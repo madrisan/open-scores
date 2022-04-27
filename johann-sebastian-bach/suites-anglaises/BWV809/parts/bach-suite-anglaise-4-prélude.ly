@@ -5,9 +5,6 @@ Global = {
    \time 4/4
 }
 
-% la si do re mi fa sol
-%  a b  c  d  e  f  g
-
 VoiceI = \relative c' {
    \tempo \markup { \italic Vitement }
    | r16 c-. d-. e-.  f-. g-. a-. f-.  bes-. c-. bes-. a-.  g-. c-. bes-. c-.
@@ -33,11 +30,19 @@ VoiceI = \relative c' {
    | << { f'8 d,16 e } \\ a8 >>  f16 g a f  bes c bes a  g c bes a
    | a8 c,  << { f8. f16 } \\ { r8 r16 <c a> } >>  << f4 \\ { d16 c bes a } \\ g8 >>  << { e'8.e16 } \\ { g,16 c bes c } >>
    %20
-   | << f4\fermata \\ a,4 >>
-}
+   | << f4\fermata \\ a,4 >>  r16 f'' e f  c f d f  c f bes, f'
+   | a, f' bes, f'  a, f' g, f'  f, f' g, f'  a, f' b, f'
+   | << { e16 g, a b  c d d\prall c32d } \\ c16 >>  e8 f e d
+   | << { r8 a' g f  e8 f g a } \\ { c,2~  c8 c b a } >>
+   | << { d16 g, b d } \\ b16>>  << { b g b d } \\ r4 >>  << { f8 f  f f } \\ { r16 d, f a  f d f a } >>
+   %25
+   | << { f'8 f f f } \\ { b, d d d } >>  << { e e e e } \\ { g, g g g } \\ { d' d c c } >>
+   | << { e e e e } \\ { f, f f f } \\ { c' c c c } >>  << { d d d d } \\ { f, f f f } \\ { g g g g } >>
+   | << { d' c c b } \\ { f e d d } \\ { g g g g } >>  << { c16 g, a b } \\ { g' } \\ { e } >>  c16 d e c
 
 % la si do re mi fa sol
 %  a b  c  d  e  f  g
+}
 
 VoiceII = \relative c {
    | r1
@@ -63,7 +68,18 @@ VoiceII = \relative c {
    | d,4  r8 d'8  g16 a g f  e c d e
    | f g f e  d c bes a  bes8[g]  c[c,]
    %20
-   | f8\fermata f'16 e
+   | f8\fermata f'16 e  f8 g  a bes  a g
+   | << { r8 d' c bes  a bes c d } \\ { f,2~  f8 f e d } >>
+   | << g4 \\ c, >>  r16 c' b c  g c a c  g c f, c'
+   | e, c' f, c'  e, c' d, c'  c, c' d, c'  e, c' f, c'
+   | << { b8 r } \\ { g g, } >>  r8 g'  d r  r4
+   %25
+   | r16 g b d  b g b d  r c, e g  e c e g
+   | a f, a c  a f a c  b g b d  b g b d
+   | e,8 e'16 f  g8 g,  c,4  c'8. c16
+
+% la si do re mi fa sol
+%  a b  c  d  e  f  g
 }
 
 
