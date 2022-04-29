@@ -56,6 +56,20 @@ VoiceI = \relative c' {
    %40
    | << { g'16 a g f  e a g a  f g f e  d f g a } \\ { d,,8 cis16 d  e8 e  e d16 e  f8 f } >>
    | << { bes'16 c bes a  g c bes c  a bes a g  f e d cis } \\ { f,8 e16 f  g8 g  g f16 g  a8 a } >>
+   | << d2~ \\ { a16 c! b! a  gis a fis gis } >>  << { d'16 d c b!  c b! c a } \\ a2~ >>
+   | << bes4~ \\ { a8. a16 } >>  << { bes8. bes16 } \\ g4~ >>  << a4~ \\ { g8. g16 } >>  << { a8. a16 } \\ { f8. f16~ } >>
+   | << { a16 c bes a } \\ { f16 e d c } >>  g' f e d  cis8 a  << { a'8. e16 } \\ d8 >>
+   %45
+   | << { f8. g16 } \\ d4 >>  e8. d16  d e f a  f g a d
+   | g,16 a b! d  b c d g  c,,d e g  e f g c
+   | f, g a c  a b! c f  b,,! c d f  d e f b!
+   | e, fis gis b!  gis a b e  a, b! c e  g,! a bes e
+   | fis, g a e'  f,! g a d  e, fis gis d'  e, gis a c
+   %50
+   | dis, e fis c'  d,! e f b!  cis, d e b'!  c,! d e a
+   | b,! c d a'  b,! c d gis  << a4 \\ c, >>  r4
+   | r2  r16 f' e d  c b! a c
+
 
 % la si do re mi fa sol
 %  a b  c  d  e  f  g
@@ -111,6 +125,19 @@ VoiceII = \relative c {
    %40
    | e,4  r8 << cis'8 \\ a >>  << a4 \\ d, >>  r8 << d'8 \\ d >>
    | << d4 \\ g, >>  r8 << e'8 \\ c >>  << c4 \\ f, >>  r8 f'
+   | b,!8 c16 d  e8 e,  a4~  a16 g f e
+   | d16 bes c d  ees f g ees  cis d cis b!  a d c! d
+   | g,8 r8  << { bes'16 a g f } \\ r4 >>  << e4 \\ { r16 bes a g } >>  << { a'8. a16 } \\ { f,16 e d cis } >>
+   %45
+   | << { a''8 b  cis4 } \\ { d,,8 g a a } >>  d,4  r8 d''8
+   | b!8 g  r g  e c  r c'
+   | a8 f  r f  d b!  r b'!
+   | gis e  r e  c a  r cis
+   | d d,  r f'  gis, e'  r a
+   % 50
+   | b! a  b! gis  a g!  f! c
+   | d b!  e e,  a16 e' fis gis  a b! c a
+   | d e d c  b! e d e  c8 e,  a a
 
 % la si do re mi fa sol
 %  a b  c  d  e  f  g
