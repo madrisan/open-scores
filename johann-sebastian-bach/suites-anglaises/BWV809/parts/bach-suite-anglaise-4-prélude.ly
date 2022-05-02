@@ -69,7 +69,18 @@ VoiceI = \relative c' {
    | dis, e fis c'  d,! e f b!  cis, d e b'!  c,! d e a
    | b,! c d a'  b,! c d gis  << a4 \\ c, >>  r4
    | r2  r16 f' e d  c b! a c
-
+   | f,16 e' d c  b! a gis b!  e, d' c b!  a g! f a
+   | << { r8 gis16 a } \\ d,4 >>  << { b'!8 b } \\ { r8 gis } >>  << { b8 a16 b } \\ { gis8 a } >>  << { c8 c } \\ { r a } >>
+   %55
+   | << { c8 b!16 c  d8 d  d c16 b!  b8. a16 } \\ { a8 gis16 a  b!8 b  b a  gis4 } >>
+   | << { a16 a c e  c a c e  a8 a  a a } \\ { a,16 r16 r8  r4  r16 f a c  a f a c } >>
+   | << { a'8 a  a a  } \\ { d,8 f  f f } >>  << { g g  g g } { f e  e e } \\ { g,8 bes  bes bes } >>
+   | << { g' g  g g  g f  f f } \\ { \stemUp \override NoteColumn.force-hshift = 0.2 e e  e e  e d  d d } \\ { \stemDown a8 a  a a  a a  a a } >>
+   | << { f'16 g, bes d } \\ \once \override NoteColumn.force-hshift = #0.2 \stemUp d16 \\ { \once \stemDown g,16 } >>
+     bes16 g bes d
+     << { e8 d  d cis } \\ { d,8\rest \stemUp \override NoteColumn.force-hshift = 0.2 a'  a a } \\ { g8\rest \stemDown f e \override NoteColumn.force-hshift = 0.8 <e g> } >>
+   %60
+   | << { d'16 a, b cis } \\ { \stemUp a'16 } \\ \once \override NoteColumn.force-hshift = 0 \stemDown f16 >>
 
 % la si do re mi fa sol
 %  a b  c  d  e  f  g
@@ -134,10 +145,20 @@ VoiceII = \relative c {
    | a8 f  r f  d b!  r b'!
    | gis e  r e  c a  r cis
    | d d,  r f'  gis, e'  r a
-   % 50
+   %50
    | b! a  b! gis  a g!  f! c
    | d b!  e e,  a16 e' fis gis  a b! c a
    | d e d c  b! e d e  c8 e,  a a
+   | a8 gis16 a  b!8 b  b a16 b  c8 c~
+   | c16 c b! a  << { r8 d } \\ { gis,16 fis e gis } >>  << { e'8 r } \\ { c,16 f! e d } >>  << { r8 e' } \\ { c,16 b! a c } >>
+   %55
+   | << { d'4  r8 f  e4 } \\ { fis,,16 e' d c  b! a gis b!  c,8 c'16 d  e8 e, } >>
+   | a8 a'  a g  f r8  r4
+   | r16 bes d f  d bes d f  r16 e, g bes  g e g bes
+   | cis16 a, cis e  cis a cis e  f d, f a  f d f a
+   | bes4  r8 bes'  cis, d  a' a,
+   %60
+   | d,4
 
 % la si do re mi fa sol
 %  a b  c  d  e  f  g
