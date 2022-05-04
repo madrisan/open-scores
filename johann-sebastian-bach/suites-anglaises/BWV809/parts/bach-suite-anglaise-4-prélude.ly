@@ -24,11 +24,14 @@ VoiceI = \relative c' {
    | f g f e  d g f g  e8 c  f8.\mordent[f16]
    | f8.g16  ees8.ees16  ees f, g a  bes c d bes
    %15
-   | ees f ees d  c f ees f  d8 bes  <d g bes>8.<d g bes>16
-   | <e g bes>8.<e g c>16  <e f a>8.<e f a>16  <d f a>8<d>8 << { g8. g16 } \\ { d8. d16 } >>
+   | ees f ees d  c f ees f  d8 bes  << { bes'8. bes16 } \\ { \stemUp \override NoteColumn.force-hshift = 0.3 g8. g16 } \\ { \stemDown d8. d16 } >>
+   | << { bes'8. c16 } \\ { \stemUp \override NoteColumn.force-hshift = 0.4 g8. g16 } \\ { \stemDown e8. e16 } >>
+     << { a8. a16 } \\ { f8. f16 } \\ { \stemUp \override NoteColumn.force-hshift = 0 e8. e16 } >>
+     << { a8 d, } \\ { f8 a,\rest } \\ { \stemDown d8 f,\rest } >>
+     << { \stemDown g8. g16 } \\ { \stemUp \override NoteColumn.force-hshift = 0 d'8. d16 } >>
    | << { g8. a16 } \\ { c,8. c16 } >>  << { f8. f16 } \\ { c8. c16 } >>  << { f8. g16 } \\ { bes,8. bes16 } >>  << { e8. f16  } \\ {{ bes,8. bes16 }} >>
    | << { f'8 d,16 e } \\ a8 >>  f16 g a f  bes c bes a  g c bes a
-   | a8 c,  << { f8. f16 } \\ { r8 r16 <c a> } >>  << f4 \\ { d16 c bes a } \\ g8 >>  << { e'8.e16 } \\ { g,16-4 c bes c } >>
+   | a8 c,  << { f8. f16 } \\ { r8 r16 <c a> } >>  << f4 \\ { d16 c-4 bes a } \\ g8 >>  << { e'8.e16 } \\ { g,16 c bes c } >>
    %20
    | << f4\fermata \\ a,4 >>  r16 f'' e f  c f d f  c f bes, f'
    | a, f' bes, f'  a, f' g, f'  f, f' g, f'  a, f' b, f'
@@ -49,7 +52,7 @@ VoiceI = \relative c' {
    | << { c'8. d16 } \\ { e,8. f16 } >>  << { b8. c16 } \\ { d,8. e16 } >>  << c'4 \\ e,4 >>  r16 c' b c
    %35
    | g16 c a c  g c f, c'  e, c' f, c'  e, c' d, c'
-   | c,16 c' d, c'  e, c' fis, c'  << { b d, e fis } \\ g16 >>  g a a\prall g32 a
+   | c,16 c' d, c'  e, c' fis, c'  << { bes d, e fis } \\ g16 >>  g a a\prall g32 a
    | b8 c  b a  << { r8 ees' d c } \\ g2~ >>
    | << { bes8 c  d e! } \\ { g, g  f e } >>  << { a8 a } \\ { d,8 d16 e } >>  << { d'8. d16 } \\ { f,8. f16 } >>
    | << { d'8. e16 } \\ e,4 >>  << { cis'8. d16 } \\ r4 >>  << { d16 a b! cis  d e f d } \\ { r8 a,  d d } >>
@@ -72,8 +75,8 @@ VoiceI = \relative c' {
    | f,16 e' d c  b! a gis b!  e, d' c b!  a g! f a
    | << { r8 gis16 a } \\ d,4 >>  << { b'!8 b } \\ { r8 gis } >>  << { b8 a16 b } \\ { gis8 a } >>  << { c8 c } \\ { r a } >>
    %55
-   | << { c8 b!16 c  d8 d  d c16 b!  b8. a16 } \\ { a8 gis16 a  b!8 b  b a  gis4 } >>
-   | << { a16 a c e  c a c e  a8 a  a a } \\ { a,16 r16 r8  r4  r16 f a c  a f a c } >>
+   | << { c8 b!16 c  d8 d  d c16 b!  b8. a16 } \\ { a8 gis16 a  b!8 b  b a  gis4 } \\ { \stemDown \override NoteColumn.force-hshift = 0.3 d4  e8\rest f  e4 } >>
+   | << { a16 a c e  c a c e  a8 a  a a } \\ { a,16 r16 c,8\rest  r4  r16 f a c  a f a c } >>
    | << { a'8 a  a a  } \\ { d,8 f  f f } >>  << { g g  g g } { f e  e e } \\ { g,8 bes  bes bes } >>
    | << { g' g  g g  g f  f f } \\ { \stemUp \override NoteColumn.force-hshift = 0.2 e e  e e  e d  d d } \\ { \stemDown a8 a  a a  a a  a a } >>
    | << { f'16 g, bes d } \\ \once \override NoteColumn.force-hshift = #0.2 \stemUp d16 \\ { \once \stemDown g,16 } >>
@@ -81,6 +84,24 @@ VoiceI = \relative c' {
      << { e8 d  d cis } \\ { d,8\rest \stemUp \override NoteColumn.force-hshift = 0.2 a'  a a } \\ { g8\rest \stemDown f e \override NoteColumn.force-hshift = 0.8 <e g> } >>
    %60
    | << { d'16 a, b cis } \\ { \stemUp a'16 } \\ \once \override NoteColumn.force-hshift = 0 \stemDown f16 >>
+     d16 e f d  g a g f  e a g a
+   | fis16 d e fis  g a bes g  c e, fis g  a bes c a
+   | d16 fis, g a  bes c d bes  ees d c bes  a d c d
+   | << { bes4. a8~ } \\ { r16 a g f  ees4 } >>  << { a8 g4 fis8 } \\ { d4 c } >>
+   | << { g'16 f! ees d } \\ { bes8 r } >>  << ees4 \\ { ees16 bes c fis, } >>  g ees' d c  bes g' a, fis'
+   %65
+   | << r4 \\ { g8 bes16 a } >>  << { r8 g' } \\ { bes, bes } >>  << { g'8 a16 g } \\ a,4 >>  << { f'!8 f } \\ { r a, } >>
+   | << { f'8 g16 f } \\ g,4 >>  << { ees'8 ees } \\ { r c } >>  << { ees8 f16 ees } \\ a,4 >>  << { d8 d } \\ { r c } >>
+   | << { d8 ees16 d } \\ bes4 >>  << { c8 c } \\ { r bes } >>  << { c8 f,  bes bes } \\ { a4 { r8 << f \\ d >> } } >>
+   | << { bes'8 a16 bes } \\ { << g8 \\ d >> r8 } >>  << { c' c } \\ { r << g \\ ees >> } >>
+     << { c'8 bes16 c } \\ { << a8 \\ ees >> r8 } >>  << { d' d } \\ { r << bes \\ f >> } >>
+   | << { d'8 c16 d } \\ { << bes8 \\ g >> r8 } >>  << { ees' ees } \\ { r << c \\ g >> } >>
+     << { ees'8 d16 c } \\ { << c8 \\ a >> bes8 } >>  << { c8. bes16 } \\ a4 >>
+   | << { bes16 a bes c } \\ bes16 >>  d ees f bes  c, d ees g  a, bes c a'
+   | bes, c d f  g, a bes g'  a, bes c ees  f, g a f'
+   | g, a bes d  ees, f g ees'  f, g a c  d, ees f d'
+   | ees, d' d, d'  ees, c' c, c'  d, c' ees, c'  f, bes d, bes'
+   | g bes f bes  ees, bes' g bes  f bes ees, bes'  d, bes' c, bes'
 
 % la si do re mi fa sol
 %  a b  c  d  e  f  g
@@ -92,7 +113,7 @@ VoiceII = \relative c {
    | a8 f  f'8.[f16]  f8.[g16]  e8.\prall[e16]
    | e8 a,  d8.[d16]  d8.[e16]  c8.\prall[c16]
    %5
-   | c16 e d c  b-1 a g-1 f  e4~  e16 d c_1 b
+   | c16 e d c  b-1 a g f  e4~  e16 d c_1 b
    | a g a f  g8 g'  c,16 g' a b  c d e c-5
    | f16 g f e  d g f g  c, d e g  f, g a c
    | b c d f  e, f g b  a b c e  d, e f a
@@ -130,9 +151,9 @@ VoiceII = \relative c {
    %35
    | e8 f  e d  << { r8 a' g f } \\ c2~ >>
    | << { e8 fis g a } \\ { c, c bes a } >>  << d4 \\ g, >>  r16 g' fis g
-   | d g ees g  d g c, g'  b, g' c, g'  b, g' a, g'
+   | d g ees g  d g c, g'  bes, g' c, g'  bes, g' a, g'
    | g,16 g' a, g'  b, g' cis, g'  f g f e  d e f d
-   | g16 a g f  e a g a  f4  r8 b
+   | g16 a g f  e a g a  f4  r8 bes
    %40
    | e,4  r8 << cis'8 \\ a >>  << a4 \\ d, >>  r8 << d'8 \\ d >>
    | << d4 \\ g, >>  r8 << e'8 \\ c >>  << c4 \\ f, >>  r8 f'
@@ -152,13 +173,29 @@ VoiceII = \relative c {
    | a8 gis16 a  b!8 b  b a16 b  c8 c~
    | c16 c b! a  << { r8 d } \\ { gis,16 fis e gis } >>  << { e'8 r } \\ { c,16 f! e d } >>  << { r8 e' } \\ { c,16 b! a c } >>
    %55
-   | << { d'4  r8 f  e4 } \\ { fis,,16 e' d c  b! a gis b!  c,8 c'16 d  e8 e, } >>
+   | fis,16 e' d c  b! a gis b!  c,8 c'16 d  e8 e,
    | a8 a'  a g  f r8  r4
    | r16 bes d f  d bes d f  r16 e, g bes  g e g bes
    | cis16 a, cis e  cis a cis e  f d, f a  f d f a
    | bes4  r8 bes'  cis, d  a' a,
    %60
-   | d,4
+   | d,4  << { r8 a'' } \\ { r8 d, } >>  << bes'4 \\ { d,8 e16 d } >>  << { r8 e } \\ { c c } >>
+   | << { a'4  r8 g  e4  r8 fis }  \\ { c8 d16 c  bes8 bes  bes c16 bes  a8 a } >>
+   | << { bes'4  r8 bes } \\ { a,8 bes16 a  g8 g'8 } >>  << { c8 r } \\ \stemUp a \\ { \stemDown g8 a16 g } >>  << { r8 fis } \\ { fis8 d } >>
+   | << g16 \\ { g16 f ees d } >>  c f ees f  bes, c d ees  a, d c d
+   | \stemDown g,8 bes  c a  bes c  d d,
+   %65
+   | g16 d' e fis  g a bes g  c d c bes  a d c d
+   | bes16 g a bes  c d ees c  f a, bes c  d ees f d
+   | g bes, c d  ees f g e!  f g g ees  d c bes d
+   | g, f' ees d  c bes a c  f, ees' d c  bes a g bes
+   | ees, f ees d  c bes a c  f,8 bes  f' f,
+   %70
+   | bes16 f' g a  bes c d bes  ees f ees d  c f ees f
+   | d ees d c  bes ees d ees  c d c bes  a d c d
+   | bes c bes a  g c bes c  a bes a g  f bes a bes
+   | g8 f  g a  bes c  d bes,
+   | ees d  c ees  d c  << { r e! } \\ bes4~ >>
 
 % la si do re mi fa sol
 %  a b  c  d  e  f  g
