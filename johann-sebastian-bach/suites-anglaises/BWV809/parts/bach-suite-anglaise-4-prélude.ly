@@ -5,7 +5,7 @@ Global = {
    \time 4/4
 }
 
-RefrainI = \relative c'' {
+RefrainUpper = \relative c'' {
    %2
    | a8[f]  f'8.[f16]  f8.\mordent[g16]  e8.\prall[f16]
    | f16[g f e]  d([e f a])  b,([c d g])  c,([d e g])
@@ -33,12 +33,13 @@ RefrainI = \relative c'' {
    | a8 c,  << { f8. f16 } \\ { r8 r16 <c a> } >>  << f4 \\ { d16 c-4 bes a } \\ g8 >>  << { e'8.e16 } \\ { g,16 c bes c } >>
 }
 
-VoiceI = \relative c' {
+Upper = \relative c' {
+   \clef treble
    \tempo \markup { \italic Vitement }
    %1
    | r16 c-. d-. e-.  f-. g-. a-. f-.  bes-. c-. bes-. a-.  g-. c-. bes-. c-.
    %2-19
-   \RefrainI
+   \RefrainUpper
    %20
    | << f,4\fermata \\ a,4 >>  r16 f'' e f  c f d f  c f bes, f'
    | a, f' bes, f'  a, f' g, f'  f, f' g, f'  a, f' b, f'
@@ -132,15 +133,16 @@ VoiceI = \relative c' {
    | r2  << { r8 a'!16 bes32 c  a8 g16 f } \\ { r8 f  f e } >>
    | << { f16 c d e } \\ f16 >>  f g a f  bes c bes a  g c bes c
    %90
-   \RefrainI
+   \RefrainUpper
    %108
    | f,4  r4  r2
+   \fine
 
 % la si do re mi fa sol
 %  a b  c  d  e  f  g
 }
 
-RefrainII = \relative c {
+RefrainLower = \relative c {
    %2
    | r16 c d e  f g a f  bes c bes a  g c bes c
    | a8 f  f'8.[f16]  f8.[g16]  e8.\prall[e16]
@@ -165,11 +167,12 @@ RefrainII = \relative c {
    | f g f e  d c bes a  bes8[g]  c[c,]
 }
 
-VoiceII = \relative c {
+Lower = \relative c {
+   \clef bass
    %1
    | r1
    %2-19
-   \RefrainII
+   \RefrainLower
    %20
    | f,8\fermata f'16 e  f8 g  a bes  a g
    | << { r8 d' c bes  a bes c d } \\ { f,2~  f8 f e d } >>
@@ -255,42 +258,36 @@ VoiceII = \relative c {
    | \stemUp bes16 c des aes  g a bes f  e8 f  c' c,
    | \stemUp f16 r16 r8  r4 r2
    %90
-   \RefrainII
+   \RefrainLower
    %108
    | << { a'4  r4  r2 } \\ { f,4  r4  r2 } >>
+   \fine
 
 % la si do re mi fa sol
 %  a b  c  d  e  f  g
 }
 
-
-\bookpart {
-  \header {
-    maintainer         = "Davide Madrisan"
-    maintainerEmail    = "davide.madrisan@gmail.com"
-  }
-  \include "../header.ily"
-  \header { title = "Suite IV" }
-
-  \score {
-    \new PianoStaff \with { instrumentName = "Prélude" }
-    <<
-      \accidentalStyle Score.piano-cautionary
-      \new Staff {
-        \Global
-        \VoiceI
-        \fine
-      }
-      \new Staff {
-        \Global
-        \clef bass
-        \VoiceII
-        \fine
-      }
-    >>
-    \layout { }
-    \midi {
-      \tempo 4 = 100
+\score {
+  \new PianoStaff
+  <<
+    \accidentalStyle Score.piano-cautionary
+    \new Staff {
+      \Global
+      \Upper
     }
+    \new Staff {
+      \Global
+      \Lower
+    }
+  >>
+  \header {
+    composer = "Johann Sebastian Bach"
+    opus = "BWV 809"
+    subtitle = "Prélude"
+    title = "SUITE IV."
+  }
+  \layout { }
+  \midi {
+    \tempo 4 = 100
   }
 }
