@@ -4,18 +4,22 @@
 
 \paper {
   line-width = 18.6\cm
-  top-margin = 8\mm
-  bottom-margin = 9\mm
-  ragged-last-bottom = ##t
-  ragged-bottom = ##t
+  top-margin = 10\mm
+  bottom-margin = 10\mm
+%  ragged-last-bottom = ##t
+%  ragged-bottom = ##f
   first-page-number = 0
-  markup-system-spacing.basic-distance = #10
-  last-bottom-spacing.padding = #2
+%  markup-system-spacing.basic-distance = #10
+%  last-bottom-spacing.padding = #2
+  print-all-headers = ##t
 }
 
 \bookpart {
+  \header {
+    maintainer      = "Davide Madrisan"
+    maintainerEmail = "davide.madrisan@gmail.com"
+  }
 
-  \header { maintainer = "Davide Madrisan" }
   \include "./header.ily"
   \header {
     title = ##f
@@ -45,5 +49,5 @@
 	} } }
 }
 
-
 \include "./parts/bach-suite-anglaise-4-prélude.ly"
+\include "./parts/bach-suite-anglaise-4-allemande.ly"
