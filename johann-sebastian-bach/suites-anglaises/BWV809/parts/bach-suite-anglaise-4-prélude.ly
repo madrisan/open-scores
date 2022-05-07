@@ -5,9 +5,8 @@ Global = {
    \time 4/4
 }
 
-VoiceI = \relative c' {
-   \tempo \markup { \italic Vitement }
-   | r16 c-. d-. e-.  f-. g-. a-. f-.  bes-. c-. bes-. a-.  g-. c-. bes-. c-.
+RefrainI = \relative c'' {
+   %2
    | a8[f]  f'8.[f16]  f8.\mordent[g16]  e8.\prall[f16]
    | f16[g f e]  d([e f a])  b,([c d g])  c,([d e g])
    | a,16 b c f  b, c d f  g, a b e  a, b c e
@@ -32,8 +31,16 @@ VoiceI = \relative c' {
    | << { g8. a16 } \\ { c,8. c16 } >>  << { f8. f16 } \\ { c8. c16 } >>  << { f8. g16 } \\ { bes,8. bes16 } >>  << { e8. f16  } \\ {{ bes,8. bes16 }} >>
    | << { f'8 d,16 e } \\ a8 >>  f16 g a f  bes c bes a  g c bes a
    | a8 c,  << { f8. f16 } \\ { r8 r16 <c a> } >>  << f4 \\ { d16 c-4 bes a } \\ g8 >>  << { e'8.e16 } \\ { g,16 c bes c } >>
+}
+
+VoiceI = \relative c' {
+   \tempo \markup { \italic Vitement }
+   %1
+   | r16 c-. d-. e-.  f-. g-. a-. f-.  bes-. c-. bes-. a-.  g-. c-. bes-. c-.
+   %2-19
+   \RefrainI
    %20
-   | << f4\fermata \\ a,4 >>  r16 f'' e f  c f d f  c f bes, f'
+   | << f,4\fermata \\ a,4 >>  r16 f'' e f  c f d f  c f bes, f'
    | a, f' bes, f'  a, f' g, f'  f, f' g, f'  a, f' b, f'
    | << { e16 g, a b  c d d\prall c32d } \\ c16 >>  e8 f e d
    | << { r8 a' g f  e8 f g a } \\ { c,2~  c8 c b a } >>
@@ -97,18 +104,44 @@ VoiceI = \relative c' {
      << { c'8 bes16 c } \\ { << a8 \\ ees >> r8 } >>  << { d' d } \\ { r << bes \\ f >> } >>
    | << { d'8 c16 d } \\ { << bes8 \\ g >> r8 } >>  << { ees' ees } \\ { r << c \\ g >> } >>
      << { ees'8 d16 c } \\ { << c8 \\ a >> bes8 } >>  << { c8. bes16 } \\ a4 >>
+   %70
    | << { bes16 a bes c } \\ bes16 >>  d ees f bes  c, d ees g  a, bes c a'
    | bes, c d f  g, a bes g'  a, bes c ees  f, g a f'
    | g, a bes d  ees, f g ees'  f, g a c  d, ees f d'
    | ees, d' d, d'  ees, c' c, c'  d, c' ees, c'  f, bes d, bes'
    | g bes f bes  ees, bes' g bes  f bes ees, bes'  d, bes' c, bes'
+   %75
+   | bes, bes' c, bes'  d, bes' e,! bes'  << { a16 c, d ees } \\ f >>  f16 g g\prall f32 g
+   | a8 bes  a g  << { r8 d' c bes } \\ f2~ >>
+   | << { a8 bes  c d } \\ f,2~ >>  << g4 \\ { f8 e16 d } >>  << { r8 c' } \\ { e, << g \\ e >> } >>
+   | << { c'8 d16 c } \\ { < a d, >4 } >>  << { bes8 bes8 } \\ { r8 << g \\ d >> } >>
+     << { bes'8 c16 bes } \\ { < g c, >4 } >>  << { a8 f' } \\ { r8 << c \\ a >> } >>
+   | << { f'8 g16 f } \\ { < d g, >4 } >>  << { ees8 ees } \\ { r8 << c \\ g >> } >>
+     << { ees'8 f16 ees } \\ { < c f, >4 } >>  << { d8 bes' } \\ { r8 << f \\ d >> } >>
+   %80
+   | << { bes'8 c16 bes } \\ { < g c, >4 } >>  << { a8 a } \\ { g,8\rest << f' \\ c >> } >>
+     << { a'8 bes16 a } \\ { < f bes, >4 } >>  << { g8 g } \\ { a,8\rest << d \\ bes >> } >>
+   | << { g'8 a16 g } \\ { << c,8 \\ bes >> r8 } >>  << { f'16 a g f } \\ r4 >>  e16 d c d  e d e c
+   | d16 e f a  g a bes d,  c d e g  f g a c,
+   | bes c d f  e f g bes,  a8 c  f8. f16
+   | f16 bes a g  g8. f16  f4  r8 f,
+   % 85
+   | e16 f g bes,  a bes c f  e f g bes,  a bes c e
+   | f g aes c,  b! c d e  f g aes c,  b! c d f
+   | e f g c,  bes c des aes \once \hideNotes a2
+   | r2  << { r8 a'!16 bes32 c  a8 g16 f } \\ { r8 f  f e } >>
+   | << { f16 c d e } \\ f16 >>  f g a f  bes c bes a  g c bes c
+   %90
+   \RefrainI
+   %108
+   | f,4  r4  r2
 
 % la si do re mi fa sol
 %  a b  c  d  e  f  g
 }
 
-VoiceII = \relative c {
-   | r1
+RefrainII = \relative c {
+   %2
    | r16 c d e  f g a f  bes c bes a  g c bes c
    | a8 f  f'8.[f16]  f8.[g16]  e8.\prall[e16]
    | e8 a,  d8.[d16]  d8.[e16]  c8.\prall[c16]
@@ -130,8 +163,15 @@ VoiceII = \relative c {
    | a bes c e  d e f a-2  g-1 g, a bes  c a bes-2 c-1
    | d,4  r8 d'8  g16-2 a g f-1  e-3 c d e
    | f g f e  d c bes a  bes8[g]  c[c,]
+}
+
+VoiceII = \relative c {
+   %1
+   | r1
+   %2-19
+   \RefrainII
    %20
-   | f8\fermata f'16 e  f8 g  a bes  a g
+   | f,8\fermata f'16 e  f8 g  a bes  a g
    | << { r8 d' c bes  a bes c d } \\ { f,2~  f8 f e d } >>
    | << g4 \\ c, >>  r16 c' b c  g c a c  g c f, c'
    | e, c' f, c'  e, c' d, c'  c, c' d, c'  e, c' f, c'
@@ -196,6 +236,28 @@ VoiceII = \relative c {
    | bes c bes a  g c bes c  a bes a g  f bes a bes
    | g8 f  g a  bes c  d bes,
    | ees d  c ees  d c  << { r e! } \\ bes4~ >>
+   %75
+   | << { d8 e  f g } \\ { bes, bes  a g } >>  << c4 \\ f, >>  r16 f' e f
+   | c16 f d f  c f bes, f'  a, f' bes, f'  a, f' g, f'
+   | f, f' g, f'  a, f' bes, f'  c g a b!  c d e c
+   | f g f e  d g f g  e c d e  f g a f
+   | bes c bes a  g c bes c  a f g a  bes c d bes
+   %80
+   | ees f ees d  c f ees f  d ees d c  bes a g f
+   | e! d c bes  a g a f  c8 g''  c c
+   | c8 d16 c  bes8 bes  bes8 c16 bes  a8 a
+   | a8 bes16 a  g16 f e g  f bes a g  f e d f
+   | bes,16 d c bes  c8 c,8  f16 c d e  f g a f
+   %85
+   | c'8 c,  r8 c'  c c,  r8 c'
+   | c8 c,  r8 c'  c c,  r8 c'
+   | c8 c,  g'4\rest  << { g'16 aes bes f  e! f g c, } \\ r2 >>
+   | \stemUp bes16 c des aes  g a bes f  e8 f  c' c,
+   | \stemUp f16 r16 r8  r4 r2
+   %90
+   \RefrainII
+   %108
+   | << { a'4  r4  r2 } \\ { f,4  r4  r2 } >>
 
 % la si do re mi fa sol
 %  a b  c  d  e  f  g
@@ -217,11 +279,13 @@ VoiceII = \relative c {
       \new Staff {
         \Global
         \VoiceI
+        \fine
       }
       \new Staff {
         \Global
         \clef bass
         \VoiceII
+        \fine
       }
     >>
     \layout { }
