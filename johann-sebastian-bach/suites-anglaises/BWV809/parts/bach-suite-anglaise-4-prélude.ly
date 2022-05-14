@@ -112,7 +112,7 @@ Upper = \relative c' {
    | ees, d' d, d'  ees, c' c, c'  d, c' ees, c'  f, bes d, bes'
    | g bes f bes  ees, bes' g bes  f bes ees, bes'  d, bes' c, bes'
    %75
-   | bes, bes' c, bes'  d, bes' e,! bes'  << { a16 c, d ees } \\ f >>  f16 g g\prall f32 g
+   | bes, bes' c, bes'  d, bes' e,! bes'  << { a16 c, d e } \\ f >>  f16 g g\prall f32 g
    | a8 bes  a g  << { r8 d' c bes } \\ f2~ >>
    | << { a8 bes  c d } \\ f,2~ >>  << g4 \\ { f8 e16 d } >>  << { r8 c' } \\ { e, << g \\ e >> } >>
    | << { c'8 d16 c } \\ { < a d, >4 } >>  << { bes8 bes8 } \\ { r8 << g \\ d >> } >>
@@ -230,7 +230,7 @@ Lower = \relative c {
    %65
    | g16 d' e fis  g a bes g  c d c bes  a d c d
    | bes16 g a bes  c d ees c  f a, bes c  d ees f d
-   | g bes, c d  ees f g e!  f g g ees  d c bes d
+   | g bes, c d  ees f g e!  f g f ees  d c bes d
    | g, f' ees d  c bes a c  f, ees' d c  bes a g bes
    | ees, f ees d  c bes a c  f,8 bes  f' f,
    %70
