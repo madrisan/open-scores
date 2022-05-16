@@ -53,3 +53,4 @@
 \include "./parts/bach-suite-anglaise-4-allemande.ly"
 \include "./parts/bach-suite-anglaise-4-courante.ly"
 \include "./parts/bach-suite-anglaise-4-sarabande.ly"
+\include "./parts/bach-suite-anglaise-4-menuet-i.ly"
