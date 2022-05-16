@@ -19,4 +19,4 @@ to view or download the compiled score (*pdf* format).
 
 ## Important Note
 
-:warning: Only the *Prélude*, *Allemande*, and *Courante* are available right now. Stay tuned!
+:warning: Only the *Prélude*, *Allemande*, *Courante*, *Sarabande*, and *Menuet I* are available right now. Stay tuned!
