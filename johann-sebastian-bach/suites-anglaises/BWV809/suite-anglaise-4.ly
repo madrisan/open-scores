@@ -55,3 +55,4 @@
 \include "./parts/bach-suite-anglaise-4-sarabande.ly"
 \include "./parts/bach-suite-anglaise-4-menuet-i.ly"
 \include "./parts/bach-suite-anglaise-4-menuet-ii.ly"
+\include "./parts/bach-suite-anglaise-4-gigue.ly"

@@ -19,4 +19,4 @@ to view or download the compiled score (*pdf* format).
 
 ## Important Note
 
-:warning: Only the *Prélude*, *Allemande*, *Courante*, *Sarabande*, *Menuet I*, and *Menuet II* are available right now. Stay tuned!
+:warning: The midi configuration has not been finalized, except for the Prélude.
