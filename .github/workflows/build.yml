@@ -1,0 +1,34 @@
+name: Build check
+
+on:
+  push:
+    paths-ignore:
+      - '**.md'
+  pull_request:
+    types: [assigned, edited, opened, synchronize, reopened]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+
+      - name: Make the output directories
+        run: mkdir -p build/{a4,letter}
+
+      - name: Build with the version specified in the source files
+        uses: docker://jeandeaual/lilypond:2.23.7
+        with:
+          args: lilypond johann-sebastian-bach/suites-anglaises/BWV809/suite-anglaise-4.ly
+
+      - name: Build A4 PDF
+        uses: docker://jeandeaual/lilypond:latest
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/a4 johann-sebastian-bach/suites-anglaises/BWV809/suite-anglaise-4.ly
+
+      - name: Build Letter PDF
+        uses: docker://jeandeaual/lilypond:latest
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"letter\" -o build/letter johann-sebastian-bach/suites-anglaises/BWV809/suite-anglaise-4.ly
