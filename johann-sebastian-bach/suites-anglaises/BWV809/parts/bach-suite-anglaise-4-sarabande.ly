@@ -14,34 +14,34 @@ Upper = \relative c'' {
 	     \override NoteColumn.force-hshift = #0 a2 }
 	\\ { \stemDown \override NoteColumn.force-hshift = #0 f4  f2 } >>
   | << { d'8 c d2 } \\ { \stemUp bes8 a bes2 } \\ { \stemDown f8 ees f2 } >>
-  | << { g8 a a bes bes c } \\ { e,!4 f e } >>
+  | << { g8 a a\turn bes bes\turn c } \\ { e,!4 f e } >>
   | << { a4\prall g8 a f4 } \\ { f4 e c } >>
   %5
-  | << { a'8. c32 b!  b!4. c8 } \\ { f,4 f2 } \\ { c4 d2 } >>
+  | << { a'8. c32 b!  b!4.\prall c8 } \\ { f,4 f2 } \\ { c4 d2 } >>
   | << { \appoggiatura ees'16 d16 c d8  << f2 \\ d2 >> } \\ { f,4 g2 } >>
-  | << { e'!8 d d c c b! } \\ { g8 f f e e d } >>
+  | << { e'!8\prall d d\prall c c\prall b! } \\ { g8 f f e e d } >>
   | << { b'!8 c c2 } \\ { d,8 e << g2 \\ e2 >> } >>
   }
   \repeat volta 2 {
-  | << { e'8. f32 g  e2\prall }
+  | << { e'8. f32 g  e2\prall( }
          \\ { \once \stemUp \override NoteColumn.force-hshift = #0.4 c4
 	      \override NoteColumn.force-hshift = #0 \stemUp c2 }
 	 \\ { \stemDown g4  g2 } >>
   %10
-  | << g'4 \\ \stemUp e \\ \stemDown a, \\ e >>  << cis'2\prall \\ \stemUp a2 \\ \stemDown e2~ >>
-  | << { bes''8 a a g g16 f g e }
+  | << g'4)( \\ \stemUp e \\ \stemDown a, \\ e >>  << cis'2)\prall \\ \stemUp a2 \\ \stemDown e2~ >>
+  | << { bes''8( a) a g g16 f g e }
         \\ { \once \stemUp \override NoteColumn.force-hshift = #0.4 cis4
 	     \once \stemUp d \override NoteColumn.force-hshift = #0 e }
         \\ { \stemDown e,4 f } >>
   | << { f'4\prall e8 f d4 } \\ { a4 g f } >>
-  | << { fis'8. a32 g  g2 }
+  | << { fis'8. a32 g  (g2 }
        \\ { \once \stemUp \override NoteColumn.force-hshift = #0.4 d4
             \once \stemUp \override NoteColumn.force-hshift = #0 d2 }
        \\ { \stemDown a4  g2 } >>
-  | << { ees'16 c d8 d4.\prall d8 } \\ { a4 aes2 } >>
+  | << { ees'16) c d8 d4.\prall d8 } \\ { a4 aes2 } >>
   %15
   | << { \override NoteColumn.force-hshift = #0.8 g'8. a16 }
-       \\ { < g g, >4 } >>
+       \\ { < g~ g, >4 } >>
     << { \override NoteColumn.force-hshift = #-0.6 a4.\prall
          \override NoteColumn.force-hshift = #0 g8 }
        \\ { \stemUp g4 fis }
@@ -66,7 +66,7 @@ Upper = \relative c'' {
        \\ { \once \override NoteColumn.force-hshift = #0.8 \stemDown d4 c }\prall >>
   | << { g'8 aes16 g  \appoggiatura c16 b!4.\prall a16 b }
        \\ { \once \override NoteColumn.force-hshift = #0.6 f4 f2 } >>
-  | << { c'8 c, f bes a g }
+  | << { c'8 c, f\mordent bes a g }
        \\ { \stemUp \override NoteColumn.force-hshift = #0.4 g8 s s f f e }
        \\ { \stemDown c8 s c d c bes } >>
   | << { f'8 e f2 } \\ { \stemUp \once \override NoteColumn.force-hshift = #0.2 c4 c2 }

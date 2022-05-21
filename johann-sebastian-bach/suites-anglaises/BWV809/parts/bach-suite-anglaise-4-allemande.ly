@@ -14,8 +14,7 @@ Upper = \relative c'' {
   \stemUp f16
   | << { f8~ f32 f e d } \\ c8 \\ a >> c16 d c bes
     \tupletUp \tuplet 3/2 8 {
-      \override TupletBracket.tuplet-slur = ##t
-      a bes c a bes c  f, g a f g a
+      a[ bes c] a[ bes c]  f,[ g a] f[ g a]
     }
   | c,8 f  f8.\prall e32 f
     << { g8 g } \\ { r f } >>  << { g8.\prall f32 g } \\ e4 >>
@@ -27,8 +26,7 @@ Upper = \relative c'' {
   | << { e4~  e16 e f g } \\ { c,16 g a b  c4~ } >>
     <<
     \tupletUp \tuplet 3/2 8 {
-      \override TupletBracket.tuplet-slur = ##t
-      a'16 b c  a b c  f, g a  f g a
+      a'16[ b c]  a[ b c]  f,[ g a]  f[ g a]
     }
     \\
     c,2~
@@ -36,8 +34,7 @@ Upper = \relative c'' {
   | << { d4~  d16 d e f } \\ { c16 c b! a  b!4~ } >>
     <<
     \tupletUp \tuplet 3/2 8 {
-      \override TupletBracket.tuplet-slur = ##t
-      g'16 a b!  g a b!  e, f g  e f g
+      g'16[ a b!]  g[ a b!]  e,[ f g]  e[ f g]
     }
     \\
     b,2~
@@ -45,8 +42,7 @@ Upper = \relative c'' {
   | << { c4~  c16 ees d c } \\ { b16 b a g  a4~ } >>
     <<
     \tupletUp \tuplet 3/2 8 {
-      \override TupletBracket.tuplet-slur = ##t
-      fis'16 g a  fis g a  c, d ees  c d ees
+      fis'16[ g a]  fis[ g a]  c,[ d ees]  c[ d ees]
     }
     \\
     a,2
@@ -55,8 +51,7 @@ Upper = \relative c'' {
   | <<
     {
       \tupletUp \tuplet 3/2 8 {
-        \override TupletBracket.tuplet-slur = ##t
-        b!16 c d  b! c d  g, a b!~
+        b!16[ c d]  b![ c d]  g,[ a b!]~
       }
       b!8
       c ees  aes, c
@@ -65,7 +60,6 @@ Upper = \relative c'' {
     {
       g4  r8
       \tupletDown \tuplet 3/2 8 {
-        \override TupletBracket.tuplet-slur = ##t
 	f16 g aes
       }
       ees8
@@ -78,18 +72,14 @@ Upper = \relative c'' {
   %\break
 
     \repeat volta 4 {
-      %\bar ".|:"
-      %\partial 16 g''16
       g''16
   |   << g4 \\ e \\ c >>  r16 g a b!  c8 g  e' c
         \tupletUp \tuplet 3/2 8 {
-          \override TupletBracket.tuplet-slur = ##t
-          g'16 f e g16 f e
+          g'16[ f e] g16[ f e]
         }
         c'16 g f\prall e
         \tupletUp \tuplet 3/2 8 {
-          \override TupletBracket.tuplet-slur = ##t
-          a16 g f a16 g f
+          a16[ g f] a16[ g f]
         }
         b!16 f e\prall d
   %15
@@ -102,15 +92,13 @@ Upper = \relative c'' {
   |   << { bes'16 d c bes  c a bes c } \\ { ees,2 } >>
       << { f16 f32 g a g f g  a16. bes32  bes16 a32\prall bes } \\ { d,8 } >>
   |   \tupletUp \tuplet 3/2 8 {
-        \override TupletBracket.tuplet-slur = ##t
-        \override TupletBracket.bracket-visibility = ##t
-        c'16 bes c d c d  e d e f e f  g f g
+        c'16[ bes c] d[ c d]  e[ d e] f[ e f]  g[ f g]
       }
       << { a8~ } \\ { a16[ c,] } \\ \stemDown f,8~ >>
       << { a'16 a g f } \\ \stemUp \override NoteColumn.force-hshift = #0.4 d4 \\ { \stemDown f,16 f bes a } >>
   | << { e'16 f e d } \\ \stemUp c8 \\ { \stemDown g16 a g f } >>  << { c'8. c16 } \\ { e,8 r } >>
-    des'16 c b! c  f, c' b! c
-  | d! c b! c  f, aes g f  bes des bes g  e! g c bes
+    des'16( c b! c)  f,( c' b! c)
+  | d!( c b! c)  f, aes g f  bes des bes g  e! g c bes
   | a c f a,  << { g f' bes, e } \\ { g,8 bes } >>  << { f'4. f16\rest } \\ { c4. a16\rest } \\ { a4. d,16\rest } >>
     }
 
@@ -126,17 +114,13 @@ Lower = \relative c {
     r16
   | f8 f,  r16 f'' e d  c8 f  a, c
   | \tupletUp \tuplet 3/2 8 {
-      \override TupletBracket.tuplet-slur = ##t
-      \override TupletBracket.bracket-visibility = ##t
-      f,16 g a f g a
+      f,16[ g a] f[ g a]
     }
     \tupletUp \tuplet 3/2 8 {
-      \override TupletBracket.tuplet-slur = ##t
-      d, e f d e f
+      d,[ e f] d[ e f]
     }
     \tupletUp \tuplet 3/2 8 {
-      \override TupletBracket.tuplet-slur = ##t
-      bes, c d bes c d
+      bes,[ c d] bes[ c d]
     }
     g,16 c bes c
   | f,8 f'  f8.\prall e32 f  g8 g  g8.\prall f32 g
@@ -145,41 +129,29 @@ Lower = \relative c {
   | bes2  a8 d  g, c
   | f, e  d c  b!16 d e f  g8 g,
   | \tupletUp \tuplet 3/2 8 {
-      \override TupletBracket.tuplet-slur = ##t
-      \override TupletBracket.bracket-visibility = ##t
-      c16 d e c d e
+      c16[ d e] c[ d e]
     }
     \tupletUp \tuplet 3/2 8 {
-      \override TupletBracket.tuplet-slur = ##t
-      \override TupletBracket.bracket-visibility = ##t
-      a,16 b c a b c
+      a,16[ b c] a[ b c]
     }
     f,8 a'  d, f
   | \tupletUp \tuplet 3/2 8 {
-      \override TupletBracket.tuplet-slur = ##t
-      \override TupletBracket.bracket-visibility = ##t
-      b,!16 c d b c d
+      b,!16[ c d] b[ c d]
     }
     \tupletUp \tuplet 3/2 8 {
-      \override TupletBracket.tuplet-slur = ##t
-      \override TupletBracket.bracket-visibility = ##t
-      g,16 a b g a b
+      g,16[ a b] g[ a b]
     }
     e,8 g'  c, e
   | \tupletUp \tuplet 3/2 8 {
-      \override TupletBracket.tuplet-slur = ##t
-      \override TupletBracket.bracket-visibility = ##t
-      a,16 b c a b c
+      a,16[ b c] a[ b c]
     }
     \tupletUp \tuplet 3/2 8 {
-      \override TupletBracket.tuplet-slur = ##t
-      \override TupletBracket.bracket-visibility = ##t
-      fis,16 g a fis g a
+      fis,16[ g a] fis[ g a]
     }
     d,8 a'  fis d
   %10
-  | g4  r8 g'  aes16([g fis g])  c,([g' fis g])
-  | a!16([g fis g])  c,([ees d c])  f!4~  f16 f e d
+  | g4  r8 g'  aes16([g fis g])  c,[g' fis g]
+  | a!16([g fis g])  c,[ees d c]  f!4~  f16 f e d
   | c e a f  g8 g,  << { c4  c8 r16 } \\ { r16 << { \stemUp c, e g } \\ { c,8.~ c8. } >> } >>
   \break
   }
@@ -188,16 +160,12 @@ Lower = \relative c {
     r16
   | c'8~  c32 g a b!  c16 b c d
     \tupletUp \tuplet 3/2 8 {
-      \override TupletBracket.tuplet-slur = ##t
-      \override TupletBracket.bracket-visibility = ##t
-      e16 d c e d c
+      e16[ d c] e[ d c]
     }
     \tupletUp \tuplet 3/2 8 {
-      \override TupletBracket.tuplet-slur = ##t
-      \override TupletBracket.bracket-visibility = ##t
-      g'16 f e g f e
+      g'16[ f e] g[ f e]
     }
-  | c'8 g  g8~  g32 b! a g  f8 f  f~  f32 a g f
+  | c'8 g~  g8~  g32 b! a g  f8 f  f~  f32 a g f
   %15
   | << { r16 g a b!  c4~  c16 c b! a  b4 } \\ { e,4  r16 g f e  d4  r16 g f g } >>
   | << { r8 g  } \\ { c,4 } >>  c'4~  c16 a b! cis  b d cis b
@@ -207,9 +175,7 @@ Lower = \relative c {
   %20
   |  g8 g'32 a g a  a8.\prall g32 a  bes8 bes,  r16 f32 g a g f g
   | \tupletUp \tuplet 3/2 8 {
-      \override TupletBracket.tuplet-slur = ##t
-      \override TupletBracket.bracket-visibility = ##t
-      a'16 g a bes a bes  c bes c d c d  e d e
+      a'16[ g a] bes[ a bes]  c[ bes c] d[ c d]  e[ d e]
     }
     f16 a,  bes4
   | c4~  c16 bes a g  f8 aes  d, f

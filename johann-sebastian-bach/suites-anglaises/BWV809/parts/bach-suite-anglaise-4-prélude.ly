@@ -14,7 +14,7 @@ Upper = \relative c' {
    \repeat unfold 2 {
    | a8[f]  f'8.[f16]  f8.\mordent[g16]  e8.\prall[f16]
    | f16[g f e]  d([e f a])  b,([c d g])  c,([d e g])
-   | a,16 b c f  b, c d f  g, a b e  a, b c e
+   | a,16([ b c f])  b,([ c d f])  g, a b e  a, b c e
    %5
    | f,8[a]  d8.[d16]  d16 g, a b  c d e c
    | f16 g f e  d g f g  e8 c  c'8. c16
@@ -28,19 +28,19 @@ Upper = \relative c' {
    | f g f e  d g f g  e8 c  f8.\mordent[f16]
    | f8.g16  ees8.ees16  ees f, g a  bes c d bes
    %15
-   | ees f ees d  c f ees f  d8 bes  << { bes'8. bes16 } \\ { \stemUp \override NoteColumn.force-hshift = 0.3 g8. g16 } \\ { \stemDown d8. d16 } >>
-   | << { bes'8. c16 } \\ { \stemUp \override NoteColumn.force-hshift = 0.4 g8. g16 } \\ { \stemDown e8. e16 } >>
-     << { a8. a16 } \\ { f8. f16 } \\ { \stemUp \override NoteColumn.force-hshift = 0 e8. e16 } >>
-     << { a8 d, } \\ { f8 a,\rest } \\ { \stemDown d8 f,\rest } >>
-     << { \stemDown g8. g16 } \\ { \stemUp \override NoteColumn.force-hshift = 0 d'8. d16 } >>
+   | ees f ees d  c f ees f  d8 bes  << { bes'8. bes16 } \\ { \stemUp \shiftOn g8. g16 } \\ { \stemDown d8. d16 } >>
+   | << { bes'8. c16 } \\ { \stemUp \shiftOn g8. g16 } \\ { \stemDown e8. e16 } >>
+     << { a8. a16 } \\ { \stemUp \shiftOn f8. f16 } \\ { \stemDown e8. e16 } >>
+     << { a8 d, } \\ { \stemUp \shiftOn f8 g,\rest } \\ { \stemDown d'8 } >>
+     << { \stemUp g8. g16 } \\ { \stemDown d8. d16 } >>
    | << { g8. a16 } \\ { c,8. c16 } >>  << { f8. f16 } \\ { c8. c16 } >>  << { f8. g16 } \\ { bes,8. bes16 } >>  << { e8. f16  } \\ {{ bes,8. bes16 }} >>
    | << { f'8 d,16 e } \\ a8 >>  f16 g a f  bes c bes a  g c bes a
-   | a8 c,  << { f8. f16 } \\ { r8 r16 <c a> } >>  << f4 \\ { d16 c-4 bes a } \\ g8 >>  << { e'8.e16 } \\ { g,16 c bes c } >>
+   | a8 c,  << { f8. f16 } \\ { r8 r16 c } >>  << f4 \\ { d16 c-4 bes a } >>  e'8.e16
    }
    \alternative {
      {
    %20
-   | << f4\fermata \\ a,4 >>  r16 f'' e f  c f d f  c f bes, f'
+   | f4\fermata  r16 f' e f  c f d f  c f bes, f'
    | a, f' bes, f'  a, f' g, f'  f, f' g, f'  a, f' b, f'
    | << { e16 g, a b  c d d\prall c32d } \\ c16 >>  e8 f e d
    | << { r8 a' g f  e8 f g a } \\ { c,2~  c8 c b a } >>
@@ -80,9 +80,13 @@ Upper = \relative c' {
    | b,! c d a'  b,! c d gis  << a4 \\ c, >>  r4
    | r2  r16 f' e d  c b! a c
    | f,16 e' d c  b! a gis b!  e, d' c b!  a g! f a
-   | << { r8 gis16 a } \\ d,4 >>  << { b'!8 b } \\ { r8 gis } >>  << { b8 a16 b } \\ { gis8 a } >>  << { c8 c } \\ { r a } >>
+   | << { d8\rest gis,16 a  b!8 b  b8 a16 b  c8 c }
+       \\ { d,4  e8\rest \stemUp \shiftOn gis  gis4  f8\rest a }
+       \\ { s4. \stemDown d,8  \stemDown e b8\rest  b8\rest e } >>
    %55
-   | << { c8 b!16 c  d8 d  d c16 b!  b8. a16 } \\ { a8 gis16 a  b!8 b  b a  gis4 } \\ { \stemDown \override NoteColumn.force-hshift = 0.3 d4  e8\rest f  e4 } >>
+   | << { c'8 b!16 c  d8 d  d c16 b!  b8. a16 }
+       \\ { a8 gis16 a  b!8 b  b a  gis4 }
+       \\ { \stemDown \override NoteColumn.force-hshift = 0.3 d4  e8\rest f  e4 } >>
    | << { a16 a c e  c a c e  a8 a  a a } \\ { a,16 r16 c,8\rest  r4  r16 f a c  a f a c } >>
    | << { a'8 a  a a  } \\ { d,8 f  f f } >>  << { g g  g g } { f e  e e } \\ { g,8 bes  bes bes } >>
    | << { g' g  g g  g f  f f } \\ { \stemUp \override NoteColumn.force-hshift = 0.2 e e  e e  e d  d d } \\ { \stemDown a8 a  a a  a a  a a } >>
@@ -95,7 +99,7 @@ Upper = \relative c' {
    | fis16 d e fis  g a bes g  c e, fis g  a bes c a
    | d16 fis, g a  bes c d bes  ees d c bes  a d c d
    | << { bes4. a8~ } \\ { r16 a g f  ees4 } >>  << { a8 g4 fis8 } \\ { d4 c } >>
-   | << { g'16 f! ees d } \\ { bes8 r } >>  << ees4 \\ { ees16 bes c fis, } >>  g ees' d c  bes g' a, fis'
+   | << { g'16 f! ees d } \\ { bes8 r } >>  ees16 bes c fis,  g ees' d c  bes g' a, fis'
    %65
    | << r4 \\ { g8 bes16 a } >>  << { r8 g' } \\ { bes, bes } >>  << { g'8 a16 g } \\ a,4 >>  << { f'!8 f } \\ { r a, } >>
    | << { f'8 g16 f } \\ g,4 >>  << { ees'8 ees } \\ { r c } >>  << { ees8 f16 ees } \\ a,4 >>  << { d8 d } \\ { r c } >>
@@ -170,16 +174,16 @@ Lower = \relative c {
    | c c, d e  f g a-3 f  bes-2 a-1 g f  e_1 d c bes
    | a bes c e  d e f a-2  g-1 g, a bes  c a bes-2 c-1
    | d,4  r8 d'8  g16-2 a g f-1  e-3 c d e
-   | f g f e  d c bes a  bes8[g]  c[c,]
+   | << { \stemDown f g f e  d16 c bes a  bes8[g]  c[c,] } \\ { \stemUp s4 c''8\rest c16\rest a16 g8  s8  g16 c bes c } >>
    }
    \alternative {
      {
    %20
-   | f8\fermata f'16 e  f8 g  a bes  a g
+   | << a4 \\ { f,8\fermata  f'16 e } >>  f8 g  a bes  a g
    | << { r8 d' c bes  a bes c d } \\ { f,2~  f8 f e d } >>
    | << g4 \\ c, >>  r16 c' b c  g c a c  g c f, c'
    | e, c' f, c'  e, c' d, c'  c, c' d, c'  e, c' f, c'
-   | << { b8 r } \\ { g g, } >>  r8 g'  d r  r4
+   | << { b8 r } \\ { g[ g,] } >>  r8 g'  d r  r4
    %25
    | r16 g b d  b g b d  r c, e g  e c e g
    | a f, a c  a f a c  b g b d  b g b d
@@ -199,8 +203,8 @@ Lower = \relative c {
    | g,16 g' a, g'  b, g' cis, g'  f g f e  d e f d
    | g16 a g f  e a g a  f4  r8 bes
    %40
-   | e,4  r8 << cis'8 \\ a >>  << a4 \\ d, >>  r8 << d'8 \\ d >>
-   | << d4 \\ g, >>  r8 << e'8 \\ c >>  << c4 \\ f, >>  r8 f'
+   | e,4  g8\rest cis8  << a4 \\ d, >>  r8 d'8
+   | g,4  << { e'8\rest e8 } \\ { a,8\rest c } >>  << c4 \\ f, >>  c'8\rest f
    | b,!8 c16 d  e8 e,  a4~  a16 g f e
    | d16 bes c d  ees f g ees  cis d cis b!  a d c! d
    | g,8 r8  << { bes'16 a g f } \\ r4 >>  << e4 \\ { r16 bes a g } >>  << { a'8. a16 } \\ { f,16 e d cis } >>
@@ -215,7 +219,7 @@ Lower = \relative c {
    | d b!  e e,  a16 e' fis gis  a b! c a
    | d e d c  b! e d e  c8 e,  a a
    | a8 gis16 a  b!8 b  b a16 b  c8 c~
-   | c16 c b! a  << { r8 d } \\ { gis,16 fis e gis } >>  << { e'8 r } \\ { c,16 f! e d } >>  << { r8 e' } \\ { c,16 b! a c } >>
+   | c16 c b! a  gis16 fis e gis  c,16 f! e d  c16 b! a c
    %55
    | fis,16 e' d c  b! a gis b!  c,8 c'16 d  e8 e,
    | a8 a'  a g  f r8  r4
@@ -225,7 +229,9 @@ Lower = \relative c {
    %60
    | d,4  << { r8 a'' } \\ { r8 d, } >>  << bes'4 \\ { d,8 e16 d } >>  << { r8 e } \\ { c c } >>
    | << { a'4  r8 g  e4  r8 fis }  \\ { c8 d16 c  bes8 bes  bes c16 bes  a8 a } >>
-   | << { bes'4  r8 bes } \\ { a,8 bes16 a  g8 g'8 } >>  << { c8 r } \\ \stemUp a \\ { \stemDown g8 a16 g } >>  << { r8 fis } \\ { fis8 d } >>
+   | << { bes'4  r8 bes } \\ { a,8 bes16 a  g8 g'8 } >>
+     << { c8 r } \\ { \stemUp a } \\ { \stemDown g8 a16 g } >>
+     << { r8 fis } \\ { fis8 d } >>
    | << g16 \\ { g16 f ees d } >>  c f ees f  bes, c d ees  a, d c d
    | \stemDown g,8 bes  c a  bes c  d d,
    %65
@@ -239,7 +245,7 @@ Lower = \relative c {
    | d ees d c  bes ees d ees  c d c bes  a d c d
    | bes c bes a  g c bes c  a bes a g  f bes a bes
    | g8 f  g a  bes c  d bes,
-   | ees d  c ees  d c  << { r e! } \\ bes4~ >>
+   | ees d  c ees  d c  << { r c } \\ bes4~ >>
    %75
    | << { d8 e  f g } \\ { bes, bes  a g } >>  << c4 \\ f, >>  r16 f' e f
    | c16 f d f  c f bes, f'  a, f' bes, f'  a, f' g, f'
@@ -287,7 +293,7 @@ Lower = \relative c {
     composer = "Johann Sebastian Bach"
     opus = "BWV 809"
     subtitle = "Prélude"
-    title = "SUITE IV."
+    title = "Suite IV - avec Prélude."
   }
   \layout { }
   \midi {

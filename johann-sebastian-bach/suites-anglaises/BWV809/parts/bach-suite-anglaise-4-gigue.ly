@@ -18,7 +18,7 @@ Upper = \relative c'' {
   %5
   | << { bes8 d a'  g fis g  bes,4.  r8 r8 g' } \\ { g,4.  r8 r8 g8  d f! bes  e, g bes } >>
   | << { a8 c g'  f e f  g, c f  ees d ees } \\ { a,4 r8  r4.  g4.  r8 r8 a } >>
-  | << { d4 e!8  e4\prall e16 f  f8 e d  c d bes } \\ { bes4.  r4.  r8 r8 bes  a4 g8 } >>
+  | << { d4 e!8  e4\prall d16 e  f8 e d  c d bes } \\ { bes4.  r4.  r8 r8 bes  a4 g8 } >>
   | << { a8 g f  c' a f  c'4.\mordent  c8 g e } \\ { f8 } >>
   | c'4.\mordent  c8 a f  c'4.\mordent  r8 r8 a
   %10
@@ -53,16 +53,16 @@ Upper = \relative c'' {
   | cis8 b! d  cis a cis  d cis e  d a d
   | e8 d f  e a, e'  f e g  f e d
   | cis8 e d  cis e d  cis e d  cis4\prall a8
-  | a'4 a,8  a'4.~  a4 a,8  a'4 a,8
-  | a'4 a,8  a'4.~  a4 a,8  a'4 e8
+  | a'4 a,8  a'4.~\mordent  a4 a,8  a'4\mordent a,8
+  | a'4 a,8  a'4.~\mordent  a4 a,8  a'4\mordent e8
   %35
   | f16 g a8 d,  a d cis  d4.~  d4 d8
   | c!8 f c!  a c a  f4 c'8  c,4.~
   | c8 d ees  f g ees  d f c'  bes a bes
   | c,8 f bes  a g a  bes, d a'  g fis g
-  | fis4 d8  d'4.~  d4 d,8  d'4 d,8
+  | fis4 d8  d'4.~\mordent  d4 d,8  d'4\mordent d,8
   %40
-  | d'4 d,8  d'4.~  d4 d,8  d'8 e fis
+  | d'4 d,8  d'4.~\mordent  d4 d,8  d'8 e fis
   | g8 fis a  g d g  a g bes  a d, a'
   | bes8 a c  bes a g  fis e d  a'4 c,8
   | bes16 c d8 g,  d8 g fis  g4.  r8 r8 bes
@@ -142,7 +142,7 @@ Lower = \relative c {
   | d c ees  d ees c  bes a c  bes c a
   %40
   | g fis a  g bes a  fis g a  d,4.~
-  | d4 d8  d'4.\mordent~  d4 d,8  d'4 d,8
+  | d4 d8  d'4.\mordent~  d4 d,8  d'4\mordent d,8
   | d'4 d,8  d'4.\mordent~  d8 d e  fis e d
   | g bes, c  d c d  g, d'' bes g bes g
   | e4 c'8  c,4.~  c8 c' a  f a f
