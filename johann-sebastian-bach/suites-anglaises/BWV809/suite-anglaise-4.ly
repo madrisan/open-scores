@@ -41,11 +41,10 @@
 	\fill-line { \abs-fontsize #20 "For Piano or Harpsichord" }
 	\null\null\null\null
 	\null\null\null\null
-        \fill-line { \abs-fontsize #14 "Transcribed and Engraved"}
+        \fill-line { \abs-fontsize #12 "Transcribed by Davide Madrisan"}
         \null
-        \fill-line { \abs-fontsize #14 "by"}
-        \null
-        \fill-line { \abs-fontsize #14 "Davide Madrisan"}
+        \fill-line { \abs-fontsize #8 "Based on a Public Domain manuscript of Johann Christian Bach (ca.1760-89)"}
+        \fill-line { \abs-fontsize #8 "The Leipzig University Library, Biblioteca Albertina (D-LEu): N.I. 10338, Faszikel 1"}
 	} } }
 }
 
