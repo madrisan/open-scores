@@ -16,7 +16,3 @@
 Click
 [here](https://github.com/madrisan/open-scores/blob/main/scores/JS-Bach-BWV809-Suite-Anglaise-4.pdf)
 to view or download the compiled score (*pdf* format).
-
-## Important Note
-
-:warning: The midi configuration has not been finalized, except for the Prélude.
