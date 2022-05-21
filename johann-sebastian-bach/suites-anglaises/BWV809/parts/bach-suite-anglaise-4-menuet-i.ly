@@ -18,7 +18,7 @@ Upper = \relative c'' {
   | bes8 c d4 g4
   | f8 (e d c bes a)
   | g (a bes a g f)
-  | a b! b4. a16 b
+  | a b! b4.\prall a16 b
   %10
   | c8 (d e d f e)
   | e8 f f4.\prall e16 f
@@ -50,7 +50,7 @@ Upper = \relative c'' {
   | f8 e d c d e
   | f8 g g4.\prall f16 g
   | a8 bes c4 c,
-  | d4 e16 f g8 f8 e
+  | d4 e16( f g8) f8 e
   }
   \alternative {
     { f2. }
