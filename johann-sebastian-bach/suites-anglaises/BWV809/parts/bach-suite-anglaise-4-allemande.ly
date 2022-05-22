@@ -112,7 +112,13 @@ Lower = \relative c {
   \partial 16
   \repeat volta 4 {
     r16
-  | f8 f,  r16 f'' e d  c8 f  a, c
+  | f8 f,
+    \change Staff = "upper" {
+      \stemDown r16 f'' e d  c8 f
+    }
+    \change Staff = "lower" {
+      a, c
+    }
   | \tupletUp \tuplet 3/2 8 {
       f,16[ g a] f[ g a]
     }

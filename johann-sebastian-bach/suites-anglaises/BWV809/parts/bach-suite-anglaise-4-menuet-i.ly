@@ -32,6 +32,7 @@ Upper = \relative c'' {
     { c2.  f,8 g g4.\prall f16 g }
     { c2. }
   }
+  \break
   \repeat volta 2 {
   | e8 f f4.\prall e16 f
   %20

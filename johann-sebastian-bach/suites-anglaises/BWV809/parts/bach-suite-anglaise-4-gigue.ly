@@ -12,7 +12,7 @@ Upper = \relative c'' {
   \repeat volta 2 {
     c,8
   | f8 c f  a f a  c4 f,8  f'4.~
-  | f8 e d  c d bes  a c f  b,! d f
+  | f8 e d  c d bes  { \stemUp a c f  b,! d f }
   | e8 g e << { c8 e c  b! c d  e f g } \\ {  e,8 c e  g4 c,8  c'4.~ } >>
   | << { a'8 b! c  d, c' b!  c4.  r8 r8 a8 } \\ { c,8 b! a  g a f  e g c  fis, a c } >>
   %5
@@ -45,38 +45,44 @@ Upper = \relative c'' {
     << r8 \\ g'8 >>
   %25
   | << { r4.  r8 r8 g' } \\ { e, g e  c e c } >>  e' g e  c e c
-  | g8 c bes  a bes g  f e g  f4 c''8
-  | a8 c a  f a f  c4 f8  f,4.~
+  | g8 c bes  a bes g  f e g  f4 \once \stemDown c''8
+  | { \stemDown a8 c a  f a f  c4 f8 }  \once \stemUp f,4.~
   | f8 g a  bes a c  d c ees  d e! fis
   | g8 fis a  g f! e  f e g f e d
   %30
   | cis8 b! d  cis a cis  d cis e  d a d
   | e8 d f  e a, e'  f e g  f e d
-  | cis8 e d  cis e d  cis e d  cis4\prall a8
-  | a'4 a,8  a'4.~\mordent  a4 a,8  a'4\mordent a,8
-  | a'4 a,8  a'4.~\mordent  a4 a,8  a'4\mordent e8
+  | cis8 e d  cis e d  cis e d  cis4\prall \once \stemUp a8
+  | a'4 \once \stemUp a,8  a'4.~\mordent  a4 \once \stemUp a,8  a'4\mordent \once \stemUp a,8
+  | a'4 \once \stemUp a,8  a'4.~\mordent  a4 \once \stemUp a,8  a'4\mordent e8
   %35
   | f16 g a8 d,  a d cis  d4.~  d4 d8
   | c!8 f c!  a c a  f4 c'8  c,4.~
   | c8 d ees  f g ees  d f c'  bes a bes
   | c,8 f bes  a g a  bes, d a'  g fis g
-  | fis4 d8  d'4.~\mordent  d4 d,8  d'4\mordent d,8
+  | fis4 \once \stemUp d8  d'4.~\mordent  d4 \once \stemUp d,8  d'4\mordent \once \stemUp d,8
   %40
-  | d'4 d,8  d'4.~\mordent  d4 d,8  d'8 e fis
+  | d'4 \once \stemUp d,8  d'4.~\mordent  d4 \once \stemUp d,8  d'8 e fis
   | g8 fis a  g d g  a g bes  a d, a'
   | bes8 a c  bes a g  fis e d  a'4 c,8
   | bes16 c d8 g,  d8 g fis  g4.  r8 r8 bes
-  | c,8 e g  bes g a  a e f  a e f
+  | c,8 e g  { \stemUp bes g a }  a e f  a e f
   %45
   | bes,8 d f  a f g  g d e  g d e
-  | a,8 c e  g e f  g, bes d  f d e
-  | f,8 a c  g' e f  a e f  b! e, f
-  | c'8 e, g  c d e  f g a  a bes c
+  | \override Stem.details.beamed-lengths = #'(7)
+    \change Staff = "lower" { \stemUp a,8 }
+    \revert Stem.details.beamed-lengths
+    \change Staff = "upper" { c e  g e f }
+    \change Staff = "lower" { g, bes }
+    \change Staff = "upper" { d f d e }
+  | \change Staff = "lower" { f,8 a }
+    \change Staff = "upper" { c  g' e f  a e f  b! e, f }
+  | c'8 e, g  { \stemDown c d e  f g a  a bes c }
   | c4.\mordent  c8 a f  c'4.\mordent  c8 g e
   %50
   | c'4.\mordent  c8 a f  c'4.\mordent  c8 g e
   | f8 d bes'  e, c a'  d, bes g'  c, a f'
-  | bes, g f'  bes, g e'  f a, c  f,4
+  | bes, g f'  bes, g e'  f a, c  \once \stemUp f,4
   }
   \fine
 
@@ -148,8 +154,8 @@ Lower = \relative c {
   | e4 c'8  c,4.~  c8 c' a  f a f
   %45
   | d4 bes'8  bes,4.  bes8 bes' g  e g e
-  | c4 a'8  a,4 d8  bes4 g'8  g,4 c8
-  | a4 f'8  b,!4 g'8  c,4 a'8  d,4 b'!8
+  | \once \stemDown c4 a'8  a,4 d8  \once \stemDown bes4 g'8  g,4 c8
+  | \once \stemDown a4 f'8  b,!4 g'8  c,4 a'8  d,4 b'!8
   | c,4.  r8 c8 bes  a g f  f g a
   | a8 c, f  a f a  c g c  e c e
   | f8 c f  a f a  c g c  e c e
