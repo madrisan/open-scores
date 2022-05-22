@@ -75,8 +75,16 @@ Lower = \relative c {
   }
   \alternative {
     { r8 bes a g f e }
-    { r8 f' e d cis b! }
+    {
+      \change Staff = "upper" {
+	\stemDown r8 f' e d
+      }
+      \change Staff = "lower" {
+	cis b!
+      }
+    }
   }
+  \break
   \repeat volta 2 {
   %10
   | a8 bes a g f e
@@ -105,11 +113,18 @@ Lower = \relative c {
   %30
   | g2.
   | g8 bes a g f e
-  | d8 g a4 a,
+  | d8 g a4 \once \stemUp a,
   }
   \alternative {
-    { d8 f' e d cis b! }
-    { d,4 a d, }
+    { d8
+      \change Staff = "upper" {
+	f' e d
+      }
+      \change Staff = "lower" {
+        cis b!
+      }
+    }
+    { \stemUp d,4 a d, }
   }
   \fine
 

@@ -13,8 +13,8 @@ Upper = \relative c' {
    %2-19
    \repeat unfold 2 {
    | a8[f]  f'8.[f16]  f8.\mordent[g16]  e8.\prall[f16]
-   | f16[g f e]  d([e f a])  b,([c d g])  c,([d e g])
-   | a,16([ b c f])  b,([ c d f])  g, a b e  a, b c e
+   | \stemUp { f16[g f e]  d^([e f a])  b,^([c d g])  c,^([d e g]) }
+   | \stemUp { a,16^([ b c f])  b,^([ c d f])  g, a b e  a, b c e }
    %5
    | f,8[a]  d8.[d16]  d16 g, a b  c d e c
    | f16 g f e  d g f g  e8 c  c'8. c16
@@ -48,7 +48,9 @@ Upper = \relative c' {
    %25
    | << { f'8 f f f } \\ { b, d d d } >>  << { e e e e } \\ { g, g g g } \\ { d' d c c } >>
    | << { e e e e } \\ { f, f f f } \\ { c' c c c } >>  << { d d d d } \\ { f, f f f } \\ { g g g g } >>
-   | << { d' c c b } \\ { f e d d } \\ { g g g g } >>  << { c16 g, a b } \\ { g' } \\ { e } >>  c16 d e c
+   | << { d' c c b } \\ { f e d d } \\ { g g g g } >>
+     << { c16 \change Staff = "lower" g, a b } \\ { \stemUp \shiftOn g' } \\ { \stemDown e } >>
+     c16 d e c
    | f g f e  d g f g  e8 c  << { c' c } \\ { r8 e, } >>
    | << { c'8 b16 c } \\ d,4 >>  << { d'8 d } \\ { r8 b } >>  << { d8 c16 d } \\ g,4 >>  << { e'8 e } \\ { r8 c } >>
    %30
@@ -78,7 +80,7 @@ Upper = \relative c' {
    %50
    | dis, e fis c'  d,! e f b!  cis, d e b'!  c,! d e a
    | b,! c d a'  b,! c d gis  << a4 \\ c, >>  r4
-   | r2  r16 f' e d  c b! a c
+   | b'2\rest  r16 f' e d  c b! a c
    | f,16 e' d c  b! a gis b!  e, d' c b!  a g! f a
    | << { d8\rest gis,16 a  b!8 b  b8 a16 b  c8 c }
        \\ { d,4  e8\rest \stemUp \shiftOn gis  gis4  f8\rest a }
@@ -89,21 +91,29 @@ Upper = \relative c' {
        \\ { \stemDown \override NoteColumn.force-hshift = 0.3 d4  e8\rest f  e4 } >>
    | << { a16 a c e  c a c e  a8 a  a a } \\ { a,16 r16 c,8\rest  r4  r16 f a c  a f a c } >>
    | << { a'8 a  a a  } \\ { d,8 f  f f } >>  << { g g  g g } { f e  e e } \\ { g,8 bes  bes bes } >>
-   | << { g' g  g g  g f  f f } \\ { \stemUp \override NoteColumn.force-hshift = 0.2 e e  e e  e d  d d } \\ { \stemDown a8 a  a a  a a  a a } >>
-   | << { f'16 g, bes d } \\ \once \override NoteColumn.force-hshift = #0.2 \stemUp d16 \\ { \once \stemDown g,16 } >>
+   | << { g' g  g g  g f  f f } \\ { \stemUp \shiftOn e e  e e  e d  d d } \\ { \stemDown a8 a  a a  a a  a a } >>
+   | << { f'16 g, bes d } \\ \once \shiftOn \stemUp d16 \\ { \once \stemDown g,16 } >>
      bes16 g bes d
-     << { e8 d  d cis } \\ { d,8\rest \stemUp \override NoteColumn.force-hshift = 0.2 a'  a a } \\ { g8\rest \stemDown f e \override NoteColumn.force-hshift = 0.8 <e g> } >>
+     << { e8 d  d cis } \\ { d,8\rest \stemUp \shiftOn a'  a a } \\ { g8\rest \stemDown f e \shiftOn <e g> } >>
    %60
-   | << { d'16 a, b cis } \\ { \stemUp a'16 } \\ \once \override NoteColumn.force-hshift = 0 \stemDown f16 >>
+   | << { d'16 \change Staff = "lower" { a, b cis } } \\ { \stemUp \shiftOn a'16 } \\ { \stemDown f16 } >>
      d16 e f d  g a g f  e a g a
    | fis16 d e fis  g a bes g  c e, fis g  a bes c a
    | d16 fis, g a  bes c d bes  ees d c bes  a d c d
    | << { bes4. a8~ } \\ { r16 a g f  ees4 } >>  << { a8 g4 fis8 } \\ { d4 c } >>
-   | << { g'16 f! ees d } \\ { bes8 r } >>  ees16 bes c fis,  g ees' d c  bes g' a, fis'
+   | << { g'16 f! ees d } \\ { bes8 r } >>
+     { \stemUp ees16 \change Staff = "lower" { bes c fis,  g } }
+     \change Staff = "upper" { ees' d }
+     \change Staff = "lower" { c  bes }
+     \change Staff = "upper" { g' }
+     \change Staff = "lower" { a, }
+     \change Staff = "upper" { fis' }
    %65
    | << r4 \\ { g8 bes16 a } >>  << { r8 g' } \\ { bes, bes } >>  << { g'8 a16 g } \\ a,4 >>  << { f'!8 f } \\ { r a, } >>
    | << { f'8 g16 f } \\ g,4 >>  << { ees'8 ees } \\ { r c } >>  << { ees8 f16 ees } \\ a,4 >>  << { d8 d } \\ { r c } >>
-   | << { d8 ees16 d } \\ bes4 >>  << { c8 c } \\ { r bes } >>  << { c8 f,  bes bes } \\ { a4 { r8 << f \\ d >> } } >>
+   | << { d8 ees16 d } \\ { \once \shiftOn bes4 } >>
+     << { c8 c } \\ { r bes } >>
+     << { c8 f,  bes bes } \\ { a4 { r8 << f \\ d >> } } >>
    | << { bes'8 a16 bes } \\ { << g8 \\ d >> r8 } >>  << { c' c } \\ { r << g \\ ees >> } >>
      << { c'8 bes16 c } \\ { << a8 \\ ees >> r8 } >>  << { d' d } \\ { r << bes \\ f >> } >>
    | << { d'8 c16 d } \\ { << bes8 \\ g >> r8 } >>  << { ees' ees } \\ { r << c \\ g >> } >>
@@ -130,9 +140,16 @@ Upper = \relative c' {
    | bes c d f  e f g bes,  a8 c  f8. f16
    | f16 bes a g  g8. f16  f4  r8 f,
    % 85
-   | e16 f g bes,  a bes c f  e f g bes,  a bes c e
+   | e16 f g
+     \once \override Stem.details.beamed-lengths = #'(8)
+     \change Staff = "lower" { bes,  a bes }
+     \once \override Stem.details.beamed-lengths = #'(8)
+     \change Staff = "upper" { c f }
+     e f g
+     \change Staff = "lower" { bes,  a bes }
+     \change Staff = "upper" { c e }
    | f g aes c,  b! c d e  f g aes c,  b! c d f
-   | e f g c,  bes c des aes \once \hideNotes a2
+   | e f g c,  bes c des \change Staff = "lower" { aes } \change Staff = "upper" { s2 }
    | r2  << { r8 a'!16 bes32 c  a8 g16 f } \\ { r8 f  f e } >>
    | << { f16 c d e } \\ f16 >>  f g a f  bes c bes a  g c bes c
      }
@@ -142,6 +159,7 @@ Upper = \relative c' {
      }
    }
    \fine
+   \pageBreak
 
 % la si do re mi fa sol
 %  a b  c  d  e  f  g
@@ -155,12 +173,27 @@ Lower = \relative c {
    \repeat unfold 2 {
    %2
    | r16 c d e  f g a f  bes c bes a  g c bes c
-   | a8 f  f'8.[f16]  f8.[g16]  e8.\prall[e16]
-   | e8 a,  d8.[d16]  d8.[e16]  c8.\prall[c16]
+   | a8 f
+     \change Staff = "upper" {
+       \override Stem.details.beamed-lengths = #'(4)
+       \stemDown
+       f'8.[f16]  f8.[g16]
+       \once \override Script.padding = #0.5
+       e8._\prall[e16]
+   |     e8
+       \revert Stem.details.beamed-lengths
+     }
+     \change Staff = "lower" {
+       \stemDown a, } d8.[d16]  d8.[e16]  c8.\prall[c16]
    %5
    | c16 e d c  b-1 a g f  e4~  e16 d c_1 b
    | a g a f  g8 g'  c,16 g' a b  c d e c-5
-   | f16 g f e  d g f g  c, d e g  f, g a c
+   | \change Staff = "upper" {
+       f16 g f e  d g f g  c, d e g
+     }
+     \change Staff = "lower" {
+       f, g a c
+     }
    | b c d f  e, f g b  a b c e  d, e f a
    | g8 c,  c'8.c16  c8.d16  bes8.\prall[bes16]
    %10
@@ -186,7 +219,7 @@ Lower = \relative c {
    | << { b8 r } \\ { g[ g,] } >>  r8 g'  d r  r4
    %25
    | r16 g b d  b g b d  r c, e g  e c e g
-   | a f, a c  a f a c  b g b d  b g b d
+   | a f, a c  { \stemUp a f a c  b g b d  b g b d }
    | e,8 e'16 f  g8 g,  c,4  c'8. c16
    | c8. d16  b8. c16  c g a b  c d e c
    | f g f e  d g f g  e g a b  c d e c
@@ -217,7 +250,10 @@ Lower = \relative c {
    %50
    | b! a  b! gis  a g!  f! c
    | d b!  e e,  a16 e' fis gis  a b! c a
-   | d e d c  b! e d e  c8 e,  a a
+   | { \change Staff = "upper" { \stemDown d16 e d } }
+     { \change Staff = "lower" { c b! } }
+     { \change Staff = "upper" { e d e } }
+     { \change Staff = "lower" { c8 e,  a a } }
    | a8 gis16 a  b!8 b  b a16 b  c8 c~
    | c16 c b! a  gis16 fis e gis  c,16 f! e d  c16 b! a c
    %55
@@ -237,7 +273,8 @@ Lower = \relative c {
    %65
    | g16 d' e fis  g a bes g  c d c bes  a d c d
    | bes16 g a bes  c d ees c  f a, bes c  d ees f d
-   | g bes, c d  ees f g e!  f g f ees  d c bes d
+   | \change Staff = "upper" { g } \change Staff = "lower" { bes, c d }
+     ees f g e!  f g f ees  d c bes d
    | g, f' ees d  c bes a c  f, ees' d c  bes a g bes
    | ees, f ees d  c bes a c  f,8 bes  f' f,
    %70
@@ -257,7 +294,7 @@ Lower = \relative c {
    | e! d c bes  a g a f  c8 g''  c c
    | c8 d16 c  bes8 bes  bes8 c16 bes  a8 a
    | a8 bes16 a  g16 f e g  f bes a g  f e d f
-   | bes,16 d c bes  c8 c,8  f16 c d e  f g a f
+   | { \stemUp bes,16 d c bes  c8 c,8  f16 c d e  f g a f }
    %85
    | c'8 c,  r8 c'  c c,  r8 c'
    | c8 c,  r8 c'  c c,  r8 c'
@@ -280,11 +317,11 @@ Lower = \relative c {
   \new PianoStaff
   <<
     \accidentalStyle Score.piano-cautionary
-    \new Staff {
+    \new Staff = "upper" {
       \Global
       \Upper
     }
-    \new Staff {
+    \new Staff = "lower" {
       \Global
       \Lower
     }

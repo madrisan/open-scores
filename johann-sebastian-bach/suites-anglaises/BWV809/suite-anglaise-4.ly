@@ -32,19 +32,19 @@
 	\null \null \null \null
 	\null \null \null \null
 	\null \null \null
-	\line {\abs-fontsize #20 "Johann Sebastian Bach"}
+	\line { \abs-fontsize #20 "Johann Sebastian Bach" }
 	\null\null\null
-	\line {\abs-fontsize #36 \bold "Suite Anglaise IV"}
+	\line { \abs-fontsize #36 \bold "Suite Anglaise IV" }
 	\null\null\null
-	\line {\abs-fontsize #20 "BWV 809"}
+	\line { \abs-fontsize #20 "BWV 809" }
 	\null\null\null\null
 	\fill-line { \abs-fontsize #20 "For Piano or Harpsichord" }
 	\null\null\null\null
 	\null\null\null\null
-        \fill-line { \abs-fontsize #12 "Transcribed by Davide Madrisan"}
+        \fill-line { \abs-fontsize #12 "Transcribed by Davide Madrisan" }
         \null
-        \fill-line { \abs-fontsize #8 "Based on a Public Domain manuscript of Johann Christian Bach (ca.1760-89)"}
-        \fill-line { \abs-fontsize #8 "The Leipzig University Library, Biblioteca Albertina (D-LEu): N.I. 10338, Faszikel 1"}
+        \fill-line { \abs-fontsize #8 "Based on a Public Domain manuscript of Johann Christian Bach (ca.1760-89)" }
+	\fill-line { \abs-fontsize #8 "The Leipzig University Library, Biblioteca Albertina (D-LEu): N.I. 10338, Faszikel 1" }
 	} } }
 }
 
