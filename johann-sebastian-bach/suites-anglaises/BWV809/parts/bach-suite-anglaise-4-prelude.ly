@@ -18,7 +18,7 @@ Upper = \relative c' {
    %5
    | f,8[a]  d8.[d16]  d16 g, a b  c d e c
    | f16 g f e  d g f g  e8 c  c'8. c16
-   | c8~[c32 b c a]  b8.b16  b8 e,  a8. a16
+   | c8^~[c32 b c a]  b8.b16  b8 e,  a8. a16
    | a8.[g32 f]  g8.g16  g8 c,  f8.f16
    | f16 a g f  e f g e  f g f e  d g f g
    %10
@@ -35,7 +35,7 @@ Upper = \relative c' {
      << { \stemUp g8. g16 } \\ { \stemDown d8. d16 } >>
    | << { g8. a16 } \\ { c,8. c16 } >>  << { f8. f16 } \\ { c8. c16 } >>  << { f8. g16 } \\ { bes,8. bes16 } >>  << { e8. f16  } \\ {{ bes,8. bes16 }} >>
    | << { f'8 d,16 e } \\ a8 >>  f16 g a f  bes c bes a  g c bes a
-   | a8 c,  << { f8. f16 } \\ { r8 r16 c } >>  << f4 \\ { d16 c-4 bes a } >>  e'8.e16
+   | a8 c,  << { f8. f16 } \\ { r8 r16 c } >>  << f4 \\ { d16 c bes a } >>  e'8.e16
    }
    \alternative {
      {
@@ -186,8 +186,8 @@ Lower = \relative c {
      \change Staff = "lower" {
        \stemDown a, } d8.[d16]  d8.[e16]  c8.\prall[c16]
    %5
-   | c16 e d c  b-1 a g f  e4~  e16 d c_1 b
-   | a g a f  g8 g'  c,16 g' a b  c d e c-5
+   | c16 e d c  b a g f  e4~  e16 d c b
+   | a g a f  g8 g'  c,16 g' a b  c d e c
    | \change Staff = "upper" {
        f16 g f e  d g f g  c, d e g
      }
@@ -198,15 +198,15 @@ Lower = \relative c {
    | g8 c,  c'8.c16  c8.d16  bes8.\prall[bes16]
    %10
    | bes8 c16 bes  a g f e  d c d bes  c8 c,
-   | f4  r8 f'  g16 c b a  g f e d
-   | c8 f  g g,  c,4  c''8.c16
+   | \stemUp f4  r8 { \stemDown f'  g16 c b a }  g f e d
+   | c8 f  g g,  \once \stemUp c,4  c''8.c16
    | c8.d16  bes8.\prall[bes16]  bes16 c, d e  f g a f
    | bes c bes a  g c bes c  a8 f  bes8.bes16
    %15
-   | bes8.c16  a8.\prall[bes16]  bes16 d, e f  g a bes-2 g
-   | c c, d e  f g a-3 f  bes-2 a-1 g f  e_1 d c bes
-   | a bes c e  d e f a-2  g-1 g, a bes  c a bes-2 c-1
-   | d,4  r8 d'8  g16-2 a g f-1  e-3 c d e
+   | bes8.c16  a8.\prall[bes16]  bes16 d, e f  g a bes g
+   | c c, d e  f g a f  bes a g f  e d c bes
+   | a bes c e  d e f a  g g, a bes  c a bes c
+   | \once \stemUp d,4  r8 d'8  g16 a g f  e c d e
    | << { \stemDown f g f e  d16 c bes a  bes8[g]  c[c,] } \\ { \stemUp s4 c''8\rest c16\rest a16 g8  s8  g16 c bes c } >>
    }
    \alternative {
