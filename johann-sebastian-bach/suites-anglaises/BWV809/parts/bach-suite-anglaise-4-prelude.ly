@@ -330,7 +330,11 @@ Lower = \relative c {
     composer = "Johann Sebastian Bach"
     opus = "BWV 809"
     subtitle = "Prélude"
-    title = "Suite IV - avec Prélude."
+    title = \markup {
+      %\override #'(font-name . "TeX Gyre Schola") {
+        "Suite IV - avec Prélude."
+      }
+    }
   }
   \layout { }
   \midi {
