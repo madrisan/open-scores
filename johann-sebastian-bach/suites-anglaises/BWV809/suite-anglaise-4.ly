@@ -39,7 +39,7 @@
         \null\null\null\null
         \fill-line { \abs-fontsize #20 "For Piano or Harpsichord" }
         \null\null\null\null\null\null\null\null\null\null
-        \fill-line { \abs-fontsize #11 "Transcribed and engraved by Davide Madrisan" }
+        \fill-line { \abs-fontsize #11 "Transcribed and Engraved by Davide Madrisan" }
         \fill-line { \abs-fontsize #9 \typewriter "https://github.com/madrisan/open-scores/" }
         \null
         \fill-line {
