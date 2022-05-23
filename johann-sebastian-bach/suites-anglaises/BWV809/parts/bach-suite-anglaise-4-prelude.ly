@@ -333,7 +333,7 @@ Lower = \relative c {
     title = \markup {
       %\override #'(font-name . "TeX Gyre Schola") {
         "Suite IV - avec Prélude."
-      }
+      %}
     }
   }
   \layout { }
