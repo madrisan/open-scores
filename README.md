@@ -15,5 +15,6 @@ Software requirements: `git`, [`lilypond`](https://lilypond.org/)
     lilypond suite-anglaise-4.ly
 
     # Alban Berg - Klaviersonate Op. 1 -- IN PROGRESS
-    cd alban-berg/klaviersonate-op1
+    git checkout BergA-op1
+    cd alban-berg/Op_1
     lilypond sonate-fur-klavier-op-1.ly
