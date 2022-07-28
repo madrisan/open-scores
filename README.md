@@ -2,6 +2,7 @@
 
 Scores
  * [J.S. Bach Suite Anglaise IV (BWV809)](https://github.com/madrisan/open-scores/blob/main/scores/JS-Bach-BWV809-Suite-Anglaise-4.pdf)
+ * [Rued Langgaard - Insektarium (BVN 134)](https://github.com/madrisan/open-scores/blob/main/scores/Rued-Langgaard-Insektarium-BVN-134.pdf)
 
 ## How to manually create the `.pdf` and `.midi` files
 
