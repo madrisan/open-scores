@@ -36,7 +36,7 @@
         \fill-line { \abs-fontsize #9 \typewriter "https://github.com/madrisan/open-scores/" }
         \null
         \fill-line {
-          \abs-fontsize #8 "Based on a Youtube's video score"
+          \abs-fontsize #8 "Based on the partition seen in a Youtube video"
         }
       }
     }
@@ -44,3 +44,4 @@
 }
 
 \include "./parts/insektarium-6.ly"
+\include "./parts/insektarium-9.ly"
