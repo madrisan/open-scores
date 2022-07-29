@@ -64,7 +64,6 @@ Upper = \relative c' {
      \ottava #0
      r8 r2
    \fine
-   \pageBreak
 
 % la si do re mi fa sol
 %  a b  c  d  e  f  g
@@ -97,7 +96,6 @@ Lower = \relative c {
      \ottava #0
      r8 r2
    \fine
-   \pageBreak
 
 % la si do re mi fa sol
 %  a b  c  d  e  f  g
@@ -120,10 +118,11 @@ Lower = \relative c {
     composer = "Rued Langgaard"
     opus = "BVN 134"
     subtitle = "Anobium pertinax"
+    subsubtitle = "(Deathwatch beetle)"
     title = \markup {
-      %\override #'(font-name . "TeX Gyre Schola") {
-        "VI"
-      %}
+       %\override #'(font-name . "TeX Gyre Schola") {
+       "VI"
+       %}
     }
   }
   \layout { }
