@@ -115,8 +115,10 @@ Lower = \relative c {
     }
   >>
   \header {
-    composer = "Rued Langgaard"
-    opus = "BVN 134"
+  % composer = "Rued Langgaard"
+    % workaround: insert some vertical space after the header
+    composer = " "
+  % opus = "BVN 134"
     subtitle = "Anobium pertinax"
     subsubtitle = "(Deathwatch beetle)"
     title = \markup {
