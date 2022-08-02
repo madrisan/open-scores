@@ -17,10 +17,10 @@
   mutopiainstrument = "Piano"
   mutopiamaintainer = "Davide Madrisan"
   mutopiaopus = "BVN 134"
-  mutopiatitle = "Insektariuem"
+  mutopiatitle = "Insektarium"
 
   opus = "BVN 134"
-  title = "Insektariuem"
+  title = "Insektarium"
   source = "Youtube"
   style = "Post Romantic"
 
