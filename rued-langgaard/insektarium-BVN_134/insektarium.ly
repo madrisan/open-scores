@@ -27,11 +27,15 @@
       \center-column {
         \null\null\null\null\null\null\null\null
         \null\null\null\null\null\null\null\null
-        \line { \abs-fontsize #30 \bold "Rued Langgaard" }
+        \line { \abs-fontsize #38 \bold "Rued Langgaard" }
 	\null\null\null
-        \line { \abs-fontsize #36 \bold "Insektarium BVN 134" }
-        \null\null\null\null\null\null\null\null
-        \null\null\null\null\null\null\null\null
+        \line { \abs-fontsize #36 \bold "Insektarium" }
+	\null\null
+	\line { \abs-fontsize #22 \bold "9 Puzzle Pictures, for solo piano" }
+	\null\null\null
+        \line { \abs-fontsize #24 \bold "BVN 134" }
+        \null\null\null\null\null\null
+        \null\null\null\null\null\null
         \fill-line { \abs-fontsize #11 "Transcribed and Engraved by Davide Madrisan" }
         \fill-line { \abs-fontsize #9 \typewriter "https://github.com/madrisan/open-scores/" }
         \null
