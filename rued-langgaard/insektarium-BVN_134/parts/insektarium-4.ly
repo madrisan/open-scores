@@ -156,17 +156,10 @@ Lower = \relative c {
     }
   >>
   \header {
-    composer = "Rued Langgaard"
-    %opus = "BVN 134"
-    % workaround to insert some vertical space after the opus
-    opus = \markup {
-             \column {
-               \line { "BVN 134" }
-	       \line { " " }
-	       \line { " " }
-	       \line { " " }
-	     }
-           }
+  % composer = "Rued Langgaard"
+    % workaround: insert some vertical space after the header
+    composer = " "
+  % opus = "BVN 134"
     subtitle = "Tripula oleracea"
     subsubtitle = "(Daddy longlegs)"
     title = \markup {
