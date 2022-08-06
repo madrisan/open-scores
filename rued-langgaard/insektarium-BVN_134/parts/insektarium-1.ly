@@ -18,12 +18,7 @@ fasterandfaster = {
 Upper = \relative c'' {
    \clef treble
    %1
-   | a'16\p\([_\markup {
-       \italic \abs-fontsize #8
-       \column {
-         \line { "crawling" }
-       }
-     }
+   | a'16\(-\markup { \dynamic p { \tiny \italic " (crawling)" } }
      dis, e bes' a ees]
      d![ gis fis c b f'!]
    | e[ bes aes d c ges]
@@ -98,7 +93,7 @@ Upper = \relative c'' {
             \stemUp
             \magnifyMusic 1.5 {
 	      \once \override Stem #'length = #8
-              c,4\harmonic-\markup \teeny \italic {
+              d,4\harmonic-\markup \teeny \italic {
                 \column {
                   "grasp the"
                   \general-align #Y #-4
@@ -215,7 +210,7 @@ Lower = \relative c {
   }
   \layout {
     \context { \Score
-      %\omit BarNumber
+      \omit BarNumber
       \omit TimeSignature
     }
   }
