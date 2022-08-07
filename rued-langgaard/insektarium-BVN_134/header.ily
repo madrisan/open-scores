@@ -1,12 +1,12 @@
-\version "2.23.7"
+\version "2.23.10"
 
 \header {
   composer = "Rued Langgaard (1893-1952)"
   date = "1917"
 
-  footer = "Mutopia-2022/07/27-100"
+  footer = "Mutopia-2022/08/07"
 
-  lastupdated = "2022 July 27"
+  lastupdated = "2022 August 7"
   license = "Creative Commons Attribution-ShareAlike 4.0"
   maintainerEmail = "davide.madrisan@gmail.com"
   maintainerWeb = "https://github.com/madrisan/open-scores"
