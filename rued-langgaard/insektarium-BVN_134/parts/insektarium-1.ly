@@ -104,7 +104,7 @@ Upper = \relative c'' {
             }
 	  } >>
    | \ottava #1
-     bes''''16\([ e, bes e \ottava #0 bes e,] bes[ e bes e, bes e,]
+     bes''''16_\pp\([ e, bes e \ottava #0 bes e,] bes[ e bes e, bes e,]
    | \stemUp \change Staff = "lower" {
        \shiftOff
        bes[ e bes e, bes e,]\)
