@@ -18,7 +18,7 @@ fasterandfaster = {
 Upper = \relative c'' {
    \clef treble
    %1
-   | a'16\(-\markup { \dynamic p { \tiny \italic " (crawling)" } }
+   | a'16[\(-\markup { \dynamic p { \tiny \italic " (crawling)" } }
      dis, e bes' a ees]
      d![ gis fis c b f'!]
    | e[ bes aes d c ges]
@@ -61,6 +61,7 @@ Upper = \relative c'' {
    | <a ees'>32->[ <a ees'>32-> <a ees'>16->~ <a ees'>16 <a ees'>16~-> <a ees'>16 <a ees'>16->]_\stopTextSpan
      r4^\markup \tiny \italic \bold { hands above the head }_\markup \tiny \italic \bold { "ad libitum!" }
      r8\fermata
+   \break
    | r4. \stemUp d,16\([ e f cis c! f]
    %15
    | gis[ d-\markup { \dynamic p \italic sempre } f b d bes] \stemDown a[ ees' f d c fis]

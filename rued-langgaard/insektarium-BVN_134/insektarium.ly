@@ -2,6 +2,10 @@
 
 #(ly:set-option 'relative-includes #t)
 
+\header {
+  tagline = ##f
+}
+
 \paper {
   indent = 0.0
   line-width = 18.6\cm
@@ -42,7 +46,7 @@
         \fill-line { \abs-fontsize #9 \typewriter "https://github.com/madrisan/open-scores/" }
         \null
         \fill-line {
-          \abs-fontsize #8 "Based on the partition seen in a Youtube video"
+          \abs-fontsize #8 "Based on the partition displayed in the Youtube video https://youtu.be/8RF4LMxJ088"
         }
       }
     }
