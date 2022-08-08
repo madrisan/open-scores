@@ -71,16 +71,16 @@ Lower = \relative c,, {
      \repeat tremolo 4 { dis!32 e }
    %5
    | \override Beam.gap-count = #3
-     \repeat tremolo 12 { f!32 e }
+     \shape #'((0 . 0) (0 . 0) (0 . 2) (0 . 0)) PhrasingSlur
+     \repeat tremolo 12 { f!32\( e }
    | \override Beam.gap-count = #0
      \omit TupletBracket
      \omit TupletNumber
-     \shape #'((0 . 2.5) (0 . 0) (0 . 4) (0 . 0)) PhrasingSlur
      \once \override Beam.damping = #4
      \change Staff = "upper" {
        \stemDown
        \tuplet 6/4 4 {
-         f16\([fis g gis a ais
+         f16[fis g gis a ais
          b bes a! aes g! ges
        }
      }
@@ -119,7 +119,7 @@ Lower = \relative c,, {
      \override Beam.gap-count = #0
      \tuplet 6/4 4 {
        \stemUp
-       \shape #'((0 . 5) (0 . -6) (0 . -8) (0 . 0)) PhrasingSlur
+       \shape #'((0 . 4) (0 . 0) (0 . 0) (0 . 0)) PhrasingSlur
        \change Staff = "lower" {
          a!16[\(
        }
