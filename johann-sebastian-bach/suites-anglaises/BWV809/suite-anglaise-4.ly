@@ -1,8 +1,13 @@
-\version "2.23.7"
+\version "2.23.10"
 
 #(ly:set-option 'relative-includes #t)
 
+\header {
+  tagline = ##f
+}
+
 \paper {
+  indent = 0.0
   line-width = 18.6\cm
   top-margin = 10\mm
   bottom-margin = 10\mm

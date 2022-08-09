@@ -1,12 +1,12 @@
-\version "2.23.7"
+\version "2.23.10"
 
 \header {
   composer = "Johann Sebastian Bach (1685-1750)"
   date = "Around 1713 or 1714"
 
-  footer = "Mutopia-2022/04/25-100"
+  footer = "Mutopia-2022/08/09"
 
-  lastupdated = "2022 April 25"
+  lastupdated = "2022 August 9"
   license = "Creative Commons Attribution-ShareAlike 4.0"
   maintainerEmail = "davide.madrisan@gmail.com"
   maintainerWeb = "https://github.com/madrisan/open-scores"
