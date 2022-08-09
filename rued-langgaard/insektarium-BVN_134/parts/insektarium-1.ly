@@ -56,10 +56,13 @@ Upper = \relative c'' {
    | <a ees'>16[ <a ees'>32->\fasterandfaster
      <a ees'>->~_\startTextSpan
      <a ees'>8. <a ees'>16->]
+     \set subdivideBeams = ##t
+     \set baseMoment = #(ly:make-moment 1/8)
      <a ees'>8->[ <a ees'>16-> <a ees'>16->~ <a ees'>16 <a ees'>16->]~
    | <a ees'>8 <a ees'>4->~ <a ees'>16[ <a ees'>16-> <a ees'>16-> <a ees'>16->~ <a ees'>8]
    | <a ees'>32->[ <a ees'>32-> <a ees'>16->~ <a ees'>16 <a ees'>16~-> <a ees'>16 <a ees'>16->]_\stopTextSpan
      r4^\markup \tiny \italic \bold { hands above the head }_\markup \tiny \italic \bold { "ad libitum!" }
+     \set subdivideBeams = ##f
      r8\fermata
    \break
    | r4. \stemUp d,16\([ e f cis c! f]
@@ -82,18 +85,24 @@ Upper = \relative c'' {
    | <a ees'>16[ <a ees'>32->
      <a ees'>->~
      <a ees'>8. <a ees'>16->]
+     \set subdivideBeams = ##t
+     \set baseMoment = #(ly:make-moment 1/8)
      <a ees'>8->[ <a ees'>16-> <a ees'>16->~ <a ees'>16 <a ees'>16->]~
+     \set subdivideBeams = ##f
    | <a ees'>32[ <a ees'>32-> <a ees'>32-> <a ees'>32->~ <a ees'>16. <a ees'>32-> <a ees'>16-> <a ees'>16->]~
      <a ees'>32[ <a ees'>32->~ <a ees'>32 <a ees'>32->~ <a ees'>16 <a ees'>16->~ <a ees'>32 <a ees'>32-> <a ees'>32-> <a ees'>32->]~
    %25
-   | <a ees'>32[ <a ees'>32-> <a ees'>32-> <a ees'>32->]~
-     <a ees'>32[ <a ees'>32-> <a ees'>32->~ <a ees'>32]~
-     <a ees'>32[ <a ees'>32->~ <a ees'>32 <a ees'>32->]
+   | \set subdivideBeams = ##t
+     \set baseMoment = #(ly:make-moment 1/8)
+     <a ees'>32[ <a ees'>32-> <a ees'>32-> <a ees'>32->~
+     <a ees'>32 <a ees'>32-> <a ees'>32->~ <a ees'>32~
+     <a ees'>32 <a ees'>32->~ <a ees'>32 <a ees'>32->]
+     \set subdivideBeams = ##f
      << { b4\rest\ff b8\rest\fermata }
        \\ { s8
             \stemUp
             \magnifyMusic 1.5 {
-	      \once \override Stem #'length = #8
+              \once \override Stem #'length = #8
               d,4\harmonic-\markup \teeny \italic {
                 \column {
                   "grasp the"
@@ -130,7 +139,18 @@ Lower = \relative c {
    | << { } \\ \stemUp bes2.~ >>
    | << {  <a' a'>8-.[ <a a'>8^>] r8 } \\ { \stemDown bes,2._\mp~ } >>
    | << { } \\ { \stemUp bes4~ bes8.  a4~ a16~ } >>
-   | << { s4. \slashedGrace e'''8-\markup \teeny { \dynamic ff } }
+   | << { s4.
+          \override DynamicText.self-alignment-X = #RIGHT
+          \override DynamicText.X-offset =
+            #(lambda (grob)
+               (- (ly:self-alignment-interface::x-aligned-on-self grob)
+               1.2))
+          \override DynamicLineSpanner.direction = #UP
+          \slashedGrace e'''8-\ff
+          \revert DynamicText.self-alignment-X
+          \revert DynamicText.X-offset
+          \revert DynamicLineSpanner.direction
+        }
        \\ { \stemUp a,,,4. r16_\ff a32[a32]~ a4~ } >>
    | << { s4 \stemDown <a'' ees'>4\sf-> <a ees'>4\sf->~ } \\ a,,2. >>
    %10
@@ -138,9 +158,12 @@ Lower = \relative c {
        \\ { } >>
    | <a ees'>16[ <a ees'>32->\sff <a ees'>->~
      <a ees'>8. <a ees'>16->]\sf
+     \set subdivideBeams = ##t
+     \set baseMoment = #(ly:make-moment 1/8)
      <a ees'>8->[ <a ees'>16->\sff <a ees'>16->~ <a ees'>16 <a ees'>16->]~
    | <a ees'>8 <a ees'>4->~\sff <a ees'>16[ <a ees'>16-> <a ees'>16-> <a ees'>16->~ <a ees'>8]
    | <a ees'>32->[ <a ees'>32->\fff <a ees'>16->~\< <a ees'>16 <a ees'>16~-> <a ees'>16\! <a ees'>16->]
+     \set subdivideBeams = ##f
      r4 r8\fermata
    | d,,,2.\pp~
    %15
@@ -150,20 +173,37 @@ Lower = \relative c {
    | << { } \\ { \stemUp b2.~ } >>
    | << { } \\ { \stemUp b4.~ b8 a4 } >>
    %20
-   | << { s4. \slashedGrace e'''8-\markup{\teeny\dynamic ff} }
-       \\ { \stemUp a,,,4. r16_\ff a32[a32]~ a4~ } >>
+   | << { s4.
+          \override DynamicText.self-alignment-X = #RIGHT
+          \override DynamicText.X-offset =
+            #(lambda (grob)
+               (- (ly:self-alignment-interface::x-aligned-on-self grob)
+               1.2))
+          \override DynamicLineSpanner.direction = #UP
+          \slashedGrace e'''8-\ff
+          \revert DynamicText.self-alignment-X
+          \revert DynamicText.X-offset
+          \revert DynamicLineSpanner.direction
+        }
+       \\ { \stemUp a,,,4. r16 a32[a32]~ a4~ } >>
    | << { s4 \stemDown <a'' ees'>4\sf-> <a ees'>4\sf->~ } \\ a,,2. >>
    | << { \stemDown <a'' ees'>4 <a ees'>8~->\ff <a ees'>[ <a ees'>-> <a ees'>->] }
        \\ { } >>
    | <a ees'>16[ <a ees'>32->\sff <a ees'>->~
      <a ees'>8. <a ees'>16->]
+     \set subdivideBeams = ##t
+     \set baseMoment = #(ly:make-moment 1/8)
      <a ees'>8->[ <a ees'>16-> <a ees'>16->~ <a ees'>16 <a ees'>16->]~
+     \set subdivideBeams = ##f
    | <a ees'>32[ <a ees'>32-> <a ees'>32-> <a ees'>32->~ <a ees'>16. <a ees'>32-> <a ees'>16-> <a ees'>16->]~
      <a ees'>32[ <a ees'>32->~ <a ees'>32 <a ees'>32->~ <a ees'>16 <a ees'>16->~ <a ees'>32 <a ees'>32-> <a ees'>32-> <a ees'>32->]~
    %25
-   | <a ees'>32-\markup \italic { \dynamic sff sempre }[ <a ees'>32-> <a ees'>32-> <a ees'>32->]~
-     <a ees'>32[ <a ees'>32-> <a ees'>32->~ <a ees'>32]~
-     <a ees'>32[ <a ees'>32->~ <a ees'>32 <a ees'>32->]
+   | \set subdivideBeams = ##t
+     \set baseMoment = #(ly:make-moment 1/8)
+     <a ees'>32-\markup \italic { \dynamic sff sempre }[ <a ees'>32-> <a ees'>32-> <a ees'>32->~
+     <a ees'>32 <a ees'>32-> <a ees'>32->~ <a ees'>32~
+     <a ees'>32 <a ees'>32->~ <a ees'>32 <a ees'>32->]
+     \set subdivideBeams = ##f
      r4\sustainOn r8\fermata
    | bes,,,2.~
    | bes2.
@@ -216,6 +256,6 @@ Lower = \relative c {
     }
   }
   \midi {
-    \tempo 4 = 60
+    \tempo 4 = 40
   }
 }
