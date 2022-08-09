@@ -20,6 +20,6 @@ Software requirements: `git`, [`lilypond`](https://lilypond.org/)
     cd alban-berg/Op_1
     lilypond sonate-fur-klavier-op-1.ly
 
-    # Rued Langgaard - Insektarium  BVN 134
+    # Rued Langgaard - Insektarium  BVN 134 -- IN PROGRESS (I, III, IV, VI, IX merged to main)
     cd rued-langgaard/insektarium-BVN_134
     lilypond insektarium.ly
