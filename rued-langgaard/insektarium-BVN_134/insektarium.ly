@@ -53,6 +53,7 @@
   }
 }
 
+\include "articulate.ly"
 \include "./parts/insektarium-1.ly"
 \pageBreak
 \include "./parts/insektarium-2.ly"
