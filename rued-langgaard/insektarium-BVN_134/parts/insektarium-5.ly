@@ -5,6 +5,12 @@ Global = {
   \time 2/8
 }
 
+% The compiler prints a few times the following warning message:
+%   programming error: Going back in MIDI time.
+%   continuing, cross fingers
+% This is because of the \afterGrace commands used in the source
+% and seems a known issue.
+
 Upper = \relative c' {
   \clef treble
   \tempo \markup { \bold Presto }
@@ -467,6 +473,6 @@ Lower = \relative c' {
   }
   \layout { }
   \midi {
-    \tempo 4 = 60
+    \tempo 8 = 70
   }
 }
