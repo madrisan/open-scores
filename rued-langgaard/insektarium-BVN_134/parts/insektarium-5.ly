@@ -268,8 +268,7 @@ centeredDynamics = {
   | \tuplet 3/2 16 { s16.\< s16. s32\!\ff\> s16 s16. }
   | \tuplet 3/2 16 { s32 s16\! s32 s32\ppp s32 s16.\< s16 s32 }
   | s8 s8
-  | s4
-  | \tuplet 3/2 16 { s32\sf\! s64 s64\p s32 }
+  | \tuplet 3/2 16 { s32\!\sf s64 s64\p s32 }
     \tuplet 3/2 16 { s16. s16.\> s16. }
   % 30
   | \tuplet 3/2 16 { s16. s16. s16. s16 s32\! }
