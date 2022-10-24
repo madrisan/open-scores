@@ -61,8 +61,19 @@ centeredDynamics = {
   | s8\p s8  s2.
   | s8\pp s8  s2.
   | s8\p \cresc s8\startTextSpan  s2 s8. s16\stopTextSpan
-  | s8\mf
+  | s8\mf s8  s2.
   %10
+  | s8^\markup{\dynamic p\italic, ben cantato }  s8  s2.
+  | s1
+  | s1
+  | s2 s2\pp
+  | s2 s2\p
+  %15
+  | s1
+  | s8. s16\pp s2.
+  | s4 s2.\mf
+  | s8. s16\> s4 s4.\! s8
+
 }
 
 Lower = \relative c' {
@@ -73,7 +84,7 @@ Lower = \relative c' {
     c,16\sustainOff\sustainOn g' e g
     c,16\sustainOff\sustainOn a' f a
   | c,16\sustainOff g' e g  f, d' b d  e, e' c e  g, d' b d
-  | c16\sustainOn g' e g  c,16 a' f a
+  | c16\sustainOn g' e g  c,16 g' e g
     c,16\sustainOff\sustainOn g' e g
     c,16\sustainOff\sustainOn a' f a
   | c,16\sustainOff g' e g  c,16 a' f a  c,16 g' e g  f,16 d' b d
@@ -86,7 +97,7 @@ Lower = \relative c' {
     a,8[ fis]  g[ cis,]  d2
   %10
   | g16 d' b d  g,16 e' c e  g,16 d' b d  fis, c' a c
-  | g d' b d  c, a' fis a  b, b' g b  d, a' fis a
+  | g d' b d  c, a' fis a  b, b' g b  d, a' fis! a
   | g d' b d
     \clef treble
     b g' d g  cis, bes' g bes  cis, bes' g bes
