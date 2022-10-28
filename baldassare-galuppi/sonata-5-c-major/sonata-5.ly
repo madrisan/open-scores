@@ -52,4 +52,5 @@
   }
 }
 
+\include "./global.ly"
 \include "./parts/sonata-5-1.ly"
