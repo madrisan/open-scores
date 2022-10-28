@@ -1,5 +1,3 @@
-\version "2.23.11"
-
 Global = {
    \key c \major
    \time 4/4

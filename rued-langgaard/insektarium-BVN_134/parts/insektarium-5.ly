@@ -1,5 +1,3 @@
-\version "2.23.11"
-
 Global = {
   \key ees \major
   \time 2/8
