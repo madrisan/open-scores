@@ -1,5 +1,3 @@
-\version "2.23.11"
-
 \header {
   composer = "Rued Langgaard (1893-1952)"
   date = "1917"
