@@ -28,11 +28,33 @@ Upper = \relative c'' {
   | g16( fis ees d  cis d ees d)
     \stemDown c32( d ees16) d16.\trill c32
     c8-.( c8-.)
+  %15
   | ais16( b) r16 g'-.  dis( e) r16 g-. cis,( d) r16 g-.  b,16( c) r16 c-.
   | ais16( b) r16 g'-.  dis( e) r16 g-. cis,( d) r16 g-.  b,16( c) r16 c-.
   | ais16( b) r16 g'-.  fis( e c' a  g  fis e d)
     \acciaccatura d8 c16( b) \acciaccatura b8 a16( g)
   | fis16( e c' a)  \stemUp \acciaccatura g8 fis4  \acciaccatura fis8 g4  r4
+  }
+  \repeat volta 2 {
+  | \stemDown
+    \set subdivideBeams = ##t
+    \set baseMoment = #(ly:make-moment 1/8)
+    cis16[( d) d( fis)]  fis[( g) g( bes)]  d,[( cis) cis( e)]  e[( fis) fis( g)]
+  %20
+  | g16[( fis) fis( a)]  a[( b!) b( c)]  e,[(dis) dis( fis)]  fis[(gis) gis( a)]
+    \set subdivideBeams = ##f
+  | gis16 b( d,!8  cis16) e( g!8  fis16) a( c,!8  b16) d( f!8
+  | e16) g( bes,8  a16) f'\( a8~  a16 g\) f( e)  e( d) a'( c,)
+  | b!8. a16(  \stemUp g4)  \stemDown g'4  a32( b c16) b16.\prall a32(
+  | g4)  f!32( g a16) g16.\prall f32(
+    e4)  d32( e f16) e16.\prall d32(
+  %25
+  | g8.) c,16(  f16 d) \acciaccatura d8 c16( b)
+    \grace { b8.[( d16] } c2)
+  | g'4  a32( b c16) b16.\prall a32(
+    g4)  f32( g a16) g16.\prall f32(
+  | e4)  d32( e f16) e16.\prall d32  g8.\trill fis32 g  a16 e \acciaccatura e8 d16 c
+  | b8.\trill a16  g8 r8  s2
   }
   \fine
 
@@ -62,20 +84,31 @@ centeredDynamics = {
   | s8. s16\pp s2.
   | s4 s2.\mf
   | s8. s16\> s4 s4.\! s8
-
+  | s8\mp s8  s2.
+  %20
+  | s8\cresc s8\startTextSpan  s2 s8. s16\stopTextSpan
+  | s8\mf s8 s4 s8\mp s8 s4
+  | s8\< s4 s8\! s4^\markup { \italic "rit.," } s4
+  | s8\> s8 s4\! s2^\markup{\dynamic p\italic, come prima }
+  | s1
+  %25
+  | s1
+  | s32 s32\pp s16 s8 s2.
+  | s1
+  | s1
 }
 
 Lower = \relative c' {
   \repeat volta 2 {
   %1
   | c16\sustainOn g' e g
-    c,16\sustainOff\sustainOn a' f a
+    c,16\sustainOff\sustainOn a' f\sustainOff\sustainOn a
     c,16\sustainOff\sustainOn g' e g
-    c,16\sustainOff\sustainOn a' f a
+    c,16\sustainOff\sustainOn a' f\sustainOff\sustainOn a
   | c,16\sustainOff g' e g  f, d' b d  e, e' c e  g, d' b d
   | c16\sustainOn g' e g  c,16 g' e g
     c,16\sustainOff\sustainOn g' e g
-    c,16\sustainOff\sustainOn a' f a
+    c,16\sustainOff\sustainOn a' f\sustainOff\sustainOn a
   | c,16\sustainOff g' e g  c,16 a' f a  c,16 g' e g  f,16 d' b d
   %5
   | e, e' c e  g, d' b d  c16 g' e g  c,16 g' e g
@@ -95,10 +128,25 @@ Lower = \relative c' {
   | d,16 a' fis a  d, a' fis a
     \clef bass
     fis, ees' c ees  fis, ees' c ees
+  %15
   | g, d' b! d  g, e' c e  g, d' b d  d, a' fis a
   | g d' b d  g, e' c e  g, d' b d  d, a' fis a
   | g d' b d  c8[ c,8]  d[ fis]  g[ b,]
   | << { r8 c'  a4  g4  } \\ { c,4  d4  g,4 } >>  r4
+  }
+  \repeat volta 2 {
+  | <bes' bes,>4\tenuto  r4  <a a,>4\tenuto  r4
+  %20
+  | <d d,>8\tenuto r8  <c! c,!>8\tenuto r8  <b! b,!>4\tenuto  r4
+  | e,8.\tenuto gis16(  a8.) cis,16(  d8.) fis16(  g!8.) b,16(
+  | c!8.) e16  f!8. c16(  f,4)  f'8 fis
+  | g4  r4  \clef treble c16 g' e g  c,16 a' f! a
+  | c,16 g' e g  c,16 a' f a  c,16 g' e g  f, d' b d
+  %25
+  | e, e' c e  g, d' b d  c16 g' e g  c,16 g' e g
+  | c,16 g' e g  c,16 a' f a  c,16 g' e g  c,16 a' f a
+  | c,16 g' e g  f,16 d' b d  e,16 e' c e  fis,16 d' c d
+  | g,16 d' b d  g,16 d' b d  s2
   }
   \fine
 
