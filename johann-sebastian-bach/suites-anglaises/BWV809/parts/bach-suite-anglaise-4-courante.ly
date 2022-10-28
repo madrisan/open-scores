@@ -1,5 +1,3 @@
-\version "2.23.10"
-
 Global = {
   \key f \major
   \time 3/2
