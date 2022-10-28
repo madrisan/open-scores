@@ -1,6 +1,7 @@
 Global = {
    \key f \major
    \time 4/4
+   \include "../global.ly"
 }
 
 Upper = \relative c' {
