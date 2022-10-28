@@ -1,6 +1,7 @@
 Global = {
   \key ees \major
   \time 2/8
+  \include "../global.ly"
 }
 
 % The compiler prints a few times the following warning message:
