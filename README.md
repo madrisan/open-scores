@@ -17,7 +17,7 @@ Software requirements: `git`, [`lilypond`](https://lilypond.org/)
     cd alban-berg/Op_1
     lilypond sonate-fur-klavier-op-1.ly
 
-    # Baldassare Galuppi - Sonata no. 5 in Do maggiore -- IN PROGRESS (1st part of Andante available)
+    # Baldassare Galuppi - Sonata no. 5 in Do maggiore -- IN PROGRESS (Andante available)
     cd /baldassare-galuppi/sonata-5-c-major
     lilypond sonata-5.ly
 
