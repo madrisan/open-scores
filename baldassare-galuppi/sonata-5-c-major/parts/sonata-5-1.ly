@@ -54,7 +54,50 @@ Upper = \relative c'' {
   | g'4  a32( b c16) b16.\prall a32(
     g4)  f32( g a16) g16.\prall f32(
   | e4)  d32( e f16) e16.\prall d32  g8.\trill fis32 g  a16 e \acciaccatura e8 d16 c
-  | b8.\trill a16  g8 r8  s2
+  | b8.\trill a16  g8 r8  dis'16\tenuto( e) r8 fis16\tenuto( g) r8
+  | cis,16( d!) d8  r4  dis16\tenuto( e) r8  fis16\tenuto( g) r8
+  %30
+  | cis,16( d!) d8  r4  f8.\trill e32 f
+    \set subdivideBeams = ##t
+    \set baseMoment = #(ly:make-moment 1/8)
+    a16( f) f( d)
+    \set subdivideBeams = ##f
+  | e8.\trill d32 e  g16( e) \acciaccatura e8 d16( c)  b( a) f'( d)  \appoggiatura c8 b4
+  | \appoggiatura d4 c2  dis16( e) r8  fis16( g) r8
+  | cis,16 d! d8  r4
+    dis16( e) r8  fis16( g) r8
+  | cis,16 d! d8  r4
+    f8.\trill e32 f
+    \set subdivideBeams = ##t
+    \set baseMoment = #(ly:make-moment 1/8)
+    a16( f) f( d)
+    \set subdivideBeams = ##f
+  | e8.\trill d32 e  g16( e) \acciaccatura e8 d16( c)  b( a) f'( d)  \appoggiatura c8 b4
+  %35
+  | \appoggiatura d4 c2  a'8. b16(  c16.) c32( b16.) a32(
+  | g4)(  c,4)
+    \set subdivideBeams = ##t
+    \set baseMoment = #(ly:make-moment 1/8)
+    b16( d) d( f)  f( d) a'( f)
+    \set subdivideBeams = ##f
+  | f4\prall  e  a8. b16( c16.) c32( b16.) a32(
+  | g4)(  c,4)
+    \set subdivideBeams = ##t
+    \set baseMoment = #(ly:make-moment 1/8)
+    b16( d) d( f)  f( d) a'( f)
+    \set subdivideBeams = ##f
+  | dis16( e) r16 c'-.  gis( a) r16 c-.
+    fis,16( g!) r16 c-.  e,( f!) r16 f!-.
+  %40
+  | dis16( e) r16 c'-.  gis( a) r16 c-.
+    fis,16( g!) r16 c-.  e,( f!) r16 f-.
+  | e16.\prall c'32 b16.\prall a32  g16.\prall f32 e16.\prall d32
+    e16 c a' f \appoggiatura e8 d4\trill
+  | e16.\prall c32 b16.\prall a32
+    \stemUp
+    g16.\prall f32 e16.\prall d32
+    e16 c a' f \appoggiatura e8 d4\trill
+  | c4 r4 r2
   }
   \fine
 
@@ -95,7 +138,25 @@ centeredDynamics = {
   | s1
   | s32 s32\pp s16 s8 s2.
   | s1
+  | s2 s2\mf
+  | s2 s2\p
+  %30
+  | s2 s2\mf
   | s1
+  | s4 s8 s8\p s4 s4
+  | s4 s4\pp s2
+  | s4 s4\p s2
+  %35
+  | s1
+  | s4 s4\mf s2
+  | s1
+  | s1
+  | s1
+  %40
+  | s1
+  | s1
+  | s1
+  | s8 s16 s64 s64\p s32 s2.
 }
 
 Lower = \relative c' {
@@ -143,10 +204,31 @@ Lower = \relative c' {
   | g4  r4  \clef treble c16 g' e g  c,16 a' f! a
   | c,16 g' e g  c,16 a' f a  c,16 g' e g  f, d' b d
   %25
-  | e, e' c e  g, d' b d  c16 g' e g  c,16 g' e g
+  | e, e' c e    g, d' b d    c16 g' e g   c,16 g' e g
   | c,16 g' e g  c,16 a' f a  c,16 g' e g  c,16 a' f a
   | c,16 g' e g  f,16 d' b d  e,16 e' c e  fis,16 d' c d
-  | g,16 d' b d  g,16 d' b d  s2
+  | g,16 d' b d  g,16 d' b d  g,16 e' c e  g,16 e' c e
+  | g,16 d' b d  g,16 d' b d  g,16 e' c e  g,16 e' c e
+  %30
+  | g,16 d' b d  g,16 d' b d  a16 f' c f   b,16 f' d f
+  | c16 g' e g   e,16 e' c e  f,16 f' d f  g,16 d' b d
+  | c16 g' e g   c,16 g' e g  c,16 g' e g  c,16 g' e g
+  | g,16 d' b d  g,16 d' b d  g,16 e' c e  g,16 e' c e
+  | g,16 d' b d  g,16 d' b d  a16 f' c f   b,16 f' d f
+  %35
+  | c16 g' e g   e,16 e' c e  f,16 f' d f  g,16 d' b d
+  | c16 g' e g   c,16 g' e g  c,16 a' f a  c,16 a' f a
+  | c,16 g' e g  c,16 g' e g  g,16 d' b d  g,16 d' b d
+  | c16 g' e g   c,16 g' e g  c,16 a' f a  c,16 a' f a
+  | c,16 g' e g  c,16 g' e g  g,16 d' b d  g,16 d' b d
+  %40
+  | c16 g' e g   c,16 a' f a  c,16 g' e g  g,16 d' b d
+  | c16 g' e g   c,16 a' f a  c,16 g' e g  g,16 d' b d
+  | c4
+    \clef bass
+    r8 b8  c[ f,]  \stemDown g[ g,]
+  | \stemUp c4  r8 b  \stemDown c[ f]  g[ g,]
+  | c4  r4  r2
   }
   \fine
 
