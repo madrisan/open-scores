@@ -1,4 +1,9 @@
-\version "2.23.13"
+Global = {
+  \key c \major
+  \clef treble
+  \time 4/4
+  \include "../global.ly"
+}
 
 cresc = { \override TextSpanner.bound-details.left.text = \markup { \small "cresc. " } }
 

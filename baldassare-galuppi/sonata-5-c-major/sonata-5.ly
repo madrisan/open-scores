@@ -1,4 +1,4 @@
-\version "2.23.10"
+\version "2.23.14"
 
 #(ly:set-option 'relative-includes #t)
 
@@ -52,5 +52,5 @@
   }
 }
 
-\include "./global.ly"
 \include "./parts/sonata-5-1.ly"
+\include "./parts/sonata-5-2.ly"
