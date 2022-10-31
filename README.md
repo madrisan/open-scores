@@ -17,7 +17,7 @@ Software requirements: `git`, [`lilypond`](https://lilypond.org/)
     cd alban-berg/Op_1
     lilypond sonate-fur-klavier-op-1.ly
 
-    # Baldassare Galuppi - Sonata no. 5 in Do maggiore -- IN PROGRESS (Andante available)
+    # Baldassare Galuppi - Sonata no. 5 in Do maggiore -- IN PROGRESS (Andante, Allegro)
     cd /baldassare-galuppi/sonata-5-c-major
     lilypond sonata-5.ly
 
@@ -25,6 +25,6 @@ Software requirements: `git`, [`lilypond`](https://lilypond.org/)
     cd johann-sebastian-bach/suites-anglaises/BWV809
     lilypond suite-anglaise-4.ly
 
-    # Rued Langgaard - Insektarium  BVN 134 -- IN PROGRESS (I-VI, IX merged to main)
+    # Rued Langgaard - Insektarium  BVN 134 -- IN PROGRESS (I-VI, IX)
     cd rued-langgaard/insektarium-BVN_134
     lilypond insektarium.ly
