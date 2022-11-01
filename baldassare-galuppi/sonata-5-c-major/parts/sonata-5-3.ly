@@ -45,7 +45,27 @@ Upper = \relative c'' {
   | fis16[ a d a] fis4
   | r2
   %30
-  | s2
+  | << { b4 c8.\trill b32 c } \\ { r8 d,[ e fis] } >>
+  | << { b16[ d g d] g[ d b g] } \\ { g4 r4 } >>
+  | << { b4 c8.\trill b32 c } \\ { r8 d,[ e fis] } >>
+  | << { b16[ d g d] g[ d b g] } \\ { g4 r4 } >>
+  | << { b4 c8.\trill b32 c } \\ { r8 d,[ e fis] } >>
+  %35
+  | << { b16[ d g d] e[ g, c a] } \\ { g4 s4 } >>
+  | b16[ d b g] a[ c a fis]
+  | g4 r4
+  | << { b4 c8.\trill b32 c } \\ { r8 d,[ e fis] } >>
+  | << { b16[ d g d] g[ d b g] } \\ { g4 r4 } >>
+  %40
+  | << { b4 c8.\trill b32 c } \\ { r8 d,[ e fis] } >>
+  | << { b16[ d g d] g[ d b g] } \\ { g4 r4 } >>
+  | << { b4 c8.\trill b32 c } \\ { r8 d,[ e fis] } >>
+  | << { b16[ d g d] \stemDown e[ a c a] } \\ { g,4 s4 } >>
+  | b'16[ g d b'] a16[ fis c a']
+  %45
+  | g16[ d b d] d16[ c a e']
+  | d16[ b g d']  c16[ a fis a]
+  | g4 r4
   }
   \repeat volta 2 {
   | s2
@@ -137,7 +157,27 @@ Lower = \relative c' {
   | d8) r8 d16[ fis a d]
   | d,4 r4
   %30
-  | s2
+  | g2~
+  | g2
+  | g2~
+  | g2
+  | g2~
+  %35
+  | g4 c4
+  | d4 d,4
+  | g16[ d' c d] b[ d a d]
+  | g,2~
+  | g2
+  %40
+  | g2~
+  | g2
+  | g2~
+  | g4 c4-.
+  | d4-. d,4-.
+  %45
+  | g4-. c,4-.
+  | d4-. d,4-.
+  | g4 r4
   }
   \repeat volta 2 {
   | s2
