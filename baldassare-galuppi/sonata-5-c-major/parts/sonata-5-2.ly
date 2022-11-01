@@ -439,6 +439,6 @@ Lower = \relative c' {
   \layout {
   }
   \midi {
-    \tempo 4 = 50
+    \tempo 4 = 80
   }
 }
