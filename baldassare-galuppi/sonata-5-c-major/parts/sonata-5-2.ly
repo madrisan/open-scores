@@ -150,6 +150,7 @@ Upper = \relative c' {
   | d32([ f16.)] e8^. d^.
   | c4^. e8\rest
     }
+    \revert Slur.direction
     \change Staff = "upper" {
     }
   }
@@ -269,6 +270,7 @@ centeredDynamics = {
   | s4.
   %90
   | s4 s16 s32\p s32
+  | s64\rit s64\startTextSpan s32 s8. s16. s32\stopTextSpan
 }
 
 Lower = \relative c' {
@@ -387,6 +389,7 @@ Lower = \relative c' {
   %85
   | \override Slur.direction = #DOWN
     f,16[( d') g,( c) g( b)]
+    \revert Slur.direction
   | \clef bass
     \stemUp
     c,4 r8

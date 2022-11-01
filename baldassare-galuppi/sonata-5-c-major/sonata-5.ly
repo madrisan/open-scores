@@ -54,3 +54,4 @@
 
 \include "./parts/sonata-5-1.ly"
 \include "./parts/sonata-5-2.ly"
+\include "./parts/sonata-5-3.ly"
