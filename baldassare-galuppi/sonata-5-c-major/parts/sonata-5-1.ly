@@ -6,6 +6,8 @@ Global = {
 }
 
 cresc = { \override TextSpanner.bound-details.left.text = \markup { \small "cresc. " } }
+moltorit = { \override TextSpanner.bound-details.left.text = \markup { \small "rit. molto " } }
+rit = { \override TextSpanner.bound-details.left.text = \markup { \small "rit. " } }
 
 Upper = \relative c'' {
   \repeat volta 2 {
@@ -15,15 +17,18 @@ Upper = \relative c'' {
   | \grace { b8.[( d16] } c2)  g'4  a32( b c16) b16.\prall a32(
   | g4)  f32( g a16)  g16.\prall f32( e4)  d32( e f16) e16.\prall d32(
   %5
-  | g8.) c,16(  f16 d) \acciaccatura d8 c16( b)  \grace { b8.[( d16] } c2)
+  | g8.) c,16(  f16 d c16 b)  \grace { b8.[( d16] } c2)
   | e32[( f g8.])  f16.\prall[ e32 d16.\prall c32]  d8( g)  g4
-  | e32[( f g8.])  f16.[ e32 d16. c32]  d8( g)  g4
+  | e32[( f g8.])  f16.\prall[ e32 d16.\prall c32]  d8( g)  g4
   | dis16\tenuto( e) r8  gis16\tenuto( a) r8  cis,16\tenuto( d) r8  fis16\tenuto( g) r8
-  | c,16.[\trill b64 c a'16. c,32]  b16.[\trill a64 b g'16. b,32]  \grace { <g b>4( } <fis a >2)
+  | c,16.[\trill b64 c a'16. c,32]
+    b16.[\trill a64 b g'16. b,32]
+
+    \grace { <g b>4( } <fis a >2)
   %10
   | d'4  e32( fis g16) fis16.\prall e32(  d4)  c32( d e16) d16.\prall c32(
   | b4)  a32( b c16) b16.\prall a32(  d8.) g,16(
-    \stemDown c16 a) \acciaccatura a8 g16( fis)
+    \stemDown c16 a g16 fis)
   | \stemUp \grace { fis8.[( a16] } g2)
     \stemDown g'32( a bes16) a16.\trill g32
     g8-.( g8-.)
@@ -50,11 +55,11 @@ Upper = \relative c'' {
     \set subdivideBeams = ##f
   | gis16 b( d,!8  cis16) e( g!8  fis16) a( c,!8  b16) d( f!8
   | e16) g( bes,8  a16) f'\( a8~  a16 g\) f( e)  e( d) a'( c,)
-  | b!8. a16(  \stemUp g4)  \stemDown g'4  a32( b c16) b16.\prall a32(
+  | b!8.\trill a16(  \stemUp g4)  \stemDown g'4  a32( b c16) b16.\prall a32(
   | g4)  f!32( g a16) g16.\prall f32(
     e4)  d32( e f16) e16.\prall d32(
   %25
-  | g8.) c,16(  f16 d) \acciaccatura d8 c16( b)
+  | g8.) c,16(  f16 d c16 b)
     \grace { b8.[( d16] } c2)
   | g'4  a32( b c16) b16.\prall a32(
     g4)  f32( g a16) g16.\prall f32(
@@ -96,7 +101,7 @@ Upper = \relative c'' {
   %40
   | dis16( e) r16 c'-.  gis( a) r16 c-.
     fis,16( g!) r16 c-.  e,( f!) r16 f-.
-  | e16.\prall c'32 b16.\prall a32  g16.\prall f32 e16.\prall d32
+  | e16. c'32 b16.\prall a32  g16.\prall f32 e16.\prall d32
     e16 c a' f \appoggiatura e8 d4\trill
   | e16.\prall c32 b16.\prall a32
     \stemUp
@@ -120,48 +125,49 @@ centeredDynamics = {
   | s8\p s8  s2.
   | s8\pp s8  s2.
   | s8\p \cresc s8\startTextSpan  s2 s8. s16\stopTextSpan
-  | s8\mf s8  s2.
+  | s8\mf s8 s8\moltorit s8\startTextSpan s4 s4\stopTextSpan
   %10
-  | s8^\markup{\dynamic p\italic, ben cantato }  s8  s2.
+  | s8^\markup{\dynamic p\italic\small ", ben cantato" }  s8  s2.
   | s1
-  | s1
-  | s2 s2\pp
+  | s2 s4\mf s4
   | s2 s2\p
+  | s1
   %15
   | s1
   | s8. s16\pp s2.
-  | s4 s2.\mf
-  | s8. s16\> s4 s4.\! s8
-  | s8\mp s8  s2.
+  | s4 s4\mf s4\rit s8\startTextSpan s8
+  | s16 s16\stopTextSpan s8\> s4 s4.\! s8
+  | s8\p s8  s2.
   %20
   | s8\cresc s8\startTextSpan  s2 s8. s16\stopTextSpan
-  | s8\mf s8 s4 s8\mp s8 s4
-  | s8\< s4 s8\! s4^\markup { \italic "rit.," } s4
-  | s8\> s8 s4\! s2^\markup{\dynamic p\italic, come prima }
+  | s8\mf s4. s2
+  | s8 s4 s8\moltorit s8\startTextSpan s8 s8 s16\stopTextSpan s16
+  | s8\> s8 s4\! s2^\markup{\dynamic p\italic\small ", come prima" }
   | s1
   %25
   | s1
   | s32 s32\pp s16 s8 s2.
   | s1
-  | s2 s2\mf
   | s2 s2\p
+  | s2 s2\pp
   %30
   | s2 s2\mf
   | s1
-  | s4 s8 s8\p s4 s4
-  | s4 s4\pp s2
-  | s4 s4\p s2
+  | s4 s8 s8 s8\p s4.
+  | s4 s8 s8 s8\pp s4.
+  | s4 s8 s8 s8\p s4.
   %35
   | s1
-  | s4 s4\mf s2
+  | s4 s8 s8 s8\mf s4.
   | s1
-  | s1
+  | s4 s8 s8 s8\p s4.
   | s1
   %40
   | s1
-  | s1
-  | s1
-  | s8 s16 s64 s64\p s32 s2.
+  | s8\pp s8  s2.
+  | s8\p s8  s2.
+  | s8 s4 s8\rit s8\startTextSpan s8 s8 s8
+  | s4 \stopTextSpan s2.
 }
 
 Lower = \relative c' {
@@ -204,8 +210,8 @@ Lower = \relative c' {
   | <bes' bes,>4\tenuto  r4  <a a,>4\tenuto  r4
   %20
   | <d d,>8\tenuto r8  <c! c,!>8\tenuto r8  <b! b,!>4\tenuto  r4
-  | e,8.\tenuto gis16(  a8.) cis,16(  d8.) fis16(  g!8.) b,16(
-  | c!8.) e16  f!8. c16(  f,4)  f'8 fis
+  | e,8.\tenuto gis16-.  a8. cis,16-.  d8. fis16-.  g!8. b,16-.
+  | c!8. e16-.  f!8. c16(  f,4)  f'8 fis
   | g4  r4  \clef treble c16 g' e g  c,16 a' f! a
   | c,16 g' e g  c,16 a' f a  c,16 g' e g  f, d' b d
   %25

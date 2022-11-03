@@ -5,8 +5,6 @@ Global = {
   \include "../global.ly"
 }
 
-rit = { \override TextSpanner.bound-details.left.text = \markup { \small "rit. " } }
-
 Upper = \relative c'' {
   \repeat volta 2 {
   %1
