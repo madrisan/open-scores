@@ -65,9 +65,11 @@ Upper = \relative c'' {
     g4)  f32( g a16) g16.\prall f32(
   | e4)  d32( e f16) e16.\prall d32  g8.\trill fis32 g  a16 e \acciaccatura e8 d16 c
   | b8.\trill a16  g8 r8  dis'16\tenuto( e) r8 fis16\tenuto( g) r8
-  | cis,16( d!) d8  r4  dis16\tenuto( e) r8  fis16\tenuto( g) r8
+% | cis,16( d!) d8  r4  dis16\tenuto( e) r8  fis16\tenuto( g) r8
+  | cis,16( d!) d8  r4 \grace { dis32 fis } e4 \grace { fis32 a } g4
   %30
-  | cis,16( d!) d8  r4  f8.\trill e32 f
+% | cis,16( d!) d8  r4  f8.\trill e32 f
+  | \grace { cis,32 e } d8 d  r4  f8.\trill e32 f
     \set subdivideBeams = ##t
     \set baseMoment = #(ly:make-moment 1/8)
     a16( f) f( d)
