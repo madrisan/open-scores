@@ -61,7 +61,7 @@ Upper = \relative c'' {
   | << { b16[ d g d] \stemDown e[ a c a] } \\ { g,4 s4 } >>
   | b'16[ g d b'] a16[ fis c a']
   %45
-  | g16[ d b d] d16[ c a e']
+  | g16[ d b d] e16[ c a e']
   | d16[ b g d']  c16[ a fis a]
   | g4 r4
   }
@@ -144,16 +144,16 @@ centeredDynamics = {
   | s2
   | s2
   | s2
-  | s2
-  %10
   | s32\p s16. s4.
+  %10
+  | s2
   | s2
   | s2
   | s2
   | s2
   %15
   | s2
-  | s2
+  | s16-\markup{\italic\small "sin. marcata"} s16 s4.
   | s32\mf s16. s4.
   | s2
   | s2
@@ -165,11 +165,73 @@ centeredDynamics = {
   | s2
   %25
   | s32\< s32 s8. s8\! s16\> s16
-  | s8 s8\! s4\p
+  | s8 s8\! s4
   | s64\rit s64\startTextSpan s16. s4.
   | s8 s8\stopTextSpan s4
   | s2
   %30
+  | s32\mf s16. s4.
+  | s2
+  | s2
+  | s2
+  | s2
+  %35
+  | s2
+  | s2
+  | s2
+  | s32\p s16. s4.
+  | s2
+  %40
+  | s2
+  | s2
+  | s2
+  | s2
+  | s2
+  %45
+  | s8 s16\rit s64\startTextSpan s64 s32 s4
+  | s8 s8 s8 s16 s16\stopTextSpan
+  | s2
+  | s32\mf s16. s4.
+  | s2
+  %50
+  | s2
+  | s2
+  | s2
+  | s2
+  | s2
+  %55
+  | s2
+  | s2
+  | s2
+  | s16 s16 s16 s16-\markup{\italic\small "rit."} s4
+  | s16 s16-\markup{\italic\small "accel."} s4.
+  %60
+  | s16-\markup{\italic\small "tempo primo"} s16 s4.
+  | s2
+  | s2
+  | s2
+  | s2
+  %65
+  | s2
+  | s2
+  | s2
+  | s2
+  | s2
+  %70
+  | s2
+  | s2
+% | s32-\markup{\dynamic mf \italic\small ", tempo primo"} s16. s4.
+  | s32\mf s16. s4.
+  | s2
+  | s2
+  %75
+  | s2
+  | s2
+  | s2
+  | s2
+  | s2
+  %80
+  | s32\p s16. s4.
 }
 
 Lower = \relative c' {

@@ -248,8 +248,8 @@ centeredDynamics = {
   | s64\rit s64\startTextSpan s32 s8. s16. s32\stopTextSpan
   | s16\> s16 s8 s16 s16\!
   %75
-  | s32\mf s32 s16 s4
-  | s4.
+  | s32-\markup{\dynamic mf \italic\small "rit. e dim."} s32 s16 s4
+  | s32-\markup{\italic\small "a tempo"} s16. s4
   | s4.
   | s4 s16\f s16
   | s4.
