@@ -227,6 +227,15 @@ Lower = \relative c {
       %}
     }
   }
-  \layout { }
+  \layout {
+    \context {
+      \Voice
+      \remove Tie_engraver
+    }
+    \context {
+      \Staff
+      \consists Tie_engraver
+    }
+  }
   \midi { }
 }
