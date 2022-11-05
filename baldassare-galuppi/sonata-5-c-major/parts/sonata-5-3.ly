@@ -232,6 +232,16 @@ centeredDynamics = {
   | s2
   %80
   | s32\p s16. s4.
+  | s2
+  | s2
+  | s2
+  | s2
+  %85
+  | s8\< s4.
+  | s4 s8 s8\!
+  | s32-\markup{\dynamic mf \italic\small ", rit. e cresc."} s16. s4.
+  | s2
+  | s32\f s16. s4.
 }
 
 Lower = \relative c' {
