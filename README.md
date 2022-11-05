@@ -13,6 +13,7 @@
 ### Johann Sebastian Bach
 
  * [Suite Anglaise IV (BWV809)](https://github.com/madrisan/open-scores/blob/main/scores/JS-Bach-BWV809-Suite-Anglaise-4.pdf)
+ * [Italienisches Konzert (BWV971)](https://github.com/madrisan/open-scores/blob/main/scores/JS-Bach-BWV971-Italienisches-Konzert.pdf) -- *in progress*
 
 ### Rued Langgaard
 
