@@ -22,23 +22,41 @@
 ## How to manually create the `.pdf` and `.midi` files
 
 Software requirements: `git`, [`lilypond`](https://lilypond.org/)
+```
+git clone https://github.com/madrisan/open-scores
+cd open-scores
+```
 
-    git clone https://github.com/madrisan/open-scores
-    cd open-scores
+### Alban Berg
+```
+# Klaviersonate Op. 1
+git checkout BergA-op1
+cd alban-berg/Op_1
+lilypond sonate-fur-klavier-op-1.ly
+```
 
-    # Alban Berg - Klaviersonate Op. 1
-    git checkout BergA-op1
-    cd alban-berg/Op_1
-    lilypond sonate-fur-klavier-op-1.ly
+### Baldassare Galuppi
+```
+# Sonata no. 5 in Do maggiore
+cd /baldassare-galuppi/sonata-5-c-major
+lilypond sonata-5.ly
+```
 
-    # Baldassare Galuppi - Sonata no. 5 in Do maggiore
-    cd /baldassare-galuppi/sonata-5-c-major
-    lilypond sonata-5.ly
+### Johann Sebastian Bach
+```
+# Suite Anglaise no. 4
+cd johann-sebastian-bach/suites-anglaises/BWV809
+lilypond suite-anglaise-4.ly
+```
+```
+# Italienisches Konzert
+cd johann-sebastian-bach/italienisches-konzert-BWV_971
+lilypond italienisches-konzert.ly
+```
 
-    # Johann Sebastian Bach - Suite Anglaise no. 4
-    cd johann-sebastian-bach/suites-anglaises/BWV809
-    lilypond suite-anglaise-4.ly
-
-    # Rued Langgaard - Insektarium  BVN 134
-    cd rued-langgaard/insektarium-BVN_134
-    lilypond insektarium.ly
+### Rued Langgaard
+```
+# Insektarium  BVN 134
+cd rued-langgaard/insektarium-BVN_134
+lilypond insektarium.ly
+```
