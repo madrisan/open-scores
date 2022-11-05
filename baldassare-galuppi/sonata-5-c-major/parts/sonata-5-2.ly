@@ -8,9 +8,9 @@ Global = {
 Upper = \relative c' {
   \repeat volta 2 {
   %1
-  | <c e g c>4  d'16\prall( c32 d
+  | <c e g c>4\arpeggio  d'16\prall( c32 d
   | \stemDown e16) c-. g-. e-. g-. c-.
-  | e4  f16\prall( e32 f
+  | <e, g c e>4\arpeggio  f'16\prall( e32 f
   | g16) e-. c-. g-. c-. e-.
   %5
   | g16( e) g,-. g'-. f-. d-.
@@ -42,7 +42,7 @@ Upper = \relative c' {
     \set subdivideBeams = ##f
   | \appoggiatura e!8 d4.
   %25
-  | e64([ fis g16.)]  c,64([ d e16.)]  a,64([ b c16.)]
+  | e64([ fis g16.->)]  c,64([ d e16.->)]  a,64([ b c16.->)]
   | \stemUp e,16-. g-. fis-. a-. g-. d'-.
   | e,16( c') \appoggiatura b8 a4
   | g4( \stemDown g'8)
@@ -50,18 +50,18 @@ Upper = \relative c' {
   %30
   | e16( d) d8.( g16)
   | \stemUp a,16.( b64 c) b8-.[ a-.]
-  | \acciaccatura a8 b4 r16 \stemDown g'16
+  | \acciaccatura c8 b4 r16 \stemDown g'16
   | fis32[( e16.)] d32[( c16.)] b32[( a16.)]
   | \stemUp
     g32[( fis16.)] e32[( d16.)] c32[( b16.)]
   %35
   | e16.( a32) \appoggiatura g8 fis4
-  | g4.
+  | <b, d g>4.\arpeggio
   }
   \repeat volta 2 {
-  | <g d b>4  a16\prall( g32 a
+  | <g' d b>4\arpeggio  a16\prall( g32 a
   | b16[) g d-. b-. d-. g-.]
-  | \stemDown b4  c16\prall( b32 c
+  | \stemDown <d g b>4\arpeggio  c'16\prall( b32 c
   %40
   | d16[) b g-. d-. g-. b-.]
   | d16[( b) d, b' d b]
@@ -70,12 +70,12 @@ Upper = \relative c' {
   | c16[( a) e] r16 r8
   %45
   | \stemUp
-    <c e a>4  b'16\prall( a32 b
+    <c e a>4\arpeggio  b'16\prall( a32 b
   | c16[) a e-. c-. e-. a-.]
   | \stemDown
-    c4 d16\prall( c32 d
+    <e a c>4\arpeggio d'16\prall( c32 d
   | e16[) c g-. e-. g-. c-.]
-  | e4 fis16\prall( e32 fis
+  | <g c e>4\arpeggio fis'16\prall( e32 fis
   %50
   | \set subdivideBeams = ##t
     \set baseMoment = #(ly:make-moment 1/8)
@@ -94,12 +94,12 @@ Upper = \relative c' {
   | e16[ g) \acciaccatura g8 f16( e) \acciaccatura e8 d16( c)]
   | b16[ a] g4
   | \stemUp
-    <c, e g c>4
+    <c, e g c>4\arpeggio
     \stemDown
-    \acciaccatura e'8 d16( c32 d
+    d'16\prall( c32 d
   %60
   | \stemDown e16) c-. g-. e-. g-. c-.
-  | <e, g c e>4  \acciaccatura g'8 f16( e32 f
+  | <e, g c e>4\arpeggio  f'16\prall( e32 f
   | g16) e-. c-. g-. c-. e-.
   | g16( e) g,-. g'-. f-. d-.
   | g16( e) g,-. g'-. f-. d-.
@@ -159,7 +159,7 @@ Upper = \relative c' {
 
 centeredDynamics = {
   %1
-  | s8^\markup{\dynamic f \italic ( la 2a volta {\dynamic p})} s4
+  | s8^\markup{\dynamic f \italic ", la 2ª volta" {\dynamic p}} s4
   | s4.
   | s4.
   | s4.
@@ -173,7 +173,7 @@ centeredDynamics = {
   | s4.
   | s32\p s32 s16 s4
   | s4.
-  | s4.
+  | s32\mf s32 s16 s4
   | s4.
   %15
   | s4.
@@ -188,10 +188,10 @@ centeredDynamics = {
   | s64\rit s64\startTextSpan s32 s8. s16. s32\stopTextSpan
   | s16\> s16 s8 s16 s16\!
   %25
-  | s32-\markup{\dynamic p \italic a tempo} s32 s16 s4
+  | s32-\markup{\dynamic mf \italic\small "rit. e dim."} s32 s16 s4
+  | s32-\markup{\italic\small "a tempo"} s16. s4
   | s4.
-  | s4.
-  | s4 s16\mf s16
+  | s4 s16\f s16
   | s4.
   %30
   | s4.
@@ -200,14 +200,14 @@ centeredDynamics = {
   | s4.
   | s4.
   %35
-  | s4.
+  | s32-\markup{\italic\small "rit. e dim."} s32 s16 s4
   | s4.
   | s32\f s32 s16 s4
   | s4.
   | s4.
   %40
   | s4.
-  | s32\p s32 s16 s4
+  | s32\mf s32 s16 s4
   | s4.
   | s4.
   | s4.
@@ -245,29 +245,32 @@ centeredDynamics = {
   | s4.
   | s32\f s32 s16 s4
   | s4.
-  | s4.
-  | s4.
+  | s64\rit s64\startTextSpan s32 s8. s16. s32\stopTextSpan
+  | s16\> s16 s8 s16 s16\!
   %75
+  | s32\mf s32 s16 s4
   | s4.
   | s4.
-  | s4.
-  | s4.
+  | s4 s16\f s16
   | s4.
   %80
   | s4.
   | s4.
+  | s4 s16\p s16
   | s4.
-  | s32\p s32 s16 s4
   | s4.
   %85
   | s4.
-  | s4 s16\mf s16
+  | s4 s16 s32\f s32
   | s4.
   | s4.
   | s4.
   %90
   | s4 s16 s32\p s32
+  | s4.
+  | s4.
   | s64\rit s64\startTextSpan s32 s8. s16. s32\stopTextSpan
+  | s4.
 }
 
 Lower = \relative c' {
