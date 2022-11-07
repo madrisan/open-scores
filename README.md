@@ -51,7 +51,7 @@ make baldassare-galuppi-sonata-5-c-major
 ```
 ```
 # Johann Sebastian Bach - BWV809 - Suite Anglaise no. 4
-make johann-sebastian-bach-suites-anglaises
+make johann-sebastian-bach-suite-anglaise-4
 ```
 ```
 # Johann Sebastian Bach - BWV971 - Italienisches Konzert
