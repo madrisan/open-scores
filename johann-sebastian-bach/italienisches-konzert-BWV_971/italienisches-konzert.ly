@@ -39,13 +39,17 @@
         \line { \abs-fontsize #20 "Johann Sebastian Bach" }
 	\null\null\null
         \line { \abs-fontsize #36 \bold "Italienisches Konzert" }
+        \null\null        
+        \line { \abs-fontsize #26 \bold "Concerto nach italienischem gusto" }        
         \null\null\null
         \line { \abs-fontsize #20 "BWV 971" }
         \null\null\null\null
-        \fill-line { \abs-fontsize #20 "For Piano" }
+        \fill-line { \abs-fontsize #20 "For Piano or Harpsichord" }
         \null\null\null\null\null\null\null\null\null\null
         \fill-line { \abs-fontsize #11 "Transcribed and Engraved by Davide Madrisan" }
         \fill-line { \abs-fontsize #9 \typewriter "https://github.com/madrisan/open-scores/" }
+        \null
+        \fill-line { \abs-fontsize #10 "Based on a previous work of Jay Anderson" }
         \null
       }
     }
