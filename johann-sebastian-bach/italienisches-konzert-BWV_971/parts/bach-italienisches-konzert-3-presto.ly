@@ -826,5 +826,7 @@ Lower = \relative c' {
     subtitle = "Presto"
   }
   \layout { }
-  \midi { }
+  \midi {
+    \tempo 4 = 300
+ }
 }

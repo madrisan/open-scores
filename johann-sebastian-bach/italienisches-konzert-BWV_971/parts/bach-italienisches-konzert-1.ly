@@ -927,5 +927,7 @@ Lower = \relative c {
     }
   }
   \layout { }
-  \midi { }
+  \midi {
+    \tempo 4 = 100
+  }
 }
