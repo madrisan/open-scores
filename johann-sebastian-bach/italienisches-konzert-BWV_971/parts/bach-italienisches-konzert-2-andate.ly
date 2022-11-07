@@ -293,5 +293,7 @@ Lower = \relative c' {
     subtitle = "Andante"
   }
   \layout { }
-  \midi { }
+  \midi {
+    \tempo 4 = 33
+  }
 }
