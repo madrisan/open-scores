@@ -4,6 +4,8 @@
 It brings the aesthetics of traditionally engraved music to computer printouts.
 LilyPond is free software and part of the [GNU Project](https://gnu.org/). 
 
+![Open Musical Scores Logo](images/SheetMusic-icon.png)
+
 ## Scores in *pdf* format
 
 The following *pdf* can be generated from the source code, but they have been added here for convenience.
