@@ -909,6 +909,7 @@ Lower = \relative c {
     \new Staff = "upper" {
       \Global
       \Upper
+      \pageBreak
     }
     \new Staff = "lower" {
       \Global
