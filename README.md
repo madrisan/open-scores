@@ -1,4 +1,4 @@
-# :musical_score: Open Musical Scores for Piano encoded using LilyPond
+# :musical_score: Open Scores for Piano encoded using LilyPond
 
 [LilyPond](https://lilypond.org/) is a music engraving program, devoted to producing the highest-quality sheet music possible.
 It brings the aesthetics of traditionally engraved music to computer printouts.
@@ -33,31 +33,20 @@ If you prefer to create these files (and *midi* ones) yourself, skip to the next
 ## How to manually create the `.pdf` and `.midi` files
 
 If you prefer to create these *pdf* (and *midi*) files yourself, please make sure the following software requirements are installed: `git`, [`lilypond`](https://lilypond.org/).
-Then execute the following commands
+Then execute the commands
 ```
 git clone https://github.com/madrisan/open-scores github-madrisan-open-scores
 cd github-madrisan-open-scores
 ```
-and one of the instruction blocks:
+and one of the following instructions:
 ```
-# Alban Berg - Klaviersonate Op. 1
 git checkout BergA-op1
 cd alban-berg/Op_1
 lilypond sonate-fur-klavier-op-1.ly
 ```
 ```
-# Baldassare Galuppi - Sonata no. 5 in Do maggiore
 make baldassare-galuppi-sonata-5-c-major
-```
-```
-# Johann Sebastian Bach - BWV809 - Suite Anglaise no. 4
 make johann-sebastian-bach-suite-anglaise-4
-```
-```
-# Johann Sebastian Bach - BWV971 - Italienisches Konzert
 make johann-sebastian-bach-italienisches-konzert
-```
-```
-# Rued Langgaard - BVN134 - Insektarium
 make rued-langgaard-insektarium
 ```
