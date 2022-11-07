@@ -47,21 +47,17 @@ lilypond sonate-fur-klavier-op-1.ly
 ```
 ```
 # Baldassare Galuppi - Sonata no. 5 in Do maggiore
-cd /baldassare-galuppi/sonata-5-c-major
-lilypond sonata-5.ly
+make baldassare-galuppi-sonata-5-c-major
 ```
 ```
-# Johann Sebastian Bach - Suite Anglaise no. 4
-cd johann-sebastian-bach/suites-anglaises/BWV809
-lilypond suite-anglaise-4.ly
+# Johann Sebastian Bach - BWV809 - Suite Anglaise no. 4
+make johann-sebastian-bach-suites-anglaises
 ```
 ```
-# Johann Sebastian Bach -  Italienisches Konzert
-cd johann-sebastian-bach/italienisches-konzert-BWV_971
-lilypond italienisches-konzert.ly
+# Johann Sebastian Bach - BWV971 - Italienisches Konzert
+make johann-sebastian-bach-italienisches-konzert
 ```
 ```
-# Rued Langgaard - Insektarium  BVN 134
-cd rued-langgaard/insektarium-BVN_134
-lilypond insektarium.ly
+# Rued Langgaard - BVN134 - Insektarium
+make rued-langgaard-insektarium
 ```
