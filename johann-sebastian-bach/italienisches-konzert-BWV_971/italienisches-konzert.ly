@@ -34,18 +34,25 @@
   \markup {
     \fill-line {
       \center-column {
-        \null\null\null\null\null\null\null\null
-        \null\null\null\null\null\null\null\null
-        \line { \abs-fontsize #20 "Johann Sebastian Bach" }
+        \null\null\null\null\null
+        \null\null\null\null\null
+        \line { \abs-fontsize #30 \bold "Johann Sebastian" }
+        \null
+        \line { \abs-fontsize #80 \bold "Bach" }
 	\null\null\null
-        \line { \abs-fontsize #36 \bold "Italienisches Konzert" }
-        \null\null        
-        \line { \abs-fontsize #26 \bold "Concerto nach italienischem gusto" }        
-        \null\null\null
-        \line { \abs-fontsize #20 "BWV 971" }
+        \line { \abs-fontsize #40 \bold "Italienisches Konzert" }
+        \null\null
+        \line { \abs-fontsize #24 "Concerto Nach Italienischem Gusto" }
         \null\null\null\null
+        \line { \abs-fontsize #20 "BWV 971" }
+        \null\null
         \fill-line { \abs-fontsize #20 "For Piano or Harpsichord" }
-        \null\null\null\null\null\null\null\null\null\null
+        \null\null\null
+        \fill-line {
+          \override #'(thickness . 5)
+          \draw-squiggle-line #0.5 #'(10 . 0) ##t
+        }
+        \null\null\null\null\null\null\null
         \fill-line { \abs-fontsize #11 "Transcribed and Engraved by Davide Madrisan" }
         \fill-line { \abs-fontsize #9 \typewriter "https://github.com/madrisan/open-scores/" }
         \null
