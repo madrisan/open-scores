@@ -6,7 +6,15 @@ Global = {
 
 Upper = \relative c'' {
   \clef treble
-  \tempo \markup { \bold rash, kernig }
+  \tempo \markup {
+    \italic
+    \column {
+       "rash, kernig"
+      \general-align #Y #-1
+      "rapidly with energy"
+    }
+  }
+
   \override TupletBracket.bracket-visibility = ##f
   \omit TupletNumber
   %1
@@ -80,11 +88,34 @@ Upper = \relative c'' {
       \tuplet 3/2 8 { r16 cis e } \tuplet 3/2 8 { r e g }
       \tuplet 3/2 8 { r g bes }   \tuplet 3/2 8 { r bes cis }
     } \\ {
-      bes,8 c f g
+      bes,8\( c f g\)
     } >>
-  | s1
-  | s1
+  | << {
+      \tuplet 3/2 8 { r16\( bes cis } \tuplet 3/2 8 { g' f e\) }
+      \tuplet 3/2 8 { r\( cis e }     \tuplet 3/2 8 { bes' a g\) }
+      \tuplet 3/2 8 { r bes, cis }  \tuplet 3/2 8 { g' f e }
+      \tuplet 3/2 8 { r cis e }     \tuplet 3/2 8 { bes' a g }
+    } \\ {
+      a,,8\mf r g'  r a, r g'
+    } >>
+  | s2
+    \tuplet 3/2 8 { f'16-> e d } \tuplet 3/2 8 { cis bes! a }
+    \tuplet 3/2 8 { g16 f e }  s8
   %15
+  | \stemDown
+    \tuplet 3/2 8 { r16 g cis } \tuplet 3/2 8 { e d cis }
+    \tuplet 3/2 8 { r e, g }    \tuplet 3/2 8 { bes a g }
+    \tuplet 3/2 8 { r g cis }   \tuplet 3/2 8 { e d cis }
+    \tuplet 3/2 8 { r e, g }    \tuplet 3/2 8 { bes a g }
+    \stemNeutral
+  | \tuplet 3/2 8 { r cis, d } \tuplet 3/2 8 { f g a }
+    \change Staff = "lower" \tuplet 3/2 8 { d\rest f, gis }
+    \change Staff = "upper" \tuplet 3/2 8 { a cis d }
+    \change Staff = "lower" \tuplet 3/2 8 { f\rest a, cis }
+    \change Staff = "upper" \tuplet 3/2 8 { d e f }
+    \change Staff = "lower" \tuplet 3/2 8 { g\rest cis,! d }
+    \change Staff = "upper" \tuplet 3/2 8 { f gis a }
+
   \fine
 
 % la si do re mi fa sol
@@ -137,8 +168,35 @@ Lower = \relative c {
       g,,8\sustainOn c ees g s8\sustainOff s4.
     } >>
   | s1
-  | s1
+  | \clef treble
+    << {
+      \override TupletBracket.bracket-visibility = ##f
+      \omit TupletNumber
+      \tuplet 3/2 8 { r16 a' cis }
+      \stemDown \change Staff = "upper" \tuplet 3/2 8 { d e f }
+      \stemUp   \change Staff = "lower" \tuplet 3/2 8 { r cis! d }
+      \stemDown \change Staff = "upper"
+      \tuplet 3/2 8 { f g a }_\markup{
+        \italic\small
+        \column {
+          "(geschwungen)"
+          \general-align #Y #-1.5
+          "(in soaring manner)"
+        }
+      }
+      \stemNeutral \change Staff = "lower"
+      s2
+    } \\ {
+      \omit TupletNumber
+      f,8 r a^\<
+      s8r\! s8 s8 \clef bass \tuplet 3/2 8 { d,16[ cis bes!] }
+    } >>
   %15
+  | a8 r cis r a r cis r
+  | a r
+    \clef treble \stemDown
+    d r f r a r
+    \clef bass
   \fine
 
 % la si do re mi fa sol
