@@ -178,7 +178,7 @@ Upper = \relative c'' {
     \tuplet 3/2 8 { d[ f d] }   \voiceTwo \tuplet 3/2 8 { a[ d a] } \voiceOne
     \tuplet 3/2 8 { f[ a f] }   \tuplet 3/2 8 { d[ f d] }
     s4
-  | s8 \tuplet 3/2 8 { d16[ f a] }
+  | s8^\markup { \italic "(continuando)" } \tuplet 3/2 8 { d16[ f a] }
     \tuplet 3/2 8 { \once\stemDown d16-^_\markup { \small\italic "l. H." } a[ f] } \tuplet 3/2 8 { d s8 }
     s8 s32 e[ g bes]
     \tuplet 3/2 8 { \once\stemDown e16-^ b[ g] } e32 s16.
@@ -306,15 +306,18 @@ Lower = \relative c {
   | gis[ fis e b'! a g] s16 s4 s4 s4
   | s2.^\markup { \italic "(" \dynamic f \italic ", sempre in tempo)" }
     \tuplet 3/2 8 { a16[ d a] } \tuplet 3/2 8 { f[ a f] }
-  | \tuplet 3/2 8 { d^\< f a } s8
-    s8\! \tuplet 3/2 8 { s16 a f^\< }
-    \tuplet 3/2 8 { d[ e g] } cis32 s16.
-    s8\! s32[ cis g e]
-  | \tuplet 3/2 8 { d16 f a } s8
+  | \tuplet 3/2 8 { d^\<\sustainOn f a } s8
+    s8\! \tuplet 3/2 8 { s16 a\hide\sustainOff f^\< }
+    \tuplet 3/2 8 { d[\sustainOn e g] } cis32 s16.
+    s8\! s32[ cis g e]\hide\sustainOff
+  | \tuplet 3/2 8 { d16^\markup { \italic "più" } f a } s8
     s8 s16 a32[ f]
     d32[ fis a c!] s8
     s8 s32 c32[ a fis]
-  | s1
+  | \tuplet 3/2 8 { d16 g bes } s8
+    s8 s16 bes32[ g]
+    \tuplet 5/4 8 { d32 f gis b! d } s8
+    s8 \tuplet 5/4 8 { d32 bes g f d }
   %30
   | s1
   | s1
