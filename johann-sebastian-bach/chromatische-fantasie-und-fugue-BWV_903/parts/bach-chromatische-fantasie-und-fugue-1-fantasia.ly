@@ -115,7 +115,83 @@ Upper = \relative c'' {
     \change Staff = "upper" \tuplet 3/2 8 { d e f }
     \change Staff = "lower" \tuplet 3/2 8 { g\rest cis,! d }
     \change Staff = "upper" \tuplet 3/2 8 { f gis a }
-
+  | \stemUp
+    \tuplet 3/2 8 { b gis a }  \tuplet 3/2 8 { b d, e }
+    \tuplet 3/2 8 { f \stemDown b,[ c }   \tuplet 3/2 8 { d] \stemUp gis,[ a] }
+    \tuplet 3/2 8 { b![ d, e } \tuplet 3/2 8 { f] b,[ c] d }
+    \stemDown
+    \tuplet 3/2 8 { gis,[ a b } \tuplet 3/2 8 { cis d] }
+    \stemNeutral
+  | \tuplet 3/2 8 { cis e d }  \tuplet 3/2 8 { cis b a }
+    g r  r8
+    \tuplet 3/2 8 { r16 f' e } \tuplet 3/2 8 { d bes a }
+    g r  r8
+  | \stemUp
+    \tuplet 3/2 8 { r16 g' f } \tuplet 3/2 8 { e s s }
+    \tuplet 3/2 8 { bes' a g } \tuplet 3/2 8 { s s d'[ }
+    \tuplet 3/2 8 { cis b] s } \tuplet 3/2 8 { s f'[ e }
+    \tuplet 3/2 8 { d] s s }   \tuplet 3/2 8 { gis[ fis e] }
+  %20
+  | \tuplet 3/2 8 { s cis[ e } \tuplet 3/2 8 { a e cis] }
+    \tuplet 3/2 8 { e[ cis a } \tuplet 3/2 8 { cis a e] }
+    \tuplet 3/2 8 { a[ e cis } \tuplet 3/2 8 { e cis a] }
+    \stemDown
+    s8
+    << {
+      a''32[\( gis a16\)]\fermata
+    }
+    \new Staff \with {
+      alignAboveContext = "upper"
+      fontSize = #-4
+      \override StaffSymbol.staff-space = #(magstep -6)
+      \omit Staff.Clef
+      \omit Staff.TimeSignature
+    } {
+      \tuplet 6/4 {
+        \omit TupletNumber
+        \override TextScript.padding = #3
+        a32[\( gis a fis gis a\)]\fermata
+      }
+    }
+    >>
+    \stemNeutral
+    \bar "||"
+  | << {
+      b,32\rest^\markup { \italic "(sopra)" }  e,[\< f g a] \voiceTwo b![ cis d] e
+      \voiceOne f[ g a bes\! a g f] e[ f g f e d s d] e[ d cis b! a s bes a]
+    } \\ {
+      s4 s4  s8 s16 cis32 s32  s8 s32 g s16
+    }
+    >>
+  | << {
+      g32[ f e f g f e d]  s d[ e d cis b! a] s32  s2
+    } \\ {
+      s4 cis32 s8. s32  s2
+    }
+    >>
+  | s1
+  | s4 s8 s32 e[ f g] f[ g a e f] \voiceTwo cis[ d a] s4
+  %25
+  | s8. \voiceOne d32[ c] b![ f'! e d] \voiceTwo gis[ fis e b'! ]
+    a[ gis] \voiceOne d'[ c b! f'! e d] \voiceTwo gis16 \voiceOne a64[ g fis g g16.\trill\< fis64 g\!]
+  | \tuplet 3/2 8 { a16[ d a] } \tuplet 3/2 8 { f[ a f] }
+    \tuplet 3/2 8 { d[ f d] }   \voiceTwo \tuplet 3/2 8 { a[ d a] } \voiceOne
+    \tuplet 3/2 8 { f[ a f] }   \tuplet 3/2 8 { d[ f d] }
+    s4
+  | s8 \tuplet 3/2 8 { d16[ f a] }
+    \tuplet 3/2 8 { \once\stemDown d16-^_\markup { \small\italic "l. H." } a[ f] } \tuplet 3/2 8 { d s8 }
+    s8 s32 e[ g bes]
+    \tuplet 3/2 8 { \once\stemDown e16-^ b[ g] } e32 s16.
+  | s8 d32[ f a d]
+    \tuplet 3/2 8 { \once\stemDown f16-^ d[ a] } f32[ d] s16
+    s8 \tuplet 5/4 8 { ees32 fis a c ees }
+    \tuplet 5/4 8 { \once\stemDown fis32-^ ees[ c a fis] } ees32 s16.
+  | s1
+  %30
+  | s1
+  | s1
+  | s1
+  | s1
   \fine
 
 % la si do re mi fa sol
@@ -195,8 +271,55 @@ Lower = \relative c {
   | a8 r cis r a r cis r
   | a r
     \clef treble \stemDown
-    d r f r a r
+    d r-\markup { \italic\small "(cresc.)" }  f r a r
     \clef bass
+  | s1
+  | r4
+    \tuplet 3/2 8 { r16 f, e\< } \tuplet 3/2 8 { d cis e }
+    \tuplet 3/2 8 { a,\! r r } r8
+    \tuplet 3/2 8 { r16 f' e } \tuplet 3/2 8 { d\< cis e }
+  | \stemUp a,s\!
+    \change Staff = "upper"
+    \stemDown
+    \tuplet 3/2 8 { s16 d'[ cis] }
+    r8 \tuplet 3/2 8 { f16 e s }
+    \tuplet 3/2 8 { s s a } \tuplet 3/2 8 { g s s }
+    \tuplet 3/2 8 { s cis b! } s8
+  %20
+  | d16 s8. s2
+    \change Staff = "lower"
+    \tuplet 3/2 8 { e,,16 cis a } r8
+    \stemNeutral
+    \bar "||"
+  | s1
+  | << {
+      s2 bes'32[ a g f e f g f ] e[ d s d e d cis b! ]
+    } \\ {
+      s4 s8. s32 g'32  s4 s16 cis,32 s32 s8
+    }
+    >>
+  | a32[ b! cis d ] \voiceOne e[^\< f g f] e[\! g f e d cis b a]
+    \voiceTwo b[ cis d\< e f]\! \voiceOne g[ a bes] a[ g f a g f e d]
+  | \voiceTwo cis32[ d\< e f g]\! \voiceOne a[ bes a]
+    \voiceTwo g[ a\< b! cis d\!] s16. s4 f,32^\markup { \small\italic "r. H." } [ g a f d f e d]
+  %25
+  | gis[ fis e b'! a g] s16 s4 s4 s4
+  | s2.^\markup { \italic "(" \dynamic f \italic ", sempre in tempo)" }
+    \tuplet 3/2 8 { a16[ d a] } \tuplet 3/2 8 { f[ a f] }
+  | \tuplet 3/2 8 { d^\< f a } s8
+    s8\! \tuplet 3/2 8 { s16 a f^\< }
+    \tuplet 3/2 8 { d[ e g] } cis32 s16.
+    s8\! s32[ cis g e]
+  | \tuplet 3/2 8 { d16 f a } s8
+    s8 s16 a32[ f]
+    d32[ fis a c!] s8
+    s8 s32 c32[ a fis]
+  | s1
+  %30
+  | s1
+  | s1
+  | s1
+  | s1
   \fine
 
 % la si do re mi fa sol
