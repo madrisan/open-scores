@@ -2,7 +2,7 @@
 
 [LilyPond](https://lilypond.org/) is a music engraving program, devoted to producing the highest-quality sheet music possible.
 It brings the aesthetics of traditionally engraved music to computer printouts.
-LilyPond is free software and part of the [GNU Project](https://gnu.org/). 
+LilyPond is free software and part of the [GNU Project](https://gnu.org/).
 
 ![Open Musical Scores Logo](images/SheetMusic-icon.png)
 
@@ -26,6 +26,7 @@ You can see here the [manuscript](images/baldassare-galuppi-sonata-5-manuscript-
 #### Johann Sebastian Bach
 
  * [Suite Anglaise IV (BWV809)](https://github.com/madrisan/open-scores/blob/main/scores/JS-Bach-BWV809-Suite-Anglaise-4.pdf)
+ * Chromatische Fantasie und Fugue (BWV903) -- *in progress*
  * [Italienisches Konzert (BWV971)](https://github.com/madrisan/open-scores/blob/main/scores/JS-Bach-BWV971-Italienisches-Konzert.pdf)
 
 #### Rued Langgaard
@@ -48,6 +49,7 @@ lilypond sonate-fur-klavier-op-1.ly
 ```
 ```
 make baldassare-galuppi-sonata-5-c-major
+make johann-sebastian-bach-chromatische-fantasie-und-fugue
 make johann-sebastian-bach-suite-anglaise-4
 make johann-sebastian-bach-italienisches-konzert
 make rued-langgaard-insektarium
