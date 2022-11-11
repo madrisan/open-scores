@@ -186,11 +186,47 @@ Upper = \relative c'' {
     \tuplet 3/2 8 { \once\stemDown f16-^ d[ a] } f32[ d] s16
     s8 \tuplet 5/4 8 { ees32 fis a c ees }
     \tuplet 5/4 8 { \once\stemDown fis32-^ ees[ c a fis] } ees32 s16.
-  | s1
+  | s8 d32[ g bes d]
+    g-^ d[ bes g] \tuplet 3/2 8 { d16 s8 }
+    s8 \tuplet 5/4 8 { f32 gis b! d f }
+    \tuplet 6/4 8 { \once\stemDown gis-^ f[ d b gis f] } s8
   %30
+  | s16 e64[ a cis e]
+    \tuplet 6/4 8 { \stemDown a32-^ \stemUp a[ bes a g a] }
+    \set subdivideBeams = ##t
+    \set baseMoment = #(ly:make-moment 1/8)
+    \tuplet 6/4 8 { bes32[^\< a bes a bes a } bes a g a]\!
+    \set subdivideBeams = ##f
+    << {
+      \tuplet 11/8 4 {
+        \change Staff = "lower" {
+          \omit TupletNumber
+          g,,,32^\ff[ cis! e bes' cis! e
+        }
+        \change Staff = "upper" {
+          g bes cis! e g]
+        }
+      }
+      \stemDown bes4~-^
+    } \\ {
+      \change Staff = "lower" { g,,,2 }
+      \change Staff = "upper"
+    } >>
+  | << {
+      \voiceTwo bes'''32^. \voiceOne a[_\markup { \italic "(sciolto)" }  g f]
+    } \\ {
+      s16
+    } >>
+    \voiceTwo e32[ f g e]
+    \voiceOne cis[ d e cis] \voiceTwo g[ a bes g]
+    \voiceOne e[ f g e] \voiceTwo cis[ d e cis]
+    \change Staff = "lower" {
+      \voiceOne g[ a bes g] \voiceTwo e[ f g e]
+    }
+    \change Staff = "upper"
   | s1
   | s1
-  | s1
+    \bar "||"
   | s1
   \fine
 
@@ -315,13 +351,88 @@ Lower = \relative c {
     d32[ fis a c!] s8
     s8 s32 c32[ a fis]
   | \tuplet 3/2 8 { d16 g bes } s8
-    s8 s16 bes32[ g]
+    s8 \tuplet 3/2 8 { s16 bes[ g] }
     \tuplet 5/4 8 { d32 f gis b! d } s8
     s8 \tuplet 5/4 8 { d32 bes g f d }
   %30
+  | \once\stemUp c64 e[ a cis] s16^\markup { \italic "(quasi in tempo)" } s8
+    s4 s4 s4
   | s1
-  | s1
-  | s1
+  | \stemUp cis,32[ d e cis] \stemDown a[\< b! cis d\!]
+    \stemUp e[ f g e] \stemDown cis![\< d e f\!]
+    \stemUp g^>[ a bes g] \stemDown e[ f g e]
+    \stemUp cis![ d e cis] \stemDown a[ b! cis! a]
+  | << {
+      \override TupletBracket.bracket-visibility = ##f
+      \omit TupletNumber
+      \change Staff = "upper" {
+        s8
+        \omit TupletNumber
+        << {
+          \tuplet 5/4 16 {
+            c'32[ ees fis a c]
+          }
+           ees4^\>^\markup { \italic\small "l. H" }\( \voiceThree d4 c4\!\)
+        } \\ {
+          \omit TupletNumber
+          \tuplet 5/4 16 {
+            s32 \single \omit Stem \single \hide Flag ees,8~
+          }
+          \voiceOne \once \shiftOn \override NoteColumn.force-hshift = 0.7
+          \single \omit Stem ees4
+        } \\ {
+          \omit TupletNumber
+          \tuplet 5/4 16 {
+            s32 s
+            \override Dots.dot-count = #0
+            \once \shiftOff
+            \single \omit Stem \single \hide Flag
+            fis16._~
+            \revert Dots.dot-count
+          }
+          \voiceOne fis4~
+          \stemDown fis2
+        } \\ {
+          \omit TupletNumber
+          \tuplet 5/4 16 {
+            s32 s s
+            \once \shape #'((0 . 0.2) (0 . 0.5) (0 . 0.5) (0 . 1)) Tie
+            \single \omit Stem \single \hide Flag
+            a16~
+          }
+          \voiceOne a4_~
+          \stemDown a2
+        } >>
+      }
+    } \\ {
+      \change Staff = "lower" {
+        << {
+          \override TupletBracket.bracket-visibility = ##f
+          \omit TupletNumber
+          \tuplet 6/4 8 {
+            \stemUp fis,,32\sustainOn
+            \stemDown a[ c! ees fis a] s4. s4 s8\sustainOff
+          }
+        } \\ {
+          \override TupletBracket.bracket-visibility = ##f
+          \omit TupletNumber
+          \tuplet 6/4 8 {
+            s32 s s s
+            \single \omit Stem \single \hide Flag fis16~
+          }
+          fis4.~ fis2_\markup { \italic "(stumm) (mute)" }
+        } \\ {
+          \override TupletBracket.bracket-visibility = ##f
+          \omit TupletNumber
+          \tuplet 6/4 8 {
+            s32 s s s s
+            \single \omit Stem \single \hide Flag a32~
+          }
+          a4.~ a2
+        } >>
+      }
+    } >>
+    \bar "||"
   | s1
   \fine
 
