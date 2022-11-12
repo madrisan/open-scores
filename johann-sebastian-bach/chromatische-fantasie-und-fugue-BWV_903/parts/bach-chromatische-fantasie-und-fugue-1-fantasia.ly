@@ -195,7 +195,7 @@ Upper = \relative c'' {
     \tuplet 6/4 8 { \stemDown a32-^ \stemUp a[ bes a g a] }
     \set subdivideBeams = ##t
     \set baseMoment = #(ly:make-moment 1/8)
-    \tuplet 6/4 8 { bes32[^\< a bes a bes a } bes a g a]\!
+    \tuplet 6/4 8 { bes32[\< a bes a bes a } bes a g a]\!
     \set subdivideBeams = ##f
     << {
       \tuplet 11/8 4 {
@@ -211,9 +211,27 @@ Upper = \relative c'' {
     } \\ {
       \change Staff = "lower" { g,,,2 }
       \change Staff = "upper"
+    } \\ {
+      << {
+        s4
+        \magnifyMusic 0.75 {
+          \change Staff = "lower" {
+            d'16\rest
+            \voiceTwo <g bes cis e>8.
+          }
+        }
+      } \\ {
+        s4
+        \magnifyMusic 0.75 {
+          \change Staff = "upper" {
+            g'16\rest
+            \voiceOne <g bes cis e bes'>8.
+          }
+        }
+      } >>
     } >>
   | << {
-      \voiceTwo bes'''32^. \voiceOne a[_\markup { \italic "(sciolto)" }  g f]
+      \voiceTwo bes'32^. \voiceOne a[_\markup { \italic "(sciolto)" }  g f]
     } \\ {
       s16
     } >>
@@ -356,7 +374,9 @@ Lower = \relative c {
     s8 \tuplet 5/4 8 { d32 bes g f d }
   %30
   | \once\stemUp c64 e[ a cis] s16^\markup { \italic "(quasi in tempo)" } s8
-    s4 s4 s4
+    s4 s4\sustainOn s8_\markup {
+      \italic{ "(mute)" }
+    } s8\sustainOff
   | s1
   | \stemUp cis,32[ d e cis] \stemDown a[\< b! cis d\!]
     \stemUp e[ f g e] \stemDown cis![\< d e f\!]
@@ -406,30 +426,15 @@ Lower = \relative c {
       }
     } \\ {
       \change Staff = "lower" {
-        << {
-          \override TupletBracket.bracket-visibility = ##f
-          \omit TupletNumber
-          \tuplet 6/4 8 {
-            \stemUp fis,,32\sustainOn
-            \stemDown a[ c! ees fis a] s4. s4 s8\sustainOff
-          }
-        } \\ {
-          \override TupletBracket.bracket-visibility = ##f
-          \omit TupletNumber
-          \tuplet 6/4 8 {
-            s32 s s s
-            \single \omit Stem \single \hide Flag fis16~
-          }
-          fis4.~ fis2_\markup { \italic "(stumm) (mute)" }
-        } \\ {
-          \override TupletBracket.bracket-visibility = ##f
-          \omit TupletNumber
-          \tuplet 6/4 8 {
-            s32 s s s s
-            \single \omit Stem \single \hide Flag a32~
-          }
-          a4.~ a2
-        } >>
+        \override TupletBracket.bracket-visibility = ##f
+        \omit TupletNumber
+        \set tieWaitForNote = ##t
+        \tuplet 6/4 8 {
+          \stemUp fis,,32\sustainOn
+          \stemDown a[ c! ees fis~ a~]
+        }
+        <fis a>4.~
+        <fis a>2_\markup { \italic "(stumm) (mute)" }\sustainOff
       }
     } >>
     \bar "||"
