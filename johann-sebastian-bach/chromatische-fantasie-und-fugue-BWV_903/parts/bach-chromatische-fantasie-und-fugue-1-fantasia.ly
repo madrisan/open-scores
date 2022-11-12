@@ -243,11 +243,66 @@ Upper = \relative c'' {
     }
     \change Staff = "upper"
   | s1
+  %33
   | s1
-    \bar "||"
+  \bar "||"
+  \omit Staff.TimeSignature
+  <<
+    \new Staff = "organUpper" \with {
+      alignAboveContext = "upper"
+    } {
+      \Global
+      \omit Staff.TimeSignature
+      \clef "treble"
+  |   <dis' fis a b!>2^\markup { \italic "(quasi Organo)" }^-
+      <dis fis a c>2^-
+  %35 organUpper
+  |   <e g bes cis>2
+      <fis g b! d>2^-
+  |   <e gis b! d>2
+      <c e a c>2
+  |   <c ees a c>2
+      <c e! bes' des>2
+  |   <ees a c ees>2
+      <cis e! g bes! cis>2
+  |   <d f a d>2
+      <c d fis a c>2
+  %40 organUpper
+  |   <bes! ees g bes!>2
+      << {
+        <bes! g' bes!>2
+      } \\ {
+        \voiceOne
+        \shiftOn ees!4\( d\)
+      } >>
+    }
+    \new Staff = "organLower" \with {
+      alignAboveContext = "upper"
+    } {
+      \Global
+      \omit Staff.TimeSignature
+      \clef "bass"
+  |   <dis, fis a b!>2^-\sustainOn
+      <dis fis a c>2^-\sustainOn
+  %35 organLower
+  |   <g bes cis>2
+      <gis b! d>2
+  |   <c, e gis b! c>2_(
+      <c e a>2)
+  |   <ges a ees' ges>2
+      <ges! bes! c ges'!>2
+  |   <f c' ees f>2
+      <f bes! cis f g>2
+  |   <f a d f>2
+      <fis a d fis>2
+  %40 organLower
+  |   <g bes! ees g>2
+      <g, bes! ees g>2
+      \bar "||"
+    }
+    >>
   | s1
   \fine
-
 % la si do re mi fa sol
 %  a b  c  d  e  f  g
 }
@@ -433,17 +488,44 @@ Lower = \relative c {
           \stemUp fis,,32\sustainOn
           \stemDown a[ c! ees fis~ a~]
         }
-        <fis a>4.~
-        <fis a>2_\markup { \italic "(stumm) (mute)" }\sustainOff
+        s4.
+        <fis a>2\sustainOff
       }
     } >>
+    \set tieWaitForNote = ##f
     \bar "||"
+  | \omit Staff.TimeSignature
+    d32\rest_\markup { \italic "dolce, (quasi Arpa)" }
+    \stemUp dis[^\( fis a b!
+    \change Staff = "upper" {
+      dis fis a]
+      b![ a fis dis
+    }
+    \change Staff = "lower"{
+      b! a fis dis]\)
+    }
+    d32\rest \stemUp dis[^\( fis a c
+    \change Staff = "upper" {
+      dis fis a]
+      c[ a fis dis
+    }
+    \change Staff = "lower"{
+      c a fis dis]\)
+    }
+  %35
+  | s1
+  | s1
+  | s1
+  | s1
+  | s1
+  %40
+  | s1
   | s1
   \fine
-
 % la si do re mi fa sol
 %  a b  c  d  e  f  g
 }
+
 
 \score {
   \new PianoStaff
