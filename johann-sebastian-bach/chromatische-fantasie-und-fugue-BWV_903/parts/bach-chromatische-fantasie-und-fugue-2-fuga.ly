@@ -19,7 +19,18 @@ Soprano = \context Voice = "one"  \relative c'' {
   | c2.~
   %10
   | c8 a16 bes! c8 c16 d! e8 e16 fis
-  | g2.
+  | g2.~
+  | g8 a16 g f!8 f16 e d8 c16 b!
+  | gis'2.\trill
+  | a2.~
+  %15
+  | a8 b!16 a gis8 gis16 fis e8 e16 d
+  | c8 e, a a16 b! c4~
+  | c16[ bes a bes] c[ d ees d] c[ bes c a]
+  | bes8 d, g[ g16 a] bes8[ c16 bes]
+  | a8[ bes16 c] d[ ees d c] d[ b! c d]
+  %20
+  | s2.
   \fine
 % la si do re mi fa sol
 %  a b  c  d  e  f  g
@@ -44,6 +55,24 @@ Tenor = \context Voice = "two"  \relative c'' {
   %10
   | g g8 fis g4
   | b,! c cis
+  | d4 d8[ cis d e]
+  | f4 e d
+  | c4 d8[ c
+    \change Staff = "lower"
+    b! a]
+  %15
+  | \stemUp b!4 e, gis
+  | a8[ a16 b!] c8[ c16 d]
+    \change Staff = "upper"
+    \stemDown
+    e8[ e16 fis]
+  | g!2.~
+  | g8[ g,16 a] bes8[ bes16 c] d8[ d16 e!]
+  | f2.
+  %20
+  | s2.
+
+
   \fine
 % la si do re mi fa sol
 %  a b  c  d  e  f  g
@@ -51,7 +80,7 @@ Tenor = \context Voice = "two"  \relative c'' {
 
 Bass = \context Voice = "three"  \relative c' {
   %1
-  \voiceThree
+  \voiceFour
   | \override MultiMeasureRest.staff-position = #-4
     R1*3/4
   | R1*3/4
@@ -62,9 +91,20 @@ Bass = \context Voice = "three"  \relative c' {
   | R1*3/4
   | R1*3/4
   | R1*3/4
-  | s2.
+  | R1*3/4
   %10
-  | s2.
+  | R1*3/4
+  | R1*3/4
+  | R1*3/4
+  | R1*3/4
+  | R1*3/4
+  %15
+  | R1*3/4
+  | R1*3/4
+  | R1*3/4
+  | R1*3/4
+  | a4 bes b!
+  %20
   | s2.
   \fine
 % la si do re mi fa sol
