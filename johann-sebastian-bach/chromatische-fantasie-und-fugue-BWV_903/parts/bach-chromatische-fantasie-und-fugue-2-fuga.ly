@@ -64,9 +64,9 @@ Soprano = \context Voice = "one"  \relative c'' {
   | b2.~
   | b8 a'16 g f8 f16 e d8 d16 c
   | d8 d16 f e8 e16 d c8 c16 b
-  | c2 r16 d, a' c
+  | c2 b16\rest d, a' c
   %50
-  | b2 r16 c, g' bes
+  | b2 b16\rest c, g' bes
   | a f a c f8 r r16 g, d' f
   | e g, c e g8 r r16 a, e' g
   | f2.~\trill
@@ -118,7 +118,7 @@ Soprano = \context Voice = "one"  \relative c'' {
   | d! d8 cis d4
   | fis, g gis
   | a a8[ gis] a8[ b!]
-  | c4 b a
+  | c!4 b a
   %95
   | g a8 g fis e
   | fis16 g a b c a b c r c b a
@@ -183,9 +183,9 @@ Soprano = \context Voice = "one"  \relative c'' {
   %145
   | r8 a16 c! bes!8 bes16 a g8 g16 f
   | g8 g16 bes a8 a16 g f8 f16 e
-  | f4 r16 c d e f a g f
-  | e4 r16 bes c d ees g f ees
-  | d4 r16 d e fis g bes a g
+  | f4 b16\rest c, d e f a g f
+  | e4 b'16\rest bes, c d ees g f ees
+  | d4 b'16\rest d, e fis g bes a g
   %150
   | fis g a bes c bes a bes c ees d c
   | bes4 r16 f g a bes d c bes
@@ -196,12 +196,11 @@ Soprano = \context Voice = "one"  \relative c'' {
   | c c8 b c4
   | e, f fis
   | g g8[ fis] g[ a]
-  | \stemDown bes4 a g
+  | \stemDown bes!4 a g
   | f \stemUp g8 f e d
   %160
   | e16 r r8 a,32[ b! cis d e f g e] cis!8. d16
   | d2.^\fermata
-
   \fine
 % la si do re mi fa sol
 %  a b  c  d  e  f  g
@@ -239,33 +238,238 @@ Tenor = \context Voice = "two"  \relative c'' {
     e8[ e16 fis]
   | g!2.~
   | g8[ g,16 a] bes8[ bes16 c] d8[ d16 e!]
-  | f2.
+  | f2.~
   %20
-  | s2.
-  | s2.
-  | s2.
-  | s2.
-  | s2.
+  | f8 d16 e! f8 f16 g a8 a16 b
+  | c2.-\shape #'((0.5 . -1) (0 . -2) (0 . -3) (0 . -1)) ~
+  | c8 d16 c bes8 bes16 a g8 f16 e
+  | cis'2~\trill cis8.\trill b32 cis
+  | d2.~
   %25
-  | s2.
-  | s2.
-  | s2.
-  | s2.
-  | s2.
+  | d8 e16 d cis8 cis16 b a8 a16 g
+  | f2.~
+  | f8 b, c d e4~
+  | e8 e f g a4~
+  | a8 a bes c d4~
   %30
-  | s2.
-  | s2.
-  | s2.
-  | s2.
-  | s2.
+  | d8 d e f g f
+  | e4 \change Staff = "lower"
+    b8\rest \stemUp a, bes c
+  | d8 c d ees! f ees
+  | d2.
+  | c4^~ c8 bes a g
   %35
-  | s2.
-  | s2.
-  | s2.
-  | s2.
-  | s2.
+  | a f^~ f8 e16 d e8 bes'^~
+  | bes16 bes a g  a4. b!8
+  | c4 d16\rest d c bes a16 bes c8^~
+  | c16 c b a b4 e8\rest cis
+  | \change Staff = "upper"
+    \voiceTwo
+    d4 r16 e d c b e d e
   %40
-
+  | a,8 e' a2~
+  | a8 b16 a gis8 gis16 fis e4~
+  | e f fis
+  | g g8 fis g4
+  | b, c cis
+  %45
+  | d d8 cis d e
+  | \appoggiatura { d16 e } f4 f8 e e d
+  | \change Staff = "lower"
+    \stemUp d c d c b! a
+  | b!4 gis g
+  | \change Staff = "upper"
+    r16 a' e c
+    \change Staff = "lower" a
+    \change Staff = "upper"
+    r r8 a4\rest
+  %50
+  | r16 g' d b
+    \change Staff = "lower" g
+    \change Staff = "upper"
+    r r8 a4\rest
+  | r r16 a' f d
+    \change Staff = "lower"
+    b!8[ g]
+    \change Staff = "upper"
+  | s4 r16 bes' g e
+    \change Staff = "lower" cis8[ a]
+    \change Staff = "upper"
+  | \stemDown r16 d' c! bes
+    a[
+    \change Staff = "lower"
+    g f e]
+    s4
+  | \change Staff = "upper"
+    \override MultiMeasureRest.staff-position = #-4
+    R1*3/4
+  %55
+  | R1*3/4
+  | R1*3/4
+  | R1*3/4
+  | R1*3/4
+  | R1*3/4
+  %60
+  | a4 bes! b!
+  | c c8 b! c4
+  | e, f fis
+  | g g8 fis g4
+  | g16 a bes8 bes a a g
+  %65
+  | g f g f e d
+  | e4 e'2~
+  | e4 d2~
+  | d4 c!2~
+  | c!4 bes2
+  %70
+  | bes8 bes16 a g8 g16 f e8 e16 g
+  | f a d, e f g f g g8.\trill f32 g
+  | a8 a16 bes c8 c16 bes a8 d16 c
+  | bes8 d16 c bes8 bes16 a bes c d bes
+  | g8. a16 b4 cis
+  %75
+  | d4~ d8 d16 cis d4
+  | r16 a b c b a g f e4~
+  | e2 r4
+  | r16 e fis g fis e d c \change Staff = "lower"
+    \stemUp b4~
+  | b2 b4\rest
+  %80
+  | \change Staff = "upper"
+    \voiceTwo
+    R1*3/4
+  | r8 fis'16 a g8 g16 fis e8 e16 d
+  | e8 r r4 fis~
+  | fis r r
+  | r8 fis16 gis a8 a16 b cis8 cis16 dis
+  %85
+  | e8 b e e16 dis e4~
+  | e8 a, d d16 cis d4~
+  | d g, c4~
+  | c fis, b4~
+  | b e, a4
+  %90
+  | a16 g fis a g a b a g fis e g
+  | fis b a g fis b e, ais fis b fis e
+  | d e d cis b d cis b e fis! e d
+  | cis e d cis fis g fis e dis e dis cis!
+  | <dis fis a>4 <e g> <b fis'!>
+  %95
+  | e2.~
+  | e2 dis4
+  | \change Staff = "lower"
+    \stemUp
+    a16\rest e' b! g e16 a'16\rest f8\rest f4\rest
+  | c16\rest d a fis d16 g'16\rest d8\rest d4\rest
+  | a4\rest c16\rest e c a fis8 d
+  %100
+  | d'4\rest c16\rest f! d b! gis8 e
+  | \change Staff = "upper"
+    \voiceTwo
+    r16 a' g f e r16 r8 r4
+  | R1*3/4
+  | \override MultiMeasureRest.staff-position = #-6
+    R1*3/4
+  | R1*3/4
+  %105
+  | R1*3/4
+  | R1*3/4
+  | g8. a16 bes4 b
+  | c4 c8 b c16 aes g f
+  | ees8. e16 f4 fis
+  %110
+  | g4 g8 fis g8. a16
+  | b4 a g
+  | f g8 f e d
+  | e g16 f e f g e cis d e cis
+  | a8 d16 cis d8 d16 cis d8 d16 cis
+  %115
+  | \change Staff = "lower"
+    \voiceThree
+    d4 r c~
+  | c8 bes a g fis f
+  | e gis16 a b!8 b16 c d8 c16 b
+  | a
+    \change Staff = "upper"
+    \voiceTwo
+    bes' a g fis2
+  | r16 a g f e2
+  %120
+  | r16 g f e d8 r r4
+  | R1*3/4
+  | r16 e' d c b2
+  | r16 d c bes a2
+  | r16 c bes a g2
+  %125
+  | r16 bes a g fis2
+  | g4 r8 bes16 a bes8 c16 bes
+  | a4 r8 a16 g aes8 bes16 aes
+  | g8 r r4 r8 g
+  | fis4 r r8 f
+  %130
+  | e4 r r8 ees
+  | d4 ees e
+  | f f8 e f4
+  | \change Staff = "lower"
+    \voiceThree
+    a, bes! b!
+  | c c8 b! c4
+  %135
+  | \change Staff = "upper"
+    \voiceTwo
+    <fis a c>4 <g bes>4 <d a'>~
+  | <d a'> g2
+  | bes4 a g
+  | f g8 f e d
+  | <gis b d>4 <a c>4 <f b>4
+  %140
+  | <e a>16 a b cis d c bes a g4~
+  | g16 r r8 r4 r
+  | r16 g a bes a g f ees d4
+  | r16 g f ees
+    \change Staff = "lower"
+    \voiceThree
+    d c bes a g f! e! d
+  | \change Staff = "upper"
+    \voiceTwo
+    cis'2.\trill
+  %145
+  | d2.~
+  | d4 cis2
+  | r16 e d c
+    \change Staff = "lower"
+    \voiceThree
+    b2
+  | r16 d c bes a2
+  | r16 c bes a g8 r r4
+  %150
+  | \change Staff = "upper"
+    \voiceTwo
+    \override MultiMeasureRest.staff-position = #-6
+    R1*3/4
+  | e'16\rest a g f e!2
+  | r16 g f e d8 r r4
+  | cis'16 d e f g f e f g bes a g~
+  | g f e g f g a g f e d f
+  %155
+  | e a g f e a d, gis e a e d
+  | c d c bes a c bes a d ees d c
+  | b d c b e f e d cis d cis b!
+  | <cis e g>4 <a d f> <a e'>
+  | <a d> <g d'>8 <a d> <bes cis> a
+  %160
+  | << {
+      \voiceTwo
+      <bes d>16 s8.
+      s4 r8 << a \\ g >>
+    } \\ {
+      \change Staff = "lower"
+      \stemUp
+      g,32 a b! cis d e f g
+      e4\rest
+      s4
+    } >>
+  | <fis a>2.
   \fine
 % la si do re mi fa sol
 %  a b  c  d  e  f  g
@@ -332,9 +536,9 @@ Bass = \context Voice = "three"  \relative c' {
   | gis2.
   | a2.~
   | a4 e e
-  | a4 d16\rest e c a fis8 d\rest
+  | a4 d,16\rest e' c a fis8 d\rest
   %50
-  | g4 d16\rest d' b g e8 d\rest
+  | g4 c,16\rest d' b g e8 d\rest
   | f8 d\rest d4\rest d\rest
   | \stemDown c8 \stemNeutral d\rest d4\rest d\rest
   | d'2 d16[ f c f]
@@ -418,7 +622,7 @@ Bass = \context Voice = "three"  \relative c' {
   | cis,4 r8 e a, cis!
   | d16 e f e bes8 a g f
   %115
-  | g8 g'16 f e8 g a a,
+  | \stemDown g8 g'16 f e8 g a a,
   | d2.~
   | d4 b\rest gis'
   | a8 bes!16 c d8 c bes a
@@ -438,9 +642,9 @@ Bass = \context Voice = "three"  \relative c' {
   %130
   | g b a b c ees c bes a c a g
   | fis8 d g fis g g,
-  | << { d'2._~ } \\ {} >>
-  | << { d2._~ } \\ {} >>
-  | << { d2._~ } \\ {} >>
+  | << { \stemDown d'2._~ } \\ {} >>
+  | << { \stemDown d2._~ } \\ {} >>
+  | << { \stemDown d2._~ } \\ {} >>
   %135
   | << {
       \stemDown <d fis a>8 s s2
@@ -478,8 +682,8 @@ Bass = \context Voice = "three"  \relative c' {
     <a' a'>8 <a a'>16 <g g'> <f f'>8 <f f'>16 <e e'> <d d'>8 <d d'>16 <cis cis'>
   | <d d'>8 <d d'>16 <c c'> <bes bes'>8 <bes bes'>16 <a a'> <g g'>8 <g g'>16 <f f'>
   %160
-  | g16 r r8 r4 r8 a
-  | d4~ <d, d'>2_\fermata
+  | g16 r r8 r4 << { r8 s8 } \\ { r8 <a e' a>8 } >>
+  | <d~ a'>4 <d, d'>2_\fermata
   \fine
 % la si do re mi fa sol
 %  a b  c  d  e  f  g
