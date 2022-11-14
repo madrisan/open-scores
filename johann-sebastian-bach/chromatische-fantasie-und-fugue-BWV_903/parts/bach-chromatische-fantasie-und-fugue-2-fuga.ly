@@ -69,10 +69,10 @@ Soprano = \context Voice = "one"  \relative c'' {
   | b2 b16\rest c, g' bes
   | a f a c f8 r r16 g, d' f
   | e g, c e g8 r r16 a, e' g
-  | f2.~\trill
-  | f2.~\trill
+  | f2.~\startTrillSpan
+  | f2.~
   %55
-  | f4\trill f16 e d c b d a d
+  | f4~ f16\stopTrillSpan e d c b d a d
   | gis, b c e d c b a gis! b f! b
   | e, gis a c fis, a b d gis,! b c e
   | a, b c e b c d f e d c b
@@ -253,15 +253,17 @@ Tenor = \context Voice = "two"  \relative c'' {
   | a8 a bes c d4~
   %30
   | d8 d e f g f
-  | e4 \change Staff = "lower"
-    b8\rest \stemUp a, bes c
+  | e4
+    \change Staff = "lower"
+    \voiceThree
+    c8\rest \stemUp a, bes c
   | d8 c d ees! f ees
   | d2.
   | c4^~ c8 bes a g
   %35
   | a f^~ f8 e16 d e8 bes'^~
   | bes16 bes a g  a4. b!8
-  | c4 d16\rest d c bes a16 bes c8^~
+  | c4 e16\rest d c bes a16 bes c8^~
   | c16 c b a b4 e8\rest cis
   | \change Staff = "upper"
     \voiceTwo
@@ -304,7 +306,8 @@ Tenor = \context Voice = "two"  \relative c'' {
     \override MultiMeasureRest.staff-position = #-4
     R1*3/4
   %55
-  | R1*3/4
+  | \override MultiMeasureRest.staff-position = #-6
+    R1*3/4
   | R1*3/4
   | R1*3/4
   | R1*3/4
@@ -358,7 +361,7 @@ Tenor = \context Voice = "two"  \relative c'' {
   | e2.~
   | e2 dis4
   | \change Staff = "lower"
-    \stemUp
+    \voiceThree
     a16\rest e' b! g e16 a'16\rest f8\rest f4\rest
   | c16\rest d a fis d16 g'16\rest d8\rest d4\rest
   | a4\rest c16\rest e c a fis8 d
@@ -464,6 +467,7 @@ Tenor = \context Voice = "two"  \relative c'' {
       s4 r8 << a \\ g >>
     } \\ {
       \change Staff = "lower"
+      \voiceThree
       \stemUp
       g,32 a b! cis d e f g
       e4\rest
@@ -515,7 +519,7 @@ Bass = \context Voice = "three"  \relative c' {
   | d8 f16 e d8 d16 c bes8 bes16 a
   %30
   | g8 bes'16 a g8 g16 f e8 e16 d
-  | c4 r8 f g a
+  | c4 b8\rest f' g a
   | bes a bes c d c
   | bes a g a bes4~
   | bes8 bes a g f e
@@ -556,7 +560,7 @@ Bass = \context Voice = "three"  \relative c' {
   | e8 e,16 fis g!8 g16 a b8 b32 cis d16
   | cis4^\prall cis'2
   %65
-  | d2 d4
+  | d2 d4^~
   | d8 e,16 f g8 g16 a b8 b16 cis
   | d8 d16 c bes8 bes16 a g8 g16 f
   | g8 g16 bes a8 a16 g f8 f16 e
