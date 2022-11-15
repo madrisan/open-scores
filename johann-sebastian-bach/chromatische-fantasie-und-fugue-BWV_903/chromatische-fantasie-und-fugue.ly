@@ -11,13 +11,14 @@
   line-width = 18.6\cm
   top-margin = 10\mm
   bottom-margin = 10\mm
-%  ragged-last-bottom = ##t
+  ragged-last-bottom = ##f
 %  ragged-bottom = ##f
   first-page-number = 0
 %  markup-system-spacing.basic-distance = #10
 %  last-bottom-spacing.padding = #2
   print-all-headers = ##t
   ragged-bottom = ##f
+  annotate-spacing = ##f
 }
 
 \bookpart {

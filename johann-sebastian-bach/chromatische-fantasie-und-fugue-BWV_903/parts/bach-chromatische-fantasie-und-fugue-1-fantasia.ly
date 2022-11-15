@@ -257,16 +257,11 @@ Upper = \relative c'' {
   |   <dis' fis a b!>2^\markup { \italic "(quasi Organo)" }^-
       <dis fis a c>2^-
   %35 organUpper
-  |   <e g bes cis>2
-      <fis g b! d>2^-
-  |   <e gis b! d>2
-      <c e a c>2
-  |   <c ees a c>2
-      <c e! bes' des>2
-  |   <ees a c ees>2
-      <cis e! g bes! cis>2
-  |   <d f a d>2
-      <c d fis a c>2
+  |   <e g bes cis>2  <fis g b! d>2^-
+  |   <e gis b! d>2  <c e a c>2
+  |   <c ees a c>2  <c e! bes' des>2
+  |   <ees a c ees>2  <cis e! g bes! cis>2
+  |   <d f a d>2  <c d fis a c>2
   %40 organUpper
   |   <bes! ees g bes!>2
       << {
@@ -275,6 +270,36 @@ Upper = \relative c'' {
         \voiceOne
         \shiftOn ees!4\( d\)
       } >>
+  |   <bes cis e! g bes>2  <a cis! e f a>2
+  |   <a d f a^~>2-\markup { \italic "(weich) (soft)" }
+      a'16^\(-\markup { \italic "(dolce)" } g f e f cis d a
+  |   s2 s8. a16 d[ f a gis]\)
+  |   << {
+        \voiceOne
+        \set tieWaitForNote = ##t
+        a4~ s4 a2
+      } \\ {
+        \voiceOne
+        \set tieWaitForNote = ##t
+        s16 fis8.~ s4 fis2
+      } \\ {
+        \voiceOne
+        s8. c!16 s4 s2
+      } \\ {
+        \voiceTwo
+        a'16 fis dis c!~ c4~ c b!
+      } >>
+  %45 organUpper
+  |   <a c e a>2^-  <gis b! d e gis>2^-
+  |   <e' gis b! c>2  <c e a c>2
+  |   <c f a c>2  <b! dis fis b!>4^- <c dis fis a>^-
+  |   <a c e a>2  <b! d e a>4^- <b! d e gis>^-
+  |   << {
+        <a e' a>2
+      } \\ {
+        d4( cis)
+      } >>
+      s2
     }
     \new Staff = "organLower" \with {
       alignAboveContext = "upper"
@@ -285,22 +310,39 @@ Upper = \relative c'' {
   |   <dis, fis a b!>2^-\sustainOn
       <dis fis a c>2^-\sustainOn
   %35 organLower
-  |   <g bes cis>2
-      <gis b! d>2
-  |   <c, e gis b! c>2_(
-      <c e a>2)
-  |   <ges a ees' ges>2
-      <ges! bes! c ges'!>2
-  |   <f c' ees f>2
-      <f bes! cis f g>2
-  |   <f a d f>2
-      <fis a d fis>2
+  |   <g bes cis>2  <gis b! d>2
+  |   <c, e gis b! c>2_(  <c e a>2)
+  |   <ges a ees' ges>2  <ges! bes! c ges'!>2
+  |   <f c' ees f>2  <f bes! cis f g>2
+  |   <f a d f>2 <fis a d fis>2
   %40 organLower
-  |   <g bes! ees g>2
-      <g, bes! ees g>2
+  |   <g bes! ees g>2 <g, bes! ees g>2
+  |   <a cis g' a>2  <a cis f a>2
+  |   <bes d f bes>2 r2
+  |   bes''16[ gis a e] f cis[ d a] bes[ d f] s16 s4
+  |   << {
+        \voiceThree
+        s4 b!16 a fis e a2
+      } \\ {
+        \voiceFour
+        s4 s16 a8.^~ a2
+      } \\ {
+        \voiceFour
+        s4. fis8~ fis2
+      } \\ {
+        \voiceFour
+        s2 dis2
+      } >>
+  %45
+  |   s1
+  |   s1
+  |   s1
+  |   s1
+  |   s1
       \bar "||"
     }
     >>
+  | s1
   | s1
   \fine
 % la si do re mi fa sol
@@ -496,29 +538,183 @@ Lower = \relative c {
     \bar "||"
   | \omit Staff.TimeSignature
     d32\rest_\markup { \italic "dolce, (quasi Arpa)" }
-    \stemUp dis[^\( fis a b!
+    \stemUp dis[^\( fis a b!]
     \change Staff = "upper" {
-      dis fis a]
-      b![ a fis dis
+      \stemDown
+      dis[ fis a
+      b! a fis dis]
     }
     \change Staff = "lower"{
-      b! a fis dis]\)
+      \stemUp b![ a fis dis]\)
     }
-    d32\rest \stemUp dis[^\( fis a c
+    d32\rest dis[^\( fis a c]
     \change Staff = "upper" {
-      dis fis a]
-      c[ a fis dis
+      \stemDown
+      dis[ fis a
+      c a fis dis]
     }
     \change Staff = "lower"{
-      c a fis dis]\)
+      \stemUp c[ a fis dis]\)
     }
   %35
-  | s1
-  | s1
-  | s1
-  | s1
-  | s1
+  | \tuplet 14/16 2 {
+      d32\rest
+      \stemUp g[ bes cis]
+      \change Staff = "upper" {
+        \stemDown e[ g bes cis bes g e]
+      }
+      \change Staff = "lower"{
+        \stemUp cis[ bes g]
+      }
+    }
+    \tuplet 14/16 2 {
+      d32\rest
+      \stemUp gis[ b! d]
+      \change Staff = "upper" {
+        \stemDown f[ gis b! d b! gis f]
+      }
+      \change Staff = "lower"{
+        \stemUp d[ b! gis]
+      }
+    }
+  | d32\rest
+    \stemUp c[ e gis b!]
+    \change Staff = "upper" {
+      \stemDown e[ gis b! d b! gis e]
+    }
+    \change Staff = "lower"{
+      \stemUp b![ gis e c]
+    }
+    \tuplet 14/16 2 {
+      d32\rest
+      \stemUp c[ e a]
+      \change Staff = "upper" {
+        \stemDown c[ e a c a e c]
+      }
+      \change Staff = "lower"{
+        \stemUp a[ e c]
+      }
+    }
+  | \tuplet 12/16 2 {
+      d32\rest
+      \stemUp ges[ a c]
+      \change Staff = "upper" {
+        \stemDown ees[ a c a ees]
+      }
+      \change Staff = "lower"{
+        \stemUp c[ a ges]
+      }
+    }
+    \tuplet 12/16 2 {
+      d32\rest
+      \stemUp ges[ bes c]
+      \change Staff = "upper" {
+        \stemDown e![ bes' des bes e,!]
+      }
+      \change Staff = "lower"{
+        \stemUp c[ bes ges]
+      }
+    }
+  | d32\rest
+    \stemUp f[ a c f]
+    \change Staff = "upper" {
+      \stemDown ees[ a c ees c a ees]
+    }
+    \change Staff = "lower"{
+      \stemUp f[ c a f]
+    }
+    d32\rest
+    \stemUp f[ g bes! cis]
+    \change Staff = "upper" {
+      \stemDown e![ g bes! cis bes g e!]
+    }
+    \change Staff = "lower"{
+      \stemUp cis[ bes g f]
+    }
+  | \tuplet 13/16 2 {
+      d32\rest
+      \stemUp f[ a d]
+      \change Staff = "upper" {
+        \stemDown f[ a d a f d]
+      }
+      \change Staff = "lower"{
+        \stemUp a[ f d]
+      }
+    }
+    \tuplet 15/16 2 {
+      d32\rest
+      \stemUp fis[ a c]
+      \change Staff = "upper" {
+        \stemDown d[ fis a c a fis d]
+      }
+      \change Staff = "lower"{
+        \stemUp c[ a fis d]
+      }
+    }
   %40
+  | d32\rest
+    \stemUp g,[ bes ees g]
+    \change Staff = "upper" {
+      \stemDown bes[ ees g bes g ees bes]
+    }
+    \change Staff = "lower"{
+      \stemUp g[ ees bes g]
+    }
+    \tuplet 9/8 4 {
+      d32\rest
+      % avoid the warning:
+      % no viable initial configuration found: may not find good beam slope
+      \once \override Beam.positions = #'(5 . 5)
+      \stemUp g[ bes ees! g
+      \change Staff = "upper" {
+        \stemDown bes ees! g bes]
+      }
+    }
+    \change Staff = "lower"{
+      << d,4 \\ {
+        \omit TupletNumber
+        \tuplet 6/8 4 {
+          \stemDown d32[ bes g ees bes g]
+        }
+      } >>
+    }
+  | s1
+  | \override MultiMeasureRest.staff-position = #0
+    << {
+      \omit TupletNumber
+      \tuplet 15/16 2 {
+        \change Staff = "upper" {
+          s8 s16 s32 a''4
+        }
+      }
+      b2\rest
+    } \\ {
+      \override TupletBracket.bracket-visibility = ##f
+      \omit TupletNumber
+      \tuplet 15/16 2 {
+        r32
+        \stemUp bes,[ d f]
+        \change Staff = "upper" {
+          \override LaissezVibrerTie.details.note-head-gap = #'-1
+          \override LaissezVibrerTie.extra-offset = #'(2 . 0)
+          \stemDown a,[ d f a^\laissezVibrer^- f d a]
+        }
+        \change Staff = "lower"{
+          \stemUp f[ d a]
+        }
+        r32^\fermata
+      }
+      r2
+    } >>
+  | R1
+  | R1
+  %45
+  | s1
+  | s1
+  | s1
+  | s1
+  | s1
+  %50
   | s1
   | s1
   \fine
