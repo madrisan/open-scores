@@ -292,7 +292,7 @@ Upper = \relative c'' {
   %45 organUpper
   |   <a c e a>2^-  <gis b! d e gis>2^-
   |   <e' gis b! c>2  <c e a c>2
-  |   <c f a c>2  <b! dis fis b!>4^- <c dis fis a>^-
+  |   <c f a c>2-\markup { \italic "(quasi forte)" }  <b! dis fis b!>4^- <c dis fis a>^-
   |   <a c e a>2  <b! d e a>4^- <b! d e gis>^-
   |   << {
         <a e' a>2
@@ -334,11 +334,19 @@ Upper = \relative c'' {
         s2 dis2
       } >>
   %45
-  |   s1
-  |   s1
-  |   s1
-  |   s1
-  |   s1
+  |   <e, a c e>2  <e b'! d e>2
+  |   <e' gis b! c>2^\markup{
+        \italic
+        \column {
+          "(somewhat lauder and firmer)"
+          \general-align #Y #-1.5
+          "(etwas lauter und entschlossener)"
+        }
+      }
+      << <e a>2 \\ { c4-- a-- } >>
+  |   <f a c f>2  <fis a b! dis>4^- <fis a c dis>^-
+  |   <e a c e>2  <e b'! d e>4 <e b'! d e>4
+  |   <a e'>2  s2
       \bar "||"
     }
     >>
@@ -670,7 +678,7 @@ Lower = \relative c {
         \stemDown bes ees! g bes]
       }
     }
-    \change Staff = "lower"{
+    \change Staff = "lower" {
       << d,4 \\ {
         \omit TupletNumber
         \tuplet 6/8 4 {
@@ -678,7 +686,26 @@ Lower = \relative c {
         }
       } >>
     }
-  | s1
+  | \tuplet 18/16 2 {
+      \stemUp
+      r32 a[ cis e g]
+      \change Staff = "upper"
+      \stemDown
+      bes[ cis e g bes g e cis bes]
+      \change Staff = "lower"
+      \stemUp
+      g[ e cis a]
+    }
+    \tuplet 18/16 2 {
+      \stemUp
+      r32 a[ cis! e f]
+      \change Staff = "upper"
+      \stemDown
+      a[ cis! e f a f e cis a]
+      \change Staff = "lower"
+      \stemUp
+      f[ e cis a]
+    }
   | \override MultiMeasureRest.staff-position = #0
     << {
       \omit TupletNumber
@@ -693,7 +720,7 @@ Lower = \relative c {
       \omit TupletNumber
       \tuplet 15/16 2 {
         r32
-        \stemUp bes,[ d f]
+        \stemUp bes,[\sustainOn d f]
         \change Staff = "upper" {
           \override LaissezVibrerTie.details.note-head-gap = #'-1
           \override LaissezVibrerTie.extra-offset = #'(2 . 0)
@@ -702,17 +729,105 @@ Lower = \relative c {
         \change Staff = "lower"{
           \stemUp f[ d a]
         }
-        r32^\fermata
+        r32^\fermata\sustainOff
       }
       r2
     } >>
-  | R1
-  | R1
+  | << {
+      \change Staff = "upper"
+      \override MultiMeasureRest.staff-position = #0
+      R1
+    } \\ {
+      \change Staff = "lower"
+      \override MultiMeasureRest.staff-position = #0
+      R1
+    } >>
+  | << {
+      \change Staff = "upper"
+      \override MultiMeasureRest.staff-position = #0
+      R1
+    } \\ {
+      \change Staff = "lower"
+      \override MultiMeasureRest.staff-position = #0
+      R1
+    } >>
   %45
-  | s1
-  | s1
-  | s1
-  | s1
+  | r32
+    \stemUp e[ a c e]
+    \change Staff = "upper" {
+      \stemDown a[ c e a e c a]
+    }
+    \change Staff = "lower"{
+      \stemUp e[ c a e]
+    }
+    r32
+    \stemUp e[ b'! d e]
+    \change Staff = "upper" {
+      \stemDown b'![ d e gis e d b!]
+    }
+    \change Staff = "lower"{
+      \stemUp e,[ d b! e,]
+    }
+  | \tuplet 18/16 2 {
+      r32
+      \stemUp e'[ gis b! c]
+      \change Staff = "upper" {
+	\stemDown e[^\< gis b! c b!\!\> c\! b! gis e]
+      }
+      \change Staff = "lower"{
+        \stemUp c[ b! gis e]
+      }
+    }
+    \tuplet 17/16 2 {
+      r32
+      \stemUp c[ e a c]
+      \change Staff = "upper" {
+	\stemDown e[^\< a c a\!\> c\! a e c]
+      }
+      \change Staff = "lower"{
+        \stemUp a[ e c a]
+      }
+    }
+  | \tuplet 18/16 2 {
+      r32
+      \stemUp f[ c' f a]
+      \change Staff = "upper"
+      \stemDown c[ f a c a c a f c]
+      \change Staff = "lower"
+      \stemUp a[ f c f,]
+    }
+    \tuplet 9/8 4 {
+      r32
+      fis[^\( b! dis a']
+      \change Staff = "upper"
+      \stemDown b![ dis fis b!]
+    }
+    \tuplet 10/8 4 {
+      r32
+      fis[ a fis dis c]
+      \change Staff = "lower"
+      a[ dis, c fis,]\)
+    }
+  | \tuplet 18/16 2 {
+      r32
+      \stemUp e[ a c e]
+      \change Staff = "upper"
+      \stemDown a[ c e a e a e c a]
+      \change Staff = "lower"
+      \stemUp e[ c a e]
+    }
+    \tuplet 9/8 4 {
+      r32
+      e[^\( b'! d a']
+      \change Staff = "upper"
+      \stemDown b![ d e a]
+    }
+    \tuplet 10/8 4 {
+      r32
+      e[ gis e d b!]
+      \change Staff = "lower"
+      gis[ d b! e,]\)
+    }
   | s1
   %50
   | s1
@@ -730,7 +845,7 @@ Lower = \relative c {
     \new Staff = "upper" {
       \Global
       \Upper
-      %\pageBreak
+      \pageBreak
     }
     \new Staff = "lower" {
       \Global
