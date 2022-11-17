@@ -297,9 +297,34 @@ Upper = \relative c'' {
   |   << {
         <a e' a>2
       } \\ {
-        d4( cis)
+        d4( cis)-\markup {
+          \italic
+          \column {
+            \small "(not to be played)"
+            \small "(nicht anzuschlagen)"
+          }
+        }
       } >>
-      s2
+      \magnifyMusic 0.75 {
+        a'16\fermata-\markup {
+          \general-align #Y #1
+          \column {
+            \normalsize\bold "    Voce Recitante"
+            \general-align #Y #1
+            \normalsize\italic "    (Always strong and broad,"
+            \normalsize\italic "     and with intense feeling)"
+            \normalsize\italic "    (Immerstark und breit mit grosser"
+            \normalsize\italic "     Energie der Empfindung)"
+          }
+        }
+      }
+      \tweak extra-spacing-width #'( -25 . 0 )
+      bes!16--[^\markup {
+        \bold
+        "Recitativ."
+      }
+      a-- g!--]
+      fis32[ g fis g  g32.\trill fis128 g a64-- fis-- d32--]
     }
     \new Staff = "organLower" \with {
       alignAboveContext = "upper"
@@ -307,7 +332,7 @@ Upper = \relative c'' {
       \Global
       \omit Staff.TimeSignature
       \clef "bass"
-  |   <dis, fis a b!>2^-\sustainOn
+  |   <dis,, fis a b!>2^-\sustainOn
       <dis fis a c>2^-\sustainOn
   %35 organLower
   |   <g bes cis>2  <gis b! d>2
@@ -346,7 +371,7 @@ Upper = \relative c'' {
       << <e a>2 \\ { c4-- a-- } >>
   |   <f a c f>2  <fis a b! dis>4^- <fis a c dis>^-
   |   <e a c e>2  <e b'! d e>4 <e b'! d e>4
-  |   <a e'>2  s2
+  |   <a' e'>2  s2
       \bar "||"
     }
     >>
@@ -828,7 +853,37 @@ Lower = \relative c {
       \change Staff = "lower"
       gis[ d b! e,]\)
     }
-  | s1
+  | << {
+      s2
+      \change Staff = "upper"
+      \magnifyMusic 0.75 {
+        <a' cis e a>16\fermata_\markup {
+          \italic
+          \column {
+            "mute"
+            \general-align #Y #-2
+            "stumm"
+          }
+        }
+      }
+    } \\ {
+      \override TupletBracket.bracket-visibility = ##f
+      \omit TupletNumber
+      \tuplet 18/16 2 {
+        r32
+        \stemUp a,[ d e]
+        \change Staff = "upper"
+        \stemDown a[ d e a e a e cis a]
+        \change Staff = "lower"
+        \stemUp e[\sustainOn cis a e a,]
+      }
+      \stemUp
+      \change Staff = "lower"
+      \magnifyMusic 0.75 {
+        <a' e'>^\fermata\shiftOn\sustainOff
+      }
+    } >>
+    s8. s4
   %50
   | s1
   | s1
