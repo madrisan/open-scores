@@ -294,6 +294,7 @@ Upper = \relative c'' {
   |   <e' gis b! c>2  <c e a c>2
   |   <c f a c>2-\markup { \italic "(quasi forte)" }  <b! dis fis b!>4^- <c dis fis a>^-
   |   <a c e a>2  <b! d e a>4^- <b! d e gis>^-
+  |
   |   << {
         <a e' a>2
       } \\ {
@@ -305,25 +306,27 @@ Upper = \relative c'' {
           }
         }
       } >>
+      \set breathMarkType = #'caesura
       \magnifyMusic 0.75 {
-        a'16\fermata-\markup {
+        a'16\fermata
+      }
+      \breathe
+      bes!16--[^\markup {
+        \bold "Voce Recitante"
+      }
+      -\markup {
           \general-align #Y #1
           \column {
-            \normalsize\bold "    Voce Recitante"
             \general-align #Y #1
-            \normalsize\italic "    (Always strong and broad,"
-            \normalsize\italic "     and with intense feeling)"
-            \normalsize\italic "    (Immerstark und breit mit grosser"
-            \normalsize\italic "     Energie der Empfindung)"
+            " "
+            \small\italic "(Always strong and broad,"
+            \small\italic " and with intense feeling)"
+            \small\italic "(Immerstark und breit mit grosser"
+            \small\italic " Energie der Empfindung)"
           }
         }
-      }
-      \tweak extra-spacing-width #'( -25 . 0 )
-      bes!16--[^\markup {
-        \bold
-        "Recitativ."
-      }
       a-- g!--]
+      \set breathMarkType = #'chantdoublebar
       fis32[ g fis g  g32.\trill fis128 g a64-- fis-- d32--]
     }
     \new Staff = "organLower" \with {
@@ -372,11 +375,65 @@ Upper = \relative c'' {
   |   <f a c f>2  <fis a b! dis>4^- <fis a c dis>^-
   |   <e a c e>2  <e b'! d e>4 <e b'! d e>4
   |   <a' e'>2  s2
-      \bar "||"
     }
     >>
-  | s1
-  | s1
+  %50
+    << {
+  |   \set breathMarkType = #'caesura
+      a''4\rest
+      << { <beses, beses'>8(\f <aes aes'>) } \\ <c ees>4 >> \breathe
+      b'2\rest
+  |   b4\rest  << { bes8( a!) } \\ { <ees ges ees'>4\f } >> \breathe b'2\rest
+  |   b4\rest  \stemUp <a, c ees a>\mp^\markup { \italic "ten." }  b'2\rest
+  |   b4\rest <c, ees ges c>4\mp b'2\rest
+  %55
+  |   b4\rest b8\rest <a, c ees a>\p \breathe b'2\rest
+  |   b4\rest <des,~ ges~ bes^~ des^~>4\p <des ges bes des>16 b'16\rest b8\rest b4\rest
+  |   b4\rest <g! ees des bes g!>4 b2\rest
+  |   r1
+    }
+    \new Staff = "recitante" \with {
+      alignAboveContext = "upper"
+    } {
+      \Global
+      \omit Staff.TimeSignature
+      \clef "treble"
+  %50 recitante
+  |   des,8( c) r4
+      r16 ees--[ f-- g!--] aes32[ bes! c des c des ees64\< des c des\!]
+  |   ees8 r  r4  r16 ees[ ges f] ees[ des c des32 bes]
+  |   bes8^( a)  r4
+      r16_\markup { \italic "(l.H.)" }
+      << {
+        bes16[ a bes] bes8.\trill a32 bes
+      } \\ {
+        des,16[c des] des8.\trill( c32\< des\!
+      } >>
+  |   << c'8 \\ ees,) >> r8  r4
+      r16
+      << {
+        des'16[ c des] des8.\trill c32 des
+      } \\ {
+        f,16[ees f] f8.\trill ees32 f
+      } >>
+  |   << {
+        ees'16 c a!_\markup { \italic "(dimin.)"  } bes--\(
+        bes16^-[ a]\)
+      } \\ {
+        ges4--
+        s8
+      } >>
+      r8
+      r16 f[\f a c] ees![ ges f ees32\prall des]
+  % 55 recitante
+  |   des8\sustainOn r8 r4 r16\sustainOff des[ fes ees]
+      des32[ ces bes ces  \appoggiatura { des16 ces des } ces32 bes ces des]
+  |   aes8( g!)  r4  r16 g[ ees f]  g16[ aes32-- g-- f16 aes32-- g--]
+  |   r1
+     \fine
+    }
+    >>
+% | r1
   \fine
 % la si do re mi fa sol
 %  a b  c  d  e  f  g
@@ -854,8 +911,9 @@ Lower = \relative c {
       gis[ d b! e,]\)
     }
   | << {
-      s2
       \change Staff = "upper"
+      s2
+      \set breathMarkType = #'caesura
       \magnifyMusic 0.75 {
         <a' cis e a>16\fermata_\markup {
           \italic
@@ -878,15 +936,22 @@ Lower = \relative c {
         \stemUp e[\sustainOn cis a e a,]
       }
       \stemUp
-      \change Staff = "lower"
       \magnifyMusic 0.75 {
-        <a' e'>^\fermata\shiftOn\sustainOff
+        <a' e'>16-\sustainOff^\fermata
       }
     } >>
     s8. s4
   %50
-  | s1
-  | s1
+  | d4\rest \stemUp <ges,, aes c ees ges>4-- d''2\rest
+  | \set breathMarkType = #'caesura
+    d4\rest  << { bes8( a!) } \\ { <c ges ees c>4 } >> \breathe d2\rest
+  | d4\rest <ges, c ees ges>4 d'2\rest
+  | d4\rest <a, ees' ges a>4 d'2\rest
+  | d4\rest d8\rest <f,, c' ees f>8 \breathe d''2\rest
+  %55
+  | d4\rest <fes,^~ bes,^~ ges-~ fes-~>4 <fes bes, ges fes>16 d16\rest d8\rest d4\rest
+  | d4\rest <ees des bes ees,>4 d'2\rest
+  | r1
   \fine
 % la si do re mi fa sol
 %  a b  c  d  e  f  g
