@@ -386,11 +386,27 @@ Upper = \relative c'' {
   |   b4\rest  << { bes8( a!) } \\ { <ees ges ees'>4\f } >> \breathe b'2\rest
   |   b4\rest  \stemUp <a, c ees a>\mp^\markup { \italic "ten." }  b'2\rest
   |   b4\rest <c, ees ges c>4\mp b'2\rest
-  %55
   |   b4\rest b8\rest <a, c ees a>\p \breathe b'2\rest
+  %55
   |   b4\rest <des,~ ges~ bes^~ des^~>4\p <des ges bes des>16 b'16\rest b8\rest b4\rest
   |   b4\rest <g! ees des bes g!>4 b2\rest
-  |   r1
+  |   b4\rest <gis,~ b!~ e!^~ gis^~>4 <gis b! e! gis>32 b'32\rest b16\rest b8\rest b4\rest
+  |   s8
+      \mergeDifferentlyDottedOn
+      << {
+        \hideNotes r32\unHideNotes eis,32[ gis b!] dis32[ cis8..]
+      } \\ {
+        \voiceTwo
+        \hideNotes r32\unHideNotes eis,16.~ eis4
+      } \\ {
+        \voiceTwo
+        \hideNotes r32\unHideNotes s32 gis16~ gis4
+      } >>
+      b2\rest
+  |   b2\rest
+      << { fis8[( eis]) } \\ { <d gis,>4 } >>
+      b'4\rest
+  %60
     }
     \new Staff = "recitante" \with {
       alignAboveContext = "upper"
@@ -429,7 +445,24 @@ Upper = \relative c'' {
   |   des8\sustainOn r8 r4 r16\sustainOff des[ fes ees]
       des32[ ces bes ces  \appoggiatura { des16 ces des } ces32 bes ces des]
   |   aes8( g!)  r4  r16 g[ ees f]  g16[ aes32-- g-- f16 aes32-- g--]
-  |   r1
+  |   gis8\mordent r r4 r32 b,![ cis dis e fis gis! a]  b!16[ d! cis e32 d]
+  |   << {
+        \set breathMarkType = #'caesura
+        d4~^\markup { \small\sharp }^\mordent
+        \magnifyMusic 0.75 {
+          d32[ cis8..]
+        }
+        r8\breathe b!--^\markup { \small \italic "meno " \dynamic "f" } [ b!-- a--]
+      } \\ {
+        d8 s4. r8 d,[-\markup { \small\italic "l.H." } d cis]
+      } >>
+  |   << {
+        a'8( gis) gis32 a b! cis d b! gis!64 eis fis32
+        fis8( eis!) b'32\rest eis,[ fis gis fis16.\trill eis32]
+      } \\ {
+         cis8.[( b!16]) b8( cis16 d)-\markup { \small\italic "r.H" }
+      } >>
+  %60
      \fine
     }
     >>
@@ -951,7 +984,25 @@ Lower = \relative c {
   %55
   | d4\rest <fes,^~ bes,^~ ges-~ fes-~>4 <fes bes, ges fes>16 d16\rest d8\rest d4\rest
   | d4\rest <ees des bes ees,>4 d'2\rest
-  | r1
+  | d4\rest <e,!^~ d!^~ e,!~ d!~>4 <e d e, d>32 d'32\rest d16\rest d8\rest d4\rest
+  | d32\rest
+    \mergeDifferentlyDottedOn
+    << {
+      cis eis gis cis4.
+    } \\ {
+      \voiceTwo
+      cis,16.~ cis4
+    } \\ {
+      \voiceTwo
+      s32 eis16~ eis4
+    } \\ {
+      \voiceTwo
+      s16 gis32~ gis4
+    } >>
+    d2\rest
+  | d2\rest
+    <b,! b'!>4 d'4\rest
+  %60
   \fine
 % la si do re mi fa sol
 %  a b  c  d  e  f  g
