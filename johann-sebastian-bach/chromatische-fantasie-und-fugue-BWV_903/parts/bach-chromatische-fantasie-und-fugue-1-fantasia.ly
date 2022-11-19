@@ -460,7 +460,16 @@ Upper = \relative c'' {
         a'8( gis) gis32 a b! cis d b! gis!64 eis fis32
         fis8( eis!) b'32\rest eis,[ fis gis fis16.\trill eis32]
       } \\ {
-         cis8.[( b!16]) b8( cis16 d)-\markup { \small\italic "r.H" }
+        cis8.[( b!16]) b8( cis16 d)-\markup { \small\italic "r.H" }
+      } \\ {
+        % workaround for drawing an arpeggio bracket high
+        % enough to be visually connected to the r.H. sign
+        \arpeggioBracket
+        \hideNotes
+        s4. s16 <a, a''>16\arpeggio
+        \unHideNotes
+        s2
+        \arpeggioNormal
       } >>
   %60
      \fine
