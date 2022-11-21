@@ -397,6 +397,7 @@ Upper = \relative c'' {
         \hideNotes r32\unHideNotes eis,32[ gis b!] dis32[ cis8..]
       } \\ {
         \voiceTwo
+        % force an horizontal space between the two nodes blocks
         \hideNotes r32\unHideNotes eis,16.~ eis4
       } \\ {
         \voiceTwo
@@ -407,6 +408,23 @@ Upper = \relative c'' {
       << { fis8[( eis]) } \\ { <d gis,>4 } >>
       b'4\rest
   %60
+  |   b2\rest  \clef treble <dis, fis a dis>4^^-\markup { \dynamic f \italic "(teatrale)" } b'4\rest
+  |   b4\rest  <bis, fis' bis>4  <e gis cis>4  b'4\rest
+  |   \override MultiMeasureRest.staff-position = #0
+      R1
+  |   b4\rest
+      \autoBeamOff
+      <c,~ d~ fis^~ a^~ d^~>8^-  <c d fis a d>32
+      \autoBeamOn
+      r32 r16 b'2\rest
+  |   R1
+  %65
+  |   R1
+  |   b1\rest
+  |   b1\rest
+  |   b1\rest
+  |   b1\rest
+  %70
     }
     \new Staff = "recitante" \with {
       alignAboveContext = "upper"
@@ -472,6 +490,69 @@ Upper = \relative c'' {
         \arpeggioNormal
       } >>
   %60
+  |   << {
+        b''!16[ cis32 d cis16 b!] a[ gis32 b! a16\trill gis32 fis]
+        \magnifyMusic 0.75 { dis'4 }
+        r32
+        \stemDown e![^\markup { \italic\small "(largamente)" } dis! cis! bis cis dis fis]
+      } \\ {
+        b,!8[ a16 gis] fis8[ eis] s2
+      } >>
+  |   a'8\downbow[ a\downbow] bis,32[ dis fis a gis16 a32 fis]
+      \tupletDown
+      \stemUp fis8[^( e)]~
+      \tuplet 3/2 8 { e16[_\markup {
+        \italic\small
+        \column {
+           \general-align #Y #2
+           "(accelerato ma"
+           " sempre recitando)"
+        }
+      } cis-- bis--] }
+      \tuplet 3/2 8 { cis--[ gis-- fis--] }
+  |   \override TupletBracket.bracket-visibility = ##f
+      \omit TupletNumber
+      \tupletDown
+      \tuplet 3/2 8 { \voiceOne gis-- \voiceTwo e^-[ dis^-] }
+      \tuplet 3/2 8 { e-- cis^-[ bis^-] }
+      \tuplet 3/2 8 { \stemUp cis^- \stemDown e[ dis] e a gis }
+      \tuplet 3/2 8 { a \stemUp cis[ b!] } \tuplet 3/2 8 { cis[ e^- d!^-] }
+      \tuplet 3/2 8 { e^-[ fis^- g!^-] } g16.^\trill \tuplet 3/2 32 { fis64\< g a\! }
+  |   ees16^> d8.  b8\rest^\markup {
+        \column {
+          \general-align #Y #2
+          \italic\small "(without hurrying, but without stiffness)"
+          \italic\small "(nicht eilen, aber ohne Steifheit)"
+        }
+      }
+      b32\rest d[ c! bes]
+      \stemDown a_>[ bes c]
+      \stemUp ees[ c bes^\< a g!\!]
+      \stemDown fis_>[ g a]
+      \stemUp c[ a g^\< fis e!\!]
+  |   \stemDown d->[-\markup { \italic "(sopra)" }  e fis]
+      \stemUp a[ g fis e d]
+      \stemDown c[ d ees]
+      \stemUp fis[ ees d c bes]
+      \clef bass
+      \stemDown a[ bes c]
+      \stemUp ees[ c bes a g]
+      \stemDown fis[ g a]
+      \stemUp c[ a g fis e!]
+  %65
+  |   \stemDown d[^\markup { \italic "(ben ritmato)" } e! fis g]
+      \stemUp a[ bes c a]  bes^-[ c]
+      \stemDown fis,![ g a bes^\<]
+      \stemUp c[ d]\! ees^-[ c d ees]
+      \clef treble
+      \stemDown a,[ bes c d e!^-]
+      \stemUp fis[ g a fis g a]
+      \stemDown d,
+  |   r1
+  |   r1
+  |   r1
+  |   r1
+  %70
      \fine
     }
     >>
@@ -1012,6 +1093,23 @@ Lower = \relative c {
   | d2\rest
     <b,! b'!>4 d'4\rest
   %60
+  |   << { gis8[ a16 b!] cis8[ b!] } \\ { eis,8 fis cis4 } >>
+      <bis, dis fis a bis>4^^ d'4\rest
+  |   d4\rest  <gis, dis' fis gis>4  <cis, gis' cis>4  d'4\rest
+  |   R1
+  |   d4\rest
+      \autoBeamOff
+      <c,~ fis~ a~ c^~ d^~>8^-  <c fis a c d>32
+      \autoBeamOn
+      r32 r16  d'2\rest
+  |   R1
+  %65
+  |   R1
+  |   d1\rest
+  |   d1\rest
+  |   d1\rest
+  |   d1\rest
+  %70
   \fine
 % la si do re mi fa sol
 %  a b  c  d  e  f  g
