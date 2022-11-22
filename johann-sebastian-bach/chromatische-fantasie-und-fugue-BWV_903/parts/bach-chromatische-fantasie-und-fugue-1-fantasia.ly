@@ -420,11 +420,21 @@ Upper = \relative c'' {
   |   R1
   %65
   |   R1
-  |   b1\rest
-  |   b1\rest
-  |   b1\rest
-  |   b1\rest
+  |   R1
+  |   b2\rest b4\rest b8\rest <a, d fis>8
+  |   <bes d g>4 b'4\rest b2\rest
+  |   b8\rest  <a, ees' fis>8  b4\rest  <g bes e! g>4  b4\rest
   %70
+  |   <f' a d f>16 s8.
+       << {
+         \stemUp <d' g>4^\f
+       } >>
+      <a cis e a>4\breathe  b4\rest
+  |   R1
+  |   s1
+  |   R1
+  |   r1
+  %75
     }
     \new Staff = "recitante" \with {
       alignAboveContext = "upper"
@@ -548,11 +558,56 @@ Upper = \relative c'' {
       \stemDown a,[ bes c d e!^-]
       \stemUp fis[ g a fis g a]
       \stemDown d,
-  |   r1
-  |   r1
-  |   r1
-  |   r1
+  |   e[ fis g]
+      \stemUp a bes![ c a bes] c
+      \stemDown fis,[ g a bes]
+      \stemUp c[ d ees] c^-[ d ees]
+      \stemDown a,[ bes c d e!] fis[ g a fis g a]^\markup {
+        \italic\small
+        \column {
+          \general-align #Y #2
+          "(un poco più veloce)"
+          "(quasi di bravura)"
+        }
+      } d,[ e]
+  |   fis[ g]
+      \stemUp a[ bes c bes a]
+      \stemDown g[ fis e! d]
+      \stemUp c[ bes a]
+      \stemDown g[ fis e d] \clef bass c[\< bes a] g[ fis e]\!
+      \autoBeamOff d16-\markup { \italic "(a tempo)" } \clef treble
+      \stemUp c'' \autoBeamOn bes![ c32 a]
+  |   bes4^~  bes32 bes[ c d d16.^\trill\( c64\< d\!]
+      e16[\) a,32 bes bes16.^\trill\( a64\< bes\!]
+      c16[\) fis,32 g g16.^\trill\( fis64\< g\!]
+  |   a8~--\)^\markup { \italic\small "ten" }
+      a16[ a32 c]  bes16[ a g a32 fis] g4
+      b32\rest \stemDown a[ b! cis d e f!64 g f g128 e]
   %70
+  |   \mergeDifferentlyDottedOn
+      f16 << { d32-- e-- f-- g-- f64 e f g } \\ d8. >>
+      \mergeDifferentlyDottedOff
+
+      \omit TupletNumber
+      \override TupletBracket.bracket-visibility = ##f
+      \set subdivideBeams = ##t
+      \set baseMoment = #(ly:make-moment 1/16)
+      \magnifyMusic 0.75 {
+        \tuplet 6/4 8 {
+          \stemUp g64 a g a g a  g a g a g a  g a g a g a
+        }
+        \tuplet 5/4 16 {
+          g a g f g
+        }
+      }
+      \set subdivideBeams = ##f
+
+      a4~--\f a16[ bes32^\markup{ \italic\small "(recitando)" }  a g f e d]
+  |   r1
+  |   r1
+  |   r1
+  |   r1
+  %75
      \fine
     }
     >>
@@ -1105,11 +1160,37 @@ Lower = \relative c {
   |   R1
   %65
   |   R1
-  |   d1\rest
-  |   d1\rest
-  |   d1\rest
-  |   d1\rest
+  |   R1
+  |   d2\rest d4\rest d8\rest <d, fis d'>8
+  |   <g, d' g>4 d''4\rest  d2\rest
+  |   r1
   %70
+  |   << { <f! a>4 } \\ { d8[ c!] } >>
+      << {
+        \omit TupletNumber
+        \override TupletBracket.bracket-visibility = ##f
+        \set subdivideBeams = ##t
+        \set baseMoment = #(ly:make-moment 1/16)
+        \magnifyMusic 0.75 {
+          \tuplet 6/4 8 {
+            g'64 a g a g a  g a g a g a  g a g a g a
+          }
+          \tuplet 5/4 16 {
+            g a g f g
+          }
+        }
+        \set subdivideBeams = ##f
+      } \\ {
+        \stemDown \shiftOn d16[ e cis d] \stemUp a'4
+      } \\ {
+        bes,!4 <a cis! e>4
+      } >>\breathe
+      d4\rest
+  |   r1
+  |   r1
+  |   r1
+  |   r1
+  %75
   \fine
 % la si do re mi fa sol
 %  a b  c  d  e  f  g
