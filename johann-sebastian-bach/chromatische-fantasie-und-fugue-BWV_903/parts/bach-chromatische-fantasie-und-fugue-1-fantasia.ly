@@ -431,10 +431,63 @@ Upper = \relative c'' {
        } >>
       <a cis e a>4\breathe  b4\rest
   |   R1
-  |   s1
+  |   b4\rest
+      << {
+        <ees, ees'>8\>\f <d d'>\!
+      } \\ {
+        <a' c!>4
+      } >>
+      b2\rest
   |   R1
-  |   r1
+  |   b4\rest  <b,! d g b>8 b'8\rest <g a cis e g>[ <a d f a>]
+      << { <f d' f>8[\> <e e'>16 <d~ d'>]\! } \\ { a'8[ <g cis>] } >>
   %75
+  |   << {
+        \stemDown d4_\markup { \italic "dim." } } \\ {
+        \stemUp <a' d>4^\markup { \italic "ten." }
+        \voiceOne
+        d16\rest\p d--[ g-- bes--] d,8[(\> cis])\!  d16\rest\p c!32[ b! c! fis-- a16--]
+      } \\ {
+        g,8[( fis])^\markup {
+          \italic\small
+          \column {
+            \general-align #Y #1
+            "(with intense feeling)"
+            "(mit Ergriffenheit)"
+          }
+        }
+        s4 \once\stemDown <cis g' bes>4 s4
+      } >>
+  |   << {
+        c'8[( b!])  b16\rest\p bes cis32-- e-- g16--  bes,8[( a])  b32\rest\p a[ d cis! d e!-- f!16--]
+      } \\ {
+        <b,,! f'! gis>4 s4 <a ees' fis>4 s4
+      } >>
+  |   << {
+        a'8[( gis])  b16\rest g!32[ a bes! cis d e]  g,8[( fis])  b16\rest d32[\downbow b! gis a b!16]
+      } \\ {
+        <gis, d' f>4 s <fis c' ees> s
+      } >>
+  |   << {
+        f'16--[( d-- e8--])  b'32\rest  ees32[\downbow c-- a-- fis a ees16]
+        ees!8[( d)]  b'32\rest d,64[ e! fis g a bes] a[ g f!32 e f!64 g]
+      } \\ {
+        <g, bes!>4 s <f! gis> s
+      } >>
+  |   << {
+        d'8[( cis])
+        \once \override Slur #'direction = #DOWN \acciaccatura d8 cis8.\startTrillSpan
+        b!32\stopTrillSpan cis
+        d2\fermata
+      } \\ {
+        g,2
+        \change Staff = "lower"
+        \stemUp
+        \once \override Stem #'cross-staff = ##t
+        \once \override Stem #'length = #20
+        <d fis>2
+        \change Staff = "upper"
+      } >>
     }
     \new Staff = "recitante" \with {
       alignAboveContext = "upper"
@@ -443,7 +496,7 @@ Upper = \relative c'' {
       \omit Staff.TimeSignature
       \clef "treble"
   %50 recitante
-  |   des,8( c) r4
+  |   des'8( c) r4
       r16 ees--[ f-- g!--] aes32[ bes! c des c des ees64\< des c des\!]
   |   ees8 r  r4  r16 ees[ ges f] ees[ des c des32 bes]
   |   bes8^( a)  r4
@@ -603,12 +656,20 @@ Upper = \relative c'' {
       \set subdivideBeams = ##f
 
       a4~--\f a16[ bes32^\markup{ \italic\small "(recitando)" }  a g f e d]
-  |   r1
-  |   r1
-  |   r1
-  |   r1
+  |   cis32[ b! a b! c d e f]  g16--[ e-- cis-- bes--]
+      g^-[ e^- cis^- bes^-] \clef bass g--[ e-- cis---\markup {
+        \italic "(l.H)"
+      }
+      e--]
+  |   fis,8 b8\rest b4\rest
+      b16\rest  d32[ e fis g a bes]  c[ d ees d c bes a g]
+  |   \stemDown fis16--[ a-- c-- ees--]
+      \clef treble
+      \stemUp fis16^-[ a^- c^- ees^-]  fis16^-[ a^- c^- a^-]
+      fis16^-[-\markup { \italic "ritenendo" } a32 fis] d16^-[ fis32 d]
+  |   c8( b!) b16\rest b32\rest b^-[ cis^- d^- e^- f^-]
+      g8[-\markup { \italic "(risolvendo)" } a] f8[ e16 d]
   %75
-     \fine
     }
     >>
 % | r1
@@ -1148,49 +1209,133 @@ Lower = \relative c {
   | d2\rest
     <b,! b'!>4 d'4\rest
   %60
-  |   << { gis8[ a16 b!] cis8[ b!] } \\ { eis,8 fis cis4 } >>
-      <bis, dis fis a bis>4^^ d'4\rest
-  |   d4\rest  <gis, dis' fis gis>4  <cis, gis' cis>4  d'4\rest
-  |   R1
-  |   d4\rest
-      \autoBeamOff
-      <c,~ fis~ a~ c^~ d^~>8^-  <c fis a c d>32
-      \autoBeamOn
-      r32 r16  d'2\rest
-  |   R1
+  | << { gis8[ a16 b!] cis8[ b!] } \\ { eis,8 fis cis4 } >>
+    <bis, dis fis a bis>4^^ d'4\rest
+  | d4\rest  <gis, dis' fis gis>4  <cis, gis' cis>4  d'4\rest
+  | R1
+  | d4\rest
+    \autoBeamOff
+    <c,~ fis~ a~ c^~ d^~>8^-  <c fis a c d>32
+    \autoBeamOn
+    r32 r16  d'2\rest
+  | R1
   %65
-  |   R1
-  |   R1
-  |   d2\rest d4\rest d8\rest <d, fis d'>8
-  |   <g, d' g>4 d''4\rest  d2\rest
-  |   r1
+  | R1
+  | R1
+  | d2\rest d4\rest d8\rest <d, fis d'>8
+  | <g, d' g>4 d''4\rest  d2\rest
+  | r1
   %70
-  |   << { <f! a>4 } \\ { d8[ c!] } >>
-      << {
-        \omit TupletNumber
-        \override TupletBracket.bracket-visibility = ##f
-        \set subdivideBeams = ##t
-        \set baseMoment = #(ly:make-moment 1/16)
-        \magnifyMusic 0.75 {
-          \tuplet 6/4 8 {
-            g'64 a g a g a  g a g a g a  g a g a g a
-          }
-          \tuplet 5/4 16 {
-            g a g f g
-          }
+  | << { <f! a>4 } \\ { d8[ c!] } >>
+    << {
+      \omit TupletNumber
+      \override TupletBracket.bracket-visibility = ##f
+      \set subdivideBeams = ##t
+      \set baseMoment = #(ly:make-moment 1/16)
+      \magnifyMusic 0.75 {
+        \tuplet 6/4 8 {
+          g'64 a g a g a  g a g a g a  g a g a g a
         }
-        \set subdivideBeams = ##f
-      } \\ {
-        \stemDown \shiftOn d16[ e cis d] \stemUp a'4
-      } \\ {
-        bes,!4 <a cis! e>4
-      } >>\breathe
-      d4\rest
-  |   r1
-  |   r1
-  |   r1
-  |   r1
+        \tuplet 5/4 16 {
+          g a g f g
+        }
+      }
+      \set subdivideBeams = ##f
+    } \\ {
+      \stemDown \shiftOn d16[ e cis d] \stemUp a'4
+    } \\ {
+      bes,!4 <a cis! e>4
+    } >>\breathe
+    d4\rest
+  | R1
+  | d4\rest <fis,, a c! fis>4 d''2\rest
+  | R1
+  | d4\rest <f,,! g f'! g>8 d''8\rest
+    << {
+      <g, cis g'>8 <f f'>16^- <g g'>^- a'4~^\markup { \italic "ten." }
+    } \\ {
+      e,8[ d]  <a' d f>8[ <a, a'>\mp]
+    } >>
   %75
+  | << {
+      a''32[ d, fis a] c[ ees d c]
+    } \\ {
+      r32 <d, d,>8.-\markup {
+        \italic\small
+        \column {
+          \general-align #Y #1
+          "(sehr ruhig)"
+          "(very quietly)"
+        }
+      }
+      s32
+    } >>
+    \bar "||"
+    << {
+      <bes' d g>4 s4 << <a c! ees! fis>4 \\ { \magnifyMusic 1.25 { c,4\rest } } >>
+    } \\ {
+      r4-\markup {
+        \italic\small
+        \column {
+          \general-align #Y #1
+          "(weich u. tief)"
+          "(soft and misterious)"
+        }
+      }
+      <d,~ g bes d e>4^-\sustainOn
+      \magnifyMusic 0.75 {
+        \parenthesize d4~
+        \sustainOff
+      }
+    } >>
+  | << {
+      s4 a'4\rest % \\ { \magnifyMusic 1.25 { \stemUp <g' bes c e>4 } } >>
+      s4 a4\rest
+    } \\ {
+      <d,~ f! gis d'>4^--\sustainOn
+      \magnifyMusic 0.75 {
+        \parenthesize d4~
+        \sustainOff
+      }
+      <d~ ees fis c' d>^-
+      \magnifyMusic 0.75 {
+        \parenthesize d4~
+      }
+    } >>
+  | << {
+      s4 a'4\rest
+      s4 a4\rest
+    } \\ {
+      <d,~ f! b! d>4^-
+      \magnifyMusic 0.75 {
+        \parenthesize d4~
+      }
+      <d~ ees a c! d>^-
+      \magnifyMusic 0.75 {
+        \parenthesize d4~
+      }
+    } >>
+  | << {
+      s4 a'4\rest
+      s4 a4\rest
+    } \\ {
+      <d,~ bes' cis d e!>4^-
+      \magnifyMusic 0.75 {
+        \parenthesize d4~
+      }
+      <d~ f! gis b! d>^-
+      \magnifyMusic 0.75 {
+        \parenthesize d4~
+      }
+    } >>
+  | << {
+      <d' e>2-\markup { \italic "ten." }
+      s2
+    } \\ {
+      \override DynamicText.self-alignment-X = #1
+      <d, e bes'>2 <d, a' d>2^\p
+      \sustainOn
+    } >>
   \fine
 % la si do re mi fa sol
 %  a b  c  d  e  f  g
