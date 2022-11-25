@@ -26,7 +26,7 @@ You can see here the [manuscript](images/baldassare-galuppi-sonata-5-manuscript-
 #### Johann Sebastian Bach
 
  * [Suite Anglaise IV (BWV809)](https://github.com/madrisan/open-scores/blob/main/scores/JS-Bach-BWV809-Suite-Anglaise-4.pdf)
- * [Chromatische Fantasie und Fugue (BWV903)](https://github.com/madrisan/open-scores/blob/main/scores/JS-Bach-BWV903-Chromatische-Fantasie-und-Fugue.pdf) -- *in progress*
+ * [Chromatische Fantasie und Fugue (BWV903)](https://github.com/madrisan/open-scores/blob/main/scores/JS-Bach-BWV903-Chromatische-Fantasie-und-Fugue.pdf)
  * [Italienisches Konzert (BWV971)](https://github.com/madrisan/open-scores/blob/main/scores/JS-Bach-BWV971-Italienisches-Konzert.pdf)
 
 #### Rued Langgaard
