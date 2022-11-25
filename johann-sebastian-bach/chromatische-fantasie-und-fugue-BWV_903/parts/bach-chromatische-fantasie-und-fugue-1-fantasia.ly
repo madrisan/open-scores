@@ -268,7 +268,7 @@ Upper = \relative c'' {
         <bes! g' bes!>2
       } \\ {
         \voiceOne
-        \shiftOn ees!4\( d\)
+        \shiftOn ees!4\( \parenthesize d\)
       } >>
   |   <bes cis e! g bes>2  <a cis! e f a>2
   |   <a d f a^~>2-\markup { \italic "(weich) (soft)" }
@@ -298,7 +298,7 @@ Upper = \relative c'' {
   |   << {
         <a e' a>2
       } \\ {
-        d4( cis)-\markup {
+        d4( \parenthesize cis)-\markup {
           \italic
           \column {
             \small "(not to be played)"
@@ -459,17 +459,19 @@ Upper = \relative c'' {
         s4 \once\stemDown <cis g' bes>4 s4
       } >>
   |   << {
-        c'8[( b!])  b16\rest\p bes cis32-- e-- g16--  bes,8[( a])  b32\rest\p a[ d cis! d e!-- f!16--]
+        c'8[(\> b!])\!  b16\rest\p bes cis32-- e-- g16--
+        bes,8[(\> a])\!  b32\rest\p a[ d cis! d e!-- f!16--]
       } \\ {
         <b,,! f'! gis>4 s4 <a ees' fis>4 s4
       } >>
   |   << {
-        a'8[( gis])  b16\rest g!32[ a bes! cis d e]  g,8[( fis])  b16\rest d32[\downbow b! gis a b!16]
+        a'8[(\> gis])\!  b16\rest g!32[ a bes! cis d e]
+        g,8[(\> fis])\!  b16\rest d32[\downbow b! gis a b!16]
       } \\ {
         <gis, d' f>4 s <fis c' ees> s
       } >>
   |   << {
-        f'16--[( d-- e8--])  b'32\rest  ees32[\downbow c-- a-- fis a ees16]
+        f'16--[(\> d-- e8--])\!  b'32\rest  ees32[\downbow c-- a-- fis a ees16]
         ees!8[( d)]  b'32\rest d,64[ e! fis g a bes] a[ g f!32 e f!64 g]
       } \\ {
         <g, bes!>4 s <f! gis> s
@@ -531,7 +533,7 @@ Upper = \relative c'' {
         \set breathMarkType = #'caesura
         d4~^\markup { \small\sharp }^\mordent
         \magnifyMusic 0.75 {
-          d32[ cis8..]
+           d32[ cis8..]
         }
         r8\breathe b!--^\markup { \small \italic "meno " \dynamic "f" } [ b!-- a--]
       } \\ {
@@ -1272,7 +1274,8 @@ Lower = \relative c {
     } >>
     \bar "||"
     << {
-      <bes' d g>4 s4 << <a c! ees! fis>4 \\ { \magnifyMusic 1.25 { c,4\rest } } >>
+      % <bes' d g>4 s4 << <a c! ees! fis>4 \\ { \magnifyMusic 1.25 { c,4\rest } } >>
+      <bes' d g>4 s <a c! ees fis>
     } \\ {
       r4-\markup {
         \italic\small
@@ -1282,15 +1285,15 @@ Lower = \relative c {
           "(soft and misterious)"
         }
       }
-      <d,~ g bes d e>4^-\sustainOn
+      <d,,~ g bes d e>4^-\sustainOn
       \magnifyMusic 0.75 {
         \parenthesize d4~
         \sustainOff
       }
     } >>
   | << {
-      s4 a'4\rest % \\ { \magnifyMusic 1.25 { \stemUp <g' bes c e>4 } } >>
-      s4 a4\rest
+      s4 <g' bes cis e>--
+      s <f a d>--
     } \\ {
       <d,~ f! gis d'>4^--\sustainOn
       \magnifyMusic 0.75 {
@@ -1303,8 +1306,8 @@ Lower = \relative c {
       }
     } >>
   | << {
-      s4 a'4\rest
-      s4 a4\rest
+      s4 <e' g! bes c>--
+      s4 <d f! gis b!>--
     } \\ {
       <d,~ f! b! d>4^-
       \magnifyMusic 0.75 {
@@ -1316,8 +1319,8 @@ Lower = \relative c {
       }
     } >>
   | << {
-      s4 a'4\rest
-      s4 a4\rest
+      s4 <c' ees fis a>--
+      s <bes d g>--
     } \\ {
       <d,~ bes' cis d e!>4^-
       \magnifyMusic 0.75 {
@@ -1347,11 +1350,13 @@ Lower = \relative c {
   <<
     \accidentalStyle Score.piano-cautionary
     \new Staff = "upper" {
+      \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \Upper
       \pageBreak
     }
     \new Staff = "lower" {
+      \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \Lower
     }
@@ -1368,6 +1373,6 @@ Lower = \relative c {
   }
   \layout { }
   \midi {
-    \tempo 4 = 100
+    \tempo 4 = 90
   }
 }

@@ -698,12 +698,14 @@ Bass = \context Voice = "three"  \relative c' {
   <<
     \accidentalStyle Score.piano-cautionary
     \context Staff = "upper" <<
+      \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \clef treble
       \Soprano
       \Tenor
     >>
     \context Staff = "lower" <<
+      \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \clef bass
       \Bass
