@@ -478,15 +478,15 @@ Upper = \relative c'' {
       } >>
   |   << {
         d'8[( cis])
-        \once \override Slur #'direction = #DOWN \acciaccatura d8 cis8.\startTrillSpan
+        \once \override Slur.direction = #DOWN \acciaccatura d8 cis8.\startTrillSpan
         b!32\stopTrillSpan cis
         d2\fermata
       } \\ {
         g,2
         \change Staff = "lower"
         \stemUp
-        \once \override Stem #'cross-staff = ##t
-        \once \override Stem #'length = #20
+        \once \override Stem.cross-staff = ##t
+        \once \override Stem.length = #20
         <d fis>2
         \change Staff = "upper"
       } >>
@@ -674,10 +674,7 @@ Upper = \relative c'' {
   %75
     }
     >>
-% | r1
   \fine
-% la si do re mi fa sol
-%  a b  c  d  e  f  g
 }
 
 Lower = \relative c {
@@ -1340,8 +1337,6 @@ Lower = \relative c {
       \sustainOn
     } >>
   \fine
-% la si do re mi fa sol
-%  a b  c  d  e  f  g
 }
 
 
