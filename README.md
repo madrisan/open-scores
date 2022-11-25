@@ -25,6 +25,7 @@ You can see here the [manuscript](images/baldassare-galuppi-sonata-5-manuscript-
 
 #### Johann Sebastian Bach
 
+ * [Jesu meine Freude (BWV610)](https://github.com/madrisan/open-scores/blob/main/scores/JS-Bach-BWV610-Jesu-meine-Freude.pdf)
  * [Suite Anglaise IV (BWV809)](https://github.com/madrisan/open-scores/blob/main/scores/JS-Bach-BWV809-Suite-Anglaise-4.pdf)
  * [Chromatische Fantasie und Fugue (BWV903)](https://github.com/madrisan/open-scores/blob/main/scores/JS-Bach-BWV903-Chromatische-Fantasie-und-Fugue.pdf)
  * [Italienisches Konzert (BWV971)](https://github.com/madrisan/open-scores/blob/main/scores/JS-Bach-BWV971-Italienisches-Konzert.pdf)
@@ -50,7 +51,8 @@ lilypond sonate-fur-klavier-op-1.ly
 ```
 make baldassare-galuppi-sonata-5-c-major
 make johann-sebastian-bach-chromatische-fantasie-und-fugue
-make johann-sebastian-bach-suite-anglaise-4
 make johann-sebastian-bach-italienisches-konzert
+make johann-sebastian-bach-jesu-meine-freude
+make johann-sebastian-bach-suite-anglaise-4
 make rued-langgaard-insektarium
 ```
