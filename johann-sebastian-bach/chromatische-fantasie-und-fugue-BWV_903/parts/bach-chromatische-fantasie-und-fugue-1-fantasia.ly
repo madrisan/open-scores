@@ -274,6 +274,7 @@ Upper = \relative c'' {
   |   <a d f a^~>2-\markup { \italic "(weich) (soft)" }
       a'16^\(-\markup { \italic "(dolce)" } g f e f cis d a
   |   s2 s8. a16 d[ f a gis]\)
+      \mergeDifferentlyDottedOn
   |   << {
         \voiceOne
         \set tieWaitForNote = ##t
@@ -289,6 +290,7 @@ Upper = \relative c'' {
         \voiceTwo
         a'16 fis dis c!~ c4~ c b!
       } >>
+       \mergeDifferentlyDottedOff
   %45 organUpper
   |   <a c e a>2^-  <gis b! d e gis>2^-
   |   <e' gis b! c>2  <c e a c>2
@@ -335,7 +337,7 @@ Upper = \relative c'' {
       \Global
       \omit Staff.TimeSignature
       \clef "bass"
-  |   <dis,, fis a b!>2^-\sustainOn
+  |   <dis, fis a b!>2^-\sustainOn
       <dis fis a c>2^-\sustainOn
   %35 organLower
   |   <g bes cis>2  <gis b! d>2
@@ -348,6 +350,7 @@ Upper = \relative c'' {
   |   <a cis g' a>2  <a cis f a>2
   |   <bes d f bes>2 r2
   |   bes''16[ gis a e] f cis[ d a] bes[ d f] s16 s4
+     \mergeDifferentlyDottedOn
   |   << {
         \voiceThree
         s4 b!16 a fis e a2
@@ -356,11 +359,12 @@ Upper = \relative c'' {
         s4 s16 a8.^~ a2
       } \\ {
         \voiceFour
-        s4. fis8~ fis2
+        s4. fis8^~ fis2
       } \\ {
         \voiceFour
         s2 dis2
       } >>
+       \mergeDifferentlyDottedOff
   %45
   |   <e, a c e>2  <e b'! d e>2
   |   <e' gis b! c>2^\markup{
@@ -381,7 +385,7 @@ Upper = \relative c'' {
     << {
   |   \set breathMarkType = #'caesura
       a''4\rest
-      << { <beses, beses'>8(\f <aes aes'>) } \\ <c ees>4 >> \breathe
+      << { <beses,, beses'>8(\f <aes aes'>) } \\ <c ees>4 >> \breathe
       b'2\rest
   |   b4\rest  << { bes8( a!) } \\ { <ees ges ees'>4\f } >> \breathe b'2\rest
   |   b4\rest  \stemUp <a, c ees a>\mp^\markup { \italic "ten." }  b'2\rest
@@ -808,46 +812,22 @@ Lower = \relative c {
     \stemUp g^>[ a bes g] \stemDown e[ f g e]
     \stemUp cis![ d e cis] \stemDown a[ b! cis! a]
   | << {
-      \override TupletBracket.bracket-visibility = ##f
-      \omit TupletNumber
       \change Staff = "upper" {
         s8
         \omit TupletNumber
-        << {
-          \tuplet 5/4 16 {
-            c'32[ ees fis a c]
-          }
-           ees4^\>^\markup { \italic\small "l. H" }\( \voiceThree d4 c4\!\)
-        } \\ {
-          \omit TupletNumber
-          \tuplet 5/4 16 {
-            s32 \single \omit Stem \single \hide Flag ees,8~
-          }
-          \voiceOne \once \shiftOn \override NoteColumn.force-hshift = 0.7
-          \single \omit Stem ees4
-        } \\ {
-          \omit TupletNumber
-          \tuplet 5/4 16 {
-            s32 s
-            \override Dots.dot-count = #0
-            \once \shiftOff
-            \single \omit Stem \single \hide Flag
-            fis16._~
-            \revert Dots.dot-count
-          }
-          \voiceOne fis4~
-          \stemDown fis2
-        } \\ {
-          \omit TupletNumber
-          \tuplet 5/4 16 {
-            s32 s s
-            \once \shape #'((0 . 0.2) (0 . 0.5) (0 . 0.5) (0 . 1)) Tie
-            \single \omit Stem \single \hide Flag
-            a16~
-          }
-          \voiceOne a4_~
-          \stemDown a2
-        } >>
+        \override TupletBracket.bracket-visibility = ##f
+        \set tieWaitForNote = ##t
+        \tuplet 5/4 16 {
+          \voiceOne
+          c'32[ ees~ fis~ a_~ c]
+        }
+        <ees, fis a>4~^\markup { \italic\small "l. H" }
+        \stemDown <d fis a>2 \stemNeutral
+      }
+    } \\ {
+      \change Staff = "upper" {
+        \voiceOne
+        s4 ees'(^\> d-\markup { \italic\small "r. H" } c)\!
       }
     } \\ {
       \change Staff = "lower" {
@@ -855,14 +835,14 @@ Lower = \relative c {
         \omit TupletNumber
         \set tieWaitForNote = ##t
         \tuplet 6/4 8 {
-          \stemUp fis,,32\sustainOn
+          \stemUp fis,,,32\sustainOn
           \stemDown a[ c! ees fis~ a~]
         }
         s4.
         <fis a>2\sustainOff
       }
     } >>
-    \set tieWaitForNote = ##f
+    %\set tieWaitForNote = ##f
     \bar "||"
   | \omit Staff.TimeSignature
     d32\rest_\markup { \italic "dolce, (quasi Arpa)" }
@@ -1040,11 +1020,11 @@ Lower = \relative c {
       \omit TupletNumber
       \tuplet 15/16 2 {
         r32
-        \stemUp bes,[\sustainOn d f]
+        \stemUp bes,,[\sustainOn d f]
         \change Staff = "upper" {
           \override LaissezVibrerTie.details.note-head-gap = #'-1
           \override LaissezVibrerTie.extra-offset = #'(2 . 0)
-          \stemDown a,[ d f a^\laissezVibrer^- f d a]
+          \stemDown a[ d f a^\laissezVibrer^- f d a]
         }
         \change Staff = "lower"{
           \stemUp f[ d a]
