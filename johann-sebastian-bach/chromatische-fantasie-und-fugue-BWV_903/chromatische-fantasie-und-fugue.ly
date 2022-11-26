@@ -34,6 +34,11 @@
   }
 
   \markup {
+    \with-dimensions #'(0 . 0) #'(0 . 0)
+    \with-color #(rgb-color 0.2 0.4 0.5)
+    \filled-box #'(-200 . 200) #'(-200 . 200) #0
+  }
+  \markup {
     \fill-line {
       \center-column {
         \null\null\null\null\null
@@ -41,7 +46,9 @@
         \line { \abs-fontsize #30 \bold "Johann Sebastian" }
         \null
         \line { \abs-fontsize #80 \bold "Bach" }
-	\null\null\null
+	\null
+        \fill-line { \draw-hline }
+        \null\null\null
         \line { \abs-fontsize #28 \bold "Chromatische Fantasie und Fuge" }
         \null\null\null\null
         \line { \abs-fontsize #20 "BWV 903" }
@@ -54,7 +61,7 @@
           \override #'(thickness . 5)
           \draw-squiggle-line #0.5 #'(10 . 0) ##t
         }
-        \null\null\null\null\null\null\null
+        \null\null\null\null\null\null
         \fill-line { \abs-fontsize #11 "Transcribed and Engraved by Davide Madrisan" }
         \fill-line { \abs-fontsize #9 \typewriter "https://github.com/madrisan/open-scores/" }
         \null
