@@ -34,29 +34,40 @@
   }
 
   \markup {
+    \with-dimensions #'(0 . 0) #'(0 . 0)
+    \with-color #(rgb-color 0.2 0.4 0.5)
+    \filled-box #'(-200 . 200) #'(-200 . 200) #0
+  }
+  \markup {
     \fill-line {
       \center-column {
-        \null\null\null\null\null
-        \null\null\null\null\null
+        \null\null\null
+        \null\null\null
         \line { \abs-fontsize #30 \bold "Johann Sebastian" }
         \null
         \line { \abs-fontsize #80 \bold "Bach" }
-        \null\null\null\null\null
-        \line { \abs-fontsize #34 \bold "Jesu, meine Freude" }
-        \null\null\null\null
-        \line { \abs-fontsize #20 "BWV 610" }
-        \null\null
-        \fill-line { \abs-fontsize #20 "Transcribed for Piano Solo" }
+        \null
+        \fill-line {
+          \draw-hline
+        }
         \null\null\null
+        \line { \abs-fontsize #34 \bold "Jesu, meine Freude" }
+        \null\null
+        \line { \abs-fontsize #25 \bold "Orgel-Büchlein nr. 12" }
+        \null\null
+        \line { \abs-fontsize #20 "BWV 610" }
+        \null\null\null\null
+        \fill-line { \abs-fontsize #20 "Transcribed for Piano Solo" }
+        \null\null\null\null
         \fill-line {
           \override #'(thickness . 5)
           \draw-squiggle-line #0.5 #'(10 . 0) ##t
         }
-        \null\null\null\null\null\null\null
+        \null\null\null\null
         \fill-line { \abs-fontsize #11 "Engraved by Davide Madrisan" }
         \fill-line { \abs-fontsize #9 \typewriter "https://github.com/madrisan/open-scores/" }
         \null
-        \fill-line { \abs-fontsize #10 "Based on the Holograph manuscript of Das Orgel-Büchlein (p.15)" }
+        \fill-line { \abs-fontsize #10 "Based on the Holograph manuscript of «Das Orgel-Büchlein» (p.15)" }
         \null
       }
     }
