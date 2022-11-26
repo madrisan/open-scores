@@ -139,7 +139,7 @@ Soprano = \context Voice = "one"  \relative c'' {
   | ees,16 g c8 r16 g a bes c ees d c
   %110
   | bes8 d16 c bes8 bes16 a bes d g8
-  | cis,2.\trill
+  | cis,2.\parenthesize\trill
   | d2.
   | bes4 a g
   | f g8 f e d
@@ -243,7 +243,7 @@ Tenor = \context Voice = "two"  \relative c'' {
   | f8 d16 e! f8 f16 g a8 a16 b
   | c2.-\shape #'((0.5 . -1) (0 . -2) (0 . -3) (0 . -1)) ~
   | c8 d16 c bes8 bes16 a g8 f16 e
-  | cis'2~\trill cis8.\trill b32 cis
+  | cis'2~\tweak extra-offset #'(1 . 1.8)\trill cis8.^\trill b32 cis
   | d2.~
   %25
   | d8 e16 d cis8 cis16 b a8 a16 g
@@ -279,7 +279,7 @@ Tenor = \context Voice = "two"  \relative c'' {
   | \appoggiatura { d16 e } f4 f8 e e d
   | \change Staff = "lower"
     \stemUp d c d c b! a
-  | b!4 gis g
+  | b!4 gis gis
   | \change Staff = "upper"
     r16 a' e c
     \change Staff = "lower" a
@@ -316,8 +316,8 @@ Tenor = \context Voice = "two"  \relative c'' {
   | a4 bes! b!
   | c c8 b! c4
   | e, f fis
-  | g g8 fis g4
-  | g16 a bes8 bes a a g
+  | g! g8 fis g4
+  | g16 a bes!8 bes a a g
   %65
   | g f g f e d
   | e4 e'2~
@@ -335,7 +335,7 @@ Tenor = \context Voice = "two"  \relative c'' {
   | r16 a b c b a g f e4~
   | e2 r4
   | r16 e fis g fis e d c \change Staff = "lower"
-    \stemUp b4~
+    \stemUp b4^~
   | b2 b4\rest
   %80
   | \change Staff = "upper"
@@ -379,10 +379,12 @@ Tenor = \context Voice = "two"  \relative c'' {
   | R1*3/4
   | g8. a16 bes4 b
   | c4 c8 b c16 aes g f
-  | ees8. e16 f4 fis
+  | \mergeDifferentlyDottedOn
+    ees8. e16 f4 fis
+    \mergeDifferentlyDottedOff
   %110
   | g4 g8 fis g8. a16
-  | b4 a g
+  | bes4 a g
   | f g8 f e d
   | e g16 f e f g e cis d e cis
   | a8 d16 cis d8 d16 cis d8 d16 cis
@@ -605,7 +607,7 @@ Bass = \context Voice = "three"  \relative c' {
   | e8 e16 d c8 c16 b a8 a16 g
   | a4~a16 fis g a b8 b,
   | \stemDown e4 r16 b'' g e cis8 r
-  | d4 r16 a' fis d b8 r
+  | d4 r16 a' fis! d b8 r
   | c4 r r
   %100
   | g'8 b,8\rest b4\rest b\rest
@@ -624,11 +626,11 @@ Bass = \context Voice = "three"  \relative c' {
   | g8 bes'16 a g8 g16 f e a g a
   | d, a' d c bes c d bes g a bes g
   | cis,4 r8 e a, cis!
-  | d16 e f e bes8 a g f
+  | d16 e f d bes8 a g f
   %115
   | \stemDown g8 g'16 f e8 g a a,
   | d2.~
-  | d4 b\rest gis'
+  | d4 b\rest gis'!
   | a8 bes!16 c d8 c bes a
   | g a16 bes c8 bes a g
   %120
@@ -696,7 +698,7 @@ Bass = \context Voice = "three"  \relative c' {
 \score {
   \new PianoStaff
   <<
-    \accidentalStyle Score.piano-cautionary
+    \accidentalStyle Score.piano
     \context Staff = "upper" <<
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
