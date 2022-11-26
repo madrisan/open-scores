@@ -53,7 +53,7 @@
           \draw-squiggle-line #0.5 #'(10 . 0) ##t
         }
         \null\null\null\null\null\null\null
-        \fill-line { \abs-fontsize #11 "Transcribed and Engraved by Davide Madrisan" }
+        \fill-line { \abs-fontsize #11 "Engraved by Davide Madrisan" }
         \fill-line { \abs-fontsize #9 \typewriter "https://github.com/madrisan/open-scores/" }
         \null
         \fill-line { \abs-fontsize #10 "Based on the Holograph manuscript of Das Orgel-Büchlein (p.15)" }
@@ -127,7 +127,10 @@ Tenor = \context Voice = "three"  \relative c' {
   \repeat volta 2 {
   %1
   | c16 b! c8~ c16 b! c g a8 g~ g16 g as es
-  | f16 es f d g as g f es d \tieDown es8~ es16 \tieNeutral f es d
+  | f16 es f d g^\markup {
+      \italic\small "r.H"
+    }
+    as g f es d \tieDown es8~ es16 \tieNeutral f es d
   | c16 b! c g' c b! c c, f8. g16 as!4^~
   | as16 g as b c b! c8 d8. c16 b! c d b!
   %5
@@ -138,8 +141,13 @@ Tenor = \context Voice = "three"  \relative c' {
   | es8 es4 d8 es8. bes16 es d es f
   | es16 f g8 c16 d c bes a g f8^~ f4
   %10
-  | g16 fis g a bes a bes g c bes c a d es d c
-  | b!8 c16 a b! g a fis g8 d16 es f es f8~
+  | g16 fis g a bes a bes g c bes c a
+    d^\markup {
+      \italic\small "r.H"
+    } es d c
+  | b!8 c16 a b! g a fis g8 d16_\markup {
+      \italic\small "l.H"
+  } es f es f8~
   | f16 d es b! c b! c8 r16 f g d es g as fis
   | g16 d f! es f as g f e8. f16~ f d e8^\fermata
 }
