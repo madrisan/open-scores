@@ -7,18 +7,18 @@
 }
 
 \paper {
+  annotate-spacing = ##f
+  bottom-margin = 10\mm
+  first-page-number = 0
   indent = 0.0
   line-width = 16.6\cm
-  top-margin = 20\mm
-  bottom-margin = 10\mm
+  print-all-headers = ##t
   ragged-last-bottom = ##f
-%  ragged-bottom = ##f
-  first-page-number = 0
+  ragged-bottom = ##f
+  system-system-spacing = #'((basic-distance . 2) (padding . 10))
+  top-margin = 30\mm
 %  markup-system-spacing.basic-distance = #10
 %  last-bottom-spacing.padding = #2
-  print-all-headers = ##t
-  ragged-bottom = ##t
-  annotate-spacing = ##f
 }
 
 \bookpart {
@@ -72,8 +72,15 @@ Global = {
 Soprano = \context Voice = "one"  \relative c'' {
   %1
   \voiceOne
+  \override Beam.breakable = ##t
   \repeat volta 2 {
-  | g4^\markup { \hspace #-4 \italic\bold "Largo" } g f es
+  | g4^\markup {
+      \hspace #-4 \italic\bold "Largo"
+    }_\markup {
+      \hspace #-4 \vspace #4 \dynamic mp
+      \italic\small "(la voce più acuta ben in risalto)"
+    }
+    g f es
   | d2 c\fermata
   | g'4 g a b!
   | c2 b!\fermata
@@ -103,6 +110,7 @@ Alto = \context Voice = "two"  \relative c' {
   | g8 f es16 g as es f es f d g as g f
   | e8 f16 g as g as e f g f8~ f16 f es d
   }
+  \pageBreak
   | es16 d es8~ es16 f es des c8 bes~ bes16 bes c g
   | as16 g as f bes c bes as g f g8~ g16 bes c d
   | es16 d es8~ es16 f es d c8 d16 es f as g f
@@ -164,7 +172,7 @@ Pedal = \context Voice = "four"  \relative c {
 \score {
   \new PianoStaff
   <<
-    \accidentalStyle Score.piano-cautionary
+    \accidentalStyle Score.piano
     \context Staff = "upper" <<
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
@@ -183,7 +191,9 @@ Pedal = \context Voice = "four"  \relative c {
   \header {
     composer = "Johann Sebastian Bach"
     opus = "BWV 610"
-    %subtitle = ""
+    subtitle = \markup {
+      \italic "(Orgel-Büchlein nr. 12)"
+    }
     title = \markup {
       %\override #'(font-name . "TeX Gyre Schola") {
         "Jesu, meine Freude"
