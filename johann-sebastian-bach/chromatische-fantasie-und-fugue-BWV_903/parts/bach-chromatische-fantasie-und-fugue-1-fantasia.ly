@@ -9,7 +9,7 @@ Upper = \relative c'' {
   \tempo \markup {
     \italic
     \column {
-       "rash, kernig"
+      "rash, kernig"
       \general-align #Y #-1
       "rapidly with energy"
     }
@@ -160,7 +160,7 @@ Upper = \relative c'' {
       b,32\rest^\markup { \italic "(sopra)" }  e,[\< f g a] \voiceTwo b![ cis d] e
       \voiceOne f[ g a bes\! a g f] e[ f g f e d s d] e[ d cis b! a s bes a]
     } \\ {
-      s4 s4  s8 s16 cis32 s32  s8 s32 g s16
+      s4 s4  s8 s16 cis!32 s32  s8 s32 g s16
     }
     >>
   | << {
@@ -254,7 +254,7 @@ Upper = \relative c'' {
       \Global
       \omit Staff.TimeSignature
       \clef "treble"
-  |   <dis' fis a b!>2^\markup { \italic "(quasi Organo)" }^-
+  |   <dis' fis a b!>2^\markup { \italic "soft, muffled (quasi Organo)" }^-
       <dis fis a c>2^-
   %35 organUpper
   |   <e g bes cis>2  <fis g b! d>2^-
@@ -265,10 +265,10 @@ Upper = \relative c'' {
   %40 organUpper
   |   <bes! ees g bes!>2
       << {
-        <bes! g' bes!>2
+        <bes g' bes>2
       } \\ {
         \voiceOne
-        \shiftOn ees!4\( \parenthesize d\)
+        \shiftOn ees!4 \( \parenthesize d\)
       } >>
   |   <bes cis e! g bes>2  <a cis! e f a>2
   |   <a d f a^~>2-\markup { \italic "(weich) (soft)" }
@@ -427,9 +427,9 @@ Upper = \relative c'' {
   |   R1
   |   b2\rest b4\rest b8\rest <a, d fis>8
   |   <bes d g>4 b'4\rest b2\rest
-  |   b8\rest  <a, ees' fis>8  b4\rest  <g bes e! g>4  b4\rest
+  |   b8\rest  <a, ees' fis>8  b'4\rest  <g, bes e! g>4  b'4\rest
   %70
-  |   <f' a d f>16 s8.
+  |   <f a d f>16 s8.
        << {
          \stemUp <d' g>4^\f
        } >>
@@ -800,9 +800,9 @@ Lower = \relative c {
   | \tuplet 3/2 8 { d16 g bes } s8
     s8 \tuplet 3/2 8 { s16 bes[ g] }
     \tuplet 5/4 8 { d32 f gis b! d } s8
-    s8 \tuplet 5/4 8 { d32 bes g f d }
+    s8 \tuplet 5/4 8 { d32 bes gis f d }
   %30
-  | \once\stemUp c64 e[ a cis] s16^\markup { \italic "(quasi in tempo)" } s8
+  | \once\stemUp cis64 e[ a cis] s16^\markup { \italic "(quasi in tempo)" } s8
     s4 s4\sustainOn s8_\markup {
       \italic{ "(mute)" }
     } s8\sustainOff
@@ -979,7 +979,7 @@ Lower = \relative c {
       }
     }
     \change Staff = "lower" {
-      << d,4 \\ {
+      << d,4^- \\ {
         \omit TupletNumber
         \tuplet 6/8 4 {
           \stemDown d32[ bes g ees bes g]
@@ -1203,7 +1203,7 @@ Lower = \relative c {
   | R1
   | d2\rest d4\rest d8\rest <d, fis d'>8
   | <g, d' g>4 d''4\rest  d2\rest
-  | r1
+  | d8\rest <c, ees fis c'> d'4\rest <cis, e! bes' cis>4 d'4\rest
   %70
   | << { <f! a>4 } \\ { d8[ c!] } >>
     << {
@@ -1221,9 +1221,10 @@ Lower = \relative c {
       }
       \set subdivideBeams = ##f
     } \\ {
-      \stemDown \shiftOn d16[ e cis d] \stemUp a'4
+      \stemDown d16[ e cis d] \stemUp a'4
     } \\ {
-      bes,!4 <a cis! e>4
+      \stemDown bes,!4
+      <a cis! e>4 \stemNeutral
     } >>\breathe
     d4\rest
   | R1
@@ -1233,7 +1234,7 @@ Lower = \relative c {
     << {
       <g, cis g'>8 <f f'>16^- <g g'>^- a'4~^\markup { \italic "ten." }
     } \\ {
-      e,8[ d]  <a' d f>8[ <a, a'>\mp]
+      e,8[ d]  <a' d f>8\arpeggio[ <a, a'>\mp]
     } >>
   %75
   | << {
@@ -1323,8 +1324,8 @@ Lower = \relative c {
 \score {
   \new PianoStaff
   <<
-    \accidentalStyle Score.piano-cautionary
-    \new Staff = "upper" {
+    \accidentalStyle Score.piano
+s    \new Staff = "upper" {
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \Upper
