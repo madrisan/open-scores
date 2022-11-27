@@ -100,7 +100,7 @@ Upper = \relative c'' {
        \\ { s8
             \stemUp
             \magnifyMusic 1.5 {
-              \once \override Stem #'length = #8
+              \once \override Stem.length = #8
               d,4\harmonic-\markup \teeny \italic {
                 \column {
                   "grasp the"
