@@ -238,7 +238,7 @@ Upper = \relative c'' {
      \stemDown \change Staff = "upper" { <b' d> }
      \stemUp   \change Staff = "lower" { <ais, cis> }
 
-     \override TupletBracket.bracket-visibility = ##f
+    \override TupletBracket.bracket-visibility = ##f
     %\override TupletNumber.Y-offset = #-7
 
      \repeat unfold 3 {
@@ -316,7 +316,7 @@ Lower = \relative c {
 \score {
   \new PianoStaff
   <<
-    \accidentalStyle Score.piano-cautionary
+    \accidentalStyle Score.piano
     \new Staff = "upper" {
       \Global
       \Upper
@@ -343,6 +343,7 @@ Lower = \relative c {
     \context { \Score
       \omit BarNumber
       \omit TimeSignature
+      \override SpacingSpanner.base-shortest-duration = #(ly:make-moment 1/2)
     }
   }
   \midi {

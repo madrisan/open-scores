@@ -106,7 +106,7 @@ Upper = \relative c'' {
      \change Staff = "upper" { \ottava #1 \stemDown <bes' bes'>-. \ottava #0 }
      \change Staff = "lower" { \stemUp <d, d'>-. }
      \change Staff = "upper"
-   | r1\fermata
+   | R1\fermata
    \fine
 
 % la si do re mi fa sol
@@ -133,18 +133,15 @@ Lower = \relative c {
    | s1
    | s1
    %15
-   | s1
-   | r1\fermata
+   | s2 s2\sustainOn\startTextSpan
+   | R1\fermata\stopTextSpan
    \fine
-
-% la si do re mi fa sol
-%  a b  c  d  e  f  g
 }
 
 \score {
   \new PianoStaff
   <<
-    \accidentalStyle Score.piano-cautionary
+    \accidentalStyle Score.piano
     \new Staff = "upper" {
       \Global
       \Upper

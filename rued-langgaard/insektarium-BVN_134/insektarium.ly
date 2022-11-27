@@ -9,8 +9,8 @@
 \paper {
   indent = 0.0
   line-width = 18.6\cm
-  top-margin = 10\mm
-  bottom-margin = 10\mm
+  top-margin = 12\mm
+  bottom-margin = 12\mm
   first-page-number = 0
   print-all-headers = ##t
   ragged-bottom = ##f
@@ -64,10 +64,8 @@
 \include "./parts/insektarium-1.ly"
 \pageBreak
 \include "./parts/insektarium-2.ly"
-\pageBreak
 \include "./parts/insektarium-3.ly"
 \include "./parts/insektarium-4.ly"
-\pageBreak
 \include "./parts/insektarium-5.ly"
 \pageBreak
 \include "./parts/insektarium-6.ly"

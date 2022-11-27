@@ -116,6 +116,7 @@ Upper = \relative c' {
       bes32\([ bes' bes, bes' bes, bes']
       bes,32[ bes' bes, bes' bes, bes']
     }
+    \break
   %20
   | \tuplet 3/2 16 {
       \stemUp
@@ -144,6 +145,7 @@ Upper = \relative c' {
     }
   | \tuplet 3/2 16 { e![ aes e! aes e! aes] }
     \tuplet 3/2 16 { g![ b! g! b! g! b!] }
+    \break
   %25
   | \key c \major
     \tuplet 3/2 16 {
@@ -445,7 +447,7 @@ Lower = \relative c' {
 \score {
   \new PianoStaff
   <<
-    \accidentalStyle Score.piano-cautionary
+    \accidentalStyle Score.piano
     \new Staff = "upper" {
       \Global
       \Upper
