@@ -27,16 +27,22 @@ Upper = \relative c'' {
    | a[ b, c! bes' b! cis,]
      g[ f' cis gis fis' d]
    %5
-   | g,![f'! des g, fis e' ]
+   | \once\override Accidental.stencil = ##f
+     g,!-\markup { \small\parenthesize\natural }[
+     \once\override Accidental.stencil = ##f
+     f'!-\markup { \small\parenthesize\natural }
+     des g, fis e' ]
      \stemUp
      c[ fis, f! des f! des]~
    | des[ a' f a f des]
      c[ fis g cis, d! g]
-   | aes[ d, d' a! g e']
+   | aes[ d, d'
+     \once\override Accidental.stencil = ##f
+     aes! g e']
      \stemDown
      f[ b, cis a' b dis,]
-   | g[ cis dis b c g']\)
-     <ees,, a c ees>4.~\sff
+   | g[ cis dis b cis g']\)
+     <ees,, as c ees>4.~\sff
    | <ees a c ees>4_>
      \footnote \markup \tiny "(*)" #'(-0.8 . 3) \markup \tiny \wordwrap {
        (*) \italic {
@@ -66,8 +72,14 @@ Upper = \relative c'' {
    | r4. \stemUp d,16\([ e f cis c! f]
    %15
    | gis[ d-\markup { \dynamic p \italic sempre } f b d bes] \stemDown a[ ees' f d c fis]
-   | aes[ d, ees a! cis g] f[ des g, e'! a, ees]
-   | g[ f' des g, fis e'!] c[fis, f! des f des~]
+   | aes[ d, ees a! cis g] f[ des g,
+     \once\override Accidental.stencil = ##f
+     e'!-\markup { \small\parenthesize\natural }
+     a, ees]
+   | g[ f' des g, fis
+     \once\override Accidental.stencil = ##f
+     e'!-\markup { \small\parenthesize\natural }]
+     c[fis, f! des f des_~]
    | des[ a' f a f des] c[fis g cis, d! g]
    | aes[ d, d' a! g e']
      \stemDown
@@ -100,7 +112,8 @@ Upper = \relative c'' {
        \\ { s8
             \stemUp
             \magnifyMusic 1.5 {
-              \once \override Stem.length = #8
+              \once\override Stem.length = #8
+              \once\override Staff.BarLine.color = #(x11-color 'grey10)
               d,4\harmonic-\markup \teeny \italic {
                 \column {
                   "grasp the"
@@ -132,11 +145,18 @@ Lower = \relative c {
    | s2 s4
    | << { } \\ { \stemUp bes,2.\pp~ } >>
    | << { } \\ { \stemUp bes4.~ bes4 d8~ } >>
-   | << { } \\ { \stemUp d4.~ d8 bes4~ } >>
+   | << { } \\ {
+       \stemUp d4.~ d8
+       \once\override Accidental.stencil = ##f
+       bes4~
+     } >>
    %5
    | << { } \\ \stemUp bes2.~ >>
    | << {  <a' a'>8-.[ <a a'>8^>] r8 } \\ { \stemDown bes,2._\mp~ } >>
-   | << { } \\ { \stemUp bes4~ bes8.  a4~ a16~ } >>
+   | << { } \\ {
+       \stemUp \once\override Accidental.stencil = ##f
+       bes4~ bes8.  a4~ a16~
+     } >>
    | << { s4.
           \override DynamicText.self-alignment-X = #RIGHT
           \override DynamicText.X-offset =
@@ -168,7 +188,7 @@ Lower = \relative c {
    | d8 aes'4\<-\markup \tiny { \italic reluctantly } b4 d8~\!
    | d16.[ f32~]\sff f4~ f4 << { } \\ { \stemUp b,8\pp~ } >>
    | << { } \\ { \stemUp b2.~ } >>
-   | << { } \\ { \stemUp b2.~ } >>
+   | << { <a' a'>8-.[ <a a'>8^>] r8 } \\ { \stemDown b,2.~ } >>
    | << { } \\ { \stemUp b4.~ b8 a4 } >>
    %20
    | << { s4.
@@ -217,7 +237,7 @@ Lower = \relative c {
 \score {
   \new PianoStaff
   <<
-    \accidentalStyle Score.piano-cautionary
+    \accidentalStyle Score.piano
     \new Staff = "upper" {
       \Global
       \Upper

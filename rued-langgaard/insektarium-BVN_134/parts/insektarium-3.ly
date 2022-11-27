@@ -87,10 +87,11 @@ Lower = \relative c,, {
        \tuplet 6/4 4 { f!16 e dis e eis fis]\) }
      }
    | \shape #'((0 . 3) (0 . 0) (0 . 3) (0 . -3)) PhrasingSlur
+     \override Beam.positions = #'(1 . 1)
      \tuplet 19/12 4 {
        \stemUp
        \change Staff = "lower" {
-         e16\([
+         g16\([
        }
        \stemDown
        \change Staff = "upper" {
@@ -102,6 +103,7 @@ Lower = \relative c,, {
          g! aes g! fis g aes a!]\)
        }
      }
+     \revert Beam.positions
    | \override Beam.gap-count = #3
      \repeat tremolo 8 { bes32 a }
      \repeat tremolo 4 { ais32 b! }
@@ -207,7 +209,7 @@ Lower = \relative c,, {
 \score {
   \new PianoStaff
   <<
-    \accidentalStyle Score.piano-cautionary
+    \accidentalStyle Score.piano
     \new Staff = "upper" {
       \Global
       \Upper
