@@ -69,4 +69,5 @@
 \include "./parts/insektarium-5.ly"
 \pageBreak
 \include "./parts/insektarium-6.ly"
+\include "./parts/insektarium-8.ly"
 \include "./parts/insektarium-9.ly"
