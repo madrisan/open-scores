@@ -29,11 +29,18 @@
   }
 
   \markup {
+    \with-dimensions #'(0 . 0) #'(0 . 0)
+    \with-color #(rgb-color 0.2 0.4 0.5)
+    \filled-box #'(-200 . 200) #'(-200 . 200) #0
+  }
+  \markup {
     \fill-line {
       \center-column {
         \null\null\null\null\null\null\null\null
         \null\null\null\null\null\null\null\null
-        \line { \abs-fontsize #38 \bold "Baldassare Galuppi" }
+        \line { \abs-fontsize #48 \bold "Baldassare Galuppi" }
+	\null
+        \fill-line { \draw-hline }
 	\null\null\null
         \line { \abs-fontsize #34 \bold "Sonata no. 5" }
 	\null
