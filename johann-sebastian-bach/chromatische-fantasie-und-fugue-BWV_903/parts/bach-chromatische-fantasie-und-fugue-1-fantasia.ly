@@ -1325,7 +1325,7 @@ Lower = \relative c {
   \new PianoStaff
   <<
     \accidentalStyle Score.piano
-s    \new Staff = "upper" {
+    \new Staff = "upper" {
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \Upper
