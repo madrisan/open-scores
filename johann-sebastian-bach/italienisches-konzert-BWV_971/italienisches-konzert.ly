@@ -32,6 +32,11 @@
   }
 
   \markup {
+    \with-dimensions #'(0 . 0) #'(0 . 0)
+    \with-color #(rgb-color 0.2 0.4 0.5)
+    \filled-box #'(-200 . 200) #'(-200 . 200) #0
+  }
+  \markup {
     \fill-line {
       \center-column {
         \null\null\null\null\null
@@ -39,13 +44,15 @@
         \line { \abs-fontsize #30 \bold "Johann Sebastian" }
         \null
         \line { \abs-fontsize #80 \bold "Bach" }
-	\null\null\null
+	\null
+        \fill-line { \draw-hline }
+	\null\null
         \line { \abs-fontsize #40 \bold "Italienisches Konzert" }
         \null\null
         \line { \abs-fontsize #24 "Concerto Nach Italienischem Gusto" }
-        \null\null\null\null
-        \line { \abs-fontsize #20 "BWV 971" }
         \null\null
+        \line { \abs-fontsize #20 "BWV 971" }
+        \null\null\null\null
         \fill-line { \abs-fontsize #20 "For Piano or Harpsichord" }
         \null\null\null
         \fill-line {
