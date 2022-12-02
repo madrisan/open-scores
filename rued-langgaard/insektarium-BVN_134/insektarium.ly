@@ -7,6 +7,7 @@
 }
 
 \paper {
+  annotate-spacing = ##f
   indent = 0.0
   line-width = 18.6\cm
   top-margin = 12\mm
@@ -69,5 +70,6 @@
 \include "./parts/insektarium-5.ly"
 \pageBreak
 \include "./parts/insektarium-6.ly"
+\include "./parts/insektarium-7.ly"
 \include "./parts/insektarium-8.ly"
 \include "./parts/insektarium-9.ly"
