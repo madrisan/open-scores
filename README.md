@@ -34,7 +34,7 @@ Image of the J.S. Bach's [manuscript](images/js-bach-jesu-meine-freude-manuscrip
 
 #### Rued Langgaard
 
- * [Insektarium (BVN 134), *I-VI, VIII, IX*](https://github.com/madrisan/open-scores/blob/main/scores/Rued-Langgaard-Insektarium-BVN-134.pdf)
+ * [Insektarium (BVN 134)](https://github.com/madrisan/open-scores/blob/main/scores/Rued-Langgaard-Insektarium-BVN-134.pdf)
 
 ## How to manually create the `.pdf` and `.midi` files
 
