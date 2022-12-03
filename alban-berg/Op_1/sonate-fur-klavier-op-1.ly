@@ -13,6 +13,7 @@
 %  markup-system-spacing.basic-distance = #10
 %  last-bottom-spacing.padding = #2
   print-all-headers = ##t
+  tagline = ##f
 }
 
 \bookpart {
