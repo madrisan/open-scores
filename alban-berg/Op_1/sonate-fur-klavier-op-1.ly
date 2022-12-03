@@ -66,8 +66,11 @@
 }
 
 Global = {
-   \key b \minor
-   \time 3/4
+  \key b \minor
+  \time 3/4
+  % Draw a box round the bar number(s)
+  \override Score.BarNumber.stencil
+    = #(make-stencil-boxer 0.1 0.25 ly:text-interface::print)
 }
 
 accel = { \override TextSpanner.bound-details.left.text = \markup { \small "accel. " } }
@@ -77,17 +80,6 @@ espress = { \override TextSpanner.bound-details.left.text = \markup { \small "es
 rit = { \override TextSpanner.bound-details.left.text = \markup { \small "rit. " } }
 ritdim = { \override TextSpanner.bound-details.left.text = \markup { \small "rit. e dim. " } }
 stringendo = { \override TextSpanner.bound-details.left.text = \markup { \small "stringendo " } }
-
-%rH = \rightHandFinger \markup \concat {
-%  \override #'(thickness . 3)\draw-line #'(0 . 3)
-%  \hspace #-.2
-%  \override #'(thickness . 3)\draw-line #'(1 . 0)
-%}
-%lH = \rightHandFinger \markup \concat {
-%  \override #'(thickness . 3) \draw-line #'(0 . -3)
-%  \hspace #-.2
-%  \override #'(thickness . 3) \draw-line #'(1 . 0)
-%}
 
 Upper = \relative c' {
   \clef treble
@@ -265,10 +257,42 @@ Upper = \relative c' {
       d!8[^> <cis! cis,!>8.^> <b! b,!>16^> ]
     } >>
   | s2.
+  | s2.
+  | s2.
+  | s2.
+  %30
+  | s2.
+  | s2.
+  | s2.
+  | s2.
+  | s2.
+  %35
+  | s2.
+  | s2.
+  | s2.
+  | s2.
+  | s2.
+  %40
+  | s2.
+  | s2.
+  | s2.
+  | s2.
+  | s2.
+  %45
+  | s2.
+  | s2.
+  | s2.
+  | s2.
+  | s2.
+  %50
+  | s2.
+  | s2.
+  | s2.
+  | s2.
+  | s2.
+  %55
+  | s2.
   }
-
-% la si do re mi fa sol
-%  a b  c  d  e  f  g
 }
 
 Lower = \relative c {
@@ -440,10 +464,42 @@ Lower = \relative c {
     gis,4
     \clef bass
   | s2.
+  | s2.
+  | s2.
+  | s2.
+  %30
+  | s2.
+  | s2.
+  | s2.
+  | s2.
+  | s2.
+  %35
+  | s2.
+  | s2.
+  | s2.
+  | s2.
+  | s2.
+  %40
+  | s2.
+  | s2.
+  | s2.
+  | s2.
+  | s2.
+  %45
+  | s2.
+  | s2.
+  | s2.
+  | s2.
+  | s2.
+  %50
+  | s2.
+  | s2.
+  | s2.
+  | s2.
+  | s2.
+  %55
+  | s2.
   }
-
-% la si do re mi fa sol
-%  a b  c  d  e  f  g
 }
 
 \score {
