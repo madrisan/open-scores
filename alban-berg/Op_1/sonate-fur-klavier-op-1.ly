@@ -28,21 +28,38 @@
   }
 
   \markup {
+    \with-dimensions #'(0 . 0) #'(0 . 0)
+    \with-color #(rgb-color 0.2 0.4 0.5)
+    \filled-box #'(-200 . 200) #'(-200 . 200) #0
+  }
+  \markup {
     \fill-line {
       \center-column {
-        \null\null\null\null\null\null\null\null
-        \null\null\null\null\null\null\null\null
-        \line { \abs-fontsize #30 \bold "Alban Berg" }
-	\null\null\null
-        \line { \abs-fontsize #36 \bold "Klaviersonate Op. 1" }
-        \null\null\null\null\null\null\null\null
-        \null\null\null\null\null\null\null\null
+        \null\null\null
+        \null\null\null
+        \null\null\null
+        \line { \abs-fontsize #30 \bold "Alban" }
+        \null
+        \line { \abs-fontsize #80 \bold "Berg" }
+	\null
+	\fill-line { \draw-hline }
+	\null\null\null\null
+        \line { \abs-fontsize #34 \bold "Klaviersonate Op. 1" }
+        \null\null\null\null
+        \null\null\null\null
+        \fill-line {
+          \override #'(thickness . 5)
+          \draw-squiggle-line #0.5 #'(10 . 0) ##t
+        }
+        \null\null\null\null
+        \null\null\null\null
         \fill-line { \abs-fontsize #11 "Transcribed and Engraved by Davide Madrisan" }
         \fill-line { \abs-fontsize #9 \typewriter "https://github.com/madrisan/open-scores/" }
         \null
         \fill-line {
           \abs-fontsize #8 "Based on the Robert Lienau's score"
         }
+        \null
       }
     }
   }
