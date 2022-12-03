@@ -70,6 +70,8 @@ test -n "$critic_missing" && AC_MSG_ERROR([
 AC_CONFIG_FILES([\
   Makefile \
   src/Makefile \
+  src/alban-berg/Makefile \
+  src/alban-berg/Op_1/Makefile \
   src/baldassare-galuppi/Makefile \
   src/baldassare-galuppi/sonata-5-c-major/Makefile \
   src/clara-schumann-wieck/Makefile \

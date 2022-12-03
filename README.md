@@ -142,7 +142,7 @@ autoreconf
 Then execute and one of the following instructions:
 ```
 git checkout BergA-op1
-make -C alban-berg/Op_1
+make -C src/alban-berg/Op_1
 git checkout main
 ```
 ```

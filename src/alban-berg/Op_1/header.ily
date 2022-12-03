@@ -1,12 +1,12 @@
-\version "2.23.10"
+\version "2.23.80"
 
 \header {
   composer = "Alban Berg (1885-1935)"
   date = "1907/1908, revision 1920"
 
-  footer = "Mutopia-2022/05/23-100"
+  footer = "Mutopia-2023/02/01-100"
 
-  lastupdated = "2022 May 23"
+  lastupdated = "2023 Feb 01"
   license = "Creative Commons Attribution-ShareAlike 4.0"
   maintainerEmail = "davide.madrisan@gmail.com"
   maintainerWeb = "https://github.com/madrisan/open-scores"
@@ -31,9 +31,9 @@
       \with-url #"http://www.MutopiaProject.org" {
         \abs-fontsize #9  "Mutopia "
         \concat {
-	  \abs-fontsize #12
-	  \with-color #white "ǀ"
-	  \abs-fontsize #9 "Project "
+          \abs-fontsize #12
+          \with-color \coverColor "ǀ"
+          \abs-fontsize #9 "Project "
         }
       }
     }
@@ -49,17 +49,17 @@
     \column {
       \abs-fontsize #8
       \concat {
-	"Typeset using " \with-url #"http://www.lilypond.org" "LilyPond " ©" 2022 ""by " \maintainer " — " \footer
+        "Typeset using " \with-url #"http://www.lilypond.org" "LilyPond " ©" 2022-2023 ""by " \maintainer " — " \footer
       }
       \concat {
-	\concat {
-	  \abs-fontsize #8 {
-	    \with-url #"http://creativecommons.org/licenses/by-sa/40/"
-	               "Creative Commons Attribution ShareAlike 4.0 International License"
-		       " — free to distribute, modify, and perform"
+        \concat {
+          \abs-fontsize #8 {
+            \with-url #"http://creativecommons.org/licenses/by-sa/40/"
+                       "Creative Commons Attribution ShareAlike 4.0 International License"
+                       " — free to distribute, modify, and perform"
           }
-	}
-	\abs-fontsize #13 \with-color #white "ǀ"
+        }
+        \abs-fontsize #13 \with-color \coverColor "ǀ"
       }
     }
   }

@@ -2,18 +2,29 @@
 
 #(ly:set-option 'relative-includes #t)
 
-\paper {
-  indent = 0.0
-  line-width = 18.6\cm
-  top-margin = 10\mm
-  bottom-margin = 10\mm
-%  ragged-last-bottom = ##t
-%  ragged-bottom = ##f
-  first-page-number = 0
-%  markup-system-spacing.basic-distance = #10
-%  last-bottom-spacing.padding = #2
-  print-all-headers = ##t
+\include "./covercolor.ly"
+
+\header {
   tagline = ##f
+}
+
+\paper {
+  annotate-spacing = ##f
+  bottom-margin = 10\mm
+  first-page-number = 0
+  indent = 0.0
+% last-bottom-spacing.padding = #2
+  line-width = 18.6\cm
+% markup-system-spacing.basic-distance = #10
+  print-all-headers = ##t
+  ragged-last-bottom = ##f
+  ragged-bottom = ##f
+  system-system-spacing =
+     #'((basic-distance . 2)
+        (minimum-distance . 1)
+        (padding . 3)
+        (stretchability . 25))
+  top-margin = 10\mm
 }
 
 \bookpart {
@@ -30,36 +41,37 @@
 
   \markup {
     \with-dimensions #'(0 . 0) #'(0 . 0)
-    \with-color #(rgb-color 0.2 0.4 0.5)
+    \with-color \coverColor
     \filled-box #'(-200 . 200) #'(-200 . 200) #0
   }
   \markup {
     \fill-line {
       \center-column {
-        \null\null\null
-        \null\null\null
-        \null\null\null
+        \null\null\null\null
+        \null\null\null\null
         \line { \abs-fontsize #30 \bold "Alban" }
         \null
         \line { \abs-fontsize #80 \bold "Berg" }
 	\null
 	\fill-line { \draw-hline }
 	\null\null\null\null
-        \line { \abs-fontsize #34 \bold "Klaviersonate Op. 1" }
+        \line { \abs-fontsize #40 \bold "Klaviersonate" }
+        \null\null
+        \line { \abs-fontsize #30 \bold "Op. 1" }
         \null\null\null\null
         \null\null\null\null
-        \fill-line {
-          \override #'(thickness . 5)
-          \draw-squiggle-line #0.5 #'(10 . 0) ##t
-        }
-        \null\null\null\null
-        \null\null\null\null
-        \fill-line { \abs-fontsize #11 "Transcribed and Engraved by Davide Madrisan" }
-        \fill-line { \abs-fontsize #9 \typewriter "https://github.com/madrisan/open-scores/" }
-        \null
-        \fill-line {
-          \abs-fontsize #8 "Based on the Robert Lienau's score"
-        }
+      }
+    }
+  }
+
+  \include "./logo.ly"
+
+  \markup {
+    \fill-line {
+      \center-column {
+        \null\null\null
+        \null\null\null
+        \fill-line { \abs-fontsize #8 "Based on the Robert Lienau's score" }
         \null
       }
     }
@@ -227,20 +239,21 @@ Upper = \relative c' {
     } >>
   | << {
       << <ais' ais,>2->^\ff \\ <fis! d!>2 >>
-      <gis d! a gis>4->
+      <gis, ais gis'>4->
     } \\ {
       s8
       \crossStaff {
         \autoBeamOff
         \stemDown
-        b,,,!16 c! c!8 dis
+        b,,!16 c! c8 dis
         \override TupletBracket.bracket-visibility = ##f
         \omit TupletNumber
         \tuplet 3/2 4 {
-          ais'8 fis! d'!
+          ais'8 fis! s
         }
       }
     } >>
+    \break
   | << {
       \stemUp <ais' gis'>2^> <fis! d'! fis!>4^>
     } \\ {
@@ -249,15 +262,29 @@ Upper = \relative c' {
   %25
   | << {
       \once\override NoteColumn.force-hshift = #0.3
-      \stemDown e'!8[->\) cis!]
+      \stemDown e'!8[->\) cis!_^]
       \tupletDown \tuplet 3/2 4 {
-        fis,!8 bes d,!
+        \once\shape #'((0 . 1) (0 . 3.5) (0 . 3) (0 . -1)) Slur
+        fis,!8_^( bes_^ d,!_^
       }
+      s4
+  |   \tupletUp \tuplet 3/2 4 {
+        <a! a'!>8[ <cis! cis'!> <f, f'>]
+      }
+      \stemUp <b,! b'!>4)^\tenuto \stemNeutral
+      \tuplet 3/2 4 { c'!8 e! gis, }
+
     } \\ {
-      \stemUp <ees' b! fis!>4.
-      d!8[^> <cis! cis,!>8.^> <b! b,!>16^> ]
+      \stemUp
+      \once\override NoteColumn.force-hshift = #0.5  <b'! fis!>4.
+      d!8[^> <cis! cis,!>8.^> <b! b,!>16^>^\< ]
+      s16 s32\! s32^\> s16 s32 s32\!
+      s4
+      % I bit too hacky... for just displying < > at the right high :p
+      \hideNotes
+      d32^\< s32 s32 s32\! a64^\> s32 s64 s64 s32\!
+      \unHideNotes
     } >>
-  | s2.
   | s2.
   | s2.
   | s2.
@@ -431,9 +458,13 @@ Lower = \relative c {
     \crossStaff {
       \stemDown
       b,,!16_>%^\markup { \small\italic "marc." }
-      c!_> c!8_> dis_>
+      c!_> c8_> dis_>
+      \once\override Beam.positions = #'(-2 . -2)
       \tuplet 3/2 4 {
-        ais'8\<_> fis!_> d'!\!_>_(
+        ais'8\<_> fis!_>
+        \change Staff = "upper"
+        <d' d'>\!_>_(
+        \change Staff = "lower"
       }
     }
   | \change Staff = "upper"
@@ -442,29 +473,33 @@ Lower = \relative c {
     <gis! gis'!>8_>)
 
     \change Staff = "lower"
-    <gis,, gis'>16_> <a! a'!>16_> <a! a'!>8_> <cis! cis'!>8_>
+    <gis,, gis'>16_>( <a! a'!>16_> <a! a'!>8_> <cis! cis'!>8_>
     \tuplet 3/2 4 {
       <fis! fis'!>8\<_> <d! d'!>_>
       \once\override Stem.details.beamed-lengths = #'(10 16.5 4)
       \change Staff = "upper"
-      <ais'! ais'!>\!_>
+      <ais'! ais'!>\!_>)
+      %\showStaffSwitch
     }
   %25
   | \change Staff = "lower"
     \clef violin
     %\set Staff.connectArpeggios = ##t
     << {
-      \stemUp e''!8[ cis!]
+      \once\shape #'((0 . 0) (0 . 1) (0 . 1) (0 . -1)) Slur
+      \stemUp e''!8[( cis!^^]
+      \stemUp \tupletDown \tuplet 3/2 4 {
+        fis,!8^^ bes^^ d,!^^
+      }
+      \once\shape #'((0.75 . 2.5) (0 . 3) (0 . 2.5) (-1 . 4.5)) Slur
+      gis,4)_^^_\tenuto_(
+      \clef bass
+  |   \stemDown
+      <gis cis fis>8) <g c f>4\tenuto <fis b! e!>4\tenuto <f! bes ees>8\tenuto
     } \\ {
       \once \override Arpeggio.positions = #'(-4.5 . 2.5)
-      <b! fis! b,!>\arpeggio
+      <b'! fis! b,!>\arpeggio
     } >>
-    \stemUp \tupletDown \tuplet 3/2 4 {
-      fis!8 bes d,!
-    }
-    gis,4
-    \clef bass
-  | s2.
   | s2.
   | s2.
   | s2.
