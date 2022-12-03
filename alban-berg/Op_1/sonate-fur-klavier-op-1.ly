@@ -234,7 +234,7 @@ Lower = \relative c {
       \\ { \stemDown dis8.->\( d!16->
            \once\override Stem.details.beamed-lengths = #'(6) d8.-> cis16->~
 	   cis8 c! }
-      \\ { \override Rest #'extra-offset = #'(0.7 . 0) f,8\rest
+      \\ { \override Rest.extra-offset = #'(0.7 . 0) f,8\rest
            \stemDown a!_~ \once\override NoteColumn.force-hshift = #0.3 a2 } >>
   | << { \stemUp
          \once\shape #'((0 . 0) (0 . 0) (5 . 0) (5 . 0)) PhrasingSlur
