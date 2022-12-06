@@ -32,6 +32,10 @@ You can see here the [manuscript](images/baldassare-galuppi-sonata-5-manuscript-
 
 Image of the J.S. Bach's [manuscript](images/js-bach-jesu-meine-freude-manuscript.png) of the Choral "*Jesu meine Freude*" (*Das Orgel-Büchlein*, p.15).
 
+#### Mikhail-Glinka
+
+ * [Nocturne](https://github.com/madrisan/open-scores/blob/main/scores/Mikhail-Glinka-Nocturne.pdf))
+
 #### Rued Langgaard
 
  * [Insektarium (BVN 134)](https://github.com/madrisan/open-scores/blob/main/scores/Rued-Langgaard-Insektarium-BVN-134.pdf)
@@ -56,5 +60,6 @@ make johann-sebastian-bach-chromatische-fantasie-und-fugue
 make johann-sebastian-bach-italienisches-konzert
 make johann-sebastian-bach-jesu-meine-freude
 make johann-sebastian-bach-suite-anglaise-4
+make mikhail-glinka-nocturne
 make rued-langgaard-insektarium
 ```
