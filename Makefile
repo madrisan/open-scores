@@ -4,7 +4,8 @@ ALL_TARGETS := baldassare-galuppi-sonata-5-c-major \
 	johann-sebastian-bach-italienisches-konzert \
 	johann-sebastian-bach-jesu-meine-freude \
 	johann-sebastian-bach-suite-anglaise-4 \
-	johann-sebastian-bach-suite-anglaise-4
+	mikhail-glinka-nocturne \
+	rued-langgaard-insektarium
 
 %: %.ly
 	$(LILYPOND) --pdf --output $@ $<
@@ -16,6 +17,7 @@ johann-sebastian-bach-chromatische-fantasie-und-fugue: johann-sebastian-bach/chr
 johann-sebastian-bach-italienisches-konzert: johann-sebastian-bach/italienisches-konzert-BWV_971/italienisches-konzert
 johann-sebastian-bach-jesu-meine-freude: johann-sebastian-bach/jesu-meine-freude-BWV_610/jesu-meine-freude
 johann-sebastian-bach-suite-anglaise-4: johann-sebastian-bach/suites-anglaises/BWV809/suite-anglaise-4
+mikhail-glinka-nocturne: mikhail-glinka/nocturne/nocturne
 rued-langgaard-insektarium: rued-langgaard/insektarium-BVN_134/insektarium
 
 # short targets (aliases)
@@ -32,6 +34,7 @@ clean:
 	rm -f johann-sebastian-bach/italienisches-konzert-BWV_971/*.pdf
 	rm -f johann-sebastian-bach/jesu-meine-freude-BWV_610/*.pdf
 	rm -f johann-sebastian-bach/suites-anglaises/BWV809/*.pdf
+	rm -f mikhail-glinka/nocturne/*.pdf
 	rm -f rued-langgaard/insektarium-BVN_134/*.pdf
 
 .PHONY: all clean $(ALL_TARGETS)
