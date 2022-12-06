@@ -13,17 +13,17 @@ If you prefer to create these files (and *midi* ones) yourself, skip to the next
 
 ### List by authors
 
-#### Alban Berg
+#### Alban Berg (1885-1935)
 
  * [Klaviersonate Op. 1](https://github.com/madrisan/open-scores/blob/BergA-op1/scores/Alban-Berg-Sonate-fur-Klavier-op-1.pdf) -- *in progress*
 
-#### Baldassare Galuppi
+#### Baldassare Galuppi (1706-1785)
 
  * [Sonata no. 5 in Do maggiore](https://github.com/madrisan/open-scores/blob/main/scores/Baldassare-Galuppi-Sonata-5.pdf)
 
 You can see here the [manuscript](images/baldassare-galuppi-sonata-5-manuscript-1st-page.png) of the first page of the sonata.
 
-#### Johann Sebastian Bach
+#### Johann Sebastian Bach (1685-1750)
 
  * [Jesu meine Freude (BWV610)](https://github.com/madrisan/open-scores/blob/main/scores/JS-Bach-BWV610-Jesu-meine-Freude.pdf)
  * [Suite Anglaise IV (BWV809)](https://github.com/madrisan/open-scores/blob/main/scores/JS-Bach-BWV809-Suite-Anglaise-4.pdf)
@@ -32,11 +32,11 @@ You can see here the [manuscript](images/baldassare-galuppi-sonata-5-manuscript-
 
 Image of the J.S. Bach's [manuscript](images/js-bach-jesu-meine-freude-manuscript.png) of the Choral "*Jesu meine Freude*" (*Das Orgel-Büchlein*, p.15).
 
-#### Mikhail-Glinka
+#### Mikhail-Glinka (1804-1857)
 
- * [Nocturne](https://github.com/madrisan/open-scores/blob/main/scores/Mikhail-Glinka-Nocturne.pdf))
+ * [Nocturne](https://github.com/madrisan/open-scores/blob/main/scores/Mikhail-Glinka-Nocturne.pdf)
 
-#### Rued Langgaard
+#### Rued Langgaard (1893-1952)
 
  * [Insektarium (BVN 134)](https://github.com/madrisan/open-scores/blob/main/scores/Rued-Langgaard-Insektarium-BVN-134.pdf)
 
