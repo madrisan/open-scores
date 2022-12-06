@@ -13,17 +13,17 @@ sluredTuplet =
 #})
 
 \paper {
-  indent = 0.0
-  line-width = 18.6\cm
-  top-margin = 10\mm
-  bottom-margin = 10\mm
-% ragged-last-bottom = ##t
-% ragged-bottom = ##f
+  bottom-margin = 20\mm
   first-page-number = 0
-% markup-system-spacing.basic-distance = #10
-% last-bottom-spacing.padding = #2
+  indent = 0.0
+  last-bottom-spacing.padding = #1
+  line-width = 18.6\cm
   print-all-headers = ##t
+  ragged-bottom = ##f
+  ragged-last-bottom = ##t
   tagline = ##f
+  top-margin = 20\mm
+% markup-system-spacing.basic-distance = #10
 }
 
 \bookpart {
@@ -164,6 +164,7 @@ Upper = \relative c'' {
   | << { f4\arpeggio( ees8) r } \\ { <g, a!>4\arpeggio r } >> r2
   | r16 ees''[ c a!] g[ fis a d,] ees[ c a! g] fis[ a d r32 c]
   | <d, g a!>4\arpeggio <d g bes>\arpeggio r2
+  \break
   | r16 ees[_\( g d'] ees^\markup { \tiny\italic "m.s." }
     ees,[ g c]\) r d,[_\( a'! c] d d,[ a' c]\)
   | r16 d,[_\( g bes] d  d,[ g bes]\)  r \stemUp g[_\( bes d] \stemDown g \stemUp g,[ bes d]\)
@@ -233,17 +234,61 @@ Upper = \relative c'' {
     <c' ees aes c>4^.
     \ottava #0
     r2
-  | r8 aes'16[\( f] d[ bes aes f] d[ bes aes f] d[ f bes\) r32 aes]
+  | \stemNeutral
+    r8 aes'16[\( f] d[ bes aes f] d[ bes aes f] d[ f bes\) r32 aes]
   | <bes, ees fis>4_. <bes ees g> r2
-  | R1
-  | R1
+    \break
+  | r16 aes'[_\( c g'] aes^\markup { \tiny\italic "m.s." }
+    aes,[ c f]\) r aes,[_\( bes f'] bes aes,[ bes f']\)
+  | r g,[_\( bes f'] g g,[ bes ees]\) r bes[_\( ees bes'] ees bes,[ ees g]\)
   %70
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
+  | r aes,[_\( c g'] aes aes,[ c f]\) r aes,[_\( bes f'] bes aes,[ bes f']\)
+  | r g,[_\( bes f'] g g,[ bes ees]\) r bes[_\( ees bes'] ees bes,[ ees g]\)
+  | \once\override TupletBracket.bracket-visibility = ##t
+    \override TupletNumber.transparent = ##f
+    \tuplet 6/4 { r g,,\( bes ees bes g\) }
+    \override TupletNumber.transparent = ##t
+    \tuplet 6/4 { r bes\( ees g ees bes\) }
+    \tuplet 6/4 { r aes\( ees' aes ees aes,\) }
+    \tuplet 6/4 { r bes \( ees g ees bes\) }
+  | \tuplet 6/4 { r c\( ees f ees c\) } \tuplet 6/4 { r c\( f a! f c\) }
+    \tuplet 6/4 { r bes\( f' bes f bes,\) } \tuplet 6/4 { r c\( f aes f c\) }
+  | \tuplet 6/4 { r d\( f g f d\) } \tuplet 6/4 { r d\( g b! g d\) }
+    \tuplet 6/4 { d'^>\( g, c, c' g c,\) } \tuplet 6/4 { r c\( f a! f c\) }
   %75
+  | \tuplet 6/4 { c'^>\( f, bes, bes' f bes,\) } \tuplet 6/4 { r d\( g b! g d\) }
+    \tuplet 6/4 { d'^>\( g, c, c' g c,\) } \tuplet 6/4 { r c\( f a! f c\) }
+  | \tuplet 6/4 { c'^>\( f, bes, bes' f bes,\) } \tuplet 6/4 { r bes\( ees g ees bes\) }
+    \tuplet 6/4 { bes'^>\( ees, aes, aes' ees aes,\) } \tuplet 6/4 { g'\( c, aes f' c aes\) }
+  | \tuplet 6/4 { r16 g[_\( bes f' bes, g]\) }
+    \tuplet 6/4 { g'^\markup { \tiny\italic "m.s." } g,[\( bes ees bes g]\) }
+    \tuplet 6/4 { r f[\( aes d aes f]\) } \tuplet 6/4 { bes' f,[\( aes d aes f]\) }
+  | \tuplet 6/4 { r g[_\( bes ees bes g]\) } \tuplet 6/4 { r des'[_\( g bes g des]\) }
+    \tuplet 6/4 { bes'^>\( ees, c aes' f bes,\) } \tuplet 6/4 { g'^>\( d! aes f' d as\) }
+  | \tuplet 6/4 { r g[_\( bes ees bes g]\) }
+    \shape #'((-0.2 . 0) (0 . -1.5) (0 . -0.5) (0 . 0)) PhrasingSlur
+    \tuplet 6/4 { f'^>\( bes, g ees' bes g\) }
+    \tuplet 6/4 { r ees[_\( aes ees' aes, ees]\) } \tuplet 6/4 { r f[_\( aes d! aes f]\) }
+  %80
+  | \tuplet 6/4 { r g[_\( bes ees bes g] } \tuplet 6/4 { g'^> g,[ bes ees bes g]\) }
+    \tuplet 6/4 { r g[_\( bes ees bes g] }
+    \tuplet 6/4 {
+      g'^\markup { \italic "ritardando" } g,[ bes ees bes g]\)
+    }
+    \break
+  | \override TupletBracket.bracket-visibility = ##t
+    \override TupletNumber.transparent = ##f
+    \change Staff = "lower"
+    \shape #'((0 . -5.5) (0 . 4) (0 . 1) (-0.5 . -1)) PhrasingSlur
+    \tuplet 6/4 {
+      \stemDown ees,8^.[\( g^. bes^.] ees^. \stemUp g_.[ bes_.]
+    }
+    \change Staff = "upper"
+    \tuplet 6/4 {
+      ees_. \stemDown g^.[ bes^.] ees^. \stemUp g_.[ bes_.]
+    }
+  | \stemDown ees8\) r8 r4 \stemUp <bes,, ees g> r
+  | <g bes ees> r r2
   \fine
 }
 
@@ -252,8 +297,8 @@ Lower = \relative c {
   \partial 4
     r4
   | \sluredTuplet ees,8[\( g' bes ees bes g]\)
-    \omit TupletBracket
-    \omit TupletNumber
+    \override TupletBracket.bracket-visibility = ##f
+    \override TupletNumber.transparent = ##t
     \sluredTuplet ees[\( aes c f c aes]\)
   | \sluredTuplet ees[\( aes bes d bes aes]\)
     \sluredTuplet ees[\( g bes ees bes g]\)
@@ -326,8 +371,6 @@ Lower = \relative c {
   | aes16\) r r8 <bes, d f aes>4\arpeggio r2
   | \clef bass
     \sluredTuplet ees,,8[\( g' bes ees bes g]\)
-    \omit TupletBracket
-    \omit TupletNumber
     \sluredTuplet ees[\( aes c f c aes]\)
   %45
   | \sluredTuplet ees[\( aes bes d bes aes]\)
@@ -380,14 +423,26 @@ Lower = \relative c {
   | <bes f' aes d>1\arpeggio
   | <ees, bes' ees>4_. <ees bes' ees>4_. r2
   | \clef treble
-    R1
-  | R1
+    f''4 r d r
+  | ees r g r
   %70
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
+  | f r d r
+  | ees r g r
+  | \clef bass
+    ees, des c bes
+  | a! ees' d c
+  | b! f' e! ees
+  %75
+  | d f e! ees
+  | d des c aes
+  | bes r bes r
+  | ees ees, ees' ees,
+  | << { ees'4 des c ces } \\ { ees,2. \stemUp ees!4_> } >>
+  %80
+  | <ees bes'>4 r ees r
+  | s1
+  | r2 <ees ees'>4 r
+  | <ees ees'>4 r r2
   \fine
 }
 
@@ -549,6 +604,29 @@ centeredDynamics = {
   | s8\f s8 s4 s4 s8\> s16 s16\!
   | s4 s4-\markup { \dynamic p \italic "calando" } s2
   | s8-\markup { \dynamic ff \italic\bold "con forza" } s8 s2.
+  %65
+  | s1
+  | s1
+  | s1
+  | s16-\markup { \dynamic p \italic "dolce" } s8. s4 \< s s8 s16 s\!
+  | s16 s s8 s s s4\> s8 s16 s\!
+  %70
+  | s16 s8. s4 \< s s8 s16 s\!
+  | s16 s s8 s s s4\> s8 s16 s\!
+  | s16 s s8 s s s s\> s8 s16 s\!
+  | s16 s s8\< s s\! s s\> s8 s16 s\!
+  | s16 s s8 s s s4\> s8\! s
+  %75
+  | s16\> s s8 s\! s s4\> s8\! s
+  | s16\> s s8 s\! s s4 s8 s
+  | s1
+  | s8 s s16-\markup { \italic "morendo" } s8. s2
+  | s8\pp s8 s2.
+  %80
+  | s1
+  | s8 s16 s32 s\ppp s8 s s s-\markup { \italic\small "a piacere" } s4
+
+  | s1
 }
 
 \score {
