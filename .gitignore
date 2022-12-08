@@ -1,4 +1,5 @@
-/*.pdf
+*.pdf
+!scores/*.pdf
 *.ps
 *.midi
 *.mid
