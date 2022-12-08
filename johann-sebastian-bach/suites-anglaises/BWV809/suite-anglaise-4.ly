@@ -2,6 +2,8 @@
 
 #(ly:set-option 'relative-includes #t)
 
+coverColor = #(rgb-color 0.2 0.4 0.5)
+
 \header {
   tagline = ##f
 }
@@ -31,6 +33,11 @@
     composer = ##f
   }
 
+  \markup {
+    \with-dimensions #'(0 . 0) #'(0 . 0)
+    \with-color \coverColor
+    \filled-box #'(-200 . 200) #'(-200 . 200) #0
+  }
   \markup {
     \fill-line {
       \center-column {
