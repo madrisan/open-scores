@@ -2,6 +2,8 @@
 
 #(ly:set-option 'relative-includes #t)
 
+coverColor = #(rgb-color 0.2 0.4 0.5)
+
 \header {
   tagline = ##f
 }
@@ -35,7 +37,7 @@
 
   \markup {
     \with-dimensions #'(0 . 0) #'(0 . 0)
-    \with-color #(rgb-color 0.2 0.4 0.5)
+    \with-color \coverColor
     \filled-box #'(-200 . 200) #'(-200 . 200) #0
   }
   \markup {
@@ -119,11 +121,11 @@ Alto = \context Voice = "two"  \relative c' {
   | f16 e f8~ f16 g f es d es d8~ d16 es f d
   %5
   | g8 f es16 g as es f es f d g as g f
-  | e8 f16 g as g as e f g f8~ f16 f es d
+  | e8 f16 g as g as e! f g f8~ f16 f es d
   }
   \pageBreak
   | es16 d es8~ es16 f es des c8 bes~ bes16 bes c g
-  | as16 g as f bes c bes as g f g8~ g16 bes c d
+  | as16 g as f bes c bes aes! g f g8~ g16 bes c d
   | es16 d es8~ es16 f es d c8 d16 es f as g f
   %10
   | es16 d es8 d g~g g4 fis8
@@ -176,9 +178,9 @@ Pedal = \context Voice = "four"  \relative c {
   | c8 f16 g aes g as8~ as16 d, fis d g fis g8
   %5
   | d8\rest a'16 b! c b! c8 d,16\rest g aes f g f g8
-  | d16\rest g as e f e f8 r16 e f b,! c b! c8
+  | d16\rest g as e f e f8 r16 e! f b,! c b! c8
   }
-  | r8 es16 f g f g8~ g16 c, d! b es d es8
+  | r8 es16 f g f g8~ g16 c, d! bes es d es8
   | r16 bes c as bes as bes8 es,2
   | r8 c'16 d es d es8~ es16 c f es d c d8
   %10

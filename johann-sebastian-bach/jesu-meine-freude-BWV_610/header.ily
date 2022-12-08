@@ -2,9 +2,9 @@
   composer = "Johann Sebastian Bach (1685-1750)"
   date = "Published in 1719"
 
-  footer = "Mutopia-2022/11/25"
+  footer = "Mutopia-2022/12/8"
 
-  lastupdated = "2022 November 25"
+  lastupdated = "2022 December 8"
   license = "Creative Commons Attribution-ShareAlike 4.0"
   maintainerEmail = "davide.madrisan@gmail.com"
   maintainerWeb = "https://github.com/madrisan/open-scores"
@@ -30,7 +30,7 @@
         \abs-fontsize #9  "Mutopia "
         \concat {
 	  \abs-fontsize #12
-	  \with-color #white "ǀ"
+	  \with-color \coverColor "ǀ"
 	  \abs-fontsize #9 "Project "
         }
       }
@@ -57,7 +57,7 @@
 		       " — free to distribute, modify, and perform"
           }
 	}
-	\abs-fontsize #13 \with-color #white "ǀ"
+	\abs-fontsize #13 \with-color \coverColor "ǀ"
       }
     }
   }
