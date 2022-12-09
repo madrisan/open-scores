@@ -58,6 +58,7 @@ lilypond sonate-fur-klavier-op-1.ly
 ```
 make baldassare-galuppi-sonata-5-c-major
 make johann-sebastian-bach-chromatische-fantasie-und-fugue
+make johann-sebastian-bach-die-kunst-der-fuge
 make johann-sebastian-bach-italienisches-konzert
 make johann-sebastian-bach-jesu-meine-freude
 make johann-sebastian-bach-suite-anglaise-4
