@@ -29,7 +29,7 @@ You can see here the [manuscript](images/baldassare-galuppi-sonata-5-manuscript-
  * [Suite Anglaise IV (BWV809)](https://github.com/madrisan/open-scores/blob/main/scores/JS-Bach-BWV809-Suite-Anglaise-4.pdf)
  * [Chromatische Fantasie und Fugue (BWV903)](https://github.com/madrisan/open-scores/blob/main/scores/JS-Bach-BWV903-Chromatische-Fantasie-und-Fugue.pdf)
  * [Italienisches Konzert (BWV971)](https://github.com/madrisan/open-scores/blob/main/scores/JS-Bach-BWV971-Italienisches-Konzert.pdf)
- * [Die Kunst der Fuge (BWV1080)](https://github.com/madrisan/open-scores/blob/main/scores/JS-Bach-BWV1080-Die-Kunst-der-Fuge.pdf) -- *contrapunctusI*
+ * [Die Kunst der Fuge (BWV1080)](https://github.com/madrisan/open-scores/blob/main/scores/JS-Bach-BWV1080-Die-Kunst-der-Fuge.pdf) -- *in progress*: contrapunctus I, II
 
 Image of the J.S. Bach's [manuscript](images/js-bach-jesu-meine-freude-manuscript.png) of the Choral "*Jesu meine Freude*" (*Das Orgel-Büchlein*, p.15).
 
