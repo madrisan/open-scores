@@ -70,3 +70,5 @@ coverColor = #(rgb-color 0.2 0.4 0.5)
 
 \include "./parts/01-contrapunctus-I.ly"
 \include "./parts/02-contrapunctus-II.ly"
+\pageBreak
+\include "./parts/03-contrapunctus-III.ly"
