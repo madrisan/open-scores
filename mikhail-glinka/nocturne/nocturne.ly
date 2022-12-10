@@ -138,7 +138,7 @@ Upper = \relative c'' {
     } >>
   | << { \tuplet 3/2 { f8[ ees d ees g bes,\)] } } \\ {} >>
     \tuplet 3/2 { a!8[\( c ees f a! c]\) }
-  | <a ees'>4^. <bes ees>^. <g, bes des g>^.\arpeggio r
+  | <a ees'>4^. <bes d>^. <g, bes des g>^.\arpeggio r
   | <bes d! f> r <c, ees! f a!> r
   %20
   | \set Staff.connectArpeggios = ##f
@@ -153,7 +153,7 @@ Upper = \relative c'' {
     \shape #'((0 . 0) (0 . 2.5) (0 . 0.5) (0 . 0)) PhrasingSlur
     c'16[\( d] f[^> ees a,! bes]
     d[^> c a f] ees[ c a! f']\)
-  | <f, bis>4_. <f bis d>_. r2
+  | <f, bes cis>4_. <f bes d>_. r2
   | <bes, d g bes>2\arpeggio
     \once\override TupletBracket.bracket-visibility = ##t
     \override TupletNumber.transparent = ##f
@@ -231,7 +231,7 @@ Upper = \relative c'' {
   %65
   | <c ees aes c>4^.
     \ottava #1
-    <c' ees aes c>4^.
+    <aes' c f aes>4^.
     \ottava #0
     r2
   | \stemNeutral

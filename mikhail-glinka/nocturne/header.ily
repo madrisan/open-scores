@@ -4,9 +4,9 @@
   composer = "Mikhail Glinka (1885-1935)"
   date = "1828"
 
-  footer = "Mutopia-2022/12/04"
+  footer = "Mutopia-2022/12/10"
 
-  lastupdated = "2022 Dec 4"
+  lastupdated = "2022 Dec 10"
   license = "Creative Commons Attribution-ShareAlike 4.0"
   maintainerEmail = "davide.madrisan@gmail.com"
   maintainerWeb = "https://github.com/madrisan/open-scores"

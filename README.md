@@ -37,6 +37,8 @@ You can see here the [manuscript](images/baldassare-galuppi-sonata-5-manuscript-
 
  * [Nocturne](https://github.com/madrisan/open-scores/blob/main/scores/Mikhail-Glinka-Nocturne.pdf)
 
+Thanks to my harpist friend Tristan Rollet ([@Pluiesurlavitre](https://github.com/Pluiesurlavitre)) for pointing me to this beautiful romantic piece.
+
 #### Rued Langgaard (1893-1952)
 
  * [Insektarium (BVN 134)](https://github.com/madrisan/open-scores/blob/main/scores/Rued-Langgaard-Insektarium-BVN-134.pdf)
