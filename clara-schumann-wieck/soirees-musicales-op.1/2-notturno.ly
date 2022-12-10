@@ -90,19 +90,15 @@ Upper = \relative c'' {
   %5
   | g4. f4.~
   | f4. f4 e8
-  | \tuplet 6/6 { d4 d8 \appoggiatura { ees32[ d cis d] } d'4.~^\sf }
-  | \tuplet 6/6 {
-      \stemDown
-      d8[\( ees gis, a ees'^. d^.]\)
-    }
+  | d4 d8 \appoggiatura { ees32[ d cis d] } d'4.~^\sf
+  | \stemDown
+    d8[\( ees gis, a ees'^. d^.]\)
   | c2.(
   %10
   | bes2.)
   | \stemUp a4. \appoggiatura { a8 } bes!4.~^\sf
-  | \tuplet 6/6 {
-      bes8[^( a dis, e
-      \acciaccatura { e8 } bes'_. a_.])
-    }
+  | bes8[^( a dis, e
+    \acciaccatura { e8 } bes'_. a_.])
   | g2.^>
   | f4. ees4 d8
   %15
@@ -193,32 +189,32 @@ Lower = \relative c {
   \mergeDifferentlyHeadedOn
   \override TupletNumber.transparent = ##t
   | \shape #'((0 . 0) (0 . 1) (0 . 1) (0 . 0)) PhrasingSlur
-    \tuplet 6/6 { <f c>8[\(\sustainOn a c a c, a\sustainOff]\) }
+    <f c>8[\(\sustainOn a c a c, a\sustainOff]\)
   | \shape #'((0 . 0) (0 . 1) (0 . 1) (0 . 0)) PhrasingSlur
-    \tuplet 6/6 { <f' c>[\(\sustainOn a c a c, a\sustainOff]\) }
-  | \tuplet 6/6 { <f' cis>[ a cis a cis, a] }
-  | \tuplet 6/6 { <f' cis>[ a cis a cis, a] }
+    <f' c>[\(\sustainOn a c a c, a\sustainOff]\)
+  | <f' cis>[ a cis a cis, a]
+  | <f' cis>[ a cis a cis, a]
   %5
-  | \tuplet 6/6 { <f d'>[ a' d a d, a] }
-  | \tuplet 6/6 { <f d'>[ a' d a d, a] }
-  | \tuplet 6/6 { <fis d'>[ a' c a d, a'] }
-  | \tuplet 6/6 { <fis, d'>[ a' c a d, a'] }
-  | \tuplet 6/6 { <fis, d'>[ a' d a d, a'] }
+  | <f d'>[ a' d a d, a]
+  | <f d'>[ a' d a d, a]
+  | <fis d'>[ a' c a d, a']
+  | <fis, d'>[ a' c a d, a']
+  | <fis, d'>[ a' d a d, a']
   %10
-  | \tuplet 6/6 { <g, d'>[ g' d' g, d g] }
-  | \tuplet 6/6 { <g, d'>[ g' d' g, d g] }
-  | \tuplet 6/6 { <a, cis>[ g' cis g cis, g] }
-  | << \tuplet 6/6 {
+  | <g, d'>[ g' d' g, d g]
+  | <g, d'>[ g' d' g, d g]
+  | <a, cis>[ g' cis g cis, g]
+  | << {
       \override TupletBracket.bracket-visibility = ##f
       \override TupletNumber.transparent = ##t
       e'[ bes' cis bes e, bes]
     } \\ d2. >>
-  | << \tuplet 6/6 { f8[ a d a f a] } \\ d,2. >>
+  | << { f8[ a d a f a] } \\ d,2. >>
   %15
-  | << \tuplet 6/6 { bes'8[ c g'] bes,[ c f] } \\ { e,4. f } >>
-  | << \tuplet 6/6 { bes8[ c ees] bes[ c e!] } \\ { ges,4. g! } >>
+  | << { bes'8[ c g'] bes,[ c f] } \\ { e,4. f } >>
+  | << { bes8[ c ees] bes[ c e!] } \\ { ges,4. g! } >>
   | \clef treble
-    << \tuplet 6/6 { ees'8[ ges ees ges ees ges] } \\ a,2. >>
+    << { ees'8[ ges ees ges ees ges] } \\ a,2. >>
   | << { bes8( des ges) } \\ bes,4. >>
     \clef bass
     << { bes,8( des des') } \\ bes,4. >>
@@ -246,7 +242,7 @@ Lower = \relative c {
   | << { e8[\sustainOn g des' g, e g\sustainOff] } \\ bes,2. >>
   | << { c8[ f a f c f] } \\ a,2. >>
   | << { c8[ f a f c f] } \\ a,2. >>
-  | << \tuplet 6/6 {
+  | << {
       \override TupletBracket.bracket-visibility = ##f
       \override TupletNumber.transparent = ##t
       f'8[ g d'] f,[ g d']
@@ -320,7 +316,7 @@ centeredDynamics = {
   | s1*6/8
   %40
   | s8\< s8 s8 s8 s8 s8\!
-  | s4 s8 s16\cresc s\startTextSpan s8
+  | s4 s8\cresc s\startTextSpan s4
   | s1*6/8
   | s1*6/8
   | s1*6/8
