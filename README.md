@@ -41,6 +41,10 @@ Image of the J.S. Bach's [manuscript](images/js-bach-jesu-meine-freude-manuscrip
 
  * [Insektarium (BVN 134)](https://github.com/madrisan/open-scores/blob/main/scores/Rued-Langgaard-Insektarium-BVN-134.pdf)
 
+#### Clara Schumann Wieck
+
+ * Soirées Musicales op.6 -- *in progress*: Nocturne
+
 ## How to manually create the `.pdf` and `.midi` files
 
 If you prefer to create these *pdf* (and *midi*) files yourself, please make sure the following software requirements are installed: `git`, [`lilypond`](https://lilypond.org/).
