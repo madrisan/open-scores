@@ -76,3 +76,4 @@ coverColor = #(rgb-color 0.2 0.4 0.5)
 \include "./parts/04-contrapunctus-IV.ly"
 \include "./parts/05-contrapunctus-V.ly"
 \include "./parts/06-contrapunctus-VI.ly"
+\include "./parts/07-contrapunctus-VII.ly"
