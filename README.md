@@ -23,7 +23,7 @@ If you prefer to create these files (and *midi* ones) yourself, skip to the next
  * [Suite Anglaise IV (BWV809)](https://github.com/madrisan/open-scores/blob/main/scores/JS-Bach-BWV809-Suite-Anglaise-4.pdf)
  * [Chromatische Fantasie und Fugue (BWV903)](https://github.com/madrisan/open-scores/blob/main/scores/JS-Bach-BWV903-Chromatische-Fantasie-und-Fugue.pdf)
  * [Italienisches Konzert (BWV971)](https://github.com/madrisan/open-scores/blob/main/scores/JS-Bach-BWV971-Italienisches-Konzert.pdf)
- * [Die Kunst der Fuge (BWV1080)](https://github.com/madrisan/open-scores/blob/main/scores/JS-Bach-BWV1080-Die-Kunst-der-Fuge.pdf) -- *in progress*: contrapunctus I-V
+ * [Die Kunst der Fuge (BWV1080)](https://github.com/madrisan/open-scores/blob/main/scores/JS-Bach-BWV1080-Die-Kunst-der-Fuge.pdf) -- *in progress*: contrapunctus I-VII
 
 Image of the J.S. Bach's [manuscript](images/js-bach-jesu-meine-freude-manuscript.png) of the Choral "*Jesu meine Freude*" (*Das Orgel-Büchlein*, p.15).
 
