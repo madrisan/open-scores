@@ -465,13 +465,9 @@ Bass = \context Voice = "four" \relative c {
   >>
   \header {
     %composer = "Johann Sebastian Bach"
-    %opus = "BWV 1080"
-    subtitle = "Fuga a 4 voci"
-    title = \markup {
-      %\override #'(font-name . "TeX Gyre Schola") {
-        "Contrapunctus II"
-      %}
-    }
+    opus = "BWV 1080, 2"
+    title = ##f
+    subtitle = \markup { \smallCaps "Contrapunctus II" }
   }
   \layout { }
   \midi { }

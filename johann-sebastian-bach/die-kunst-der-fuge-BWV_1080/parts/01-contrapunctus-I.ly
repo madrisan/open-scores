@@ -12,8 +12,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | c a
   | gis a4 b
   | c2~ c8 d c bes
-  | a_\markup { \italic\small "cresc." }
-    d, d'2 cis4
+  | a d, d'2 cis4
   %10
   | d8 a c4~ c8 a bes4~
   | bes8 e, a2.~
@@ -38,13 +37,13 @@ Soprano = \context Voice = "one" \relative c'' {
     R1
   | R1
   | R1
-  | a2^> e'^>
+  | a2 e'
   %30
-  | c^> a^>
-  | gis^> a4 b
-  | c2~^> c8 d c bes
+  | c a
+  | gis a4 b
+  | c2~ c8 d c bes
   | a4 r r a~
-  | a8 c! bes a\< bes a g fis\!
+  | a8 c! bes a bes a g fis
   %35
   | g4. bes8 e,4. fis8
   | g4. e8 cis4. a'8
@@ -100,9 +99,7 @@ Soprano = \context Voice = "one" \relative c'' {
 
 Alto = \context Voice = "two" \relative c' {
   \voiceTwo
-  | d2-\markup{
-      \hspace #-2.5 \raise #-2.5 \dynamic p
-    } a'
+  | d2 a'
   | f d
   | cis d4 e
   | f2~ f8 g f e
@@ -128,10 +125,10 @@ Alto = \context Voice = "two" \relative c' {
   | s1*3
   %20
   | s1*3
-  | d2_> a'_>
-  | f_> d_>
+  | d2 a'
+  | f d
   %25
-  | cis_> d4 e
+  | cis d4 e
   | \stemUp
     f2~ f8 g f e
   | d4 g~ g8 e f4
@@ -145,38 +142,28 @@ Alto = \context Voice = "two" \relative c' {
   | e a~ a8 g f e
   | d1~
   %35
-  | d8\> d g4~ g8\! g
+  | d8 d g4~ g8 g
     \change Staff = "lower"
     \stemUp
     c,4~
-  | c8^\p a bes4 a2^~^>
-  | a8 f g4^\markup {
-      \hspace #-2.5 \raise #-1.5
-      \italic\small "cresc."
-    }
-    c2^~^>
+  | c8 a bes4 a2^~
+  | a8 f g4 c2^~
   | c8 a b4
     \change Staff = "upper"
     \stemDown
-    e2~->
-  | e8 cis d4 g2~->
+    e2~
+  | e8 cis d4 g2~
   %40
   | g8 a bes4 a2~
   | a2~ a8 f g4
-  | a4. bes8\sf a4 g~
-  | g f8 d a'4.\> g8\!
-  | fis\p d g4~ g8 e f4~
+  | a4. bes8 a4 g~
+  | g f8 d a'4. g8
+  | fis d g4~ g8 e f4~
   %45
-  | f8 d-\markup {
-      \italic\small "cresc."
-    }
-    g4~ g8 e a4~
+  | f8 d g4~ g8 e a4~
   | a8 f bes4~ bes8 g a4~
-  | a8-\markup {
-      \italic\small "dim."
-    }
-    f g2 f8 d
-  | a'2\f d~\sf
+  | a8 f g2 f8 d
+  | a'2 d~
   | d8 cis b cis d a e'4~
   %50
   | e8 a, d4 r8 f, bes4~
@@ -193,13 +180,13 @@ Alto = \context Voice = "two" \relative c' {
   %60
   | a, r r ees'
   | d2 r4 fis!
-  | g8 fis\< g4 r\! bes~
-  | bes8-\f a f' d b4 e8 cis
+  | g8 fis g4 r bes~
+  | bes8 a f' d b4 e8 cis
   | a4 d8 a bes4. g8
   %65
   | a4. f8 e4. g8
   | fis d g4~ g8 e f4~
-  | f8\< d' c4~ c4.\!\> c8\!
+  | f8 d' c4~ c4. c8
   | bes a gis4 a4. e8
   | a4 g~ g4. c8
   %70
@@ -213,7 +200,7 @@ Alto = \context Voice = "two" \relative c' {
   | d4
     \change Staff = "lower"
     \stemUp
-    a^\< bes c\!
+    a bes c
     \change Staff = "upper"
   | \stemDown d-\markup {
       \hspace #2.5
@@ -230,27 +217,26 @@ Alto = \context Voice = "two" \relative c' {
 
 Tenor = \context Voice = "three" \relative c' {
   \voiceThree
-  | s1*12
-  | a2^\markup {
-      \hspace #-2 \whiteout \pad-markup #0.5
-      \dynamic f >
-    } d^>
-  | c^> a^>
+  | \override MultiMeasureRest.staff-position = #0
+    R1*5
+  | s1*7
+  | a2 d
+  | c a
   %15
-  | gis^> a4 b
+  | gis a4 b
   | \change Staff = "upper"
     \stemDown
     c2_~ c8 d c bes
     \stemNeutral
     \change Staff = "lower"
   | \stemUp
-    a2~^\p^> a8 f g4
-  | c2~^> c8 a b4
+    a2~ a8 f g4
+  | c2~ c8 a b4
   | \change Staff = "upper"
     \stemDown
-    e2_~_> e8 cis d4
+    e2_~ e8 cis d4
   %20
-  | g2_~_> g8 e f4
+  | g2_~ g8 e f4
   | e4. a8 d,4. e8
   | cis4 d8
     \change Staff = "lower"
@@ -258,9 +244,7 @@ Tenor = \context Voice = "three" \relative c' {
     a
     \stemUp
     b4. cis8
-  | d4^\markup {
-      \hspace #2 \dynamic f
-    } a2.~
+  | d4 a2.~
   | a2 bes
   %25
   | r8 e, a4~ a8 bes a g
@@ -271,7 +255,7 @@ Tenor = \context Voice = "three" \relative c' {
   %30
   | c d b8\rest a c4 a
   | b2 c4 gis
-  | a8 g fis e fis4 g~^\markup { \italic\small "dim." }
+  | a8 g fis e fis4 g~
   | g8 g f e f e d cis!
   | d4 r r2
   %35
@@ -280,10 +264,10 @@ Tenor = \context Voice = "three" \relative c' {
   | R1
   | s1*3
   %40
-  | e2^>
-    a^>
-  | f^> d^>
-  | cis^> d4 e
+  | e2
+    a
+  | f d
+  | cis d4 e
   | f2~ f8 g f e
   | d2. a'8 f
   %45
@@ -291,57 +275,52 @@ Tenor = \context Voice = "three" \relative c' {
   | d4 g, c f,
   | bes e, a2
   | e4 a4~ a8 gis fis gis
-  | a4.^\sf g8 f^\sf e d cis
+  | a4. g8 f e d cis
   %50
-  | d4^\sf f8 d
+  | d4 f8 d
     \stemDown
-    bes'4^\sf g8 e
-  | a4.^\sf f'8 b,4 cis
-  | d^\sf b8 g c4 a8 f
+    bes'4 g8 e
+  | a4. f'8 b,4 cis
+  | d b8 g c4 a8 f
   | bes d g4~ g8 e
-    f4~^\markup {
-      \italic\small "dim."
-    }
+    f4~
   | f8 f e d cis2
   %55
   | d8 c bes a g a bes c
   | \stemUp
-    d^\p a d4~ d8 b^\markup { \italic\small "cresc." }
+    d a d4~ d8 b
     cis4~
   | cis8 e a, cis d4 bes8 g
   | e2 f4 g
-  | a2^\markup { \italic\small "dim." }
+  | a2
     b4 cis
   %60
-  | d r4^\p r fis,
-  | g8^\markup { \italic\small "cresc." }
+  | d r4 r fis,
+  | g8
     a bes4 r c
   | d2 r8 g,4 f8
   | e4 f\rest f2\rest
-  | f4\rest f8 d g4. cis,8^\markup {
-      \whiteout \pad-markup #0.5
-      \whiteout \italic\small "dim."
-    }
+  | f4\rest f8 d g4. cis,8
   %65
   | f4. d8 a'2
   | d,4 d'2 a8 f
   | bes2~ bes8 gis a4
-  | d2~ d8 b^\markup { \italic\small "cresc." }
+  | d2~ d8 b
     c4
   | f2~ f8 d ees4
   %70
-  | d2^\f e4 r
-  | r2 f4^\f r
-  | r2 f2~^\fz
-  | f4 e8 d e4 r^\sf
-  | a,2^\sf d^\sf
+  | d2 e4 r
+  | r2 f4 r
+  | r2 f2~
+  | f4 e8 d e4 r
+  | a,2 d
   %75
-  | bes^\sf g^\sf
-  | fis^\sf g4 a
-  | bes2~^\ff
+  | bes g
+  | fis g4 a
+  | bes2~
     \stemDown
     bes8 d c bes
-  | a1^\p\fermata
+  | a1\fermata
   \fine
 }
 
@@ -357,16 +336,16 @@ Bass = \context Voice = "four" \relative c {
   | r4 a8 b c a f'4~
   %15
   | f8 b, e4~ e8 f e d
-  | e g fis^\markup { \raise #1.5 \italic\small "dim." } a g2
+  | e g fis a g2
   | d2. e8 d
-  | e4 f8^\markup { \raise #1.5 \italic\small "cresc." }
+  | e4 f8
     e fis4 g8 fis
   | gis4 a8 gis a4 bes8 a
   %20
   | b4 c8 b cis4 d8 gis,
-  | a2~^\markup { \raise #1.5 \italic\small "dim." }
+  | a2~
     a8 f g4~
-  | g8 e f4~^\p f8 d e4
+  | g8 e f4~ f8 d e4
   | d2~ d8 b cis4
   | d4. c8 bes2
   %25
@@ -378,15 +357,15 @@ Bass = \context Voice = "four" \relative c {
   %30
   | a f~
   | f8 f e d c d c b
-  | a2-> d->
-  | cis-> a->
-  | fis-> g4 a
+  | a2 d
+  | cis a
+  | fis g4 a
   %35
   | bes2~ bes8 c bes a
-  | g2~-> g8 e f4
-  | bes2~-> bes8 g a4
-  | d2~-> d8 b c4
-  | f2~-> f8 d e4
+  | g2~ g8 e f4
+  | bes2~ bes8 g a4
+  | d2~ d8 b c4
+  | f2~ f8 d e4
   %40
   | a,4. g'8 f e d cis
   | d4. f,8 bes2
@@ -402,10 +381,10 @@ Bass = \context Voice = "four" \relative c {
   %50
   | R1
   | s1*5
-  | d2_> a'_>
-  | f_> d_>
-  | cis_> d4 e
-  | f2~_> f8 g f e
+  | d2 a'
+  | f d
+  | cis d4 e
+  | f2~ f8 g f e
   %60
   | d2~ d8 ees d c
   | bes2~ bes8 c bes a
@@ -453,13 +432,10 @@ Bass = \context Voice = "four" \relative c {
   >>
   \header {
     %composer = "Johann Sebastian Bach"
-    %opus = "BWV 1080"
-    subtitle = "Fuga a 4 voci"
-    title = \markup {
-      %\override #'(font-name . "TeX Gyre Schola") {
-        "Contrapunctus I"
-      %}
-    }
+    opus = "BWV 1080, 1"
+    title = \markup { \smallCaps "Die Kunst der Fuge" }
+    subtitle = \markup { \smallCaps "Contrapunctus I" }
+    subsubtitle = ##f
   }
   \layout { }
   \midi { }
