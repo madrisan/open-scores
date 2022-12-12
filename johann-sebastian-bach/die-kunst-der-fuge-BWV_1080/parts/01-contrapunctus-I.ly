@@ -22,9 +22,9 @@ Soprano = \context Voice = "one" \relative c'' {
   %15
   | b c4 d
   | g,8 bes a4~ a8 bes a g~
-  | g e f d bes'2~^>
-  | bes8 g a4 d2~^>
-  | d8 b c4 f!2~^>
+  | g e f d bes'2~
+  | bes8 g a4 d2~
+  | d8 b c4 f!2~
   %20
   | f8 d e4 a, d~
   | d8 b c4 f, bes |
@@ -45,7 +45,9 @@ Soprano = \context Voice = "one" \relative c'' {
   | a4 r r a~
   | a8 c! bes a bes a g fis
   %35
-  | g4. bes8 e,4. fis8
+  | g4. bes8
+    \once\override NoteColumn.force-hshift = #0.3 e,4.
+    fis8
   | g4. e8 cis4. a'8
   | d,4. f8 e4. c'8
   | f,4. a8 g4. e'8
@@ -224,13 +226,8 @@ Tenor = \context Voice = "three" \relative c' {
   | c a
   %15
   | gis a4 b
-  | \change Staff = "upper"
-    \stemDown
-    c2_~ c8 d c bes
-    \stemNeutral
-    \change Staff = "lower"
-  | \stemUp
-    a2~ a8 f g4
+  | c2~ c8 d c bes
+  | a2~ a8 f g4
   | c2~ c8 a b4
   | \change Staff = "upper"
     \stemDown
