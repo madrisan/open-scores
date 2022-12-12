@@ -2,7 +2,11 @@
 
 #(ly:set-option 'relative-includes #t)
 
-coverColor = #(rgb-color 0.2 0.4 0.5)
+%coverColor = #(rgb-color 0.70 0.95 1.00)
+%coverColor = #(rgb-color 0.80 1.00 0.83)
+%coverColor = #(rgb-color 1.00 0.80 0.70)   % apricot
+%coverColor = #(rgb-color 0.87 1.00 0.80)   % tea green
+coverColor = #(rgb-color 0.80 0.90 1.00)   % lavender blue
 
 \paper {
   bottom-margin = 15\mm
@@ -54,14 +58,23 @@ coverColor = #(rgb-color 0.2 0.4 0.5)
         \fill-line { \abs-fontsize #20 "For Piano or Harpsichord" }
         \null\null\null\null
         \fill-line {
-          \override #'(thickness . 5)
-          \draw-squiggle-line #0.5 #'(10 . 0) ##t
+          \override #'(thickness . 1)
+          \draw-squiggle-line #0.5 #'(14 . 0) ##t
         }
+        \null\null
+
+        \fill-line {
+          \abs-fontsize #13
+          \smallCaps " Lavender.Blue Open Scores"
+        }
+        \fill-line { \abs-fontsize #10 "Engraved by Davide Madrisan" }
+        \fill-line {
+          \abs-fontsize #9
+          \typewriter "https://github.com/madrisan/open-scores/" }
+
         \null\null\null\null
-        \fill-line { \abs-fontsize #11 "Engraved by Davide Madrisan" }
-        \fill-line { \abs-fontsize #9 \typewriter "https://github.com/madrisan/open-scores/" }
         \null
-        \fill-line { \abs-fontsize #10 "Based on a previous work of Pierre-Luc Gauthier & Chris Sawer" }
+        \fill-line { \abs-fontsize #10 "Based on a previous Mutopia work of Pierre-Luc Gauthier & Chris Sawer" }
         \null
       }
     }
@@ -69,10 +82,9 @@ coverColor = #(rgb-color 0.2 0.4 0.5)
 }
 
 \include "./parts/01-contrapunctus-I.ly"
+\pageBreak
 \include "./parts/02-contrapunctus-II.ly"
-\pageBreak
 \include "./parts/03-contrapunctus-III.ly"
-\pageBreak
 \include "./parts/04-contrapunctus-IV.ly"
 \include "./parts/05-contrapunctus-V.ly"
 \include "./parts/06-contrapunctus-VI.ly"

@@ -398,11 +398,10 @@ Bass = \context Voice = "four" \relative c {
   >>
   \header {
     %composer = "Johann Sebastian Bach"
-    %opus = "BWV 1080"
-    subtitle = "A 4 per augmentationem et diminutionem "
-    title = \markup {
-      Contrapunctus VII
-    }
+    opus = "BWV 1080, 7"
+    title = ##f
+    subtitle = \markup { \smallCaps "Contrapunctus VII" }
+    subsubtitle = "per Augmentationem et Diminutionem"
   }
   \layout { }
   \midi { }

@@ -443,11 +443,10 @@ Bass = \context Voice = "four" \relative c {
   >>
   \header {
     %composer = "Johann Sebastian Bach"
-    %opus = "BWV 1080"
-    subtitle = "A 4 in stilo francese"
-    title = \markup {
-      Contrapunctus VI
-    }
+    opus = "BWV 1080, 6"
+    title = ##f
+    subtitle = \markup { \smallCaps "Contrapunctus VI" }
+    subsubtitle = "[per Diminutionem] in Stilo Francese"
   }
   \layout { }
   \midi { }
