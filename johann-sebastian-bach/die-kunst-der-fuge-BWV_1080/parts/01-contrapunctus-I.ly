@@ -95,7 +95,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | d,2 r8 g a c~
   | c8 bes c ees~ ees d fis a~
   | a g16 a bes8 cis, d2~
-  | d2~ d\fermata
+  | d1\fermata
   \fine
 }
 
@@ -196,18 +196,16 @@ Alto = \context Voice = "two" \relative c' {
   | r2 a4 r
   | r2 b
   | a~ a4. g8
-  | fis g a4~ a8 g c4^~
+  | fis g a4~ a8 g
+    \shape #'((0 . -0.4) (0 . -0.8) (0 . -0.8) (0 . 0)) Tie
+    c4~
   %75
   | c8 fis, g bes ees,2
   | d4
     \change Staff = "lower"
     \stemUp
     a bes c
-    \change Staff = "upper"
-  | \stemDown d-\markup {
-      \hspace #2.5
-      \italic\small "rallent. dim."
-    }
+  | d
     \change Staff = "lower"
     \stemUp g,~ g8
     \change Staff = "upper"
