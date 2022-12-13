@@ -2,11 +2,13 @@
 
 #(ly:set-option 'relative-includes #t)
 
-coverColor = #(rgb-color 0.2 0.4 0.5)
+coverColor = #(rgb-color 0.80 0.90 1.00)   % lavender blue
+
+calando = { \override TextSpanner.bound-details.left.text = \markup { \small "calando " } }
 cresc = { \override TextSpanner.bound-details.left.text = \markup { \small "cresc. " } }
 
 \paper {
-  bottom-margin = 15\mm
+  bottom-margin = 13\mm
   first-page-number = 0
   indent = 0.0
   last-bottom-spacing.padding = #1
@@ -15,7 +17,7 @@ cresc = { \override TextSpanner.bound-details.left.text = \markup { \small "cres
   ragged-bottom = ##f
   ragged-last-bottom = ##t
   tagline = ##f
-  top-margin = 15\mm
+  top-margin = 13\mm
 % markup-system-spacing.basic-distance = #10
 }
 
@@ -53,15 +55,23 @@ cresc = { \override TextSpanner.bound-details.left.text = \markup { \small "cres
         \line { \abs-fontsize #20 "Op. 6" }
         \null\null\null\null
         \fill-line { \abs-fontsize #20 "For Piano" }
+
         \null\null\null\null
         \fill-line {
-          \override #'(thickness . 5)
-          \draw-squiggle-line #0.5 #'(10 . 0) ##t
+          \override #'(thickness . 1)
+          \draw-squiggle-line #0.5 #'(14 . 0) ##t
         }
-        \null\null\null\null\null\null
-        \fill-line { \abs-fontsize #11 "Engraved by Davide Madrisan" }
-        \fill-line { \abs-fontsize #9 \typewriter "https://github.com/madrisan/open-scores/" }
-        \null
+        \null\null
+        \fill-line {
+          \abs-fontsize #13
+          \smallCaps " Lavender.Blue Open Scores"
+        }
+        \fill-line { \abs-fontsize #10 "Engraved by Davide Madrisan" }
+        \fill-line {
+          \abs-fontsize #9
+          \typewriter "https://github.com/madrisan/open-scores/"
+        }
+        \null\null\null\null
         \fill-line { \abs-fontsize #10 "Based on the score publiched by Friedrich Hofmeister - Leipzig, 1836" }
         \null
       }
@@ -177,10 +187,75 @@ Upper = \relative c'' {
   | c4.^\markup { \italic\small "stretto e rubato" }
     c
   %45
-  | c bes~^\markup { \italic\small "ritenuto" }
-  | bes16[ a g f ees d] s4.
+  | c << { } \\ { bes^~^\markup { \italic\small "ritenuto" } } >>
+  | << {
+      s16 d s bes s g s d s bes[( c d])
+    } \\ {
+      bes'16[ a g f e d] c[ bes a g8.]
+    } >>
+  | d'4.^> f,4 g8
+  | a4. e8[ bes'!8. a16]
+  | a4 r8
+    f'4 8~
+  %50
+  | \override TupletNumber.transparent = ##f
+    \shape #'((0 . -1.5) (0 . 1.5) (0 . 0) (0 . -2)) PhrasingSlur
+    \tuplet 8/6 { f8^.[\( e^. f'^._> e^. c^. a^. f^. e^.]\) }
+  | e^> r r d4.~_>
+  | \shape #'((0 . -1.5) (0 . 1.5) (0 . 0) (0 . -2)) PhrasingSlur
+    \tuplet 8/6 { d8^.[\( c^. d'^._> c^. a^. f^. d^. c^.]\) }
+  | c8^> r r bes4._>
+  | \tuplet 9/6 {
+      bes8^.^\markup {
+      \small\italic "risoluto con forza."
+      } [^\( a^. g^._> f^. e^. d^. e^. f^. g^.]\)
+    }
+  %55
+  | a8 r r a,4.~^\sf
+  | a4 8 bes4^> a8
+  | <d, d'>8^\markup { \italic\small "più mosso" } r r r4 r8
+  | r4 r8 d'8._.[\( e16_. f8_.]\)
+  | g8._.[\( a16_. bes8_.]\) cis8.^.[\( d16^. e8^.]\)
+  %60
+  | f4.~ f8\( e d\)
+  | e4.~ e4.
+  | a,8 r8 r bes8.^.[\( cis16^. d8^.]\)
+  | e8.^.[\( f16^. g8^.]\) << gis4.^> \\ { f8.[\( e16 d8]\) } >>
+  | << a'4 \\ cis,4 >> r8 bes!8.^.[\( cis!16^. d8^.]\)
+  %65
+  | e8.^.[\( f16^. g8^.]\) << gis4.^> \\ { f8.[\( e16 d8]\) } >>
+  | << a'4 \\ cis,4 >> r8 << fis4. \\ { ees8. d16 c8 } >>
+  | << g'4. \\ b,!4. >> << e!4. \\ { des8. c!16 bes8 } >>
+  | << f'!4. \\ a,!4. >> << cis4. \\ { <g bes>8.[_> <f a>16 <g e>8] } >>
+  | <d f d'>4 r8 r4 r8
+  %70
+  | r4 r8 d8.^.[\( e16^. f8^.]\)
+  | g8.^.[\( a16^. bes8^.]\) cis8.^.[\( d16^. e8^.]\)
+  | f2.~
+  | f4. a8.^>[ g16 f8]
+  | d bes f a'8.^>[ g16 f8]
+  %75
+  | d bes f <d f>4 <d g>8
+  | << { a'4. a4.~ } \\ { d,4 8 cis4 8 } >>
+  | << { a'4. a'8.[\> g16 fis8]\! } \\ { c,!4 8 s4. } >>
+  | d'8 bes g <f'! f'!>8.-> <e e'>16 <d d'>8
+  | <c c'> <a a'> <f f'> << { f4 g8 } \\ { f4 f8 } >>
+  %80
+  | << { a4 a8 } \\ { f4 f8 } >> << { a4 g8 } \\ { e4 e8 } >>
+  | << { f4. <f a>~ } \\ { f4. d8.[ d16 des8] } >>
+  | << { <f a>4. <f a>4.~ } \\ { c4 f,8 d'!8.[ d16 des8] } >>
+  | << { <f a>4. a4.~ } \\ { c,4 f,8 a'4. } >>
+  | << { a8. bes16 c8 d4 c8 } \\ { a8. g16 f8 e4 e8 } >>
+  %85
+  | << { a4. <f a>~ } \\ { f4. d4 des8 } >>
+  | << { <f a>4. <f a>4.~ } \\ { c4 f,8 d'4 des8  } >>
+  | << { <f a>4. a4.~ } \\ { c,4 f,8 s4. } >>
+  | << { a'8. <g a>16 <f a>8 <e a>4.~ } \\ {} >>
+  | << { <e a>4. a4.^> } \\ {} >>
+    \bar ".|"
+  %90
   | s1*6/8
-  \fine
+   \fine
 }
 
 Lower = \relative c {
@@ -259,8 +334,68 @@ Lower = \relative c {
   | << { d8[ g! bes g d g] } \\ bes,2. >>
   | \clef bass
     << { d,8[ g bes g d g] } \\ bes,2. >>
+  | << { f'8[ a c a f a] } \\ c,2. >>
+  | << { e8[ g a g e g] } \\ cis,2. >>
+  | << { f8[ a d a f a] } \\ d,2. >>
+  %50
+  | \clef treble
+    << { c'8[ e c' e, c' e,] } \\ <c a>2. >>
+  | << { d8[ f bes f bes f] } \\ <bes, d>2. >>
+  | << { a8[ c a' c, a' c,] } \\ <a f>2. >>
+  | << { bes8[ d g d g d] } \\ <g, bes>2. >>
+  | \clef bass
+    << { bes,8[ d g bes g d] } \\ bes2. >>
+  %55
+  | << { a8[ f' d' f, d' f,] } \\ a,2. >>
+  | << { a8[ g' cis g cis g] } \\ a,2. >>
+  | d8[ r <d f a>] <d f a>4 8
+  | 4 8 4 8
+  | <d g bes>4 8 <d e g bes>4 <d e g bes cis>8
+  %60
+  | <d f a d>4 <d f a>8 <d f bes>4 <f a b!>8
+  | <e a c!>4 8 <e gis b!>4 8
+  | <a c>4 8 \clef treble <a cis e g>4 8
+  | 4 8 <a b! d f gis>4 8
+  | <a cis e a>4 8 <a cis e g>4 8
+  %65
+  | <a cis e g>4 8 <a b! d f gis>4 8
+  | <a cis e a>4 8 <a c! ees fis>4 8
+  | <a b! d g>4 8 <a bes! cis e g>4 8
+  | <a d f>4 8 \clef bass <a, a'>4 8
+  | <d, d'>4 <d' f a>8 4 8
+  %70
+  | 4 8 4 8
+  | <d g bes>4 8 <d e g bes>4 <d e g bes cis>8
+  | <d f a d>4 8 <d f bes d>4^> 8
+  | 4 8
+    << { bes4 s8 } \\ { bes4^>\sustainOn <e bes' cis>8 } >>
+  | << { } \\ { <f bes d>4 8\sustainOff } >>
+    << { bes,4 s8 } \\ { bes4^>\sustainOn <e bes' cis>8 } >>
+  %75
+  | << { } \\ { <f bes d>4 8\sustainOff <bes, f'>4 8 } >>
+  | <a f'>4 8 <g e'>4 8
+  | <fis ees'>4 8
+    \stemDown <fis! c' ees! a>4\arpeggio\sustainOn 8\arpeggio
+  | \stemNeutral <g bes d bes'>4\arpeggio\sustainOff\sustainOn <g bes d bes'>8\arpeggio
+    <gis d' f! b!>4\arpeggio\sustainOff\sustainOn <gis d' f! b!>8\arpeggio
+  | <a c f c'>4\arpeggio\sustainOff\sustainOn <a c f c'>8\arpeggio
+    <d b'!>4\sustainOff <des b'>8
+  %80
+  | <c c'!>4 <c c'>8 <c bes'>4 <c bes'>8
+  | << { a'4. <f a>~ } \\ { c4 f,8 d'8.[ d16 des8] } >>
+  | << { <f a>4. <f a>~ } \\ { c4 f,8 d'8.[ d16 des8] } >>
+  | << { <f a>4. s4. } \\ { c4 f,8 <c' f a>4 <c f a>8 } >>
+  | bes,4 <d' g bes>8 c,4 <c' g' bes>8
+  %85
+  | << { a'4. <f a>4.~ } \\ { f4 f,8 d'4 des8 } >>
+  | << { <f a>4. <f a>4.~ } \\ { c4 f,8 d'4 des8 } >>
+  | << { <f a>4. s4. } \\ { c4 f,8 <c' f a>4 8 } >>
+  | a,4\sustainOn <cis' a'>8 4 8
+  | 4 8 4 8\sustainOff
+    \bar "||"
+  %90
   | s1*6/8
-  \fine
+   \fine
 }
 
 centeredDynamics = {
@@ -323,6 +458,64 @@ centeredDynamics = {
   %45
   | s4. s4\stopTextSpan s8
   | s8^\p s s2
+  | s8\< s8 s8 s8 s8 s8\!
+  | s8\> s8 s8 s8 s8 s8\!
+  | s8-\markup { \dynamic p \italic\small "con grazia" } s s2
+  %50
+  | s1*6/8
+  | s1*6/8
+  | s16
+    \once \override DynamicLineSpanner.Y-offset = -3
+    s16_\pp s4 s4.
+  | s1*6/8
+  | s16
+    \once \override DynamicLineSpanner.Y-offset = -3
+    s16_\ff s4 s4.
+  %55
+  | s1*6/8
+  | s1*6/8
+  | s16
+    \once \override DynamicLineSpanner.Y-offset = -3
+    s16_\p s4 s4.
+  | s1*6/8
+  | s8 s\cresc s16\startTextSpan s s8 s s
+  %60
+  | s8 s s s s s\stopTextSpan
+  | s8\> s s s s s\!
+  | s8 s s s\< s s
+  | s8 s s\! s\> s s\!
+  | s8 s s s\< s s
+  %65
+  | s8 s s\!\sf s\> s s\!
+  | s8 s s s\> s s\!
+  | s16-\markup { \italic\small "dimin." } s s8 s s\> s s\!
+  | s1*6/8
+  | s16_\p s s4 s4.
+  %70
+  | s1*6/8
+  | s8\< s8 s8 s8 s8 s8\!
+  | s1*6/8
+  | s8 s s\mf s\> s s
+  | s8 s s\! s\> s s\!
+  %75
+  | s1*6/8
+  | s8\< s s2
+  | s8 s8 s8\! s8\f s4
+  | s16^\markup { \italic\small "animato rinf." } s s8 s s s s
+  | s8 s s s-\markup { \hspace #-1 \dynamic p \italic\small "espress." } s4
+  %80
+  | s1*6/8
+  | s8 s s s\< s s
+  | s8 s\!\> s s\!\< s s
+  | s8\!\> s s\! s s s
+  | s8\< s s\!\> s s s\!
+  %85
+  | s8 s s\< s s s\!
+  | s8\> s s\! s\< s s\!
+  | s8\> s s\! s s s
+  | s16 s\pp s \calando s\startTextSpan s2
+  | s8 s s s s s\stopTextSpan
+  %| s1*6/8
 }
 
 \score {
