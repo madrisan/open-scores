@@ -19,29 +19,29 @@ If you prefer to create these files (and *midi* ones) yourself, skip to the next
 
 #### Johann Sebastian Bach (1685-1750)
 
- * [Jesu meine Freude (BWV610)](https://github.com/madrisan/open-scores/blob/main/scores/JS-Bach-BWV610-Jesu-meine-Freude.pdf)
- * [Suite Anglaise IV (BWV809)](https://github.com/madrisan/open-scores/blob/main/scores/JS-Bach-BWV809-Suite-Anglaise-4.pdf)
- * [Chromatische Fantasie und Fugue (BWV903)](https://github.com/madrisan/open-scores/blob/main/scores/JS-Bach-BWV903-Chromatische-Fantasie-und-Fugue.pdf)
- * [Italienisches Konzert (BWV971)](https://github.com/madrisan/open-scores/blob/main/scores/JS-Bach-BWV971-Italienisches-Konzert.pdf)
- * [Die Kunst der Fuge (BWV1080)](https://github.com/madrisan/open-scores/blob/main/scores/JS-Bach-BWV1080-Die-Kunst-der-Fuge.pdf) -- *in progress*: contrapunctus I-VII
+ * [Jesu meine Freude (BWV610)](https://github.com/madrisan/open-scores/releases/download/v1/Baldassare-Galuppi-Sonata-5.pdf)
+ * [Suite Anglaise IV (BWV809)](https://github.com/madrisan/open-scores/releases/download/v1/JS-Bach-BWV809-Suite-Anglaise-4.pdf)
+ * [Chromatische Fantasie und Fugue (BWV903)](https://github.com/madrisan/open-scores/releases/download/v1/JS-Bach-BWV903-Chromatische-Fantasie-und-Fugue.pdf)
+ * [Italienisches Konzert (BWV971)](https://github.com/madrisan/open-scores/releases/download/v1/JS-Bach-BWV971-Italienisches-Konzert.pdf)
+ * [Die Kunst der Fuge (BWV1080)](https://github.com/madrisan/open-scores/releases/download/v1/JS-Bach-BWV1080-Die-Kunst-der-Fuge.pdf) -- *in progress*: contrapunctus I-VII
 
 Image of the J.S. Bach's [manuscript](images/js-bach-jesu-meine-freude-manuscript.png) of the Choral "*Jesu meine Freude*" (*Das Orgel-Büchlein*, p.15).
 
 #### Baldassare Galuppi (1706-1785)
 
- * [Sonata no. 5 in Do maggiore](https://github.com/madrisan/open-scores/blob/main/scores/Baldassare-Galuppi-Sonata-5.pdf)
+ * [Sonata no. 5 in Do maggiore](https://github.com/madrisan/open-scores/releases/download/v1/Baldassare-Galuppi-Sonata-5.pdf)
 
 You can see here the [manuscript](images/baldassare-galuppi-sonata-5-manuscript-1st-page.png) of the first page of the sonata.
 
 #### Mikhail-Glinka (1804-1857)
 
- * [Nocturne](https://github.com/madrisan/open-scores/blob/main/scores/Mikhail-Glinka-Nocturne.pdf)
+ * [Nocturne](https://github.com/madrisan/open-scores/releases/download/v1/Mikhail-Glinka-Nocturne.pdf)
 
 Thanks to my harpist friend Tristan Rollet ([@Pluiesurlavitre](https://github.com/Pluiesurlavitre)) for pointing me to this beautiful romantic piece.
 
 #### Rued Langgaard (1893-1952)
 
- * [Insektarium (BVN 134)](https://github.com/madrisan/open-scores/blob/main/scores/Rued-Langgaard-Insektarium-BVN-134.pdf)
+ * [Insektarium (BVN 134)](https://github.com/madrisan/open-scores/releases/download/v1/Rued-Langgaard-Insektarium-BVN-134.pdf)
 
 #### Clara Schumann Wieck (1819-1896)
 
@@ -63,6 +63,7 @@ lilypond sonate-fur-klavier-op-1.ly
 ```
 ```
 make baldassare-galuppi-sonata-5-c-major
+make clara-schumann-wieck-soirees-musicales
 make johann-sebastian-bach-chromatische-fantasie-und-fugue
 make johann-sebastian-bach-die-kunst-der-fuge
 make johann-sebastian-bach-italienisches-konzert
