@@ -251,9 +251,64 @@ Upper = \relative c'' {
   | << { <f a>4. <f a>4.~ } \\ { c4 f,8 d'4 des8  } >>
   | << { <f a>4. a4.~ } \\ { c,4 f,8 s4. } >>
   | << { a'8. <g a>16 <f a>8 <e a>4.~ } \\ {} >>
-  | << { <e a>4. a4.^> } \\ {} >>
+  | << { <e a>4. a4.~^> } \\ {} >>
     \bar ".|"
   %90
+  | << { a8.[ <g a>16 <f a>8] } \\ { } >> <e a>4.
+  | <e a>4 a8 4^> g8
+  | g4._> f4.~
+  | f4 8 4 e8
+  | \shape #'((0 . 0) (0 . 0) (0 . 0) (0 . 0.4)) PhrasingSlur
+    d4\( 8 \tuplet 4/3 { d'8( d d' d~)\) }
+  %95
+  | \ottava #1
+    <d d'>16^.[ <ees ees'>^. <c c'>^. <a a'>^.
+    <fis fis'>^.
+    \ottava #0
+    <ees ees'>^. <d d'>^. <cis cis'>^.
+    <c! c'!>^. <b! b'!>^. <bes bes'>^. <a a'>^.]
+  | <c c'>4. <bes! bes'!>~
+  | <bes bes'> bes4^> a8
+  | a8 r r g4.->~
+  | g8^.[( fis^. g^. a^. bes!^. b!^.])
+  %100
+  | c8 r r c4.^>^\markup { \italic\small "dolce" }
+  | c8[( bes! a bes d r16 d,])
+  | f4.^\markup { \italic\small "ben marcato il canto" } e~_>
+  | e ees~_>
+  | ees d~_>
+  %105
+  | d cis~_>
+  | des c!~_>
+  | c8^\f c'4^> c4.~^>
+  | c8 << { \stemDown c2~^>^\f } \\ { } >> << \stemDown c8~ \\ {} >>
+  | << { c4 bes!8 } \\ { c8 ees, d } >>
+    << { a'8 g d' } \\ { <ees,! fis> d4 } >>
+  %110
+  | f!8 r4 \acciaccatura <f c'>8 <f a c>4.~^\sf
+  | <f a c>16 \acciaccatura <dis c'>8 <dis fis c'>16^.
+    \acciaccatura <e c'>8 <e g c>16^.
+    \acciaccatura <e c'>8 <e gis c>16^.
+    \acciaccatura <e c'>8 <e a c>16^.
+    r32 a^\sf
+    <c a'>4 r16 <b! gis'>32^\pp <bes g'!>
+  | <a f'>8 r r r4 r8
+  | s1*6/8
+  | s1*6/8
+  %115
+  | s1*6/8
+  | s1*6/8
+  | s1*6/8
+  | s1*6/8
+  | s1*6/8
+  %120
+  | s1*6/8
+  | s1*6/8
+  | s1*6/8
+  | s1*6/8
+  | s1*6/8
+  %125
+  | s1*6/8
   | s1*6/8
    \fine
 }
@@ -394,6 +449,49 @@ Lower = \relative c {
   | 4 8 4 8\sustainOff
     \bar "||"
   %90
+  | <f, cis'>8[ a' cis a cis, a']
+  | <f, cis'>8[ a' cis a cis, a']
+  | <f, d'>8[ a' d a d, a']
+  | <f, d'>8[ a' d a d, a']
+  | <fis, d'>8[ a' c!] a[ d, a']
+  %95
+  | <fis, d'>8[ a' c! a d, a']
+  | <g, d'>8[ g' bes] g[ d g]
+  | <g, d'>8[ g' bes] g[ d g]
+  | << { e g c g e g } \\ c,2. >>
+  | << { e8[ g c g e g] } \\ bes,2. >>
+  %100
+  | << { c8[ f c' f, e ees] } \\ a,2. >>
+  | << { d8[ fis d' g, d' bes] } \\ bes,2. >>
+  | << { c8 a' c c, g' c } \\ { c,4. c4. } >>
+  | << { c8 ges' a ces, ges' a } \\ { c,4. ces4. } >>
+  | << { bes8 ges' bes bes, f' bes } \\ { bes,4. bes4. } >>
+  %105
+  | << { bes8 e g! a, e' g } \\ { bes,4. a4. } >>
+  | << { gis8 e' gis a, ees' ges } \\ { gis,4. a4.\sustainOn } >>
+  | << {} \\ { a'8[ c ees fis ees c] } >>
+  | << { bes,!8\sustainOff\sustainOn[ fis' a d a fis] } \\ { bes,2. } >>
+  | << { bes!8[\sustainOff\sustainOn fis' g c bes g]\sustainOff } \\ { bes,2. } >>
+  %110
+  | << { c8[ a' c a c a] } \\ { c,2. } >>
+  | << { <c, c'>8\sustainOn[ bes'' c bes\sustainOff c bes] } \\ { c,2. } >>
+  | << { f,8\sustainOn[ c' a' c, a' c,\sustainOff] } \\ { f,2. } >>
+  | s1*6/8
+  | s1*6/8
+  %115
+  | s1*6/8
+  | s1*6/8
+  | s1*6/8
+  | s1*6/8
+  | s1*6/8
+  %120
+  | s1*6/8
+  | s1*6/8
+  | s1*6/8
+  | s1*6/8
+  | s1*6/8
+  %125
+  | s1*6/8
   | s1*6/8
    \fine
 }
