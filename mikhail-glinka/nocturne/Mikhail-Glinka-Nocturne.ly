@@ -2,7 +2,7 @@
 
 #(ly:set-option 'relative-includes #t)
 
-coverColor = #(rgb-color 0.2 0.4 0.5)
+\include "../../covercolor.ly"
 
 sluredTuplet =
   #(define-scheme-function (n1 n2 n3 n4 n5 n6)

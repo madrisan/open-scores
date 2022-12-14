@@ -2,7 +2,7 @@
 
 #(ly:set-option 'relative-includes #t)
 
-coverColor = #(rgb-color 0.80 0.90 1.00)   % lavender blue
+\include "../../covercolor.ly"
 
 calando = { \override TextSpanner.bound-details.left.text = \markup { \small "calando " } }
 cresc = { \override TextSpanner.bound-details.left.text = \markup { \small "cresc. " } }
