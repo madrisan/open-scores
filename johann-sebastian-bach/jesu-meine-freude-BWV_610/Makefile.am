@@ -1,5 +1,4 @@
 EXTRA_DIST = *.ly *.ily
-LILYPOND := lilypond
 
 %: %.ly
 	$(LILYPOND) --pdf --output $@ $<
