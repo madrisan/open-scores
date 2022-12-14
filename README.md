@@ -62,13 +62,13 @@ cd alban-berg/Op_1
 lilypond sonate-fur-klavier-op-1.ly
 ```
 ```
-make baldassare-galuppi-sonata-5-c-major
-make clara-schumann-wieck-soirees-musicales
-make johann-sebastian-bach-chromatische-fantasie-und-fugue
-make johann-sebastian-bach-die-kunst-der-fuge
-make johann-sebastian-bach-italienisches-konzert
-make johann-sebastian-bach-jesu-meine-freude
-make johann-sebastian-bach-suite-anglaise-4
-make mikhail-glinka-nocturne
-make rued-langgaard-insektarium
+make -C baldassare-galuppi/sonata-5-c-major
+make -C clara-schumann-wieck/soirees-musicales-op.6
+make -C johann-sebastian-bach/chromatische-fantasie-und-fugue-BWV_903
+make -C johann-sebastian-bach/die-kunst-der-fuge-BWV_1080
+make -C johann-sebastian-bach/italienisches-konzert-BWV_971
+make -C johann-sebastian-bach/jesu-meine-freude-BWV_610
+make -C johann-sebastian-bach/suites-anglaises/BWV809
+make -C mikhail-glinka/nocturne
+make -C rued-langgaard/insektarium-BVN_134
 ```

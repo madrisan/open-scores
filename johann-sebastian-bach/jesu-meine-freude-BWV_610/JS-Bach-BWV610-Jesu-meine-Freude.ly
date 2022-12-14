@@ -2,7 +2,7 @@
 
 #(ly:set-option 'relative-includes #t)
 
-coverColor = #(rgb-color 0.2 0.4 0.5)
+\include "../../covercolor.ly"
 
 \header {
   tagline = ##f
