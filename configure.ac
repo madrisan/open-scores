@@ -24,6 +24,44 @@ AM_INIT_AUTOMAKE([
 AM_MAINTAINER_MODE
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 
+dnl Locate a program and check that its version is acceptable.
+dnl AC_PROG_CHECK_VER(var, namelist, version-switch,
+dnl                   [version-extract-regexp], version-glob [, do-if-fail])
+AC_DEFUN([AC_CHECK_PROG_VER],
+[AC_CHECK_PROGS([$1], [$2])
+if test -z "[$]$1"; then
+  ac_verc_fail=yes
+else
+  # Found it, now check the version.
+  AC_MSG_CHECKING([version of [$]$1])
+changequote(<<,>>)dnl
+  ac_prog_version=`<<$>>$1 $3 2>&1 ifelse(<<$4>>,,,
+                   <<| sed -n 's/^.*patsubst(<<$4>>,/,\/).*$/\1/p'>>)`
+  case $ac_prog_version in
+    '') ac_prog_version="v. ?.??, bad"; ac_verc_fail=yes;;
+    <<$5>>)
+changequote([,])dnl
+       ac_prog_version="$ac_prog_version, ok"; ac_verc_fail=no;;
+    *) ac_prog_version="$ac_prog_version, bad"; ac_verc_fail=yes;;
+
+  esac
+  AC_MSG_RESULT([$ac_prog_version])
+fi
+ifelse([$6],,,
+[if test $ac_verc_fail = yes; then
+  $6
+fi])
+])
+
+AC_CHECK_PROG_VER(LILYPOND, lilypond, --version,
+  [GNU LilyPond \([0-9]*\.[0-9.]*\.[0-9.]*\) .running Guile .*],
+  [2.23.[0-9]*],
+  critic_missing="$critic_missing lilypond")
+
+test -n "$critic_missing" && AC_MSG_ERROR([
+*** These critical programs are missing or too old:$critic_missing
+*** Check the INSTALL file for required versions.])
+
 AC_CONFIG_FILES([\
   Makefile \
   baldassare-galuppi/Makefile \
