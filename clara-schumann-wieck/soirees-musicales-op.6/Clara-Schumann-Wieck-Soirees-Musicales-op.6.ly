@@ -4,9 +4,6 @@
 
 \include "../../covercolor.ly"
 
-calando = { \override TextSpanner.bound-details.left.text = \markup { \small "calando " } }
-cresc = { \override TextSpanner.bound-details.left.text = \markup { \small "cresc. " } }
-
 \paper {
   bottom-margin = 13\mm
   first-page-number = 0

@@ -4,8 +4,9 @@
 
 \include "../../covercolor.ly"
 
-calando = { \override TextSpanner.bound-details.left.text = \markup { \small "calando " } }
+calando = { \override TextSpanner.bound-details.left.text = \markup { \dynamic pp \small "calando " } }
 cresc = { \override TextSpanner.bound-details.left.text = \markup { \small "cresc. " } }
+stretto = { \override TextSpanner.bound-details.left.text = \markup { \small "stretto " } }
 
 \paper {
   bottom-margin = 13\mm
@@ -267,21 +268,22 @@ Upper = \relative c'' {
     \ottava #0
     <ees ees'>^. <d d'>^. <cis cis'>^.
     <c! c'!>^. <b! b'!>^. <bes bes'>^. <a a'>^.]
-  | <c c'>4. <bes! bes'!>~
+  | <c c'>4. <bes! bes'!>~_>
   | <bes bes'> bes4^> a8
   | a8 r r g4.->~
   | g8^.[( fis^. g^. a^. bes!^. b!^.])
   %100
   | c8 r r c4.^>^\markup { \italic\small "dolce" }
-  | c8[( bes! a bes d r16 d,])
+  | c8[^( bes! a bes d r16 d,])
   | f4.^\markup { \italic\small "ben marcato il canto" } e~_>
   | e ees~_>
   | ees d~_>
   %105
-  | d cis~_>
-  | des c!~_>
-  | c8^\f c'4^> c4.~^>
-  | c8 << { \stemDown c2~^>^\f } \\ { } >> << \stemDown c8~ \\ {} >>
+  | d cis~_>\stretto
+  | des\startTextSpan c!~_>
+  | c8^\f c'4^> c4.~^>\stopTextSpan
+  | c8 << { \stemDown c2~^>^\f } \\ { } >>
+    << \stemDown c8~^\markup { \italic\small "riten." } \\ {} >>
   | << { c4 bes!8 } \\ { c8 ees, d } >>
     << { a'8 g d' } \\ { <ees,! fis> d4 } >>
   %110
@@ -292,24 +294,34 @@ Upper = \relative c'' {
     \acciaccatura <e c'>8 <e a c>16^.
     r32 a^\sf
     <c a'>4 r16 <b! gis'>32^\pp <bes g'!>
-  | <a f'>8 r r r4 r8
-  | s1*6/8
-  | s1*6/8
+  | <a f'>8^\markup { \italic\small "a tempo ma più lento" } r r r4 r8
+  | << des2.-^ \\ {
+      \mergeDifferentlyDottedOn
+      \mergeDifferentlyHeadedOn
+      des8[ f,^\markup { \italic\small "con espress." } aes, f' aes, f']
+    } >>
+  | << { des'4.~-^ des8. c16 bes8 } \\ {
+      des8[ ges, bes, ges' bes, ges']
+    } >>
   %115
-  | s1*6/8
-  | s1*6/8
-  | s1*6/8
-  | s1*6/8
-  | s1*6/8
+  | << c2.-^ \\ { c8[ e,! bes e bes e] } >>
+  | << a!2.-^ \\ { a8[ f a,! f' a, f'] } >>
+  | << des'2.-^ \\ { des8[ f, bes, f' bes, f'] } >>
+  | << { des'4.~-^ des8. c16 bes8 } \\ {
+      des8[ ges, bes, ges' bes, ges']
+    } >>
+  | << c2.-^ \\ { c8[ e,! bes e bes e] } >>
   %120
-  | s1*6/8
-  | s1*6/8
-  | s1*6/8
-  | s1*6/8
-  | s1*6/8
+  | << a!2.-^ \\ { a8[ f a,! f' a, f'] } >>
+  | << { a4~ a8.[ g16 f8] } \\ { a8[ cis,^> f, cis' f, cis'] } >>
+  | << d2. \\ { d8[ f, d'^> f, d' f,] } >>
+  | << { a'4.~^\markup { \italic\small "calando e morendo" }  a8. g16 f8 } \\ {
+      a8[ des, f, des' f, des']
+    } >>
+  | << c2. \\ { c8[ f, c' f, c' f,] } >>
   %125
-  | s1*6/8
-  | s1*6/8
+  | << { c'4 8 f a c } \\ { c,8[ f, c'] f[ a c] } >>
+  | \grace { c,8~[ f~] } <c f f'>2.
    \fine
 }
 
@@ -449,13 +461,13 @@ Lower = \relative c {
   | 4 8 4 8\sustainOff
     \bar "||"
   %90
-  | <f, cis'>8[ a' cis a cis, a']
-  | <f, cis'>8[ a' cis a cis, a']
+  | <f, cis'>8\sustainOn[ a' cis a cis, a']
+  | <f, cis'>8[ a' cis a cis, a']\sustainOff
   | <f, d'>8[ a' d a d, a']
   | <f, d'>8[ a' d a d, a']
-  | <fis, d'>8[ a' c!] a[ d, a']
+  | <fis, d'>8\sustainOn[ a' c!] a[ d, a']\sustainOff
   %95
-  | <fis, d'>8[ a' c! a d, a']
+  | <fis, d'>8\sustainOn[ a' c! a d, a']\sustainOff
   | <g, d'>8[ g' bes] g[ d g]
   | <g, d'>8[ g' bes] g[ d g]
   | << { e g c g e g } \\ c,2. >>
@@ -468,31 +480,37 @@ Lower = \relative c {
   | << { bes8 ges' bes bes, f' bes } \\ { bes,4. bes4. } >>
   %105
   | << { bes8 e g! a, e' g } \\ { bes,4. a4. } >>
-  | << { gis8 e' gis a, ees' ges } \\ { gis,4. a4.\sustainOn } >>
-  | << {} \\ { a'8[ c ees fis ees c] } >>
+  | << { gis8 e' gis a,\sustainOn ees' ges } \\ { gis,4. a4. } >>
+  | << { s2. } \\ { a'8[ c ees fis ees c] } >>
   | << { bes,!8\sustainOff\sustainOn[ fis' a d a fis] } \\ { bes,2. } >>
   | << { bes!8[\sustainOff\sustainOn fis' g c bes g]\sustainOff } \\ { bes,2. } >>
   %110
   | << { c8[ a' c a c a] } \\ { c,2. } >>
   | << { <c, c'>8\sustainOn[ bes'' c bes\sustainOff c bes] } \\ { c,2. } >>
-  | << { f,8\sustainOn[ c' a' c, a' c,\sustainOff] } \\ { f,2. } >>
-  | s1*6/8
-  | s1*6/8
+  | << { f,8\sustainOn[ c' a' c, a' c,] } \\ { f,2. } >>
+  | << { des8\sustainOff\sustainOn[ des' f des f des] } \\ { des,2. } >>
+  | << { ges8\sustainOff\sustainOn[ des' ges des ges des] } \\ { ges,2. } >>
   %115
-  | s1*6/8
-  | s1*6/8
-  | s1*6/8
-  | s1*6/8
-  | s1*6/8
+  | << { c,8\sustainOff\sustainOn[ c' g'! c, g'! c,] } \\ { c,2. } >>
+  | << { f8\sustainOff\sustainOn[ c' f c f c] } \\ { f,2. } >>
+  | << { bes,!8\sustainOff\sustainOn[ bes' f' bes, f' bes,] } \\ { bes,!2. } >>
+  | << { ges'8\sustainOff\sustainOn[ des' ges des ges des] } \\ { ges,!2. } >>
+  | << { c,8\sustainOff\sustainOn[ c' g'! c, g' c,] } \\ { c,2. } >>
   %120
-  | s1*6/8
-  | s1*6/8
-  | s1*6/8
-  | s1*6/8
-  | s1*6/8
+  | << { f8\sustainOff\sustainOn[ c' f c f c] } \\ { f,2. } >>
+  | << { f8\sustainOff\sustainOn[ cis'_>] \stemDown a'[ cis, a' cis,] } \\ { f,2. } >>
+  | << { f8\sustainOff\sustainOn[ d'_>] \stemDown a'[ d, a' d,] } \\ { f,2. } >>
+  | << { f8\sustainOff\sustainOn[ des'_>] \stemDown a'[ des, a' des,] } \\ { f,2. } >>
+  | << { f8\sustainOff\sustainOn[ c'_>] \stemDown a'[ c, a' c,] } \\ { f,2. } >>
   %125
-  | s1*6/8
-  | s1*6/8
+  | << { a'8[ c, a'] f[ c a] } \\ { } >>
+  | << {
+      \set tieWaitForNote = ##t
+      \tieDown
+      \grace { f8[ ~ c' ~ a'] ~ } <f, c' a'>2.\sustainOff
+    } \\ {
+      s4 s s
+    } >>
    \fine
 }
 
@@ -611,9 +629,53 @@ centeredDynamics = {
   | s8 s s\< s s s\!
   | s8\> s s\! s\< s s\!
   | s8\> s s\! s s s
-  | s16 s\pp s \calando s\startTextSpan s2
-  | s8 s s s s s\stopTextSpan
-  %| s1*6/8
+  | s16 s\calando s s\startTextSpan s2\stopTextSpan
+  | s8 s s s s s
+  %90
+  | s8^\markup { \hspace #-1 \dynamic ppp \italic\small "dolente" } s s2
+  | s8^\markup { \italic\small "Tempo 1°" } s s2
+  | s1*6/8
+  | s1*6/8
+  | s8 s s s^\markup { \italic\small "cresc." } s s
+  %95
+  | s8^\markup { \hspace #-1 \dynamic ff \italic\small "risoluto" } s s2
+  | s1*6/8
+  | s8 s s s\p s s
+  | s1*6/8
+  | s8 s s s s\< s
+  %100
+  | s8 s\! s s s s
+  | s8\> s s\! s s s
+  | s1*6/8
+  | s8\cresc s s\startTextSpan s s4
+  | s1*6/8
+  %105
+  | s8 s\stopTextSpan s2
+  | s1*6/8
+  | s8 s\< s s s s
+  | s16 s\! s8 s s s s
+  | s1*6/8
+  %110
+  | s1*6/8
+  | s8^\markup { \italic\small "ritardando" } s s s s s
+  | s1*6/8
+  | s1*6/8
+  | s1*6/8
+  %115
+  | s1*6/8
+  | s1*6/8
+  | s16_\pp s s4 s4.
+  | s1*6/8
+  | s1*6/8
+  %120
+  | s1*6/8
+  | s1*6/8
+  | s8\< s s s s s\!
+  | s1*6/8
+  | s8\> s s s s s\!
+  %125
+  | s1*6/8
+  | s16_\ppp s s4 s4.
 }
 
 \score {
