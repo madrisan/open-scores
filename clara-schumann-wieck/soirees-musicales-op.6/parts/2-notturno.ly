@@ -321,8 +321,12 @@ Upper = \relative c'' {
   | << c2. \\ { c8[ f, c' f, c' f,] } >>
   %125
   | << { c'4 8 f a c } \\ { c,8[ f, c'] f[ a c] } >>
-  | \grace { c,8~[ f~] } <c f f'>2.
-   \fine
+    \set tieWaitForNote = ##t
+    \hideNotes
+    \grace { s8 s s c,~[ f~ f'~] }
+    \unHideNotes
+    <c, f f'>2.
+    \fine
 }
 
 Lower = \relative c {
@@ -504,14 +508,16 @@ Lower = \relative c {
   | << { f8\sustainOff\sustainOn[ c'_>] \stemDown a'[ c, a' c,] } \\ { f,2. } >>
   %125
   | << { a'8[ c, a'] f[ c a] } \\ { } >>
-  | << {
-      \set tieWaitForNote = ##t
-      \tieDown
-      \grace { f8[ ~ c' ~ a'] ~ } <f, c' a'>2.\sustainOff
-    } \\ {
-      s4 s s
-    } >>
-   \fine
+    \clef bass
+    \set tieWaitForNote = ##t
+    \grace {
+      \voiceTwo f8~ [ c'~ a'~
+      \change Staff = "upper"
+      c f f' ]
+    }
+    \change Staff ="lower"
+    <f,,, c' a'>2.
+    \fine
 }
 
 centeredDynamics = {
@@ -675,7 +681,7 @@ centeredDynamics = {
   | s8\> s s s s s\!
   %125
   | s1*6/8
-  | s16_\ppp s s4 s4.
+  | s16^\markup { \hspace #-10 \dynamic ppp }
 }
 
 \score {
