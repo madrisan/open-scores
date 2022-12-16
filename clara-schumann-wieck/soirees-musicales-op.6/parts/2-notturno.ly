@@ -50,10 +50,10 @@ Upper = \relative c'' {
   %10
   | bes2.)
   | \stemUp a4. \appoggiatura { a8 } bes!4.~^\sf
-  | bes8[^( a dis, e
+  | bes!8[^( a dis, e
     \acciaccatura { e8 } bes'_. a_.])
   | g2.^>
-  | f4. ees4 d8
+  | f4. e4 d8
   %15
   | \acciaccatura { c8 }
     \stemDown c'4.-\markup {
@@ -132,7 +132,7 @@ Upper = \relative c'' {
   %45
   | c << { } \\ { bes^~^\markup { \italic\small "ritenuto" } } >>
   | << {
-      s16 d s bes s g s d s bes[( c d])
+      s16\( d s bes s g s d s bes[ c d]\)
     } \\ {
       bes'16[ a g f e d] c[ bes a g8.]
     } >>
@@ -150,7 +150,7 @@ Upper = \relative c'' {
   | c8^> r r bes4._>
   | \tuplet 9/6 {
       bes8^.^\markup {
-      \small\italic "risoluto con forza."
+      \small\italic "risoluto con forza"
       } [^\( a^. g^._> f^. e^. d^. e^. f^. g^.]\)
     }
   %55
@@ -265,9 +265,9 @@ Upper = \relative c'' {
   | << { c'4 8 f a c } \\ { c,8[ f, c'] f[ a c] } >>
     \set tieWaitForNote = ##t
     \hideNotes
-    \grace { s8 s s c,~[ f~ f'~] }
+    \grace { s8 s s c,~[ f~] s }
     \unHideNotes
-    <c, f f'>2.
+    <c f f'>2.
     \fine
 }
 
@@ -277,26 +277,26 @@ Lower = \relative c {
   \mergeDifferentlyHeadedOn
   \override TupletNumber.transparent = ##t
   | \shape #'((0 . 0) (0 . 1) (0 . 1) (0 . 0)) PhrasingSlur
-    <f c>8[\(\sustainOn a c a c, a\sustainOff]\)
+    <f c>8[\(\sustainOn a c a c, a'\sustainOff]\)
   | \shape #'((0 . 0) (0 . 1) (0 . 1) (0 . 0)) PhrasingSlur
-    <f' c>[\(\sustainOn a c a c, a\sustainOff]\)
-  | <f' cis>[ a cis a cis, a]
-  | <f' cis>[ a cis a cis, a]
+    <f c>[\(\sustainOn a c a c, a'\sustainOff]\)
+  | <f cis>[ a cis a cis, a']
+  | <f cis>[ a cis a cis, a']
   %5
-  | <f d'>[ a' d a d, a]
-  | <f d'>[ a' d a d, a]
-  | <fis d'>[ a' c a d, a']
+  | <f, d'>[ a' d a d, a']
+  | <f, d'>[ a' d a d, a']
+  | <fis, d'>[ a' c a d, a']
   | <fis, d'>[ a' c a d, a']
   | <fis, d'>[ a' d a d, a']
   %10
   | <g, d'>[ g' d' g, d g]
   | <g, d'>[ g' d' g, d g]
-  | <a, cis>[ g' cis g cis, g]
+  | <a, cis>[ g' cis g cis, g']
   | << {
       \override TupletBracket.bracket-visibility = ##f
       \override TupletNumber.transparent = ##t
-      e'[ bes' cis bes e, bes]
-    } \\ d2. >>
+      e[ bes' cis bes e, bes']
+    } \\ d,2. >>
   | << { f8[ a d a f a] } \\ d,2. >>
   %15
   | << { bes'8[ c g'] bes,[ c f] } \\ { e,4. f } >>
@@ -361,7 +361,7 @@ Lower = \relative c {
   %55
   | << { a8[ f' d' f, d' f,] } \\ a,2. >>
   | << { a8[ g' cis g cis g] } \\ a,2. >>
-  | d8[ r <d f a>] <d f a>4 8
+  | \stemDown d,8[ r <d' f a>] \stemNeutral <d f a>4 8
   | 4 8 4 8
   | <d g bes>4 8 <d e g bes>4 <d e g bes cis>8
   %60
@@ -455,10 +455,10 @@ Lower = \relative c {
     \grace {
       \voiceTwo f8~ [ c'~ a'~
       \change Staff = "upper"
-      c f f' ]
+      c f s]
     }
     \change Staff ="lower"
-    <f,,, c' a'>2.
+    <f,, c' a'>2.
     \fine
 }
 
@@ -494,11 +494,11 @@ centeredDynamics = {
   | s8\< s8 s8 s8 s8 s8
   | s8 s8 s8 s8 s8 s8\!
   | s8\> s8 s8 s8 s8 s8
-  | s8 s8 s8 s8 s8 s8\!
+  | s8 s8 s8 s8\pp\! s8 s8
   %25
   | s1*6/8
   | s1*6/8
-  | s1*6/8
+  | s8 s8 s8 s8 s8 s16 s16\p
   | s1*6/8
   | s1*6/8
   %30
@@ -524,7 +524,7 @@ centeredDynamics = {
   | s8^\p s s2
   | s8\< s8 s8 s8 s8 s8\!
   | s8\> s8 s8 s8 s8 s8\!
-  | s8-\markup { \dynamic p \italic\small "con grazia" } s s2
+  | s8 s s-\markup { \dynamic p \italic\small "con grazia" } s4.
   %50
   | s1*6/8
   | s1*6/8
