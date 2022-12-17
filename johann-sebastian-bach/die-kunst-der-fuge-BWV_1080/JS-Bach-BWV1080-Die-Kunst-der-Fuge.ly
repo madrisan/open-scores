@@ -83,3 +83,4 @@
 \include "./parts/05-contrapunctus-V.ly"
 \include "./parts/06-contrapunctus-VI.ly"
 \include "./parts/07-contrapunctus-VII.ly"
+\include "./parts/07-contrapunctus-VIII.ly"

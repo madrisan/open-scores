@@ -43,6 +43,7 @@ If you prefer to create these files (and *midi* ones) yourself, skip to the next
    * Contrapunctus V
    * Contrapunctus VI - [per Diminutionem] in Stilo Francese
    * Contrapunctus VII - per Augmentationem et Diminutionem
+   * Contrapunctus VIII
 
 Image of the J.S. Bach's [manuscript](images/js-bach-jesu-meine-freude-manuscript.png) of the Choral "*Jesu meine Freude*" (*Das Orgel-Büchlein*, p.15).
 
