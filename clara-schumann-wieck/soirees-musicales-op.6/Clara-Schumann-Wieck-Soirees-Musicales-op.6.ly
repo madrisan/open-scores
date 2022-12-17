@@ -2,7 +2,7 @@
 
 #(ly:set-option 'relative-includes #t)
 
-\include "../../covercolor.ly"
+\include "./covercolor.ly"
 
 \paper {
   bottom-margin = 13\mm
@@ -47,9 +47,8 @@
         \fill-line { \draw-hline }
         \null\null\null
         \line { \abs-fontsize #34 \bold "Soirées Musicales" }
-        \null\null
-        \null\null
-        \line { \abs-fontsize #20 "Op. 6" }
+        \null\null\null\null
+        \line { \abs-fontsize #20 \bold "Op. 6" }
         \null\null\null\null
         \fill-line { \abs-fontsize #20 "For Piano" }
 
@@ -69,6 +68,7 @@
           \typewriter "https://github.com/madrisan/open-scores/"
         }
         \null\null\null\null
+
         \fill-line { \abs-fontsize #10 "Based on the score publiched by Friedrich Hofmeister - Leipzig, 1836" }
         \null
       }

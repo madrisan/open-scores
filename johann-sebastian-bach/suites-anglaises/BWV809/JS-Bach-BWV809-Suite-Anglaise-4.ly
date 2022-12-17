@@ -2,7 +2,7 @@
 
 #(ly:set-option 'relative-includes #t)
 
-\include "../../../covercolor.ly"
+\include "./covercolor.ly"
 
 \header {
   tagline = ##f
@@ -53,15 +53,24 @@
         \line { \abs-fontsize #20 "BWV 809" }
         \null\null
         \fill-line { \abs-fontsize #20 "For Piano or Harpsichord" }
-        \null\null\null
+
+        \null\null\null\null
         \fill-line {
-          \override #'(thickness . 5)
-          \draw-squiggle-line #0.5 #'(10 . 0) ##t
+          \override #'(thickness . 1)
+          \draw-squiggle-line #0.5 #'(14 . 0) ##t
         }
-        \null\null\null\null\null\null\null
-        \fill-line { \abs-fontsize #11 "Transcribed and Engraved by Davide Madrisan" }
-        \fill-line { \abs-fontsize #9 \typewriter "https://github.com/madrisan/open-scores/" }
-        \null
+        \null\null
+        \fill-line {
+          \abs-fontsize #13
+          \smallCaps " Lavender.Blue Open Scores"
+        }
+        \fill-line { \abs-fontsize #10 "Engraved by Davide Madrisan" }
+        \fill-line {
+          \abs-fontsize #9
+          \typewriter "https://github.com/madrisan/open-scores/"
+        }
+        \null\null\null\null
+
         \fill-line {
           \abs-fontsize #8 "Based on a Public Domain manuscript of Johann Christian Bach (ca.1760-89)"
         }

@@ -2,6 +2,8 @@
 
 #(ly:set-option 'relative-includes #t)
 
+\include "./covercolor.ly"
+
 \header {
   tagline = ##f
 }
@@ -33,7 +35,7 @@
 
   \markup {
     \with-dimensions #'(0 . 0) #'(0 . 0)
-    \with-color #(rgb-color 0.2 0.4 0.5)
+    \with-color \coverColor
     \filled-box #'(-200 . 200) #'(-200 . 200) #0
   }
   \markup {
@@ -54,15 +56,24 @@
         \line { \abs-fontsize #20 "BWV 971" }
         \null\null\null\null
         \fill-line { \abs-fontsize #20 "For Piano or Harpsichord" }
-        \null\null\null
+
+        \null\null\null\null
         \fill-line {
-          \override #'(thickness . 5)
-          \draw-squiggle-line #0.5 #'(10 . 0) ##t
+          \override #'(thickness . 1)
+          \draw-squiggle-line #0.5 #'(14 . 0) ##t
         }
-        \null\null\null\null\null\null\null
-        \fill-line { \abs-fontsize #11 "Transcribed and Engraved by Davide Madrisan" }
-        \fill-line { \abs-fontsize #9 \typewriter "https://github.com/madrisan/open-scores/" }
-        \null
+        \null\null
+        \fill-line {
+          \abs-fontsize #13
+          \smallCaps " Lavender.Blue Open Scores"
+        }
+        \fill-line { \abs-fontsize #10 "Engraved by Davide Madrisan" }
+        \fill-line {
+          \abs-fontsize #9
+          \typewriter "https://github.com/madrisan/open-scores/"
+        }
+        \null\null\null\null
+
         \fill-line { \abs-fontsize #10 "Based on a previous work of Jay Anderson" }
         \null
       }
