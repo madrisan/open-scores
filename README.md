@@ -21,15 +21,37 @@ If you prefer to create these files (and *midi* ones) yourself, skip to the next
 
  * [Jesu meine Freude (BWV610)](https://github.com/madrisan/open-scores/releases/download/v3/Baldassare-Galuppi-Sonata-5.pdf)
  * [Suite Anglaise IV (BWV809)](https://github.com/madrisan/open-scores/releases/download/v3/JS-Bach-BWV809-Suite-Anglaise-4.pdf)
- * [Chromatische Fantasie und Fugue (BWV903)](https://github.com/madrisan/open-scores/releases/download/v3/JS-Bach-BWV903-Chromatische-Fantasie-und-Fugue.pdf)
+   * Prélude
+   * Allemande
+   * Courante
+   * Sarabande
+   * Menuet I
+   * Menuet II
+   * Gigue
+ * [Chromatische Fantasie und Fugue (BWV903)](https://github.com/madrisan/open-scores/releases/download/v3/JS-Bach-BWV903-Chromatische-Fantasie-und-Fugue.pdf) - Interpretiert von Ferruccio Busoni
+   * Fantasie
+   * Fugue
  * [Italienisches Konzert (BWV971)](https://github.com/madrisan/open-scores/releases/download/v3/JS-Bach-BWV971-Italienisches-Konzert.pdf)
+   * .
+   * Andante
+   * Presto
  * [Die Kunst der Fuge (BWV1080)](https://github.com/madrisan/open-scores/releases/download/v3/JS-Bach-BWV1080-Die-Kunst-der-Fuge.pdf) -- *in progress*: contrapunctus I-VII
+   * Contrapunctus I
+   * Contrapunctus II
+   * Contrapunctus III
+   * Contrapunctus IV
+   * Contrapunctus V
+   * Contrapunctus VI - [per Diminutionem] in Stilo Francese
+   * Contrapunctus VII - per Augmentationem et Diminutionem
 
 Image of the J.S. Bach's [manuscript](images/js-bach-jesu-meine-freude-manuscript.png) of the Choral "*Jesu meine Freude*" (*Das Orgel-Büchlein*, p.15).
 
 #### Baldassare Galuppi (1706-1785)
 
  * [Sonata no. 5 in Do maggiore](https://github.com/madrisan/open-scores/releases/download/v3/Baldassare-Galuppi-Sonata-5.pdf)
+   * Andante
+   * Allegro
+   * Allegro assai
 
 You can see here the [manuscript](images/baldassare-galuppi-sonata-5-manuscript-1st-page.png) of the first page of the sonata.
 
@@ -41,7 +63,16 @@ Thanks to my harpist friend Tristan Rollet ([@Pluiesurlavitre](https://github.co
 
 #### Rued Langgaard (1893-1952)
 
- * [Insektarium (BVN 134)](https://github.com/madrisan/open-scores/releases/download/v3/Rued-Langgaard-Insektarium-BVN-134.pdf)
+ * [Insektarium (BVN 134)](https://github.com/madrisan/open-scores/releases/download/v3/Rued-Langgaard-Insektarium-BVN-134.pdf) - 9 Puzzle Pictures, for solo piano
+   * I. Forficula auricularia (Earwig)
+   * II. Acridium migratorium (Migratory locust)
+   * III. Melonetha vulgaris (Cockchafer)
+   * IV. Tripula oleracea (Daddy longlegs)
+   * V. Libellula depressa (Dragon fly)
+   * VI. Anobium pertinax (Deathwatch beetle)
+   * VII. Musca domestica (Housefly)
+   * VIII. Julus terrestris (Millipede)
+   * IX. Culex pipiens (Mosquito)
 
 #### Clara Schumann Wieck (1819-1896)
 
