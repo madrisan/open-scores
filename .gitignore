@@ -6,7 +6,6 @@ configure
 *.midi
 *.mid
 *.pdf
-!scores/*.pdf
 *.ps
 *.tar.bz2
 *.tar.xz
