@@ -2,7 +2,7 @@
 
 #(ly:set-option 'relative-includes #t)
 
-\include "../../covercolor.ly"
+\include "./covercolor.ly"
 
 sluredTuplet =
   #(define-scheme-function (n1 n2 n3 n4 n5 n6)
@@ -58,17 +58,23 @@ sluredTuplet =
         \line { \abs-fontsize #34 \bold "Nocturne" }
         \null\null
         \line { \abs-fontsize #24 \bold "for Piano or Harpe" }
-        \null\null
+
         \null\null\null\null
         \fill-line {
-          \override #'(thickness . 5)
-          \draw-squiggle-line #0.5 #'(10 . 0) ##t
+          \override #'(thickness . 1)
+          \draw-squiggle-line #0.5 #'(14 . 0) ##t
+        }
+        \null\null
+        \fill-line {
+          \abs-fontsize #13
+          \smallCaps " Lavender.Blue Open Scores"
+        }
+        \fill-line { \abs-fontsize #10 "Engraved by Davide Madrisan" }
+        \fill-line {
+          \abs-fontsize #9
+          \typewriter "https://github.com/madrisan/open-scores/"
         }
         \null\null\null\null
-        \null\null\null\null
-        \fill-line { \abs-fontsize #11 "Transcribed and Engraved by Davide Madrisan" }
-        \fill-line { \abs-fontsize #9 \typewriter "https://github.com/madrisan/open-scores/" }
-        \null
         \fill-line {
           \abs-fontsize #8 "Based on the score published by Muzgiz (Полное собрание сочинений, vol 6 - Moscow, 1958)"
         }

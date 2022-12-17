@@ -2,7 +2,7 @@
 
 #(ly:set-option 'relative-includes #t)
 
-\include "../../covercolor.ly"
+\include "./covercolor.ly"
 
 \paper {
   bottom-margin = 15\mm

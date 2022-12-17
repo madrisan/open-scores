@@ -2,25 +2,9 @@
 
 #(ly:set-option 'relative-includes #t)
 
-\include "../../covercolor.ly"
-
 calando = { \override TextSpanner.bound-details.left.text = \markup { \dynamic pp \small "calando " } }
 cresc = { \override TextSpanner.bound-details.left.text = \markup { \small "cresc. " } }
 stretto = { \override TextSpanner.bound-details.left.text = \markup { \small "stretto " } }
-
-\paper {
-  bottom-margin = 13\mm
-  first-page-number = 0
-  indent = 0.0
-  last-bottom-spacing.padding = #1
-  line-width = 18.6\cm
-  print-all-headers = ##t
-  ragged-bottom = ##f
-  ragged-last-bottom = ##t
-  tagline = ##f
-  top-margin = 13\mm
-% markup-system-spacing.basic-distance = #10
-}
 
 Global = {
   \key f \major

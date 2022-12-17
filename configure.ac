@@ -58,6 +58,11 @@ AC_CHECK_PROG_VER(LILYPOND, lilypond, --version,
   [2.23.[0-9]*],
   critic_missing="$critic_missing lilypond")
 
+RGB_COLOR="0.80 0.90 1.00"
+AC_MSG_CHECKING([for front page RGB color])
+AC_MSG_RESULT([rgb-color( $RGB_COLOR )])
+AC_SUBST([RGB_COLOR], [$RGB_COLOR]) # lavender blue
+
 test -n "$critic_missing" && AC_MSG_ERROR([
 *** These critical programs are missing or too old:$critic_missing
 *** Check the INSTALL file for required versions.])
