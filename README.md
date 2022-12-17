@@ -15,7 +15,7 @@ If you prefer to create these files (and *midi* ones) yourself, skip to the next
 
 #### Alban Berg (1885-1935)
 
- * [Klaviersonate Op. 1](https://github.com/madrisan/open-scores/blob/BergA-op1/scores/Alban-Berg-Sonate-fur-Klavier-op-1.pdf) -- *in progress*
+ * Klaviersonate Op. 1 -- *in progress*
 
 #### Johann Sebastian Bach (1685-1750)
 
