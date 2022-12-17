@@ -26,9 +26,7 @@ SUFFIXES = .in
 BUILT_SOURCES = covercolor.ly
 EXTRA_DIST = Mikhail-Glinka-Nocturne.ly \
 	     covercolor.ly.in \
-	     header.ily \
-	     global.ly \
-	     parts/*.ly
+	     header.ily
 
 all: $(BUILT_SOURCES) Mikhail-Glinka-Nocturne
 
