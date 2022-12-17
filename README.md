@@ -84,10 +84,10 @@ This package uses `GNU autotools` for configuration and build.
 
 If you prefer to create the *pdf* (and *midi*) files yourself, please make sure the following software requirements are installed: `GNU autotools`, `git`, [`lilypond`](https://lilypond.org/).
 
-Then you will need clone the repository and run `autoreconf --install` to generate the required files
+Then you will need clone the repository and run `autoreconf` and `configure` to generate the required files:
 ```
-git clone --depth 1 https://github.com/madrisan/open-scores github-madrisan-open-scores
-cd github-madrisan-open-scores
+git clone --depth 1 https://github.com/madrisan/open-scores
+cd open-scores
 autoreconf
 ./configure
 ```
