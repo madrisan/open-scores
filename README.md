@@ -63,8 +63,8 @@ autoreconf
 Then execute and one of the following instructions:
 ```
 git checkout BergA-op1
-cd alban-berg/Op_1
-lilypond sonate-fur-klavier-op-1.ly
+make -C alban-berg/Op_1
+git checkout main
 ```
 ```
 make -C baldassare-galuppi/sonata-5-c-major
