@@ -19,8 +19,8 @@ If you prefer to create these files (and *midi* ones) yourself, skip to the next
 
 #### Johann Sebastian Bach (1685-1750)
 
- * [Jesu meine Freude (BWV610)](https://github.com/madrisan/open-scores/releases/download/v3/Baldassare-Galuppi-Sonata-5.pdf)
- * [Suite Anglaise IV (BWV809)](https://github.com/madrisan/open-scores/releases/download/v3/JS-Bach-BWV809-Suite-Anglaise-4.pdf)
+ * [Jesu meine Freude (BWV610)](https://github.com/madrisan/open-scores/releases/download/v4/Baldassare-Galuppi-Sonata-5.pdf)
+ * [Suite Anglaise IV (BWV809)](https://github.com/madrisan/open-scores/releases/download/v4/JS-Bach-BWV809-Suite-Anglaise-4.pdf)
    * Prélude
    * Allemande
    * Courante
@@ -28,14 +28,14 @@ If you prefer to create these files (and *midi* ones) yourself, skip to the next
    * Menuet I
    * Menuet II
    * Gigue
- * [Chromatische Fantasie und Fugue (BWV903)](https://github.com/madrisan/open-scores/releases/download/v3/JS-Bach-BWV903-Chromatische-Fantasie-und-Fugue.pdf) - Interpretiert von Ferruccio Busoni
+ * [Chromatische Fantasie und Fugue (BWV903)](https://github.com/madrisan/open-scores/releases/download/v4/JS-Bach-BWV903-Chromatische-Fantasie-und-Fugue.pdf) - Interpretiert von Ferruccio Busoni
    * Fantasie
    * Fugue
- * [Italienisches Konzert (BWV971)](https://github.com/madrisan/open-scores/releases/download/v3/JS-Bach-BWV971-Italienisches-Konzert.pdf)
+ * [Italienisches Konzert (BWV971)](https://github.com/madrisan/open-scores/releases/download/v4/JS-Bach-BWV971-Italienisches-Konzert.pdf)
    * .
    * Andante
    * Presto
- * [Die Kunst der Fuge (BWV1080)](https://github.com/madrisan/open-scores/releases/download/v3/JS-Bach-BWV1080-Die-Kunst-der-Fuge.pdf) -- *in progress*: contrapunctus I-VII
+ * [Die Kunst der Fuge (BWV1080)](https://github.com/madrisan/open-scores/releases/download/v4/JS-Bach-BWV1080-Die-Kunst-der-Fuge.pdf) -- *in progress*: contrapunctus I-VII
    * Contrapunctus I
    * Contrapunctus II
    * Contrapunctus III
@@ -49,7 +49,7 @@ Image of the J.S. Bach's [manuscript](images/js-bach-jesu-meine-freude-manuscrip
 
 #### Baldassare Galuppi (1706-1785)
 
- * [Sonata no. 5 in Do maggiore](https://github.com/madrisan/open-scores/releases/download/v3/Baldassare-Galuppi-Sonata-5.pdf)
+ * [Sonata no. 5 in Do maggiore](https://github.com/madrisan/open-scores/releases/download/v4/Baldassare-Galuppi-Sonata-5.pdf)
    * Andante
    * Allegro
    * Allegro assai
@@ -58,13 +58,13 @@ You can see here the [manuscript](images/baldassare-galuppi-sonata-5-manuscript-
 
 #### Mikhail-Glinka (1804-1857)
 
- * [Nocturne](https://github.com/madrisan/open-scores/releases/download/v3/Mikhail-Glinka-Nocturne.pdf)
+ * [Nocturne](https://github.com/madrisan/open-scores/releases/download/v4/Mikhail-Glinka-Nocturne.pdf)
 
 Thanks to my harpist friend Tristan Rollet ([@Pluiesurlavitre](https://github.com/Pluiesurlavitre)) for pointing me to this beautiful romantic piece.
 
 #### Rued Langgaard (1893-1952)
 
- * [Insektarium (BVN 134)](https://github.com/madrisan/open-scores/releases/download/v3/Rued-Langgaard-Insektarium-BVN-134.pdf) - 9 Puzzle Pictures, for solo piano
+ * [Insektarium (BVN 134)](https://github.com/madrisan/open-scores/releases/download/v4/Rued-Langgaard-Insektarium-BVN-134.pdf) - 9 Puzzle Pictures, for solo piano
    * I. Forficula auricularia (Earwig)
    * II. Acridium migratorium (Migratory locust)
    * III. Melonetha vulgaris (Cockchafer)
@@ -77,7 +77,7 @@ Thanks to my harpist friend Tristan Rollet ([@Pluiesurlavitre](https://github.co
 
 #### Clara Schumann Wieck (1819-1896)
 
- * [Soirées Musicales op.6 - Nocturne](https://github.com/madrisan/open-scores/releases/download/v3/Clara-Schumann-Wieck-Soirees-Musicales-op.6.pdf)
+ * [Soirées Musicales op.6 - Nocturne](https://github.com/madrisan/open-scores/releases/download/v4/Clara-Schumann-Wieck-Soirees-Musicales-op.6.pdf)
 
 ## How to manually create the `.pdf` and `.midi` files
 
