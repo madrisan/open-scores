@@ -88,3 +88,4 @@
 \include "./parts/08-contrapunctus-VIII.ly"
 \pageBreak
 \include "./parts/09-contrapunctus-IX.ly"
+\include "./parts/10-contrapunctus-X.ly"
