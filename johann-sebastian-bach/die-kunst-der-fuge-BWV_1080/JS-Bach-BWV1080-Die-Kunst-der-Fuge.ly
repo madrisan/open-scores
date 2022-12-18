@@ -5,7 +5,7 @@
 \include "./covercolor.ly"
 
 \paper {
-  bottom-margin = 15\mm
+  bottom-margin = 12\mm
   first-page-number = 0
   indent = 0.0
   last-bottom-spacing.padding = #1
@@ -14,7 +14,7 @@
   ragged-bottom = ##f
   ragged-last-bottom = ##f
   tagline = ##f
-  top-margin = 15\mm
+  top-margin = 12\mm
 % markup-system-spacing.basic-distance = #10
 }
 
@@ -82,5 +82,9 @@
 \include "./parts/04-contrapunctus-IV.ly"
 \include "./parts/05-contrapunctus-V.ly"
 \include "./parts/06-contrapunctus-VI.ly"
+\pageBreak
 \include "./parts/07-contrapunctus-VII.ly"
+\pageBreak
 \include "./parts/08-contrapunctus-VIII.ly"
+\pageBreak
+\include "./parts/09-contrapunctus-IX.ly"

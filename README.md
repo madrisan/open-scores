@@ -37,7 +37,7 @@ Latest release: [Open Scores for Piano v4](https://github.com/madrisan/open-scor
    * .
    * Andante
    * Presto
- * [Die Kunst der Fuge (BWV1080)](https://github.com/madrisan/open-scores/releases/download/v4/JS-Bach-BWV1080-Die-Kunst-der-Fuge.pdf) -- *in progress*: contrapunctus I-VII
+ * [Die Kunst der Fuge (BWV1080)](https://github.com/madrisan/open-scores/releases/download/v4/JS-Bach-BWV1080-Die-Kunst-der-Fuge.pdf) -- *in progress*: contrapunctus I-IX
    * Contrapunctus I
    * Contrapunctus II
    * Contrapunctus III
@@ -46,6 +46,7 @@ Latest release: [Open Scores for Piano v4](https://github.com/madrisan/open-scor
    * Contrapunctus VI - [per Diminutionem] in Stilo Francese
    * Contrapunctus VII - per Augmentationem et Diminutionem
    * Contrapunctus VIII
+   * Contrapunctus IX - alla Duodecima
 
 Image of the J.S. Bach's [manuscript](images/js-bach-jesu-meine-freude-manuscript.png) of the Choral "*Jesu meine Freude*" (*Das Orgel-Büchlein*, p.15).
 
