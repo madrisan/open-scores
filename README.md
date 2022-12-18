@@ -11,6 +11,8 @@ LilyPond is free software and part of the [GNU Project](https://gnu.org/).
 The following *pdf* can be generated from the source code, but they have been added here for convenience.
 If you prefer to create these files (and *midi* ones) yourself, skip to the next section.
 
+Latest release: [Open Scores for Piano v4](https://github.com/madrisan/open-scores/releases)
+
 ### List by authors
 
 #### Alban Berg (1885-1935)
