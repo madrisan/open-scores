@@ -13,6 +13,8 @@ If you prefer to create these files (and *midi* ones) yourself, skip to the next
 
 Latest release: [Open Scores for Piano v5](https://github.com/madrisan/open-scores/releases)
 
+The source code was compiled with `GNU LilyPond 2.23.82 (running Guile 2.2)` (Fedora Linux 37).
+
 ### List by authors
 
 #### Alban Berg (1885-1935)
