@@ -72,8 +72,8 @@ echo '    >>
   >>
   \header {
     %composer = "Johann Sebastian Bach"
-    %opus = "BWV 1080, X"
-    subtitle = "Fuga a 4 voci"
+    opus = "BWV 1080, X"
+    subtitle = "YYYYYY"
     title = \markup {
       Contrapunctus XXXXXX
     }
