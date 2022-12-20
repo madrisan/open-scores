@@ -90,3 +90,6 @@
 \include "./parts/09-contrapunctus-IX.ly"
 \include "./parts/10-contrapunctus-X.ly"
 \include "./parts/11-contrapunctus-XI.ly"
+\pageBreak
+\include "./parts/12-contrapunctus-XII-I.ly"
+\include "./parts/12-contrapunctus-XII-II.ly"
