@@ -35,7 +35,7 @@ Sopran = \context Voice = "one" \relative c'' {
   %20
   | d e f g a2
   | R1*3/2
-  | r2 r a,8 g f e
+  | r1 a,8 g f e
   | d cis d e f4 g a bes
   | a b8 cis d2. e8 d
   %25
@@ -78,6 +78,7 @@ Sopran = \context Voice = "one" \relative c'' {
 
 Alto = \context Voice = "two" \relative c' {
   \voiceTwo
+  \showStaffSwitch
   | s1*3/2*4
   %5
   | d2 a1
@@ -90,7 +91,7 @@ Alto = \context Voice = "two" \relative c' {
     \change Staff = "lower"
     \stemUp\tieUp
     bes
-  | a2 r4 g f e
+  | a2 c,4\rest g' f e
   | \stemDown d e f g \stemUp a bes
   | a2. bes4 a g
   | \change Staff = "upper"
@@ -117,13 +118,13 @@ Alto = \context Voice = "two" \relative c' {
   %25
   | f4 e8 g f d c b a4 b
   | c8 b c d e f e d c b a gis
-  | a2 r r
+  | a2 r \hideStaffSwitch r
   | R1*3/2*4
   | \change Staff = "lower"
     \stemUp\tieDown
     c8 bes a g
     \stemDown f2_~ \stemUp f8 e f g
-  | a4 bes c2.
+  | \showStaffSwitch a4 bes c2.
     \change Staff = "upper"
     \stemDown d8 ees
   | d2 c2.
@@ -166,20 +167,23 @@ Alto = \context Voice = "two" \relative c' {
     \stemDown
     c'8 b a b c d
   | e d cis2 e4 c g~
-  | g8 a g
+  | \hideStaffSwitch
+    g8 a g
     \change Staff = "lower"
     \stemUp
     f e4
     \change Staff = "upper"
     \stemDown
+    \showStaffSwitch
     bes'2 bes4
   %50
-  | a2~ a8 c bes
+  | a2~ a8 c \hideStaffSwitch bes
     \change Staff = "lower"
     \stemUp
     a g bes a g
   | \change Staff = "upper"
     \stemDown
+    \showStaffSwitch
     d'4 r
     a'8 g f e d2_~
   | d8 cis d e f2~ f8 g a bes
@@ -199,6 +203,7 @@ Alto = \context Voice = "two" \relative c' {
 
 Tenor = \context Voice = "three" \relative c' {
   \voiceThree
+  \showStaffSwitch
   | \override MultiMeasureRest.staff-position = #0
     R1*3/2*9
   %10
