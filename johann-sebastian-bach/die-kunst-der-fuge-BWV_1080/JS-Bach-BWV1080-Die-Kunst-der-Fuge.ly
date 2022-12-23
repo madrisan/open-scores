@@ -100,3 +100,5 @@
 \include "./parts/12-contrapunctus-XII-II.ly"
 \pageBreak
 \include "./parts/13-contrapunctus-XIII-I.ly"
+\pageBreak
+\include "./parts/13-contrapunctus-XIII-II.ly"
