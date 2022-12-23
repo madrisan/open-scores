@@ -78,18 +78,25 @@
 \include "./parts/01-contrapunctus-I.ly"
 \pageBreak
 \include "./parts/02-contrapunctus-II.ly"
+\pageBreak
 \include "./parts/03-contrapunctus-III.ly"
+\pageBreak
 \include "./parts/04-contrapunctus-IV.ly"
+\pageBreak
 \include "./parts/05-contrapunctus-V.ly"
 \include "./parts/06-contrapunctus-VI.ly"
 \pageBreak
 \include "./parts/07-contrapunctus-VII.ly"
 \pageBreak
 \include "./parts/08-contrapunctus-VIII.ly"
-\pageBreak
 \include "./parts/09-contrapunctus-IX.ly"
+\pageBreak
 \include "./parts/10-contrapunctus-X.ly"
+\pageBreak
 \include "./parts/11-contrapunctus-XI.ly"
 \pageBreak
 \include "./parts/12-contrapunctus-XII-I.ly"
+\pageBreak
 \include "./parts/12-contrapunctus-XII-II.ly"
+\pageBreak
+\include "./parts/13-contrapunctus-XIII-I.ly"
