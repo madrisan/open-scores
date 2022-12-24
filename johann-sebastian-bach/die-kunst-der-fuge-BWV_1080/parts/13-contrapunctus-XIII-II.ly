@@ -366,7 +366,7 @@ Bass = \context Voice = "four" \relative c {
   >>
   \header {
     %composer = "Johann Sebastian Bach"
-    opus = "BWV 1080, XIII/2"
+    opus = "BWV 1080, 13/2"
     subtitle = "inversus"
     title = \markup {
       Contrapunctus XIII

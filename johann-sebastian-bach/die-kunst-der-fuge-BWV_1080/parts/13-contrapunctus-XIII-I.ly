@@ -74,7 +74,8 @@ Sopran = \context Voice = "one" \relative c'' {
   | bes a g} a4~ \tuplet 3/2 { a8 g f g f e}
   | f8.*8/9[ a16*4/3 d8.*8/9 a16*4/3] f8.*8/9[ e16*4/3 fis8.*8/9 gis16*4/3]
   | a4 c, e a
-  | e8.*8/9[ g16*4/3 c8.*8/9 g16*4/3] e8.*8/9[ d16*4/3 e8.*8/9 fis16*4/3]
+  | \mergeDifferentlyDottedOn
+    e8.*8/9[ g16*4/3 c8.*8/9 g16*4/3] e8.*8/9[ d16*4/3 e8.*8/9 fis16*4/3]
   | g4 bes, d g
   %55
   | d8.*8/9[ f16*4/3 bes8.*8/9 f16*4/3] d8.*8/9[ c16*4/3 d8.*8/9 e16*4/3]
@@ -219,7 +220,7 @@ Alto = \context Voice = "two" \relative c' {
   | \change Staff = "lower"
     \stemUp
     a4 f d a'
-  | e r r
+  | e g\rest g\rest
     \change Staff = "upper"
     \stemDown
     e
@@ -341,7 +342,7 @@ Bass = \context Voice = "four" \relative c {
     d,\rest d\rest \clef bass g
   | \stemDown d' d,\rest d\rest d' \stemNeutral
   | c8.*8/9[ a16*4/3 e8.*8/9 a16*4/3] c8.*8/9[ e16*4/3 d8.*8/9 c16*4/3]
-  | g'4 r r c,
+  | g'4 c,\rest c\rest c
   | bes8.*8/9[ g16*4/3 d8.*8/9 g16*4/3] bes8.*8/9[ d16*4/3 c8.*8/9 bes16*4/3]
   %55
   | f'4 d,\rest d\rest bes'
