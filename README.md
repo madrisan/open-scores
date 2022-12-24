@@ -11,7 +11,7 @@ LilyPond is free software and part of the [GNU Project](https://gnu.org/).
 The following *pdf* can be generated from the source code, but they have been added here for convenience.
 If you prefer to create these files (and *midi* ones) yourself, skip to the next section.
 
-Latest release: [Open Scores for Piano v9](https://github.com/madrisan/open-scores/releases)
+Latest release: [Open Scores for Piano v10](https://github.com/madrisan/open-scores/releases)
 
 The source code was compiled with `GNU LilyPond 2.23.82 (running Guile 2.2)` (Fedora Linux 37).
 
@@ -23,8 +23,8 @@ The source code was compiled with `GNU LilyPond 2.23.82 (running Guile 2.2)` (Fe
 
 #### Johann Sebastian Bach (1685-1750)
 
- * [Jesu meine Freude (BWV610)](https://github.com/madrisan/open-scores/releases/download/v9/Baldassare-Galuppi-Sonata-5.pdf)
- * [Suite Anglaise IV (BWV809)](https://github.com/madrisan/open-scores/releases/download/v9/JS-Bach-BWV809-Suite-Anglaise-4.pdf)
+ * [Jesu meine Freude (BWV610)](https://github.com/madrisan/open-scores/releases/download/v10/Baldassare-Galuppi-Sonata-5.pdf)
+ * [Suite Anglaise IV (BWV809)](https://github.com/madrisan/open-scores/releases/download/v10/JS-Bach-BWV809-Suite-Anglaise-4.pdf)
    * Prélude
    * Allemande
    * Courante
@@ -32,14 +32,14 @@ The source code was compiled with `GNU LilyPond 2.23.82 (running Guile 2.2)` (Fe
    * Menuet I
    * Menuet II
    * Gigue
- * [Chromatische Fantasie und Fugue (BWV903)](https://github.com/madrisan/open-scores/releases/download/v9/JS-Bach-BWV903-Chromatische-Fantasie-und-Fugue.pdf) - Interpretiert von Ferruccio Busoni
+ * [Chromatische Fantasie und Fugue (BWV903)](https://github.com/madrisan/open-scores/releases/download/v10/JS-Bach-BWV903-Chromatische-Fantasie-und-Fugue.pdf) - Interpretiert von Ferruccio Busoni
    * Fantasie
    * Fugue
- * [Italienisches Konzert (BWV971)](https://github.com/madrisan/open-scores/releases/download/v9/JS-Bach-BWV971-Italienisches-Konzert.pdf)
+ * [Italienisches Konzert (BWV971)](https://github.com/madrisan/open-scores/releases/download/v10/JS-Bach-BWV971-Italienisches-Konzert.pdf)
    * .
    * Andante
    * Presto
- * [Die Kunst der Fuge (BWV1080)](https://github.com/madrisan/open-scores/releases/download/v9/JS-Bach-BWV1080-Die-Kunst-der-Fuge.pdf) -- *in progress*
+ * [Die Kunst der Fuge (BWV1080)](https://github.com/madrisan/open-scores/releases/download/v10/JS-Bach-BWV1080-Die-Kunst-der-Fuge.pdf) -- *in progress*
    * Contrapunctus I
    * Contrapunctus II
    * Contrapunctus III
@@ -53,12 +53,13 @@ The source code was compiled with `GNU LilyPond 2.23.82 (running Guile 2.2)` (Fe
    * Contrapunctus XI
    * Contrapunctus XII - rectus / inversus
    * Contrapunctus XIII - rectus / inversus
+   * Contrapunctus XIV
 
 Image of the J.S. Bach's [manuscript](images/js-bach-jesu-meine-freude-manuscript.png) of the Choral "*Jesu meine Freude*" (*Das Orgel-Büchlein*, p.15).
 
 #### Baldassare Galuppi (1706-1785)
 
- * [Sonata no. 5 in Do maggiore](https://github.com/madrisan/open-scores/releases/download/v9/Baldassare-Galuppi-Sonata-5.pdf)
+ * [Sonata no. 5 in Do maggiore](https://github.com/madrisan/open-scores/releases/download/v10/Baldassare-Galuppi-Sonata-5.pdf)
    * Andante
    * Allegro
    * Allegro assai
