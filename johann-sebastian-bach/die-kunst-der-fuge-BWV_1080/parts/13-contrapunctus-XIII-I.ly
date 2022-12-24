@@ -392,7 +392,7 @@ Bass = \context Voice = "four" \relative c {
     opus = "BWV 1080, 13/1"
     subtitle = "[rectus]"
     title = \markup {
-      Contrapunctus XIII
+      Contrapunctus [XIII]
     }
   }
   \layout { }
