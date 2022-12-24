@@ -103,5 +103,5 @@
 \pageBreak
 \include "./parts/13-contrapunctus-XIII-II.ly"
 \include "./parts/14-contrapunctus-XIV.ly"
-
-%\include "./parts/15-canon-in-hypodiapason.ly"
+\pageBreak
+\include "./parts/15-canon-in-hypodiapason.ly"

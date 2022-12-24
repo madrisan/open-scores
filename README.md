@@ -54,6 +54,7 @@ The source code was compiled with `GNU LilyPond 2.23.82 (running Guile 2.2)` (Fe
    * Contrapunctus XII - rectus / inversus
    * Contrapunctus XIII - rectus / inversus
    * Contrapunctus XIV
+   * Canon in Hypodiapason (Canon alla Ottava)
 
 Image of the J.S. Bach's [manuscript](images/js-bach-jesu-meine-freude-manuscript.png) of the Choral "*Jesu meine Freude*" (*Das Orgel-Büchlein*, p.15).
 
