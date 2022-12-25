@@ -5,20 +5,20 @@
 # usage: ./extract-data.ly < contrapunctusXXXX.ly
 # data: https://www.mutopiaproject.org/cgibin/make-table.cgi?searchingfor=Die+Kunst+der+Fuge
 
-Sopran_FOUND=0
-Alto_FOUND=0
-Tenor_FOUND=0
-Bass_FOUND=0
-
 echo 'Global = {
   \key d \minor
   \time 4/4
   \include "../global.ly"
 }'
 
+Sopran_FOUND=0
+Alto_FOUND=0
+Tenor_FOUND=0
+Bass_FOUND=0
+
 while read -r line; do
   case $line in
-  sopran*) echo "
+  sopran*|right*) echo "
 Sopran = \\context Voice = \"one\" \\relative c'' {
   \\voiceOne"
     Sopran_FOUND=1
@@ -33,7 +33,7 @@ Tenor = \\context Voice = \"three\" \\relative c' {
   \\voiceThree"
     Tenor_FOUND=1
   ;;
-  bass*) echo "
+  bass*|left*) echo "
 Bass = \\context Voice = \"four\" \\relative c {
   \\voiceFour"
     Bass_FOUND=1
