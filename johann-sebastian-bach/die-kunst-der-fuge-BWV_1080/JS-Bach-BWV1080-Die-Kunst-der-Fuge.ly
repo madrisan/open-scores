@@ -105,3 +105,5 @@
 \include "./parts/14-contrapunctus-XIV.ly"
 \pageBreak
 \include "./parts/15-canon-in-hypodiapason.ly"
+\pageBreak
+\include "./parts/16-canon-alla-decima.ly"
