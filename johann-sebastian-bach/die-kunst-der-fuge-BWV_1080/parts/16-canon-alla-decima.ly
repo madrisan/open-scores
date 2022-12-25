@@ -205,8 +205,9 @@ Bass = \context Voice = "four" \relative c {
   | d8 cis d~ d e d cis! d e a, cis b
   | cis16 d e f g e f g a8 cis, d16 f e d cis! b a8 cis e
   | a2*3/2~ a8 g f e4*3/2~
-  | e8.*4/3 a16*2 d,4*3/2~ d8.*4/3 bes'16*2 cis,8 e a
-  | \clef bass a,8*3/2 d,4*3/2 f a bes8*3/2~
+  | e8.*4/3 a16*2 d,4*3/2~ d8.*4/3 bes'16*2 \stemDown cis,8 e a
+  | \clef bass
+    \stemUp a,8*3/2 d,4*3/2 f a bes8*3/2~
   %80
   | bes a4*3/2 g f8*3/2~ f16*3/2 e f g
   | \override TextScript.padding = #1 a2*3/2_\fermata^\markup { \small\italic Cadenza } a,
