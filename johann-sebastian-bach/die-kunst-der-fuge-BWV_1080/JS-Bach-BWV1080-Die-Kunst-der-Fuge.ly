@@ -107,3 +107,4 @@
 \include "./parts/15-canon-in-hypodiapason.ly"
 \pageBreak
 \include "./parts/16-canon-alla-decima.ly"
+\include "./parts/17-canon-alla-duodecima.ly"
