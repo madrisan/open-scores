@@ -108,3 +108,5 @@
 \pageBreak
 \include "./parts/16-canon-alla-decima.ly"
 \include "./parts/17-canon-alla-duodecima.ly"
+\pageBreak
+\include "./parts/18-canon-in-hypodiatessaron.ly"
