@@ -303,5 +303,5 @@ Lower = \context Voice = "two" \relative c' {
     }
   }
   \layout { }
-  \midi { }
+  \midi { \tempo 4 = 120 }
 }

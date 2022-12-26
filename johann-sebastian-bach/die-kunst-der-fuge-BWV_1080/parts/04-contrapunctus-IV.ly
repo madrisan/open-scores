@@ -718,5 +718,5 @@ Bass = \context Voice = "four" \relative c {
     subtitle = \markup { \smallCaps "Contrapunctus IV" }
   }
   \layout { }
-  \midi { }
+  \midi { \tempo 4=180 }
 }
