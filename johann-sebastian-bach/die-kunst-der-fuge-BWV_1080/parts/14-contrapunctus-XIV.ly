@@ -1108,10 +1108,14 @@ Bass = \context Voice = "four" \relative c {
   | \once \override TextScript.padding = #2
   | a_\markup {
       \column {
-      | \line { \italic\small { While working on this fugue, where } }
-        \line { \italic\small { the name B.A.C.H. appears in the } }
-        \line { \italic\small { countersubject, the composer died. } }
-        \line { \tiny { In the autograph, in the hand of C.P.E. Bach } }
+      | \line { \italic\small { Über dieser Fuge, wo der Nahme B A C H } }
+        \line { \italic\small { im Contrasubject angebracht worden ist } }
+        \line { \italic\small { der Verfasser gestorben } }
+        \line { \tiny { \char ##x2014 in the autograph, in the hand of C.P.E. Bach } }
+%     | \line { \italic\small { While working on this fugue, where } }
+%       \line { \italic\small { the name B.A.C.H. appears in the } }
+%       \line { \italic\small { countersubject, the composer died. } }
+%       \line { \tiny { In the autograph, in the hand of C.P.E. Bach } }
       }
     }
   | d,4 s2.
