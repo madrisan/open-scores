@@ -404,5 +404,5 @@ Bass = \context Voice = "four" \relative c {
     subsubtitle = "per Augmentationem et Diminutionem"
   }
   \layout { }
-  \midi { }
+  \midi { \tempo 4=100 }
 }

@@ -449,5 +449,5 @@ Bass = \context Voice = "four" \relative c {
     subsubtitle = "[per Diminutionem] in Stilo Francese"
   }
   \layout { }
-  \midi { }
+  \midi { \tempo 4=100 }
 }
