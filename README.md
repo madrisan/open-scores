@@ -39,7 +39,7 @@ The source code was compiled with `GNU LilyPond 2.23.82 (running Guile 2.2)` (Fe
    * .
    * Andante
    * Presto
- * [Die Kunst der Fuge (BWV1080)](https://github.com/madrisan/open-scores/releases/download/v11/JS-Bach-BWV1080-Die-Kunst-der-Fuge.pdf) -- *in progress*
+ * [Die Kunst der Fuge (BWV1080)](https://github.com/madrisan/open-scores/releases/download/v11/JS-Bach-BWV1080-Die-Kunst-der-Fuge.pdf)
    * Contrapunctus I
    * Contrapunctus II
    * Contrapunctus III
