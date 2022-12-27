@@ -9,16 +9,17 @@
 }
 
 \paper {
-  indent = 0.0
-  line-width = 18.6\cm
-  top-margin = 10\mm
-  bottom-margin = 10\mm
-%  ragged-last-bottom = ##t
-%  ragged-bottom = ##f
+  bottom-margin = 13\mm
   first-page-number = 0
-%  markup-system-spacing.basic-distance = #10
-%  last-bottom-spacing.padding = #2
+  indent = 0.0
+  last-bottom-spacing.padding = #1
+  line-width = 18.6\cm
   print-all-headers = ##t
+  ragged-bottom = ##f
+  ragged-last-bottom = ##f
+  tagline = ##f
+  top-margin = 13\mm
+% markup-system-spacing.basic-distance = #10
 }
 
 \bookpart {
