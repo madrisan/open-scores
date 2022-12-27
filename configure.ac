@@ -82,6 +82,8 @@ AC_CONFIG_FILES([\
   johann-sebastian-bach/suites-anglaises/Makefile \
   mikhail-glinka/Makefile \
   mikhail-glinka/nocturne/Makefile \
+  robert-schumann/kinderscenen-op.15/Makefile \
+  robert-schumann/Makefile \
   rued-langgaard/Makefile \
   rued-langgaard/insektarium-BVN_134/Makefile \
 ])

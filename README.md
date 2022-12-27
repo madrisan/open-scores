@@ -72,13 +72,13 @@ You can see here the [manuscript](images/baldassare-galuppi-sonata-5-manuscript-
 
 #### Mikhail-Glinka (1804-1857)
 
- * [Nocturne](https://github.com/madrisan/open-scores/releases/download/v4/Mikhail-Glinka-Nocturne.pdf)
+ * [Nocturne](https://github.com/madrisan/open-scores/releases/download/v11/Mikhail-Glinka-Nocturne.pdf)
 
 Thanks to my harpist friend Tristan Rollet ([@Pluiesurlavitre](https://github.com/Pluiesurlavitre)) for pointing me to this beautiful romantic piece.
 
 #### Rued Langgaard (1893-1952)
 
- * [Insektarium (BVN 134)](https://github.com/madrisan/open-scores/releases/download/v4/Rued-Langgaard-Insektarium-BVN-134.pdf) - 9 Puzzle Pictures, for solo piano
+ * [Insektarium (BVN 134)](https://github.com/madrisan/open-scores/releases/download/v11/Rued-Langgaard-Insektarium-BVN-134.pdf) - 9 Puzzle Pictures, for solo piano
    * I. Forficula auricularia (Earwig)
    * II. Acridium migratorium (Migratory locust)
    * III. Melonetha vulgaris (Cockchafer)
@@ -92,7 +92,12 @@ Thanks to my harpist friend Tristan Rollet ([@Pluiesurlavitre](https://github.co
 #### Clara Schumann Wieck (1819-1896)
 
  * Soirées Musicales op.6
-   * [2. Nocturne](https://github.com/madrisan/open-scores/releases/download/v4/Clara-Schumann-Wieck-Soirees-Musicales-op.6.pdf)
+   * [2. Nocturne](https://github.com/madrisan/open-scores/releases/download/v11/Clara-Schumann-Wieck-Soirees-Musicales-op.6.pdf)
+
+#### Robert Schumann (1810–1856)
+
+ * Kinderscenen op.15
+   * 7. Träumerei
 
 ## How to manually create the `.pdf` and `.midi` files
 
