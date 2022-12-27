@@ -20,9 +20,9 @@
   mutopiatitle = "Soirées Musicales"
 
   opus = "6"
-  title = "eSoirées Musicales"
+  title = "Soirées Musicales"
   source = "Leipzig: Friedrich Hofmeister, n.d.[1836]. Plate 2148."
-  style = "Baroque"
+  style = "Romantic"
 
   copyright = \markup {
     \override #'(font-name . "DejaVu Sans, Bold")
