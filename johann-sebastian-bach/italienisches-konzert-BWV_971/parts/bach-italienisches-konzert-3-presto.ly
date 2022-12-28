@@ -6,7 +6,7 @@ Global = {
 
 Upper = \relative c'' {
   \clef treble
-  | f4 f,2 g8 a
+  | f4\f f,2 g8 a
   | bes c d e f g a bes
     << {
   |   c4 <c a> <c g> <bes g>
@@ -106,7 +106,7 @@ Upper = \relative c'' {
   |   e2. fis4
   |   g1
     } \\ {
-  |   r8 c, bes a bes a g a
+  |   r8 c, bes! a bes a g a
   |   f4 r r2
   %55.2
   |   r8 a g f a g f g
@@ -120,7 +120,7 @@ Upper = \relative c'' {
   |   b4 a8 g a4 c~
   |   c8 e d c d c b a
     } >>
-  | g a b c d e f d
+  | g a b c d e f! d
   %65
   | e4 c,2 d8 e
   | f g a b c d e f
@@ -141,14 +141,14 @@ Upper = \relative c'' {
   |   r4 c b g
   |   g2 g
       \repeat unfold 4 {
-  |     r8 c b c r c4 r8
+  |     r8 c b c r c4 c8
       }
   |   r8 c4 c8 r c b a
   |   g4 f e2~
-  |   e4 g g f
+  |   e4 g g <f b>
   |   e2
     } >> r2
-  | g8^\p e c e g e bes' e,
+  | g8^\p e c e g e bes'! e,
   | a f c f a f c' f,
   | g8 e c e g e bes' e,
   %80
@@ -158,15 +158,15 @@ Upper = \relative c'' {
   | c a f a c a ees' a,
   | d bes f bes d bes f' bes,
   %85
-  | g' cis, bes cis g' cis, g' d
+  | g' cis, bes! cis g' cis, g' d
   | g e a, e' g e g d
-  | g cis, bes cis g' cis, g' d
+  | g cis, bes! cis g' cis, g' d
   | g e a, e' g e g d
-  | g cis, bes cis g' cis, g' d
+  | g cis, bes! cis g' cis, g' d
   %90
   | g f g e f e d e
   | f g a4 a, cis
-  | d8 d[^\f c bes] a g f e
+  | d8 d[ c bes!] a g f e
   | d e f g a b cis d
   | e f g e f e d e
   %95
@@ -194,7 +194,7 @@ Upper = \relative c'' {
   |   g8 a g f g f e f
     } >>
   %105
-  | r8 d' c bes c bes a c
+  | r8 d' c! bes c bes a c
   | bes2 b\upprall
     << {
   |   r8 g' f e f e d f
@@ -218,7 +218,7 @@ Upper = \relative c'' {
   |   g4
     } >>
     bes,2 c8 d
-  | ees f g a bes c d ees
+  | ees f g a! bes c d ees
     << {
   %115.1
   |   f4 <f d> <f c> <ees c>
@@ -239,7 +239,7 @@ Upper = \relative c'' {
     \new Voice
     {
       \voiceOne
-  |   bes4 <e g~> <cis g'> <d f~>
+  |   bes4 <e! g~> <cis g'> <d f~>
   |   f8 f e d e d cis e
   |   a,1~
   |   a8 a g f g f e g
@@ -319,7 +319,7 @@ Upper = \relative c'' {
   |   gis2. a4
   |   r8 a4 a8 r a gis fis
   |   e4 d c2~
-  |   c4 e e d
+  |   c4 e e <d gis>
   |   c
     } >> r4 r2
   | r2
@@ -352,10 +352,10 @@ Upper = \relative c'' {
   | d bes f bes d2~
   | d8 b g b d b f' b,
   %160
-  | e c g c e c g' c,
+  | e! c g c e c g' c,
   | d b g b d b f' b,
   | e c g c e c f c
-  | g' e c e g e bes' e,
+  | g' e c e g e bes'! e,
   | a f c f a f c' f,
   %165
   | g e c e g e bes' e,
@@ -419,7 +419,7 @@ Upper = \relative c'' {
   |   f8 f e d c2
   |   r8 d c bes a2
   |   r8 bes a g f2~
-  |   f8 f e d e2
+  |   f8 f e! d e2
     } >>
   %195
   | c8( d e) bes'-. a( bes c) f-.
@@ -580,14 +580,14 @@ Lower = \relative c' {
   %85
   \repeat unfold 2
   {
-  |  e'4 g8 f e4 d
+  |  e'!4 g8 f e4 d
   | cis8 d cis b a b cis d
   }
-  e8 f g a bes4 d,
+  e8 f g a bes!4 d,
   %90
   | cis8 a b cis d e f g
   | a g f g a4 a,
-  | d,8 d'[^\p e f] g a b cis
+  | d,8 d'[^\f e f] g a b cis
   | d4 d,,2 e8 f
   | g a b cis d e f g
   %95
@@ -618,7 +618,7 @@ Lower = \relative c' {
   |   bes!2 a
   |   g1~
   |   g
-  |   r8 c, bes a bes a g bes
+  |   r8 c, bes! a bes a g bes
     } >>
   | a4 d g, c
   %110
@@ -644,7 +644,7 @@ Lower = \relative c' {
   %116
   | bes8 c d ees f ees d f
   | << { r4 g2 fis4 } \\ { bes,2 a } >>
-  | r8 g f e f e d f
+  | r8 g f! e! f e d f
   | bes,4 d g e
   %120
   | cis a d f,
@@ -672,12 +672,12 @@ Lower = \relative c' {
   | e, d' e, d e d' fis, d'
   | gis, d' gis, fis gis d' a d
   | b d b a b d a d
-  | gis, d' e, fis g a b c
+  | gis, d' e, fis gis a b c
   %140
   | d c b a gis fis e d
   | c a b c d e fis gis
   | a b c d e b gis e
-  | f f' e f f, f' e, e'
+  | f! f' e f f, f' e, e'
   | d, f e f d d' e, e'
   %145
   <<
@@ -688,7 +688,7 @@ Lower = \relative c' {
     }
     \\
     {
-  |   f,2~ f4 e
+  |   f,2. e4
   |   d2. c4
   |   f e d b
     }
@@ -743,7 +743,7 @@ Lower = \relative c' {
   %175
   | f4^\f a c ees
   | d f d bes
-  | e, g bes d
+  | e,! g bes d
   | c e c a
   | d, f a c
   %180
@@ -767,7 +767,7 @@ Lower = \relative c' {
     }
     \new Voice {
       \voiceTwo
-  |   f2~ f4 e
+  |   f2. e4
   |   d2 c4 bes
   |   a8 f g a bes c d e
     }

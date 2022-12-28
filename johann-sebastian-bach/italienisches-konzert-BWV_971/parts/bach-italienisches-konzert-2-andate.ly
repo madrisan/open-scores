@@ -13,7 +13,7 @@ Upper = \relative c''' {
   | a4~\mordent a16 g( f e d cis d) f~
   %5
   | f32 e d16 e8~ e16 g a bes~ bes cis,( d e)
-  | a,32( g f16) g8~ g16 a bes cis~ cis d8 e16~
+  | a,32( g f16) g8~ g16 a bes! cis~ cis d8 e16~
   | e g, f\prall e f bes a\prall g
     \set subdivideBeams = ##t
     a b32( cis d e f g)
@@ -34,7 +34,7 @@ Upper = \relative c''' {
     f32 g f e f a cis,16
     \set subdivideBeams = ##f
     cis16( d) r8 r d'8~
-  | d16 c bes\prall a bes g bes d g d bes'8~
+  | d16 c! bes\prall a bes g bes d g d bes'8~
   | \set subdivideBeams = ##t
     bes32 c bes a bes g a bes f16( e) r8 r c32 d e16~
   %15
@@ -95,11 +95,11 @@ Upper = \relative c''' {
     f32 ees d ees f ees d ees
   %35
   | f, a g f c' bes a ees' d cis d8.~ d32 d, cis d e f g a
-  | bes d bes a bes d bes a g fis g8.~ g32 bes g fis g e' g, f
+  | bes d bes a bes d bes a g fis g8.~ g32 bes g fis g e' g, fis
     \set subdivideBeams = ##f
-  | g16( bes cis e~)
+  | g16( bes! cis e~)
     \set subdivideBeams = ##t
-    e32 d c d e d c b
+    e32 d cis d e d cis b
     \set subdivideBeams = ##f
     a16 g32 f! g16. e'32
   | g,16( f) f'8~
@@ -111,7 +111,7 @@ Upper = \relative c''' {
     \set subdivideBeams = ##t
     g32 f e f g f e d
     \set subdivideBeams = ##f
-    cis16 bes32 a bes16. g'32
+    cis16 bes!32 a bes16. g'32
   %40
   | bes,16( a8) cis16~ cis d8 e32 f g a bes a bes16. bes32
   | bes16 cis,8( d32 e) e16 g,8( a32 bes) bes e f g~ g16 bes,
@@ -132,10 +132,10 @@ Upper = \relative c''' {
     a32 g fis e d cis d16~
     \set subdivideBeams = ##f
   | \set subdivideBeams = ##t
-    d16 e32 fis g f g a bes g bes c d a cis d e f g a bes d, cis d
+    d16 e32 fis g d g a bes g bes c! d a cis d e f g a bes d, cis d
     \set subdivideBeams = ##f
   | d16 g,~ g32 a g f g16 cis32 d e16 g, f32 a b cis d16 bes
-  | cis16 a8 d,32 g
+  | gis16 a8 d,32 g
     \set subdivideBeams = ##t
     f16~ f64 g f e f e d e d cis d e
     \set subdivideBeams = ##f
@@ -181,7 +181,7 @@ LowerOneMvtII = \relative c' {
   | f4~ f8 e16 d e8 bes'
   | a r r a b cis
   | d r r f g a
-  | bes r r a g f
+  | bes! r r a g f
   %30
   | e r r g f e
   | f r r f g a
@@ -214,7 +214,7 @@ LowerTwoMvtII = \relative c' {
   | d \clef bass d, d \clef treble d' e f
   %5
   | g \clef bass d, d \clef treble f' e d
-  | cis \clef bass d, d \clef treble e' d c
+  | cis \clef bass d, d \clef treble e' d cis
   | d \clef bass d, d g f e
   | d d, d d'' c bes
   | c e, e c' bes a
@@ -223,7 +223,7 @@ LowerTwoMvtII = \relative c' {
   | a a, a a' b cis
   | d d, d \clef treble d' e f
   | g \clef bass g, g \clef treble f' e d
-  | c \clef bass c, c \clef treble c' d e
+  | c! \clef bass c, c \clef treble c' d e
   %15
   | f \clef bass f, f \clef treble e' d c
   | bes \clef bass bes, bes bes' a g
@@ -243,14 +243,14 @@ LowerTwoMvtII = \relative c' {
   | d d, d \clef treble d'' e f
   | g \clef bass d, d \clef treble f' e d
   %30
-  | cis \clef bass d, d \clef treble e' d c
+  | cis \clef bass d, d \clef treble e' d cis
   | d \clef bass d, d \clef treble d' e f
   | g \clef bass g,, g g' a bes
   | c c, c c' d e
   | f f,, f f' g a
   %35
   | bes bes, bes a' g f
-  | e e, e d' cis b
+  | e! e, e d' cis b
   | a a, a a' b cis
   | d a, a b' cis d
   | e a,, a cis' d e
