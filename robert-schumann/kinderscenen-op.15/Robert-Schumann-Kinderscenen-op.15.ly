@@ -60,7 +60,7 @@
         \null\null
         \fill-line {
           \abs-fontsize #13
-          \smallCaps " Lavender.Blue Open Scores"
+          \smallCaps " Lavender.Blue OMpen Scores"
         }
         \fill-line { \abs-fontsize #10 "Engraved by Davide Madrisan" }
         \fill-line {
@@ -76,5 +76,7 @@
   }
 }
 
+\include "./parts/01-von-fremden-landern-und-menschen.ly"
+\pageBreak
 \include "./parts/07-traumerei.ly"
 \pageBreak

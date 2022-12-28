@@ -231,7 +231,6 @@ Bass = \context Voice = "four" \relative c {
                \line { " " }
              }
            }
-
   }
   \layout {}
   \midi {}
