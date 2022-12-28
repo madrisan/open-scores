@@ -6,6 +6,7 @@ Global = {
 
 Upper = \relative c'' {
   \clef treble
+  \mergeDifferentlyDottedOn
   %1
   <<
     {
@@ -48,7 +49,8 @@ Upper = \relative c'' {
     {
   |   s2
   |   s2
-  |   e4 f
+  |   \once\override NoteColumn.force-hshift = #0.8
+      e4 f
   |   s4
     }
   >>
@@ -78,7 +80,7 @@ Upper = \relative c'' {
   <<
     {
       c'8 f,
-  |   <c f>4 <c e>~
+  |   <c f>4 e~
   |   e16 f8. r4
   |   r16 c f8^~ f <c e>
   |   <a c f>4
@@ -88,15 +90,17 @@ Upper = \relative c'' {
       r8 <a c>
   |   a4 g
   |   f s
-  |   s4 s8 bes
+  |   s4 b8\rest bes
   |   s4
     }
     \\
     {
       \voiceFour
       s4
- |    s2
- |    c8 b~b16 d c bes
+ |    s4 \stemUp\shiftOff c~
+ |    \once\override NoteColumn.force-hshift = #1
+      \stemDown c8
+      b~b16 d c bes
  |    a8. a16 g4
  |    f
     }
@@ -182,8 +186,13 @@ Upper = \relative c'' {
       f,[ d' e d]
     }
   >>
-  | f16 e32 d e8~ e16 d32 cis d8~
-  | d16 cis32 b cis8~ cis16 e cis a
+    << {
+      \stemDown
+  |   f16 e32 d e8~
+      e16 d32 cis d8~
+  |   d16 cis32 b
+      cis8~ cis16 e cis a
+    } \\ {} >>
   %75
   | g-. e'( cis a) g-. e'( cis a)
   | g-. e'( cis a) g-. e'( cis a)
@@ -193,8 +202,8 @@ Upper = \relative c'' {
   %80
   | b-. gis'( f d) b-. gis'( f d)
   | cis a' e cis a cis b d
-  | cis e cis a e g f a
-  | g bes g e cis e d f
+  | cis e cis a e g! f a
+  | g bes! g e cis e d f
   | e g e cis a g' f e
   %85
   | f d e f g a b cis
@@ -202,7 +211,7 @@ Upper = \relative c'' {
   <<
     {
       a'8 d,
-  |   <d f>4 <cis e>~
+  |   <d f>4 e~
   |   e16 d8. r4
   |   r16 a d8^~ d <a cis>
   %90.1
@@ -221,8 +230,12 @@ Upper = \relative c'' {
     {
       \voiceFour
       s4
-  |   s2
-  |   cis16 d gis,8~ gis16 bes a g
+  |   s4 \stemUp\shiftOff
+      \shape #'((0.2 . 0.6) (0 . 0.4) (0 . 0.4) (-0.1 . 0.6)) Tie
+      cis~
+  |   \once\override NoteColumn.force-hshift = #1.1
+      \stemDown cis16
+      d gis,8~ gis16 bes! a g
   |   f8. f16 e4
   %90.3
   |   d
@@ -236,7 +249,7 @@ Upper = \relative c'' {
   %95
   | a16\prall gis a8 a16\prall gis a8~
   | a16 cis e f g8 a,~
-  | a16 g' f e32 d bes'8 g,~
+  | a16 g' f e32 d bes'!8 g,~
   | g16 f' e d32 c a'8 f,~
   | f16 es' d c32 bes g'16 d c bes32 a
   %100
@@ -245,7 +258,7 @@ Upper = \relative c'' {
   | a g a c f, es' d c
   <<
     {
-  |   d8 bes' d, es
+  |   d8[ bes' d, es]
   |   f4 g
   %105.1
   |   f8 bes4 as16 g
@@ -255,7 +268,7 @@ Upper = \relative c'' {
   |   <bes d> <a c> r <a c>
   %110.1
   |   <a c> <g bes> bes'4^~
-  |   bes8 a16 g a fis g a
+  |   bes8 a16 g \stemDown a fis g a
     }
     \\
     {
@@ -276,7 +289,8 @@ Upper = \relative c'' {
   |   s2
   |   s2
   %105.3
-  |   d4 es
+  |   \once\override NoteColumn.force-hshift = #0.8
+      d4 es
   |   s2
   |   s2
   |   s2
@@ -290,11 +304,11 @@ Upper = \relative c'' {
   | d~
   | d~
   %115
-  | d8\stopTrillSpan g, bes d
+  | d8[\stopTrillSpan g, bes d]
   | c2~\startTrillSpan
   | c~
   | c~
-  | c8 \stopTrillSpan f, a c
+  | c8[ \stopTrillSpan f, a c]
   %120
   | f f,
   <<
@@ -332,7 +346,7 @@ Upper = \relative c'' {
   | bes16 \stopTrillSpan g' e c bes g' e c
   <<
     {
-  |   a8 f' a, bes
+  |   a8[ f' a, bes]
   %140.1
   |   c4 d~
   |   d8 c16 d-. es8 d16 c
@@ -369,7 +383,7 @@ Upper = \relative c'' {
   | es16 d32 c d16 c32 bes g'8 bes,~
   %155
   | bes16 a32 g a16 g32 f d'8 f,
-  | f8\prall e r bes''
+  | f8\prall e r bes''!
   | a16 bes c f, a g f e
   | f c d f bes, a bes d
   | f bes, c f a, g a c
@@ -398,7 +412,9 @@ Upper = \relative c'' {
   |   s2
   |   s2
   %165.3
-  |   a4 bes
+  |   \once\override NoteColumn.force-hshift = #0.8
+      a4
+      bes
   |   s2
     }
   >>
@@ -422,7 +438,10 @@ Upper = \relative c'' {
     {
       s2
       s2
-      e4 f
+      \once\override NoteColumn.force-hshift = #0.8
+      \once\override NoteColumn.force-hshift = #0.8
+      e4
+      f
   %170.3
       s4
     }
@@ -435,15 +454,15 @@ Upper = \relative c'' {
   %175
   | as16 g32 f g8~ g16 f32 e f8~
   | f16 e32 d e8~ e16 g e c
+  | bes!-. g'( e c) bes-. g'( e c)
   | bes-. g'( e c) bes-. g'( e c)
-  | bes-. g'( e c) bes-. g'( e bes)
   | a-. a'( f des) c-. a'( f des)
   %180
   | c-. a'( f des) c-. a'( f es)
   | d-. b'( as f) d-. b'( as f)
   | d-. b'( as f) d-. b'( as f)
   | e c' g e c e d f
-  | e g e c g bes a c
+  | e g e c g bes! a c
   %185
   | bes d bes g e g f a
   | g bes g e c bes' a g
@@ -453,7 +472,7 @@ Upper = \relative c'' {
     {
       c'8 f,
   %190.1
-  |   <c f>4 <c e>~
+  |   <c f>4 e~
   |   e16 f8. r4
   |   r16 c f8~ f <c e>
   |   <a c f>2\fermata
@@ -472,8 +491,11 @@ Upper = \relative c'' {
       \voiceFour
       s4
   %190.3
-  |   s2
-  |   c8 b~ b16 d c bes
+  |   s4 \stemUp\shiftOff c~
+  |   \stemDown
+      \once\override NoteColumn.force-hshift = #1
+      c8
+      b~ b16 d c bes
   |   a8. a16 g4
   |   f2
     }
@@ -486,14 +508,10 @@ Upper = \relative c'' {
 
 Lower = \relative c {
   \clef bass
-  <<
-    <a c f>4
-    \\
-    f4
-  >>
-    r4
-  | r8 f'' d bes
-  | r8 f d bes
+  \override Rest.staff-position = #0
+  | << <a c f>4 \\ f4 >>  r4
+  | r8 f''[ d bes]
+  | r8 f[ d bes]
   |
   <<
     f'4
@@ -522,19 +540,19 @@ Lower = \relative c {
   <<
     {
       <g' c>4 <e g c>~
-  |   c'8 a c f
+  |   c'8[ a c f]
     }
     \\
     {
       e,4 c
-  |   f r
+  |   f d\rest
     }
   >> \clef treble
   %11
   <<
     {
       <c' f>4 <a c f>~
-  |   f'8 d f bes
+  |   f'8[ d f bes]
   |   <f b>4 <d g>
   |   \clef bass <b d> <g c>
     }
@@ -552,7 +570,7 @@ Lower = \relative c {
   | e c \clef bass c,4
   | \clef treble r16 c'16 d e f8 a
   | f c \clef bass c,4
-  | r8 d'16 e f8 d16 e
+  | r8 d'16 e! f8 d16 e
   %20
   | f8 d g, b
   | c c,16 d e8 g
@@ -573,7 +591,7 @@ Lower = \relative c {
   |   bes[ bes bes bes]
   |   bes[ bes a a]
   |   g[ g g g]
-  |   g f r f
+  |   g f b\rest f
   %35.1
   |   f[ e f a]
   |   g[ f e f]
@@ -610,8 +628,8 @@ Lower = \relative c {
   |   r16 a, b d g8 r8
   %45.1
   |   r16 b, c e a8 c,8
-  |   d b d f
-  |   d b d f
+  |   d[ b d f]
+  |   d[ b d f]
   |   g16 f e d c8 s8
   |   s2
   %50.1
@@ -619,12 +637,12 @@ Lower = \relative c {
   |   g8 c,4 b8
   |   c16 c'^\f[ b a] g f e d
   |   c s16 s8 s4
-  |   r8 c' a f
+  |   r8 c'[ a f]
   %55.1
   |   c2^~
   |   c8 r r16 bes'16 a g
   |   f s16 s8 s4
-  |   r8 f' d bes
+  |   r8 f'[ d bes]
   |   f2^~
   %60.1
   |   f8 r8 s16
@@ -636,22 +654,22 @@ Lower = \relative c {
   |   g s r e
   %45.2
   |   a4 r8 a
-  |   b g b d
-  |   b g b d
+  |   b[ g b d]
+  |   b[ g b d]
   |   c4_~c16 b a g
-  |   fis e d c b a g fis
+  |   fis e d c \stemUp b a g fis
   %50.2
-  |   g4 r8 b
-  |   c e, f g
+  |   \stemDown g4 r8 b
+  |   c[ e, f g]
   |   g16 r16 r8 r4
   |   r16 c b a g f e d
   |   c8 r r4
   %55.2
-  |   r8 g' e c
+  |   r8 g'[ e c]
   |   f r r4
   |   r16 f'16 e d c bes a g
   |   f8 s8 s4
-  |   r8 c' a f
+  |   r8 c'[ a f]
   %60.2
   |   bes r8 r16
     }
@@ -662,16 +680,16 @@ Lower = \relative c {
   | g8 e'~ e16 d cis d
   | g, d' cis e a, g f e
   %65
-  | f8 g f e
-  | d bes' a g
-  | f g f e
-  | d bes' a g
+  | f8[ g f e]
+  | d[ bes' a g]
+  | f g[ f e]
+  | d[ bes' a g]
   | f16 cis'([ d e] d cis d) f,-.
   %70
   | g-. cis( d e d cis d) g,-.
   | a-. cis( d e d cis d) a-.
   | \clef treble
-    bes-. cis( d e d cis d) f
+    bes!-. cis( d e d cis d) f
   <<
     {
       \voiceThree
@@ -693,7 +711,7 @@ Lower = \relative c {
   | d a a,4
   | r8 b'16 cis d8 b16 cis
   %80
-  | d8 b e, gis
+  | d8[ b e, gis]
   | a8 a,16 b cis8 e
   | a a,16 b cis8 d
   | e a,16 cis e8 f
@@ -702,8 +720,8 @@ Lower = \relative c {
   | d16 f e d cis b a g
   | f a b cis d e f g
   | a4 a,
-  | bes r8 cis
-  | d f, g a
+  | bes! r8 cis
+  | d[ f, g a]
   %90
   <<
     {
@@ -722,7 +740,7 @@ Lower = \relative c {
   |   cis8[ a d a]
   |   cis a16 b cis d e cis
   |   d8[ a cis a]
-  |   d e,8\rest r4
+  |   d e,8\rest e4\rest
   %95.2
   |   e'8[ a, d=' a]
   |   cis16 d cis b
@@ -733,43 +751,43 @@ Lower = \relative c {
   | c, c' d e f, es' d c
   | bes, bes' c d es,8 a
   %100
-  | d, g c, f
-  | bes, d g es
-  | f c a f
+  | d,[ g c, f]
+  | bes,[ d g es]
+  | f[ c a f]
   | bes bes, r4 \clef treble
-  | r8 bes''' g es \clef bass
+  | r8 bes'''[ g es] \clef bass
   %105
-  | r bes g es
-  | bes'16 c d c bes a bes g
+  | r bes[ g es]
+  | bes'16 c d c bes a! bes g
   | c, g' c bes a g a f
   | bes, f' bes a g f g es
-  | a, es' a g fis e fis d
+  | a, c a' g fis e fis d
   %110
   | g, d' g a g f es d
   | c g' c d c bes a g
-  | fis d' cis d d, fis e g
+  | fis d' cis d d, fis e! g
   | fis a d, fis g bes d, g
   | a c a fis d c' bes a
   %115
-  | bes d bes g d f e d
+  | bes d bes g d f e! d
   | e c' b c c, e d f
   | e g c, e f a c, f
-  | g bes g e c bes' a g
+  | g bes! g e c bes' a g
   | a c a f c es d c
   %120
   | d f d bes g bes a g
   | c e c a f a g f
-  | bes8 c d bes
-  | c d e c
-  | c, a' bes d
+  | bes8[ c d bes]
+  | c[ d e c]
+  | c,[ a' bes d]
   %125
-  | c, bes' c e
-  | c, c' d f
-  | c, d' e g
+  | c,[ bes' c e]
+  | c,[ c' d f]
+  | c,[ d' e g]
   | c,,4 r \clef treble
   <<
     {
-  |   r8 a''' a a
+  |   r8 a'''[ a a]
   %130.1
   |   g[ g g g]
   |   r f[ f f]
@@ -799,7 +817,7 @@ Lower = \relative c {
   | f f es d c bes a g
   | f f' c a f f' es f
   | bes, d f a \clef treble bes d f a
-  | g g f e \clef bass d c b a
+  | g g f e! \clef bass d c b a
   | g g f e d c b a
   %145
   | g g' d b g g' f g
@@ -816,12 +834,12 @@ Lower = \relative c {
     }
     \\
     {
-  |   e8 c f c
+  |   e8[ c f c]
   |   e c16 d e f g e
-  |   f8 c e c
+  |   f8[ c e c]
   %150.2
   |   f r r4
-  |   g8 c, f c
+  |   g8[ c, f c]
   |   e r r16
     }
   >> \clef bass bes16 a g
@@ -862,7 +880,7 @@ Lower = \relative c {
   <<
     {
   |   <c' f>4 <a c f>~
-  |   f'8 d f bes
+  |   f'8[ d f bes]
   %175.1
   |   <f b>4 <d g>
   |   \clef bass
@@ -882,7 +900,7 @@ Lower = \relative c {
   | \clef treble r16 c'16 d e f8 a
   %180
   | f c \clef bass c,4
-  | r8 d'16 e f8 d16 e
+  | r8 d'16 e! f8 d16 e
   | f8[ d g, b]
   | c c,16 d e8 g
   | c c,16 d e8 f
@@ -905,7 +923,7 @@ Lower = \relative c {
 \score {
   \new PianoStaff
   <<
-    \accidentalStyle Score.piano-cautionary
+    \accidentalStyle Score.piano
     \new Staff = "upper" {
       \Global
       \Upper
