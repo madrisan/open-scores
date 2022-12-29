@@ -66,13 +66,13 @@ Tenor = \context Voice = "two" \relative c' {
     \tuplet 3/2 { \bottom\stemUp bes,8 e \top\stemDown g }
     \override Beam.positions = #'(5 . 5.5)
   | \override TupletNumber.transparent = ##t
-    \tuplet 3/2 { \bottom\stemUp a,8 d \top\stemDown f }
+    \tuplet 3/2 { \bottom\stemUp a,8 d \top\stemDown fis }
     \tuplet 3/2 { \bottom\stemUp c!8 d \top\stemDown a' }
   | \tuplet 3/2 { \bottom\stemUp b,8 d \top\stemDown g }
     \override Beam.positions = #'(5.5 . 6)
     \tuplet 3/2 { \bottom\stemUp bes,8 e \top\stemDown g }
   | \override Beam.positions = #'(5 . 5.5)
-    \tuplet 3/2 { \bottom\stemUp a,8 d \top\stemDown f }
+    \tuplet 3/2 { \bottom\stemUp a,8 d \top\stemDown fis }
     \tuplet 3/2 { \bottom\stemUp c!8 d \top\stemDown a' }
     \break
   %5
@@ -103,9 +103,9 @@ Tenor = \context Voice = "two" \relative c' {
   | \override Beam.positions = #'(3.8 . 4.3)
     \tuplet 3/2 { \bottom\stemUp c,8 g' \top\stemDown c }
     \override Beam.positions = #'(3.6 . 4.1)
-    \tuplet 3/2 { \bottom\stemUp f,,8 f' \top\stemDown c' }
+    \tuplet 3/2 { \bottom\stemUp fis,,8 fis' \top\stemDown c' }
   | \override Beam.positions = #'(3.4 . 3.8)
-    \tuplet 3/2 { \bottom\stemUp b,8 f' \top\stemDown b }
+    \tuplet 3/2 { \bottom\stemUp b,8 fis' \top\stemDown b }
     \tuplet 3/2 { \bottom\stemUp g,8 g' \top\stemDown b }
   | \tuplet 3/2 { \bottom\stemUp c,8 g' \top\stemDown c }
     \override Beam.positions = #'(3.8 . 4.2)
@@ -128,18 +128,19 @@ Tenor = \context Voice = "two" \relative c' {
     \break
   | \tuplet 3/2 { \bottom\stemUp b,8 d \top\stemDown g }
     \tuplet 3/2 { \bottom\stemUp bes,8 e \top\stemDown g }
-  | \tuplet 3/2 { \bottom\stemUp a,8 d \top\stemDown f }
+  | \tuplet 3/2 { \bottom\stemUp a,8 d \top\stemDown fis }
     \tuplet 3/2 { \bottom\stemUp c!8 d \top\stemDown a' }
   | \tuplet 3/2 { \bottom\stemUp b,8 d \top\stemDown g }
     \tuplet 3/2 { \bottom\stemUp g,8 d' \top\stemDown g }
     \break
   %20
   | \tuplet 3/2 { \bottom\stemUp g,8 e' \top\stemDown g }
-    \tuplet 3/2 { \bottom\stemUp g,8 c \top\stemDown g' }
+    \override Hairpin.self-alignment-Y = #5
+    \tuplet 3/2 { \bottom\stemUp g,8\> c \top\stemDown g' }
   | \tuplet 3/2 { \bottom\stemUp g,8 c \top\stemDown g' }
     \tuplet 3/2 { \bottom\stemUp fis,8 c' \top\stemDown fis }
   | \bottom\stemUp d,8 \top\stemDown g'
-    s4
+    s4\!
   }
 }
 
@@ -184,7 +185,7 @@ Bass = \context Voice = "three" \relative c' {
   | d r fis r
   | g r b, r
   %20
-  | c r e r
+  | c r e\> r
   | d r fis r
   | << {
       \stemDown <g, d'>2
@@ -193,7 +194,7 @@ Bass = \context Voice = "three" \relative c' {
       \once\override NoteColumn.force-hshift = #1.2
       b'4^~
       \override Beam.positions = #'(5 . 5.4)
-      \tuplet 3/2 { \bottom\stemUp b8 b \top\stemDown g' }
+      \tuplet 3/2 { \bottom\stemUp b8 b \top\stemDown g'\! }
     } >>
   }
   \fine
