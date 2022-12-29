@@ -60,7 +60,7 @@
         \null\null
         \fill-line {
           \abs-fontsize #13
-          \smallCaps " Lavender.Blue OMpen Scores"
+          \smallCaps " Lavender.Blue Open Scores"
         }
         \fill-line { \abs-fontsize #10 "Engraved by Davide Madrisan" }
         \fill-line {
