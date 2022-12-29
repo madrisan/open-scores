@@ -165,7 +165,7 @@ Tenor = \context Voice = "three" \relative c' {
   %25
   | s2.
   | << {
-      \shape #'((0 . 0) (0 . 0.3) (0 . 0.5) (0 . 0)) PhrasingSlur
+      \shape #'((0 . 0) (0 . 0.8) (0 . 1.2) (0 . 0)) PhrasingSlur
       a8[\( b cis d] d[ e]
     } \\ { } >>
   | << {
@@ -190,7 +190,7 @@ Tenor = \context Voice = "three" \relative c' {
   | s2.
   | s2.
   | << {
-      \shape #'((0 . 0) (0 . 0.3) (0 . 0.5) (0 . 0)) PhrasingSlur
+      \shape #'((0 . 0) (0 . 1.2) (0 . 1.6) (0 . 0)) PhrasingSlur
       a8[\( b cis d] d[ e]
     } \\ { } >>
   | << {
