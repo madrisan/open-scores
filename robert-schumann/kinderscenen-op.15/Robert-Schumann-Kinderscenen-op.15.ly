@@ -47,29 +47,44 @@
         \fill-line { \draw-hline }
         \null\null\null
         \line { \abs-fontsize #34 \bold "Kinderscenen" }
-        \null\null\null\null
+        \null\null
         \line { \abs-fontsize #20 \bold "Op. 15" }
-        \null\null\null\null
-        \fill-line { \abs-fontsize #20 "For Piano" }
+        \null\null\null
+        \fill-line { \abs-fontsize #20 "Für Pianoforte zu zwei Händen" }
 
         \null\null\null\null
+        %\fill-line {
+        %  \override #'(thickness . 1)
+        %  \draw-squiggle-line #0.5 #'(10 . 0) ##t
+        %}
+        \null\null\null\null
+
         \fill-line {
-          \override #'(thickness . 1)
-          \draw-squiggle-line #0.5 #'(14 . 0) ##t
+          \line {
+            \abs-fontsize #24
+            { \smallCaps
+              \override #'(circle-padding . 0.0)
+              \override #'(thickness . 2)
+              \with-color #(x11-color 'grey50)
+              \circle
+              \with-color #(x11-color 'black)
+              "L"
+              \hspace #-0.7
+              \smallCaps "avender" }
+          }
         }
-        \null\null
-        \fill-line {
-          \abs-fontsize #13
-          \smallCaps " Lavender.Blue Open Scores"
-        }
+        \fill-line { \abs-fontsize #9 \bold "B L U E" }
+        \fill-line { \abs-fontsize #10 \smallCaps "Open Scores" }
+        \null
+
         \fill-line { \abs-fontsize #10 "Engraved by Davide Madrisan" }
         \fill-line {
-          \abs-fontsize #9
+          \abs-fontsize #10
           \typewriter "https://github.com/madrisan/open-scores/"
         }
         \null\null\null\null
 
-	\fill-line { \abs-fontsize #10 "Based on the score publiched by Breitkopf & Härtel - Leipzig, 1880" }
+	\fill-line { \abs-fontsize #10 "Based on the score published by Breitkopf & Härtel - Leipzig, 1880" }
         \null
       }
     }
