@@ -52,7 +52,7 @@ Upper = \relative c''' {
     c16 bes32 a bes16. g'32
   %20
   | \set subdivideBeams = ##t
-    bes,16( c) a'8~ a32 g f g a g f e d c bes a g f e f
+    bes,16( a) a'8~ a32 g f g a g f e d c bes a g f e f
     \set subdivideBeams = ##f
   | f16 e~ e32 g f e bes' c bes a bes16 c~ c d8 e16~
   | \set subdivideBeams = ##t
@@ -85,7 +85,7 @@ Upper = \relative c''' {
     \set subdivideBeams = ##t
     d32 cis d e d cis b a~ a16 d8 f16~
     \set subdivideBeams = ##f
-  | f32 g f e f16 bes~ bes a8 g16
+  | f32 g f e f16 bes~ bes a8 g16~
     \set subdivideBeams = ##t
     g f32 e d c bes a
     \set subdivideBeams = ##f
