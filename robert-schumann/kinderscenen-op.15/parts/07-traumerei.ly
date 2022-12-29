@@ -1,7 +1,3 @@
-\version "2.23.10"
-
-#(ly:set-option 'relative-includes #t)
-
 Global = {
   \key f \major
   \time 4/4
@@ -224,10 +220,10 @@ Bass = \context Voice = "four" \relative c {
     %composer = "Robert Schumann"
     %opus = "Op. 15"
     title = \markup { "7. Träumerei" }
-    % workaround to insert some vertical space after the subtitle
     subtitle = \markup {
              \column {
                \line { "(Dreaming)" }
+               % workaround to insert some vertical space after the subtitle
                \line { " " }
              }
            }

@@ -1,7 +1,3 @@
-\version "2.23.10"
-
-#(ly:set-option 'relative-includes #t)
-
 Global = {
   \key g \major
   \time 2/4
@@ -9,6 +5,9 @@ Global = {
 }
 
 ritardando = { \override TextSpanner.bound-details.left.text = \markup { \small "ritardando " } }
+
+top = \change Staff = "upper"
+bottom = \change Staff = "lower"
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
@@ -47,9 +46,6 @@ Sopran = \context Voice = "one" \relative c'' {
   }
   \fine
 }
-
-top = \change Staff = "upper"
-bottom = \change Staff = "lower"
 
 Tenor = \context Voice = "two" \relative c' {
   \voiceTwo
@@ -185,7 +181,7 @@ Bass = \context Voice = "three" \relative c' {
   | d r fis r
   | g r b, r
   %20
-  | c r e\> r
+  | c r e r
   | d r fis r
   | << {
       \stemDown <g, d'>2
@@ -222,10 +218,10 @@ Bass = \context Voice = "three" \relative c' {
     %composer = "Robert Schumann"
     %opus = "Op. 15"
     title = \markup { "1. Von fremden Ländern und Menschen" }
-    % workaround to insert some vertical space after the subtitle
     subtitle = \markup {
              \column {
                \line { "(From foreign Lands and People)" }
+               % workaround to insert some vertical space after the subtitle
                \line { " " }
              }
            }

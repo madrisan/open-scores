@@ -92,6 +92,6 @@
 }
 
 \include "./parts/01-von-fremden-landern-und-menschen.ly"
+\include "./parts/02-curiose-geschichte.ly"
 \pageBreak
 \include "./parts/07-traumerei.ly"
-\pageBreak
