@@ -61,20 +61,19 @@
 
         \fill-line {
           \line {
-            \abs-fontsize #24
-            { \smallCaps
-              \override #'(circle-padding . 0.0)
-              \override #'(thickness . 2)
-              \with-color #(x11-color 'grey50)
+            \abs-fontsize #20
+            { \override #'(circle-padding . -0.1)
+              \override #'(thickness . 2.4)
+              \with-color #(x11-color 'grey52)
               \circle
               \with-color #(x11-color 'black)
-              "L"
-              \hspace #-0.7
+              \smallCaps "L"
+              \hspace #-0.6
               \smallCaps "avender" }
           }
         }
-        \fill-line { \abs-fontsize #9 \bold "B L U E" }
-        \fill-line { \abs-fontsize #10 \smallCaps "Open Scores" }
+        \fill-line { \abs-fontsize #12 \smallCaps "b l u e" }
+        \fill-line { \abs-fontsize #8 \smallCaps "Open Scores" }
         \null
 
         \fill-line { \abs-fontsize #10 "Engraved by Davide Madrisan" }
