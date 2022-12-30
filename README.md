@@ -98,6 +98,8 @@ Thanks to my harpist friend Tristan Rollet ([@Pluiesurlavitre](https://github.co
 
  * [Kinderscenen op.15](https://github.com/madrisan/open-scores/releases/download/v13/Robert-Schumann-Kinderscenen-op.15.pdf)
    * I. Von fremden Ländern und Menschen
+   * II. Curiose Geschichte
+   * III. Hasche-Mann
    * VII. Träumerei
 
 ## How to manually create the `.pdf` and `.midi` files
