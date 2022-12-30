@@ -5,7 +5,7 @@
 \include "./covercolor.ly"
 
 \paper {
-  bottom-margin = 11\mm
+  bottom-margin = 15\mm
   first-page-number = 0
   indent = 0.0
   last-bottom-spacing.padding = #1
@@ -14,7 +14,7 @@
   ragged-bottom = ##f
   ragged-last-bottom = ##t
   tagline = ##f
-  top-margin = 11\mm
+  top-margin = 18\mm
 % markup-system-spacing.basic-distance = #10
 }
 
