@@ -100,6 +100,9 @@ Thanks to my harpist friend Tristan Rollet ([@Pluiesurlavitre](https://github.co
    * I. Von fremden Ländern und Menschen
    * II. Curiose Geschichte
    * III. Hasche-Mann
+   * IV. Bittendes Kind
+   * V. Glückes genug
+   * VI. Wichtige Begebenheit
    * VII. Träumerei
 
 ## How to manually create the `.pdf` and `.midi` files
