@@ -26,7 +26,7 @@ Sopran = \context Voice = "one" \relative c'' {
 %    \break
   | a[\< cis fis\! e]
   %10
-  | d a ) r8 a^.
+  | d a ) c8\rest a^.
   | a16[ ( e16^. ] ) e[ ( fis] g8 b
 %    \break
   | a fis e ) gis^> (
@@ -143,7 +143,7 @@ Bass = \context Voice = "four" \relative c {
   %15
   | c2
   | c16[ ( bes'_.] ) bes[ ( a] \autoBeamOff g8 ) c,, ( \autoBeamOn
-  | f8 <a-3> c4 )
+  | f8 a c4 )
   | s2*3
   | a8 a,8 d4
   \fine
