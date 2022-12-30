@@ -149,9 +149,6 @@ Bass = \context Voice = "four" \relative c {
   \fine
 }
 
-centerDynamics = {
-}
-
 \score {
   \new PianoStaff
   <<
@@ -162,9 +159,6 @@ centerDynamics = {
       \clef treble
       \Sopran
       \Alto
-    >>
-    \context Dynamics <<
-      \Global \centerDynamics
     >>
     \context Staff = "lower" <<
       \set Staff.midiInstrument = #"acoustic grand"
