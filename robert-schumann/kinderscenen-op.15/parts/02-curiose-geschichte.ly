@@ -11,7 +11,7 @@ Sopran = \context Voice = "one" \relative c' {
   \voiceOne
   \override Rest.staff-position = #0
   \partial 4
-    <d fis>4(
+    <d fis>4 (
   %1
   | \grace { b'16 [a16] }
     <cis, g'>8 ) [ r16 <cis fis>16 ]  <cis g'>4 <cis b'> (
@@ -71,21 +71,14 @@ Alto = \context Voice = "two" \relative c' {
   \partial 4
   s4
   %1
-  | s2.
-  | s2.
-  | s2.
-  | s2.
-  %5
-  | s2.
+  | s2.*5
+  %6
   | s2 a'4
   | a2 d4~
   | d4 cis s
   | s2.
   %10
-  | s2.
-  | s2.
-  | s2.
-  | s2.
+  | s2.*4
   | s2 a4
   %15
   | a2 d4~
@@ -97,10 +90,7 @@ Alto = \context Voice = "two" \relative c' {
   | g g8[ a] <d, a'>[ g]
   %20
   | <d g>[ fis e d] d[ bis]
-  | s2.
-  | s2.
-  | s2.
-  | s2.
+  | s2.*4
   %25
   | s2 cis4
   | s2 b'4
@@ -111,11 +101,7 @@ Alto = \context Voice = "two" \relative c' {
   | c!2 a4
   | g g8[ a] <d, a'>[ g]
   | <d g>[ fis e d] d[ bis]
-  | s2.
-  | s2.
-  %35
-  | s2.
-  | s2.
+  | s2.*4
   | s2 cis4
   | s2 b'4
   | s2.
@@ -138,7 +124,7 @@ Tenor = \context Voice = "three" \relative c' {
   | s2 a8 b
   | \once\override Beam.positions = #'(5 . 5.5)
     cis[ \top\stemDown d e fis]
-    \bottom\stemUp f8. gis16
+    \bottom\stemUp fis8. gis16
   | gis4 a s4
   | s2.
   %10
