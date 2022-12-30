@@ -14,7 +14,7 @@
   ragged-bottom = ##f
   ragged-last-bottom = ##t
   tagline = ##f
-  top-margin = 13\mm
+  top-margin = 15\mm
 % markup-system-spacing.basic-distance = #10
 }
 
@@ -77,4 +77,6 @@
 \include "./parts/03-hasche-mann.ly"
 \pageBreak
 \include "./parts/04-bittendes-kind.ly"
+\pageBreak
+\include "./parts/05-gluckes-genug.ly"
 \include "./parts/07-traumerei.ly"
