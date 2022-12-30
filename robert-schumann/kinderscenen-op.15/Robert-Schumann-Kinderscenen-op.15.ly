@@ -59,21 +59,16 @@
         %}
         \null\null\null\null
 
+        \fill-line { \abs-fontsize #20 \smallCaps "lavender" }
         \fill-line {
-          \line {
-            \abs-fontsize #20
-            { \override #'(circle-padding . -0.1)
-              \override #'(thickness . 2.4)
-              \with-color #(x11-color 'grey52)
-              \circle
-              \with-color #(x11-color 'black)
-              \smallCaps "L"
-              \hspace #-0.6
-              \smallCaps "avender" }
+          \abs-fontsize #12
+          \concat {
+            \draw-line #'(-3 . 0)
+            \smallCaps " b l u e "
+            \draw-line #'(-3 . 0)
           }
         }
-        \fill-line { \abs-fontsize #12 \smallCaps "b l u e" }
-        \fill-line { \abs-fontsize #8 \smallCaps "Open Scores" }
+        \fill-line { \abs-fontsize #9 \smallCaps "Open Scores" }
         \null
 
         \fill-line { \abs-fontsize #10 "Engraved by Davide Madrisan" }
