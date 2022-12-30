@@ -346,6 +346,12 @@ centerDynamics = {
              }
            }
   }
-  \layout {}
+  \layout {
+    \context {
+      \PianoStaff
+      % More space between staves in the same PianoStaff
+      \override StaffGrouper.staff-staff-spacing.minimum-distance = 10
+    }
+  }
   \midi {}
 }
