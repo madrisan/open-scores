@@ -14,35 +14,28 @@ Sopran = \context Voice = "one" \relative c'' {
   %1
   | a\< [ cis fis\! e ]
   | d a ) c8\rest a^.
-%    \break
   | a16[ ( e16^.] ) e[ ( fis] g8 b
   | a[ fis ] e ) gis^> (
   %5
   | a4^> ) c8\rest cis,8 (
-%    \break
   | d\< [ fis b\! <a> ]
   | g [ b e\> d_\markup { "rit." } ]
   | cis[ b\! a] ) gis (
-%    \break
   | a[\< cis fis\! e]
   %10
   | d a ) c8\rest a^.
   | a16[ ( e16^. ] ) e[ ( fis] g8 b
-%    \break
   | a fis e ) gis^> (
   | a4^> ) c8\rest cis,8 (
   | d\< [ fis b\! a ]
-%    \break
   %15
   | g [ b e\> d_\markup { "rit." } ]
   | cis[ b\! a] ) a (
   | bes[\<  e a\! g]
-%    \break
   | f c ) c8\rest c^.
   | c16[ ( g16^.] ) g[ ( a] bes8 d
   %20
   | c8 a g ) a (
-%    \break
   | bes[\<  e a\! g]
   | fis[ cis e d]
   | b![\ritardando fis\startTextSpan a g]

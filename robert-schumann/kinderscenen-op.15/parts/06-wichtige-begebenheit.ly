@@ -17,36 +17,33 @@ Sopran = \context Voice = "one" \relative c'' {
   | <b e gis>8. ) <a dis fis>16 <gis cis e>4^^ <a cis fis>-^
   | <fis b dis>4-^ <gis b e>-^ \stemUp <b d>4 (
   | <e, a cis>8. ) <d gis b>16 <cis fis a>4-^ <d fis b>-^
-%    \break
   | <b e gis>4-^ <cis e a>-^ <cis e a> (
   %5
   | <b e gis>8. ) <a dis fis>16 <gis cis e>4-^ <a cis fis>-^
   | \bottom\stemUp <fis b dis>4-^^\> <gis b e>4-^ \stemUp <b d> (
-%    \break
   | <e, a cis>8. ) <d gis b>16 <cis fis a>4-^ <d fis b>-^\!
   | <b e gis>4-^ <cis e a>-^
   \repeat volta 2 {
-  | \top\stemDown
+    \partial 4
+    \top\stemDown
     <a' cis e a>4
   %10
   | <a d fis a>2 <a d fis a>4
   | <d e g b>2-^ <d e g b>4
-%    \break
   | <g, a cis e>4-^ <g a cis e>-^ <g a cis e>-^
   | \dynamicUp <c d a'>2.\sf
   | <g c d>4-^ <g c d>4-^ <g c d>4-^
   %15
   | <g b d>-^ <g d' g>-^ <a d fis>-^
-%    \break
   | <b d e>8.-^ <b d fis>16 <b d g>4-^ <g a cis! e>-^
   | <fis a d>-^ r4
   }
-  | \stemDown <cis'' e a>4 (
+  \partial 4
+    \stemDown <cis'' e a>4 (
   | <b e gis!>8. ) <a dis fis>16 <gis cis e>4^^ <a cis fis>-^
   %20
   | <fis b dis>4-^ <gis b e>-^ \stemUp <b d>4 (
   | <e, a cis>8. ) <d gis b>16 <cis fis a>4-^ <d fis b>-^
-%    \break
   | <b e gis>4-^ <cis e a>-^ <cis e a> (
   | <b e gis>8. ) <a dis fis>16 <gis cis e>4-^ <a cis fis>-^
   | \bottom\stemUp <fis b dis>4-^^\> <gis b e>4-^ \stemUp <b d> (
@@ -63,7 +60,7 @@ Alto = \context Voice = "two" \relative c' {
     s4
   %1
   | s2.
-  [ s2 fis8[ e]
+  | s2 fis8[ e]
   | s2.*3
   | s2
     \once\override Beam.positions = #'(3.5 . 3.0)
@@ -94,7 +91,9 @@ Bass = \context Voice = "four" \relative c {
   | \stemDown <b b'>-^ <e, e'>-^ <fis fis'>8 <gis gis'>8
   | <a a'>8. <eis eis'>16 <fis fis'>4-^ <d d'>-^
   | <e e'>4-^ <a e'>-^
-  | \stemUp <a a'>8 cis'
+  \repeat volta 2 {
+    \partial 4
+    \stemUp <a a'>8 cis'
   %10
   | <d, d'>8^> [ <a a'> <g g'> <fis fis'> ] <fis fis'>4
   | <d' d'>8^> [ <b b'> <a a'> <g g'> ] <g g'>4
@@ -105,7 +104,9 @@ Bass = \context Voice = "four" \relative c {
   | <d d'>4 <b b'>^^ <a a'>^^
   | <g g'>8.^^ <fis fis'>16 <e e'>4^^ <a a'>^^
   | <d d'>4^^ r4
-  | \stemDown <a' a'>8 <cis cis'>
+  }
+  \partial 4
+    \stemDown <a' a'>8 <cis cis'>
   | <e e'>8. <bis bis'>16 <cis cis'>4^^ <a a'>^^
   %20
   | <b b'>^^ \stemUp <e, e'>-^ <fis fis'>8 <gis gis'>

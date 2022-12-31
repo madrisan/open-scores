@@ -41,6 +41,7 @@ Sopran = \context Voice = "one" \relative c' {
   | a2\) fis4 \(
   | \grace { b16 [a] } <cis,! g'>8 \) [r16 <cis fis>16 ] <cis g'>4 <cis b'> (
   | <d a'>2 ) <a' d>4(
+  \break
   | <g cis>8) [r16 <fis b>16 ] <e a>4 \stemDown <g a g'>^\accent (
   | <fis d' fis>8) [r16 <g cis e>16 ] <a d>4 \stemUp <d, fis> (
   %25

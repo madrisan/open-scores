@@ -5,7 +5,7 @@
 \include "./covercolor.ly"
 
 \paper {
-  bottom-margin = 10\mm
+  bottom-margin = 12\mm
   first-page-number = 0
   indent = 0.0
   last-bottom-spacing.padding = #1
@@ -14,7 +14,7 @@
   ragged-bottom = ##f
   ragged-last-bottom = ##t
   tagline = ##f
-  top-margin = 13\mm
+  top-margin = 12\mm
 % markup-system-spacing.basic-distance = #10
 }
 
@@ -72,6 +72,7 @@
 }
 
 \include "./parts/01-von-fremden-landern-und-menschen.ly"
+\pageBreak
 \include "./parts/02-curiose-geschichte.ly"
 \pageBreak
 \include "./parts/03-hasche-mann.ly"
@@ -79,6 +80,7 @@
 \include "./parts/04-bittendes-kind.ly"
 \pageBreak
 \include "./parts/05-gluckes-genug.ly"
+%\pageBreak
 \include "./parts/06-wichtige-begebenheit.ly"
 \include "./parts/07-traumerei.ly"
 \include "./parts/08-am-camin.ly"
