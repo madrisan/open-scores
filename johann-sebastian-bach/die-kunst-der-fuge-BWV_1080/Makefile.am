@@ -28,6 +28,7 @@ EXTRA_DIST = JS-Bach-BWV1080-Die-Kunst-der-Fuge.ly \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
+	     logo.ly \
 	     parts/*.ly
 
 all: $(BUILT_SOURCES) JS-Bach-BWV1080-Die-Kunst-der-Fuge

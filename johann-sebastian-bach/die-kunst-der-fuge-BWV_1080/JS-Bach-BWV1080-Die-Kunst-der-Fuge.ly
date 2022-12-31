@@ -47,26 +47,22 @@
         \fill-line { \draw-hline }
         \null\null\null
         \line { \abs-fontsize #34 \bold "Die Kunst der Fuge" }
-        \null\null
-        \null\null
+        \null\null\null
         \line { \abs-fontsize #20 "BWV 1080" }
-        \null\null\null\null
+        \null\null\null
         \fill-line { \abs-fontsize #20 "For Piano or Harpsichord" }
+
         \null\null\null\null
-        \fill-line {
-          \override #'(thickness . 1)
-          \draw-squiggle-line #0.5 #'(14 . 0) ##t
-        }
-        \null\null
-        \fill-line {
-          \abs-fontsize #13
-          \smallCaps " Lavender.Blue Open Scores"
-        }
-        \fill-line { \abs-fontsize #10 "Engraved by Davide Madrisan" }
-        \fill-line {
-          \abs-fontsize #9
-          \typewriter "https://github.com/madrisan/open-scores/"
-	}
+        \null\null\null\null
+      }
+    }
+  }
+
+  \include "./logo.ly"
+
+  \markup {
+    \fill-line {
+      \center-column {
         \null\null\null\null
         \fill-line { \abs-fontsize #10 "Based on a previous Mutopia work of Pierre-Luc Gauthier & Chris Sawer" }
         \null
