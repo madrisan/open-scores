@@ -5,7 +5,7 @@
 \include "./covercolor.ly"
 
 \paper {
-  bottom-margin = 15\mm
+  bottom-margin = 10\mm
   first-page-number = 0
   indent = 0.0
   last-bottom-spacing.padding = #1
@@ -14,7 +14,7 @@
   ragged-bottom = ##f
   ragged-last-bottom = ##t
   tagline = ##f
-  top-margin = 18\mm
+  top-margin = 13\mm
 % markup-system-spacing.basic-distance = #10
 }
 
@@ -81,4 +81,4 @@
 \include "./parts/05-gluckes-genug.ly"
 \include "./parts/06-wichtige-begebenheit.ly"
 \include "./parts/07-traumerei.ly"
-\pageBreak
+\include "./parts/08-am-camin.ly"
