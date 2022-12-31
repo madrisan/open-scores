@@ -24,4 +24,6 @@ SUBDIRS = baldassare-galuppi \
 	  robert-schumann \
 	  rued-langgaard
 
+EXTRA_DIST = template-part.ly
+
 check-local: all
