@@ -128,7 +128,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | bes'1
   | e,2 d~
   | d cis
-  | d4 a~^\markup{\hspace #0 \raise #1 \bold "XIX b"} a g
+  | d4 a~^\markup{\hspace #0 \raise #1 "XIV/b"} a g
   %115
   | f r r2
   %---
@@ -208,7 +208,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | ees8 ees d c bes a bes d
   | \mergeDifferentlyDottedOn
     g,4. a8 fis4. g8
-  | g2^\markup{\hspace #0 \raise #1 \bold "XIX c"} d'\rest
+  | g2^\markup{\hspace #0 \raise #1 "XIV/c"} d'\rest
   | \override MultiMeasureRest.staff-position = #2
     R1*7
   | r2 bes
@@ -399,7 +399,9 @@ Alto = \context Voice = "two" \relative c' {
   | c b a gis a4 b
   | c4. d8 e4 fis
   | g gis2 a4~
-  | a8 f e d c b
+  | a8 f e d
+    \once\override Beam.positions = #'(-5 . -6)
+    c b
     \change Staff = "lower"
     \stemUp
     a g
