@@ -28,6 +28,7 @@ EXTRA_DIST = Robert-Schumann-Kinderscenen-op.15.ly \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
+	     logo.ly \
 	     parts/*.ly
 
 all: $(BUILT_SOURCES) Robert-Schumann-Kinderscenen-op.15
