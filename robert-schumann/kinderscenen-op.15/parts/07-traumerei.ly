@@ -21,7 +21,8 @@ Sopran = \context Voice = "one" \relative c' {
   | f2 ~ f8 ) e[\< ( f a]
   | c8 a'\! ) a4. \( g8 f e
   | f8 a d, f e4. ees8
-  | d4_\markup { \italic "ritard." } e \appoggiatura { c8 } c2*1/2 \)
+  | d4_\markup { \hspace #0.6 \italic "ritard." }
+    e \appoggiatura { c8 } c2*1/2 \)
     s8 \stemDown c,8 (
     }
     \break
@@ -31,6 +32,7 @@ Sopran = \context Voice = "one" \relative c' {
   | bes d g, a bes4. a8
   | g4. d8 ~ d4 ) r8 f8 (
   | bes2 ~ bes8 ) a ( bes d
+  \pageBreak
   | f8 bes ) bes2 ( a8 g
   %15
   | f8 a d, e f4. e8
@@ -228,6 +230,11 @@ Bass = \context Voice = "four" \relative c {
              }
            }
   }
-  \layout {}
+  \layout {
+    \context {
+      \PianoStaff
+      \override StaffGrouper.staff-staff-spacing.minimum-distance = 10
+    }
+  }
   \midi {}
 }
