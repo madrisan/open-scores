@@ -127,7 +127,7 @@ Bass = \context Voice = "three" \relative c' {
 centerDynamics = {
   %1
   | s4-\markup { \hspace #-2 \dynamic mf } s2
-  | s2.*16
+  | s2.*15
   | s4-\markup { \dynamic ff } s2
 }
 
