@@ -80,7 +80,7 @@
 \include "./parts/04-bittendes-kind.ly"
 \pageBreak
 \include "./parts/05-gluckes-genug.ly"
-%\pageBreak
 \include "./parts/06-wichtige-begebenheit.ly"
 \include "./parts/07-traumerei.ly"
 \include "./parts/08-am-camin.ly"
+\include "./parts/09-ritter-vom-steckenpferd.ly"

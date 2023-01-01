@@ -292,7 +292,7 @@ centerDynamics = {
   \header {
     %composer = "Robert Schumann"
     %opus = "Op. 15"
-    title = \markup { "Am Camin" }
+    title = \markup { "8. Am Camin" }
     subtitle = \markup {
              \column {
                \line { "(By the Fireside)" }
