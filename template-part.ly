@@ -75,16 +75,16 @@ centerDynamics = {
     >>
   >>
   \header {
-    %composer = "Robert Schumann"
-    %opus = "Op. 15"
+    %composer = "The Composer"
+    %opus = "Op. NN"
     title = \markup { "Title" }
     subtitle = \markup {
-             \column {
-               \line { "Subtitle" }
-               % workaround to insert some vertical space after the subtitle
-               \line { " " }
-             }
-           }
+      \column {
+        \line { "Subtitle" }
+        % workaround to insert some vertical space after the subtitle
+        \line { " " }
+      }
+    }
   }
   \layout {
     \context {
