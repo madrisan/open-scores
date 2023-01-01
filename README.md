@@ -104,6 +104,8 @@ Thanks to my harpist friend Tristan Rollet ([@Pluiesurlavitre](https://github.co
    * V. Glückes genug
    * VI. Wichtige Begebenheit
    * VII. Träumerei
+   * VIII. Am Camin
+   * IX. Ritter vom Steckenpferd
 
 ## How to manually create the `.pdf` and `.midi` files
 
