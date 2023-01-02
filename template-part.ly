@@ -28,7 +28,7 @@ Alto = \context Voice = "two" \relative c' {
 }
 
 Tenor = \context Voice = "three" \relative c' {
-  \voiceFour
+  \voiceThree
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   %1
