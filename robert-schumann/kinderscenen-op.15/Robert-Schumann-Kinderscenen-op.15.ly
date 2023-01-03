@@ -86,3 +86,4 @@
 \include "./parts/09-ritter-vom-steckenpferd.ly"
 \pageBreak
 \include "./parts/10-fast-zu-ernst.ly"
+\include "./parts/11-furchtenmachen.ly"
