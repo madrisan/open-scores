@@ -106,6 +106,9 @@ Thanks to my harpist friend Tristan Rollet ([@Pluiesurlavitre](https://github.co
    * VII. Träumerei
    * VIII. Am Camin
    * IX. Ritter vom Steckenpferd
+   * X. Fast zu ernst
+   * XI. Fürchtenmachen
+   * XII. Kind im Einschlummern
 
 ## How to manually create the `.pdf` and `.midi` files
 
