@@ -109,6 +109,7 @@ Thanks to my harpist friend Tristan Rollet ([@Pluiesurlavitre](https://github.co
    * X. Fast zu ernst
    * XI. Fürchtenmachen
    * XII. Kind im Einschlummern
+   * XIII. Der Dichter spricht
 
 ## How to manually create the `.pdf` and `.midi` files
 

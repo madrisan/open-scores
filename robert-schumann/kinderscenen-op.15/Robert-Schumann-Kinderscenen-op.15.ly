@@ -88,3 +88,4 @@
 \include "./parts/10-fast-zu-ernst.ly"
 \include "./parts/11-furchtenmachen.ly"
 \include "./parts/12-kind-im-einschlummern.ly"
+\include "./parts/13-der-dichter-spricht.ly"
