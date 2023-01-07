@@ -138,7 +138,7 @@ Bass = \context Voice = "four" \relative c {
   | c16[ ( bes'_.] ) bes[ ( a] \autoBeamOff g8 ) c,, ( \autoBeamOn
   | f8 a c4 )
   | s2*3
-  | a8 a,8 d4
+  | a8 a,8 d4_\markup { \hspace #1.5 "D.C." }
   \fine
 }
 

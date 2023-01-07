@@ -32,7 +32,7 @@ Sopran = \context Voice = "one" \relative c'' {
   %15
   | b8\startTextSpan \( [g' fis e]
   | d <gis, b> s4\stopTextSpan
-  | g'4^\fermata \) r4
+  | g'!4^\fermata \) r4
   \fine
 }
 
