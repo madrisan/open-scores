@@ -74,6 +74,7 @@ AC_CONFIG_FILES([\
   clara-schumann-wieck/Makefile \
   clara-schumann-wieck/soirees-musicales-op.6/Makefile \
   johann-sebastian-bach/Makefile \
+  johann-sebastian-bach/chorale-prelude-BWV_659/Makefile \
   johann-sebastian-bach/chromatische-fantasie-und-fugue-BWV_903/Makefile \
   johann-sebastian-bach/die-kunst-der-fuge-BWV_1080/Makefile \
   johann-sebastian-bach/italienisches-konzert-BWV_971/Makefile \
