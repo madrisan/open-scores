@@ -34,7 +34,6 @@ Tenor = \context Voice = "three" \relative c' {
   %1
   | c1
   | R1
-  \fine
 }
 
 Bass = \context Voice = "four" \relative c {
