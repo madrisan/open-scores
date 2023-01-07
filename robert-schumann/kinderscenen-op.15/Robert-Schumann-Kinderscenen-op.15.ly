@@ -74,9 +74,7 @@
 \include "./parts/01-von-fremden-landern-und-menschen.ly"
 \pageBreak
 \include "./parts/02-curiose-geschichte.ly"
-\pageBreak
 \include "./parts/03-hasche-mann.ly"
-\pageBreak
 \include "./parts/04-bittendes-kind.ly"
 \pageBreak
 \include "./parts/05-gluckes-genug.ly"
