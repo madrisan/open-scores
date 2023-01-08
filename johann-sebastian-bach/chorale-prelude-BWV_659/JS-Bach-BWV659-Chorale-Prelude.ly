@@ -140,7 +140,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | R1
   | \override MultiMeasureRest.staff-position = #6
     R1
-  | a'4\rest g, g\prall fis8[ g16 a]
+  | a'4\rest g,^\markup { \dynamic mf \italic "c.f." } g\prall fis8[ g16 a]
   | bes4~ bes16[ g \grace a16 g32 fis g16]
     c4~ c16[ a \grace bes16 a32 g a16]
   %30
