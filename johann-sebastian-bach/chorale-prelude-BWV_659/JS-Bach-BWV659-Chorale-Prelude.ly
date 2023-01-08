@@ -334,8 +334,12 @@ Bass = \context Voice = "four" \relative c {
   | d[ c b! g] c[ d ees c]
   | g'[ g, g' f] ees[ c f g]
   | a[ g a f] bes[ bes, bes' aes]
-  | g[ f] ees4~ ees8[ ees d c]  % should be: ees8[ ees, d c']
-  | b![ g c bes] a![ f bes d]
+  | % in the original score:
+    % g[ f] ees4~ ees8[ ees, d c']
+    g[ f] ees4~ ees8[ ees d c]
+  | % in the original score:
+    % b![ g c bes] a![ f bes d]
+    b![ g c bes'] a![ f bes, d]
   %15
   | ees[ d ees d] ees[ d ees c]
   | d[ ees f f,] bes[ c d ees]
@@ -353,7 +357,7 @@ Bass = \context Voice = "four" \relative c {
   | d[ d, d' g,] c[ ees aes, c]
   | f,[ f' ees aes] g[ f g^\prall g,]
   | c[ d c bes] a![ d,] d'4~
-  | d8[ bes ees d] e![ c f! e]
+  | d8[ bes ees d] e![ c f! e!]
   %30
   | fis[ d g g,] c[ d ees c]
   | d[ c bes ees] c[ a d d,]
