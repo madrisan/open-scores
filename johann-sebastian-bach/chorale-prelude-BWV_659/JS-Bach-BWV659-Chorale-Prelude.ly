@@ -101,21 +101,22 @@ Sopran = \context Voice = "one" \relative c'' {
   | R1
   | R1
   | R1
-  | r4 g^\markup { "(corale in risalto)" } g fis8[ g16 a]
+  | r4 g^\markup { \dynamic mf \italic "cantus firmus" } g fis8[ g16 a]
   %5
   | bes4~ bes16[ g \grace a16 g32 fis g16]
     c4~ c16[ a \grace bes16 a32 g a16]
   | d4~ d16[ g,32 a bes c d16] ees8. d16 c16[ bes32 a a16 bes32 c]
   | \appoggiatura g16 fis8[ e!16 d] g4~ g32[ a g fis! g16 c32 a] g8[ fis16.\prall g32]
-  | g2 r
+  | g2\p r
   | R1
   %10
-  |   \override MultiMeasureRest.staff-position = #5
+  | \override MultiMeasureRest.staff-position = #5
     R1
-  | g8[ bes16 a] bes4\prall c~ c16[ bes a bes]
+  | g8[^\markup { \dynamic mf \italic "c.f." }
+    bes16 a] bes4\prall c~ c16[ bes a bes]
   | c16[ d ees8~] ees16[ c bes c] d[ ees f8~] f16[ d c d]
   | ees16[ f g8~] g16[ c, d ees] \appoggiatura bes16 a8[ g16 f] f'4~
-  | f16[ g32 f ees f d16] ees4~ ees16[ a32 bes c16 ees,] d4~
+  | f16[ g32 f ees f d16] ees4~ ees16[^\markup { "dolce" } a32 bes c16 ees,] d4~
   %15
   | d16[ g, g32\prall f g16] c32[ bes a16 bes32 a g16]
     f[ g32 a bes c d ees] f4~
@@ -123,11 +124,13 @@ Sopran = \context Voice = "one" \relative c'' {
   | \override MultiMeasureRest.staff-position = #0
     R1
   | R1
-  | bes8[ c32 bes a bes] c8[ d32 c bes c] d16[ bes a bes] \appoggiatura bes16  f'8.[ ees32 d]
+  | bes8[^\markup { \dynamic mf \italic "c.f." } c32 bes a bes] c8[ d32 c bes c]
+    d16[ bes a bes] \appoggiatura bes16  f'8.[ ees32 d]
   %20
   | c16[ d32 c b!16 c] d16[ ees32 d c16 d] ees16[ c b! c] \appoggiatura c16  g'8.[ f32 ees]
-  | d16[ g32 a bes!16 f] ees16[( d) d( c)]
-    c16[ fis32 g a16 ees] d16[( c) c( bes)]
+  \pageBreak
+  | d16[ g32\f a bes!16 f] ees16[( d) d( c)]
+    c16[ fis32_\markup { "dim." } g a16 ees] d16[( c) c( bes)]
   | bes[ g'16. f!32 ees d] c[ d c b! c8~] c16[ ees32 d c d ees16~] ees32[ c aes g aes8~]
   | aes16[ ees'32 d ees c b! c] c[ aes g aes aes g fis g] fis16[ a!32 c ees16 d] d4~
   | d32[ g fis e! d16. c32] bes8[( a32\prall g a16]) g2
@@ -144,7 +147,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | d4~ d16[ g,32 a bes c d16] ees8. d16 c16[ bes32 a a16 bes32 c]
   | \appoggiatura g16 fis8[ e!16 d] g4~
     g32[ a g fis! g16 c32 a] g8[ fis16.\prall g32]
-  | g16[ g' f!8]~ f16[ ees32 d g f ees d]
+  | g16[^\markup { "dolce, molto sostenuto" } g' f!8]~ f16[ ees32 d g f ees d]
     f[ ees d c bes'8~] bes32[ a bes c bes a g a]
   | g[ fis g a c,8~] c32[ ees d c d c bes a]
     bes16[ g'32 ees cis d g,16] bes8[( a32\prall g a16])
@@ -171,7 +174,7 @@ Alto = \context Voice = "two" \relative c' {
   | \top\stemDown\tieDown
     a4\rest a8\rest g'~ g[ fis g ees]
   | d4 b8\rest bes ees4 d8[ c~]
-  | c[ bes16 c] d8[ c16 bes] a4. \stemUp bes16[ c]
+  | c[ bes16 c] d8[ c16 bes] a4. \stemUp bes16[^\markup { "tranquillo" } c]
   | d8[ ees f g] c,4. d16[ ees]
   %10
   | f4. g16 f ees2
@@ -191,7 +194,7 @@ Alto = \context Voice = "two" \relative c' {
     f8\rest \stemDown f
   %15
   | g8 c,\rest g' c,\rest c g\rest g\rest ees'
-  | d[ g] f16[ d ees8~] ees[ d16 ees] f8[ ees16 d]
+  | d[ g]-\markup { "allarg." } f16[ d ees8~] ees[ d16 ees] f8[ ees16 d]
   | c4. d16 ees f2~
   | f8[ ees16 d] ees8[ c'] fis,[ g] a4~
   | a8 g f!4~
@@ -207,9 +210,9 @@ Alto = \context Voice = "two" \relative c' {
   | d[ g,] d\rest d~ d8[ c16 b!] \stemUp\tieUp\slurUp c16[( d) d( ees)]
   %25
   | ees2~ ees8[ d16 c] d16[( ees) ees( f!)]
-  | f2~ f16[ ees g( f)] f[( ees) ees( d)]
+  | f2~^\f f16[ ees g( f)] f[( ees) ees( d)]
   | d[ aes' aes( g)] g[( f) f( ees)]
-    ees8. f16 d8.^\prall g16
+    ees8.\p f16 d8.^\prall g16
   | ees16[ f f( ees)]
     \stemDown\tieDown\slurDown
     ees[( d) d( c)] c[( bes) bes( a)]
@@ -223,9 +226,9 @@ Alto = \context Voice = "two" \relative c' {
   | %b![ c d b] c[ d] c[ d16 bes]
     s8 c'[ d b] c[ d] c[ d16 bes]
   | a8[ g] fis[ a16 ees]
-    << \\ d4 >> << \\ { d8. c16~ } >>
+    << \\ d4_\markup { "rit." } >> << \\ { d8. c16~ } >>
   | << {
-      s16 b!8._~ \stemDown b!16[ b c8] b2
+      s16 b!8._~ \stemDown b!16[ b c8] b2\pp
     } \\ {
       \mergeDifferentlyDottedOn
       c16[ b! f'! d] \stemUp ees4 d2
@@ -286,8 +289,8 @@ Tenor = \context Voice = "three" \relative c {
   %15
   | bes8 d\rest ees d\rest a b\rest b\rest a
   | bes4. a8 f4 bes~
-  | bes a~ a8[ b!16 c] d[ c b a]
-  | g4~ g8[ a16 bes!] c[ d] ees4 d16[ c]
+  | bes a~ a8[ b!16-\markup { \small "r.H" } c] d[ c b a]
+  | g4~-\markup { \small "l.H" } g8[ a16 bes!] c[ d] ees4 d16[ c]
   | bes8 ees4 d16[ c] bes4. bes8
   %20
   | f' f\rest f\rest
@@ -302,7 +305,7 @@ Tenor = \context Voice = "three" \relative c {
   %25
   | g8[ g16-\markup { \small "r.H" } fis] g[( a) a( bes)] bes2~
   | \top\stemDown\slurDown\tieDown
-    bes8[ a16( g)] a[( b!) b( c)] c2~
+    bes8[\p a16( g)] a[( b!) b( c)] c2~\f
   | c2~ c8.[ d16] b!8.[ a!32 b]
   | c8 g\rest \bottom\stemUp\tieUp a2.\rest
   | d8\rest d, g4 s4. c8~
@@ -312,7 +315,7 @@ Tenor = \context Voice = "three" \relative c {
   | \top\stemDown
     <g b!>8 \bottom\stemDown a[ b! g~] g[ f] \stemUp ees[ d16 ees]
   | c8[ ees d fis] g4~ g8[ fis!]
-  | g4_~ g8. fis16 g2
+  | g4_~\> g8. fis16 g2\!
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -320,7 +323,7 @@ Bass = \context Voice = "four" \relative c {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   %1
-  | g8[ a bes c] d[ ees d c]
+  | g8[^\p a bes c] d[ ees d c]
   | bes[ d f ees] d[ c b! g]
   | c[ bes a g] fis[ d g f!]
   | ees[ d] ees4 d2~
