@@ -254,7 +254,7 @@ Upper = \relative c'' {
       \Global
       \omit Staff.TimeSignature
       \clef "treble"
-  |   <dis' fis a b!>2^\markup { \italic "soft, muffled (quasi Organo)" }^-
+  |   <dis' fis a b!>2^\markup { \hspace #-2.5 \italic "soft, muffled (quasi Organo)" }^-
       <dis fis a c>2^-
   %35 organUpper
   |   <e g bes cis>2  <fis g b! d>2^-
@@ -500,6 +500,7 @@ Upper = \relative c'' {
     } {
       \Global
       \omit Staff.TimeSignature
+      \once\set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
       \clef "treble"
   %50 recitante
   |   des'8( c) r4
