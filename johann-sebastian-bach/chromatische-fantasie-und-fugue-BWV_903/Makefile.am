@@ -1,6 +1,6 @@
 ## Process this file with automake to produce Makefile.in
 
-## Copyright (c) 2022 Davide Madrisan <davide.madrisan@gmail.com>
+## Copyright (c) 2022,2023 Davide Madrisan <davide.madrisan@gmail.com>
 ##
 ## This program is free software: you can redistribute it and/or modify
 ## it under the terms of the GNU General Public License as published by
@@ -28,6 +28,7 @@ EXTRA_DIST = JS-Bach-BWV903-Chromatische-Fantasie-und-Fugue.ly \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
+	     logo.ly \
 	     parts/*.ly
 
 all: $(BUILT_SOURCES) JS-Bach-BWV903-Chromatische-Fantasie-und-Fugue

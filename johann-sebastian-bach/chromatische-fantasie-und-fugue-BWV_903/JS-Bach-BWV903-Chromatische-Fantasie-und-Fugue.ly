@@ -43,41 +43,35 @@
   \markup {
     \fill-line {
       \center-column {
-        \null\null\null\null\null
-        \null\null\null\null\null
+        \null\null\null\null
+        \null\null\null\null
         \line { \abs-fontsize #30 \bold "Johann Sebastian" }
         \null
         \line { \abs-fontsize #80 \bold "Bach" }
-	\null
+        \null
         \fill-line { \draw-hline }
         \null\null\null
         \line { \abs-fontsize #28 \bold "Chromatische Fantasie und Fuge" }
-        \null\null\null\null
+        \null\null
         \line { \abs-fontsize #20 "BWV 903" }
-        \null\null
-        \fill-line { \abs-fontsize #20 "Piano Solo" }
-	\null
-        \fill-line { \abs-fontsize #20 "(Ferruccio Busoni)" }
-
         \null\null\null\null
-        \fill-line {
-          \override #'(thickness . 1)
-          \draw-squiggle-line #0.5 #'(14 . 0) ##t
-        }
+        \fill-line { \abs-fontsize #20 "for Piano Solo" }
         \null\null
-        \fill-line {
-          \abs-fontsize #13
-          \smallCaps " Lavender.Blue Open Scores"
-        }
-        \fill-line { \abs-fontsize #10 "Engraved by Davide Madrisan" }
-        \fill-line {
-          \abs-fontsize #9
-          \typewriter "https://github.com/madrisan/open-scores/"
-        }
-        \null\null\null\null
+        \fill-line { \abs-fontsize #24 "Interpreted by Ferruccio Busoni" }
+        \null\null\null
+        \null\null\null
+      }
+    }
+  }
 
+  \include "./logo.ly"
+
+  \markup {
+    \fill-line {
+      \center-column {
+        \null\null\null\null
         \fill-line { \abs-fontsize #10 "Based on the N. Simrock - Elite Edition" }
-        \null
+        \null\null
       }
     }
   }

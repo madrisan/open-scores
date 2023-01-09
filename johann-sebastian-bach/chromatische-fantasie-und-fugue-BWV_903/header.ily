@@ -2,9 +2,9 @@
   composer = "Johann Sebastian Bach (1685-1750)"
   date = "Probably composed from 1717 to 1723"
 
-  footer = "Mutopia-2022/11/08"
+  footer = "Mutopia-2023/01/10"
 
-  lastupdated = "2022 November 8"
+  lastupdated = "2023 December 10"
   license = "Creative Commons Attribution-ShareAlike 4.0"
   maintainerEmail = "davide.madrisan@gmail.com"
   maintainerWeb = "https://github.com/madrisan/open-scores"
@@ -47,7 +47,7 @@
     \column {
       \abs-fontsize #8
       \concat {
-	"Typeset using " \with-url #"http://www.lilypond.org" "LilyPond " ©" 2022 ""by " \maintainer " — " \footer
+	"Typeset using " \with-url #"http://www.lilypond.org" "LilyPond " ©" 2022,2023 ""by " \maintainer " — " \footer
       }
       \concat {
 	\concat {
