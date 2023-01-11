@@ -1,4 +1,5 @@
-SUBDIRS = chorale-prelude-BWV_659 \
+SUBDIRS = chorale-preludes \
+	  chorale-prelude-BWV_659 \
 	  chromatische-fantasie-und-fugue-BWV_903 \
 	  die-kunst-der-fuge-BWV_1080 \
 	  italienisches-konzert-BWV_971 \
