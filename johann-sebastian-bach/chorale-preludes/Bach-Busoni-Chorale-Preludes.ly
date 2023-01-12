@@ -10,7 +10,7 @@
 
 \paper {
   annotate-spacing = ##f
-  bottom-margin = 10\mm
+  bottom-margin = 13\mm
   first-page-number = 0
   indent = 0.0
   line-width = 16.8\cm
@@ -18,7 +18,7 @@
   ragged-last-bottom = ##t
   ragged-bottom = ##f
   %system-system-spacing = #'((basic-distance . 2) (padding . 10))
-  top-margin = 10\mm
+  top-margin = 13\mm
 %  markup-system-spacing.basic-distance = #10
 %  last-bottom-spacing.padding = #2
 }
