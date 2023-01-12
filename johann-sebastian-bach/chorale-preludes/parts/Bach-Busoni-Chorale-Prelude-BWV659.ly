@@ -63,7 +63,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | d16[ g32 a bes!16 f] ees16[( d) d( c)]
     c16[ fis32 g a16 ees] d16[( c) c( bes)]
   | bes[ g'16. f!32 ees d] c[ d c b! c8~] c16[ ees32 d c d ees16~] ees32[ c aes g aes8~]
-  | aes16[ ees'32_\markup { \small "drammatico" } d ees c b! c] c[ aes g aes aes g fis g]
+  | aes16[ ees'32_\markup { \small "dramatico" } d ees c b! c] c[ aes g aes aes g fis g]
     fis16[ a!32 c ees16 d] d4~
   | d32[ g fis e! d16. c32] bes8[( a32\prall g a16]) g2
   %25
@@ -94,6 +94,7 @@ Alto = \context Voice = "two" \relative c'' {
   \voiceTwo
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \set breathMarkType = #'caesura
   \mergeDifferentlyDottedOn
   \mergeDifferentlyHeadedOn
   \slurUp\tieUp
@@ -101,7 +102,7 @@ Alto = \context Voice = "two" \relative c'' {
   | \stemUp b'2\rest d,,4\rest d(
   | d c f4. ees16[ d])
   | ees2 d~
-  | d4 \stemDown\tieDown c d2~
+  | d4 \breathe \stemDown\tieDown c d2~
   %5
   | d4 s2.
     \bottom\stemUp\tieUp
@@ -149,7 +150,7 @@ Alto = \context Voice = "two" \relative c'' {
   | \once\omit Flag a' s s \once\omit Flag b! s s s a
   | bes4 s8 \once\override NoteColumn.force-hshift = #1 bes_( a4) s8 \once\omit Flag a
   | g4 f16\rest f[ g f] g8 f\rest s4
-  | \top\stemDown s4. ees8 d[ fis!]
+  | \top\stemDown s4. ees8 \once\omit Beam d[ fis!]
     \stemUp
     \once\override NoteColumn.force-hshift = #0.4
     \once\override Beam.positions = #'(1.3 . 1.8)
@@ -169,14 +170,17 @@ Alto = \context Voice = "two" \relative c'' {
     } >>
     \stemUp\tieUp\slurUp
     \once\override NoteColumn.force-hshift = #0.4
-    << { \once\override NoteColumn.force-hshift = #0.4 d8[ c16 b!] } \\ {} >>
+    << {
+      \set breathMarkType = #'caesura
+      \once\override NoteColumn.force-hshift = #0.4 d8[ \breathe c16 b!]
+    } \\ {} >>
     c16[( d) d( ees)]
   %25
   | ees2~ ees8[ d16 c] d16[( ees!) ees( f!)]
   | f2~ f16[ ees g(^\( f)] f[( ees) ees( d)]\)
   | d[(^\( aes') aes( g)] g[( f) f( ees)]\)
     ees8. f16 ees32[ d~ d8 g16]
-  | ees16[( f) f( ees)]
+  | ees16[( f) f( ees)] \breathe
     \stemDown\tieDown\slurDown
     ees[( d) d( c)] c[( bes) bes( a)]
     a8[ bes16 c]
@@ -219,6 +223,7 @@ Tenor = \context Voice = "three" \relative c' {
   \voiceThree
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \set breathMarkType = #'caesura
   \mergeDifferentlyDottedOn
   \mergeDifferentlyHeadedOn
   \slurDown
@@ -247,7 +252,7 @@ Tenor = \context Voice = "three" \relative c' {
   | g2 g4 f~
   | f \top\stemDown\tieDown bes2 a4~
   %10
-  | a8 b!16 c d4~ d8 c16 b c4~
+  | a8 b!16 c d4~ d8 c16 b c4~ \breathe
   | c8[_\tc bes16 c] s4 s8 \stemUp g'[ \shiftOff a] s
   | s2 \stemDown \once\override NoteColumn.force-hshift = #0.2 f8[
     \bottom\stemUp d16 c] \top\stemDown d8[ f]
@@ -272,7 +277,7 @@ Tenor = \context Voice = "three" \relative c' {
     bes8[^( a])
     bes8 f,_\uc bes4~_-
   | bes a~ a8[ b!16 c] d[ c b a]
-  | g4~ g8[ a16 bes!] c[ d] ees4 d16[ c]
+  | g4~ g8[ a16 bes!] c[ d] ees4 d16[ c] \breathe
   | bes8_\tc \once\override NoteColumn.force-hshift = #0.3 ees4 d16[ c]
     \bottom\stemUp bes4. s8
   %20
@@ -284,7 +289,8 @@ Tenor = \context Voice = "three" \relative c' {
   | d4
     \bottom\stemUp f16\rest d[ ees d] c8 c\rest d16\rest <b! d>^( [ <c ees> <b d>]
   | <c ees>8) c\rest c\rest
-    \top\stemDown \once\override NoteColumn.force-hshift = #0.8 c16[ bes] a!8[ c]
+    \top\stemDown \once\override NoteColumn.force-hshift = #0.8 c16[ bes]
+    \once\omit  a!8[ c]
     d16[( c) c( bes)]
   | \once\omit Flag \once\omit Stem bes8 s4
      \once\override NoteColumn.force-hshift = #0.4
@@ -315,12 +321,7 @@ Bass = \context Voice = "four" \relative c, {
   \override Staff.SustainPedalLineSpanner.staff-padding = #8
   %1
   | \stemUp
-    <g g'>8[^\markup {
-      \column {
-        \italic\small "(una corda)"
-        \concat { \dynamic p " legato" }
-      }
-    } <a a'> <bes bes'> <c c'>]
+    <g g'>8[^\markup { \dynamic p " legato (una corda)" } <a a'> <bes bes'> <c c'>]
     <d d'>[ <ees ees'> <d d'> <c c'>]
   | <bes bes'>[ <d d'> <f f'> <ees ees'>] <d d'>[ <c c'> <b! b'!> <g g'>]
   | <c c'>[^\markup { \small "senza rallentando" } <bes bes'> <a a'> <g g'>]
@@ -412,45 +413,6 @@ Choral = \relative {
   \fine
 }
 
-\markup {
-  \fill-line {
-    \override #'(baseline-skip . 2)
-    \center-column {
-      \line { \abs-fontsize #14 \bold "Nun komm’ der Heiden Heiland" }
-      \null
-      \line { \abs-fontsize #10 \italic "Aus dem Gregorianishen Choral" }
-      \null
-      \line {
-        \score {
-          <<
-          \new Voice = "corale" {
-            \override VerticalAxisGroup.staff-staff-spacing.basic-distance = #1
-            \Choral
-          }
-          \new Lyrics \lyricsto "corale" {
-            \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = #1
-            \override VerticalAxisGroup.nonstaff-relatedstaff-spacing =
-              #'((basic-distance . 4))
-
-            Nun komm, der Hei -- den Hei -- land,
-            der Jung -- frau -- en Kind er -- kannt,
-            des sich wun -- der al -- le Welt,
-            Gott solch Ge -- burt ihm be -- stellt.
-          }
-          >>
-          \layout {
-            indent = #0
-            line-width = #150
-            #(layout-set-staff-size 14)
-          }
-        }
-      }
-      \null\null\null
-      \null\null\null
-    }
-  }
-}
-
 \score {
   \new PianoStaff
   <<
@@ -472,15 +434,16 @@ Choral = \relative {
   >>
   \header {
     composer = "Johann Sebastian Bach"
-    opus = "BWV 659"
+    opus = \markup { "BWV 659, " { \italic "ca." } "1708 – 17" }
     title = \markup { "Nun komm’ der Heiden Heiland" }
     subtitle = \markup {
       \column {
-        \line { "Chorale Prelude" }
+        \line { "[" { \italic "Now comes the gentiles' Saviour" } "]" }
         % workaround to insert some vertical space after the subtitle
         \line { " " }
       }
     }
+    %subsubtitle = \markup { "BWV 659, " { \italic "ca." } "1708 – 17" }
   }
   \layout {
     \context {
