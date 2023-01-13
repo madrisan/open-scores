@@ -70,3 +70,5 @@
 }
 
 \include "./parts/Bach-Busoni-Chorale-Prelude-BWV659.ly"
+\pageBreak
+\include "./parts/Bach-Busoni-Chorale-Prelude-BWV639.ly"
