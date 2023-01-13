@@ -394,25 +394,6 @@ Bass = \context Voice = "four" \relative c, {
   \fine
 }
 
-Choral = \relative {
-  \autoBeamOff
-  \time 10/2
-  \key f \major
-  \override Score.BarNumber.break-visibility = ##(#f #f #f)
-  \override Staff.NoteHead.style = #'baroque
-  \once\override Staff.TimeSignature.stencil = ##f
-  g'1 g2 f bes2 a4( g) a1  g1 \bar "'"
-  \time 8/2
-  \once\override Staff.TimeSignature.stencil = ##f
-    g2 bes c bes c d bes1 \bar "'"
-  \break
-  bes2 c d bes c4( bes) a2 g1 \bar "'"
-  \time 12/2
-  \once\override Staff.TimeSignature.stencil = ##f
-  g1 g2 f bes a4( g) a1 g\breve
-  \fine
-}
-
 \score {
   \new PianoStaff
   <<
