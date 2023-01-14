@@ -24,9 +24,10 @@ The source code was compiled with `GNU LilyPond 2.23.82 (running Guile 2.2)` (Fe
 #### Johann Sebastian Bach (1685-1750)
 
  * [Jesu meine Freude (BWV610)](https://github.com/madrisan/open-scores/releases/download/v19/Baldassare-Galuppi-Sonata-5.pdf)
- * [Chorale Prelude - Ich ruf zu dir, Herr Jesu Christ (BWV639) - Busoni](https://github.com/madrisan/open-scores/releases/download/v19/Bach-Busoni-Chorale-Prelude-BWV639.pdf)
+ * [Chorale Prelude - Ich ruf zu dir, Herr Jesu Christ (BWV639) - Ferruccio Busoni](https://github.com/madrisan/open-scores/releases/download/v19/Bach-Busoni-Chorale-Prelude-BWV639.pdf)
  * [Chorale Prelude - Nun komm’ der Heiden Heiland (BWV659)](https://github.com/madrisan/open-scores/releases/download/v19/JS-Bach-BWV659-Chorale-Prelude.pdf)
- * [Chorale Prelude - Nun komm’ der Heiden Heiland (BWV659) - Busoni](https://github.com/madrisan/open-scores/releases/download/v19/Bach-Busoni-Chorale-Prelude-BWV659.pdf)
+ * [Chorale Prelude - Nun komm’ der Heiden Heiland (BWV659) - Ferruccio Busoni](https://github.com/madrisan/open-scores/releases/download/v19/Bach-Busoni-Chorale-Prelude-BWV659.pdf)
+ * [Siciliano (BWV 1031) - Ludwig Stark](https://github.com/madrisan/open-scores/releases/download/v19/Bach-Stark-Siciliano-BWV1031.pdf)
  * [Suite Anglaise IV (BWV809)](https://github.com/madrisan/open-scores/releases/download/v19/JS-Bach-BWV809-Suite-Anglaise-4.pdf)
    * Prélude
    * Allemande
@@ -143,6 +144,7 @@ make -C johann-sebastian-bach/chromatische-fantasie-und-fugue-BWV_903
 make -C johann-sebastian-bach/die-kunst-der-fuge-BWV_1080
 make -C johann-sebastian-bach/italienisches-konzert-BWV_971
 make -C johann-sebastian-bach/jesu-meine-freude-BWV_610
+make -C johann-sebastian-bach/siciliano-BWV_1031
 make -C johann-sebastian-bach/suites-anglaises/BWV809
 make -C mikhail-glinka/nocturne
 make -C robert-schumann/kinderscenen-op.15
