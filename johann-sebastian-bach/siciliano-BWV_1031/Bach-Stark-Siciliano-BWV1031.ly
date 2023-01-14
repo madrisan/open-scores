@@ -114,7 +114,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | a8. g16) f8~ \once\omit Flag\once\omit Stem f16 s s4
   | cis4^>( d8) \stemDown\slurDown e!16( gis a e f d)
   | \slurUp cis4^>( d8) \stemDown\slurDown e!16( gis a e f d)
-  | \stemUp\slurUp cis16 d e!8( a,) \stemDown\slurUp bes16( d cis d ees d)
+  | \stemUp\slurUp cis16 d e!8( a,) \stemDown\slurUp bes16( d cis! d e d)
   %20
   | a( d cis d e! d) \stemUp g,( bes a g f e!)
   | f8[ d] \stemDown d' ees16( g fis g a g)
@@ -131,7 +131,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | <fis a>16(\< <e! g> <fis a> <g bes> <a c> <bes d>\!
     \stemDown <c ees>8\> <bes d> <a c>)\!
   %30
-  | \stemUp bes16( d c bes aes g)
+  | \stemUp bes16( d c bes a g)
     <g ees'>16.\> <a c>32 <g bes>8( <fis a>)\!
   | g8 d'( bes  g) g'( bes,)
   | \stemDown r16 <g bes>( <fis a> <g bes> <bes g'> <g bes>)
@@ -228,7 +228,7 @@ Alto = \context Voice = "two" \relative c' {
   | c,16\rest \slurDown
     \once\shape #'((0 . 0) (0 . 0) (0 . -0.8) (0 . -1.5)) Slur
     g'( bes g \bottom fis g)
-  | bes, \top
+    bes, \top
     \once\shape #'((0 . 0) (0 . -0.8) (0 . -1.5) (0 . -1.5)) Slur
     g'( bes g \bottom fis g)
 }
