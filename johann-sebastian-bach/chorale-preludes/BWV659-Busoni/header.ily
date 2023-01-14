@@ -21,7 +21,7 @@
 
   opus = "BWV 659"
   title = "Chorale Prelude - Nun komm’ der Heiden Heiland"
-  source = "Transcription for piano by Lucien Follet"
+  source = "Transcription for piano by Ferruccio Busoni"
   style = "Baroque"
 
   copyright = \markup {
