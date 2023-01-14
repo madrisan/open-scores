@@ -133,8 +133,8 @@ Alto = \context Voice = "two" \relative c' {
     \once\override NoteColumn.force-hshift = #-0.4 bes,[ ees f ees]
     \once\override NoteColumn.force-hshift = #-0.4 c[ ees f ees]
     d![ g, b! d]
-  | \once\override NoteColumn.force-hshift = #-0.4 ges,[ c ees des]
-    ges,[ bes des c] ees,[ aes c bes] des[ bes ees, des']
+  | \once\override NoteColumn.force-hshift = #-0.4 g,[ c ees des]
+    g,[ bes des c] ees,[ aes c bes] des[ bes ees, des']
   % 15
   | \bottom\stemUp
     \shape #'((0.3 . 0.8) (0 . 0.8) (0 . 0) (0 . 0)) Slur
@@ -309,7 +309,7 @@ Bass = \context Voice = "four" \relative c, {
     title = \markup { "Ich ruf zu dir, Herr Jesu Christ" }
     subtitle = \markup {
       \column {
-        \line { "[" { \italic "I call to You, Lord Jesus Christ" } "]" }
+        \line { "[" { \italic "I call on Thee, Lord Jesus Christ" } "]" }
         % workaround to insert some vertical space after the subtitle
         \line { " " }
       }
