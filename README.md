@@ -24,8 +24,9 @@ The source code was compiled with `GNU LilyPond 2.23.82 (running Guile 2.2)` (Fe
 #### Johann Sebastian Bach (1685-1750)
 
  * [Jesu meine Freude (BWV610)](https://github.com/madrisan/open-scores/releases/download/v19/Baldassare-Galuppi-Sonata-5.pdf)
+ * [Chorale Prelude - Ich ruf zu dir, Herr Jesu Christ (BWV639) - Busoni](https://github.com/madrisan/open-scores/releases/download/v19/Bach-Busoni-Chorale-Prelude-BWV639.pdf)
  * [Chorale Prelude - Nun komm’ der Heiden Heiland (BWV659)](https://github.com/madrisan/open-scores/releases/download/v19/JS-Bach-BWV659-Chorale-Prelude.pdf)
- * [Chorale Preludes (BWV639, BWV659)](https://github.com/madrisan/open-scores/releases/download/v19/Bach-Busoni-Chorale-Preludes.pdf) - Interpretiert von Ferruccio Busoni
+ * [Chorale Prelude - Nun komm’ der Heiden Heiland (BWV659) - Busoni](https://github.com/madrisan/open-scores/releases/download/v19/Bach-Busoni-Chorale-Prelude-BWV659.pdf)
  * [Suite Anglaise IV (BWV809)](https://github.com/madrisan/open-scores/releases/download/v19/JS-Bach-BWV809-Suite-Anglaise-4.pdf)
    * Prélude
    * Allemande
@@ -135,7 +136,9 @@ git checkout main
 ```
 make -C baldassare-galuppi/sonata-5-c-major
 make -C clara-schumann-wieck/soirees-musicales-op.6
-make -C johann-sebastian-bach/chorale-prelude-BWV_659
+make -C johann-sebastian-bach/chorale-preludes/BWV639-Busoni
+make -C johann-sebastian-bach/chorale-preludes/BWV659
+make -C johann-sebastian-bach/chorale-preludes/BWV659-Busoni
 make -C johann-sebastian-bach/chromatische-fantasie-und-fugue-BWV_903
 make -C johann-sebastian-bach/die-kunst-der-fuge-BWV_1080
 make -C johann-sebastian-bach/italienisches-konzert-BWV_971
