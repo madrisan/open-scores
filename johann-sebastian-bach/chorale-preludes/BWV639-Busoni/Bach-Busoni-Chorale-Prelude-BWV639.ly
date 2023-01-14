@@ -132,7 +132,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | c2.^\markup { \italic\small "ten." }\calando <des, des'>4^-\startTextSpan
   | <c c'>^- <bes bes'>^- <aes aes'>^- <f f'>8.^-[ g'16]\stopTextSpan
   | <aes, aes'>4^- <g g'>^- <f aes f'>
-    \clef bass ees!^\markup { \italic\small "più oscruro, ma sempre calando" }
+    \clef bass ees!^\markup { \italic\small "più oscuro, ma sempre calando" }
   | aes aes bes bes
   %20
   | c2. <des, des'>4
