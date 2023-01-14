@@ -14,7 +14,7 @@
   bottom-margin = 13\mm
   first-page-number = 0
   indent = 0.0
-  line-width = 16.8\cm
+  line-width = 18\cm
   print-all-headers = ##t
   ragged-last-bottom = ##t
   ragged-bottom = ##f
