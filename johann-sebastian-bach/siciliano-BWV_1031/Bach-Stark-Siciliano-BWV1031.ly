@@ -56,7 +56,11 @@
         \null\null
         \line { \abs-fontsize #14 \bold "from the" }
         \null
-        \line { \abs-fontsize #18 \bold "Sonata in E♭ major for flute and harpsichord" }
+        \line {
+          \abs-fontsize #18 \bold "Sonata in E"
+          \abs-fontsize #15 \bold \flat
+          \abs-fontsize #18 \bold "major for flute and harpsichord"
+        }
         \null\null\null
         \line { \abs-fontsize #24 \bold "BWV 1031" }
         \null\null
