@@ -82,6 +82,7 @@ AC_CONFIG_FILES([\
   johann-sebastian-bach/die-kunst-der-fuge-BWV_1080/Makefile \
   johann-sebastian-bach/italienisches-konzert-BWV_971/Makefile \
   johann-sebastian-bach/jesu-meine-freude-BWV_610/Makefile \
+  johann-sebastian-bach/schafe-konnen-sicher-weiden-BWV208/Makefile \
   johann-sebastian-bach/siciliano-BWV_1031/Makefile \
   johann-sebastian-bach/suites-anglaises/BWV809/Makefile \
   johann-sebastian-bach/suites-anglaises/Makefile \
