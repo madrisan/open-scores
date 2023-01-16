@@ -65,9 +65,9 @@
         \line { \abs-fontsize #24 \bold "BWV 1031" }
         \null\null
         \null\null
-        \line { \abs-fontsize #18 \italic "transcribed for Piano Solo by" }
+        \line { \abs-fontsize #15 \italic "transcribed for Piano Solo by" }
         \null\null
-        \line { \abs-fontsize #36 \bold "Ludwig Stark" }
+        \line { \abs-fontsize #33 \bold "Ludwig Stark" }
         \null\null\null
       }
     }
@@ -329,7 +329,7 @@ Bass = \context Voice = "four" \relative c {
     title = \markup { "Siciliano" }
     subtitle = \markup {
       \column {
-        \line { "aus der 2. Sonate für flöte une Clavier" }
+        \line { "aus der 2. Sonate für Flöte une Clavier" }
         % workaround to insert some vertical space after the subtitle
         \line { " " }
       }
