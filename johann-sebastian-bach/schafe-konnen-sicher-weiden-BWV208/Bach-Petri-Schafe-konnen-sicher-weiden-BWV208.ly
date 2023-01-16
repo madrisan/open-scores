@@ -82,6 +82,18 @@ Global = {
 bottom = { \change Staff = "lower"\stemUp }
 top = { \change Staff = "upper"\stemDown }
 
+startParenthesis = {
+  \once\override Parentheses.stencils = #(lambda (grob)
+    (let ((par-list (parentheses-interface::calc-parenthesis-stencils grob)))
+      (list (car par-list) point-stencil )))
+}
+
+endParenthesis = {
+  \once\override Parentheses.stencils = #(lambda (grob)
+    (let ((par-list (parentheses-interface::calc-parenthesis-stencils grob)))
+      (list point-stencil (cadr par-list))))
+}
+
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
@@ -142,10 +154,43 @@ Sopran = \context Voice = "one" \relative c'' {
   | \stemUp bes'4\( g-- fis4.-- g8--
   | ees4-- d--
     \once\override Script.avoid-slur = #'inside
-    bes--\trill a8--( g--)\)
-  | s1
-  | s1
+    bes--\trill a8--( g--)
+  | c4-- d8--( b!--) c4.-- d8--
+  | ees4-- f8--( d--) ees4-- g8--( f--)
   %25
+  | g4-- aes-- b,!-- c8--( d--)
+  | ees4-- d8--( c--)\) <ees g> q16( <c ees>) <ees g>8 q16( <c ees>)
+  | \stemDown <ees g>8( <f aes>) q( <aes c>) <d, f>8 q16( <b! d>) <d f>8 q16( <b d>)
+  | <d f>8( <f b!>) <d b'>( <f d'>)
+    <ees_~ c'~>\( q32 <f d'> <g ees'>16\)  <ees c'>( <g ees'>) <f d'>( <d g>)
+  | <ees_~ c'~>8\(\pp q32 <f d'> <g ees'>16\)  <ees c'>( <g ees'>) <f d'>( <d g>)
+    <ees c'>8 <c' ees>32(\p <d f> <ees g>16) <c ees>( <ees, c'>) <f d'>( <g b!>)
+  %30
+  | <ees c'>8 <c' ees>32( <d f> <ees g>16) <c ees>( <ees, c'>) <f d'>( <d b'!>)
+    \stemUp\once\shape #'((0 . -1.5) (0 . 0) (0 . 0.5) (0 . 0)) PhrasingSlur
+    <ees c'>4\( bes8-- a!--
+  | bes4.-- d8-- c4-- bes8--( a16-- bes--)
+  | \once\override Script.avoid-slur = #'inside
+    a4--\trill g8--( f--)\)  a' a16( f)  a8 a16( f)
+  | <f a>8( <g bes>) <g bes>( <bes d>)  bes, bes16( g)  bes8 bes16( g)
+  | g8[( e'!)] e[( g)] <ees a> q16( fis) <fis a>8 q16 <d fis>
+  %35
+  | <fis a>8( <g bes>) q( d')  <g, c> q16( <e! g>) q8 16( <c e>)
+  | <e! g>8( <f a>) q( <a c>)  <a, c> <a c>16 <f a> <a c>8 <a c>16 <f a>
+  | <a c>8( bes) <b d>4 <b! d>8 <b d>16 <g b> <b d>8 <b d>16 <g b>
+  | <b! d>8( c) ees( g)  g\( g16( c,) <f a>8 a16( <d, f>)
+  | <e! bes'>8( <g c>) <e bes'>( <e g>)
+    c16--(_\markup { \hspace #0.3 \italic\small "sostenuto" } bes-- a-- bes-- c-- bes-- c-- d--)
+  %40
+  | a4-- g8--( f--) f2--^\markup { \italic\small "a tempo" }\)
+  | bes4-- d8--( c--) c4.-- d8--
+  | s1
+  | s1
+  | s1
+  %42
+  | s1
+  | s1
+  | s1
 
   \fine
 }
@@ -180,6 +225,36 @@ Alto = \context Voice = "two" \relative c'' {
   %21
   | d'4---\markup { \italic\small "canto" } d8 d <c d> q <bes d> q
   | a a a a g4 c,\rest
+  | g'8\< g <f g> q  g g <f g> q
+  | <ees g> q <f aes>( <f g>) <ees g> q g g\!
+  %25
+  | <g c>-\markup { \italic\small "quasi" \dynamic f \italic\small "(ma dolce)" } q <aes c> q
+    g g\> g <aes c>
+  | <g c> q <f b!>4 c'2--\p\!
+  | s1*3
+  %30
+  | s2 g8\rest ees ees ees
+  | f f f f g g g g
+  | f2 f'4--\( e!8--( d--)
+  | d4.-- f8--  e!--( f16-- g--) e8--( d--)
+  | cis4-- b!8-- a--\) c!2~--\(
+  %35
+  | c4 bes8--( c16-- a--) bes2~
+  | bes8--( a--) a4--\)
+    \tieUp\once\shape #'((-0.8 . 2.2) (0 . 3) (0 . 3) (0 . 0.5)) Tie
+    ees'!2~--
+  | ees8( d--) d--( f16-- e!--)
+    \once\shape #'((-0.3 . 1.2) (0 . 2.5) (0 . 2.5) (0 . 0.5)) Tie
+    f2~--
+  | f8[( e!--]) d--[( e--])
+    \once\override Staff.TextScript.extra-offset = #'(0 . -1)
+    e4--_\markup {
+      \italic\small "quasi" \dynamic f
+    } d8--( c--)
+  | bes4-- a8--( bes16-- g--) f4 f
+  %40
+  | <c f>8 q <bes e!>4 <a c>2
+  | <d f>8-\markup { \italic "più" \dynamic p } q bes'4 bes8 bes bes bes
 
 }
 
@@ -200,6 +275,21 @@ Tenor = \context Voice = "three" \relative c' {
   | s1*5
   %20
   | s2 \stemUp <bes' d>8[ q q] s
+  | s1*5
+  %26
+  | s2 \stemDown ees,2
+  | s1*3
+  %30
+  | \stemUp\slurUp <c' ees>8 q q <b! d g> <ees g>4--^\markup { \hspace #-1.8 \italic\small "canto" } s4
+  | s1*2
+  | a,8( g) g( f) s2
+  | s1*6
+  %40
+  | s2
+    \override Parentheses.font-size = #3
+    \magnifyMusic 0.90 {
+      d'8\rest \startParenthesis\parenthesize f, f \endParenthesis\parenthesize f
+    }
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -239,9 +329,40 @@ Bass = \context Voice = "four" \relative c {
   | <ees f bes d> q <f bes d> q g f16_( ees f8) \stemDown <f, f'>
   | <bes bes'> q <bes' d> q <a d> q <bes d> q
   | <c g'> q <d fis> q <g, d'> q <f g d'> q
-  | s1
-  | s1
+  | <ees g c> q <d g b!> <d g d'>  <ees g c> q <b! g'> q
+  | <c g' c> q  <b! d aes' d> <b d g d'> <c g' c> q <d f b!> q
   %25
+  | <ees g c> q <f c' f>( <f c' ees> <f g d'>) q <ees g c> <f c'>
+  | \stemUp g g <g, g'> <g g'> <c c'> q q q
+  | \stemDown\slurDown <c aes'> q <c f> q <c d b'!> q q q
+  | <c g' b!> q q q <c' ees g> q <bes c ees g> q
+  | <aes c ees g> q <g c ees g> q  <f aes c ees> q <g c ees> q
+  %30
+  | aes( g16 f g8) g c <c, c'> q q
+  | <d bes'> q q q <e! g> q <e c'> q
+  | <f c'> q <e! cis'> q <d f a d> q <c! d a'> q
+  | <bes d> q <a d> q \stemUp <g bes g'> q q q
+  | <a e'!> q <g cis e> q <fis d'> q <d d'> q
+  %35
+  | <g d'> q <f! d'> q
+    \once\override Staff.SustainPedal.stencil =
+      #(lambda (grob) (grob-interpret-markup grob (markup "(" #:musicglyph "pedal.Ped" ")" )))
+    \override SustainPedal.style = #'dotted-line
+    <e! c'>\sustainOn q <c c'> q
+  | <f c'> q\sustainOff <f f'> q q^\markup { \italic\small "più espr." } q q q
+  | \stemDown <bes f'>^\< q q <bes d>  \stemUp <g g'> q q q
+  | <c g'> q <c c'> q\! \stemDown <bes! c g'> q <a c f> q
+  | \stemUp <g c e!> q q q  <a c f> q <bes d f> q
+  %40
+  | c c <c, c'> q \stemDown <f f'>2
+  | <bes, bes'>8 bes'' <bes d f> q <bes ees g> q q q
+  | s1
+  | s1
+  | s1
+  %42
+  | s1
+  | s1
+  | s1
 
   \fine
 }
