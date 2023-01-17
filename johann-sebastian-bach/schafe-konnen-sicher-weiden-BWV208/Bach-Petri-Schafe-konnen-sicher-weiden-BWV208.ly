@@ -16,7 +16,7 @@
   indent = 0.0
   line-width = 18\cm
   print-all-headers = ##t
-  ragged-last-bottom = ##t
+  ragged-last-bottom = ##f
   ragged-bottom = ##f
   %system-system-spacing = #'((basic-distance . 2) (padding . 10))
   top-margin = 13\mm
@@ -173,24 +173,50 @@ Sopran = \context Voice = "one" \relative c'' {
   | \once\override Script.avoid-slur = #'inside
     a4--\trill g8--( f--)\)  a' a16( f)  a8 a16( f)
   | <f a>8( <g bes>) <g bes>( <bes d>)  bes, bes16( g)  bes8 bes16( g)
-  | g8[( e'!)] e[( g)] <ees a> q16( fis) <fis a>8 q16 <d fis>
+  | g8[( e'!)] <cis e>[( g')] <ees a> q16( fis) <fis a>8 q16 <d fis>
   %35
   | <fis a>8( <g bes>) q( d')  <g, c> q16( <e! g>) q8 16( <c e>)
   | <e! g>8( <f a>) q( <a c>)  <a, c> <a c>16 <f a> <a c>8 <a c>16 <f a>
-  | <a c>8( bes) <b d>4 <b! d>8 <b d>16 <g b> <b d>8 <b d>16 <g b>
+  | <a c>8( bes) <bes d>4 <b! d>8 <b d>16 <g b> <b d>8 <b d>16 <g b>
   | <b! d>8( c) ees( g)  g\( g16( c,) <f a>8 a16( <d, f>)
   | <e! bes'>8( <g c>) <e bes'>( <e g>)
+    \once\override Staff.TextScript.extra-offset = #'(0 . -0.5)
     c16--(_\markup { \hspace #0.3 \italic\small "sostenuto" } bes-- a-- bes-- c-- bes-- c-- d--)
   %40
   | a4-- g8--( f--) f2--^\markup { \italic\small "a tempo" }\)
   | bes4-- d8--( c--) c4.-- d8--
-  | s1
-  | s1
-  | s1
-  %42
-  | s1
-  | s1
-  | s1
+  | ees4-- g8--( f--) d4--\trill c8--( bes--)
+  | d--[( bes--]) a--[( g--]) c4.-- d8--
+  | a4-- g8--( f--) f2--
+  %45
+  | <d' f>8 <d f>16( <bes d>) <d f>8 <d f>16( <bes d>)
+    <d f>8[( <ees g>) <ees g>( <g bes>)]
+  | <ees g>8 <ees g>16( <c ees>) <ees g>8 g16( ees)
+    <ees g>8[( <f a>) <f a>( <a c>)]
+  | c8\rest <d, bes'>32(\( c' d16) <d, bes'>( d') c( c,)
+    <bes bes'>8\) b'8\rest c,--( bes--)
+  | c'8\rest <d, bes'>32(\( c' d16) <d, bes'>( d') c( c,)
+    <bes bes'>8\) b'8\rest c,--( bes--)
+  | ees4.-- f8-- d--[( c--]) bes--[( c--])
+  %50
+  | a4.-- bes8-- <d f>8 <d f>16( <bes d>) <d f>8 <d f>16( <bes d>)
+  | <d f>8( <ees g>) <ees g>( <g bes>)
+    <c, ees>8 c16 a ees'8 ees16( a,)
+  | <c a'>8( <d bes'>) q( <ees c'>)
+    c'\rest <bes d>32(-\markup { \italic\small "sostenuto" }
+    <c ees> <d f>16) <bes d>( <d, bes'>) <ees f>( a)
+  | <d, bes'>8^\markup { \italic\small "a tempo" } <d f>16( <bes d>) <d f>8 <d f>16( <bes d>)
+    <d f>8( <ees g>) q( <g bes>)
+  | \stemDown
+    <c, ees>8 <c ees>16( <a c>) <c ees>8 <c ees>16( <a c>)
+    <c ees>8[( <ees a>) <c a'>( <ees c'>)]
+  %55
+  | <d bes'>8~\( <d bes'>32 <ees c'> <f d'>16\)  <d bes'>16( <f d'>) <ees c'>( <c f>)
+    <d bes'>8~\(\pp <d bes'>32 <ees c'> <f d'>16\)  <d bes'>16( <f d'>) <ees c'>( <c f>)
+  | <d bes'>8 <bes' d>32(\p <c ees> <d f>16)  <bes d>16( <d, bes'>) <ees c'>( <f a>)
+    <d bes'>8 <bes' d>32(_\markup { \dynamic pp \italic "rit. . . . . . ." } <c ees> <d f>16)
+    <bes d>16( <d, bes'>) <ees c'>( <c a'>)
+  | <bes d bes'>1
 
   \fine
 }
@@ -255,7 +281,20 @@ Alto = \context Voice = "two" \relative c'' {
   %40
   | <c f>8 q <bes e!>4 <a c>2
   | <d f>8-\markup { \italic "più" \dynamic p } q bes'4 bes8 bes bes bes
-
+  | c c c_~ c  bes4 d,\rest
+  | <d g>8 q <d f> q  <c e!> q <c f> f
+  | <c f> f <c e!> c8 c c c c
+  %45
+  | f4-- aes8--( g--) g4.-- a!8--
+  | bes4-- d8--( c--) a4-- g8--^( \bottom f^-)
+  | \top\stemDown f'4-- g8--( f--) f--( d--) ees,4
+  | f'4-- g8--( f--) f--( d--) f,4
+  | <g bes>8 q <f a> q  <f bes> <ees a> <d f> <c g'>
+  %50
+  | <c f> q <ees f> q bes'2--
+  | e,2\rest g'8--[( ees--]) d--[( c--])
+  | f4.-- g8-- d4.-- c16--( bes--)
+  | bes4-- e,\rest e2\rest
 }
 
 Tenor = \context Voice = "three" \relative c' {
@@ -290,6 +329,13 @@ Tenor = \context Voice = "three" \relative c' {
     \magnifyMusic 0.90 {
       d'8\rest \startParenthesis\parenthesize f, f \endParenthesis\parenthesize f
     }
+  | s1*9
+  %50
+  | s2 \stemDown d2
+  | s1*5
+  %56
+  | \stemUp s2 <bes' d>8 q q s
+
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -302,7 +348,8 @@ Bass = \context Voice = "four" \relative c {
       \italic\small "semplice, tranquillo"
     }_\markup { \hspace #-4 \italic\small "col " \musicglyph #"pedal.Ped" }
     q^.^- q^.^- q^.^-  <bes g'>8^.^- q^.^- <bes ees>8^.^- q^.^-)
-  | <bes c a'>8^\markup { \italic\small "simile" } q q q
+  | \once\override Staff.TextScript.extra-offset = #'(0 . 2)
+    <bes c a'>8^\markup { \italic\small "simile" } q q q
     <bes f' a>8 q q q
   | <bes' d f> q <a bes d f> q  <g bes d f> q <f bes d f> q
   | <ees f bes d> q <f bes d> q g f16_( ees f8) \stemDown <f, f'>
@@ -315,7 +362,7 @@ Bass = \context Voice = "four" \relative c {
   %10
   | <c ees c'> q q q  <f c'> q <ees a c>\sustainOn q
   | <d f bes>\sustainOff q <ees g bes> <ees a c> <bes d bes'> q <c ees bes'> q
-  | <d f bes> q <ees g bes> <ees a c> <bes d bes'> q <c ees bes'> q
+  | <d f bes> q <ees g bes> <ees a c> <bes d bes'> q <d f bes> q
   | <c c'> q <f c'> q <bes, bes'>( c d ees
   | \stemUp f) f <f, f'> q <bes bes'> q q q
   %15
@@ -349,21 +396,35 @@ Bass = \context Voice = "four" \relative c {
       #(lambda (grob) (grob-interpret-markup grob (markup "(" #:musicglyph "pedal.Ped" ")" )))
     \override SustainPedal.style = #'dotted-line
     <e! c'>\sustainOn q <c c'> q
-  | <f c'> q\sustainOff <f f'> q q^\markup { \italic\small "più espr." } q q q
+  | <f c'> q\sustainOff <f f'> q
+    \once\override Staff.TextScript.extra-offset = #'(0 . 1.5)
+    q^\markup { \italic\small "più espr." } q q q
   | \stemDown <bes f'>^\< q q <bes d>  \stemUp <g g'> q q q
-  | <c g'> q <c c'> q\! \stemDown <bes! c g'> q <a c f> q
+  | \stemDown <c g'> q <c c'> q\! <bes! c g'> q <a c f> q
   | \stemUp <g c e!> q q q  <a c f> q <bes d f> q
   %40
   | c c <c, c'> q \stemDown <f f'>2
   | <bes, bes'>8 bes'' <bes d f> q <bes ees g> q q q
-  | s1
-  | s1
-  | s1
-  %42
-  | s1
-  | s1
-  | s1
-
+  | <a c f> q q q <bes d f> q q q
+  | <bes, bes'> q q q  <bes g'> q <a a'> <bes g'>
+  | c c <c bes'> q  <f a> q <ees a> q
+  %45
+  | <d bes'> q <bes bes'> q <ees bes'> q <d bes'> q
+  | <c ees c'> q q q  <f c'> q <ees a c> q
+  | <d f bes> q <ees g bes> <ees a c> <bes d bes'> q <c ees bes'> q
+  | <d f bes> q <ees g bes> <ees a c> <bes d bes'> q <d f bes> q
+  | <c c'>8 q <f c'> q <bes, bes'>^( c d ees
+  %50
+  | \stemUp f) f <f, f'> q <bes bes'> q q q
+  | \stemDown <bes g'> q <bes ees> q <bes c g'>
+    q <a ees' f> q
+  | <bes ees f_(> <bes d f)> <ees g> q <f bes d>\tweak Y-offset -5\sustainOn q <f, f'> q\sustainOff
+  | <bes bes'> q q q <bes g'> q <bes ees> q
+  | <bes c a'>8 q q q  <bes f' a>8 q q q
+  %55
+  | <bes' d f> q <a bes d f> q  <g bes d f> q <f bes d f> q
+  | <ees g bes d> q <f bes d> q g f16_( ees \autoBeamOff f8) \stemUp <f, f'> \autoBeamOn
+  | <bes, bes'>1
   \fine
 }
 
