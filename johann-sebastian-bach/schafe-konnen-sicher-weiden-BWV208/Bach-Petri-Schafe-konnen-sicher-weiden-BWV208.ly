@@ -127,7 +127,7 @@ Sopran = \context Voice = "one" \relative c'' {
     <d f>8[( <ees g>) <ees g>( <g bes>)]\)
   %10
   | \once\shape #'((0 . 0) (0 . 0) (0 . 0) (0 . 0.3)) PhrasingSlur
-    <ees g>8\( <ees g>16( <c ees>) <ees g>8 g16( ees)
+    <ees g>8\( <ees g>16( <c ees~>) <ees g>8 g16( ees)
     <ees g>8[( <f a>) <f a>( <a c>)]\)
   | c8\rest <d, bes'>32(\( c' d16) <d, bes'>( d') c( c,)
     <bes bes'>8\) b'8\rest c,--( bes--)
@@ -171,14 +171,14 @@ Sopran = \context Voice = "one" \relative c'' {
     <ees c'>4\( bes8-- a!--
   | bes4.-- d8-- c4-- bes8--( a16-- bes--)
   | \once\override Script.avoid-slur = #'inside
-    a4--\trill g8--( f--)\)  a' a16( f)  a8 a16( f)
+    a4--\trill g8--( f--)\)  a' a16( f)  <f a>8 a16( f)
   | <f a>8( <g bes>) <g bes>( <bes d>)  bes, bes16( g)  bes8 bes16( g)
   | g8[( e'!)] <cis e>[( g')] <ees a> q16( fis) <fis a>8 q16 <d fis>
   %35
   | <fis a>8( <g bes>) q( d')  <g, c> q16( <e! g>) q8 16( <c e>)
   | <e! g>8( <f a>) q( <a c>)  <a, c> <a c>16 <f a> <a c>8 <a c>16 <f a>
   | <a c>8( bes) <bes d>4 <b! d>8 <b d>16 <g b> <b d>8 <b d>16 <g b>
-  | <b! d>8( c) ees( g)  g\( g16( c,) <f a>8 a16( <d, f>)
+  | <b! d>8( c) e( g)  g\( g16( c,) <f a>8 a16( <d, f>)
   | <e! bes'>8( <g c>) <e bes'>( <e g>)
     \once\override Staff.TextScript.extra-offset = #'(0 . -0.5)
     c16--(_\markup { \hspace #0.3 \italic\small "sostenuto" } bes-- a-- bes-- c-- bes-- c-- d--)
@@ -352,7 +352,7 @@ Bass = \context Voice = "four" \relative c {
     <bes c a'>8^\markup { \italic\small "simile" } q q q
     <bes f' a>8 q q q
   | <bes' d f> q <a bes d f> q  <g bes d f> q <f bes d f> q
-  | <ees f bes d> q <f bes d> q g f16_( ees f8) \stemDown <f, f'>
+  | <ees g bes d> q <f bes d> q g f16_( ees f8) \stemDown <f, f'>
   %5
   | <bes bes'> <bes' d f> q q  <bes ees g> q q q
   | <a c f> q q q  <bes d f> q q q
@@ -373,7 +373,7 @@ Bass = \context Voice = "four" \relative c {
   | <bes c a'>8 q q q  <bes f' a>8 q q q
   | <bes' d f> q <a bes d f> q  <g bes d f> q <f bes d f> q
   %20
-  | <ees f bes d> q <f bes d> q g f16_( ees f8) \stemDown <f, f'>
+  | <ees g bes d> q <f bes d> q g f16_( ees f8) \stemDown <f, f'>
   | <bes bes'> q <bes' d> q <a d> q <bes d> q
   | <c g'> q <d fis> q <g, d'> q <f g d'> q
   | <ees g c> q <d g b!> <d g d'>  <ees g c> q <b! g'> q
