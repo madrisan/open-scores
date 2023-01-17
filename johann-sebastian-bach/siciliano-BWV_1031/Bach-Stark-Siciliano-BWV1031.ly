@@ -135,7 +135,9 @@ Sopran = \context Voice = "one" \relative c'' {
   | <fis a>16(\< <e! g> <fis a> <g bes> <a c> <bes d>\!
     \stemDown <c ees>8\> <bes d> <a c>)\!
   %30
-  | \stemUp bes16( d c bes a g)
+  | \stemUp
+    \stemUp\once\override Beam.positions = #'(4.2 . 3.2)
+    bes16( d c bes a g)
     <g ees'>16.\> <a c>32 <g bes>8( <fis a>)\!
   | g8 d'( bes  g) g'( bes,)
   | \stemDown r16 <g bes>( <fis a> <g bes> <bes g'> <g bes>)
@@ -167,14 +169,17 @@ Alto = \context Voice = "two" \relative c' {
   | a16^. d \top a' fis \bottom e! fis
     \slurDown d^.( \top a' c a \bottom d, \top a')
   | e16\rest a( g fis g d
-    \stemUp bes es d c d bes)
+    \stemUp bes es d
+    \once\override Staff.TextScript.extra-offset = #'(0 . 2.5)
+    c_\markup { \italic\small "l.H." } d bes)
   %5
   | \stemDown e16\rest
     \once\shape #'((0 . 0) (0 . -0.5) (0 . -1) (0 . -1.8)) Slur
     g( bes g \bottom fis g)
     c, \top c' es c bes c
   | f,!^. c'(  bes a bes f)
-    \bottom d \top bes' d bes \bottom \clef treble a bes \clef bass
+    \bottom d \top bes' d bes
+    \bottom \clef treble a_\markup { \italic\small "r.H." } bes \clef bass
   | \top g^.( bes es bes as bes)
     g^.( bes c a! bes g)
   | a8[ \bottom f] \top g\rest s4.
