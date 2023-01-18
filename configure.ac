@@ -75,6 +75,7 @@ AC_CONFIG_FILES([\
   clara-schumann-wieck/soirees-musicales-op.6/Makefile \
   johann-sebastian-bach/Makefile \
   johann-sebastian-bach/chorale-preludes/Makefile \
+  johann-sebastian-bach/chorale-preludes/BWV615-Busoni/Makefile \
   johann-sebastian-bach/chorale-preludes/BWV639-Busoni/Makefile \
   johann-sebastian-bach/chorale-preludes/BWV659/Makefile \
   johann-sebastian-bach/chorale-preludes/BWV659-Busoni/Makefile \
