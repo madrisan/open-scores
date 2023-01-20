@@ -25,6 +25,7 @@ The source code was compiled with `GNU LilyPond 2.23.82 (running Guile 2.2)` (Fe
 
  * [Schafe können sicher weiden (BWV 208) - Egon Petri](https://github.com/madrisan/open-scores/releases/download/v21/Bach-Petri-Schafe-konnen-sicher-weiden-BWV208.pdf)
  * [Jesu meine Freude (BWV610)](https://github.com/madrisan/open-scores/releases/download/v21/Baldassare-Galuppi-Sonata-5.pdf)
+ * [Chorale Prelude - In dir ist Freude (BWV615) - Ferruccio Busoni](https://github.com/madrisan/open-scores/releases/download/v21/Bach-Busoni-Chorale-Prelude-BWV615.pdf)
  * [Chorale Prelude - Ich ruf zu dir, Herr Jesu Christ (BWV639) - Ferruccio Busoni](https://github.com/madrisan/open-scores/releases/download/v21/Bach-Busoni-Chorale-Prelude-BWV639.pdf)
  * [Chorale Prelude - Nun komm’ der Heiden Heiland (BWV659)](https://github.com/madrisan/open-scores/releases/download/v21/JS-Bach-BWV659-Chorale-Prelude.pdf)
  * [Chorale Prelude - Nun komm’ der Heiden Heiland (BWV659) - Ferruccio Busoni](https://github.com/madrisan/open-scores/releases/download/v21/Bach-Busoni-Chorale-Prelude-BWV659.pdf)
@@ -138,6 +139,7 @@ git checkout main
 ```
 make -C baldassare-galuppi/sonata-5-c-major
 make -C clara-schumann-wieck/soirees-musicales-op.6
+make -C johann-sebastian-bach/chorale-preludes/BWV615-Busoni
 make -C johann-sebastian-bach/chorale-preludes/BWV639-Busoni
 make -C johann-sebastian-bach/chorale-preludes/BWV659
 make -C johann-sebastian-bach/chorale-preludes/BWV659-Busoni
