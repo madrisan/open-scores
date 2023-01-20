@@ -11,7 +11,7 @@ LilyPond is free software and part of the [GNU Project](https://gnu.org/).
 The following *pdf* can be generated from the source code, but they have been added here for convenience.
 If you prefer to create these files (and *midi* ones) yourself, skip to the next section.
 
-Latest release: [Open Scores for Piano v21](https://github.com/madrisan/open-scores/releases)
+Latest release: [Open Scores for Piano v22](https://github.com/madrisan/open-scores/releases)
 
 The source code was compiled with `GNU LilyPond 2.23.82 (running Guile 2.2)` (Fedora Linux 37).
 
@@ -23,13 +23,13 @@ The source code was compiled with `GNU LilyPond 2.23.82 (running Guile 2.2)` (Fe
 
 #### Johann Sebastian Bach (1685-1750)
 
- * [Schafe können sicher weiden (BWV 208) - Egon Petri](https://github.com/madrisan/open-scores/releases/download/v21/Bach-Petri-Schafe-konnen-sicher-weiden-BWV208.pdf)
- * [Jesu meine Freude (BWV610)](https://github.com/madrisan/open-scores/releases/download/v21/Baldassare-Galuppi-Sonata-5.pdf)
- * [Chorale Prelude - In dir ist Freude (BWV615) - Ferruccio Busoni](https://github.com/madrisan/open-scores/releases/download/v21/Bach-Busoni-Chorale-Prelude-BWV615.pdf)
- * [Chorale Prelude - Ich ruf zu dir, Herr Jesu Christ (BWV639) - Ferruccio Busoni](https://github.com/madrisan/open-scores/releases/download/v21/Bach-Busoni-Chorale-Prelude-BWV639.pdf)
- * [Chorale Prelude - Nun komm’ der Heiden Heiland (BWV659)](https://github.com/madrisan/open-scores/releases/download/v21/JS-Bach-BWV659-Chorale-Prelude.pdf)
- * [Chorale Prelude - Nun komm’ der Heiden Heiland (BWV659) - Ferruccio Busoni](https://github.com/madrisan/open-scores/releases/download/v21/Bach-Busoni-Chorale-Prelude-BWV659.pdf)
- * [Suite Anglaise IV (BWV809)](https://github.com/madrisan/open-scores/releases/download/v21/JS-Bach-BWV809-Suite-Anglaise-4.pdf)
+ * [Schafe können sicher weiden (BWV 208) - Egon Petri](https://github.com/madrisan/open-scores/releases/download/v22/Bach-Petri-Schafe-konnen-sicher-weiden-BWV208.pdf)
+ * [Jesu meine Freude (BWV610)](https://github.com/madrisan/open-scores/releases/download/v22/Baldassare-Galuppi-Sonata-5.pdf)
+ * [Chorale Prelude - In dir ist Freude (BWV615) - Ferruccio Busoni](https://github.com/madrisan/open-scores/releases/download/v22/Bach-Busoni-Chorale-Prelude-BWV615.pdf)
+ * [Chorale Prelude - Ich ruf zu dir, Herr Jesu Christ (BWV639) - Ferruccio Busoni](https://github.com/madrisan/open-scores/releases/download/v22/Bach-Busoni-Chorale-Prelude-BWV639.pdf)
+ * [Chorale Prelude - Nun komm’ der Heiden Heiland (BWV659)](https://github.com/madrisan/open-scores/releases/download/v22/JS-Bach-BWV659-Chorale-Prelude.pdf)
+ * [Chorale Prelude - Nun komm’ der Heiden Heiland (BWV659) - Ferruccio Busoni](https://github.com/madrisan/open-scores/releases/download/v22/Bach-Busoni-Chorale-Prelude-BWV659.pdf)
+ * [Suite Anglaise IV (BWV809)](https://github.com/madrisan/open-scores/releases/download/v22/JS-Bach-BWV809-Suite-Anglaise-4.pdf)
    * Prélude
    * Allemande
    * Courante
@@ -37,15 +37,15 @@ The source code was compiled with `GNU LilyPond 2.23.82 (running Guile 2.2)` (Fe
    * Menuet I
    * Menuet II
    * Gigue
- * [Chromatische Fantasie und Fugue (BWV903)](https://github.com/madrisan/open-scores/releases/download/v21/JS-Bach-BWV903-Chromatische-Fantasie-und-Fugue.pdf) - Interpretiert von Ferruccio Busoni
+ * [Chromatische Fantasie und Fugue (BWV903)](https://github.com/madrisan/open-scores/releases/download/v22/JS-Bach-BWV903-Chromatische-Fantasie-und-Fugue.pdf) - Interpretiert von Ferruccio Busoni
    * Fantasie
    * Fugue
- * [Italienisches Konzert (BWV971)](https://github.com/madrisan/open-scores/releases/download/v21/JS-Bach-BWV971-Italienisches-Konzert.pdf)
+ * [Italienisches Konzert (BWV971)](https://github.com/madrisan/open-scores/releases/download/v22/JS-Bach-BWV971-Italienisches-Konzert.pdf)
    * .
    * Andante
    * Presto
- * [Siciliano (BWV 1031) - Ludwig Stark](https://github.com/madrisan/open-scores/releases/download/v21/Bach-Stark-Siciliano-BWV1031.pdf)
- * [Die Kunst der Fuge (BWV1080)](https://github.com/madrisan/open-scores/releases/download/v21/JS-Bach-BWV1080-Die-Kunst-der-Fuge.pdf)
+ * [Siciliano (BWV 1031) - Ludwig Stark](https://github.com/madrisan/open-scores/releases/download/v22/Bach-Stark-Siciliano-BWV1031.pdf)
+ * [Die Kunst der Fuge (BWV1080)](https://github.com/madrisan/open-scores/releases/download/v22/JS-Bach-BWV1080-Die-Kunst-der-Fuge.pdf)
    * Contrapunctus I
    * Contrapunctus II
    * Contrapunctus III
@@ -69,7 +69,7 @@ Image of the J.S. Bach's [manuscript](images/js-bach-jesu-meine-freude-manuscrip
 
 #### Baldassare Galuppi (1706-1785)
 
- * [Sonata no. 5 in Do maggiore](https://github.com/madrisan/open-scores/releases/download/v21/Baldassare-Galuppi-Sonata-5.pdf)
+ * [Sonata no. 5 in Do maggiore](https://github.com/madrisan/open-scores/releases/download/v22/Baldassare-Galuppi-Sonata-5.pdf)
    * Andante
    * Allegro
    * Allegro assai
@@ -78,13 +78,13 @@ You can see here the [manuscript](images/baldassare-galuppi-sonata-5-manuscript-
 
 #### Mikhail-Glinka (1804-1857)
 
- * [Nocturne](https://github.com/madrisan/open-scores/releases/download/v21/Mikhail-Glinka-Nocturne.pdf)
+ * [Nocturne](https://github.com/madrisan/open-scores/releases/download/v22/Mikhail-Glinka-Nocturne.pdf)
 
 Thanks to my harpist friend Tristan Rollet ([@Pluiesurlavitre](https://github.com/Pluiesurlavitre)) for pointing me to this beautiful romantic piece.
 
 #### Rued Langgaard (1893-1952)
 
- * [Insektarium (BVN 134)](https://github.com/madrisan/open-scores/releases/download/v21/Rued-Langgaard-Insektarium-BVN-134.pdf) - 9 Puzzle Pictures, for solo piano
+ * [Insektarium (BVN 134)](https://github.com/madrisan/open-scores/releases/download/v22/Rued-Langgaard-Insektarium-BVN-134.pdf) - 9 Puzzle Pictures, for solo piano
    * I. Forficula auricularia (Earwig)
    * II. Acridium migratorium (Migratory locust)
    * III. Melonetha vulgaris (Cockchafer)
@@ -98,11 +98,11 @@ Thanks to my harpist friend Tristan Rollet ([@Pluiesurlavitre](https://github.co
 #### Clara Schumann Wieck (1819-1896)
 
  * Soirées Musicales op.6
-   * [2. Nocturne](https://github.com/madrisan/open-scores/releases/download/v21/Clara-Schumann-Wieck-Soirees-Musicales-op.6.pdf)
+   * [2. Nocturne](https://github.com/madrisan/open-scores/releases/download/v22/Clara-Schumann-Wieck-Soirees-Musicales-op.6.pdf)
 
 #### Robert Schumann (1810–1856)
 
- * [Kinderscenen op.15](https://github.com/madrisan/open-scores/releases/download/v21/Robert-Schumann-Kinderscenen-op.15.pdf)
+ * [Kinderscenen op.15](https://github.com/madrisan/open-scores/releases/download/v22/Robert-Schumann-Kinderscenen-op.15.pdf)
    * I. Von fremden Ländern und Menschen
    * II. Curiose Geschichte
    * III. Hasche-Mann
