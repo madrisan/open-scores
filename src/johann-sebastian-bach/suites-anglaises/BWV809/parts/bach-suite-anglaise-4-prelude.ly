@@ -93,7 +93,7 @@ Upper = \relative c' {
    | << { g' g  g g  g f  f f } \\ { \stemUp \shiftOn e e  e e  e d  d d } \\ { \stemDown a8 a  a a  a a  a a } >>
    | << { f'16 g, bes d } \\ \once \shiftOn \stemUp d16 \\ { \once \stemDown g,16 } >>
      bes16 g bes d
-     << { e8 d  d cis } \\ { d,8\rest \stemUp \shiftOn a'  a a } \\ { g8\rest \stemDown f e \shiftOn <e g> } >>
+     << { e8 d  d cis } \\ { c,8\rest \stemUp \shiftOn a'  a a } \\ { g8\rest \stemDown f e \shiftOn <e g> } >>
    %60
    | << { d'16 \change Staff = "lower" { a, b cis } } \\ { \stemUp \shiftOn a'16 } \\ { \stemDown f16 } >>
      d16 e f d  g a g f  e a g a
@@ -295,7 +295,7 @@ Lower = \relative c {
    | a8 bes16 a  g16 f e g  f bes a g  f e d f
    | { \stemUp bes,16 d c bes  c8 c,8  f16 c d e  f g a f }
    %85
-   | c'8 c,  r8 c'  c c,  r8 c'
+   | c'8 c,  c'8\rest c  c c,  c'8\rest c
    | c8 c,  r8 c'  c c,  r8 c'
    | c8 c,  g'4\rest  << { g'16 aes bes f  e! f g c, } \\ r2 >>
    | \stemUp bes16 c des aes  g a bes f  e8 f  c' c,
@@ -315,7 +315,7 @@ Lower = \relative c {
 \score {
   \new PianoStaff
   <<
-    \accidentalStyle Score.piano-cautionary
+    \accidentalStyle Score.piano
     \new Staff = "upper" {
       \Global
       \Upper

@@ -2,7 +2,7 @@
   composer = "Johann Sebastian Bach (1685-1750)"
   date = "Around 1713 or 1714"
 
-  footer = "Mutopia-2022/12/08"
+  footer = "Mutopia-2023/01/21"
 
   lastupdated = "2022 December 8"
   license = "Creative Commons Attribution-ShareAlike 4.0"
