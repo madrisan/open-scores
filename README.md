@@ -69,7 +69,7 @@ Image of the J.S. Bach's [manuscript](images/js-bach-jesu-meine-freude-manuscrip
 
  * [Schafe können sicher weiden (BWV 208) - Egon Petri](https://github.com/madrisan/open-scores/releases/download/v22/Bach-Petri-Schafe-konnen-sicher-weiden-BWV208.pdf)
 
-#### Sebastian Bach / Ludwig Stark
+#### Johann Sebastian Bach / Ludwig Stark
 
  * [Siciliano (BWV 1031)](https://github.com/madrisan/open-scores/releases/download/v22/Bach-Stark-Siciliano-BWV1031.pdf)
 
@@ -82,7 +82,7 @@ Image of the J.S. Bach's [manuscript](images/js-bach-jesu-meine-freude-manuscrip
 
 You can see here the [manuscript](images/baldassare-galuppi-sonata-5-manuscript-1st-page.png) of the first page of the sonata.
 
-#### Mikhail-Glinka (1804-1857)
+#### Mikhail Glinka (1804-1857)
 
  * [Nocturne](https://github.com/madrisan/open-scores/releases/download/v22/Mikhail-Glinka-Nocturne.pdf)
 
