@@ -137,19 +137,19 @@ make -C alban-berg/Op_1
 git checkout main
 ```
 ```
-make -C baldassare-galuppi/sonata-5-c-major
-make -C clara-schumann-wieck/soirees-musicales-op.6
-make -C johann-sebastian-bach/chorale-preludes/BWV615-Busoni
-make -C johann-sebastian-bach/chorale-preludes/BWV639-Busoni
-make -C johann-sebastian-bach/chorale-preludes/BWV659
-make -C johann-sebastian-bach/chorale-preludes/BWV659-Busoni
-make -C johann-sebastian-bach/chromatische-fantasie-und-fugue-BWV_903
-make -C johann-sebastian-bach/die-kunst-der-fuge-BWV_1080
-make -C johann-sebastian-bach/italienisches-konzert-BWV_971
-make -C johann-sebastian-bach/jesu-meine-freude-BWV_610
-make -C johann-sebastian-bach/siciliano-BWV_1031
-make -C johann-sebastian-bach/suites-anglaises/BWV809
-make -C mikhail-glinka/nocturne
-make -C robert-schumann/kinderscenen-op.15
-make -C rued-langgaard/insektarium-BVN_134
+make -C src/baldassare-galuppi/sonata-5-c-major
+make -C src/clara-schumann-wieck/soirees-musicales-op.6
+make -C src/johann-sebastian-bach/chorale-preludes/BWV615-Busoni
+make -C src/johann-sebastian-bach/chorale-preludes/BWV639-Busoni
+make -C src/johann-sebastian-bach/chorale-preludes/BWV659
+make -C src/johann-sebastian-bach/chorale-preludes/BWV659-Busoni
+make -C src/johann-sebastian-bach/chromatische-fantasie-und-fugue-BWV_903
+make -C src/johann-sebastian-bach/die-kunst-der-fuge-BWV_1080
+make -C src/johann-sebastian-bach/italienisches-konzert-BWV_971
+make -C src/johann-sebastian-bach/jesu-meine-freude-BWV_610
+make -C src/johann-sebastian-bach/siciliano-BWV_1031
+make -C src/johann-sebastian-bach/suites-anglaises/BWV809
+make -C src/mikhail-glinka/nocturne
+make -C src/robert-schumann/kinderscenen-op.15
+make -C src/rued-langgaard/insektarium-BVN_134
 ```

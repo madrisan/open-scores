@@ -17,6 +17,9 @@
 
 AM_MAKEFLAGS = --no-print-directory
 
-EXTRA_DIST = template-part.ly
+EXTRA_DIST = covercolor.ly.in \
+	     global.ly \
+	     logo.ly \
+	     template-part.ly
 
 check-local: all
