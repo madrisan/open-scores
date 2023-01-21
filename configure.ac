@@ -69,30 +69,31 @@ test -n "$critic_missing" && AC_MSG_ERROR([
 
 AC_CONFIG_FILES([\
   Makefile \
-  baldassare-galuppi/Makefile \
-  baldassare-galuppi/sonata-5-c-major/Makefile \
-  clara-schumann-wieck/Makefile \
-  clara-schumann-wieck/soirees-musicales-op.6/Makefile \
-  johann-sebastian-bach/Makefile \
-  johann-sebastian-bach/chorale-preludes/Makefile \
-  johann-sebastian-bach/chorale-preludes/BWV615-Busoni/Makefile \
-  johann-sebastian-bach/chorale-preludes/BWV639-Busoni/Makefile \
-  johann-sebastian-bach/chorale-preludes/BWV659/Makefile \
-  johann-sebastian-bach/chorale-preludes/BWV659-Busoni/Makefile \
-  johann-sebastian-bach/chromatische-fantasie-und-fugue-BWV903/Makefile \
-  johann-sebastian-bach/die-kunst-der-fuge-BWV1080/Makefile \
-  johann-sebastian-bach/italienisches-konzert-BWV971/Makefile \
-  johann-sebastian-bach/jesu-meine-freude-BWV610/Makefile \
-  johann-sebastian-bach/schafe-konnen-sicher-weiden-BWV208/Makefile \
-  johann-sebastian-bach/siciliano-BWV1031/Makefile \
-  johann-sebastian-bach/suites-anglaises/BWV809/Makefile \
-  johann-sebastian-bach/suites-anglaises/Makefile \
-  mikhail-glinka/Makefile \
-  mikhail-glinka/nocturne/Makefile \
-  robert-schumann/kinderscenen-op.15/Makefile \
-  robert-schumann/Makefile \
-  rued-langgaard/Makefile \
-  rued-langgaard/insektarium-BVN134/Makefile \
+  src/Makefile \
+  src/baldassare-galuppi/Makefile \
+  src/baldassare-galuppi/sonata-5-c-major/Makefile \
+  src/clara-schumann-wieck/Makefile \
+  src/clara-schumann-wieck/soirees-musicales-op.6/Makefile \
+  src/johann-sebastian-bach/Makefile \
+  src/johann-sebastian-bach/chorale-preludes/Makefile \
+  src/johann-sebastian-bach/chorale-preludes/BWV615-Busoni/Makefile \
+  src/johann-sebastian-bach/chorale-preludes/BWV639-Busoni/Makefile \
+  src/johann-sebastian-bach/chorale-preludes/BWV659/Makefile \
+  src/johann-sebastian-bach/chorale-preludes/BWV659-Busoni/Makefile \
+  src/johann-sebastian-bach/chromatische-fantasie-und-fugue-BWV903/Makefile \
+  src/johann-sebastian-bach/die-kunst-der-fuge-BWV1080/Makefile \
+  src/johann-sebastian-bach/italienisches-konzert-BWV971/Makefile \
+  src/johann-sebastian-bach/jesu-meine-freude-BWV610/Makefile \
+  src/johann-sebastian-bach/schafe-konnen-sicher-weiden-BWV208/Makefile \
+  src/johann-sebastian-bach/siciliano-BWV1031/Makefile \
+  src/johann-sebastian-bach/suites-anglaises/BWV809/Makefile \
+  src/johann-sebastian-bach/suites-anglaises/Makefile \
+  src/mikhail-glinka/Makefile \
+  src/mikhail-glinka/nocturne/Makefile \
+  src/robert-schumann/kinderscenen-op.15/Makefile \
+  src/robert-schumann/Makefile \
+  src/rued-langgaard/Makefile \
+  src/rued-langgaard/insektarium-BVN134/Makefile \
 ])
 
 AC_OUTPUT

@@ -17,7 +17,11 @@
 
 AM_MAKEFLAGS = --no-print-directory
 
-SUBDIRS = src
-EXTRA_DIST = template-part.ly
+SUBDIRS = baldassare-galuppi \
+	  clara-schumann-wieck \
+	  johann-sebastian-bach \
+	  mikhail-glinka \
+	  robert-schumann \
+	  rued-langgaard
 
 check-local: all
