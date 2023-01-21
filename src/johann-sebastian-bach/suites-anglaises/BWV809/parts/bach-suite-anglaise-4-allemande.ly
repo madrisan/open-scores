@@ -70,7 +70,7 @@ Upper = \relative c'' {
   }
   %\break
 
-    \repeat volta 4 {
+  \repeat volta 4 {
       g''16
   |   << g4 \\ e \\ c >>  r16 g a b!  c8 g  e' c
         \tupletUp \tuplet 3/2 8 {
@@ -98,8 +98,10 @@ Upper = \relative c'' {
   | << { e'16 f e d } \\ \stemUp c8 \\ { \stemDown g16 a g f } >>  << { c'8. c16 } \\ { e,8 r } >>
     des'16( c b! c)  f,( c' b! c)
   | d!( c b! c)  f, aes g f  bes des bes g  e! g c bes
-  | a c f a,  << { g f' bes, e } \\ { g,8 bes } >>  << { f'4. f16\rest } \\ { c4. a16\rest } \\ { a4. d,16\rest } >>
-    }
+  | a c f a,
+    << { g f' bes, e } \\ { g,8 bes } >>
+    << { f'4. f16\rest } \\ { c4. a16\rest } \\ { a4. c,16\rest } >>
+  }
 
 % la si do re mi fa sol
 %  a b  c  d  e  f  g
@@ -157,7 +159,12 @@ Lower = \relative c {
   %10
   | g4  r8 g'  aes16([g fis g])  c,[g' fis g]
   | a!16([g fis g])  c,[ees d c]  f!4~  f16 f e d
-  | c e a f  g8 g,  << { c4  c8 r16 } \\ { r16 << { \stemUp c, e g } \\ { c,8.~ c8. } >> } >>
+  | c e a f  g8 g,
+    << {
+      c4  c8 c16\rest
+    } \\ {
+      r16 << { \stemUp c, e g } \\ { c,8.~ c8. } >>
+    } >>
   \break
   }
 
@@ -195,7 +202,7 @@ Lower = \relative c {
 \score {
   \new PianoStaff
   <<
-    \accidentalStyle Score.piano-cautionary
+    \accidentalStyle Score.piano
     \new Staff = "upper" \Upper
     \new Staff = "lower" \Lower
   >>
