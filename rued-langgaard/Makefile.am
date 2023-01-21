@@ -1,1 +1,1 @@
-SUBDIRS = insektarium-BVN_134
+SUBDIRS = insektarium-BVN134
