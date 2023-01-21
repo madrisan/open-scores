@@ -17,6 +17,9 @@
   first-page-number = 0
   print-all-headers = ##t
   ragged-bottom = ##f
+  ragged-last-bottom = ##f
+  %system-system-spacing = #'((basic-distance . 2) (padding . 4))
+  %page-breaking = #ly:minimal-breaking
 }
 
 \bookpart {
@@ -43,33 +46,28 @@
         \null\null\null\null
         \line { \abs-fontsize #30 \bold "Rued" }
         \null
-        \line { \abs-fontsize #56 \bold "Langgaard" }
+        \line { \abs-fontsize #80 \bold "Langgaard" }
         \null
 	\fill-line { \draw-hline }
 	\null\null\null
-        \line { \abs-fontsize #36 \bold "Insektarium" }
+        \line { \abs-fontsize #50 \bold "Insektarium" }
 	\null\null
-	\line { \abs-fontsize #22 \bold "9 Puzzle Pictures, for solo piano" }
+	\line { \abs-fontsize #26 \bold "9 Puzzle Pictures, for solo piano" }
 	\null\null\null\null
         \line { \abs-fontsize #24 \bold "BVN 134" }
 
-        \null\null\null\null
-        \fill-line {
-          \override #'(thickness . 1)
-          \draw-squiggle-line #0.5 #'(14 . 0) ##t
-        }
-        \null\null
-        \fill-line {
-          \abs-fontsize #13
-          \smallCaps " Lavender.Blue Open Scores"
-        }
-        \fill-line { \abs-fontsize #10 "Engraved by Davide Madrisan" }
-        \fill-line {
-          \abs-fontsize #9
-          \typewriter "https://github.com/madrisan/open-scores/"
-        }
-        \null\null\null\null
+        \null\null\null\null\null\null
+      }
+    }
+  }
 
+  \include "./logo.ly"
+
+  \markup {
+    \null\null
+    \fill-line {
+      \center-column {
+        \null\null\null
         \fill-line {
           \abs-fontsize #8 "Based on the partition displayed in the Youtube video https://youtu.be/8RF4LMxJ088"
         }
@@ -82,10 +80,10 @@
 \include "./parts/insektarium-1.ly"
 \pageBreak
 \include "./parts/insektarium-2.ly"
+\pageBreak
 \include "./parts/insektarium-3.ly"
 \include "./parts/insektarium-4.ly"
 \include "./parts/insektarium-5.ly"
-\pageBreak
 \include "./parts/insektarium-6.ly"
 \include "./parts/insektarium-7.ly"
 \include "./parts/insektarium-8.ly"

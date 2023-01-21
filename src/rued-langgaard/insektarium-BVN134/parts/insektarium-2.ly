@@ -344,6 +344,7 @@ Lower = \relative c {
       \omit BarNumber
       \omit TimeSignature
       \override SpacingSpanner.base-shortest-duration = #(ly:make-moment 1/2)
+      \override VerticalAxisGroup.staff-staff-spacing.basic-distance = #12
     }
   }
   \midi {
