@@ -94,6 +94,7 @@ AC_CONFIG_FILES([\
   src/robert-schumann/Makefile \
   src/rued-langgaard/Makefile \
   src/rued-langgaard/insektarium-BVN134/Makefile \
+  template/Makefile
 ])
 
 AC_OUTPUT

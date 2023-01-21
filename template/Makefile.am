@@ -17,7 +17,6 @@
 
 AM_MAKEFLAGS = --no-print-directory
 
-SUBDIRS = src \
-	  template
+EXTRA_DIST = template-part.ly
 
 check-local: all
