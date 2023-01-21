@@ -23,12 +23,6 @@ The source code was compiled with `GNU LilyPond 2.23.82 (running Guile 2.2)` (Fe
 
 #### Johann Sebastian Bach (1685-1750)
 
- * [Schafe können sicher weiden (BWV 208) - Egon Petri](https://github.com/madrisan/open-scores/releases/download/v22/Bach-Petri-Schafe-konnen-sicher-weiden-BWV208.pdf)
- * [Jesu meine Freude (BWV610)](https://github.com/madrisan/open-scores/releases/download/v22/Baldassare-Galuppi-Sonata-5.pdf)
- * [Chorale Prelude - In dir ist Freude (BWV615) - Ferruccio Busoni](https://github.com/madrisan/open-scores/releases/download/v22/Bach-Busoni-Chorale-Prelude-BWV615.pdf)
- * [Chorale Prelude - Ich ruf zu dir, Herr Jesu Christ (BWV639) - Ferruccio Busoni](https://github.com/madrisan/open-scores/releases/download/v22/Bach-Busoni-Chorale-Prelude-BWV639.pdf)
- * [Chorale Prelude - Nun komm’ der Heiden Heiland (BWV659)](https://github.com/madrisan/open-scores/releases/download/v22/JS-Bach-BWV659-Chorale-Prelude.pdf)
- * [Chorale Prelude - Nun komm’ der Heiden Heiland (BWV659) - Ferruccio Busoni](https://github.com/madrisan/open-scores/releases/download/v22/Bach-Busoni-Chorale-Prelude-BWV659.pdf)
  * [Suite Anglaise IV (BWV809)](https://github.com/madrisan/open-scores/releases/download/v22/JS-Bach-BWV809-Suite-Anglaise-4.pdf)
    * Prélude
    * Allemande
@@ -38,13 +32,7 @@ The source code was compiled with `GNU LilyPond 2.23.82 (running Guile 2.2)` (Fe
    * Menuet II
    * Gigue
  * [Chromatische Fantasie und Fugue (BWV903)](https://github.com/madrisan/open-scores/releases/download/v22/JS-Bach-BWV903-Chromatische-Fantasie-und-Fugue.pdf) - Interpretiert von Ferruccio Busoni
-   * Fantasie
-   * Fugue
  * [Italienisches Konzert (BWV971)](https://github.com/madrisan/open-scores/releases/download/v22/JS-Bach-BWV971-Italienisches-Konzert.pdf)
-   * .
-   * Andante
-   * Presto
- * [Siciliano (BWV 1031) - Ludwig Stark](https://github.com/madrisan/open-scores/releases/download/v22/Bach-Stark-Siciliano-BWV1031.pdf)
  * [Die Kunst der Fuge (BWV1080)](https://github.com/madrisan/open-scores/releases/download/v22/JS-Bach-BWV1080-Die-Kunst-der-Fuge.pdf)
    * Contrapunctus I
    * Contrapunctus II
@@ -65,7 +53,25 @@ The source code was compiled with `GNU LilyPond 2.23.82 (running Guile 2.2)` (Fe
    * Canon alla Duodecima - in Contrapunto alla Quinta
    * Canon in Hypodiatessaron - per Augmentationem in Contrario Motu
 
+#### Johann Sebastian Bach / Ferruccio Busoni
+
+ * [Chorale Prelude - Ich ruf zu dir, Herr Jesu Christ (BWV639) - Ferruccio Busoni](https://github.com/madrisan/open-scores/releases/download/v22/Bach-Busoni-Chorale-Prelude-BWV639.pdf)
+ * [Chorale Prelude - Nun komm’ der Heiden Heiland (BWV659)](https://github.com/madrisan/open-scores/releases/download/v22/Bach-Busoni-Chorale-Prelude-BWV659.pdf)
+
+#### Johann Sebastian Bach / Davide Madrisan
+
+ * [Chorale Prelude - Jesu meine Freude (BWV610)](https://github.com/madrisan/open-scores/releases/download/v22/JS-Bach-BWV610-Jesu-meine-Freude.pdf)
+ * [Chorale Prelude - Nun komm’ der Heiden Heiland (BWV659)](https://github.com/madrisan/open-scores/releases/download/v22/JS-Bach-BWV659-Chorale-Prelude.pdf)
+
 Image of the J.S. Bach's [manuscript](images/js-bach-jesu-meine-freude-manuscript.png) of the Choral "*Jesu meine Freude*" (*Das Orgel-Büchlein*, p.15).
+
+#### Johann Sebastian Bach / Egon Petri
+
+ * [Schafe können sicher weiden (BWV 208) - Egon Petri](https://github.com/madrisan/open-scores/releases/download/v22/Bach-Petri-Schafe-konnen-sicher-weiden-BWV208.pdf)
+
+#### Sebastian Bach / Ludwig Stark
+
+ * [Siciliano (BWV 1031)](https://github.com/madrisan/open-scores/releases/download/v22/Bach-Stark-Siciliano-BWV1031.pdf)
 
 #### Baldassare Galuppi (1706-1785)
 
