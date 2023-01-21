@@ -74,7 +74,7 @@
 Global = {
   \key g \minor
   \time 4/4
-  \include "../global.ly"
+  \include "./global.ly"
 }
 
 bottom = \change Staff = "lower"
