@@ -79,12 +79,12 @@ AC_CONFIG_FILES([\
   johann-sebastian-bach/chorale-preludes/BWV639-Busoni/Makefile \
   johann-sebastian-bach/chorale-preludes/BWV659/Makefile \
   johann-sebastian-bach/chorale-preludes/BWV659-Busoni/Makefile \
-  johann-sebastian-bach/chromatische-fantasie-und-fugue-BWV_903/Makefile \
-  johann-sebastian-bach/die-kunst-der-fuge-BWV_1080/Makefile \
-  johann-sebastian-bach/italienisches-konzert-BWV_971/Makefile \
-  johann-sebastian-bach/jesu-meine-freude-BWV_610/Makefile \
+  johann-sebastian-bach/chromatische-fantasie-und-fugue-BWV903/Makefile \
+  johann-sebastian-bach/die-kunst-der-fuge-BWV1080/Makefile \
+  johann-sebastian-bach/italienisches-konzert-BWV971/Makefile \
+  johann-sebastian-bach/jesu-meine-freude-BWV610/Makefile \
   johann-sebastian-bach/schafe-konnen-sicher-weiden-BWV208/Makefile \
-  johann-sebastian-bach/siciliano-BWV_1031/Makefile \
+  johann-sebastian-bach/siciliano-BWV1031/Makefile \
   johann-sebastian-bach/suites-anglaises/BWV809/Makefile \
   johann-sebastian-bach/suites-anglaises/Makefile \
   mikhail-glinka/Makefile \
@@ -92,7 +92,7 @@ AC_CONFIG_FILES([\
   robert-schumann/kinderscenen-op.15/Makefile \
   robert-schumann/Makefile \
   rued-langgaard/Makefile \
-  rued-langgaard/insektarium-BVN_134/Makefile \
+  rued-langgaard/insektarium-BVN134/Makefile \
 ])
 
 AC_OUTPUT
