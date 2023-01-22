@@ -1,4 +1,5 @@
-SUBDIRS = chorale-preludes \
+SUBDIRS = chaconne-fur-violine-busoni-BWV1004 \
+	  chorale-preludes \
 	  chromatische-fantasie-und-fugue-BWV903 \
 	  die-kunst-der-fuge-BWV1080 \
 	  italienisches-konzert-BWV971 \
