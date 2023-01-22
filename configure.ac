@@ -75,6 +75,7 @@ AC_CONFIG_FILES([\
   src/clara-schumann-wieck/Makefile \
   src/clara-schumann-wieck/soirees-musicales-op.6/Makefile \
   src/johann-sebastian-bach/Makefile \
+  src/johann-sebastian-bach/chaconne-fur-violine-busoni-BWV1004/Makefile \
   src/johann-sebastian-bach/chorale-preludes/Makefile \
   src/johann-sebastian-bach/chorale-preludes/BWV615-Busoni/Makefile \
   src/johann-sebastian-bach/chorale-preludes/BWV639-Busoni/Makefile \
@@ -86,8 +87,8 @@ AC_CONFIG_FILES([\
   src/johann-sebastian-bach/jesu-meine-freude-BWV610/Makefile \
   src/johann-sebastian-bach/schafe-konnen-sicher-weiden-BWV208/Makefile \
   src/johann-sebastian-bach/siciliano-BWV1031/Makefile \
-  src/johann-sebastian-bach/suites-anglaises/BWV809/Makefile \
   src/johann-sebastian-bach/suites-anglaises/Makefile \
+  src/johann-sebastian-bach/suites-anglaises/BWV809/Makefile \
   src/mikhail-glinka/Makefile \
   src/mikhail-glinka/nocturne/Makefile \
   src/robert-schumann/kinderscenen-op.15/Makefile \
