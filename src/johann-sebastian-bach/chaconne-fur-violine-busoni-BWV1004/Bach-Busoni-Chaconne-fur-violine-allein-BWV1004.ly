@@ -11,15 +11,19 @@
 
 \paper {
   annotate-spacing = ##f
-  bottom-margin = 13\mm
+  bottom-margin = 5\mm
   first-page-number = 0
   indent = 0.0
   line-width = 18\cm
   print-all-headers = ##t
   ragged-last-bottom = ##t
   ragged-bottom = ##f
-  %system-system-spacing = #'((basic-distance . 2) (padding . 10))
-  top-margin = 13\mm
+  system-system-spacing =
+     #'((basic-distance . 3)
+        (minimum-distance . 2)
+        (padding . 3)
+        (stretchability . 25))
+  top-margin = 12\mm
 %  markup-system-spacing.basic-distance = #10
 %  last-bottom-spacing.padding = #2
 }
@@ -154,7 +158,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | <f d' f>16_.]) d'_._( f_. a_.) d[ f bes a] gis[( b! gis e]
   | a, e') a^. g^. fis( a fis c! a fis d c
   | b!) d g^\< fis g ees' d cis\! bes'->^\> a gis a\!
-  | f( e! d c! bes a gis a c, g'! f e
+  | f( e! d c! bes a gis a cis, g'! f e
     \bar "||"
     \break
   %40
@@ -188,7 +192,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | <bes a'>16^. \clef treble \stemUp <bes'' bes'>[_( f') <ees, ees'>_.]
     <d d'>[ <c c'> <bes bes'> <a a'>] <g g'> r \clef bass <bes, g'>8
   | <a g'>8 r16 \clef treble <g' bes d>16_. <g bes cis>8_. r16 <a e' a>16_.
-    <a c g'>8_. r16 <bes c bes'>16_.
+    <a cis g'>8_. r16 <bes cis bes'>16_.
   | <a d a'>^.
     \once\override Staff.TextScript.extra-offset = #'(0 . -1)
     d_\markup { \italic\tiny "cresc." }[ f a]
@@ -200,11 +204,27 @@ Sopran = \context Voice = "one" \relative c'' {
   %55
   | <e cis'> a[\!\< cis e] <a, a'>[ <g e'> <cis a'> <e cis'>]
     \stemDown <a e'> \stemUp <g, g'>[ <f f'> <e e'>]\!
-  | <f a d f>8_\markup { \dynamic f \italic\tiny "marcatissimo" }
+  | <f a d f>8_\markup {
+      \dynamic f \italic\tiny "marcatissimo"
+    }^\markup {
+      \column {
+        \tiny "largamente"
+        \general-align #Y #-2.5
+        \italic\tiny "breit"
+      }
+    }
     \stemDown a^>[ d,^>] \stemUp \autoBeamOff <f a d f>^!\fz g'^! s \autoBeamOff
-  | <e, g c e>8\fz \stemDown g^>[ c,^>] \stemUp \autoBeamOff <e g c e>^!\fz f'^!\fz s \autoBeamOff
+  | \once\override Staff.TextScript.extra-offset = #'(0 . -2.5)
+    <e, g c e>8_\markup { \dynamic fz }
+    \stemDown g^>[ c,^>]
+    \stemUp \autoBeamOff
+    \once\override Staff.TextScript.extra-offset = #'(0 . -2.6)
+    <e g c e>^!_\markup { \dynamic fz }
+    \once\override Staff.TextScript.extra-offset = #'(0 . -0.8)
+    f'^!_\markup { \dynamic fz } s
+    \autoBeamOff
   | <d, f bes d>8\fz \stemDown f^>[ bes,^>]
-    \stemUp \autoBeamOff <d f bes d>^! <bes' e>^! s \autoBeamOff
+    \stemUp \autoBeamOff <d f bes d>^! <bes' e>^! s \autoBeamOn
   | <a, a'>^![ <d d'>^!]
     \override Stem.details.beamed-lengths = #'(6.5)
     d'16[ cis d b!] cis8 s
@@ -212,6 +232,53 @@ Sopran = \context Voice = "one" \relative c'' {
   %60
   | f8^\markup { \hspace #0.4 \italic\tiny "con bravura" }
     s <d, d'>^.^^ r16 s8 <d g>16[\< <f d'> <bes! bes'!>]\!
+  | e8 s <c, c'>^.^^ r16 s8 <c f>16[ <e c'> <a a'>]
+  | <f d'> <ees c'> <f d'> <d bes'> <bes bes'>8 r16 s8 <b! e!>16[ <d b'!> <g g'>]
+  | s2.
+    \bar "||"
+  | <d f d'>16_._^^\markup {
+      \column {
+        \tiny "non affrettare!"
+        \general-align #Y #-2.5
+        \italic\tiny "nicht eilen!"
+      }
+    }
+    \stemDown
+    \once\override Staff.TextScript.extra-offset = #'(0.8 . 0.8)
+    a'32[_\markup {
+      \italic\tiny "sempre" \dynamic f
+    }
+    g f16^! \bottom \clef treble e_!]
+    d_! \top c^! bes^! a^! r16 d''32[(\< c bes a g f]\!
+  %65
+  | e16^.\fz) \stemDown g,32[ f e16^! \bottom d_!]
+    c_! \top bes^! a^! g^! r16 c''32[(\< bes a g f ees]\!
+  | d16^.\fz) \stemDown f,32[ ees d16^! \bottom c_!]
+    bes_! \top d32 c bes16^! \bottom a_!
+    \top r16 bes''32(\< a g f e! d)\!
+  | cis32( b!\< a b cis d e f  g a bes\! a g f e d  cis!16) e'32\<( d cis b! a g\!
+  | f16^!) \stemUp d,32[ e f16\!_! a] f\!_! d\!_! f\!_! a\!_! bes32( c d e f g a bes^.)
+  | bes16^! \stemUp c,,32[ d e16\!_! g_!] e\!_! c\!_! e\!_! g\!_! a32( bes c d e f g a^.)
+  %70
+  | a16^! \stemUp bes,,32[ c d16 f] d bes d f g32( a bes c d e f g^.)
+  | <cis, g'>_._> bes'( a g f e d cis  bes a g f e d cis b!  a b cis d e f g e
+  | \autoBeamOff f16^!)
+    \bottom
+    \once\shape #'((0 . -6) (0 . 0) (0 . 0) (0 . 0)) Slur
+    d,8.^^^\markup {
+      \dynamic ff
+    }(
+    \autoBeamOn
+    \once\override Hairpin.Y-offset = #-4
+    \grace {
+      e32\< f g a b! cis \top\stemUp d e f g a b! cis
+    } \stemDown d32^.) bes( c! d e f g a bes16^.)\! s8.
+
+  | s2.
+  | s2.
+  %75
+  | s2.
+  | s2.
 
   \fine
 }
@@ -295,12 +362,40 @@ Alto = \context Voice = "two" \relative c' {
   %55
   | \once\override NoteColumn.force-hshift = #1.7 bes16_> s8.
     a16_. s8. s8 \once\override NoteColumn.force-hshift = #1.3 a_>
-  | s2 <g bes d>16\fz a bes g
+  | s2
+    \once\override Staff.TextScript.extra-offset = #'(0 . -1)
+    <g bes d>16-\markup { \dynamic fz } a bes g
   | s2 <f a c>16 g a f
   | s2 <e g bes>16 f g e
   | s4 <d e a>8 <a' a'>^.^^ <a a'>16 <g g'> <a a'> <e e'>
   %60
-  | <f d'> <e cis'> <f d'> a
+  | <f d'> <e cis'> <f d'> a s2
+  | <e c'>16 <d b'!> <e c'> g s2
+  | s2.*6
+  %68
+  | s2
+    \once\override Beam.positions = #'(-5.2 . -2)
+    \once\override Hairpin.rotation = #'(10 -1 0)
+    bes,8..\<[ f''32\!]
+  | e16\fz s8. s4
+    \once\override Beam.positions = #'(-6.2 . -2.5)
+    \once\override Hairpin.rotation = #'(10 -1 0)
+    a,,8..\<[ e''32\!]
+  %70
+  | d16\fz s8. s4
+    \once\override Beam.positions = #'(-6.2 . -2.5)
+    \once\override Hairpin.rotation = #'(10 -1 0)
+    g,,8..\<[ d''32\!]
+  | s2 s8. \once\override NoteColumn.force-hshift = #1.4 <a, a'>16_!
+  | <a a'>16_!\fz^\markup {
+      \column {
+        \small "Un poco a piacere, ma sempre energico il ritmo"
+        \general-align #Y #-1.4
+        \italic\small "Etwas freier, doch stets mit rhythmischer Energie"
+      }
+    }
+    s8. s2
+
 }
 
 Tenor = \context Voice = "three" \relative c' {
@@ -359,10 +454,33 @@ Tenor = \context Voice = "three" \relative c' {
   | s2 s8 <g, g'>16 <f f'>
   | <e e'>16 s8. s2
   %50
-  | s2.*10
-  | s4 s8. <f' d'>16^\markup { \italic\tiny "m.d." }[ g]
-  }
+  | s2.*2
+  | s4 c''16\rest s8. s4
+  | s4 c16\rest s8. s4
+  | s4 c16\rest s8. s4
+  %55
+  | s2.*5
+  %60
+  | s4 s8. <f, d'>16^\markup { \italic\tiny "m.d." }[ g] s8.
+  | s4 s8. <e c'>16^\markup { \italic\tiny "m.d." }[ f] s8.
+  | s4 s8. <d bes'>16^\markup { \italic\tiny "m.d." }[ e!] s8.
+  | s2.*5
+  %68
+  | s2 g32( a bes c d e f g^.)
+  | s2 f,32( g a bes c d e f^.)
+  %70
+  | f16^! s8. s4 e,32( f g a bes c d e^.)
+  | s2 \stemDown
+    \autoBeamOff
+    \showStaffSwitch
+    a8.^>_\markup { \italic\tiny "ten." }
+    \top \once\override NoteColumn.force-hshift = #1.4 \hideNotes a,32 s \unHideNotes
+    \hideStaffSwitch
+    \autoBeamOn
+  | \bottom s2 s16 <d, d'>^![^\markup { \italic\tiny "pesante" }
+    \grace { c16[ d'] } <c, c'>^! <bes bes'>^!]
 
+  }
 
 Bass = \context Voice = "four" \relative c {
   \voiceFour
@@ -455,7 +573,7 @@ Bass = \context Voice = "four" \relative c {
     <g g'> bes' <ees, ees'> <d d'>
   | \stemUp <cis cis'> e'! <a, a'> <g g'> <f f'> d' <e,! e'!> <d d'>
     <a a'>(\< e'' <d d'>_.) <cis! cis'!>_.\!
-  | \stemDown g'^. e^. f^. cis^. d <c! c'!> <b b'> <a a'>_\markup {
+  | \stemDown g'^. e^. f^. cis^. d <c! c'!> <bes bes'> <a a'>_\markup {
       \hspace #-1.5 \italic\tiny "dim."
     }
     \stemUp <g g'> <f f'> <e e'> <d d'>
@@ -491,6 +609,42 @@ Bass = \context Voice = "four" \relative c {
   | <d, d'>8 r16 \stemUp d' \stemDown <a f'>[ <g e'> <a f'>]
     g,16\rest
     \stemUp \once\override NoteColumn.force-hshift = #0.3 <bes, bes'> <a a'> <bes bes'> <g g'>
+  | <c c'>8 r16 c'' \stemDown <g e'>[ <f d'> <g e'>] g,16\rest <a, a'> <g g'> <a a'> <f f'>
+  | <bes bes'>8 r8 <f'' d'>16[ <ees c'> <f d'>] g,16\rest <g, g'> <f f'> <g g'> <e e'>
+  | \stemUp <a a'>_._^ \top <e''' cis'> <g e'> <cis g'>
+    \bottom <a,, a'>_._^ \top <d' a'> <f d'> <a f'>
+    \once\override Beam.positions = #'(7.5 . 7.5)
+    \bottom <a, a'>_._^ \top <cis g'> <e cis'> <g e'>
+  | \bottom
+    \once\override Staff.TextScript.extra-offset = #'(0 . -2)
+    <d,, d'>16_._^_\markup {
+      \hspace #2
+      \italic\tiny "staccatissimo"
+    }
+    s8. s4 bes''^\markup { \italic\tiny "ten." }\fz(
+  %65
+  | <c e c'>16_!^\fz) s8. s4 a^\markup { \italic\tiny "ten." }\fz(
+  | <bes d bes'>16_!^\fz) s8. s4 g\fz(
+  | <a e' a>8_!^\fz) r16. a32_!\< bes!8_!\! r16. g32_.\< a8_.\! r16. cis32_.\<
+  | d16\!_! \clef bass <d,, d'>[ <f f'> <a a'>] <f f'> <d d'> <f f'> <a a'> \stemDown g8.. g'32
+  | <c g'>16^. \stemUp <c,, c'>[ <e e'> <g g'>] <e e'> <c c'> <e e'> <g g'> \stemDown f8.. f'32
+  %70
+  | bes16 \stemUp <bes,, bes'>[ <d d'> <f f'>] <d d'> <bes bes'> <d d'> <f f'> \stemDown e8.. e'32
+  | <a e'>16^.^>_\markup { \dynamic fz \italic\tiny "marcatiss." }
+    a32[^( b! cis16^!) e^!] cis^! a^! cis^! e^! s8. \stemUp <a,,, a'>16_!
+  | \stemDown\autoBeamOff
+    <d d'>16
+    \once\override Staff.TextScript.extra-offset = #'(0 . 0)
+    <d, d'>8._\markup { \italic\tiny "ten." }(
+    \autoBeamOn
+    \grace { e'32 f g a b! cis d e f g a b! cis! }
+    \stemUp \clef treble d16_._>) e32 f g a bis c! \stemDown d16^!
+    \clef bass <d,,,, d'>16[ <c c'> <bes bes'>]
+  | s2.
+  | s2.
+  %75
+  | s2.
+  | s2.
 
   \fine
 }
