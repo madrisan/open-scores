@@ -14,18 +14,18 @@
   bottom-margin = 5\mm
   first-page-number = 0
   indent = 0.0
+% last-bottom-spacing.padding = #2
   line-width = 18\cm
+% markup-system-spacing.basic-distance = #10
   print-all-headers = ##t
   ragged-last-bottom = ##t
   ragged-bottom = ##f
   system-system-spacing =
-     #'((basic-distance . 3)
-        (minimum-distance . 2)
+     #'((basic-distance . 2)
+        (minimum-distance . 1)
         (padding . 3)
         (stretchability . 25))
-  top-margin = 12\mm
-%  markup-system-spacing.basic-distance = #10
-%  last-bottom-spacing.padding = #2
+  top-margin = 15\mm
 }
 
 \bookpart {
@@ -270,13 +270,99 @@ Sopran = \context Voice = "one" \relative c'' {
     }(
     \autoBeamOn
     \once\override Hairpin.Y-offset = #-4
+    %\once\override Hairpin.rotation = #'(2 -1 0)
     \grace {
       e32\< f g a b! cis \top\stemUp d e f g a b! cis
     } \stemDown d32^.) bes( c! d e f g a bes16^.)\! s8.
-
-  | s2.
-  | s2.
+  | \bottom
+    \omit TupletNumber
+    \set subdivideBeams = ##t
+    \set baseMoment = #(ly:make-moment 1/16)
+    \tuplet 12/8 {
+      <c,,, c'>32^^(^\markup { \hspace #-0.5 \italic\tiny "ten." } \top
+      \once\override Hairpin.rotation = #'(5 -1 0)
+      \magnifyMusic 0.75 {
+        d'\< e  fis g a  bes c d  e fis g
+      }
+    }
+    \undo\omit TupletNumber
+    \set subdivideBeams = ##f
+    \tuplet 10/8 {
+      a32^.)
+      \once\shape #'((0 . 0) (0 . 2.5) (0 . 1.3) (0 . 0)) Slur
+      fis!( g a bes c d e fis g\!
+    }
+    a16) s8.
+  | \omit TupletNumber
+    \set subdivideBeams = ##t
+    \set baseMoment = #(ly:make-moment 1/16)
+    \bottom
+    \tuplet 12/8 {
+      <bes,,,, bes'>32^^^\markup { \hspace #-2 \italic\tiny "ten." } \top
+      \once\override Hairpin.rotation = #'(4 -1 0)
+      \magnifyMusic 0.75 {
+        g''(\< a  bes c d  e fis g a bes c
+      }
+    }
+    \set subdivideBeams = ##f
+    d^!) g,( a bes c d e fis
+    \ottava #1
+    g a\! bes a g f! e d
   %75
+  | \set subdivideBeams = ##t
+    \set baseMoment = #(ly:make-moment 1/4)
+    cis^.^>)[ a'( g f
+      \once\override Staff.TextScript.extra-offset = #'(0 . -2.5)
+      e_\markup {
+      \italic\tiny "cresc. possibile"
+    } d cis b!
+    a b! c d e f g a
+    b! cis d e f g a bes^>)]
+  | g[( e cis bes g e cis bes
+    \ottava #0
+    g e cis bes g e cis bes
+    \bottom g e cis bes g e cis bes])
+    \set subdivideBeams = ##f
+    \top
+  | r16 \stemUp
+    \once\override Staff.TextScript.extra-offset = #'(-1 . -0.4)
+    a''_(^\markup { \dynamic mf \italic\tiny ", dolce espress." }_\markup {
+      \italic\tiny  "tranquillo"
+    }
+    d e  f d bes a  gis b! d f)
+    \clef bass
+  | \bottom
+    \once\shape #'((0 . 2) (0 . 0) (0 . -3) (0 . 0.5)) Slur
+    c,16( \top e a c  e c a g  fis a c ees)
+  | \bottom
+    \once\shape #'((0 . 2) (0 . 0) (0 . -3) (0 . 0.5)) Slur
+    bes,16( \top d g bes  d bes g f  e g bes cis)
+  %80
+  | r8 \clef treble \stemUp <d a' d>^.( r  <f a>^. r <e a>^.)
+  | \stemDown r16
+    \once\override Staff.TextScript.extra-offset = #'(-3 . -0.5)
+    <f' bes>\(^\markup {
+      \column {
+        \small "Sostenuto, a tempo"
+        \general-align #Y #-2.5
+        \italic\tiny "dolente"
+      }
+    }_\markup {
+      \italic\tiny "molto" \dynamic p
+    }
+    <f bes>( <d gis>)  <d gis>( <bes f'>) <bes f'>( <f d'>)
+    \stemUp <f d'> <d b'!> <b! gis'> <gis e'>\)
+  | \stemDown r16 <e'' a>\( <ees a>( <c! fis>)  <c fis>( <a ees'!>) <a ees'>( <ees c'>)
+    \stemUp <ees c'> <c a'> <a fis'> <fis d'>\)
+  | \stemDown r16 <d'' g>\( <cis g'>( <bes ees>)  <bes ees>( <g cis!>) <g cis>( <cis, bes'>)
+    \stemUp <cis bes'> <bes g'> <g e'!> <e cis'!>\)
+  | r16^\markup {
+      \dynamic p \italic\tiny "sempre"
+    } cis'( cis e  e g32 f g16 bes32 a  bes16 cis32 d e16 g,
+  %85
+  | <d f>8) \stemDown <d' gis>[( <f bes> <gis! d'> <b! f'>)] \stemUp <d,, b'>
+  | s2.
+  | s2.
   | s2.
   | s2.
 
@@ -386,8 +472,10 @@ Alto = \context Voice = "two" \relative c' {
     \once\override Beam.positions = #'(-6.2 . -2.5)
     \once\override Hairpin.rotation = #'(10 -1 0)
     g,,8..\<[ d''32\!]
-  | s2 s8. \once\override NoteColumn.force-hshift = #1.4 <a, a'>16_!
-  | <a a'>16_!\fz^\markup {
+  | s2 s8.
+    \once\override NoteColumn.force-hshift = #1.4 <a, a'>16_!
+  | \once\override Staff.TextScript.extra-offset = #'(0 . 2.4)
+    <a a'>16_!\fz^\markup {
       \column {
         \small "Un poco a piacere, ma sempre energico il ritmo"
         \general-align #Y #-1.4
@@ -395,7 +483,9 @@ Alto = \context Voice = "two" \relative c' {
       }
     }
     s8. s2
-
+  | s2.*11
+  %84
+  | s16 e g8  g8 cis!  cis g'16 e
 }
 
 Tenor = \context Voice = "three" \relative c' {
@@ -479,6 +569,20 @@ Tenor = \context Voice = "three" \relative c' {
     \autoBeamOn
   | \bottom s2 s16 <d, d'>^![^\markup { \italic\tiny "pesante" }
     \grace { c16[ d'] } <c, c'>^! <bes bes'>^!]
+  | s2 s16 <c c'>^![ \grace { bes16[ c'] } <bes, bes'>^! <a a'>^!]
+  | s2.*3
+  %77
+  | s8 \clef treble <a'' d f>^.(\p r <bes d f>^. r <b! d f>^.)
+    s8 \clef treble <a c e>^.( r <g c e>^. r <fis c' ees>^.)
+    s8 \clef treble <g bes d>^.( r <f! bes d>^. r <e bes' cis>^.)
+    \once\shape #'((1 . 0.3) (0 . 0) (0 . -0.5) (0 . 0)) Slur
+    a,,16_( d f a  d a f d  a e' \top g cis)
+  | \bottom s8 d,[( f gis b!)] s
+  | s c,![( ees fis a)] s
+  | s bes,![( cis\< ees_\markup {
+      \italic\tiny "poco"
+    } e!)]\! s
+
 
   }
 
@@ -638,11 +742,57 @@ Bass = \context Voice = "four" \relative c {
     <d, d'>8._\markup { \italic\tiny "ten." }(
     \autoBeamOn
     \grace { e'32 f g a b! cis d e f g a b! cis! }
-    \stemUp \clef treble d16_._>) e32 f g a bis c! \stemDown d16^!
+    \stemUp \clef treble d16_._>) e32 f g a bes c! \stemDown d16^!
     \clef bass <d,,,, d'>16[ <c c'> <bes bes'>]
-  | s2.
-  | s2.
+  | \omit TupletNumber
+    \set subdivideBeams = ##t
+    \set baseMoment = #(ly:make-moment 1/16)
+    \tuplet 12/8 {
+      <c c'>32_^( \magnifyMusic 0.75 {
+        d'' e  fis g a  bes c d  e fis g
+      }
+    }
+    \set subdivideBeams = ##f
+    \clef treble
+    \stemUp\slurUp
+    \tuplet 10/8 {
+      a16_.) bes32( c d e fis g a bes
+    }
+    \stemDown c16^.)
+    \clef bass <c,,,,, c'>16[ <bes bes'> <a a'>]
+  | \set subdivideBeams = ##t
+    \set baseMoment = #(ly:make-moment 1/16)
+    \tuplet 12/8 {
+      <bes bes'>32 \clef treble
+      \magnifyMusic 0.75 {
+        g'''( a  bes c d  e fis g a bes c
+      }
+    }
+    \set subdivideBeams = ##f
+    d32^!) bes( c d e fis g a  bes c d c bes a g f!
+    \undo\omit TupletNumber
   %75
+  | \set subdivideBeams = ##t
+    \set baseMoment = #(ly:make-moment 1/4)
+    <a, e'>^.^>)[ a'_( g f e d cis b!  a b! c d e f g a  b! cis d e f g a bes^>]
+  | g[ e cis bes g e cis bes  \clef bass g e cis bes g e cis bes]  g e cis bes g e cis bes)
+    \set subdivideBeams = ##f
+  | \stemUp <d d'>2._\markup { \dynamic ffz ">" \dynamic p }
+  | \clef bass \stemDown d'2.
+  | \clef bass d2.
+  %80
+  | \clef bass d2.
+  | \stemUp <d, d'>8_-\sustainOn s4 s8 s8\sustainOff \stemDown <d' d'>8[_(
+  | <cis cis'>8 <c! c'!>)]\sustainOn
+    s4. <c c'>8[_(\sustainOff
+  | <b! b'!> <bes bes'>)]\sustainOn s8 s s\sustainOff <bes bes'>8_(
+  | <a a'>) \stemUp <e' e'>_.[\pp_( <cis cis'>_. <bes bes'>_. <g g'>_. <cis,! cis'!>_.]
+  %85
+  | <d d'>16_.) \clef treble \slurDown bes''''_.[^\( <f bes>( <d gis>)]
+    <d gis>( <bes f'>) <bes f'>( <gis d'>)
+    \clef bass \stemDown <gis d'> <d b'!> <b! gis'!> <gis! e'>\)
+  | s2.
+  | s2.
   | s2.
   | s2.
 
