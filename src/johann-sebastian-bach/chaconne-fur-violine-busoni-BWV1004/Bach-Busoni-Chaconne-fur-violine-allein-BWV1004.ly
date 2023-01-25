@@ -316,7 +316,7 @@ Sopran = \context Voice = "one" \relative c'' {
       e_\markup {
       \italic\tiny "cresc. possibile"
     } d cis b!
-    a b! c d e f g a
+    a b! cis d e f g a
     b! cis d e f g a bes^>)]
   | g[( e cis bes g e cis bes
     \ottava #0
@@ -774,7 +774,7 @@ Bass = \context Voice = "four" \relative c {
   %75
   | \set subdivideBeams = ##t
     \set baseMoment = #(ly:make-moment 1/4)
-    <a, e'>^.^>)[ a'_( g f e d cis b!  a b! c d e f g a  b! cis d e f g a bes^>]
+    <a, e'>^.^>)[ a'_( g f e d cis b!  a b! cis d e f g a  b! cis d e f g a bes^>]
   | g[ e cis bes g e cis bes  \clef bass g e cis bes g e cis bes]  g e cis bes g e cis bes)
     \set subdivideBeams = ##f
   | \stemUp <d d'>2._\markup { \dynamic ffz ">" \dynamic p }
