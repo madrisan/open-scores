@@ -84,6 +84,7 @@ Global = {
 
 bottom = { \change Staff = "lower"\stemUp }
 top = { \change Staff = "upper"\stemDown }
+sostenendo = { \override TextSpanner.bound-details.left.text = \markup { \small "sostenendo " } }
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
@@ -320,8 +321,8 @@ Sopran = \context Voice = "one" \relative c'' {
     b! cis d e f g a bes^>)]
   | g[( e cis bes g e cis bes
     \ottava #0
-    g e cis bes g e cis bes
-    \bottom g e cis bes g e cis bes])
+    g e cis bes g e cis bes]
+    \bottom g[ e cis bes g e cis bes])
     \set subdivideBeams = ##f
     \top
   | %\break
@@ -499,8 +500,102 @@ Sopran = \context Voice = "one" \relative c'' {
   | r cis bes' bes <cis bes'>^^ bes bes cis,  r d a' a <d a'>^^ a a d,  r cis g' g <cis g'>^^ g g cis,
   | \stemUp r d[ fis fis] <d' fis>[^^ fis, fis d] <a a'>4^^\ff <b! b'!>^^
   | <c c'>^^ <g g'>^^ <a a'>^^
-  | s2.
+  | <bes! bes'!>^^ <bes bes'>^^ <a a'>^^
   %120
+  | <gis gis'>^^ <a a'>^^ <a a'>^^
+  | <d d'>8_.\fz^\markup {
+      \small "tempo animato"
+    }
+    f'32[( e d e] d[ c d c bes c bes a]
+    \set subdivideBeams = ##f
+    bes[ c d e f16^.]) <g,, bes f'>16_.\f
+  | <g bes e>8_.\f
+    \set subdivideBeams = ##t
+    e''32[( d c d c bes c bes a bes a g]
+    \set subdivideBeams = ##f
+    a[ bes c d ees16^.]) <f,, a ees'>16
+  | <f a d>8_.\f
+    \set subdivideBeams = ##t
+    d''32[( c bes c bes a bes a g a g f]
+    \set subdivideBeams = ##f
+    g[ a bes c d16^.]) <e,, g d'>16^.\f
+  | <f a d>32 \stemDown a'[(\< b! cis d16^.])\! \stemUp <f,, a d>16_.\f
+    <f bes d>32_. \stemDown a'[(\< b! cis d16^.])\! \stemUp <f,, bes d>16_.\f
+    <e a d>32_. \stemDown d''[( cis b! cis16^.]) \stemUp <g, cis g'>16_.\f
+  %125.
+  | <f d' f>8 r <f d' f a>4.\< q8^-\!
+  | <e' g bes e>4^\markup {
+      \bold\small "Tempo I"
+    }_\markup {
+      \dynamic ff \italic\small "molto tenuto"
+    }
+    <e g a e'>4. q8
+  | \stemNeutral <f a f'>4 <d g d'>4. q8
+  | <bes' d bes'>4 <a d a'> <g cis g'>
+  | <g a d g> <fis a d fis> r8 \stemUp <f! a d f!>
+  %130
+  | <f g d' f>4 <e g c e> r8 <ees g c ees>
+  | <f c' ees>4 <f bes d> r8 <f bes d>
+  | r8 <f b! d>
+    \set baseMoment = #(ly:make-moment 1/16)
+    \set subdivideBeams = ##t
+    \tuplet 12/8 {
+      cis'32( d cis d cis d cis d cis d cis b
+    }
+    \set subdivideBeams = ##f
+    \autoBeamOff
+    cis8^.) <d, e a d>8_!
+    \autoBeamOn
+  \bar "||"
+  | \key d \major
+    <d d'>4_\markup { \italic\tiny "ten." }
+    \clef bass fis,4.^-(^\markup {
+      \small "quasi Tromboni"
+    } g8^-
+  | e4^-) fis4.( g16 a
+  %135
+  | d,4^-) e4.( fis16 g)
+  | fis8( e) e4. fis8^-
+  | fis4^- b8^-( a^- g^- fis^-)
+  | e4 fis16( g a g fis8) e^-
+  | <fis, d'>4^- e'8( g16 fis e8 d)
+  %140
+  | a'4\rest e4.^\> a8\!
+  | s4 d8^.( d\rest d\rest fis^.)
+  | e^.^-( f\rest <e, e'>^.^-) a'\rest a\rest <g,! g'>^.(
+  | <fis fis'>^.) c''\rest
+    \clef treble <b, b'>4^.^- r8 d^.(
+  | fis8^.) d'8\rest <a, a'>4^-( d'8\rest <a, a'>8^-
+  %145
+  | <a d a'>4^-) <fis' a d fis>4.^>^\markup {
+      \hspace #0.5 \italic\tiny "sostenuto"
+    }
+    <fis d' fis>8
+  | <e a e'>4 <a e' a>4. <g a e' g>8
+  | \stemDown
+    \sostenendo <fis a fis'>^-[_\startTextSpan
+    <e a e'>^-] <g d' g>^-[ <fis d' fis>^-] <b d b'>^-[ <a b d a'>^-]
+  | <g a cis g'>^-[ <fis d' fis>^-] \stemUp <d e a d e>4^-(\f <e a cis e>^-)\stopTextSpan
+    \bar "||"
+  | d'16(^\markup {
+      \bold "Allegro moderato ma deciso"
+    } cis_\markup {
+      \italic\small "meno" \dynamic f
+    } b a  gis b d fis
+    \autoBeamOff
+    e8^.)
+    \once\override Staff.TextScript.extra-offset = #'(-0.2 . -2)
+    <e, gis! b e>_._\markup { \dynamic ff }
+  %150
+  | <e a cis e>8 s s4 r8 <e fis cis' e>8_.
+  | <d fis b d>16_. s8. s8. r16 r8 <d e b' d>8_.\ff
+  | <cis e a cis>16_. \autoBeamOn r32 b'16_.(\f a_.\> b32_. r32 \stemDown cis16^. e^. g^. b32^.
+    r32 a16^.[ g32^.]) \stemUp <a, cis>8^.\!
+  | <a d>16^.
+    \stemDown a'^.[\p^\markup {
+      \italic\small "legg. staccato e tranquillo"
+    }
+    fis^. d^.] \stemUp a_. d_. a_. fis_. d_. fis_. e_. d_.
 
   \fine
 }
@@ -637,8 +732,51 @@ Alto = \context Voice = "two" \relative c' {
   | s2 s16. d,32 s8
   %110
   | s16. d32 s8 s2
-  | s4 s16. f32 s4
-}
+  | s4 s16. f32 s4.
+  | s2.*9
+  %121
+  | s8 f2_>_\markup { \italic\tiny "ten." } s8
+  | s8 e2_>( ees16_.) s16
+  | s8 d2_> s8
+  | s2.*5
+  %129
+  | s2 c!4_^
+  | s2 bes!4_^
+  | s2 a4_^
+  | gis4_^ <e' a>4.\ff s8
+  | s4 d,2
+  | e4 cis2
+  %135
+  | d4 b2
+  | d4 cis2
+  | a4 fis'4. fis8
+  | a,4 cis4. cis8
+  | s4 b4.\< b8\!
+  %140
+  | << { \stemDown a2._( } \\ { s4 d( cis) } >>
+  | << {
+      \stemDown \omit Flag \omit Stem d8) s8
+    } \\ {
+      \once\override Staff.TextScript.extra-offset = #'(0.3 . -3)
+      <d fis>[_\markup {
+        \dynamic p \italic\small "molto legato"
+      } e]
+    } >>
+    d[ e fis gis]
+  | a[ b] cis[ d b cis]
+  | d[ fis] e[ d cis <g b>]
+  | a[ b] cis[ d e cis]
+  %145
+  | s2.
+  | cis'8[( d]) s8 <a, e'>_._-[( <b a'>_._-]) s8
+  | s2.*2
+  | <d d'>8_.\fz s s2
+  %150
+  | s2.*2
+  | s2 s8 fis'16_.[ e_.]
+  | \once\override NoteColumn.force-hshift = #1.4 fis16 s8. s2
+
+  }
 
 Tenor = \context Voice = "three" \relative c' {
   \voiceThree
@@ -727,9 +865,11 @@ Tenor = \context Voice = "three" \relative c' {
   | s8 \clef treble <a'' d f>^.(\p r <bes d f>^. r <b! d f>^.)
   | s8 \clef treble <a c e>^.( r <g c e>^. r <fis c' ees>^.)
   | s8 \clef treble <g bes d>^.( r <f! bes d>^. r <e bes' cis>^.)
-    \once\shape #'((1 . 0.3) (0 . 0) (0 . -0.5) (0 . 0)) Slur
   %80
-  | a,,16_( d f a  d a f d  a e' \top g cis)
+  | \once\shape #'((1 . 0.3) (0 . 0) (0 . -0.5) (0 . 0)) Slur
+    a,,16_( d f a  d a f d
+    \once\override Beam.positions = #'(3 . 3.8)
+    a e' \top g cis)
   | \bottom s8 d,[( f gis b!)] s
   | s c,![( ees fis a)] s
   | s bes,![( cis\< ees_\markup {
@@ -773,13 +913,7 @@ Tenor = \context Voice = "three" \relative c' {
     \once\shape #'((0 . -4) (0 . 0) (0 . 1.5) (0 . -1)) Slur
     \bottom d,[(^\< a' f'] \top d\!
     a'^>[\> f'^\markup {
-      \column {
-        \concat {
-          \italic\small "sempre più " \dynamic f \italic\small " poco a poco; animando il tempo"
-        }
-        \general-align #Y #-1.5
-        \italic\small "non legg."
-      }
+      \italic\small "sempre più " \dynamic f \italic\small "poco a poco, animando il tempo; non legg."
     } a, d,])\!
     \once\shape #'((0 . -5) (0 . 0) (0 . 1.5) (0 . -2)) Slur
     \bottom d,( a' c f  \top a^>[ f' c d,])
@@ -803,6 +937,50 @@ Tenor = \context Voice = "three" \relative c' {
   %115
   | \bottom s8 \clef treble <fis d'>^^ s g^^ s f^^
   | s8 e^^ s f^^ s e^^
+  | s2.*9
+  %126
+  | s4 <a, cis>4. s8
+  | <a d>4 <f bes>4. s8
+  | <g e'>4 <a f'> <a e'>
+  | <a d> q a8\rest <a d>
+  %130
+  | <g d'>4 <g c> g8\rest <g c>
+  | <f c' ees>4 <f bes d> r8 <f bes d>
+  | r8 <f b! d>
+    << {
+      \set baseMoment = #(ly:make-moment 1/16)
+      \set subdivideBeams = ##t
+      \omit TupletNumber
+      \tuplet 12/8 {
+        cis'32( d cis d cis d cis d cis d cis b
+      }
+      \set subdivideBeams = ##f
+      cis8^.) s
+    } \\ {
+      <e, a>4. s8
+    } >>
+  | s2.*7
+  %140
+  | <g cis>8[(^\>^\markup { \hspace #-3 \italic\tiny "m.s." } <fis d'>])\! s2
+  | fis,8 e d[ e fis b]
+  | cis[ d] a'\rest fis[( g!]) a\rest
+  | a\rest d,[( g fis e]) s
+  | \top fis8 \bottom d e[ fis g e,]
+  %145
+  | <fis d'>[ <e e'>]^\markup {
+      \italic\small "cresc."
+    }
+    s8 <e' a>^.^-[(^\markup {
+      \italic\tiny "m.d."
+    }
+    <fis d'>^.^-]) s8
+  | s2.*4
+  %150
+  | a,8 cis16[ b] a^\< cis e <g, g'>\! s4
+  | s16 cis[(^\<^\mf d b] g[ b d]) s16\! s4
+  | s4 cis'16[ e g b] a[ g fis^. e^.]
+  | fis8 s fis,4.( g8)
+
   }
 
 Bass = \context Voice = "four" \relative c {
@@ -1083,9 +1261,24 @@ Bass = \context Voice = "four" \relative c {
   | <e e'> <f f'> <e e'>
   << {
   %117 (lower)
-  | r4 \clef treble r32 <d'' a'>[ <f! d'>] \stemUp <f'! d' f!>[ <f d' f>^^ a] \stemDown <f, d'>[ <d a'>]
+  | r4 \clef treble r32^\ff <d'' a'>[_\markup {
+      \hspace #-2.5 \italic\tiny "m.g."
+    } <f! d'>]
+    \stemUp <f'! d' f!>[^\markup {
+      \hspace #-2 \italic\tiny "m.d."
+    } <f d' f>^^ a] \stemDown <f, d'>[ <d a'>]
     r32 <d g> <f! d'> \stemUp <f'! d' f!>[ <f d' f>^^ g] \stemDown <f, d'> <d g>
-  | d4 e f
+  | \clef treble r32 <c g'>[<e c'>]
+    \stemUp <e' c' e>[<e c' e>^^ g] \stemDown <e, c'>[ <c g'>]
+    r32 <c g'>[<ees c'>] \stemUp <ees' c' ees>[<ees c' ees>^^ g] \stemDown <ees, c'>[ <c g'>]
+    r32 <c f>[<ees c'>] \stemUp <ees' c' ees>[<ees c' ees>^^ f] \stemDown <ees, c'>[ <c f>]
+  | r32 <bes f'>[<d bes'>] \stemUp <d' bes' d>[<d bes' d> f] \stemDown <d, bes'>[ <bes f'>]
+    r32 <bes g'>[<d bes'>] \stemUp <d' bes' d>[<d bes' d> g] \stemDown <d, bes'>[ <bes g'>]
+    r32 <bes f'>[<d bes'>] \stemUp <d' bes' d>[<d bes' d> f] \stemDown <d, bes'>[ <bes f'>]
+  %120 (lower)
+  | r32 <b! e>[<d b'!>] \stemUp <d' b'! d>[<d b' d> e] \stemDown <d, b'>[ <b e>]
+    r32 <a e'>[<d a'>] \stemUp <d' a' d>[<d a' d> e] \stemDown <d, a'>[ <a e'>]
+    r32 <a e'>[<cis a'>] \stemUp <cis' a' cis>[<cis a' cis> e] \stemDown <cis, a'>[ <a e'>]
   }
   %117 (lowerlower)
   | \new Staff = "lowerlower"
@@ -1094,12 +1287,104 @@ Bass = \context Voice = "four" \relative c {
       \omit Staff.TimeSignature
       \clef bass
     } {
-  |   \stemUp <d,, d'>4*1/2 d''8^^ <a,, a'>4_^\ff <b! b'!>_^
+  |   \stemUp <d,, d'>4*1/2 d''8^^ <a,, a'>4_^\ff^\markup {
+         \hspace #2 \italic\small "più allargando"
+      } <b! b'!>_^
   |   <c c'>_^ <g g'>_^ <a a'>_^
+  |   <bes bes'>_^ <bes bes'>_^ <a a'>_^
+  %120 (lowerlower)
+  |   <gis gis'>_^ <a a'>_^ <a a'>_^
     }
   >>
-  | s2.
-  %120
+  | \clef bass
+    \stemUp
+    \set subdivideBeams = ##f
+    <d d'>16_.\fz <d d'>_.[^\markup {
+      \italic\tiny "poco" \dynamic f
+    } <c c'>_. <d d'>_.] <bes bes'>_.[ <d d'>_. <a a'>_. <d d'>_.]
+    <g, g'>_.[ <bes bes'>_. <g g'>_.] <d' d'>_.\f
+  | <c c'>_.\f <c c'>[^\markup {
+      \italic\tiny "poco" \dynamic f
+    } <bes bes'> <c c'>] <a a'>[ <c c'> <g g'> <c c'>]
+    <f, f'>[ <a a'> <f f'>] <c' c'>_.\f
+  | <bes bes'>_.\f <bes bes'>[^\markup {
+      \italic\tiny "poco" \dynamic f
+    } <a a'> <bes bes'>] <g g'>[ <bes bes'> <f f'> <bes bes'>]
+    <e, e'>[ <g g'> <e e'>] <bes' bes'>_.\f
+  | <a a'>16_. \stemDown <d d'>^.[\mf <f f'>^.] \stemUp <a, a'>_.\f
+    <g g'>16_. \stemDown <d' d'>^.[\mf <f f'>^.] \stemUp <g, g'>_.\f
+    <a a'>16_. \stemDown <e' e'>^.[\mf <g g'>^.] \stemUp <a, a'>_.\f
+  %125.
+  | <d d'>16 <e e'>_![ <d d'>_! <cis cis'>_!]^\ff <d d'>_![ <f f'>_! <g g'>_! <a a'>_!]
+    \stemDown <bes bes'>[ <a a'> <bes bes'> <g g'>]
+  | <d d'>4
+    \set tieWaitForNote = ##t
+    \tieUp
+    \grace { cis16~ cis'~ } <cis, cis'>4. <cis' a' cis>8
+  | \grace { d,16~ d'~ } <d, d'>4
+    \grace { bes16~ bes'~ } <bes, bes'>4. <bes' f' bes>8
+  | \grace { g,16~ g'~ } <g, g'>4  \grace { a16~ a'~ } <a, a'>4  \grace { a16~ a'~ } <a, a'>4
+  | \grace { d16~ d'~ } <d, d'>4  \grace { d16~ d'~ } <d, d'>4  <c! c'!>_^
+  %130
+  | \grace { b!16~ b'!~ } <b, b'>4  \grace { c16~ c'~ } <c, c'>4  <bes bes'>_^
+  | \grace { a16~ a'~ } <a, a'>4  \grace { bes16~ bes'~ } <bes, bes'>4  <a a'>_^
+  | <gis gis'>4_^  \grace { a16~ a'~ } <a, a'>4. \stemUp <a a'>8_!
+    \set tieWaitForNote = ##f
+    \bar "||"
+  | \key d \major
+    <d d'>4^\markup { \hspace #2 \italic\small "dolce" }
+    <d a'>2_._-(
+  | <cis a'>4_._-) <a fis'>2_._-(
+  %135
+  | <b fis'>4_._-) <g e'>2
+  | <a a'>4 q2
+  | <d, d'>4
+    \once\override Staff.TextScript.extra-offset = #'(0 . 2.5)
+    <d' b'>4.^\markup {
+      \italic\small "molto espress."
+    }
+    <d d'>8_-[(
+  | <cis cis'>_- <b b'>_-] <a a'>4._-) <a a'>8_-[(
+  | <b b'>_- <a a'>_-] <g g'>4.) q8
+  %140
+  | \appoggiatura a16 \stemDown a4
+    \once\override Staff.TextScript.extra-offset = #'(0 . 2.5)
+    \stemUp <a e'>2\pp^\markup { \italic\small "dim." }
+  | \stemDown d8 g,\rest d_.( g\rest g\rest <d' gis>_.)
+  | <cis a'>_._-( d\rest <a a'>_._-) d\rest d\rest <a a'>8_.(
+  | <b b'>4_.) g'_- e8\rest <g, g'>_.(
+  | <a a'>4_.) a'_-( a8\rest
+    \once\shape #'((0.8 . 4.8) (0 . 4.5) (0 . 3.5) (0 . 0)) PhrasingSlur
+    <a, a'>_-^\(
+  %145
+  | d4_-)
+    \once\override Staff.TextScript.extra-offset = #'(-1.5 . -0.5)
+    <d a' fis'>8[\)_\markup {
+      \italic\small "un poco pesante"
+    }
+    <e a g'> <fis d' a'> <g b b'>]
+  | <a e' cis'>[ <b e d'>] <cis a' e'>[ <a e' cis'> <b e d'> <cis a' e'>]
+  | <d a' d>[ <cis g' cis>] <b g' b>[ <a fis' a>] <g d' b'>[ <fis b d a'>]
+  | \stemUp <e a cis g'>[ <d a' d fis>] \stemDown <a' e' a>4 <a e' a cis>
+  | \stemUp\slurUp <d, d'>8_.
+    b''16[(^\<_\markup {
+      \italic\small "poco a piacere"
+    }
+    cis] <b d>[ <a cis>\!^\> <gis b> <fis a>]
+    \autoBeamOff <gis b>8)\! <d, b' d>_. \autoBeamOn
+  %150
+  | \stemDown <cis cis'>16[ <d d'>] cis[ b] a[ cis e] c\rest
+    \autoBeamOff <fis fis'>8^. \stemUp <ais, ais'>_. \autoBeamOn
+  | <b b'>16_. \stemDown cis[_( d b] g[ b d]) <fis fis'>^.
+    \autoBeamOff <e e'>8^. \stemUp <gis, e' gis> \autoBeamOn
+  | <a a'>16_. \stemDown b''[ a b] \clef treble s4. <a cis>8 % \stemUp cis e g b a g fis^. e^.
+  | <a d>8_._\markup {
+      \italic\small "dolce, poco marcato ed espress."
+    }
+    r
+    \clef bass
+    \once\override Arpeggio.positions = #'(-5.5 . 1.5)
+    <a,, a' d>2\arpeggio
 
   \fine
 }
