@@ -597,6 +597,18 @@ Sopran = \context Voice = "one" \relative c'' {
       \italic\small "legg. staccato e tranquillo"
     }
     fis^. d^.] \stemUp a_. d_. a_. fis_. d_. fis_. e_. d_.
+  | \stemNeutral cis16_. a''[ e cis] a[ cis a e] cis[ e d cis]
+  %155
+  | b gis''[ d b] gis[ b gis e] b[ d cis b]
+  | a b cis d  e cis a cis  e g fis e
+  | fis^\markup {
+      \italic\small "sempre stacc."
+    }
+    d a d  fis d <d a'> fis  <fis d'> a <a fis'> d
+  | <a a'> e' cis e  <cis a'> e <e cis'> a  <a e'> cis <a fis'> cis
+  | <fis, d'> fis' <fis, d'> b  <d, fis> <cis b'> <b d> <a fis'>  \stemDown <g b> <fis d'> <g cis> b
+  %160
+  | \stemUp a'16 s8. cis,16 s8. a16 s8.
 
   \fine
 }
@@ -776,6 +788,15 @@ Alto = \context Voice = "two" \relative c' {
   | s2.*2
   | s2 s8 fis'16_.[ e_.]
   | \once\override NoteColumn.force-hshift = #1.4 fis16 s8. s2
+  | s2.*3
+  %157
+  | \bottom\slurUp s4
+    \once\override Hairpin.rotation = #'(-4 1 0)
+    b,,8(^\> a g fis\!
+  | e4) fis16( g a g fis8 e
+  | d4) s2
+  %160
+  | \top cis''16 e cis a  e a cis, e  a, cis e g
 
   }
 
@@ -981,6 +1002,22 @@ Tenor = \context Voice = "three" \relative c' {
   | s16 cis[(^\<^\mf d b] g[ b d]) s16\! s4
   | s4 cis'16[ e g b] a[ g fis^. e^.]
   | fis8 s fis,4.( g8)
+  | s4 fis4.( g16 a)
+  %155
+  | <b, d>4
+    \once\override Hairpin.rotation = #'(8 1 0)
+    d4.(^\< e8\!
+  | \once\override Hairpin.rotation = #'(-10 1 0)
+    fis^\> e)\! e4. fis8
+  | s4 \stemDown
+    \once\override Stem.length = #3.5
+    d4. d8_(
+  | \stemUp cis[ b] \stemDown
+    \once\override NoteColumn.force-hshift = #0.5
+    \once\override Stem.length = #4 a4.) a8
+  | b a \stemUp d( g16 fis e8 d
+  %160
+  | e fis g4 fis8 e)
 
   }
 
@@ -1415,6 +1452,23 @@ Bass = \context Voice = "four" \relative c {
     \clef bass
     \once\override Arpeggio.positions = #'(-5.5 . 1.5)
     <a,, a' d>2\arpeggio
+  | <a' e'>4
+    \once\override Arpeggio.positions = #'(-5.5 . 1.5)
+    <a, fis' cis'>2\arpeggio
+  %155
+  | a'4 <a, e' b'>2
+  | <a' cis>4
+    \once\override Arpeggio.positions = #'(-2.5 . 0.7)
+    <a cis>2\arpeggio
+  | <a d fis>4^-
+    \once\override Arpeggio.positions = #'(-5.8 . 1.8)
+    <a, fis'>2\arpeggio
+  | s4
+    \once\override Arpeggio.positions = #'(-5.8 . 1.8)
+    <a cis'>2\arpeggio
+  | s4 <a g'>2
+  %160
+  | a'2.
 
   \fine
 }
