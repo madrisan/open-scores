@@ -525,7 +525,7 @@ Sopran = \context Voice = "one" \relative c'' {
   %125.
   | <f d' f>8 r <f d' f a>4.\< q8^-\!
   | <e' g bes e>4^\markup {
-      \bold\small "Tempo I"
+      \bold "Tempo I"
     }_\markup {
       \dynamic ff \italic\small "molto tenuto"
     }
@@ -591,7 +591,8 @@ Sopran = \context Voice = "one" \relative c'' {
   | <d fis b d>16_. s8. s8. r16 r8 <d e b' d>8_.\ff
   | <cis e a cis>16_. \autoBeamOn r32 b'16_.(\f a_.\> b32_. r32 \stemDown cis16^. e^. g^. b32^.
     r32 a16^.[ g32^.]) \stemUp <a, cis>8^.\!
-  | <a d>16^.
+  | \once\override Stem.length = #13
+    <a d>16^.
     \stemDown a'^.[\p^\markup {
       \italic\small "legg. staccato e tranquillo"
     }
@@ -1229,6 +1230,8 @@ Bass = \context Voice = "four" \relative c {
       \omit Staff.TimeSignature
     } {
       %\key d \minor   % FIME: this introduces an empty stave at the end of the previous line
+      \override Beam.beam-thickness = #0.4
+      \override Beam.length-fraction = #0.8
       \stemDown d32[^\markup {
         \hspace #-4 \tiny "ossia:"
       }_\markup {
@@ -1264,21 +1267,47 @@ Bass = \context Voice = "four" \relative c {
   | r4 \clef treble r32^\ff <d'' a'>[_\markup {
       \hspace #-2.5 \italic\tiny "m.g."
     } <f! d'>]
-    \stemUp <f'! d' f!>[^\markup {
+    \stemUp
+    \once\override Beam.positions = #'(8.6 . 8.6)
+    <f'! d' f!>[^\markup {
       \hspace #-2 \italic\tiny "m.d."
     } <f d' f>^^ a] \stemDown <f, d'>[ <d a'>]
-    r32 <d g> <f! d'> \stemUp <f'! d' f!>[ <f d' f>^^ g] \stemDown <f, d'> <d g>
+    r32 <d g> <f! d'>
+    \stemUp
+    \once\override Beam.positions = #'(8.7 . 8.7)
+    <f'! d' f!>[ <f d' f>^^ g] \stemDown <f, d'> <d g>
   | \clef treble r32 <c g'>[<e c'>]
-    \stemUp <e' c' e>[<e c' e>^^ g] \stemDown <e, c'>[ <c g'>]
-    r32 <c g'>[<ees c'>] \stemUp <ees' c' ees>[<ees c' ees>^^ g] \stemDown <ees, c'>[ <c g'>]
-    r32 <c f>[<ees c'>] \stemUp <ees' c' ees>[<ees c' ees>^^ f] \stemDown <ees, c'>[ <c f>]
-  | r32 <bes f'>[<d bes'>] \stemUp <d' bes' d>[<d bes' d> f] \stemDown <d, bes'>[ <bes f'>]
-    r32 <bes g'>[<d bes'>] \stemUp <d' bes' d>[<d bes' d> g] \stemDown <d, bes'>[ <bes g'>]
-    r32 <bes f'>[<d bes'>] \stemUp <d' bes' d>[<d bes' d> f] \stemDown <d, bes'>[ <bes f'>]
+    \once\override Beam.positions = #'(8.6 . 8.6)
+    \stemUp <e' c' e>[<e c' e>^^ g]
+    \stemDown <e, c'>[ <c g'>]  r32 <c g'>[<ees c'>]
+    \once\override Beam.positions = #'(8.6 . 8.6)
+    \stemUp <ees' c' ees>[<ees c' ees>^^ g]
+    \stemDown <ees, c'>[ <c g'>]  r32 <c f>[<ees c'>]
+    \once\override Beam.positions = #'(8.6 . 8.6)
+    \stemUp <ees' c' ees>[<ees c' ees>^^ f]
+    \stemDown <ees, c'>[ <c f>]
+  | r32 <bes f'>[<d bes'>]
+    \once\override Beam.positions = #'(8.0 . 8.0)
+    \stemUp <d' bes' d>[<d bes' d> f]
+    \stemDown <d, bes'>[ <bes f'>]
+    r32 <bes g'>[<d bes'>]
+    \once\override Beam.positions = #'(8.0 . 8.0)
+    \stemUp <d' bes' d>[<d bes' d> g]
+    \stemDown <d, bes'>[ <bes g'>]  r32 <bes f'>[<d bes'>]
+    \once\override Beam.positions = #'(8.0 . 8.0)
+    \stemUp <d' bes' d>[<d bes' d> f]
+    \stemDown <d, bes'>[ <bes f'>]
   %120 (lower)
-  | r32 <b! e>[<d b'!>] \stemUp <d' b'! d>[<d b' d> e] \stemDown <d, b'>[ <b e>]
-    r32 <a e'>[<d a'>] \stemUp <d' a' d>[<d a' d> e] \stemDown <d, a'>[ <a e'>]
-    r32 <a e'>[<cis a'>] \stemUp <cis' a' cis>[<cis a' cis> e] \stemDown <cis, a'>[ <a e'>]
+  | r32 <b! e>[<d b'!>]
+    \once\override Beam.positions = #'(8.0 . 8.0)
+    \stemUp <d' b'! d>[<d b' d> e]
+    \stemDown <d, b'>[ <b e>]  r32 <a e'>[<d a'>]
+    \once\override Beam.positions = #'(8.0 . 8.0)
+    \stemUp <d' a' d>[<d a' d> e]  \stemDown <d, a'>[ <a e'>]
+    r32 <a e'>[<cis a'>]
+    \once\override Beam.positions = #'(8.0 . 8.0)
+    \stemUp <cis' a' cis>[<cis a' cis> e]
+    \stemDown <cis, a'>[ <a e'>]
   }
   %117 (lowerlower)
   | \new Staff = "lowerlower"
@@ -1321,7 +1350,8 @@ Bass = \context Voice = "four" \relative c {
     \set tieWaitForNote = ##t
     \tieUp
     \grace { cis16~ cis'~ } <cis, cis'>4. <cis' a' cis>8
-  | \grace { d,16~ d'~ } <d, d'>4
+  | %\override Staff.Tie.minimum-length = #2
+    \grace { d,16~ d'~ } <d, d'>4
     \grace { bes16~ bes'~ } <bes, bes'>4. <bes' f' bes>8
   | \grace { g,16~ g'~ } <g, g'>4  \grace { a16~ a'~ } <a, a'>4  \grace { a16~ a'~ } <a, a'>4
   | \grace { d16~ d'~ } <d, d'>4  \grace { d16~ d'~ } <d, d'>4  <c! c'!>_^
