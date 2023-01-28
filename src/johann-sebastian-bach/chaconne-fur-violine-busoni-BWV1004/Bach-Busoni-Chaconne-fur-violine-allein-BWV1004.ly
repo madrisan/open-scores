@@ -418,6 +418,7 @@ Sopran = \context Voice = "one" \relative c'' {
     \top e^.[ \bottom d'_. \top g^. \bottom d,_.]
     \top e^.[ \bottom cis'_. \top g'^. \bottom d,_.]
     \top e^.[ \bottom cis'_. \top g'^.\) \bottom d,_.])
+    \break
   %95
   | \override Beam.positions = #'(-8 . -8)
     \top d^.\([ \bottom bes'_._( \top f'^. \bottom d,_.]
@@ -428,7 +429,7 @@ Sopran = \context Voice = "one" \relative c'' {
     \top d,^.[\) \bottom a'_.) \top f'( a,])
     \revert Beam.positions
     \top
-  | r32 bes[( e bes)]
+  | r32 bes[_( e bes)]
     \override Beam.positions = #'(7 . 7)
     \bottom a_.[ \top a( f' a,])
     \bottom g_.[ \top g( e' g,])
@@ -577,6 +578,7 @@ Sopran = \context Voice = "one" \relative c'' {
     <e a e'>^-] <g d' g>^-[ <fis d' fis>^-] <b d b'>^-[ <a b d a'>^-]
   | <g a cis g'>^-[ <fis d' fis>^-] \stemUp <d e a d e>4^-(\f <e a cis e>^-)\stopTextSpan
     \bar "||"
+    \break
   | d'16(^\markup {
       \bold "Allegro moderato ma deciso"
     } cis_\markup {
@@ -609,6 +611,59 @@ Sopran = \context Voice = "one" \relative c'' {
   | <fis, d'> fis' <fis, d'> b  <d, fis> <cis b'> <b d> <a fis'>  \stemDown <g b> <fis d'> <g cis> b
   %160
   | \stemUp a'16 s8. cis,16 s8. a16 s8.
+  | \once\override Staff.TextScript.extra-offset = #'(-4 . 0)
+    fis16[^\markup {
+      \column {
+        \tiny "Le seguenti 16 battute poco a poco sempre più cresc. ed animando il tempo"
+        \general-align #Y #-2.5
+        \italic\tiny "Die folgenden 16 Takte nach und nach immer stärker und belebter"
+      }
+    }
+    \once\override Staff.TextScript.extra-offset = #'(0 . -0.5)
+    d]_\markup {
+      \italic\tiny "poco marc."
+    }
+    \once\override Staff.TextScript.extra-offset = #'(-10 . -7)
+    a''^.[^.^\markup {
+      \italic\tiny "sempre stacc."
+    } a^.] a[ fis d] f\rest fis,[ d a d]
+  | e16[ cis] a''[ a] a[ e cis] f\rest e,[ cis a cis]
+  | d16[ b] a''[ a] a[ fis d b] d4
+  | a'16[ e] a[ a] a[ cis, <a e'> <a e'>] e'[ a, cis g]
+  %165.
+  | fis[ d] <a a'>_.[ <a a'>_.] <a a'>_>[ fis' d] <a fis'> <d a'>[ <fis d'> <a fis'> b,]
+  | cis[ e] <a, a'>[ <a a'>] <a a'>[ e' cis] <a e'> <cis a'>[ <e cis'> <a e'> a,]
+  | b[ d] <a a'>[ <a a'>] <a a'>[ d b] <a d> <b gis'>[ <d b'> <gis e'> d]
+  | cis[ e] <a, a'>[ <a a'>] a' e[\< <cis a'> <e cis'>] <a e'>[\! <e cis'> <cis a'> <e g>]
+  | <d fis> <a a'>[ <a a'> <a a'>] <a a'>^>
+    <d' a'>[ <d a'> <a fis'>] <a fis'>[\< <fis d'> <a d> <fis a fis'>]\!
+  %170
+  | <e cis' e>_> <a, a'>[ q q] q_> <cis' a'>[ q <a e'>] q[\< <e cis'> <a cis> <e a e'>]\!
+  | <d gis d'>^> <a a'>[ q q] q^> <d' b'>[ q <b gis'>] q[\< <gis e'> <b e> <gis d' gis>]\!
+  | s16 <a, a'>[_\markup {
+      \italic\small "marcatissimo"
+    } q q] q s8. a''16[( g!^.) g g]
+  | s16 <d, d'>[ q q] q s8. a'16[( g]) s8
+  | s16 <d, d'>[ q q] q s8. d'''16[( c!) c c]
+  %175
+  | s16 <d,, d'>[ q q] q s8. s4
+  | s2.
+  | <fis d' fis>4\ff^\markup {
+      \small\bold "a tempo misurato"
+    } q4. q8
+  | <fis fis'>8[( <e e'>]) q4. q8
+  | e'[( d]) c!4. c8
+  %180
+  | c![( b]) cis b'[ a g]
+  | <fis, d' fis>4 <fis fis'>4.\fz <d' fis>8
+  | <d e>4 <e, e'>4.^\fz <cis' e>8
+  | <c! a'>[ <d fis>] <b b'>[ <a a'> <g g'> <fis fis'>]
+  | <e e'>[ d'] <cis, cis'>4.^> <d d'>8
+  %185
+  | <d d'>4^!\fz
+    \clef bass \stemDown <d, fis a>4.^^^\markup {
+      \hspace #-4 \small "più largamente"
+    } q8
 
   \fine
 }
@@ -797,7 +852,48 @@ Alto = \context Voice = "two" \relative c' {
   | d4) s2
   %160
   | \top cis''16 e cis a  e a cis, e  a, cis e g
-
+  | s8 a16[ a] a8 s4.
+  | s8 a16[ a] a8 s4.
+  | \set tieWaitForNote = ##t
+    s8 a16[ a] a8 s8
+    \override Stem.details.beamed-lengths = #'(4.5)
+    d16~[^\markup { \italic\tiny "ten." } gis b gis]
+    \revert Stem.details.beamed-lengths
+  | d8 a16[ a] a8 s8 a16 s8.
+    \set tieWaitForNote = ##f
+  %165
+  | s2.*3
+  | s4 a,8 s4.
+  | s4 s16 fis'[ fis d] s4
+  %170
+  | s4 s16 e16[ e cis] s4
+  | s4 s16 <e gis>16[ q d] s4
+  | <a' cis a'>16^> s4 q16[ q q] <a d>8[ <a e'>16 q]
+  | <a d fis>^.^> s4 <d, a'>16[ q q] <d b'>8[^> <d g cis>16 q]
+  | <d fis d'>^.^> s4 <d' fis d'>16[ q q] <d g>8[ <d a'>16 q]
+  %175
+  | <d g b>^.^> s4 <b g' b>16[ q q] <cis! e cis'!>[ <d fis d'> q q]
+  | <g, b g'>^.^>[ <g cis g'> q q] <fis e' fis>^.^>[ <fis d' fis>^\markup {
+      \italic\small "poco riten."
+    }
+    q q]
+    <e d' e>^.^>[ <e cis' e> q q]
+  | s2.
+  | d'4 d8[ cis b ais]
+  | <fis b>4 b8 a g fis
+  %180
+  | <d g>4 q8 <b' g'>[\< <b fis'> <cis e>]\!
+  | b,16\rest d'[^\markup {
+      \small\italic "non legato"
+    } cis e]
+    \once\override NoteColumn.force-hshift = #-0.2 d[ e cis d]
+    b[ cis a cis]
+  | b a g fis
+    \once\override NoteColumn.force-hshift = #-0.2 cis' d b cis
+    a b g b
+  | a g fis e  d' e cis d  b cis a b
+  | g a fis g
+    \once\override NoteColumn.force-hshift = #-0.2 e_! fis_! d_! e_!  e8 s
   }
 
 Tenor = \context Voice = "three" \relative c' {
@@ -1018,6 +1114,31 @@ Tenor = \context Voice = "three" \relative c' {
   | b a \stemUp d( g16 fis e8 d
   %160
   | e fis g4 fis8 e)
+  | fis4^- r8 <a a'>16^.[ q^.] q8^. s
+  | \stemDown s4. <a a'>16[ q] q8 s
+  | s4. <a a'>16[ q] q8 s
+  | s4. <a e'>16[ q] q8 s
+  %165
+  | \stemUp s8 \magnifyMusic 0.75 { fis16^.^>[ d^.] } s2
+  | \stemUp s8 \magnifyMusic 0.75 { e16^.^>[ cis^.] } s2
+  | \stemUp s8 \magnifyMusic 0.75 { d16^.^>[ b^.] } s2
+  | \stemUp s8 \magnifyMusic 0.75 { cis16^.^>[ e ^.] } s2
+  | s2.*5
+  %174
+  | s4 s16 d'[ d d] d[ d d d]
+  %175
+  | s2.*2
+  | c16\rest d cis e d e cis d b cis a b
+  | g b g a fis g e fis d e cis d
+  | b16 cis' b e  d e c! d  b c a b
+  %180
+  | g a fis g  e g fis a  g b a cis
+  | s8 <fis,, fis'>[ <b b'> <a a'> <g g'> <fis fis'>]
+  | <g g'>[ <e e'>] <a a'>[ <g g'> <fis fis'> <e e'>]
+  | <fis fis'>[ <d d'>] s8 <b' g'>[ <cis! a'> <d a' b>]
+  | <e a cis!>[ <fis a d>]
+    \once\override Stem.length = #3.5
+    g4.\startTrillSpan fis16^.[\stopTrillSpan e^.]
 
   }
 
@@ -1469,6 +1590,70 @@ Bass = \context Voice = "four" \relative c {
   | s4 <a g'>2
   %160
   | a'2.
+  | <a d>4_\markup {
+      \column {
+        \tiny "Ped. ogni battuta"
+        \general-align #Y #-3
+        \italic\tiny "Ped. zu jedem Takt"
+      }
+    }
+    s4.
+    \once\override Staff.TextScript.extra-offset = #'(-5 . -7.5)
+    <a, a'>16_.^\markup {
+      \column {
+        \italic\tiny "poco"
+        \general-align #Y #-4
+        \italic\tiny "marc."
+      }
+    } q_.
+  | q8_. r8 r s4 \stemUp <a a'>16_. q_.
+  | q8_. r8 r s4 <a a'>16_. q_.
+  | q8 r r s4 q16[ q]
+  %165.
+  | q8 b'\rest r \clef treble \stemDown a'''16^.[ a^.] a8^.^> \clef bass \stemUp <a,,,, a'>16_.[ q_.]
+  | q8_.^> a'\rest r \clef treble \stemDown a'''16[ a] a8 \clef bass \stemUp <a,,,, a'>16_.[ q_.]
+  | q8 a'\rest r \clef treble \stemDown a'''16[ a] a8 \clef bass \stemUp <a,,,, a'>16[ q]
+  | q8 g'\rest r \clef treble \stemDown a'''16[ a] a8 \clef bass a,,16[ a16]
+  | a16_>^\markup {
+      \hspace #2 \italic\small "rinforzando"
+    }
+    \stemUp <a,, a'>[ <a a'> <a a'>] <a a'>_> s8. \stemDown d''16[ a fis d]
+  %170
+  | \stemUp <a a'>16 <a, a'>[ <a a'> q] q s8. \stemDown cis''16[ a e cis]
+  | \stemUp <a e'>16^> <a, a'>[ <a a'> q] q s8. \stemDown d''16[ b gis e]
+  | \stemUp <a, e' a>16_> <a, a'>[ <a a'> q] q \stemDown <a'' cis>[ q q] <b d>[q <cis e> q]
+  | <d fis>16^._> \stemUp <d,, d'>[ <d d'> q] q \stemDown <fis' a>[ q q] q[(<e g>) q q]
+  | <d fis>16^._> \stemUp <d,, d'>[ <d d'> q] q \stemDown <d'' fis>[ q q] <e g>[q <fis a> q]
+  %175
+  | <g b d>16^.^> \stemUp <d, d'>[ <d d'> q] q \stemDown <b'' g g'>[ q q] <g e' g>[<fis d' fis> q q]
+  | <fis d' fis>^._>[ <e cis' e> q q] <d d'>^._>
+    \stemUp <fis, fis'>[ q q] <g g'>_._>[ <a a'> q q]
+  | \stemDown <d, d'>2._\markup {
+      \hspace #2 \dynamic fz }_\markup {
+      \musicglyph #"pedal.Ped"
+    }
+  | d'2 s4
+  | d,2 d'4
+  %180
+  | d d2
+  | <d d'>8 s s2
+  | s2.
+  | s4 <g, g'>2
+  | s4 a2
+  %185
+  | \stemUp\slurDown <d, d'>8
+    \tuplet 3/2 {
+      \once\override Staff.TextScript.extra-offset = #'(0 . 1.5)
+      d16^>[(^\markup {
+        \dynamic f \italic\small "etwas breiter"
+      } d' d,]
+    }
+    \omit TupletNumber
+    \set subdivideBeams = ##t
+    \set baseMoment = #(ly:make-moment 1/8)
+    \tuplet 6/4 { cis'^>[ cis, cis' d,^> d' d,] }
+    \tuplet 6/4 { a'^>[ a, a' d,^> d' d,]) }
+    \set subdivideBeams = ##f
 
   \fine
 }
