@@ -664,6 +664,23 @@ Sopran = \context Voice = "one" \relative c'' {
     \clef bass \stemDown <d, fis a>4.^^^\markup {
       \hspace #-4 \small "più largamente"
     } q8
+  | <c! fis a>4^^ q4.^^ q8
+  | <b fis' g b>4^^ <e g b>4.^^ \stemUp <g b>8^>
+  | s4 d'4. cis8
+  | s2.
+  %190
+  | s2.
+  | s2.
+  | e8^-[ d^-] d4. cis8
+  | <d, a' d>4 \clef treble <fis' a d fis>4.^\markup {
+      \hspace #2
+      \column {
+        \small "non affrettare!"
+        \general-align #Y #-2.5
+        \italic\small "nicht eilen!"
+      }
+    }
+    <fis a fis'>8
 
   \fine
 }
@@ -894,6 +911,24 @@ Alto = \context Voice = "two" \relative c' {
   | a g fis e  d' e cis d  b cis a b
   | g a fis g
     \once\override NoteColumn.force-hshift = #-0.2 e_! fis_! d_! e_!  e8 s
+  %185
+  | s2.*3
+  | <e, g cis>8^>[ <d fis d'>^>] e_>[ d_>] e4_>
+  | <d fis d'>4
+    \once\override Staff.TextScript.extra-offset = #'(-2 . -1.5)
+    <fis a d fis>4._\markup {
+      \dynamic ff \italic\small "tenuto"
+    }
+    q8
+  %190
+  | q4 q4. q8
+  | <g d' fis>4 <g a e'>4. q8
+  | <d a'>4 <e a>2
+  | s4 b'16\rest_\markup {
+      \italic\small "non legato"
+    }
+    d[ a' fis] d' a d cis
+
   }
 
 Tenor = \context Voice = "three" \relative c' {
@@ -1139,7 +1174,20 @@ Tenor = \context Voice = "three" \relative c' {
   | <e a cis!>[ <fis a d>]
     \once\override Stem.length = #3.5
     g4.\startTrillSpan fis16^.[\stopTrillSpan e^.]
-
+  %185
+  | s2.*3
+  | \omit TupletBracket \omit TupletNumber
+    s4 \tuplet 6/4 { s16 gis,8( s16 a8) }
+    \tuplet 6/4 { r16 gis,[ a'] r a,[ a'] }
+  | \tuplet 6/4 { r16 d,,[_>^\< d' a_> a' d,_~_>]\! } <d d'>4. q8
+  %190
+  | <c! d c'! d>4 q4. q8
+  | <b g' d'>4_\markup {
+      \italic\small "non arpegg."
+    }
+    <cis a' e'>4. q8
+  | <d a' fis'>4 e8[ <fis fis'>_>] <g g'>4_>
+  | <fis fis'>8_>[ <e e'>_>] c''16\rest d,[ a' fis] d'[ a] d,[ cis]
   }
 
 Bass = \context Voice = "four" \relative c {
@@ -1648,12 +1696,28 @@ Bass = \context Voice = "four" \relative c {
         \dynamic f \italic\small "etwas breiter"
       } d' d,]
     }
-    \omit TupletNumber
+    \omit TupletBracket \omit TupletNumber
     \set subdivideBeams = ##t
     \set baseMoment = #(ly:make-moment 1/8)
     \tuplet 6/4 { cis'^>[ cis, cis' d,^> d' d,] }
     \tuplet 6/4 { a'^>[ a, a' d,^> d' d,]) }
-    \set subdivideBeams = ##f
+  | <d, d'>8_.
+    \tuplet 3/2 { d'16^>[(d' d,] }
+    \tuplet 6/4 { cis'^>[ cis,! cis' d,^> d' d,] }
+    \tuplet 6/4 { a'^>[ a, a' d,^> d' d,]) }
+  | <d, d'>8_.
+    \tuplet 3/2 { d'16^>[d' d,] }
+    \tuplet 6/4 { cis'^>[ cis, cis' d,^> d' d,] }
+    \tuplet 6/4 { b'^>[ b, b' e,^> e' e,] }
+  | \tuplet 3/2 { r16 a,[ a'] } \stemDown \tuplet 3/2 { r a[ a'] }
+    \tuplet 6/4 { r16 gis,[ a'] a\rest a,[ a'] }
+    \autoBeamOff \tuplet 6/4 { r16 gis,,8( r16 a8) } \autoBeamOn
+  | s2.
+  %190
+  | s2.
+  | s2.
+  | s4 <a a'>2
+  | s4 <d d'>4._> q8
 
   \fine
 }
