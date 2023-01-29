@@ -90,6 +90,7 @@ Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \set breathMarkType = #'caesura
   %1
   \tempo \markup {
     \column {
@@ -681,6 +682,54 @@ Sopran = \context Voice = "one" \relative c'' {
       }
     }
     <fis a fis'>8
+  | <g d' g>4 <a d a'>4. <a a'>8
+  %195
+  | <b d b'>4 <b d e b'>4. <b b'>8
+  | s4 <d e a d> <cis e a cis>
+  | <d fis a d>4 \stemDown q4. q8
+  | \stemUp <cis e a cis>4 \stemDown <c! d fis a c!>4. q8
+  | \stemUp <b d g b>4 <d, e b' d e>4. <d e d' e>8
+  %200
+  | <e e'>[ <fis fis'>]
+    <g g'>[ <b b'> <a a'> <g g'>]
+  | s2.*7
+  %208
+  | \autoBeamOff <d fis b d>8\fz^\markup {
+      \hspace #-1 \tiny\italic "riten."
+    }
+    <b' d b'>\fz \autoBeamOn
+    <g cis>4 r8 <d d'>_.^\markup {
+      \tiny "largamente"
+    }
+    \bar "||"
+  | \key d \minor
+    <d d'>4\fz \breathe r^\markup {
+      \column {
+        \small "Più sostenuto"
+        \general-align #Y #-1.6
+        \italic\small "Ruhiger"
+      }
+    }
+    r
+  %210
+  | R1*3/4
+  | R1*3/4
+  | R1*3/4
+  | R1*3/4
+  | \clef bass <g,, d'>4^- r r8.
+    \once\omit Flag \once\omit Stem a16(
+  %215
+  | <bes) f'>4 r r
+  | <a e'!>8^.^-( <g f'>^.^-) <a e'>2^-
+    \clef treble
+  | s2.
+  | \mergeDifferentlyDottedOn
+    s16 g''4 s8. s4
+  | s2.
+  %220
+  | s2.
+  | s2.
+
 
   \fine
 }
@@ -915,7 +964,7 @@ Alto = \context Voice = "two" \relative c' {
   | s2.*3
   | <e, g cis>8^>[ <d fis d'>^>] e_>[ d_>] e4_>
   | <d fis d'>4
-    \once\override Staff.TextScript.extra-offset = #'(-2 . -1.5)
+    \once\override Staff.TextScript.extra-offset = #'(-2.5 . -1.5)
     <fis a d fis>4._\markup {
       \dynamic ff \italic\small "tenuto"
     }
@@ -928,6 +977,59 @@ Alto = \context Voice = "two" \relative c' {
       \italic\small "non legato"
     }
     d[ a' fis] d' a d cis
+  | c,16\rest e[ d' g,]  c,\rest d[ a' fis] d'[ a d cis]
+  %195
+  | d,\rest d[ d' g,]  d\rest e[ b' e,] d'[ b e d]
+  | <cis e a cis>8[ <d fis a d>] e,16\rest e[ d' a] s4
+  | g16\rest_\markup {
+      \italic\small "sempre" \dynamic ff
+    } a[ fis a] s2
+  | e16\rest \stemUp a[ e a] s2
+  | e16\rest d[ b d] s2
+  %200
+  | \stemDown
+    \once\override NoteColumn.force-hshift = #1.6 <d a' d>4
+    <a' cis>4. q8
+  | s16 <fis d' fis>[^\markup {
+      \hspace #-2 \italic\small "con fuoco"
+    } q] s8 <fis' d' fis>16[ q] s8 <fis,, d' fis>16[ q] s16
+  | s16 <fis' d' fis>[ q] s8 <fis' d' fis>16[ q] s8 <fis,, d' fis>16[ q] s16
+  | s16 <e' b' e>[ q \bottom <g, b d>] <g cis e>[ \top <a' cis a'> q \bottom <g,, e' g>]
+    q[ \top <cis' e cis'> q \bottom <g,, e' g>\<]
+  | <gis e' gis>[ \top <b''' d b'>\! q \bottom <gis,, e' gis>\<]
+    <a e' a>\![ \top <e'' d' e>^\< <fis d' fis>\! \bottom <a, e'>]
+    q[ \top <g'! cis g'!> q \bottom <a,,, a'>]
+  %205
+  | <d d'>[ \top <g'' a d g> q \bottom <d, a'>]
+    q[\< \top <fis' a fis'> <fis b fis'> \bottom <d, b'>\!]
+    <d c'!>[ \top <fis' c'! fis> q \bottom <d,, d'>]
+  | <g d' g> \top <fis'' b! fis'> q \bottom <g, b d>\<]
+    <g b e>\![ \top <e' b' e>^\< <e cis' e>\! \bottom <g, cis e>]\<
+    <gis d' e>\![ \top <e' d' e> q \bottom <gis,, e' gis>]
+  | <a e' a>[ \top <d' e d' e> q \bottom <a, e' a>]
+    <a e' a>[ \top <e'' cis' e>^\< <fis cis' e>\! \bottom <a,, fis' a>]\<
+    <ais g' ais>[\! \top <e'' g cis e> q \bottom <ais,,, ais'>]
+  | \top s4
+    e'''16[
+    \omit TupletBracket \omit TupletNumber
+    \tuplet 3/2 {
+      <fis d'>32^\markup {
+        \small\italic "trillo a piacere"
+      }
+      \bottom \clef treble <e cis'> \top <fis d'>
+    }
+    \tuplet 3/2 { \bottom <e cis'> \top <fis d'> \bottom <e cis'> }
+    \tuplet 3/2 { \top <fis d'> \bottom \clef treble <e cis'> \top <d b'>] }
+    \bottom <e cis'>8 s
+    \top
+  | s2.*8
+  %217
+  | r16^\markup {
+      \small "una corda," \italic\small "dolcissimo"
+    }
+    a( cis g' f d cis d) r16 d( cis d)
+  | r16 g,( cis a' g d cis d) r d( cis d)
+  | r16 a( cis bes' a d, cis d) r d( cis d)
 
   }
 
@@ -1188,6 +1290,47 @@ Tenor = \context Voice = "three" \relative c' {
     <cis a' e'>4. q8
   | <d a' fis'>4 e8[ <fis fis'>_>] <g g'>4_>
   | <fis fis'>8_>[ <e e'>_>] c''16\rest d,[ a' fis] d'[ a] d,[ cis]
+  | d'16\rest e,[ d' g,] e'16\rest d,[ a' fis] d'[ a] d,[ cis]
+  %195
+  | f'16\rest d,[ d' g,]  f'16\rest e,[ b' e,] d'[ b e, d]
+  | s16 <a, a'>[ <fis' fis'> <d d'>]  g''16\rest e,[ d' a]  e'[ cis a' a,]
+  | s16 a[ fis a] s4 <fis, fis'>16[ <a a'> <d, a' d> <fis fis'>]
+  | s16 a'[ e a] s4 <fis, fis'>16[ <a a'> <d, a' d> <fis fis'>]
+  | <g d' g>4 s4 <b, b'>16[ <e e'> <gis, gis'> <b b'>]
+  %200
+  | <a a'>4 s2
+  | <d' d'>16\fz s8 <d' fis>16[_\markup {
+      \hspace #-2 \italic\small "martellato"
+    }
+    q] s8 <d, d'>16[ <cis d cis'>] s8 <cis, d cis'>16[
+  | <b d b'>] s8 <b'' d fis>16[ q] s8 <b, d b'>16[ <a d a'>] s8 <a, d a'>16[
+  | <g d' g>] s8. s2
+  | s2.*5
+  %209
+  | s4 bes''!4.^\markup {
+      \hspace #-1
+      \dynamic mf \whiteout \pad-markup #0.3 \italic\tiny "espress."
+    } bes8
+  %210
+  | bes8. e16( bes g a e
+    \autoBeamOff c8) a' \autoBeamOn
+  | a8. d16( a[ fis g d] \autoBeamOff bes8) g' \autoBeamOn
+  | g8. e'16( cis a bes! g cis,8) a'^.(
+  | \autoBeamOff f8.^.^-)^\markup {
+      \italic\small "più espress. poco cresc."
+    } d16( \autoBeamOn f a d cis s8.
+    \once\omit Flag
+    \once\omit Stem
+    a16)
+  | <bes f'>8. d,16( s4 ees'16 c f,) \top a,
+  %215
+  | \bottom <bes' ees>8. cis16( d a bes fis g d ees g)
+  | <g cis>8_._- <bes! d>_._- d8. b!16( cis
+    \once\override Staff.TextScript.extra-offset = #'(0 . 3.9)
+    e_\markup {
+      \italic\small "dim."
+    } g \top a,)
+
   }
 
 Bass = \context Voice = "four" \relative c {
@@ -1712,12 +1855,46 @@ Bass = \context Voice = "four" \relative c {
   | \tuplet 3/2 { r16 a,[ a'] } \stemDown \tuplet 3/2 { r a[ a'] }
     \tuplet 6/4 { r16 gis,[ a'] a\rest a,[ a'] }
     \autoBeamOff \tuplet 6/4 { r16 gis,,8( r16 a8) } \autoBeamOn
+    \set subdivideBeams = ##f
   | s2.
   %190
   | s2.
   | s2.
   | s4 <a a'>2
   | s4 <d d'>4._> q8
+  | <e d' e>4 <fis d' fis>4. <fis fis'>8
+  %195
+  | <g d' g>4 <gis e' gis>4. <gis gis'>8
+  | <a e' a>16 s8. <a a'>2
+  | <d fis a d>4 <d a' d>16[ <fis fis'> <a, a'> <d d'>] s4
+  | <a e' a>4 <d d'>16[ <fis fis'> <a, a'> <d d'>] s4
+  | c,16\rest \stemUp d'[ b d] \stemDown <gis, gis'>[ <b b'> <e, e'> <gis gis'>] s4
+  %200
+  | s4 \stemNeutral \acciaccatura a8 <a e' a e'>4. q8
+  | s2.*7
+  %208
+  | \autoBeamOff
+    \stemUp <b, b'>8 \stemDown <g' e' g>
+    <a e' a>4 s8 \clef bass \stemUp <d,, d'>_.
+    \autoBeamOn
+  | \key d \minor
+    <d' d'>4 \stemDown <d' f!>2
+  %210
+  | \once\override Arpeggio.positions = #'(-1.4 . 2.6)
+    <c e>2\arpeggio s8 q
+  | <bes d>2 s8 q
+  | <a cis>2 s8 <cis e>
+  | d8. s16 s4 d'16 e f a,
+  | s4 g16 bes ees d s8. r16
+  %215
+  | s2.
+  | s4 a s
+  | \slurUp <d, d'>^-\p r d'^.(
+  | e^.) r e^.(
+  | f^.) r f^.(
+  %220
+  | g4) r \clef treble a
+  | s2.
 
   \fine
 }
