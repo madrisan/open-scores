@@ -724,13 +724,103 @@ Sopran = \context Voice = "one" \relative c'' {
     \clef treble
   | s2.
   | \mergeDifferentlyDottedOn
-    s16 g''4 s8. s4
-  | s2.
+    s16 g''4*1/4 cis8.*2/3^\markup { \italic\tiny "ten." } s2
+    s16 a4*1/4 cis8.*2/3 s2
   %220
-  | s2.
-  | s2.
-
-
+  | s8 bes4. r4
+  | \top f'16[(^\markup {
+      \italic\small "egualmente"
+    } d \bottom a g] f[ \top a d, c] \bottom b![ \top g' d' g])
+  | e( c \bottom g f e \top g c, bes \bottom a \top f' c' ees)
+  | d( bes \bottom f ees d \top f bes, a \bottom g \top cis e! bes')
+  | a( f \bottom d bes' \top g e \bottom cis e a, g' \top f e
+  %225
+  | \stemNeutral
+    \once\override Staff.TextScript.extra-offset = #'(0 . 2)
+    d16)^\markup {
+      \italic\small "dolce tranquillo"
+    }
+    a'[( b! cis] d[ f g a] bes) g,32[_( f e f g16]
+  | c,) g'[( a bes] c[ e f g] a) f,32[_( e d e f16]
+  | bes,)
+    \once\override Staff.TextScript.extra-offset = #'(0 . -1)
+    d''32[(_\markup {
+      \italic\small "sempre" \dynamic pp
+    } c bes c d16^-])  g,^-[( bes32 a g a bes16^-])  e,^-[( g32 f e f g16^-])
+  | cis,16^-[( e32 d cis d e cis])  g16^-[( bes32 a g a bes g]  e[ d cis d e f g e]
+  | <d f>16^-) a'8^.[(^\markup {
+      \italic\small "languido"
+    } a^. a^. a^. a^. a16^. ])
+  %230
+  | s16 a8^.[( a^. a^. a^. a^. a16^. ])
+  | s16 a8^.[( a^. a^. a^. a^. a16^. ])
+  | s16 <a, a'>8^.[( <a a'>^. q^. q^. q^. q16^. ])
+  | f''16\rest <a,, a'>16^.[( r a'8^. <a, a'>^. q^. q^. q16~^. ])
+  | <a a'>16[ <a a'>8^. a'^. <a, a'>^. q^. q^. q16~^. ]
+  %235
+  | <a a'>16[^\markup {
+      \italic\small "cresc. poco a poco"
+    } <a a'>8^. q^. q^. q^. q^. q16^. ]
+  | \set baseMoment = #(ly:make-moment 1/8)
+    \set subdivideBeams = ##t
+     \once\override Staff.TextScript.extra-offset = #'(0 . -2)
+    <a a'>16_![_\markup {
+      \italic\small "marcato"
+    } q_! q_! q_!] q_![ q_! q8] <b! b'!>[ <cis cis'>]
+  | <d d'>[^\markup {
+      \italic\small "più cresc."
+    }
+    <c! c'!> <bes bes'> q q q]
+  | <bes bes'>8[ q]
+    <a a'>16[ q q q] q[ q q q]
+  | <a a'>16[ q q q] <a g' a>[ q <a a'>^\markup { \italic\small "allarg." } q] q[ q q q]
+  %240
+  | <a a'>16[ q q q q q] <a cis g' a>[^\>_\markup {
+      \dynamic ff \italic\small "e ritenuto"
+    }
+    q]\! <a d f g a>[^\> q]\! <a e' g a>[^\> q]\!
+  | \once\override Staff.TextScript.extra-offset = #'(0 . 1)
+    <f a d f>16_![^\markup {
+       \bold\small "Più vivo"
+    } <a a'>_!]
+    \stemDown\omit TupletBracket
+    \tuplet 3/2 { <a' d>16( f' a) }
+    \tuplet 3/2 { <d, f>[( a' d)] }
+    \tuplet 3/2 { <f, a>[( d' f)] }
+    \once\override Hairpin.Y-offset = #-3
+    \tuplet 3/2 { <g, bes>[(\< d' g)] }
+    \tuplet 3/2 { g,[ d' bes'] }
+  | \tuplet 3/2 { g,[ c\! bes'] }
+    \tuplet 3/2 { <g,, c>[ e' g] }
+    \tuplet 3/2 { <c, e>[ g' c] }
+    \tuplet 3/2 { <e, g>[ c' e] }
+    \once\override Hairpin.Y-offset = #-3
+    \tuplet 3/2 { <f, a>[\< c' f] }
+    \tuplet 3/2 { f,[ c' a'] }
+  | \tuplet 3/2 { f,[ bes a']\! }
+    \tuplet 3/2 { <f,, bes>[ d' f] }
+    \once\override Hairpin.Y-offset = #-3
+    \tuplet 3/2 { <bes, d>[\< f' bes] }
+    \tuplet 3/2 { <d, f>[ bes' d] }
+    \tuplet 3/2 { <ees, g>[ bes'\! ees] }
+    \tuplet 3/2 { ees,^>\f[( bes' g']) }
+  | R1*3/4
+  %245
+  | R1*3/4
+  | R1*3/4
+  | R1*3/4
+  | R1*3/4
+  | R1*3/4^\markup { \bold\small "Tempo I, largamente maestoso" }
+  %250
+  | R1*3/4
+  | R1*3/4
+  | R1*3/4
+  | R1*3/4
+  | R1*3/4
+  %255
+  | R1*3/4
+  | R1*3/4
+  | R1*3/4
   \fine
 }
 
@@ -1030,7 +1120,46 @@ Alto = \context Voice = "two" \relative c' {
     a( cis g' f d cis d) r16 d( cis d)
   | r16 g,( cis a' g d cis d) r d( cis d)
   | r16 a( cis bes' a d, cis d) r d( cis d)
-
+  %220
+  | s2.*8
+  | s2 s8. cis,16
+  | \slurDown s8 a'_.[(_\markup {
+      \column {
+        \italic\tiny "m.s."
+        \concat { \dynamic p \italic\small " flebile" }
+      }
+    } bes_. a_. g_.)] f([
+  %230
+  | e)] bes'_.[( a_. g_. f_.)] e([
+  | d)] a'_.[( g_. f_. e_.)] d(
+  | e_.) f_.[( g_. bes_. a_. g_.])
+  | f4 gis8[( g! fis f!]
+  | e[) g( fis f! e ees])
+  %235
+  | d[ e f fis g gis]
+  | s4.
+    \set baseMoment = #(ly:make-moment 1/8)
+    \set subdivideBeams = ##t
+    \once\override NoteColumn.force-hshift = #1.4 a16[ a
+    \once\override NoteColumn.force-hshift = #1.4 a a
+    \once\override NoteColumn.force-hshift = #1.1 a a]
+  | \once\override NoteColumn.force-hshift = #1.1 a16[ a
+    \once\override NoteColumn.force-hshift = #1.1 a a
+    \once\override NoteColumn.force-hshift = #1.4 a a
+    \once\override NoteColumn.force-hshift = #1.4 a a
+    \once\override NoteColumn.force-hshift = #1.4 a a
+    \once\override NoteColumn.force-hshift = #1.4 a a]
+  | \once\override NoteColumn.force-hshift = #1.4 a16[ a
+    \once\override NoteColumn.force-hshift = #1.4 a a]
+    f8 c d e
+  | f[ d] s
+    \once\override NoteColumn.force-hshift = #1.4 <b! g'>[
+    \once\override NoteColumn.force-hshift = #1.4 <cis g'>
+    \once\override NoteColumn.force-hshift = #1.4 <d g>]
+    \once\override NoteColumn.force-hshift = #1.4 <e g>[
+    \once\override NoteColumn.force-hshift = #1.4 <cis g'>
+    \once\override NoteColumn.force-hshift = #1.1 <cis e>]
+    s4.
   }
 
 Tenor = \context Voice = "three" \relative c' {
@@ -1330,6 +1459,38 @@ Tenor = \context Voice = "three" \relative c' {
     e_\markup {
       \italic\small "dim."
     } g \top a,)
+  | s2.*3
+  %220
+  | \bottom g'16[ a( \top bes bes'] e,[ d cis e])
+    \bottom a,( d cis e)
+  | s2.*8
+  | s2 s8 \slurNeutral <d,, a'>[(\pp
+  %230
+  | <c e>_.]) s2 <c a'>8[(
+  | <bes d>_.]) s2 <bes d>8(
+  | <a e'>_.) s s2
+  | s2 s8 <des, a' f'!>[\arpeggio_\markup {
+      \hspace #-3 \italic\small "dolciss."
+    }
+  | <c a' e'>]\arpeggio s2 <ces a' ees'>8\arpeggio
+  %235
+  | <bes a' d>8\arpeggio s s2
+  | <a a'>8[\< <b! a' b!> <c a' c> <cis cis'> <d d'> <e e'>]\!
+  | \slurUp
+    <f f'>[ <d d'>]
+    \set subdivideBeams = ##t
+    \set baseMoment = #(ly:make-moment 1/8)
+    g'16[(^\> a^.)\! f(^\> a^.)\! e(^\> a^.)\! d,(^\> a'^.)]\!
+  | e[ a c, a'] a,[ a e' a,] d[ a c a]
+  | d[ a b! a] e'[ a, d a] cis[ a b a]
+  %240
+  | cis[ a e' a,] s8 a,16^^[ <a a'>] b!^^[ <b! b'!>] cis^^[ <cis cis'>]
+  | <d, d'>8 s2 <g' bes d g>8_.\arpeggio
+  | <e g c e>_.\arpeggio s2 <f a c f>8_.\arpeggio
+  | \autoBeamOff
+    <d f bes d>_. s4. <g bes ees g>8 <ees bes' g'>^\markup {
+      \hspace #-2 \italic\small "marc."
+    }
 
   }
 
@@ -1894,8 +2055,58 @@ Bass = \context Voice = "four" \relative c {
   | f^.) r f^.(
   %220
   | g4) r \clef treble a
-  | s2.
-
+  | s2.*4
+  %225
+  | \clef bass
+    \stemNeutral\slurNeutral
+    r16 a,,[( b! cis] d[ f g a] bes) g,[( e g]
+  | c,) g'[ a bes] c[ e f g] a f,[( d f]
+  | bes,) r r d''( g,8. bes16) e,8.( g16)
+  | cis,8.( e16) g,8.( bes16) e,8.( a16
+  | d,8^-)_\markup { \hspace #3 \italic\tiny "II Ped." } s s2
+  %230
+  | s2.*3
+  | <d' d'>8 <f a>[( <e gis> <ees g!> <d fis>]) s
+  | s <ees g>[( <d fis> <des f!> <c e!>]) s
+  %235
+  | s <c e>[( <des f> <d! fis> <ees g> <e! gis>])
+  | s4.
+    \set subdivideBeams = ##t
+    \set baseMoment = #(ly:make-moment 1/8)
+    \stemDown
+    \once\override NoteColumn.force-hshift = #1.1 a,16^![ a^!
+    \once\override NoteColumn.force-hshift = #1.1 a^! a^!
+    \once\override NoteColumn.force-hshift = #1.1 a^! a^!]
+  | \once\override NoteColumn.force-hshift = #1.1 a[ a
+    \once\override NoteColumn.force-hshift = #1.1 a a]
+    \set subdivideBeams = ##f
+    <g g'>8[\< <f f'> <e e'> <d d'>]\!
+  | <e e'>[ <c c'>] <f f'>[\< <e e'> <d d'> <c c'>]\!
+  | <d d'>[ <b! b'!>] <e e'>[\< <d d'> <cis cis'> <b b'>]
+  %240
+  | <cis cis'>[ <e e'>\! <a e'>] <a,, a'>\ff[ <b! b'!> <cis cis'>]
+  | \autoBeamOff
+    s8 <a''' d f>^.\arpeggio\mf <f a d f>^.\arpeggio^\markup { \italic\small "cresc." }
+    <d f a d>^.\arpeggio <bes d g bes>^.\arpeggio s
+  | s <g' c e>^.\arpeggio <e g c e>^.\arpeggio <c e g c>^.\arpeggio <a c f a>^.\arpeggio s
+  | s <f' bes d> <d f bes d> <bes d f bes> s4
+  | R1*3/4
+  %245
+  | R1*3/4
+  | R1*3/4
+  | R1*3/4
+  | R1*3/4
+  | R1*3/4
+  %250
+  | R1*3/4
+  | R1*3/4
+  | R1*3/4
+  | R1*3/4
+  | R1*3/4
+  %255
+  | R1*3/4
+  | R1*3/4
+  | R1*3/4
   \fine
 }
 
