@@ -720,7 +720,12 @@ Sopran = \context Voice = "one" \relative c'' {
   | R1*3/4
   | R1*3/4
   | \clef bass <g,, d'>4^- r r8.
-    \once\omit Flag \once\omit Stem a16(
+    \once\omit Flag \once\omit Stem
+    \once\shape #'(
+      ((0 . 0) (0 . 0) (0 . 0) (0 . 0))
+      ((0.5 . -5) (-1 . -4) (-2 . 0) (-1.3 . 0))
+    ) Slur
+    a16(
   %215
   | <bes) f'>4 r r
   | <a e'!>8^.^-( <g f'>^.^-) <a e'>2^-
