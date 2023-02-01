@@ -148,6 +148,7 @@ git checkout main
 ```
 make -C src/baldassare-galuppi/sonata-5-c-major
 make -C src/clara-schumann-wieck/soirees-musicales-op.6
+make -C src/johann-sebastian-bach/chaconne-fur-violine-busoni-BWV1004
 make -C src/johann-sebastian-bach/chorale-preludes/BWV615-Busoni
 make -C src/johann-sebastian-bach/chorale-preludes/BWV639-Busoni
 make -C src/johann-sebastian-bach/chorale-preludes/BWV659
