@@ -10,21 +10,26 @@
 }
 
 \paper {
+  #(set-paper-size "a4")
   annotate-spacing = ##f
-  bottom-margin = 5\mm
+  bottom-margin = 8\mm
   first-page-number = 0
   indent = 0.0
 % last-bottom-spacing.padding = #2
-  line-width = 18\cm
-% markup-system-spacing.basic-distance = #10
+  line-width = 17\cm
+  markup-system-spacing =
+     #'((basic-distance . 2)
+        (minimum-distance . 1)
+        (padding . 2)
+        (stretchability . 20))
   print-all-headers = ##t
-  ragged-last-bottom = ##t
+  ragged-last-bottom = ##f
   ragged-bottom = ##f
   system-system-spacing =
      #'((basic-distance . 2)
         (minimum-distance . 1)
-        (padding . 3)
-        (stretchability . 25))
+        (padding . 2)
+        (stretchability . 18))
   top-margin = 15\mm
 }
 
