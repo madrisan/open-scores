@@ -55,13 +55,15 @@
         \null\null
         \fill-line { \draw-hline }
         \null\null\null
-        \line { \abs-fontsize #40 \bold "4 Klavierstücke" }
+        \line { \abs-fontsize #48 \bold "Rapsodie Es-Dur" }
+        \null\null\null\null
+        \line { \abs-fontsize #16 \italic "from" }
         \null\null
-        \line { \abs-fontsize #24 \bold "op. 119" }
-        \null\null\null\null
-        \line { \abs-fontsize #20 \bold "4. Rapsodie Es-Dur" }
-        \null\null\null\null
-        \null\null\null\null
+        \line { \abs-fontsize #34 \bold "4 Klavierstücke" }
+        \null
+        \line { \abs-fontsize #34 \bold "op. 119" }
+        \null\null\null
+        \null\null\null
       }
     }
   }
