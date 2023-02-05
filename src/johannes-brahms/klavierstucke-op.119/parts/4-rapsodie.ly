@@ -6,7 +6,10 @@ Global = {
 
 bottom = { \change Staff = "lower"\stemUp }
 top = { \change Staff = "upper"\stemDown }
+
 Ped = \markup { \hspace #-1.5 \musicglyph #"pedal.Ped" }
+cresc = { \override TextSpanner.bound-details.left.text = \markup { \small "cresc. " } }
+dolce = \markup { \hspace #-1.3 \italic\small "dolce" }
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
@@ -209,8 +212,52 @@ Sopran = \context Voice = "one" \relative c'' {
   | \acciaccatura { \stemUp g'16 ees } c8( bes) \acciaccatura { \stemUp ees16 c } aes4
     \clef bass
   | <ces d!>2
-  | s2
+    \clef treble
+  | \stemNeutral\slurNeutral\phrasingSlurNeutral
+    <g ees' g>4\p( <a! fis' a!>)
   %110
+  | <bes g' bes>2_\dolce
+  | <g' ees' g>4( <a! fis' a!>)
+  | <bes g' bes>2_\dolce
+  | <g, e'! g>4^\( <a! fis' a!>
+  | <bes g' bes> <c a'! c>
+  %115
+  | <des! bes' des!> <e! c' e!>
+  | \stemUp <f f'> <g g'>\)
+  | <aes' c>8 c\rest <aes c> c\rest
+  | <c, c'> c'\rest <c, aes' c> c'\rest
+  | \once\override Arpeggio.positions = #'(-0.5 . 4.5)
+    <c, aes' c>\arpeggio a'\rest
+    \once\override Arpeggio.positions = #'(-0.5 . 4.5)
+    <c, aes' c>\arpeggio a'\rest
+  %120
+  | \slurDown \acciaccatura { \stemUp bes16 g } \stemDown des8[^(_\dolce c
+    \acciaccatura { \stemUp g'16 ees } \stemDown bes8 c]
+  | \acciaccatura { \stemUp aes'16 f } \stemDown des8[ c
+    \acciaccatura { \stemUp f16 des } \stemDown bes8 aes])
+  | \stemUp
+    \acciaccatura { \stemUp ees'16 bes }
+    \once\shape #'((0.3 . 0) (0 . -1) (0 . -1.5) (0 . 0)) PhrasingSlur
+    g8[_\( f \acciaccatura { \stemUp des'16 bes } ees,8 f]
+  | \acciaccatura { \stemUp ees'16 des } g,8[ bes \acciaccatura { \stemUp ees16 des } f,8 aes]
+  | \acciaccatura { \stemUp ees'16 c } ees,8[ g \acciaccatura { \stemUp ees'16 bes } des,8 f]\)
+  %125
+  | \once\override Arpeggio.positions = #'(-3.5 . 1.5)
+    <aes c>8\arpeggio f'\rest
+    \once\override Arpeggio.positions = #'(-3.5 . 1.0)
+    <aes, c>\arpeggio f'\rest
+  | \once\override Arpeggio.positions = #'(-3.8 . 1.8)
+    <c, ees'>\arpeggio f'\rest
+    \once\override Arpeggio.positions = #'(-2.5 . 1.5)
+    <f, aes c>\arpeggio f'\rest
+  | s2
+  | s2
+  | s2
+  %130
+  | s2
+  | s2
+  | s2
+  | s2
 
   \fine
 }
@@ -262,8 +309,37 @@ Alto = \context Voice = "two" \relative c' {
     g2\arpeggio
   | s2*4
   | g,4(\> f)\!
-    \clef treble
-
+  | s2*7
+  %116
+  | des''2
+  | \once\override Arpeggio.positions = #'(0 . 4.5)
+    \once\override Staff.TextScript.extra-offset = #'(0 . -3)
+    c8\arpeggio[_\markup { \dynamic p } des
+    \once\override Arpeggio.positions = #'(0 . 4.5)
+    d!\arpeggio ees]
+  | \once\override Arpeggio.positions = #'(0 . 4.5)
+    aes\arpeggio[ g
+    \once\override Arpeggio.positions = #'(0 . 4.5)
+    f\arpeggio fes]
+  | ees2
+  %120
+  | s2*5
+  %125
+  | c,8[( des d!\< ees]\!
+  | c'[\> aes\! f fes])
+  | \stemUp
+    \once\override Hairpin.Y-offset = #-5
+    <c ees aes c>\arpeggio[(\< <des bes' des> <d! b'! d!> <ees c' ees>])\!
+  | \stemDown <ees' ges ees'>[^(\f\> <c aes' c> <aes f' aes> <ges ees' ges>])\!
+  | \once\override Staff.TextScript.extra-offset = #'(0 . -2)
+    <f des' f>4_\markup { \dynamic p \italic\small "dim." }
+    <fes des' fes>
+  %130
+  | \stemUp <ees c' ees>2
+  | <aes, ees' aes>4 <g! ees' g!>
+  | <fis ees' fis>2
+    \bar "||"
+    \key ees \major
 }
 
 Tenor = \context Voice = "three" \relative c {
@@ -496,8 +572,42 @@ Bass = \context Voice = "four" \relative c {
     <aes, c>_.\arpeggio[ ees'_.]
   | \once\override Arpeggio.positions = #'(-6 . -2)
     <aes,, ees'>_.\arpeggio[ aes'_.] r4
-  | s2
+  | \stemNeutral
+    ees'8_.[ ees,_. ees,_. ees'_.]
   %110
+  | <ees' des'>2
+  | des8_.[ des,_. des,_. des'_.]
+  | <e'! des' e!>2
+  | c8_.[ c,_.\cresc c,_.\startTextSpan c''_.]
+  | \once\override Arpeggio.positions = #'(-1.5 . 1.5)
+    <c e!>8_.\arpeggio[ c_. c,_. e'_.]
+  %115
+  | \once\override Arpeggio.positions = #'(-1.5 . 1.5)
+    <bes f'>8_.\arpeggio[ bes_. bes,_. f''_.]
+  | \once\override Arpeggio.positions = #'(-0.5 . 3)
+    <ees! bes'>8_.\arpeggio[ ees,_. ees,_. ees''_.]\stopTextSpan
+  | \stemDown
+    <aes,, aes'>^.\arpeggio[ c'^. <aes aes'>^.\arpeggio c'^.]
+  | <aes aes'>^.\arpeggio[ c^. <aes, aes'>^.\arpeggio c^.]
+  | <aes, aes'>^.\arpeggio[ c'^. <aes aes'>^.\arpeggio c'^.]
+  %120
+  | <aes ees'>^.\arpeggio[ g'^. <aes, des>^.\arpeggio ees'^.]
+  | <aes, f'>^.\arpeggio[ aes'^. <aes, des>^.\arpeggio f'^.]
+  | <aes,, des>^.\arpeggio[ ees'^. <aes, ees' g>^.\arpeggio aes'^.]
+  | <aes, ees' bes'>^.\arpeggio[ des'^. <aes, ees' aes>^.\arpeggio c'^.]
+  | <aes, ees' g>^.\arpeggio[ bes'^. <aes, ees' aes>^.\arpeggio g'^.]
+  %125
+  | <aes, aes'>^.\arpeggio[ c^. <aes, aes'>^.\arpeggio c'^. ]
+  | <aes aes'>^.\arpeggio[ c^. <aes, aes'>^.\arpeggio c'^. ]
+  | <aes aes'>^.\arpeggio[ ees'^. <aes,, aes'>^.\arpeggio c'^. ]
+  | <aes' aes'>^.\arpeggio[ ees'^. <aes,, aes'>^.\arpeggio c^. ]
+  | \stemUp <des,, des'>_.\arpeggio[ aes''_. <des, des'>_.\arpeggio aes''_.]
+  %130
+  | \stemDown <aes c aes'>2
+  | \stemUp <c,,, c'>8_.\arpeggio[ aes''_. <c, c'>_.\arpeggio aes''_.]
+  | \stemDown <c, aes' c>2
+    \key ees \major
+  | s2
 
   \fine
 }
