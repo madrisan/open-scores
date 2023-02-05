@@ -433,8 +433,18 @@ Bass = \context Voice = "four" \relative c {
   | c,) <g' c>
   | c, <g' c>
   | \stemNeutral\slurNeutral\phrasingSlurNeutral
-    \tuplet 3/2 { <c, f a!>8( c') <c~ e!~ g^~>\( } <c e g c>4\)
-  | \tuplet 3/2 { <d, f a!>8( d') <a~ c~ e!~>\( } <a c e a!>4\)
+    \tuplet 3/2 {
+      <c, f a!>8( c')
+      \once\shape #'((-0.8 . 1.6) (0 . 1.2) (0 . 1) (0 . 0)) PhrasingSlur
+      <c~ e!~ g^~>\(
+    }
+    <c e g c>4\)
+  | \tuplet 3/2 {
+      <d, f a!>8( d')
+      \once\shape #'((-0.8 . 2.8) (0 . 2.2) (0 . 1.6) (0 . 0.2)) PhrasingSlur
+      <a~ c~ e!~>\(
+    }
+    <a c e a!>4\)
   | \tuplet 6/4 { g,8[( g' <c e!> <g g'> <d' f> <g, g'>] }
   %80
   | \tuplet 3/2 { <c e!>8 <g g'> <a! c>) } <g b! d g>4
@@ -463,7 +473,7 @@ Bass = \context Voice = "four" \relative c {
   | <aes,, des>^.\arpeggio[ ees'^. <aes, ees' g>^.\arpeggio aes'^.]
   | <aes, ees' bes'>^.\arpeggio[ des'^. <aes, ees' aes>^.\arpeggio c'^.]
   %100
-  | <aes, ees' g>^.[ bes'^. <aes, ees' aes>^. g'^.]
+  | <aes, ees' g>^.\arpeggio[ bes'^. <aes, ees' aes>^.\arpeggio g'^.]
   | <aes, aes'>^.\arpeggio[ c^. <aes, aes'>^.\arpeggio c'^. ]
   | <aes aes'>^.\arpeggio[ c^. <aes, aes'>^.\arpeggio c'^. ]
   | <g, g'>^.\arpeggio[ c'^. <g g'>^.\arpeggio c'^.]
