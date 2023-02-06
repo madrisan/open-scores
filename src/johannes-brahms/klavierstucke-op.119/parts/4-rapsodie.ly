@@ -140,7 +140,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | \tuplet 3/2 { <e! e'!>8[( c' <d, d'>] } <bes! e bes'!>4)
   | \stemNeutral
     \tuplet 3/2 {
-      \once\override Staff.TextScript.extra-offset = #'(-0.2 . -2.5)
+      \once\override Staff.TextScript.extra-offset = #'(-0.2 . -2)
       <c' c'>8[(_\markup {
       \dynamic f \italic\small "ben marcato"
     } <f a!> <c c'>] } <e! g>4)
@@ -250,12 +250,70 @@ Sopran = \context Voice = "one" \relative c'' {
     <c, ees'>\arpeggio f'\rest
     \once\override Arpeggio.positions = #'(-2.5 . 1.5)
     <f, aes c>\arpeggio f'\rest
+  | s2*8
+  %135
+  | \stemUp\slurUp \tuplet 3/2 { g8( ees f } d4)
+  | \tuplet 3/2 {
+      \once\override NoteColumn.force-hshift = #0.3 ees8( c des
+    }
+    \once\override NoteColumn.force-hshift = #0.4 bes4)
+  | \stemDown \tuplet 3/2 { <c c'>8(\> aes'\! <bes, bes'> } g'4)
+  | \tuplet 6/4 { <c, c'>8[(\> aes'\! <bes, bes'> g' <aes, aes'> f')] }
+  | \tuplet 3/2 {
+      \once\override Staff.TextScript.extra-offset = #'(0 . -1)
+      <fis, fis'>(_\markup {
+        \italic\small "cresc."
+      }
+      ees' <fis, fis'>)
+    }
+    <g d' g>4
+  %140
+  | \tuplet 3/2 { <a a'>8( ees' <a, a'>) } <g d' g>4
+  | \tuplet 3/2 {
+      \once\override Staff.TextScript.extra-offset = #'(0 . -1)
+      <c c'>8(_\markup {
+        \dynamic f \italic\small "cresc."
+      }
+      g' <c, c'>)
+    }
+    <d g d'>4
+  | \tuplet 3/2 { <e! e'!>8( g <e e'>) } <d g d'>4
+  | \tuplet 3/2 { <g g'>8( e'! <f, f'>) } \stemUp <d, g d'>4
+  | \stemDown \tuplet 3/2 { <e'! e'!>8( g <d d'>) } \stemUp <bes,! e! bes'!>4
+  %145
+  | \stemDown \tuplet 3/2 { <c' c'>8(\ff <f a!> <c c'>) } <g e'! g>4
+  | \tuplet 3/2 { <a! a'!>8( <d f> <a a'>) } <e! c' e!>4
+  | \tuplet 6/4 { <g g'>8[( <c e!> <g g'> <d' f> <g, g'> <c e>] }
+  | \tuplet 3/2 { <g g'> <a! c> <g g'>) } <g b! d g>4
+  | \tuplet 6/4 { <c c'>8[( <g' b!> <c, c'> <f a!> <c c'> <e g>]) }
+  %150
+  | \tuplet 6/4 { <a,! a'!>8[( <e'! g> <a, a'> <d f> <a a'> <c e>]) }
+  | \tuplet 6/4 { <g g'>8[( <d' f> <g, g'> <c e!> <g g'> <a! c>]) }
+  | <g c e! g>4^>\sf <g b! d g>8\sf r
+    \clef bass
+  | \once\override Staff.TextScript.extra-offset = #'(0.3 . -3)
+    r8_\markup {
+      \dynamic pp \italic\small "ma ben marc."
+    }
+    <g, c e!>^.[ <g b d>^. <g c e>^.]
+  | r8 <a c f>^.[ <g c e!>^. <a c d>^.]
+  %155
+  | r8 <g c e!>^.[ <f b! d>^. <e! c'>^.]
+  | <d b'! d>^.[ g^.] r s \clef treble
   | s2
+  | r8 <e''! g c>^.[ <d g b!>^. <e! g c>^.]
+  | r <a! c e!>^.[ <f a d>^. <e! a c>^.]
+  %160
+  | r <e! g b!>^.[ <c e a!>^. <b! e g>^.]
+  | <fis d' fis>^. b!^. r s
   | s2
-  | s2
-  %130
-  | s2
-  | s2
+  | r8 <g, c e!>^.[ <g b! d>^. <g c e>^.]
+  | r <a! c f>^.[ <g c e!>^. <a c d>^.]
+  %165
+  | r <g c e!>^.[ <f b! d>^. <e! c'>^.]
+  | <d b'! d>^.[ g^.] r s
+  | \clef treble
+    s2
   | s2
   | s2
 
@@ -340,6 +398,13 @@ Alto = \context Voice = "two" \relative c' {
   | <fis ees' fis>2
     \bar "||"
     \key ees \major
+  | \stemDown <g' c g'>4^>^(\p <g d' g>^>
+  | <g ees' g>^> <g d' g>^>)
+  %135
+  | \omit TupletBracket \omit TupletNumber
+    <g g'> q
+  | q q
+
 }
 
 Tenor = \context Voice = "three" \relative c {
@@ -408,6 +473,29 @@ Tenor = \context Voice = "three" \relative c {
   | s2*7
   % 90
   | f4( fes)_\Ped
+  | s2*42
+  %133
+  | \once\undo\omit TupletNumber
+    \tuplet 3/2 { c8( g c) } s4
+  | \once \undo \omit TupletNumber
+    \tuplet 3/2 { ees8( g, ees') } s4
+  %135
+  | \tuplet 3/2 { ees8( g, d') } s4
+  | \tuplet 3/2 { ees8( g, bes!) } s4
+  | \tuplet 3/2 { aes8( c g' } bes4)
+  | \tuplet 6/4 { aes,8[( c g' bes f aes]) }
+  | \tuplet 3/2 { ees,8( aes ees') } g4
+  %140
+  | \tuplet 3/2 { ees,8( a! ees') } g4
+  | \slurUp s4 \tuplet 3/2 { <c, d g>8( g <c d g>) }
+  | s4 \tuplet 3/2 { <c d g>8( g <c d g>) }
+  | e![( d]) \tuplet 3/2 { <c d g>8( g <c d g>) }
+  | c[( bes!]) \tuplet 3/2 { <c g'>( g <c g'>) }
+  %145
+  | s2*4
+  | s4 \tuplet 3/2 { \once\override NoteColumn.force-hshift = #0.4 <c c'>4. }
+  | s4 \tuplet 3/2 { \once\override NoteColumn.force-hshift = #0.4 <a! a'!>4. }
+
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -607,7 +695,54 @@ Bass = \context Voice = "four" \relative c {
   | \stemUp <c,,, c'>8_.\arpeggio[ aes''_. <c, c'>_.\arpeggio aes''_.]
   | \stemDown <c, aes' c>2
     \key ees \major
+  | c,4 <d' g d'>
+  | c,4 <d' g d'>
+  %135
+  | c,4 \stemUp <g' c g'>
+  | \stemDown c,4 \stemUp <g' c g'>
+  | \stemDown \tuplet 3/2 { c,4 c'8^~ } c4
+  | \tuplet 6/4 { c,4 c' c }
+  | c,4 <g' c d>
+  %140
+  | c,4 <g' c d>
+  | \stemUp <c, g' e'!> s
+  | <c g' c> s
+  | \stemDown <c g'> s
+  | <c g'> s
+  %145
+  | \stemNeutral <c f a! c>4 \tuplet 3/2 { <e'! g c>8( c <e g c>) }
+  | <d, f a! d>4 \tuplet 3/2 { <c' e! a!>8( a <c e a>) }
+  | \tuplet 3/2 { <g, g'>4 <c' e!>8_( } \tuplet 3/2 { <g g'> <d' f> <g, g'> }
+  | \tuplet 3/2 { <c e!> <g g'> <a! c>) } <g b! d g>4
+  | \tuplet 3/2 { c,8( c' <f_~ a!^~> } \tuplet 3/2 { q4 <e! g>8) }
+  %150
+  | \tuplet 3/2 { a,,!( a'! <d_~ f^~> } \tuplet 3/2 { q4 <c e!>8) }
+  | \tuplet 3/2 { g, g' <d' f> } \tuplet 3/2 { <g, g'> <c e!> <g_~ g'^~> }
+  | <g a! c g'>4 <g b! d g>8\arpeggio r
+  | c,8_. r g_.[ c_.]
+  | f,_. r c'[ f,_.]
+  %155
+  | c'_. r g[ c_.]
+  | g_. g'_. c,_. \top <c' a'! c>^.
+  | \bottom <c g' b!>_. \top <c' g' b! c>^. \bottom \clef treble <c f a!>_. \top <c' f a c>^.
+  | \bottom <c, e! g>_. r g_. c_.
+  | a!_. r d_.[ a_.]
+  %160
+  | e'!_. r a,!_. e'_.
+  | b!_. r e!_.[ \top e'!^.]
+  | \bottom
+    \clef bass
+    <dis,, e! dis'>_. \top <e'! dis' e!>^. \bottom <d,,! e! d'>_. \top \clef bass <e'! d'! e!>
+  | \bottom
+    <c,, c'>_. r g'_.[ c_.]
+  | f,_. r c'_.[ f,_.]
+  %165
+  | c'_. r g_.[ c_.]
+  | g_.[ g'_.] c,_.[ \top <c' c'>^.]
   | s2
+  | s2
+  | s2
+    \bottom
 
   \fine
 }
