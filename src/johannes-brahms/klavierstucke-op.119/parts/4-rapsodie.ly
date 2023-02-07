@@ -307,15 +307,65 @@ Sopran = \context Voice = "one" \relative c'' {
   | r <e! g b!>^.[ <c e a!>^. <b! e g>^.]
   | <fis d' fis>^. b!^. r s
   | s2
-  | r8 <g, c e!>^.[ <g b! d>^. <g c e>^.]
+  | \once\override Staff.TextScript.extra-offset = #'(0.3 . -2)
+    r8_\markup { \italic\small "dim." }
+    <g, c e!>^.[ <g b! d>^. <g c e>^.]
   | r <a! c f>^.[ <g c e!>^. <a c d>^.]
   %165
   | r <g c e!>^.[ <f b! d>^. <e! c'>^.]
   | <d b'! d>^.[ g^.] r s
   | \clef treble
     s2
+  | \once\override Staff.TextScript.extra-offset = #'(0.3 . -2)
+    r8_\markup {
+      \dynamic pp
+    }
+    \stemUp \once\override NoteColumn.force-hshift = #0.3 g''4.
+  | r8 <ees g>[( <d f> <ees g>])
+  %170
+  | r8 <c ees>[( <b! d> <c ees>])
+  | c4 <aes c>
+  | q cis
+  | r8 \once\override NoteColumn.force-hshift = #0.3 aes'4.
+  | r8 <g bes>[( <f aes> <g bes>])
+  %175
+  | r8 <ees g>[( <d f> <ees g>])
+  | ees4 <c ees>
+  | q <aes f'>
+  | r8 \ottava #1 \once\override NoteColumn.force-hshift = #0.3 d'4.
+  | r8 <c ees>[( <bes d> <c ees>]) \ottava #0
+  %180
+  | r8 <aes c>[( <g bes> <aes c>])
+  | aes4( <f aes>
+  | <f aes> <d aes'>)
+  | s2*19
+  %202
+  | \stemNeutral s4
+    \once\override Staff.TextScript.extra-offset = #'(-1.5 . -1)
+    <des, des'>_\markup {
+      \italic\small "cresc."
+    }
+  | <des bes' des> <ges bes ees ges>
+  | <ges ces ees ges> <ces ees aes ces>
+  %205
+  | f'4\rest \ottava #1 \stemUp f'16[( d f, d] \ottava #0
+  | bes[ d, bes8]) s4
+  | <f' bes d f>2^>
+  | s2
+  | a'4\rest \ottava #1 aes'16[( f aes, f] \ottava #0
+  %210
+  | des[ f, des8]) s4
+  | s4 \stemDown <aes des! f aes>~
+  | <des f aes> <aes des fes aes>~
+  | <des fes aes> s4
+  | s2
+  %215
   | s2
   | s2
+  | s2
+  | s2
+  | s2
+  %220
 
   \fine
 }
@@ -404,6 +454,61 @@ Alto = \context Voice = "two" \relative c' {
   | \omit TupletBracket \omit TupletNumber
     <g g'> q
   | q q
+  | s2*31
+  %168
+  | s8 <ees'! c'>[^(\( <d b'!> <ees c'>])
+  | s8 c4.
+  %170
+  | s8 g4.
+  | aes!4 f
+  | c f\)
+  | s8 <f'! d'>[^(\( <ees c'!> <f d'>])
+  | r8 d4.
+  %175
+  | r8 bes4.
+  | c4 aes
+  | ees \once\omit Stem aes\)
+  | s8 <bes' g'>[ <aes f'> <bes g'>]
+  | s8 g4.
+  %180
+  | s8 ees4.
+  | f4 d
+  | aes s
+  | <c ees fis a!>^( q
+  | q q)
+  %185
+  | \stemNeutral\slurUp
+    r
+    \once\shape #'((0 . 0) (0 . -5.5) (0 . 3) (0 . 3.5)) Slur
+    ees'16[(\< c a! fis]
+  | c[ a! fis ees]
+    \bottom s16 s\! s \stemDown \once\omit Flag \once\omit Stem c,) \top
+  | s2*3
+  %190
+  | \stemNeutral r4 \ottava #1 f''''16[( d f, cis] \ottava #0
+  | d[ bes d, a!] bes[ f d c])
+  | s2*3
+  %195
+  | r4 \ottava #1 ges''''16[( ees ges, d!] \ottava #0
+  | ees[ ces ees, bes] ces[ ges ees des])
+  | s2*3
+  %200
+  | r4 \ottava #1 aes''''16[( f aes, e!] \ottava #0
+  | f[ des f, c] des[ aes f ees])
+  | s2*3
+  %205
+  | \stemDown <bes' d! f bes>2
+  | s4 <ges' bes ees ges>^>
+  | f,\rest <f bes d f>~
+  | <bes d f>4 <ees ges ces ees>^>
+  | <des f aes des>2_>
+  %210
+  | s4 \ottava #1 <bes' des ges bes>^>
+  | << {
+      \stemUp \once\override Stem.length = #9 <aes des f aes>2*1/2^>
+    } \\ r4 >>
+    \ottava #0
+    s4
 
 }
 
@@ -495,6 +600,65 @@ Tenor = \context Voice = "three" \relative c {
   | s2*4
   | s4 \tuplet 3/2 { \once\override NoteColumn.force-hshift = #0.4 <c c'>4. }
   | s4 \tuplet 3/2 { \once\override NoteColumn.force-hshift = #0.4 <a! a'!>4. }
+  | s2*17
+  %168
+  | g,4( c'
+  | ees! g
+  %170
+  | c ees)
+  | s2
+  | s4 aes,
+  | g,,( d''
+  | g bes
+  %175
+  | ees g)
+  | s2
+  | s4 c,
+  | g,,( g''
+  | c ees
+  %180
+  | aes c)
+  | s2
+  | s4 f,
+  | ees c
+  | a! fis
+  %185
+  | <g, c ees>8_.\arpeggio r <g c ees>_.\arpeggio r
+  | <g c ees>_.\arpeggio r a'16[ fis ees c]
+  | <g g'>4(^\markup { \dynamic f \hspace #-0.4 \dynamic pp } g'
+  | g <f g>
+  | <ees g> <ces ees a!>)
+  %190
+  | << { <bes~ d~ bes'~>2 } \\ { <bes, f' bes>2 } >>
+  | << { <bes' d bes'>2 } \\ >>
+  | <bes bes'>4(^\markup {
+      \dynamic pp \italic\small "sempre ma ben marc."
+    } bes'
+  | <ges bes> <ees ges ces>
+  | <ees aes ces!> <aes ces fes>)
+  %195
+  | << { <ges~ ces~ ees~>2 } \\ { <ces,, ces'~>2 } >>
+  | << { <ges'' ces ees>2 } \\ { \once\override Stem.length = #3.5 ces,2 } >>
+  | <b b'>4( b'
+  | b! <a! b>
+  | <g b!> <fis bis>)
+  %200
+  | << { <des~ f~ des'~>2 } \\ { <des, aes'! des>2 } >>
+  | << { <des' f des'>2 } \\ >>
+  | des'4 s
+  | s2*2
+  %205
+  | f,4\rest^\markup {
+      \dynamic f \italic\small "sempre più"
+    }
+    \clef treble \tieDown <bes d! f bes>~
+  | <bes d f> <ees, ges bes ees>_>
+  | <bes' d f bes>2^>
+  | s2
+  | <des,, f aes des>2^>
+  %210
+  | s2
+  | <des'' f aes des>2^>
 
 }
 
@@ -739,10 +903,79 @@ Bass = \context Voice = "four" \relative c {
   %165
   | c'_. r g_.[ c_.]
   | g_.[ g'_.] c,_.[ \top <c' c'>^.]
+  | \bottom <bes! c bes'!>_.[ \top <c' bes'! c>^. ] \bottom <aes! c aes'!>_. \top <c' aes'! c>^.
+  | \bottom \stemDown g,,,2
+  | g'2*1/2 \hideNotes g'4~ \unHideNotes
+  %170
+  | g2
+  | \stemUp g,,
+  | \stemDown g'
+  | g,
+  | g'
+  %175
+  | g'
+  | \stemUp g,,
+  | \stemDown g'
+  | g,2
+  | \stemNeutral\slurDown \acciaccatura g'8 \stemDown g2
+    \clef treble
+  %180
+  | g'
+    \clef bass
+  | \stemUp g,,
+  | \stemDown g'
+  | g'~
+  | g4 s
+  %185
+  | s2
+  | s4 <g, c ees>8 g\rest
+  | g4 <f g>
+  | <ees g> <d g>
+  | <c g'> <ces ees ces'>
+  %190
+  | \once\override Voice.Rest.X-offset = #0.5 b,4\rest <bes bes'>_.
+  | q_. q_.
+  | bes'' ges
+  | ees ces
+  | aes <fes fes'>
+  %195
+  | \once\override Voice.Rest.X-offset = #0.5 ces\rest_\Ped <ces ces'>_.
+  | \once\override NoteColumn.force-hshift = #0 q_. q_.
+  | b''! <a! b>
+  | <g b!> <fis b>
+  | <e! b'!> <d fis d'>
+  %200
+  | \once\override Voice.Rest.X-offset = #0.5 d,\rest_\Ped <des des'>_.
+  | q_. q_.
+  | \stemNeutral <des'' des'> <bes bes'>
+  | <ges bes ges'> <ees bes' ees>
+  | <ces ees ces'> <aes ees' aes>
+  %205
+  | \stemDown\slurUp <bes d! f bes>2_\Ped
+  | s2
+  | d'4\rest_\Ped \clef bass
+    \set subdivideBeams = ##t
+    \set baseMoment = #(ly:make-moment 1/4)
+    bes,16[( f' bes d
+    \set subdivideBeams = ##f
+  | bes' d f8]) \stemUp <ces,, ees ges ces>4_>
+  | f,\rest \clef treble <des''' f aes des>~
+  %210
+  | <des f aes> <ges, bes des ges>_>
+  | e\rest_\Ped \clef bass
+    \stemDown \set subdivideBeams = ##t
+    des,16[( aes' des f
+  | des' f aes8]) des,,,16[( aes' des fes
+  | des' fes aes8]) s4
+    \stemDown \set subdivideBeams = ##f
+  | s2
+  %215
   | s2
   | s2
   | s2
-    \bottom
+  | s2
+  | s2
+  %220
 
   \fine
 }

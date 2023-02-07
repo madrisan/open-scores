@@ -21,7 +21,7 @@
      #'((basic-distance . 2)
         (minimum-distance . 1)
         (padding . 2)
-        (stretchability . 20))
+        (stretchability . 18))
   print-all-headers = ##t
   ragged-last-bottom = ##f
   ragged-bottom = ##f
