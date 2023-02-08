@@ -122,7 +122,7 @@ Sopran = \context Voice = "one" \relative c'' {
   %65
   | \slurNeutral\phrasingSlurDown
     \tuplet 3/2 { <ees, c'>8^>\!\(( g <ees c'>) } <d g d'>4^>\)
-  | \tuplet 3/2 { <ees c'>8^>\(( g <ees c'>) } <d g d'>4^>\)
+  | \tuplet 3/2 { <ees ees'>8^>\(( g <ees ees'>) } <d g d'>4^>\)
   | \tuplet 3/2 { <g g'>8^>\(( ees' <f, f'>) } d'4^>\)
   | \tuplet 3/2 { <ees, ees'>8^>\(( g <des des'>) } bes'4^>\)
     \clef treble
@@ -305,7 +305,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | r <a! c e!>^.[ <f a d>^. <e! a c>^.]
   %160
   | r <e! g b!>^.[ <c e a!>^. <b! e g>^.]
-  | <fis d' fis>^. b!^. r s
+  | <fis dis' fis>^. b!^. r s
   | s2
   | \once\override Staff.TextScript.extra-offset = #'(0.3 . -2)
     r8_\markup { \italic\small "dim." }
@@ -357,16 +357,74 @@ Sopran = \context Voice = "one" \relative c'' {
   | des[ f, des8]) s4
   | s4 \stemDown <aes des! f aes>~
   | <des f aes> <aes des fes aes>~
-  | <des fes aes> s4
-  | s2
+  | <des fes aes>
+    \ottava #1
+    <aes' des fes aes>^>\ff
+  | <ges bes des ges>^> <f! bes des f!>^>
   %215
-  | s2
-  | s2
-  | s2
-  | s2
-  | s2
+  | <fes bes des fes>^> \stemUp <ees ces' ees>_> \ottava #0
+  | \stemDown <ees bes' ees>^> <ees a! ees'>^>
+  | \stemNeutral <ees g! bes ees>->\ff <f, bes d f>8-.[ <g bes ees g>-.]
+  | <aes c! ees aes>4-> <g bes ees g>8-.[ <f c' ees f>-.]
+  | <g bes ees g>4-> <f aes d f>8-.[ <ees g bes ees>-.]
   %220
-
+  | <f d' f>8-.[ bes-.] <ees, c' ees>4_>
+  | <ees bes' d ees>_> <ees aes c ees>_>
+  | <ees g bes ees>4 <d f bes d>8[ <ees g bes ees>]
+  | <g c ees g>4 <f aes d f>8[ <ees g c ees>]
+  | <d g bes d>4 <c ees g c>8[ <bes d g bes>]
+  %225
+  | <a! fis' a!>8[ d] <g, g'>4
+  | <g fis' g>4 <g f'! g>4
+  | <g' bes ees g>4 <f bes d f>8[ <g bes ees g>]
+  | <aes c ees aes>4 <g bes ees g>8[ <f c' ees f>]
+  | <g bes ees g>4 <f aes d f>8[ <ees g bes ees>]
+  %230
+  | <f d' f> bes <ees, ees'>4\<
+  | <ees des' ees> <ees bes' ees>
+  | <aes' ces ees aes>->\!\ff <d,! bes' d!>8-.[ <ees ces' ees>-.]
+  | <ces fes aes ces>4-> <g! ees' g!>8-.[ <aes fes' aes>-.]
+  | <fes aes des fes>4-> <c! aes' c!>8_.[ <des fes des'>_.]
+  %235
+  | <ces d! f! ces'>4\sf \stemUp bes'^>
+  | bes^> bes^>
+  | \stemNeutral <ges, bes ees>8_. r16 <bes' bes'>16^>^.  f8^.[ r16 <ges ges'>^.]
+  | ees8^.[ r16 <bes' bes'>16^>^.]  f8^.[ r16 <ges ges'>^.]
+  | ees8^.[ r16 <ees' ees'>16^>^.]  f,8^.[ r16 <f' f'>^>^.]
+  %240
+  | ges,8^.[ r16 <ges' ges'>16^>^.]  a,!8^.[ d16\rest <a'! a'!>^.]
+  | \stemNeutral <bes ees ges bes>4^> <d,, aes' bes d>_>
+  | <ees ges ees'>8 r16 <ces' ces'>\sf ges!8^.[ r16 <g! g'!>^.]
+  | ees8_. r16 <ces' ces'>^.\sf ges!8^.[ r16 <g! g'!>^.]
+  | ees8_. r16 <ges' ges'>^>^. f,8^.[ r16 <f' f'>^>^.]
+  %245
+  | ees,8^.[ r16 <ees' ees'>^>^.] a,,!8^.[ r16 <a''! a'!>^.]
+  | <bes ees ges bes>4-> <ees, aes ces ees>->
+  | <ees, a! c! ees>_> <aes, bes d f bes>_>
+  | s2
+  | s2
+  %250
+  | \tuplet 3/2 { d'8\rest d,_. ees_. } \tuplet 3/2 { d'\rest ees,_. d_. }
+  | \tuplet 3/2 { d'8\rest <d, f>_. <ees g>_. } \tuplet 3/2 { e'\rest <ees, g>_. <d f>_. }
+  | s2
+  | r2
+  | \tuplet 3/2 { <ges' bes ees ges>8^. <f f'>^. <ges ges'>^. }
+    \tuplet 3/2 { <aes ces ees aes>^. <ges ges'>^. <f f'>^. }
+  %255
+  | \tuplet 3/2 { <ges bes ees ges>^. <f f'>^. <ges ges'>^. }
+    \tuplet 3/2 { <aes ces ees aes>^. <ges ges'>^. <f f'>^. }
+  | \tuplet 3/2 { <ges bes ees ges>^. <f f'>^. <ees ees'>^. }
+    \tuplet 3/2 { <ges ces ees ges>^. <f f'>^. <ees ees'>^. }
+  | \tuplet 3/2 { <ges a! c! ees ges>^. <f f'>^. <ees ees'>^. }
+    <f bes d f>8^.[ <bes, bes'>^.]
+  | <ees ees'>^. r <ees ges ces ees>4^>
+  | <des ges bes des>^> <ces ees aes ces>^>
+  %260
+  | <bes ees ges bes>2^>~
+  | \stemUp <bes ees ges bes>2
+  | \stemDown
+    \once\override Staff.OttavaBracket.minimum-length = 3
+    \ottava #1 <ees' ges bes ees>2\fermata \ottava #0
   \fine
 }
 
@@ -493,7 +551,7 @@ Alto = \context Voice = "two" \relative c' {
   | ees[ ces ees, bes] ces[ ges ees des])
   | s2*3
   %200
-  | r4 \ottava #1 aes''''16[( f aes, e!] \ottava #0
+  | r4 \ottava #1 aes''''!16[( f aes, e!] \ottava #0
   | f[ des f, c] des[ aes f ees])
   | s2*3
   %205
@@ -509,7 +567,33 @@ Alto = \context Voice = "two" \relative c' {
     } \\ r4 >>
     \ottava #0
     s4
+  | s2*23
+  %235
+  | s4 <bes,, ees>8_.[ <ces ees aes>_.]
+  | <bes ees ges>4_. <aes d! f>_.
+  | s2*13
+  %250
+  | \once\override Stem.cross-staff = ##t
+    \once\override Stem.length = #10
+    \once\override Stem.flag-style = #'no-flag
+    ees'4
+    \once\override Stem.cross-staff = ##t
+    \once\override Stem.length = #10
+    \once\override Stem.flag-style = #'no-flag
+    f
+  | \once\override Stem.cross-staff = ##t
+    \once\override Stem.length = #14
+    \once\override Stem.flag-style = #'no-flag
+    ges4
+    \once\override Stem.cross-staff = ##t
+    \once\override Stem.length = #14
+    \once\override Stem.flag-style = #'no-flag
+    aes
 
+  | s2*10
+  %261
+  | \stemDown \once\override NoteColumn.force-hshift = #1.7 <ees' ges bes ees>8^. r
+    <ees ges bes ees>8^. r
 }
 
 Tenor = \context Voice = "three" \relative c {
@@ -659,7 +743,26 @@ Tenor = \context Voice = "three" \relative c {
   %210
   | s2
   | <des'' f aes des>2^>
-
+  | s2*3
+  %215
+  | \slurDown s4 ces'16[( ges ees ces])
+  | ges[( ees ces ges]) ees[( ces ges ees])
+  | <bes''' ees g!>4_> s
+  | s2*19
+  %237
+  | \slurUp ees,,16[( bes' ees ges] \once\omit Stem aes4)
+  | \slurUp ees,16[( bes' ees ges] \once\omit Stem aes4)
+  | ees,4 s4
+  %240
+  | ees4 s4
+  | s2*7
+  %248
+  | \tuplet 3/2 { b''8\rest d,^. ees^. } \tuplet 3/2 { c'8\rest ees,^. d^. }
+  | \tuplet 3/2 { d'8\rest <d, f>^. <ees ges>^. } \tuplet 3/2 { e'8\rest <ees, ges>^. <d f>^. }
+  | s2*10
+  %260
+  | \stemDown <ees~ ges~ bes~ ees^~>2^>_\Ped
+  | \stemUp <ees ges bes ees>
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -966,17 +1069,80 @@ Bass = \context Voice = "four" \relative c {
     \stemDown \set subdivideBeams = ##t
     des,16[( aes' des f
   | des' f aes8]) des,,,16[( aes' des fes
-  | des' fes aes8]) s4
+  | des' fes aes8]) \stemUp ges,,,16[_(_\Ped bes des ges])
     \stemDown \set subdivideBeams = ##f
-  | s2
+  | bes[(_\Ped des ges bes]) \clef treble \stemUp des[_(_\Ped ges bes des])
   %215
-  | s2
-  | s2
-  | s2
-  | s2
-  | s2
+  | \stemDown <ges, bes des ges>8 r ces4_\Ped \clef bass
+  | ges,4_\Ped ees,_\Ped \clef treble
+  | s4 \clef bass \stemNeutral <bes' bes'>8^.[ <ees, ees'>^.]
+  | <ees' aes c! ees>4 <ees, ees'>8[ <aes, aes'>]
+  | <ees' bes' ees>4 <bes bes'>8[ <ees, ees'>]
   %220
-
+  | <bes' bes'>8[ <bes' bes'>] <ees, ees'>4_>
+  | <ees' bes' d> <ees aes c>
+  | <ees, bes' ees>4 <bes bes'>8[ <ees, ees'>]
+  | <c'' ees g c>4 <f, f'>8[ <c c'>]
+  | <g' bes d g>4 <c, c'>8[ <g g'>]
+  %225
+  | <d d'>8[ <d' d'>] <g, g'>4
+  | <g' fis'>4 <g f'!>
+  | <ees' g bes ees>4 <bes bes'>8[ <ees, ees'>]
+  | <aes ees' aes>4 <ees ees'>8[ <aes, aes'>]
+  | <ees' bes' ees>4 <bes bes'>8[ <ees, ees'>]
+  %230
+  | <bes' bes'>8[ <bes' bes'>] <ees, ees'>4
+  | <des ees des'>4 <bes ees bes'>
+  | <aes ees' aes>_> <ces ces'>8_.[ <aes aes'>]_.
+  | <fes' aes ces fes>4_> <aes aes'>8_.[ <fes fes'>_.]
+  | <des' fes aes des>4^> <fes, fes'>8_.[ <des des'>_.]
+  %235
+  | <aes' d! f! aes>4^> <ges ees' ges>8_.[ <f f'>_.]
+  | <bes bes'>4^. <bes, bes'>_.
+  | s4 <bes' d aes'>
+  | s4 <bes d aes'>
+  | \stemDown\slurDown ees,16[( ces' ees ges] <ces, ees a!>4)
+  %240
+  | ees,16[( c'! ees a!] <ees ges c>4)
+  | \stemNeutral <bes, ees ges bes>4_> <bes' f' aes bes>^>
+  | ces,16[( ges' ces ees]) <ces fes bes>4
+  | ces,16[( ges' ces ees]) <ces fes bes>4
+  | ces,16[( ges' ces ees^~] <c! ees a!>4)
+  %245
+  | f,,16[ f' a! c~] <f, c' ees>4
+  | <bes, ees ges bes>4_> <bes' ees aes ces>^>
+  | <bes f' c'!>^> <bes, bes'>_>
+  | \stemDown <ees ges bes ees>8_.\arpeggio^\markup {
+      \dynamic fp \italic\small "cresc."
+    }
+    g\rest <ees aes ces f>_.\arpeggio g\rest
+  | <ees bes' ges'>_.\arpeggio g\rest <ees ces' aes'>_.\arpeggio g\rest
+  %250
+  | \once\override Arpeggio.positions = #'(-0.5 . 4)
+    <ees' ges bes>8_.\arpeggio r
+    \once\override Arpeggio.positions = #'(-0.5 . 4)
+    <ees aes ces>_.\arpeggio r
+  | \once\override Arpeggio.positions = #'(-0.5 . 4)
+    <ees bes'>_.\arpeggio r
+    \once\override Arpeggio.positions = #'(-0.5 . 4)
+    <ees ces'>_.\arpeggio r
+    \clef treble
+  | <ees' ges bes ees>8^.\arpeggio g\rest <ees aes ces f>^.\arpeggio g\rest
+  | <ees bes' ges'>^.\arpeggio r <ees ces' aes'>^.\arpeggio r
+  | \stemNeutral <ees ges bes ees>_.[^\f <ees, ees'>_.] <ees' aes ces ees>_.[^\sf
+    \clef bass <aes,, aes'>_.]
+  %255
+  | \stemDown <ees' ges bes ees>^.[ <ees, ees'>^.] <ees' aes ces ees>^.[^\sf <aes,, aes'>^.]
+  | \stemUp <bes' ees ges bes>_.[ <ees,, ees'>_.]
+    <ces'' ees ges ces>_.[ <ees,, ees'>_.]
+  | \stemDown <c''! ees ges a! c!>4^\sf \stemDown <bes f' bes d>8^.\arpeggio[ <bes, bes'>^.]
+  | \stemNeutral <ees, ees'>_. r <ces' ees ges ces>4_>^\ff
+  | <ges' bes des ges>4-> <aes ces ees aes>^>
+  %260
+  | s2
+  | \stemDown <ees, ees'>8_. r <bes'' ees ges bes>_. r
+  | \clef treble
+    <ges'' bes ees ges>2\fermata
   \fine
 }
 
