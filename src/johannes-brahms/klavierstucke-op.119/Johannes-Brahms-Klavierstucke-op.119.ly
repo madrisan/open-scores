@@ -21,7 +21,7 @@
      #'((basic-distance . 2)
         (minimum-distance . 1)
         (padding . 2)
-        (stretchability . 18))
+        (stretchability . 20))
   print-all-headers = ##t
   ragged-last-bottom = ##f
   ragged-bottom = ##f
@@ -29,7 +29,7 @@
      #'((basic-distance . 2)
         (minimum-distance . 1)
         (padding . 2)
-        (stretchability . 18))
+        (stretchability . 25))
   top-margin = 15\mm
 }
 
