@@ -2,11 +2,11 @@
 
 \header {
   composer = "Johannes Brahms (1685-1750)"
-  date = "1733-1797"
+  date = "1833-1897"
 
   footer = "Mutopia-2023/02/02"
 
-  lastupdated = "2023 Feb 2"
+  lastupdated = "2023 Feb 9"
   license = "Creative Commons Attribution-ShareAlike 4.0"
   maintainerEmail = "davide.madrisan@gmail.com"
   maintainerWeb = "https://github.com/madrisan/open-scores"
