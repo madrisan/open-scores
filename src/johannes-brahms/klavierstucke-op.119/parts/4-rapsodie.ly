@@ -140,7 +140,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | \tuplet 3/2 { <e! e'!>8[( c' <d, d'>] } <bes! e bes'!>4)
   | \stemNeutral
     \tuplet 3/2 {
-      \once\override Staff.TextScript.extra-offset = #'(-0.2 . -2)
+      \once\override Staff.TextScript.extra-offset = #'(-2 . -2)
       <c' c'>8[(_\markup {
       \dynamic f \italic\small "ben marcato"
     } <f a!> <c c'>] } <e! g>4)
@@ -172,7 +172,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | \stemDown <ees_~ c'_~ ees~>
   | q
     \key aes \major
-    %\break
+    \break
   | \stemUp
     \once\shape #'((0 . 0) (0 . 1) (0 . 1.5) (0 . -2)) Slur
     <c, ees aes c>8[^(_\markup {
@@ -293,7 +293,7 @@ Sopran = \context Voice = "one" \relative c'' {
     \clef bass
   | \once\override Staff.TextScript.extra-offset = #'(0.3 . -3)
     r8_\markup {
-      \dynamic pp \italic\small "ma ben marc."
+      \dynamic pp \whiteout \pad-markup #0.2 \italic\small "ma ben marc."
     }
     <g, c e!>^.[ <g b d>^. <g c e>^.]
   | r8 <a c f>^.[ <g c e!>^. <a c d>^.]
@@ -406,9 +406,12 @@ Sopran = \context Voice = "one" \relative c'' {
   %250
   | \tuplet 3/2 { d'8\rest d,_. ees_. } \tuplet 3/2 { d'\rest ees,_. d_. }
   | \tuplet 3/2 { d'8\rest <d, f>_. <ees g>_. } \tuplet 3/2 { e'\rest <ees, g>_. <d f>_. }
-  | s2
-  | r2
-  | \tuplet 3/2 { <ges' bes ees ges>8^. <f f'>^. <ges ges'>^. }
+  | \tuplet 3/2 { \bottom ees' \top <d d'>^. <ees ees'>^. }
+    %\once\override Hairpin.Y-offset = #10
+    \tuplet 3/2 { \bottom f \top <ees ees'>^. <f f'>^. }
+  | \tuplet 3/2 { \bottom ges \top <f f'>^. <ges ges'>^. }
+    \tuplet 3/2 { \bottom aes \top <ges ges'>^. <f f'>^. }
+  | \tuplet 3/2 { <ges bes ees ges>8^. <f f'>^. <ges ges'>^. }
     \tuplet 3/2 { <aes ces ees aes>^. <ges ges'>^. <f f'>^. }
   %255
   | \tuplet 3/2 { <ges bes ees ges>^. <f f'>^. <ges ges'>^. }
@@ -537,8 +540,8 @@ Alto = \context Voice = "two" \relative c' {
   %185
   | \stemNeutral\slurUp
     r
-    \once\shape #'((0 . 0) (0 . -5.5) (0 . 3) (0 . 3.5)) Slur
-    ees'16[(\< c a! fis]
+    \once\shape #'((0 . 0) (0 . 0.5) (0 . 12) (0.8 . 6)) Slur
+    ees'16[_(\< c a! fis]
   | c[ a! fis ees]
     \bottom s16 s\! s \stemDown \once\omit Flag \once\omit Stem c,) \top
   | s2*3
@@ -574,25 +577,25 @@ Alto = \context Voice = "two" \relative c' {
   | s2*13
   %250
   | \once\override Stem.cross-staff = ##t
-    \once\override Stem.length = #10
+    \once\override Stem.length = #20
     \once\override Stem.flag-style = #'no-flag
-    ees'4
+    ees'4\arpeggio
     \once\override Stem.cross-staff = ##t
-    \once\override Stem.length = #10
+    \once\override Stem.length = #20
     \once\override Stem.flag-style = #'no-flag
-    f
+    f\arpeggio
   | \once\override Stem.cross-staff = ##t
-    \once\override Stem.length = #14
+    \once\override Stem.length = #20
     \once\override Stem.flag-style = #'no-flag
-    ges4
+    ges4\arpeggio
     \once\override Stem.cross-staff = ##t
-    \once\override Stem.length = #14
+    \once\override Stem.length = #20
     \once\override Stem.flag-style = #'no-flag
-    aes
-
-  | s2*10
+    aes\arpeggio
+  | \tuplet 6/4 { r8 s4 r8 s4 }
+  | s2*8
   %261
-  | \stemDown \once\override NoteColumn.force-hshift = #1.7 <ees' ges bes ees>8^. r
+  | \stemDown \once\override NoteColumn.force-hshift = #1.7 <ees ges bes ees>8^. r
     <ees ges bes ees>8^. r
 }
 
@@ -716,7 +719,7 @@ Tenor = \context Voice = "three" \relative c {
   | << { <bes~ d~ bes'~>2 } \\ { <bes, f' bes>2 } >>
   | << { <bes' d bes'>2 } \\ >>
   | <bes bes'>4(^\markup {
-      \dynamic pp \italic\small "sempre ma ben marc."
+      \dynamic pp \whiteout \pad-markup #0.2 \italic\small "sempre ma ben marc."
     } bes'
   | <ges bes> <ees ges ces>
   | <ees aes ces!> <aes ces fes>)
@@ -732,7 +735,8 @@ Tenor = \context Voice = "three" \relative c {
   | des'4 s
   | s2*2
   %205
-  | f,4\rest^\markup {
+  | \once\override Staff.TextScript.extra-offset = #'(2 . 1.5)
+    f,4\rest^\markup {
       \dynamic f \italic\small "sempre più"
     }
     \clef treble \tieDown <bes d! f bes>~
@@ -999,7 +1003,9 @@ Bass = \context Voice = "four" \relative c {
   | b!_. r e!_.[ \top e'!^.]
   | \bottom
     \clef bass
-    <dis,, e! dis'>_. \top <e'! dis' e!>^. \bottom <d,,! e! d'>_. \top \clef bass <e'! d'! e!>
+    <dis,, e! dis'>_. \top <e'! dis' e!>^. \bottom <d,,! e! d'>_. \top
+    \once\override Score.Clef.X-extent = #'(-1.5 . 2.5)
+    \clef bass <e'! d'! e!>
   | \bottom
     <c,, c'>_. r g'_.[ c_.]
   | f,_. r c'_.[ f,_.]
@@ -1112,23 +1118,24 @@ Bass = \context Voice = "four" \relative c {
   | f,,16[ f' a! c~] <f, c' ees>4
   | <bes, ees ges bes>4_> <bes' ees aes ces>^>
   | <bes f' c'!>^> <bes, bes'>_>
-  | \stemDown <ees ges bes ees>8_.\arpeggio^\markup {
+  | \stemDown
+    \once\override Staff.TextScript.extra-offset = #'(0 . 2)
+    <ees ges bes ees>8_.\arpeggio^\markup {
       \dynamic fp \italic\small "cresc."
     }
     g\rest <ees aes ces f>_.\arpeggio g\rest
   | <ees bes' ges'>_.\arpeggio g\rest <ees ces' aes'>_.\arpeggio g\rest
   %250
-  | \once\override Arpeggio.positions = #'(-0.5 . 4)
+  | \set PianoStaff.connectArpeggios = ##t
     <ees' ges bes>8_.\arpeggio r
-    \once\override Arpeggio.positions = #'(-0.5 . 4)
+    \once\override Arpeggio.padding = #4
     <ees aes ces>_.\arpeggio r
-  | \once\override Arpeggio.positions = #'(-0.5 . 4)
-    <ees bes'>_.\arpeggio r
-    \once\override Arpeggio.positions = #'(-0.5 . 4)
+  | <ees bes'>_.\arpeggio r
+    \once\override Arpeggio.padding = #4
     <ees ces'>_.\arpeggio r
     \clef treble
-  | <ees' ges bes ees>8^.\arpeggio g\rest <ees aes ces f>^.\arpeggio g\rest
-  | <ees bes' ges'>^.\arpeggio r <ees ces' aes'>^.\arpeggio r
+  | <ees' ges bes ees>8^.\arpeggio g\rest <ees aes ces f>^.\arpeggio\< g\rest
+  | <ees bes' ges'>^.\arpeggio r <ees ces' aes'>^.\arpeggio r\!
   | \stemNeutral <ees ges bes ees>_.[^\f <ees, ees'>_.] <ees' aes ces ees>_.[^\sf
     \clef bass <aes,, aes'>_.]
   %255
