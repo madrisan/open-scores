@@ -140,7 +140,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | \tuplet 3/2 { <e! e'!>8[( c' <d, d'>] } <bes! e bes'!>4)
   | \stemNeutral
     \tuplet 3/2 {
-      \once\override Staff.TextScript.extra-offset = #'(-2 . -2)
+      \once\override Staff.TextScript.extra-offset = #'(-0.8 . -2)
       <c' c'>8[(_\markup {
       \dynamic f \italic\small "ben marcato"
     } <f a!> <c c'>] } <e! g>4)
