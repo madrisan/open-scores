@@ -1,1 +1,2 @@
-SUBDIRS = klavierstucke-op.119
+SUBDIRS = rhapsodie-op.79-nr.2 \
+	  klavierstucke-op.119

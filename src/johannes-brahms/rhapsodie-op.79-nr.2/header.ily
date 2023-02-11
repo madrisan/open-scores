@@ -2,7 +2,7 @@
 
 \header {
   composer = "Johannes Brahms (1833-1897)"
-  date = "1893"
+  date = "1833-1897"
 
   footer = "Mutopia-2023/02/09"
 
@@ -16,11 +16,11 @@
   mutopiacopyright = "Creative Commons Attribution-ShareAlike 4.0"
   mutopiainstrument = "Piano"
   mutopiamaintainer = "Davide Madrisan"
-  mutopiaopus = "119"
-  mutopiatitle = "4 Klavierstücke op. 119"
+  mutopiaopus = "79"
+  mutopiatitle = "Rhapsodie op. 79 nr. 2"
 
-  opus = "119"
-  title = "4 Klavierstücke op. 119"
+  opus = "79"
+  title = "Rhapsodie op. 79 nr. 2"
   source = "Edizioni Curci Milano"
   style = "Romantic"
 
