@@ -106,6 +106,8 @@ top = { \change Staff = "upper"\stemDown }
 Ped = \markup { \hspace #-1.5 \musicglyph #"pedal.Ped" }
 crescendo = { \override TextSpanner.bound-details.left.text = \markup { \small "crescendo " } }
 intempo = \markup { \small "in tempo" }
+ms = \markup { \small "m.s." }
+parenthesizems = \markup { \hspace #-0.8 \small "(m.s.)" }
 rit = { \override TextSpanner.bound-details.left.text = \markup { \small "rit. " } }
 
 Sopran = \context Voice = "one" \relative c'' {
@@ -124,13 +126,13 @@ Sopran = \context Voice = "one" \relative c'' {
     d,4
   %1
   \repeat volta 2 {
-  | ees g^\markup { \small "m.s." } bes e,!
-  | f a^\markup { \small "m.s." } c f^>
+  | ees g^\ms bes e,!
+  | f a^\ms c f^>
   | e! c g a
   | b! d2 fis,4^\intempo
   %5
-  | g b!^\markup { \small "m.s." } d gis,
-  | a cis!^\markup { \small "m.s." } e! a^>
+  | g b!^\ms d gis,
+  | a cis!^\ms e! a^>
   | gis e! b cis
   | dis fis2
     \once\override Staff.TextScript.extra-offset = #'(0 . -1)
@@ -199,9 +201,63 @@ Sopran = \context Voice = "one" \relative c'' {
       r8 <cis'! e!>4
       \ottava #0
     }
-  | s2. d,,4
+  | s2. d,,4(
   }
+  \break
   %33
+  | c ees^\ms g) bes,(
+  | a c^\ms f) aes,(
+  %35
+  | g des'^\ms c g'^\ms
+  | f c'^\ms bes) f'(^\ms
+  | e! des^\ms bes) e(
+  | f d!^\parenthesizems bes) f'(
+  | e! des^\parenthesizems bes) g'4(
+  %40
+  | aes f d bes)
+    \bar "||"
+    \key b \minor
+  | gis4( b^\ms dis) fis,(
+  | eis gis4^\parenthesizems cis) e,!(
+  | dis a'!4^\parenthesizems gis dis'^\parenthesizems
+  | cis gis'4^\parenthesizems fis cis'^\parenthesizems)
+  %45
+  | bis2. 4
+  | b2. 4
+  | ais2. 4
+  | b fis dis d!
+  | cis2. 4
+  %50
+  | b2. 4
+  | ais2. 4
+  | b4 fis dis d!
+  | cis2 r4 \clef bass \stemDown \tuplet 3/2 { fis,8( g fis) }
+  | \stemUp b4^.( 4^. 4^.) \tuplet 3/2 { fis8( g fis) }
+  %55
+  | b4^.( 4^. 4^.) \tuplet 3/2 { fis8( g fis) }
+  | <b d>4 q q \tuplet 3/2 { b8( cis b) }
+  | <a cis>4 q q \tuplet 3/2 { a8( b a) }
+  | <g b>4( q <g bes> q)
+  | bes2 a4. g8
+  %60
+  | g2 fis
+    \bar "||"
+    \key g \minor
+    \clef treble
+  | \override NoteColumn.force-hshift = #0.3 <b! g' b!>2
+    <bes g' bes>
+  | <bes bes'>2
+    <a a'>4. g'8
+    \revert NoteColumn.force-hshift
+  | g1
+  | fis
+  %65
+  | g'4\rest bes,^.(^\ms d^.) g\rest
+  | g4\rest d^.( g^.) g\rest
+  | g4\rest bes,^.( d^.) g\rest
+  | g4\rest bes,^.( d^.) g\rest
+  | s1
+  %70
 
   \fine
 }
@@ -241,7 +297,7 @@ Alto = \context Voice = "two" \relative c' {
       \small "cresc."
     }
     \omit TupletNumber
-  | s1
+  | gis'4 cis, b' cis,
    %20
   | s1
   | \tuplet 3/2 { a8( bes a) } \tuplet 3/2 { a8( bes a) } \tuplet 3/2 { a8( bes a) } a4
@@ -288,6 +344,42 @@ Alto = \context Voice = "two" \relative c' {
     }
     \revert Parentheses.font-size\top
   %33
+  | c2. s4
+  | a2. s4
+  %35
+  | g2 s2
+  | s1
+  | e''!2. s4
+  | f2. s4
+  | e!2. s4
+  %40
+  | s1
+  | gis,2. s4
+  | eis2. s4
+  | dis2 s2
+  | s1*17
+  %61
+  | \slurDown \tuplet 3/2 { d8(\< e! d) } \tuplet 3/2 { d( e d) }
+    \tuplet 3/2 { d( ees d) } \tuplet 3/2 { d( ees d) }
+  | \tuplet 3/2 { d(\!\ff\> g d) } \tuplet 3/2 { d( g d) }
+    \tuplet 3/2 { ees( g ees) } ees[( c])\!
+  | \shape #'((0 . 2) (0 . 2) (0 . 2) (0 . 1)) PhrasingSlur
+    \tuplet 3/2 { d(^\(_\markup {
+      \dynamic p \small "dim."
+    } ees d) } \tuplet 3/2 { d( ees d)\> }
+    \tuplet 3/2 { d( ees d) } \tuplet 3/2 { d( ees d) }
+  | \tuplet 3/2 { d( ees d) } \tuplet 3/2 { d( ees d) }
+    \tuplet 3/2 { d( ees d)\)\!\ppp } \tuplet 3/2 { \bottom d, \top d' \bottom d, }
+    \top
+  %65
+  | \stemUp \override NoteColumn.force-hshift = #0.4 <g g'>2._\markup {
+      \hspace #-0.5 \small "sottovoce"
+    }
+    <a a'>4
+  | \stemUp <bes bes'>2. <a a'>4
+  | \stemUp <g g'>2. <ges ges'>4
+    \revert NoteColumn.force-hshift
+  | f'2. s4
 
 }
 
@@ -317,19 +409,179 @@ Tenor = \context Voice = "three" \relative c' {
     \tuplet 3/2 { fis \bottom fis, cis' }
   %5
   | \tuplet 9/6 {
-      \top \top \once\override NoteColumn.force-hshift = #0.5
+      \top \once\override NoteColumn.force-hshift = #0.5
       \once\hide NoteHead g'[ \bottom g, d'~ d g, d'~ d g, d' ]
     }
     \tuplet 3/2 { \top gis \bottom gis, d' }
   | \tuplet 9/6 {
-      \top \top \once\override NoteColumn.force-hshift = #0.5
+      \top \once\override NoteColumn.force-hshift = #0.5
       \once\hide NoteHead a'[ \bottom a, e'^~ e a, e'^~ e a, e' ]
     }
     s4
-  | s1*13
+  | s1*6
+  %13
+  | s2
+    \once\override Stem.cross-staff = ##t
+    \once\override Stem.length = #22
+    \once\override Stem.flag-style = #'no-flag
+    e,!4 s
+  | s1*6
   %20
   | \hideNotes g,1^\f \unHideNotes
-
+  | s1*12
+  %33
+  | \tuplet 9/6 {
+      \top \once\override NoteColumn.force-hshift = #0.5
+      \once\hide NoteHead
+      c'8[ \bottom\tieDown c, g'~  g c, g'~  g c, g']
+    }
+    \tuplet 3/2 { \top bes \bottom des, g }
+  | \tuplet 9/6 {
+      \top \once\override NoteColumn.force-hshift = #0.5
+      \once\hide NoteHead
+      a8[ \bottom\tieDown c, f~  f c f~  f c f]
+    }
+    \tuplet 3/2 { \top aes \bottom ces, f }
+  %35
+  | \tuplet 6/4 {
+      \top \once\override NoteColumn.force-hshift = #0.5
+      \once\hide NoteHead
+      g8[ \bottom\tieDown bes, ees~ ees bes ees]
+    }
+    \tuplet 6/4 { \top c'[ \bottom c, g' \top bes \bottom c, g'] }
+  | \tuplet 6/4 { \top f'[ \bottom f, a \top ees'! \bottom f, a] }
+    \tuplet 6/4 { \top bes'[ bes, d aes'\> bes, d]\! }
+  | \tuplet 9/6 {
+      \top \once\override NoteColumn.force-hshift = #0.5
+      \once\hide NoteHead
+      e'!8[\p e,! g~  g e g~  g e g]
+    }
+    \tuplet 3/2 { e' e, g }
+  | \tuplet 9/6 {
+      \top \once\override NoteColumn.force-hshift = #0.5
+      \once\hide NoteHead
+      f'8[ f, aes~  aes f aes~  aes f aes]
+    }
+    \tuplet 3/2 { f' f, aes }
+  | \tuplet 9/6 {
+      \top \once\override NoteColumn.force-hshift = #0.5
+      \once\hide NoteHead
+      e'8[ e,! g~  g e g~  g e g]
+    }
+    \tuplet 3/2 { g'\< g, des' }
+  %40
+  | \tuplet 12/8 {
+      aes'[ aes, d\!\> f f, bes d d,\! aes' bes bes, f']
+    }
+  | \tuplet 9/6 {
+      \top \once\override NoteColumn.force-hshift = #0.5
+      \once\hide NoteHead gis[ \bottom gis, dis'~ dis gis, dis'~ dis gis, dis' ]
+    }
+    \tuplet 3/2 { \top fis \bottom a,! dis }
+  | \tuplet 9/6 {
+      \top \once\override NoteColumn.force-hshift = #0.5
+      \once\override Beam.positions = #'(-4.5 . -3.5)
+      \once\hide NoteHead eis[ \bottom gis, cis~ cis gis cis~ cis gis cis ]
+    }
+    \tuplet 3/2 { \top eis \bottom g,! cis }
+  | \tuplet 6/4 {
+      \top \once\override NoteColumn.force-hshift = #0.5
+      \once\override Beam.positions = #'(-5 . -3.5)
+      \once\hide NoteHead dis[ \bottom fis, b~ b fis b ]
+    }
+    \tuplet 6/4 {
+      \top
+      \once\override Beam.positions = #'(-3.5 . -3.5)
+      gis'[ \bottom gis, dis' \top fis \bottom gis, dis' ]
+    }
+  | \tuplet 6/4 {
+      \top cis'[ cis, eis b'! cis, eis ]
+    }
+    \tuplet 6/4 {
+      fis'[ fis, ais e'! fis, ais ]
+    }
+  %45
+  | \tuplet 9/6 {
+      \top \once\override NoteColumn.force-hshift = #2.4
+      \shape #'(
+        ((0 . 0) (0 . 1) (0 . 1.5) (0 . 0))
+        ((0 . 0) (0 . 1.5) (0 . 2.5) (0 . 0))
+      ) Slur
+      bis'[( bis, dis a'! bis, dis fis bis, dis ]
+    }
+    \tuplet 3/2 { bis' bis, dis }
+  | \tuplet 9/6 {
+      \top \once\override NoteColumn.force-hshift = #2.4
+      b'[ b,! d! gis b, d eis b d ]
+    }
+    \tuplet 3/2 { b' b, d }
+  | \tuplet 9/6 {
+      \top \once\override NoteColumn.force-hshift = #2.4
+      ais'[ ais, cis g' ais, cis e! ais, cis ]
+    }
+    \tuplet 3/2 { ais' ais, cis }
+  | \tuplet 12/8 {
+      b'[ b, dis fis fis, b dis dis, fis d'! d,! b' ])
+    }
+  | \tuplet 9/6 {
+      \top \once\override NoteColumn.force-hshift = #2.4
+      \shape #'(
+        ((0 . 0) (0 . 1) (0 . 3) (0 . 3.5))
+        ((0 . 2) (0 . 2) (0 . 7) (0 . -3))
+      ) Slur
+      cis[( cis, e!~ e cis e~ e cis e ]
+    }
+    \tuplet 3/2 { cis' cis, e }
+  %50
+  | \tuplet 9/6 {
+      \top \once\override NoteColumn.force-hshift = #2.4
+      b'[ b, d!~ d b d~ d b d ]
+    }
+    \tuplet 3/2 { b' b, d }
+  | \tieUp \tuplet 9/6 {
+      \top \once\override NoteColumn.force-hshift = #2.4
+      ais'[ \bottom ais, cis~ cis ais cis~ cis ais cis ]
+    }
+    \tuplet 3/2 { \top ais' \bottom ais, cis }
+  | \tuplet 12/8 {
+      \top
+      \once\override Beam.positions = #'(-3 . -5)
+      b'[ \bottom b, dis \top fis \bottom fis, b \top dis \bottom dis, fis \top d'! \bottom d,! gis])
+    }
+  | \once\override Stem.cross-staff = ##t
+    \once\override Stem.length = #20
+    \once\override Stem.flag-style = #'no-flag
+    <cis, ais'>2 s
+  | \top\slurDown
+    \tuplet 3/2 { fis8( g fis) } \tuplet 3/2 { fis8( g fis) } \tuplet 3/2 { fis8( g fis) } fis4
+  %55
+  | \tuplet 3/2 { fis8( g fis) } \tuplet 3/2 { fis8( g fis) } \tuplet 3/2 { fis8( g fis) } fis4
+  | \tuplet 3/2 { fis8( g fis) } \tuplet 3/2 { fis8( g fis) } \tuplet 3/2 { fis8( g fis) } <e g>4
+  | \once\override Hairpin.Y-offset = #-4
+    \tuplet 3/2 { e8(\< fis e) }
+    \tuplet 3/2 { e( fis e)\! }
+    \tuplet 3/2 { e(\> fis e) } <d fis>4
+  | \tuplet 3/2 { d8(\!\< e d) } \tuplet 3/2 { d( e d) }
+    \tuplet 3/2 { d( ees d) } \tuplet 3/2 { d( ees d) }
+  | \tuplet 3/2 { d(\!\ff\> g d) } \tuplet 3/2 { d( g d) }
+    \tuplet 3/2 { ees( g ees) } ees[ c!\! ]
+  %60
+  | \tuplet 3/2 { d( ees d) } \tuplet 3/2 { d( ees d) }
+    \tuplet 3/2 { d( ees d) } \tuplet 3/2 { d( ees d) }
+  % bar ||
+  | s1*3
+  | \bottom\stemDown s2.
+    \shape #'((0 . 5) (0 . 6) (0 . 2) (0 . 1)) Slur
+    d4^(
+  %65
+  | \top \tuplet 3/2 { d'8)( ees d) } \tuplet 3/2 { d( ees d) }
+    \tuplet 3/2 { d( ees d) } \tuplet 3/2 { d( ees d) }
+  | \tuplet 3/2 { d( ees d) } \tuplet 3/2 { d( ees d) }
+    \tuplet 3/2 { d( ees d) } \tuplet 3/2 { d( ees d) }
+  | \tuplet 3/2 { d( ees d) } \tuplet 3/2 { d( ees d) }
+    \tuplet 3/2 { d( ees d) } \tuplet 3/2 { d( ees d) }
+  | \tuplet 3/2 { d( ees d) } \tuplet 3/2 { d( ees d) }
+    \tuplet 3/2 { d( ees d) } \tuplet 3/2 { \bottom d,^( \top d' \bottom d,) }
 
 }
 
@@ -440,6 +692,57 @@ Bass = \context Voice = "four" \relative c {
   | <d f d'> r \clef bass <d,,, d'>2
   }
   %33
+  | \stemDown\slurDown <ees! ees'>2. <e! e'!>4(
+  | <f f'>2.) <d d'>4(
+  %35
+  | <ees ees'>) s4 <e! e'!> s
+  | <f f'> s4 <bes bes'> s
+  | \stemUp bes2._\Ped 4~
+  | 2. 4~
+  | 2. 4~
+  %40
+  | \stemDown\slurUp 8[( f' bes d f bes aes d,])
+    \bar "||"
+    \key b \minor
+  | <b,! b'!>2.<bis bis'>4
+  | <cis cis'>2.<ais ais'>4
+  | <b b'> s <bis bis'> s
+  | <cis cis'> s <fis fis'> s
+  %45
+  | \stemUp\slurDown fis,_\Ped \clef treble a'''!_.( fis_.) \clef bass fis,,,~
+  | fis \clef treble gis'''!_.( eis_.) \clef bass fis,,,~
+  | fis \clef treble g'''!_.( e!_.) \clef bass fis,,,~
+  | \shape #'((0 . 4) (0 . 0) (0 . 1) (0 . 0)) Slur
+    \stemDown\slurUp fis8[( fis' b dis fis b gis eis ])
+  | \stemNeutral fis,,4 ais''^.( g!^.) fis,,~
+  %50
+  | fis gis''^.( eis^.) fis,,~
+  | \slurDown fis g''_.( e_.) fis,,~
+  | \stemDown fis8[( b dis fis b b, eis eis,])
+  | <fis fis'>4 \tuplet 3/2 { fis'8[( g! fis]) } \tuplet 3/2 { fis[( g fis]) } \tuplet 3/2 { fis8[( g fis]) }
+  | \stemUp <b, b'>4 <d d'> <e e'> \tuplet 3/2 { fis8[( g fis]) }
+  %55
+  | <b, b'>4 <d d'> <e e'> \tuplet 3/2 { fis8[( g fis]) }
+  | <b, b'>8.[ <cis cis'>16 <d d'>8. <b b'>16] g'2
+  | <a, a'>8.[ <b b'>16 <cis cis'>8. <a a'>16] fis'2
+  | <g, g'>4. <a a'>8 <bes bes'>4. <g g'>8
+  | <ees' ees'>2 <c! c'!>4. <a a'>8
+  %60
+  | <d a'>2^\p q
+    \bar "||"
+    \key g \minor
+  | <g, g'>4. <a a'>8 <bes bes'>4. <g g'>8
+  | <ees' ees'>2 <c c'>4. <a a'>8
+  | <d_~ a'^~>1
+  | q2. <d, d'>4(
+  %65
+  | <g d' g>2.)_\markup { \small "col Ped." } <a d a'>4(
+  | <bes d bes'>2.) <a d a'>4(
+  | <g d' g>2.) <ges d' ges>4(
+  | <f d' f>2.)
+    \once\override NoteColumn.force-hshift = #0.3 <d d'>4
+  | s1
+  %70
 
   \fine
 }
