@@ -89,15 +89,6 @@ Global = {
   \include "./global.ly"
   %\override Staff.BreathingSign.text =
   %  \markup { \magnify #1.5 \musicglyph "scripts.rcomma" }
-  \override Staff.BreathingSign.text = \markup {
-    \override #'(direction . 1)
-    \override #'(baseline-skip . 2)
-    \dir-column {
-      \translate #'(-0.025 . 0.3)
-      \center-align \concat { \tiny "( " \musicglyph "scripts.rcomma" \tiny " )" }
-      \center-align \musicglyph "scripts.ufermata"
-    }
-  }
 }
 
 bottom = { \change Staff = "lower"\stemUp }
@@ -105,6 +96,7 @@ top = { \change Staff = "upper"\stemDown }
 
 Ped = \markup { \hspace #-1.5 \musicglyph #"pedal.Ped" }
 crescendo = { \override TextSpanner.bound-details.left.text = \markup { \small "crescendo " } }
+dotteddim = \markup { \small "dim." }
 intempo = \markup { \small "in tempo" }
 ms = \markup { \small "m.s." }
 parenthesizems = \markup { \hspace #-0.8 \small "(m.s.)" }
@@ -171,12 +163,12 @@ Sopran = \context Voice = "one" \relative c'' {
     \once\override Hairpin.Y-offset = #-5.5
     \tuplet 3/2 { d8\>( e d\! }
   | \tuplet 3/2 { c! d bes } \tuplet 3/2 { a bes a } e'!4) \tuplet 3/2 { a,8( bes a) }
-  | f'4 \tuplet 3/2 { a,8( bes a) } gis'4 \tuplet 3/2 { a,8( bes a) }
+  | f'4\< \tuplet 3/2 { a,8( bes a) } gis'4 \tuplet 3/2 { a,8( bes a)\! }
   %20
   | <a cis e! a>2.^-
     \clef bass \stemDown\slurDown
     \tuplet 3/2 {
-      \once\override Staff.TextScript.extra-offset = #'(1 . -1.5)
+      \once\override Staff.TextScript.extra-offset = #'(-0.5 . -1.5)
       a,8_\markup {
         \dynamic p \whiteout \pad-markup #0.4 \small "mezza voce"
       }(
@@ -208,8 +200,9 @@ Sopran = \context Voice = "one" \relative c'' {
   | c ees^\ms g) bes,(
   | a c^\ms f) aes,(
   %35
-  | g des'^\ms c g'^\ms
-  | f c'^\ms bes) f'(^\ms
+  | g des'^\ms c \once\override NoteColumn.force-hshift = #-0.4 g'^\ms
+  | f \once\override NoteColumn.force-hshift = #-0.4 c'^\ms bes)
+    \once\override NoteColumn.force-hshift = #-0.4 f'(^\ms
   | e! des^\ms bes) e(
   | f d!^\parenthesizems bes) f'(
   | e! des^\parenthesizems bes) g'4(
@@ -219,22 +212,34 @@ Sopran = \context Voice = "one" \relative c'' {
     \key b \minor
   | gis4( b^\ms dis) fis,(
   | eis gis4^\parenthesizems cis) e,!(
-  | dis a'!4^\parenthesizems gis dis'^\parenthesizems
-  | cis gis'4^\parenthesizems fis cis'^\parenthesizems)
+  | dis a'!4^\parenthesizems gis
+    \once\override NoteColumn.force-hshift = #-0.4 dis'^\parenthesizems
+  | cis
+    \once\override NoteColumn.force-hshift = #-0.4 gis'4^\parenthesizems
+    fis
+    \once\override NoteColumn.force-hshift = #-0.4 cis'^\parenthesizems)
   %45
   | bis2. 4
   | b2. 4
   | ais2. 4
   | b fis dis d!
-  | cis2. 4
+  | cis2._\dotteddim 4
   %50
   | b2. 4
   | ais2. 4
   | b4 fis dis d!
-  | cis2 r4 \clef bass \stemDown \tuplet 3/2 { fis,8( g fis) }
-  | \stemUp b4^.( 4^. 4^.) \tuplet 3/2 { fis8( g fis) }
+  | cis2 r4 \clef bass \stemDown \tuplet 3/2 { fis,8(\parenthesize\> g fis)\! }
+  | \stemUp b4^.( 4^. 4^.)
+    \tuplet 3/2 {
+      \once\override Hairpin.Y-offset = #-4
+      fis8(\> g fis)\!
+    }
   %55
-  | b4^.( 4^. 4^.) \tuplet 3/2 { fis8( g fis) }
+  | b4^.( 4^. 4^.)
+    \tuplet 3/2 {
+      \once\override Hairpin.Y-offset = #-4
+      fis8(\> g fis)\!
+    }
   | <b d>4 q q \tuplet 3/2 { b8( cis b) }
   | <a cis>4 q q \tuplet 3/2 { a8( b a) }
   | <g b>4( q <g bes> q)
@@ -256,8 +261,46 @@ Sopran = \context Voice = "one" \relative c'' {
   | g4\rest d^.( g^.) g\rest
   | g4\rest bes,^.( d^.) g\rest
   | g4\rest bes,^.( d^.) g\rest
-  | s1
+  | f4\rest bes,^.( d^.) f\rest
   %70
+  | b\rest d,^.( g^.) f\rest
+  | g\rest d^.( f^.) g\rest
+  | d\rest a^.( d^.) d\rest
+  | f\rest b,!^.( d^.) f\rest
+  | f\rest b,!^.( d^.) f\rest
+  %75
+  | f\rest b,!^.( d^.) f\rest
+  | f\rest b,!^.( d^.) f\rest
+  | g\rest d^-( f^-) g\rest
+  | g\rest fis^- g\rest g^-
+  | a\rest gis^.^> b!^.^> a\rest
+  %80
+  | a\rest f^.^> a^.^> a\rest
+  | e\rest gis,^.^-^\ms b!^.^- e\rest
+  | e\rest f,^.^-^\ms a^.^- \clef bass s
+  | <g, bes!>2~ \tuplet 6/4 { q8[ \clef treble bes\< d g bes d]\! }
+  | \stemDown
+    \tuplet 6/4 {
+      \once\override Hairpin.Y-offset = #-4
+      g[\> bes d, a' bes, g']\!
+    }
+    \tuplet 6/4 { a,[_\dotteddim d g, bes d, a'] }
+  %85
+  | \stemUp
+    \set tieWaitForNote = ##t
+    \tuplet 6/4 {
+      bes,[ g' a, d g,~
+      \once\override Staff.TextScript.extra-offset = #'(0.5 . 0)
+      bes~]^\markup { \small "lunga" }
+    }
+    <g bes>4\fermata
+    \once\override Staff.BreathingSign.text = \markup {
+      \translate #'(0 . 0.3)
+      \concat { \tiny "( " \musicglyph "scripts.rcomma" \tiny " )" }
+    }
+    \breathe
+    s4^\intempo
+  | \stemUp ees'4 g^\ms  bes e,!
 
   \fine
 }
@@ -284,6 +327,15 @@ Alto = \context Voice = "two" \relative c' {
     \tuplet 9/6 {
       dis'\startTextSpan[ dis, <fis b!> fis' fis, <b!_~ d^~> <b d> fis <b dis>\stopTextSpan]
     }
+    \once\override Staff.BreathingSign.text = \markup {
+      \override #'(direction . 1)
+      \override #'(baseline-skip . 2)
+      \dir-column {
+        \translate #'(-0.025 . 0.3)
+        \center-align \concat { \tiny "( " \musicglyph "scripts.rcomma" \tiny " )" }
+        \center-align \musicglyph "scripts.ufermata"
+      }
+    }
     \breathe s4
   | s1*5
   | gis2. \tuplet 3/2 { <a a'>8[(\< <bes bes'> <a a'>])\! }
@@ -302,10 +354,17 @@ Alto = \context Voice = "two" \relative c' {
   | s1
   | \tuplet 3/2 { a8( bes a) } \tuplet 3/2 { a8( bes a) } \tuplet 3/2 { a8( bes a) } a4
   | \tuplet 3/2 { a8( bes a) } \tuplet 3/2 { a8( bes a) } \tuplet 3/2 { a8( bes a) } a4
-  | \tuplet 3/2 { a8( bes a) } \tuplet 3/2 { a8( bes a) } \tuplet 3/2 { a8( bes a) }
+  | \once\override Hairpin.Y-offset = #-3
+    \tuplet 3/2 { a8(\< bes a) }
+    \tuplet 3/2 {
+      a8( bes
+      \once\override Hairpin.Y-offset = #-3
+      a)\!\>
+    }
+    \tuplet 3/2 { a8( bes a) }
     \tuplet 3/2 {
       \once\override NoteColumn.force-hshift = #1.5
-      a8( bes a)
+      a8( bes a)\!
     }
   | \tuplet 3/2 { a8( bes a) } \tuplet 3/2 { a8( bes a) } \tuplet 3/2 { a8( bes a) } e'!4
   %25
@@ -380,7 +439,62 @@ Alto = \context Voice = "two" \relative c' {
   | \stemUp <g g'>2. <ges ges'>4
     \revert NoteColumn.force-hshift
   | f'2. s4
+  | \slurUp <g, g'>2. <a a'>4(
+  %70
+  | <bes bes'>2.) d4(
+  | <gis, gis'>2.) <a a'>4
+  | s2. d4(
+  | <g, g'>2.) <aes aes'>4(
+  | <f f'>) s2 \bottom \stemDown d4 \top
+  %75
+  | \stemUp <g g'>2. <aes aes'>4(
+  | <f f'>4) s2 \bottom \stemDown d4 \top
+  | \stemUp <b'! b'!>2. 4
+  | 2 <b g' b>
+  | <b gis' b>1
+  %80
+  | <a a'>2. d4
+  | \stemDown
+    \tuplet 3/2 { d8 e d } \tuplet 3/2 { d e d } \tuplet 3/2 { d e d } \tuplet 3/2 { d e d }
+  | \tuplet 3/2 { d8 e d } \tuplet 3/2 { d e d } \tuplet 3/2 { d e d } \tuplet 3/2 { d,( e d) }
+  | \tuplet 6/4 { d8[ e! d e d e] } \bottom \tuplet 6/4 { d8[ e! d e d e] }
+  | \tuplet 6/4 { d8[( e! d e d e] } \tuplet 6/4 { d8[ e d e d e] }
+  %85
+  | \set tieWaitForNote = ##t
+    \tuplet 6/4 { d8[ e! d e d_~ e^~] } <d e>4)
+    \tuplet 3/2 { <d fis a d>8^.^\f d[( \top d']) }
 
+    % \top
+}
+
+AltoSecond = \context Voice = "twotwo" \relative c' {
+  \voiceThree
+  \mergeDifferentlyHeadedOn
+  \partial 4
+    s4
+  %1
+  | s1*34
+  %35
+  | \override NoteColumn.force-hshift = #0
+    s2. bes4
+  | s ees s aes
+  | s1*6
+  %43
+  | s2. fis4
+  | s b! s e!
+  | s1*23
+  %68
+  | s2. \bottom \stemDown
+    \once\override NoteColumn.force-hshift = #1
+    d,,4
+  | \top \omit TupletBracket \omit TupletNumber
+    \revert NoteColumn.force-hshift
+    \once\override NoteColumn.force-hshift = #2
+    \tuplet 3/2 { d'8 ees d }
+    \tuplet 3/2 { d ees d } \tuplet 3/2 { d ees d }
+    \tuplet 3/2 { \once\override NoteColumn.force-hshift = #1.5 d\< ees d }
+  | \tuplet 3/2 { \once\override NoteColumn.force-hshift = #2 d ees d }
+    \tuplet 3/2 { d ees d } \tuplet 3/2 { d ees d } \tuplet 3/2 { d d' d,\! }
 }
 
 Tenor = \context Voice = "three" \relative c' {
@@ -521,7 +635,7 @@ Tenor = \context Voice = "three" \relative c' {
     }
     \tuplet 3/2 { ais' ais, cis }
   | \tuplet 12/8 {
-      b'[ b, dis fis fis, b dis dis, fis d'! d,! b' ])
+      b'[\< b, dis fis fis, b\!\> dis dis, fis d'! d,! b'\! ])
     }
   | \tuplet 9/6 {
       \top \once\override NoteColumn.force-hshift = #2.4
@@ -555,8 +669,12 @@ Tenor = \context Voice = "three" \relative c' {
   | \top\slurDown
     \tuplet 3/2 { fis8( g fis) } \tuplet 3/2 { fis8( g fis) } \tuplet 3/2 { fis8( g fis) } fis4
   %55
-  | \tuplet 3/2 { fis8( g fis) } \tuplet 3/2 { fis8( g fis) } \tuplet 3/2 { fis8( g fis) } fis4
-  | \tuplet 3/2 { fis8( g fis) } \tuplet 3/2 { fis8( g fis) } \tuplet 3/2 { fis8( g fis) } <e g>4
+  | \tuplet 3/2 { fis8( g fis) } \tuplet 3/2 { fis8( g fis) }
+    \tuplet 3/2 { fis8( g fis) } fis4
+  | \once\override Hairpin.Y-offset = #-4
+    \tuplet 3/2 { fis8(\< g fis) } \tuplet 3/2 { fis8( g fis)\! }
+    \once\override Hairpin.Y-offset = #-4
+    \tuplet 3/2 { fis8(\> g fis) } <e g>4\!
   | \once\override Hairpin.Y-offset = #-4
     \tuplet 3/2 { e8(\< fis e) }
     \tuplet 3/2 { e( fis e)\! }
@@ -650,9 +768,9 @@ Bass = \context Voice = "four" \relative c {
     \stemUp\slurDown \tuplet 3/2 { a,,( a' e' }
   %20
   | \slurUp \tuplet 9/6 {
-      \top e'![ cis \bottom a^\> e! cis a e! cis gis])
+      \top e'![ cis \bottom a^\> e! cis a e! cis gis])\!
     }
-    \tuplet 3/2 { <a a'>\!\arpeggio(_\> bes' a)\! }
+    \tuplet 3/2 { <a a'>\arpeggio(_\> bes' a)\! }
   | <d,, d'>4_._( <f f'>_. <g g'>_.)
     \tuplet 3/2 {
       \once\override Hairpin.Y-offset = #4
@@ -719,7 +837,14 @@ Bass = \context Voice = "four" \relative c {
   | fis gis''^.( eis^.) fis,,~
   | \slurDown fis g''_.( e_.) fis,,~
   | \stemDown fis8[( b dis fis b b, eis eis,])
-  | <fis fis'>4 \tuplet 3/2 { fis'8[( g! fis]) } \tuplet 3/2 { fis[( g fis]) } \tuplet 3/2 { fis8[( g fis]) }
+  | <fis fis'>4
+    \tuplet 3/2 {
+      fis'8[(^\markup {
+        \dynamic p \small "mezza voce"
+      }
+      g! fis])
+    }
+    \tuplet 3/2 { fis[( g fis]) } \tuplet 3/2 { fis8[( g fis]) }
   | \stemUp <b, b'>4 <d d'> <e e'> \tuplet 3/2 { fis8[( g fis]) }
   %55
   | <b, b'>4 <d d'> <e e'> \tuplet 3/2 { fis8[( g fis]) }
@@ -728,7 +853,8 @@ Bass = \context Voice = "four" \relative c {
   | <g, g'>4. <a a'>8 <bes bes'>4. <g g'>8
   | <ees' ees'>2 <c! c'!>4. <a a'>8
   %60
-  | <d a'>2^\p q
+  | \once\override Staff.TextScript.extra-offset = #'(0 . 2)
+    <d a'>2^\markup { \dynamic p } q
     \bar "||"
     \key g \minor
   | <g, g'>4. <a a'>8 <bes bes'>4. <g g'>8
@@ -740,9 +866,29 @@ Bass = \context Voice = "four" \relative c {
   | <bes d bes'>2.) <a d a'>4(
   | <g d' g>2.) <ges d' ges>4(
   | <f d' f>2.)
-    \once\override NoteColumn.force-hshift = #0.3 <d d'>4
-  | s1
+    \once\override NoteColumn.force-hshift = #1.4 <d d'>4
+  | <g d' g>2. <a d a'>4
   %70
+  | <bes d bes'>2. <d d'>4(
+  | <gis, d' gis>2.) <a d a'>4
+  | \stemDown <d, d'>2 f4\rest q(
+  | \stemUp <g d' g>2.) <f d' f>4(
+  | <aes d aes'>) r r <d, d'>(
+  %75
+  | <g d' g>2.) <f d' f>4(
+  | <aes d aes'>) r r <d, d'>(
+  | <g g'>2.) q4
+  | <fis fis'>2_> <f! f'!>_>
+  | <e! e'!>1_>
+  %80
+  | <f f'>2._> <d' d'>4
+  | <e,! e'!>1
+  | <f f'>2. d'4
+  | <g, g'>2_- \stemDown <g' bes!>~
+  | <g bes>1~
+  %85
+  | <g bes>2~ q4\fermata <d, d'>8_. d'\rest
+  | <g g'>4_\Ped s2.
 
   \fine
 }
@@ -763,6 +909,7 @@ centerDynamics = {
       \clef treble
       \Sopran
       \Alto
+      \AltoSecond
     >>
     \context Dynamics <<
       \Global \centerDynamics
