@@ -368,6 +368,7 @@ Sopran = \context Voice = "one" \relative c'' {
   %115
   | <a bes> <g bes> <g a> <fis a>
   | \once\override DynamicText.Y-offset = #-5
+     \once\shape #'((-0.4 . 0.4) (0 . 0) (0 . 0) (0 . 0)) PhrasingSlur
     <bes,_~ g'^~>1\(\ff
   | <bes_~ g'^~>1
   | <bes_~ g'^~>1
@@ -517,7 +518,7 @@ Alto = \context Voice = "two" \relative c' {
   | \slurUp <g, g'>2. <a a'>4(
   %70
   | <bes bes'>2.)
-    \shape #'((0 . 2.5) (0 . 3) (0 . 1.2) (0 . 0)) Slur
+    \shape #'((0 . 3) (0 . 4) (0 . 3) (-0.5 . 2.5)) Slur
     d4(
   | <gis, gis'>2.) <a a'>4
   | s2. d4(
@@ -1099,7 +1100,9 @@ Bass = \context Voice = "four" \relative c {
   | 2. 4~
   | 2. 4~
   %40
-  | \stemDown\slurUp 8[( f' bes d f bes aes d,])
+  | \stemDown\slurUp
+    \shape #'((0 . 1) (0 . 0) (0 . 0) (0 . 0)) Slur
+    8[( f' bes d f bes aes d,])
     \bar "||"
     \key b \minor
   | <b,! b'!>2.<bis bis'>4
@@ -1212,14 +1215,43 @@ Bass = \context Voice = "four" \relative c {
     r4^\mp
   | \tuplet 9/6 { g'8[( ees' g bes ees g, e'! g, e!]) } \tuplet 3/2 { fis,( fis' a) }
   %100
-  | \tuplet 9/6 { g,[( ees' g bes ees g, e'! g, e!]) } \tuplet 3/2 { f,!( f'! a) }
-  | \tuplet 9/6 { ees,[( ees' g c ees c fis, c' fis,]) } \tuplet 3/2 { d,( d' g) }
-  | \tuplet 3/2 { c,,( c' a') } \tuplet 6/4 { d,,8[( d' a' d a fis]) } \tuplet 3/2 { d,( d' g }
-  | \tuplet 3/2 { c,, c' a') } \tuplet 6/4 { d,,8[( d' a' d a fis]) } \tuplet 3/2 { d,( d' a' }
+  | \tuplet 9/6 {
+      \shape #'((-0.5 . 3.5) (0 . 0) (0 . 0) (0 . 0)) Slur
+      g,[( ees' g bes ees g, e'! g, e!])
+    }
+    \tuplet 3/2 { f,!( f'! a) }
+  | \tuplet 9/6 {
+      \once\shape #'((-0.5 . 3.5) (0 . 0) (0 . 0) (0 . 0)) Slur
+      ees,[( ees' g c ees c fis, c' fis,])
+    }
+    \tuplet 3/2 {
+      \once\shape #'((0 . 1) (0 . 2) (0 . 1) (0 . 0)) Slur
+      d,( d' g)
+    }
+  | \tuplet 3/2 {
+      \once\shape #'((0 . -0.5) (0 . 1) (0 . 1) (0 . 0)) Slur
+      c,,( c' a')
+    }
+    \tuplet 6/4 { d,,8[( d' a' d a fis]) }
+    \tuplet 3/2 {
+      \once\shape #'((0 . -1) (0 . 1) (0 . 1) (0 . 0)) Slur
+      d,( d' g
+    }
+  | \tuplet 3/2 { c,, c' a') } \tuplet 6/4 { d,,8[( d' a' d a fis]) }
+    \tuplet 3/2 {
+      \once\shape #'(
+        ((0 . -0.5) (0 . 2) (0 . 1) (0 . 0))
+        ((0 . 0) (0 . 1) (0 . 1) (0 . 0))
+      ) Slur
+      d,( d' a'
+    }
   | \tuplet 3/2 { e'! bes g) } \tuplet 6/4 { d,8[( d' a' g' e bes]) } \tuplet 3/2 { d,,( d' a'~) }
   %105
-  | \tuplet 9/6 { <a a'>[( fis' d a fis d a fis cis]) }
-    \stemUp\slurDown \tuplet 3/2 { d(^\p ees d) }
+  | \tuplet 9/6 {
+    \once\shape #'((0 . 0) (0 . 1) (0 . 2) (0 . 0.5)) Slur
+    <a a'>[( fis' d a fis d a fis cis])
+  }
+  \stemUp\slurDown \tuplet 3/2 { d(^\p ees d) }
   | <g, g'>4_.( <bes bes'>_. <c c'>_.) \tuplet 3/2 { d8( ees d) }
   | <g, g'>4_.( <bes bes'>_. <c c'>_.) \tuplet 3/2 { d8( ees d) }
   | <g, g'>8.[ <a a'>16 <bes bes'>8. <g g'>16] ees'4 c8. a16
