@@ -1287,7 +1287,11 @@ centerDynamics = {
     composer = "Johannes Brahsm"
     opus = "Op. 79 Nr. 2"
     title = \markup { "Rapsodie g-moll" }
-    %subtitle = \markup { "Op. 79, No 2" }
+    subtitle = \markup {
+      \concat {
+        \small "(" { \italic\small "Frau Elisabeth von Herzogenberg gewidmet" } \small ")"
+      }
+    }
   }
   \layout {
     \context {
