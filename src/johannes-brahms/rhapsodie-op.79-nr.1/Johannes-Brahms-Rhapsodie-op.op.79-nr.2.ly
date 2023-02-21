@@ -98,13 +98,7 @@ cresc = \markup { \small "cresc." }
 md = \markup { \hspace #-1 \small "m.d." }
 ms = \markup { \hspace #-0.5 \small "m.s." }
 parenthesizems = \markup { \hspace #-2 \small "(m.s.)" }
-
-%Ped = \markup { \hspace #-1.5 \musicglyph #"pedal.Ped" }
-%crescendo = { \override TextSpanner.bound-details.left.text = \markup { \small "crescendo " } }
-%dotteddim = \markup { \small "dim." }
-%intempo = \markup { \small "in tempo" }
-%parenthesizems = \markup { \hspace #-0.8 \small "(m.s.)" }
-%rit = { \override TextSpanner.bound-details.left.text = \markup { \small "rit. " } }
+pocorit = { \override TextSpanner.bound-details.left.text = \markup { \small "poco rit. " } }
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
@@ -168,51 +162,75 @@ Sopran = \context Voice = "one" \relative c'' {
   \break
   %30
   | \key d \minor
-    a'4( d e2)
-  | a,4( d e2)
-  | a,4( d e f
+    a'4( d^\< e2)\!\>
+  | a,4(\! d^\< e2)\!\>
+  | a,4(\! d e f
   | g f8 g f4 e)
-  | d( g a2)
+  | d( g^\< a2)\!\>
   %35
-  | d,4( g a2)
-  | d,4( g a bes
-  | c! bes8 a g4 e)
+  | d,4(\! g^\< a2)\!\>
+  | d,4(\! g a bes\pocorit
+  | c!\startTextSpan bes8 a g4 e)
   | d2 d
-  | d4 <d f! bes d>^.^> q^.^> q^.^>
+  | d4\stopTextSpan^\markup { \small\bold "in tempo" }
+    <d f! bes d>^.^> q^.^> q^.^>
   %40
-  | s1
-  | s1
-  | s1
-  | s1
-  | s1
+  | q4. \stemNeutral
+    \tupletNeutral\tuplet 3/2 { a'16( bes c } <bes, ges' bes>4.) <ges ees' ges>8
+  | <f d' f>4 r8
+    \once\override DynamicText.X-offset = #-1
+    bes'_\parenthesize\mf <a, ges'>4.--( <c ees>8)
+  | <f, d'>4._-( bes8) <a, ges'>4._-( <c ees>8)
+  | \once\override Staff.TextScript.extra-offset = #'(0 . -1)
+    r8_\markup { \dynamic p \small "mezza voce" } s <des ges bes>4 q q
+  | q2 s
   %45
-  | s1
-  | s1
-  | s1
-  | s1
-  | s1
+  | s4. <bes ges' bes>4_( <ces ges' bes> <c!_~ ges'^~ bes^~>8
+  | q <des ges bes>4) s2 s8
+  | s4. <d! ges bes>4_( <ees ges bes>) s8
+  | s4. <ees bes'>4_(\parenthesize\< <e! bes'>8) <bes' e! bes'>4^.
+  | \ottava #1
+    <bes' des bes'>4.^>\!\parenthesize\f \tuplet 3/2 { e!16[ f ges] } <a, c f>4^. \ottava #0 r
   %50
-  | s1
-  | s1
-  | s1
-  | s1
-  | s1
+  | <bes,, des bes'>4._>( \tuplet 3/2 { e!16 f ges } <a, c f>4_.) r
+  | \ottava #1
+    <des'' f des'>4.^>\f( \tuplet 3/2 { g!16[ aes beses] } <c, ees aes>4^.) \ottava #0 r
+  | <des,, f des'>4._>( \tuplet 3/2 { g16[ aes beses] } <c, ees aes>4_.) r
+  | <f' f'>4.^> \tuplet 3/2 { e,!16[( f ges] } <f, f'>4.)_\markup { \hspace #2 \small "sempre cresc." }
+    <f''_~ f'^~>8^-
+  | q4. \tuplet 3/2 { e,16[( f ges] } <f, f'>4.) <eis''_~ cis'~ eis~>8^-
   %55
-  | s1
-  | s1
-  | s1
-  | s1
-  | s1
+  | q4. <fis_~ cis'~ fis~>8^- q4. <fis d' fis>8^-~
+  | q4. \tuplet 3/2 { eis,16[( fis gis] } <fis, fis'>4.) <fis'' e'! fis~>8^-~
+  | q4. \tuplet 3/2 { eis,16[( fis gis] } <fis, fis'>4.) <ges''_~ ces~ ges'~>8^-
+  | q4. \ottava #1 <g! bes! e! g>8^>\< q4. <a!_~ c!_~ f~ a!~>8
+  | q4. <c_~ f~ c'~>8^> q4. <f a f'>8^^
   %60
-  | s1
-  | s1
-  | s1
-  | s1
-  | s1
+  | q4.(\!\ff \tuplet 3/2 { c'16[ des ees] } <e,! des'>4^.) \ottava #0 r
+  | <f,,, a f'>4.( \tuplet 3/2 { c'16[ des ees] } <e,! des'>4_.) r
+  | \omit TupletNumber
+    \clef bass
+    \once\override DynamicText.Y-offset = #-5
+    f,2~(\f \tuplet 10/16 { f32[ g a bes c d! e f g a] }
+  | \clef treble \tuplet 11/16 { bes[ c d e f g a bes c d e] } f8^.) r r4\parenthesize\breathe
+  | \clef bass
+    \once\override DynamicText.Y-offset = #-5
+    <bes,,, des g>1~^>\ff(
   %65
+  | \stemDown \tuplet 10/16 { q32[ aes' bes ces \clef treble des\< ees f ges aes bes] }
+    \tuplet 11/16 { ces[ des ees f ges aes bes ces des ees f] }
+  | \stemUp fis8)\!\fz d\rest d4\rest d2\rest
+  | \key d \major
+    \stemNeutral fis,4. \tuplet 3/2 { c16[ d e] } d4. b8
+  | s1
+  | s1
+  %70
   | s1
   | s1
   | s1
+  | s1
+  | s1
+  %75
 
   \fine
 }
@@ -237,7 +255,8 @@ Alto = \context Voice = "two" \relative c' {
   %30
   | \top\slurUp
     \shape #'((1 . -0.8) (0 . -1.2) (0 . -0.8) (0 . 0)) Slur
-    a'8[( f! \bottom d a] g[ bes cis \top e])
+    \once\override DynamicText.Y-offset = #-5
+    a'8[(\pp f! \bottom d a] g[ bes cis \top e])
   | \shape #'((1 . -0.8) (0 . -1.2) (0 . -0.8) (0 . 0)) Slur
     a[( f! \bottom d a] g[ bes cis \top e])
   | \shape #'((0.6 . 0) (0 . 0) (0 . 0) (0 . 0)) Slur
@@ -252,11 +271,24 @@ Alto = \context Voice = "two" \relative c' {
   | \shape #'((0 . 0) (0 . 0) (0 . -0.8) (0 . -0.4)) Slur
     <d, a'>[( d' fis c'] <d, bes'>[ d' \top g bes])
   | <fis a>[_( \bottom d c d,] bes'[ d, cis d,])
+  | s1*4
+  %43
+  | \top s8 bes''[ des bes] des[ bes des bes]
+  | des bes4 \bottom <bes, bes'>4(^\< <ces bes' ces> <c!^~ bes'~ c!^~>8
+  %45
+  | q <des bes' des>4)\! s2 s8
+  | s4. <c bes' c>4( <des bes' des> <d! bes' d!>8^~
+  | q8 <ees bes'( ees>4) s8 \once\omit Stem bes'4) s8 q8^~(
+  | q <e,! bes'( e!>4) s8 \once\omit Stem bes'4) s
+  | s1*17
+  %66
+  | \top fis''1_>^~
+    \bar "||"
+  | \once\omit Stem fis4 s2.
 }
 
 AltoSecond = \context Voice = "twotwo" \relative c' {
   \voiceThree
-  \mergeDifferentlyHeadedOn
   %1
   | s1*24
   %25
@@ -264,8 +296,8 @@ AltoSecond = \context Voice = "twotwo" \relative c' {
   | c!( ais) s2
   | s1*11
   %38
-  | \once\override NoteColumn.force-hshift = #1 c'4( bes8 a g4 e)
-  | d s2.
+  | \once\override NoteColumn.force-hshift = #1 c'4( bes8 a g4\> e)
+  | d s4\!\f s2
 }
 
 Tenor = \context Voice = "three" \relative c' {
@@ -357,40 +389,55 @@ Bass = \context Voice = "four" \relative c {
   | d'4 <bes, bes'>-. <d d'>-. <f f'>-.
   %40
   | <bes bes'>^. <bes, bes'>-. <ees ees'>-. <ees, ees'>-.
-  | <bes' bes'>-. <bes, bes'>-. r8 <ees'' ees'>[( c' a])
-  | r8 <bes, bes'>[( f' d]) r <ees, ees'>[( c' a])
+  | <bes' bes'>-. <bes, bes'>-. r8 <ees'' ees'>[( c'^\parenthesize\> a])
+  | r8 <bes, bes'>[( f' d]) r <ees, ees'>[( c'\! a])
   | bes,-. r <bes' des ges>4( q q
   | q) \stemDown <ges, bes ges'>_( q q
   %45
   | q) <bes' des ges>( q q
   | q) <ges, bes ges'>_( q q
-  | q) <bes' ges' bes> q \stemNeutral <ges, bes ges'>(
+  | \stemDown q) <bes' ges' bes> q <ges, bes ges'>_(
   | q) <bes' ges' bes> q \stemNeutral <ges bes e!>-.
   | <des bes' f'>\arpeggio r \clef treble <f'' f'>4.^>( \tuplet 3/2 { c'16 des ees }
   %50
   | des4^.) r \clef bass <f,,, f'>4._>( \tuplet 3/2 { c'16 des ees }
   | <des, des'>4) r \clef treble <aes''' aes'>4.^>( \tuplet 3/2 { ees'16 f ges }
   | f4^.) r \clef bass <aes,,, aes'>4.^>( \tuplet 3/2 { ees'16 f ges }
-  | <f, f'>4) <f, f'> <ges ges'> <ges' ges'>
+  | <f, f'>4)^\markup {
+      \dynamic sf \concat { "(" \dynamic mp ")" }
+    }
+    <f, f'> <ges ges'> <ges' ges'>
   | <g! g'!> <g, g'> <aes aes'> <aes' aes'>
   %55
   | <a! cis a'!> <a, cis a'> <ais' cis ais'> <ais, cis ais'>
-  | <b'! d b'!> <b,! d b'!> <bis dis bis'!> <bis' dis bis'!>
+  | \once\override Staff.TextScript.extra-offset = #'(0 . 2)
+    <b'! d b'!>^\markup { \small "(più" \dynamic f \small ")" }
+    <b,! d b'!> <bis dis bis'!> <bis' dis bis'!>
   | <cis e cis'> <cis, e cis'> <d eis d'> <d' eis d'>
   | <ees ges ces ees>^> <ees, ees'>-. <des' e! bes'! des>^> <des, des'>-.
   | <c'! f! a! c!> <c, c'>-. <a' c f a>^> <a, a'>-.
   %60
-  | <f f'>-. r \clef treble <bes'''! bes'!>4.( \tuplet 3/2 { e!16 f g! }
+  | <f f'>-. r \clef treble <bes'''! bes'!>4.(^> \tuplet 3/2 { e!16 f g! }
   | f4^.) r \clef bass <bes,,,, bes'>4._>( \tuplet 3/2 { e16 f g }
   | \omit TupletNumber
     f,2~)( \tuplet 10/16 { f32[ g a bes c d! e f g a] }
   | \tuplet 11/16 { bes[ c d e f g a bes c d e] } f8^.) r r4
-  | <bes,,,! des g>1~
+  | <bes,,,! des g>1~->(
   %65
   | \stemDown \tuplet 10/16 { q32[ aes' bes ces des ees f ges aes bes] }
     \clef treble \tuplet 11/16 { ces[ des ees f ges aes bes ces des ees f] }
-  | fis,8 r r4 r2 \clef bass \key d \major
-  | r2 s
+  | fis,8) r r4 r2
+  | \clef bass \key d \major
+    r2 s
+  | s1
+  | s1
+  %70
+  | s1
+  | s1
+  | s1
+  | s1
+  | s1
+  %75
 
   \fine
 }
