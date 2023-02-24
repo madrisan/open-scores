@@ -94,6 +94,7 @@ Global = {
 bottom = { \change Staff = "lower"\stemUp }
 top = { \change Staff = "upper"\stemDown }
 
+Ped = \markup { \hspace #-1.5 \musicglyph #"pedal.Ped" }
 cresc = \markup { \small "cresc." }
 md = \markup { \hspace #-1 \small "m.d." }
 ms = \markup { \hspace #-0.5 \small "m.s." }
@@ -221,16 +222,61 @@ Sopran = \context Voice = "one" \relative c'' {
     \tuplet 11/16 { ces[ des ees f ges aes bes ces des ees f] }
   | \stemUp fis8)\!\fz d\rest d4\rest d2\rest
   | \key d \major
-    \stemNeutral fis,4. \tuplet 3/2 { c16[ d e] } d4. b8
-  | s1
-  | s1
+    \stemDown fis,4.^( \undo\omit TupletNumber \tupletDown \tuplet 3/2 { cis16[ d e] } \stemUp\slurDown d4. b8
+  | ais4. cis8 fis,4. gis8
+  | ais4. fis8) <e cis' e>[( fis <d b' d> fis])
   %70
-  | s1
-  | s1
-  | s1
-  | s1
-  | s1
+  | <cis ais' cis>4.( fis8) <g e' g>8[( b <e, cis' e> b'])
+  | \once\override DynamicText.Y-offset = #-5
+    <cis, ais' cis>4_.\f \stemDown <fis ais cis fis>2^- <fis b d fis>4^-
+  | \stemUp r8 <e cis'>[( <fis d'> <g e'>]) r <fis d'>[( <cis ais'> <d b'>])
+  | r8 <cis ais' cis>[( eis fis]) \stemDown\slurUp r <g e' g>[( b <fis d' fis>])
+  | r8 <cis ais' cis>[( eis fis]) \stemDown\slurUp r <b g' b>[( cis <g e' g>])
   %75
+  | <e cis' e>4 <a cis e a>2^- <ais cis fis ais>4^-~\<
+  | q4 <b d fis b>2^- <d fis b d>4^-~
+  | q4\!\f \ottava #1 <b' fis' b>^. <g b g'>^. \ottava #0 <e g e'>^.
+  | <fis cis' fis>^. <d fis d'>^. <ais fis' ais>^. <b fis' b>^.
+  | r8 <g g'>[(_\parenthesize\mf <fis fis'> <eis eis'>]) r
+    \once\override Hairpin.Y-offset = #-3.5
+    <fis fis'>[(\< <gis gis'> <ais ais'>])
+  %80
+  | r <b b'>[( <cis cis'> <d d'>]) r <e e'>[( <fis fis'> <g g'>])
+  | r\!_\markup { \hspace #-2.5 \small "più" \dynamic f } <a, a'>[( <g g'> <fis fis'>]) r <g g'>[( <a a'> <b b'>])
+  | r <c! c'!>[( <d d'> <ees ees'>]) r <f! f'!>[( <g g'> <aes aes'>])
+  | r \stemUp bis,,_._- r cis_._- r \stemDown <fis' fis'>[(\parenthesize\< <gis gis'> <a a'>])\!
+  | r \stemUp cis,,_._- r d_._- r \stemDown <g' g'>[(\parenthesize\< <a a'> <bes bes'>])\!
+  %85
+  | r \stemUp ees,,_._- r \ottava #1 cis''!4. \ottava #0 r8 e,,!_._-
+  | r \ottava #1 cis''!4. r4 \stemDown
+    \once\override DynamicText.Y-offset = #-5
+    <b fis' b>^.\sf \ottava #0
+  | r8 <eis, eis'>^.[ r <fis b fis'>^. r <b, b'>^. r <c! g' c!>^.]
+  | r8 \stemUp\slurDown <ais ais'>_.[ r <b d b'>_. r <eis,, eis'>_. r <fis ais cis fis>_.]
+  |  \once\override DynamicText.Y-offset = #-4.5
+    \once\override Hairpin.Y-offset = #-4
+    r2\f\> \clef bass fis,4^>( b^>)
+  %90
+  | <fis cis'>1^>
+  | \once\override Staff.TextScript.extra-offset = #'(0 . -2)
+    r8\!_\markup { \small "dim." } \stemDown\slurUp fis'4^-( b^- cis^- d8^-)
+  | \once\override Staff.TextScript.extra-offset = #'(0 . -2)
+    r2_\markup { \concat { \small "rit. ( " \dynamic p \small " )" } }
+    \clef treble r8 \stemUp\slurDown <fis, fis'>4(\< <b b'>8)\!
+  | <cis fis cis'>1\fermata
+    \bar "||"
+  | \key b \major
+    fis'1
+  %95
+  \repeat volta 4 {
+  | fis1
+  | fis1
+  | fis1
+  | b,2 ais!
+  | s1
+  }
+  %100
+  | s1
 
   \fine
 }
@@ -284,7 +330,28 @@ Alto = \context Voice = "two" \relative c' {
   %66
   | \top fis''1_>^~
     \bar "||"
-  | \once\omit Stem fis4 s2.
+  | \once\omit Stem fis4 s eis,2
+  | e! d
+  | cis s
+  | s1*15
+  %85
+  | s4. <g'' g'>8[_\markup {
+      \small "(sempre cresc.)"
+    }
+    <a a'> <bes bes'>] s4
+  | s8 <g g'>8[ <a a'> <ais ais'>] s2
+  | s1*5
+  %92
+  | \bottom r2 fis,,,4( b)
+  | s1
+  | \top\slurDown
+    fis''4( b cis dis
+  %95
+  | e dis8[ e] dis4 cis
+  | b ais8[ b] ais4 gis)
+  | fis4( gis8 ais b4 cis8 dis
+  | e4 gis cis,2)
+
 }
 
 AltoSecond = \context Voice = "twotwo" \relative c' {
@@ -330,6 +397,16 @@ Tenor = \context Voice = "three" \relative c' {
   | r4 <d' fis a>2 q4
   | r4 <d fis>2 q4
   %30
+  | s1*51
+  %81
+  | ees'4( <b d>8[ <a c!>]) d4( <a c>8[ <g b>])
+  | g'4( <d f!>8 <c ees>]) c'!4( <g bes>8[ <f aes>])
+  | s2 cis'4( <gis b>8[ <fis a>])
+  | s2 d'4( <a c!>8[ <g bes>])
+  | s1*6
+  %91
+  | fis,,4^-( b^- cis^- d^-)
+  | b,1
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -428,16 +505,67 @@ Bass = \context Voice = "four" \relative c {
     \clef treble \tuplet 11/16 { ces[ des ees f ges aes bes ces des ees f] }
   | fis,8) r r4 r2
   | \clef bass \key d \major
-    r2 s
-  | s1
-  | s1
+    r2 r8 <b,, b'>[( gis' eis])
+  | \stemUp r8 <fis, fis'>[( cis' ais]) r <b, b'>[( fis' d])
+  | r <fis, fis'>[( cis' ais]) r <b b'>[( fis' d])
   %70
-  | s1
-  | s1
-  | s1
-  | s1
-  | s1
+  | r <fis fis'>[( cis' ais]) r <e e'>[( b' g])
+  | \stemNeutral
+    <fis fis'>4.( \undo\omit TupletNumber \tupletDown\tuplet 3/2 { cis'16 d e } <d, d'>4.) <b b'>8
+  | <ais ais'>4.( <ais' cis fis>8) <b, b'>4.( <b' eis gis>8)
+  | \once\override Staff.TextScript.extra-offset = #'(0 . 2)
+    <fis, fis'>4.(^\cresc
+    ais8) <b b'>4.( d8)
+  | <fis fis'>4.( ais8) <e b'> b''[( g e])
   %75
+  | \omit TupletNumber  <a, a'>4. \tuplet 3/2 { e'16( fis g } <fis, fis'>4.) <e e'>8
+  | <d d'>4. \tuplet 3/2 { ais'16( b cis } <b, b'>4.) <a a'>8
+  | <g g'>4.( <d'' fis b>8) <cis, cis'>4.( <e' g b>8)
+  | <ais,, ais'>4.( <d' fis ais>8) <d, d'>4.( <d' fis b>8)
+  | <g, g'>4( <fis fis'>8 <eis eis'>) <fis fis'>4( <gis gis'>8 <ais ais'>)
+  %80
+  | <b b'>4( <cis cis'>8 <d d'>) <e e'>4( <fis fis'>8 <g g'>)
+  | \once\override Arpeggio.positions = #'(-1 . 4)
+    <c,! fis a>8\arpeggio_\Ped r s4
+    \once\override Arpeggio.positions = #'(-1.5 . 3.5)
+    <b d g>8\arpeggio_\Ped r s4
+  | \once\override Arpeggio.positions = #'(0 . 5)
+    <ees! g c!>8\arpeggio_\Ped s4. \clef treble \stemDown
+    \once\override Arpeggio.positions = #'(-5 . 1)
+    <aes c! f!>8\arpeggio_\Ped s4. \clef bass
+  | \stemUp <bis,, bis'>8_._- r <cis cis'>_._- r \clef treble \stemDown
+    \once\override Arpeggio.positions = #'(-5 . 1)
+    <a''! cis fis>8\arpeggio_\Ped s4.
+    \clef bass
+  | \stemUp <cis,, cis'>8_._- r <d d'>_._- r \clef treble \stemDown
+    \once\override Arpeggio.positions = #'(-4 . 2)
+    <bes'' d g>8\arpeggio_\Ped s4.
+  %85
+  | \clef bass \stemUp <ees,, ees'>8_._- r \clef treble <cis''! bes' cis!>2_>_\Ped
+    \clef bass <e,,! e'!>8_._- r
+  | \clef treble <cis'' ais' cis>2_>_\Ped \clef bass r4 <b,, d b' d>4\arpeggio
+  | \stemNeutral eis''^. <dis, fis a b fis'>^.\arpeggio b'^. <e, g c! e!>^.\arpeggio
+  | ais^. <gis, d' eis b'>\arpeggio eis_. <fis, ais cis fis>_.\arpeggio
+  | <b, b'>1\arpeggio
+  %90
+  | q\arpeggio
+  | \once\override Arpeggio.positions = #'(-5 . -2)
+    b'\arpeggio
+  | \stemDown
+    \once\override Arpeggio.positions = #'(-9 . -4)
+    b,2\arpeggio s
+  | <b' fis' cis'>1\arpeggio\fermata
+    \bar "||"
+  | \key b \major
+    b'8[( b' dis b e b fis' b,]
+  %95
+  | gis'[ b, fis' gis fis b, e b])
+  | dis[( b cis dis cis b, b' b,]
+  | ais'[ b, e' b dis b a'! b,])
+  | gis'[ b, e b fis' b, e b]
+  | s1
+  %100
+  | s1
 
   \fine
 }
