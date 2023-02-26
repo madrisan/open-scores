@@ -24,12 +24,12 @@ SUFFIXES = .in
 	$(LILYPOND) --pdf --output $@ $<
 
 BUILT_SOURCES = covercolor.ly
-EXTRA_DIST = Johannes-Brahms-Rhapsodie-op.op.79-nr.2.ly \
+EXTRA_DIST = Johannes-Brahms-Rhapsodie-op.op.79-nr.1.ly \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly
 
-all: $(BUILT_SOURCES) Johannes-Brahms-Rhapsodie-op.op.79-nr.2
+all: $(BUILT_SOURCES) Johannes-Brahms-Rhapsodie-op.op.79-nr.1
 
 clean-local:
 	-rm -f $(BUILT_SOURCES)
