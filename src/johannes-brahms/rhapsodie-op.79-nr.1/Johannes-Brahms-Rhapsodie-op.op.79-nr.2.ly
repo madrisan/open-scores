@@ -399,18 +399,27 @@ Sopran = \context Voice = "one" \relative c'' {
     bes'_\parenthesize\mf <a, ges'>4.--( <c ees>8)
   | <f, d'>4._-( bes8) <a, ges'>4._-( <c ees>8)
   | \once\override Staff.TextScript.extra-offset = #'(0 . -1)
-    r8_\markup { \dynamic p \small "mezza voce" } s <des ges bes>4 q q
+    r8_\markup { \dynamic p \small "mezza voce" } s <des ges bes>4(-- q-- q--
   %175
-  | q2 s
+  | q2--) s
   | s4. <bes ges' bes>4_( <ces ges' bes> <c!_~ ges'^~ bes^~>8
   | q <des ges bes>4) s2 s8
-  | s4. <d! ges bes>4_( <ees ges bes>) s8
-  | s4. <ees bes'>4_(\< <e! bes'>8) <bes' e! bes'>4^.
+  | s4.
+    \once\override Staff.TextScript.extra-offset = #'(0 . -0.5)
+    <d! ges bes>4_(_\markup {
+      \hspace #-1 \small "cresc."
+    }
+    <ees ges bes>) s8
+  | s4.
+    \once\override Hairpin.Y-offset = #-3
+    <ees bes'>4_(\< <e! bes'>8) <bes' e! bes'>4^.
   %180
   | \ottava #1
+    \once\override DynamicText.Y-offset = #-4.5
     <bes' des bes'>4.^>\!\f \tuplet 3/2 { e!16[ f ges] } <a, c f>4^. \ottava #0 r
   | <bes,, des bes'>4._>( \tuplet 3/2 { e!16 f ges } <a, c f>4_.) r
   | \ottava #1
+    \once\override DynamicText.Y-offset = #-5
     <des'' f des'>4.^>\f( \tuplet 3/2 { g!16[ aes beses] } <c, ees aes>4^.) \ottava #0 r
   | <des,, f des'>4._>( \tuplet 3/2 { g16[ aes beses] } <c, ees aes>4_.) r
   | <f' f'>4.^> \tuplet 3/2 { e,!16[( f ges] } <f, f'>4.)_\markup { \hspace #2 \small "sempre cresc." }
@@ -439,7 +448,9 @@ Sopran = \context Voice = "one" \relative c'' {
   | \stemUp fis1~)\!\fz
   | \key d \major
     \stemDown
-    fis4.^( \undo\omit TupletNumber \tupletDown \tuplet 3/2 { cis,16[ d e] } \stemUp\slurDown d4. b8
+    fis4.^(
+    \undo\omit TupletNumber \tupletDown \tuplet 3/2 { cis,16[\parenthesize\f d e] }
+    \stemUp\slurDown d4. b8
   | ais4. cis8 fis,4. gis8
   %200
   | ais4. fis8) <e cis' e>[( fis <d b' d> fis])
@@ -513,6 +524,7 @@ Alto = \context Voice = "two" \relative c' {
   \voiceTwo
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \override Parentheses.font-size = #1
   %1
   | fis2 eis
   | e! d
@@ -662,10 +674,10 @@ Alto = \context Voice = "two" \relative c' {
   | s1*4
   | \top s8 bes''[ des bes] des[ bes des bes]
   %175
-  | des bes4 \bottom <bes, bes'>4(^\< <ces bes' ces> <c!^~ bes'~ c!^~>8
-  | q <des bes' des>4)\! s2 s8
-  | s4. <c bes' c>4( <des bes' des> <d! bes' d!>8^~
-  | q8 <ees bes'( ees>4) s8 \once\omit Stem bes'4) s8 q8^~(
+  | des bes4 \bottom <bes, bes'>4( <ces bes' ces>^\< <c!^~ bes'~ c!^~>8\!
+  | q <des bes' des>4) s2 s8
+  | s4. <c bes' c>4( <des bes' des>^\< <d! bes' d!>8^~
+  | q8 <ees bes'( ees>4)\! s8 \once\omit Stem bes'4) s8 q8^~(
   | q <e,! bes'( e!>4) s8 \once\omit Stem bes'4) s
   %180
   | s1*17
@@ -678,11 +690,9 @@ Alto = \context Voice = "two" \relative c' {
   | cis s
   | s1*15
   %216
-  | s4. <g'' g'>8[_\markup {
-      \small "(sempre cresc.)"
-    }
-    <a a'> <bes bes'>] s4
-  | s8 <g g'>8[ <a a'> <ais ais'>] s2
+  | s4. <g'' g'>8[\parenthesize\< <a a'> <bes bes'>\!] s4
+  | s8
+    <g g'>8[\parenthesize\< <a a'> <ais ais'>\!] s2
   | s1*6
   %224
   | \omit TupletBracket \omit TupletNumber
@@ -816,9 +826,9 @@ Tenor = \context Voice = "three" \relative c' {
   | % it seems a lilypond bug... the b1 note is much bigger than the b2 one
     \magnifyMusic 0.9 { b,,,1 }
   | s1*3
-  | fis'4( b) cis2
+  | fis'4( b) cis2\espressivo
   %225
-  | fis,4( b) cis2
+  | fis,4( b) cis2\espressivo
   | fis,4( b cis d)
   | e( d8 e d4 cis)
   | s1*2
@@ -832,7 +842,7 @@ Tenor = \context Voice = "three" \relative c' {
   %235
   | \tuplet 6/4 { b,8[( dis' fis b dis, fis]) }
     \tuplet 6/4 { r dis[( fis b dis, fis]) }
-  | \tuplet 6/4 { b,,8[( dis' fis b dis, fis]) } s2
+  | \tuplet 6/4 { b,,8[( dis' fis^\< b\!\> dis, fis]) } s2\!
 
 }
 
@@ -1101,19 +1111,24 @@ Bass = \context Voice = "four" \relative c {
   %170
   | d'4 <bes, bes'>-. <d d'>-. <f f'>-.
   | <bes bes'>^. <bes, bes'>-. <ees ees'>-. <ees, ees'>-.
-  | <bes' bes'>-. <bes, bes'>-. r8 <ees'' ees'>[( c'^\parenthesize\> a])
-  | r8 <bes, bes'>[( f' d]) r <ees, ees'>[( c'\! a])
-  | bes,-. r <bes' des ges>4( q q
+  | <bes' bes'>-. <bes, bes'>-. r8\sustainOn <ees'' ees'>[(
+    \once\override Hairpin.Y-offset = #4
+    c'^\> a])
+  | r8\sustainOff\sustainOn <bes, bes'>[( f' d]) r\!\sustainOff\sustainOn <ees, ees'>[( c' a])
+  | bes,-.\sustainOff\sustainOn r <bes' des ges>4( q q
   %175
-  | q) \stemDown <ges, bes ges'>_( q q
-  | q) <bes' des ges>( q q
-  | q) <ges, bes ges'>_( q q
-  | \stemDown q) <bes' ges' bes> q <ges, bes ges'>_(
-  | q) <bes' ges' bes> q \stemNeutral <ges bes e!>-.
+  | q)\sustainOff_\Ped \stemDown <ges, bes ges'>_( q q
+  | q)_\Ped <bes' des ges>( q q
+  | q)_\Ped <ges, bes ges'>_( q q
+  | \stemDown q)\sustainOn <bes' ges' bes> q\sustainOff\sustainOn <ges, bes ges'>_(
+  | q)\sustainOff\sustainOn <bes' ges' bes> q\sustainOff\sustainOn \stemNeutral <ges bes e!>-.
   %180
-  | <des bes' f'>\arpeggio r \clef treble <f'' f'>4.^>( \tuplet 3/2 { c'16 des ees }
-  | des4^.) r \clef bass <f,,, f'>4._>( \tuplet 3/2 { c'16 des ees }
-  | <des, des'>4) r \clef treble <aes''' aes'>4.^>( \tuplet 3/2 { ees'16 f ges }
+  | <des bes' f'>\arpeggio\sustainOff\sustainOn r \clef treble <f'' f'>4.^>(\sustainOff \tuplet 3/2 { c'16 des ees }
+  | des4^.)\sustainOn r \clef bass <f,,, f'>4._>(\sustainOff \tuplet 3/2 { c'16 des ees }
+  | <des, des'>4)_\markup {
+      \concat { \musicglyph #"pedal.Ped" "." \small " simile" }
+    }
+    r \clef treble <aes''' aes'>4.^>( \tuplet 3/2 { ees'16 f ges }
   | f4^.) r \clef bass <aes,,, aes'>4.^>( \tuplet 3/2 { ees'16 f ges }
   | <f, f'>4)^\markup {
       \dynamic sf \concat { "(" \dynamic mp ")" }
@@ -1193,7 +1208,7 @@ Bass = \context Voice = "four" \relative c {
   | b b
   | b b
   | b' b
-  | \stemUp <b, b'>4( \stemDown e') <b fis'>2
+  | \stemUp <b, b'>4( \stemDown e') <b fis'>2^\espressivo
   | \stemUp <b, b'>4( \stemDown e') <b fis'>2
   %230
   | s2 b
@@ -1202,7 +1217,7 @@ Bass = \context Voice = "four" \relative c {
   | b2 e4( c!)
   | b2 e4( c!)
   %235
-  | b2 b
+  | b2_\Ped b
   | b \stemUp <b, b'>\fermata
   \fine
 }
