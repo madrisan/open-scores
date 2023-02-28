@@ -99,6 +99,7 @@ cresc = \markup { \small "cresc." }
 md = \markup { \hspace #-1 \small "m.d." }
 ms = \markup { \hspace #-0.5 \small "m.s." }
 parenthesizems = \markup { \hspace #-2 \small "(m.s.)" }
+pedsimile = \markup { \concat { \musicglyph #"pedal.Ped" \small " simile" } }
 pocorit = { \override TextSpanner.bound-details.left.text = \markup { \small "poco rit. " } }
 pocoapocorit = {
   \override TextSpanner.bound-details.left.text = \markup {
@@ -121,13 +122,16 @@ Sopran = \context Voice = "one" \relative c'' {
   }
   %1
   \repeat volta 2 {
-  | fis4.^>\(\tuplet 3/2 { cis16 d e } d4. b8
+  | fis4.^>\(
+   \once\override TupletNumber.Y-offset = #-1
+   \tupletDown\tuplet 3/2 { cis16-2 d-3 e-4 } d4.^\markup { \finger "3-5" } b8-4
   | ais4. cis8 fis,4. gis8
   | ais4. fis8\) <e cis' e>[_( fis <d b' d> fis])
   | <cis ais' cis>4.( fis8) <g e' g>[( b <fis d' fis> b])
   %5
-  | <e, cis' e>4_.\f <a cis e a>2-- <a_~ d~ f!~ a~>4--
-  | q8 <g e'>[( <a f'!> <bes g'>]) r <gis f'>[( <e cis'> <f! d'>])
+  | \once\override DynamicText.Y-offset = #-5
+    <e, cis' e>4_.\f <a cis e a>2-- <a_~ d~ f!~ a~>4--
+  | q8 <g e'>^1-3[( <a f'!>^1-4 <bes g'>^2-5]) r <gis f'>^2-5[( <e cis'>^1-4 <f! d'>^2-5])
   | \stemDown r <e cis' e>--[(\parenthesize\mf gis a]) r <g! e' g!>--[( a <f! d' f!>--])
   | r <e cis' e>--[(_\cresc gis a]) r <bes! g' bes!>--[( d <a f'! a>--])
   | <g e' g>4-. <c! e g c!>2->\parenthesize\f <c_~ f!~ aes~ c~>4--\<
@@ -135,11 +139,11 @@ Sopran = \context Voice = "one" \relative c'' {
   | q <cis eis gis b cis>2-> <cis_~ fis~ a!~ cis~>4--
   | q\!\f <fis cis' fis>-. <d fis d'>-. <b d b'>-.
   | <cis gis' cis>-. <a cis a'>-. <eis cis' eis>-. <fis cis' fis>-.
-  | \stemUp\slurDown r8_\parenthesize\mf <d d'>[( <cis cis'> <bis bis'>])
-     r <cis cis'>[(\< <dis dis'> <eis eis'>])
-  | \stemDown\slurUp r <fis fis'>[( <gis gis'> <a a'>]) r <b b'>[( <cis cis'> <d d'>])
+  | \stemUp\slurDown r8_\parenthesize\mf <d d'>^5[( <cis cis'>^4 <bis bis'>^5])
+     r <cis cis'>^3[(\< <dis dis'>^4 <eis eis'>^5])
+  | \stemDown\slurUp r <fis fis'>[( <gis gis'> <a a'>]) r <b b'>^5[( <cis cis'>^4 <d d'>])
   %15
-  | \stemUp\slurDown r\!\parenthesize\f <eis, eis'>-.[ r <fis fis'>-. r <bis, bis'>-. r <cis cis'>-.]
+  | \stemUp\slurDown r\!\parenthesize\f <eis, eis'>_.[ r <fis fis'>_. r <bis, bis'>_. r <cis cis'>_.]
   | s1
   | s1
   | s4 <d fis>8_.[(^\ms g\rest <cis, eis>_. g'\rest <c,! e!>_.]) g'\rest
@@ -170,12 +174,14 @@ Sopran = \context Voice = "one" \relative c'' {
   | \key d \minor
     a'4( d^\< e2)\!\>
   | a,4(\! d^\< e2)\!\>
-  | a,4(\! d e f
-  | g f8 g f4 e)
-  | d( g^\< a2)\!\>
+  | a,4^2(\! d^4 e^5 f^4
+  | g^5 f8^2 g^4 f4^3 e^2)
+  | d^3(
+    \once\override Staff.TextScript.extra-offset = #'(0.1 . -3.5)
+    g^\<^\markup { \finger "5-4" } a2)\!\>
   %35
   | d,4(\! g^\< a2)\!\>
-  | d,4(\! g a bes\pocorit
+  | d,4^3(\! g^5 a^3 bes\pocorit
   | c!\startTextSpan bes8 a g4 e)
   | d2 d
   | d4\stopTextSpan^\markup { \small\bold "in tempo" }
@@ -185,8 +191,8 @@ Sopran = \context Voice = "one" \relative c'' {
     \tupletNeutral\tuplet 3/2 { a'16( bes c } <bes, ges' bes>4.) <ges ees' ges>8
   | <f d' f>4 r8
     \once\override DynamicText.X-offset = #-1
-    bes'_\parenthesize\mf <a, ges'>4.--( <c ees>8)
-  | <f, d'>4._-( bes8) <a, ges'>4._-( <c ees>8)
+    bes'^4_\parenthesize\mf <a, ges'>4.--^5( <c ees>8^4)
+  | <f, d'>4._-^5( bes8) <a, ges'>4._-^5( <c ees>8)
   | \once\override Staff.TextScript.extra-offset = #'(0 . -1)
     r8_\markup { \dynamic p \small "mezza voce" } s <des ges bes>4 q q
   | q2 s
@@ -200,6 +206,7 @@ Sopran = \context Voice = "one" \relative c'' {
   %50
   | <bes,, des bes'>4._>( \tuplet 3/2 { e!16 f ges } <a, c f>4_.) r
   | \ottava #1
+    \once\override DynamicText.Y-offset = #-5
     <des'' f des'>4.^>\f( \tuplet 3/2 { g!16[ aes beses] } <c, ees aes>4^.) \ottava #0 r
   | <des,, f des'>4._>( \tuplet 3/2 { g16[ aes beses] } <c, ees aes>4_.) r
   | <f' f'>4.^> \tuplet 3/2 { e,!16[( f ges] } <f, f'>4.)_\markup { \hspace #2 \small "sempre cresc." }
@@ -227,7 +234,9 @@ Sopran = \context Voice = "one" \relative c'' {
     \tuplet 11/16 { ces[ des ees f ges aes bes ces des ees f] }
   | \stemUp fis8)\!\fz d\rest d4\rest d2\rest
   | \key d \major
-    \stemDown fis,4.^( \undo\omit TupletNumber \tupletDown \tuplet 3/2 { cis16[ d e] } \stemUp\slurDown d4. b8
+    \stemDown fis,4.^(
+    \undo\omit TupletNumber \tupletDown \tuplet 3/2 { cis16_\parenthesize\f[ d e] }
+    \stemUp\slurDown d4. b8
   | ais4. cis8 fis,4. gis8
   | ais4. fis8) <e cis' e>[( fis <d b' d> fis])
   %70
@@ -271,7 +280,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | <cis fis cis'>1\fermata
     \bar "||"
   | \key b \major
-    fis'1
+    fis'^5
   %95
   \repeat volta 2 {
   | fis1
@@ -313,7 +322,7 @@ Sopran = \context Voice = "one" \relative c'' {
     cis2( dis4 e
   | \alternative {
       \volta 1 { dis1) fis }
-      \volta 2 { dis1 }
+      \volta 2 { dis1\repeatTie }
     }
   }
   %125
@@ -499,8 +508,8 @@ Sopran = \context Voice = "one" \relative c'' {
   | \stemUp\slurUp cis4( d ais b)
   | g( g2 fis4)
   | \tuplet 3/2 { fis8( a,! dis } \tuplet 3/2 { g g, b) }
-    \tuplet 6/4 { cis![( e, ais cis e ais]) }
-  | dis4 e ais, s
+    \tuplet 6/4 { cis![( e, ais cis e-1 ais]) }
+  | dis4-4 e ais, s
   %230
   | b'( c! a g)
   | dis e c ais\pocoapocorit
@@ -551,7 +560,7 @@ Alto = \context Voice = "two" \relative c' {
   | \shape #'((0.8 . -0.6) (0 . -1.2) (0 . -0.8) (0 . 0)) Slur
     bes[( g \bottom e cis] <d, c'!>[ ees' fis \top a])
   %35
-  | bes[ g \bottom e cis] <d, c'!>[ ees' fis \top a]
+  | bes[ g \bottom e^1 cis^2] <d, c'!>^1[ ees'^3 fis^2 \top a]
   | \shape #'((0.8 . 0) (0 . 0) (0 . 0) (0 . 0)) Slur
     bes[( g \bottom e cis] bes[ g e cis])
   | \shape #'((0 . 0) (0 . 0) (0 . -0.8) (0 . -0.4)) Slur
@@ -585,18 +594,18 @@ Alto = \context Voice = "two" \relative c' {
   | \bottom r2 fis,,,4( b)
   | s1
   | \top\slurDown
-    fis''4(_\markup {
+    fis''4(-1_\markup {
       \small "molto dolce espress."
-    } b cis dis
+    } b-1 cis dis
   %95
   | e dis8[ e] dis4 cis
-  | b ais8[ b] ais4 gis)
+  | b ais8^2[ b^1] ais4^2 gis)
   | fis4( gis8 ais b4 cis8 dis
   | e4 gis cis,2)
   | fis,4( b cis dis
   %100
   | e4 dis8 cis e4 dis)
-  | cis( eis fis\< gis
+  | cis-1( eis^1 fis\< gis
   | b4 ais8\! b ais4 gis
   | fis\> dis cis\! b)
   | ais( fis b cis)
@@ -627,12 +636,12 @@ Alto = \context Voice = "two" \relative c' {
   | 1
   | \once\override DynamicText.Y-offset = #-3.5
     f4\rest\!\p fis( gis ais)
-  | fis2( gis4_\markup { "dim." } a!
+  | fis2( gis4_\markup { \small "dim." } a!
   %125
   | gis2 g!)
   | fis(\> gis4 a!
   | gis2 g!)
-  | \once\override DynamicText.Y-offset = #-3
+  | \once\override DynamicText.Y-offset = #-0.5
     fis1\!\pp
   | 1
   %130
@@ -699,14 +708,14 @@ Alto = \context Voice = "two" \relative c' {
     \tuplet 6/4 { cis,8[(^\markup {
       \small "leggiero"
     }
-    e, ais d d, fis] } \tuplet 6/4 { ais[ e g ais e' g]) }
+    e, ais d d, fis] } \tuplet 6/4 { ais[ e g ais e'^1 g^2]) }
   | \shape #'((0 . 0) (0 . 0.5) (0 . 1) (0 . 0)) Slur
-    \tuplet 6/4 { cis[( e, ais d d, fis] } \tuplet 6/4 { ais[ g e ais, g e]) }
+    \tuplet 6/4 { cis^4[( e, ais d d, fis] } \tuplet 6/4 { ais[ g e ais, g e]) }
   | \tuplet 6/4 { cis'[ e, ais d d, fis] } \tuplet 6/4 { ais[ e g b d, fis] }
   | \tuplet 3/2 { g b, cis } \tuplet 3/2 { b\rest b cis }
     \tuplet 3/2 { b\rest b cis } \tuplet 3/2 { b\rest ais e' }
   | fis4 g cis,2
-  | \tuplet 6/4 { dis'8[( a! c! e g, b]) } \tuplet 6/4 { ais[( e g a! e' g]) }
+  | \tuplet 6/4 { dis'8[( a! c! e g,-1 b-4]) } \tuplet 6/4 { ais[(-3 e g a! e'-1 g]) }
   %230
   | \tuplet 6/4 { b[ dis, a'! c! e, g] } \tuplet 6/4 { ais[ c,! dis g b, e] }
   | \tuplet 6/4 { dis[ fis, c'! e e, b'] } \tuplet 6/4 { c[ e, g ais e fis] }
@@ -754,7 +763,7 @@ Tenor = \context Voice = "three" \relative c' {
   %1
   | s1*7
   %8
-  | a4.( cis,8) s2
+  | a4.^-( cis,8) s2
   | s1*7
   %16
   | \override Stem.details.beamed-lengths = #'(4.4)
@@ -766,14 +775,14 @@ Tenor = \context Voice = "three" \relative c' {
   | g8\rest fis[ g8\rest^\< fis g8\rest fis g8\rest fis]
   | g8\rest\!\> fis[ b8\rest fis b8\rest fis\! b8\rest fis]
     \revert Stem.details.beamed-lengths
-  | g8\rest^\md fis[ \top a! \bottom fis \top a \bottom fis \top a \bottom fis]
+  | g8\rest^\md fis[^\p \top a! \bottom fis \top a \bottom fis \top a \bottom fis]
   | d,4( a' bes g)
   | a
     \shape #'((0.5 . 1) (0 . 0) (0 . 0) (-0.5 . 1)) Slur
     fis( g gis
   %25
   | a) s2.
-  | s2 \once\override Voice.Rest.X-offset = #1.4 g8\rest d4 8~
+  | s2 \once\override Voice.Rest.X-offset = #1.5 g8\rest d4 8~
   | \once\override NoteColumn.force-hshift = #1 8 4 4 4 8
   | r4 <d' fis a>2 q4
   | r4 <d fis>2 q4
@@ -835,10 +844,10 @@ Tenor = \context Voice = "three" \relative c' {
   %230
   | <b, b'>4( e' fis g)
   | a( g8 fis e4 c!)
-  | b2 b
+  | b2^1 b
   | \omit TupletNumber \omit TupletBracket
     \tuplet 6/4 { b,8[( dis' fis b dis, fis]) } b,2
-  | \tuplet 6/4 { b,8[( dis' fis b dis, fis]) } b,2
+  | \tuplet 6/4 { b,8[( dis'-1 fis-2 b dis, fis]) } b,2
   %235
   | \tuplet 6/4 { b,8[( dis' fis b dis, fis]) }
     \tuplet 6/4 { r dis[( fis b dis, fis]) }
@@ -853,16 +862,18 @@ Bass = \context Voice = "four" \relative c {
   %1
   \stemNeutral\slurNeutral
   \repeat volta 2 {
-  | r2 r8 <b b'>[( gis' eis])
-  | r8 <fis, fis'>[( cis' ais)] r8 <b, b'>[( fis' d)]
+  | r2\sustainOn r8\sustainOff\sustainOn <b b'>[( gis'\sustainOff eis])
+  | \override Staff.SustainPedalLineSpanner.staff-padding = #4
+    r8\sustainOn <fis, fis'>[( cis'\sustainOff ais)]
+    r8_\pedsimile <b, b'>[( fis' d)]
   | r8 <fis, fis'>[( cis' ais)] r8 <b b'>[( fis' d)]
   | r8 <fis fis'>[( cis' ais)] r8 <e e'>[( b' g)]
   %5
-  | <a a'>4.^> \tuplet 3/2 { e'16( f! g } <f,! f'>4.) <d d'>8
+  | <a a'>4.^> \tuplet 3/2 { e'16^4( f!^3 g^2 } <f,! f'>4.^1) <d d'>8
   | <cis cis'>4.--( <cis' e a>8) <d, d'>4.--( <d' gis b>8)
   | <a, a'>4.--( cis8) <d d'>4.--( gis8)
   | \stemDown a2 \stemNeutral <g d'>8 d''[( bes g)]
-  | <c,! c'!>4.-- \tuplet 3/2 { g'16( aes bes } <aes, aes'>4.) <f! f'!>8
+  | <c,! c'!>4.^- \tuplet 3/2 { g'16( aes bes } <aes, aes'>4.) <f! f'!>8
   %10
   | <cis! cis'!>4.-- \tuplet 3/2 { gis'16( a b) } <a, a'>4. <fis fis'>8
   | <d d'>4.--( <d'' fis a>8) <gis,, gis'>4.--( <d '' fis gis>8)
@@ -903,19 +914,21 @@ Bass = \context Voice = "four" \relative c {
   | d'4 <bes, bes'>-. <d d'>-. <f f'>-.
   %40
   | <bes bes'>^. <bes, bes'>-. <ees ees'>-. <ees, ees'>-.
-  | <bes' bes'>-. <bes, bes'>-. r8 <ees'' ees'>[( c'^\parenthesize\> a])
-  | r8 <bes, bes'>[( f' d]) r <ees, ees'>[( c'\! a])
-  | bes,-. r <bes' des ges>4( q q
-  | q) \stemDown <ges, bes ges'>_( q q
+  | <bes' bes'>-. <bes, bes'>-. r8\sustainOn <ees'' ees'>[( c'^\parenthesize\> a])
+  | r8\sustainOff\sustainOn <bes, bes'>[( f' d]) r\sustainOff\sustainOn <ees, ees'>[( c'\! a])
+  | bes,-.\sustainOff\sustainOn r <bes' des ges>4( q q
+  | q)\sustainOff_\Ped \stemDown <ges, bes ges'>_( q q
   %45
-  | q) <bes' des ges>( q q
-  | q) <ges, bes ges'>_( q q
-  | \stemDown q) <bes' ges' bes> q <ges, bes ges'>_(
-  | q) <bes' ges' bes> q \stemNeutral <ges bes e!>-.
-  | <des bes' f'>\arpeggio r \clef treble <f'' f'>4.^>( \tuplet 3/2 { c'16 des ees }
+  | q)_\Ped <bes' des ges>( q q
+  | q)\sustainOn <ges, bes ges'>_( q q
+  | \stemDown q)\sustainOff\sustainOn <bes' ges' bes> q\sustainOff\sustainOn <ges, bes ges'>_(
+  | q)\sustainOff\sustainOn <bes' ges' bes> q\sustainOff\sustainOn
+    \stemNeutral <ges bes e!>-.\sustainOff\sustainOn
+  | <des bes' f'>\arpeggio\sustainOff\sustainOn r
+    \clef treble <f'' f'>4.^>(\sustainOff \tuplet 3/2 { c'16 des ees }
   %50
-  | des4^.) r \clef bass <f,,, f'>4._>( \tuplet 3/2 { c'16 des ees }
-  | <des, des'>4) r \clef treble <aes''' aes'>4.^>( \tuplet 3/2 { ees'16 f ges }
+  | des4^.)\sustainOn r \clef bass <f,,, f'>4._>(\sustainOff \tuplet 3/2 { c'16 des ees }
+  | <des, des'>4)_\pedsimile r \clef treble <aes''' aes'>4.^>( \tuplet 3/2 { ees'16 f ges }
   | f4^.) r \clef bass <aes,,, aes'>4.^>( \tuplet 3/2 { ees'16 f ges }
   | <f, f'>4)^\markup {
       \dynamic sf \concat { "(" \dynamic mp ")" }
@@ -931,10 +944,10 @@ Bass = \context Voice = "four" \relative c {
   | <ees ges ces ees>^> <ees, ees'>-. <des' e! bes'! des>^> <des, des'>-.
   | <c'! f! a! c!> <c, c'>-. <a' c f a>^> <a, a'>-.
   %60
-  | <f f'>-. r \clef treble <bes'''! bes'!>4.(^> \tuplet 3/2 { e!16 f g! }
-  | f4^.) r \clef bass <bes,,,, bes'>4._>( \tuplet 3/2 { e16 f g }
+  | <f f'>-._\Ped r \clef treble <bes'''! bes'!>4.(^>_\Ped \tuplet 3/2 { e!16 f g! }
+  | f4^.)_\Ped r \clef bass <bes,,,, bes'>4._>(\sustainOn \tuplet 3/2 { e16 f g }
   | \omit TupletNumber
-    f,2~)( \tuplet 10/16 { f32[ g a bes c d! e f g a] }
+    f,2~)(\sustainOff \tuplet 10/16 { f32[ g a bes c d! e f g a] }
   | \tuplet 11/16 { bes[ c d e f g a bes c d e] } f8^.) r r4
   | <bes,,,! des g>1~->(
   %65
@@ -1018,7 +1031,7 @@ Bass = \context Voice = "four" \relative c {
   | fis'[ fis, e' d! fis fis, e' a,!])
   | a,![_( a'! cis a fis' a, g' a,]
   %110
-  | \clef treble \stemUp b'[ a,! a'! b a a, g'! a,]
+  | \clef treble \stemUp b'[ a,! a'!_1 b_2 a_1 a, g'! a,]
   | fis'[ a,! e' fis e a, d a]
   | cis[ a! g'! a, fis' a, \clef bass c! d,!])
   | \stemDown b'[( g,! g'! g, a'! a,! g' g,]
@@ -1032,11 +1045,15 @@ Bass = \context Voice = "four" \relative c {
   | b'[( fis b fis,] b'[ fis b fis,])
   %120
   | b'[( fis b fis,] b'[ fis b fis,])
-  | b'[( fis b fis,] ais'[ fis ais fis,]
+  | \shape #'(
+      ((0 . 0) (0 . 0) (0 . 1) (0 . 0))
+      ((0 . 0) (0 . 1) (0 . 1) (0 . 0.5))
+    ) Slur
+    b'[( fis b fis,] ais'[ fis ais fis,]
   | \alternative {
       \volta 1 {
         b'[ fis b b, fis' fis, b b,])
-        \shape #'((0 . 3) (0 . 0) (0 . 0) (0 . 0.5)) Slur
+        \shape #'((0 . -2) (0 . 1.5) (0 . 0.5) (0 . 0)) Slur
         fis[( fis' ais' fis b fis cis' fis,])
       }
       \volta 2 {
@@ -1213,9 +1230,9 @@ Bass = \context Voice = "four" \relative c {
   %230
   | s2 b
   | b b
-  | \slurDown a!4( g8 fis e4 c!)
-  | b2 e4( c!)
-  | b2 e4( c!)
+  | \slurDown a!4-2( g8-3 fis-2 e4-3 c!-4)
+  | b2-5 e4( c!)
+  | b2 e4_3( c!_4)
   %235
   | b2_\Ped b
   | b \stemUp <b, b'>\fermata
