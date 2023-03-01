@@ -74,6 +74,8 @@ AC_CONFIG_FILES([\
   src/baldassare-galuppi/sonata-5-c-major/Makefile \
   src/clara-schumann-wieck/Makefile \
   src/clara-schumann-wieck/soirees-musicales-op.6/Makefile \
+  src/hans-erich-apostel/Makefile \
+  src/hans-erich-apostel/kubiniana-op.13/Makefile \
   src/johannes-brahms/Makefile \
   src/johannes-brahms/klavierstucke-op.119/Makefile \
   src/johannes-brahms/rhapsodie-op.79-nr.1/Makefile \
