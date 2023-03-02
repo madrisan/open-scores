@@ -18,10 +18,10 @@ Sopran = \context Voice = "one" \relative c'' {
     \slurDown
     b,!8[( c! fis eis])
   %1
-  | cis!4-- cis-- e!8[(\mf f! b! ais])
+  | cis!4_- cis_- e!8[(\mf f! b! ais])
   | fis!4-- fis f'\rest f!8.[(^>\prall\f e!16])
   | \stemNeutral\slurNeutral
-    e!8.[(^>\prall d16]) d8.[(^>\prall\f cis!16]) cis!8[ f,!16 f_.] bes4^>(
+    e!8.[(^>\prall d16]) d8.[(^>\prall cis!16]) cis!8[ f,!16 f_.] bes4^>(
   | <e,! a!>_.) r c!8[(\mf cis g'! fis])
   %5
   | \stemUp <bes, d!>4_. <cis'! e!>8[^. a'16\rest ais^. <cis,! b'!>8^.] r s4
@@ -33,9 +33,10 @@ Sopran = \context Voice = "one" \relative c'' {
   | bes,8^.) r <c,! e! fis>_.[\pp g'\rest <c, e fis>_.] r r4
   %10
   | r4 <b'! d!>8^._\pp[ r16 gis'^. <b,! a'!>8^.] r
-    \afterGrace b'!4^>_\p\startTrillSpan { ais32[( b!\stopTrillSpan ] }
-  | <des, c'!>8^.)[\mf r q r q] r <d! des'>8.[\f( ees'16]
-  | <des, c'!>8^.) r gis,4^>( a!8^.) r <aes, bes d!>4_-_\p(
+    \once\override Hairpin.Y-offset = #-3.5
+    \afterGrace b'!4^>_\p\<\startTrillSpan { ais32[( b!\stopTrillSpan ] }
+  | <des, c'!>8^.)[\!\mf r q r q] r <d! des'>8.[\f( ees'16]
+  | <des, c'!>8^.) r gis,4^>( a!8^.) r <aes, bes d!>4_-_\p_(
   | <a! cis e!>8_.) r r4 \acciaccatura { e''!8 } <ges, f'!>8\pp r r4
     \bar "||"
     \break
@@ -44,12 +45,12 @@ Sopran = \context Voice = "one" \relative c'' {
   | cis4_- cis_- e!8[(\mf f! b! ais])
   | fis4-- fis-- f'\rest f!8.[(^>\prall\f e!16])
   | \stemNeutral\slurNeutral
-    e!8.[(^>\prall d16]) d8.[(^>\prall\f cis!16]) cis!8[ f,!16 f_.] bes4^>(
+    e!8.[(^>\prall d16]) d8.[(^>\prall cis!16]) cis8[ f,!16 f_.] bes4^>(
   | \override DynamicText.Y-offset = #-6
     <e,! a!>_.) r e!8[(\mf f! b! bes]
-  | <bes, fis'>4) r b!8[(\p c! fis! f!]
+  | <bes, fis'>4_.) r b!8[(\p c! fis! f!]
   %20
-  | <f,! a! cis>4_.) r8 f'!16_.[\pp f] bes4^. r
+  | <f,! a! cis>4_.) r8 f'!16_.[_\pp f] bes4^. r
   \fine
 }
 
@@ -67,7 +68,9 @@ Alto = \context Voice = "two" \relative c' {
   | s4 <dis g! a!>8[_.\p e\rest <g a>_.] s4.
   | s1*6
   %12
-  | s4 des8.[( ees16] c!8_.) s4.
+  | s4
+    \once\override DynamicText.X-offset = #-3
+    des8.[(\mf ees16] c!8_.) s4.
   | s1*3
   %16
   | b8\rest <bes d!>_.[ b\rest q_.] b2\rest
@@ -80,8 +83,10 @@ Tenor = \context Voice = "three" \relative c' {
   \partial 2
     s2
   %1
-  | c8\rest <f,! a!>[ c'\rest <f,! a!>] a2\rest
-  | s1*4
+  | c8\rest <f,! a!>^.[ c'\rest <f,! a!>^.] a2\rest
+  | s1
+  | e'8\rest f!^.[ e\rest e!^.] ees^. s d![( c!])
+  | s1*2
   %6
   | s4 <g! b! cis>8^.^\p[ b\rest q^.] s4.
   | s1*5
@@ -123,7 +128,7 @@ Bass = \context Voice = "four" \relative c {
     \tupletUp\tuplet 3/2 { aes8 bes_. e,!_. } \tuplet 3/2 { aes!8_. d,!_. ges!_. }
   | c,!4_. <c fis>_. \acciaccatura { b!8 } <c g'!>4_. r
   %15
-  | \stemDown <g'! b! dis>_. q_. \stemUp \acciaccatura { b,!8 } c!4_. f\rest
+  | \stemDown <g'! b! dis> q_. \stemUp \acciaccatura { b,!8 } c!4_. f\rest
   | <aes c! e!>_. q_. \acciaccatura { cis,!8 } d!4_. r
   | \stemDown <g'! a!>_- q_- q8 r <ees ges>4
   | <des f! b!>^. \stemUp \acciaccatura { fis,!8 } g!4_. r2
