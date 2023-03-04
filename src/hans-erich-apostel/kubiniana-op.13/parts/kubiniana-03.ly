@@ -6,6 +6,7 @@ Global = {
 
 bottom = { \change Staff = "lower"\stemUp }
 top = { \change Staff = "upper"\stemDown }
+crescmolto = { \override TextSpanner.bound-details.left.text = \markup { \small "cresc molto " } }
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
@@ -41,11 +42,14 @@ Sopran = \context Voice = "one" \relative c'' {
     }
     \bottom \tuplet 3/2 { c,!( f! b!) }
   | \top \clef bass \stemUp bes,4.^> \tuplet 3/2 { b!16[^( d! b!)] }
-  | bes2^>~\p
+  | \shape #'((0 . 0) (0 . 1.2) (0 . 1.2) (0 . 0)) Tie
+    bes2^>~\p
   | bes
   | \clef treble \stemDown
     \once\override TupletBracket.positions = #'(8.8 . 8.8)
     \once\undo\omit TupletBracket \tuplet 3/2 {
+      \override DynamicText.X-offset = #0.2
+      \override DynamicText.Y-offset = #-4
       r8.\ff <fis''' cis' g'!>16^! <dis, gis d'!>8^!
     } \stemUp b!4_>~
   %10
@@ -75,19 +79,14 @@ Alto = \context Voice = "two" \relative c {
   \voiceTwo
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \set subdivideBeams = ##t
+  \set baseMoment = #(ly:make-moment 1/8)
   %1
   | s2*5
   %6
   | e,8\rest g16\rest\mf <ges aes>[ g\rest <f! g!>] d8\rest
-}
-
-Tenor = \context Voice = "three" \relative c' {
-  \voiceThree
-  \override MultiMeasureRest.staff-position = #0
-  \override Rest.staff-position = #0
-  %1
-  | s2
-  | s2
+  | e\rest e32\rest aes[( ges16])\crescmolto f!32[(_\startTextSpan g! f16) aes!32( ges aes ges])
+  | f![( g! f g) aes( ges aes ges]) f![( g! f g) aes( ges aes ges])\stopTextSpan
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -146,7 +145,6 @@ centerDynamics = {
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \clef bass
-      \Tenor
       \Bass
     >>
   >>
