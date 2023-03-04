@@ -11,8 +11,10 @@ Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \override DynamicText.Y-offset = #-2.4
+  \override Hairpin.Y-offset = #-2
   %1
-  \tempo \markup { \bold Lento amoroso }
+  \tempo \markup { \bold "Allegretto" } 4 = 80
   | c1
   | R1
   \fine
@@ -48,7 +50,8 @@ Bass = \context Voice = "four" \relative c {
 
 centerDynamics = {
   %1
-  | s4-\markup { \hspace #-2 \dynamic p } s2.
+  | \once\override Staff.TextScript.extra-offset = #'(-2 . 0)
+    s4-\markup { \dynamic mf } s2.
 }
 
 \score {
