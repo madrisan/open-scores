@@ -48,8 +48,8 @@ Sopran = \context Voice = "one" \relative c'' {
   | \clef treble \stemDown
     \once\override TupletBracket.positions = #'(8.8 . 8.8)
     \once\undo\omit TupletBracket \tuplet 3/2 {
-      \override DynamicText.X-offset = #0.2
-      \override DynamicText.Y-offset = #-4
+      \once\override DynamicText.X-offset = #0.2
+      \once\override DynamicText.Y-offset = #-6
       r8.\ff <fis''' cis' g'!>16^! <dis, gis d'!>8^!
     } \stemUp b!4_>~
   %10
