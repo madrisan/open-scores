@@ -246,6 +246,6 @@ centerDynamics = {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 2. = 66
   }
 }
