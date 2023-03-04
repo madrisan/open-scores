@@ -79,3 +79,4 @@
 
 \include "./parts/kubiniana-03.ly"
 \include "./parts/kubiniana-06.ly"
+\include "./parts/kubiniana-07.ly"
