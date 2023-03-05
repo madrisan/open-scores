@@ -112,15 +112,6 @@ Sopran = \context Voice = "one" \relative c'' {
   \fine
 }
 
-Alto = \context Voice = "two" \relative c' {
-  \voiceTwo
-  \override MultiMeasureRest.staff-position = #0
-  \override Rest.staff-position = #0
-  %1
-  | s2.
-  | s2.
-}
-
 Tenor = \context Voice = "three" \relative c' {
   \voiceThree
   \override MultiMeasureRest.staff-position = #0
@@ -219,7 +210,6 @@ centerDynamics = {
       \Global
       \clef treble
       \Sopran
-      \Alto
     >>
     \context Dynamics <<
       \Global \centerDynamics
