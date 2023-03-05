@@ -16,7 +16,7 @@
   first-page-number = 0
   indent = 0.0
 % last-bottom-spacing.padding = #2
-  line-width = 17\cm
+  line-width = 17.4\cm
   markup-system-spacing =
      #'((basic-distance . 2)
         (minimum-distance . 1)
@@ -78,5 +78,8 @@
 }
 
 \include "./parts/kubiniana-03.ly"
+\pageBreak
 \include "./parts/kubiniana-06.ly"
 \include "./parts/kubiniana-07.ly"
+\pageBreak
+\include "./parts/kubiniana-09.ly"
