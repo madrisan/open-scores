@@ -13,8 +13,8 @@ Sopran = \context Voice = "one" \relative c {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
-  \override DynamicText.Y-offset = #-2.4
-  \override Hairpin.Y-offset = #-2
+  \override DynamicText.Y-offset = #-3.4
+  \override Hairpin.Y-offset = #-3
   \set subdivideBeams = ##t
   \set baseMoment = #(ly:make-moment 1/8)
   \set tieWaitForNote = ##t
@@ -70,16 +70,24 @@ Sopran = \context Voice = "one" \relative c {
   | r4 s8 r r4 s8 r
   }
   >>
-  | s1
-  | s1
-  | s1
-  | s1
+  | r16. <f'! ges>32^>[(\sfz c!8^-~] c8) r gis,32[( cis <fis g!>16^.]) r8 r f!32[( b! <dis e!>16])
+  | \bottom fis,16[ \top \ottava #1 r32
+    \shape #'((0 . 0) (0 . 0) (0 . 0) (0 . -3.5)) Slur
+    <gis d'! g!>^>( \bottom a!8~^-])^(
+    a16[ bes) \top <dis gis>32 \bottom <f,! b!>_. \top <e'! a!>16^.] r4
+    r8 <e! bes'>32^.[ \bottom <fis, a! c!> \top <f'! b!>16]
+  | <d! gis cis>16^.[\fff c16\rest c32\rest <a'! d!>( dis,)] r32
+    r32 fis[( <b! f'!>) f\rest f\rest gis( <cis! g'!>)] r c![(\< d! <fis gis>16])\!
+    \ottava #0 r8 r4\fermata
+    \clef bass
+  | \tempo \markup { \bold "Meno" }
+    r4 c,,,!2~^-(\pp c32[ bes a! aes\< g! gis a! ais]
   %20
-  | s1
-  | s1
-  | s1
-  | s1
-  | s1
+  | b!8)\!\p r r4 r ges32^>[( <c! des>\> ges!8.~]
+  | ges8^.)\!\p r d'!2~^-(\mp d8~[ d32\> cis a! f!])\!
+  | e!2~\p e32[ d! des c! b! c! cis d!] ees4~^-
+  | ees~ ees32[ <a,! bes>_>(\pp ees8.~] ees2~)
+  | ees8 r r4 r2\ppp
   \fine
 }
 
@@ -163,14 +171,17 @@ Bass = \context Voice = "four" \relative c {
   | <cis, g'!>16_.) r r8 <d'! gis d'!>_._>[ \acciaccatura e'! <b! f'! b!>_._>] r \clef treble
     <a'! dis a'!>_._>[ \acciaccatura a'! <e! bes'! e!>_._>] r8
   | c'!16[ r <b! e!>8~] q16 g16\rest g8\rest cis^>[ \acciaccatura fis g!^>~] g16[ gis] g,8\rest
-  | s1
-  | s1
+  | \slurUp
+    r16 <dis' a'!>32[ b'! c!16 f,32\rest cis']( g!16[) g32\rest dis'( a!16^.) g32\rest e'!^.]
+    b!32[( c! <f! g!>16^.]) r8 r4\fermata
+    \clef bass
+  | r4 <e,,,,! g! b! ees>2._(
   %20
-  | s1
-  | s1
-  | s1
-  | s1
-  | s1
+  | <ees ges bes d!>8_.) r r4 r2
+  | <d! f! a! cis>8_. r r4 r2
+  | \slurDown r4 cis8[\pp \acciaccatura fis g!] r2
+  | aes32[( c! d16_.]) r8 r4 r4 aes,32[( c! d16_.]) r8
+  | r2 cis,8[ \once\override Stem.length = #8 \acciaccatura fis g!] r4
   \fine
 }
 
