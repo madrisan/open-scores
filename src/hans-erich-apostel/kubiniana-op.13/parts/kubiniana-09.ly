@@ -108,15 +108,6 @@ Alto = \context Voice = "two" \relative c' {
     } s8
 }
 
-Tenor = \context Voice = "three" \relative c' {
-  \voiceThree
-  \override MultiMeasureRest.staff-position = #0
-  \override Rest.staff-position = #0
-  %1
-  | s1
-  | s1
-}
-
 Bass = \context Voice = "four" \relative c {
   \voiceFour
   \override MultiMeasureRest.staff-position = #0
@@ -217,7 +208,6 @@ centerDynamics = {
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \clef bass
-      \Tenor
       \Bass
     >>
   >>
