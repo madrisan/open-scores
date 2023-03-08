@@ -77,9 +77,8 @@
 
 }
 
+\include "./parts/kubiniana-02.ly"
 \include "./parts/kubiniana-03.ly"
-\pageBreak
 \include "./parts/kubiniana-06.ly"
 \include "./parts/kubiniana-07.ly"
-\pageBreak
 \include "./parts/kubiniana-09.ly"
