@@ -19,6 +19,10 @@ The source code was compiled with `GNU LilyPond 2.23.82 (running Guile 2.2)` (Fe
 
 ### List by authors
 
+#### Hans Erich Apostel (1901-1972)
+
+ * Kubiniana Op. 13 - 10 Klavierstücke nach Zeichnungen von A. Kubin -- *in progress*: II, III, VI, VII, IX
+
 #### Alban Berg (1885-1935)
 
  * Klaviersonate Op. 1 -- *in progress*
