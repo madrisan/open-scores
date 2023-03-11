@@ -21,7 +21,7 @@ The source code was compiled with `GNU LilyPond 2.23.82 (running Guile 2.2)` (Fe
 
 #### Hans Erich Apostel (1901-1972)
 
- * Kubiniana Op. 13 - 10 Klavierstücke nach Zeichnungen von A. Kubin -- *in progress*: II, III, VI, VII, IX
+ * [Kubiniana Op. 13](https://github.com/madrisan/open-scores/releases/download/v27/Hans-Erich-Apostel-Kubiniana-op.13.pdf) - 10 Klavierstücke nach Zeichnungen von A. Kubin -- *in progress*: II, III, VI, VII, IX
 
 #### Alban Berg (1885-1935)
 
