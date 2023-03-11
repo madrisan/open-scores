@@ -64,11 +64,13 @@
         \null\null
         \line { \abs-fontsize #34 \bold "op. 13" }
         \null\null\null\null
-        \line { \abs-fontsize #20 \italic "10 Klavierstücke" }
+        \line { \abs-fontsize #18 \italic "10 Klavierstücke" }
         \null
-        \line { \abs-fontsize #20 \italic "nach Zeichnungen von A.Kubin" }
-        \null\null\null\null
-        \null\null\null\null
+        \line { \abs-fontsize #18 \italic "nach Zeichnungen von A.Kubin" }
+        \null\null
+        \line { \abs-fontsize #18 "II, III, VI, VII, IX" }
+        \null\null\null
+        \null\null\null
       }
     }
   }
@@ -78,7 +80,10 @@
 }
 
 \include "./parts/kubiniana-02.ly"
+\pageBreak
 \include "./parts/kubiniana-03.ly"
+\pageBreak
 \include "./parts/kubiniana-06.ly"
 \include "./parts/kubiniana-07.ly"
+\pageBreak
 \include "./parts/kubiniana-09.ly"

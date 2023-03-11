@@ -51,6 +51,7 @@ Sopran = \context Voice = "one" \relative c {
     r16. <g! e'!>32^.^>[\f <g_~ e'~>8^>]( \tuplet 6/4 { q16 ees' d cis d! dis) }
   | <g,! e'!>32[( ees' d! des c! cis d! dis]) e![( ees d! des c! cis d! dis])
     e![(\< ees d! des c! cis d! dis]) e![( ees d! des c! cis d! ees!]\!
+    \pageBreak
   \omit Staff.TimeSignature
   << {
   %14-upper
