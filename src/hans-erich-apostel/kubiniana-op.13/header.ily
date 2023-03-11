@@ -19,8 +19,8 @@
   mutopiaopus = "13"
   mutopiatitle = "Kubiniana op. 13"
 
-  opus = "12"
-  title = "Kubiniana op. 119"
+  opus = "13"
+  title = "Kubiniana op. 13"
   source = "Youtube"
   style = "Dodecaphony"
 
