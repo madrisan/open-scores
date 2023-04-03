@@ -251,9 +251,9 @@ Upper = \relative c'' {
     \new Staff = "organUpper" \with {
       alignAboveContext = "upper"
     } {
-      \Global
       \omit Staff.TimeSignature
       \clef "treble"
+      \key d \minor
   |   <dis' fis a b!>2^\markup { \hspace #-2.5 \italic "soft, muffled (quasi Organo)" }^-
       <dis fis a c>2^-
   %35 organUpper
@@ -333,10 +333,11 @@ Upper = \relative c'' {
     }
     \new Staff = "organLower" \with {
       alignAboveContext = "upper"
+      \omit Staff.TimeSignature
     } {
-      \Global
       \omit Staff.TimeSignature
       \clef "bass"
+      \key d \minor
   |   <dis, fis a b!>2^-\sustainOn
       <dis fis a c>2^-\sustainOn
   %35 organLower
