@@ -4,16 +4,21 @@ Global = {
   \include "./global.ly"
 }
 
+textmordent = \markup { \musicglyph "scripts.mordent" }
+
 Sopran = \context Voice = "one" \relative c' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \repeat volta 2 {
   %1
-  | e4 r8 f g4 r8 c
+  | \once\override NoteColumn.force-hshift = #0.5 e4
+    r8 f \once\override NoteColumn.force-hshift = #1 g4 r8 c
   | f,8 \mordent[ f ] d'[ f,] f[ e] r4
   | d4 \mordent r8 e f4 r8 f
-  | e8[ g] g16[ f g a] \appoggiatura e8 d4-\prall-\turn r16 g[ b d]
+  | e8[ g] g16[ f g a] \appoggiatura e8 d4-\prall^\markup {
+      \hspace #0.6 \musicglyph "scripts.turn"
+    } r16 g[ b d]
   %5
   | e16[ d c b] a[ g fis e] fis[ d fis a] fis[ d fis a]
   | d[ c b a] g[ fis e d] e[ c e g] e[ c e g]
@@ -22,16 +27,19 @@ Sopran = \context Voice = "one" \relative c' {
   }
   \break
   \repeat volta 2 {
-  | b'4 r8 c d4 r8 e
+  | \once\override NoteColumn.force-hshift = #1.2 b'4 r8 c
+    \once\override NoteColumn.force-hshift = #1.2 d4
+    r8 e
   %10
-  | f8[ f] f[ e] d[ c] r4
+  | f!8[ f] f[ e] d[ c] r4
   | <c g'>4 r8 bes a4 \mordent r8 a'
-  | b8[ c] f,[ e] \appoggiatura f16 e8[ d] r16 g,[ b d]
+  | b!8[ c] f,[ e] \appoggiatura f16 e8[ d] r16 g,[ b d]
   | g16[ f e d] c[ bes a g] a[ f a c] a[ f a c]
   | f[ e d c] b[ a g f] g[ f g d'] g,[ f g d']
   %15
   | e[ d c b] a[ g f e] d[ f a c] b[ g b d]
-  | g8[c,] e16[ d c b] c[ g e c] r4
+  | g8[c,] e16[ d c b] c[ g e c]
+    \once\override Voice.Rest.X-offset = #1 r4
   }
   \fine
 }
@@ -42,7 +50,12 @@ Alto = \context Voice = "two" \relative c' {
   \override Rest.staff-position = #0
   \repeat volta 2 {
   %1
-  | <g c>4-\mordent s8 d' <c e>4 \mordent s8 e
+  | \once\override Staff.TextScript.extra-offset = #'(-1.5 . -6.4)
+    \once\override NoteColumn.force-hshift = #0.5 <g c>4^\textmordent
+    s8 d'
+    \once\override Staff.TextScript.extra-offset = #'(-1.5 . -5.4)
+    \once\override NoteColumn.force-hshift = #1
+    <c e>4^\textmordent s8 e
   | d8[ d] d\rest d d[ c] s4
   | b4 s8 c d4 s8 d
   | c8[ e] c[ c] \appoggiatura c b4 s
@@ -50,7 +63,11 @@ Alto = \context Voice = "two" \relative c' {
   | s1*4
   }
   \repeat volta 2 {
-  | <d g>4-\mordent s8 a' <g b >4 \mordent s8 c
+  | \once\override Staff.TextScript.extra-offset = #'(-1.5 . -5)
+    \once\override NoteColumn.force-hshift = #1.2 <d g>4^\textmordent s8 a'
+    \once\override Staff.TextScript.extra-offset = #'(-1.5 . -4.8)
+    \once\override NoteColumn.force-hshift = #1.2
+    <g b >4^\textmordent s8 c
   | d[ d] d[ c] b[ a] s4
   | g4 s8 g f4 s8 c'
   | f8[ e] d[ c] c[ b] s4
@@ -65,7 +82,8 @@ Bass = \context Voice = "four" \relative c, {
   \stemNeutral
   \repeat volta 2 {
   %1
-  | r16 c[ e g] c4 r16 c,[ e g] c4
+  | \once\override NoteColumn.force-hshift = #0.5 r16 c[ e g] c4
+    \once\override NoteColumn.force-hshift = #1 r16 c,[ e g] c4
   | r16 c[ d c] b[ d g, b] c[ c, e g] c[ d e f]
   | g[ g, b d] g4 r16 g,[ b d] g4
   | r16 g,[ c e] e,8[ f] g16[ g' d b] g8[ g']
@@ -76,16 +94,17 @@ Bass = \context Voice = "four" \relative c, {
   | b[ e c d] g r16 g g,4
   }
   \repeat volta 2 {
-  | r16 g[ b d ] g4 r16 g,[ b d ] g4
+  | \once\override Voice.Rest.X-offset = #1.5 r16 g[ b d ] g4
+    \once\override Voice.Rest.X-offset = #1 r16 g,[ b d ] g4
   %10
-  | r16 a[ b a ] gis[ b e, g] a[ a, c e] a[ b c d]
+  | r16 a[ b a ] gis[ b e, gis] a[ a, c e] a[ b c d]
   | e[ e, g c] e4 r16 f,[ a c] f[ e f e ]
   | d[c d c] b[ g c e] g[ fis g d] b[ d g, b]
   | e,8[ c' e, c'] f,[ c' e, c']
-  | d,[ b' c, a'] b,[ f' e d]
+  | d,[ b'! c, a'] b,[ f' e d]
   %15
   | c[ e f a] f[ d g f]
-  | e[ a f g] c,4 c,
+  | e[ a f g] c,4 \once\override NoteColumn.force-hshift = #1 c,
   }
   \fine
 }
