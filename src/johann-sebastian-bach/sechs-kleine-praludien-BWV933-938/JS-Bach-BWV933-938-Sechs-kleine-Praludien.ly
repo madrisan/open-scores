@@ -78,3 +78,5 @@
 }
 
 \include "./parts/sechs-kleine-praludien-BWV933.ly"
+\pageBreak
+\include "./parts/sechs-kleine-praludien-BWV934.ly"
