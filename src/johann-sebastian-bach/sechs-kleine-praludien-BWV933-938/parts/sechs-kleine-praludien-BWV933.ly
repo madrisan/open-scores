@@ -8,7 +8,6 @@ textmordent = \markup { \musicglyph "scripts.mordent" }
 
 Sopran = \context Voice = "one" \relative c' {
   \voiceOne
-  \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \repeat volta 2 {
   %1
@@ -27,7 +26,8 @@ Sopran = \context Voice = "one" \relative c' {
   }
   \break
   \repeat volta 2 {
-  | \once\override NoteColumn.force-hshift = #1.2 b'4 r8 c
+  | \once\override NoteColumn.force-hshift = #1.2 b'4
+    r8 c
     \once\override NoteColumn.force-hshift = #1.2 d4
     r8 e
   %10
@@ -46,7 +46,6 @@ Sopran = \context Voice = "one" \relative c' {
 
 Alto = \context Voice = "two" \relative c' {
   \voiceTwo
-  \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \repeat volta 2 {
   %1
@@ -77,7 +76,6 @@ Alto = \context Voice = "two" \relative c' {
 
 Bass = \context Voice = "four" \relative c, {
   \voiceFour
-  \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \stemNeutral
   \repeat volta 2 {
@@ -130,7 +128,7 @@ Bass = \context Voice = "four" \relative c, {
   \header {
     composer = "Johann Sebastian Bach"
     opus = "BWV 933"
-    title = \markup { "Kleines Präludium C-Dur" }
+    title = \markup { "1. Kleines Präludium C-Dur" }
   }
   \layout {
     \context {
