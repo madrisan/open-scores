@@ -38,11 +38,11 @@ Sopran = \context Voice = "one" \relative c'' {
   \repeat volta 2 {
   | \stemNeutral
     g8[ as bes g bes f]
-  | e[ d c e g bes]
+  | e[ d! c e g bes]
   | as[ f des g e c]
   | bes[ g as c f a,]
   %25
-  | bes[ d f as! g f]
+  | bes[ d! f as! g f]
   | g[ es d c b f']
   | es[ d c es a, g ]
   | fis[ g a fis d a']
@@ -113,7 +113,7 @@ Bass = \context Voice = "four" \relative c {
   | es4. bes'8 es4
   }
   \repeat volta 2 {
-  | e, es' des
+  | ees, es' des
   | c e, c
   | f bes, c
   | f, f' es!
@@ -126,7 +126,7 @@ Bass = \context Voice = "four" \relative c {
   %30
   | es' d c
   | d c d
-  | g,8[ d' g bes des f,]
+  | g,8[ d' g bes des f,!]
   | e4 c e
   | f8[ g] as!4 r
   %35
@@ -134,7 +134,7 @@ Bass = \context Voice = "four" \relative c {
   | c8[ d] es!4 r
   | fis, d fis
   | g d' es
-  | as, f g
+  | as,! f g
   | c4. g'8 c4
     \tweak direction #DOWN
     \textEndMark \markup { \musicglyph "scripts.dfermata" }
