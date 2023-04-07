@@ -93,3 +93,5 @@
 \include "./parts/sechs-kleine-praludien-BWV935.ly"
 %\pageBreak
 \include "./parts/sechs-kleine-praludien-BWV936.ly"
+\include "./parts/sechs-kleine-praludien-BWV937.ly"
+%\include "./parts/sechs-kleine-praludien-BWV938.ly"
