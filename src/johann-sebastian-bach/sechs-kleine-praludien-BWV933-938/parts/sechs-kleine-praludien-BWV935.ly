@@ -4,8 +4,6 @@ Global = {
   \include "./global.ly"
 }
 
-textmordent = \markup { \musicglyph "scripts.mordent" }
-
 Sopran = \context Voice = "one" \relative c' {
   \voiceOne
   \override Rest.staff-position = #0
@@ -41,7 +39,7 @@ Sopran = \context Voice = "one" \relative c' {
   | f8 e4\trill
   | f4.
   }
-  \break
+  %\break
   \repeat volta 2 {
   %25
   | a'16[ bes a c a f]
@@ -85,7 +83,6 @@ Tenor = \context Voice = "three" \relative c {
   | a'4.
   | s4.*23
   | f4.
-
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -124,7 +121,7 @@ Bass = \context Voice = "four" \relative c {
   | c[ d c bes a g]
   | \stemDown r f[ c a] f8
   }
-  \break
+  %\break
   \repeat volta 2 {
   %25
   | f''8[ f, f']
