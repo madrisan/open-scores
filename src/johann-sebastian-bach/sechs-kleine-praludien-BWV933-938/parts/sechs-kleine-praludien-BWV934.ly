@@ -1,7 +1,7 @@
 Global = {
   \key c \minor
   \time 3/4
-  \include "./global.ly"
+  \include "../global.ly"
 }
 
 Sopran = \context Voice = "one" \relative c'' {

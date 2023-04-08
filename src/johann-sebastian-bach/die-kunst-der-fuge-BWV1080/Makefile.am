@@ -29,7 +29,26 @@ EXTRA_DIST = JS-Bach-BWV1080-Die-Kunst-der-Fuge.ly \
 	     header.ily \
 	     global.ly \
 	     logo.ly \
-	     parts/*.ly
+	     parts/01-contrapunctus-I.ly \
+	     parts/02-contrapunctus-II.ly \
+	     parts/03-contrapunctus-III.ly \
+	     parts/04-contrapunctus-IV.ly \
+	     parts/05-contrapunctus-V.ly \
+	     parts/06-contrapunctus-VI.ly \
+	     parts/07-contrapunctus-VII.ly \
+	     parts/08-contrapunctus-VIII.ly \
+	     parts/09-contrapunctus-IX.ly \
+	     parts/10-contrapunctus-X.ly \
+	     parts/11-contrapunctus-XI.ly \
+	     parts/12-contrapunctus-XII-II.ly \
+	     parts/12-contrapunctus-XII-I.ly \
+	     parts/13-contrapunctus-XIII-II.ly \
+	     parts/13-contrapunctus-XIII-I.ly \
+	     parts/14-contrapunctus-XIV.ly \
+	     parts/15-canon-in-hypodiapason.ly \
+	     parts/16-canon-alla-decima.ly \
+	     parts/17-canon-alla-duodecima.ly \
+	     parts/18-canon-in-hypodiatessaron.ly
 
 all: $(BUILT_SOURCES) JS-Bach-BWV1080-Die-Kunst-der-Fuge
 

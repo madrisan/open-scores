@@ -29,7 +29,8 @@ EXTRA_DIST = JS-Bach-BWV903-Chromatische-Fantasie-und-Fugue.ly \
 	     header.ily \
 	     global.ly \
 	     logo.ly \
-	     parts/*.ly
+	     parts/bach-chromatische-fantasie-und-fugue-1-fantasia.ly \
+	     parts/bach-chromatische-fantasie-und-fugue-2-fuga.ly
 
 all: $(BUILT_SOURCES) JS-Bach-BWV903-Chromatische-Fantasie-und-Fugue
 

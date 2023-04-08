@@ -28,7 +28,7 @@ EXTRA_DIST = Clara-Schumann-Wieck-Soirees-Musicales-op.6.ly \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
-	     parts/*.ly
+	     parts/2-notturno.ly
 
 all: $(BUILT_SOURCES) Clara-Schumann-Wieck-Soirees-Musicales-op.6
 

@@ -29,7 +29,19 @@ EXTRA_DIST = Robert-Schumann-Kinderscenen-op.15.ly \
 	     header.ily \
 	     global.ly \
 	     logo.ly \
-	     parts/*.ly
+	     parts/01-von-fremden-landern-und-menschen.ly \
+	     parts/02-curiose-geschichte.ly \
+	     parts/03-hasche-mann.ly \
+	     parts/04-bittendes-kind.ly \
+	     parts/05-gluckes-genug.ly \
+	     parts/06-wichtige-begebenheit.ly \
+	     parts/07-traumerei.ly \
+	     parts/08-am-camin.ly \
+	     parts/09-ritter-vom-steckenpferd.ly \
+	     parts/10-fast-zu-ernst.ly \
+	     parts/11-furchtenmachen.ly \
+	     parts/12-kind-im-einschlummern.ly \
+	     parts/13-der-dichter-spricht.ly
 
 all: $(BUILT_SOURCES) Robert-Schumann-Kinderscenen-op.15
 

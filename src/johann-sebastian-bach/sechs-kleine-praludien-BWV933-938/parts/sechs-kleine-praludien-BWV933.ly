@@ -1,7 +1,7 @@
 Global = {
   \key c \major
   \time 4/4
-  \include "./global.ly"
+  \include "../global.ly"
 }
 
 textmordent = \markup { \musicglyph "scripts.mordent" }

@@ -1,7 +1,7 @@
 Global = {
   \key d \major
   \time 2/4
-  \include "./global.ly"
+  \include "../global.ly"
 }
 
 bottom = \change Staff = "lower"
