@@ -29,7 +29,7 @@
         (minimum-distance . 1)
         (padding . 2)
         (stretchability . 25))
-  top-margin = 15\mm
+  top-margin = 10\mm
 }
 
 \bookpart {
@@ -87,11 +87,8 @@
 }
 
 \include "./parts/sechs-kleine-praludien-BWV933.ly"
-%\pageBreak
 \include "./parts/sechs-kleine-praludien-BWV934.ly"
-%\pageBreak
 \include "./parts/sechs-kleine-praludien-BWV935.ly"
-%\pageBreak
 \include "./parts/sechs-kleine-praludien-BWV936.ly"
 \include "./parts/sechs-kleine-praludien-BWV937.ly"
-%\include "./parts/sechs-kleine-praludien-BWV938.ly"
+\include "./parts/sechs-kleine-praludien-BWV938.ly"
