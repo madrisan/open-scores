@@ -28,7 +28,16 @@ EXTRA_DIST = Rued-Langgaard-Insektarium-BVN-134.ly \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
-	     parts/*.ly
+	     logo.ly \
+	     parts/insektarium-1.ly \
+	     parts/insektarium-2.ly \
+	     parts/insektarium-3.ly \
+	     parts/insektarium-4.ly \
+	     parts/insektarium-5.ly \
+	     parts/insektarium-6.ly \
+	     parts/insektarium-7.ly \
+	     parts/insektarium-8.ly \
+	     parts/insektarium-9.ly
 
 all: $(BUILT_SOURCES) Rued-Langgaard-Insektarium-BVN-134
 

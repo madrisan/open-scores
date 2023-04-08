@@ -27,7 +27,8 @@ BUILT_SOURCES = covercolor.ly
 EXTRA_DIST = Johannes-Brahms-Rhapsodie-op.op.79-nr.1.ly \
 	     covercolor.ly.in \
 	     header.ily \
-	     global.ly
+	     global.ly \
+	     logo.ly
 
 all: $(BUILT_SOURCES) Johannes-Brahms-Rhapsodie-op.op.79-nr.1
 

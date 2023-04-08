@@ -28,7 +28,12 @@ EXTRA_DIST = Hans-Erich-Apostel-Kubiniana-op.13.ly \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
-	     parts/*.ly
+	     logo.ly \
+	     parts/kubiniana-02.ly \
+	     parts/kubiniana-03.ly \
+	     parts/kubiniana-06.ly \
+	     parts/kubiniana-07.ly \
+	     parts/kubiniana-09.ly
 
 all: $(BUILT_SOURCES) Hans-Erich-Apostel-Kubiniana-op.13
 

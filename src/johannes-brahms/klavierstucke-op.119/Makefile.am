@@ -28,7 +28,8 @@ EXTRA_DIST = Johannes-Brahms-Klavierstucke-op.119.ly \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
-	     parts/*.ly
+	     logo.ly \
+	     parts/4-rapsodie.ly
 
 all: $(BUILT_SOURCES) Johannes-Brahms-Klavierstucke-op.119
 

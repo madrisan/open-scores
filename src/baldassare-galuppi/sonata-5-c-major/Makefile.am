@@ -28,7 +28,9 @@ EXTRA_DIST = Baldassare-Galuppi-Sonata-5.ly \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
-	     parts/*.ly
+	     parts/sonata-5-1-andante.ly \
+	     parts/sonata-5-2-allegro.ly \
+	     parts/sonata-5-3-allegro-assai.ly
 
 all: $(BUILT_SOURCES) Baldassare-Galuppi-Sonata-5
 

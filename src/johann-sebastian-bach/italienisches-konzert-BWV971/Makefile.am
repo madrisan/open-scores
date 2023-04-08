@@ -28,7 +28,9 @@ EXTRA_DIST = JS-Bach-BWV971-Italienisches-Konzert.ly \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
-	     parts/*.ly
+	     parts/bach-italienisches-konzert-1.ly \
+	     parts/bach-italienisches-konzert-2-andate.ly \
+	     parts/bach-italienisches-konzert-3-presto.ly
 
 all: $(BUILT_SOURCES) JS-Bach-BWV971-Italienisches-Konzert
 

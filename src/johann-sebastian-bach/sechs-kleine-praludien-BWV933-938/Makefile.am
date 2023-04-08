@@ -29,7 +29,12 @@ EXTRA_DIST = JS-Bach-BWV933-938-Sechs-kleine-Praludien.ly \
 	     header.ily \
 	     global.ly \
 	     logo.ly \
-             parts/*.ly
+             parts/sechs-kleine-praludien-BWV933.ly \
+             parts/sechs-kleine-praludien-BWV934.ly \
+             parts/sechs-kleine-praludien-BWV935.ly \
+             parts/sechs-kleine-praludien-BWV936.ly \
+             parts/sechs-kleine-praludien-BWV937.ly \
+             parts/sechs-kleine-praludien-BWV938.ly
 
 all: $(BUILT_SOURCES) JS-Bach-BWV933-938-Sechs-kleine-Praludien
 
