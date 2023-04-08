@@ -184,9 +184,6 @@ Bass = \context Voice = "four" \relative c {
   \layout {
     \context {
       \PianoStaff
-      % More space between staves in the same PianoStaff
-      %\override StaffGrouper.staff-staff-spacing.minimum-distance = 12
-      \override TextScript.font-shape = #'italic
     }
   }
   \midi {
