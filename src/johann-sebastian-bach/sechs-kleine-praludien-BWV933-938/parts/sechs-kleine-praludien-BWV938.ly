@@ -53,7 +53,8 @@ Sopran = \context Voice = "one" \relative c' {
   | c16[ f! b, e a, d]
   | g,[ c f,! b e, a]
   | gis[ a c b a gis]
-  | a4\mordent r8
+  | \once \override TextScript.script-priority = #-100
+    a4\mordent^\markup { \teeny\sharp } r8
   | r16 e[ a gis a c]
   %35
   | fis,![ c' e, c' d, d']
@@ -74,9 +75,11 @@ Sopran = \context Voice = "one" \relative c' {
   | fis16[ b, e g fis dis]
   }
   \alternative {
-    { e4.\mordent }
+    { \once \override TextScript.script-priority = #-100
+      e4.\mordent^\markup { \teeny\sharp } }
   %50
-    { e4.\mordent }
+    { \once \override TextScript.script-priority = #-100
+      e4.\mordent^\markup { \teeny\sharp } }
   }
   \override Score.TextMark.self-alignment-X = #CENTER
   \textEndMark \markup { \musicglyph "scripts.ufermata" }
@@ -89,9 +92,11 @@ Bass = \context Voice = "four" \relative c {
   \stemNeutral
   \repeat volta 2 {
   %1
-  | e8^\mordent[ e,] r
+  | \once \override TextScript.script-priority = #-100
+    e8^\mordent^\markup { \teeny\sharp }[ e,] r
   | r16 e'[ g b g e]
-  | b'8^\mordent[ b,] r
+  | \once \override TextScript.script-priority = #-100
+    b'8^\mordent^\markup { \teeny\sharp }[ b,] r
   | r16 b'[ dis fis dis b]
   %5
   | e8[ g e]
@@ -117,9 +122,11 @@ Bass = \context Voice = "four" \relative c {
     { b,8[ fis' b] }
   }
   \repeat volta 2 {
-  | b^\mordent b, r
+  | \once \override TextScript.script-priority = #-100
+    b^\mordent^\markup { \teeny\sharp } b, r
   | r16 b[ dis fis dis b]
-  | e8^\mordent e, r
+  | \once \override TextScript.script-priority = #-100
+    e8^\mordent^\markup { \teeny\sharp } e, r
   %25
   | r16 e'[ gis b gis e]
   | a[ a, b c d e]
@@ -185,9 +192,6 @@ Bass = \context Voice = "four" \relative c {
   \layout {
     \context {
       \PianoStaff
-      % More space between staves in the same PianoStaff
-      %\override StaffGrouper.staff-staff-spacing.minimum-distance = 12
-      \override TextScript.font-shape = #'italic
     }
   }
   \midi {
