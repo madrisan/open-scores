@@ -88,7 +88,7 @@ Upper = \relative c'' {
       \tuplet 3/2 8 { r16 cis e } \tuplet 3/2 8 { r e g }
       \tuplet 3/2 8 { r g bes }   \tuplet 3/2 8 { r bes cis }
     } \\ {
-      bes,8\( c f g\)
+      bes,8\( cis e g\)
     } >>
   | << {
       \tuplet 3/2 8 { r16\( bes cis } \tuplet 3/2 8 { g' f e\) }
@@ -379,14 +379,14 @@ Upper = \relative c'' {
       << <e a>2 \\ { c4-- a-- } >>
   |   <f a c f>2  <fis a b! dis>4^- <fis a c dis>^-
   |   <e a c e>2  <e b'! d e>4 <e b'! d e>4
-  |   <a' e'>2  s2
+  |   <a e'>2  s2
     }
     >>
   %50
     << {
   |   \set breathMarkType = #'caesura
       a''4\rest
-      << { <beses,, beses'>8(\f <aes aes'>) } \\ <c ees>4 >> \breathe
+      << { <beses, beses'>8(\f <aes aes'>) } \\ <c ees>4 >> \breathe
       b'2\rest
   |   b4\rest  << { bes8( a!) } \\ { <ees ges ees'>4\f } >> \breathe b'2\rest
   |   b4\rest  \stemUp <a, c ees a>\mp^\markup { \italic "ten." }  b'2\rest
