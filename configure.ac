@@ -91,6 +91,7 @@ AC_CONFIG_FILES([\
   src/johann-sebastian-bach/die-kunst-der-fuge-BWV1080/Makefile \
   src/johann-sebastian-bach/italienisches-konzert-BWV971/Makefile \
   src/johann-sebastian-bach/jesu-meine-freude-BWV610/Makefile \
+  src/johann-sebastian-bach/praludium-und-fuge-liszt-BWV543-S462/Makefile \
   src/johann-sebastian-bach/schafe-konnen-sicher-weiden-BWV208/Makefile \
   src/johann-sebastian-bach/sechs-kleine-praludien-BWV933-938/Makefile \
   src/johann-sebastian-bach/siciliano-BWV1031/Makefile \
