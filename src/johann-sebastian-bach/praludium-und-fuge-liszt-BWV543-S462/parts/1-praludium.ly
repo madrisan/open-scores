@@ -119,7 +119,21 @@ Sopran = \context Voice = "one" \relative c'' {
   | d16[ d c b] c4~ \once\override NoteColumn.force-hshift = #-1 c e\rest
   | f16\rest c[ b c] a[ a' a, c] <d, b'>8[ q] r4
   | f'16\rest bes,[ a bes] g[ g' g, bes] <c, a'>8[ q] r4
-  | s1
+  | f'16\rest bes,[ a bes] f[ f' bes, d] <b, gis'>8[ q] r4
+  | d'16\rest a[ gis a] e[ e' a, c] d2
+  %45
+  | c2 d16\rest b[ a b] e,[ e' b d]
+  | <a c>4 r r2
+  | r r4 r16 e'[ d e]
+  | c[ c b c]
+    \shape #'((0 . 1.5) (0 . 2) (0 . 2) (0 . 1)) Tie
+    b4~ b16[ fis!32 gis! a8~] a16[ b gis8]
+  | <e a>16[ a' g! a] f[ f e f] e4~ e16[ b32 cis! d8~]
+  %50
+  | d16[ e cis8] d4~ d16[ cis! d cis] d4~
+  | d16[ cis! d cis] d4~ d16[ cis d e] f4~
+  | f16[ e f g] a4~ \once\override NoteColumn.force-hshift = #-1 a16[ b gis a] f4~
+  | f16[ f e d] gis4 a2
 
   \fine
 }
@@ -160,6 +174,40 @@ Alto = \context Voice = "Two" \relative c {
    \once\override NoteColumn.force-hshift = #-1.5 a4 f\rest
   | g16\rest a[ gis a] \bottom d,[ fis fis a] \top g!8[ g] s4
   | g16\rest g[ f! g] \bottom c,[ e e g] \top f8[ f] s4
+  | g16\rest d[ c d] \bottom bes[ d d f] \top e!8[ e] s4
+  | e16\rest c[ b c] \bottom a[ c c \top e] e\rest fis[ e fis] \stemUp g!8[ f!]
+  %45
+  | \once\override NoteColumn.force-hshift = #0.5 e16[ g f g] c,[ a' g a]
+    \stemDown d,8[ d] e[ e]
+  | e4 s2.
+  | s1
+  | f16\rest a[ gis a] \stemUp \once\override NoteColumn.force-hshift = #0.5 gis[ gis fis gis]
+    \once\override NoteColumn.force-hshift = #0.3
+    \shape #'((1 . 0) (0 . 0.4) (0 . 0.8) (-0.8 . 0.7)) Tie
+    e4~ \once\override NoteColumn.force-hshift = #0.3 e
+  | s4 r16 \stemDown d'[ cis d]
+    \stemUp \once\override NoteColumn.force-hshift = #0.5 cis[ cis b cis]
+    \once\override NoteColumn.force-hshift = #0.3 a4~
+  %50
+  | a4 a
+    \autoBeamOff
+    \once\override NoteColumn.force-hshift = #0.3 a8
+    \once\override NoteColumn.force-hshift = #0.3 a8
+    \autoBeamOn a4
+  | \autoBeamOff
+    \once\override NoteColumn.force-hshift = #0.3 a8
+    \once\override NoteColumn.force-hshift = #0.3 a8
+    \once\override NoteColumn.force-hshift = #0.3 a4
+    \once\override NoteColumn.force-hshift = #0.3 a8
+    \once\override NoteColumn.force-hshift = #0.3 a8
+    \autoBeamOn
+    \once\override NoteColumn.force-hshift = #0.3 d4~
+  | \omit Beam d16[ cis d e]
+    \undo\omit Beam \stemDown <d f>8[ <cis e>]
+    \once\override NoteColumn.force-hshift = #0.1 d16[ c! b a]
+    \stemUp \override Stem.length = #5 gis4
+    \revert Stem.length
+  | \once\override NoteColumn.force-hshift = #0.3 a4 b16\rest f'[ e d] \stemDown <a cis e>2
 
 }
 
@@ -207,7 +255,21 @@ Tenor = \context Voice = "three" \relative c {
   | \once\override NoteColumn.force-hshift = #-1.2 d8 s s2.
   | s1
   | \top\tieDown fis4~ fis16[ fis g e] f!4 e~
+  %40
   | e2~ e4 s
+  | s1*3
+  | s2 \bottom b16\rest a[ g! a] d[ \top d \bottom g, b]
+  %45
+  | \top c[ \bottom e, d e] f8[ f] f[ <f b>] <e b'>[ q]
+  | <e a>16 s8. s2.
+  | s1
+  | \top s4 c'16\rest e[ d e] c8.[ b32 a] b8.[ d16]
+  | c8[ \bottom cis] d d\rest d16\rest a'[ g a] f8.[ e32 d]
+  %50
+  | e8.[ \top g16] f4~ f16[ e f e] f4~
+  | f16[ e f e] f4~ f16[ e f g] a4~
+  | a4 s a4 d,16\rest f[ e d]
+  | cis8[ \bottom d16 e] f[ d cis b] e2
 
 }
 
@@ -259,7 +321,20 @@ Bass = \context Voice = "four" \relative c {
   | << { a2~ 16 } \\ { a2~ 16 } >> <a a'>[ <gis gis'> <a a'>] <e e'>[ <c' c'> <e, e'> <g! g'!>]
   | <fis fis'>8[ q]  r4 r16 <g g'>[ <f f'> <g g'>] <d d'>[ <b' b'> <d, d'> <f! f'!>]
   | <e e'>8[ q]  r4 r16 <f f'>[ <e e'> <f f'>] <c c'>[ <a' a'> <c, c'> <e e'>]
-  | s1
+  | <d d'>8[ q] c'4\rest c16\rest <e, e'>[ <d d'> <e e'>] <b b'>[ <gis' gis'> <b, b'> <d d'>]
+  | <c c'>8 c'[ c c] c[ c b b]
+  %45
+  | b[ b a a] a[ a gis gis]
+  | a16 <a a'>[ <gis gis'> <a a'>] <e e'>[ <c' c'> <e, e'> <a a'>]
+    <c, c'>[ <e e'> <dis dis'> <e e'>] <c c'>[ <a' a'> <c, c'> <e e'>]
+  | <a, a'>[ <c c'> <b b'> <c c'>] <a a'>[ <e' e'> <a, a'> <c c'>] <e, e'>2~
+  | q1
+  | <a a'>1~
+  %50
+  | q4 r16 <d d'>[ <cis cis'> <d d'>] <a a'>8[ <a' a'>] r16 <d, d'>[ <cis cis'> <d d'>]
+  | <a a'>8[ <a' a'>] r16 <f f'>[ <e e'> <f f'>] <d d'>8[ <a' a'>] r16 <f f'>[ <e e'> <f f'>]
+  | <d d'>8[ <a' a'>] r16 <a a'>[ <g g'> <a a'>] <f f'>8[ <d' d'>] r16 <b b'>[ <gis gis'> <b b'>]
+  | <a, a'>1*1/2 <a'' cis>2
 
   \fine
 }
