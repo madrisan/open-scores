@@ -1286,7 +1286,7 @@ Lower = \relative c {
       }
     } >>
   | << {
-      s4 <e' g! bes c>--
+      s4 <e' g! bes cis>--
       s4 <d f! gis b!>--
     } \\ {
       <d,~ f! b! d>4^-
