@@ -114,7 +114,8 @@ Sopran = \context Voice = "one" \relative c'' {
   | f16\rest c[ e c] g'[ g, c g] a[ d f d] a'[ a, d a]
   | b8[ <d g>] <e g>[ q] <a, e' f>[ <a d f>] <g d' f>[ q]
   | <g c e>16[ c e c] g'[ c, e c] f[ b,! d b] e[ a, c a]
-  | d2 d2~
+  | d2
+    \shape #'((0 . 0.5) (0 . 1) (0 . 1.5) (0 . 0)) Tie d2~
   %40
   | d16[ d c b] c4~ \once\override NoteColumn.force-hshift = #-1 c e\rest
   | f16\rest c[ b c] a[ a' a, c] <d, b'>8[ q] r4
@@ -164,10 +165,12 @@ Alto = \context Voice = "Two" \relative c {
   | s1*2
   %36
   | e,2\rest c16\rest f[ a f] d'[ f, a f]
-  | e16\rest g[ b g] c[ \bottom c, e c] a16\rest f[ a f] b[ b, d b]
+  | \once\override Voice.Rest.X-offset = #1.6 e16\rest
+    g[ b g] c[ \bottom c, e c] a16\rest f[ a f] b[ b, d b]
   | \top c'16\rest e[ g e] bes'[ e, g e] a[ d, f d] g[ c, e c]
-  | \stemUp \once\override Voice.Rest.X-offset = #1.5 b'16\rest a[ b a] a4
-    \once\override NoteColumn.force-hshift = #0.9 gis8[ a] b4~
+  | \stemUp \once\override Voice.Rest.X-offset = #1.6 b'16\rest a[ b a] a4
+    \once\override NoteColumn.force-hshift = #0.9 gis8[ a]
+    \once\override Stem.length = #5 b4~
   %40
   | \once\override NoteColumn.force-hshift = #0.4 b4~
     \stemDown \once\override NoteColumn.force-hshift = #0.4 b16[ b a gis]
@@ -252,11 +255,12 @@ Tenor = \context Voice = "three" \relative c {
   | \top d8 s s2.
   | s1*3
   %37
-  | \once\override NoteColumn.force-hshift = #-1.2 d8 s s2.
+  | d8 s s2.
   | s1
   | \top\tieDown fis4~ fis16[ fis g e] f!4 e~
   %40
-  | e2~ e4 s
+  | \shape #'((0 . -0.2) (0 . -1) (0 . -2) (0 . -1.4)) Tie
+    e2~ e4 s
   | s1*3
   | s2 \bottom b16\rest a[ g! a] d[ \top d \bottom g, b]
   %45
