@@ -88,4 +88,5 @@
 }
 
 \include "./parts/1-praludium.ly"
+\pageBreak
 \include "./parts/2-fuge.ly"
