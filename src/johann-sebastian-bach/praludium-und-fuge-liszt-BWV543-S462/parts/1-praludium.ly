@@ -107,7 +107,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | \stemDown a[ d c b] c[ e a gis] \stemUp a2~
   | a8[ a] a,32[ c b c fis, a g a] d,[ a' g a c a g a] fis[ a g a d, fis e fis]
   | a,[ c b c ees c b c] \clef bass \stemDown a[ c b c \bottom fis, a g a]
-    d,[ fis a c \top ees d c b] a[ g fis e! \bottom e c b a]
+    d,[ fis a c \top ees d c b] a[ g fis e! \bottom d c b a]
   %35
   | \top r32 d[ e fis g a b c] \clef treble b[ g a b c d e fis]
     g[ g, b d g b d b] \stemUp g'8 f\rest
