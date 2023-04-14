@@ -42,10 +42,10 @@ Sopran = \context Voice = "one" \relative c'' {
   | e4. d4.
   | c4.~ c16[ c b a b d]
   %25
-  | gis,8 a4~ a16[ a g! fis g! e]
+  | gis,8 a4~ a16[ a g! fis! g! e]
   | c'8.[ c16 b a] g4 d'16\rest g,
   | g'4\rest fis8 b4.~
-  | b8[ a16 g fis e] a4.~
+  | b8[ a16 g fis e] \once\override NoteColumn.force-hshift = #-1 a4.~
   | a8[ g16 fis e d] g4.~
   %30
   | g8[ fis16 e d c] fis4.~
@@ -72,7 +72,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | d[ b d gis, d' e,] c'[ a c e a fis]
   | g[ fis g b c a] b8.[ fis16 g dis]
   %50
-  | e[ fis] dis8.\prall[ e16] e[ b c a b fis]
+  | e[ fis] dis8.\prall[ e16] e[ b c a b fis!]
   | g4 r8 g[ b e~]
   | e8[ dis16 e fis8~] fis16[ dis e fis g8~]
   | g16[ g a8 a] a[ a a~]
@@ -133,12 +133,76 @@ Sopran = \context Voice = "one" \relative c'' {
   | <g, d'> c
   %100
   | <f, c'> b
-  | <e, b'>8[ a gis]
-  | s1*6/8
-  | s1*6/8
-  | s1*6/8
+  | <e, b'>8[ a gis] a16[ gis a c b d]
+  | c[ b c a d b] c[ b c a d gis,]
+  | a[ gis a e b' e,] c'[ b c e, d' e,]
+  | e'[ f e d c b] c[ d c b c a]
   %105
-
+  | f'[ g f e d c] b[ c b a b g]
+  | g'[ a g f e d] e[ f e d c b]
+  | c[ d c b a gis] a[ b a g! fis e]
+  | dis16[ fis] b4~ 16[ e,] e'4~
+  | e16[ a, a' g fis e] dis4.~
+  %110
+  | dis8[ e d!~] d[ c b~]
+  | b[ a g~] g[ f! e]
+  | \set tieWaitForNote = ##t
+    d16[ fis a c b~ s] b[ a g8 fis]
+    \set tieWaitForNote = ##f
+  | e[ b' e~] e[ dis16 cis dis8]
+  | e16[ fis g fis g e] fis[ b, dis fis a fis]
+  %115
+  | g4 b8 a fis4
+  | \mergeDifferentlyDottedOn e4.*2/3 \once\omit Flag \once\omit Stem e8~ e4.
+  | d~ d
+  | c~ c
+  | b~ b8[ <b, e g> <g' b e>]
+  %120
+  | <e a cis>[ <cis e a> <e a cis>] <f! a d>[ <d f a> <f a d>]
+  | <d g b>[ <b d g> <d g b>] <e g c>[ <g c e> <e g c>]
+  | <c f a>[ <a c f> <c f a>] <d f b>[ <f b d> <d f b>]
+  | <b e gis>[ <gis b e> \once\override NoteColumn.force-hshift = #0 <b e gis>] <c a'> s4
+  | \stemUp a'16[ b c d e f!] gis,[ a b c d e]
+  %125
+  | f[ e d f e d] c[ e d c b a]
+  | gis4.\mordent a\mordent
+  | b\mordent c\mordent
+  | d~ d
+  | \once\omit Stem c~ c
+  %130
+  | b b8[ c d]
+  | c[ d e] f[ e d]
+  | c4. <a c>8[ a' <a, c>]
+  | <g b>4. <g bes>8[ g' <g, bes>]
+  | <f a>4. q8[ f' q]
+  %135
+  | <e, gis>[ e' <e, gis>] a[ e' a,]
+  | <gis b>[ e' b] c[ fis c]
+  | d![ f! e] c[ e c]
+  | b[ d b] a[ c a]
+  | gis4 r8 <b, d e b'>4 r8
+  %140
+  | \stemNeutral <d gis b d>4 r8 <f! gis! b d f!>4 r8
+  | <e a c e>4 r8 r4 r8
+  | s1*6/8*4
+  %146
+  | \stemNeutral r32 a'[ b c b a gis a]
+    \bottom \clef treble fis[ \top a b c]
+    \bottom dis,[ \top a' b c b a gis a] \bottom dis,[ \top fis gis a]
+  | \bottom c,![ \top a' b c b a gis a] \bottom c,[ \top dis e fis]
+    \bottom a,[ \top a' b c b a gis a] \bottom fis[ \top a b c]
+  | \bottom dis,[ \top fis g! a] \bottom c,![ \top dis e fis] a,[ c b a]
+    gis[ b c d!] c[ b a b] gis[ b c d]
+  | f,![ b c d c b a b] r b[ c d] r b[ c d c b a b] r b[ c d]
+  %150
+  | r b[ c d c b a b] r b[ c d]
+    \override TupletBracket.tuplet-slur = ##t
+    \override TupletBracket.bracket-visibility = ##t
+    \tupletUp \tuplet 6/4 { \bottom gis,,[ b e \top dis b' f!] }
+    \tuplet 6/4 { \bottom gis,[ b e \top dis b' f!] }
+    \tuplet 6/4 { \bottom gis,[ b e \top dis b' f!] }
+  | \stemUp r8 <c e a>[ <b d! e gis>] <c e a>4\fermata r8
+  \fine
 }
 
 Alto = \context Voice = "Two" \relative c'' {
@@ -156,15 +220,15 @@ Alto = \context Voice = "Two" \relative c'' {
   %20
   | c4.~ c16[ c b a b8]
   | b16\rest \autoBeamOff b8. b8 \autoBeamOn a16[ cis e d cis b]
-  | a8[ b c~] c16[ a b c d a]
-  | gis[ e a b c! a] fis8[ g8. b16~]
+  | a8[ b cis~] cis16[ a b cis d a]
+  | gis[ e a b c! a] fis8[ gis8. b16~]
   | b[ b a gis a e] f!4.
   %25
   | e4 fis8 dis e4~
   | e16[ e] dis4 e8 s4
   | \stemUp a16[ g] a4~ \stemDown a8[ g16 fis g b]
   | \shape #'((0 . 0) (0 . 0) (0 . 0) (0 . 0.5)) Tie
-    e4.~ e8[ d16 c b a]
+    e4.~ \once\override NoteColumn.force-hshift = #0.1 e8[ d16 c b a]
   | \shape #'((0 . 0) (0 . 0) (0 . 0) (0 . 0.5)) Tie
     d4.~ \once\override NoteColumn.force-hshift = #1 d8[ c16 b a g]
   %30
@@ -194,7 +258,7 @@ Alto = \context Voice = "Two" \relative c'' {
   | e8.[ fis8 e16] r fis8[ d! a!16]
   | d8.[ e8 dis16] r e8[ c g16]
   %55
-  | c8 r16 dis8[ cis16] r d8[ b fis16]
+  | c8 r16 dis8[ cis16] r dis8[ b fis16]
   | b4.~ b8[ a g]
   | fis4.~ fis8[ d g]
   | e4.~ e16[ g fis e dis e]
@@ -224,7 +288,50 @@ Alto = \context Voice = "Two" \relative c'' {
   | \stemDown e16[ d e c e b] \stemUp \once\override NoteColumn.force-hshift = #0.4 g'8 f4
   %100
   | \stemDown d16[ c d b d a] \stemUp \once\override NoteColumn.force-hshift = #0.4 f'8 e4
-  | \stemDown c16[ b c a d b] s4.
+  | \stemDown c16[ b c a d b] \bottom c[ b c a d gis,]
+  | a[ gis a e gis e] a[ gis a e b' e,]
+  | c'[ b c a d gis,] a[ gis a c b d]
+  | s4. \top e16[ f e d e c]
+  %105
+  | a'[ b a g f e] d4.
+  | \bottom d4. c8[ \top d16 e fis gis]
+  | a[ f! \bottom e d c b] c4.
+  | b b
+  | e4 \top a8~ a[ fis dis]
+  %110
+  | \bottom b[ \top b' a] g4 fis8
+  | e4 d8 c16[ b c a b g]
+  | a4~ a16[ a'] g[ fis! e b dis a]
+  | e'16[ fis g fis g e] fis[ \bottom b, dis fis b fis]
+  | \top g8[ \bottom b, e^~] e[ dis16 cis dis8]
+  %115
+  | \once\override NoteColumn.force-hshift = #-0.8 e8 \top b'[ e~] e[ dis16 cis dis8]
+  | e16[ e, g b e b] c[ b c a c g]
+  | c[ a c fis, c' d,] b'[ a b g b fis]
+  | b[ g b e, b' c,] a'[ g a fis a e]
+  | a[ fis a dis, a' b,] <e g>8 s4
+  %120
+  | s1*6/8*4
+  | d4 c8\rest c\rest gis'[ a]
+  %125
+  | b4 g8\rest e[ a f~]
+  | f16[ \bottom e d f e d] c[ e d c b a]
+  | \top gis'4 g8\rest a4 g8\rest
+  | b4.~ b
+  | \stemUp \once\omit Dots \once\override NoteColumn.force-hshift = #-1 b
+    a
+  %130
+  | \stemDown a8[ gis a] e4 b'8~
+  | b[ a16 gis a8] d b4
+  | <e, b'>8[ <a, c e> <c e a>] f16[ \bottom e f d f c]
+  | \top f[ d f b, f' g,] e'[ \bottom d e c e bes]
+  | \top e[ c e a, e' f,] d'[ c \bottom d bes \top d a]
+  %135
+  | d[ b! \bottom d gis, d' e,] \top e'4 fis8
+  | s4 gis8 a4 8
+  | b[ d c] a[ c a]
+  | \stemUp \once\override NoteColumn.force-hshift = #0.4 gis4 \stemDown gis8 fis4 8
+  | <d f!>4 s2
 
 }
 
@@ -308,6 +415,52 @@ Tenor = \context Voice = "three" \relative c {
   | s4. \top f16[ d f b, f' g,]
   | s4. e'16[ c e a, e' f,]
   | s4. d'16[ b d gis, d' e,]
+  | s1*6/8*3
+  %104
+  | \bottom gis8 c8\rest d8\rest s4.
+  | s1*6/8*8
+  %113
+  | g,4 s2
+  | s1*6/8
+  %115
+  | \mergeDifferentlyDottedOn
+    \once\override NoteColumn.force-hshift = #0 e16[ fis g fis g e] fis[ b, dis fis b fis]
+  | g8[ e g~] g[ fis e]
+  | fis[ d fis~] fis[ e d]
+  | e[ c e~] e[ dis e]
+  | dis[ b dis] s4.
+  %120
+  | s1*6/8*3
+  | \top s4 \once\omit Flag \once\omit Stem \once\override NoteColumn.force-hshift = #0 e'8~
+    e16[ fis g! a b c]
+  | \bottom fis,,4 f8\rest b\rest d[ c]
+  %125
+  | b4 b8\rest c4 d8
+  | s4. \stemDown a4 e8\rest
+  | \stemUp f16[ e d f e d] c[ e d c b a]
+  | gis[ b e fis gis a] b[ \top c d e fis gis]
+  | \top a[ gis a f! e d] e[ d c e d c]
+  %130
+  | \bottom d[ c b d c b] d[ b a b a gis!]
+  | a[ b c b c a] b8[ e,16 b' \top e \bottom b]
+  | s1*6/8*3
+  %135
+  | s4. c16[ b c a c e,]
+  | \top b'[ \bottom a b gis b e,] a[ gis a fis a dis,]
+  | gis[ fis gis e fis gis] a[ gis a e gis a]
+  | \top b[ \bottom a b e, a b] c[ b c e, b' c]
+  | s1*6/8*3
+  %142
+  | s16 gis[ a e f! dis] e[ dis e b c gis]
+  | a[ dis e b c gis] a[ dis e b c gis]
+  | a[ c c e e a] c,[ e e a a c]
+  %145
+  | gis[ a e f dis e] b[ c gis a e fis]
+  | s1*6/8*3
+  | s4 gis''8 4 8
+  %150
+  | 4 8 s4.
+  | a,8\rest <c, e a>[ <b d e>] <e a>4\fermata s8
 
 }
 
@@ -415,9 +568,73 @@ Bass = \context Voice = "four" \relative c {
   | <a a'>4 b'8\rest b4\rest b8\rest
   | a4 b8\rest b4\rest b8\rest
   | a4 b8\rest b4\rest b8\rest
-  | e8[ fis gis] a[ a, a']
+  | e8[ fis gis!] a[ a, a']
   %105
-
+  | d,8[ e f] g[ g,] g'16[ a]
+  | b8[ a g] c[ c, e]
+  | \tieDown a4.~ a~
+  | a8.[ g16 a fis] g8.[ fis16 g e]
+  | c'8.[ b16 c a] b[ a b g a fis]
+  %110
+  | g[ fis g e fis d!] e[ d e c d b]
+  | c[ b c a b g] a4 g8
+  | fis[ e dis] e b'4
+  | e,4 r8 b'4 r8
+  | e4 r8 b'4 r8
+  %115
+  | \mergeDifferentlyDottedOn e,4. s16 b4 s16
+  | e,4 g8\rest a4 g8\rest
+  | d4 g8\rest g4 g8\rest
+  | c,4 g'8\rest fis4 g8\rest
+  | b,4 g'8\rest <g g'>16[ <fis fis'> <g g'> <e e'> <g g'> <d! d'!>]
+  %120
+  | <g g'>[ <e e'> <g g'> <cis, cis'> <g' g'> <a, a'>]
+    <f'! f'!>[ <e e'> <f f'> <d d'> <f f'> <c! c'!>]
+  | <f f'>[ <d d'> <f f'> <b, b'> <f' f'> <g, g'>]
+    <e' e'>[ <d d'> <e e'> <c c'> <e e'> <b b'>]
+  | <e e'>[ <c c'> <e e'> <a, a'> <e' e'> <f, f'>]
+    <d' d'>[ <c c'> <d d'> <b b'> <d d'> <a a'>]
+  | <d d'>[ <b b'> <d d'> <gis, gis'> <d' d'> <e, e'>] <c' c'>4 r8
+  | c'4 b8\rest b[ b' a]
+  %125
+  | gis4 r8 a[ f d]
+  | <e b'>4 r8 \once\override Voice.Rest.X-offset = #0.4 a,4\rest s8
+  | e4 e8\rest e4\rest e8\rest
+  | c\rest e[ fis] gis[ fis e]
+  | a\rest a[ b] c[ b a]
+  %130
+  | r8 e'[ fis] gis[ fis e]
+  | a,4.~ a8 gis4
+  | <a c'>16 <a, a'>[ <c c'> <b b'> <c c'> <a a'>] <d d'>4 g8\rest
+  | <g, g'>[ <a a'> <b b'>] <c c'>4 g'8\rest
+  | <f, f'>[ <g g'> <a a'>] <bes bes'>[ c' <d, d'>]
+  %135
+  | <e e'>4 g8\rest g4\rest g8\rest
+  | <e e'>4 g8\rest g4\rest g8\rest
+  | e4 g8\rest g4\rest g8\rest
+  | <e e'>4 g8\rest g4\rest g8\rest
+  | \stemUp r16 <b, b'>[ <d d'> <c c'> <d d'> <b b'>]
+    <gis' gis'>[ <e e'> <f! f'!> <e e'> <f f'> <d d'>]
+  %140
+  | \stemDown <b' b'>[ <fis fis'> <gis gis'> <fis fis'> <gis gis'> <e e'>]
+    <d' d'>[ <a a'> <b b'> <a a'> <b b'> <gis gis'>]
+  | <c c'>[ <gis gis'> <a a'> <e e'> <f! f'!> <dis dis'>]
+    <e e'>[ <gis gis'> <a a'> <e e'> <f f'> <dis dis'>]
+  | <e e'> gis[ a e f! dis] e[ dis e b c gis]
+  | a[ dis e b c gis] a[ dis e b c gis]
+  | a[ c c e e a] c,[ e e a a c]
+  %145
+  | gis[ a e f dis e] b[ c gis a e fis]
+  | <dis dis'>4 s2
+  | s1*6/8
+  | s4. \clef bass <e e'>4 r8
+  | r4 f'''!8 <d f>4 q8
+  %150
+  | <b d f>4 q8 s4.
+  | \set tieWaitForNote = ##t
+    <e,,, e'>4 \grace { \stemUp e16~ e'~ } \stemDown <e, e'>8
+    \grace { \stemUp a16~ a'~ } \stemDown <a, a'>4\fermata r8
+  \fine
 }
 
 \score {
