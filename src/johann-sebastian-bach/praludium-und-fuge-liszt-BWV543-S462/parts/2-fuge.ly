@@ -198,9 +198,11 @@ Sopran = \context Voice = "one" \relative c'' {
   | r b[ c d c b a b] r b[ c d]
     \override TupletBracket.tuplet-slur = ##t
     \override TupletBracket.bracket-visibility = ##t
+    \override Beam.positions = #'(7.5 . 7.5)
     \tupletUp \tuplet 6/4 { \bottom gis,,[ b e \top dis b' f!] }
     \tuplet 6/4 { \bottom gis,[ b e \top dis b' f!] }
     \tuplet 6/4 { \bottom gis,[ b e \top dis b' f!] }
+    \revert Beam.positions
   | \stemUp r8 <c e a>[ <b d! e gis>] <c e a>4\fermata r8
   \fine
 }
@@ -272,8 +274,11 @@ Alto = \context Voice = "Two" \relative c'' {
   %65
   | f'[ e f d f c] f[ d f b, f' g,]
   | e'[ d] e4 f16\rest a[ e c \bottom a \top g']
-  | fis[ e] fis4 g16\rest b[ fis d \bottom b \top a']
+  | fis[ e] fis4 g16\rest
+    \override Beam.positions = #'(-5.5 . -5.5)
+    b[ fis d \bottom b \top a']
   | g16[ fis] g4 a16\rest c[ g e \bottom c \top b']
+    \revert Beam.positions
   | a[ g] a4~ a8.[ 16 g fis]
   %70
   | e[ d] e4~ e8.[ 16 d c]
@@ -327,7 +332,9 @@ Alto = \context Voice = "Two" \relative c'' {
   | \top f[ d f b, f' g,] e'[ \bottom d e c e bes]
   | \top e[ c e a, e' f,] d'[ c \bottom d bes \top d a]
   %135
-  | d[ b! \bottom d gis, d' e,] \top e'4 fis8
+  | \override Beam.positions = #'(-7 . -6.5)
+    d[ b! \bottom d gis, d' e,] \top e'4 fis8
+    \revert Beam.positions
   | s4 gis8 a4 8
   | b[ d c] a[ c a]
   | \stemUp \once\override NoteColumn.force-hshift = #0.4 gis4 \stemDown gis8 fis4 8
