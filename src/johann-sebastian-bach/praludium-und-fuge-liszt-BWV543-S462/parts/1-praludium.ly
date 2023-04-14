@@ -60,10 +60,15 @@ Sopran = \context Voice = "one" \relative c'' {
     \tuplet 3/2 { \bottom cis,[ \top e g!] } \stemUp \tuplet 3/2 { e' gis, a }
     \clef treble
   %15
-  | \tuplet 6/4 { \bottom d16\rest f,[ a \top d e f] }
-    \tuplet 6/4 { \bottom d16\rest e,[ a \top e' f g] }
+  | \override Beam.positions = #'(4.6 . 4)
     \tuplet 6/4 { \bottom d16\rest f,[ a \top d e f] }
+    \override Beam.positions = #'(4.6 . 4)
+    \tuplet 6/4 { \bottom d16\rest e,[ a \top e' f g] }
+    \override Beam.positions = #'(4.6 . 4)
+    \tuplet 6/4 { \bottom d16\rest f,[ a \top d e f] }
+    \override Beam.positions = #'(4.4 . 3)
     \tuplet 6/4 { \bottom d16\rest g,[ a \top cis d e] }
+    \revert Beam.positions
   | \stemDown \tuplet 3/2 { f,[ a d] } \stemUp \tuplet 3/2 { e[ cis d] }
     \stemDown \tuplet 3/2 { g,[ bes d] } \stemUp \tuplet 3/2 { e[ cis d] }
     \stemDown \tuplet 3/2 { a[ d f] } \stemUp \tuplet 3/2 { e[ cis d] }
@@ -129,7 +134,9 @@ Sopran = \context Voice = "one" \relative c'' {
   | c[ c b c]
     \shape #'((0 . 1.5) (0 . 2) (0 . 2) (0 . 1)) Tie
     b4~ b16[ fis!32 gis! a8~] a16[ b gis8]
-  | <e a>16[ a' g! a] f[ f e f] e4~ e16[ b32 cis! d8~]
+  | <e a>16[ a' g! a] f[ f e f]
+    \shape #'((0 . 1.6) (0 . 2) (0 . 2) (0 . 1)) Tie
+    e4~ e16[ b32 cis! d8~]
   %50
   | d16[ e cis8] d4~ d16[ cis! d cis] d4~
   | d16[ cis! d cis] d4~ d16[ cis d e] f4~
@@ -239,7 +246,10 @@ Tenor = \context Voice = "three" \relative c {
     s8 \tuplet 3/2 { a'16[ cis, d] }
     s8 \tuplet 3/2 { b'16[ cis, d] }
   | s1*2
-  | \top e32[ d! e fis gis a b c] d[ b a gis \bottom b, d e f!]
+  | \top e32[ d! e fis gis a b c]
+    \override Beam.positions = #'(-5.5 . -5.5)
+    d[ b a gis \bottom b, d e f!]
+    \revert Beam.positions
     f[ gis, f' gis, f' gis, f' gis,] f'[ gis, f' gis, f' gis, f' gis,]
   | a1
   %25
