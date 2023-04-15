@@ -147,7 +147,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | dis8[ e d!~] d[ c b~]
   | b[ a g~] g[ f! e]
   | \set tieWaitForNote = ##t
-    d16[ fis a c b~ s] b[ a g8 fis]
+    dis16[ fis a c b~ s] b[ a g8 fis]
     \set tieWaitForNote = ##f
   | e[ b' e~] e[ dis16 cis dis8]
   | e16[ fis g fis g e] fis[ b, dis fis a fis]
