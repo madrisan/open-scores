@@ -72,6 +72,10 @@ The source code was compiled with `GNU LilyPond 2.23.82 (running Guile 2.2)` (Fe
  * [Chorale Prelude - Nun komm’ der Heiden Heiland (BWV 659)](https://github.com/madrisan/open-scores/releases/download/v28/Bach-Busoni-Chorale-Prelude-BWV659.pdf)
  * [Chaconne für violine allein (BWV 1004)](https://github.com/madrisan/open-scores/releases/download/v28/Bach-Busoni-Chaconne-fur-violine-allein-BWV1004.pdf)
 
+#### Johann Sebastian Bach / Franz Liszt
+
+ * Präludium und Fuge BWV543 S462
+
 #### Johann Sebastian Bach / Davide Madrisan
 
  * [Chorale Prelude - Jesu meine Freude (BWV 610)](https://github.com/madrisan/open-scores/releases/download/v28/JS-Bach-BWV610-Jesu-meine-Freude.pdf)
@@ -168,6 +172,7 @@ make -C src/johann-sebastian-bach/chromatische-fantasie-und-fugue-BWV_903
 make -C src/johann-sebastian-bach/die-kunst-der-fuge-BWV_1080
 make -C src/johann-sebastian-bach/italienisches-konzert-BWV_971
 make -C src/johann-sebastian-bach/jesu-meine-freude-BWV_610
+make -C src/johann-sebastian-bach/praludium-und-fuge-liszt-BWV543-S462
 make -C src/johann-sebastian-bach/sechs-kleine-praludien-BWV933-938
 make -C src/johann-sebastian-bach/siciliano-BWV_1031
 make -C src/johann-sebastian-bach/suites-anglaises/BWV809
