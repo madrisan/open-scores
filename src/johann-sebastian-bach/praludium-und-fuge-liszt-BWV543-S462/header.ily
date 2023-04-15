@@ -1,6 +1,6 @@
 \header {
   composer = "Johann Sebastian Bach (1685-1750)"
-  date = "Arranged for piano from 1842-50"
+  date = "Composed between 1708-1717, arranged for piano from 1842-50"
 
   footer = "Mutopia-2023/04/15"
 
