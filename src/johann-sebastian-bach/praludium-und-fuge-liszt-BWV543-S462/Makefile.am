@@ -28,7 +28,9 @@ EXTRA_DIST = Bach-Liszt-Praludium-und-Fuge-BWV543-S462.ly \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
-	     logo.ly
+	     logo.ly \
+	     parts/1-praludium.ly \
+	     parts/2-fuge.ly
 
 all: $(BUILT_SOURCES) Bach-Liszt-Praludium-und-Fuge-BWV543-S462
 
