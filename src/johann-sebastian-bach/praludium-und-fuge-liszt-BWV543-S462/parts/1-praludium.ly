@@ -6,6 +6,8 @@ Global = {
 
 bottom = { \change Staff = "lower" \stemUp }
 top = { \change Staff = "upper" \stemDown }
+lH = \markup { \italic\tiny "l.H." }
+rH = \markup { \italic\tiny "r.H." }
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
@@ -22,13 +24,16 @@ Sopran = \context Voice = "one" \relative c'' {
     \tuplet 3/2 { f[ e d] } \tuplet 3/2 { cis[ b a] }
   %5
   | \tuplet 3/2 { d[ e f] } \tuplet 3/2 { e[ d c] } \tuplet 3/2 { b[ c d] } \tuplet 3/2 { c[ b a] }
-    \tuplet 3/2 { gis[ a b] } \tuplet 3/2 { e,[ gis b] } \tuplet 3/2 { d[ c b] } \tuplet 3/2 { f'[ e d] }
-  | \tuplet 3/2 { c[ a b] } \tuplet 3/2 { c[ d e] } \tuplet 3/2 { f[ e d] } \tuplet 3/2 { c[ b a] }
-    gis[ f' b, f'] g,![ e' b e]
+    \stemDown \tuplet 3/2 { gis[ a b] } \tuplet 3/2 { e,[ gis b] }
+    \stemUp \tuplet 3/2 { d[ c b] } \tuplet 3/2 { f'[ e d] }
+  | \stemDown \tuplet 3/2 { c[ a b] } \tuplet 3/2 { c[ d e] }
+    \stemUp \tuplet 3/2 { f[ e d] } \tuplet 3/2 { c[ b a] }
+    gis_\lH [ f'^\rH b, f'] g,![ e' b e]
   | fis,[ e' a, e'] \clef bass \stemDown f,![ d' a d] e,[ d' gis, d'] e,[ c' g! c]
   | dis,[ c' fis, c'] d,![ b' f! b] cis,[ b' e, b'] c,![ a' e a]
-  | b,[ a' d, a'] b,[ gis' d gis] \tuplet 3/2 { a,[ c e] } \tuplet 3/2 { b'[ gis! a] }
-    \tuplet 3/2 { b,[ d e] } \tuplet 3/2 { b'[ gis a] }
+  | b,[ a' d, a'] b,[ gis' d gis]
+    \stemDown \tuplet 3/2 { a,_\lH[ c e] } \tuplet 3/2 { b'^\rH[ gis! a] }
+    \stemUp \tuplet 3/2 { b,[ d e] } \tuplet 3/2 { b'[ gis a] }
   %10
   | \tuplet 3/2 { c,[ e a] } \stemUp \tuplet 3/2 { b[ gis a] }
     \stemDown \tuplet 3/2 { d,[ f a] } \stemUp \tuplet 3/2 { b[ gis a] }
@@ -175,7 +180,7 @@ Alto = \context Voice = "Two" \relative c {
   | \once\override Voice.Rest.X-offset = #1.6 e16\rest
     g[ b g] c[ \bottom c, e c] a16\rest f[ a f] b[ b, d b]
   | \top c'16\rest e[ g e] bes'[ e, g e] a[ d, f d] g[ c, e c]
-  | \stemUp \once\override Voice.Rest.X-offset = #1.6 b'16\rest a[ b a] a4
+  | \stemUp \once\override Voice.Rest.X-offset = #1.6 b'16\rest a[ b g] a4
     \once\override NoteColumn.force-hshift = #0.9 gis8[ a]
     \once\override Stem.length = #5 b4~
   %40
@@ -193,7 +198,7 @@ Alto = \context Voice = "Two" \relative c {
   | s1
   | f16\rest a[ gis a] \stemUp \once\override NoteColumn.force-hshift = #0.5 gis[ gis fis gis]
     \once\override NoteColumn.force-hshift = #0.3
-    \shape #'((1 . 0) (0 . 0.4) (0 . 0.8) (-0.8 . 0.7)) Tie
+    \shape #'((1 . 0) (0 . 0.6) (0 . 0.9) (-0.8 . 0.7)) Tie
     e4~ \once\override NoteColumn.force-hshift = #0.3 e
   | s4 r16 \stemDown d'[ cis d]
     \stemUp \once\override NoteColumn.force-hshift = #0.5 cis[ cis b cis]
