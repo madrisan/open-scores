@@ -2,9 +2,9 @@
   composer = "Johann Sebastian Bach (1685-1750)"
   date = "Arranged for piano from 1842-50"
 
-  footer = "Mutopia-2023/04/08"
+  footer = "Mutopia-2023/04/15"
 
-  lastupdated = "2023 February 8"
+  lastupdated = "2023 April 15"
   license = "Creative Commons Attribution-ShareAlike 4.0"
   maintainerEmail = "davide.madrisan@gmail.com"
   maintainerWeb = "https://github.com/madrisan/open-scores"
