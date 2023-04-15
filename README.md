@@ -10,8 +10,8 @@ LilyPond is free software and part of the [GNU Project](https://gnu.org/).
 
 ## Scores in *pdf* format
 
-The following *pdf* can be generated from the source code, but they have been added here for convenience.
-If you prefer to create these files (and *midi* ones) yourself, skip to the next section.
+The following *pdf* files can be generated from source code, but have been added here for convenience.
+If you prefer to create these files yourself (and midi files as well), you can skip to the next section.
 
 Latest release: [Open Scores for Piano v28](https://github.com/madrisan/open-scores/releases)
 
@@ -143,9 +143,9 @@ Thanks to my harpist friend Tristan Rollet ([@Pluiesurlavitre](https://github.co
 
 ## How to manually create the `.pdf` and `.midi` files
 
-This package uses `GNU autotools` for configuration and build.
+This project uses `GNU autotools` for configuration and build.
 
-If you prefer to create the *pdf* (and *midi*) files yourself, please make sure the following software requirements are installed: `GNU autotools`, `git`, [`lilypond`](https://lilypond.org/).
+If you prefer to create the *pdf* (and *midi*) files yourself, please make sure the following software requirements are installed: `GNU autotools`, `git`, `make`, and [`lilypond`](https://lilypond.org/).
 
 Then you will need clone the repository and run `autoreconf` and `configure` to generate the required files:
 ```
