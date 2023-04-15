@@ -18,7 +18,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | f[ d f b, f' g,] e'[ d e c e b]
   | e[ c e a, e' f,] d'[ c d b d a]
   %5
-  | d[ b d g, d' e,] c'[ a c e a fis]
+  | d[ b d gis, d' e,] c'[ a c e a fis]
   | g8 e4~ e16[ dis e cis dis fis]
   | b4.~ b8[ a16 g fis e]
   | a4.~ a8[ g16 fis e d]
