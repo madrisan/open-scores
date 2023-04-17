@@ -125,12 +125,77 @@ Sopran = \context Voice = "one" \relative c'' {
   | a[ 8 8 g g16~] g[ 8 8 8 16]
   %50
   | g[ g8 g fis f! f f f f16]
-  | s1
-  | s1
-  | s1
-  | s1
+  | e8[ a a( g]) fis[ b b( a])
+  | g[ c c( b]) a[ d d( c])
+  | b4~ b16[ g b d] c4~ c16[ a c e]
+  | d4~ d16[ b d f!] e4~ e16[ c e g]
   %55
-
+  | fis[ e d8~] d16[ d g d] e4~ e16[ a, d a]
+  | b2 a
+  | g fis4 f'8\rest d
+  | d[( cis]) f\rest e e[( d]) f\rest fis
+  | fis[( e16 fis]) g8[ b,] a[ cis d fis]
+  %60
+  | g,[ e' a, cis] d4 g8\rest b,
+  | b[( a]) g'\rest d d[( c]) a'\rest f!
+  | f![( e]) a\rest e e[( d]) g\rest d
+  | d[( c]) g'\rest c, c[( b) b a]
+  | a[( gis]) r16 e'[ d c] b[ d e f!] gis,[ f' e d]
+  %65
+  | \stemNeutral c[ e fis gis] a,[ g'! f! e] d[ fis gis a] b,[ c d a]
+  | gis[ f'! e d] c[ b a8~] a16[ gis a b] d,[ f! e d]
+  | c[ e a c] b[ a b e] a,[ c b a] g![ f! g c]
+  | f,![ a g f] e[ d e a] d,[ f e d] c8[ c']
+  | c[\prall( b]) r b32[ c d16] d8\prall[( c]) r c32[ d e16]
+  %70
+  | e8\prall[( d16 e]) f!8[ a,] \stemUp g[( a16 b]) c8[ e]
+  | f,![ d' g, b] c4~ c16[ bes a g]
+  | \stemNeutral\slurNeutral a[ b! c d] c[ b c a] g[ b c d] c[ b c g]
+  | f![ c' d e] d[ c d f,] e[ d e g] c[ b c e]
+  | a8^![ d,~^-] d16[ a( b d]) g8^![ c,~^-] c16[ g^( a c)]
+  %75
+  | f!^-[( e d c]) b[ d b g] e[( f! g e]) c8[ e']
+  | d[( a f!) d'] c[( a e) c']
+  | b[( gis d) gis] a[( e c) a']
+  | a\prall[( gis]) r b b\prall[( a]) \stemUp r c
+  | \slurUp c[( b]) r a a[( g]) r b
+  %80
+  | b[( ais]) r cis cis[( b]) r d
+  | d[( cis]) r b b[( ais]) g'16\rest fis[ e! d]
+  | cis[ e fis g] ais,[ g' fis e] e[ fis gis ais] b,[ a'! g! fis]
+  | e[ b e fis] g4~ g16[ g fis e] d4~
+  | d16[ cis e b] ais8 s f'4\rest d16\rest fis,[ d' b]
+  %85
+  | g'4~^- g8.[ g16] fis4~^- fis8.[ fis16]
+  | e4~^- e8.[ e16^.] d[( cis d e]) fis4~
+  | fis16[ cis d e] d[ cis d8~] d16[ cis d e] d[ cis d8~]
+  | d16[ b cis d] cis[ b cis8~] cis16[ eis, gis b~] b16[ 8( ais16)]
+  | \once\override Beam.positions = #'(6.2 . 6.6)
+    \set subdivideBeams = ##t
+    \bottom b,,16_-[ d32 fis b \top d fis b] d8.[ d16] \stemUp d4( cis)
+  %90
+  | \once\override Beam.positions = #'(4.4 . 5.2)
+    \bottom ais,,16_-[ cis32 e g \top ais cis d] e8.[ e16] \stemUp <a, c e>4_( <b d>)
+  | s1
+  | s1
+  | s1
+  | s1
+  %95
+  | s1
+  | s1
+  | s1
+  | s1
+  | s1
+  %100
+  | s1
+  | s1
+  | s1
+  | s1
+  | s1
+  %105
+  | s1
+  | s1
+  | s1
   \bar "||"
 }
 
@@ -166,6 +231,39 @@ Alto = \context Voice = "Two" \relative c'' {
   | e[ b e d!] cis[ e a, cis]
   %50
   | d[ a d c!] b[ d g, b]
+  | c d\rest d\rest e e[( d]) d\rest fis
+  | fis[( e]) f\rest g g[( fis]) f\rest a~
+  | a16[ fis g d] e4~ e16[ g a e] fis4~
+  | fis16[ a b fis] g4~ g16[ b c g] a4~
+  %55
+  | a8.[ c16] b4~ b16[ b c e,] fis4~
+  | fis16[ fis e d] e[ fis g cis,~] cis[ e d cis] d[ e fis b,~]
+  | b[ d cis b] cis[ d e a,~] a[_\markup {
+      \concat { \small "( " \dynamic f \small " )" }
+    }
+    cis d e] fis[ g a fis]
+  | g8[ e a cis] a[ fis a d]
+  | b4~ b16[ fis' \once\override NoteColumn.force-hshift = #1.3 e d]
+    \once\override NoteColumn.force-hshift = #1.3 cis[ b a g] a8 r
+  %60
+  | b,2\rest g'8\rest a[ a( gis])
+  | e\rest c'[ c( b)] e,\rest e'[ e( d)]
+  | g,\rest d'[ d( c)] g\rest c[ c( b)]
+  | f\rest b[ b( a)] e\rest d[ d( c)]
+  | \once\override Beam.positions = #'(-6 . -4)
+    c[( b) \bottom b a] a^\prall[ (gis]) b\rest b
+  %65
+  | \slurUp b[( a]) g'\rest c, c^\parenthesize\prall[( b16 c]) d8[ f,]
+  | e[ gis a c] d,[ b'] e,[ gis]
+  | a[ f'! f( e)] e\rest d[ d( c)]
+  | c\rest b[ b( a)] a\rest g~ g16[ e f! d]
+  | e[ c d b] g[ b d f!] e[ d e c] g[ c e g]
+  %70
+  | f![ e f g] a[ b c d] \top e2~
+  | e8[ d] b\rest f'~ f16[ f( e d]) e8[ \bottom c] \top
+  | s1*17
+  %89
+  | s2 <e g>
 
 }
 
@@ -200,6 +298,21 @@ Tenor = \context Voice = "three" \relative c' {
   %40
   | d8[ b] d[ g!] e[ cis] e[ ais]
   | fis[ d] fis[ b] s2
+  | s1*36
+  %78
+  | e16[ b c d] gis,[ \clef treble f'! e d] c[ e fis gis] \clef bass a,8[ \top e']
+  | \slurDown e[( dis]) s fis fis[( e]) s g
+  %80
+  | g[( fis]) s e e[( d]) s fis
+  | fis[( eis]) s gis gis[( fis]) e4\rest
+  | s1
+  | e4\rest r16 cis'[ d e] ais,8 a\rest g16\rest ais[ b fis]
+  | g8 f\rest d16\rest g![ fis e] d[ cis d fis] b,8 c\rest
+  %85
+  | \tieDown r16 ais'[ b cis] b[ ais b8~] b16[ ais b cis] b[ ais b8~]
+  | b16[ b cis d] cis[ b cis8~] cis4~ cis16[ b cis d]
+  | g,4~_- g8.[ 16_.] fis4~_- fis8.[ fis16_.]
+  | e4~_- e8.[ 16] d4_- cis8[ e!]
 
 }
 
@@ -273,7 +386,69 @@ Bass = \context Voice = "four" \relative c {
   | g8[ g,] r g' g^\prall[( fis]) r a
   | a8^\prall[( g]) r b b^\prall[( a16 b]) c8[ e,]
   %55
-
+  | d[ fis g b] c,[ a' d, fis]
+  | g,[ g' cis, e] fis,[ fis' b, d]
+  | e,[ e' a, cis] d,16[ a' b cis] d[ e fis d]
+  | e[ g a b] cis,[ b' a g] fis[ a b cis] d,[ c'! b a]
+  | g[ b cis e] e,[ fis g8~] g16[ g fis e] fis[ g a d,]
+  %60
+  | b'[ d, cis b] cis[ d e a,] fis'[ e d c!] b[ c d b]
+  | c[ e a g!] fis[ gis a fis] gis[ e a g!] fis[ gis a c]
+  | b[ a gis fis!] gis[ e a g!] fis[ c' fis, e] fis[ d g f!]
+  | e[ b' e, d] e[ c f! e] d[ e f gis,] a[ b c dis,]
+  | \stemDown\slurDown e[ e' d! e] c4 d e
+  %65
+  | a,16[ gis' a b] c[ b a g!] fis8[( f!]) r b,
+  | c4 b8\rest f'!16[ e] f8[ d] e4
+  | a,8[ a'] b,\rest g'! g[( f!]) r e
+  | e[( d]) r c c[( b]) a4
+  | g4 b,\rest c2\rest
+  %70
+  | \stemNeutral\slurNeutral s2 r16 d''[ c b] a[ g fis e]
+  | d[ c b a] g[ f! e d] c8 r r4
+  | f''!8[( c a f']) e[( c g e'])
+  | d[( b g b]) c[( g e c])
+  | f16[( e f a]) d8^![ f,~^-] f16[ d( e g]) c8^![ e,~^-]
+  %75
+  | e16[ c( d f!] g[ f g b]) c8^-[ c,] r16 e'[ c a]
+  | f![ gis a b] a[ gis a f] e[ gis a b] a[ gis a e]
+  | d[ a' b c] b[ a b d,] c[ b c e] a[ e c' a]
+  | g,2\rest e'4\rest b16\rest b'[ a g!]
+  | fis![ a b c] dis,[ c' b a] g[ b cis dis] e,[ fis e d!]
+  %80
+  | cis[ e fis g] ais,[ g' fis e] d[ fis gis ais] b,[ cis b a!]
+  | gis[ b cis d] eis,[ gis fis eis] fis[ cis fis gis] ais[ fis b8]
+  | b^\prall[( ais]) r cis cis^\prall[( b]) r d
+  | d^\prall[( cis16 d]) e8[ g,] fis[ ais b d]
+  | e,[ cis' fis, ais] b[ fis d' b]
+  %85
+  | e[( b' g') e,] d[( b' fis') d,]
+  | cis[( ais' e') ais,] b[( fis d b])
+  | e16[ ais b cis] b[ ais b e,^.] d^-[ ais' b cis] b[ ais b d,^.]
+  | cis^-[ gis' ais b] ais[ gis ais cis,^.] b8--[ eis,( fis) fis'-.]
+  | s2 <b, e g>
+  %90
+  | s2 \stemUp\slurDown\acciaccatura \parenthesize g'8 \stemDown <b, fis'>2
+  | \clef treble s1
+  | s1
+  | s1
+  | s1
+  %95
+  | s1
+  | s1
+  | s1
+  | s1
+  | s1
+  %100
+  | s1
+  | s1
+  | s1
+  | s1
+  | s1
+  %105
+  | s1
+  | s1
+  | s1
   \bar "||"
 }
 
