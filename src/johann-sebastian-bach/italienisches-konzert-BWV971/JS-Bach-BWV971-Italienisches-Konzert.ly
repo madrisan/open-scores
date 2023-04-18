@@ -9,17 +9,27 @@
 }
 
 \paper {
-  bottom-margin = 13\mm
+  #(set-paper-size "a4")
+  annotate-spacing = ##f
+  bottom-margin = 8\mm
   first-page-number = 0
   indent = 0.0
-  last-bottom-spacing.padding = #1
+% last-bottom-spacing.padding = #2
   line-width = 18.6\cm
+  markup-system-spacing =
+     #'((basic-distance . 2)
+        (minimum-distance . 1)
+        (padding . 2)
+        (stretchability . 20))
   print-all-headers = ##t
-  ragged-bottom = ##f
   ragged-last-bottom = ##f
-  tagline = ##f
-  top-margin = 13\mm
-% markup-system-spacing.basic-distance = #10
+  ragged-bottom = ##f
+  system-system-spacing =
+     #'((basic-distance . 2)
+        (minimum-distance . 1)
+        (padding . 2)
+        (stretchability . 25))
+  top-margin = 10\mm
 }
 
 \bookpart {
@@ -57,26 +67,20 @@
         \line { \abs-fontsize #20 "BWV 971" }
         \null\null\null\null
         \fill-line { \abs-fontsize #20 "For Piano or Harpsichord" }
-
-        \null\null\null\null
-        \fill-line {
-          \override #'(thickness . 1)
-          \draw-squiggle-line #0.5 #'(14 . 0) ##t
-        }
         \null\null
-        \fill-line {
-          \abs-fontsize #13
-          \smallCaps " Lavender.Blue Open Scores"
-        }
-        \fill-line { \abs-fontsize #10 "Engraved by Davide Madrisan" }
-        \fill-line {
-          \abs-fontsize #9
-          \typewriter "https://github.com/madrisan/open-scores/"
-        }
-        \null\null\null\null
+        \null\null
+      }
+    }
+  }
 
+  \include "./logo.ly"
+
+  \markup {
+    \fill-line {
+      \center-column {
+        \null\null\null\null
         \fill-line { \abs-fontsize #10 "Based on a previous work of Jay Anderson" }
-        \null
+        \null\null
       }
     }
   }
