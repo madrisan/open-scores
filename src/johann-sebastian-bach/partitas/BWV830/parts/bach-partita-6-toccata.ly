@@ -176,26 +176,36 @@ Sopran = \context Voice = "one" \relative c'' {
   %90
   | \once\override Beam.positions = #'(4.4 . 5.2)
     \bottom ais,,16_-[ cis32 e g \top ais cis d] e8.[ e16] \stemUp <a, c e>4_( <b d>)
-  | s1
-  | s1
-  | s1
-  | s1
+  | s1*2
+  | \once\override Beam.positions = #'(5.8 . 6.6)
+    \bottom b,16[ d32 fis b \top d fis b] d8.[ d16] \stemUp d4( cis)
+  | \once\override Beam.positions = #'(6.2 . 7.6)
+    \bottom fis,,16[ a32 c! d \top a' d fis] a8.[ c,!16] \stemUp <a c>4( <g b>)
   %95
-  | s1
-  | s1
-  | s1
-  | s1
+  | s1*2
+  | \once\override Beam.positions = #'(7.2 . 8.2)
+    \bottom gis,16[ b32 d f! \top b d f!] b8.[ <d, gis b>16] q4( <c a'>)
+  | \once\override Beam.positions = #'(6.2 . 7.6)
+    \bottom dis,,16[ fis32 a c \top a' c fis] a8.[ <c, dis fis a>16] q4( <b e g!>)
+    \clef bass
   | s1
   %100
   | s1
+  | \once\override Beam.positions = #'(6.2 . 7.6)
+    \bottom \clef bass
+    e,,16[ g32 b e \top g b e] g8.[ g16] \stemUp g8.[ e16]
+    \slurDown\acciaccatura e8 f!4\parenthesize\mordent
+  | \once\override Beam.positions = #'(6.2 . 7.6)
+    \bottom b,,16[ d32 f! gis \top b d f!] gis8.[ <b, d e gis>16] <b d gis>4( <a c a'>)
   | s1
-  | s1
-  | s1
-  | s1
+  | b'8.[ <g, c e>16] <a c fis>8.[ <fis b dis>16]
+    \once\override NoteColumn.force-hshift = #1.5 b4( ais)]
   %105
+  | \clef bass s1
   | s1
-  | s1
-  | s1
+  | s4 <fis a> <e b'>2
+    \override Score.TextMark.self-alignment-X = #CENTER
+    \textEndMark \markup { \musicglyph "scripts.ufermata" }
   \bar "||"
 }
 
@@ -264,7 +274,21 @@ Alto = \context Voice = "Two" \relative c'' {
   | s1*17
   %89
   | s2 <e g>
-
+  | s1*3
+  | s2 g
+  | s1*3
+  %97
+  | \stemUp s2 e'
+  | s1*3
+  %101
+  | \stemDown s2 <a, c>
+  | \stemUp s e'
+  | s1
+  | s2 <e, e'>2
+  | s1*2
+  | r8 r16 e' b8.[ dis16]
+    \once\override NoteColumn.force-hshift = #0.5
+    <a dis>4( <gis e'>)
 }
 
 Tenor = \context Voice = "three" \relative c' {
@@ -313,6 +337,14 @@ Tenor = \context Voice = "three" \relative c' {
   | b16[ b cis d] cis[ b cis8~] cis4~ cis16[ b cis d]
   | g,4~_- g8.[ 16_.] fis4~_- fis8.[ fis16_.]
   | e4~_- e8.[ 16] d4_- cis8[ e!]
+  | s1*8
+  %97
+  | \bottom s2 gis4^( a)
+    \clef bass
+  | s1*3
+  %101
+  | s1*6
+  | s4 <dis,, fis b> <b e>2
 
 }
 
@@ -429,26 +461,61 @@ Bass = \context Voice = "four" \relative c {
   | s2 <b, e g>
   %90
   | s2 \stemUp\slurDown\acciaccatura \parenthesize g'8 \stemDown <b, fis'>2
-  | \clef treble s1
-  | s1
-  | s1
-  | s1
+  | \clef treble
+    \tuplet 7/4 { \bottom b'16[ d \top fis g a! g fis] }
+    \omit TupletNumber
+    \tuplet 7/4 { \bottom e16[ g \top b cis d cis b] }
+    \tuplet 7/4 { \bottom a,!16[ cis \top e fis g fis e] }
+    \tuplet 7/4 { \bottom d16[ fis \top ais b cis! b ais] }
+  | \tuplet 7/4 { \bottom g,16[ b \top d e fis e d] }
+    \tuplet 7/4 { \bottom cis16[ eis \top gis ais b ais gis] }
+    \tuplet 7/4 { \bottom fis16[ ais \top cis d e! d cis] }
+    \tuplet 7/4 { \bottom ais16[ cis \top e fis g! fis e] }
+  | \bottom \clef bass
+    \stemDown s2 <e,, g b>
+  | s <g b d>
   %95
-  | s1
-  | s1
-  | s1
-  | s1
-  | s1
+  | \clef treble
+    \tuplet 7/4 { \bottom e'16[ g \top ais b cis b ais] }
+    \tuplet 7/4 { \bottom dis,16[ fis \top a! b c! b a] }
+    \tuplet 7/4 { \bottom d,!16[ f! \top gis a b a gis] }
+    \tuplet 7/4 { \bottom cis,16[ e \top g! a bes a g] }
+  | \tuplet 7/4 { \bottom c,!16[ dis \top fis g a g fis] }
+    \bottom \clef bass
+    \tuplet 7/4 { \bottom b,!16[ d! \top eis fis gis fis eis] }
+    \tuplet 7/4 { \bottom ais,16[ cis \top e! fis g! fis e] }
+    \tuplet 7/4 { \bottom a,!16[ c! \top dis e fis e dis] }
+  | \bottom\stemDown s2 \clef treble <c e>
+  | s2 <e, e'>
+  | \tuplet 7/4 { \bottom e,16[ g \top b c d! c b] }
+    \tuplet 7/4 { \bottom a16[ c \top e fis g fis e] }
+    \tuplet 7/4 { \bottom d16[ fis \top a b c b  a] }
+    \tuplet 7/4 { \bottom g16[ b \top \clef treble dis e fis e dis] }
   %100
-  | s1
-  | s1
-  | s1
-  | s1
-  | s1
+  | \bottom \clef treble
+    \tuplet 7/4 { \bottom c16[ e \top g a b a g] }
+    \tuplet 7/4 { \bottom fis16[ ais \top cis dis e dis cis] }
+    \tuplet 7/4 { \bottom b16[ dis \top fis g a! g fis] }
+    \tuplet 7/4 { \bottom dis16[ fis \top a b c! b a] }
+  | \bottom \stemDown s2 <a,, c e>
+  | \clef treble s2 \stemUp <c e>
+  | \tuplet 7/4 { \bottom c'16[ e \top fis g! a g fis] }
+    \tuplet 7/4 { \bottom b,16[ dis \top e fis g fis e] }
+    \tuplet 7/4 { \bottom a,16[ c \top dis e fis e dis] }
+    \tuplet 7/4 { \bottom fis,16[ dis'! \top a' b c b a] }
+  | \bottom\stemDown g,8.[ \clef bass c,16] a8.[ b16] <cis, e g cis>2
   %105
-  | s1
-  | s1
-  | s1
+  | \tuplet 7/4 { \bottom dis16[ fis \top a! b c! b a] }
+    \tuplet 7/4 { \bottom e[ g \top ais b cis b ais] }
+    \tuplet 7/4 { \bottom f![ gis \top b cis! d! cis b] }
+    \tuplet 7/4 { \bottom fis[ a! \top \clef treble b c! dis c b] }
+  | \tuplet 7/4 { \bottom g!16[ ais \top cis d! e d cis] }
+    \tuplet 7/4 { \bottom gis16[ b \top d e f! e d] }
+    \tuplet 7/4 { \bottom a!16[ c! \top dis e fis e dis] }
+    \tuplet 7/4 { \bottom ais16[ cis \top e fis g fis e] }
+  | \bottom\stemDown b4 b, e,2
+    \tweak direction #DOWN
+    \textEndMark \markup { \musicglyph "scripts.dfermata" }
   \bar "||"
 }
 
