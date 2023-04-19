@@ -84,4 +84,5 @@
   }
 }
 
-\include "./parts/bach-partita-6-toccata.ly"
+\include "./parts/bach-partita-6-1-toccata.ly"
+\include "./parts/bach-partita-6-2-allemanda.ly"

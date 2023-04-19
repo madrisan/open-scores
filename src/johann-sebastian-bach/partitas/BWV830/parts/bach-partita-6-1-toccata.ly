@@ -1,6 +1,6 @@
 Global = {
   \key e \minor
-  \time 4/4
+  \time 2/2
   \include "../global.ly"
 }
 
