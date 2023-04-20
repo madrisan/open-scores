@@ -206,7 +206,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | s4 <fis a> <e b'>2
     \override Score.TextMark.self-alignment-X = #CENTER
     \textEndMark \markup { \musicglyph "scripts.ufermata" }
-  \bar "||"
+  \fine
 }
 
 Alto = \context Voice = "Two" \relative c'' {
@@ -516,7 +516,7 @@ Bass = \context Voice = "four" \relative c {
   | \bottom\stemDown b4 b, e,2
     \tweak direction #DOWN
     \textEndMark \markup { \musicglyph "scripts.dfermata" }
-  \bar "||"
+  \fine
 }
 
 \score {

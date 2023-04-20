@@ -85,4 +85,5 @@
 }
 
 \include "./parts/bach-partita-6-1-toccata.ly"
+\pageBreak
 \include "./parts/bach-partita-6-2-allemanda.ly"
