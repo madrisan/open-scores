@@ -490,6 +490,7 @@ Bass = \context Voice = "four" \relative c {
   | \tuplet 7/4 { \bottom e,16[ g \top b c d! c b] }
     \tuplet 7/4 { \bottom a16[ c \top e fis g fis e] }
     \tuplet 7/4 { \bottom d16[ fis \top a b c b  a] }
+    \once\override Beam.positions = #'(5 . 4.5)
     \tuplet 7/4 { \bottom g16[ b \top \clef treble dis e fis e dis] }
   %100
   | \bottom \clef treble
@@ -508,6 +509,7 @@ Bass = \context Voice = "four" \relative c {
   | \tuplet 7/4 { \bottom dis16[ fis \top a! b c! b a] }
     \tuplet 7/4 { \bottom e[ g \top ais b cis b ais] }
     \tuplet 7/4 { \bottom f![ gis \top b cis! d! cis b] }
+    \once\override Beam.positions = #'(5 . 3.5)
     \tuplet 7/4 { \bottom fis[ a! \top \clef treble b c! dis c b] }
   | \tuplet 7/4 { \bottom g!16[ ais \top cis d! e d cis] }
     \tuplet 7/4 { \bottom gis16[ b \top d e f! e d] }

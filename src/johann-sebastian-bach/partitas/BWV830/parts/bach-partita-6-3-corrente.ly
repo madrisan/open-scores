@@ -13,11 +13,11 @@ Sopran = \context Voice = "one" \relative c'' {
   \override Rest.staff-position = #0
   \set baseMoment = #(ly:make-moment 1/8)
   \stemNeutral\slurNeutral\tieNeutral
-  \partial 16 b16^\markup {
-      \tiny\italic
-      \concat { "(" \dynamic f " sempre)" }
-  }
   \repeat volta 2 {
+    \partial 16 b16^\markup {
+        \tiny\italic
+        \concat { "(" \dynamic f " sempre)" }
+    }
   %1
   | b16 e,8 dis e16
   | fis c'8 b a16~
@@ -95,25 +95,106 @@ Sopran = \context Voice = "one" \relative c'' {
   | d[ \top eis gis b] r8 \stemUp <cis,, e fis ais>8_.
   | <b dis fis b>4_- r16
   }
-
+  \break
+  \repeat volta 2 {
+    \partial 16 \stemNeutral fis''16
+  %55
+  | fis16 b8 a! c!16~
+  | c16 dis,8 fis a,16~
+  | a16 c8 b a16~
+  | a32 fis g16
+    \set subdivideBeams = ##t r b32 a g fis e16~ \set subdivideBeams = ##f
+  | e32 gis a16. b32 c16. d32 e16~
+  %60
+  | e32 cis d16
+    \set subdivideBeams = ##t r a32 g f e d16~ \set subdivideBeams = ##f
+  | d32 fis! g16. a32 b16. c32 d16~
+  | d32 b c16 \set subdivideBeams = ##t r c32 d e f g16~ \set subdivideBeams = ##f
+  | g32[ a g cis,] g'[ a g cis,] g'[ a g cis,]
+  | f[ g f d] f[ g f d] f[ g f d]
+  %65
+  | e[ f e d] gis[ a gis d] b'[ c b d,]
+  | e c a'16
+    \set subdivideBeams = ##t
+    r bes,32 a g f e16~
+  | e32 f d16 r c'32 b a g fis16~
+  | fis32 gis e16 r f'32 e d! c b16^~
+    \set subdivideBeams = ##f
+  | b c8 gis a16~
+  %70
+  | a e8 f cis16~
+  | cis d8 a bes16
+  | f'32 e d16. c32 b!16. a'32 gis16~
+  | \set subdivideBeams = ##t
+    gis32 a b c d e f8 gis,16~
+  | gis( a) r c'32 b a g fis! e
+    \set subdivideBeams = ##f
+  %75
+  | fis[ a fis e] dis[ fis c! b] a[ fis' b, a]
+  | g[ e' b a] g[ b g fis] e[ g b d]
+  | cis[ e cis b] ais[ cis g! fis] e[ cis' fis, e]
+  | dis[ b' fis e] dis[ fis dis cis] b8~
+  | b16 b'8 e, fis16~
+  %80
+  | fis c'!8 b a16~
+  | a g8 fis32 e fis16 a~
+  | a( dis,) r dis'32 e fis16 a,~
+  | a g r gis'32 a b16 d,!~
+  | d c r cis32 d e16 g,~
+  %85
+  | g f r f'32 g a16 c,!~
+  | c b r b32 c d16 f,
+  | e32 f g16. f32 e16. d32 c16
+  | d32 e f16. e32 d16. c32 b16
+  | \set subdivideBeams = ##t
+    c32 d e8 f32 g a b c a
+    \set subdivideBeams = ##f
+  %90
+  | f32[ d' b g] f[ d' b g] f[ d' b g]
+  | e32[ c' g e] c[ g' e c] b[ c d e]
+  | f32[ d' b g] f[ d' b g] f[ d' b g]
+  | e32[ c' g e] c[ g' e c] b[ c d e]
+  | fis!32 [ ees d c ] a [ c d ees] fis [ ees d c ]
+  %95
+  | f32 [ d c b ] aes [ b c d ] f [ d c b ]
+  | ees32 [ c b a!] fis![ a b c ] ees [ c b a ]
+  | fis'!32[ ees d c ] aes'[ f ees! d ] b'![ aes! g f!]
+  | c'32 b c8 e!16 g, b
+  | c8
+    \set subdivideBeams = ##t
+    r16 e32 d c b a16~
+    \set subdivideBeams = ##f
+  %100
+  | a32( bes) g16.( a32) f!16.( g32) e16~
+  | e32( f d16)
+    \set subdivideBeams = ##t
+    r d'32 e f e d16
+    \set subdivideBeams = ##f
+  | b'32 e, f16. e32 d16. c32 b16
+  | c32 b a16
+    \set subdivideBeams = ##t
+    r dis32 e fis! g a16~
+    \set subdivideBeams = ##f
+  | a32 b c16. b32 a16. g32 fis16
+  %105
+  | g32( fis g8) b,( a16)
+  | fis'32( e fis8) a,( g16)
+  | e'32( dis e8) g,( fis16)
+  | dis'32[ b c b] e[ b c b] fis'[ b, c b]
+  | g'32[ e dis cis] b[ e fis g] dis[ fis g a]
+  %110
+  | g[ b e,16~] e32[ fis e d!~] d[ e d c~]
+  | c[ d c b]~ b[ c b a]~ a[ b a g]~
+  | g c f,16.( c'32) e,16.( c'32) dis,16~
+  | dis8 s4
+  | s4.
+  %115
+  | b''8 r <fis, a b dis>_.
+  | <e g b e>4_- r16
+    \override Score.TextMark.self-alignment-X = #CENTER
+    \textEndMark \markup { \musicglyph "scripts.ufermata" }
+  }
   \fine
-}
-
-Alto = \context Voice = "Two" \relative c'' {
-  \voiceTwo
-  \override Rest.staff-position = #0
-  \stemDown
-  \partial 16 s16
-  %1
-}
-
-Tenor = \context Voice = "three" \relative c' {
-  \voiceThree
-  \override MultiMeasureRest.staff-position = #0
-  \override Rest.staff-position = #0
-  \stemUp\slurDown\tieDown
-  \partial 16 s16
-  %1
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -121,8 +202,8 @@ Bass = \context Voice = "four" \relative c {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \stemNeutral\slurNeutral\tieDown
-  \partial 16 r16
-  \repeat volta 4 {
+  \repeat volta 2 {
+    \partial 16 r16
   %1
   | e8_\markup {
       \tiny\italic
@@ -192,6 +273,86 @@ Bass = \context Voice = "four" \relative c {
   | f'8\rest \clef bass fis^.[ fis,^.]
   | b,4-- r16
   }
+  \repeat volta 2 {
+    \partial 16 \stemNeutral r16
+  %55
+  | b8_\markup { \tiny\italic "(sempre legato)" } dis fis
+  | a c dis
+  | fis dis b
+  | e, e' d!
+  | c a g!
+  %60
+  | f d' c!
+  | b g f
+  | e c' b!
+  | a f! e
+  | d bes' a
+  %65
+  | gis e d
+  | c cis a
+  | d dis b
+  | e e, gis
+  | a b c
+  %70
+  | f,! g a
+  | bes c! d
+  | gis, e' d
+  | c a e
+  | a a' c
+  %75
+  | dis fis b,
+  | e e, g
+  | ais cis fis,
+  | <b, b'> b dis
+  | e 8 g c!
+  %80
+  | dis, fis b
+  | e, a c,
+  | b b' dis,
+  | e e, gis
+  | a a' cis,
+  %85
+  | d d, f!
+  | g g' b,
+  | c b' a
+  | b, a' g
+  | a, g' f
+  %90
+  | \tieDown g, g' g,~_-
+  | g g' g,~_-
+  | g g' g,~_-
+  | g g' g,~_-
+  | g g' g,~_-
+  %95
+  | g g' g,~_-
+  | g g' g,~_-
+  | g d' f,!
+  | e! f! g
+  | c,_- c' e
+  %100
+  | cis a a'
+  | d, b'! a
+  | gis e e'
+  | a, fis! e
+  | dis fis b,
+  %105
+  | e d'! c
+  | d, c' b
+  | c, b' a
+  | b,^- cis'! dis
+  | b,^- e' fis
+  %110
+  | b,,^- fis'' e
+  | d c b
+  | a 8 g fis!
+  | b32[ b, cis dis] e[ \top \clef bass fis! g a] \bottom \clef treble b[ cis dis e]
+  | fis[ \top \clef treble g a b] c![ \bottom b cis dis] e[ \top fis g a]
+  %115
+  | \bottom \clef bass r8 g,,,_. b_.
+  | e,4_- r16
+    \tweak direction #DOWN
+    \textEndMark \markup { \musicglyph "scripts.dfermata" }
+  }
   \fine
 }
 
@@ -204,13 +365,11 @@ Bass = \context Voice = "four" \relative c {
       \Global
       \clef treble
       \Sopran
-      \Alto
     >>
     \context Staff = "lower" <<
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \clef bass
-      \Tenor
       \Bass
     >>
   >>
