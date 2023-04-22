@@ -11,7 +11,6 @@ Sopran = \context Voice = "one" \relative c' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #-2
   \override Rest.staff-position = #0
-  \set baseMoment = #(ly:make-moment 1/8)
   \stemNeutral\slurNeutral\tieNeutral
   \repeat volta 2 {
     \partial 2 { e8[ fis g a] }
