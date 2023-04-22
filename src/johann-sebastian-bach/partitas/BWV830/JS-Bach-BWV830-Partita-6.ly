@@ -19,7 +19,7 @@
   markup-system-spacing =
      #'((basic-distance . 2)
         (minimum-distance . 1)
-        (padding . 2)
+        (padding . 1.8)
         (stretchability . 20))
   print-all-headers = ##t
   ragged-last-bottom = ##f
@@ -27,7 +27,7 @@
   system-system-spacing =
      #'((basic-distance . 2)
         (minimum-distance . 1)
-        (padding . 2)
+        (padding . 1.5)
         (stretchability . 25))
   top-margin = 10\mm
 }

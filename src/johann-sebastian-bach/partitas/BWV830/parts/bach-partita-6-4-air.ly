@@ -32,12 +32,12 @@ Sopran = \context Voice = "one" \relative c' {
   | <dis fis>2
   }
   \repeat volta 2 {
-    \partial 2 { fis,4 c'~ }
+    \partial 2 { \stemUp\tieUp fis,4 c'~ }
   | c b~ b a~
   | a^( g8[ fis]) g4 e'~
   %15
   | e d~ d c~
-  | c b8[ a] b4 g'
+  | c \stemNeutral\tieNeutral b8[ a] b4 g'
   | fis c'~ c8[^( b a g)]
   | fis4 c~ c8[ b] e4~
   | e8[ d c b] d[ c b a]
@@ -70,6 +70,22 @@ Alto = \context Voice = "Two" \relative c'' {
   \voiceTwo
   \override Rest.staff-position = #0
   \stemDown
+  \repeat volta 2 {
+    \partial 2 s2
+  %1
+  | s1*11
+  | s2
+  }
+  \repeat volta 2 {
+    \partial 2 dis,2
+  %13
+  | e fis
+  | <b, e> e
+  | fis a
+  | <d, g> s2
+  | s1*11
+  | s2
+  }
 }
 
 Bass = \context Voice = "four" \relative c {
