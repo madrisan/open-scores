@@ -33,36 +33,52 @@ Sopran = \context Voice = "one" \relative c'' {
   | g8.\arpeggio[( e32 g]) fis8.[ g'16] fis8.[ e16]
   | d8.[ cis16] \appoggiatura b8 a8.[ b16] fis16[ cis'32 d e d cis16]
   | <e, cis'>4_( <dis b'>)
+    \set subdivideBeams = ##f
   }
   \repeat volta 2 {
-    \partial 4 { s4 }
-  | s2.
-  | s2.
+    \partial 4 { fis8.\arpeggio[ 16] }
+  | fis4( g16)[ b b32\prall a b16] d!4~
+  | <b d>2.~
   %15
-  | s2.
-  | s2.
-  | s2.
-  | s2.
-  | s2.
+  | <b d>8.[ <a c>16] b8.[ d16] \appoggiatura a8 gis8.[ a16]
+  | \set subdivideBeams = ##t
+    a4( gis16)\prall~[ gis32 fis! gis fis e16] f'!8.[ f16]
+    \set subdivideBeams = ##f
+  | f!4( e2~)
+  | e8[ cis~] cis[ d16. b!32]
+    \once\override NoteColumn.force-hshift = #3.5 c!8.\arpeggio[ c16]
+  | c4
+    \shape #'((0 . 0.5) (0 . 1.4) (0 . 1.8) (0 . 1.2)) Tie
+    b2~
   %20
+  | b8 s a16_~[ a64 b a gis a16 e32 b'] s4
   | s2.
-  | s2.
-  | s2.
-  | s2.
-  | s2.
+  | \slurDown \appoggiatura a'8 b8.[ f!16] \appoggiatura f8 e8.[ f32 d]
+    \override Stem.details.beamed-lengths = #'(6)
+    c16~[ c64 e d c d16 e32 f]
+    \revert Stem.details.beamed-lengths
+  | \appoggiatura a,8 gis8.[ a16] d8.[ c16] b8.\prallprall[ a16]
+  | a2\arpeggio c8.\arpeggio[ c16]
   %25
+  | c16~[ c64 d! c b c32 a b16] b8~\parenthesize\mordent[ b32 cis dis e] fis[ g a16 g16.\prallprall fis32]
+  | s2
+    \set subdivideBeams = ##t
+    g,16[ b32 dis, e16 g32 b,]
+    \set subdivideBeams = ##f
   | s2.
-  | s2.
-  | s2.
-  | s2.
-  | s2.
+  | s2 g''4*1/4 e16~[ e8]
+  | s16. g32~ 8~ 16 fis8.\prallprall
+    \set subdivideBeams = ##t
+    f!32[ e f d f g! a64 g f32]
+    \set subdivideBeams = ##f
   %30
-  | s2.
+  | f!8~\downprall[ 32 e f g] e4 e8.[ 16]
   | s2.
   | s2.
   | s2.
   | s2.
   %35
+  | s2.
   | s2
   }
   \fine
@@ -71,6 +87,7 @@ Sopran = \context Voice = "one" \relative c'' {
 Alto = \context Voice = "Two" \relative c' {
   \voiceTwo
   \override Rest.staff-position = #0
+  \set baseMoment = #(ly:make-moment 1/8)
   \mergeDifferentlyDottedOn
   \stemDown
   \repeat volta 2 {
@@ -102,13 +119,86 @@ Alto = \context Voice = "Two" \relative c' {
   | b4 gis fis8.[ e16]
   | s2
   }
+  \repeat volta 2 {
+    \partial 4 { <b dis!>4\arpeggio }
+  | <b dis>4 <b e>8 s d'!16[ gis, gis32_\prall fis gis16~]
+    << {
+  |   gis2.^~
+  |   \stemUp \once\omit Flag \once\omit Stem \once\override NoteColumn.force-hshift = #0 gis8. s16 s2
+    }
+    \new Voice {
+      \voiceTwo
+  |   s4 f!2~
+  |   \once\override NoteColumn.force-hshift = #0.8 f8.[ e16] f8.[ e16] d8.[ f16]
+    }
+    >>
+  %16
+  | \stemDown e2 <b' d>4
+    << {
+  |   q c32_\mordent[ d c b c16. a32] bes16.[ g!32~ g8]
+  |   \set subdivideBeams = ##t
+      g32[ bes a g~ g bes a g]
+      \set subdivideBeams = ##f
+      \stemUp
+      << {
+        \once\override NoteColumn.force-hshift = #0.5 f!32[ g a16_~] \stemDown a8
+      } \\ {
+        \once\override NoteColumn.force-hshift = #0.5 f4
+      } >>
+      \once\override NoteColumn.force-hshift = #3.5 \stemDown <fis a>4\arpeggio
+    }
+    \new Voice {
+      \voiceOne
+  |   s2 bes4~
+  |   \stemDown \once\omit Flag bes16 s8. s2
+    }
+    >>
+  | <fis a>4
+    \set subdivideBeams = ##t
+    g32[ a g fis g16 fis32 e] << { d32 e f!8. } \\ d4~ >>
+    \set subdivideBeams = ##f
+  }
+  %20
+  | << \stemDown \once\omit Flag f32 \\ { d d c b c16. e32 } >> s4
+    \set subdivideBeams = ##t
+    \tieUp c'16~[ c64 d c b c16 a32 cis]
+  | d16~[ d64 e d cis d16 a32 e'] f!16~[ f64 g f e f16 d32 fis] gis16~[ gis64 a gis fis gis16 d32 a']
+    \set subdivideBeams = ##f
+  | s4 e,8.\rest e16 e8.[ 16]
+  | d8.[ f!16] f8.[ e16] d8.[ c16]
+  | <c e>2\arpeggio <c e a>4\arpeggio
+  %25
+  | fis!4. e8\rest e4\rest
+  | \stemUp\appoggiatura fis'8 \stemDown g8~^\mordent[ g32 fis e dis]
+    \set subdivideBeams = ##t
+    e16[ g32 ais, b16 e32 fis,] s4
+    \set subdivideBeams = ##f
+  | r8. fis'32[ g] g8.^\prallprall[ fis32 g] g8~^\prallprall[ g32 fis g a!]
+  | \slurUp e8( dis16.^\prallprall) cis32]
+    \set subdivideBeams = ##t
+    dis64[ b cis dis e fis g a g16.^\prallprall fis32]
+    \set subdivideBeams = ##f
+    g32[ d e b_~] 8
+  | \tieDown s16 c!64[ e g e] \omit TupletBracket \tuplet 3/2 { c32 b c~ } c16~ c4 s16.
+    \autoBeamOff d32~ d8~ \autoBeamOff
+  %30
+  | d4 c32[ b a gis a16. c32] e32[ d c b c8~]
+  | s2.
+  | s2.
+  | s2.
+  | s2.
+  %35
+  | s2.
+  | s2
+
 }
 
 Tenor = \context Voice = "Three" \relative c' {
   \voiceThree
   \override Rest.staff-position = #0
-  \mergeDifferentlyDottedOn
+  \set baseMoment = #(ly:make-moment 1/8)
   \set PianoStaff.connectArpeggios = ##t
+  \mergeDifferentlyDottedOn
   \stemUp
   \repeat volta 2 {
     \partial 4 { s4 }
@@ -128,12 +218,49 @@ Tenor = \context Voice = "Three" \relative c' {
   | d8.[ e16] cis8.[ d16] ais8.\prallprall[ 16]
   | ais4( b)
   }
+  \repeat volta 2 {
+    \partial 4 { s4 }
+  | a4( g) s
+  | s2 s8. \once\omit Flag \once\omit Stem gis16~
+  %15
+  | gis8.[ a16~ ] \autoBeamOff \once\omit Flag \once\omit Stem a8. b16 \autoBeamOn b8.[ c16]
+  | b2 s4
+  | gis'4( a8) r r \clef bass
+    \shape #'((0 . 0.8) (0 . 1) (0 . 1.5) (0 . 1.5)) Tie
+    cis,8~
+  | cis[ e] a,4 \once\override NoteColumn.force-hshift = #3.5 <a c dis>\arpeggio
+  | dis8.[ e32 dis] e8 s4
+    \shape #'((0 . 0.8) (0 . 1) (0 . 1.5) (0 . 1)) Tie
+    gis,8~
+  %20
+  | gis[ a~] a8.[ gis16] a4~
+  | a8.[ cis16] d2~
+  | d8~ d32[ c b a] g8.\prall[ 16] a8.[ b16]
+  | b8.[ c16] a4( gis\prall)
+  | << { a2\parenthesize\mordent a8.\arpeggio[ 16~] } \\ { s2 s8  \stemUp	<c, e> } >>
+  %25
+  | << { a'2 s4 } \\ >>
+  | s2.
+  | s2.
+  | s2 s8 g'64[ fis e dis e32 c!]
+  | a64[ c e \top a] \bottom s8 \tuplet 3/2 { a32[ gis a~] } a8.[ 16~] a8.[ g!16~]
+  %30
+  | g4 s2
+  | s2.
+  | s2.
+  | s2.
+  | s2.
+  %35
+  | s2.
+  | s2
+  }
 }
 
 Bass = \context Voice = "four" \relative c {
   \voiceFour
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \set baseMoment = #(ly:make-moment 1/8)
   \stemDown\slurNeutral\tieDown
   \repeat volta 2 {
     \partial 4 { <e g>4 }
@@ -145,10 +272,7 @@ Bass = \context Voice = "four" \relative c {
     } \\ {
       s8 \stemUp fis16~ \once\override NoteColumn.force-hshift = #1 \once\omit Flag fis8 s
     } \\ {
-      \stemDown c'16[ a fis]
-      \appoggiatura e8
-      \once\override Dots.Y-offset = #(-1)
-      dis8.[ 16]
+      \stemDown c'16[ a fis] \appoggiatura e8 dis8.[ 16]
     } >>
     e8.[ fis16]
   | g8.[ e16] \clef treble <a e'>8.[ <b dis>16] c8.[ a16]
@@ -165,35 +289,42 @@ Bass = \context Voice = "four" \relative c {
   | <b, fis'>2
   }
   \repeat volta 2 {
-    \partial 4 { s4 }
-  | s2.
-  | s2.
+    \partial 4 { <b dis fis a>4\arpeggio }
+  | e2 r4
+  | r16 d'16[ d32^\prall c d16] r16 b16[ b32^\prall a b16] d16[ gis, gis32^\prall fis gis16]
   %15
-  | s2.
-  | s2.
-  | s2.
-  | s2.
-  | s2.
+  | c,4 <d a'>8.[ <e gis>16] f!8.[ d16]
+  | e2 \clef treble \stemUp <d' f! gis>4
+  | \stemDown c2 s8 cis16.[ e32]
+  | f,!2 \once\override NoteColumn.force-hshift = #3.5 fis4\arpeggio
+  | g2
+    \set subdivideBeams = ##t
+    r16 b32[ a gis a b16]
+    \set subdivideBeams = ##f
   %20
-  | s2.
-  | s2.
-  | s2.
-  | s2.
-  | s2.
+  | c,4~ c8.[ e16] a8.[ g!16]
+  | f!8.[ a16] d8.[ c!16] b8.[ a16]
+  | gis4 b,8.\rest e16 a8.[ g!16]
+  | f!8.[ d16] e2
+  | g,8\rest e'32\rest f![ e d]
+    \set subdivideBeams = ##t
+    e[ d c d e c d e] a,8.\arpeggio[ a'16]
+    \set subdivideBeams = ##f
   %25
-  | s2.
-  | s2.
-  | s2.
-  | s2.
-  | s2.
+  | dis,2_\parenthesize\mordent r4
+  | <e g b e>2\arpeggio r4
+  | \appoggiatura b'8 <cis, e ais>4. r16 <c! e a!> q8.[ <c e ais>16]
+  | <b fis' b>4 r r8 \clef treble s8
+  | s4 a'4 b
   %30
-  | s2.
-  | s2.
-  | s2.
-  | s2.
-  | s2.
+  | c~ 8. \clef bass b16 a8.[ g16]
+  | fis2 gis4
+  | a4. g!8[ fis8. e16]
+  | dis4 s2
+  | c!4_( b8.) a16] g8.[ fis16]
   %35
-  | s2
+  | g8.[ a16] b2
+  | e,2
   }
   \fine
 }
