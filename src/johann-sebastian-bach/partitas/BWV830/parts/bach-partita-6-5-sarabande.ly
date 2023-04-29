@@ -73,13 +73,17 @@ Sopran = \context Voice = "one" \relative c'' {
     \set subdivideBeams = ##f
   %30
   | f!8~\downprall[ 32 e f g] e4 e8.[ 16]
-  | s2.
-  | s2.
-  | s2.
-  | s2.
+  | \set subdivideBeams = ##t
+    a4~ a32[ a b c b a gis a] b8.[ b16]
+  | e,32[ fis gis16 fis16.\prall e32] a8~[ a32 g! fis e] dis[ e dis e fis e64 dis e32 fis]
+  | a,8.[ fis'16] a,8.[ g'16] a,8.[ a'16]
+  | \slurUp\tieUp e4( dis8~\prall)[ dis16 e64 dis cis dis] e16~[ e64 d! c! b c32 e ais,16]
   %35
-  | s2.
-  | s2
+  | b16~[ b64 a! g fis g32 b e,16] \slurDown \appoggiatura fis8 g8~[ g16 a64 g fis g] a8.[ fis16]
+    \set subdivideBeams = ##f
+  | <a, fis'>4_( <g e'>)
+    \override Score.TextMark.self-alignment-X = #CENTER
+    \textEndMark \markup { \musicglyph "scripts.ufermata" }
   }
   \fine
 }
@@ -183,12 +187,12 @@ Alto = \context Voice = "Two" \relative c' {
     \autoBeamOff d32~ d8~ \autoBeamOff
   %30
   | d4 c32[ b a gis a16. c32] e32[ d c b c8~]
-  | s2.
-  | s2.
-  | s2.
-  | s2.
+  | c16.[ b64 c c16._\prallprall b64 c~] c16 r r8 r32 f![ e d e16 b]
+  | b4 a4. s8
+  | a4 a a
+  | a2 d,4\rest
   %35
-  | s2.
+  | b\rest a\rest b8.\rest a16
   | s2
 
 }
@@ -245,14 +249,14 @@ Tenor = \context Voice = "Three" \relative c' {
   | s2 s8 g'64[ fis e dis e32 c!]
   | a64[ c e \top a] \bottom s8 \tuplet 3/2 { a32[ gis a~] } a8.[ 16~] a8.[ g!16~]
   %30
-  | g4 s2
-  | s2.
-  | s2.
-  | s2.
-  | s2.
+  | g4 s4 e8.\rest <c e>16
+  | e4( dis\prall) d!8.\mordent[ d16]
+  | d4( cis\prall) c!8.[ c16]
+  | c16~[ c64 b a gis a16. c32] fis,16~[ fis64 g! fis e fis16. a32] d,16~[ d64 e d cis d16. fis32]
+  | fis2 <b, e>4~
   %35
-  | s2.
-  | s2
+  | e2 dis4\prallmordent
+  | <b e>2
   }
 }
 
@@ -325,6 +329,8 @@ Bass = \context Voice = "four" \relative c {
   %35
   | g8.[ a16] b2
   | e,2
+    \tweak direction #DOWN
+    \textEndMark \markup { \musicglyph "scripts.dfermata" }
   }
   \fine
 }
