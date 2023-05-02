@@ -4,6 +4,9 @@ Global = {
   \include "../global.ly"
 }
 
+bottom = { \change Staff = "lower" \stemUp }
+top = { \change Staff = "upper" \stemDown }
+
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
@@ -29,25 +32,25 @@ Sopran = \context Voice = "one" \relative c'' {
     \once\shape #'((0 . 2) (0 . 2.5) (0 . 2) (0.4 . 1.5)) Tie
     b4~ \once\override NoteColumn.force-hshift = #0 b8[ e,]
     e'4~ e8[ cis] dis4
-  | s1*8/4
+  | e4. g8 fis4. b8 e,4. a8 cis,4. g'!8
   %10
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
+  | fis4. 8 e4. a8 d,4. g8 b,4. f'8
+  | e16[( d c d)] e4 a, d g, c fis, b
+  | e,4 a~ a8 d, g4~ g8[( fis16 e)] \stemNeutral\slurNeutral c'!4~ c8[( b16 ais)] e'4~
+  | e8[( d16 cis)] d8[( cis16 b)] cis8[( d16 e) d8( cis16 b)] ais8[( gis16 fis)] g'!4~ g8 e fis4~
+  | fis8 dis e4~ e8 a, a'4~ \stemUp a8 fis g4~ g8 e fis4~
   %15
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
+  | \stemNeutral fis8 b, b'4~ b8 gis ais4\prallprall b \stemUp g e fis
+  | dis4 e~ e8 a gis4 a fis d e
+  | cis4 d~ d8 g fis4 g8 d g4~ g8 e fis4~
+  | fis8 dis e4~ e8 cis dis4 e8^-[ fis16 g a b c!8] \stemDown d,8^-[ e16 f g a b8]
+  | c,8^-[ d16 e f g a8] b,8^-[ c16 d e f! d8] \stemUp c4. b8 c4. c8
   %20
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
+  | b4 f'\rest a,4. fis8 e4.c'8 d!4. b8
+  | gis'4 g\rest a4. d,8 e8[ d!16 c b a g8] g'8\rest a,16[ b c! b a8]
+  | g4 g~ g g~ g fis~ fis f~
+  | f4 e~ e e~ e dis~ dis g
+  | d'4\rest a d\rest ais r8 b16[ fis dis8( b16 ais)] b8 dis16 fis_. \stemDown b4^-
   }
   \repeat volta 2
   {
@@ -94,11 +97,30 @@ Alto = \context Voice = "two" \relative c' {
   \override Rest.staff-position = #0
   %1
   | s1*8/4*6
+  %7
   | s2 dis4. fis8 e4. c'8 f,!4 s8 b8
   | gis4. a16[ fis] g!4. dis'8
     \once\override NoteColumn.force-hshift = #1.2 e4.
     c8 a4. b8
-
+  | g4 b a b gis a~ a8 e' a,4~
+  %10
+  | a4 b g a fis g~ g8 d' g,4~
+  | g4. e8 fis!4. d8 e4. c8 d4. b8
+  | c4. a8 b4. \bottom g8 a4. fis8 g4. e8
+  | fis2 g4 gis fis b8\rest b^. cis4.^- ais8
+  | g'4. e8 fis4. dis8 \top c'!4. ais8 b4. \bottom e,8
+  %15
+  | d!4 d\rest cis2^\prallprall b4 \top g'8\rest d'_. cis4._- fis,8
+  | b4. d!8 gis,4 g8\rest d'8_. cis4._- 8 b4. e,8
+  | a4. c!8 fis,4 r8 c'8_. b4._- 8 c4. a8
+  | b4. g8 a4. fis8 g4 \bottom g8\rest e^. f!4.^- d8
+  | e4. c8 d4 b a8[ \top e'] a4~ a8 e a4~
+  %20
+  | a8[ g16 fis g fis e8] fis4. dis8 \once\override NoteColumn.force-hshift = #1.2 c'4. a8 b4. gis8
+  | f'!4. dis8 e4. a,8 g!4 d\rest  fis2~
+  | fis8 dis e4~ 8 bes e4~ 8 cis d!4~ d8 aes d4~
+  | d8 b c4~ 8 fis, c'4~ 8 ais b4~ 8 8 e4_-
+  | d8\rest b_. fis'4_- d8\rest cis_. g'!4_- s1
 }
 
 Tenor = \context Voice = "three" \relative c' {
@@ -127,25 +149,25 @@ Bass = \context Voice = "four" \relative c {
   | g4. fis8 e!4. cis8 fis4. e8 dis4. b8
   | g4\rest g8\rest \clef bass e^. fis4.^- dis8 c'4. a8 b4. gis8
   | f'!4. dis8 e4. a,8 g!4 r fis2^\prallprall
-  | s1*8/4
+  | e8 e, e'4~ e8 cis d!4~ d16[ cis! b8 cis16 b a8] a'16[ g fis8 g16 fis e8]
   %10
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
+  | d8 d, d'4~ d8 b c4~ c16[ b a8 b16 a g8] g'16[ f e8 f16 e d8]
+  | \stemDown c8 g' c4~ c8 a b4~ b8 g a4~ a8 fis g4~
+  | g8 e fis4 g4 e cis dis e cis
+  | ais4 b e eis fis b,\rest ais' b,\rest
+  | b'4 b,\rest g2\rest e'4 r d! r
   %15
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
+  | g4. fis8 e4. fis8 b b, b'4~ b8 gis a!4~
+  | a16[ gis fis8 gis16 fis e8] e'16[ d cis8 d16 cis b8] a8 a, a'4~ a8 fis g4~
+  | g16[ fis e8 fis16 e d8] d'16[ c! b8 c16 b a8] g8 b e4 a, d
+  | g,4 c fis, b e,8 b' c!4_~ c8 a b4_~
+  | b8 gis a4_~ a8 fis! gis4 a8[( g16 fis) g8( fis16 e)] fis8[ g16 a g fis e8]
   %20
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
+  | \stemNeutral\tieNeutral dis8_. b_. e4~^- e8 a, b4~ b8 gis a4~ a8 d,! d'4~
+  | d8 b c4~ c8 a b4~ b8 e, e'4~ e8 cis dis4
+  | e4. d'!8 cis4. a8 d,4. c'8 b!4. g8
+  | c,4. b'8 a4. fis8 b,4. a'!8 g4. e8
+  | dis4. b'8 g4. e8 b1_-
   }
   \repeat volta 2
   {
