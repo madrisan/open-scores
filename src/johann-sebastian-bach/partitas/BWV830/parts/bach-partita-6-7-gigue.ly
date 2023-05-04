@@ -55,13 +55,14 @@ Sopran = \context Voice = "one" \relative c'' {
   \repeat volta 2
   {
   %25
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
+  | R1*8/4
+  | R1*8/4
+  | \override MultiMeasureRest.staff-position = #2
+    R1*8/4
+  | \clef bass s1*8/4
+  | R1*8/4
   %30
-  | s1*8/4
+  | R1*8/4
   | s1*8/4
   | s1*8/4
   | s1*8/4
@@ -85,6 +86,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | s1*8/4
   | s1*8/4
   %50
+  | s1*8/4
   | s1*8/4
   | s1*8/4
   }
@@ -121,6 +123,16 @@ Alto = \context Voice = "two" \relative c' {
   | fis8 dis e4~ 8 bes e4~ 8 cis d!4~ d8 aes d4~
   | d8 b c4~ 8 fis, c'4~ 8 ais b4~ 8 8 e4_-
   | d8\rest b_. fis'4_- d8\rest cis_. g'!4_- s1
+  %25
+  | s1*8/4*2
+  | f4\rest f8\rest fis_. e4._- g8 ais,4. cis8 b4. d8
+  | eis,4. g!8 fis4. ais8 b4 r cis2_\prallprall
+  | \clef treble
+    d8[ g fis e] d[ fis_.] b,4~_- b8[ gis] f'!4~ f8[ d] gis4~
+  %30
+  | gis8[ f! e d] c[ e_.] a,4~_- a8[ fis] ees'4~ ees8[ c fis c]
+  | b4 s4 s1.
+
 }
 
 Tenor = \context Voice = "three" \relative c' {
@@ -172,38 +184,39 @@ Bass = \context Voice = "four" \relative c {
   \repeat volta 2
   {
   %25
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
+  | r4 r8 b'^. a4.^- c8 dis,4. fis8 e4. g8
+  | ais,4. c!8 b4. dis8 e4 r fis2^\prallprall
+  | g8[ c b a] g[ b^.] e,4~^- e8[ cis] d!4~ d8[ fis] b,4~
+  | b8[ gis] ais4~ ais8[ cis] e!4~ e8[ cis! d b'^.] e,[ b' fis^. ais^.]
+  | b2~^- b8[ a! gis fis] e4. d8^. c!4.(^\prall b8)
   %30
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
+  | a4 a'~^- a8[ g! fis! e] d4. c8 b4.^\parenthesize\prall( a8)
+  | \stemDown g8[ b e d] c[ e] a,4~ a8 fis g4~ \stemNeutral g8 b e,4~
+  | e8 cis dis4~ dis8 fis a4~ a8[ fis g e'^.] \stemDown a,[ e' b^. dis^.]
+  | e4. g8 fis4. b8 e,4. a8^. \stemUp cis,8[( e) a,_. cis_.]
+  | \stemDown d4.^- fis8 e4. a8 d,4. g8^. \stemUp b,8[( d) g,^. b^.]
   %35
+  | \stemNeutral\slurNeutral c8 e a4 d, g c, f! b, e
+  | a,4 d~ d8 gis, c4~ c8[ b16 a] f'!4~ f8[ e16 dis] a'4~
+  | a8[( g16 fis!) g8( fis16 e)] fis8[ g16 a g8 fis16 e] b'4 \clef treble a4\rest b2\rest
   | s1*8/4
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
+  | a1\rest b4\rest r8 \clef bass e^. d!4.^- f8
   %40
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
+  | gis,4. b8 a4. c8 dis,4. f8 e4. gis8
+  | a4 \clef treble \stemDown a\rest b2 c4. e8 \clef bass a,4. c8
+  | fis,4.^- a8^. dis,8[( fis) b,^. dis^.] \stemNeutral e4.^- e,8 e'4. g8
+  | cis,4._- e8^. ais,8[( cis) fis,-. ais-.] b^-[ cis!16 dis e fis g8] a,8_-[ b16 c d e fis8]
+  | g,8_-[ a16 b c d e8] fis,8_-[ g16 a b a b8] e,4. e'8 a,4. c8
   %45
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
+  | \stemDown b4 g\rest \clef treble a'2\rest b4 a4\rest a2\rest
+  | \clef bass b,4 b\rest b\rest r8 b'^. c4^- b a! b^.
+  | \stemNeutral e,2~^- e8[ d! cis b] a4. g8_. f!4.(^\prall e8)
+  | d4 d'~^- d8[ c! b! a] g4. f!8 e4.^\prall( d8)
+  | c4 e\rest e\rest \stemDown g8\rest b_. e4_- g,\rest g\rest g8\rest e'_.
   %50
-  | s1*8/4
-  | s1*8/4
+  | a4 b,\rest g'! b,\rest \stemDown c4. b8 \stemNeutral a4 b
+  | e,4. b''8^. gis4.^- e8 c4. f8 d4. b8
+  | gis4. e'8 c4. a8 e1_-
   }
   \fine
 }
