@@ -63,21 +63,21 @@ Sopran = \context Voice = "one" \relative c'' {
   | R1*8/4
   %30
   | R1*8/4
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
+  | \stemUp f'4\rest f8\rest b,^. a4.^- c8 dis,4. fis8 e4. g8
+  | \once\override NoteColumn.force-hshift = #1.5 ais,4. c!8 b4. dis8 e4 r fis2\prallprall
+  | g8[ e] e'4~ e8[ cis] d!4~ d16[ c b8 c16 b a8] a'16[ g! fis8 g16 fis e8]
+  | fis[ a,] d4~ 8 b c!4~ c16[ b a8 b16 a g8] g'16[ f! e8 f16 e d8]
   %35
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
+  | e4. 8^. f!4.^- d8 e4. c8 d4. b8
+  | c4. a8 b4. gis8 a4. b8 c4 cis
+  | d e d e fis4. b8^. \stemDown a4.^- c!8
+  | \stemNeutral dis,4. fis8 e4. g8 ais,4. c!8 b4. dis8
+  | e4 r fis2\prall\prall \stemUp g2~ g8[ d^.] f!4~^-
   %40
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
+  | f8[ f! e d] c2~ 8[ c b a] gis[ b^.] d4~^-
+  | d8[ b c a'] d,[ a' b,^. gis'^.] a[ dis,^.] e4~^- 8[ d] e4~
+  | e16[ dis cis8 dis16 cis b8] b'16[ a g8 a16 g fis8] g4. 8 cis,4. d!8
+  | e4 g\rest s2 b4\rest e8\rest e, c'4.^- a!8
   | s1*8/4
   %45
   | s1*8/4
@@ -131,7 +131,24 @@ Alto = \context Voice = "two" \relative c' {
     d8[ g fis e] d[ fis_.] b,4~_- b8[ gis] f'!4~ f8[ d] gis4~
   %30
   | gis8[ f! e d] c[ e_.] a,4~_- a8[ fis] ees'4~ ees8[ c fis c]
-  | b4 s4 s1.
+  | \tieUp b4 \bottom g4~g fis~ fis \top\tieDown b~ b g~
+  | g fis4~ 4 f\rest f\rest b c \bottom b^~
+  | b8 c\rest \top g'\rest b_. a4._- fis8 gis4 d\rest e2\rest
+  | e4\rest e8\rest a_. g4._- e8 fis4 d\rest e2\rest
+  %35
+  | g8\rest g_. c4~_- 8[ a] b4~ b8[ gis] a4~ a8[ fis] g!4~
+  | g8[ e] f!4~ f8[ d] e4~ e d8[ gis] a4. g!8
+  | \tieUp fis4 b2 cis4 d8[ b \bottom a g] fis[ a^.] c!4~^-
+  | c8[ c b a] g[ b^.] e,4~^- e8[ g fis e] dis[ fis^.] a!4~^-
+  | a8[ fis g e'] a,[ e' b^. dis^.] e,[ \top e' d! c] \tieDown b2~
+  %40
+  | b~ b8[ e,_.] a4~_- a b,\rest b\rest e8\rest f!_.
+  | e4_- \bottom a f! d e4. \top c'8 fis,4. g!8
+  | a4 d,\rest e2\rest r8 ais_. b4~_- 8[ ais] b4~
+  | b16[ ais gis8 ais16 gis fis8] fis'16[ e dis8 e16 dis cis8] dis![ b]
+    \shape #'((-0.2 . -0.5) (0 . -1.5) (0 . -1) (0 . 0)) Tie
+    g'!4~ g8[ e] fis4~
+  | fis8[ dis]
 
 }
 
@@ -191,7 +208,7 @@ Bass = \context Voice = "four" \relative c {
   | b2~^- b8[ a! gis fis] e4. d8^. c!4.(^\prall b8)
   %30
   | a4 a'~^- a8[ g! fis! e] d4. c8 b4.^\parenthesize\prall( a8)
-  | \stemDown g8[ b e d] c[ e] a,4~ a8 fis g4~ \stemNeutral g8 b e,4~
+  | \stemDown g8[ b e d] c[ e_.] a,4_~_- a8 fis g4~ \stemNeutral g8 b e,4~
   | e8 cis dis4~ dis8 fis a4~ a8[ fis g e'^.] \stemDown a,[ e' b^. dis^.]
   | e4. g8 fis4. b8 e,4. a8^. \stemUp cis,8[( e) a,_. cis_.]
   | \stemDown d4.^- fis8 e4. a8 d,4. g8^. \stemUp b,8[( d) g,^. b^.]
@@ -200,7 +217,7 @@ Bass = \context Voice = "four" \relative c {
   | a,4 d~ d8 gis, c4~ c8[ b16 a] f'!4~ f8[ e16 dis] a'4~
   | a8[( g16 fis!) g8( fis16 e)] fis8[ g16 a g8 fis16 e] b'4 \clef treble a4\rest b2\rest
   | s1*8/4
-  | a1\rest b4\rest r8 \clef bass e^. d!4.^- f8
+  | a1\rest g4\rest r8 \clef bass e'^. d!4.^- f8
   %40
   | gis,4. b8 a4. c8 dis,4. f8 e4. gis8
   | a4 \clef treble \stemDown a\rest b2 c4. e8 \clef bass a,4. c8
