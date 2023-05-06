@@ -36,13 +36,7 @@ The source code was compiled with `GNU LilyPond 2.23.82 (running Guile 2.2)` (Fe
 #### Johann Sebastian Bach (1685-1750)
 
  * [Suite Anglaise IV (BWV 809)](https://github.com/madrisan/open-scores/releases/download/v29/JS-Bach-BWV809-Suite-Anglaise-4.pdf)
-   * Prélude
-   * Allemande
-   * Courante
-   * Sarabande
-   * Menuet I
-   * Menuet II
-   * Gigue
+ * [Partita VI (BWV 830)](https://github.com/madrisan/open-scores/releases/download/v29/JS-Bach-BWV830-Partita-6.pdf)
  * [Chromatische Fantasie und Fugue (BWV 903)](https://github.com/madrisan/open-scores/releases/download/v29/JS-Bach-BWV903-Chromatische-Fantasie-und-Fugue.pdf) - Interpretiert von Ferruccio Busoni
  * [Sechs kleine Präludien (BWV 933-938)](https://github.com/madrisan/open-scores/releases/download/v29/JS-Bach-BWV933-938-Sechs-kleine-Praludien.pdf))
  * [Italienisches Konzert (BWV 971)](https://github.com/madrisan/open-scores/releases/download/v29/JS-Bach-BWV971-Italienisches-Konzert.pdf)
@@ -172,6 +166,7 @@ make -C src/johann-sebastian-bach/chromatische-fantasie-und-fugue-BWV_903
 make -C src/johann-sebastian-bach/die-kunst-der-fuge-BWV_1080
 make -C src/johann-sebastian-bach/italienisches-konzert-BWV_971
 make -C src/johann-sebastian-bach/jesu-meine-freude-BWV_610
+make -C src/johann-sebastian-bach/partitas/BWV830
 make -C src/johann-sebastian-bach/praludium-und-fuge-liszt-BWV543-S462
 make -C src/johann-sebastian-bach/sechs-kleine-praludien-BWV933-938
 make -C src/johann-sebastian-bach/siciliano-BWV_1031
