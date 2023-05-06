@@ -48,7 +48,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | \tuplet 7/4 { \bottom g16[ b \top cis d e d cis] }
     \tuplet 7/4 { \bottom fis,16[ ais \top b cis d cis b] }
     \tuplet 7/4 { \bottom e,16[ g \top ais b cis b ais] }
-    \tuplet 7/4 { \bottom cis,16[ ais' \top e' fis g fis e] }
+    \tuplet 7/4 { \bottom cis,16[ ais'! \top e' fis g fis e] }
   | \stemUp fis8.[ <g, b>16] <g cis>8.[ <e fis ais>16]
     \once\override NoteColumn.force-hshift = #0 ais4( b16)[ a! g fis]
   | g[_( ais b cis]) b[ ais b g] fis[ ais b cis] b[ ais b fis]
@@ -81,7 +81,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | \tuplet 7/4 { \bottom c,16[ e \top fis g! a g fis] }
     \tuplet 7/4 { \bottom b,[ dis \top e fis g fis e] }
     \tuplet 7/4 { \bottom a,[ c \top dis e fis e dis] }
-    \tuplet 7/4 { \bottom fis,[ dis' \top a' b c b a] }
+    \tuplet 7/4 { \bottom fis,[ dis'! \top a' b c b a] }
   %20
   | \set subdivideBeams = ##f
     \stemUp b8.[ <c, e>16] <c fis>8.[ <a b dis>16]
@@ -365,7 +365,7 @@ Bass = \context Voice = "four" \relative c {
   | \stemNeutral\slurNeutral e'8[( b g e']) d![( b fis d'])
   %10
   | cis[( ais e ais]) b[( fis d fis])
-  | g!16[( ais b cis]) b[ ais b g] fis[ ais b cis] b[ ais b fis]
+  | g!16[( ais b cis]) b[ ais b g] fis[ ais! b cis] b[ ais b fis]
   | e[ b' cis d] cis[ b cis e,] d[ cis d fis] b[ fis d' b]
   | s2 <a! e'>
   | s <g d'>
