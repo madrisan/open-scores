@@ -30,6 +30,7 @@ Sopran = \context Voice = "one" \relative c' {
   | e,4 b'' <b, dis> <cis e>
   | <dis fis>2
   }
+  \break
   \repeat volta 2 {
     \partial 2 { \stemUp\tieUp fis,4 c'~ }
   | c b~ b a~

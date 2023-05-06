@@ -95,7 +95,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | d[ \top eis gis b] r8 \stemUp <cis,, e fis ais>8_.
   | <b dis fis b>4_- r16
   }
-  \break
+  \pageBreak
   \repeat volta 2 {
     \partial 16 \stemNeutral fis''16
   %55
