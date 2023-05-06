@@ -32,7 +32,7 @@ Sopran = \context Voice = "one" \relative c'' {
       { g2 }
     }
   }
-  \break
+  \pageBreak
   \repeat volta 2 {
     \partial 2 { b16[ c d8] g,8. e'16 }
   | a8.[ cis,16] d4 \tuplet 3/2 { cis8 b a8 } g'8.[ e16]

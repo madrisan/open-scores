@@ -52,6 +52,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | f4 e~ e e~ e dis~ dis g
   | d'4\rest a d\rest ais r8 b16[ fis dis8( b16 ais)] b8 dis16 fis_. \stemDown b4^-
   }
+  \pageBreak
   \repeat volta 2
   {
   %25
@@ -78,17 +79,19 @@ Sopran = \context Voice = "one" \relative c'' {
   | d8[ b c a'] d,[ a' b,^. gis'^.] a[ dis,^.] e4~^- 8[ d] e4~
   | e16[ dis cis8 dis16 cis b8] b'16[ a g8 a16 g fis8] g4. 8 cis,4. d!8
   | e4 g\rest s2 b4\rest e8\rest e, c'4.^- a!8
-  | s1*8/4
+  | b4. g8 a4. fis8 g2~^- g8[ fis16 e fis g a8]
   %45
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
+  | s1 s2 g,8[ b] e4~^-
+  | e8[ g, fis e] dis[ fis^.] a4~^- a8[ fis g e'] a,[ e' a,^. dis^.]
+  | e[ c b a] g b4.^( b4) bes~ \once\override NoteColumn.force-hshift = #0 bes8[ g] cis4~
+  | cis8[ bes a g] f!8 a4.~ a4 aes~ 8[ f] b!4~
+  | \stemNeutral b8[ gis a e] fis4. dis8 c'4. a8 b4. gis8
   %50
-  | s1*8/4
-  | s1*8/4
-  | s1*8/4
+  | f'!4. dis8 e4. a,8 g!4 c\rest fis,2\parenthesize\prallprall
+  | \stemUp e4 <f! gis>~ q <gis b>~ q <e a>~ q <b' d>~
+  | <g b d> <a c>~ q <c! dis> r8 e16[ b gis8( e16 dis)] e16[ gis b8^.] e4^-
+    \override Score.TextMark.self-alignment-X = #CENTER
+    \textEndMark \markup { \musicglyph "scripts.ufermata" }
   }
   \fine
 }
@@ -148,7 +151,19 @@ Alto = \context Voice = "two" \relative c' {
   | b16[ ais gis8 ais16 gis fis8] fis'16[ e dis8 e16 dis cis8] dis![ b]
     \shape #'((-0.2 . -0.5) (0 . -1.5) (0 . -1) (0 . 0)) Tie
     g'!4~ g8[ e] fis4~
-  | fis8[ dis]
+  | fis8[ dis] e4~ 8[ cis] dis4 e8[ d!16 c! b c d8] c2_-
+  %45
+  | dis8[ b' a g] fis[ a^.] c4^~^- c8[ c, b a] s2
+  | s1*8/4
+  | s2. e4~ \tieUp e~ \stemUp e~ \once\override NoteColumn.force-hshift = #1 e2_~
+  | \stemDown \once\override NoteColumn.force-hshift = #0 e8
+    c8\rest c4\rest a\rest s \stemUp \once\override NoteColumn.force-hshift = #0 d~ d~
+    \once\override NoteColumn.force-hshift = #0.4 d2_~
+  | \stemDown d4 c s1.
+  %50
+  | \tieDown s1 g'!4 e~ e8[ cis] dis4
+  | e8 d4.~ 8 4.~ 8 c4.~ c8[ b_.] gis'4_-
+  | f!8 e4.~ 8 fis4.
 
 }
 
@@ -159,6 +174,21 @@ Tenor = \context Voice = "three" \relative c' {
   %1
   | s1*8/4*6
   | e2 s1.
+  | s1*8/4*37
+  %45
+  | \showStaffSwitch
+    b4\rest b8\rest \clef treble b'^. a4.^- c8^. dis,4. fis8 e4. \top g8
+  | \bottom ais,4. c!8 b4. \top dis8 e4 b\rest fis'2
+    \hideStaffSwitch
+  | \tieDown g2 b,4\rest s4. cis4._( \once\override NoteColumn.force-hshift = #0 8)
+    \mergeDifferentlyDottedOn g'4.~
+  | \once\omit Flag \once\override NoteColumn.force-hshift = #0 g8
+    s s2 d4~ 8 b!4. s8 f'4.~
+  | \once\override NoteColumn.force-hshift = #0 f4 s
+    \bottom a,8\rest a^. b4~^- b8[ gis] a4~ a8[ d,!] \tieUp d'4~
+  %50
+  | d8[ b] c4~ c8[ a] b4~ b8[ e,^.]
+
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -225,7 +255,7 @@ Bass = \context Voice = "four" \relative c {
   | cis,4._- e8^. ais,8[( cis) fis,-. ais-.] b^-[ cis!16 dis e fis g8] a,8_-[ b16 c d e fis8]
   | g,8_-[ a16 b c d e8] fis,8_-[ g16 a b a b8] e,4. e'8 a,4. c8
   %45
-  | \stemDown b4 g\rest \clef treble a'2\rest b4 a4\rest a2\rest
+  | \stemDown b4 g\rest a'2\rest b4 a4\rest a2\rest
   | \clef bass b,4 b\rest b\rest r8 b'^. c4^- b a! b^.
   | \stemNeutral e,2~^- e8[ d! cis b] a4. g8_. f!4.(^\prall e8)
   | d4 d'~^- d8[ c! b! a] g4. f!8 e4.^\prall( d8)
@@ -234,6 +264,8 @@ Bass = \context Voice = "four" \relative c {
   | a4 b,\rest g'! b,\rest \stemDown c4. b8 \stemNeutral a4 b
   | e,4. b''8^. gis4.^- e8 c4. f8 d4. b8
   | gis4. e'8 c4. a8 e1_-
+    \tweak direction #DOWN
+    \textEndMark \markup { \musicglyph "scripts.dfermata" }
   }
   \fine
 }
