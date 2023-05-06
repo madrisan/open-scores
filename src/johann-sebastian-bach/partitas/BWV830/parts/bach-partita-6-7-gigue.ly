@@ -76,7 +76,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | e4 r fis2\prall\prall \stemUp g2~ g8[ d^.] f!4~^-
   %40
   | f8[ f! e d] c2~ 8[ c b a] gis[ b^.] d4~^-
-  | d8[ b c a'] d,[ a' b,^. gis'^.] a[ dis,^.] e4~^- 8[ d] e4~
+  | d8[ b c a'] d,[ a' b,^. gis'^.] a[ dis,^.] e4~^- 8[ dis] e4~
   | e16[ dis cis8 dis16 cis b8] b'16[ a g8 a16 g fis8] g4. 8 cis,4. d!8
   | e4 g\rest s2 b4\rest e8\rest e, c'4.^- a!8
   | b4. g8 a4. fis8 g2~^- g8[ fis16 e fis g a8]
@@ -162,7 +162,7 @@ Alto = \context Voice = "two" \relative c' {
   | \stemDown d4 c s1.
   %50
   | \tieDown s1 g'!4 e~ e8[ cis] dis4
-  | e8 d4.~ 8 4.~ 8 c4.~ c8[ b_.] gis'4_-
+  | e8 d4.~ 8 4.~ 8 c4.~ c8[ b_.] gis'!4_-
   | f!8 e4.~ 8 fis4.
 
 }

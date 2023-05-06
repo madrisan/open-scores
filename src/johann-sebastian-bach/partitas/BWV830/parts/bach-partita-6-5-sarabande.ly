@@ -161,7 +161,6 @@ Alto = \context Voice = "Two" \relative c' {
     \set subdivideBeams = ##t
     g32[ a g fis g16 fis32 e] << { d32 e f!8. } \\ d4~ >>
     \set subdivideBeams = ##f
-  }
   %20
   | << \stemDown \once\omit Flag f32 \\ { d d c b c16. e32 } >> s4
     \set subdivideBeams = ##t
@@ -173,7 +172,7 @@ Alto = \context Voice = "Two" \relative c' {
   | <c e>2\arpeggio <c e a>4\arpeggio
   %25
   | fis!4. e8\rest e4\rest
-  | \stemUp\appoggiatura fis'8 \stemDown g8~^\mordent[ g32 fis e dis]
+  | \stemUp\appoggiatura fis'8 \stemDown g8~^\parenthesize\mordent[ g32 fis e dis]
     \set subdivideBeams = ##t
     e16[ g32 ais, b16 e32 fis,] s4
     \set subdivideBeams = ##f
@@ -182,7 +181,7 @@ Alto = \context Voice = "Two" \relative c' {
     \set subdivideBeams = ##t
     dis64[ b cis dis e fis g a g16.^\prallprall fis32]
     \set subdivideBeams = ##f
-    g32[ d e b_~] 8
+    g32[ dis e b_~] 8
   | \tieDown s16 c!64[ e g e] \omit TupletBracket \tuplet 3/2 { c32 b c~ } c16~ c4 s16.
     \autoBeamOff d32~ d8~ \autoBeamOff
   %30
@@ -194,7 +193,7 @@ Alto = \context Voice = "Two" \relative c' {
   %35
   | b\rest a\rest b8.\rest a16
   | s2
-
+  }
 }
 
 Tenor = \context Voice = "Three" \relative c' {
@@ -239,7 +238,7 @@ Tenor = \context Voice = "Three" \relative c' {
   %20
   | gis[ a~] a8.[ gis16] a4~
   | a8.[ cis16] d2~
-  | d8~ d32[ c b a] g8.\prall[ 16] a8.[ b16]
+  | d8~ d32[ c b a] gis8.\prall[ 16] a8.[ b16]
   | b8.[ c16] a4( gis\prall)
   | << { a2\parenthesize\mordent a8.\arpeggio[ 16~] } \\ { s2 s8  \stemUp	<c, e> } >>
   %25
@@ -252,7 +251,7 @@ Tenor = \context Voice = "Three" \relative c' {
   | g4 s4 e8.\rest <c e>16
   | e4( dis\prall) d!8.\mordent[ d16]
   | d4( cis\prall) c!8.[ c16]
-  | c16~[ c64 b a gis a16. c32] fis,16~[ fis64 g! fis e fis16. a32] d,16~[ d64 e d cis d16. fis32]
+  | c16~[ c64 b a gis a16. c32] fis,16~[ fis64 g! fis e fis16. a32] dis,16~[ d64 e d cis d16. fis32]
   | fis2 <b, e>4~
   %35
   | e2 dis4\prallmordent
