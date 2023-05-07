@@ -376,7 +376,6 @@ Bass = \context Voice = "four" \relative c {
   \header {
     %composer = "Johann Sebastian Bach"
     %opus = "BWV 830"
-    %subtitle = "Toccata"
     title = \markup {
       %\override #'(font-name . "TeX Gyre Schola") {
         "Corrente"
@@ -389,6 +388,6 @@ Bass = \context Voice = "four" \relative c {
     }
   }
   \midi {
-    \tempo 4 = 60
+    \tempo 4 = 68
   }
 }
