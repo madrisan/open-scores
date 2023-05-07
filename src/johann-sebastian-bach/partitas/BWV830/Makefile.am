@@ -29,7 +29,13 @@ EXTRA_DIST = JS-Bach-BWV830-Partita-6.ly \
 	     header.ily \
 	     global.ly \
 	     logo.ly \
-	     parts/bach-partita-6-toccata.ly
+	     parts/bach-partita-6-1-toccata.ly \
+	     parts/bach-partita-6-2-allemanda.ly \
+	     parts/bach-partita-6-3-corrente.ly \
+	     parts/bach-partita-6-4-air.ly \
+	     parts/bach-partita-6-5-sarabande.ly \
+	     parts/bach-partita-6-6-gavotta.ly \
+	     parts/bach-partita-6-7-gigue.ly
 
 all: $(BUILT_SOURCES) JS-Bach-BWV830-Partita-6
 

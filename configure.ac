@@ -55,7 +55,7 @@ fi])
 
 AC_CHECK_PROG_VER(LILYPOND, lilypond, --version,
   [GNU LilyPond \([0-9]*\.[0-9.]*\.[0-9.]*\) .running Guile .*],
-  [2.23.[0-9]*],
+  [2.24.[0-9]*],
   critic_missing="$critic_missing lilypond")
 
 RGB_COLOR="0.80 0.90 1.00"
