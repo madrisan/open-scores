@@ -1,4 +1,5 @@
-SUBDIRS = BWV615-Busoni \
-	  BWV639-Busoni \
+SUBDIRS = BWV615-busoni \
+	  BWV639-busoni \
 	  BWV659 \
-	  BWV659-Busoni
+	  BWV659-busoni \
+	  jesu-meine-freude-BWV610
