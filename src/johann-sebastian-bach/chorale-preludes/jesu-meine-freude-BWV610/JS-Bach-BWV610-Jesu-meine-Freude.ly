@@ -9,18 +9,27 @@
 }
 
 \paper {
+  #(set-paper-size "a4")
   annotate-spacing = ##f
-  bottom-margin = 10\mm
+  bottom-margin = 8\mm
   first-page-number = 0
   indent = 0.0
-  line-width = 16.6\cm
+% last-bottom-spacing.padding = #2
+  line-width = 18.6\cm
+  markup-system-spacing =
+     #'((basic-distance . 2)
+        (minimum-distance . 1)
+        (padding . 1.5)
+        (stretchability . 20))
   print-all-headers = ##t
   ragged-last-bottom = ##f
   ragged-bottom = ##f
-  system-system-spacing = #'((basic-distance . 2) (padding . 10))
-  top-margin = 30\mm
-%  markup-system-spacing.basic-distance = #10
-%  last-bottom-spacing.padding = #2
+  system-system-spacing =
+     #'((basic-distance . 2)
+        (minimum-distance . 1)
+        (padding . 1.5)
+        (stretchability . 25))
+  top-margin = 10\mm
 }
 
 \bookpart {
@@ -60,26 +69,19 @@
         \line { \abs-fontsize #20 "BWV 610" }
         \null\null\null\null
         \fill-line { \abs-fontsize #20 "Transcribed for Piano Solo" }
+        \null\null\null
+      }
+    }
+  }
 
-        \null\null\null\null
-        \fill-line {
-          \override #'(thickness . 1)
-          \draw-squiggle-line #0.5 #'(14 . 0) ##t
-        }
-        \null\null
-        \fill-line {
-          \abs-fontsize #13
-          \smallCaps " Lavender.Blue Open Scores"
-        }
-        \fill-line { \abs-fontsize #10 "Engraved by Davide Madrisan" }
-        \fill-line {
-          \abs-fontsize #9
-          \typewriter "https://github.com/madrisan/open-scores/"
-        }
-        \null\null\null\null
+  \include "./logo.ly"
 
+  \markup {
+    \fill-line {
+      \center-column {
+        \null\null\null\null
         \fill-line { \abs-fontsize #10 "Based on the Holograph manuscript of «Das Orgel-Büchlein» (p.15)" }
-        \null
+        \null\null
       }
     }
   }
@@ -110,6 +112,7 @@ Soprano = \context Voice = "one"  \relative c'' {
   | c8. d16 es4 d4. d8
   | c1\fermata
   }
+  \break
   | g4 g as g
   | f4. f8 es2\fermata
   | g4 g a b!
@@ -132,7 +135,6 @@ Alto = \context Voice = "two"  \relative c' {
   | g8 f es16 g as es f es f d g as g f
   | e8 f16 g as g as e! f g f8~ f16 f es d
   }
-  \pageBreak
   | es16 d es8~ es16 f es des c8 bes~ bes16 bes c g
   | as16 g as f bes c bes aes! g f g8~ g16 bes c d
   | es16 d es8~ es16 f es d c8 d16 es f as g f
@@ -174,7 +176,7 @@ Tenor = \context Voice = "three"  \relative c' {
   | g16 d f! es f as g f e8. f16~ f d e8^\fermata
 }
 
-Pedal = \context Voice = "four"  \relative c {
+Bass = \context Voice = "four"  \relative c {
   \voiceFour
   \change Staff = "lower"
   \repeat volta 2 {
@@ -199,6 +201,65 @@ Pedal = \context Voice = "four"  \relative c {
   | r16 g as fis g fis g8 c,2_\fermata
 }
 
+Choral = \relative {
+  \autoBeamOff
+  \time 8/4
+  \key c \major
+  \override Score.BarNumber.break-visibility = ##(#f #f #f)
+  \override Staff.NoteHead.style = #'baroque
+  \override Staff.TimeSignature.stencil = ##f
+  a'4. 8 g4 f e2 d2 \bar "'"
+  a'4 a b c d2 cis \bar "'"
+  d4 f e e d1
+  \bar "||"
+  \break
+  a4 a bes a g4. f8 f2 \bar "'"
+  \time 10/4
+  a4 a b c d c b2 a \bar "'"
+  fis4 f g f! e2 d1
+  \fine
+}
+
+\markup {
+  \fill-line {
+    \override #'(baseline-skip . 2)
+    \center-column {
+      \line { \abs-fontsize #14 \bold "Jesu, meine Freude" }
+      \null
+      \line { \abs-fontsize #10 \italic "Johann Crüger - Praxis pietatis melica (1653)" }
+      \null
+      \line {
+        \score {
+          <<
+          \new Voice = "corale" {
+            \override VerticalAxisGroup.staff-staff-spacing.basic-distance = #1
+            \Choral
+          }
+          \new Lyrics \lyricsto "corale" {
+            \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = #1
+            \override VerticalAxisGroup.nonstaff-relatedstaff-spacing =
+              #'((basic-distance . 4))
+            Je -- su, mei -- ne Freu -- de,
+            mei -- nes Her -- zens Wei -- de,
+            Je -- su, mei -- ne Zier:
+            Got -- tes Lamm, mein Bräu -- ti -- gam,
+            au -- ßer dir soll mir auf Er -- den
+            nichts sonst lie -- bers wer -- den.
+          }
+          >>
+          \layout {
+            indent = #0
+            line-width = #150
+            #(layout-set-staff-size 14)
+          }
+        }
+      }
+      \null\null\null
+      \null\null\null
+    }
+  }
+}
+
 \score {
   \new PianoStaff
   <<
@@ -215,7 +276,7 @@ Pedal = \context Voice = "four"  \relative c {
       \Global
       \clef bass
       \Tenor
-      \Pedal
+      \Bass
     >>
   >>
   \header {
