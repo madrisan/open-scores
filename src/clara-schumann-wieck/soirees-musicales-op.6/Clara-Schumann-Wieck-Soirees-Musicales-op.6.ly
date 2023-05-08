@@ -5,17 +5,28 @@
 \include "./covercolor.ly"
 
 \paper {
-  bottom-margin = 13\mm
+  #(set-paper-size "a4")
+  annotate-spacing = ##f
+  bottom-margin = 8\mm
   first-page-number = 0
   indent = 0.0
-  last-bottom-spacing.padding = #1
+% last-bottom-spacing.padding = #2
   line-width = 18.6\cm
+  markup-system-spacing =
+     #'((basic-distance . 2)
+        (minimum-distance . 1)
+        (padding . 1.5)
+        (stretchability . 20))
   print-all-headers = ##t
+  ragged-last-bottom = ##f
   ragged-bottom = ##f
-  ragged-last-bottom = ##t
+  system-system-spacing =
+     #'((basic-distance . 2)
+        (minimum-distance . 1)
+        (padding . 1.5)
+        (stretchability . 25))
   tagline = ##f
-  top-margin = 13\mm
-% markup-system-spacing.basic-distance = #10
+  top-margin = 10\mm
 }
 
 \bookpart {
@@ -69,7 +80,7 @@
         }
         \null\null\null\null
 
-        \fill-line { \abs-fontsize #10 "Based on the score publiched by Friedrich Hofmeister - Leipzig, 1836" }
+        \fill-line { \abs-fontsize #10 "Based on the score published by Friedrich Hofmeister - Leipzig, 1836" }
         \null
       }
     }

@@ -513,23 +513,20 @@ centeredDynamics = {
   | s1*6/8
   | s1*6/8
   | s16
-    \once \override DynamicLineSpanner.Y-offset = -3
+    \override DynamicLineSpanner.Y-offset = -3
     s16_\pp s4 s4.
   | s1*6/8
-  | s16
-    \once \override DynamicLineSpanner.Y-offset = -3
-    s16_\ff s4 s4.
+  | s16 s16_\ff s4 s4.
   %55
   | s1*6/8
   | s1*6/8
-  | s16
-    \once \override DynamicLineSpanner.Y-offset = -3
-    s16_\p s4 s4.
+  | s16 s16_\p s4 s4.
   | s1*6/8
   | s8 s\cresc s16\startTextSpan s s8 s s
   %60
   | s8 s s s s s\stopTextSpan
-  | s8\> s s s s s\!
+  | \override DynamicLineSpanner.Y-offset = 0.5
+    s8\> s s s s s\!
   | s8 s s s\< s s
   | s8 s s\! s\> s s\!
   | s8 s s s\< s s
@@ -541,7 +538,8 @@ centeredDynamics = {
   | s16_\p s s4 s4.
   %70
   | s1*6/8
-  | s8\< s8 s8 s8 s8 s8\!
+  | \override DynamicLineSpanner.Y-offset = 1.5
+    s8\< s8 s8 s8 s8 s8\!
   | s1*6/8
   | s8 s s\mf s\> s s
   | s8 s s\! s\> s s\!
@@ -550,7 +548,9 @@ centeredDynamics = {
   | s8\< s s2
   | s8 s8 s8\! s8\f s4
   | s16^\markup { \italic\small "animato rinf." } s s8 s s s s
-  | s8 s s s-\markup { \hspace #-1 \dynamic p \italic\small "espress." } s4
+  | s8 s s
+    \once\override Staff.TextScript.extra-offset = #'(-2.2 . 2.2)
+    s-\markup { \dynamic p \italic\small "espress." } s4
   %80
   | s1*6/8
   | s8 s s s\< s s
@@ -574,10 +574,12 @@ centeredDynamics = {
   | s1*6/8
   | s8 s s s\p s s
   | s1*6/8
-  | s8 s s s s\< s
+  | \override DynamicLineSpanner.Y-offset = 3.5
+    s8 s s s s\< s
   %100
   | s8 s\! s s s s
-  | s8\> s s\! s s s
+  | \override DynamicLineSpanner.Y-offset = 3
+    s8\> s s\! s s s
   | s1*6/8
   | s8\cresc s s\startTextSpan s s4
   | s1*6/8
@@ -607,7 +609,7 @@ centeredDynamics = {
   | s8\> s s s s s\!
   %125
   | s1*6/8
-  | s16^\markup { \hspace #-10 \dynamic ppp }
+  | s16^\markup { \hspace #-8.8 \dynamic ppp }
 }
 
 \score {
