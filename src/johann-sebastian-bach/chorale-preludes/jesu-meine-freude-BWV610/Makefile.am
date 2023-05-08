@@ -27,7 +27,8 @@ BUILT_SOURCES = covercolor.ly
 EXTRA_DIST = JS-Bach-BWV610-Jesu-meine-Freude.ly \
 	     covercolor.ly.in \
 	     header.ily \
-	     global.ly
+	     global.ly \
+	     logo.ly
 
 all: $(BUILT_SOURCES) JS-Bach-BWV610-Jesu-meine-Freude
 
