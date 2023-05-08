@@ -11,7 +11,7 @@
 \paper {
   #(set-paper-size "a4")
   annotate-spacing = ##f
-  bottom-margin = 8\mm
+  bottom-margin = 10\mm
   first-page-number = 0
   indent = 0.0
 % last-bottom-spacing.padding = #2
@@ -29,7 +29,7 @@
         (minimum-distance . 1)
         (padding . 1.5)
         (stretchability . 25))
-  top-margin = 10\mm
+  top-margin = 18\mm
 }
 
 \bookpart {
@@ -69,6 +69,7 @@
         \line { \abs-fontsize #20 "BWV 610" }
         \null\null\null\null
         \fill-line { \abs-fontsize #20 "Transcribed for Piano Solo" }
+        \null\null\null
         \null\null\null
       }
     }
