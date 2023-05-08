@@ -81,16 +81,16 @@ AC_CONFIG_FILES([\
   src/johannes-brahms/rhapsodie-op.79-nr.1/Makefile \
   src/johannes-brahms/rhapsodie-op.79-nr.2/Makefile \
   src/johann-sebastian-bach/Makefile \
-  src/johann-sebastian-bach/chaconne-fur-violine-busoni-BWV1004/Makefile \
+  src/johann-sebastian-bach/chaconne-fur-violine-BWV1004-busoni/Makefile \
   src/johann-sebastian-bach/chorale-preludes/Makefile \
-  src/johann-sebastian-bach/chorale-preludes/BWV615-Busoni/Makefile \
-  src/johann-sebastian-bach/chorale-preludes/BWV639-Busoni/Makefile \
+  src/johann-sebastian-bach/chorale-preludes/BWV615-busoni/Makefile \
+  src/johann-sebastian-bach/chorale-preludes/BWV639-busoni/Makefile \
   src/johann-sebastian-bach/chorale-preludes/BWV659/Makefile \
-  src/johann-sebastian-bach/chorale-preludes/BWV659-Busoni/Makefile \
-  src/johann-sebastian-bach/chromatische-fantasie-und-fugue-BWV903/Makefile \
+  src/johann-sebastian-bach/chorale-preludes/BWV659-busoni/Makefile \
+  src/johann-sebastian-bach/chorale-preludes/jesu-meine-freude-BWV610/Makefile \
+  src/johann-sebastian-bach/chromatische-fantasie-und-fugue-BWV903-busoni/Makefile \
   src/johann-sebastian-bach/die-kunst-der-fuge-BWV1080/Makefile \
   src/johann-sebastian-bach/italienisches-konzert-BWV971/Makefile \
-  src/johann-sebastian-bach/jesu-meine-freude-BWV610/Makefile \
   src/johann-sebastian-bach/partitas/Makefile \
   src/johann-sebastian-bach/partitas/BWV830/Makefile \
   src/johann-sebastian-bach/praludium-und-fuge-liszt-BWV543-S462/Makefile \
