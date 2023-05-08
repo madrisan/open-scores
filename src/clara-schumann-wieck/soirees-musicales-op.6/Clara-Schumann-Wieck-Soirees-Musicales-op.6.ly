@@ -7,7 +7,7 @@
 \paper {
   #(set-paper-size "a4")
   annotate-spacing = ##f
-  bottom-margin = 8\mm
+  bottom-margin = 10\mm
   first-page-number = 0
   indent = 0.0
 % last-bottom-spacing.padding = #2
@@ -26,7 +26,7 @@
         (padding . 1.5)
         (stretchability . 25))
   tagline = ##f
-  top-margin = 10\mm
+  top-margin = 15\mm
 }
 
 \bookpart {
@@ -57,31 +57,27 @@
         \null
         \fill-line { \draw-hline }
         \null\null\null
-        \line { \abs-fontsize #34 \bold "Soirées Musicales" }
-        \null\null\null\null
-        \line { \abs-fontsize #20 \bold "Op. 6" }
-        \null\null\null\null
-        \fill-line { \abs-fontsize #20 "For Piano" }
-
-        \null\null\null\null
-        \fill-line {
-          \override #'(thickness . 1)
-          \draw-squiggle-line #0.5 #'(14 . 0) ##t
-        }
+        \line { \abs-fontsize #40 \bold "Soirées Musicales" }
         \null\null
-        \fill-line {
-          \abs-fontsize #13
-          \smallCaps " Lavender.Blue Open Scores"
-        }
-        \fill-line { \abs-fontsize #10 "Engraved by Davide Madrisan" }
-        \fill-line {
-          \abs-fontsize #9
-          \typewriter "https://github.com/madrisan/open-scores/"
-        }
-        \null\null\null\null
+        \line { \abs-fontsize #24 \bold "Op. 6" }
+       \null\null\null
+       \fill-line { \abs-fontsize #30 \bold "2. Nocturne" }
+        \null\null
+        \fill-line { \abs-fontsize #20 "For Piano" }
+        \null\null\null
+        \null\null\null
+      }
+    }
+  }
 
+  \include "./logo.ly"
+
+  \markup {
+    \fill-line {
+      \center-column {
+        \null\null\null\null
         \fill-line { \abs-fontsize #10 "Based on the score published by Friedrich Hofmeister - Leipzig, 1836" }
-        \null
+        \null\null
       }
     }
   }
