@@ -9,18 +9,27 @@
 }
 
 \paper {
-  indent = 0.0
-  line-width = 18.6\cm
-  top-margin = 10\mm
-  bottom-margin = 10\mm
-  ragged-last-bottom = ##f
-%  ragged-bottom = ##f
-  first-page-number = 0
-%  markup-system-spacing.basic-distance = #10
-%  last-bottom-spacing.padding = #2
-  print-all-headers = ##t
-  ragged-bottom = ##f
+  #(set-paper-size "a4")
   annotate-spacing = ##f
+  bottom-margin = 8\mm
+  first-page-number = 0
+  indent = 0.0
+% last-bottom-spacing.padding = #2
+  line-width = 18.6\cm
+  markup-system-spacing =
+     #'((basic-distance . 2)
+        (minimum-distance . 1)
+        (padding . 1.5)
+        (stretchability . 20))
+  print-all-headers = ##t
+  ragged-last-bottom = ##f
+  ragged-bottom = ##f
+  system-system-spacing =
+     #'((basic-distance . 2)
+        (minimum-distance . 1)
+        (padding . 1.5)
+        (stretchability . 25))
+  top-margin = 10\mm
 }
 
 \bookpart {
@@ -54,12 +63,14 @@
         \line { \abs-fontsize #28 \bold "Chromatische Fantasie und Fuge" }
         \null\null
         \line { \abs-fontsize #20 "BWV 903" }
-        \null\null\null\null
-        \fill-line { \abs-fontsize #20 "for Piano Solo" }
         \null\null
-        \fill-line { \abs-fontsize #24 "Interpreted by Ferruccio Busoni" }
+        \fill-line { \abs-fontsize #20 "for Piano Solo" }
         \null\null\null
+        \fill-line { \abs-fontsize #16 "Interpreted by " }
+        \null
+        \fill-line { \abs-fontsize #40 \bold "Ferruccio Busoni" }
         \null\null\null
+        \null\null
       }
     }
   }
