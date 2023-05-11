@@ -91,7 +91,11 @@ Sopran = \context Voice = "one" \relative c'' {
     \acciaccatura { des16[ ges] } ees8[ des]\) bes16[\( ees des ees] aes8[ g]
   | \time 2/4 \stemDown aes[ des des \stemUp \acciaccatura ges8 \stemDown ees]
   | \time 3/4 \stemNeutral des4^- aes^- ees^-\)
-  | \time 2/4 ges8_.[ aes16( ges] ees16[ ges des8_.)]
+  | \tempo \markup {
+      \hspace #5
+      \normal-text\italic\small "un poco capriccioso"
+    }
+    \time 2/4 ges8_.[ aes16( ges] ees16[ ges des8_.)]
   | ees_.[ des16( ees] \clef bass bes[ aes bes8^.])
   %35
   | \time 2/8 ges16( g! aes a!
@@ -101,9 +105,13 @@ Sopran = \context Voice = "one" \relative c'' {
   | cis ees~
   %40
   | \tupletDown\tuplet 6/4 { ees!16 cis ees cis ees cis } ees4~
-  | ees cis8[ ees~]
+  | ees cis8[_\markup {
+      \hspace #2 \whiteout
+      \italic\small "perdendosi"
+    } ees~]
   | ees2
-  | cis4~ \tupletUp\tuplet 3/2 { cis4 ees8~ }
+  | \once\override Hairpin.Y-offset = #1
+    cis4_~\> \tupletUp\tuplet 3/2 { cis4\! ees8~ }
   | ees2~
   %45
   | 4~ 8\)\fermata r\fermata
@@ -138,16 +146,13 @@ Sopran = \context Voice = "one" \relative c'' {
     \once\override Beam.positions = #'(1.5 . 1.2)
     a,32[^( d b g \bottom e16_.)] \top \once\override Voice.Rest.X-offset = #1 r16
   |  \set subdivideBeams = ##f
-     \clef bass r8 \stemDown <ees g>16-.[ q-.^\markup {
-       \italic\small "(senza allargare)"
-     } q-. q-. <ees g>8-.]
-  | \override Hairpin.Y-offset = #-5
-    \time 3/8 <d ges>-.[\< <des f>-. c-.]\!
+     \clef bass r8 \stemDown <ees g>16-.[ q-. q-. q-. <ees g>8-.]
+  | \time 3/8 <d ges>-.[ <des f>-. c-.]
   | \time 2/4 r8
     \appoggiatura {
       \override Stem.details.beamed-lengths = #'(5.8)
       \stemUp ges,32[ aes bes]
-    } a8_!_\markup { \hspace #-2 \dynamic sff \small\italic "secco" } r4\fermata
+    } a8_! r4\fermata
   \fine
 }
 
@@ -344,7 +349,16 @@ centerDynamics = {
   | s4 s4\< s4
   | s2
   | s4\!\> s2
-  | s4\!
+  | s4\! s4
+  | s2
+  %35
+  | \override Hairpin.to-barline = ##f
+    s4\<
+  | s8\!\sf\> s4
+  | s4\!\p s4
+    \override Hairpin.to-barline = ##t
+  | s4 s4-\markup { \italic\small "dim." }
+  | s4-\markup { \hspace #-1.5 \italic\small "(senza rall.)" } s4
 
 }
 
