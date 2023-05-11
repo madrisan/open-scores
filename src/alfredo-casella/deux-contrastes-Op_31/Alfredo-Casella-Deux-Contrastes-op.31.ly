@@ -91,4 +91,4 @@
 
 \include "parts/1-grazioso.ly"
 \pageBreak
-%\include "parts/2-antigrazioso.ly"
+\include "parts/2-antigrazioso.ly"
