@@ -29,7 +29,8 @@ EXTRA_DIST = Alfredo-Casella-Deux-Contrastes-op.31.ly \
 	     header.ily \
 	     global.ly \
 	     logo.ly \
-	     parts/1-grazioso.ly
+	     parts/1-grazioso.ly \
+	     parts/2-antigrazioso.ly
 
 all: $(BUILT_SOURCES) Alfredo-Casella-Deux-Contrastes-op.31
 

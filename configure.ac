@@ -71,7 +71,7 @@ AC_CONFIG_FILES([\
   Makefile \
   src/Makefile \
   src/alfredo-casella/Makefile \
-  src/alfredo-casella/deux-contrastes-Op_31/Makefile \
+  src/alfredo-casella/deux-contrastes-op.31/Makefile \
   src/baldassare-galuppi/Makefile \
   src/baldassare-galuppi/sonata-5-c-major/Makefile \
   src/clara-schumann-wieck/Makefile \

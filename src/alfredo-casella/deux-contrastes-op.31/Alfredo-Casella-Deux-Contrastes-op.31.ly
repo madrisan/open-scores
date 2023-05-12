@@ -9,7 +9,7 @@
 \paper {
   #(set-paper-size "a4")
   annotate-spacing = ##f
-  bottom-margin = 10\mm
+  bottom-margin = 15\mm
   first-page-number = 0
   indent = 0.0
 % last-bottom-spacing.padding = #2
@@ -50,7 +50,7 @@
     \fill-line {
       \center-column {
         \null\null\null
-        \null\null\null
+        \null\null
         \line { \abs-fontsize #30 \bold "Alfredo" }
         \null
         \line { \abs-fontsize #80 \bold "Casella" }
@@ -69,7 +69,7 @@
         \line { \abs-fontsize #14 "POUR LE" }
         \null
         \line { \abs-fontsize #22 "PIANO" }
-        \null\null\null
+        \null\null\null\null\null
       }
     }
   }
@@ -79,11 +79,11 @@
   \markup {
     \fill-line {
       \center-column {
-        \null\null\null\null
+        \null\null\null
         \fill-line {
           \abs-fontsize #12 "Based on the edition London: J. & W. Chester, Ltd., 1919. Plate J. & W. C. 2041."
         }
-        \null\null
+        \null
       }
     }
   }
