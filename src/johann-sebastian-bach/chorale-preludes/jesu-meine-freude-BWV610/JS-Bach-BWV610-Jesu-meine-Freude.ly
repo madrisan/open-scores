@@ -11,7 +11,7 @@
 \paper {
   #(set-paper-size "a4")
   annotate-spacing = ##f
-  bottom-margin = 10\mm
+  bottom-margin = 5\mm
   first-page-number = 0
   indent = 0.0
 % last-bottom-spacing.padding = #2
@@ -22,14 +22,14 @@
         (padding . 1.5)
         (stretchability . 20))
   print-all-headers = ##t
-  ragged-last-bottom = ##f
+  ragged-last-bottom = ##t
   ragged-bottom = ##f
   system-system-spacing =
      #'((basic-distance . 2)
         (minimum-distance . 1)
         (padding . 1.5)
         (stretchability . 25))
-  top-margin = 18\mm
+  top-margin = 24\mm
 }
 
 \bookpart {
@@ -105,22 +105,22 @@ Soprano = \context Voice = "one"  \relative c'' {
       \hspace #-4 \vspace #4 \dynamic mp
       \italic\small "(la voce più acuta ben in risalto)"
     }
-    g f es
+    g f ees
   | d2 c\fermata
   | g'4 g a b!
   | c2 b!\fermata
   %5
-  | c8. d16 es4 d4. d8
+  | c8. d16 ees4 d4. d8
   | c1\fermata
   }
   \break
-  | g4 g as g
-  | f4. f8 es2\fermata
+  | g4 g aes g
+  | f4. f8 ees2\fermata
   | g4 g a b!
   %10
   | c4 bes! a2
   | g1\fermata
-  | g4 g f es
+  | g4 g f ees
   | d2 c2\fermata \bar "|."
 }
 
@@ -128,22 +128,22 @@ Alto = \context Voice = "two"  \relative c' {
   \voiceTwo
   \repeat volta 2 {
   %1
-  | es16 d es8~ es16 f es d c8[ d~] d c
+  | ees16 d ees8~ ees16 f ees d c8[ d~] d c
   | c8 c4 b!8 c8.[ g16] c b! c d
-  | es16 d es8~ es16 f es d c8 d16 es f as g f~
-  | f16 e f8~ f16 g f es d es d8~ d16 es f d
+  | ees16 d ees8~ ees16 f ees d c8 d16 ees f aes g f~
+  | f16 e f8~ f16 g f ees d es d8~ d16 ees f d
   %5
-  | g8 f es16 g as es f es f d g as g f
-  | e8 f16 g as g as e! f g f8~ f16 f es d
+  | g8 f ees16 g aes ees f ees f d g aes g f
+  | e8 f16 g aes g aes e! f g f8~ f16 f ees d
   }
-  | es16 d es8~ es16 f es des c8 bes~ bes16 bes c g
-  | as16 g as f bes c bes aes! g f g8~ g16 bes c d
-  | es16 d es8~ es16 f es d c8 d16 es f as g f
+  | ees16 d ees8~ ees16 f ees des c8 bes~ bes16 bes c g
+  | aes16 g aes f bes c bes aes! g f g8~ g16 bes c d
+  | ees16 d ees8~ ees16 f ees d c8 d16 ees f aes g f
   %10
-  | es16 d es8 d g~g g4 fis8
+  | ees16 d ees8 d g~g g4 fis8
   | g16 d es c d b! c a b! a b! c d b! g b!
-  | c16 b! c d es d es8~ es d4 c8~
-  |c16 b! c8~ c b! c16 g as8 g4^\fermata
+  | c16 b! c d ees d es8~ ees d4 c8~
+  |c16 b! c8~ c b! c16 g aes8 g4^\fermata
 }
 
 Tenor = \context Voice = "three"  \relative c' {
@@ -151,30 +151,30 @@ Tenor = \context Voice = "three"  \relative c' {
   \change Staff = "lower"
   \repeat volta 2 {
   %1
-  | c16 b! c8~ c16 b! c g a8 g~ g16 g as es
-  | f16 es f d g^\markup {
+  | c16 b! c8~ c16 b! c g a8 g~ g16 g aes ees
+  | f16 ees f d g^\markup {
       \italic\small "r.H"
     }
-    as g f es d \tieDown es8~ es16 \tieNeutral f es d
-  | c16 b! c g' c b! c c, f8. g16 as!4^~
-  | as16 g as b c b! c8 d8. c16 b! c d b!
+    aes g f ees d \tieDown ees8~ ees16 \tieNeutral f ees d
+  | c16 b! c g' c b! c c, f8. g16 aes!4^~
+  | aes16 g aes b c b! c8 d8. c16 b! c d b!
   %5
-  | es16 d es d^~ d8 c~c c4 b!8
-  | c4^~ c8. bes16 as bes as8 g16 as g f
+  | ees16 d ees d^~ d8 c~c c4 b!8
+  | c4^~ c8. bes16 aes! bes aes8 g16 aes g f
   }
-  | es16 f g as bes des c bes as g f8^~ f es
-  | es8 es4 d8 es8. bes16 es d es f
-  | es16 f g8 c16 d c bes a g f8^~ f4
+  | ees16 f g aes bes des c bes aes g f8^~ f ees
+  | ees8 ees4 d8 ees8. bes16 ees d ees f
+  | ees16 f g8 c16 d c bes a g f8^~ f4
   %10
   | g16 fis g a bes a bes g c bes c a
     d^\markup {
       \italic\small "r.H"
-    } es d c
+    } ees d c
   | b!8 c16 a b! g a fis g8 d16_\markup {
       \italic\small "l.H"
-  } es f es f8~
-  | f16 d es b! c b! c8 r16 f g d es g as fis
-  | g16 d f! es f as g f e8. f16~ f d e8^\fermata
+  } ees f ees f8~
+  | f16 d ees b! c b! c8 r16 f g d ees g aes fis
+  | g16 d f! ees f aes g f e8. f16~ f d e8^\fermata
 }
 
 Bass = \context Voice = "four"  \relative c {
@@ -182,24 +182,24 @@ Bass = \context Voice = "four"  \relative c {
   \change Staff = "lower"
   \repeat volta 2 {
   %1
-  | r8 c16 d es d es8~ es16 a, b! g c b! c8
+  | r8 c16 d ees d ees8~ ees16 a, b! g c b! c8
   | r16 g aes f g f g8 c,2\fermata
-  | r8 c'16 d es d
+  | r8 c'16 d ees d
     \shape #'((0 . -0.2) (0 . -1.5) (0 . -1.5) (0 . 0.5)) Tie
-    es8~ es16 c f es d c d8
-  | c8 f16 g aes g as8~ as16 d, fis d g fis g8
+    ees8~ ees16 c f ees d c d8
+  | c8 f16 g aes g aes8~ aes16 d, fis d g fis g8
   %5
   | d8\rest a'16 b! c b! c8 d,16\rest g aes f g f g8
-  | d16\rest g as e f e f8 r16 e! f b,! c b! c8
+  | d16\rest g aes e f e! f8 r16 e! f b,! c b! c8
   }
-  | r8 es16 f g f g8~ g16 c, d! bes es d es8
-  | r16 bes c as bes as bes8 es,2
-  | r8 c'16 d es d es8~ es16 c f es d c d8
+  | r8 ees16 f g f g8~ g16 c, d! bes ees d ees8
+  | r16 bes c aes bes aes bes8 es,2
+  | r8 c'16 d ees d ees8~ es16 c f ees d c d8
   %10
-  | c8 es16 f! g fis g8 d16\rest d es c d c d8
+  | c8 es16 f! g fis g8 d16\rest d ees c d c d8
   | g,1
   | c4 c,8 c'16 bes a8 b! c16 b! c8
-  | r16 g as fis g fis g8 c,2_\fermata
+  | r16 g aes fis g fis g8 c,2_\fermata
 }
 
 Choral = \relative {
@@ -255,8 +255,8 @@ Choral = \relative {
           }
         }
       }
-      \null\null\null
-      \null\null\null
+      \null\null\null\null
+      \null\null
     }
   }
 }
@@ -292,7 +292,14 @@ Choral = \relative {
       %}
     }
   }
-  \layout { }
+  \layout {
+    \context {
+      \PianoStaff
+      \consists "Span_stem_engraver"
+      % More space between staves in the same PianoStaff
+      \override StaffGrouper.staff-staff-spacing.minimum-distance = 15
+    }
+  }
   \midi {
     \tempo 4 = 100
   }
