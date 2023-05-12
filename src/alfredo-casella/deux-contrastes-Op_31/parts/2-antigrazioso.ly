@@ -97,6 +97,7 @@ Sopran = \context Voice = "one" \relative c'' {
     }
     \time 2/4 ges8_.[ aes16( ges] ees16[ ges des8_.)]
   | ees_.[ des16( ees] \clef bass bes[ aes bes8^.])
+    \break
   %35
   | \time 2/8 ges16( g! aes a!
   | \time 3/8 bes8^.) b! g~\(
@@ -105,10 +106,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | cis ees~
   %40
   | \tupletDown\tuplet 6/4 { ees!16 cis ees cis ees cis } ees4~
-  | ees cis8[_\markup {
-      \hspace #2 \whiteout
-      \italic\small "perdendosi"
-    } ees~]
+  | ees cis8[ ees~]
   | ees2
   | \once\override Hairpin.Y-offset = #1
     cis4_~\> \tupletUp\tuplet 3/2 { cis4\! ees8~ }
@@ -140,13 +138,25 @@ Sopran = \context Voice = "one" \relative c'' {
   | <ees g!>_. <d e! gis c>_.] <a ces des f>4
   | \stemDown <c' ees g>16-.[ q-. q-. q-.] <c ees g>8-.[ <bes d f a>-.
   | <c ees g>-. <bes des f>-. <c ees g>-. <b d! f a>-.]
-  | \ottava 1 a''32[( d b g e16-.]) \ottava 0 r16 a,32[( d b g e16-.]) r16
+  | \ottava 1
+    \once\override Staff.TextScript.extra-offset = #'(-0.5 . 0.5)
+    a''32[(^\markup {
+      \italic\small "stringendo"
+    }
+    d b g e16-.])
+    \ottava 0
+    r16 a,32[( d b g e16-.]) r16
   %60
   | \stemUp a,32[( d b g e16_.)] r16
     \once\override Beam.positions = #'(1.5 . 1.2)
     a,32[^( d b g \bottom e16_.)] \top \once\override Voice.Rest.X-offset = #1 r16
   |  \set subdivideBeams = ##f
-     \clef bass r8 \stemDown <ees g>16-.[ q-. q-. q-. <ees g>8-.]
+     \clef bass r8 \stemDown <ees g>16-.[ q-.
+     \once\override Staff.TextScript.extra-offset = #'(-0.5 . 0.5)
+     q-.^\markup {
+       \italic\small "(senza allargare)"
+     }
+     q-. <ees g>8-.]
   | \time 3/8 <d ges>-.[ <des f>-. c-.]
   | \time 2/4 r8
     \appoggiatura {
@@ -194,6 +204,8 @@ Tenor = \context Voice = "three" \relative c' {
   | s1*1/2
   %54
   | s4 g16[( ees g8-.])
+  | s2
+  | s4 ees16[( c! ees8-.])
 }
 
 Bass = \context Voice = "four" \relative c' {
@@ -277,10 +289,10 @@ Bass = \context Voice = "four" \relative c' {
   | <f bes>-.[ <d a'>-. <f bes>-. <d a'>-.
   | <f bes>-. <d a'>-.] r4
   | <f bes>8-.[ <d a'>-. <f bes>-. <d a'>-.]
-  | \tupletUp\tuplet 3/2 { r4 <f bes>8-.[ r <d a'>-.] r }
+  | \tupletUp\tuplet 3/2 { r4_\> <f bes>8-.[ r <d a'>-.] r }
   | <f bes>8-.[ r <d a'>-.] r
   %45
-  | r <f bes>8-. r4\fermata
+  | r <f bes>8-.\!\pp r4\fermata
   | r8 r16. \stemNeutral \clef treble cis''32( d'16^.)[ a^. g'^. bes,^.]
   | ees8..^> aes,32 d,16-.[ e'!-. a,!-. d,-.]
   | des8.. aes32 d!16[ a! \clef bass ees] aes,-.[
@@ -359,6 +371,35 @@ centerDynamics = {
     \override Hairpin.to-barline = ##t
   | s4 s4-\markup { \italic\small "dim." }
   | s4-\markup { \hspace #-1.5 \italic\small "(senza rall.)" } s4
+  %40
+  | s2
+  | s4 s4_\markup {
+      \hspace #1.8 \whiteout
+      \italic\small "perdendosi"
+    }
+  | s2*4
+  %46
+  | s8 s16. s32\f s4
+  | s2*2
+  | s8. s16\< s4
+  %50
+  | s4 s4\!\sf
+  | s8\sf s4 s8\sf\>
+  | s2.
+  | s2\!\p
+  | s4 s4\>
+  %55
+  | s4\!\parenthesize\p s4
+  | s4 s4\sf
+  | s4-\markup { \dynamic f }
+    \override Hairpin.Y-offset = #-2
+    \once\override Hairpin.rotation = #'(2 -1 0) s4\<
+  | s2
+  | s4\!\ff s4
+  %60
+  | s2*2
+  | s8\< s4
+  | s8\! s8-\markup { \hspace #-1.4 \dynamic sff \italic\small "secco" }
 
 }
 
