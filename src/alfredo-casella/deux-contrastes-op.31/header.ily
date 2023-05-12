@@ -2,9 +2,9 @@
   composer = "Alfredo Casella (1883-1947)"
   date = "1916-1918"
 
-  footer = "Mutopia-2023/05/08"
+  footer = "Mutopia-2023/05/12"
 
-  lastupdated = "2023 May 8"
+  lastupdated = "2023 May 12"
   license = "Creative Commons Attribution-ShareAlike 4.0"
   maintainerEmail = "davide.madrisan@gmail.com"
   maintainerWeb = "https://github.com/madrisan/open-scores"
