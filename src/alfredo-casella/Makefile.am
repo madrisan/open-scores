@@ -17,4 +17,4 @@
 
 AM_MAKEFLAGS = --no-print-directory
 
-SUBDIRS = deux-contrastes-Op_31
+SUBDIRS = deux-contrastes-op.31

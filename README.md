@@ -155,6 +155,7 @@ make -C alban-berg/Op_1
 git checkout main
 ```
 ```
+make -C src/alfredo-casella/deux-contrastes-op.31
 make -C src/baldassare-galuppi/sonata-5-c-major
 make -C src/clara-schumann-wieck/soirees-musicales-op.6
 make -C src/johann-sebastian-bach/chaconne-fur-violine-busoni-BWV1004
