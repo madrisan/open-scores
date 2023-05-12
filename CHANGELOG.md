@@ -7,6 +7,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [v32] -
 
+### Changed
+
+- J.S. Bach: Jesu meine Freude (BWV 610) - better pagination
 
 ## [v31] - 2023-05-12
 
