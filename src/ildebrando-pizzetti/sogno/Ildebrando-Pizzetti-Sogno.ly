@@ -120,7 +120,12 @@ Sopran = \context Voice = "one" \relative c' {
   | %c'2~ \once\override NoteColumn.force-hshift = #1 c4 bes
     c'2. bes4
   | %bes2~ bes4\) aes~\(
-    bes2.\) aes4~\(
+    bes2.\)
+    \shape #'(
+      (( 0 . 0) (0 . 0) (0 . 0) (0 . 0))
+      (( 0 . 0) (0 . 0.5) (0 . 0) (0 . -1))
+    ) PhrasingSlur
+    aes4~\(
   | aes^\< bes \once\override NoteColumn.force-hshift = #-0.7 c des
   | %aes'2~\!\> aes4( ges)
     aes'2.\!\>( ges4)
@@ -135,14 +140,22 @@ Sopran = \context Voice = "one" \relative c' {
       \small "a tempo"
     }
   | des4\) g\rest f2\rest
-  | aes1^>(\(
+  | \shape #'(
+      (( 1 . 1) (0 . 0) (0 . 0) (0 . 1))
+      ((0.5 . 1.5) (1 . 0) (0 . 0) (11 . -2))
+    ) PhrasingSlur
+    aes1^>(\(
   | g!1
   \pageBreak
   | ges2) \tuplet 6/4 { aes8^-[( ges^- f^- ges^- aes^- ges^-] }
   %20
   | bes2. ges4
   | f2.)\) f4\rest
-  | f1^>(\(^\markup {
+  | \shape #'(
+      (( 1 . 1) (0 . 0) (0 . 0) (0 . 0.5))
+      (( 0 . 0.5) (0 . 0) (0 . 0) (-1 . 0))
+    ) PhrasingSlur
+    f1^>(\(^\markup {
       \small "animando"
     }
   | e!1
@@ -153,12 +166,21 @@ Sopran = \context Voice = "one" \relative c' {
   | \once\override Hairpin.Y-offset = #0
     \once\override Hairpin.rotation = #'(4 -1 0)
     q\> <aes aes'> <g! g'!> <f f'>\!
-  | \slurDown \acciaccatura ees'!8\) ees,!2.\( des4
+  | \slurDown \acciaccatura ees'!8\) ees,!2.
+    \shape #'(
+      (( 0 . 0) (0 . 0) (0 . 0) (0 . 0))
+      (( 0 . 2) (0 . 2) (0 . 2) (0 . 2))
+    ) PhrasingSlur
+    \( des4
   | \acciaccatura ees8 f,2 g!4 c~
   %30
   | \slurNeutral \tuplet 3/2 { c8[( bes^- aes^-)] } aes2.~
   | aes8\) f'\rest f4\rest f2\rest
-  | f,1^>\(
+  | \shape #'(
+      (( 0 . 0) (0 . 0) (0 . 0) (0 . 0))
+      (( 0 . 2) (0 . 2) (0 . 2) (0 . 2))
+    ) PhrasingSlur
+    f,1^>\(
   | e!2. f4
   | c'2. bes4
   %35
