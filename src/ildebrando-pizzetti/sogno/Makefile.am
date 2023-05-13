@@ -1,6 +1,6 @@
 ## Process this file with automake to produce Makefile.in
 
-## Copyright (c) 2022 Davide Madrisan <davide.madrisan@gmail.com>
+## Copyright (c) 2023 Davide Madrisan <davide.madrisan@gmail.com>
 ##
 ## This program is free software: you can redistribute it and/or modify
 ## it under the terms of the GNU General Public License as published by
@@ -15,17 +15,22 @@
 ## You should have received a copy of the GNU General Public License
 ## along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-AM_MAKEFLAGS = --no-print-directory
+SUFFIXES = .in
+.in:; @echo "Generating $@...";\
+	sed "s,@rgb_color@,$(RGB_COLOR),g;" \
+	$< > $@
 
-SUBDIRS = alfredo-casella \
-	  baldassare-galuppi \
-	  clara-schumann-wieck \
-	  hans-erich-apostel \
-	  ildebrando-pizzetti \
-	  johannes-brahms \
-	  johann-sebastian-bach \
-	  mikhail-glinka \
-	  robert-schumann \
-	  rued-langgaard
+%: %.ly
+	$(LILYPOND) --pdf --output $@ $<
 
-check-local: all
+BUILT_SOURCES = covercolor.ly
+EXTRA_DIST = Ildebrando-Pizzetti-Sogno.ly \
+	     covercolor.ly.in \
+	     header.ily
+
+all: $(BUILT_SOURCES) Ildebrando-Pizzetti-Sogno
+
+clean-local:
+	-rm -f $(BUILT_SOURCES)
+	-rm -f *.midi parts/*.midi
+	-rm -f *.pdf parts/*.pdf
