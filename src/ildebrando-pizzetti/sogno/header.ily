@@ -2,9 +2,9 @@
   composer = "Ildebrando Pizzetti (1880-1968)"
   date = "15 December 1900"
 
-  footer = "Mutopia-2023/05/13"
+  footer = "Mutopia-2023/05/15"
 
-  lastupdated = "2023 May 13"
+  lastupdated = "2023 May 15"
   license = "Creative Commons Attribution-ShareAlike 4.0"
   maintainerEmail = "davide.madrisan@gmail.com"
   maintainerWeb = "https://github.com/madrisan/open-scores"
