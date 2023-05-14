@@ -82,7 +82,7 @@ Global = {
       \center-column {
         \null\null\null
         \fill-line {
-          \abs-fontsize #12 "on the score published by Angelo Giglia, Genova"
+          \abs-fontsize #12 "Based on the score published by Angelo Giglia, Genova"
         }
         \null
       }
@@ -105,7 +105,7 @@ Sopran = \context Voice = "one" \relative c' {
   %1
   \tempo \markup { \bold "Lento e tranquillo" }
   | <cis e! a!>1\(
-  | <d! f bes>
+  | <d! f bes!>
   | <dis fis b!>
   | <c_~ f!~ c'~>\)
   %5
@@ -141,8 +141,12 @@ Sopran = \context Voice = "one" \relative c' {
     }
   | des4\) g\rest f2\rest
   | \shape #'(
+      (( 0 . 0) (0 . 0) (0 . 0) (0 . 0))
+      ((-1 . 0.8) (0 . 0.6) (0 . 0.5) (0 . 0))
+    ) Slur
+    \shape #'(
       (( 1 . 1) (0 . 0) (0 . 0) (0 . 1))
-      ((0.5 . 1.5) (1 . 0) (0 . 0) (11 . -2))
+      ((0.5 . 1) (1 . 0) (0 . 0) (11 . -2))
     ) PhrasingSlur
     aes1^>(\(
   | g!1
@@ -234,7 +238,7 @@ Sopran = \context Voice = "one" \relative c' {
   %50
   | \appoggiatura { aes32 ees' aes } <aes bes aes'>2. <ges ges'>4
   | \slurUp \clef bass <cis,,, e! a!>1\)(
-  | <d! f bes>1
+  | <d! f bes!>1
   | <dis fis b!>1
   | <c_~ f!~ c'~>1_>)
   %55
@@ -424,7 +428,7 @@ Tenor = \context Voice = "three" \relative c' {
     \shape #'((0 . 1.2) (0 . 1.5) (0 . 1.5) (0 . 0.8)) Tie
     f'4~
   | f4 s2 \shape #'((0 . 1.2) (0 . 1.5) (0 . 1.5) (0 . 0.8)) Tie f4~
-  | f s \shape #'((0 . 0.6) (0 . 1.5) (0 . 1.3) (0 . 1)) Tie f2~
+  | f s \shape #'((0 . 0.6) (0 . 1.5) (0 . 1.3) (0.5 . 1)) Tie f2~
   | <bes, des f>1
 }
 
@@ -440,7 +444,9 @@ Bass = \context Voice = "four" \relative c' {
   %5
   | d~
   | d4 a4\rest g2\rest
-  | R1
+  | \override MultiMeasureRest.staff-position = #-4
+    R1
+    \override MultiMeasureRest.staff-position = #0
   | des'!8_\Ped s s2.
   | des8_\Ped s s2.
   %10
@@ -562,7 +568,8 @@ centerDynamics = {
        \dynamic ppp \whiteout \italic\small "a tempo"
     }
   | s1*2
-  | s1_\markup {
+  | \once\override Staff.TextScript.extra-offset = #'(0 . 1)
+    s1_\markup {
       \small\italic "poco" \dynamic sf
     }
   %55
@@ -627,7 +634,7 @@ centerDynamics = {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 4 = 60
   }
 }
 
