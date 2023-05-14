@@ -229,7 +229,8 @@ Sopran = \context Voice = "one" \relative c' {
       (( 0 . 0) (0 . 0.5) (0 . 1.8) (-1 . -2))
     ) PhrasingSlur
     \tupletUp\tuplet 6/4 { f8^-[^(^\( ees^- des^- ees^- f^- des_~^-)] }
-  | <aes des aes'>4 <bes bes'> <c c'> <des des'>
+  | <aes des aes'>4 <bes bes'>
+    \once\override NoteColumn.force-hshift = #0.9 <c c'> <des des'>
   %50
   | \appoggiatura { aes32 ees' aes } <aes bes aes'>2. <ges ges'>4
   | \slurUp \clef bass <cis,,, e! a!>1\)(
@@ -289,7 +290,7 @@ Alto = \context Voice = "two" \relative c' {
   | s ees4 8 8 4 8
   | s1*8
   %31
-  | \override Stem.length = #15
+  | \override Stem.length = #18
     s8 <des ges>4
     \revert Stem.length
     <des ges bes>4_- <bes des ees>_- <aes c aes'>8_-
@@ -313,7 +314,7 @@ Alto = \context Voice = "two" \relative c' {
   %40
   | \tupletUp\tuplet 3/2 { f8 ees des } des2\) c4\rest
   | \stemDown
-    \override Stem.length = #15
+    \override Stem.length = #18
     \omit Flag
     s8 <des,, aes'>4 q8 <des bes'> <des aes'>4 q8
   | s <ees aes>4 q8 <ees bes'> <ees aes>4 q8
@@ -323,7 +324,7 @@ Alto = \context Voice = "two" \relative c' {
   | s <ees f>4 q8 <ees ges!> <ees f>4 q8
   | s1*2
   | s8 g!4 8 aes g4 8
-  | s <f aes>4 q8 <f bes> <f aes>4 q8
+  | s <f aes>4 q8 \once\override NoteColumn.force-hshift = #0 <f bes> <f aes>4 q8
     \revert Stem.length
     \undo\omit Flag
   | s1*10
@@ -333,7 +334,7 @@ Alto = \context Voice = "two" \relative c' {
   | q r
     \shape #'((0 . 0) (0 . 0.5) (0 . 0.5) (0 . 0)) Slur
     q2^~(
-  | <b f'>1)^\fermata
+  | <bes f'>1)^\fermata
 }
 
 Tenor = \context Voice = "three" \relative c' {
@@ -407,8 +408,8 @@ Tenor = \context Voice = "three" \relative c' {
   | s8 aes4 8[ bes] aes4 8
   | s1*9
   %48
-  | s8 <bes des ees>4 q8 q q4 q8
-  | s <aes des>4 q8 <bes des> <aes des>4 q8
+  | s8 <bes des ees>4 q8[ q] q4 q8
+  | s <aes des>4 q8[ <bes des>] <aes des>4 q8
   %50
   | s <bes ees ges>4 q8[ <c ees ges>] <bes ees ges>4 q8
   | s1*2
@@ -423,7 +424,7 @@ Tenor = \context Voice = "three" \relative c' {
     \shape #'((0 . 1.2) (0 . 1.5) (0 . 1.5) (0 . 0.8)) Tie
     f'4~
   | f4 s2 \shape #'((0 . 1.2) (0 . 1.5) (0 . 1.5) (0 . 0.8)) Tie f4~
-  | f s \shape #'((0 . 0.6) (0 . 1.1) (0 . 1.1) (0 . 0.5)) Tie f2~
+  | f s \shape #'((0 . 0.6) (0 . 1.5) (0 . 1.3) (0 . 1)) Tie f2~
   | <bes, des f>1
 }
 
