@@ -7,6 +7,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [v32] -
 
+### Added
+
+- Ildebrando Pizzetti: Sogno
+
 ### Changed
 
 - J.S. Bach: Jesu meine Freude (BWV 610) - better pagination
