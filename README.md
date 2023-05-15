@@ -117,6 +117,10 @@ Thanks to my harpist friend Tristan Rollet ([@Pluiesurlavitre](https://github.co
    * VIII. Julus terrestris (Millipede)
    * IX. Culex pipiens (Mosquito)
 
+#### Ildebrando Pizzetti (1880-1968)
+
+ * [Sogno](https://github.com/madrisan/open-scores/releases/download/v31/Ildebrando-Pizzetti-Sogno.pdf)
+
 #### Clara Schumann Wieck (1819-1896)
 
  * Soirées Musicales op.6
