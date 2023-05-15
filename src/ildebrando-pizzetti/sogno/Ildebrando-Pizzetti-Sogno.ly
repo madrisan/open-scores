@@ -70,7 +70,6 @@ Global = {
         \line { \abs-fontsize #20 \italic "A Maria Stradivari" }
         \null\null\null
         \null\null\null
-        \null\null\null
       }
     }
   }
@@ -80,11 +79,11 @@ Global = {
   \markup {
     \fill-line {
       \center-column {
-        \null\null\null
+        \null\null\null\null\null
         \fill-line {
           \abs-fontsize #12 "Based on the score published by Angelo Giglia, Genova"
         }
-        \null
+        \null\null
       }
     }
   }
@@ -104,7 +103,8 @@ Sopran = \context Voice = "one" \relative c' {
   \override Rest.staff-position = #0
   %1
   \tempo \markup { \bold "Lento e tranquillo" }
-  | <cis e! a!>1\(
+  | \shape #'((0 . 0) (0 . 0.5) (0 . 0.5) (0 . 0)) PhrasingSlur
+    <cis e! a!>1\(
   | <d! f bes!>
   | <dis fis b!>
   | <c_~ f!~ c'~>\)
@@ -113,7 +113,11 @@ Sopran = \context Voice = "one" \relative c' {
   | q4 r r2
     \break
   | R1
-  | f1^>\(
+  | \shape #'(
+      (( 0 . 0) (0 . 0) (0 . 0) (0 . 0))
+      (( -0.5 . 1.5) (0 . 1.5) (0 . 1.5) (-0.2 . 1.5))
+    ) PhrasingSlur
+    f1^>\(
   | %e!2_~ e4 f
     e!2. f4
   %10
@@ -122,8 +126,8 @@ Sopran = \context Voice = "one" \relative c' {
   | %bes2~ bes4\) aes~\(
     bes2.\)
     \shape #'(
-      (( 0 . 0) (0 . 0) (0 . 0) (0 . 0))
-      (( 0 . 0) (0 . 0.5) (0 . 0) (0 . -1))
+      (( 0 . -0.8) (0 . 0) (0 . 0) (0 . 0))
+      (( 0 . -0.5) (0 . 0.5) (0 . 0) (0 . -1))
     ) PhrasingSlur
     aes4~\(
   | aes^\< bes \once\override NoteColumn.force-hshift = #-0.7 c des
@@ -168,7 +172,7 @@ Sopran = \context Voice = "one" \relative c' {
         (( 0 . 0) (0 . 0) (0 . 0) (0 . 0))
         (( 0 . -6) (0 . 1) (0 . 1) (0 . 0))
       ) PhrasingSlur
-      f8^-\)[\( ees^- des!^- ees^- f^- des~^-]
+      f8^-\)[\( ees^- des^- ees^- f^- des~^-]
     }
   %25
   | <aes des aes'>4 <bes bes'> <c c'> <des des'>
@@ -182,7 +186,7 @@ Sopran = \context Voice = "one" \relative c' {
       (( 0 . 2) (0 . 2) (0 . 2) (0 . 2))
     ) PhrasingSlur
     des4
-  | \acciaccatura ees8 f,2 g!4 c~
+  | \acciaccatura ees8 f,2 g!4 c~^-
   %30
   | \slurNeutral \tuplet 3/2 { c8[( bes^- aes^-)] } aes2.~
   | aes8\) f'\rest f4\rest f2\rest
@@ -227,7 +231,7 @@ Sopran = \context Voice = "one" \relative c' {
   | a!2.\) d4\rest
   | \slurDown \appoggiatura { f,32\( a! ees' } f1
   | \appoggiatura { e,!32 gis d' } e!1
-  | \appoggiatura { ees,!32 gis des' } ees2\)
+  | \appoggiatura { ees,!32 g! des' } ees2\)
     \shape #'(
       (( 0 . 0.5) (0 . 0) (0 . 0) (0 . 2.5))
       (( 0 . 0) (0 . 0.5) (0 . 1.8) (-1 . -2))
@@ -236,7 +240,7 @@ Sopran = \context Voice = "one" \relative c' {
   | <aes des aes'>4 <bes bes'>
     \once\override NoteColumn.force-hshift = #0.9 <c c'> <des des'>
   %50
-  | \appoggiatura { aes32 ees' aes } <aes bes aes'>2. <ges ges'>4
+  | \appoggiatura { aes32 ees' aes_~ } <aes bes aes'>2. <ges ges'>4
   | \slurUp \clef bass <cis,,, e! a!>1\)(
   | <d! f bes!>1
   | <dis fis b!>1
@@ -295,10 +299,12 @@ Alto = \context Voice = "two" \relative c' {
   | s1*8
   %31
   | \override Stem.length = #18
+    \undo\omit Flag
     s8 <des ges>4
     \revert Stem.length
     <des ges bes>4_- <bes des ees>_- <aes c aes'>8_-
   | \override Stem.length = #20
+    \omit Flag
     s <des aes'>4 q8 <des bes'> <des aes'>4 q8
   | s <des aes'>4 q8 <des bes'> <des aes'>4 q8
   | s <f aes>4 q8 <f bes> <f aes>4 q8
@@ -429,7 +435,9 @@ Tenor = \context Voice = "three" \relative c' {
     f'4~
   | f4 s2 \shape #'((0 . 1.2) (0 . 1.5) (0 . 1.5) (0 . 0.8)) Tie f4~
   | f s \shape #'((0 . 0.6) (0 . 1.5) (0 . 1.3) (0.5 . 1)) Tie f2~
-  | <bes, des f>1
+  | \arpeggioBracket
+    \once\override Arpeggio.positions = #'(-3 . -0.5)
+    <bes, des f>1\arpeggio
 }
 
 Bass = \context Voice = "four" \relative c' {
@@ -475,7 +483,7 @@ Bass = \context Voice = "four" \relative c' {
   | ees,8_\Ped s s2.
   %30
   | aes8_\Ped s s2.
-  | \stemDown <c' des aes'>8^. bes4 s2 s8
+  | \stemDown <c' des aes'>8^. bes4_- s2 s8
   | des,8_\Ped s s2.
   | des8_\Ped s s2.
   | d!8_\Ped s s2.
@@ -507,8 +515,8 @@ Bass = \context Voice = "four" \relative c' {
   | d1
   | R1*4_\markup { \italic\small "sempre" \small\musicglyph #"pedal.Ped" }
   %60
-  | \stemDown des8 <aes' des aes'>4 q8[ <bes des aes'>] <aes des aes'>4 q8
-  | des,8 <aes' des aes'>4 q8[ <bes des aes'>] <aes des aes'>4 q8
+  | \stemDown des8 <aes' des aes'>4 q8[ <bes des bes'>] <aes des aes'>4 q8
+  | des,8 <aes' des aes'>4 q8[ <bes des bes'>] <aes des aes'>4 q8
   | des,4 <aes' des aes'>2 q4
   | des,1\fermata
   \fine
