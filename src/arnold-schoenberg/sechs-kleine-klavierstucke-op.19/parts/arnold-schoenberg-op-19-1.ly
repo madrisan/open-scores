@@ -11,6 +11,16 @@ extendLV = #(define-music-function (parser location further) (number?) #{
   \once \override LaissezVibrerTie.extra-offset = #(cons (/ further 2) 0)
 #})
 
+#(define-markup-command (annotation layout props text) (markup?)
+  "Draw an annotation (a double box around text)."
+  (interpret-markup layout props
+    (markup #:override '(box-padding . 0.2) #:box
+            #:override '(box-padding . 0.4) #:box #:normal-text #:tiny text )))
+
+csBracket = \override PianoStaff.Arpeggio.stencil = #ly:arpeggio::brew-chord-bracket
+lH = \markup { \small "l.H" }
+rH = \markup { \small "r.H" }
+
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
@@ -29,7 +39,11 @@ Sopran = \context Voice = "one" \relative c'' {
       \small "etwas zögernd"
       %\override #'((on . 0.3) (off . 0.5))
       \draw-dashed-line #'(24 . 0)
-    } bes16^\< a] fis4\!\> dis8\!)
+    } bes16^\< a]
+    \once\override Staff.TextScript.extra-offset = #'(-7 . -2)
+    \csBracket fis4_\rH
+    \arpeggio\!\> dis8\!)
+    \revert PianoStaff.Arpeggio.stencil
   | r4. r16 \tuplet 3/2 { b''!32[(\ppp^\markup {
        \small "flüchtig"
     } e,! a!] } g!16[ gis8 a!16~]
@@ -38,7 +52,11 @@ Sopran = \context Voice = "one" \relative c'' {
   | \tuplet 3/2 { ees16 d! a! } des8^- c) g'\rest aes8.\espressivo[( g16]
   | \time 3/8 b!8.[ d!16 fis^- f!])
   | \time 2/4 \stemDown r8 <ees, b'! d!>16\arpeggio r16 r8 <f! a! des>16\arpeggio r16
-  | r32 fis[( cis g!] bes[ d! a'! gis] <b! f'!>16^.)[ <c,!_~ fis~>^> q8]
+  | r32 fis[( cis g!]
+    bes_\lH[_\markup \annotation 4 d!
+    \once\override Staff.TextScript.extra-offset = #'(0 . -3.6)
+    a'!^\rH gis]
+    <b! f'!>16^.)[ <c,!_~ fis~>^> q8]
   | r8 \stemUp a,!4.
   %10
   | b''8\rest
@@ -56,18 +74,17 @@ Sopran = \context Voice = "one" \relative c'' {
 
     f'!8[\(^\mf^\markup {
       \small "(mit Ton)"
-    } ees des d,!]
+    } ees des d,!_\lH_\markup \annotation {6}]
     \break
   | \time 6/8 d!4^\markup {
       \small "molto rit."
       \draw-dashed-line #'(14 . 0)
     }^\markup { \tiny\note {8} #1 "=" \tiny\note {8.} #1  } f!8 des4 ces8
   %15
-  | \stemDown
-    % FIXME
-    <e'!_~ gis^~ des'^~>2.\ppp\)
-  | <e_~ gis^~ des'^~>2.
-  | <e_~ gis^~ des'^~>4.
+  | \stemDown\tieNeutral
+    <e'! gis dis'>2.~^>\ppp\)
+  | <e gis dis'>2.~
+  | <e gis dis'>4.~
     \once\override Staff.TextScript.extra-offset = #'(-2 . 0)
     q8[^\markup {
       \small "molto rit."
@@ -90,7 +107,9 @@ Alto = \context Voice = "two" \relative c' {
   \override Rest.staff-position = #0
   \partial 8 s8
   %1
-  | s4. b8\rest c!4
+  | s4. b8\rest
+    \once\override Staff.TextScript.extra-offset = #'(-6 . 0)
+    \csBracket c!4\arpeggio-\lH
   | s2.*2
   | \stemUp d'8_-[( e!8._- f!16_-)] s4.
   %5
@@ -114,9 +133,13 @@ Tenor = \context Voice = "three" \relative c' {
   \set baseMoment = #(ly:make-moment 1/8)
   \partial 8 s8
   %1
-  | s2.*2
+  | s2.
+  | s4.
+    \stemDown
+    \once\omit Beam
+    \csBracket c!16\arpeggio[( d,!8]) s8.
   | s4
-    \clef bass \stemUp\tieUp\slurUp ais'8^>^(
+    \clef bass \stemUp\tieUp\slurUp ais''8^>^(
     \once\override Hairpin.shorten-pair = #'(3.5 . 3.5)
     bes8.[)^\< b!16\! bes8~]
   | \override Hairpin.to-barline = ##f
@@ -144,36 +167,45 @@ Tenor = \context Voice = "three" \relative c' {
   | \set tieWaitForNote = ##t
     \once\override Hairpin.shorten-pair = #'(0 . 13)
     \repeat tremolo 4 {
-      <d,!_~ ees_~ g!_~>32^\> b'!~
+      <d,! ees g!>32^\>_~_\markup \annotation 5 b'!~
     }
-    <d,_~ ees_~ g_~ b^~>4\)\!
-  | <d_~ ees_~ g_~ b^~>2
+    <d, ees g b>4_~\)\!
+  | <d ees g b>2_~
   | <d ees g b>4\fermata r
   | s2
   | s8 gis,4( aes8) s4
   %15
   | \shape #'((0 . 0) (0 . 1.5) (0 . 2.5) (0 . 0)) Tie
-    bes'2.~
+    bes'2.-2~_\markup \annotation 7
   | \shape #'((0 . 0) (0 . 2.5) (0 . 2.5) (0 . 0)) Tie
     2.~
-  | 4.~ 8[ b! bes\laissezVibrer]\fermata
+  | 4.~ 8[
+    \shape #'((0 . 0) (0 . 0) (0 . 0.3) (3 . -0.5)) Slur
+    b!(
+    \extendLV #1.5
+    \once\override LaissezVibrerTieColumn.tie-configuration = #`((2 . ,UP))
+    bes\laissezVibrer]_\fermata
+    <>)
 }
 
 Bass = \context Voice = "four" \relative c' {
   \voiceFour
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
-  \stemNeutral\slurNeutral
+  \stemNeutral\slurNeutral\tieNeutral
   \clef treble
   \partial 8 a!32[( c g'! gis)]
   %1
-  | \clef bass r8 r r16. <des,, b'! e!>32~ q8[ g'] r
-  | \clef treble r r f'32[( e! des bes]) \clef bass <g! c!>16[( <b,! d!>8]) r16 d![ cis~]
+  | \clef bass r8 r r16. <des,, b'! e!>32~ q8[ \csBracket g'\arpeggio]_\markup \annotation 1 r
+  | \clef treble r r f'32[( e! des bes])
+    \clef bass
+    g!16[_\markup \annotation 2 b,!8] r16 d![ cis~]
   | cis16[_\> \appoggiatura c!16 b'!8 d!16]
-    \clef treble \stemDown\slurDown s8\! <c! ees>8.[ <b! d!>16 <c ees>8~]
+    \clef treble \stemDown\slurDown s8\! <c! ees>8.[ <b! d!>16 <c_~ ees_~>8]
   | <c! ees>4.
-    \once\override Staff.TextScript.extra-offset = #'(1 . 0.2)
-    r8^\markup { \small "espress." } \clef bass d,!8[( ees]
+    \once\override Staff.TextScript.extra-offset = #'(0 . 0.2)
+    r8^\markup { \small "espress." }_\markup \annotation 3
+    \clef bass d,!8[( ees]
   %5
   | f!8[_\< a!8.\!\> fis16\!]) r8 cis16[(_\< d fis8_-])\!
   | \time 3/8 r8 \clef treble f'! d!16[(\< ees])\!
@@ -183,11 +215,13 @@ Bass = \context Voice = "four" \relative c' {
   %13
   | \clef bass <a,! ges'>4 <bes f'!>
   | \time 6/8 <c! e!>4. <b! f'>8 r r
-  | \clef treble c'4\rest d!16[(\pp f!] cis'4._~
+  | \clef treble c'4\rest d!16[(\pp f!] cis'4.-1_~
   | cis4)
-    \shape #'((-0.5 . -1.5) (0 . 0) (0 . -1) (14 . -1)) PhrasingSlur
-    d!8\( a!4 cis,8
-  | f4. f!4.( <>)\)
+    \shape #'((-0.5 . -1.5) (0 . 0) (0 . -1) (14 . -1.5)) PhrasingSlur
+    d!8-1\( a!4-3	 cis,8
+  | fis4.-4
+    \shape #'((0 . 0) (0 . -0.5) (0 . -0.8) (0 . 0)) Slur
+    f!4.(-5 <>)\)
   \fine
 }
 
@@ -220,7 +254,7 @@ centerDynamics = {
 }
 
 \score {
-  \new PianoStaff
+  \new PianoStaff \with { connectArpeggios = ##t }
   <<
     \accidentalStyle Score.piano
     \context Staff = "upper" <<
@@ -254,6 +288,8 @@ centerDynamics = {
             \abs-fontsize #14 \normal-text\bold "(1911)"
           }
           \null
+          \line { \abs-fontsize #20 "I." }
+          \null
         }
       }
     }
@@ -277,6 +313,9 @@ centerDynamics = {
   \column {
     \fill-line {
       \small\italic "Nach jedem Stuck ausgiebige Pause; die Stücke dürfen nicht ineinander übergehen!" ""
+    }
+    \fill-line {
+      \small\italic "Long break after each piece; the pieces must not merge into one another!" ""
     }
   }
 }
