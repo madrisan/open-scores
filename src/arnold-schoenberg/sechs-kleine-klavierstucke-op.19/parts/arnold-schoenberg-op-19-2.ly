@@ -19,8 +19,8 @@ Sopran = \context Voice = "one" \relative c'' {
   %\override Hairpin.Y-offset = #-2
   \stemNeutral\slurNeutral
   %1
-  \tempo \markup {
     \bold\concat { "Langsam (" { \tiny\note {4} #1 } " )" }
+  \tempo \markup {
   }
   | R1
   | r2 r4
@@ -56,7 +56,6 @@ Alto = \context Voice = "two" \relative c'' {
   %1
   | s1*8
   | s2 <ees fis bes d!>^\fermata
-
 }
 
 Bass = \context Voice = "four" \relative c' {
