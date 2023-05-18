@@ -4,13 +4,6 @@ Global = {
   \include "../global.ly"
 }
 
-#(define-markup-command (annotation layout props text) (markup?)
-  "Draw an annotation (a double box around text)."
-  (interpret-markup layout props
-    (markup #:override '(box-padding . 0.2) #:box
-            #:override '(box-padding . 0.4) #:box #:normal-text #:tiny text )))
-
-
 Sopran = \context Voice = "one" \relative c {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
@@ -68,14 +61,6 @@ Alto = \context Voice = "two" \relative c {
     s4. \hideNotes c8\!\> c c\! \unHideNotes\autoBeamOn
   | a2\rest a4\rest f'8_. e\rest
   | \stemUp a,!8^. r8 r4 r2
-}
-
-Tenor = \context Voice = "three" \relative c' {
-  \voiceThree
-  \override MultiMeasureRest.staff-position = #0
-  \override Rest.staff-position = #0
-  \set baseMoment = #(ly:make-moment 1/8)
-  %1
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -146,7 +131,6 @@ centerDynamics = {
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \clef bass
-      \Tenor
       \Bass
     >>
   >>
