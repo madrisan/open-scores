@@ -4,13 +4,6 @@ Global = {
   \include "../global.ly"
 }
 
-#(define-markup-command (annotation layout props text) (markup?)
-  "Draw an annotation (a double box around text)."
-  (interpret-markup layout props
-    (markup #:override '(box-padding . 0.2) #:box
-            #:override '(box-padding . 0.4) #:box #:normal-text #:tiny text )))
-
-
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
