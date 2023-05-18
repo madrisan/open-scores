@@ -18,15 +18,18 @@ Sopran = \context Voice = "one" \relative c'' {
   \partial 16 s16
   %1
   | s2
-  | f'8..\rest
+  | b'8..\rest
     \once\override Staff.TextScript.extra-offset = #'(-2.5 . -5)
-    <f,! b!>32^>^\markup {
+    <f! b!>32^>^\markup {
     \dynamic f
     }
     s4
   | e16[( dis) e,!_. fis_.] g![( f!) d'!_. c!_.]
     \break
-  | fis,16_.[ gis_.] ais4.~\pp\>
+  | fis,16_.[ gis_.] ais4.~\pp\>^\markup {
+      \small\italic "poco rit."
+      \draw-dashed-line #'(20 . 0)
+    }
   %5
   | ais4\fermata\! s4
   | \slurUp
@@ -53,12 +56,13 @@ Alto = \context Voice = "two" \relative c'' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \stemDown\slurUp
-  \override Hairpin.to-barline = ##f
   \partial 16 f!16\(_\p
   %1
   | a!8.. f!32 bes,8.. des32
-  | c!4 \autoBeamOff a!8.\p\) cis16 \autoBeamOn
-  | s2*2
+  | c!4 \autoBeamOff a!8.\p\)
+    \once\override Hairpin.shorten-pair = #'(-1 . 0)
+    cis16\< \autoBeamOn
+  | s2*2\!
   | s4 b!8[(^\markup { \small\italic "leicht" } c!])
   %5
   | \once\override Staff.TextScript.extra-offset = #'(-2.5 . 2.5)
