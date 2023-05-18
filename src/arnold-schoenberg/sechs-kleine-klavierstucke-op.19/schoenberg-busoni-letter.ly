@@ -2,9 +2,7 @@
   \hspace #10
   \column {
     \null\null\null\null\null
-    \override #'(line-width . 75) \justify {
-      [...]
-    }
+    \line { \abs-fontsize #40 "“" }
     \override #'(line-width . 75) \justify {
       I strive for: complete liberation from all forms from all symbols of cohesion and of logic.
     }
@@ -46,13 +44,27 @@
       Now I have made my confession and they can burn me.
       You will not number amongst those who burn me: that I know.
     }
-    \hspace #0
-    \override #'(line-width . 75) \justify {
-      [...]
+  }
+}
+
+\markup \abs-fontsize #40 {
+  \hspace #10
+  \column {
+    \override #'(line-width . 75) {
+      \fill-line { "" "”" }
     }
-    \null\null\null
-    \override #'(line-width . 75) \justify \italic {
+  }
+}
+
+\markup {
+  \hspace #10
+  \column {
+    \null\null
+    \override #'(line-width . 75) \italic {
       "From a Schoenberg's letter to Ferruccio Busoni (August 13, 1909)"
+    }
+    \override #'(line-width . 75) {
+      \concat { \italic "See: " "http://archive.schoenberg.at/letters" }
     }
   }
 }
