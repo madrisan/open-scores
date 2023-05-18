@@ -11,12 +11,6 @@ extendLV = #(define-music-function (parser location further) (number?) #{
   \once \override LaissezVibrerTie.extra-offset = #(cons (/ further 2) 0)
 #})
 
-#(define-markup-command (annotation layout props text) (markup?)
-  "Draw an annotation (a double box around text)."
-  (interpret-markup layout props
-    (markup #:override '(box-padding . 0.2) #:box
-            #:override '(box-padding . 0.4) #:box #:normal-text #:tiny text )))
-
 csBracket = \override PianoStaff.Arpeggio.stencil = #ly:arpeggio::brew-chord-bracket
 lH = \markup { \small "l.H" }
 rH = \markup { \small "r.H" }
