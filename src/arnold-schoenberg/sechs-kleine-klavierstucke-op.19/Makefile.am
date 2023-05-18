@@ -30,7 +30,9 @@ EXTRA_DIST = Arnold-Schoenberg-Sechs-Kleine-Klavierstucke-op.19.ly \
 	     global.ly \
 	     logo.ly \
 	     parts/arnold-schoenberg-op-19-1.ly \
-	     parts/arnold-schoenberg-op-19-2.ly
+	     parts/arnold-schoenberg-op-19-2.ly \
+	     preface.ly \
+	     schoenberg-busoni-letter.ly
 
 all: $(BUILT_SOURCES) Arnold-Schoenberg-Sechs-Kleine-Klavierstucke-op.19
 
