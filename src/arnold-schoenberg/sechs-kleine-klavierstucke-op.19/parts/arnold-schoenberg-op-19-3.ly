@@ -31,7 +31,9 @@ Sopran = \context Voice = "one" \relative c {
     \break
   | r8 c!16[\( b'!] ees,4. e!8_-[ e dis_.]\)
   | \shape #'((( 0 . 0) (0 . 2) (0 . 3) (-1.2 . 3.3))) PhrasingSlur
-    ees4\(^\> g,!2.~\!
+    ees4\(^\>
+    \shape #'((( 0 . 0) (0 . -1.5) (0 . -1.5) (-1.2 . -0.8))) Tie
+    g,!2.~\!
   | \once\override NoteColumn.force-hshift = #0.6 g1\)
   \fine
 }
@@ -57,8 +59,8 @@ Alto = \context Voice = "two" \relative c {
   | \revert Hairpin.rotation
     s8 \autoBeamOff\hideNotes c!16~ \unHideNotes c\<
     s4. \hideNotes c8\!\> c c\! \unHideNotes\autoBeamOn
-  | a2\rest a4\rest f'8_. e\rest
-  | \stemUp a,!8^. r8 r4 r2
+  | a2\rest a4\rest f'8_.-5 e\rest
+  | \stemUp a,!8^.-5 r8 r4 r2
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -99,7 +101,7 @@ Bass = \context Voice = "four" \relative c {
     <cis a'!>\>
   | <d! aes'>4\)\! r r2
   | r8. <aes g'>16 r4 r2
-  | \stemUp r2 r4 <ees cis'>8_. r
+  | \stemUp r2 r4 <ees cis'>8_._\markup \annotation {11} r
   | <bes' d!>_. r r4 r2
   \fine
 }

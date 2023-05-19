@@ -112,18 +112,18 @@
     \hspace #0
 
     \wordwrap \abs-fontsize #11 {
-      Il pulsare ritmico del bicordo SOL bequadro/SI bequadro affidato alla mano sinistra
-      sarà opportuno mantenerlo alla stessa mano anche nelle tre battute finali [es. 8].
+      Il pulsare ritmico del bicordo SOL bequadro / SI bequadro affidato alla mano sinistra
+      sarà opportuno mantenerlo alla stessa mano anche nelle tre battute finali [10].
       Tutto ciò al fine di rendere omogeneo il peso sonoro e quindi la qualità timbrica di
       questo “ostinato”.
     }
     \hspace #0
     \wordwrap \abs-fontsize #11 {
-      Battuta 6: l’inciso in terze sarà enunciato dalla mano destra [es. 9] e una volta
+      Battuta 6: l’inciso in terze sarà enunciato dalla mano destra [8] e una volta
       espresso l’accordo conclusivo, che va sostenuto con il pedale di risonanza,
       abbassare il tasti muti, alzare il pedale e subito dopo riattivare la vibrazione con il
       pedale stesso.
-      Questo consentirà l’attuazione del diminuendo richiesto [es. 10].
+      Questo consentirà l’attuazione del diminuendo richiesto [9].
     }
     \hspace #0
     \hspace #0
@@ -142,7 +142,7 @@
     \wordwrap \abs-fontsize #11 {
       Nulla da eccepire sul piano strumentale tranne nelle due ultime battute ove le crome staccate FA
       e LA bequadro della mano destra è preferibile che vengano entrambi suonate con il quinto dito
-      [es. 11], mantenendo così una equabile fonicità.
+      [11], mantenendo così una equabile fonicità.
     }
     \hspace #0
     \wordwrap \abs-fontsize #11 {
@@ -166,28 +166,28 @@
       della battuta 2.
       Di conseguenza il bicordo FA bequadro / SI bequadro della seconda battuta sarà affidato alla mano
       destra che si riapproprierà della linea melodica a partire dal DO diesis (biscroma) sempre nella
-      battuta 2 [es. 12].
+      battuta 2 [12].
       Tale accorgimento offrirà maggiore plasticità al gesto pianistico eludendo la sovrapposizione
       della mano sinistra sulla destra.
     }
     \hspace #0
     \wordwrap \abs-fontsize #11 {
       Battuta 4: l’accordo a metà battuta è necessario dividerlo fra le due mani,
-      ottenendo così una presa di maggiore morbidezza [es. 13].
+      ottenendo così una presa di maggiore morbidezza [13].
     }
     \hspace #0
     \wordwrap \abs-fontsize #11 {
-      Battuta 6: si raccomanda la massima attenzione ai differenti livelli dinamici [es. 14].
+      Battuta 6: si raccomanda la massima attenzione ai differenti livelli dinamici [14].
     }
     %\hspace #0
     \wordwrap \abs-fontsize #11 {
       Battuta 9: il RE bequadro legato andrà al MI bequadro sempre con la mano destra a
-      conclusione della linea melodica (e di uno stesso peso sonoro) che parte dalla battuta 6 [es. 15].
+      conclusione della linea melodica (e di uno stesso peso sonoro) che parte dalla battuta 6 [15].
     }
     \hspace #0
     \wordwrap \abs-fontsize #11 {
       Per le ultime quattro battute, vista la generosa esplosione di sonorità, si
-      suggeriscono la divisione fra le mani e la diteggiatura indicate nell' [es. 16].
+      suggeriscono la divisione fra le mani e la diteggiatura indicate nel [16].
     }
   }
 }
@@ -200,7 +200,7 @@
     \hspace #0
     \wordwrap \abs-fontsize #11 {
       Pochissimo da dire! Solo viene indicata una diteggiatura univoca alla mano sinistra
-      per i quattro bicordi delle battute 9 e 10 [es. 17].
+      per i quattro bicordi delle battute 9 e 10 [17].
       E’ così garantito lo staccato previsto!
     }
     \hspace #0
@@ -219,13 +219,13 @@
       Battuta 3: occorre fare molta attenzione all’attacco dinamico differenziato dei due
       RE diesis posti a un’ottava di distanza l’uno dall’altro [mano destra \dynamic{p} – mano sinistra
       \dynamic{pppp}!!!!].
-      Preferibilmente emettere l’inudibile RE diesis della mano sinistra con il quarto dito!
+      Preferibilmente emettere l’inudibile RE diesis della mano sinistra con il quarto dito! [19]
     }
     \hspace #0
     \wordwrap \abs-fontsize #11 {
       Solo in questo brano e nel quarto Schoenberg ha indicato un preciso intervento del pedale
       di risonanza. Questo naturalmente, come si è visto, non esclude l’uso (intelligente) dei tre pedali
-      in tutta l’opera. Proprio in quest’ultimo brano è possibile utilizzate il pedale tonale.
+      in tutta l’opera. Proprio in quest’ultimo brano è possibile utilizzate il pedale tonale. [18]
     }
     \hspace #0
     \wordwrap \abs-fontsize #11 {
@@ -250,14 +250,14 @@
       Battuta 7: appare opportuno portare il RE al DO diesis con la mano destra e
       proseguire sempre con la mano destra.
       L’uso della mano sinistra, a partire dal DO diesis, destabilizza la tensione iniziale
-      dell’arco espressivo del frammento melodico.
+      dell’arco espressivo del frammento melodico. [20]
     }
     \hspace #0
     \wordwrap \abs-fontsize #11 {
       Battuta 8: nell’accordo della mano destra, per consentire il legato fra il MI bequadro
       e il MI bemolle, prendere il bicordo MI bequadro / RE bequadro con il solo pollice che
       spostandosi lateralmente (lasciando il MI bequadro ma mantenendo il RE!) favorirà
-      agevolmente l’entrata del MI bemolle con il secondo dito.
+      agevolmente l’entrata del MI bemolle con il secondo dito. [21]
     }
     \hspace #0
     \wordwrap \abs-fontsize #11 {
