@@ -244,7 +244,6 @@ centerDynamics = {
   %15
   | s2.*2
   | s4 s8 s\ppp\< s s\!
-
 }
 
 \score {

@@ -99,3 +99,5 @@
 \include "parts/arnold-schoenberg-op-19-4.ly"
 \pageBreak
 \include "parts/arnold-schoenberg-op-19-5.ly"
+\pageBreak
+\include "parts/arnold-schoenberg-op-19-6.ly"
