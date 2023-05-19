@@ -8,8 +8,6 @@ Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
-  %\override DynamicText.Y-offset = #-2.4
-  %\override Hairpin.Y-offset = #-2
   \stemUp\slurNeutral\tieDown
   %1
   \tempo \markup {

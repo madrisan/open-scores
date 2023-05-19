@@ -19,8 +19,6 @@ Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
-  %\override DynamicText.Y-offset = #-2.4
-  %\override Hairpin.Y-offset = #-2
   \stemUp\slurNeutral\tieUp
   \tempo \markup {
     \bold\concat { "Etwas rasch (" { \tiny\note {8} #1 } " )" }
