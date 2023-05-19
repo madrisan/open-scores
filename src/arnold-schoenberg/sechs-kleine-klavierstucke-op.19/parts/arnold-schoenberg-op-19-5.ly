@@ -4,6 +4,9 @@ Global = {
   \include "../global.ly"
 }
 
+lH = \markup { \small\italic "l.H" }
+rH = \markup { \small\italic "r.H" }
+
 pocoapocorit = {
   \override TextSpanner.bound-details.left.text = \markup {
     \small\italic "poco a poco rit "
@@ -122,25 +125,25 @@ Bass = \context Voice = "four" \relative c {
     \override Tie.details.height-limit = #3
     <fis g'!>4.~
   | q4 r8
-  | r r
+  | r_\markup \annotation {17} r
     \once\override Staff.TextScript.extra-offset = #'(-6 . 1)
-    <ees' g!>16^._\markup {
+    <ees'-4 g!-2>16^._\markup {
       \center-column {
         \line { \dynamic pp }
         \line { \small\italic "l.H. stacc." }
       }
     }
-    [ <d! fis>^.]
+    [ <d!-4 fis-2>^.]
   %10
   | r8 r \stemUp
     \once\override Staff.TextScript.extra-offset = #'(-6 . 1)
-    <bes d!>16_._\markup {
+    <bes-4 d!-2>16_._\markup {
       \center-column {
         \line { \dynamic pp }
         \line { \small\italic "l.H. stacc." }
       }
     }
-    [ <a! cis>_.]
+    [ <a!-4 cis-2>_.]
   | R1*3/8
   | r8 \clef treble r16 <ges'' bes>^\marcato\f[ <g! b!>8^\marcato]
   | r16 <gis, b!>^\marcato \clef bass r16 \stemDown <cis, e!>_\marcato[ <d! f>8_\marcato_~]

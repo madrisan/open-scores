@@ -6,6 +6,8 @@ Global = {
 
 bottom = \change Staff = "lower"
 top = \change Staff = "upper"
+lH = \markup { \small\italic "l.H" }
+rH = \markup { \small\italic "r.H" }
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
@@ -30,10 +32,13 @@ Sopran = \context Voice = "one" \relative c'' {
   | r4 \stemDown
     \shape #'((( 0.5 . 0.2) (0 . 2.5) (0 . 6) (0 . 4.5))) PhrasingSlur
     \once\override Hairpin.rotation = #'(-1 -1 0)
+    \once\override Staff.TextScript.extra-offset = #'(-2.2 . -2.5)
     d!8[_\markup {
-      \hspace #-2.8 \dynamic p
+      \dynamic p
     }_\<\(
-    \bottom\stemUp cis,^~\!] \tuplet 3/2 { cis\> d!\!_\< fis4\!\> ees\!\) }
+    \bottom \stemUp
+    \once\override Staff.TextScript.extra-offset = #'(-5 . 1.5)
+    cis,^~\!^\rH] \tuplet 3/2 { cis\> d!\!_\< fis4\!\> ees\!\) }
     \top
   | \omit TupletBracket\omit TupletNumber
     \tuplet 3/2 { r8 <d'!~ gis^~ c!~>4^> } q8 r r2
@@ -49,12 +54,17 @@ Alto = \context Voice = "two" \relative c' {
   \partial 4 s4
   %1
   | s1*2
-  | a2\rest dis'2~_>_\p
+  | a2\rest
+     \once\override Staff.TextScript.extra-offset = #'(-2 . 1)
+    dis'2~_>_\markup { \dynamic p }
   | %\once\override NoteColumn.force-hshift = #1.4
     dis8[ dis\p] r4 e,2\rest
   %5
   | s1*3
-  | \tupletUp\tuplet 3/2 { r8 e!\pp[ ees~] }
+  | \tupletUp
+    \tuplet 3/2 {
+      r8 e!-\markup { \finger "1-1" }_\markup { \hspace #-3.5 \dynamic pp }[ ees~-2]
+    }
     \once\override Stem.length = #7
     ees s s2
 }
@@ -71,7 +81,7 @@ Tenor = \context Voice = "three" \relative c' {
     \once\override Staff.TextScript.extra-offset = #'(-8 . -6)
     %\once\override PhrasingSlur.outside-staff-priority = #300
     \once\override Hairpin.rotation = #'(10 -1 0)
-    dis4.^\<^\markup {
+    dis4.-4^\<^\markup {
       \dynamic pppp
     }\( e8~\!
   | \override Hairpin.rotation = #'(-6 1 0)
@@ -101,13 +111,17 @@ Bass = \context Voice = "four" \relative c {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \phrasingSlurNeutral\stemNeutral\slurNeutral\tieNeutral
-  \partial 4 r4
+  \set Staff.pedalSustainStyle = #'mixed
+  \override Staff.SustainPedal.color = #(x11-color "dimgray")
+  \partial 4 r4\sustainOn_\markup \annotation {18}
   %1
   | r2 \clef treble <g'! c! f!>2~
-  | q2 r
-  | r4 \stemDown q2.~
+  | q2 r\sustainOff\sustainOn
+  | r4_\markup \annotation {19} \stemDown q2.~\sostenutoOn
     \break
-  | q2 r2
+  | q2 r2\sustainOff\sostenutoOff
+    \set Staff.pedalSustainStyle = #'text
+    \revert Staff.SustainPedal.color
   %5
   | \stemUp q2. \clef bass \stemDown\tieDown <e,! d'!>4~_>\sustainOn
   | q1\tweak X-offset 18\tweak Y-offset -5\sustainOff
@@ -118,7 +132,11 @@ Bass = \context Voice = "four" \relative c {
       }
   |   \tuplet 3/2 { r8 <cis'_~ b'!^~>4^> } q8 r r2
   |   \clef treble
-      r4 \stemUp <g'! c! f!>2.^\fermata
+      r4 \stemUp
+      \override Staff.SostenutoPedal.color = #(x11-color "dimgray")
+      %\override Staff.SostenutoPedalLineSpanner.X-extent = #'(-2 . -5) FIXME
+      %<g'! c! f!>2.\sostenutoOn^\fermata
+      <g'! c! f!>2.^\fermata
       \fine
     }
     \new Staff \with {
@@ -128,13 +146,15 @@ Bass = \context Voice = "four" \relative c {
       %\override StaffSymbol.staff-space = #(magstep -6)
       \omit Staff.TimeSignature
     } {
-  |   R1
-  |   R1
-      \once\override Staff.TextScript.extra-offset = #'(-2.5 . 1.5)
-  |   r2^\markup {
+  |   R1_\markup \annotation {20}
+  |   R1_\markup \annotation {21}
+      \once\override Staff.TextScript.extra-offset = #'(-2.5 . 1.2)
+  |   \set Staff.pedalSustainStyle = #'mixed
+      \override Staff.SustainPedal.color = #(x11-color "dimgray")
+      r2\sustainOn^\markup {
         \small\italic "wie ein Hauch"
       }
-      r4 bes,8\pppp[( aes,])\fermata
+      r4 bes,8\pppp[( aes,])\sustainOff\fermata
       \fine
     }
     >>

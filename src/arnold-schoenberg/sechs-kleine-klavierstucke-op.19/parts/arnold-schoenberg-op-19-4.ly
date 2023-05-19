@@ -4,6 +4,10 @@ Global = {
   \include "../global.ly"
 }
 
+csBracket = \override PianoStaff.Arpeggio.stencil = #ly:arpeggio::brew-chord-bracket
+lH = \markup { \small\italic "l.H" }
+rH = \markup { \small\italic "r.H" }
+
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
@@ -39,13 +43,14 @@ Sopran = \context Voice = "one" \relative c'' {
   | s2
     \break
   %10
-  | r32 f!_\marcato[ a!_\marcato f_\marcato]
-    \tuplet 3/2 { bes,16_\marcato[ des_\marcato ces_\marcato] }
-    bes!32_\marcato[ f'\rest fis_\marcato dis!_\marcato]
-    c![_( d! e!_.) gis,_. ]
-  | d''4\rest <b! e!>8^. d\rest
-  | g,!8^>_.\ff bes,4.
-  | b!8 r r4
+  | r32_\markup \annotation {16}
+    f!_\marcato-1[ a!_\marcato-3 f_\marcato]
+    \tuplet 3/2 { bes,16_\marcato_3[ des_\marcato_2 ces_\marcato_1] }
+    bes!32_\marcato_3[ f'\rest fis_\marcato-3 dis!_\marcato-2]
+    c!-1[_( d! e!_.-3) gis,_._3 ]
+  | c'4\rest <b! e!>8^. d\rest
+  | g,!8^1^>_.\ff bes,4.^3
+  | b!8^3 r r4
   \fine
 }
 
@@ -54,12 +59,14 @@ Alto = \context Voice = "two" \relative c'' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \stemDown\slurUp
-  \partial 16 f!16\(_\p
+  \partial 16
+  \once\override Staff.TextScript.extra-offset = #'(1.5 . -0.5)
+  f!16\(_\p^\lH
   %1
   | a!8.. f!32 bes,8.. des32
-  | c!4 \autoBeamOff a!8.\p\)
-    \once\override Hairpin.shorten-pair = #'(-1 . 0)
-    cis16\< \autoBeamOn
+  | c!4 \autoBeamOff a!8.\p\)^\rH
+    \once\override Hairpin.shorten-pair = #'(-2 . 0)
+    cis16\<^\rH \autoBeamOn
   | s2*2\!
   | s4 b!8[(^\markup { \small\italic "leicht" } c!])
   %5
@@ -72,12 +79,13 @@ Alto = \context Voice = "two" \relative c'' {
       a8^-\> gis a,!\!
     }
   | b!8.[ c!16] d!4~
-  | d8[ e,!]\) r4
+  | d8-5[_\markup \annotation {15}
+    e,!-2]\) r4
   | s2
   %10
-  | f'!8_.
+  | f'!8_.^3
     \once\override Staff.TextScript.extra-offset = #'(-3.2 . 2)
-    fis4._>_\markup {
+    fis4._>^1_\markup {
       \dynamic ff
     }
 }
@@ -100,16 +108,24 @@ Bass = \context Voice = "four" \relative c {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \phrasingSlurNeutral\stemUp\slurNeutral\tieNeutral
-  \partial 16 r16
+  \partial 16 r16_\markup \annotation {12}
   %1
   | R1*1/2
   | R1*1/2
   | R1*1/2
-  | r8 <d,! f! g!>16[\sustainOn c'!] \stemDown <ees g! b! d!>4~
+  | r8 <d,! f! g!>16[\sustainOn c'!]
+    \stemDown
+    \once\override Arpeggio.positions = #'(3 . 5)
+    \once\override Staff.TextScript.extra-offset = #'(-3.3 . 0.4)
+    \csBracket <ees g! b! d!>4~\arpeggio_\markup \annotation {13}^\rH
+    \revert PianoStaff.Arpeggio.stencil
   %5
   | q^\fermata\tweak X-offset 2\tweak Y-offset -4\sustainOff r
-  | \once\override Staff.TextScript.extra-offset = #'(-4 . 1)
-    <cis e! ais>8^._\markup { \dynamic pp } <d! gis b!>4.
+  | \once\override Staff.TextScript.extra-offset = #'(0 . 0.5)
+    <cis e! ais>8^._\markup {
+      " " \dynamic pp
+    }_\markup \annotation {14}
+    <d! gis b!>4.
   | R1*1/2
   | r4 r8 \stemUp <g,! a! fis'>16_. r
   | R1*1/2
