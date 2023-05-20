@@ -6,4 +6,4 @@
   "Draw an annotation (a double box around text)."
   (interpret-markup layout props
     (markup #:override '(box-padding . 0.2) #:box
-            #:override '(box-padding . 0.4) #:box #:normal-text #:tiny text )))
+            #:override '(box-padding . 0.3) #:box #:normal-text #:tiny text )))

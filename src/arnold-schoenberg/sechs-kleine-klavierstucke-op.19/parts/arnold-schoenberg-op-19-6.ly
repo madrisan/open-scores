@@ -6,6 +6,8 @@ Global = {
 
 bottom = \change Staff = "lower"
 top = \change Staff = "upper"
+
+grayTextColor = #(x11-color "dimgray")
 lH = \markup { \small\italic "l.H" }
 rH = \markup { \small\italic "r.H" }
 
@@ -112,12 +114,12 @@ Bass = \context Voice = "four" \relative c {
   \override Rest.staff-position = #0
   \phrasingSlurNeutral\stemNeutral\slurNeutral\tieNeutral
   \set Staff.pedalSustainStyle = #'mixed
-  \override Staff.SustainPedal.color = #(x11-color "dimgray")
+  \override Staff.SustainPedal.color = \grayTextColor
   \partial 4 r4\sustainOn_\markup \annotation {18}
   %1
   | r2 \clef treble <g'! c! f!>2~
   | q2 r\sustainOff\sustainOn
-  | \override Staff.SostenutoPedal.color = #(x11-color "dimgray")
+  | \override Staff.SostenutoPedal.color = \grayTextColor
     r4_\markup \annotation {19} \stemDown q2.~\sostenutoOn
     \break
   | q2 r2\sustainOff\sostenutoOff
@@ -135,24 +137,19 @@ Bass = \context Voice = "four" \relative c {
   |   \tuplet 3/2 { r8 <cis'_~ b'!^~>4^> } q8 r r2
   |   \clef treble
       r4 \stemUp
-      %s\override Staff.SostenutoPedal.color = #(x11-color "dimgray")
-      %\override Staff.SostenutoPedalLineSpanner.X-extent = #'(-2 . -5) FIXME
-      %<g'! c! f!>2.\sostenutoOn^\fermata
       <g'! c! f!>2.^\fermata
       \fine
     }
     \new Staff \with {
       alignBelowContext = "lower"
       \clef bass
-      %fontSize = #-4
-      %\override StaffSymbol.staff-space = #(magstep -6)
       \omit Staff.TimeSignature
     } {
   |   R1_\markup \annotation {20}
   |   R1_\markup \annotation {21}
       \once\override Staff.TextScript.extra-offset = #'(-2.5 . 1.2)
   |   \set Staff.pedalSustainStyle = #'mixed
-      \override Staff.SustainPedal.color = #(x11-color "dimgray")
+      \override Staff.SustainPedal.color = \grayTextColor
       r2\sustainOn^\markup {
         \small\italic "wie ein Hauch"
       }
@@ -160,7 +157,7 @@ Bass = \context Voice = "four" \relative c {
         r4 bes,8\pppp[( aes,])\fermata
       } \\ {
         % workaround for printing a sostenuto pedal at the bass
-        \override Staff.SostenutoPedal.color = #(x11-color "dimgray")
+        \override Staff.SostenutoPedal.color = \grayTextColor
         s4\sostenutoOn s
       } >>
       \fine

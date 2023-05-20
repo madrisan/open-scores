@@ -4,8 +4,8 @@ Global = {
   \include "../global.ly"
 }
 
-lH = \markup { \small\italic "l.H" }
-rH = \markup { \small\italic "r.H" }
+lH = \markup \small\italic { "l.H" }
+rH = \markup \small\italic { "r.H" }
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
@@ -35,8 +35,8 @@ Sopran = \context Voice = "one" \relative c'' {
   | \clef treble s2 <b! d!>~^\>_\rH
     \break
   | \once\override Staff.TextScript.extra-offset = #'(-3 . 0)
-    q8[\!^\markup {
-      \small\italic "gut im Takt"
+    q8[\!^\markup \small\italic {
+      "gut im Takt"
     } <g'! b!>_.]_\pp_\lH r4 r8 <g b>8_.^\lH q_. r
   | r4 q8_. r r4 q8_.[ q_.]
   | r4 r8 \stemDown\tieDown <g! b!>~_\lH q2
@@ -51,8 +51,8 @@ Alto = \context Voice = "two" \relative c'' {
   %1
   | s1*8
   | s2
-    \once\override Staff.TextScript.extra-offset = #'(2 . -2)
-    <ees fis bes d!>^\rH^\fermata
+    \once\override Staff.TextScript.extra-offset = #'(2.5 . -5)
+    <ees fis bes d!>^\rH-\tweak script-priority #-100 ^\fermata
 }
 
 Bass = \context Voice = "four" \relative c' {
@@ -61,8 +61,8 @@ Bass = \context Voice = "four" \relative c' {
   \override Rest.staff-position = #0
   \stemNeutral\slurNeutral\tieNeutral
   %1
-  | r4^\markup {
-      \hspace #-4 \italic\small "äußerst kurz" \dynamic pp
+  | r4^\markup \italic\small {
+      \hspace #-4 "äußerst kurz" \dynamic pp
     } <g'! b!>8_.[ q_.] q_. r r q_.
   | r4 <g b>8_.[ q_.] q_. r r q_.
   | r4 <g b>8_.^\pp[ q_.] q_. r r q_.~
@@ -82,9 +82,9 @@ centerDynamics = {
   %1
   | s1*5
   | \once\override Staff.TextScript.extra-offset = #'(-1 . -1)
-    s4-\markup { \italic\small "etwas gedehnt" } s2.
+    s4-\markup \italic\small { "etwas gedehnt" } s2.
   | s1*2
-  | s4-\markup { \italic\small \hspace #2 "poco rit." } s2.
+  | s4-\markup \italic\small { \hspace #2 "poco rit." } s2.
 }
 
 \score {
