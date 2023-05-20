@@ -18,8 +18,9 @@ upline =
   \stopped
 
 csBracket = \override PianoStaff.Arpeggio.stencil = #ly:arpeggio::brew-chord-bracket
-lH = \markup { \small "l.H" }
-rH = \markup { \small "r.H" }
+grayTextColor = #(x11-color "dimgray")
+lH = \markup \italic\small { "l.H" }
+rH = \markup \italic\small { "r.H" }
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
@@ -44,8 +45,8 @@ Sopran = \context Voice = "one" \relative c'' {
     \csBracket fis4_\rH
     \arpeggio\!\> dis8\!)
     \revert PianoStaff.Arpeggio.stencil
-  | r4. r16 \tuplet 3/2 { b''!32[(\ppp^\markup {
-       \small "flüchtig"
+  | r4. r16 \tuplet 3/2 { b''!32[(\ppp^\markup \italic\small {
+       "flüchtig"
     } e,! a!] } g!16[ gis8 a!16~]
   | a4.) r8 \stemUp\slurUp <ees ges>8\espressivo[( f,!16. e'!32]
   %5
@@ -61,9 +62,9 @@ Sopran = \context Voice = "one" \relative c'' {
   %10
   | b''8\rest
     \once\override Staff.TextScript.extra-offset = #'(0 . 6)
-    des32^\pp_\markup { "flüchtig" }
+    des32^\pp_\markup \italic\small { "flüchtig" }
     [( bes f! ges] e![ cis f!8.~]_\upline_\markup \italic\tiny {
-      \hspace #-5 \with-color #(x11-color "dimgray")
+      \hspace #-5 \with-color \grayTextColor
       \column {
         \line { "(presa muta" }
         \raise #1 \line { " del SOL)" }
