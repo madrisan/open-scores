@@ -11,6 +11,12 @@ extendLV = #(define-music-function (parser location further) (number?) #{
   \once \override LaissezVibrerTie.extra-offset = #(cons (/ further 2) 0)
 #})
 
+upline =
+\tweak stencil
+  #(lambda (grob)
+    (grob-interpret-markup grob #{ \markup \draw-line #'(0 . 4) #}))
+  \stopped
+
 csBracket = \override PianoStaff.Arpeggio.stencil = #ly:arpeggio::brew-chord-bracket
 lH = \markup { \small "l.H" }
 rH = \markup { \small "r.H" }
@@ -55,7 +61,14 @@ Sopran = \context Voice = "one" \relative c'' {
   %10
   | b''8\rest
     \once\override Staff.TextScript.extra-offset = #'(0 . 6)
-    des32^\pp_\markup { "flüchtig" } [( bes f! ges] e![ cis f!8.~]
+    des32^\pp_\markup { "flüchtig" }
+    [( bes f! ges] e![ cis f!8.~]_\upline_\markup \italic\tiny {
+      \hspace #-5 \with-color #(x11-color "dimgray")
+      \column {
+        \line { "(presa muta" }
+        \raise #1 \line { " del SOL)" }
+      }
+    }
   | f16) c'16\rest c,,8\rest^\markup {
       \small "rit."
       \draw-dashed-line #'(12 . 0)
@@ -111,7 +124,7 @@ Alto = \context Voice = "two" \relative c' {
   | r8 e'!16_.[ dis_.] g!8_.
   | s2*3
   %10
-  | g,,!2~
+  | g,,!2~_\markup \annotation {5}
   | g8[ \clef bass cis,( fis dis]
   | e4)^\fermata r
     \clef treble
@@ -160,11 +173,13 @@ Tenor = \context Voice = "three" \relative c' {
   %10
   | \set tieWaitForNote = ##t
     \once\override Hairpin.shorten-pair = #'(0 . 13)
+    \set Staff.pedalSustainStyle = #'mixed
+    \override Staff.SustainPedal.color = #(x11-color "dimgray")
     \repeat tremolo 4 {
-      <d,! ees g!>32^\>_~_\markup \annotation 5 b'!~
+      <d,! ees g!>32^\>_~\sustainOn b'!~
     }
     <d, ees g b>4_~\)\!
-  | <d ees g b>2_~
+  | <d ees g b>2_~\sustainOff
   | <d ees g b>4\fermata r
   | s2
   | s8 gis,4( aes8) s4
@@ -198,8 +213,8 @@ Bass = \context Voice = "four" \relative c' {
     \clef treble \stemDown\slurDown s8\! <c! ees>8.[ <b! d!>16 <c_~ ees_~>8]
   | <c! ees>4.
     \once\override Staff.TextScript.extra-offset = #'(0 . 0.2)
-    r8^\markup { \small "espress." }_\markup \annotation 3
-    \clef bass d,!8[( ees]
+    r8^\markup { \small "espress." }
+    \clef bass d,!8[(_\markup \annotation 3 ees]
   %5
   | f!8[_\< a!8.\!\> fis16\!]) r8 cis16[(_\< d fis8_-])\!
   | \time 3/8 r8 \clef treble f'! d!16[(\< ees])\!
@@ -302,13 +317,13 @@ centerDynamics = {
   }
 }
 
-\markup {
+\markup \small\italic {
   \column {
     \fill-line {
-      \small\italic "Nach jedem Stuck ausgiebige Pause; die Stücke dürfen nicht ineinander übergehen!" ""
+       "Nach jedem Stuck ausgiebige Pause; die Stücke dürfen nicht ineinander übergehen!" ""
     }
     \fill-line {
-      \small\italic "Long break after each piece; the pieces must not merge into one another!" ""
+      "(Long break after each piece; the pieces must not merge into one another!)" ""
     }
   }
 }

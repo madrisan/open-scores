@@ -117,10 +117,12 @@ Bass = \context Voice = "four" \relative c {
   %1
   | r2 \clef treble <g'! c! f!>2~
   | q2 r\sustainOff\sustainOn
-  | r4_\markup \annotation {19} \stemDown q2.~\sostenutoOn
+  | \override Staff.SostenutoPedal.color = #(x11-color "dimgray")
+    r4_\markup \annotation {19} \stemDown q2.~\sostenutoOn
     \break
   | q2 r2\sustainOff\sostenutoOff
     \set Staff.pedalSustainStyle = #'text
+    \revert Staff.SostenutoPedal.color
     \revert Staff.SustainPedal.color
   %5
   | \stemUp q2. \clef bass \stemDown\tieDown <e,! d'!>4~_>\sustainOn
@@ -133,7 +135,7 @@ Bass = \context Voice = "four" \relative c {
   |   \tuplet 3/2 { r8 <cis'_~ b'!^~>4^> } q8 r r2
   |   \clef treble
       r4 \stemUp
-      \override Staff.SostenutoPedal.color = #(x11-color "dimgray")
+      %s\override Staff.SostenutoPedal.color = #(x11-color "dimgray")
       %\override Staff.SostenutoPedalLineSpanner.X-extent = #'(-2 . -5) FIXME
       %<g'! c! f!>2.\sostenutoOn^\fermata
       <g'! c! f!>2.^\fermata
@@ -154,7 +156,13 @@ Bass = \context Voice = "four" \relative c {
       r2\sustainOn^\markup {
         \small\italic "wie ein Hauch"
       }
-      r4 bes,8\pppp[( aes,])\sustainOff\fermata
+      << {
+        r4 bes,8\pppp[( aes,])\fermata
+      } \\ {
+        % workaround for printing a sostenuto pedal at the bass
+        \override Staff.SostenutoPedal.color = #(x11-color "dimgray")
+        s4\sostenutoOn s
+      } >>
       \fine
     }
     >>
@@ -211,5 +219,15 @@ centerDynamics = {
   }
   \midi {
     \tempo 4 = 100
+  }
+}
+
+\markup {
+  \column {
+    \wordwrap \italic\small\abs-fontsize #11 {
+      \bold "Note:"
+      "The pedal of bars 5-6 is Schoenberg's original."
+      "The gray-colored ones are a suggestion by Giancarlo Simonacci (see the Preface)."
+    }
   }
 }
