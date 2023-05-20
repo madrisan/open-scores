@@ -19,7 +19,7 @@ Sopran = \context Voice = "one" \relative c'' {
   }
   \partial 4 <a fis' b>4~\pp
   %1
-  | q1
+  | q1~
   | q2 q2~
   | q1~
   | \stemUp q2 f'4\rest
