@@ -7,20 +7,29 @@
       I strive for: complete liberation from all forms from all symbols of cohesion and of logic.
     }
     \hspace #0
-    \override #'(line-width . 75) \justify {
+    \override #'(line-width . 75) \wordwrap-lines {
       Thus: away with “motivic working out.”
+    }
+    \override #'(line-width . 75) \wordwrap-lines {
       Away with harmony as cement or bricks of a building.
+    }
+    \override #'(line-width . 75) \wordwrap-lines {
       Harmony is \italic expression and nothing else.
     }
-    \hspace #0
-    \override #'(line-width . 75) \justify {
+    \override #'(line-width . 75) \wordwrap-lines {
       Then: Away with Pathos!
+    }
+    \override #'(line-width . 75) \justify {
       Away with protracted ten-ton scores, from erected or constructed towers, rocks, and other
       massive claptrap.
-      My music must be \italic brief. Concise!
-      In two notes: not built, but “expressed”!!
     }
     \hspace #0
+    \override #'(line-width . 75) \wordwrap-lines {
+      My music must be \italic brief.
+    }
+    \override #'(line-width . 75) \wordwrap-lines {
+      Concise! In two notes: not built, but “expressed”!!
+    }
     \override #'(line-width . 75) \justify {
       And the result I whish for: no stylized and sterile protracted emotion.
       People are not like that: it is \italic impossible to a person to have \italic one sensation
