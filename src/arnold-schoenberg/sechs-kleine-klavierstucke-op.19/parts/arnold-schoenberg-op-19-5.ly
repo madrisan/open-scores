@@ -159,7 +159,7 @@ centerDynamics = {
     s4_\markup {
       \center-column {
         \line { \small\italic "zart, aber voll" }
-        \line { \dynamic p }
+        \raise #1 \line { \dynamic p }
       }
     } s8
   | s4.*2
