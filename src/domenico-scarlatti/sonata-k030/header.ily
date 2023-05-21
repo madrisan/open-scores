@@ -15,9 +15,9 @@
   mutopiainstrument = "Piano"
   mutopiamaintainer = "Davide Madrisan"
   mutopiaopus = ""
-  mutopiatitle = "Sonata in G major K. 55"
+  mutopiatitle = "Sonata in G minor K. 30"
 
-  opus = "K.55"
+  opus = "K.30"
   title = "Sonata"
   source = ""
   style = "Baroque"

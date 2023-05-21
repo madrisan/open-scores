@@ -15,7 +15,24 @@
 ## You should have received a copy of the GNU General Public License
 ## along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-AM_MAKEFLAGS = --no-print-directory
+SUFFIXES = .in
+.in:; @echo "Generating $@...";\
+	sed "s,@rgb_color@,$(RGB_COLOR),g;" \
+	$< > $@
 
-SUBDIRS = sonata-k030 \
-	  sonata-k055
+%: %.ly
+	$(LILYPOND) --pdf --output $@ $<
+
+BUILT_SOURCES = covercolor.ly
+EXTRA_DIST = Domenico-Scarlatti-Sonata-k30.ly \
+	     covercolor.ly.in \
+	     header.ily \
+	     global.ly \
+	     logo.ly
+
+all: $(BUILT_SOURCES) Domenico-Scarlatti-Sonata-k30
+
+clean-local:
+	-rm -f $(BUILT_SOURCES)
+	-rm -f *.midi
+	-rm -f *.pdf
