@@ -1,4 +1,4 @@
-![Release Status](https://img.shields.io/badge/status-stable-brightgreen.svg)
+![Release Status](https://img.shields.io/badge/status-in--progress-brightgreen.svg)
 [![License](https://img.shields.io/badge/License-CC--BY--NC--4.0-blue.svg)](https://spdx.org/licenses/CC-BY-4.0.html)
 [![Latest Release](https://img.shields.io/badge/download-latest--version-blue.svg)](https://github.com/madrisan/open-scores/releases)
 
@@ -124,6 +124,10 @@ Thanks to my harpist friend Tristan Rollet ([@Pluiesurlavitre](https://github.co
 #### Ildebrando Pizzetti (1880-1968)
 
  * [Sogno](https://github.com/madrisan/open-scores/releases/download/v32/Ildebrando-Pizzetti-Sogno.pdf)
+
+#### Domenico Scarlatti (1685-1757)
+
+ * Sonata K.55
 
 #### Arnold Schoenberg (1874–1951)
 
