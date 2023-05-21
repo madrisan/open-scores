@@ -72,11 +72,14 @@ AC_CONFIG_FILES([\
   src/Makefile \
   src/alfredo-casella/Makefile \
   src/alfredo-casella/deux-contrastes-op.31/Makefile \
+  src/arnold-schoenberg/Makefile \
   src/arnold-schoenberg/sechs-kleine-klavierstucke-op.19/Makefile \
   src/baldassare-galuppi/Makefile \
   src/baldassare-galuppi/sonata-5-c-major/Makefile \
   src/clara-schumann-wieck/Makefile \
   src/clara-schumann-wieck/soirees-musicales-op.6/Makefile \
+  src/domenico-scarlatti/Makefile \
+  src/domenico-scarlatti/sonata-k055/Makefile \
   src/hans-erich-apostel/Makefile \
   src/hans-erich-apostel/kubiniana-op.13/Makefile \
   src/ildebrando-pizzetti/Makefile \
