@@ -57,9 +57,9 @@
         \null\null
         \fill-line { \draw-hline }
         \null\null\null
-        \line { \abs-fontsize #33 \bold "Sonata per clavicembalo" }
+        \line { \abs-fontsize #35 \bold "Sonata in G major" }
         \null\null\null
-        \line { \abs-fontsize #35 \bold "K.55" }
+        \line { \abs-fontsize #35 \bold "K. 55" }
         \null\null\null
         \null\null\null
         \null\null\null
@@ -73,8 +73,10 @@
     \fill-line {
       \center-column {
         \null\null\null\null
-        \fill-line {
-          \abs-fontsize #12 "Based on ???"
+        \fill-line \abs-fontsize #12 {
+          \concat {
+            "Based on the score published by Heugel & C" \super "ie"
+          }
         }
         \null\null
       }
@@ -288,15 +290,6 @@ Alto = \context Voice = "two" \relative c' {
   %119
   | b16 a b c d c
   | d e d c b a
-
-
-}
-
-Tenor = \context Voice = "three" \relative c' {
-  \voiceThree
-  \override MultiMeasureRest.staff-position = #0
-  \override Rest.staff-position = #0
-  %1
 }
 
 Bass = \context Voice = "four" \relative c' {
@@ -486,14 +479,13 @@ Bass = \context Voice = "four" \relative c' {
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \clef bass
-      \Tenor
       \Bass
     >>
   >>
   \header {
     composer = "Domenico Scarlatti"
     opus = #f
-    title = \markup { "Sonata K.55" }
+    title = \markup { "Sonata in G major" \italic "(K. 55)" }
     subtitle = #f
   }
   \layout {
