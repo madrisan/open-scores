@@ -79,6 +79,7 @@ AC_CONFIG_FILES([\
   src/clara-schumann-wieck/Makefile \
   src/clara-schumann-wieck/soirees-musicales-op.6/Makefile \
   src/domenico-scarlatti/Makefile \
+  src/domenico-scarlatti/sonata-k030/Makefile \
   src/domenico-scarlatti/sonata-k055/Makefile \
   src/hans-erich-apostel/Makefile \
   src/hans-erich-apostel/kubiniana-op.13/Makefile \
