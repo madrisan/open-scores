@@ -1,3 +1,7 @@
+![Release Status](https://img.shields.io/badge/status-stable-brightgreen.svg)
+[![License](https://img.shields.io/badge/License-CC--BY--NC--4.0-blue.svg)](https://spdx.org/licenses/CC-BY-4.0.html)
+[![Latest Release](https://img.shields.io/badge/download-latest--version-blue.svg)](https://github.com/madrisan/open-scores/releases)
+
 # :musical_score: Open Scores for Piano encoded using LilyPond
 
 Open Scores for Piano and and Piano trascriptions encoded using the LilyPond language and tools.
