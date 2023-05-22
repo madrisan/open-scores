@@ -2,9 +2,9 @@
   composer = "Domenico Scarlatti (1685-1757)"
   date = "1742"
 
-  footer = "Mutopia-2023/05/21"
+  footer = "Mutopia-2023/05/22"
 
-  lastupdated = "2023 May 21"
+  lastupdated = "2023 May 22"
   license = "Creative Commons Attribution-ShareAlike 4.0"
   maintainerEmail = "davide.madrisan@gmail.com"
   maintainerWeb = "https://github.com/madrisan/open-scores"
