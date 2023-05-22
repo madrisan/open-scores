@@ -14,8 +14,10 @@
       \null
       \fill-line { \abs-fontsize #10 "Engraved by Davide Madrisan" }
       \fill-line {
-        \abs-fontsize #10
-        \typewriter "https://github.com/madrisan/open-scores/"
+        \with-url #"https://github.com/madrisan/open-scores/" {
+          \abs-fontsize #10
+          \typewriter "https://github.com/madrisan/open-scores/"
+        }
       }
     }
   }
