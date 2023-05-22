@@ -72,8 +72,11 @@
     \override #'(line-width . 75) \italic {
       "From a Schoenberg's letter to Ferruccio Busoni (August 13, 1909)"
     }
-    \override #'(line-width . 75) {
-      \concat { \italic "See: " "http://archive.schoenberg.at/letters" }
+    \concat {
+      \italic "See: "
+      \with-url #"http://archive.schoenberg.at/letters" {
+          "http://archive.schoenberg.at/letters"
+      }
     }
   }
 }
