@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [v33] - unreleased
+
+### Added
+
+- Domenico Scarlatti: Sonata K. 30 ("Cat's Fugue")
+- Domenico Scarlatti: Sonata K. 55
+- Domenico Scarlatti: Sonata K. 87
+- Arnold Schoenberg: Sechs kleine Klavierstucke op.19
+
 ## [v32] - 2023-05-15
 
 ### Added
