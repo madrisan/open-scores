@@ -9,7 +9,7 @@
 \paper {
   #(set-paper-size "a4")
   annotate-spacing = ##f
-  bottom-margin = 15\mm
+  bottom-margin = 5\mm
   first-page-number = 0
   indent = 0.0
 % last-bottom-spacing.padding = #2
@@ -465,7 +465,7 @@ Alto = \context Voice = "two" \relative c'' {
   | \stemDown g8 a g~ g a fis
   | g4 aes8 g4 f8~
   %150
-  | f8 d e4 c8 e
+  | f8 d ees4 c8 ees
   | d4 c8 b!4 a8
   | b!2.
 }
@@ -545,7 +545,7 @@ Tenor = \context Voice = "three" \relative c' {
   | c8 bes a bes a g
   | s2.*13
   %146
-  | \top s4. \stemDown d'8 e! f
+  | \top s4. \stemDown d'8 e! fis
   | \bottom\stemUp g,4.~ g4 c8
   | d,4. ~ <d, d'>
   | g4._~ <g b!>
