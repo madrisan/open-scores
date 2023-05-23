@@ -9,7 +9,7 @@
 \paper {
   #(set-paper-size "a4")
   annotate-spacing = ##f
-  bottom-margin = 15\mm
+  bottom-margin = 5\mm
   first-page-number = 0
   indent = 0.0
 % last-bottom-spacing.padding = #2
