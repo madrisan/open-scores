@@ -81,6 +81,8 @@ AC_CONFIG_FILES([\
   src/domenico-scarlatti/Makefile \
   src/domenico-scarlatti/sonata-k030/Makefile \
   src/domenico-scarlatti/sonata-k055/Makefile \
+  src/franz-liszt/Makefile \
+  src/franz-liszt/nuages-gris-s.199/Makefile \
   src/hans-erich-apostel/Makefile \
   src/hans-erich-apostel/kubiniana-op.13/Makefile \
   src/ildebrando-pizzetti/Makefile \
