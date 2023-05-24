@@ -183,7 +183,7 @@ Sopran = \context Voice = "one" \relative c {
   | R1
   | \ottava 1
     <fis b! fis'>1\arpeggio^\markup { \small "rallent." }
-  | <g bes g'>~\arpeggio
+  | <g b g'>~\arpeggio
   | q1
   \fine
 }
