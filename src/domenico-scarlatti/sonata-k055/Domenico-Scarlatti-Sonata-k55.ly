@@ -103,10 +103,10 @@ Sopran = \context Voice = "one" \relative c'' {
   | g'8 d b
   | g' e c
   | g' d b
-  | a'16g fis e d c
+  | a'16-5 g fis e-2 d-1 c-2
   %5
   | b4.
-  | a16 c b a g fis
+  | a16-3 c b a-3 g-1 fis-2
   | d'4.
   | a16 c b a g fis
   | d'4.
@@ -114,22 +114,22 @@ Sopran = \context Voice = "one" \relative c'' {
   | a16 c b a g fis
   | \appoggiatura fis16 g4.
   | \stemUp d'4 8
-  | c4\trill b8
+  | c4-1-3\trill b8
   | b'4 8
   %15
-  | a4\trill b8
+  | a4-1-3\trill b8
   | d,4 8
   | c4\trill b8
   | b'4 8
   | a4\trill b8
   %20
-  | \stemNeutral r16 b b, cis d e
+  | \stemNeutral r16 b b, cis d-3 e-1
   | f! gis a gis gis a
   | r16 a a, b cis d
   | e fis! g fis fis g
-  | r16 g cis, d g, bes
+  | r16 g cis,-3 d g, bes
   %25
-  | a g' f! e a d,
+  | a g' f! e a d,-3
   | r16 g cis, d g, bes
   | a g' f! e a d,
   | r16 g cis,d g, bes
@@ -142,32 +142,32 @@ Sopran = \context Voice = "one" \relative c'' {
   | e4.~\trill
   %35
   | e16 a fis! e d cis
-  | b b' g fis e d
-  | cis b a g fis e
+  | b b' g fis e-1 d-4
+  | cis b a-1 g-3 fis e
   | fis a d fis, e cis'
   | d a fis d fis d'
   %40
-  | e cis a e g cis
+  | e cis-4 a-3 e-1 g-2 cis
   | d a fis d fis d'
   | e cis a e g cis
   | d a fis d fis d'
   | e cis a e g cis
   %45
   | \stemUp d4.
-  | \stemNeutral a16 b a g fis e
-  | fis' d a fis' a fis
-  | g e a, e' g e
+  | \stemNeutral a16 b a-3 g-1 fis-2 e
+  | fis'-4 d a fis'-3 a fis
+  | g-4 e a, e'-3 g e
   | fis d a fis' a fis
   %50
   | g e a, e' g e
   | fis d a fis' a fis
-  | g e a, e' g e
-  | fis e fis g a g
-  | a b a g fis e
+  | g e a, e'-2 g e
+  | fis-3 e-1 fis g a g
+  | a b a g fis e-1
   %55
-  | d a' fis e d cis
-  | b g' fis e d cis
-  | d a fis e d cis
+  | d-2 a' fis e d cis
+  | b g' fis e d-1 cis-4
+  | d a fis e d-3 cis
   | b g' fis e d cis
   | d4.
   }
@@ -180,23 +180,23 @@ Sopran = \context Voice = "one" \relative c'' {
   | dis8 a e'
   | fis16 c b a g fis
   %65
-  | b' g fis e dis e
+  | b' g fis e dis-3 e-4
   | fis16 c b a g fis
   | b' g fis e dis e
   | fis16 c b a g fis
-  | b' a gis f! e d
+  | b' a gis f! e-1 d-4
   %70
-  | cis bes a g f! e
+  | cis bes a-1 g-3 f! e
   | a' f! e d cis d
   | e bes a g f! e
   | a' f! e d cis d
-  | e bes a g f! e
+  | e bes a-2 g-	1 f!-2 e-1
   %75
-  | fis g a bes c d
+  | fis-3 g-1 a bes-3 c-1 d
   | ees4.\trill
   | fis,16 g a bes c d
   | ees4.\parenthesize\trill
-  | b!16 c d ees f! g
+  | b!16-1 c d ees-4 f!-1 g-3
   %80
   | f!4.\parenthesize\trill
   | b,!16 c d ees f! g
@@ -204,15 +204,15 @@ Sopran = \context Voice = "one" \relative c'' {
   | b,!16 c d ees f! g
   | f! aes g f ees d
   %85
-  | g f! ees d c! bes
+  | g f! ees d c!-2 bes-1
   | a fis' g bes, a bes
   | a fis' g bes, a bes
-  | a8 c d
-  | ees c g'
+  | a8 c-2 d
+  | ees c-1 g'-3
   %90
-  | fis g bes
-  | c a g
-  | fis c d
+  | fis a bes
+  | c-5 a-3 g-1
+  | fis-4 c d
   | ees c g'
   | fis a bes
   %95
@@ -232,13 +232,13 @@ Sopran = \context Voice = "one" \relative c'' {
   | a4.~\parenthesize\trill
   | a16 g a bes cis d
   | a4.~\parenthesize\trill
-  | a16 d b! a g fis
+  | a16 d b! a g-1 fis-2
   %110
-  | e e' c b a g'
-  | fis e d c b a
+  | e e' c b a g'-4
+  | fis e d-1 c-3 b a
   | b c d c b a
   | g' d b g b g'
-  | a fis d a c fis
+  | a fis d-3 a c-2 fis
   %115
   | g d b g b g'
   | a fis d a c fis
@@ -247,19 +247,19 @@ Sopran = \context Voice = "one" \relative c'' {
   | \stemUp g4.
   %120
   | s4.
-  | \stemNeutral b16 g d b d b'
+  | \stemNeutral b16 g d b d b'-4
   | c a fis d fis c'
   | b g d b d b'
   | c a fis d fis c'
   %125
   | b g d b d b'
   | c a fis d fis c'
-  | b a g fis g d
-  | e c b a g fis
-  | g d' b a g fis
+  | b a g-1 fis-3 g d-1
+  | e-5 c b a g fis
+  | g d' b a g-1 fis-2
   %130
-  | e c' b a g fis
-  | g[ d] \clef bass b a g fis
+  | e-1 c' b a g-1 fis-4
+  | g-5[ d-3] \clef bass b a-1 g-3 fis
   | e c' b a g fis
   | g4.
   }
@@ -285,10 +285,10 @@ Alto = \context Voice = "two" \relative c' {
   %20
   | s4.*25
   %45
-  | fis,16 e fis g a g
+  | fis,16 e fis-2 g-1 a g
   | s4.*73
   %119
-  | b16 a b c d c
+  | b16 a b-2 c-1 d-3 c
   | d e d c b a
 }
 
@@ -304,9 +304,9 @@ Bass = \context Voice = "four" \relative c' {
   | g4.
   | fis4.
   %5
-  | g16 fis e d c b
+  | g16-1 fis e-3 d-1 c b
   | c8 d c
-  | b16 a g fis e d
+  | b16 a g fis-4 e-1 d
   | c8 d c
   | b16 a g fis e d
   %10
@@ -334,8 +334,8 @@ Bass = \context Voice = "four" \relative c' {
   | <e g>4 d8
   | cis4 <d f!>8
   %30
-  | g,16 bes a d cis g'
-  | f!4.
+  | g,16 bes a d cis-2 g'-1
+  | f!4.-2
   | g,16 bes a d cis g'
   | f!4.
   | g,16 bes a d cis g'
@@ -344,17 +344,17 @@ Bass = \context Voice = "four" \relative c' {
   | g4.
   | a8 a, cis
   | d g, a
-  | d,, d' a'
+  | d,,-5 d'-2 a'-1
   %40
-  | a,, a' a'
+  | a,,-5 a'-2 a'-1
   | d,, d' a'
   | a,, a' a'
   | d,, d' a'
   | a,, a' a'
   %45
-  | d, e fis
-  | g a a,
-  | d, d' a'
+  | d,-5 e fis
+  | g a a,-3
+  | d,-5 d' a'
   | a,, a' a'
   | d,, d' a'
   %50
@@ -366,7 +366,7 @@ Bass = \context Voice = "four" \relative c' {
   %55
   | d e fis
   | g a a,
-  | d e fis
+  | d-4 e fis
   | g a a,
   | d,4.
   }
@@ -415,7 +415,7 @@ Bass = \context Voice = "four" \relative c' {
   | d16 g fis g fis g
   %95
   | ees16 g fis g fis g
-  | d8 d, fis'
+  | d8 d, fis'!
   | g8 g, bes
   | <a c>4 g8
   | <fis c'>4 g8
@@ -433,8 +433,8 @@ Bass = \context Voice = "four" \relative c' {
   | b!4.
   %110
   | c4.
-  | d8 d, fis
-  | g c, d
+  | d8 d, fis-4
+  | g c, d-4
   | g, g' d'
   | d,, d' d'
   %115
@@ -453,8 +453,8 @@ Bass = \context Voice = "four" \relative c' {
   | g,, g' d'
   | d,, d' d'
   | g,, a b
-  | c d d,
-  | g a b
+  | c d d,-5
+  | g-5 a b
   %130
   | c d d,
   | g a b
