@@ -25,6 +25,7 @@ SUFFIXES = .in
 
 BUILT_SOURCES = covercolor.ly
 EXTRA_DIST = Franz-Liszt-Nuages-Gris-S.199.ly \
+	     Franz-Liszt-by-Nadar-march-1886.ps \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
