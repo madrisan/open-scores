@@ -57,9 +57,9 @@
         \null\null
         \fill-line { \draw-hline }
         \null\null\null
-        \line { \abs-fontsize #35 \bold "Nuages Gris" }
+        \line { \abs-fontsize #35 \bold "Trübe Wolken" }
         \null
-        \line { \abs-fontsize #26 \bold "(Trübe Wolken)" }
+        \line { \abs-fontsize #26 \bold "(Nuages Gris)" }
         \null\null\null
         \line { \abs-fontsize #35 \bold "S. 199" }
         \null\null\null
@@ -325,8 +325,8 @@ Sustain = {
   \header {
     composer = "Franz Liszt"
     opus = #f
-    title = "Nuages Gris"
-    subtitle = "(Trübe Wolken)"
+    title = "Trübe Wolken"
+    subtitle = "(Nuages Gris)"
     arranger = \markup { \italic "Komponiert 24. August 1881 in Weimar" }
   }
   \layout {
