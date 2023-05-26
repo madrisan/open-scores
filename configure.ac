@@ -79,8 +79,10 @@ AC_CONFIG_FILES([\
   src/clara-schumann-wieck/Makefile \
   src/clara-schumann-wieck/soirees-musicales-op.6/Makefile \
   src/domenico-scarlatti/Makefile \
+  src/domenico-scarlatti/sonata-k001/Makefile \
   src/domenico-scarlatti/sonata-k030/Makefile \
   src/domenico-scarlatti/sonata-k055/Makefile \
+  src/domenico-scarlatti/sonata-k087/Makefile \
   src/domenico-scarlatti/sonata-k387/Makefile \
   src/franz-liszt/Makefile \
   src/franz-liszt/nuages-gris-s.199/Makefile \
