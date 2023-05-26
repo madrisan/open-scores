@@ -1,36 +1,45 @@
+\markup \center-column {
+  \line {
+    \hspace #8
+    \general-align #Y #DOWN {
+      \epsfile #X #80 #"arnold-shoenberg-photo.ps"
+    }
+  }
+}
+
 \markup {
-  \hspace #10
+  \hspace #0
   \column {
-    \null\null\null\null\null
-    \line { \abs-fontsize #40 "“" }
-    \override #'(line-width . 75) \justify {
+    \null\null\null
+    \line { \abs-fontsize #34 "“" }
+    \wordwrap \abs-fontsize #11 {
       I strive for: complete liberation from all forms from all symbols of cohesion and of logic.
     }
     \hspace #0
-    \override #'(line-width . 75) \wordwrap-lines {
+    \wordwrap \abs-fontsize #11 {
       Thus: away with “motivic working out.”
     }
-    \override #'(line-width . 75) \wordwrap-lines {
+    \wordwrap \abs-fontsize #11 {
       Away with harmony as cement or bricks of a building.
     }
-    \override #'(line-width . 75) \wordwrap-lines {
+    \wordwrap \abs-fontsize #11 {
       Harmony is \italic expression and nothing else.
     }
-    \override #'(line-width . 75) \wordwrap-lines {
+    \wordwrap \abs-fontsize #11 {
       Then: Away with Pathos!
     }
-    \override #'(line-width . 75) \justify {
+    \wordwrap \abs-fontsize #11 {
       Away with protracted ten-ton scores, from erected or constructed towers, rocks, and other
       massive claptrap.
     }
     \hspace #0
-    \override #'(line-width . 75) \wordwrap-lines {
+    \wordwrap \abs-fontsize #11 {
       My music must be \italic brief.
     }
-    \override #'(line-width . 75) \wordwrap-lines {
+    \wordwrap \abs-fontsize #11 {
       Concise! In two notes: not built, but “expressed”!!
     }
-    \override #'(line-width . 75) \justify {
+    \wordwrap \abs-fontsize #11 {
       And the result I whish for: no stylized and sterile protracted emotion.
       People are not like that: it is \italic impossible to a person to have \italic one sensation
       at a time.
@@ -38,38 +47,38 @@
       together than and apple and a pear. They do their own way.
     }
     \hspace #0
-    \override #'(line-width . 75) \justify {
+    \wordwrap \abs-fontsize #11 {
       And this variegation, this multifariousness, this \italic illogicality which our senses demonstrate,
       the illogicality presented by their interactions, set forth by some mounting rush of blood,
       by some reaction of the senses, or the nerves, this I should like to in my music.
     }
     \hspace #0
-    \override #'(line-width . 75) \justify {
+    \wordwrap \abs-fontsize #11 {
       It should be an expression of feeling, as our feelings, which bring us in contact with our
       subconscious, really are, and no false child of feelings and “conscious logic”.
     }
     \hspace #0
-    \override #'(line-width . 75) \justify {
+    \wordwrap \abs-fontsize #11 {
       Now I have made my confession and they can burn me.
       You will not number amongst those who burn me: that I know.
     }
   }
 }
 
-\markup \abs-fontsize #40 {
-  \hspace #10
+\markup {
+  \hspace #0
   \column {
-    \override #'(line-width . 75) {
+    \wordwrap \abs-fontsize #34 {
       \fill-line { "" "”" }
     }
   }
 }
 
 \markup {
-  \hspace #10
+  \hspace #0
   \column {
     \null\null
-    \override #'(line-width . 75) \italic {
+    \wordwrap \abs-fontsize #11 \italic {
       "From a Schoenberg's letter to Ferruccio Busoni (August 13, 1909)"
     }
     \concat {
