@@ -24,13 +24,13 @@ SUFFIXES = .in
 	$(LILYPOND) --pdf --output $@ $<
 
 BUILT_SOURCES = covercolor.ly
-EXTRA_DIST = Domenico-Scarlatti-Sonata-kXX.ly \
+EXTRA_DIST = Domenico-Scarlatti-Sonata-k387.ly \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
 	     logo.ly
 
-all: $(BUILT_SOURCES) Domenico-Scarlatti-Sonata-kXX
+all: $(BUILT_SOURCES) Domenico-Scarlatti-Sonata-k387
 
 clean-local:
 	-rm -f $(BUILT_SOURCES)
