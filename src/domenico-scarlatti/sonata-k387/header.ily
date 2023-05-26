@@ -14,8 +14,8 @@
   mutopiacopyright = "Creative Commons Attribution-ShareAlike 4.0"
   mutopiainstrument = "Piano"
   mutopiamaintainer = "Davide Madrisan"
-  mutopiaopus = ""
-  mutopiatitle = "Sogno"
+  mutopiaopus = "K.387"
+  mutopiatitle = "Sonata"
 
   opus = "K.387"
   title = "Sonata"

@@ -129,6 +129,7 @@ Thanks to my harpist friend Tristan Rollet ([@Pluiesurlavitre](https://github.co
 
  * Sonata K.33 (Cat's fugue)
  * Sonata K.55
+ * Sonata K.387
 
 #### Arnold Schoenberg (1874–1951)
 

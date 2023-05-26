@@ -27,7 +27,7 @@
         (minimum-distance . 1)
         (padding . 2)
         (stretchability . 20))
-  top-margin = 15\mm
+  top-margin = 20\mm
 }
 
 \bookpart {
@@ -121,6 +121,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | g' f aes, f' d! g,
   | f' ees g,~ g c ees~
   | ees d! f~ f b, c
+  %\pageBreak
   | d! b! g f aes c
   | d! b! g f aes c,
   %20
@@ -167,6 +168,7 @@ Sopran = \context Voice = "one" \relative c'' {
   %50
   | e! g bes des bes g
   | aes f d!~ d c b!
+  %\pageBreak
   | c4.\prall g''
   | g g
   | g des'~
@@ -349,7 +351,7 @@ Bass = \context Voice = "four" \relative c' {
   \header {
     composer = "Domenico Scarlatti"
     opus = #f
-    title = \markup { "Sonata K. 387" }
+    title = \markup { "Sonata in F minor" \italic "(K. 387)" }
     subtitle = #f
   }
   \layout {

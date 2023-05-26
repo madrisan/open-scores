@@ -764,7 +764,7 @@ Bass = \context Voice = "four" \relative c' {
   \header {
     composer = "Domenico Scarlatti"
     opus = #f
-    title = \markup { "Sonata K. 30" \italic "(“Cat fugue”)" }
+    title = \markup { "Sonata in G minor" \italic "(K. 30 “Cat fugue”)" }
     subtitle = #f
   }
   \layout {
