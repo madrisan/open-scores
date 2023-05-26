@@ -17,6 +17,8 @@
 
 AM_MAKEFLAGS = --no-print-directory
 
-SUBDIRS = sonata-k030 \
+SUBDIRS = sonata-k001 \
+	  sonata-k030 \
 	  sonata-k055 \
+	  sonata-k087 \
 	  sonata-k387
