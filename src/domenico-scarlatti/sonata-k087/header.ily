@@ -15,7 +15,7 @@
   mutopiainstrument = "Piano"
   mutopiamaintainer = "Davide Madrisan"
   mutopiaopus = ""
-  mutopiatitle = "Sogno"
+  mutopiatitle = "Sonata in B minor K. 87"
 
   opus = "K.87"
   title = "Sonata"

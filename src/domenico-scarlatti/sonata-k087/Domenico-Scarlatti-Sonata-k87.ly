@@ -57,7 +57,7 @@
         \null\null
         \fill-line { \draw-hline }
         \null\null\null
-        \line { \abs-fontsize #35 \bold "Sonata in b minor" }
+        \line { \abs-fontsize #35 \bold "Sonata in B minor" }
         \null\null\null
         \line { \abs-fontsize #35 \bold "K. 87" }
         \null\null\null
@@ -477,7 +477,7 @@ Bass = \context Voice = "four" \relative c' {
   \header {
     composer = "Domenico Scarlatti"
     opus = #f
-    title = \markup { "Sonata K. 87" }
+    title = \markup { "Sonata in B minor" \italic "(K. 87)" }
     subtitle = #f
   }
   \layout {

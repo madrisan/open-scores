@@ -176,7 +176,11 @@ Sopran = \context Voice = "one" \relative c'' {
   %60
   | d'8 a fis
   | d' b g
-  | d'[ a] fis16 e'
+  | d'[ a] fis16_\markup {
+      \hspace #-1 \small\italic "l.H"
+    } e'^\markup {
+      \hspace #-1 \small\italic "r.H"
+    }
   | dis8 a e'
   | fis16 c b a g fis
   %65
