@@ -136,7 +136,7 @@ Sopran = \context Voice = "one" \relative c'' {
     \clef treble \slurUp\appoggiatura { e''16 f } g4\prall f16 e
   | f4. \clef bass c, d, \clef treble f''4\trill e16 d
   | e4. c \clef bass d,, \clef treble b''4\prall a16 b
-  | c4. \clef bass c,,, c
+  | c4. \clef bass c,,, c\fermata
   }
 }
 
@@ -190,8 +190,8 @@ Bass = \context Voice = "four" \relative c' {
   %20
   | \repeat unfold 4 { e, g c }
   | \repeat unfold 4 { d, f b }
-  | c e g \clef bass e,, g c  f, a d  g, b d
-  | \clef treble \repeat unfold 3 { c e g }
+  | c, e g \clef bass e, g c  f, a d  g, b d
+  | \clef treble \repeat unfold 2 { c e g } c,4.\fermata
   }
 }
 
