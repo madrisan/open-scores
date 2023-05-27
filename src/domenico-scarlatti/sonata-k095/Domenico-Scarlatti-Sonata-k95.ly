@@ -157,20 +157,6 @@ Sopran = \context Voice = "one" \relative c'' {
   }
 }
 
-Alto = \context Voice = "two" \relative c' {
-  \voiceTwo
-  \override MultiMeasureRest.staff-position = #0
-  \override Rest.staff-position = #0
-  %1
-}
-
-Tenor = \context Voice = "three" \relative c' {
-  \voiceThree
-  \override MultiMeasureRest.staff-position = #0
-  \override Rest.staff-position = #0
-  %1
-}
-
 Bass = \context Voice = "four" \relative c' {
   \voiceFour
   \override MultiMeasureRest.staff-position = #0
@@ -222,13 +208,11 @@ Bass = \context Voice = "four" \relative c' {
       \Global
       \clef treble
       \Sopran
-      \Alto
     >>
     \context Staff = "lower" <<
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \clef bass
-      \Tenor
       \Bass
     >>
   >>
