@@ -96,9 +96,6 @@ Image of the J.S. Bach's [manuscript](images/js-bach-jesu-meine-freude-manuscrip
 #### Baldassare Galuppi (1706-1785)
 
  * [Sonata no. 5 in Do maggiore](https://github.com/madrisan/open-scores/releases/download/v33/Baldassare-Galuppi-Sonata-5.pdf)
-   * Andante
-   * Allegro
-   * Allegro assai
 
 You can see here the [manuscript](images/baldassare-galuppi-sonata-5-manuscript-1st-page.png) of the first page of the sonata.
 
@@ -123,7 +120,7 @@ Thanks to my harpist friend Tristan Rollet ([@Pluiesurlavitre](https://github.co
 
 #### Franz Liszt (1811–1886)
 
- * [Trübe Wolken (Nuages Gris)](https://github.com/madrisan/open-scores/releases/download/v33/Franz-Liszt-Nuages-Gris-S.199.pdf)
+ * [Trübe Wolken (Nuages Gris)](https://github.com/madrisan/open-scores/releases/download/v33/Franz-Liszt-Nuages-Gris-S.199.pdf) S.199
 
 #### Ildebrando Pizzetti (1880-1968)
 
@@ -185,23 +182,35 @@ git checkout main
 ```
 ```
 make -C src/alfredo-casella/deux-contrastes-op.31
+make -C src/arnold-schoenberg/sechs-kleine-klavierstucke-op.19
 make -C src/baldassare-galuppi/sonata-5-c-major
 make -C src/clara-schumann-wieck/soirees-musicales-op.6
+make -C src/domenico-scarlatti/sonata-k001
+make -C src/domenico-scarlatti/sonata-k030
+make -C src/domenico-scarlatti/sonata-k055
+make -C src/domenico-scarlatti/sonata-k087
+make -C src/domenico-scarlatti/sonata-k095
+make -C src/domenico-scarlatti/sonata-k387
+make -C src/franz-liszt/nuages-gris-s.199
+make -C src/ildebrando-pizzetti/sogno
 make -C src/johann-sebastian-bach/chaconne-fur-violine-busoni-BWV1004
 make -C src/johann-sebastian-bach/chorale-preludes/BWV615-Busoni
 make -C src/johann-sebastian-bach/chorale-preludes/BWV639-Busoni
 make -C src/johann-sebastian-bach/chorale-preludes/BWV659
 make -C src/johann-sebastian-bach/chorale-preludes/BWV659-Busoni
-make -C src/johann-sebastian-bach/chromatische-fantasie-und-fugue-BWV_903
-make -C src/johann-sebastian-bach/die-kunst-der-fuge-BWV_1080
-make -C src/johann-sebastian-bach/italienisches-konzert-BWV_971
-make -C src/johann-sebastian-bach/jesu-meine-freude-BWV_610
+make -C src/johann-sebastian-bach/chorale-preludes/jesu-meine-freude-BWV610
+make -C src/johann-sebastian-bach/chromatische-fantasie-und-fugue-BWV903-busoni
+make -C src/johann-sebastian-bach/die-kunst-der-fuge-BWV1080
+make -C src/johann-sebastian-bach/italienisches-konzert-BWV971
 make -C src/johann-sebastian-bach/partitas/BWV830
 make -C src/johann-sebastian-bach/praludium-und-fuge-liszt-BWV543-S462
+make -C src/johann-sebastian-bach/schafe-konnen-sicher-weiden-BWV208
 make -C src/johann-sebastian-bach/sechs-kleine-praludien-BWV933-938
-make -C src/johann-sebastian-bach/siciliano-BWV_1031
+make -C src/johann-sebastian-bach/siciliano-BWV1031
 make -C src/johann-sebastian-bach/suites-anglaises/BWV809
 make -C src/johannes-brahms/klavierstucke-op.119
+make -C src/johannes-brahms/rhapsodie-op.79-nr.1
+make -C src/johannes-brahms/rhapsodie-op.79-nr.2
 make -C src/mikhail-glinka/nocturne
 make -C src/robert-schumann/kinderscenen-op.15
 make -C src/rued-langgaard/insektarium-BVN_134
