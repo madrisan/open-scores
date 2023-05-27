@@ -94,17 +94,28 @@ Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \override Parentheses.font-size = #1
   \stemNeutral\slurNeutral
   \tempo \markup {
     \bold\concat { "Andante comodo" }
   }
   \repeat volta 2 {
-  \partial 4. { g8 r r }
+  \partial 4. {
+    \once\override Staff.TextScript.extra-offset = #'(-2 . -2)
+    g8_\markup\small\italic {
+       \whiteout
+       \concat {
+         \dynamic mf " (la seconda volta " \dynamic p ")"
+       }
+    } r r
+  }
   %1
-  | c4. \clef bass g, c, \clef treble c''4 b16 c
-  | d4. \clef bass g,, g, \clef treble d'''4 c16 d
+  | c4. \clef bass g, c,
+    \clef treble \stemUp\slurDown\appoggiatura d''16 \stemDown c4\trill b16 c
+  | d4. \clef bass g,, g,
+    \clef treble \stemUp\appoggiatura e'''16 \stemDown d4\trill c16 d
   | e4. \clef bass c,, c, \clef treble e'''
-  | e4.\trill d \clef bass g,,,
+  | \stemUp\appoggiatura f16 \stemDown e4.\trill d \clef bass g,,,
   }
   \repeat volta 2 {
     \partial 4. { \clef treble g''4. }
@@ -114,28 +125,34 @@ Sopran = \context Voice = "one" \relative c'' {
   | a4. \clef bass c,, f, \clef treble a''
   | \slurUp\appoggiatura { b16 c } d4. c
     \slurDown\clef bass d,, \clef treble \appoggiatura { a''16 b } c4.\prall
-  | d4. \clef bass d,, g, \clef treble d'''
+  | b4. \clef bass d,, g, \clef treble d'''
   | <e g>4. \clef bass g,,, \clef treble <d''' f> \clef bass g,,,
   %10
-  | \clef treble <e''' g>4. \clef bass g,,, \clef treble <b'' d> \clef bass g,,
+  | \clef treble <c'' e>4. \clef bass g,, \clef treble <b'' d> \clef bass g,,
   | \clef treble <c'' e>4. \clef bass g,, \clef treble <d''' f> \clef bass g,,,
-  \pageBreak
   | \clef treble
-    <c'' e>4. \clef bass g,, g \clef treble g''
-  | \appoggiatura { a16 bes } c4.\prall bes! \clef bass c,, \clef treble bes''\prall
+    <c'' e>4._\markup { \small\italic "rallent. molto" }
+    \clef bass g,, \clef treble <b'' d>\parenthesize\fermata  g
+  \pageBreak
+  | \appoggiatura { a16 bes } c4.\prall bes! \clef bass c,,
+    \clef treble  \slurUp\appoggiatura { g''16 a } bes4.\trill
   | a \clef bass c,, f, \clef treble a''
   %15
   | \slurUp\appoggiatura { b16 c } d4. c
-    \clef bass d,, \clef treble \slurDown\appoggiatura { a''16 b } c4.\prall
+    \clef bass d,, \clef treble \slurDown\appoggiatura { a''16 b } c4.\trill
   | b \clef bass d,, g, \clef treble d'''
-  | \slurUp\appoggiatura { e16 f } g4. f \clef bass g,, \clef treble f''\prall
-  | e \clef bass g,, c, \clef treble g'''4\trill f16 g
-  | a 4. \clef bass c,, f, \clef treble a''4\trill g16 f
+  | \slurUp\appoggiatura { e16 f } g4. f \clef bass g,, \clef treble f''\trill
+  | e \clef bass g,, c,
+    \clef treble \stemUp\slurDown\appoggiatura a'''16 \stemDown g4\trill f16 g
+  | a 4. \clef bass c,, f,
+    \clef treble \stemUp\slurDown\appoggiatura b''16 \stemDown a4\trill g16 f
   %20
   | g4. \clef bass c,, e,
-    \clef treble \slurUp\appoggiatura { e''16 f } g4\prall f16 e
-  | f4. \clef bass c, d, \clef treble f''4\trill e16 d
-  | e4. c \clef bass d,, \clef treble b''4\prall a16 b
+    \clef treble  \stemUp\slurDown\appoggiatura a''16 \stemDown g4\trill f16 e
+  | f4. \clef bass c, d,
+    \clef treble \stemUp\slurDown\appoggiatura g''16 \stemDown f4\trill e16 d
+  | e4. c \clef bass d,,
+    \clef treble \stemUp\slurDown\appoggiatura c''16 \stemDown b4\prall a16 b
   | c4. \clef bass c,,, c\fermata
   }
 }
@@ -158,6 +175,7 @@ Bass = \context Voice = "four" \relative c' {
   \voiceFour
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \override Parentheses.font-size = #1
   \stemNeutral\slurNeutral\tieNeutral
   \repeat volta 2 {
   \partial 4. { \clef treble c8 e g }
@@ -177,7 +195,7 @@ Bass = \context Voice = "four" \relative c' {
   \repeat unfold 3 {
   | g, c e  g, c e  g, b d  g, b d
   }
-  | g, c e  g, c e  <g, b d>4. e8 g c
+  | g, c e  g, c e  <g, b d>4.\parenthesize\fermata e8 g c
   | \repeat unfold 4 { e, g c }
   | \repeat unfold 4 { f, a c }
   %15
@@ -191,7 +209,7 @@ Bass = \context Voice = "four" \relative c' {
   | \repeat unfold 4 { e, g c }
   | \repeat unfold 4 { d, f b }
   | c, e g \clef bass e, g c  f, a d  g, b d
-  | \clef treble \repeat unfold 2 { c e g } c,4.\fermata
+  | \clef treble \repeat unfold 2 { c e g } c, e g\fermata
   }
 }
 
@@ -229,6 +247,6 @@ Bass = \context Voice = "four" \relative c' {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 4. = 64
   }
 }
