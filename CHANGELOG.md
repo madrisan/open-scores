@@ -13,7 +13,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Domenico Scarlatti: Sonata K. 87
 - Domenico Scarlatti: Sonata K. 95
 - Domenico Scarlatti: Sonata K. 387
-- Franz List: Nuages Gris (Trübe Wolken) S.199
+- Franz List: Trübe Wolken (Nuages Gris) S.199
 
 ## [v32] - 2023-05-15
 
