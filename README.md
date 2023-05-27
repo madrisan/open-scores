@@ -121,18 +121,22 @@ Thanks to my harpist friend Tristan Rollet ([@Pluiesurlavitre](https://github.co
    * VIII. Julus terrestris (Millipede)
    * IX. Culex pipiens (Mosquito)
 
+#### Franz Liszt (1811–1886)
+
+ * [Trübe Wolken (Nuages Gris)](https://github.com/madrisan/open-scores/releases/download/v32/Franz-Liszt-Nuages-Gris-S.199.pdf)
+
 #### Ildebrando Pizzetti (1880-1968)
 
  * [Sogno](https://github.com/madrisan/open-scores/releases/download/v32/Ildebrando-Pizzetti-Sogno.pdf)
 
 #### Domenico Scarlatti (1685-1757)
 
- * Sonata K. 1
- * Sonata K. 33 (Cat's fugue)
- * Sonata K. 55
- * Sonata K. 87
- * Sonata K. 95
- * Sonata K. 387
+ * [Sonata K. 1](https://github.com/madrisan/open-scores/releases/download/v32/Domenico-Scarlatti-Sonata-k1.pdf)
+ * [Sonata K. 33](https://github.com/madrisan/open-scores/releases/download/v32/Domenico-Scarlatti-Sonata-k33.pdf) (Cat's fugue)
+ * [Sonata K. 55](https://github.com/madrisan/open-scores/releases/download/v32/Domenico-Scarlatti-Sonata-k55.pdf)
+ * [Sonata K. 87](https://github.com/madrisan/open-scores/releases/download/v32/Domenico-Scarlatti-Sonata-k87.pdf)
+ * [Sonata K. 95](https://github.com/madrisan/open-scores/releases/download/v32/Domenico-Scarlatti-Sonata-k95.pdf)
+ * [Sonata K. 387](https://github.com/madrisan/open-scores/releases/download/v32/Domenico-Scarlatti-Sonata-k387.pdf)
 
 #### Arnold Schoenberg (1874–1951)
 

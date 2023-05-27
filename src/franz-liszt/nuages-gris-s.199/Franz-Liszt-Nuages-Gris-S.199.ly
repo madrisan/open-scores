@@ -102,15 +102,6 @@
   }
 }
 
-%  \general-align #Y #DOWN {
-%    \epsfile #X #96 #"Franz-Liszt-by-Nadar-march-1886.ps"
-%  }
-%  \null
-%  \fill-line \abs-fontsize #10 {
-%    \center-column { "Franz Liszt - March 1886" }
-%  }
-
-
 Global = {
   \key g \minor
   \time 4/4
