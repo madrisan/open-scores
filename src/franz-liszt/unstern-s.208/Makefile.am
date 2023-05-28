@@ -15,7 +15,24 @@
 ## You should have received a copy of the GNU General Public License
 ## along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-AM_MAKEFLAGS = --no-print-directory
+SUFFIXES = .in
+.in:; @echo "Generating $@...";\
+	sed "s,@rgb_color@,$(RGB_COLOR),g;" \
+	$< > $@
 
-SUBDIRS = nuages-gris-s.199 \
-	  unstern-s.208
+%: %.ly
+	$(LILYPOND) --pdf --output $@ $<
+
+BUILT_SOURCES = covercolor.ly
+EXTRA_DIST = Franz-Liszt-Unsern-S.208.ly \
+	     covercolor.ly.in \
+	     header.ily \
+	     global.ly \
+	     logo.ly
+
+all: $(BUILT_SOURCES) Franz-Liszt-Unsern-S.208
+
+clean-local:
+	-rm -f $(BUILT_SOURCES)
+	-rm -f *.midi
+	-rm -f *.pdf

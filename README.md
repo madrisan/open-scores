@@ -121,6 +121,7 @@ Thanks to my harpist friend Tristan Rollet ([@Pluiesurlavitre](https://github.co
 #### Franz Liszt (1811–1886)
 
  * [Trübe Wolken (Nuages Gris)](https://github.com/madrisan/open-scores/releases/download/v33/Franz-Liszt-Nuages-Gris-S.199.pdf) S.199
+ * [Unstern (Sinistre)](https://github.com/madrisan/open-scores/releases/download/v33/Franz-Liszt-Unstern-S.208.pdf) S.208
 
 #### Ildebrando Pizzetti (1880-1968)
 
@@ -192,6 +193,7 @@ make -C src/domenico-scarlatti/sonata-k087
 make -C src/domenico-scarlatti/sonata-k095
 make -C src/domenico-scarlatti/sonata-k387
 make -C src/franz-liszt/nuages-gris-s.199
+make -C src/franz-liszt/unstern-s.208
 make -C src/ildebrando-pizzetti/sogno
 make -C src/johann-sebastian-bach/chaconne-fur-violine-busoni-BWV1004
 make -C src/johann-sebastian-bach/chorale-preludes/BWV615-Busoni
