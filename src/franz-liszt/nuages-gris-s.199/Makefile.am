@@ -31,7 +31,7 @@ EXTRA_DIST = Franz-Liszt-Nuages-Gris-S.199.ly \
 	     global.ly \
 	     logo.ly
 
-all: $(BUILT_SOURCES) Franz-Liszt-Nuages-Gris-S.199.ly
+all: $(BUILT_SOURCES) Franz-Liszt-Nuages-Gris-S.199
 
 clean-local:
 	-rm -f $(BUILT_SOURCES)
