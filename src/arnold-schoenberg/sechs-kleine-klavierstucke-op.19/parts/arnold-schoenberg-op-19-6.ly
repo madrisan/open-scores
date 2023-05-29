@@ -115,14 +115,14 @@ Bass = \context Voice = "four" \relative c {
   \phrasingSlurNeutral\stemNeutral\slurNeutral\tieNeutral
   \set Staff.pedalSustainStyle = #'mixed
   \override Staff.SustainPedal.color = \grayTextColor
-  \partial 4 r4\sustainOn_\markup \annotation {18}
+  \partial 4 r4
   %1
   | r2 \clef treble <g'! c! f!>2~
-  | q2 r\sustainOff\sustainOn
+  | q2 r
   | \override Staff.SostenutoPedal.color = \grayTextColor
-    r4_\markup \annotation {19} \stemDown q2.~\sostenutoOn
+    r4 \stemDown q2.~\sostenutoOn
     \break
-  | q2 r2\sustainOff\sostenutoOff
+  | q2 r2\sostenutoOff
     \set Staff.pedalSustainStyle = #'text
     \revert Staff.SostenutoPedal.color
     \revert Staff.SustainPedal.color
@@ -145,20 +145,21 @@ Bass = \context Voice = "four" \relative c {
       \clef bass
       \omit Staff.TimeSignature
     } {
-  |   R1_\markup \annotation {20}
-  |   R1_\markup \annotation {21}
+  |   R1
+  |   R1
       \once\override Staff.TextScript.extra-offset = #'(-2.5 . 1.2)
   |   \set Staff.pedalSustainStyle = #'mixed
       \override Staff.SustainPedal.color = \grayTextColor
-      r2\sustainOn^\markup {
-        \small\italic "wie ein Hauch"
-      }
       << {
+        r2^\markup {
+          \small\italic "wie ein Hauch"
+        }
         r4 bes,8\pppp[( aes,])\fermata
       } \\ {
+        r4
         % workaround for printing a sostenuto pedal at the bass
         \override Staff.SostenutoPedal.color = \grayTextColor
-        s4\sostenutoOn s
+        s8 s\sostenutoOn s2
       } >>
       \fine
     }

@@ -6,6 +6,7 @@ Global = {
 
 lH = \markup \small\italic { "l.H" }
 rH = \markup \small\italic { "r.H" }
+grayTextColor = #(x11-color "dimgray")
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
@@ -71,7 +72,14 @@ Bass = \context Voice = "four" \relative c' {
   | <c! ees>8^-( <g! b!>4) q8_. r4 q8_. q_.
   | \shape #'((( 0 . 0) (0 . 1) (0 . 0) (0 . 4))) Slur
     <aes, c>8^\rH^(_\markup \annotation {8} <a! cis>4^\< <c! ees>8\!
-    \clef bass <fis,, bis dis f!>2~_\>)_\markup \annotation {9}
+    \clef bass <fis,, bis dis f!>2~_\>)^\markup \italic\tiny {
+      \hspace #1.8 \with-color \grayTextColor
+      \column {
+        \line { "presa muta" }
+        \raise #1 \line { "dell'accordo" }
+        \raise #2 \line { \char ##x2193 }
+      }
+    }_\markup \annotation {9}
   | q8\! r r4 <f'! a!>8^._\pp_^_\markup \annotation {10}^\rH r r4
   | <ees g>8^. r r4 r8 <des f>^. r4
   | r8 <c e!>^.^\rH r4 r2^\fermata
@@ -85,6 +93,14 @@ centerDynamics = {
     s4-\markup \italic\small { "etwas gedehnt" } s2.
   | s1*2
   | s4-\markup \italic\small { \hspace #2 "poco rit." } s2.
+}
+Sustain = {
+  \set Staff.pedalSustainStyle = #'mixed
+  \override Staff.SustainPedal.color = \grayTextColor
+  %1
+  | s1*5
+  | s2 s4\sustainOn s4\sustainOff\sustainOn
+  | s8 s\sustainOff s2
 }
 
 \score {
@@ -106,6 +122,7 @@ centerDynamics = {
       \Global
       \clef treble
       \Bass
+      \Sustain
     >>
   >>
   \header {
