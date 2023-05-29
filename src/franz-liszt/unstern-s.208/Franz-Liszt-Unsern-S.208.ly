@@ -57,7 +57,7 @@
         \null\null
         \fill-line { \draw-hline }
         \null\null\null
-        \line { \abs-fontsize #32 \bold "Unstern! Sinistre, Disastro" }
+        \line { \abs-fontsize #35 \bold "Unstern! Sinistre" }
         \null\null\null
         \line { \abs-fontsize #35 \bold "S. 208" }
         \null\null\null
@@ -75,7 +75,7 @@
         \null\null\null\null
         \fill-line \abs-fontsize #12 {
           \concat {
-            "Based on the score: Leipzig - Breitkopf & Härtel, 1927. Plate F.L. 77"
+            "Based on the score: Leipzig: Breitkopf & Härtel, 1927. Plate F.L. 80."
           }
         }
         \null\null
@@ -235,6 +235,7 @@ Sopran = \context Voice = "one" \relative c {
   | q1
   %100
   | r2 fis
+  \repeat unfold 2 {
   | <e g!>1
   | <dis g!>2. q4
     << {
@@ -243,52 +244,41 @@ Sopran = \context Voice = "one" \relative c {
     }
     \new Voice {
       \voiceThree \stemDown
-  |   dis,2_\accent d~_\accent
+  |   dis,2_\accent d_~_\accent
   |   \once\override NoteColumn.force-hshift = #-0.4 d cis4 c\rest
     } >>
-  }
   | \stemNeutral\phrasingSlurNeutral d2\( cis4 c
   | b ais a ais
   | b bis cis\) r
-  | d2(_\accent cis4) r
+  | d2_(_\accent cis4) r
+  }
+  }
+  \repeat unfold 2 {
+  | <cis fis>1
+  | <cis eis>
+  | <cis e>
+  | <cis eis>
+  }
+  \repeat unfold 2 {
+  | <cis fis>
+  | R1
+  | <dis fis>1
+  | R1
+  }
+  | R1
+  | R1
+  | q1
+  | R1
+  | R1
+  | q1
+  | <cis fis>1~
+  | q1
   | R1
   | R1
   | R1
   | R1
   | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
+  | R1\fermata
   \fine
 }
 
@@ -310,6 +300,9 @@ Alto = \context Voice = "two" \relative c' {
   \crossStaff {
   | \bottom <g! a>1^~
   | \stemUp q4 s2.
+  | s1*6
+  | <g! a>1^~
+  | q4 s2.
   }
 
 }
@@ -355,11 +348,31 @@ Tenor = \context Voice = "three" \relative c' {
   | q1
   %100
   | r2 fis
+  \repeat unfold 2 {
   | <g! ais>1
   | q2. <g'! ais>4
   | \stemDown \once\override NoteColumn.force-hshift = #-0.9 dis2 d_~
   | \once\override NoteColumn.force-hshift = #-0.4 d \stemUp cis4 r
+  | s1*4
   }
+  | <fis, ais>1
+  }
+  \repeat unfold 2 {
+  | <eis ais>
+  | <e ais>
+  | <eis ais>
+  | <fis ais>
+  }
+  \repeat unfold 3 {
+  | s
+  | q
+  }
+  | s1*3
+  | q1
+  | s1*2
+  | q1
+  | q~
+  | q
 }
 
 Bass = \context Voice = "four" \relative c, {
@@ -529,44 +542,47 @@ Bass = \context Voice = "four" \relative c, {
   | b ais a ais
   | b bis cis\) r
   | d2(^\accent cis4) r
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
-  | R1
+  | \stemDown \ottava -1 cis,,2 cisis
+  %110
+  | dis \ottava 0 <ais' ais'>4 <dis dis'>
+  | e1_~
+  | e4 d\rest d2\rest
+  | \stemNeutral d'2\( cis4 c
+  | b ais a ais
+  %115
+  | b bis cis\) r
+  | d2(^\accent cis4) r
+    \ottava -1
+    \stemDown
+  \repeat unfold 2 {
+  | e,,1
+  | eis2 fis
+  | g fis_~
+  | fis eis
+  }
+  | e1
+  | \stemUp gis!2 fis
+  | dis1
+  | ais'2 gis4 fis
+  | e1
+  | gis2 fis
+  | dis1
+  | ais'2 gis4 fis
+  | ais1~
+  | ais2 gis
+  | fis1~
+  | fis2 eis
+  | fis1~
+  | fis
+  | e!~
+  | e~
+  | e2 fis
+  | gis ais~
+  | ais gis~
+  | gis fis~
+  | fis e~
+  | e1^\fermata
+  \ottava 0
   \fine
 }
 
@@ -609,6 +625,21 @@ centerDynamics = {
   | s1*8
   %85
   | s1\mp
+  | s1*15
+  %101
+  | s1\<
+  | s2 s8 s\! s4
+  | s1*2
+  %105
+  | \once\override Hairpin.Y-offset = #-0.5
+    s4\p\> s s s\!
+  | s1*3
+  | s4 s2.\<
+  | s2 s8 s\! s4
+  | s1*2
+  %113
+  | \once\override Hairpin.Y-offset = #-0.5
+    s4\p\> s s s\!
 
 
 }
@@ -668,7 +699,7 @@ Sustain = {
   \header {
     composer = "Franz Liszt"
     opus = #f
-    title = "Unstern! Sinistre, Disastro"
+    title = "Unstern! Sinistre (Disastro)"
     subtitle = #f
   }
   \layout {
