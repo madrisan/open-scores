@@ -182,7 +182,7 @@ Sopran = \context Voice = "one" \relative c {
       \small\italic "up poco accelerando"
     }
     <fis ais d fis>4~
-  | q <g b dis g>2 <gis c e g>4~
+  | q <g b dis g>2 <gis c e gis>4~
   | q <a cis f a>2 <ais d fis ais>4~
   | q <b dis g b>2 <c e gis c>4~
   %70
@@ -298,7 +298,7 @@ Alto = \context Voice = "two" \relative c' {
   | s1*26
   %103
   \crossStaff {
-  | \bottom <g! a>1^~
+  | \bottom <g a>1^~
   | \stemUp q4 s2.
   | s1*6
   | <g! a>1^~
@@ -350,7 +350,7 @@ Tenor = \context Voice = "three" \relative c' {
   | r2 fis
   \repeat unfold 2 {
   | <g! ais>1
-  | q2. <g'! ais>4
+  | q2. <g' ais>4
   | \stemDown \once\override NoteColumn.force-hshift = #-0.9 dis2 d_~
   | \once\override NoteColumn.force-hshift = #-0.4 d \stemUp cis4 r
   | s1*4
@@ -430,8 +430,8 @@ Bass = \context Voice = "four" \relative c, {
   >>
   %30
   | R1
-  | r2 \stemUp <ges, ges'>\accent_\markup { \small\italic "marcato" }
-  | <f f'>4_. <ees ees'>_. <f f'>_. <ges ges'>_.
+  | r2 \stemUp <ges, ges'>\accent_\markup { \small\italic "marcato" }(
+  | <f f'>4_.) <ees ees'>_. <f f'>_. <ges ges'>_.
   | <des des'>_. <c c'>_. <des des'>_. <ees ees'>_.
   | <e! e'!>_. r \stemDown <f cis' f>2\accent
   | <e c' e>2\accent <f cis' f>\accent

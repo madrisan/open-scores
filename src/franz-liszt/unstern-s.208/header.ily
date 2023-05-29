@@ -2,9 +2,9 @@
   composer = "Franz Liszt (1811–1886)"
   date = "1881"
 
-  footer = "Mutopia-2023/05/27"
+  footer = "Mutopia-2023/05/29"
 
-  lastupdated = "2023 May 27"
+  lastupdated = "2023 May 29"
   license = "Creative Commons Attribution-ShareAlike 4.0"
   maintainerEmail = "davide.madrisan@gmail.com"
   maintainerWeb = "https://github.com/madrisan/open-scores"
@@ -18,7 +18,7 @@
   mutopiatitle = "Unstern! Sinistre, Disastro"
 
   opus = "S.208"
-  title = "Unstern! Sinistre, Disastro S.208"
+  title = "Unstern! Sinistre (Disastro) S.208"
   source = ""
   style = "Romantic"
 

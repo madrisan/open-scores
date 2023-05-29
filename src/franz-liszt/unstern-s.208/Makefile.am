@@ -24,13 +24,13 @@ SUFFIXES = .in
 	$(LILYPOND) --pdf --output $@ $<
 
 BUILT_SOURCES = covercolor.ly
-EXTRA_DIST = Franz-Liszt-Unsern-S.208.ly \
+EXTRA_DIST = Franz-Liszt-Unstern-S.208.ly \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
 	     logo.ly
 
-all: $(BUILT_SOURCES) Franz-Liszt-Unsern-S.208
+all: $(BUILT_SOURCES) Franz-Liszt-Unstern-S.208
 
 clean-local:
 	-rm -f $(BUILT_SOURCES)
