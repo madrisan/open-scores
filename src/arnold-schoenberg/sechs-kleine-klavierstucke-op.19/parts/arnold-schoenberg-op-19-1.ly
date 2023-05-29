@@ -11,12 +11,6 @@ extendLV = #(define-music-function (parser location further) (number?) #{
   \once \override LaissezVibrerTie.extra-offset = #(cons (/ further 2) 0)
 #})
 
-upline =
-\tweak stencil
-  #(lambda (grob)
-    (grob-interpret-markup grob #{ \markup \draw-line #'(0 . 4) #}))
-  \stopped
-
 csBracket = \override PianoStaff.Arpeggio.stencil = #ly:arpeggio::brew-chord-bracket
 grayTextColor = #(x11-color "dimgray")
 lH = \markup \italic\small { "l.H" }
@@ -63,13 +57,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | b''8\rest
     \once\override Staff.TextScript.extra-offset = #'(0 . 6)
     des32^\pp_\markup \italic\small { "flüchtig" }
-    [( bes f! ges] e![ cis f!8.~]_\upline_\markup \italic\tiny {
-      \hspace #-5 \with-color \grayTextColor
-      \column {
-        \line { "(presa muta" }
-        \raise #1 \line { " del SOL)" }
-      }
-    }
+    [( bes f! ges] e![ cis f!8.~]
   | f16) c'16\rest c,,8\rest^\markup {
       \small "rit."
       \draw-dashed-line #'(12 . 0)
@@ -179,7 +167,14 @@ Tenor = \context Voice = "three" \relative c' {
     \repeat tremolo 4 {
       <d,! ees g!>32^\>_~\sustainOn b'!~
     }
-    <d, ees g b>4_~\)\!
+    <d, ees g b>4_~\)\!^\markup \italic\tiny {
+      \hspace #2 \with-color \grayTextColor
+      \column {
+        \line { \char ##x2191 }
+        \raise #1 \line { "presa muta" }
+        \raise #2 \line { "del SOL" }
+      }
+    }
   | <d ees g b>2_~\sustainOff
   | <d ees g b>4\fermata r
   | s2

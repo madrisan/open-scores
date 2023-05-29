@@ -121,7 +121,7 @@
     \wordwrap \abs-fontsize #11 {
       Battuta 6: l’inciso in terze sarà enunciato dalla mano destra [8] e una volta
       espresso l’accordo conclusivo, che va sostenuto con il pedale di risonanza,
-      abbassare il tasti muti, alzare il pedale e subito dopo riattivare la vibrazione con il
+      abbassare i tasti muti, alzare il pedale e subito dopo riattivare la vibrazione con il
       pedale stesso.
       Questo consentirà l’attuazione del diminuendo richiesto [9].
     }
@@ -219,13 +219,13 @@
       Battuta 3: occorre fare molta attenzione all’attacco dinamico differenziato dei due
       RE diesis posti a un’ottava di distanza l’uno dall’altro [mano destra \dynamic{p} – mano sinistra
       \dynamic{pppp}!!!!].
-      Preferibilmente emettere l’inudibile RE diesis della mano sinistra con il quarto dito! [19]
+      Preferibilmente emettere l’inudibile RE diesis della mano sinistra con il quarto dito!
     }
     \hspace #0
     \wordwrap \abs-fontsize #11 {
       Solo in questo brano e nel quarto Schoenberg ha indicato un preciso intervento del pedale
       di risonanza. Questo naturalmente, come si è visto, non esclude l’uso (intelligente) dei tre pedali
-      in tutta l’opera. Proprio in quest’ultimo brano è possibile utilizzate il pedale tonale. [18]
+      in tutta l’opera. Proprio in quest’ultimo brano è possibile utilizzate il pedale tonale.
     }
     \hspace #0
     \wordwrap \abs-fontsize #11 {
@@ -250,20 +250,20 @@
       Battuta 7: appare opportuno portare il RE al DO diesis con la mano destra e
       proseguire sempre con la mano destra.
       L’uso della mano sinistra, a partire dal DO diesis, destabilizza la tensione iniziale
-      dell’arco espressivo del frammento melodico. [20]
+      dell’arco espressivo del frammento melodico.
     }
     \hspace #0
     \wordwrap \abs-fontsize #11 {
       Battuta 8: nell’accordo della mano destra, per consentire il legato fra il MI bequadro
       e il MI bemolle, prendere il bicordo MI bequadro / RE bequadro con il solo pollice che
       spostandosi lateralmente (lasciando il MI bequadro ma mantenendo il RE!) favorirà
-      agevolmente l’entrata del MI bemolle con il secondo dito. [21]
+      agevolmente l’entrata del MI bemolle con il secondo dito.
     }
-    \hspace #0
-    \wordwrap \abs-fontsize #11 {
-      Sarà opportuno per tutte le indicazioni suggerite fornire l’intera immagine del sesto brano.
-    }
-
+    %\hspace #0
+    %\wordwrap \abs-fontsize #11 {
+    %  Sarà opportuno per tutte le indicazioni suggerite fornire l’intera immagine del sesto brano.
+    %}
+    %
     \hspace #0
     \hspace #0
 
