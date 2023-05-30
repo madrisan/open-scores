@@ -167,10 +167,11 @@ Tenor = \context Voice = "three" \relative c' {
     \repeat tremolo 4 {
       <d,! ees g!>32^\>_~\sustainOn b'!~
     }
+    \once\override Staff.TextScript.extra-offset = #'(0 . 2.5)
     <d, ees g b>4_~\)\!^\markup \italic\tiny {
       \hspace #2 \with-color \grayTextColor
       \column {
-        \line { \char ##x2191 }
+        \line { \hspace #6 \char ##x2191 }
         \raise #1 \line { "presa muta" }
         \raise #2 \line { "del SOL" }
       }
