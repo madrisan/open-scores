@@ -179,7 +179,7 @@ Sopran = \context Voice = "one" \relative c {
   %65
   | <d fis bes d>2. <dis g b! dis>4
   | <e gis c e>\) <f a cis f>2^\markup {
-      \small\italic "up poco accelerando"
+      \small\italic "un poco accelerando"
     }
     <fis ais d fis>4~
   | q <g b dis g>2 <gis c e gis>4~
@@ -195,6 +195,7 @@ Sopran = \context Voice = "one" \relative c {
   | q4.. q16 \stemUp q4.. q16
   | q4 r \clef bass \stemDown <c,, e gis c>4.. q16
   | q4.. q16 q4.. q16
+    \break
   | q4^! r q4..^\marcato q16
   | q4 r q4.. q16
   %80
@@ -464,11 +465,11 @@ Bass = \context Voice = "four" \relative c, {
   %40
   | <d d'>4_. <cis cis'>_. <d d'>_. <e e'>_.
   | <fis fis'>4_. <g g'>_. r2
-  | r2 <aes aes'>\accent
-  | <g g'>4_. <f f'>_. <g g'>_. <aes aes'>_.
+  | r2 <aes aes'>^\accent
+  | <g g'>4_. <f f'>_. <g g'>_. <aes aes'>^.
   | <ees ees'>4_. <d d'>_. <ees ees'>_. <f f'>_.
   %45
-  | <g g'>_. <aes aes'>_. <a dis f a>4.. q16
+  | <g g'>_. <aes aes'>^. <a dis f a>4.. q16
   | q4.. q16 q4.. q16
   | <g g'>4_. <f f'>_. <g g'>_. <a a'>_.
   | <f f'>4_. <dis dis'>_. <f f'>_. <g g'>_.
@@ -483,12 +484,13 @@ Bass = \context Voice = "four" \relative c, {
   }
   %57
   | <cis cis'>_. <b b'>_. <a a'>_. <g g'>_.
+  \break
   | \repeat tremolo 8 { f32_\p f' } \repeat tremolo 8 { f, f' }
   \repeat unfold 2 {
   | \repeat tremolo 8 { f,32 f' } \repeat tremolo 8 { f, f' }
   }
   %61
-  | \repeat tremolo 8 { f,!32_\p f'! } \repeat tremolo 8 { f, f' }
+  | \repeat tremolo 8 { f,!32 f'! } \repeat tremolo 8 { f, f' }
   \repeat unfold 8 {
   | \repeat tremolo 8 { f,32 f' } \repeat tremolo 8 { f, f' }
   }
@@ -668,9 +670,16 @@ Sustain = {
   | s2\sustainOn s4 s4\tweak X-offset -0.2\tweak Y-offset -3.5\sustainOff
   | s1*6
   %35
-  | s2\sustainOn s4 s4\tweak X-offset 0.3\tweak Y-offset -4.5\sustainOff
+  | s2\sustainOn s4 s4\tweak X-offset 0.3\tweak Y-offset -2.5\sustainOff
   | s2\sustainOn s4 s4\tweak X-offset -0.2\tweak Y-offset -3.5\sustainOff
-
+  | s1*33
+  %70
+  | s1\sustainOn
+  | s2 s4 s8 s16 s32 s\tweak Y-offset -4\sustainOff
+  | s1*6
+  %78
+  | s2 s2\sustainOn
+  | s4 s\tweak Y-offset -4\sustainOff s2
 }
 
 \score {
