@@ -193,6 +193,7 @@ make -C src/domenico-scarlatti/sonata-k055
 make -C src/domenico-scarlatti/sonata-k087
 make -C src/domenico-scarlatti/sonata-k095
 make -C src/domenico-scarlatti/sonata-k387
+make -C src/franz-liszt/en-reve-nocturne-s.207
 make -C src/franz-liszt/nuages-gris-s.199
 make -C src/franz-liszt/unstern-s.208
 make -C src/ildebrando-pizzetti/sogno
