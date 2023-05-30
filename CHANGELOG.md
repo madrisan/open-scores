@@ -3,11 +3,15 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [v35] - unreleased
+## [v35] - 2023-05-30
+
+### Added
 
 - Franz Liszt: En rêve (Nocturne) S.207
 
 ## [v34] - 2023-05-29
+
+### Added
 
 - Franz Liszt: Unstern (Sinistre) S.208
 
