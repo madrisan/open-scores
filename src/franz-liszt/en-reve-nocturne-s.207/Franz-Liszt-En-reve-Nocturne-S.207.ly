@@ -141,15 +141,16 @@ Sopran = \context Voice = "one" \relative c'' {
   | dis,2 \stemUp\grace { e16 fis } \stemNeutral e4 b'
   }
   %35
-  | \stemUp\grace { ais32 b cis } b1\startTrillSpan
-  | \afterGrace b1 { ais32[ b]\stopTrillSpan }
+  | \stemUp
+    \grace { ais32 b cis } b1\startTrillSpan
+  | \afterGrace b1 { ais32[ \stopTrillSpan b] }
   | \stemUp\grace { bis32 cis dis } cis1\startTrillSpan
   | cis1
   | cis1
   %40
-  | \afterGrace cis1 { bis32[ cis]\stopTrillSpan }
+  | \afterGrace cis1 { bis32[ \stopTrillSpan cis] }
   | d1\startTrillSpan
-  | \afterGrace d1 { cis32[ d]\stopTrillSpan }
+  | \afterGrace d1 { cis32[ \stopTrillSpan d] }
   | \stemNeutral eis4 r <gis, ais eis'>2~
   | q2 <fis ais fis'>
   %45

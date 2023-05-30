@@ -73,13 +73,13 @@ Bass = \context Voice = "four" \relative c' {
   | \shape #'((( 0 . 0) (0 . 1) (0 . 0) (0 . 4))) Slur
     <aes, c>8^\rH^(_\markup \annotation {8} <a! cis>4^\< <c! ees>8\!
     \clef bass
-    \once\override Staff.TextScript.extra-offset = #'(0 . -1.5)
+    \once\override Staff.TextScript.extra-offset = #'(0 . -0.4)
     <fis,, bis dis f!>2~_\>)^\markup \italic\tiny {
       \hspace #1.8 \with-color \grayTextColor
       \column {
         \line { "presa muta" }
         \raise #1 \line { "dell'accordo" }
-        \raise #2 \line { \hspace #5 \char ##x2193 }
+        \raise #2 \line { \hspace #2 \char ##x2193 }
       }
     }_\markup \annotation {9}
   | q8\! r r4 <f'! a!>8^._\pp_^_\markup \annotation {10}^\rH r r4
