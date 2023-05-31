@@ -15,9 +15,26 @@
 ## You should have received a copy of the GNU General Public License
 ## along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-AM_MAKEFLAGS = --no-print-directory
+SUFFIXES = .in
+.in:; @echo "Generating $@...";\
+	sed "s,@rgb_color@,$(RGB_COLOR),g;" \
+	$< > $@
 
-SUBDIRS = nuages-gris-s.199 \
-	  en-reve-nocturne-s.207 \
-	  trauervorspiel-und-trauermarsch-s.206 \
-	  unstern-s.208
+%: %.ly
+	$(LILYPOND) --pdf --output $@ $<
+
+BUILT_SOURCES = covercolor.ly
+EXTRA_DIST = Franz-Liszt-Trauervorspiel-und-Trauermarsch-S.206.ly \
+	     covercolor.ly.in \
+	     header.ily \
+	     global.ly \
+	     logo.ly \
+	     parts/franz-liszt-trauervorspiel-und-trauermarsch-1.ly \
+	     parts/franz-liszt-trauervorspiel-und-trauermarsch-2.ly
+
+all: $(BUILT_SOURCES) Franz-Liszt-Trauervorspiel-und-Trauermarsch-S.206
+
+clean-local:
+	-rm -f $(BUILT_SOURCES)
+	-rm -f *.midi parts/*.midi
+	-rm -f *.pdf parts/*.pdf

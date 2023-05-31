@@ -88,6 +88,7 @@ AC_CONFIG_FILES([\
   src/franz-liszt/Makefile \
   src/franz-liszt/en-reve-nocturne-s.207/Makefile \
   src/franz-liszt/nuages-gris-s.199/Makefile \
+  src/franz-liszt/trauervorspiel-und-trauermarsch-s.206/Makefile \
   src/franz-liszt/unstern-s.208/Makefile \
   src/hans-erich-apostel/Makefile \
   src/hans-erich-apostel/kubiniana-op.13/Makefile \
