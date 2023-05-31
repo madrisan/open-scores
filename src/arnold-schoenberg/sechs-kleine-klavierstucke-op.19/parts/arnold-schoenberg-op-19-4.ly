@@ -15,7 +15,7 @@ Sopran = \context Voice = "one" \relative c'' {
   \stemUp\slurNeutral\tieDown
   %1
   \tempo \markup {
-    \bold\concat { "Rash, aber leicht (" { \tiny\note {4} #1 } " )" }
+    \bold\concat { "Rasch, aber leicht (" { \tiny\note {4} #1 } " )" }
   }
   \partial 16 s16
   %1
