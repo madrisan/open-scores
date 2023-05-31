@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [v36] - 2023-05-31 ("A papà")
+
+### Added
+
+- Arnold Schoenberg: Sechs kleine Klavierstücke op.19
+  With a preface by Giancarlo Simonacci
+
+### Fixed
+
+- Franz Liszt: Unstern (Sinistre) S.208
+
 ## [v35] - 2023-05-30
 
 ### Added
