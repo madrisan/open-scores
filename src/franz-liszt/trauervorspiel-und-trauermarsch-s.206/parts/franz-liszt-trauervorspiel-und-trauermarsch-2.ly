@@ -504,6 +504,7 @@ centerDynamics = {
   \line {
     \column {
       \line { "Liszts Anweisungen" \italic "(Liszt's instructions)" }
+      \null
       \line {
         \normal-text\super "(1)"
         "Diese Bezeichnung ist für den Verlauf ganzen Stückes festzuhalten"
@@ -519,10 +520,11 @@ centerDynamics = {
         \italic "fis, g, b, cis" \normal-text "sind durch das ganze Werk als breites"
         \italic "staccato" \normal-text "zu spielen"
       }
-      \line {
+      \line \italic {
         "   "
-        \italic "The individual bell sounds falling on the four notes"
-        \italic "F sharp, G, B flat and C sharp are to be played throughont with a broad staccato"
+        "The individual bell sounds falling on the four notes"
+        "F" \raise #0.6 \sharp ", G, B" \raise #0.5 \flat "and C" \raise #0.6 \sharp
+        "are to be played throughout with a broad staccato"
       }
 
       \line { \normal-text\super "(3)" "Im strengen Marsch-Tempo" }
@@ -532,9 +534,11 @@ centerDynamics = {
         \normal-text\super "(4)" "Die Grund-Intonation" \italic "fis, g, b, cis"
         \normal-text "immer hervorgehoben"
       }
-      \line {
+      \line \italic {
         "   "
-        \italic "The fundamental tone of F sharp, G, B flat and C sharp is always to be brought out"
+        "The fundamental tone of"
+        "F" \raise #0.6 \sharp ", G, B" \raise #0.5 \flat "and C" \raise #0.6 \sharp
+        "is always to be brought out"
       }
     }
   }
