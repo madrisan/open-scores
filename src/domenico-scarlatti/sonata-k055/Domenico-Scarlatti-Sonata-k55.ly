@@ -357,8 +357,8 @@ Bass = \context Voice = "four" \relative c' {
   | a,, a' a'
   %45
   | d,-5 e fis
-  | g a a,-3
-  | d,-5 d' a'
+  | g a-1 a,-3
+  | d,-5 d'-2 a'-1
   | a,, a' a'
   | d,, d' a'
   %50
@@ -368,10 +368,10 @@ Bass = \context Voice = "four" \relative c' {
   | d, e fis
   | g a a,
   %55
-  | d e fis
-  | g a a,
   | d-4 e fis
   | g a a,
+  | d e fis
+  | g a a,-3
   | d,4.
   }
   \repeat volta 2 {
@@ -437,9 +437,9 @@ Bass = \context Voice = "four" \relative c' {
   | b!4.
   %110
   | c4.
-  | d8 d, fis-4
-  | g c, d-4
-  | g, g' d'
+  | d8 d, fis-3
+  | g c,-3 d-2
+  | g,-5 g'-2 d'-1
   | d,, d' d'
   %115
   | g,, g' d'

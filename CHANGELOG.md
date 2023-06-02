@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [v37] - unreleased
+
+### Added
+
+- Franz Liszt: Franz Liszt: Trauervorspiel und Trauermarsch S.206
+
+### Changed
+
+- Domenico Scarlatti - Sonata K.55: update fingering
+
 ## [v36] - 2023-05-31 ("A papà")
 
 ### Added
