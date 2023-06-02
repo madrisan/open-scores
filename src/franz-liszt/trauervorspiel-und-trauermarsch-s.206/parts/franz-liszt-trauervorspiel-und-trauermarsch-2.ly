@@ -19,7 +19,7 @@ Sopran = \context Voice = "one" \relative c {
       }
     } f,
   | fis1
-  | g2 bis
+  | g2 bes
   | cis1
   %5
   | r2 f,
@@ -68,7 +68,7 @@ Sopran = \context Voice = "one" \relative c {
   | b\marcato bes\marcato
   | c4.^\markup { \small\italic "doloroso" \normal-text\super "(3)" } b8 bes4. a8
   %40
-  | aes4. g8 a8.[ 16 bes8. b16]
+  | aes4. g8 aes8.[ a16 bes8. b16]
   | c4. b8 bes4. a8
   | aes4. g8 aes8.[ a16 bes8. b16]
   \repeat unfold 2 {
@@ -123,7 +123,7 @@ Sopran = \context Voice = "one" \relative c {
   | q8 r16 <bes cis>16[ q8. q16] q8 r16 <cis bes' cis>16[ q8. q16]
     \break
   %75
-  | q8 r r4 \stemUp f2
+  | q8 r r4 \stemUp fis2
   | s1
   | s2 fis
   | s1
@@ -495,7 +495,7 @@ centerDynamics = {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 2 = 48
   }
 }
 
