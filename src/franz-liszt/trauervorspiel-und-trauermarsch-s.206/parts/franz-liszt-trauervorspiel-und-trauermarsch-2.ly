@@ -444,7 +444,7 @@ centerDynamics = {
   | s2 s-\markup { \hspace #-1 \dynamic ff \whiteout \small\italic "sempre" }
   | s1*11
   %115
-  | s1-\markup { \small\italic "sempre" \dynamic ff }
+  | s1-\markup { \hspace #-1.5 \small\italic "sempre" \dynamic ff }
   | s1*5
   | s2 s\ff\<
   | s1
