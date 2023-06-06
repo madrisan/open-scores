@@ -90,6 +90,8 @@
 \pageBreak
 \include "preface.ly"
 \pageBreak
+\include "preface-en.ly"
+\pageBreak
 \include "parts/arnold-schoenberg-op-19-1.ly"
 \pageBreak
 \include "parts/arnold-schoenberg-op-19-2.ly"
