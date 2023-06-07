@@ -68,21 +68,78 @@ Sopran = \context Voice = "one" \relative c'' {
   | bes^> bes bes^. r aes r
   | aes^> aes aes^. r g r
   | g^> g s2
-  | R1*3/4
-  | R1*3/4
+  | s2.
+    \break
+  | ees,2\( ees'4
   %50
-  | R1*3/4
-  | R1*3/4
-  | R1*3/4
-  | R1*3/4
-  | R1*3/4
+  | b!2 g4
+  | ees2 c4
+  | ees2.\)
+  | ees2\( ees'4
+  | b!2 g4
   %55
-  | R1*3/4
-  | R1*3/4
+  | ees2 g4
+  | c2.\)
     \bar "||"
+  | \key c \major
+    gis2\( e'4
+  | c2 gis4
+  | b2 a4
+  %60
+  | e2.\)
+  | b'2\( c4
+  | ees2 d4
+  | aes2 d4
+  | g,2^~\) g8 r
+    \stemNeutral
+  %65
+  \repeat unfold 2 {
+  | <c e g>4.^> q8^> q4^>
+  | q2.^>~
+  | q8 r <a d fis>4\( <g c e>
+  | <fis a d> <e g c> <c' e g>8\) r
+  | <a d fis>2( <g c e>8) r
+  }
+  %75
+  | <c, e g>4.^> q8^> q4^>
+  | \stemUp\tieUp g'2.^>
+  | fis4( g e')
+  | <c, e g>4.^> q8^> q4^>
+  | g'2.(
+  %80
+  | fis)
+  | fis'^>~
+  | fis4 c\( g'
+  | \slurDown\appoggiatura { fis16 g } fis2.~\)
+  | fis!4 d\( g
+  %85
+  | \appoggiatura { fis16 g } fis4 cis e
+  | \appoggiatura { d16 e } \stemDown d4 c! b
+  | \stemNeutral ais cis g
+  | fis2.\)
+  | \stemUp g2\( ees'4
+  %90
+  | b2 g4\)
+  | ees2\( g4
+  | c2.\)
+  | gis2\( e'4
+  | c2 gis4
+  %95
+  | e2 a4
+  | c2.\)
+  | bes2\(^\markup { \small\italic "céder" } g'4
+  | f2.\)
+  | bes,2\(^\markup { \small\italic "céder encore" }  g'4
+  %100
+  | f2.\)
+    \bar "||"
+  | \key ees \major
+    R1*3/4
   | R1*3/4
   | R1*3/4
   | R1*3/4
+  %105
+
   \fine
 }
 
@@ -134,7 +191,62 @@ Alto = \context Voice = "two" \relative c' {
   | a4\rest <g bes ees> q
   | g'\rest g'8 r <g bes> r
   | a,4\rest <d f>4 q8 r
-
+  | s2.
+  | r4 <des e!> q8 r
+  %45
+  | s2 <c f>8 s
+  | s2 <bes ees>8 s
+  | s4 <aes g'>8 r <aes f'> r
+  | \tieNeutral <g bes ees>4~^> q8 r r4
+  | g,4\rest <g b!> ees'
+  %50
+  | a,4\rest <b! ees> q
+  | g4\rest <g c>2
+  | g4\rest <g c> q
+  | g4\rest <g b> ees'
+  | g,4\rest <b ees> q
+  %55
+  | f4\rest <g c>2
+  | c4\rest <c g'>2
+  | b4\rest <c e>2
+  | b4\rest <c e>2
+  | b4\rest <a e'>2
+  %60
+  | s2.
+  | b4\rest <d f>4 q
+  | b4\rest <d f>4 q
+  | <c fis> q q
+  | <b f'!>2_~ q8 s
+  %65
+  | s2.*11
+  %76
+  | <c e>4 q q
+  | c2.
+  | s
+  | <c e>4 q q_~
+  %80
+  | c2.
+  | s
+  | g'
+  | s
+  | g
+  %85
+  | s2.*4
+  | \stemDown a,4\rest <g ees'> s
+  %90
+  | a\rest <bes ees> q
+  | g\rest <g c>2
+  | c4\rest <c ees g> q
+  | b\rest <c e!> <e gis>
+  | c\rest <c e!> <e gis>
+  %95
+  | s a, <a e'>
+  | d\rest <e a> q
+  | <c ees aes> q <bes' ees>
+  | <f bes> q q
+  | <c ees aes> q <bes' ees>
+  %100
+  | <f bes>2.
 }
 
 Tenor = \context Voice = "three" \relative c {
@@ -154,6 +266,47 @@ Tenor = \context Voice = "three" \relative c {
   | aes4 4 4
   | c\rest ees ees
   | <d aes'>2.
+  | s2.*16
+  %49
+  | b,!4 b b
+  | g g g
+  | c c c
+  | ees ees ees
+  | b b b
+  | g g g
+  %55
+  | c^> c c
+  | ees^> ees ees
+  | c c c
+  | gis^> gis gis
+  | c c c
+  %60
+  | c' c c
+  | aes2 g4
+  | c2 b4
+  | d,2 4
+  | s2.
+    \stemDown
+  %65
+  \repeat unfold 2 {
+  | <c' e g>4. <c e>8 q4
+  | \stemUp q2.~
+  | q8 c\rest c4\rest c\rest
+  | c\rest fis,^> g^>
+  | a^> b^> c^>
+  }
+  %75
+  \repeat unfold 2 {
+  | \tieDown\stemUp g2 fis4~
+  | \stemDown fis!2.~
+  | fis!
+  }
+  | s2.*16
+  %97
+  | \stemUp bes4 bes bes
+  | <ees aes>2.
+  | bes
+  | <d aes'>
 
 }
 
@@ -220,27 +373,83 @@ Bass = \context Voice = "four" \relative c {
   | <ees, ees'> r ees'4 4
   | <ees, ees'>8 r <g' bes ees> r <bes ees g> r
   | <bes,, bes'>8 r <bes'' d>4 <d f>8 r
-  | R1*3/4
-  | R1*3/4
+  | <c,, c'>8 r <g'' c ees>4 <c ees g>8 r
+  | <g,, g'>8 r <g'' bes des>4 <bes des e>8 r
   %45
-  | R1*3/4
-  | R1*3/4
-  | R1*3/4
-  | R1*3/4
-  | R1*3/4
+  | <aes,, aes'>8 r <aes'' c f>4 q8 r
+  | <bes,, bes'>8 r <bes'' ees g>4 <bes ees>8 r
+  | <bes,, bes'>8 r <bes'' d>8 r q r
+  | <ees,, ees'>4_> <ees, ees'>8_> r r4
+  | \stemDown b'!8_\markup { \hspace #-2 \small\italic "quasi pizz." } b\rest b4\rest b\rest
   %50
-  | R1*3/4
-  | R1*3/4
-  | R1*3/4
-  | R1*3/4
-  | R1*3/4
+  | g8 g\rest g4\rest g\rest
+  | c8 c\rest c4\rest c\rest
+  | ees8 c\rest c4\rest c\rest
+  | b!8 b\rest b4\rest b\rest
+  | g8 b\rest b4\rest b\rest
   %55
-  | R1*3/4
-  | R1*3/4
+  | c8 c\rest c4\rest c\rest
+  | ees8 c\rest c4\rest c\rest
     \bar "||"
+  | \key c \major
+    c8 c\rest c4\rest c\rest
+  | gis8 g\rest g4\rest g\rest
+  | c8 c\rest c4\rest c\rest
+  %60
+  | c'8 b\rest b4\rest b\rest
+  | g2.~
+  | g
+  | d
+  | \stemNeutral\tieNeutral <g, g'>2~ q8 r
+    \stemDown
+  %65
+  \repeat unfold 2 {
+  | s2.
+  | g'4\rest <c, c'>_>( <g g'>_>)
+  | \tieDown <c, c'>2._>~
+  | q~
+  | q
+  }
+  %75
+  \repeat unfold 2 {
+  | \stemDown f'4\rest_\markup { \hspace #1 \small\italic "m.g. marquée" } fis2
+  | \stemUp b'2.
+  | ais
+  }
+  %81
+  | \stemDown <fis cis' fis>4_\markup \small\italic {
+      \hspace #-1 \musicglyph #"pedal.Ped" "sur chaque mesure"
+    }
+    q q
+  | <g c fis> q q
+  \repeat unfold 2 {
+  | <fis cis' fis>4 q q
+  | <g c fis> q q
+  }
+  | <fis cis' fis>4 q q
+  | <g c>2.
+  | \stemNeutral <b,,! b'!>8_\markup \small\italic { \hspace #-2 "sec et ponctué" } r r4 r
+  %90
+  | <g g'>8 r r4 r
+  | <c c'>8 r r4 r
+  | <ees ees'>8 r r4 r
+  | <c c'>8 r r4 r
+  | <gis gis'>8 r r4 r
+  %95
+  | <c c'>8 r r4 r
+  | c''8 r r2
+  | \stemDown bes,2.~
+  | bes
+  | bes~
+  %100
+  | bes
+    \bar "||"
+  | \key ees \major
+    R1*3/4
   | R1*3/4
   | R1*3/4
   | R1*3/4
+  %105
 
   \fine
 }
@@ -266,7 +475,28 @@ centerDynamics = {
   | s2.*7
   %41
   | s2.\ff
-
+  | s2.*7
+  %49
+  | s2.-\markup { \dynamic mf \whiteout \small\italic "surtout sans ralentir" }
+  | s2.*15
+  %65
+  | s2.\ff
+  | s2.*4
+  %70
+  | s2.\ff
+  | s2.*4
+  %75
+  | s2.\f
+  | s2.*5
+  | s2.-\markup { \dynamic p \small\italic "subito" }
+  | s2.*7
+  %89
+  | s2.\mf
+  | s2.*7
+  %97
+  | s2.\sf
+  | s4 s\> s\!
+  | s2.\p
 }
 
 \score {
