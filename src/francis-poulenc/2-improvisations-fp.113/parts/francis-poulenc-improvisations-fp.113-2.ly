@@ -133,13 +133,58 @@ Sopran = \context Voice = "one" \relative c'' {
   %100
   | f2.\)
     \bar "||"
+    \break
   | \key ees \major
-    R1*3/4
-  | R1*3/4
-  | R1*3/4
-  | R1*3/4
+    \slurUp bes,8^>^\markup { \hspace #-2 \small\italic "a tempo" } 8^> 4^. ees^.
+  | d2^>( bes8^.) r
+  | g^. r \slurDown\appoggiatura { g16 aes } \slurUp g8( fis g c
+  | bes2^>) 8^. r
   %105
-
+  | bes^> bes bes r aes^. r
+  | aes^> aes aes r g^. r
+  | f^> f f r fis^. r
+  | g2.^>
+  | \stemNeutral bes'8^> 8^> <g bes>^. r <g bes ees>^. r
+  %110
+  | \stemUp d'2^>( bes8^.) r
+  | \stemNeutral g^. r \slurDown\appoggiatura { \stemUp g16 aes } \slurUp\stemNeutral g8( fis g c
+  | \stemUp bes2^>) 8^. r
+  | bes^> bes bes a\rest aes^. r
+  | aes^> aes aes a\rest g^. r
+  %115
+  | \stemDown g^> g <aes, g'> r <aes f'> r
+  | <g ees'> r r4 \clef bass <g, bes des>4(^\markup {
+       \small\italic "sans ralentir"
+    }
+  | <aes c>2) <b! d f>4(
+  | <g bes>2) <g bes des>4(
+  | <aes c>2) <b! d f>4
+  %120
+  | \tieNeutral <f aes b>2.~
+  | q2.
+  | <d f b>2.~
+  | q2.
+  | \clef treble
+    \stemNeutral\slurNeutral
+    <ees' g>4( g,)_\laissezVibrer r^\markup {
+      \hspace #-1 \small\italic "toujours sans relantir"
+    }
+  %125
+  \repeat unfold 4 {
+  | <ees' g>4( g,)_\laissezVibrer r
+  }
+  | <g'' g'>2.(^\markup {
+      \hspace #-1 \small\italic "toujours sans relantir"
+    }
+  %130
+  | <f f'>~)
+  | q~
+  | q
+  | <ees ees'>~
+  | q~
+  %135
+  | q~
+  | q8 r r2
   \fine
 }
 
@@ -247,6 +292,22 @@ Alto = \context Voice = "two" \relative c' {
   | <c ees aes> q <bes' ees>
   %100
   | <f bes>2.
+  | d4\rest g <g bes>
+  | d4\rest <d f> q8 s
+  | s4 ees2
+  | c4\rest <des e>4 q8 s
+  %105
+  | s2 <c f>8 s
+  | s2 ees8 s
+  | s4 d8 s d s
+  | a4\rest <g bes ees> q8 b\rest
+  | s2.
+  %110
+  | b'4\rest <d f> q8 b\rest
+  | s2.
+  | a4\rest <des e!>4 q8 s
+  | s2 <c f>8 r
+  | s2 <bes ees>8 r
 }
 
 Tenor = \context Voice = "three" \relative c {
@@ -445,12 +506,54 @@ Bass = \context Voice = "four" \relative c {
   | bes
     \bar "||"
   | \key ees \major
-    R1*3/4
-  | R1*3/4
-  | R1*3/4
-  | R1*3/4
+    \stemNeutral <ees, ees'>8 r <bes'' ees>4 q
+  | <bes,, bes'>8 r <f'' bes>4 q8 r
+  | <c, c'> r <g'' c>4 q
+  | <g,, g'>8 r <g'' bes>4 q8 r
   %105
-
+  | <aes,, aes'> r <f'' aes>4 q8 r
+  | <bes,, bes'> r <g'' bes>4 q8 r
+  | <bes,, bes'> r <aes'' bes> r q r
+  | <ees, ees'> r ees'4 4
+  | <ees, ees'>8 r <g' bes ees> r <bes ees g> r
+  %110
+  | <bes,, bes'>8 r <bes'' d>4 <d f>8 r
+  | <c,, c'>8 r <g'' c ees>4 <c ees g>8 r
+  | <g,, g'>8 r <g'' bes des>4 <bes des e>8 r
+  | <aes,, aes'>8 r <aes'' c f>4 q8 r
+  | <bes,, bes'>8 r <bes'' ees g>4 <bes ees>8 r
+  %115
+  | <bes,, bes'>8 r <bes'' d>8 r q r
+  | <ees, ees'> r r4 <ees,, ees'>_>
+  | ees' ees ees
+  | ees ees <ees, ees'>_>
+  | ees' ees ees
+  %120
+  \repeat unfold 2 {
+  | aes_.( ees_. aes_.)
+  | ees_.( aes_. ees_.)
+  }
+  | \set Staff.pedalSustainStyle = #'mixed
+    <ees,\laissezVibrer ees'^\laissezVibrer>2.*2/3\sustainOn
+    \clef treble
+    <bes''' bes'!>4(
+  %125
+  | ees2) \clef bass bes4(
+  | ees,2)
+    \clef treble
+    <bes' bes'>4(
+  | ees2) \clef bass bes4(
+  | ees,2.)
+  | g'2.(
+  %130
+  | \tieUp f~)
+  | f~
+  | f
+  | ees~
+  | ees~
+  %132
+  | ees~
+  | ees8 r r2
   \fine
 }
 
@@ -497,6 +600,26 @@ centerDynamics = {
   | s2.\sf
   | s4 s\> s\!
   | s2.\p
+  %100
+  | s2.
+  | s2.\f
+  | s2.*7
+  %109
+  | s2.\ff
+  | s2.*6
+  %116
+  | s2 s4\f
+  | s2.*5
+  | s4\> s2
+  | s4\! s2
+  %124
+  | s2.\p
+  | s2.*4
+  | s2.\pp
+  | s2.
+  | s4\> s2
+  | s2.
+  | s4\! s2\ppp
 }
 
 \score {
@@ -551,3 +674,5 @@ centerDynamics = {
     \tempo 2 = 120
   }
 }
+
+\markup { \column { \fill-line { "" \tiny\italic "Paris November 1941" } } }
