@@ -128,10 +128,11 @@ Bass = \context Voice = "four" \relative c {
     r2 c'4 aes8. ees16
   | d4 \clef bass
     \override Staff.SustainPedalLineSpanner.staff-padding = #8.5
+    \set Staff.pedalSustainStyle = #'mixed
     d,( g,2)\sustainOn
   %20
   | \stemDown\tieDown d''2 g,,,~
-  | g~ g8\sustainOff b\rest b4\rest
+  | g~ g8 b\rest\sustainOff b4\rest
   \fine
 }
 
