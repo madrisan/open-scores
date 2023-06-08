@@ -50,6 +50,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | f2 c'4
   | bes2 g'4
   | \stemDown <bes, f'>2.\)
+    \break
   | \stemUp bes8^>^\markup { \small\italic "a tempo" } 8 4 ees
   | d2^>( bes8) r
   %35
@@ -75,12 +76,14 @@ Sopran = \context Voice = "one" \relative c'' {
   | b!2 g4
   | ees2 c4
   | ees2.\)
+    \break
   | ees2\( ees'4
   | b!2 g4
   %55
   | ees2 g4
   | c2.\)
     \bar "||"
+    \break
   | \key c \major
     gis2\( e'4
   | c2 gis4
@@ -133,7 +136,7 @@ Sopran = \context Voice = "one" \relative c'' {
   %100
   | f2.\)
     \bar "||"
-    \break
+    \pageBreak
   | \key ees \major
     \slurUp bes,8^>^\markup { \hspace #-2 \small\italic "a tempo" } 8^> 4^. ees^.
   | d2^>( bes8^.) r
@@ -646,7 +649,7 @@ centerDynamics = {
   >>
   \header {
     composer = "Francis Poulenc"
-    arranger = " "
+    arranger = \markup \italic { "Paris Novembre 1941"}
     opus = #f
     title = \markup {
       \fill-line {
@@ -675,4 +678,4 @@ centerDynamics = {
   }
 }
 
-\markup { \column { \fill-line { "" \tiny\italic "Paris November 1941" } } }
+%\markup { \column { \fill-line { "" \tiny\italic "Paris November 1941" } } }
