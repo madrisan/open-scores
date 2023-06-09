@@ -348,9 +348,9 @@ Bass = \context Voice = "four" \relative c' {
   | g4.
   | a8 a, cis
   | d g, a
-  | d,,-5 d'-2 a'-1
+  | d,,-5 d'-1 a'-2
   %40
-  | a,,-5 a'-2 a'-1
+  | a,,-5 a'-1 a'-2
   | d,, d' a'
   | a,, a' a'
   | d,, d' a'
@@ -358,8 +358,8 @@ Bass = \context Voice = "four" \relative c' {
   %45
   | d,-5 e fis
   | g a-1 a,-3
-  | d,-5 d'-2 a'-1
-  | a,, a' a'
+  | d,-5 d'-1 a'-2
+  | a,,-5 a'-1 a'-2
   | d,, d' a'
   %50
   | a,, a' a'
@@ -439,8 +439,8 @@ Bass = \context Voice = "four" \relative c' {
   | c4.
   | d8 d, fis-3
   | g c,-3 d-2
-  | g,-5 g'-2 d'-1
-  | d,, d' d'
+  | g,-5 g'-1 d'-2
+  | d,,-5 d'-1 d'-2
   %115
   | g,, g' d'
   | d,, d' d'
