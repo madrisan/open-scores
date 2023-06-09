@@ -125,8 +125,8 @@ Bass = \context Voice = "four" \relative c {
   | bes( g) b!( g)
   | bes( g) b!2
   | \clef treble
-    r2 c'4 aes8. ees16
-  | d4 \clef bass
+    r2 c'4\( aes8. ees16
+  | d4\) \clef bass
     \override Staff.SustainPedalLineSpanner.staff-padding = #8.5
     \set Staff.pedalSustainStyle = #'mixed
     d,( g,2)\sustainOn
@@ -143,7 +143,7 @@ centerDynamics = {
   | s1\sf
   | s1*3
   %9
-  | s8 s8\mf s2.
+  | s4\mf s2.
   | s1*2
   | s4\sf s s\> s
   | s s\! s s
@@ -151,7 +151,7 @@ centerDynamics = {
   | s
   | s\p
   | s
-  | s8 s8\mf s2.
+  | s4\mf s2.
   | s4 s2.\p
   | s1\p
 }
@@ -180,7 +180,7 @@ centerDynamics = {
   >>
   \header {
     composer = "Francis Poulenc"
-    arranger = " "
+    arranger = \markup \italic { "Paris Juin 1941"}
     opus = #f
     title = \markup {
       \fill-line {
