@@ -3,11 +3,17 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [v38] - unreleased
+
+### Added
+
+- Francis Poulenc: Deux Improvisations FP.113
+
 ## [v37] - 2023-06-03
 
 ### Added
 
-- Franz Liszt: Franz Liszt: Trauervorspiel und Trauermarsch S.206
+- Franz Liszt: Trauervorspiel und Trauermarsch S.206
 
 ### Changed
 
