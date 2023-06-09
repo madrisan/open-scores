@@ -39,6 +39,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | aes^> aes aes r g^. r
   | g^> g g r f r
   | <g, bes ees>2~_> q8 r
+    \break
   %25
   | \phrasingSlurUp
     d'2\( g4
@@ -120,6 +121,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | \appoggiatura { d16 e } \stemDown d4 c! b
   | \stemNeutral ais cis g
   | fis2.\)
+    \break
   | \stemUp g2\( ees'4
   %90
   | b2 g4\)
@@ -537,7 +539,7 @@ Bass = \context Voice = "four" \relative c {
   | ees_.( aes_. ees_.)
   }
   | \set Staff.pedalSustainStyle = #'mixed
-    <ees,\laissezVibrer ees'^\laissezVibrer>2.*2/3\sustainOn
+    <ees,\laissezVibrer ees'^\laissezVibrer>2.*2/3
     \clef treble
     <bes''' bes'!>4(
   %125
@@ -624,6 +626,25 @@ centerDynamics = {
   | s2.
   | s4\! s2\ppp
 }
+Sustain = {
+  \set Staff.pedalSustainStyle = #'mixed
+  %1
+  | s2.\sustainOn
+  | s2.*4
+  | s2.\sustainOff\sustainOn
+  | s2.*2
+  | s2.\sustainOff\sustainOn
+  | s2.\sustainOff\sustainOn
+  | s2.\sustainOff
+  | s2.*17
+  %29
+  | s2.\sustainOn
+  | s2.*3
+  | s2.\sustainOff
+  | s2.*89
+  %124
+  | s2.\sustainOn
+}
 
 \score {
   \new PianoStaff \with { connectArpeggios = ##t }
@@ -645,6 +666,7 @@ centerDynamics = {
       \clef bass
       \Tenor
       \Bass
+      \Sustain
     >>
   >>
   \header {
