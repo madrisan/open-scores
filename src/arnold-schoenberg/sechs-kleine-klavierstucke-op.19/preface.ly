@@ -270,7 +270,7 @@
     \wordwrap \abs-fontsize #11 {
       A conclusione di questo breve percorso vorrei fare una lieve disgressione (ma credo
       pertinente!) raccontando che diversi anni fa nel conservatorio dove insegnavo attuai
-      un corso sulla Seconda Scuola di Vienna, quindi su Schoenberg – Webern – Berg.
+      un corso sulla Seconda Scuola di Vienna, quindi su Schoenberg − Webern − Berg.
       Fra i vari allievi partecipanti, pianisti, altri strumentisti, cantanti, c’erano anche
       alcuni allievi compositori.
       Proprio a quest’ultimi chiesi di strumentare tutta l’op. 19 di Schoenberg.
@@ -279,6 +279,7 @@
       l’aspetto timbrico dell’opera di Schoenberg, con impasti coloristici-strumentali
       piuttosto suggestivi.
     }
+    \hspace #0
     \hspace #0
 
     \wordwrap \abs-fontsize #11 {
