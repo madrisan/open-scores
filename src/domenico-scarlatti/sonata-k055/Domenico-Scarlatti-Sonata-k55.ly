@@ -100,18 +100,18 @@ Sopran = \context Voice = "one" \relative c'' {
   }
   \repeat volta 2 {
   %1
-  | g'8 d b
-  | g' e c
-  | g' d b
-  | a'16-5 g fis e-2 d-1 c-2
+  | g'8^.^> d^. b^.
+  | g'^.^> e^. c^.
+  | g'^.^> d^. b^.
+  | a'16-5( g fis e-2 d-1 c-2)
   %5
   | b4.
-  | a16-3 c b a-3 g-1 fis-2
+  | a16-3( c b a-3 g-1 fis-2)
   | d'4.
-  | a16 c b a g fis
+  | a16( c b a g fis)
   | d'4.
   %10
-  | a16 c b a g fis
+  | a16( c b a g fis)
   | \appoggiatura fis16 g4.
   | \stemUp d'4 8
   | c4-1-3\trill b8
@@ -174,10 +174,10 @@ Sopran = \context Voice = "one" \relative c'' {
   \pageBreak
   \repeat volta 2 {
   %60
-  | d'8 a fis
-  | d' b g
-  | d'[ a] fis16_\markup {
-      \hspace #-1 \small\italic "l.H"
+  | d'8_. a_. fis_.
+  | d'^. b^. g^.
+  | d'^.[ a^.] fis16_\markup {
+      \hspace #-2.5 \dynamic sf \hspace #-0.5 \small\italic ", l.H"
     } e'^\markup {
       \hspace #-1 \small\italic "r.H"
     }
@@ -196,31 +196,31 @@ Sopran = \context Voice = "one" \relative c'' {
   | a' f! e d cis d
   | e bes a-2 g-	1 f!-2 e-1
   %75
-  | fis-3 g-1 a bes-3 c-1 d
+  | fis-3( g-1 a bes-3 c-1 d)
   | ees4.\trill
-  | fis,16 g a bes c d
+  | fis,16( g a bes c d)
   | ees4.\parenthesize\trill
-  | b!16-1 c d ees-4 f!-1 g-3
+  | b!16-1( c d ees-4 f!-1 g-3)
   %80
   | f!4.\parenthesize\trill
-  | b,!16 c d ees f! g
+  | b,!16( c d ees f! g)
   | f!4.\parenthesize\trill
-  | b,!16 c d ees f! g
-  | f! aes g f ees d
+  | b,!16( c d ees f! g
+  | f! aes g f ees d)
   %85
   | g f! ees d c!-2 bes-1
   | a fis' g bes, a bes
   | a fis' g bes, a bes
-  | a8 c-2 d
-  | ees c-1 g'-3
+  | a8^. c-2^. d^.
+  | ees^. c-1^. g'-3^.
   %90
-  | fis a bes
-  | c-5 a-3 g-1
-  | fis-4 c d
-  | ees c g'
-  | fis a bes
+  | fis^. a^. bes^.
+  | c-5^. a-3^. g-1^.
+  | fis-4^. c^. d^.
+  | ees^. c^. g'^.
+  | fis^. a^. bes^.
   %95
-  | c a g
+  | c^. a^. g^.
   | fis16 ees d c bes a
   | bes d c bes a g
   | r16 c fis, g c, ees
@@ -308,13 +308,13 @@ Bass = \context Voice = "four" \relative c' {
   | g4.
   | fis4.
   %5
-  | g16-1 fis e-3 d-1 c b
-  | c8 d c
-  | b16 a g fis-4 e-1 d
-  | c8 d c
-  | b16 a g fis e d
+  | g16-1( fis e-3 d-1 c b)
+  | c8^. d^. c^.
+  | b16( a g fis-4 e-1 d)
+  | c8_. d_. c_.
+  | b16( a g fis e d)
   %10
-  | c8 d d
+  | c8_. d_. d_.
   | g4.
   | r4 b'8
   | a d, g
@@ -406,9 +406,9 @@ Bass = \context Voice = "four" \relative c' {
   | d,4.
   | <g, g'>4.
   %85
-  | c8 c' cis
-  | d, d' cis
-  | d, d' cis
+  | c8^. c'^. cis^.
+  | d,^. d'^. cis^.
+  | d,^. d'^. cis^.
   | d16 g fis g fis g
   | c,16 g' fis g fis g
   %90
@@ -468,6 +468,26 @@ Bass = \context Voice = "four" \relative c' {
   \fine
 }
 
+centerDynamics = {
+  %1
+  | s4.\mf
+  | s4.*37
+  %39
+  | s16 s\mp s4
+  | s4.*5
+  | s4.\mf
+  | s4.
+  | s16 s\mp s4
+  | s4.*12
+  %60
+  | s4.\mf
+  | s4.*52
+  %113
+  | s16 s\mp s4
+  | s4.*5
+  | s4.\mf
+}
+
 \score {
   \new PianoStaff \with { connectArpeggios = ##t }
   <<
@@ -478,6 +498,9 @@ Bass = \context Voice = "four" \relative c' {
       \clef treble
       \Sopran
       \Alto
+    >>
+    \context Dynamics <<
+      \Global \centerDynamics
     >>
     \context Staff = "lower" <<
       \set Staff.midiInstrument = #"acoustic grand"
