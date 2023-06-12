@@ -255,7 +255,7 @@
 
     \wordwrap \abs-fontsize #11 {
       At the conclusion of this brief journey, I would like to make a slight digression (which I think is pertinent)
-      by saying that several years ago in the Conservatory where I taught, I gave a course on the Second School
+      by saying that several years ago in the Conservatoire where I taught, I gave a course on the Second School
       of Vienna, therefore on Schoenberg − Webern − Berg.
       Among the various students there were pianists, other instrumentalists, singers, and there were also some
       composer students.

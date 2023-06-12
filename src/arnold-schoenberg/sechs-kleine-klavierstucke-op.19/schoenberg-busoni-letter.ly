@@ -40,7 +40,7 @@
       Concise! In two notes: not built, but “expressed”!!
     }
     \wordwrap \abs-fontsize #11 {
-      And the result I whish for: no stylized and sterile protracted emotion.
+      And the result I wish for: no stylized and sterile protracted emotion.
       People are not like that: it is \italic impossible to a person to have \italic one sensation
       at a time.
       One has \italic thousands simultaneously. And these thousands can no more readily be added
