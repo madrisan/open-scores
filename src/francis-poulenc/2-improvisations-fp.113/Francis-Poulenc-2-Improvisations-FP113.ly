@@ -61,9 +61,10 @@
         \null\null
         \line { \abs-fontsize #40 \bold "pour piano" }
         \null\null\null\null
+        \line { \abs-fontsize #25 \bold "(Improvisations 11, 12)" }
+        \null
         \line { \abs-fontsize #35 \bold "FP. 113" }
-        \null\null\null
-        \null\null\null
+        \null\null\null\null\null
       }
     }
   }
@@ -73,9 +74,8 @@
   \markup {
     \fill-line {
       \center-column {
-        \null\null\null
-        \null\null\null
-        \fill-line \abs-fontsize #12 {
+        \null\null\null\null
+        \fill-line \abs-fontsize #10 {
           \concat {
             "Based on the score: Paris, Rouart, Lerolle & Cie., 1941. Plates R.L. 12124, R.L. 12125"
           }
@@ -85,6 +85,54 @@
     }
   }
 }
+\pageBreak
+
+\markup \center-column {
+  \null\null\null
+  \null\null\null
+  \line {
+    \hspace #1
+    \general-align #Y #DOWN {
+      \epsfile #X #94 #"francis-poulenc-photo-1949.ps"
+    }
+  }
+  \null
+  \line \italic {
+     "Francis Poulenc (1899 – 1963)"
+  }
+  \null\null\null
+}
+
+\markup {
+  \column {
+    \line { \abs-fontsize #34 "“" }
+    \wordwrap \abs-fontsize #10 \italic {
+        "I tolerate the Mouvements perpétuels, my old Suite en ut [in C], and the Trois pieces."
+        "I like very much my two collections of Improvisations, an Intermezzo in A flat,"
+        "and certain Nocturnes."
+        "I condemn Napoli and the Soirées de Nazelles without reprieve."
+        ""
+    }
+  }
+}
+\markup {
+  \hspace #0
+  \column {
+    \wordwrap \abs-fontsize #34 {
+      \fill-line { "" "”" }
+    }
+  }
+}
+\markup {
+  \hspace #0
+  \column {
+    \wordwrap \abs-fontsize #10 {
+      "Schmidt (2001), p. 182"
+    }
+  }
+}
+
+\pageBreak
 
 \include "parts/francis-poulenc-improvisations-fp.113-1.ly"
 \pageBreak

@@ -23,7 +23,9 @@ Sopran = \context Voice = "one" \relative c'' {
   | bes8^>^\markup { \hspace #-1 \small\italic "pimpant" } 8^> 4^. ees^.
   %10
   | d2^>( bes8^.) r
-  | g^. r \slurDown\appoggiatura { g16 aes } \slurUp g8( fis g c
+  | g^. r
+    \once\shape #'((0 . 0.2) (0 . 0.4) (-0.8 . 0.6) (-0.8 . 0.8)) Slur
+    \slurDown\appoggiatura { g16 aes } \slurUp g8( fis g c
   | bes2^>) 8^. r
   | bes^> bes bes r aes^. r
   | aes^> aes aes r g^. r
@@ -32,7 +34,9 @@ Sopran = \context Voice = "one" \relative c'' {
   | g2.^>
   | bes8^> 8^> 4^. ees^.
   | d2^>( bes8^.) r
-  | g^. r \slurDown\appoggiatura { g16 aes } \slurUp g8( fis g c
+  | g^. r
+    \once\shape #'((0 . 0.2) (0 . 0.4) (-0.8 . 0.6) (-0.8 . 0.8)) Slur
+    \slurDown\appoggiatura { g16 aes } \slurUp g8( fis g c
   %20
   | bes2^>) 8^. r
   | bes^> bes bes r aes^. r
@@ -55,7 +59,9 @@ Sopran = \context Voice = "one" \relative c'' {
   | \stemUp bes8^>^\markup { \small\italic "a tempo" } 8 4 ees
   | d2^>( bes8) r
   %35
-  | g^. r \slurDown\appoggiatura { g16 aes } \slurUp g8( fis g c)
+  | g^. r
+    \once\shape #'((0 . 0.2) (0 . 0.4) (-0.8 . 0.6) (-0.8 . 0.8)) Slur
+    \slurDown\appoggiatura { g16 aes } \slurUp g8( fis g c)
   | bes2^> 8^. r
   | bes^> bes bes r aes^. r
   | aes^> aes aes r g^. r
@@ -142,7 +148,9 @@ Sopran = \context Voice = "one" \relative c'' {
   | \key ees \major
     \slurUp bes,8^>^\markup { \hspace #-2 \small\italic "a tempo" } 8^> 4^. ees^.
   | d2^>( bes8^.) r
-  | g^. r \slurDown\appoggiatura { g16 aes } \slurUp g8( fis g c
+  | g^. r
+    \once\shape #'((0 . 0.2) (0 . 0.4) (-0.8 . 0.6) (-0.8 . 0.8)) Slur
+    \slurDown\appoggiatura { g16 aes } \slurUp g8( fis g c
   | bes2^>) 8^. r
   %105
   | bes^> bes bes r aes^. r
@@ -680,7 +688,7 @@ Sustain = {
           \null
           \line { \abs-fontsize #18 "IMPROVISATION" }
           \line \abs-fontsize #13 { "en mi" \raise #0.6 \flat "majeur" }
-          \line \abs-fontsize #13 { \italic "(HOMMAGE À SCHUBERT)" }
+          \line \abs-fontsize #13 { \italic "(“HOMMAGE À SCHUBERT”)" }
           \null\null
         }
       }
