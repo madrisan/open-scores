@@ -7,14 +7,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Added
 
-- Francis Poulenc: Deux Improvisations FP.113
 - Arnold Schoenberg: Sechs kleine Klavierstücke op.19
   Preface by Giancarlo Simonacci translated into (hopefully ;) English
-- Domenico Scarlatti: Sonata K.55 - dynamic indications
+- Domenico Scarlatti: Sonata K.141
+- Francis Poulenc: Deux Improvisations FP.113
 
 ### Changed
 
-- Domenico Scarlatti - Sonata K.55: update fingering
+- Domenico Scarlatti: Sonata K.55 - update fingering
+- Domenico Scarlatti: Sonata K.55 - dynamic indications
 
 ## [v37] - 2023-06-03
 
@@ -24,7 +25,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 
-- Domenico Scarlatti - Sonata K.55: update fingering
+- Domenico Scarlatti: Sonata K.55 - update fingering
 
 ## [v36] - 2023-05-31 ("A papà")
 
