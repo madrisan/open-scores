@@ -9,18 +9,27 @@
 }
 
 \paper {
+  #(set-paper-size "a4")
   annotate-spacing = ##f
-  bottom-margin = 13\mm
+  bottom-margin = 5\mm
   first-page-number = 0
   indent = 0.0
-  line-width = 16.8\cm
+% last-bottom-spacing.padding = #2
+  line-width = 18\cm
+  markup-system-spacing =
+     #'((basic-distance . 2)
+        (minimum-distance . 1)
+        (padding . 2)
+        (stretchability . 20))
   print-all-headers = ##t
-  ragged-last-bottom = ##t
+  ragged-last-bottom = ##f
   ragged-bottom = ##f
-  %system-system-spacing = #'((basic-distance . 2) (padding . 10))
-  top-margin = 13\mm
-%  markup-system-spacing.basic-distance = #10
-%  last-bottom-spacing.padding = #2
+  system-system-spacing =
+     #'((basic-distance . 2)
+        (minimum-distance . 1)
+        (padding . 2)
+        (stretchability . 20))
+  top-margin = 5\mm
 }
 
 \bookpart {
@@ -120,11 +129,13 @@ Sopran = \context Voice = "one" \relative c'' {
     c4) c8.des16
   | ees4 \appoggiatura des16 c8.[ bes16] aes4 bes8[ c]
   | des4~ des16[ ees32 f des16 c] c4\fermata ees4
+    \break
   | f4 ees8_~[ \grace { ees16[ des ees] } des32 c des16] c8[ bes aes bes]
   % 10
   | c4 bes aes\fermata <c, c'>^-
   | c'^- <c, c'>^- <bes bes'>^- <aes aes'>^-
   | <g g'>2^- <f f'>\fermata_\pp
+    \break
   | <aes aes'>4^- <g g'>^- <f f'>2^-
   | <ees ees'>2.^- ees'4^\markup { \italic\small "poco aumentando" }
   % 15
@@ -151,6 +162,7 @@ Alto = \context Voice = "two" \relative c' {
   \slurUp\tieUp
   \partial 4
     \once\override Arpeggio.positions = #'(-4.5 . 0.5)
+    \once\override Staff.TextScript.extra-offset = #'(-4.5 . 0)
     aes16(\arpeggio_\markup {
       \column {
         \line { \hspace #-2 \tiny "leise und gebunden" }
@@ -173,6 +185,7 @@ Alto = \context Voice = "two" \relative c' {
     bes[ aes g aes] g[ c, e! bes]
     \once\override Arpeggio.positions = #'(-4.5 . 0.5)
     aes[\arpeggio c f e]
+    \break
   %5
   | f[ c aes \bottom\stemUp f] \top\stemDown g[ bes des c]
     \bottom\stemUp f,[ \top\stemDown aes c bes] aes[ \bottom\stemUp f \top\stemDown aes c]
@@ -187,7 +200,7 @@ Alto = \context Voice = "two" \relative c' {
       \column {
         \line { \hspace #-1 \tiny "etwas heller" }
         \general-align #Y #-2
-        \line { \hspace #-1 \tiny\italic "poco più sonoro" }
+        \line { \hspace #-1 \whiteout \tiny\italic "poco più sonoro" }
       }
     }
     des' aes c]
