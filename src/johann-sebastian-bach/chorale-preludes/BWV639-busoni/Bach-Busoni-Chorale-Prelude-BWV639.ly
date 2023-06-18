@@ -196,6 +196,7 @@ Alto = \context Voice = "two" \relative c' {
   | g[ ees aes g] aes[ ees f ges] f[ des f aes] g![ des c ges']
   | f[ \bottom\stemUp bes, \top\stemDown des f] bes[ aes g aes]
     g[ bes, aes f']\breathe \bottom\stemUp
+    \once\override Staff.TextScript.extra-offset = #'(-0.5 . 0)
     g,[^\markup {
       \column {
         \line { \hspace #-1 \tiny "etwas heller" }
@@ -248,7 +249,9 @@ Alto = \context Voice = "two" \relative c' {
   %20
   | ees8 s s2 g,16\rest g'!8[( f16])
   | \slurDown f,16\rest e'![( f ees]) e,16\rest des'![( ees des])
-    d,16\rest c'![^( des c] bes[ aes \bottom\stemUp g f])
+    d,16\rest
+    \once\shape #'((0 . 0) (0 . -0.7) (0 . 2) (0 . -3)) Slur
+    c'![^( des c] bes[ aes \bottom\stemUp g f])
   | s1
 }
 
