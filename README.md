@@ -132,10 +132,11 @@ Thanks to my harpist friend Tristan Rollet ([@Pluiesurlavitre](https://github.co
 #### Domenico Scarlatti (1685-1757)
 
  * [Sonata K. 1](https://github.com/madrisan/open-scores/releases/download/v37/Domenico-Scarlatti-Sonata-k1.pdf)
- * [Sonata K. 33](https://github.com/madrisan/open-scores/releases/download/v37/Domenico-Scarlatti-Sonata-k33.pdf) (Cat's fugue)
+ * [Sonata K. 30](https://github.com/madrisan/open-scores/releases/download/v37/Domenico-Scarlatti-Sonata-k30.pdf) (Cat's fugue)
  * [Sonata K. 55](https://github.com/madrisan/open-scores/releases/download/v37/Domenico-Scarlatti-Sonata-k55.pdf)
  * [Sonata K. 87](https://github.com/madrisan/open-scores/releases/download/v37/Domenico-Scarlatti-Sonata-k87.pdf)
  * [Sonata K. 95](https://github.com/madrisan/open-scores/releases/download/v37/Domenico-Scarlatti-Sonata-k95.pdf)
+ * [Sonata K. 141](https://github.com/madrisan/open-scores/releases/download/v37/Domenico-Scarlatti-Sonata-k141.pdf)
  * [Sonata K. 387](https://github.com/madrisan/open-scores/releases/download/v37/Domenico-Scarlatti-Sonata-k387.pdf)
 
 #### Arnold Schoenberg (1874–1951)
