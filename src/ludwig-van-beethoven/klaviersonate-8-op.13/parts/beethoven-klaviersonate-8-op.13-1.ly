@@ -6,6 +6,7 @@ Global = {
 
 bottom = \change Staff = "lower"
 top = \change Staff = "upper"
+cresc = \markup { "cresc." }
 
 Sopran = \context Voice = "one" \relative c' {
   \voiceOne
@@ -40,7 +41,7 @@ Sopran = \context Voice = "one" \relative c' {
   | \autoBeamOff <d fis a>8 <a' a'>8~ \autoBeamOn q16.[ q32 <b b'>16. <c c'>32]
     q8[( <b b'>16)] r r8 q16.[ <c c'>32]
   | \once\override Staff.TextScript.extra-offset = #'(0 . -1)
-    <cis cis'>8[(_\markup { \italic "cresc."  }
+    <cis cis'>8[(_cresc
     <d d'>)] r q16.[ <ees ees'>32] <e e'>8( <f f'>4) q8
   | <f f'>8~\sfp
     q32[ ees'!64 d f ees d c!] \stemUp b16[-.( b-. b-. b)-.] c8 r r4
@@ -81,20 +82,24 @@ Sopran = \context Voice = "one" \relative c' {
   | q4 r q2~\sf
   | q8 f' d b g f d b
   %30
-  | \stemUp c ees c \bottom g fis c' aes fis
+  | \stemUp
+    \override Beam.positions = #'(1.5 . 1.5)
+    c ees c \bottom g \revert Beam.positions fis c' aes fis
   | g4 \top\stemNeutral r <g' g'>2~
   | q4 r q2~
   | q8 f' d b g f d b
-  | \stemUp c ees c \bottom g fis c' aes fis
+  | \stemUp
+    \override Beam.positions = #'(1.5 . 1.5)
+    c ees c \bottom g \revert Beam.positions fis c' aes fis
   %35
   | g4 \top\stemNeutral\slurNeutral
     \once\override Staff.TextScript.extra-offset = #'(0 . -1)
-    fis'_!_\markup { \italic "cresc." }
+    fis'_!_cresc
     g_! <fis c'>_!
   | <g b>_! <c fis>-! <b g'>-! <fis' c'>-!
   | <g b>^! r r2
   | <bes,, des ees>1_(\sf
-  | <c ees>4) des'-! c-! <d g>-!
+  | <c ees>4) des'-! c-! <des g>-!
   %40
   | <c aes'>-! <g' des'>-! <aes c>-! <g des'>-!
   | <aes c>-! r r2
@@ -103,13 +108,141 @@ Sopran = \context Voice = "one" \relative c' {
   | <d bes'>-! <a' ees'>-! <bes d>-! <a ees'>-!
   %45
   | <bes d>-! r <ees, a>2\sf(
-  | <d bes'>4) r <ees, a>2\sf(
-  | <d bes'>4) r <a e'>2^\sf(
-  | <bes d>4) a bes a
-  | bes a\p( bes a
+  | <d bes'>4) r <a ees'>2\sf(
+  | <bes d>4) r <ees, a>2\sf(
+  | <d bes'>4) r <a ees'>2^\sf(
+  | <bes d>4) a\p( bes a
   %50
   | bes a bes a)
+    \pageBreak
+  | r4 \clef bass bes,_! ees^! f^!
+  | ges^! \clef treble bes'^! ees^! f^!
+  \repeat unfold 2 {
+  | \stemUp \slashedGrace bes,8 \stemNeutral ges'2.\sf ees4
   }
+  %55
+  | d \clef bass bes,,_! f'^! ges^!
+  | aes^! \clef treble bes'( aes' ges)
+  | ges\prall( f) f\prall( ees)
+  | ees\prall( d) c^! d^!
+  | ees-! \clef bass bes,,_! es-! f-!
+  %60
+  | ges^! \clef treble bes'^! ees^! f^!
+  \repeat unfold 2 {
+  | \stemUp \slashedGrace bes,8 \stemNeutral ges'2.\sf( ees4)
+  }
+  | c-! \clef bass aes,,-! ees'-! f-!
+  | ges-! \clef treble aes'( ges' f)
+  %65
+  | f^\prall( es) es^\prall( des) | des^\prall( c) bes-! c-!
+  | des \clef bass aes,,_! des-! ees-!
+  | f-! \clef treble aes'-! des-! ees-!
+  \repeat unfold 2 {
+  | \stemUp \slashedGrace aes,8 \stemNeutral f'2.\sf( des4)
+  }
+  %71
+  | c-! \clef bass aes,,-! ees'-! f-!
+  | ges-! \clef treble
+    \once\override Staff.TextScript.extra-offset = #'(0 . -2)
+    aes'(_\markup{ "(rinf.)" } ges' f)
+  | f^\prall( ees) ees^\prall( des)
+  | des^\prall( c) bes-! c-!
+  %75
+  | des \clef bass des,,( aes') ces,_!
+  | bes_! \clef treble bes''( aes' ges)
+  | ges^\prall( f) f^\prall( es)
+  | ees^\prall( d!) c-! d-!
+  | ees-! \clef bass
+    \once\override Staff.TextScript.extra-offset = #'(0 . -2)
+    ees,,_\markup{ "rinf." } ( bes') des,-!
+  %80
+  | c_! \clef treble c''( bes' as)
+  | aes^\prall( g!) g^\prall( f)
+  | f^\prall( e) d!( e)
+  | g^\prall( f) f^\prall( es!)
+  | ees^\prall( d) c( d)
+  %85
+  | \once\override Staff.TextScript.extra-offset = #'(0 . -2)
+    f^\prall_\markup{ "decresc." }( ees) ees^\prall( d)
+  | d^\prall( c) c^\prall( b)
+  | c^\prall( bes!) bes-! bes-!
+  | \once\override Staff.TextScript.extra-offset = #'(0 . -1)
+    c^\prall(_\markup { \dynamic pp } bes) bes-! bes-!
+  | \stemUp\tieUp s2 ees~
+  %90
+  | ees ees
+  | s2 ees~
+  | ees ees
+  | \stemNeutral
+    ees8_![ ees, aes ees]
+    \once\override Staff.TextScript.extra-offset = #'(0 . -1)
+    e'_![_cresc e, c' e,]
+  | f'[-! f, c' f,] g'[-! g, c g]
+  %95
+  | aes'[-! aes, c aes] a'[-! a, c a]
+  | bes'[-! bes, f' bes,] c'[-! c, f c]
+  | des'[-! des, f des] d'[-! d, f d]
+  | ees'[-! ees, g ees] b'[-! b, ees b]
+  | r\f c[ ees c] c'[ c, ees c]
+  %100
+  | r f,[ aes f] d'[ f, aes f]
+  | \stemUp\tieUp s2 ees'~
+  | ees ees
+  | s2 ees~
+  | ees ees
+  %105
+  | \stemNeutral
+    \once\override Staff.TextScript.extra-offset = #'(0 . -2)
+    ees8_![_cresc ees, aes ees] e'_![ e, c' e,]
+  | f'[-! f, c' f,] g'[-! g, c g]
+  | aes'[-! aes, c aes] a'[-! a, c a]
+  | bes'[-! bes, f' bes,] c'[-! c, f c]
+  | des'[-! des, f des] d'[-! d, f d]
+  %110
+  | ees'[-! ees, bes' ees,] e'[-! e, bes' e,]
+  | \once\override Staff.TextScript.extra-offset = #'(0 . -2)
+    r_\markup { \dynamic f } aes[ c aes] f'[ aes, c aes]
+  | r f[ aes f] d'[ f, aes f]
+  | g4
+    \once\override Staff.TextScript.extra-offset = #'(0 . -2)
+    ees'2\(_\markup { \dynamic p } d8[ ees]
+  | f[ ees d c] b[ c d c]
+  %115
+  | bes![ aes g f] e[ f g f]
+  | ees![ d c bes] a[ bes c aes]
+  | g4-!\)
+    \once\override Staff.TextScript.extra-offset = #'(0 . -1)
+    <ees' ees'>2_\cresc d'8 ees
+  | f[ ees d c] b[ c d c]
+  | bes![ aes g f] e[ f g f]
+  %120
+  | ees![ d c bes] a[ bes c aes]
+  | ees'4\f ees,2 <des g>4_!
+  | <c aes'>_! <g' bes>_! <aes c>-! <aes d!>-!
+  | <g ees'>-! ees'2 <des g>4-!
+  | <c aes'>-! <g' bes>-! <aes c>-! <aes d!>-!
+  %125
+  | <g ees'>1\f
+  | <g, ees'>
+  | <g' ees'>
+  | <g, ees'>
+  | <c' ees>\f
+  %130
+  | <c, ees>\f
+    \alternative {
+      \volta 1 {
+        <a' c d>\f
+        <b,, d>\ff\fermata
+      }
+      \volta 2 {
+        <a'' c d>\f
+        <a,, c d>\ff
+      }
+    }
+    \bar "||"
+    \time 4/4
+  }
+%  | <g bes d g>4 s2.
 
 }
 
@@ -120,13 +253,11 @@ Alto = \context Voice = "two" \relative c' {
   \override Stem.cross-staff = ##t
   %1
   | s1*3
-  | \override Stem.length = #24
+  | \override Stem.length = #26
     s4.
     \omit Flag
     \once\override Staff.TextScript.extra-offset = #'(0.6 . -1)
-    e8_\markup {
-      \whiteout \italic "cresc."
-    }
+    e8_\markup { \whiteout "cresc." }
     f s4 s8
   %5
   | s1*4
@@ -137,17 +268,28 @@ Alto = \context Voice = "two" \relative c' {
   | \revert Stem.length
     s2
     \once\override Staff.TextScript.extra-offset = #'(-3 . -2)
-    <g b f'>_\markup { \italic "cresc." }
+    <g, b f'>_cresc
  | <g c>2 <f a>
   | g fis
   | s1*5
   %23
   | s2
     \once\override Staff.TextScript.extra-offset = #'(-3 . -2)
-    <g, b f'>_\markup { \italic "cresc." }
+    <g b f'>_cresc
   | <g c>2 <f aes>
   | g fis
-
+  | s1*63
+  %89
+  | r8\p ees[ g ees] ees'[ ees, g ees]
+  | g[ ees g ees] g\rest ees[ g ees]
+  | r8 ees[ g ees] ees'[ ees, g ees]
+  | g[ ees g ees] g\rest ees[ g ees]
+  | s1*8
+  %101
+  | r8\p ees[ g ees] ees'[ ees, g ees]
+  | g[ ees g ees] g\rest ees[ g ees]
+  | r8 ees[ g ees] ees'[ ees, g ees]
+  | g[ ees g ees] g\rest ees[ g ees]
 }
 
 Tenor = \context Voice = "three" \relative c {
@@ -156,14 +298,73 @@ Tenor = \context Voice = "three" \relative c {
   \override Rest.staff-position = #0
   \override Stem.cross-staff = ##t
   %1
-  | \override Stem.length = #16
+  | \override Stem.length = #20
     \omit Flag \autoBeamOff
     <ees g>4~ q16. g32 16. 32 a4 b8 s
   | s1*3
   %5
   | s2. <f aes b>16. q32 <f aes c>16. q32
   | <f aes d>8 s4. s8. s32 g a16. 32 bes16. 32
-  | a8 s s2.
+  | a8 s s2. \revert Stem.length \undo\omit Flag \autoBeamOn
+  | s1*43
+  %51
+  \repeat unfold 4 {
+  | c'4\rest <ees, ges> q q
+  }
+  %55
+  \repeat unfold 4 {
+  | c'4\rest <f, aes> q q
+  }
+  \repeat unfold 8 {
+  | c'4\rest <ees, ges> q q
+  }
+  %67
+  \repeat unfold 4 {
+  | c'4\rest <des, f> q q
+  }
+  %71
+  \repeat unfold 4 {
+  | c'4\rest <ees, ges> q q
+  }
+  %75
+  | c'4\rest <f, aes> c'\rest q
+  \repeat unfold 3 {
+  | c4\rest <f, aes> q q
+  }
+  | c'4\rest <ges bes> c\rest <f, bes>
+  %80
+  \repeat unfold 3 {
+  | c'4\rest <g bes> q q
+  }
+  | c4\rest aes aes aes
+  | c4\rest <f, aes> q q
+  %85
+  | c'4\rest <ees, g> q q
+  | c'4\rest <ees, f> q q
+  | c'4\rest <ees, g> q q
+  | c'4\rest <d, f> q q
+  \repeat unfold 2 {
+  | c8\rest bes[ g bes] g[ bes g bes]
+  | g[ bes g bes] c8\rest bes[ g bes]
+  }
+  %93
+  | s1*8
+  %101
+  \repeat unfold 2 {
+  | c8\rest bes[ g bes] g[ bes g bes]
+  | g[ bes g bes] c8\rest bes[ g bes]
+  }
+  %105
+  | s1*9
+  %114
+  | c'4\rest <ees, g> q q
+  | c'4\rest <ees, f> q q
+  | c'4\rest <d, f> q q
+  | c4\rest <g ees'> q q
+  | c4\rest <ees, g c> q q
+  | c'4\rest <ees, f aes> q q
+  %120
+  | c'4\rest <d, f bes> q q
 }
 
 Bass = \context Voice = "four" \relative c, {
@@ -190,9 +391,9 @@ Bass = \context Voice = "four" \relative c, {
   %10
   | r r8 \clef bass <f, c' d>16[(^. q^.])
     <g c es>8 r <f d g,>8*1/2
-    \once\override Staff.TextScript.extra-offset = #'(6 . 0)
+    \once\override Staff.TextScript.extra-offset = #'(5 . 0)
     s16_\markup {
-      \italic\small "attacca subito il Allegro"
+      "attacca subito il Allegro"
     }
     r8^\fermata
    \bar "||"
@@ -240,8 +441,99 @@ Bass = \context Voice = "four" \relative c, {
   | \repeat tremolo 2 { bes,8 bes' } \repeat tremolo 2 { bes,8 bes' }
   }
   | <bes, bes'>4 r r2
-  | R1 \clef treble
+  %50
+  | R1 \clef treble \stemDown\tieDown
+  \repeat unfold 12 {
+  | bes''1
   }
+  %63
+  \repeat unfold 12 {
+  | aes1
+  }
+  %75
+  | des2 ces
+  \repeat unfold 3 {
+  | bes1
+  }
+  | ees2 des
+  %80
+  \repeat unfold 3 {
+  | c1
+  }
+  | f1
+  | bes,2 b2
+  %85
+  | c1
+  | aes1
+  | bes1
+  | bes1
+    \clef bass
+  | ees,1~
+  %90
+  | ees2 ees
+  | des1~
+  | des2 des
+  | \stemNeutral\tieNeutral c8^! aes' ees aes bes,^! g' c, g'
+  | aes,^! aes' c, aes' g,_! g' c, g'
+  %95
+  | f,_! f' c f ees,_! ees' f, ees'
+  | d,_! d' f, d' c,_! c' f, c'
+  | bes,_! bes' f bes aes,_! aes' f aes
+  | g,_! g' ees g g,_! g' ees g
+  | <aes, aes'>4 r r2
+  %100
+  | <bes bes'>4 r r2
+  | \tieDown ees'1~
+  | ees2 ees
+  | des1~
+  | des2 des
+  %105
+  | \stemNeutral\tieNeutral c8^! aes' ees aes bes,^! g' c, g'
+  | aes,^! aes' c, aes' g,_! g' c, g'
+  | f,_! f' c f ees,_! ees' f, ees'
+  | d,_! d' f, d' c,_! c' f, c'
+  | bes,_! bes' f bes aes,_! aes' f aes
+  %110
+  | g,_! g' ees g g,_! g' ees g
+  | <aes, aes'>4 r r2
+  | <bes bes'>4 r r2
+  | <ees ees'>4 \clef treble <ees'' g> q q
+  | c1
+  %115
+  | aes1
+  | bes1
+    \clef bass
+  | ees,1
+  | c1
+  | aes1
+  %120
+  | bes1
+  | ees,8[ ees' ees, ees'] ees,[ ees' ees, ees']
+  \repeat unfold 4 {
+  | \repeat tremolo 2 { ees,8 ees' } \repeat tremolo 2 { ees, ees' }
+  }
+  %126
+  | \repeat unfold 2 { \repeat tremolo 2 { d, d' } }
+  | \repeat unfold 2 { \repeat tremolo 2 { c, c' } }
+  | \repeat unfold 2 { \repeat tremolo 2 { bes, bes' } }
+  | \repeat unfold 2 { \repeat tremolo 2 { aes, aes' } }
+  %130
+  | \repeat unfold 2 { \repeat tremolo 2 { g, g' } }
+  | \alternative {
+      \volta 1 {
+        <fis, fis'>1
+        <g g' f'!>\fermata
+      }
+      \volta 2 {
+        <fis fis'>1
+        <fis' fis'>\fermata
+      }
+    }
+    \bar "||"
+    \time 4/4
+  }
+%  | <g, bes d g>4 s2.
+
 }
 
 centerDynamics = {
@@ -284,7 +576,7 @@ centerDynamics = {
       \PianoStaff
       % More space between staves in the same PianoStaff
       %\override StaffGrouper.staff-staff-spacing.minimum-distance = 14
-      %\override TextScript.font-shape = #'italic
+      \override TextScript.font-shape = #'italic
     }
   }
   \midi {
