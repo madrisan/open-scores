@@ -10,10 +10,11 @@ cresc = \markup { "cresc." }
 
 Sopran = \context Voice = "one" \relative c' {
   \voiceOne
-  \override MultiMeasureRest.staff-position = #0
-  \override Rest.staff-position = #0
+  %\override DynamicText.Y-offset = #-2.4
   \override Hairpin.minimum-length = #7
+  \override MultiMeasureRest.staff-position = #0
   \override Parentheses.font-size = #1
+  \override Rest.staff-position = #0
   \stemUp\slurUp\tieUp
   \tempo "Grave"
   %1
@@ -242,8 +243,114 @@ Sopran = \context Voice = "one" \relative c' {
     \bar "||"
     \time 4/4
   }
-%  | <g bes d g>4 s2.
-
+  \break
+  %135
+  | \tieNeutral\stemUp
+    \tempo "Tempo I"
+    <g bes d g>4\fp ~ q16.[ <d' g>32 <d fis a>16. <d g bes>32] <e g bes>4( <fis a>8) r
+  | <fis a c>4\fp~ q16.[ q32 <fis a d>16. <fis a ees'>32] q4( <g bes d>8) r
+  | <fis a c>4\fp~ q16.[ q32 <fis a d>16. <fis a dis>32] q4^(\p <e g e'>
+  | <a fis dis>_\markup { "decresc." } <g e b> <dis fis>
+    \once\override Staff.TextScript.extra-offset = #'(0 . -2)
+    dis)\fermata_\markup {
+      \whiteout \dynamic pp
+    }
+    \key a \minor
+    \time 2/2
+  | \stemNeutral e!4_!\p a!_!
+    \once\override Staff.TextScript.extra-offset = #'(0 . -1)
+    g_!_\cresc <a dis>^!
+  %140
+  | <g e'>^! <dis' a'>^! <e g>^! <a dis>^!
+  | <g e'>^!\f r <e, e'> r
+  | r\p q_! <fis fis'>^! <g g'>^!
+  | q2( <fis fis'>4) r
+  | r q^! <g g'>^! <a a'>^!
+  %145
+  | q
+    \once\override Staff.TextScript.extra-offset = #'(0 . -1)
+    g_!_\cresc fis_! <g cis>_!
+  | <fis d'>_! <cis' g'>^! <d fis>^! <g cis>^!
+  | <fis d'>\f r <fis, fis'> r
+  | r q^!\p <g g'>^! <a a'>^!
+  | q2( <g g'>4) r
+  %150
+  | r <g g'>^! <a a'>^! <bes bes'>^!
+  \repeat unfold 4 {
+  | \repeat tremolo 2 { bes8 bes' } \repeat tremolo 2 { bes, bes' }
+  }
+  \repeat unfold 4 {
+  | \repeat tremolo 2 { a,8 a' } \repeat tremolo 2 { a, a' }
+  }
+  %159
+  \repeat unfold 3 {
+  | \repeat tremolo 2 { aes,8 aes' } \repeat tremolo 2 { aes, aes' }
+  }
+  | aes,8 aes' g, g' g, g' f, f'
+  | f, f' e,! e'! e, e' des, des'
+  | des, des' c, c' c, c' bes, bes'
+  %165
+  | bes,\p bes' aes, aes' aes, aes' g, g'
+  | \stemUp
+    \override Beam.positions = #'(2 . 2)
+    g, g' \bottom f, \top f'
+    \override Beam.positions = #'(13.5 . 13.5) \bottom f, \top f' \bottom ees, \top ees'
+  | \override Beam.positions = #'(13 . 13)
+    \bottom ees, \top ees' \bottom d, \top d' \bottom d, \top d' \bottom ees, \top ees'
+  | \bottom ees, \top ees' \bottom d, \top d' \bottom d, \top d' \bottom c, c' \top
+    \revert Beam.positions
+  %169
+  | s1*4
+  | \stemNeutral s4 e!_!
+    \once\override Staff.TextScript.extra-offset = #'(0 . -1)
+    f_!_\cresc <e cis'>_!
+  | <f d'>_! <cis' e>^! <d f>^! <e cis'>^!
+  %175
+  | <f d'>^! <cis' e>^! <d f>2~\sf
+  | q \afterGrace <c! ees>\trill { \stemUp d16 ees }
+  | \stemNeutral <d f>4 r \clef bass cis,,,8\pp\( aes' e! cis
+  | d aes' f d c aes' ees c
+  | b g' d b cis aes' e cis
+  %180
+  | d aes' f d c aes' ees c
+  | <b d g>4\) \clef treble e'!_! f_! <e cis'>_!
+  | <f d'>_! <cis' e>^! <d f>^! <e cis'>^!
+  | <f d'>^! <cis' e>^! <d f>2~\sf
+  | q \afterGrace <c! ees>\trill { \stemUp d16 ees }
+  %185
+  \repeat unfold 2 {
+  | <b d>4^! <cis e>^! <d f>2~\sf
+  | q \afterGrace <c! ees>\trill { \stemUp d16 ees }
+  }
+  | \stemNeutral <b d>8\sf f' d c b f' d c
+  %190
+  | b f' d c b d b g
+  | aes bes aes g f aes f ees
+  | d f d c b! d b g
+  | aes bes aes g f aes f ees
+  | d f d c \bottom \stemUp b! d b g
+  %195
+  | aes bes aes g f ees d c
+  | b! c b aes f'2\rest
+    \break
+  | \top \key c \minor
+    c'2.\p <bes e!>4
+  | <aes f'>_! <e' g>_! <f aes>_! <d b'>_!
+  | <ees c'>_! <e c'>2\sf <bes' e>4^!
+  %200
+  | <aes f'>^! <e' g>^! <f aes>^! <d b'>^!
+  | <c ees g c>2 <g b! f'g>
+  | <g c ees>^! <f aes d>_!
+  | <ees c'>1~
+  | <ees a c>2 <d f b>
+  %205
+  | \once\override Staff.TextScript.extra-offset = #'(-0.8 . 0)
+    <c ees c'>4_\p c2 <bes e>4_!
+  | <aes f'>_! <e' g>_! <f aes>_! <d b'>_!
+  | <ees c'>_! <e c'>2\sf <bes' e>4^!
+  | <aes f'>^! <e' g>^! <f aes>^! <d b'>^!
+  | <c ees g c>2^! <aes ees' aes>^!
+  %210
 }
 
 Alto = \context Voice = "two" \relative c' {
@@ -253,7 +360,7 @@ Alto = \context Voice = "two" \relative c' {
   \override Stem.cross-staff = ##t
   %1
   | s1*3
-  | \override Stem.length = #26
+  | \override Stem.length = #16
     s4.
     \omit Flag
     \once\override Staff.TextScript.extra-offset = #'(0.6 . -1)
@@ -261,15 +368,16 @@ Alto = \context Voice = "two" \relative c' {
     f s4 s8
   %5
   | s1*4
-  | s4 f8\rest f'16 f ees8 s4.
+  | \override Stem.length = #26
+    s4 f8\rest f'16 f ees8 s4.
+    \revert Stem.length
   %10
   | s1*5
   %15
-  | \revert Stem.length
-    s2
+  | s2
     \once\override Staff.TextScript.extra-offset = #'(-3 . -2)
     <g, b f'>_cresc
- | <g c>2 <f a>
+  | <g c>2 <f a>
   | g fis
   | s1*5
   %23
@@ -290,6 +398,9 @@ Alto = \context Voice = "two" \relative c' {
   | g[ ees g ees] g\rest ees[ g ees]
   | r8 ees[ g ees] ees'[ ees, g ees]
   | g[ ees g ees] g\rest ees[ g ees]
+  | s1*98
+  %203
+  | g2 fis
 }
 
 Tenor = \context Voice = "three" \relative c {
@@ -365,6 +476,35 @@ Tenor = \context Voice = "three" \relative c {
   | c'4\rest <ees, f aes> q q
   %120
   | c'4\rest <d, f bes> q q
+  | s1*17
+  %136
+  | \override Stem.length = #20
+    s2 <a' c>4 <fis a>
+    \revert Stem.length
+  | s1*30
+  %169
+  | <b,! b'!>4 a'\rest
+    \shape #'(
+      ((0 . 1) (0 . 2) (0 . 2) (-0.2 . 2))
+      ((0 . 4) (0 . -6) (0 . -6) (0 . 0))
+    ) PhrasingSlur
+    cis,8[\(^\pp as' e cis]
+    \break
+  | d[ as' f d] c![ as' es c]
+  | b[ g' d b] cis[ as' e! cis]
+  | d[ as' f d] c![ as' es c]
+  | <bes d g>4\) s2.
+  | s1
+  %175
+  | g,4 g'2 4~
+  | 4 2 4
+  | s1*6
+  %183
+  \repeat unfold 3 {
+  | g,4 g'2 4~
+  | 4 2 4
+  }
+
 }
 
 Bass = \context Voice = "four" \relative c, {
@@ -532,7 +672,89 @@ Bass = \context Voice = "four" \relative c, {
     \bar "||"
     \time 4/4
   }
-%  | <g, bes d g>4 s2.
+  %135
+  | <g, bes d g>4~ q16.[ bes''32 a16. g32] cis4 d8 r16. ees,32
+  | ees'4~ 16. 32 d16. c32 bes4. r16. ees,32
+  | ees'4~ 16. 32 d16. c32 c8( b4) 8~
+  | 8_\markup { "attacca subito" } b,4 4 b, b8\fermata
+    \key a \minor
+    \time 2/2
+  | e!8[ e'! e, e'] e,[ e' e, e']
+  %140
+  | \repeat tremolo 2 { e,8 e' } \repeat tremolo 2 { e, e' }
+  | <e, e'>4 <g' b> q q
+  | e4 <g b> q q
+  | e4 <a c> q q
+  | ees4 <a c> q q
+  %145
+  | d,,8[ d' d, d'] d,[ d' d, d']
+  | \repeat tremolo 2 { d,8 d' } \repeat tremolo 2 { d, d' }
+  | <d, d'>4 <a'' c> q q
+  | d,4 <a' c> q q
+  | d,4 <g bes> q q
+  %150
+  | des4 <g bes> q q
+  | <c, c,> des( c) f(
+  | e) des'( c) f(
+  | e) fis( g) r
+  | R1
+  %155
+  | r4 ges,,( f) des'(
+  | c) ges'( f) des'(
+  | c) e( f) r
+  | R1
+  | r4 c,( b d)
+  %160
+  | f^! c'( b d)
+  | f^! r d^! r
+  | b^! r g^! r
+  | <des' des,> r <bes bes,> r
+  | <g g,> r <e e,> r
+  %165
+  | <f f,>4 r r2
+  | \stemDown <f, f,>4 d\rest d2\rest
+  \repeat unfold 2 {
+  |\stemDown <fis fis,>4 d\rest d2\rest
+  }
+  \repeat unfold 4 {
+  | \stemDown
+    \repeat tremolo 2 { g,8 g' } \repeat tremolo 2 { g, g' }
+  }
+  | \repeat tremolo 2 { g,8 g' } \repeat tremolo 2 { g, g' }
+  | \repeat tremolo 2 { g,8 g' } \repeat tremolo 2 { g, g' }
+  %175
+  | \slurDown g,2( b
+  | c fis,)
+  \repeat unfold 6 {
+  | \repeat tremolo 2 { g8 g' } \repeat tremolo 2 { g, g' }
+  }
+  %183
+  \repeat unfold 3 {
+  | g,2( b
+  | c fis,)
+  }
+  | \stemNeutral <g g'>4 r r2
+  %190
+  | R1*4
+  | \override MultiMeasureRest.staff-position = #-4
+    R1
+  %195
+  | R1
+  | d'2\rest \stemDown g8[ f ees d]
+  | \key c \minor
+    \stemNeutral c c' c, c' c, c' c, c'
+  \repeat unfold 3 {
+  | \repeat tremolo 2 { c,8 c' } \repeat tremolo 2 { c,8 c' }
+  }
+  %15
+  | \repeat tremolo 2 { c,8 c' } \repeat tremolo 2 { d,8 d' }
+  | \repeat tremolo 2 { ees,8 ees' } \repeat tremolo 2 { f,8 f' }
+  | \repeat tremolo 2 { g,8 g' } \repeat tremolo 2 { aes,8 aes' }
+  | \repeat tremolo 2 { fis,8 fis' } \repeat tremolo 2 { g,8 g' }
+  %20
+  \repeat unfold 5 {
+  | \repeat tremolo 2 { c,,8 c' } \repeat tremolo 2 { c,8 c' }
+  }
 
 }
 
