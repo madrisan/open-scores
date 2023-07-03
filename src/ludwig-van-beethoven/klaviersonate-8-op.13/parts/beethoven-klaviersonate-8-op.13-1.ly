@@ -351,6 +351,22 @@ Sopran = \context Voice = "one" \relative c' {
   | <aes f'>^! <e' g>^! <f aes>^! <d b'>^!
   | <c ees g c>2^! <aes ees' aes>^!
   %210
+  | <aes des f>^! <ges c ees>
+  | <f aes des>_! <des ges bes>_!
+  | aes'1
+  | \stemNeutral <d,! f bes>2_!\p <bes' f' bes>^!_\cresc
+  | <bes ees ges>^! <aes d f>^!
+  %215
+  | <ges bes ees>^! <ees aes ces>_!
+  | bes'1
+  | <e, g c>2_!\p <c' g' c>^!_\cresc
+  | <c f aes>^! <bes e g>^!
+  | <aes c f>^! <f des'>_!
+  %220
+  | <f c'>_! <f b>_!
+  | <ees c'>4 b_\(\p c b
+  | c b c b\)
+
 }
 
 Alto = \context Voice = "two" \relative c' {
@@ -401,6 +417,12 @@ Alto = \context Voice = "two" \relative c' {
   | s1*98
   %203
   | g2 fis
+  | s1*8
+  %212
+  | <des f>2\( <c ees>\)
+  | s1*3
+  %216
+  | <ees ges>2\( <d f>\)
 }
 
 Tenor = \context Voice = "three" \relative c {
@@ -746,15 +768,37 @@ Bass = \context Voice = "four" \relative c, {
   \repeat unfold 3 {
   | \repeat tremolo 2 { c,8 c' } \repeat tremolo 2 { c,8 c' }
   }
-  %15
-  | \repeat tremolo 2 { c,8 c' } \repeat tremolo 2 { d,8 d' }
-  | \repeat tremolo 2 { ees,8 ees' } \repeat tremolo 2 { f,8 f' }
-  | \repeat tremolo 2 { g,8 g' } \repeat tremolo 2 { aes,8 aes' }
-  | \repeat tremolo 2 { fis,8 fis' } \repeat tremolo 2 { g,8 g' }
-  %20
-  \repeat unfold 5 {
-  | \repeat tremolo 2 { c,,8 c' } \repeat tremolo 2 { c,8 c' }
+  %201
+  | c,
+    \once\override Staff.TextScript.extra-offset = #'(0 . 2)
+    c'^\cresc c, c' d, d' d, d'
+  | \repeat tremolo 2 { ees,8 ees' } \repeat tremolo 2 { f, f' }
+  | \repeat tremolo 2 { g, g' } \repeat tremolo 2 { aes, aes' }
+  | \repeat tremolo 2 { fis, fis' } \repeat tremolo 2 { g, g' }
+  %205
+  \repeat unfold 4 {
+  | \repeat tremolo 2 { c,, c' } \repeat tremolo 2 { c, c' }
   }
+  | c, c'
+    \once\override Staff.TextScript.extra-offset = #'(0 . 2)
+    c,^\cresc c' c, c' c, c'
+  %210
+  | \repeat tremolo 2 { des,8 des' } \repeat tremolo 2 { ees, ees' }
+  | \repeat tremolo 2 { f, f' } \repeat tremolo 2 { ges, ges' }
+  | \repeat unfold 2 { \repeat tremolo 2 { aes, aes' } }
+  | \repeat tremolo 2 { aes, aes' } \repeat tremolo 2 { d,,! d'! }
+  | \repeat tremolo 2 { ees, ees' } \repeat tremolo 2 { f, f' }
+  %215
+  | \repeat tremolo 2 { ges, ges' } \repeat tremolo 2 { aes, aes' }
+  | \repeat unfold 2 { \repeat tremolo 2 { bes, bes' } }
+  | \repeat tremolo 2 { bes, bes' } \repeat tremolo 2 { e,, e' }
+  | \repeat tremolo 2 { f, f' } \repeat tremolo 2 { g, g' }
+  | \repeat tremolo 2 { aes, aes' } \repeat tremolo 2 { bes, bes' }
+  %220
+  | \repeat tremolo 2 { c, c' } \repeat tremolo 2 { des, des' }
+  | <c, c'>4 r r2
+  | \override MultiMeasureRest.staff-position = #0 R1
+    \clef treble
 
 }
 

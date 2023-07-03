@@ -76,7 +76,7 @@
         \null\null\null\null
         \fill-line \abs-fontsize #12 {
           \concat {
-            "Based on the score G. Schirmer, 1894 and Berners, 1908"
+            "Based on the score of G. Schirmer, 1894 and Berners, 1908"
           }
         }
         \null\null
