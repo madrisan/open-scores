@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Arnold Schoenberg: Sechs kleine Klavierstücke op.19
   Preface by Giancarlo Simonacci translated into (hopefully ;) English
 - Domenico Scarlatti: Sonata K.141
+- Domenico Scarlatti: Sonata K.387 - fix a slur position
 - Francis Poulenc: Deux Improvisations FP.113
 
 ### Changed
