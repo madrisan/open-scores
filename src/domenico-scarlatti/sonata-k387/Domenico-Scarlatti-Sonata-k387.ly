@@ -176,7 +176,9 @@ Sopran = \context Voice = "one" \relative c'' {
   | <f, des'>8 <aes c> <g bes>~ q <f aes> <e! g>
   | f4. g
   | g g
-  | g \stemUp\slurDown \appoggiatura ees'16 \stemDown\slurNeutral des4.~
+  | g \stemUp\slurDown
+    \override Slur.positions = #'(2.5 . 2.3)
+    \appoggiatura ees'16 \stemDown\slurNeutral des4.~
   | <f, des'>8 <aes c> <g bes>~ q <f aes> <e! g>
   %60
   | f4 c'8 des <f, f'> <e e'>
