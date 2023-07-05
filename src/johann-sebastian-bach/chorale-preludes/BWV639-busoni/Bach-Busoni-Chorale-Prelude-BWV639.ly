@@ -29,7 +29,7 @@
         (minimum-distance . 1)
         (padding . 2)
         (stretchability . 20))
-  top-margin = 15\mm
+  top-margin = 20\mm
 }
 
 \bookpart {
@@ -52,8 +52,7 @@
   \markup {
     \fill-line {
       \center-column {
-        \null\null\null
-        \null\null\null
+        \null\null\null\null\null
         \line { \abs-fontsize #30 \bold "Johann Sebastian" }
         \null
         \line { \abs-fontsize #80 \bold "Bach" }
