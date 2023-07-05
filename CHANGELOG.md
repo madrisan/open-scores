@@ -15,7 +15,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 
-- Bach/Busoni: Chorale Prelude: BWV 639 - review paging
+- Bach/Busoni: Chorale Prelude BWV 639 - review paging
+- Bach/Petri: Schafe können sicher weiden BWV 208 - fix a couple of ties
 - Domenico Scarlatti: Sonata K.55 - update fingering
 - Domenico Scarlatti: Sonata K.55 - dynamic indications
 
