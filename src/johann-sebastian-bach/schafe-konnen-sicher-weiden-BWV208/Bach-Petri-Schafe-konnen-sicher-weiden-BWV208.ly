@@ -366,9 +366,11 @@ Bass = \context Voice = "four" \relative c {
   | <c c'> q <f c'> q <bes, bes'>( c d ees
   | \stemUp f) f <f, f'> q <bes bes'> q q q
   %15
-  | \stemDown <bes g'> q <bes ees> q <bes c g'>^\markup { \italic\small "molto espr." }
+  | \stemDown\tieUp <bes g'> q <bes ees> q <bes c g'>^\markup {
+      \italic\small "molto espr."
+    }
     q <a ees' f> q
-  | <bes ees f_(> <bes d f)> <ees g> q <f bes d>\tweak Y-offset -5\sustainOn q <f, f'> q\sustainOff
+  | <bes ees f~> <bes d f> <ees g> q <f bes d>\tweak Y-offset -5\sustainOn q <f, f'> q\sustainOff
   | <bes bes'> q q q <bes g'> q <bes ees> q
   | <bes c a'>8 q q q  <bes f' a>8 q q q
   | <bes' d f> q <a bes d f> q  <g bes d f> q <f bes d f> q
@@ -416,9 +418,9 @@ Bass = \context Voice = "four" \relative c {
   | <c c'>8 q <f c'> q <bes, bes'>^( c d ees
   %50
   | \stemUp f) f <f, f'> q <bes bes'> q q q
-  | \stemDown <bes g'> q <bes ees> q <bes c g'>
+  | \stemDown\tieUp <bes g'> q <bes ees> q <bes c g'>
     q <a ees' f> q
-  | <bes ees f_(> <bes d f)> <ees g> q <f bes d>\tweak Y-offset -5\sustainOn q <f, f'> q\sustainOff
+  | <bes ees f~> <bes d f> <ees g> q <f bes d>\tweak Y-offset -5\sustainOn q <f, f'> q\sustainOff
   | <bes bes'> q q q <bes g'> q <bes ees> q
   | <bes c a'>8 q q q  <bes f' a>8 q q q
   %55
