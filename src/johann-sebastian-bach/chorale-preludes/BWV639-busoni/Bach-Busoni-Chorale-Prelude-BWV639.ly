@@ -11,11 +11,11 @@
 \paper {
   #(set-paper-size "a4")
   annotate-spacing = ##f
-  bottom-margin = 5\mm
+  bottom-margin = 10\mm
   first-page-number = 0
   indent = 0.0
 % last-bottom-spacing.padding = #2
-  line-width = 18\cm
+  line-width = 18.5\cm
   markup-system-spacing =
      #'((basic-distance . 2)
         (minimum-distance . 1)
@@ -29,7 +29,7 @@
         (minimum-distance . 1)
         (padding . 2)
         (stretchability . 20))
-  top-margin = 5\mm
+  top-margin = 15\mm
 }
 
 \bookpart {
@@ -210,7 +210,7 @@ Alto = \context Voice = "two" \relative c' {
   % 10
   | aes[ ees aes, ges'] f[ aes, g! des']
     c[ aes c ees]_\markup { \hspace #1 \italic "più" \dynamic p }
-    \tweak X-offset -0.5 g16\rest g![ bes, g']
+    \tweak X-offset -1 g16\rest g![ bes, g']
   | \once\override Arpeggio.positions = #'(-4.5 . 0.5)
     a,![\arpeggio c f g] a![ f ees a]
     \once\override NoteColumn.force-hshift = #-0.3 des,[ g aes g]
@@ -250,7 +250,7 @@ Alto = \context Voice = "two" \relative c' {
   | ees8 s s2 g,16\rest g'!8[( f16])
   | \slurDown f,16\rest e'![( f ees]) e,16\rest des'![( ees des])
     d,16\rest
-    \once\shape #'((0 . 0) (0 . -0.7) (0 . 2) (0 . -3)) Slur
+    \once\shape #'((0 . 0) (0 . -1) (0 . 2.5) (0 . -3)) Slur
     c'![^( des c] bes[ aes \bottom\stemUp g f])
   | s1
 }
@@ -295,7 +295,9 @@ Tenor = \context Voice = "three" \relative c' {
   | \top\stemUp s16 c'8 s16 s2.
   | s1*4
   %16
-  | \bottom\stemUp aes16[\( \top\stemDown c\< ees aes]
+  | \bottom\stemUp
+    \shape #'((0 . 0.5) (0 . -2.5) (0 . -2.5) (0 . 3)) PhrasingSlur
+    aes16[\( \top\stemDown c\< ees aes]
     ees[ bes' c\! bes]%_\markup { \italic\tiny "poco" }
     a![\> ees ges\! \bottom\stemUp a,!]\)^(
     \stemDown \once\override NoteColumn.force-hshift = #0 \once\omit Stem bes4)
@@ -309,7 +311,7 @@ Tenor = \context Voice = "three" \relative c' {
   | s1
   | s2. g,16[ bes des c]
   %20
-  | \shape #'((0 . -1) (0 . -1.5) (0 . 1) (0 . 1)) Slur
+  | \shape #'((0 . -1) (0 . -6) (0 . 0.8) (0 . 1)) Slur
     aes16[^( c \top\stemDown ees aes] ees[ bes' c bes]
     a![ ees ges \bottom\stemUp\slurUp\tieUp a,!]) s4
   | g8[( aes]) f[( g]) ees![( f~]) f s
