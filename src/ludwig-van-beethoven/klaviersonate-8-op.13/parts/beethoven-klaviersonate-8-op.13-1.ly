@@ -712,7 +712,6 @@ Tenor = \context Voice = "three" \relative c {
   | \override Stem.length = #20
     <d f g>4 s2.
   | <ees g>4 s2.
-
 }
 
 Bass = \context Voice = "four" \relative c, {
@@ -1072,10 +1071,6 @@ Bass = \context Voice = "four" \relative c, {
     \bar "|."
 }
 
-centerDynamics = {
-  %1
-}
-
 \score {
   \new PianoStaff \with { connectArpeggios = ##t }
   <<
@@ -1086,9 +1081,6 @@ centerDynamics = {
       \clef treble
       \Sopran
       \Alto
-    >>
-    \context Dynamics <<
-      \Global \centerDynamics
     >>
     \context Staff = "lower" <<
       \set Staff.midiInstrument = #"acoustic grand"
