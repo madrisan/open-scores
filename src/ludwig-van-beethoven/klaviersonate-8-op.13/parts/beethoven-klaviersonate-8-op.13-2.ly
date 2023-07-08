@@ -7,6 +7,8 @@ Global = {
 bottom = \change Staff = "lower"
 top = \change Staff = "upper"
 cresc = \markup { "cresc." }
+decresc = \markup { "decresc." }
+rinf = \markup { "rinf." }
 
 Sopran = \context Voice = "one" \relative c' {
   \voiceOne
@@ -176,7 +178,7 @@ Alto = \context Voice = "two" \relative c' {
       \tuplet 3/2 { <g bes ees>16[ q q] }
     }
   | \repeat unfold 4 {
-      \tuplet 3/2 { <ces ees> q q }
+      \tuplet 3/2 { <ces ees>[ q q] }
     }
   | s2*17
   %59
@@ -238,7 +240,7 @@ Tenor = \context Voice = "three" \relative c {
     \once\override NoteColumn.force-hshift = #1.2
     f16( fes) fes( ees)  ees( d) d( ees)
   | \once\override NoteColumn.force-hshift = #1.2
-    ees( fes) fes( ees)  ees( d) d( des)
+    ees( fes) fes( ees)  ees(^\pp d) d( des)
   | \stemUp <c aes'> ees aes ees  g ees g ees
   %30
   | aes ees aes ees  bes' ees, bes' ees,
@@ -447,6 +449,46 @@ Bass = \context Voice = "four" \relative c {
 
 centerDynamics = {
   %1
+  | s4\p s
+  | s2*22
+  %24
+  | s8 s8-\cresc s4
+  | s4\p s
+  | s8-\cresc s4.
+  | \once\override Staff.TextScript.extra-offset = #'(-0.5 . 1)
+    s16-\markup { \dynamic p } s8.\< s4
+  | s8 s16\!\> s s4
+  | s4\!\p s
+  %30
+  | s2*7
+  %37
+  | s4-\markup { \hspace #-2 \dynamic pp } s
+  | s2*3
+  | s8 \tuplet 3/2 { s16 s-\cresc s } s4
+  | \override Staff.TextScript.extra-offset = #'(-1 . 1)
+    s8-\markup { \dynamic sf } s8
+    s-\markup { \dynamic sf } s
+  | s8-\markup { \dynamic sf } s4.
+  | \override Staff.TextScript.extra-offset = #'(-2 . 0)
+    s4-\markup { \dynamic fp }
+    \revert Staff.TextScript.extra-offset
+    s4-\decresc
+  %45
+  | s4\pp s
+  | s2*4
+  %50
+  | s4-\cresc s
+  | s4\p s
+  | s2*15
+  %67
+  | s8\< s \tuplet 3/2 { s16 s\! s } s8\>
+  | s4\! s
+  | s8\< s \tuplet 3/2 { s16 s\!\> s } s8
+  %80
+  | s4\! s-\rinf
+  | s s-\rinf
+  | s s-\rinf
+  | s4\pp s
 }
 
 \score {
