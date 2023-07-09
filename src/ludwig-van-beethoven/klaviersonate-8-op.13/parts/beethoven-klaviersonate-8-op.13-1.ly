@@ -841,7 +841,7 @@ Bass = \context Voice = "four" \relative c, {
   | d,_! d' f, d' c,_! c' f, c'
   | bes,_! bes' f bes aes,_! aes' f aes
   %110
-  | g,_! g' ees g g,_! g' ees g
+  | g,_! g' ees g g,_! g' g, g'
   | <aes, aes'>4 r r2
   | <bes bes'>4 r r2
   | <ees ees'>4 \clef treble <ees'' g> q q

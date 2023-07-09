@@ -14,7 +14,6 @@ Sopran = \context Voice = "one" \relative c' {
   \voiceOne
   %\override DynamicText.Y-offset = #-2.4
   \override MultiMeasureRest.staff-position = #0
-  \override Parentheses.font-size = #1
   \override Rest.staff-position = #0
   \phrasingSlurDown\stemUp\slurDown\tieUp
   \tempo "Adagio cantabile"
@@ -121,7 +120,10 @@ Sopran = \context Voice = "one" \relative c' {
   | des\) \tuplet 3/2 { des16[( c) bes] } \tuplet 3/2 { bes[( aes) g] }
   | \stemNeutral\slurNeutral\tieNeutral <c, aes'>8 r r ees'16.( e32)
   | f8~ \tuplet 3/2 { f16[( ees) d-.]\( } \tuplet 3/2 { c-.[ bes-. aes-.]\) } g32[( des' bes g])
-  | aes16.( c32 ees,8) r <ees' ees'>16.[( <e e'>32])
+    \override Staff.Script.extra-offset = #'(0 . 2.5)
+    \after 16 \turn aes16.( c32 ees,8) r
+    \revert Staff.Script.extra-offset
+    <ees' ees'>16.[( <e e'>32])
   | <f f'>8~ \tuplet 3/2 { q16[( <ees ees'>) <des des'>-.]\( }
     \tuplet 3/2 { <c c'>-.[ <bes bes'>-. <aes aes'>-.]\) } \tuplet 3/2 { <g g'>[( <des' des'> <g, g'>]) }
   %70
@@ -257,7 +259,7 @@ Tenor = \context Voice = "three" \relative c {
   %43
   | s4. \once\omit Flag \once\override Stem.length = #20 <fis a b>8
   | \omit Beam
-    \override Stem.details.beamed-lengths = #'(6 10 10)
+    \override Stem.details.beamed-lengths = #'(6 11.5 11.5)
     \tuplet 3/2 {
       <gis b>16[ q q]
     }
@@ -408,7 +410,11 @@ Bass = \context Voice = "four" \relative c {
   | <aes, aes'>4\( des'
   | c g\)
   | aes8[\( g f f']
-  | ees4\)\( ees,
+  | \shape #'(
+      (( 0 . -3) (0 . -1) (0 . 0) (0 . 1))
+      (( 0 . 0) (0 . -1) (0 . -2) (0 . -3))
+    ) PhrasingSlur
+    ees4\)\( ees,
   %55
   | des des'\)
   | c\( f,
