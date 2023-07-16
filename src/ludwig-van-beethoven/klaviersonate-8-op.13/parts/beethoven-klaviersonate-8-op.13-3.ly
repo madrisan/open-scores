@@ -8,6 +8,8 @@ cresc = \markup { \italic "cresc." }
 bottom = \change Staff = "lower"
 top = \change Staff = "upper"
 
+calando = { \override TextSpanner.bound-details.left.text = \markup { \italic"calando " } }
+
 Sopran = \context Voice = "one" \relative c' {
   \voiceOne
   \omit TupletBracket
@@ -56,7 +58,7 @@ Sopran = \context Voice = "one" \relative c' {
   | f( ees d c) \stemUp bes4-! bes-!
   | \stemNeutral\tieUp bes1~
   %30
-  | <ees, bes'>8( c' des ees f g aes f)
+  | <ees, bes'>8( c' d ees f ges aes f)
   | ges4
     \once\override Staff.TextScript.extra-offset = #'(0 . -2)
     bes2_\cresc bes4~
@@ -98,9 +100,10 @@ Sopran = \context Voice = "one" \relative c' {
   | ees4 r \tuplet 3/2 { r8 b[_\cresc c] d[ c b] }
   | \tuplet 3/2 { f'8[ ees d] aes'[ g f] d'[ c b] f'[ es d] }
   | f'2.\ff \tuplet 3/2 { ees8[ d c] }
-  | \tuplet 3/2 {  b8[ aes g] f[ ees d] c[ b aes] } \tuplet 5/4 { g16[ f ees d c] }
+  | \tuplet 3/2 {  b8[ aes g] f[ ees d] c[ b aes] }
+    \undo\omit TupletNumber \tuplet 5/4 { g16[ f ees d c] } \omit TupletNumber
   %60
-  | b1~\sf
+  | b1_~\sf
   | b2^\fermata r8 g'8-! \p c-! d-!
   | ees4.( f8 d4. ees8)
   | c2 \once\stemUp \slashedGrace d8 c8( b c d
@@ -141,7 +144,7 @@ Sopran = \context Voice = "one" \relative c' {
   | f <bes bes,>2 es,4~
   | \stemUp
     ees\( aes g f
-  | ees d f ees\)
+  | ees d! f ees\)
   %95
   | \stemNeutral\slurNeutral\tieNeutral r2 r4 ees\(
   | c des f g,\)
@@ -164,14 +167,14 @@ Sopran = \context Voice = "one" \relative c' {
     r16 g( b d) g4_! r16 g,( c ees) g4_!
   %110
   | r16 g,( d' f g4-!) r16 g,( c ees g4-!)
-  | r16 g(\ff b d) g4_! r16 g,( c ees) g4_!
+  | r16\ff g( b d) g4_! r16 g,( c ees) g4_!
   | r16 g,( d' f g4-!) r16 g,( c ees g4-!)
   | \undo\omit TupletBracket \undo\omit TupletNumber
-    \tuplet 3/2 { r8 g,[ fis] } \tuplet 3/2 { g[ b d] } \tuplet 3/2 { g[ d b] } g4
+    \tuplet 3/2 { r8 g,[ fis] } \tuplet 3/2 { g[ b d] } \tuplet 3/2 { g[\sf d b] } g4
     \omit TupletBracket \omit TupletNumber
   | \tuplet 3/2 { r8 b[( ais] b[ d g] b[\sf g d] } b4)-!
   %115
-  | \tuplet 3/2 { r8 d[( cis] d[ g b] d[\sf b g] } d4)-!
+  | \tuplet 3/2 { r8 d[( cis] d[ f b] d[\sf b g] } d4)-!
   | \tuplet 3/2 { r8 f[( e] f[ b d] f[ d b] f'[ d b)] }
   | f'2. \ff \tuplet 3/2 { es!8[ d c] }
   | \tuplet 3/2 {  b8[ as g]  f[ es d]  c[ b as] }
@@ -239,7 +242,7 @@ Sopran = \context Voice = "one" \relative c' {
   | fis
   %170
   | f\)
-  | \slurNeutral\stemNeutral <g, c ees>4.( f'8 d4. ees8)
+  | \slurNeutral\stemNeutral <g, c ees>4.(\p f'8 d4. ees8)
   | c2 \once\stemUp \slashedGrace d8 c8( b c d
   | \once\stemUp \slashedGrace f8 ees8 d ees f) g4-! g-!
   | g2. f8(  g)
@@ -248,11 +251,15 @@ Sopran = \context Voice = "one" \relative c' {
   | \slashedGrace { ees16[ f] } g2( c,4) c8( d)
   | ees4-! es8( f) d4-! d8( ees)
   | c8( b c d ees e f g)
-  | aes_\cresc\( g bes aes g f ees! d
+  | \once\override Staff.TextScript.extra-offset = #'(0 . -2)
+    aes_\cresc\( g bes aes g f ees! d
   %180
   | g fis aes g f ees d c
   | ees d f ees d cis ees d
-  | c4\)\p r \tuplet 3/2 { r8_\cresc c'[( d] e[ d c)] }
+  | c4\)\p r \tuplet 3/2 {
+      \once\override Staff.TextScript.extra-offset = #'(0 . -1)
+      r8_\cresc c'[( d] e[ d c)]
+    }
   | f4-!\sf r \tuplet 3/2 { r8 c[( d] e[ d c)] }
   | f4-!\sf r \tuplet 3/2 { r8 c[( d] e[ d c)] }
   %185
@@ -261,8 +268,11 @@ Sopran = \context Voice = "one" \relative c' {
   | f4-!\sf r \tuplet 3/2 { r8 c[( d] e[ d  c)] }
   | f4-!\sf r \tuplet 3/2 { r8 c,[ d] e[ d c] }
     \tuplet 3/2 {
-  |   f\p[ c d] ees![ d c] fis[ c_\cresc d] ees[ d c]
+      \override Staff.TextScript.extra-offset = #'(0 . -1)
+  |   f_\markup { \dynamic p }[ c d] ees![ d c] fis[
+      c_\cresc d] ees[ d c]
   %190
+      \revert Staff.TextScript.extra-offset
   |   g'[ c, d] ees[ d c] a'[ c, d] ees[ d c]
   |   b'[ b, c] d[ c b] c'[ c, d] ees[ d c]
   |   d'[ d, ees] f[ ees d] b'[ b, c] d[ c b]
@@ -287,7 +297,9 @@ Sopran = \context Voice = "one" \relative c' {
   | des1~^\sf
   | des2.\fermata \top aes'8(\p bes)
   | \phrasingSlurNeutral\stemNeutral c4.\( des8 bes4. c8
-  | aes4\) r r_\markup { "decresc." } aes'8( bes)
+  | aes4\) r
+    \once\override Staff.TextScript.extra-offset = #'(0 . -2)
+    r_\markup { "decresc." } aes'8( bes)
   %205
   | c4.\( des8 bes4. c8
   | aes4\) r r c(\pp
@@ -339,16 +351,19 @@ Alto = \context Voice = "two" \relative c' {
   | \hideNotes c4 s2 d4~ \unHideNotes
   | d( d) ees2~
   | 4 fis fis fis~
-  | fis fis( g) fis~
+  | fis\< fis( g) fis~
   %155
-  | fis fis( g) b~
-  | b b( c) b~
-  | b b( c) b~
-  | b ais( b d)
+  | fis\!\> fis( g)\! b~
+  | \override Hairpin.Y-offset = #-3.5
+    b\< b( c) b~
+  | b\!\> b( c)
+    \override Staff.TextSpanner.extra-offset = #'(0 . -2.5)
+    b~\calando
+  | b\!_\startTextSpan ais( b d)
   | g,\rest ais( b d)
   %160
   | g,\rest ais( b d~)
-  | d( ais b2)
+  | d( ais\stopTextSpan b2)
 
 }
 
@@ -362,9 +377,13 @@ Tenor = \context Voice = "three" \relative c {
   | s1*132
   %133
   | c'4( f c fis)
-  | s1*6
+  | s1*2
+  %136
+  | s2 d'
+  | c s
+  | s1*2
   %140
-  | c4( g' c g)
+  | c,4( g' c g)
   | c( a! cis a)
   | s1*61
   %203
@@ -378,7 +397,7 @@ Bass = \context Voice = "four" \relative c {
   \omit TupletBracket \omit TupletNumber
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
-  \phrasingSlurNeutral\stemNeutral\slurNeutral\tieNeutral
+  \phrasingSlurNeutral\stemNeutral\slurNeutral\tieNeutral\tupletNeutral
   \partial 4. {
     r8 r4
   }
@@ -421,12 +440,11 @@ Bass = \context Voice = "four" \relative c {
   | ges bes ges bes d, bes' d, bes'
   | ees,( bes' ges bes bes, bes' d, bes'
   | ces, bes' ees, bes' ces, a' ees a)
-  | bes,4 \clef treble <f'' d bes>-. <ges \sf ees bes>2
-  | r4 <f d bes>-. <ges \sf ees bes>2
+  | bes,4 s2.
+  | s1
   %35
-  | <f d bes>4 r <aes f bes,> r
-  | <aes f d bes> r r2 \clef bass
-  | ees,4 r \tuplet 3/2 { r8 bes'[ c] } \tuplet 3/2 { d[ c bes] }
+  | s1*2
+  | ees4 r \tuplet 3/2 { r8 bes'[ c] } \tuplet 3/2 { d[ c bes] }
   | ees4 r \tuplet 3/2 {r8 bes[ c] } \tuplet 3/2 { d[ c bes] }
   | ees4 r ees r
   %40
