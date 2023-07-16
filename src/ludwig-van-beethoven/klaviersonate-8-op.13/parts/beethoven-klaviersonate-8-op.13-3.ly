@@ -188,8 +188,114 @@ Sopran = \context Voice = "one" \relative c' {
   | \slashedGrace { ees16[ f] } g2( c,4) c8( d)
   | ees4-! es8( f) d4-! d8( ees)
   | c4 r r2
-
-
+  | r8 b,( d f) r f'( d b)
+  %130
+  | r c,( ees g) r g'( ees c)
+  | r e,( g bes) r bes'( g e)
+  | r f,( aes c f aes c f~)\sf
+  | f4( ees d c
+  | b-!)_\markup { \dynamic p " dolce" } g2 g4~
+  %135
+  | g8( a b c d e f d)
+  | f( e d c) c( b a b)
+  | d( c b a) \stemUp\tieUp g4-! g-!
+  | g1~
+  | \stemNeutral <c, g'>8( a' b c d e f d)
+  %140
+  | f( e d c b_\cresc c e c)
+  | b( a c a g f a f)
+  | e( d f d a' f d c)
+  | \undo\omit TupletNumber \tuplet 3/2 { b8[ g a] } \tuplet 3/2 { b[ a g] } c2 \omit TupletNumber
+  | \tuplet 3/2 { b8[ g a] } \tuplet 3/2 { b[ a g] } c2
+  %145
+  | \tuplet 3/2 { b8[ g a] } \tuplet 3/2 { b[ a g] } \tuplet 3/2 { d'[ b c] } \tuplet 3/2 { d[ c b] }
+  | \tuplet 3/2 { f'[ e d] } \tuplet 3/2 { c[ b a] } \tuplet 3/2 { g[ a g] } \tuplet 3/2 { f[ e d] }
+  | \tuplet 3/2 { e8[ c d] e[ d c] } f2
+  | \tuplet 3/2 { e8[ c' d] e[ d c] } f2
+  | \tuplet 3/2 { e8[ c d] e[ d c] g'[ e f] g[ f e] }
+  %150
+  | \tuplet 3/2 { bes'!8[( a g] f[ e d] c[ b c] cis[ d bes)] }
+  | r4 \tuplet 3/2 { a,8[( c f] a[ c f)] } a8[-! a-!]
+  | a( g) f-! e-! e( d) c-! b-!
+  | c4 r r g\p
+  | <d' b>-.( <d b>-. <d b>-. <d b>-.)
+  %155
+  | <g c,>2. <g c,>4
+  | <fis ees! c>2-! <fis d c>-!
+  | <g d b>4 r r g,,
+  | <d' b>_.( <d b>_. <d b>_. <d b>_.)
+  | \slurUp\stemUp g2. 4
+  %160
+  | <c, f>-.( q-. <d f>-. q-.)
+  | bes'2. 4
+  | a-.( a-. a-. a-.)
+  | d2. a4(
+  | d2.) 4(
+  %165
+  | g2.) d4(
+  | g2.) d4(
+  | aes'1)\(
+  | g
+  | fis
+  %170
+  | f\)
+  | \slurNeutral\stemNeutral <g, c ees>4.( f'8 d4. ees8)
+  | c2 \once\stemUp \slashedGrace d8 c8( b c d
+  | \once\stemUp \slashedGrace f8 ees8 d ees f) g4-! g-!
+  | g2. f8(  g)
+  %175
+  | \slashedGrace { f16[ g] } aes2(  d,4) ees8( f)
+  | \slashedGrace { ees16[ f] } g2( c,4) c8( d)
+  | ees4-! es8( f) d4-! d8( ees)
+  | c8( b c d ees e f g)
+  | aes_\cresc\( g bes aes g f ees! d
+  %180
+  | g fis aes g f ees d c
+  | ees d f ees d cis ees d
+  | c4\)\p r \tuplet 3/2 { r8_\cresc c'[( d] e[ d c)] }
+  | f4-!\sf r \tuplet 3/2 { r8 c[( d] e[ d c)] }
+  | f4-!\sf r \tuplet 3/2 { r8 c[( d] e[ d c)] }
+  %185
+  | f4-! <c  fis, es! c>-!\ff <c g es c>-! <b g d b>-!
+  | <c g es c> r \tuplet 3/2 { r8 c,[( d] e[ d c)] }
+  | f4-!\sf r \tuplet 3/2 { r8 c[( d] e[ d  c)] }
+  | f4-!\sf r \tuplet 3/2 { r8 c,[ d] e[ d c] }
+    \tuplet 3/2 {
+  |   f\p[ c d] ees![ d c] fis[ c_\cresc d] ees[ d c]
+  %190
+  |   g'[ c, d] ees[ d c] a'[ c, d] ees[ d c]
+  |   b'[ b, c] d[ c b] c'[ c, d] ees[ d c]
+  |   d'[ d, ees] f[ ees d] b'[ b, c] d[ c b]
+    }
+  | <c' c,>4\f r g'\sf( f16 ees d c
+  | d4)-! r f( \sf es16 d c b
+  %195
+  | c4)-! r g'\sf( f16 ees d c
+  | d4)-! r f\sf(  ees16 d c b
+  | c4)-! r g'\sf( f16 ees d c
+  | des4)-! r f'2~\ff
+  | f2. \tuplet 3/2 { ees8[ des c] }
+  %200
+  | \tuplet 3/2 { bes8[ aes g] f[ ees des] }
+    \undo\omit TupletNumber
+    \tuplet 6/4 { c16[ bes aes g f es] }
+    \tuplet 7/4 {
+      \stemUp
+      des16[ \bottom c bes aes g f ees]
+    }
+    \omit TupletNumber
+  | des1~^\sf
+  | des2.\fermata \top aes'8(\p bes)
+  | \phrasingSlurNeutral\stemNeutral c4.\( des8 bes4. c8
+  | aes4\) r r_\markup { "decresc." } aes'8( bes)
+  %205
+  | c4.\( des8 bes4. c8
+  | aes4\) r r c(\pp
+  | <fis ees>)-! r r c(
+  | <g' ees>)-! r r \times 2/3 { ees'8[ d c] }
+  | \times 2/3 { f[\ff ees d] c[ b aes] g[ f ees] d[ c b] }
+  | c4 r r8\fermata %s4.
+    \bar "|."
 }
 
 Alto = \context Voice = "two" \relative c' {
@@ -211,15 +317,38 @@ Alto = \context Voice = "two" \relative c' {
   | <bes d f aes>4 d\rest s2
   | s1*12
   %49
-  | bes'2(_\cresc des-\markup { \dynamic sf }
+  | \once\override Staff.TextScript.extra-offset = #'(-0.6 . 0)
+    bes'2(_\cresc des-\markup { \dynamic sf }
   | \hideNotes c4) \unHideNotes s2.
-  | s1*38
-  %89
-  | ees,4 c f ees
+  | s1*37
+  %88
+  | s2 \hideNotes ees,~ \unHideNotes
+  | ees4 c f ees
   | des c bes s
   | s1*2
   | c'2 bes4 aes
   | g f aes g
+  %95
+  | s1*42
+  %137
+  | s2 f'4 f
+  | f8( e d c) c( b a b)
+  | s1*20
+  %159
+  | \stemDown a,4\rest b( c2~)
+  | \hideNotes c4 s2 d4~ \unHideNotes
+  | d( d) ees2~
+  | 4 fis fis fis~
+  | fis fis( g) fis~
+  %155
+  | fis fis( g) b~
+  | b b( c) b~
+  | b b( c) b~
+  | b ais( b d)
+  | g,\rest ais( b d)
+  %160
+  | g,\rest ais( b d~)
+  | d( ais b2)
 
 }
 
@@ -228,7 +357,20 @@ Tenor = \context Voice = "three" \relative c {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \override Stem.cross-staff = ##t
-%1
+  \partial 4. s4.
+  %1
+  | s1*132
+  %133
+  | c'4( f c fis)
+  | s1*6
+  %140
+  | c4( g' c g)
+  | c( a! cis a)
+  | s1*61
+  %203
+  | ees,2( des
+  | c4) s2.
+  | ees'2( des)
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -395,8 +537,105 @@ Bass = \context Voice = "four" \relative c {
   | ees, g c ees aes, c ees fis
   | g, c ees g g, b d g
   | r c,,, ees g c ees f g
-
-
+  | aes2( d,4)^! ees8( f)
+  %130
+  | g2( c,4)-! bes'8( c)
+  | des2( g,4)^! aes8( bes)
+  | c2( f,4) r
+  | aes2 aes
+  | g4 \clef treble g'\( f g
+  %135
+  | e g b, g'\)
+  | c,( g') \phrasingSlurDown\stemDown f\( g
+  | e g b, g'\)
+  | \phrasingSlurNeutral\stemNeutral c,\( g' f g
+  | e g b, g'\)
+  %140
+  | \stemDown s2 e
+  | f f
+  | \stemNeutral <f d'>4( a! f fis)
+  | g r \undo\omit TupletBracket \undo\omit TupletNumber
+    \tuplet 3/2 { r8 d e } \tuplet 3/2 { fis[ e d] }
+    \omit TupletBracket \omit TupletNumber
+  | g4 r \tuplet 3/2 { r8 d e } \tuplet 3/2 { fis[ e d] }
+  %145
+  | g4 r g r
+  | \clef bass <g, b d f> r r2
+  | c,4 r \tuplet 3/2 { r8 g'[ a] b[ a g] }
+  | c4 r \tuplet 3/2 { r8 g[ a] b[ a g] }
+  | c4 r c r
+  %150
+  | <c bes! g e> r r2
+  | \tuplet 3/2 { f,,8[( a  c] } f4) r2
+  | <e' c g>4 r <f d g,> r
+  | <e c> r r2 \clef treble
+  | <g f>4-.(\p <g f>-. <g f>-. <g f>)-.
+  %155
+  | <g e>2. e4
+  | a2-! a-!
+  | g4 r r2 \clef bass
+  | <g, f>4^.( <g f>^. <g f>^. <g f>)^.
+  | <ees! g>2. ees4
+  %160
+  | aes!^.( aes^. <bes! as>^. <bes as>)^.
+  | <bes g>2. g4
+  | c^. <ees c>^.( <ees c>^. <ees c>)^.
+  | <d b>2. <ees c>4
+  | <d b>2. \clef treble <aes'! f!>4
+  %165
+  | <g ees>2. <aes f>4
+  | <g ees>2. <aes f>4
+  | R1*3
+  %170
+  |  r2 r4 \clef bass g,,
+  | c8 ees g c c, f g b
+  | c,( ees g c) ees g ees d
+  | c g' <ees c> g <d b> g <c, aes> g'
+  | g,( b d g)  g,( b d g)
+  %175
+  | f,( aes b  d) f,( aes b d)
+  | ees,( g c ees) aes,( c ees fis)
+  | g,( c ees g) g,( b d g)
+  | c,4 r r2
+  | f,,8 aes b d f, aes b d
+  %180
+  | ees, g c ees aes, c ees fis
+  | g, c ees g g, g' g, g'
+  | c, c'( b c bes c g  c)
+  | aes( c f, c' bes c g  c)
+  | aes( c f, c' bes c g  c)
+  %185
+  | aes4^! <aes ees c aes>^! <g ees c g>-! <g d b g>-!
+  | c,,8-! c'( b c bes c g  c)
+  | aes( c f, c' bes c g  c)
+  | aes( c f, c' bes c g  c)
+  | aes4 <aes' aes,> r <aes ees c aes>^!
+  %190
+  | r <g ees c g>-! r <fis ees c fis,>-!
+  | r <f! d b f!>-! r <ees c g ees>-!
+  | r <f d aes f>-! r <g d b g>-!
+  | <c, c,>-! <c' g ees>2.\sf
+  | <d c aes f>4^! <d b g>2.\sf
+  %195
+  | <c g ees>4^! q2.\sf
+  | <d c aes f>4^! <d b g>2.\sf
+  | <c g ees>4^! q2.\sf
+  | <des aes f>4^! q2\sf q4^!
+  | <ees des bes g>1~
+  %200
+  | <ees des bes g>2 r
+  | <g,, ees g,>1~
+  | \stemDown <g ees g,>2.\fermata r4
+  | aes1
+  | aes4 r r2
+  %205
+  | aes'1
+  | <aes c>4 r r2
+  | \clef treble \stemNeutral aes'4 r r2
+  | g4 r r2
+  | \clef bass <g,, b d g>4 r r2
+  %210
+  | <c, ees g c>4 r r8^\fermata %s4.
 }
 
 centerDynamics = {
