@@ -64,7 +64,7 @@
         \line { \abs-fontsize #30 \bold "Op. 19" }
         \null\null\null\null
         \line {
-          \abs-fontsize #12 "With a preface (in italian) by Giancarlo Simonacci"
+          \abs-fontsize #12 "With a preface (Italian and English) by Giancarlo Simonacci"
         }
         \null\null\null\null
       }

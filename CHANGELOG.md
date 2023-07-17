@@ -8,18 +8,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Added
 
 - Arnold Schoenberg: Sechs kleine Klavierstücke op.19
-  Preface by Giancarlo Simonacci translated into (hopefully ;) English
+  Preface by Giancarlo Simonacci translated into English
 - Domenico Scarlatti: Sonata K.141
-- Domenico Scarlatti: Sonata K.387 - fix a slur position
 - Francis Poulenc: Deux Improvisations FP.113
 - Ludwig van Beethoven: Klaviersonate Nr.8 c-moll Opus 13 "Grande Sonate Pathétique"
 
 ### Changed
 
 - Bach/Busoni: Chorale Prelude BWV 639 - review paging
-- Bach/Petri: Schafe können sicher weiden BWV 208 - fix a couple of ties
 - Domenico Scarlatti: Sonata K.55 - update fingering
 - Domenico Scarlatti: Sonata K.55 - dynamic indications
+
+### Fixed
+
+- Bach/Petri: Schafe können sicher weiden BWV 208 - fix a couple of ties
+- Domenico Scarlatti: Sonata K.387 - fix a slur position
 
 ## [v37] - 2023-06-03
 

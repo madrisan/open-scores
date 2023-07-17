@@ -120,6 +120,7 @@ AC_CONFIG_FILES([\
   src/johann-sebastian-bach/siciliano-BWV1031/Makefile \
   src/johann-sebastian-bach/suites-anglaises/Makefile \
   src/johann-sebastian-bach/suites-anglaises/BWV809/Makefile \
+  src/ludwig-van-beethoven/Makefile \
   src/ludwig-van-beethoven/klaviersonate-8-op.13/Makefile \
   src/mikhail-glinka/Makefile \
   src/mikhail-glinka/nocturne/Makefile \
