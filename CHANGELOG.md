@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [v39] - unreleased
+
+- Christoph Willibald Gluck/G. Sgambati: Mélodie de Gluck (depuis "Orfeo ed Euridice")
+
 ## [v38] - 2023-07-17
 
 ### Added
