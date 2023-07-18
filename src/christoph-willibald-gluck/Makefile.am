@@ -1,6 +1,6 @@
 ## Process this file with automake to produce Makefile.in
 
-## Copyright (c) 2022 Davide Madrisan <davide.madrisan@gmail.com>
+## Copyright (c) 2023 Davide Madrisan <davide.madrisan@gmail.com>
 ##
 ## This program is free software: you can redistribute it and/or modify
 ## it under the terms of the GNU General Public License as published by
@@ -17,21 +17,4 @@
 
 AM_MAKEFLAGS = --no-print-directory
 
-SUBDIRS = alfredo-casella \
-	  arnold-schoenberg \
-	  baldassare-galuppi \
-	  christoph-willibald-gluck \
-	  clara-schumann-wieck \
-	  domenico-scarlatti \
-	  francis-poulenc \
-	  franz-liszt \
-	  hans-erich-apostel \
-	  ildebrando-pizzetti \
-	  johannes-brahms \
-	  johann-sebastian-bach \
-	  ludwig-van-beethoven \
-	  mikhail-glinka \
-	  robert-schumann \
-	  rued-langgaard
-
-check-local: all
+SUBDIRS = orfeo-melodie-sgambati

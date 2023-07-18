@@ -109,6 +109,10 @@ You can see here the [manuscript](images/baldassare-galuppi-sonata-5-manuscript-
 
 Thanks to my harpist friend Tristan Rollet ([@Pluiesurlavitre](https://github.com/Pluiesurlavitre)) for pointing me to this beautiful romantic piece.
 
+#### Christoph Willibald Gluck (1714-1787) / Giovanni Sgambati
+
+ * Mélodie de Gluck (depuis "Orfeo ed Euridice")
+
 #### Rued Langgaard (1893-1952)
 
  * [Insektarium (BVN 134)](https://github.com/madrisan/open-scores/releases/download/v38/Rued-Langgaard-Insektarium-BVN-134.pdf) - 9 Puzzle Pictures, for solo piano
@@ -192,6 +196,7 @@ git checkout main
 make -C src/alfredo-casella/deux-contrastes-op.31
 make -C src/arnold-schoenberg/sechs-kleine-klavierstucke-op.19
 make -C src/baldassare-galuppi/sonata-5-c-major
+make -C src/christoph-willibald-gluck/orfeo-melodie-sgambati
 make -C src/clara-schumann-wieck/soirees-musicales-op.6
 make -C src/domenico-scarlatti/sonata-k001
 make -C src/domenico-scarlatti/sonata-k030
