@@ -1,4 +1,4 @@
-\version "2.23.7"
+\version "2.24.1"
 
 #(ly:set-option 'relative-includes #t)
 
@@ -48,7 +48,6 @@ sluredTuplet =
       \center-column {
         \null\null\null
         \null\null\null
-        \null\null\null
         \line { \abs-fontsize #30 \bold "Mikhail" }
         \null
         \line { \abs-fontsize #80 \bold "Glinka" }
@@ -58,27 +57,25 @@ sluredTuplet =
         \line { \abs-fontsize #34 \bold "Nocturne" }
         \null\null
         \line { \abs-fontsize #24 \bold "for Piano or Harpe" }
+        \null\null\null
+        \null\null\null
+        \null\null\null
+      }
+    }
+  }
 
+  \include "logo.ly"
+
+  \markup {
+    \fill-line {
+      \center-column {
         \null\null\null\null
-        \fill-line {
-          \override #'(thickness . 1)
-          \draw-squiggle-line #0.5 #'(14 . 0) ##t
+        \fill-line \abs-fontsize #8 {
+          \concat {
+            "Based on the score published by Muzgiz (Полное собрание сочинений, vol 6 - Moscow, 1958)"
+          }
         }
         \null\null
-        \fill-line {
-          \abs-fontsize #13
-          \smallCaps " Lavender.Blue Open Scores"
-        }
-        \fill-line { \abs-fontsize #10 "Engraved by Davide Madrisan" }
-        \fill-line {
-          \abs-fontsize #9
-          \typewriter "https://github.com/madrisan/open-scores/"
-        }
-        \null\null\null\null
-        \fill-line {
-          \abs-fontsize #8 "Based on the score published by Muzgiz (Полное собрание сочинений, vol 6 - Moscow, 1958)"
-        }
-        \null
       }
     }
   }
@@ -87,9 +84,7 @@ sluredTuplet =
 Global = {
   \key ees \major
   \time 4/4
-  % Draw a box round the bar number(s)
-  \override Score.BarNumber.stencil
-    = #(make-stencil-boxer 0.1 0.25 ly:text-interface::print)
+  \include "global.ly"
 }
 
 % _\markup { \dynamic p \italic "amoroso" } FIXME
