@@ -24,13 +24,13 @@ SUFFIXES = .in
 	$(LILYPOND) --pdf --output $@ $<
 
 BUILT_SOURCES = covercolor.ly
-EXTRA_DIST = Christoph-Willibald-Gluck-Orfeo-Melodie-Sgambati.ly
+EXTRA_DIST = Christoph-Willibald-Gluck-Giovanni-Sgambati-Orfeo-Melodie.ly \
 	     covercolor.ly.in \
 	     global.ly \
 	     header.ily \
 	     logo.ly
 
-all: $(BUILT_SOURCES) Christoph-Willibald-Gluck-Orfeo-Melodie-Sgambati
+all: $(BUILT_SOURCES) Christoph-Willibald-Gluck-Giovanni-Sgambati-Orfeo-Melodie
 
 clean-local:
 	-rm -f $(BUILT_SOURCES)

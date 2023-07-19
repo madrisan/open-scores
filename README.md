@@ -111,7 +111,7 @@ Thanks to my harpist friend Tristan Rollet ([@Pluiesurlavitre](https://github.co
 
 #### Christoph Willibald Gluck (1714-1787) / Giovanni Sgambati
 
- * Mélodie de Gluck (depuis "Orfeo ed Euridice")
+ * [Mélodie de Gluck](https://github.com/madrisan/open-scores/releases/download/v39/Christoph-Willibald-Gluck-Orfeo-Melodie-Sgambati.pdf) (depuis "Orfeo ed Euridice")
 
 #### Rued Langgaard (1893-1952)
 
