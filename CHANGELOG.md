@@ -5,7 +5,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [v39] - unreleased
 
+### Added
+
 - Christoph Willibald Gluck/G. Sgambati: Mélodie de Gluck (depuis "Orfeo ed Euridice")
+
+### Changed
+
+- Mikhail Glinka: Nocturne - update cover
 
 ## [v38] - 2023-07-17
 
