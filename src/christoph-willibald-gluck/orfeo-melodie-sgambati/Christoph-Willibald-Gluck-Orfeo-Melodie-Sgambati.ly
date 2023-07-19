@@ -96,8 +96,11 @@ Global = {
   \include "global.ly"
 }
 
-dimin = { \override TextSpanner.bound-details.left.text = \markup { \italic "dimin.  " } }
+dimin = { \override TextSpanner.bound-details.left.text = \markup { \italic\small "dimin.  " } }
 naked = { \once\omit Flag \once\omit Stem }
+perdendosi = {
+  \override TextSpanner.bound-details.left.text = \markup { \italic\small "perdendosi  " }
+}
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
@@ -126,38 +129,38 @@ Sopran = \context Voice = "one" \relative c'' {
   | \slurNeutral e4 r a32[(\p bes a bes]) c16. c32
   | c4( d,)
     \override Staff.TextScript.extra-offset = #'(0 . -1)
-    a'32[(_\markup { "cresc." } bes a bes]) c16. c32
+    a'32[(_\markup { \small "cresc." } bes a bes]) c16. c32
   | c4 f, \stemUp\slurDown \appoggiatura { g16 a } \slurNeutral\stemNeutral bes8\mf a\dimin
   %15
-  | \override Staff.TextSpanner.extra-offset = #'(0 . -0.5)
+  | \once\override Staff.TextSpanner.extra-offset = #'(0 . -0.5)
     r_\startTextSpan g r f r e\stopTextSpan
   | f2.(\p
   | fis8)[ ees']( d4) r8 fis,
-  | s2.
-  | s2.
+  | g2.(
+  | gis8)_\markup { \small "dolce" } f'( e4) r8 gis,
   %20
-  | s2.
-  | s2.
-  | s2.
-  | s2.
-  | s2.
+  | \slurDown\stemUp \acciaccatura gis8 \slurNeutral\stemNeutral a4 r4 f32[(\pp g f g]) a16.[ a32]
+  | a4( bes,) f'32[(_\markup { \small "cresc." } g f g]) a16.[ a32]
+  | a4( d,) f32[( g f g]) a16.[ a32]
+  | cis,16[(\f e g f]) e[( g bes a]) g[( cis e d])
+  | cis4 r r
   %25
-  | s2.
-  | s2.
-  | s2.
-  | s2.
-  | s2.
+  | d16[(_\markup { \small "dolciss." } e f32 e d16]) d8.[( c16] bes8[ a])
+  | g16[( a bes32 a g16])\< g8.[( f16] e16[ d cis8])
+  | d8.\!\mf\>( e16) f4( e8.) d16]
+  | d4\! r f32[(\pp g f g]) a16. a32
+  | a4( bes,) f'32[(_\markup { \small "cresc." } g f g]) a16.[ a32]
   %30
-  | s2.
-  | s2.
-  | s2.
-  | s2.
-  | s2.
+  | a4( d,) f32[( g f g]) a16.[ a32]
+  | cis,16[(\f e g f]) e[( g bes a]) g[( cis e d])
+  | cis4 r r
+  | d16[(_\markup { \small "dolciss." } e f32 e d16]) d8.[( c16] bes8[ a])
+  | g16[( a bes32\< a g16]) g8.[( f16] e16[ d cis8])
   %35
-  | s2.
-  | s2.
-  | s2.
-  | s2.
+  | d8.(\!\mf\> e16) f4( e8.)_\markup { \hspace #-4 \small "un poco rit." } d16]
+  | d4\! r r
+  | R1*3/4
+  | R1*3/4\fermata
   \fine
 }
 
@@ -172,8 +175,7 @@ Alto = \context Voice = "two" \relative c' {
     a16[( d]) s8
   | \slurUp g,16[(^\< a bes a]) <e g>[\!\> f e d] cis[( d e f])
   | \autoBeamOff
-    \once\shape #'((( 0.5 . 0.8) (0 . 0.8) (0 . 1) (-1 . 0.2))) Slur
-    f\!_( \naked a) s8 \naked e16( g) s8 \naked d16( a') s8
+    f\! \naked a s8 \naked e16( g) s8 \naked d16( a') s8
   | s16 bes s8 s16 a s8 s16 a s8
   %5
   | \naked gis16( d') s4. \naked d,16( d') s8
@@ -191,31 +193,37 @@ Alto = \context Voice = "two" \relative c' {
   | g[ bes] s8 f16[ a] s8 e16[ g] s8
   | \naked a,16( a') s8 \naked <a, c>16( a') s8 \naked <a, c>16( a') s8
   | \naked <a, c>16( a') s8 \naked <a, c>16( a') s8 \naked <a, c>16( a') s8
-    \autoBeamOn
-  | s2.
-  | s2.
+  | \naked bes,16( bes')^\< s8 \naked <bes, d>16( bes') s8 \naked <b, d>16( b') s8
+  | \repeat unfold 2 { \naked <b, d>16\!( b') s8 } \naked <b, d>16\!( b') s8
   %20
-  | s2.
-  | s2.
-  | s2.
-  | s2.
-  | s2.
+  | \naked cis,16( cis')^\> s8 \naked <cis, e>16( cis') s8\! a16[_( d]) s8
+  | \repeat unfold 2 { bes16[_( <d f>]) s8 } \naked <d, f>16( d') s8
+  | \naked d,16( d') s4. \naked d,16( d') s8
+  | bes8 4 4 8
+  | \naked <e, g>16( \autoBeamOn cis' e d) cis( d e d) cis(_\markup {
+      \hspace #-0.8 \small "un poco rit."
+    } bes a g)
   %25
-  | s2.
-  | s2.
-  | s2.
-  | s2.
-  | s2.
+  | \autoBeamOff
+    s4 \naked <d a'>16( d') s8 \naked d,16( c') s8
+  | bes16[ d] s8 bes16[ d] s8 \naked <e, g>16( bes') s8
+  | \naked <d, f>16( b') s8 \naked d,16( <f d'>) s8 \naked cis16( <e cis'>) s8
+  | \slurDown f16[( a]) s8 <f a>16[( d')] s8 a16[( d]) s8
+  | \repeat unfold 2 { bes16[_( <d f>]) s8 } \naked <d, f>16^( d') s8
   %30
-  | s2.
-  | s2.
-  | s2.
-  | s2.
-  | s2.
+  | \slurUp \naked d,16( d') s4. \naked d,16( d') s8
+  | bes8 4 4 8
+  | \naked <e, g>16( \autoBeamOn cis' e d) cis( d e d) cis(^\markup {
+      \hspace #-0.4 \small "un poco rit."
+    } bes a g)
+  | \autoBeamOff
+    s4 \naked <d a'>16( d') s8 \naked d,16( c') s8
+  | bes16[ d] s8 bes16[ d] s8 \naked <e, g>16( bes') s8
   %35
-  | s2.
-  | s2.
-  | s2.
+  | \naked <d, f>16( b') s8 \naked d,16( <f d'>) s8 \naked cis16( <e cis'>) s8
+  | \autoBeamOn
+    \slurDown f16( a) s8 <a, d>16( f') s8 \clef bass <f, a>16( d') s8
+  | \repeat unfold 3 { <d, f>16( a') s8 }
   | s2.
   \fine
 }
@@ -226,16 +234,14 @@ Tenor = \context Voice = "three" \relative c' {
   \override Rest.staff-position = #0
   \slurUp\stemDown
   %1
-  | \autoBeamOff <a d>16^(_\markup {
-      \hspace #-3 \dynamic pp
-    } \hideNotes f') \unHideNotes \autoBeamOn
-    <d f>[( a]) s8 <f' a>16[( d]) f s <a d>[( f])
-  | \slurDown e16[ f g f] \hideNotes e( \unHideNotes d[ cis bes]) a[ bes cis d]
-  | \slurUp d16[ a'] <f a>[( d]) <cis e> s <e g>[( cis]) d s <f a>[( d])
+  | \autoBeamOff <a d>16^(_\markup { \hspace #-3 \dynamic pp  } \naked f')
+    \autoBeamOn <d f>[( a]) s8 <f' a>16[( d]) f s <a d>[( f])
+  | \slurDown e16[ f g f] \naked e( d[ cis bes]) a[ bes cis d]
+  | \slurUp d16[_( a']) <f a>[( d]) <cis e> s <e g>[( cis]) d s <f a>[( d])
   | \autoBeamOff
-    <cis e>( \hideNotes bes') \unHideNotes <e, bes'>[( cis])
-    d( \hideNotes a') \unHideNotes <f a>[( d])
-    <cis e>( \hideNotes a') \unHideNotes <e a>[( cis])
+    <cis e>( \naked bes') <e, bes'>[( cis])
+    d( \naked a') <f a>[( d])
+    <cis e>( \naked a') <e a>[( cis])
   %5
   | <d gis>[ f] <f d'>[( <d gis>]) q[( <f d'>]) q[( <d gis>]) d[ f] <f d'>[( d])
   | cis[ e] e[ cis] <cis e> s <e cis'>[( cis]) <cis e> s <e cis'>[( <cis a'>])
@@ -253,32 +259,44 @@ Tenor = \context Voice = "three" \relative c' {
   | d_( \naked bes') <g bes>[( d]) c_( \naked a') <f a>[( c]) bes_( \naked g') <e g>[( bes])
   | a[ c] <c a'>[( a]) <a c> s <c a'>[( a]) <a c> s <c a'>[( a])
   | <a c> s <c a'>[( <a fis'>]) <a c> s <c a'>[( <a fis'>]) <a c> s <c a'>[( <a fis'>])
-    \autoBeamOn
-  | s2.
-  | s2.
+  | bes[ d] <d bes'>[( bes]) <bes d> s <d bes'>[( bes]) <b d> s <d b'>[( b])
+  | \repeat unfold 3 { <b d> s <d b'>[( <b gis'>]) }
   %20
-  | s2.
-  | s2.
-  | s2.
-  | s2.
-  | s2.
+  | cis[ e] <e cis'>[( cis]) <cis e> s <e cis'>[( cis]) s8 <d' f>16[( a)]
+  | s8 <d f>16[( bes]) s8 <d f>16[( bes]) <d, f>16 s <f d'>[( d])
+  | \repeat unfold 3 { d[ f ] <f d'>[( d]) }
+  | <e g>8 q4 q q8
+  | q16\p s
+    \autoBeamOn
+    \override Hairpin.Y-offset = #-5
+    g[ f]\> e f g f e g f e
+    \revert Hairpin.Y-offset
   %25
-  | s2.
-  | s2.
-  | s2.
-  | s2.
-  | s2.
+  | \autoBeamOff
+    <d f>[(\!\pp^\markup { \small "a tempo" } a']) <a d>[( d,]) <d a'> s <a' d>[( d,]) d
+    s <a' c>[( d,])
+  | \repeat unfold 2 { d_( \naked d') <bes d>[( d,]) } <e g> s <g bes>[( e])
+  | <d f> s <f b>[( d]) d s <f d'>[( <d a'>]) cis s <e cis'>[( <cis a'>])
+  | s8 <f a>16[( d]) s8 <a' d>16[( f]) s8 <d' f>16[( a])
+  | s8 <d f>16[( bes]) s8 <d f>16[( bes]) <d, f>16 s <f d'>[( d])
   %30
-  | s2.
-  | s2.
-  | s2.
-  | s2.
-  | s2.
+  | d[ f] <f d'>[( d]) d[( f]) <f d'>[( d]) d[ f] <f d'>[( d])
+  | <e g>8 q4 q q8
+  | q16\p s
+    \autoBeamOn
+    \override Hairpin.Y-offset = #-5
+    g[ f]\> e f g f e g f e
+    \revert Hairpin.Y-offset
+  | \autoBeamOff
+    <d f>[(\!\pp^\markup { \small "a tempo" } a']) <a d>[( d,]) <d a'> s <a' d>[( d,])
+    d s <a' c>[( d,])
+  | \repeat unfold 2 { d_( \naked d') <bes d>[( d,]) } <e g> s <g bes>[( e])
   %35
-  | s2.
-  | s2.
-  | s2.
-  | s2.
+  | <d f> s <f b>[( d]) d s <f d'>[( <d a'>]) cis s <e cis'>[( <cis a'>])
+  | \autoBeamOn
+    s8 <f a>16( d) s8 <d f>16( a) \clef bass s8 <a d>16( f)
+  | s8 <f a>16( d)\perdendosi s8_\startTextSpan <f a>16( d) s8 <f a>16( d)
+  | <d f>4\stopTextSpan \override Script.extra-offset = #'(1.7 . 0) r\fermata r
   \fine
 }
 
@@ -308,31 +326,31 @@ Bass = \context Voice = "four" \relative c {
   | bes4 c c,
   | <f, c'> f' ees
   | d d d
-  | s2.
-  | s2.
+  | <g, d'> g' f
+  | e e e
   %20
-  | s2.
-  | s2.
-  | s2.
-  | s2.
-  | s2.
+  | <a, e'> a' f^\markup { \hspace #-1.8 \small "un poco marcato" }
+  | g2 a4
+  | bes2 a4
+  | g g g
+  | g2 r4
   %25
-  | s2.
-  | s2.
-  | s2.
-  | s2.
-  | s2.
+  | f f fis
+  | g g g
+  | gis a a,
+  | d d, f'
+  | g2 a4
   %30
-  | s2.
-  | s2.
-  | s2.
-  | s2.
-  | s2.
+  | bes2 a4
+  | g g g
+  | g2 r4
+  | f f fis
+  | g g g
   %35
-  | s2.
-  | s2.
-  | s2.
-  | s2.
+  | gis a a,
+  | d r r
+  | r a f
+  | d \override Script.extra-offset = #'(1.7 . 0) r^\fermata r
   \fine
 }
 
@@ -359,7 +377,31 @@ Sustain = {
   | s4\sustainOff\sustainOn s4\sustainOff\sustainOn s4\sustainOff\sustainOn
   | s4\sustainOff\sustainOn s2
   | s4\sustainOff\sustainOn s2
-  | s4\sustainOff
+  | s4\sustainOff\sustainOn s4 s4\sustainOff\sustainOn
+  | s4\sustainOff\sustainOn s2
+  %20
+  | s4\sustainOff\sustainOn s4 s4\sustainOff\sustainOn
+  | s4\sustainOff\sustainOn s4 s4\sustainOff\sustainOn
+  | s4\sustainOff\sustainOn s4 s4\sustainOff\sustainOn
+  | s4\sustainOff\sustainOn s2
+  | s4\sustainOff s2
+  %25
+  | s4\sustainOn s4 s4\sustainOff\sustainOn
+  | s4\sustainOff\sustainOn s4 s4\sustainOff\sustainOn
+  | s4\sustainOff\sustainOn s4\sustainOff\sustainOn s4\sustainOff\sustainOn
+  | s4\sustainOff\sustainOn s4 s4\sustainOff\sustainOn
+  | s4\sustainOff\sustainOn s4 s4\sustainOff\sustainOn
+  %30
+  | s4\sustainOff\sustainOn s4 s4\sustainOff\sustainOn
+  | s4\sustainOff\sustainOn s2
+  | s4\sustainOff s2
+  | s4\sustainOn s4 s4\sustainOff\sustainOn
+  | s4\sustainOff\sustainOn s4 s4\sustainOff\sustainOn
+  %35
+  | s4\sustainOff\sustainOn s4\sustainOff\sustainOn s4\sustainOff\sustainOn
+  | s4\sustainOff\sustainOn s2
+  | s2.
+  | s4 s\sustainOff s
 }
 
 \score {
@@ -417,6 +459,6 @@ Sustain = {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 8 = 68
   }
 }
