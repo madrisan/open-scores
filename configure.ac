@@ -91,6 +91,7 @@ AC_CONFIG_FILES([\
   src/francis-poulenc/Makefile \
   src/francis-poulenc/2-improvisations-fp.113/Makefile \
   src/franz-liszt/Makefile \
+  src/franz-liszt/am-grabe-richard-wagners-s.202/Makefile \
   src/franz-liszt/en-reve-nocturne-s.207/Makefile \
   src/franz-liszt/nuages-gris-s.199/Makefile \
   src/franz-liszt/trauervorspiel-und-trauermarsch-s.206/Makefile \
