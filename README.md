@@ -109,7 +109,7 @@ You can see here the [manuscript](images/baldassare-galuppi-sonata-5-manuscript-
 
 Thanks to my harpist friend Tristan Rollet ([@Pluiesurlavitre](https://github.com/Pluiesurlavitre)) for pointing me to this beautiful romantic piece.
 
-#### Christoph Willibald Gluck (1714-1787) / Giovanni Sgambati
+#### Christoph Willibald Gluck (1714-1787) / Giovanni Sgambati (1841-1914)
 
  * [Mélodie de Gluck](https://github.com/madrisan/open-scores/releases/download/v39/Christoph-Willibald-Gluck-Orfeo-Melodie-Sgambati.pdf) (depuis "Orfeo ed Euridice")
 
