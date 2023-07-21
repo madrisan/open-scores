@@ -28,6 +28,23 @@
         (padding . 2)
         (stretchability . 20))
   top-margin = 15\mm
+
+  oddFooterMarkup = \markup {
+    \if \on-last-page
+    \column \abs-fontsize #9 {
+      \justify {
+         (*) Wagner once reminded me of the likeness between his Parsifal theme and my previously
+         written − “Excelsior” − (introduction to the Strasbourg bells).
+         May this remembrance remain here.
+         He has fulfilled the Great and Sublime in the art of the present day.
+      }
+      \hspace #0
+      \left-align \italic {
+        "⸺ F. Liszt. May 22, 1983. Weimar."
+      }
+    }
+  }
+  evenFooterMarkup = \oddFooterMarkup
 }
 
 \bookpart {
@@ -74,9 +91,9 @@
     \fill-line {
       \center-column {
         \null\null\null\null
-        \fill-line \abs-fontsize #12 {
+        \fill-line \abs-fontsize #10 {
           \concat {
-            "Based on the score: N/A"
+            "Based on the Holograph manuscript, n.d.[1883]"
           }
         }
         \null\null
@@ -203,7 +220,6 @@ Tenor = \context Voice = "three" \relative c' {
   | <eis a>1~
   | q2 r
   %45
-
 }
 
 Bass = \context Voice = "four" \relative c, {
@@ -293,8 +309,50 @@ Bass = \context Voice = "four" \relative c, {
   \fine
 }
 
-centerDynamics = {
+Sustain = {
   %1
+  | s1*8
+  | s2 s2\sustainOn
+  | s1*2
+  | s2 s4 s8 s\sustainOff
+  %13
+  | s2 s2\sustainOn
+  | s1*2
+  | s2 s4 s8 s\sustainOff
+  | s2 s2\sustainOn
+  | s1*2
+  %20
+  | s2 s4 s8 s\sustainOff
+  | s2 s2\sustainOn
+  | s1*2
+  | s2 s4 s8 s\sustainOff
+  %25
+  | s2 s2\sustainOn
+  | s2. s8 s\sustainOff
+  | s1
+  | s2\sustainOn s4 s8 s\sustainOff
+  | s2 s2\sustainOn
+  %30
+  | s2 s4 s8 s\sustainOff
+  | s1*2
+  | s2\sustainOn s
+  | s2 s4\sustainOff s
+  %35
+  | s2\sustainOn s
+  | s2 s4\sustainOff s
+  | s2\sustainOn s
+  | s2 s4\sustainOff s
+  | s2\sustainOn s
+  %40
+  | s s\sustainOff
+  | s\sustainOn s
+  | s s\sustainOff
+  | s\sustainOn s
+  | s s\sustainOff
+  %45
+  | s\sustainOn s
+  | s1
+  | s4\sustainOff
 }
 
 \score {
@@ -314,6 +372,7 @@ centerDynamics = {
       \clef bass
       \Tenor
       \Bass
+      \Sustain
     >>
   >>
   \header {
@@ -330,10 +389,10 @@ centerDynamics = {
           Wagner erinnerte mich einst an die Ähnlichkeit seines Parsifal-motivs
           mit einem früher geschriebenen − “Excelsior” − (Einleitung zu den
           Glocken von Straßburg). Möge diese Erinnerung hiermit verblieben.
-          Er hat das Grosse und Hehre in der Kunst der Jetzt-Zeit vollbracht.
+          Er hat das Grosse und Hehre in der Kunst der Jetzt-Zeit vollbracht. (*)
         }
         \hspace #0
-        \line { \italic "F. Liszt, 22ten Mai, 83. Weimar" }
+        \line { \italic "⸺ F. Liszt, 22ten Mai, 83. Weimar" }
         \hspace #0
       }
     }
@@ -347,6 +406,6 @@ centerDynamics = {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 4 = 60
   }
 }
