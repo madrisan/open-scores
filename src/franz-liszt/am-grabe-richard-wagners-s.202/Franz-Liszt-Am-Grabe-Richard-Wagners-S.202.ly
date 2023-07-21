@@ -34,13 +34,13 @@
     \column \abs-fontsize #9 {
       \justify {
          (*) Wagner once reminded me of the likeness between his Parsifal theme and my previously
-         written − “Excelsior” − (introduction to the Strasbourg bells).
+         written \char ##x2013 “Excelsior” \char ##x2013 (introduction to the Strasbourg bells).
          May this remembrance remain here.
          He has fulfilled the Great and Sublime in the art of the present day.
       }
       \hspace #0
       \left-align \italic {
-        "⸺ F. Liszt. May 22, 1983. Weimar."
+        \concat { \char ##x2E3A " F. Liszt. May 22, 1983. Weimar." }
       }
     }
   }
@@ -387,12 +387,12 @@ Sustain = {
         \override #'(baseline-skip . 2.8)
         \justify {
           Wagner erinnerte mich einst an die Ähnlichkeit seines Parsifal-motivs
-          mit einem früher geschriebenen − “Excelsior” − (Einleitung zu den
-          Glocken von Straßburg). Möge diese Erinnerung hiermit verblieben.
+          mit einem früher geschriebenen \char ##x2013 “Excelsior” \char ##x2013
+          (Einleitung zu den Glocken von Straßburg). Möge diese Erinnerung hiermit verblieben.
           Er hat das Grosse und Hehre in der Kunst der Jetzt-Zeit vollbracht. (*)
         }
         \hspace #0
-        \line { \italic "⸺ F. Liszt, 22ten Mai, 83. Weimar" }
+        \line { \italic \char ##x2E3A " F. Liszt, 22ten Mai, 83. Weimar" }
         \hspace #0
       }
     }
