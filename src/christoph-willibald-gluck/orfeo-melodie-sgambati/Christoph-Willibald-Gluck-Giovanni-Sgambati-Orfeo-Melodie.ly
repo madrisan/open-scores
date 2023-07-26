@@ -172,10 +172,10 @@ Alto = \context Voice = "two" \relative c' {
   %1
   | s16 f s8 <d f>16[( a']) s8
     \once\shape #'((( 0.5 . 0.8) (0 . 0.8) (0 . 0.5) (0 . 0.3))) Slur
-    a16[( d]) s8
-  | \slurUp g,16[(^\< a bes a]) <e g>[\!\> f e d] cis[( d e f])
+    a16[( d]) <a d>[( f])
+  | \slurUp <e g>16[(^\< <f a> <g bes> <f a>]) <e g>[\!\> <d f> e d] cis[( d e f])
   | \autoBeamOff
-    f\! \naked a s8 \naked e16( g) s8 \naked d16( a') s8
+    f\![( a]) s8 \naked e16( g) s8 \naked d16( a') s8
   | s16 bes s8 s16 a s8 s16 a s8
   %5
   | \naked gis16( d') s4. \naked d,16( d') s8
@@ -190,7 +190,7 @@ Alto = \context Voice = "two" \relative c' {
   | \naked d16( a') s4. \naked f16( f') s8
   | \naked f,16( f') s4. \naked g,16( c) c( \naked <f, a>)
   %15
-  | g[ bes] s8 f16[ a] s8 e16[ g] s8
+  | s2 e16[ g] s8
   | \naked a,16( a') s8 \naked <a, c>16( a') s8 \naked <a, c>16( a') s8
   | \naked <a, c>16( a') s8 \naked <a, c>16( a') s8 \naked <a, c>16( a') s8
   | \naked bes,16( bes')^\< s8 \naked <bes, d>16( bes') s8 \naked <b, d>16( b') s8
@@ -207,12 +207,12 @@ Alto = \context Voice = "two" \relative c' {
   | \autoBeamOff
     s4 \naked <d a'>16( d') s8 \naked d,16( c') s8
   | bes16[ d] s8 bes16[ d] s8 \naked <e, g>16( bes') s8
-  | \naked <d, f>16( b') s8 \naked d,16( <f d'>) s8 \naked cis16( <e cis'>) s8
+  | \naked <d, f>16( b') s8 \naked d,16( <f d'>) q[( a]) s <e cis'> q[( a])
   | \slurDown f16[( a]) s8 <f a>16[( d')] s8 a16[( d]) s8
   | \repeat unfold 2 { bes16[_( <d f>]) s8 } \naked <d, f>16^( d') s8
   %30
   | \slurUp \naked d,16( d') s4. \naked d,16( d') s8
-  | bes8 4 4 8
+  | bes8 s2 s8
   | \naked <e, g>16( \autoBeamOn cis' e d) cis( d e d) cis(^\markup {
       \hspace #-0.4 \small "un poco rit."
     } bes a g)
@@ -235,9 +235,9 @@ Tenor = \context Voice = "three" \relative c' {
   \slurUp\stemDown
   %1
   | \autoBeamOff <a d>16^(_\markup { \hspace #-3 \dynamic pp  } \naked f')
-    \autoBeamOn <d f>[( a]) s8 <f' a>16[( d]) f s <a d>[( f])
-  | \slurDown e16[ f g f] \naked e( d[ cis bes]) a[ bes cis d]
-  | \slurUp d16[_( a']) <f a>[( d]) <cis e> s <e g>[( cis]) d s <f a>[( d])
+    \autoBeamOn <d f>[( a]) s8 <f' a>16[( d]) f s8.
+  | \slurDown s4 \naked e16( s cis[ bes]) a[ bes cis d]
+  | \slurUp d16 s <f a>[( d]) <cis e> s <e g>[( cis]) d s <f a>[( d])
   | \autoBeamOff
     <cis e>( \naked bes') <e, bes'>[( cis])
     d( \naked a') <f a>[( d])
@@ -256,7 +256,7 @@ Tenor = \context Voice = "three" \relative c' {
   | d[ f] <f a>[( d]) <d f>[( a']) <f a>[( d]) f[ a] <a f'>[( f])
   | f[ a] <a f'>[( f]) <f a>[( f']) <a, f'>[( f]) <c g'> s8 <f a>16
   %15
-  | d_( \naked bes') <g bes>[( d]) c_( \naked a') <f a>[( c]) bes_( \naked g') <e g>[( bes])
+  | <d g>[_( bes']) <g bes>[( d]) <c f>_([ a')] <f a>[( c]) bes_( \naked g') <e g>[( bes])
   | a[ c] <c a'>[( a]) <a c> s <c a'>[( a]) <a c> s <c a'>[( a])
   | <a c> s <c a'>[( <a fis'>]) <a c> s <c a'>[( <a fis'>]) <a c> s <c a'>[( <a fis'>])
   | bes[ d] <d bes'>[( bes]) <bes d> s <d bes'>[( bes]) <b d> s <d b'>[( b])
@@ -276,13 +276,13 @@ Tenor = \context Voice = "three" \relative c' {
     <d f>[(\!\pp^\markup { \small "a tempo" } a']) <a d>[( d,]) <d a'> s <a' d>[( d,]) d
     s <a' c>[( d,])
   | \repeat unfold 2 { d_( \naked d') <bes d>[( d,]) } <e g> s <g bes>[( e])
-  | <d f> s <f b>[( d]) d s <f d'>[( <d a'>]) cis s <e cis'>[( <cis a'>])
+  | <d f> s <f b>[( d]) d s s d cis s s cis
   | s8 <f a>16[( d]) s8 <a' d>16[( f]) s8 <d' f>16[( a])
   | s8 <d f>16[( bes]) s8 <d f>16[( bes]) <d, f>16 s <f d'>[( d])
   %30
   | d[ f] <f d'>[( d]) d[( f]) <f d'>[( d]) d[ f] <f d'>[( d])
-  | <e g>8 q4 q q8
-  | q16\p s
+  | <e g bes>8 q4 q q8
+  | <e g>16\p s
     \autoBeamOn
     \override Hairpin.Y-offset = #-5
     g[ f]\> e f g f e g f e
@@ -296,7 +296,7 @@ Tenor = \context Voice = "three" \relative c' {
   | \autoBeamOn
     s8 <f a>16( d) s8 <d f>16( a) \clef bass s8 <a d>16( f)
   | s8 <f a>16( d)\perdendosi s8_\startTextSpan <f a>16( d) s8 <f a>16( d)
-  | <d f>4\stopTextSpan \override Script.extra-offset = #'(1.7 . 0) r\fermata r
+  | \stemUp <d f>4\stopTextSpan \override Script.extra-offset = #'(1.7 . 0) r\fermata r
   \fine
 }
 
@@ -320,7 +320,7 @@ Bass = \context Voice = "four" \relative c {
   | f f, r
   | a bes b
   | c c, a'
-  | bes2 c4
+  | bes2  c4
   | d2 e8 f
   %15
   | bes4 c c,
