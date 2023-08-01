@@ -88,3 +88,5 @@
 
 \include "./parts/bach-goldberg-variationen-00-aria.ly"
 \pageBreak
+\include "./parts/bach-goldberg-variationen-01-variatio.ly"
+\pageBreak
