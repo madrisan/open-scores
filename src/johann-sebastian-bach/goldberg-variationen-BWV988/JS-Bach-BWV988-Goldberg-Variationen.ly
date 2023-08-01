@@ -90,3 +90,4 @@
 \pageBreak
 \include "./parts/bach-goldberg-variationen-01-variatio.ly"
 \pageBreak
+\include "./parts/bach-goldberg-variationen-02-variatio.ly"
