@@ -114,6 +114,7 @@ AC_CONFIG_FILES([\
   src/johann-sebastian-bach/chorale-preludes/jesu-meine-freude-BWV610/Makefile \
   src/johann-sebastian-bach/chromatische-fantasie-und-fugue-BWV903-busoni/Makefile \
   src/johann-sebastian-bach/die-kunst-der-fuge-BWV1080/Makefile \
+  src/johann-sebastian-bach/goldberg-variationen-BWV988/Makefile \
   src/johann-sebastian-bach/italienisches-konzert-BWV971/Makefile \
   src/johann-sebastian-bach/partitas/Makefile \
   src/johann-sebastian-bach/partitas/BWV830/Makefile \

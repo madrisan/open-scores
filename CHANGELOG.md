@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [v41] - unreleased
 
+### Added
+
+- J.S. Bach: Goldberg Variationen (BWV 988)
+
 ### Changed
 
 - Christoph Willibald Gluck/Giovanni Sgambati: Mélodie de Gluck - rework hands positions
