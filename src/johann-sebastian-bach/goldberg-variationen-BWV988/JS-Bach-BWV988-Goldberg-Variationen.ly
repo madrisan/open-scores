@@ -29,7 +29,7 @@
         (minimum-distance . 1)
         (padding . 2)
         (stretchability . 24))
-  top-margin = 12\mm
+  top-margin = 8\mm
 }
 
 \bookpart {
@@ -52,8 +52,8 @@
   \markup {
     \fill-line {
       \center-column {
-        \null\null\null\null
-        \null\null\null\null
+        \null\null\null\null\null
+        \null\null\null\null\null
         \line { \abs-fontsize #30 \bold "Johann Sebastian" }
         \null
         \line { \abs-fontsize #80 \bold "Bach" }
@@ -67,8 +67,7 @@
         \line { \abs-fontsize #20 "BWV 988" }
         \null\null\null
         \fill-line { \abs-fontsize #20 "Clavicimbal mit 2 Manualen" }
-        \null\null
-        \null\null
+        \null\null\null\null\null
       }
     }
   }
@@ -79,7 +78,9 @@
     \fill-line {
       \center-column {
         \null\null\null\null
-        \fill-line { \abs-fontsize #10 "Based on a previous work of Martin Straeten" }
+        \fill-line {
+          \abs-fontsize #10 "Based on a previous work of Martin Straeten, J.D. Erickson, and Hajo Dezelski"
+        }
         \null\null
       }
     }
@@ -89,5 +90,5 @@
 \include "./parts/bach-goldberg-variationen-00-aria.ly"
 \pageBreak
 \include "./parts/bach-goldberg-variationen-01-variatio.ly"
-\pageBreak
 \include "./parts/bach-goldberg-variationen-02-variatio.ly"
+\include "./parts/bach-goldberg-variationen-03-variatio.ly"

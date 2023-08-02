@@ -36,9 +36,11 @@ Sopran = \context Voice = "one" \relative c'' {
     { d8 d'\rest d4\rest }
     { d,4 d'\rest }
   }
+  \break
   \repeat volta 2 {
   | a4 a'4~
   | a16 g fis a g fis e dis
+  \break
   | e4 a8\rest fis
   %20
   | dis8 b e4\rest
@@ -199,12 +201,12 @@ Bass = \context Voice = "four" \relative c' {
     >>
   >>
   \header {
-    composer = #f % "Johann Sebastian Bach"
-    opus = #f % "BWV 988"
-    title = \markup { \smallCaps "Variation 2 a 1 Clav" }
-    subtitle = #f
+    composer = ##f % "Johann Sebastian Bach"
+    opus = ##f % "BWV 988"
+    title = \markup { \smallCaps "Variatio 2 a 1 Clav" }
+    subtitle = ##f
     subsubtitle = ##f
   }
   \layout { }
-  \midi { \tempo 4=82 }
+  \midi { \tempo 4=80 }
 }
