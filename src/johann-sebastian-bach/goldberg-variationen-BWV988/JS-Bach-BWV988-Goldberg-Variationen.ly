@@ -92,3 +92,4 @@
 \include "./parts/bach-goldberg-variationen-01-variatio.ly"
 \include "./parts/bach-goldberg-variationen-02-variatio.ly"
 \include "./parts/bach-goldberg-variationen-03-variatio.ly"
+\include "./parts/bach-goldberg-variationen-04-variatio.ly"
