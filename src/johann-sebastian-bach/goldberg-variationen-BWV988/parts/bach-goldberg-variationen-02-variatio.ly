@@ -40,7 +40,6 @@ Sopran = \context Voice = "one" \relative c'' {
   \repeat volta 2 {
   | a4 a'4~
   | a16 g fis a g fis e dis
-  \break
   | e4 a8\rest fis
   %20
   | dis8 b e4\rest

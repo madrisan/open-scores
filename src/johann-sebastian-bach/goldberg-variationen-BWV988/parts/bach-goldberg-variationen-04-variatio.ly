@@ -257,6 +257,12 @@ Bass = \context Voice = "four" \relative c' {
     subtitle = ##f
     subsubtitle = ##f
   }
-  \layout { }
+  \layout {
+    \context {
+      \PianoStaff
+      % More space between staves in the same PianoStaff
+      \override StaffGrouper.staff-staff-spacing.minimum-distance = 11
+    }
+  }
   \midi { \tempo 4=76 }
 }

@@ -34,6 +34,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | fis d cis b a g fis e d4
   }
   \break
+  \pageBreak
   \repeat volta 2 {
   | fis'16 g a8~ a16 b a g fis e d c
   | b c d8~ d16 e d c b a g fis
@@ -135,6 +136,12 @@ Bass = \context Voice = "four" \relative c {
     subtitle = ##f
     subsubtitle = ##f
   }
-  \layout { }
+  \layout {
+    \context {
+      \PianoStaff
+      % More space between staves in the same PianoStaff
+      \override StaffGrouper.staff-staff-spacing.minimum-distance = 11
+    }
+  }
   \midi { \tempo 4=82 }
 }

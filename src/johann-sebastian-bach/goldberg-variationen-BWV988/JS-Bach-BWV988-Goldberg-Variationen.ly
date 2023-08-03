@@ -29,7 +29,7 @@
         (minimum-distance . 1)
         (padding . 2)
         (stretchability . 24))
-  top-margin = 8\mm
+  top-margin = 12\mm
 }
 
 \bookpart {
@@ -90,6 +90,8 @@
 \include "./parts/bach-goldberg-variationen-00-aria.ly"
 \pageBreak
 \include "./parts/bach-goldberg-variationen-01-variatio.ly"
+\pageBreak
 \include "./parts/bach-goldberg-variationen-02-variatio.ly"
 \include "./parts/bach-goldberg-variationen-03-variatio.ly"
 \include "./parts/bach-goldberg-variationen-04-variatio.ly"
+\include "./parts/bach-goldberg-variationen-05-variatio.ly"
