@@ -237,7 +237,7 @@ Bass = \context Voice = "four" \relative c {
   \header {
     composer = ##f % "Johann Sebastian Bach"
     opus = ##f % "BWV 988"
-    title = \markup { \smallCaps "Variatio 6 a 1 Clav" }
+    title = \markup { \smallCaps "Variatio 6 a 1 Clav." }
     subtitle = \markup { "Canone alla Seconda" }
     subsubtitle = ##f
   }
