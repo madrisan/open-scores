@@ -47,7 +47,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | \appoggiatura fis16 e8. fis32 dis \grace dis8 e2
   %25
   | \stemNeutral e8 \appoggiatura d16 c8 \appoggiatura b16 a4. b16[ c]
-  | d32[( c b16) c32( b a16)] \appoggiatura a8 g4. a16 b
+  | d32[( c b16) c32( b a16)] \grace a16 g4. a16 b
   | c16 d c b c a e a \stemUp c4^~
   | c16 d c b c a fis a c e d c
   | b c b a b g d g b g c d
@@ -79,8 +79,9 @@ Alto = \context Voice = "two" \relative c' {
   %10
   | \top s8. \once\omit Flag \once\omit Stem \hideNotes a16~ \unHideNotes \stemDown a2
   | <g b e g>4\arpeggio s2
-  | s2.*2
-  | s2 e4
+  | s2.
+  | \bottom \stemUp d4\rest e\rest d
+  | d4\rest \top\stemDown s e
   %15
   | fis e8. fis16 g4~
   | g fis2
