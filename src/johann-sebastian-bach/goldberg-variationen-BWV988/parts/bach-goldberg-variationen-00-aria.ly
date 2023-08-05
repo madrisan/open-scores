@@ -89,9 +89,10 @@ Alto = \context Voice = "two" \relative c' {
   %23
   | fis4. c'8 b a~
   | a4 g2
-  | s2.*2
+  | \bottom\stemUp s4 e,2 \top\stemDown
+  | s2.
   %27
-  | s4. e8~ e16 b' a g
+  | s4. e'8~ e16 b' a g
   | fis4 f8\rest fis4.
   | g8 e\rest e\rest d8.[ g8.~]
   %30
@@ -134,7 +135,7 @@ Tenor = \context Voice = "three" \relative c' {
   | g4\rest g\rest g8\rest dis
   | e4 s2
   %25
-  | b'4\rest b\rest a~
+  | b'4\rest c\rest a~
   | a8 fis \grace e16 d8[ e16 fis] g[ fis g8~]
   | g[ e] a a\rest a4\rest
 }
