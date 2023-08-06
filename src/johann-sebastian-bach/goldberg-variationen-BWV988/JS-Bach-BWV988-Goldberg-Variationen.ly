@@ -104,3 +104,4 @@
 \include "./parts/bach-goldberg-variationen-12-variatio.ly"
 \include "./parts/bach-goldberg-variationen-13-variatio.ly"
 \include "./parts/bach-goldberg-variationen-14-variatio.ly"
+\include "./parts/bach-goldberg-variationen-15-variatio.ly"
