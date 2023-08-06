@@ -30,7 +30,19 @@ EXTRA_DIST = JS-Bach-BWV988-Goldberg-Variationen.ly \
 	     global.ly \
 	     logo.ly \
 	     parts/bach-goldberg-variationen-00-aria.ly \
-	     parts/bach-goldberg-variationen-01-variatio.ly
+	     parts/bach-goldberg-variationen-01-variatio.ly \
+	     parts/bach-goldberg-variationen-02-variatio.ly \
+	     parts/bach-goldberg-variationen-03-variatio.ly \
+	     parts/bach-goldberg-variationen-04-variatio.ly \
+	     parts/bach-goldberg-variationen-05-variatio.ly \
+	     parts/bach-goldberg-variationen-06-variatio.ly \
+	     parts/bach-goldberg-variationen-07-variatio.ly \
+	     parts/bach-goldberg-variationen-08-variatio.ly \
+	     parts/bach-goldberg-variationen-09-variatio.ly \
+	     parts/bach-goldberg-variationen-10-variatio.ly \
+	     parts/bach-goldberg-variationen-11-variatio.ly \
+	     parts/bach-goldberg-variationen-12-variatio.ly \
+	     parts/bach-goldberg-variationen-13-variatio.ly
 
 all: $(BUILT_SOURCES) JS-Bach-BWV988-Goldberg-Variationen
 
