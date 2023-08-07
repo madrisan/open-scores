@@ -190,6 +190,12 @@ Bass = \context Voice = "four" \relative c' {
     subtitle = \markup { "Canone alla Quinta" }
     subsubtitle = ##f
   }
-  \layout { }
+  \layout {
+    \context {
+      \PianoStaff
+      % More space between staves in the same PianoStaff
+      \override StaffGrouper.staff-staff-spacing.minimum-distance = 11
+    }
+  }
   \midi { \tempo 4=36 }
 }
