@@ -108,3 +108,4 @@
 \include "./parts/bach-goldberg-variationen-16-variatio.ly"
 \include "./parts/bach-goldberg-variationen-17-variatio.ly"
 \include "./parts/bach-goldberg-variationen-18-variatio.ly"
+\include "./parts/bach-goldberg-variationen-19-variatio.ly"
