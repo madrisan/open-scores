@@ -126,7 +126,7 @@ Bass = \context Voice = "four" \relative c' {
   | g,8[ g'~] \tuplet 3/2 { g16[ b e,] }
     \tuplet 3/2 { f[ a d,] } \tuplet 3/2 { e[ g c,] } \tuplet 3/2 { d[ f b,] }
   | \tuplet 3/2 { c[ g e'] } \tuplet 3/2 { d[ b f'] } e8 g' c e,
-  | d8~[ \tuplet 3/2 { d16[ e fis] }] \tuplet 3/2 { g16[fis e }
+  | d8~[ \tuplet 3/2 { d16 e fis] }] \tuplet 3/2 { g16[fis e }
     d8~] \tuplet 3/2 { d16[ c b] } \tuplet 3/2 { a[b c] }
   | b8 r8 \tuplet 3/2 { r16 b,[ d] } \tuplet 3/2 { g[ b d] } g8 r
     \tweak direction #DOWN
