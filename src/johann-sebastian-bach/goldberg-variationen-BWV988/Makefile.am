@@ -54,7 +54,8 @@ EXTRA_DIST = JS-Bach-BWV988-Goldberg-Variationen.ly \
 	     parts/bach-goldberg-variationen-22-variatio.ly \
 	     parts/bach-goldberg-variationen-23-variatio.ly \
 	     parts/bach-goldberg-variationen-24-variatio.ly \
-	     parts/bach-goldberg-variationen-25-variatio.ly
+	     parts/bach-goldberg-variationen-25-variatio.ly \
+	     parts/bach-goldberg-variationen-26-variatio.ly
 
 all: $(BUILT_SOURCES) JS-Bach-BWV988-Goldberg-Variationen
 
