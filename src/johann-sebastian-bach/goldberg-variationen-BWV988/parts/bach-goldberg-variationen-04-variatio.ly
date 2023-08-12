@@ -48,7 +48,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | e[ dis16 cis b a]
   %25
   | g16\prall [ fis e8] d'\rest
-  | d\rest d[ e]
+  | d\rest c[ e]
   | a,[ b d]
   | g, c4~
   | c8[ d c]
@@ -71,8 +71,8 @@ Alto = \context Voice = "two" \relative c' {
   \repeat volta 2 {
   %1
   | s1*3/8
-  | d8\rest d[ fis ]
-  | b,[ g' c]
+  | \bottom\stemUp d8\rest d[ fis]
+  | b,[ \top\stemDown g' c]
   | b16[ g a8] r
   %5
   | R1*3/8
@@ -111,7 +111,7 @@ Alto = \context Voice = "two" \relative c' {
   %30
   | a g b
   | e,4.
-  | a,8 d c~
+  | \bottom\stemUp a,8 \top\stemDown d c~
   }
   \alternative {
     { c16 a b8 b\rest }
@@ -127,13 +127,13 @@ Tenor = \context Voice = "three" \relative c' {
   \repeat volta 2 {
   %1
   | s4.*2
-  | b8\rest b[ g]
+  | \once\override Voice.Rest.X-offset = #-0.5 f8\rest b,[ g]
   | d'4 d8\rest
   %5
-  | b8\rest g[ b ]
+  | d8\rest g,[ b ]
   | e,[ a g~]
   | g[ fis16 e fis8]
-  | g[ d ] a'\rest
+  | g[ d ] b'\rest
   | R1*3/8
   %10
   | d8\rest d[ fis]
@@ -149,7 +149,7 @@ Tenor = \context Voice = "three" \relative c' {
     { d,4 f'8\rest }
   }
   \repeat volta 2 {
-  | \override MultiMeasureRest.staff-position = #8 R1*3/8
+  | \override MultiMeasureRest.staff-position = #9 R1*3/8
   | f8\rest d[ g]
   %20
   | e8 c4~

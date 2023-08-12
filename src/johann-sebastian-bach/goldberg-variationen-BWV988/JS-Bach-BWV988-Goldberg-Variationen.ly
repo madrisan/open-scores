@@ -52,8 +52,8 @@
   \markup {
     \fill-line {
       \center-column {
-        \null\null\null\null\null
-        \null\null\null\null\null
+        \null\null\null\null
+        \null\null\null\null
         \line { \abs-fontsize #30 \bold "Johann Sebastian" }
         \null
         \line { \abs-fontsize #80 \bold "Bach" }
@@ -63,11 +63,15 @@
         \line { \abs-fontsize #40 \bold "Goldberg Variationen" }
         \null\null
         \line { \abs-fontsize #20 \bold "Aria mit verschiedenen Veraenderungen" }
+        \null
+        \line { \abs-fontsize #14 \italic "(Aria with diverse variations)" }
         \null\null\null
-        \line { \abs-fontsize #20 "BWV 988" }
+        \line { \abs-fontsize #24 \bold "BWV 988" }
         \null\null\null
         \fill-line { \abs-fontsize #20 "Clavicimbal mit 2 Manualen" }
-        \null\null\null\null\null
+        \null
+        \line { \abs-fontsize #14 \italic "(for harpsichord with two manuals)" }
+        \null\null\null\null
       }
     }
   }
