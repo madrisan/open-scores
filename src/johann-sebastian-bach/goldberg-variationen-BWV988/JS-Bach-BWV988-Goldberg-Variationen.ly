@@ -121,3 +121,4 @@
 \include "./parts/bach-goldberg-variationen-25-variatio.ly"
 \include "./parts/bach-goldberg-variationen-26-variatio.ly"
 \include "./parts/bach-goldberg-variationen-27-variatio.ly"
+\include "./parts/bach-goldberg-variationen-28-variatio.ly"
