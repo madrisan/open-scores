@@ -224,6 +224,12 @@ Bass = \context Voice = "four" \relative c' {
     subtitle = ##f
     subsubtitle = ##f
   }
-  \layout { }
+  \layout {
+    \context {
+      \PianoStaff
+      \override StaffGrouper.staff-staff-spacing.padding = #3
+      \override StaffGrouper.staff-staff-spacing.basic-distance = #2
+    }
+  }
   \midi { \tempo 4=100 }
 }

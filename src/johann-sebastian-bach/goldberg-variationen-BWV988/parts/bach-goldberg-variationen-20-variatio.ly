@@ -14,6 +14,7 @@ Sopran = \context Voice = "one" \relative c'' {
   %1
   | r16 b r g r d r b r \clef "bass"  g fis e
   | fis8[ a \clef "treble" d fis a d]
+    \noBreak
   | r16 g, r e r cis r a r \clef "bass" g fis e
   | d8[ fis a \clef "treble" d fis a]
   %5
@@ -21,12 +22,14 @@ Sopran = \context Voice = "one" \relative c'' {
   | c8[ e g c e g]
   | r16 fis r d r a r fis r d[ c d]
   | g,8[ b d g fis c'] \clef "treble"
+    \noBreak
   | \tuplet 3/2 { b16[ a b] } \tuplet 3/2 { cis[ b cis] } \omit TupletNumber \tuplet 3/2 { d[ cis d] }
     \tuplet 3/2 { e[ d e] } \tuplet 3/2 { fis[ e fis] } \tuplet 3/2 { g[ fis g] }
   %10
   | \tuplet 3/2 { a[ g a] } \tuplet 3/2 { b[ a b] } \tuplet 3/2 { cis[ b cis] }
     \tuplet 3/2 { d[ cis d] } \tuplet 3/2 { e[ d e] } \tuplet 3/2 { fis[ e fis] }
   | g8 r \clef "bass" e,,4\mordent r8 \clef "treble" b''
+    \break
   | g' r \clef "bass" cis,,,4\mordent r8 \clef "treble" g'''
   | \tuplet 3/2 { fis16[ a d,] } \tuplet 3/2 { e[ g cis,] } \tuplet 3/2 { d[ fis b,] }
     \tuplet 3/2 { c[ e a,] } \tuplet 3/2 { b[ d g,] } \tuplet 3/2 { a[ c fis,] }
@@ -36,9 +39,11 @@ Sopran = \context Voice = "one" \relative c'' {
     \tuplet 3/2 { fis16[ e d] } b'8[ cis\turn]
   | \tuplet 3/2 { d16[ a fis] } \clef "bass" \tuplet 3/2 { d[ a fis] } d8 r r4 \clef "treble"
   }
+  \break
   \repeat volta 2 {
   | r16 a''' r fis r d r a r fis r d \clef "bass"
   | r b r g r d r b r g[ a b]
+    \noBreak
   | c8[ g' c e a, \clef "treble" c'~]
   %20
   | \tuplet 3/2 { c16[ b ais] } \tuplet 3/2 { b[ cis dis] } \tuplet 3/2 { e[ dis cis] }
@@ -51,6 +56,7 @@ Sopran = \context Voice = "one" \relative c'' {
   %25
   | \tuplet 3/2 { e[ c a] } \tuplet 3/2 { r d,[ b'] } \tuplet 3/2 { r c,[ a'] }
     \tuplet 3/2 { r b,[ g'] }  \tuplet 3/2 { r c,[ a'] } \tuplet 3/2 { r fis[ es'] }
+    \noBreak
   | \tuplet 3/2 { d[ b g] } \tuplet 3/2 { r c,[ a'] } \tuplet 3/2 { r b,[ g'] }
     \tuplet 3/2 { r a,[ fis'] } \tuplet 3/2 { r b,[ g'] } \tuplet 3/2 { r e[ d'] }
   | \tuplet 3/2 { c[ a e } c8_.] c_.[c_. c_. c']

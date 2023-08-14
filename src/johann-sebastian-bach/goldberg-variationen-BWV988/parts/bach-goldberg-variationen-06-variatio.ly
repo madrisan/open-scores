@@ -49,6 +49,7 @@ Sopran = \context Voice = "one" \relative c'' {
   |   \stemDown a''
     }
   }
+  \break
   \repeat volta 2 {
   %20
   | \stemUp b4.~
@@ -245,7 +246,7 @@ Bass = \context Voice = "four" \relative c {
     \context {
       \PianoStaff
       % More space between staves in the same PianoStaff
-      \override StaffGrouper.staff-staff-spacing.minimum-distance = 11
+      \override StaffGrouper.staff-staff-spacing.minimum-distance = 8
     }
   }
   \midi { \tempo 4=88 }

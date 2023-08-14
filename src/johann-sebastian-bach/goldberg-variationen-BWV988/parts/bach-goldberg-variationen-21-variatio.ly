@@ -17,6 +17,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | g8[ d' g, c~] c16[ fis, g a] bes[ a g fis]
   | g8 b\rest b\rest g as[ g as a]
   | bes16[ c d c] bes[ a g fis!] es'8 d\rest d\rest c~
+    \noBreak
   %5
   | c16[ c bes a] bes[ c d e] f!8[ e] f16[ g a8~]
   | a16[ g f a] g[ f e d] cis8.\downprall[ b16] cis[ d e8]
@@ -28,6 +29,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | f2\rest g16\rest as16[ g16 f!] e[ f g e]
   %10
   | c8[ d16 es!] f8[ bes,] f'16\rest f[ es d] c[ es d f]
+    \noBreak
   | es8[ f] g4~ g16[ f g as] d,[ c d f]
   | bes,[ c d bes] es8[ as,~] as[ g16 f] g8[ es'8~]
   | es8[ d16 c] d8 r d16\rest e,[ f! g] f[ e d c]

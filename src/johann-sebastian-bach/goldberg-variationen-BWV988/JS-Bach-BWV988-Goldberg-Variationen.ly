@@ -15,7 +15,7 @@
   first-page-number = 0
   indent = 0.0
 % last-bottom-spacing.padding = #2
-  line-width = 18.3\cm
+  line-width = 19.2\cm
   markup-system-spacing =
      #'((basic-distance . 2)
         (minimum-distance . 1)
@@ -29,7 +29,7 @@
         (minimum-distance . 1)
         (padding . 2)
         (stretchability . 24))
-  top-margin = 12\mm
+  top-margin = 8\mm
 }
 
 \bookpart {
@@ -52,7 +52,7 @@
   \markup {
     \fill-line {
       \center-column {
-        \null\null\null\null
+        \null\null\null
         \null\null\null\null
         \line { \abs-fontsize #30 \bold "Johann Sebastian" }
         \null
@@ -92,17 +92,20 @@
 }
 
 \include "./parts/bach-goldberg-variationen-00-aria.ly"
-\pageBreak
 \include "./parts/bach-goldberg-variationen-01-variatio.ly"
 \pageBreak
 \include "./parts/bach-goldberg-variationen-02-variatio.ly"
 \include "./parts/bach-goldberg-variationen-03-variatio.ly"
+\pageBreak
 \include "./parts/bach-goldberg-variationen-04-variatio.ly"
 \include "./parts/bach-goldberg-variationen-05-variatio.ly"
+\pageBreak
 \include "./parts/bach-goldberg-variationen-06-variatio.ly"
 \include "./parts/bach-goldberg-variationen-07-variatio.ly"
 \include "./parts/bach-goldberg-variationen-08-variatio.ly"
+\pageBreak
 \include "./parts/bach-goldberg-variationen-09-variatio.ly"
+\pageBreak
 \include "./parts/bach-goldberg-variationen-10-variatio.ly"
 \include "./parts/bach-goldberg-variationen-11-variatio.ly"
 \include "./parts/bach-goldberg-variationen-12-variatio.ly"
@@ -111,6 +114,7 @@
 \include "./parts/bach-goldberg-variationen-15-variatio.ly"
 \include "./parts/bach-goldberg-variationen-16-variatio.ly"
 \include "./parts/bach-goldberg-variationen-17-variatio.ly"
+\pageBreak
 \include "./parts/bach-goldberg-variationen-18-variatio.ly"
 \include "./parts/bach-goldberg-variationen-19-variatio.ly"
 \include "./parts/bach-goldberg-variationen-20-variatio.ly"
@@ -119,7 +123,12 @@
 \include "./parts/bach-goldberg-variationen-23-variatio.ly"
 \include "./parts/bach-goldberg-variationen-24-variatio.ly"
 \include "./parts/bach-goldberg-variationen-25-variatio.ly"
+\pageBreak
 \include "./parts/bach-goldberg-variationen-26-variatio.ly"
 \include "./parts/bach-goldberg-variationen-27-variatio.ly"
+\pageBreak
 \include "./parts/bach-goldberg-variationen-28-variatio.ly"
+\pageBreak
 \include "./parts/bach-goldberg-variationen-29-variatio.ly"
+\pageBreak
+\include "./parts/bach-goldberg-variationen-30-variatio.ly"
