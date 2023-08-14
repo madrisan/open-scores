@@ -69,7 +69,7 @@ Alto = \context Voice = "two" \relative c' {
   %1
   | \bottom \stemUp
     \repeat unfold 2 { d4\rest f\rest d }
-  | c\rest d\rest cis
+  | c\rest e\rest cis
   | d\rest d\rest a
   %5
   | c\rest c\rest g
@@ -157,7 +157,7 @@ Bass = \context Voice = "four" \relative c' {
   | g,4. d'8[ e8.\prallmordent fis16]
   | g2._~
   %10
-  | g4 fis8\prallprall e fis b
+  | g4 fis8^\prallprall e fis b
   | e,4. e8 fis g
   | a4. b8 a g
   | fis2.

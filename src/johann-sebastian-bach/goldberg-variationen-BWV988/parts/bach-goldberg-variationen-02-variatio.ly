@@ -24,7 +24,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | b g' fis a g fis e d
   | c'8^( b) b4\rest
   %10
-  | \override MultiMeasureRest.staff-position = #4 R2
+  | \override MultiMeasureRest.staff-position = #5 R2
   | b,16^( dis e g) b4^~
   | b16 a g b a g fis e
   | d4^~ d16 c b a
@@ -46,7 +46,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | e4~ e16 d c b
   | c4^~ c16 b a g
   | fis4^~ fis16 a g fis
-  | g4 f'\rest
+  | g4 g'\rest
   %25
   | e,4 a~
   | a16 g fis a g fis e d
@@ -58,8 +58,8 @@ Sopran = \context Voice = "one" \relative c'' {
   | c16 b a c b a g fis
   }
   \alternative {
-    { g4 f\rest }
-    { g4 f\rest }
+    { g4 g\rest }
+    { g4 g\rest }
   }
   \fine
 }
@@ -85,18 +85,18 @@ Alto = \context Voice = "two" \relative c'' {
   %10
   | e16 d cis e d cis b a
   | g4 b8\rest g'
-  | e cis r4
-  | e,16\rest a[ g b] a8 fis~
+  | e cis a4\rest
+  | e16\rest a[ g b] a8 fis~
   | fis16 e d fis e8 d~
   %15
   | d16 cis b d cis4
   }
   \alternative {
-    { d8 d\rest d4\rest }
-    { d4 d\rest }
+    { d8 c\rest c4\rest }
+    { d4 c\rest }
   }
   \repeat volta 2 {
-  | d16\rest fis'[ e g] fis e d cis
+  | c16\rest fis'[ e g] fis e d cis
   | d4 r8 b
   %20
   | g e a4~

@@ -41,8 +41,9 @@ Sopran = \context Voice = "one" \relative c'' {
   }
   \alternative {
     {
-  |   d16[ c! b a g \bottom fis] \top
-  |  \extendLaissezVibrer #10 g''4._\laissezVibrer
+  |   \override Stem.details.beamed-lengths = #'(4 4 4)
+      d16[ c! b a g \bottom fis] \top
+  |   \extendLaissezVibrer #9 g''4._\laissezVibrer
     }
     {
   |   d,
@@ -131,14 +132,15 @@ Alto = \context Voice = "two" \relative c'' {
     e4.~
   %30
   | e16[ cis d b d fis]
-  | g4.~
+  | \once\shape #'(((0 . -0.5) (0 . -2.4) (0 . -1.8) (0 . 0))) Tie
+    g4.~
   | g16[ fis e g fis e]
   | fis[ e d c b a]
   }
   \alternative {
     {
   |   g8 g\rest f\rest
-  |   \extendLaissezVibrer #14 a''4.\laissezVibrer
+  |   \extendLaissezVibrer #11 a''4.\laissezVibrer
     }
     { \stemUp g, }
   }

@@ -44,7 +44,7 @@ The source code was compiled with `GNU LilyPond 2.24.1 (running Guile 2.2)` (Fed
  * [Chromatische Fantasie und Fugue (BWV 903)](https://github.com/madrisan/open-scores/releases/download/v40/JS-Bach-BWV903-Chromatische-Fantasie-und-Fugue.pdf) - Interpretiert von Ferruccio Busoni
  * [Sechs kleine Präludien (BWV 933-938)](https://github.com/madrisan/open-scores/releases/download/v40/JS-Bach-BWV933-938-Sechs-kleine-Praludien.pdf)
  * [Italienisches Konzert (BWV 971)](https://github.com/madrisan/open-scores/releases/download/v40/JS-Bach-BWV971-Italienisches-Konzert.pdf)
- * Goldberg Variationen (BWV 988) -- *in progress*
+ * [Goldberg Variationen (BWV 988)](https://github.com/madrisan/open-scores/releases/download/v41/JS-Bach-BWV988-Goldberg-Variationen.pdf)
  * [Die Kunst der Fuge (BWV 1080)](https://github.com/madrisan/open-scores/releases/download/v40/JS-Bach-BWV1080-Die-Kunst-der-Fuge.pdf)
    * Contrapunctus I
    * Contrapunctus II

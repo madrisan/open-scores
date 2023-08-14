@@ -14,9 +14,11 @@ Sopran = \context Voice = "one" \relative c'' {
   | b4.~ b16[ c d c d e ] a,4.~ a16[ b c b c d]
   | \stemUp\tieUp g,4. g'~ g8[ a16 g fis g ] a8 a\rest a\rest
   | a8\rest d,16 [ c b a ]
-    \override Stem.details.beamed-lengths = #'(3.6 3.6 3.6) b8[ c16 b a b ]
-    \revert Stem.details.beamed-lengths
+    \override Stem.details.beamed-lengths = #'(3.8 3.8 3.8)
+    b8[ c16 b a b]
+    \override Stem.details.beamed-lengths = #'(4.5 4.5 4.5)
     g8 e' d c fis a
+    \revert Stem.details.beamed-lengths
   | b,4 g'8 g4 fis8 b\rest b\rest b8 a4 d,8 ~
   %5
   | d16 [ e d c b8 ] e b d cis d e~ e cis a
@@ -26,10 +28,10 @@ Sopran = \context Voice = "one" \relative c'' {
   }
   \break
   \repeat volta 2 {
-  | f'4.\rest a~ a16[ b c a b c] b[ a g fis e dis]
+  | g'4.\rest a~ a16[ b c a b c] b[ a g fis e dis]
   %10
   | e8[ fis g~] g[ fis e]
-    \once\shape #'(((0.6 . -0.2) (0 . -0.5) (0 . -0.5) (-0.5 . -0.2))) Tie
+    \once\shape #'(((0.6 . -0.2) (0 . -0.6) (0 . -0.6) (-0.5 . -0.2))) Tie
     dis4.~ dis4 b'8\rest
   | b4.\rest
     \once\shape #'(((0.5 . -0.5) (0 . -0.8) (0 . -0.8) (-2 . -0.5))) Tie
@@ -81,7 +83,7 @@ Alto = \context Voice = "two" \relative c'' {
   | g,4.\rest
     \once\shape #'(((0 . -0.5) (0 . -1.5) (0 . -1.2) (-1.4 . -0.2))) Tie
     a'4.~ a16[ b c a b c] b[ a g fis e dis]
-  | e8[ fis g~] g[ fis e]
+  | e8[ fis g^~] g[ fis e]
     \once\shape #'(((-0.2 . 1.8) (0 . 2) (0 . 2) (0 . 0.8))) Tie
     dis4.^~ dis4 d,8\rest
   | g,4.\rest
