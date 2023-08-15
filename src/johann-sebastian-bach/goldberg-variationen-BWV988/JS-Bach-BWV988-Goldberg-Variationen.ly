@@ -102,29 +102,42 @@
 \pageBreak
 \include "./parts/bach-goldberg-variationen-06-variatio.ly"
 \include "./parts/bach-goldberg-variationen-07-variatio.ly"
+\pageBreak
 \include "./parts/bach-goldberg-variationen-08-variatio.ly"
 \pageBreak
 \include "./parts/bach-goldberg-variationen-09-variatio.ly"
 \pageBreak
 \include "./parts/bach-goldberg-variationen-10-variatio.ly"
+\pageBreak
 \include "./parts/bach-goldberg-variationen-11-variatio.ly"
+\pageBreak
 \include "./parts/bach-goldberg-variationen-12-variatio.ly"
+\pageBreak
 \include "./parts/bach-goldberg-variationen-13-variatio.ly"
+\pageBreak
 \include "./parts/bach-goldberg-variationen-14-variatio.ly"
+\pageBreak
 \include "./parts/bach-goldberg-variationen-15-variatio.ly"
 \include "./parts/bach-goldberg-variationen-16-variatio.ly"
+\pageBreak
 \include "./parts/bach-goldberg-variationen-17-variatio.ly"
 \pageBreak
 \include "./parts/bach-goldberg-variationen-18-variatio.ly"
 \include "./parts/bach-goldberg-variationen-19-variatio.ly"
 \include "./parts/bach-goldberg-variationen-20-variatio.ly"
+\pageBreak
 \include "./parts/bach-goldberg-variationen-21-variatio.ly"
+\pageBreak
 \include "./parts/bach-goldberg-variationen-22-variatio.ly"
+\pageBreak
 \include "./parts/bach-goldberg-variationen-23-variatio.ly"
+\pageBreak
 \include "./parts/bach-goldberg-variationen-24-variatio.ly"
+\pageBreak
 \include "./parts/bach-goldberg-variationen-25-variatio.ly"
 \pageBreak
 \include "./parts/bach-goldberg-variationen-26-variatio.ly"
+\pageBreak
 \include "./parts/bach-goldberg-variationen-27-variatio.ly"
 \pageBreak
 \include "./parts/bach-goldberg-variationen-28-variatio.ly"

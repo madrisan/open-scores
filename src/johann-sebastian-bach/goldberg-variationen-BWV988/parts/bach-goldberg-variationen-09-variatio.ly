@@ -22,6 +22,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | g fis4 e8 fis[ g a g]
   | fis4 e d2
   }
+  \break
   \repeat volta 2 {
   | fis8[ d e fis] g[ d g a]
   %10

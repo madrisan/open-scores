@@ -28,7 +28,7 @@ Sopran = \context Voice = "one" \relative c' {
   | a[ e, fis fis' g a]
   | b[ fis, e g' a b]
   | e,[ g, \clef "bass" a, e' cis a]
-  | fis[ \clef "treble" d' fis a] d4
+  | d,[ \clef "treble" d' fis a] d4
   }
   \break
   \repeat volta 2 {

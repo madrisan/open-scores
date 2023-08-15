@@ -247,8 +247,10 @@ Bass = \context Voice = "four" \relative c {
   \layout {
     \context {
       \PianoStaff
-      % More space between staves in the same PianoStaff
-      \override StaffGrouper.staff-staff-spacing.minimum-distance = 8
+      % make the piano staves closer together
+      \override StaffGrouper.staff-staff-spacing = #'(
+                              (basic-distance . 0)
+                              (padding . 2))
     }
   }
   \midi { \tempo 4=88 }

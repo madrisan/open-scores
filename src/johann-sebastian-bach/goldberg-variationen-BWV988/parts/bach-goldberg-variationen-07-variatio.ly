@@ -13,13 +13,16 @@ Sopran = \context Voice = "one" \relative c'' {
   | b8.[ a16 b8] d,8.[ g16 b8]
   | a8.\prall[ g16 a8] d4.
   | g8.\mordent[ fis16 g8] a,8.[ e'16 g8]
+    \break
   | fis8.\prall[ e16 fis8] d4.~
   %5
   | d4 e32([ fis g a] b8.)[ g16 d8]
   | e4 fis32[( g a b] c8.)[ a16 e8]
+    \break
   | fis8.[ d16 g8] a,8.[ b16 c8]
   | \stemUp \grace c8 \stemNeutral b4.~ b8.[ a16 g fis ]
   | g4 d'8 g4.~ \mordent
+    \break
   %10
   | g8[ a16 g fis e] fis4.( \mordent
   | fis8.)[ g16 fis8] e8.[ cis16 d8]
@@ -30,10 +33,13 @@ Sopran = \context Voice = "one" \relative c'' {
   | \stemUp \grace b8 \stemNeutral cis8.[ a16 a'8] d,8.[ e16 cis8]
   | \stemUp \grace cis \stemNeutral d4.~ d
   }
+  \break
+  \pageBreak
   \repeat volta 2 {
   | fis8.[ e16 fis8] a,8.[ d16 fis8]
   | g8.[ fis16 g8] b4.
   | e,4 fis32([ g a b] c16)[ b a g fis e]
+    \break
   %20
   | dis8.\prall[ cis16 dis8] b4.~
   | b8.[ b'16 fis8] g8.[ dis16 e8]
@@ -42,6 +48,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | e8.[ b16 g8] e4 b'8
   %25
   | b8.[ gis16 a8] d8[ e16 d c b]
+    \break
   | c8.[ e16 d8] e8.[ g16 fis8]
   | g8[ a16 g fis e] a8.[ b16 g8]
   | fis8.\prall[ e16 fis8] d4.~
@@ -131,8 +138,13 @@ Bass = \context Voice = "four" \relative c' {
   \layout {
     \context {
       \PianoStaff
+      % make the piano staves closer together
+      %\override StaffGrouper.staff-staff-spacing = #'(
+      %                        (basic-distance . 0)
+      %                        (padding . 0))
+
       % More space between staves in the same PianoStaff
-      \override StaffGrouper.staff-staff-spacing.minimum-distance = 6
+      \override StaffGrouper.staff-staff-spacing.minimum-distance = 12
     }
   }
   \midi { \tempo 4=90 }

@@ -108,6 +108,7 @@ Alto = \context Voice = "two" \relative c'' {
   |   g8 s4 b16[ a b c b c] b8 s4
   %30
   |   c8 s4 s2.
+  |   s16*18*2
     }
   }
 }
