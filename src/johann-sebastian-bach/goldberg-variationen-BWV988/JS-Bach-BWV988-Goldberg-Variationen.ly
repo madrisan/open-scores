@@ -91,6 +91,36 @@
   }
 }
 
+\markup \center-column {
+  \null\null\null
+  \line {
+    \hspace #14
+    \general-align #Y #DOWN {
+      \epsfile #X #82 #"Johann-Sebastian-Bach-oil-canvas-Elias-Gottlieb-1746.ps"
+    }
+  }
+  \null
+  \line \italic {
+    \hspace #12
+    { \bold "Johann Sebastian Bach" } \char ##x2014 "oil canvas Elias Gottlob Haußmann (1746)"
+  }
+  \null
+}
+
+\markup \center-column \abs-fontsize #10 \italic {
+  \line {
+    \hspace #17
+    "Haussmann's portrait of Bach depicts him holding the manuscript to BWV 1076,"
+  }
+  \line  {
+    \hspace #17
+    "which is also the thirteenth canon in the Goldberg Canon cycle:"
+  }
+  \null
+}
+\include "JS-Bach-BWV1087-13-canon-triplex-six.ly"
+\pageBreak
+
 \include "./parts/bach-goldberg-variationen-00-aria.ly"
 \include "./parts/bach-goldberg-variationen-01-variatio.ly"
 \pageBreak

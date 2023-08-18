@@ -93,6 +93,12 @@ centerDynamics = {
       \PianoStaff
       % More space between staves in the same PianoStaff
       %\override StaffGrouper.staff-staff-spacing.minimum-distance = 12
+
+      % Make the piano staves closer together
+      %\override StaffGrouper.staff-staff-spacing = #'(
+      %                        (basic-distance . 0)
+      %                        (padding . 0))
+
       \override TextScript.font-shape = #'italic
     }
   }
