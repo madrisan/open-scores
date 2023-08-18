@@ -6,6 +6,7 @@ Global = {
 }
 
 Upper = \relative c' {
+  \voiceOne
   \repeat volta 2 {
   %1
   | <c e g c>4\arpeggio  d'16\prall( c32 d
@@ -58,6 +59,7 @@ Upper = \relative c' {
   | e16.( a32) \appoggiatura g8 fis4
   | <b, d g>4.\arpeggio
   }
+  \break
   \repeat volta 2 {
   | <g' d b>4\arpeggio  a16\prall( g32 a
   | b16[) g d-. b-. d-. g-.]
@@ -142,19 +144,14 @@ Upper = \relative c' {
   | \appoggiatura d8 e4 r16 \stemUp c'16
   | \override Slur.direction = #UP
     b32([ a16.)] g32([ f16.)] e32([ d16.)]
-  | \change Staff = "lower" {
-      c32([ b16.)] a32([ g16.)] f32([ e16.)]
+  | \change Staff = "lower"
+    c32([ b16.)] a32([ g16.)] f32([ e16.)]
   | d32([ f16.)] e8^. d^.
-  | c4^. e8\rest
-    }
+  | c4^. d8\rest
     \revert Slur.direction
-    \change Staff = "upper" {
-    }
+    \change Staff = "upper"
   }
   \fine
-
-% la si do re mi fa sol
-%  a b  c  d  e  f  g
 }
 
 centeredDynamics = {
@@ -275,6 +272,7 @@ centeredDynamics = {
 
 Lower = \relative c' {
   \clef bass
+  \voiceTwo
   \repeat volta 2 {
   %1
   | c16[( g) e-. c-.] b'-.[ g-.]
@@ -405,24 +403,21 @@ Lower = \relative c' {
   | c4_.  c8\rest
   }
   \fine
-
-% la si do re mi fa sol
-%  a b  c  d  e  f  g
 }
 
 \score {
   \new PianoStaff
   <<
-    \accidentalStyle Score.piano-cautionary
-    \new Staff = "upper" {
+    \accidentalStyle Score.piano
+    \context Staff = "upper" <<
       \Global
       \Upper
-    }
+    >>
     \new Dynamics { \Global \centeredDynamics }
-    \new Staff = "lower" {
+    \context Staff = "lower" <<
       \Global
       \Lower
-    }
+    >>
   >>
   \header {
     %composer = "Baldassare Galuppi"
@@ -437,6 +432,13 @@ Lower = \relative c' {
     }
   }
   \layout {
+    \context {
+      \PianoStaff
+      % Make the piano staves closer together
+      \override StaffGrouper.staff-staff-spacing = #'(
+                             (basic-distance . 0)
+                             (padding . 0))
+    }
   }
   \midi {
     \tempo 4 = 80

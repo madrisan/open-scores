@@ -65,6 +65,8 @@ Upper = \relative c'' {
   | d16[ b g d']  c16[ a fis a]
   | g4 r4
   }
+  \break
+  %\pageBreak
   \repeat volta 2 {
   | g8[( bes)] r8 d-.
   | cis8[( d)] r8 e-.
@@ -397,6 +399,13 @@ Lower = \relative c' {
     }
   }
   \layout {
+    \context {
+      \PianoStaff
+      % Make the piano staves closer together
+      \override StaffGrouper.staff-staff-spacing = #'(
+                             (basic-distance . 0)
+                             (padding . 0))
+    }
   }
   \midi {
     \tempo 4 = 160

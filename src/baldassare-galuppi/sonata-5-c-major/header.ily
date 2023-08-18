@@ -32,7 +32,7 @@
         \abs-fontsize #9  "Mutopia "
         \concat {
 	  \abs-fontsize #12
-	  \with-color #white "ǀ"
+	  \with-color \coverColor "ǀ"
 	  \abs-fontsize #9 "Project "
         }
       }
@@ -49,7 +49,7 @@
     \column {
       \abs-fontsize #8
       \concat {
-	"Typeset using " \with-url #"http://www.lilypond.org" "LilyPond " ©" 2022 ""by " \maintainer " — " \footer
+        "Typeset using " \with-url #"http://www.lilypond.org" "LilyPond " ©" 2022-2023 ""by " \maintainer " — " \footer
       }
       \concat {
 	\concat {
@@ -59,7 +59,7 @@
 		       " — free to distribute, modify, and perform"
           }
 	}
-	\abs-fontsize #13 \with-color #white "ǀ"
+	\abs-fontsize #13 \with-color \coverColor"ǀ"
       }
     }
   }

@@ -45,6 +45,8 @@ Upper = \relative c'' {
     \acciaccatura d8 c16( b) \acciaccatura b8 a16( g)
   | fis16( e c' a)  \stemUp \acciaccatura g8 fis4  \acciaccatura fis8 g4  r4
   }
+  \break
+  \pageBreak
   \repeat volta 2 {
   | \stemDown
     \set subdivideBeams = ##t
@@ -276,6 +278,13 @@ Lower = \relative c' {
     }
   }
   \layout {
+    \context {
+      \PianoStaff
+      % Make the piano staves closer together
+      \override StaffGrouper.staff-staff-spacing = #'(
+                             (basic-distance . 0)
+                             (padding . 0))
+    }
   }
   \midi {
     \tempo 4 = 44
