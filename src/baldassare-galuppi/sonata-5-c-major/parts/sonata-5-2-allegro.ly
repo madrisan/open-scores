@@ -6,6 +6,7 @@ Global = {
 }
 
 Upper = \relative c' {
+  \override Rest.staff-position = #0
   \voiceOne
   \repeat volta 2 {
   %1
@@ -20,10 +21,10 @@ Upper = \relative c' {
   | c4-. r8
   }
   \repeat volta 2 {
-  | \stemUp e,8-. \stemDown e'32[( f g16]) c,32[( d e16])
+  | \stemUp e,8_. \stemDown e'32[( f g16]) c,32[( d e16])
   %10
   | \acciaccatura e8 d8 c16 b a g
-  | \stemUp e8-. \stemDown e'32[( f g16]) c,32[( d e16])
+  | \stemUp e8_. \stemDown e'32[( f g16]) c,32[( d e16])
   | \acciaccatura e8 d8 c16 b a g
   | c8-. a'16\prall([ g32 a] c,8)
   | b8-. g'16\prall([ a32 g] d8)
@@ -62,7 +63,7 @@ Upper = \relative c' {
   \break
   \repeat volta 2 {
   | <g' d b>4\arpeggio  a16\prall( g32 a
-  | b16[) g d-. b-. d-. g-.]
+  | b16[) g d_. b_. d_. g_.]
   | \stemDown <d g b>4\arpeggio  c'16\prall( b32 c
   %40
   | d16[) b g-. d-. g-. b-.]
@@ -73,7 +74,7 @@ Upper = \relative c' {
   %45
   | \stemUp
     <c e a>4\arpeggio  b'16\prall( a32 b
-  | c16[) a e-. c-. e-. a-.]
+  | c16[) a e_. c_. e_. a_.]
   | \stemDown
     <e a c>4\arpeggio d'16\prall( c32 d
   | e16[) c g-. e-. g-. c-.]
@@ -272,18 +273,19 @@ centeredDynamics = {
 
 Lower = \relative c' {
   \clef bass
+  \override Rest.staff-position = #0
   \voiceTwo
   \repeat volta 2 {
   %1
-  | c16[( g) e-. c-.] b'-.[ g-.]
-  | c4-. r8
-  | c16[( g) e-. c-.] d'-.[ b-.]
-  | e4-. r8
+  | c16[( g) e^. c^.] b'^.[ g^.]
+  | c4^. r8
+  | c16[( g) e^. c^.] d'^.[ b^.]
+  | e4^. r8
   %5
-  | c,8-.[<c' e>( <g d'>)]
-  | c,8-.[<c' e>( <g d'>)]
-  | e8-.[ f-. g-.]
-  | r16 c,-. e-. c-. g'-. e-.
+  | c,8^.[<c' e>( <g d'>)]
+  | c,8^.[<c' e>( <g d'>)]
+  | e8^.[ f^. g^.]
+  | r16 c,^. e^. c^. g'^. e^.
   }
   \repeat volta 2 {
   | c16[( g') c,16( g') c,16( g')]
@@ -291,11 +293,11 @@ Lower = \relative c' {
   | b,16[( g') b,16( g') b,16( g')]
   | c,16[( g') c,16( g') c,16( g')]
   | b,16[( g') b,16( g') b,16( g')]
-  | a,16-. a'-. fis-. a-. d,-. fis-.
-  | \stemDown g,16-. g'-. d-. g-. b,-. g'-.
+  | a,16^. a'^. fis^. a^. d,^. fis^.
+  | \stemDown g,16^. g'^. d^. g^. b,^. g'^.
   %15
-  | c,8-.[ e-. cis-.]
-  | d16-.[ d'( a) d( g,) d'](
+  | c,8^.[ e^. cis^.]
+  | d16^.[ d'( a) d( g,) d'](
   | fis,16)([ d) g( d) a'( d,)]
   | g16([ d) a'( d,) b'( d,)]
   | fis16([ d) g( d) a'( d,)]
@@ -307,14 +309,14 @@ Lower = \relative c' {
   | d16) a'( fis a d,8)
   %25
   | r4.
-  | c'8[-. a-. b-.]
-  | c8[-. d-. d,-.]
-  | g16-.[ d'( b d g, d')]
-  | g,16-.[ e'( c e g, e')]
+  | c'8[^. a^. b^.]
+  | c8[^. d^. d,^.]
+  | g16^.[ d'( b d g, d')]
+  | g,16^.[ e'( c e g, e')]
   %30
-  | g,16-.[ d'( b d g, d')]
+  | g,16^.[ d'( b d g, d')]
   | c,16( a') d,( g) d( fis)
-  | g16-.[ d'( b d g, b)]
+  | g16^.[ d'( b d g, b)]
   | <c c,>8 r8 r8
   | d,8 r8 g8
   %35
@@ -328,7 +330,7 @@ Lower = \relative c' {
     g16[ d b g] a'[ fis]
   %40
   | b4 r8
-  | b,8[-. b'( a)]
+  | b,8[^. b'( a)]
   | r8 gis( f!)
   | e4 gis8(
   | a8) r16 d16[c b]
@@ -349,15 +351,15 @@ Lower = \relative c' {
   | << { d,8.\sustainOn fis16(\sustainOff g a } \\ d,4. >>
   | << { g8.) b16( c d } \\ g,4. >>
   | \stemDown
-    << { c8[) a-. fis-.] } \\ { } >>
-  | g16( f!) e-. d-. c-. b-.
+    << { c8[) a_. fis_.] } \\ { } >>
+  | g16( f!) e^. d^. c^. b^.
   | c'16[( g) e c] b'[ g]
   %60
-  | c4-. r8
+  | c4^. r8
   | c16[( g) e c] d'[ b]
   | e4 r8
-  | c,8-.[<c' e>( <g d'>)]
-  | c,8-.[<c' e>( <g d'>)]
+  | c,8^.[<c' e>( <g d'>)]
+  | c,8^.[<c' e>( <g d'>)]
   %65
   | e8[ a fis]
   | g16[ g' d g c, g']
@@ -372,11 +374,11 @@ Lower = \relative c' {
   | g16)[ d'( b d g,8)]
   %75
   | r4.
-  | f8-. d-. e-.
+  | f8^. d^. e^.
   | f16[( d') g,( c) g( b)]
   | \clef treble
-    c16-.[ g'( e g c, g')]
-  | c,16-.[ a'( f a c, a')]
+    c16^.[ g'( e g c, g')]
+  | c,16^.[ a'( f a c, a')]
   %80
   | \stemUp
     c,16-.[ g'( e g c, e)]
@@ -394,11 +396,11 @@ Lower = \relative c' {
   | r4.
   | \stemDown
     g'8 r8 c8
-  | f,8-.[ g-. g,-.]
+  | f,8^.[ g^. g,^.]
   %90
-  | c4-. r8
+  | c4^. r8
   | r4.
-  | g8_. r8 c8_.
+  | g8^. r8 c8_.
   | f,8_.[ g_. g,_.]
   | c4_.  c8\rest
   }
@@ -436,8 +438,8 @@ Lower = \relative c' {
       \PianoStaff
       % Make the piano staves closer together
       \override StaffGrouper.staff-staff-spacing = #'(
-                             (basic-distance . 0)
-                             (padding . 0))
+                             (basic-distance . 1)
+                             (padding . 1))
     }
   }
   \midi {

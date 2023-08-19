@@ -9,7 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - J.S. Bach: Goldberg Variationen (BWV 988) - better pages layout
 - J.S. Bach: Goldberg Variationen (BWV 988) - add the famous Haussmann's portrait of Bach
-- Baldassare Galuppi: Sonata 5 - Rework layout, update cover and fix a rest collision issue
+- Baldassare Galuppi: Sonata 5 - Update the cover and rework the entire page layout
 
 ## [v41] - 2023-08-14
 

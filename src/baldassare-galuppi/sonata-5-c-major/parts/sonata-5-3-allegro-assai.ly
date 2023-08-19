@@ -254,7 +254,7 @@ Lower = \relative c' {
   | << { b4( d) } \\ b2 >>
   | << { b4( c) } \\ b2 >>
   %5
-  | << { a4-. e-. } \\ { }>>
+  | << { a4_. e_. } \\ { }>>
   | << { f4\( d' } \\ f,2 >>
   | << { c'4 b } \\ g2 >>
   | << { c16\)(
@@ -265,7 +265,7 @@ Lower = \relative c' {
   | << { c4( d) } \\ c2 >>
   | << { b4( d) } \\ b2 >>
   | << { b4( c) } \\ b2 >>
-  | << { a4-. e-. } \\ { }>>
+  | << { a4_. e_. } \\ { }>>
   | << { f4 d'( } \\ f,2 >>
   %15
   | << { c'4 b } \\ g2 >>
@@ -375,7 +375,7 @@ Lower = \relative c' {
 \score {
   \new PianoStaff
   <<
-    \accidentalStyle Score.piano-cautionary
+    \accidentalStyle Score.piano
     \new Staff = "upper" {
       \Global
       \Upper
@@ -403,8 +403,8 @@ Lower = \relative c' {
       \PianoStaff
       % Make the piano staves closer together
       \override StaffGrouper.staff-staff-spacing = #'(
-                             (basic-distance . 0)
-                             (padding . 0))
+                             (basic-distance . 1)
+                             (padding . 1))
     }
   }
   \midi {
