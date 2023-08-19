@@ -25,6 +25,8 @@ Upper = \relative c'' {
     b16.[\trill a64 b g'16. b,32]
 
     \grace { <g b>4( } <fis a >2)
+    \break
+    \pageBreak
   %10
   | d'4  e32( fis g16) fis16.\prall e32(  d4)  c32( d e16) d16.\prall c32(
   | b4)  a32( b c16) b16.\prall a32(  d8.) g,16(
@@ -77,6 +79,8 @@ Upper = \relative c'' {
     a16( f) f( d)
     \set subdivideBeams = ##f
   | e8.\trill d32 e  g16( e) \acciaccatura e8 d16( c)  b( a) f'( d)  \appoggiatura c8 b4
+    \break
+    \pageBreak
   | \appoggiatura d4 c2  dis16( e) r8  fis16( g) r8
   | cis,16 d! d8  r4
     dis16( e) r8  fis16( g) r8

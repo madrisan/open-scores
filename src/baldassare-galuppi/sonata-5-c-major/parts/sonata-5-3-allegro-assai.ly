@@ -42,6 +42,7 @@ Upper = \relative c'' {
   | cis16[ g g' cis,] bes'[ bes, a g]
   | fis16[ a d a] fis4
   | r2
+    \break
   %30
   | << { b4 c8.\trill b32 c } \\ { r8 d,[ e fis] } >>
   | << { b16[ d g d] g[ d b g] } \\ { g4 r4 } >>
