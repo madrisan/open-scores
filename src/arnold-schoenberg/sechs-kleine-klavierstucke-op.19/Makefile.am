@@ -25,14 +25,19 @@ SUFFIXES = .in
 
 BUILT_SOURCES = covercolor.ly
 EXTRA_DIST = Arnold-Schoenberg-Sechs-Kleine-Klavierstucke-op.19.ly \
-	     arnold-shoenberg-photo.ps \
+	     arnold-schoenberg-photo.ps \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
 	     logo.ly \
 	     parts/arnold-schoenberg-op-19-1.ly \
 	     parts/arnold-schoenberg-op-19-2.ly \
+	     parts/arnold-schoenberg-op-19-3.ly \
+	     parts/arnold-schoenberg-op-19-4.ly \
+	     parts/arnold-schoenberg-op-19-5.ly \
+	     parts/arnold-schoenberg-op-19-6.ly \
 	     preface.ly \
+	     preface-en.ly \
 	     schoenberg-busoni-letter.ly
 
 all: $(BUILT_SOURCES) Arnold-Schoenberg-Sechs-Kleine-Klavierstucke-op.19

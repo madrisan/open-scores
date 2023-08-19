@@ -2,7 +2,7 @@
   \line {
     \hspace #8
     \general-align #Y #DOWN {
-      \epsfile #X #80 #"arnold-shoenberg-photo.ps"
+      \epsfile #X #80 #"arnold-schoenberg-photo.ps"
     }
   }
 }
