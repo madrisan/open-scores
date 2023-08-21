@@ -6,6 +6,7 @@ Global = {
 
 bottom = \change Staff = "lower"
 top = \change Staff = "upper"
+grayTextColor = #(x11-color "dimgray")
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
@@ -13,6 +14,9 @@ Sopran = \context Voice = "one" \relative c'' {
   \override Rest.staff-position = #0
   \override DynamicText.Y-offset = #-2.4
   \override Hairpin.Y-offset = #-2
+  % shows staff change lines but in gray color to reduce visual impact
+  \showStaffSwitch
+  \override VoiceFollower.color = \grayTextColor
   %1
   \tempo \markup { \bold "Allegretto" } 4 = 80
   | c1

@@ -4,6 +4,7 @@ SUBDIRS = chaconne-fur-violine-BWV1004-busoni \
 	  die-kunst-der-fuge-BWV1080 \
 	  goldberg-variationen-BWV988 \
 	  italienisches-konzert-BWV971 \
+	  musikalisches-opfer-BWV1079 \
 	  partitas \
 	  praludium-und-fuge-liszt-BWV543-S462 \
 	  schafe-konnen-sicher-weiden-BWV208 \

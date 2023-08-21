@@ -116,6 +116,7 @@ AC_CONFIG_FILES([\
   src/johann-sebastian-bach/die-kunst-der-fuge-BWV1080/Makefile \
   src/johann-sebastian-bach/goldberg-variationen-BWV988/Makefile \
   src/johann-sebastian-bach/italienisches-konzert-BWV971/Makefile \
+  src/johann-sebastian-bach/musikalisches-opfer-BWV1079/Makefile \
   src/johann-sebastian-bach/partitas/Makefile \
   src/johann-sebastian-bach/partitas/BWV830/Makefile \
   src/johann-sebastian-bach/praludium-und-fuge-liszt-BWV543-S462/Makefile \

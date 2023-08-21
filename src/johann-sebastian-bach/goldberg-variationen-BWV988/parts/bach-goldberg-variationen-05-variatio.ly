@@ -4,6 +4,9 @@ Global = {
   \include "../global.ly"
 }
 
+bottom = \change Staff = "lower"
+top = \change Staff = "upper"
+
 Sopran = \context Voice = "one" \relative c' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
@@ -27,8 +30,9 @@ Sopran = \context Voice = "one" \relative c' {
   | cis,[ g' e g] a,8[ g' fis g \turn]
   | a[ e, fis fis' g a]
   | b[ fis, e g' a b]
-  | e,[ g, \clef "bass" a, e' cis a]
-  | d,[ \clef "treble" d' fis a] d4
+  %15
+  | e,[ g, a, e' cis a]
+  | \clef "bass" d,[ \clef "treble" d' fis a] d4
   }
   \break
   \repeat volta 2 {
@@ -81,8 +85,8 @@ Bass = \context Voice = "four" \relative c' {
   | fis,[ e' d cis] d[ a d, d'] e,[ d' fis, d']
   | g,[ e' d cis] d[ b e, d'] fis,[ d' g, d']
   %15
-  | a[ d cis b] cis[e a, cis] e,[ g fis e]
-  | fis[a d, fis] \clef "bass" a,[ d fis, a] d,4
+  | a[ d cis b] cis[e a, cis] \stemDown e,[ g fis e]
+  | fis[a d, fis] \clef "bass" \stemNeutral a,[ d fis, a] d,4
   }
   \repeat volta 2 {
   | \clef "treble"
