@@ -8,7 +8,7 @@ grayTextColor = #(x11-color "dimgray")
 staffLower = \change Staff = "lower"
 staffUpper = \change Staff = "upper"
 
-Sopran = \context Voice = "one" \relative c'' {
+Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
@@ -696,7 +696,7 @@ Bass = \context Voice = "four" \relative c {
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \clef treble
-      \Sopran
+      \Soprano
       \Alto
     >>
     \context Staff = "lower" <<
@@ -709,15 +709,16 @@ Bass = \context Voice = "four" \relative c {
   \header {
     composer = ##f % "Johann Sebastian Bach"
     opus = ##f % "BWV 1079"
-    title = \markup \abs-fontsize #14 \italic {
+    title = \markup \italic {
               \fill-line {
                 \center-column {
-                  \fill-line { "Regis Iussu Cantio Et Reliqua Canonica Arte Resoluta" }
+                  \fill-line \abs-fontsize #16 { "Regis Iussu Cantio Et Reliqua Canonica Arte Resoluta" }
+                  %\fill-line \abs-fontsize #16 { "Musikalisches Opfer" }
                   \null
                 }
               }
     }
-    subtitle = \markup \abs-fontsize #22 { \smallCaps "Ricercar a 3" }
+    subtitle = \markup \abs-fontsize #22 \smallCaps { "Ricercar a 3" }
     subsubtitle = " "
   }
   \layout {

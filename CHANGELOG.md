@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [v42] - unreleased
 
+### Added
+
+- J.S. Bach - Musikalisches Opfer - Ricercar a 3
+
 ### Changed
 
 - J.S. Bach: Goldberg Variationen (BWV 988) - better pages layout

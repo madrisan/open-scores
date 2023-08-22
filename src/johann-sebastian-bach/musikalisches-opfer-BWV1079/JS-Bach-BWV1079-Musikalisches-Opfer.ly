@@ -62,15 +62,18 @@
         \null\null
         \line { \abs-fontsize #40 \bold "Musikalisches Opfer" }
         \null\null
-        \line { \abs-fontsize #16 \bold "Regis Iussu Cantio Et Reliqua Canonica Arte Resoluta" }
-        \null\null
-        \line { \abs-fontsize #30 \bold "Ricercar a 3" }
+        \line { \abs-fontsize #18 \bold "Regis Iussu Cantio Et Reliqua Canonica Arte Resoluta" }
         \null\null\null
-        \line { \abs-fontsize #24 \bold "BWV 1079" }
+        \line {
+          \concat \abs-fontsize #28 \bold {
+             "Ricercar a 3 " \char ##x2022 " Ricercar a 6"
+          }
+        }
         \null\null\null
-        \line { \abs-fontsize #14 \italic "for harpsichord, fortepiano, and piano" }
+        \line { \abs-fontsize #28 \bold "BWV 1079" }
         \null\null\null
-        \null\null\null
+        \line { \abs-fontsize #20 \italic "for piano" }
+        \null\null\null\null\null
       }
     }
   }
@@ -91,3 +94,5 @@
 }
 
 \include "./parts/bach-musikalisches-opfer-ricercare-a-3.ly"
+\pageBreak
+\include "./parts/bach-musikalisches-opfer-ricercare-a-6.ly"
