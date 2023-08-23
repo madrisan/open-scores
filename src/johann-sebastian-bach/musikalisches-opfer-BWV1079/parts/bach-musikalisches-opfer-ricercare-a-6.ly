@@ -25,7 +25,207 @@ VoiceOne = \context Voice = "one" \relative c'' {
   \showStaffSwitch
   \override VoiceFollower.color = \grayTextColor
   %1
-  | s1*205
+  | s1*36
+  | c2^\i ees
+  | g aes
+  | \hshift #0.2 b,
+    \once\override Voice.Rest.X-offset = #-0.2 a'4\rest \hshift #-0.2 \once\override Stem.length = #3 g
+  %40
+  | fis2 f
+  | e ees2~
+  | ees4 d des c
+  | b g c f
+  | ees2 d
+  %45
+  | c2. bes8 c
+  | d4 c8 d ees4 d
+  | c d8 ees d c b c
+  | b d g2 f8 ees
+  | \once\shape #'(((0 . 0.5) (0 . 1) (0 . 1) (0 . 0.5))) Tie
+    d1~
+  %50
+  | d2 \once\shape #'(((0 . 0.5) (0 . 1) (0 . 1) (0 . 0.5))) Tie c~
+  | c \once\shape #'(((0 . 0.7) (0 . 1.3) (0 . 1.3) (0 . 0.7))) Tie bes~
+  | bes \once\shape #'(((0 . 0.3) (0 . 0.6) (0 . 0.6) (0 . 0.3))) Tie a~
+  | a4 g8 fis g4 a8 bes
+  | \once\shape #'(((0 . 0.5) (0 . 1) (0 . 1) (0 . 0.5))) Tie
+    c1~
+  %55
+  | c4 d8 c bes4 a
+  | bes2 c~
+  | c4 bes g'2~
+  | g f4 ees
+  | d1~
+  %60
+  | d4 des c2~
+  | c bes4 aes
+  | g2. a8 bes
+  | c4 bes8 c d4 c8 d
+  | ees1
+  %65
+  | f
+  | ees~
+  | ees2 d~
+  | d c4 bes
+  | aes2 aes'~
+  %70
+  | aes g~
+  | g f4 ees
+  | d c8 d ees2~
+  | ees4 f8 g aes2
+  | aes g
+  %75
+  | c1
+  | f,4 bes2 aes8 g
+  | f4 g aes2~
+  | aes4 g bes,2\rest
+  | \override MultiMeasureRest.staff-position = #2 R1
+  %80
+  | \override MultiMeasureRest.staff-position = #4 R1
+  | \once\override Voice.Rest.X-offset = #1.5 f'2\rest bes2~
+  | bes4 aes aes2~
+  | aes4 g ges2
+  | \hshift #1 f2. bes4
+  %85
+  | e,2 f
+  | g a
+  | \once\shape #'(((0 . 0.5) (0 . 1.2) (0 . 1) (0 . 0.5))) Tie bes1~
+  | bes2 a
+  | bes4 f bes2~
+  %90
+  | bes4 aes!2 bes8 aes
+  | g2 \once\override Voice.Rest.X-offset = #1.5 f\rest
+  | \override MultiMeasureRest.staff-position = #6 R1
+  | R1
+  | b4\rest g c2~
+  %95
+  | c4 bes2 c8 bes
+  | a4 aes2 g4
+  | a bes8 a g2~
+  | g4 a8 g fis4 a
+  | d,2. cis8 d
+  %100
+  | e2. fis8 g
+  | a4 g8 fis g2~
+  | g fis
+  | g g
+  | fis f~
+  %105
+  | f4 e8 d e g aes!4~
+  | aes8 g f e f4 g
+  | c, f8 ees! des c bes a
+  | bes c des2 c4
+  | f, bes4\rest bes2\rest
+  %110
+  | R1
+  | bes2\rest ees
+  | f2. g4
+  | aes ees c'2
+  | b bes2~
+  %115
+  | bes4 aes~ aes8 g f e
+  | f1
+  | bes,2\rest bes4\rest aes'~
+  | aes8 g f e f4 g
+  | c,1~
+  %120
+  | c4 bes8 c bes aes g aes
+  | g2 bes4\rest g'~
+  | g f2 e4
+  | f2 f
+  | d! bes
+  %125
+  | bes\rest ees
+  | c aes
+  | R1*4
+  %131
+  | ees'2 g
+  | aes c
+  | d,! bes4\rest bes'
+  | a2 aes
+  %135
+  | g ges2~
+  | ges4 f fes ees
+  | d bes ees aes
+  | g2 f
+  | ees4 g bes ees,
+  %140
+  | aes f des ees8 f
+  | ges4 ees c2~
+  | c8 ees des c bes2~
+  | bes4 ees8 des c4 bes
+  | a8 g a bes c des ees c
+  %145
+  | des ees des c bes c des bes
+    \noBreak
+  | c2. bes4
+    \noBreak
+  | c8 ges' f ees des2~
+  | des8 ees des c des bes f'4~
+  | f8 ees d! c bes2~
+  %150
+  | bes bes8\rest ees f ges
+  | c, ees des c bes4 a
+  | bes2 bes\rest
+  | R1*3
+  %156
+  | bes8\rest d e f g aes bes g
+  | aes1~
+  | aes4 aes g2~
+  | g f4 es
+  %160
+  | des1~
+  | des2 c
+  | f g
+  | aes1~
+  | aes2 g
+  %165
+  | aes4 bes,4\rest bes2\rest
+  | bes4\rest g'2 f8 ees
+  | d2 e
+  | f8 g aes f d aes' g f
+  | ees2~ ees8 d c b
+  %170
+  | c bes! aes g aes2
+  | g2 bes\rest
+  | bes4\rest c~c8 bes a g
+  | d'2~ d8 c bes a
+  | g4 bes\rest bes2\rest
+  %175
+  | R1*2
+  | bes8\rest ees d c bes a g fis
+  | g4 g'2 fis4
+  | g bes,\rest bes2\rest
+  %180
+  | R1*3
+  | bes4\rest f' d g
+  | c, d8 e f2~
+  %185
+  | f4 ees!8 f bes,4 c8 d
+  | ees4( f16 ees d ees f4 g16 f ees f)
+  | g4 bes,\rest bes2\rest
+  | R1
+  | bes2\rest bes4\rest des~
+  %190
+  | des c8 bes a4 f'~
+  | f d! bes ees
+  | a, b8 c d4 des~
+  | des c2 bes!4~
+  | bes aes8 g aes4 f'
+  %195
+  | d g c, d8 e
+  | f2. ees!8 d
+  | ees4 b c b\rest
+  | b\rest ees c f~
+  | f g8 f ees2~
+  %200
+  | ees4 ees d2~
+  | d4 des c2~
+  | c4 c b c
+  | d! b c2~
+  | c b
+  %205
+  | c\breve*1/2\fermata
   \fine
 }
 
@@ -34,8 +234,130 @@ VoiceTwo = \context Voice = "two" \relative c'' {
   \override MultiMeasureRest.staff-position = #-6
   \showStaffSwitch
   \override VoiceFollower.color = \grayTextColor
+  \slurUp\stemUp\tieUp
   %1
-  | s1*205
+  | s1*8
+  | g2 bes
+  %10
+  | c ees
+  | fis, f4\rest d'
+  | cis2 c
+  | b bes~
+  | bes4 a aes g
+  %15
+  | fis d g c
+  | bes2 a
+  | g4 aes!8( g16 f) g4 c
+  | bes ees c f~
+  | f ees8 d \stemNeutral ees2~
+  %20
+  | ees4 d a b
+  | \stemUp c g e'\rest c8 bes!
+  | a g f4 d'\rest aes
+  | g4. f8 ees d c b
+  | c4 c' f,2~
+  %25
+  | f4 ees d'\rest bes
+  | ees d8 c b4 c
+  | d2. e8 f
+  | e4 fis g a
+  | d,2. ees!8 d
+  %30
+  | c1~
+  | c4 fis, g a
+  | bes8 a g2 fis4
+  | g2 d'\rest
+  | d4\rest f, f'2~
+  %35
+  | f4 ees2 d8 c
+  | d2. ees8 d
+  | \once\stemDown c2 a8\rest c bes aes
+  | g4 c2 d4~
+  | d g8 f ees d c bes!
+  %40
+  | \hshift #0.3 a4 b8 c \hshift #0.3 d2_~
+  | \hshift #0.7 d4 c8 b \hshift #0.4 c2~
+  | \hshift #0.2 c8 bes! \hshift #0.2 aes!2 \hshift #0.2 f4
+  | g \once\override Voice.Rest.X-offset = #-1 f\rest
+    \once\override Voice.Rest.X-offset = #1.4 g\rest
+    \hshift #0.3 c8 b
+  | \hshift #0.3 c2. bes!8 aes
+  %45
+  | \hshift #0.3 g4 f8 g aes4 \hshift #0.3 g8 \hshift #0.3 aes
+  | bes1
+  | aes
+  | \tieDown \hshift #0.3 g4. b8 c2~
+  | \hshift #1 c bes!~
+  %50
+  | \hshift #0.2 bes2. a8 g
+  | \hshift #0.2 a2. g8 fis
+  | \hshift #0.3 g2. fis8 e
+  | \hshift #0.3 fis4 \hshift #0.2 d \once\stemDown g2~
+  | \hshift #0.5 g4 a8 g fis4 g
+  %55
+  | \hshift #0.2 a2~ \hshift #0.7 a8 g4 fis8
+  | \hshift #0.2 g2 \hshift #0.2 a
+
+  | \once\override Stem.length = #4 d, d'\rest
+  | d\rest \hshift #0.2 c~
+  | \hshift #1 c bes2~
+  %60
+  | \hshift #0.3 bes \hshift #0.3 aes4 g
+  | f1~
+  | \hshift #0.9 f2 ees4 \hshift #0.2 f8 \hshift #0.2 g
+  | \hshift #0.2 f2 \hshift #0.2 bes~
+  | \hshift #0.5 bes4 b c2
+  %65
+  | d1~
+  | \hshift #1 d2 c~
+  | \hshift #0.2 c \hshift #0.2 bes!4 aes!
+  | g1~
+  | \hshift #0.9 g4 f \hshift #0.3 f'2~
+  %70
+  | \hshift #0.3 f \hshift #0.3 ees4 des
+  | c1
+  | bes
+  | \hshift #0.3 c2. d8 ees
+  | \hshift #0.3 f2 \hshift #0.3 ees~
+  %75
+  | \hshift #0.8 ees4 f8 g f4 ees
+  | \hshift #0.3 d2 ees~
+  | \hshift #0.8 ees \hshift #0.3 d
+  | \hshift #0.3 ees g,\rest
+  | \override MultiMeasureRest.staff-position = #0
+    R1
+  %80
+  | \tieUp b2\rest ees~
+  | ees4 d
+    \override Stem.length = #4
+    \hshift #0.3 des2~
+  | \hshift #0.3 des4 \hshift #0.3 c \hshift #0.3 ces2
+  | \hshift #0.3 bes2. ees4~
+  | ees d8 c bes2
+  %85
+  | \hshift #0.3 c2. bes8 c
+  | \hshift #0.3 des2 \hshift #0.3 c4 d8 ees
+  | \hshift #0.7 f2. ees8 f
+  | \hshift #0.3 ges2 \hshift #0.3 f2~
+  | \hshift #0.4 f2. ees8 d
+  %90
+  | \hshift #0.3 c2 d\rest
+  | \hshift #0.3 c ees
+  | g4 d g2~
+  | g4 f2 g8 f
+  | ees4 \hshift #0.2 ees2 f8 ees
+  %95
+  | \override Stem.length = #5
+    \stemDown\tieDown d4 g4. f8 ees d
+  | c4 f bes, c~
+  | c d8 c bes4 g
+  | e'2 g,4\rest a~
+  | a \stemUp g8 fis g4 e\rest
+  %100
+  | R1  %%% %(93)
+
+
+  | s1*118
   \fine
 }
 
@@ -91,8 +413,7 @@ VoiceFour = \context Voice = "four" \relative c' {
   | d1
   | e4 ees2 d8 c
   | d4 \staffLower b
-    \once\shape #'(((0 . 0.5) (0 . 1.2) (0 . 1) (0 . 0.5))) Tie
-    g2~
+    \once\shape #'(((0 . 0.5) (0 . 1.2) (0 . 1) (0 . 0.5))) Tie g2~
   | g4 fis a2\rest
   %55
   | a\rest b4\rest a~
@@ -117,7 +438,9 @@ VoiceFour = \context Voice = "four" \relative c' {
     \once\shape #'(((0 . 0.3) (0 . 0.6) (0 . 0.6) (0 . 0.3))) Tie
     bes2~
   | bes4 b c2~
-  | c4 c d2~
+  | c4 c
+    \once\shape #'(((0 . 0.3) (0 . 0.6) (0 . 0.6) (0 . 0.3))) Tie
+    d2~
   %70
   | d4 d
     \once\shape #'(((0 . 0.3) (0 . 0.6) (0 . 0.6) (0 . 0.3))) Tie
@@ -199,7 +522,7 @@ VoiceFour = \context Voice = "four" \relative c' {
   %145
   | \hshift #-0.7 bes,2 \hshift #-0.4 des \staffUpper
   | f ges
-  | \staffLower a, \staffUpper\tieDown a4\rest f'
+  | \staffLower \hshift #0.3 a, \staffUpper\tieDown a4\rest f'
   | e2 ees
   | d des2~
   %150
@@ -280,7 +603,7 @@ VoiceFour = \context Voice = "four" \relative c' {
   | g f \hshift #0 ees d
   | ees8 f g2.
   %205
-  | g1\fermata
+  | g\breve*1/2\fermata
   \fine
 }
 
@@ -429,7 +752,7 @@ VoiceFive = \context Voice = "five" \relative c {
   | f2^\v 	 a
   | \hshift #0 bes4 aes! g2
   | a8 f g a bes c des bes
-  | f'4 c f8 ees des c
+  | \hshift #0 f'4 c f8 ees des c
   | bes c bes a bes4 c~
   | c f, bes aes!
   %150
@@ -507,7 +830,7 @@ VoiceFive = \context Voice = "five" \relative c {
   | d,2 \stemUp \hshift #1 c~
   | \hshift #0.2 c4 \hshift #0.2 c d8 ees f4
   %205
-  | e1
+  | e\breve*1/2
   \fine
 }
 
@@ -685,7 +1008,7 @@ VoiceSix = \context Voice = "six" \relative c {
   | \hshift #0.3 b g \hshift #0 c f,
   | g2 g
   %205
-  | c1
+  | c\breve*1/2
   \fine
 }
 
