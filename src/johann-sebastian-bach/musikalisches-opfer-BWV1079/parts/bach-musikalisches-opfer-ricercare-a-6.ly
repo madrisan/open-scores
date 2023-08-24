@@ -115,33 +115,34 @@ VoiceOne = \context Voice = "one" \relative c'' {
   | aes8 g f e f4 g
   | c, f8 ees! des c bes a
   | bes c des2 c4
-  | f, bes4\rest bes2\rest
+  | f, e'4\rest f2\rest
   %110
   | R1
-  | bes2\rest ees
+  | \once\override Voice.Rest.X-offset = #-1 f2\rest ees
   | f2. g4
   | aes ees c'2
   | b bes2~
   %115
   | bes4 aes~ aes8 g f e
   | f1
-  | bes,2\rest bes4\rest aes'~
+  | b2\rest bes4\rest \hshift #-0.3 \once\override Stem.length = #3 aes~
   | aes8 g f e f4 g
-  | c,1~
+  | \once\shape #'(((0 . 0.5) (0 . 1.5) (0 . 1.5) (0 . 0.5))) Tie c,1~
   %120
   | c4 bes8 c bes aes g aes
-  | g2 bes4\rest g'~
+  | \hshift #0.3 g2 \once\override Voice.Rest.X-offset = #-1 c4\rest g'~
   | g f2 e4
   | f2 f
   | d! bes
   %125
-  | bes\rest ees
+  | f'\rest ees
   | c aes
-  | R1*4
+  | R1*3
+  | \override MultiMeasureRest.staff-position = #8 R1
   %131
-  | ees'2 g
+  | ees'2^\i g
   | aes c
-  | d,! bes4\rest bes'
+  | d,! d'4\rest bes
   | a2 aes
   %135
   | g ges2~
@@ -158,68 +159,73 @@ VoiceOne = \context Voice = "one" \relative c'' {
   %145
   | des ees des c bes c des bes
     \noBreak
-  | c2. bes4
+  | \hshift #0 c2. bes4
     \noBreak
-  | c8 ges' f ees des2~
-  | des8 ees des c des bes f'4~
+  | c8 ges' f ees
+    \once\shape #'(((0 . 1.8) (0 . 2) (0 . 2) (0 . 1.8))) Tie
+    des2~
+  | des8 ees des c \hshift #0.3 des bes f'4~
   | f8 ees d! c bes2~
   %150
-  | bes bes8\rest ees f ges
-  | c, ees des c bes4 a
-  | bes2 bes\rest
-  | R1*3
+  | bes f'8\rest ees f ges
+  | c, ees des c bes4 \once\override Stem.length = #4 \hshift #-0.2 a
+  | bes2 g'\rest
+  | \override MultiMeasureRest.staff-position = #4 R1*3
   %156
-  | bes8\rest d e f g aes bes g
-  | aes1~
+  | d8\rest d e f g aes bes g
+  | \once\shape #'(((0 . 0.5) (0 . 1) (0 . 1) (0 . 0.5))) Tie aes1~
   | aes4 aes g2~
   | g f4 es
   %160
-  | des1~
+  | \once\shape #'(((0 . 0) (0 . 0.3) (0 . 0.3) (0 . 0))) Tie
+    \hshift #0.7 des1~
   | des2 c
   | f g
   | aes1~
   | aes2 g
   %165
-  | aes4 bes,4\rest bes2\rest
-  | bes4\rest g'2 f8 ees
+  | aes4 b4\rest b2\rest
+  | b4\rest g2 f8 ees
   | d2 e
   | f8 g aes f d aes' g f
   | ees2~ ees8 d c b
   %170
   | c bes! aes g aes2
-  | g2 bes\rest
-  | bes4\rest c~c8 bes a g
+  | g2 f'\rest
+  | a4\rest c,_~ \hshift #0.3 c8 bes a g
   | d'2~ d8 c bes a
-  | g4 bes\rest bes2\rest
+  | \hshift #0.3 g4 f'\rest a2\rest
   %175
   | R1*2
-  | bes8\rest ees d c bes a g fis
+  | f8\rest ees d c bes a g fis
   | g4 g'2 fis4
-  | g bes,\rest bes2\rest
+  | g a\rest a2\rest
   %180
-  | R1*3
-  | bes4\rest f' d g
+  | \override MultiMeasureRest.staff-position = #6 R1*3
+  | g4\rest f d g
   | c, d8 e f2~
   %185
   | f4 ees!8 f bes,4 c8 d
   | ees4( f16 ees d ees f4 g16 f ees f)
-  | g4 bes,\rest bes2\rest
+  | g4 b\rest b2\rest
   | R1
-  | bes2\rest bes4\rest des~
+  | b2\rest b4\rest des,~^\i
   %190
   | des c8 bes a4 f'~
   | f d! bes ees
-  | a, b8 c d4 des~
+  | a, b8 c d4
+    \once\shape #'(((0 . 0.8) (0 . 1) (0 . 1) (0 . 0.5))) Tie
+    des~
   | des c2 bes!4~
-  | bes aes8 g aes4 f'
+  | bes \hshift #0.3 aes8 g aes4 f'
   %195
   | d g c, d8 e
   | f2. ees!8 d
-  | ees4 b c b\rest
-  | b\rest ees c f~
+  | ees4 b c e\rest
+  | e\rest ees c f~
   | f g8 f ees2~
   %200
-  | ees4 ees d2~
+  | ees4 ees d2_~
   | d4 des c2~
   | c4 c b c
   | d! b c2~
@@ -324,8 +330,7 @@ VoiceTwo = \context Voice = "two" \relative c'' {
   | \hshift #0.3 d2 ees~
   | \hshift #0.8 ees \hshift #0.3 d
   | \hshift #0.3 ees g,\rest
-  | \override MultiMeasureRest.staff-position = #0
-    R1
+  | \override MultiMeasureRest.staff-position = #0 R1
   %80
   | \tieUp b2\rest ees~
   | ees4 d
@@ -354,10 +359,143 @@ VoiceTwo = \context Voice = "two" \relative c'' {
   | e'2 g,4\rest a~
   | a \stemUp g8 fis g4 e\rest
   %100
-  | R1  %%% %(93)
-
-
-  | s1*118
+  | R1
+  | \override Stem.length = #4
+    g4\rest a \hshift #0.3 bes g8 a
+    \revert Stem.length
+  | \hshift #0.3 bes c d2.~
+  | \hshift #0.3 d4 g, \hshift #0.3 ees'2~
+  | \stemDown ees8 d c b c4 d
+  %105
+  | g,4. bes!8 aes! g f e
+  | f g aes2 g4
+  | f g\rest \once\override Voice.Rest.X-offset = #1 g2\rest
+  | \override MultiMeasureRest.staff-position = #-2 R1
+  | g2\rest g4\rest \stemUp bes
+  %110
+  | c2. d4
+  | \hshift #0.2 ees bes \once \stemDown ees2
+  | \hshift #0.3 d! des~
+  | \hshift #0.3 des4 \hshift #0.3 c8 des \stemDown ees g aes4~
+  | aes8 g f e f4 g
+  %115
+  | c,2 b\rest
+  | \stemUp \once\override Voice.Rest.X-offset = #2 f'4\rest c2 bes8 aes
+  | g aes bes4~ bes8 g' f e
+  | \stemDown \hshift #1 f g aes2 g4~
+  | g f4. ees!8 des c
+  %120
+  | des1
+  | \once\shape #'(((0.8 . -0.8) (0 . -0.5) (0 . -0.5) (-0.8 . -0.8))) Tie c^~
+  | \stemUp \hshift #0.3 c4 \hshift #0.3 des2 \hshift #0.3 c4~
+  | \hshift #0.3 c c \hshift #0.3 aes f
+  | \hshift #0.3 aes2 \once\override Voice.Rest.X-offset = #1.2 g\rest
+  %125
+  | b4\rest bes \hshift #0.3 g ees
+  | \tieUp \hshift #0.3 ges2 \hshift #0.3 ees~
+  | ees e'4\rest c~
+  | c8 f, g a bes c des bes
+  | ees1~
+  %130
+  | ees8 aes, bes c des ees f des
+  | \hshift #0.3 bes4. c8 \hshift #0.3 des c bes4
+  | \hshift #0.3 aes ees'8 des \hshift #0.3 ees4 aes~
+  | \stemDown aes8 c bes aes g f ees d!
+  | c ges' f ees d c bes c
+  %135
+  | des fes ees des c bes aes bes
+  | ces des ces bes aes ges f ges
+  | aes ces bes aes g! f ees d!
+  | ees4 ees'2 d8 c!
+  | des2. c8 bes
+  %140
+  | ces2. bes8 a
+  | bes2. a4
+  | f'2. aes,!4
+  | ges2. ees'4~
+  | \tieDown ees c f,2~
+  %145
+  | f4 f'2 e4
+  | \hshift #1.2 ees! \hshift #0 d des2
+  | c~ \stemUp \hshift #0.8 c8 c bes a
+  | \hshift #0.2 bes2 \once\override Voice.Rest.X-offset = #-0.4 a4\rest b8\rest c
+  | \once\override Stem.length = #4
+    \once\shape #'(((0 . -1) (0 . -0.9) (0 . -1.2) (-0.8 . -1))) Tie
+    f,2^~
+    \hshift #0.3 f8 e4 f8
+  %150
+  | \hshift #0.3 g f e f ges2
+  | \mergeDifferentlyHeadedOn
+    \hshift #0.3 f~ \hshift #0.3 f8 f \hshift #0 ees! f
+  | \hshift #0.3 ges aes ges f ees f ges ees
+  | f4 g\rest g2\rest
+  | c,8\rest c_\ii des ees f aes g f
+  %155
+  | c'1
+  | R1
+  | c8\rest c d e f2~
+  | \hshift #0.4 f \hshift #0.3 ees!4 des
+  | \once\shape #'(((0 . 0) (0 . 1.5) (0 . 1.5) (0 . 0))) Tie c1^~
+  %160
+  | c4 c bes2~
+  | \hshift #0.3 bes \hshift #0.3 aes
+  | des!1
+  | \hshift #0.4 ees2. d!4
+  | \once\shape #'(((0 . 0.3) (0 . 1.3) (0 . 1.3) (0 . 0))) Tie ees1^~
+  %165
+  | \hshift #0.3 ees4 ees2 des!8 c
+  | bes4 \once\override Voice.Rest.X-offset = #1.5 d\rest b2\rest
+  | R1*3
+  %170
+  | \override MultiMeasureRest.staff-position = #-6 R1
+  | g2 \hshift #0.2 b
+  | c ees
+  | \hshift #0.3 fis,
+    \once\override Voice.Rest.X-offset = #1.4 d'4\rest
+    \hshift #-0.3 \once\override Stem.length = #4 d
+  | cis2 \once\override Stem.length = #4 c
+  %175
+  | b bes2^~
+  | bes4 a aes g
+  | \override Stem.length = #4
+    fis d \stemDown \revert Stem.length g c
+  | bes2 a
+  | g4 \stemUp d' \once\override Stem.length = #5 bes ees
+  %180
+  | a, b8 c d2
+  | g,4 a8 b c2
+  | b bes
+  | a \hshift #0.3 aes4 \once\override Stem.length = #5 g
+  | \hshift #0.3 g2 \hshift #0.3 \once\override Stem.length = #5 f4 g8 a
+  %185
+  | \hshift #0.3 bes2 \hshift #0.3 f
+  | \hshift #0.3 c'
+    \once\override Voice.Rest.X-offset = #1 g4\rest \hshift #0.3 bes~
+  | \hshift #0.3 bes aes!8 bes \once\override Stem.length = #5 c4 des8 c
+  | bes2. f4
+  | e c'2 \hshift #0.3 bes8 aes!
+  %190
+  | \stemDown g4 c f, g8 a
+  | bes2 \once\override Voice.Rest.X-offset = #-1.6 g\rest
+  | c,4\rest d2 \stemUp \hshift #0.3 g8 aes!  % to be checked ???
+  | \hshift #0.3 bes4 \hshift #0.3 aes2 \hshift #0.3 g4~
+  | g c2 \stemDown d8 c
+  %195
+  | b4 c e,\rest \hshift #1 aes8 \hshift #1 bes
+  | c2~ c8 d c b
+  | c4 f, g \once\override Voice.Rest.X-offset = #-0.8 g\rest
+  | g2\rest e4\rest \stemUp \hshift #0.3
+    \override Stem.length = #5
+    aes
+  | \hshift #0 g \hshift #0.3 d'2 \stemDown c8 b
+  %200
+  | c2. f4
+  | g bes,!2 bes4
+  | \stemUp \hshift #0.3 a \hshift #0.3 aes2 \hshift #0.3 aes4
+  | \hshift #0.3 g2. aes4
+  | g2 \hshift #0.3 g
+  %205
+  | g\breve*1/2
   \fine
 }
 
@@ -520,8 +658,8 @@ VoiceFour = \context Voice = "four" \relative c' {
   | \override MultiMeasureRest.staff-position = #4 R1*2
     s1*12
   %145
-  | \hshift #-0.7 bes,2 \hshift #-0.4 des \staffUpper
-  | f ges
+  | \hshift #-0.7 bes,2^\iv \hshift #-0.4 des \staffUpper
+  | \hshift #0 f \hshift #0.3 ges
   | \staffLower \hshift #0.3 a, \staffUpper\tieDown a4\rest f'
   | e2 ees
   | d des2~
@@ -561,8 +699,8 @@ VoiceFour = \context Voice = "four" \relative c' {
   | c4. bes8 aes4 \staffUpper f'
   %170
   | \staffLower c2~ c8 \hideStaffSwitch \staffUpper ees! d c
-  | b c d ees f g aes! f
-  | g4 g\rest g2\rest
+  | b c d ees \hshift #0.2 f g aes! f
+  | g4 e\rest e2\rest
   | \override MultiMeasureRest.staff-position = #-2 R1
   | \staffLower a,2\rest c8\rest g' fis e
     \showStaffSwitch
@@ -593,7 +731,8 @@ VoiceFour = \context Voice = "four" \relative c' {
   %195
   | \hshift #0 d c8 b c2~
   | c \once\override Voice.Rest.X-offset = #1.5 a\rest
-  | a\rest \staffUpper d4\rest ees
+  | a\rest \staffUpper
+    \once\override Voice.Rest.X-offset = #0.3 b4\rest ees
   | d g2 f4
   | g e\rest e2\rest
   %200
