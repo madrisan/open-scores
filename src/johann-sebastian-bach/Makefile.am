@@ -3,6 +3,7 @@ SUBDIRS = chaconne-fur-violine-BWV1004-busoni \
 	  chromatische-fantasie-und-fugue-BWV903-busoni \
 	  die-kunst-der-fuge-BWV1080 \
 	  goldberg-variationen-BWV988 \
+	  inventionen-und-sinfonien-BWV772-801 \
 	  italienisches-konzert-BWV971 \
 	  musikalisches-opfer-BWV1079 \
 	  partitas \
