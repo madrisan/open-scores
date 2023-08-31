@@ -96,3 +96,11 @@
 \include "./parts/bach-invention-02.ly"
 \pageBreak
 \include "./parts/bach-invention-03.ly"
+\pageBreak
+\include "./parts/bach-invention-04.ly"
+\pageBreak
+\include "./parts/bach-invention-05.ly"
+\pageBreak
+\include "./parts/bach-invention-06.ly"
+\pageBreak
+\include "./parts/bach-invention-07.ly"
