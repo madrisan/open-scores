@@ -207,6 +207,6 @@ VoiceTwo = \context Voice = "two" \relative c {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 8 = 104
   }
 }

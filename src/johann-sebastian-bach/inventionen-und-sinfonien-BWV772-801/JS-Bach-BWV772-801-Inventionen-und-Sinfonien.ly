@@ -104,3 +104,13 @@
 \include "./parts/bach-invention-06.ly"
 \pageBreak
 \include "./parts/bach-invention-07.ly"
+\pageBreak
+\include "./parts/bach-invention-08.ly"
+\pageBreak
+\include "./parts/bach-invention-09.ly"
+\pageBreak
+\include "./parts/bach-invention-10.ly"
+\pageBreak
+\include "./parts/bach-invention-11.ly"
+\pageBreak
+\include "./parts/bach-invention-12.ly"
