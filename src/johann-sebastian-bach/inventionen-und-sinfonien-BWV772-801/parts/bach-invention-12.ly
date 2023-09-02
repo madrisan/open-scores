@@ -4,8 +4,34 @@ Global = {
   \include "../global.ly"
 }
 
+greyTextColor = #(x11-color 'grey35)
 staffLower = { \change Staff = "lower" }
 staffUpper = { \change Staff = "upper" }
+
+voiceOneOssia = \relative c'' {
+  %1
+  | \key a \major
+    \stemUp
+    \set subdivideBeams = ##t
+    \set baseMoment = #(ly:make-moment 1/8)
+    \override TextScript.color = \greyTextColor
+    \override TextScript.padding = #3
+    a32[(^\markup { \italic "ossia" } gis a8.)] a8  a32[( gis a8.)] a8
+    a32 b cis b cis b cis b cis b cis b  cis b cis b cis b cis b cis b a b\laissezVibrer
+    \stopStaff
+    \override Staff.Clef.break-visibility = #all-invisible
+    \override Staff.KeySignature.break-visibility = #all-invisible
+  | s1*12/8*19
+  %21
+  | \stemNeutral\omit TupletBracket
+    \set subdivideBeams = ##f
+    s4 \startStaff s8 a16 d cis b e8~
+    \set subdivideBeams = ##t
+    \set baseMoment = #(ly:make-moment 1/16)
+    \tuplet 3/2 { e32[ fis e } \tuplet 3/2 { d e fis } cis8 \tuplet 3/2 { b32 cis b } a16]
+    a4.\fermata
+    \fine
+}
 
 VoiceOne = \context Voice = "one" \relative c'' {
   \voiceOne
@@ -13,24 +39,24 @@ VoiceOne = \context Voice = "one" \relative c'' {
   \override Rest.staff-position = #0
   \stemNeutral\tieNeutral
   %1
-  | a4^\mordent a8 a4^\mordent a8 b2.~^\prallmordent
+  | a4\mordent a8 a4\mordent a8 b2.~\upmordent
   | b16 a gis a b cis  d cis d fis e d  cis a cis e a fis  dis b dis fis a fis
   | gis a gis fis e dis  cis dis e dis cis b  a cis e cis a cis  fis, a cis a fis a
   | dis,8 fis dis  b16 dis fis a gis fis  e gis b e b gis e4 r8
   %5
-  | e'4^\mordent e8  e4^\mordent e8  e16 a e cis a cis  e16 a e cis a cis
+  | e'4\mordent e8  e4\mordent e8  e16 a e cis a cis  e16 a e cis a cis
   | d4\mordent d8  d4\mordent d8  d16 b' gis d b d  gis b gis d b d
   | cis8 r r  r16 d, fis a d cis  b8 r r  r16 cis, eis gis cis b
   | a8 r r  r16 b, d fis b a  gis fis b a gis fis  eis gis cis b a gis
-  | fis8 fis' fis,  fis cis fis  gis2.~^\prallmordent
+  | fis8 fis' fis,  fis cis fis  gis2.~\prallmordent
   %10
   | gis16 fis eis fis gis a  b a b d cis b  a fis a cis fis dis  bis gis bis dis fis dis
   | e fis e dis cis b  a b cis b a gis  fis a cis a fis a  dis, fis a fis dis fis
   | bis,8 dis fis a gis bis  cis16 e gis e cis e  gis e cis e gis e
   | cis e fis e cis e  fis e cis e fis ais,  b d fis d b d  fis d b d fis d
-  | b d e d b d  e d b d e gis,  a4^\mordent a8  a4^\mordent a8
+  | b d e d b d  e d b d e gis,  a4\mordent a8  a4\mordent a8
   %15
-  | a16 dis b a fis a  b dis b a fis a  g4^\mordent g8 g4^\mordent g8
+  | a16 dis b a fis a  b dis b a fis a  g4\mordent g8 g4\mordent g8
   | g16 e' cis g e g  cis e cis g e g  fis8 r r  r16 gis, b d gis fis
   | e8 r r
     r16
@@ -44,7 +70,7 @@ VoiceOne = \context Voice = "one" \relative c'' {
   | gis,8 b d  fis( e) b  fis'( e) a,  e'( d) gis,
   %20
   | d'( cis) e,  fis16 gis a b cis d  gis, e gis b e b  gis' e b' gis e gis
-  | a8 e cis  a16 d cis b e8~  e16\turn fis cis8 b16\prall a  a4.^\fermata
+  | a8 e cis  a16 d cis b e8~  e16\turn fis cis8 b16\prall a  a4.\fermata
     \fine
 }
 
@@ -75,17 +101,39 @@ VoiceTwo = \context Voice = "two" \relative c' {
   | fis8 a dis~  dis cis b  e16 fis g fis e d  cis d e d cis b
   | a8 e cis  a4 r8  r16 d fis a d cis  b8 r r
   | r16 cis, e gis cis b  a8 b,\rest b\rest  r16 b d fis b a  gis8 b,\rest b\rest
-  | a4^\mordent a8  a4^\mordent a8  b2.~^\prallmordent
+  | a4\mordent a8  a4\mordent a8  b2.~\upmordent
   | b16 a gis a b cis  d cis d fis e d  cis b cis e d cis  b a b d cis b
   %20
-  | a gis a b cis a  d4^\mordent d8  d2.^\upmordent
+  | a gis a b cis a  d4\mordent d8  d2.\upmordent
   | cis16 d cis b a gis  fis fis' e d cis b  cis d e8 e,  a4._\fermata
     \fine
 }
 
 \score {
-  \new PianoStaff {
-    \set Score.connectArpeggios = ##t
+  <<
+  \new Staff = "ossia" \with {
+    fontSize = #-3
+    \override StaffSymbol.staff-space = #(magstep -3)
+    \override StaffSymbol.thickness = #(magstep -3)
+    %\hide Clef
+    %\remove Time_signature_engraver
+    \RemoveAllEmptyStaves
+    \override Accidental.color = \greyTextColor
+    \override BarLine.color = \greyTextColor
+    \override Beam.color = \greyTextColor
+    \override Clef.color = \greyTextColor
+    \override Flag.color = \greyTextColor
+    \override KeySignature.color = \greyTextColor
+    \override NoteHead.color = \greyTextColor
+    \override Rest.color = \greyTextColor
+    \override Script.color = \greyTextColor
+    \override Slur.color = \greyTextColor
+    \override Stem.color = \greyTextColor
+    \override Tie.color = \greyTextColor
+    \override TimeSignature.color = \greyTextColor
+  }
+  { \voiceOneOssia }
+  \new PianoStaff
     <<
       \accidentalStyle Score.piano
       \context Staff = "upper" <<
@@ -101,7 +149,7 @@ VoiceTwo = \context Voice = "two" \relative c' {
         \VoiceTwo
       >>
     >>
-  }
+  >>
   \header {
     composer = "Johann Sebastian Bach"
     opus = "BWV 783"
