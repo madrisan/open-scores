@@ -186,7 +186,7 @@ Tenor = \context Voice = "three" \relative c' {
   | \shape #'((0 . 0) (0 . 2.5) (0 . 2.5) (0 . 0)) Tie
     2.~
   | 4.~ 8[
-    \shape #'((0 . 0) (0 . 0) (0 . 0.3) (3 . -0.5)) Slur
+    \shape #'((0 . 0) (0 . 0) (0 . 0.3) (3 . -1.5)) Slur
     b!(
     \extendLV #1.5
     \once\override LaissezVibrerTieColumn.tie-configuration = #`((2 . ,UP))
@@ -223,11 +223,12 @@ Bass = \context Voice = "four" \relative c' {
   | \time 6/8 <c! e!>4. <b! f'>8 r r
   | \clef treble c'4\rest d!16[(\pp f!] cis'4.-1_~
   | cis4)
-    \shape #'((-0.5 . -1.5) (0 . 0) (0 . -1) (14 . -1.5)) PhrasingSlur
-    d!8-1\( a!4-3	 cis,8
+    \shape #'((-0.5 . -1.5) (0 . 0) (0 . -1) (14 . -0.7)) PhrasingSlur
+    d!8-1\( a!4-3 cis,8
   | fis4.-4
-    \shape #'((0 . 0) (0 . -0.5) (0 . -0.8) (0 . 0)) Slur
-    f!4.(-5 <>)\)
+    \extendLV #9.8
+    \shape #'((0 . -0.5) (0 . -1) (0 . -1) (0 . -0.5)) LaissezVibrerTie
+    f!4.-5\laissezVibrer \)
   \fine
 }
 
