@@ -1,10 +1,11 @@
 \markup {
   \fill-line {
     \center-column {
-      \null
       \fill-line { \abs-fontsize #18 \bold "GIANCARLO SIMONACCI" }
       \null\null
       \fill-line { \abs-fontsize #18 \bold "Piano Notes and Reflections" }
+      \null
+      \fill-line { \abs-fontsize #10 \bold "(Translated by Davide Madrisan)" }
       \null\null\null
     }
   }
@@ -87,9 +88,10 @@
   }
 }
 
+\pageBreak
+
 \markup {
   \column {
-    \hspace #0
     \wordwrap \abs-fontsize #11 {
       Bar 13: the D−natural (last quaver) in the right hand is to be entrusted to the left hand (if there are
       no problems with the tenth!) so as not to dirty the chord in its entirety with the damper pedal.
@@ -184,6 +186,9 @@
       For the last four bars, given the generous explosion of sonority, the division between the hands and
       the fingering indicated in [16] are suggested.
     }
+    \hspace #0
+    \hspace #0
+    \hspace #0
   }
 }
 
