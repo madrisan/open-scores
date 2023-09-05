@@ -4,6 +4,34 @@ Global = {
   \include "../global.ly"
 }
 
+voiceOneOssia = \relative c'' {
+  %1
+  | \omit TupletBracket
+    \stopStaff s1 s2 s8 \startStaff
+    \set subdivideBeams = ##t
+    \set baseMoment = #(ly:make-moment 1/8)
+    s8 \key c \minor ees32 d ees d ees d c d
+  | \set subdivideBeams = ##f
+    %\undo\hide Clef
+    %\set Staff.forceClef = ##t
+    %\clef treble
+    ees16 d c d  ees f g8
+    g32 aes g16 f8 r f
+  | f32 g f16 ees8 s8 \stopStaff s8 s2
+  | \override Staff.KeySignature.break-visibility = #all-invisible
+    s1*21
+  | \startStaff \key c \minor
+    \set subdivideBeams = ##t
+    f32[ g f16 ees16 d]
+    \set subdivideBeams = ##f
+    g[ f aes f] g8.[ aes16]
+    \set subdivideBeams = ##t
+    \set baseMoment = #(ly:make-moment 1/16)
+    \tuplet 3/2 { d,32[ ees d } \tuplet 3/2 { ees d ees }
+    d16 c]
+  | c1\fermata\fine
+}
+
 VoiceOne = \context Voice = "one" \relative c'' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
@@ -86,6 +114,13 @@ VoiceTwo = \context Voice = "two" \relative c' {
 }
 
 \score {
+  <<
+  \new Staff = "ossia" \with {
+    \include "../ossiasetup.ly"
+    \hide Clef
+    \remove Time_signature_engraver
+  }
+  { \voiceOneOssia }
   \new PianoStaff {
     \set Score.connectArpeggios = ##t
     <<
@@ -104,6 +139,7 @@ VoiceTwo = \context Voice = "two" \relative c' {
       >>
     >>
   }
+  >>
   \header {
     composer = "Johann Sebastian Bach"
     opus = "BWV 773"

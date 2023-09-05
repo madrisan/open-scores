@@ -4,7 +4,6 @@ Global = {
   \include "../global.ly"
 }
 
-greyTextColor = #(x11-color 'grey35)
 staffLower = { \change Staff = "lower" }
 staffUpper = { \change Staff = "upper" }
 
@@ -14,7 +13,6 @@ voiceOneOssia = \relative c'' {
     \stemUp
     \set subdivideBeams = ##t
     \set baseMoment = #(ly:make-moment 1/8)
-    \override TextScript.color = \greyTextColor
     \override TextScript.padding = #3
     a32[(^\markup { \italic "ossia" } gis a8.)] a8  a32[( gis a8.)] a8
     a32 b cis b cis b cis b cis b cis b  cis b cis b cis b cis b cis b a b\laissezVibrer
@@ -111,27 +109,7 @@ VoiceTwo = \context Voice = "two" \relative c' {
 
 \score {
   <<
-  \new Staff = "ossia" \with {
-    fontSize = #-3
-    \override StaffSymbol.staff-space = #(magstep -3)
-    \override StaffSymbol.thickness = #(magstep -3)
-    %\hide Clef
-    %\remove Time_signature_engraver
-    \RemoveAllEmptyStaves
-    \override Accidental.color = \greyTextColor
-    \override BarLine.color = \greyTextColor
-    \override Beam.color = \greyTextColor
-    \override Clef.color = \greyTextColor
-    \override Flag.color = \greyTextColor
-    \override KeySignature.color = \greyTextColor
-    \override NoteHead.color = \greyTextColor
-    \override Rest.color = \greyTextColor
-    \override Script.color = \greyTextColor
-    \override Slur.color = \greyTextColor
-    \override Stem.color = \greyTextColor
-    \override Tie.color = \greyTextColor
-    \override TimeSignature.color = \greyTextColor
-  }
+  \new Staff = "ossia" \with { \include "../ossiasetup.ly" }
   { \voiceOneOssia }
   \new PianoStaff
     <<

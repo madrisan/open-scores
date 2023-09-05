@@ -29,6 +29,7 @@ EXTRA_DIST = JS-Bach-BWV772-801-Inventionen-und-Sinfonien.ly
 	     header.ily \
 	     global.ly \
 	     logo.ly \
+	     ossiasetup.ly \
 	     parts/bach-invention-01.ly
 
 all: $(BUILT_SOURCES) JS-Bach-BWV772-801-Inventionen-und-Sinfonien

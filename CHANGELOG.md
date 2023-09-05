@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Changed
 
 - Arnold Schoenberg: Sechs kleine Klavierstücke op.19 - review the page layout of the preface
+- Arnold Schoenberg: Sechs kleine Klavierstücke op.19 - fix error: bounds of this piece aren't breakable
 
 ## [v42] - 2023-08-26
 

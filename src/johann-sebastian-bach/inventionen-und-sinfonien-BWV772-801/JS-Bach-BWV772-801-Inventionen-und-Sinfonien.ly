@@ -91,6 +91,7 @@
 }
 
 \include "./parts/bach-invention-01.ly"
+\pageBreak
 \include "./parts/bach-sinfonia-01.ly"
 \pageBreak
 \include "./parts/bach-invention-02.ly"

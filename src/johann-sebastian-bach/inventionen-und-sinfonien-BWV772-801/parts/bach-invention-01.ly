@@ -4,6 +4,20 @@ Global = {
   \include "../global.ly"
 }
 
+voiceOneOssia = \relative c'' {
+  %1
+  | \stopStaff s2 s8 \startStaff s8 b32 a b16 c8
+  | d16 g, a b c a b g d'8[ g f32 e f16 g8]
+    \stopStaff
+  | s1*2
+  %5
+  | \startStaff a,8 d, c'32 b c8 d16 \stopStaff s2
+  | s2 s8 \startStaff
+    \set subdivideBeams = ##t
+    \set baseMoment = #(ly:make-moment 1/8)
+    s8 b32 c b16 a g \stopStaff
+}
+
 VoiceOne = \context Voice = "one" \relative c' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
@@ -76,6 +90,13 @@ VoiceTwo = \context Voice = "two" \relative c {
 }
 
 \score {
+  <<
+  \new Staff = "ossia" \with {
+    \include "../ossiasetup.ly"
+    \hide Clef
+    \remove Time_signature_engraver
+  }
+  { \voiceOneOssia }
   \new PianoStaff {
     \set Score.connectArpeggios = ##t
     <<
@@ -94,6 +115,7 @@ VoiceTwo = \context Voice = "two" \relative c {
       >>
     >>
   }
+  >>
   \header {
     composer = "Johann Sebastian Bach"
     opus = "BWV 772"
