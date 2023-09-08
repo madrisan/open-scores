@@ -26,8 +26,10 @@ SUFFIXES = .in
 BUILT_SOURCES = covercolor.ly
 EXTRA_DIST = JS-Bach-BWV772-801-Inventionen-und-Sinfonien.ly
 	     covercolor.ly.in \
-	     header.ily \
 	     global.ly \
+	     header.ily \
+	     jsbach-clavier-buchlein-ornament-table.ly \
+	     jsbach-clavier-buchlein-ornament-table.eps \
 	     logo.ly \
 	     ossiasetup.ly \
 	     parts/bach-invention-01.ly

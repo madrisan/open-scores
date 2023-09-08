@@ -89,6 +89,10 @@
     }
   }
 }
+\pageBreak
+
+\include "./jsbach-clavier-buchlein-ornament-table.ly"
+\pageBreak
 
 \include "./parts/bach-invention-01.ly"
 \pageBreak
