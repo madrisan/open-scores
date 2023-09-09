@@ -4,6 +4,66 @@ Global = {
   \include "../global.ly"
 }
 
+extendLaissezVibrer = #(define-music-function (parser location further) (number?)
+#{
+   \once \override LaissezVibrerTie.X-extent = #'(0 . 0)
+   \once \override LaissezVibrerTie.details.note-head-gap = #(/ further -2)
+   \once \override LaissezVibrerTie.extra-offset = #(cons (/ further 2) -0.8)
+#})
+
+voiceOneOssia = \relative c' {
+  \stopStaff
+  \omit TupletBracket
+  \partial 8 { s8 }
+  %1
+  | s4.*2
+  | \startStaff
+    \key d \major
+    a'8[ b \tuplet 3/2 { cis32( b cis } d16)]
+  | cis64[( d cis16.) b32( a) r16 cis d]
+  | \stopStaff
+    \override Staff.KeySignature.break-visibility = #all-invisible
+    s4.*6
+    \noBreak
+  %11
+  | s16 \startStaff s16 \tuplet 3/2 { cis32[( b cis } b8) a16]
+  | \stopStaff
+    s4.*10
+  %22
+  | \startStaff cis8[ ais64( b ais16.) b8~]
+  | b16[ cis] \tuplet 3/2 { d32( cis d } cis8) b16
+    \stopStaff
+  | s4.*2
+  %26
+  | \startStaff
+    \set subdivideBeams = ##t
+    \set baseMoment = #(ly:make-moment 1/8)
+    g'32[ a g a g a g a g a g a]
+  | g[ a g a g a g a
+    \shape #'((0.3 . 0.8) (0 . 1) (0 . 1) (0 . 0.8)) LaissezVibrerTie
+    \extendLaissezVibrer #2
+    g8\laissezVibrer] \stopStaff
+  | s4.*11
+  %39
+  | s8. \startStaff s16 b,32( a g a
+  | b8^.) d32( cis b cis
+    d8~)
+  | d16 \stopStaff s s4
+  | s4.*3
+  %45
+  | s8. \startStaff s16 \tuplet 3/2 { cis32( b cis } d16^.)
+  | cis64[( d cis16.) b32( a^.) r16 d8^.] \stopStaff
+  | s4.*11
+  %58
+  | \startStaff d,16[( g]
+    \set baseMoment = #(ly:make-moment 1/16)
+    fis32 e \tuplet 3/2 { fis[ e fis] }
+    \set baseMoment = #(ly:make-moment 1/8)
+    e16 d_.)
+  | d4.\fermata\fine
+
+}
+
 VoiceOne = \context Voice = "one" \relative c' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
@@ -14,7 +74,7 @@ VoiceOne = \context Voice = "one" \relative c' {
   | fis16[ e( g fis e d)]
   | a'[ g( fis e fis d)]
   | a'8[ b cis16\mordent d]
-  | cis8[\prall a cis16 d]
+  | cis8[\prall \once\stemUp\once\slurDown \appoggiatura b8 a cis16 d]
   %5
   | e[ cis( fis d cis b)]
   | e[ cis( d b a gis)]
@@ -37,7 +97,7 @@ VoiceOne = \context Voice = "one" \relative c' {
   | e[ d( fis e d cis)]
   | d[ cis( e d cis b)]
   | cis8[ ais\prall b]~
-  | b16[ cis] cis8.[\prall b16]~
+  | b16[ cis] cis8.[\prall b16]
   | b16[ fis( gis ais b cis)]
   %25
   | d[( cis e d cis b)]
@@ -165,6 +225,13 @@ VoiceTwo = \context Voice = "two" \relative c {
 }
 
 \score {
+  <<
+  \new Staff = "ossia" \with {
+    \include "../ossiasetup.ly"
+    \hide Clef
+    \remove Time_signature_engraver
+  }
+  { \voiceOneOssia }
   \new PianoStaff {
     \set Score.connectArpeggios = ##t
     <<
@@ -183,6 +250,7 @@ VoiceTwo = \context Voice = "two" \relative c {
       >>
     >>
   }
+  >>
   \header {
     composer = "Johann Sebastian Bach"
     opus = "BWV 774"
@@ -192,6 +260,7 @@ VoiceTwo = \context Voice = "two" \relative c {
   \layout {
     \context {
       \PianoStaff
+      \override Parentheses.font-size = #-2
     }
   }
   \midi {
