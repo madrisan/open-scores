@@ -70,7 +70,7 @@
         \line \abs-fontsize #24 \bold { "BWV 787" \char ##x2012 "801" }
         \null\null\null
         \line { \abs-fontsize #18 \italic "für Tasteninstrument" }
-        \null\null\null\null
+        \null\null\null
       }
     }
   }
@@ -81,8 +81,11 @@
     \fill-line {
       \center-column {
         \null\null\null\null
-        \fill-line {
-          \abs-fontsize #10 "Based on a previous work of Allen Garvin and Olivier Vermersch"
+        \fill-line \abs-fontsize #10 {
+          "Based on a previous work of Allen Garvin and Olivier Vermersch,"
+        }
+        \fill-line \abs-fontsize #10 {
+          "and on the Wilhelm Friedemann Bach's manuscript (1720)"
         }
         \null\null
       }
