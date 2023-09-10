@@ -85,7 +85,7 @@
           "Based on a previous work of Allen Garvin and Olivier Vermersch,"
         }
         \fill-line \abs-fontsize #10 {
-          "and on the Wilhelm Friedemann Bach's manuscript (1720)"
+          "and on the manuscripts by Johann Sebastian and Wilhelm Friedemann Bach (1720-1723)"
         }
         \null\null
       }
@@ -101,8 +101,12 @@
 \pageBreak
 \include "./parts/bach-sinfonia-01.ly"
 \pageBreak
+
 \include "./parts/bach-invention-02.ly"
 \pageBreak
+\include "./parts/bach-sinfonia-02.ly"
+\pageBreak
+
 \include "./parts/bach-invention-03.ly"
 \pageBreak
 \include "./parts/bach-invention-04.ly"

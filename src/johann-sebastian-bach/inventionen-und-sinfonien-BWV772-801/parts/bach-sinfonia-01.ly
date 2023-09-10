@@ -8,9 +8,6 @@ grayTextColor = #(x11-color "dimgray")
 staffLower = { \change Staff = "lower" \stemUp\tieUp }
 staffUpper = { \change Staff = "upper" \stemDown\tieDown }
 
-%\showStaffSwitch
-%\override VoiceFollower.color = \grayTextColor
-
 VoiceOne = \context Voice = "one" \relative c'' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
@@ -152,6 +149,6 @@ VoiceThree = \context Voice = "three" \relative c {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 4 = 92
   }
 }
