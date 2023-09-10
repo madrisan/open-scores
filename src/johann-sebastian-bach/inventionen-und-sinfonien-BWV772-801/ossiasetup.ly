@@ -3,6 +3,7 @@
 fontSize = #-3
 \override StaffSymbol.staff-space = #(magstep -3)
 \override StaffSymbol.thickness = #(magstep -3)
+\override VerticalAxisGroup.staff-staff-spacing.minimum-distance = 2
 %\hide Clef
 %\remove Time_signature_engraver
 \RemoveAllEmptyStaves

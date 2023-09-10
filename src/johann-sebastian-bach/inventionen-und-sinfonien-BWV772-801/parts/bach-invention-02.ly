@@ -16,19 +16,18 @@ voiceOneOssia = \relative c'' {
     %\set Staff.forceClef = ##t
     %\clef treble
     ees16 d c d  ees f g8
-    g32 aes g16 f8 r f
-  | f32 g f16 ees8 s8 \stopStaff s8 s2
+    aes32 g aes16 f8 r f
+  | g32 f g16 ees8 s8 \stopStaff s8 s2
   | \override Staff.KeySignature.break-visibility = #all-invisible
     s1*21
   | \startStaff \key c \minor
     \set subdivideBeams = ##t
-    f32[ g f16 ees16 d]
+    g32[ f g16 ees16 d]
     \set subdivideBeams = ##f
     g[ f aes f] g8.[ aes16]
     \set subdivideBeams = ##t
     \set baseMoment = #(ly:make-moment 1/16)
-    \tuplet 3/2 { d,32[ ees d } \tuplet 3/2 { ees d ees }
-    d16 c]
+    ees64[ d c d \tuplet 3/2 { ees32 d ees] } d16[ c]
   | c1\fermata\fine
 }
 
@@ -38,7 +37,9 @@ VoiceOne = \context Voice = "one" \relative c'' {
   \override Rest.staff-position = #0
   \stemNeutral\tieNeutral
   %1
-  | r8 c16[ b] c[ d ees g,] aes[ bes aes f] f'[ es d c]
+  | \override Score.MetronomeMark.Y-offset = #-4
+    \tempo "Moderato ed espressivo" 4 = 40
+    r8 c16[ b] c[ d ees g,] aes[ bes aes f] f'[ es d c]
   | b[ aes' g f] ees[ d c b] c[ d c d] d8.[\downprall c32 d]
   | ees16[ d c d] ees[ f g8] g[\prall f] r f
   | f[\prall ees] r d ees[ aes,]~ aes16[ f bes f]
@@ -152,6 +153,6 @@ VoiceTwo = \context Voice = "two" \relative c' {
     }
   }
   \midi {
-    \tempo 4 = 69
+    \tempo 4 = 40
   }
 }

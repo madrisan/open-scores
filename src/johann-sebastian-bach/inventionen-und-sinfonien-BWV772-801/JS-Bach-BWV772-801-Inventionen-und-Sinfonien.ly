@@ -97,16 +97,22 @@
 \include "./jsbach-clavier-buchlein-ornament-table.ly"
 \pageBreak
 
+\markup {
+  \fill-line {
+    \center-column {
+      \null\null\null\null\null\null
+      \line \abs-fontsize #42 \bold { "Inventionen" }
+      \null\null
+      \line \abs-fontsize #24 \bold { "BWV 772" \char ##x2012 "786" }
+    }
+  }
+}
+\pageBreak
+
 \include "./parts/bach-invention-01.ly"
 \pageBreak
-\include "./parts/bach-sinfonia-01.ly"
-\pageBreak
-
 \include "./parts/bach-invention-02.ly"
 \pageBreak
-\include "./parts/bach-sinfonia-02.ly"
-\pageBreak
-
 \include "./parts/bach-invention-03.ly"
 \pageBreak
 \include "./parts/bach-invention-04.ly"
@@ -132,3 +138,21 @@
 \include "./parts/bach-invention-14.ly"
 \pageBreak
 \include "./parts/bach-invention-15.ly"
+\pageBreak
+
+\markup {
+  \fill-line {
+    \center-column {
+      \null\null\null\null\null\null
+      \line \abs-fontsize #42 \bold { "Sinfonien" }
+      \null\null
+      \line \abs-fontsize #24 \bold { "BWV 787" \char ##x2012 "801" }
+    }
+  }
+}
+\pageBreak
+
+\include "./parts/bach-sinfonia-01.ly"
+\pageBreak
+\include "./parts/bach-sinfonia-02.ly"
+\pageBreak

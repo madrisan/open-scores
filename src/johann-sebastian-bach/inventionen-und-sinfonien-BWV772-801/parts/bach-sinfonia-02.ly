@@ -42,7 +42,7 @@ voiceOneOssia = \relative c'' {
 voiceThreeOssia = \relative c {
   %1
   | \stopStaff s1*12/8*14
-  | s1*5/8 s16 \startStaff s16 \key c \minor
+  | s1*5/8 \startStaff s8 \key c \minor
     \set subdivideBeams = ##t
     \set baseMoment = #(ly:make-moment 1/8)
     \repeat unfold 6 { bes32 c bes c }
