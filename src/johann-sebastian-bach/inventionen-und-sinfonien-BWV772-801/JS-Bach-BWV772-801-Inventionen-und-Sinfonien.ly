@@ -59,15 +59,19 @@
         \null
         \fill-line { \draw-hline }
         \null\null\null
-        \line \abs-fontsize #42 \bold { "Inventionen" }
+        \line \abs-fontsize #40 \bold { "Inventionen" }
+        \null
+        \line \abs-fontsize #14 { "(Two-Part Inventions)" }
         \null\null
-        \line \abs-fontsize #24 \bold { "BWV 772" \char ##x2012 "786" }
+        \line \abs-fontsize #22 \bold { "BWV 772" \char ##x2012 "786" }
+        \null
+        \line \italic { \abs-fontsize #16 "und" }
+        \null
+        \line \abs-fontsize #40 \bold { "Sinfonien" }
+        \null
+        \line \abs-fontsize #14 { "(Three-Part Inventions)" }
         \null\null
-        \line \italic { \abs-fontsize #18 "und" }
-        \null\null
-        \line \abs-fontsize #42 \bold { "Sinfonien" }
-        \null\null
-        \line \abs-fontsize #24 \bold { "BWV 787" \char ##x2012 "801" }
+        \line \abs-fontsize #22 \bold { "BWV 787" \char ##x2012 "801" }
         \null\null\null
         \line { \abs-fontsize #18 \italic "für Tasteninstrument" }
         \null\null\null
@@ -80,7 +84,7 @@
   \markup {
     \fill-line {
       \center-column {
-        \null\null\null\null
+        \null\null
         \fill-line \abs-fontsize #10 {
           "Based on a previous work of Allen Garvin and Olivier Vermersch,"
         }
@@ -155,4 +159,6 @@
 \include "./parts/bach-sinfonia-01.ly"
 \pageBreak
 \include "./parts/bach-sinfonia-02.ly"
+\pageBreak
+\include "./parts/bach-sinfonia-03.ly"
 \pageBreak
