@@ -10,6 +10,24 @@ staffUpper = { \change Staff = "upper" \stemDown\tieDown }
 
 voiceOneOssia = \relative c'' {
   %1
+  | \stopStaff s1
+  | s2 s8 \startStaff s8 \key d \minor
+    << {
+      \omit TupletBracket
+      \tuplet 3/2 { a'32[ gis fis } gis8 a16]
+    } \\ {
+      s8 d,\laissezVibrer
+    } >>
+  | \stopStaff
+    \override Staff.KeySignature.break-visibility = #all-invisible
+    s1
+  | s2 s8
+    << {
+      s16 \startStaff \hideNotes g~ \unHideNotes g[ f e f]
+    } \\ {
+      \omit TupletBracket
+      s8 \tuplet 3/2 { d32 cis d } cis8.
+    } >>
 }
 
 voiceThreeOssia = \relative c {
@@ -23,7 +41,7 @@ VoiceOne = \context Voice = "one" \relative c'' {
   \stemNeutral\tieUp
   %1
   | r16 d cis d a8 f'~ f16 e d e a,8 g'~
-  | g16 f e d \stemUp a'4~ a16 gis fis gis gis8. a16
+  | g16 f e d \stemUp a'4~ a16 gis fis gis gis8.\downprall a16
   | a4~ a16 d, cis d g4~ g16 cis,! b! cis
   | f4. a8 g4~ g16 f e f
   %5
@@ -171,7 +189,7 @@ VoiceThree = \context Voice = "three" \relative c {
   \header {
     composer = "Johann Sebastian Bach"
     opus = "BWV 790"
-    title = \markup { "Sinfonia IV" \char ##x2012 "d-Moll" }
+    title = \markup { "Sinfonia IV (d-Moll)" }
     subtitle = ##f
   }
   \layout {

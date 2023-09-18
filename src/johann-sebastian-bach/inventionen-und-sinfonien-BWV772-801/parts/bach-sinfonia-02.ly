@@ -235,7 +235,7 @@ VoiceThree = \context Voice = "three" \relative c {
   \header {
     composer = "Johann Sebastian Bach"
     opus = "BWV 788"
-    title = \markup { "Sinfonia II" \char ##x2012 "c-Moll" }
+    title = \markup { "Sinfonia II (c-Moll)" }
     subtitle = ##f
   }
   \layout {
