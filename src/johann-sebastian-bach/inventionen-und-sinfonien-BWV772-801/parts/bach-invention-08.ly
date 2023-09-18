@@ -124,7 +124,7 @@ VoiceTwo = \context Voice = "two" \relative c {
   \header {
     composer = "Johann Sebastian Bach"
     opus = "BWV 779"
-    title = \markup { "Invention VIII" "(F-Dur)" }
+    title = \markup { "Invention VIII " \char ##x00b7 " F-Dur" }
     subtitle = ##f
   }
   \layout {

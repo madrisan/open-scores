@@ -146,7 +146,7 @@ VoiceTwo = \context Voice = "two" \relative c' {
   }
   >>
   \header {
-    composer = ##f % "Johann Sebastian Bach"
+    composer = "Johann Sebastian Bach"
     opus = "BWV 773"
     title = \markup { "Invention II " \char ##x00b7 " c-Moll" }
     subtitle = ##f
