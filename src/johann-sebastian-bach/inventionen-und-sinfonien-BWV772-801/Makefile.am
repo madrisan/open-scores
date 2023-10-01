@@ -32,7 +32,26 @@ EXTRA_DIST = JS-Bach-BWV772-801-Inventionen-und-Sinfonien.ly
 	     jsbach-clavier-buchlein-ornament-table.eps \
 	     logo.ly \
 	     ossiasetup.ly \
-	     parts/bach-invention-01.ly
+	     parts/bach-invention-01.ly \
+	     parts/bach-invention-01a.ly \
+	     parts/bach-invention-02.ly \
+	     parts/bach-invention-03.ly \
+	     parts/bach-invention-04.ly \
+	     parts/bach-invention-05.ly \
+	     parts/bach-invention-06.ly \
+	     parts/bach-invention-07.ly \
+	     parts/bach-invention-08.ly \
+	     parts/bach-invention-09.ly \
+	     parts/bach-invention-10.ly \
+	     parts/bach-invention-11.ly \
+	     parts/bach-invention-12.ly \
+	     parts/bach-invention-13.ly \
+	     parts/bach-invention-14.ly \
+	     parts/bach-invention-15.ly \
+	     parts/bach-sinfonia-01.ly \
+	     parts/bach-sinfonia-02.ly \
+	     parts/bach-sinfonia-03.ly \
+	     parts/bach-sinfonia-04.ly
 
 all: $(BUILT_SOURCES) JS-Bach-BWV772-801-Inventionen-und-Sinfonien
 
