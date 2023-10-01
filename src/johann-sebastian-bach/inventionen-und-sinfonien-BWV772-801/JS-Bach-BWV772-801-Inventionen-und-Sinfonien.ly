@@ -115,6 +115,8 @@
 
 \include "./parts/bach-invention-01.ly"
 \pageBreak
+\include "./parts/bach-invention-01a.ly"
+\pageBreak
 \include "./parts/bach-invention-02.ly"
 \pageBreak
 \include "./parts/bach-invention-03.ly"
