@@ -65,9 +65,9 @@ VoiceOne = \context Voice = "one" \relative c'' {
   | f[ a d c] bes[ a g-1 f-2] ees-1[ g c g-1] a8.[\prall a16]
   | bes[ f g f] d'4~ d16[ f, g f] ees'4~
   %20
-  | ees16[ f, bes-3 a-1] d[ c ees d] g[ f ees d] c[ f ees f]
-  | d-2[ c-1 bes a] d[ c ees d] c-1[ bes-2 a c] f4~
-  | f16[ g, c b-1] ees-3[ d-1 f ees] aes[ g f ees] d[ g f g]
+  | ees16[ f, bes-3 a-1] \stemUp d[ c ees d] \stemNeutral g[ f ees d] c[ f ees f]
+  | d-2[ c-1 bes a] d[ c ees d] \stemUp c-1[ bes-2 a c] \stemNeutral f4~
+  | \stemUp f16[ g, c b-1] \stemNeutral ees-3[ d-1 f ees] aes[ g f ees] d[ g f g]
   | ees[ d-1] c-3[ b] c[ d ees g,] aes[ bes aes f] f'[ ees d c]
   | b[ aes' g f] ees[ d-1 c-3 b] c[ d c-1 d] d8.[\downprall c32 d]
   %25
@@ -95,7 +95,7 @@ VoiceTwo = \context Voice = "two" \relative c' {
   | ees[ bes c bes] g'4~ g16[ bes, c bes] aes'4~
   %10
   | aes16[ bes, ees d] g-1[ f-4 aes g] c[ bes aes g] f-5[ bes-1 aes bes]
-  | g8 \clef bass ees,16-3[ f] g[ a-3 bes-2 d,] ees[ f ees c] c'[ bes a g]
+  | g8 \clef bass ees,16-3[ f] g[ a-3 bes-2 d,-1] ees-3[ f ees c] c'[ bes a g]
   | fis[ ees'-2 d-1 c] bes-3[ a-1 g fis] g-3[ a-1 g-4 a] a8.[^\downprall g32 a]
   | bes16[ a g a] bes-2[ c-1 d8-3] d[^\prall c] r c^3
   | c[^\prall bes] r a^3 bes[ ees,-3]~ ees16[ c f! c]
