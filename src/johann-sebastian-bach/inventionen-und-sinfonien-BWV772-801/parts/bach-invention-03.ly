@@ -58,20 +58,22 @@ VoiceOne = \context Voice = "one" \relative c' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \stemNeutral\tieNeutral
+  \override Score.MetronomeMark.Y-offset = #-3
+  \tempo "Allegretto con brio" 4. = 64
   \partial 8 { d16[ e] }
   %1
   | fis16[ e g fis e d]
   | a'[ g fis e fis d]
-  | a'8^.[ b^. cis16\mordent d]
-  | cis8[\prall \once\stemUp\once\slurDown \appoggiatura b8 a cis16 d]
+  | a'8^.[_2 b^. cis16_3\mordent d]
+  | cis8[\prall \once\stemUp\once\slurDown \appoggiatura b8 a cis16_2 d]
   %5
   | e[ cis fis d cis b]
-  | e[ cis d b a gis]
-  | e'[ cis fis d cis b]
-  | e[ cis d b a gis]
-  | cis[ b d cis b a]
+  | e-5[ cis-4 d b a gis]
+  | e'-4[ cis fis d cis b]
+  | e-5[ cis-4 d b a gis]
+  | cis-3[ b d cis b a]
   %10
-  | fis'8^.[ gis,^. a^.]~
+  | fis'8^.-5[ gis,^.-2 a^.-1]~
   | a16[ b] b8.[\parenthesize\prall a16]
   | a4 r8
   | r e'^. a~
@@ -79,55 +81,55 @@ VoiceOne = \context Voice = "one" \relative c' {
   %15
   | g[ fis a g fis e]
   | b'8^.[ b,^.] r
-  | r fis^.[ b]~
-  | b16[ ais b cis d e]
+  | r fis^._1[ b_3]~
+  | b16[ ais_2 b_1 cis d_1 e]
   | fis[ e g fis e d]
   %20
-  | e[ d fis e d cis]
-  | d[ cis e d cis b]
+  | e-4[ d fis e d cis]
+  | d-4[ cis e d cis b]
   | cis8^.[ ais\prall b]~
   | b16[ cis] cis8.[\prall b16]
-  | b16[ fis gis ais b cis]
+  | b16-4[ fis gis ais b-1 cis]
   %25
   | d[ cis e d cis b]
-  | g'4.~
+  | g'4.~-5
   | g4.~
-  | g16[ e, fis gis a b]
+  | g16[ e, fis gis a-1 b]
   | cis[ b d cis b a]
   %30
   | fis'4.~
   | fis~
-  | fis16[ b, e d cis b]
+  | fis16[ b,-1 e-5 d cis b]
   | cis[ b d cis b a]
-  | gis8[\prall e_. a16 b]
+  | gis8[\prall e_. a16-2 b]
   %35
-  | cis[ b d cis b a]
-  | fis'8.[ gis,16 a gis]
-  | a[ d b8.\parenthesize\prall a16]
+  | cis[ b d-5 cis-3 b a]
+  | fis'8.[ gis,16-2 a gis]
+  | a-1[ d b8.\parenthesize\prall a16]
   | a8.[ cis16 d e]
-  | fis,8_.[ g_. a\reverseturn ]
+  | fis,8_.-1[ g_. a\reverseturn ]
   %40
-  | b^.[ cis\reverseturn d]~
+  | b^.-1[ cis\reverseturn d]~
   | d16[ cis e d cis d]
-  | e[ d cis b] a[ g]
+  | e[ d cis b] a-1[ g-4]
   | fis[ e g fis e d]
   | a'[ g fis e fis d]
   %45
-  | a'8^.[ b^. cis16\mordent d]
+  | a'8^.-2[ b^. cis16\mordent d]
   | cis8[\prall \once\stemUp \once\slurDown \acciaccatura b a d]
   | d_.[ d,_. d'_.]
   | d_.[ d,_. d'_.]
   | d_.[ d,_. d'_.]
   %50
-  | d_.[ d,_.] d'16[ e]
+  | d_.[ d,_.] d'16-1[ e]
   | fis[ e g fis e d]
-  | b'8^.[ cis,^. d]~
-  | d16[ e] e8.[\parenthesize\prall d16]
-  | d8_.[ d,_. g]~
+  | b'8^.-5[ cis,^.-2 d-1]~
+  | d16[ e] e8.[\parenthesize\prall d16-1]
+  | d8_.-5[ d,_. g-5]~
   %55
-  | g16[ a, b cis] d[ e]
+  | g16[ a, b cis] d-1[ e]
   | fis[ e g fis e d]
-  | b'8.[ cis,16 d cis]
+  | b'8.[ cis,16-1 d cis]
   | d[ g] e8.[\parenthesize\prall d16]
   | d4.\fermata
     \fine
@@ -149,64 +151,64 @@ VoiceTwo = \context Voice = "two" \relative c {
   | a^.[ a,^. a'^.]
   | a^.[ a,^. a'^.]
   | a^.[ a,^. a'^.]
-  | a^.[ b^. cis^.]
+  | a^.-5[ b^. cis^.]
   %10
   | d16[ cis e d cis b]
   | cis[ d e8^. e,^.]
-  | a16[ e fis gis a b]
-  | cis[ b d cis b a]
+  | a16-2[ e fis gis a b-1]
+  | cis-3[ b d cis b a]
   | e'8^.[ e,^.] r
   %15
   | r b'^.[ e]~
-  | e16[ fis, gis ais b cis]
+  | e16[ fis, gis ais-3 b-1 cis-3]
   | d[ cis e d cis b]
   | fis'8^.[ fis,^. \clef "treble" e'^.]
-  | d_.[ b'16 ais b8]
+  | d_.-5[ b'16 ais b8]
   %20
-  | cis,_.[ ais'16 gis ais8]
-  | b16[ a! g! fis e d]
+  | cis,_.[ ais'16-1 gis-3 ais8-2]
+  | b16[ a! g!-1 fis e d]
   | e[ d fis e d cis]
-  | d[ e fis8_. fis,_.] \clef "bass"
+  | d-3[ e fis8_. fis,_.] \clef "bass"
   | b^.[ fis^. d^.]
   %25
   | b4 r8
-  | r16 b[ cis dis e fis]
+  | r16 b[ cis dis-3 e-1 fis-3]
   | g[ fis a g fis e]
   | a4.~
   | a~
   %30
-  | a16[ a, b cis d e]
-  | fis[ e g fis e d]
+  | a16[ a, b cis d e-1]
+  | fis-3[ e g fis e d]
   | gis8.[ e16 fis gis]
-  | a[ gis fis e d fis]
-  | e[ d cis b cis a]
+  | a[ gis fis e d-5 fis-3]
+  | e-1[ d cis b cis a]
   %35
   | a'8^.[ fis^. cis^.]
-  | d16[ cis e d cis b]
+  | d16-3[ cis-4 e-1 d cis b]
   | cis[ d e8_. e,_.]
-  | a16[ cis d e fis g]
+  | a16-5[ cis-3 d e fis-4 g]
   | a[ g b a g fis]
   %40
-  | g[ fis a g fis e]
-  | fis[ e g fis e d]
+  | g-3[ fis-4 a-1 g fis e]
+  | fis[ e g-2 fis e d]
   | a'8^.[ a,^.] r
   | R1*3/8
-  | r8 r d16[ e]
+  | r8 r d16-5[ e]
   %45
   | fis[ e g fis e d]
   | a'[ g fis e fis d]
-  | a'[ fis b g fis e]
-  | a[ fis g e d cis]
+  | a'[ fis b-1 g-2 fis e]
+  | a-1[ fis-2 g e d cis]
   | a'[ fis b g fis e]
   %50
   | a[ fis g e d cis]
   | d8^.[ e^. fis^.]
-  | g16[ fis a g fis e]
+  | g16-1[ fis-3 a-1 g fis e]
   | fis[ g a8^. a,^.]
-  | b16[ a c b a g]
+  | b16-3[ a c b a g]
   %55
   | d'4.~
-  | d16[ cis b a g fis]
+  | d16[ cis b-3 a-1 g fis]
   | g[ fis a g fis e]
   | fis[ g] a4
   | d,4.^\fermata
@@ -253,6 +255,6 @@ VoiceTwo = \context Voice = "two" \relative c {
     }
   }
   \midi {
-    \tempo 4. = 60
+    \tempo 4. = 64
   }
 }
