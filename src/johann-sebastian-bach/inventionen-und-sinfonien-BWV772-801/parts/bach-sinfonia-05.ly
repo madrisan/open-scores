@@ -5,8 +5,6 @@ Global = {
 }
 
 grayTextColor = #(x11-color "dimgray")
-staffLower = { \change Staff = "lower" \stemUp\tieUp }
-staffUpper = { \change Staff = "upper" \stemDown\tieDown }
 
 voiceOneOssia = \relative c'' {
   %1

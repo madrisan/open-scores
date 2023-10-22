@@ -167,3 +167,5 @@
 \include "./parts/bach-sinfonia-04.ly"
 \pageBreak
 \include "./parts/bach-sinfonia-05.ly"
+\pageBreak
+\include "./parts/bach-sinfonia-06.ly"
