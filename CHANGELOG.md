@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Added
 
 - J.S. Bach: Inventionen (BWV 772-786) und Sinfonien (BWV 787-801)
+- J.S. Bach: Goldberg Variationen - Variatio 3: move some notes to staffLower
 
 ### Changed
 

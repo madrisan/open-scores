@@ -4,6 +4,9 @@ Global = {
   \include "../global.ly"
 }
 
+staffLower = { \change Staff = "lower" \stemUp\tieUp }
+staffUpper = { \change Staff = "upper" \stemDown\tieDown }
+
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
@@ -89,7 +92,7 @@ Alto = \context Voice = "two" \relative c'' {
   | g,4.\rest
     \once\shape #'(((0 . 0) (0 . -2.2) (0 . -2.2) (0 . 0))) Tie
     a'4.~ a16[ b c a g fis] g16[ a b g a b]
-  | e,8[ fis16 g a b] c8[ e, dis] e4. c\rest
+  | e,8[ fis16 g a b] c8[ \staffLower e, dis] \staffUpper e4. c\rest
   | \once\shape #'(((-0.5 . 2.5) (0 . 3) (0 . 3) (0.5 . 2.5))) Tie
     \once\override NoteColumn.force-hshift = #-0.2 e'4.^~ e16[ fis g e fis g]
     c,[ d e c d e] a,[ b c a b c]
@@ -121,7 +124,7 @@ Bass = \context Voice = "four" \relative c {
   | c16[ d c b a g ] fis16[ e fis g a fis ] b8[ fis g ] a16[ c b a g fis ]
   | g16[ a g fis e d ] c16[ b a b c a ] b8[ fis' b ~ ] b[ g e ]
   | c'16[ d c b a g ] fis16[ e fis b a b ] e,8[ g b ] e8[ e, d ]
-  | c8[ c' b8 ] a4. ~ a8[ c a ] fis8[ d d' ]
+  | c8[ c' b8 ] a4. _~ a8[ c a ] fis8[ d d' ]
   | g,16[ a g f e d ] c8[ e c ] a16[ b c a b c ] d8[ d, fis' ]
   %15
   | g16[ a b g a b ] c8[ e a, ] d16[ c b d c b ] c16[ b a g fis a ]
