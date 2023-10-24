@@ -70,7 +70,9 @@ VoiceOne = \context Voice = "one" \relative c'' {
   | \stemUp b b, cis dis e fis e fis dis
   | e4. r4 r8 fis,4 a8
   %40
-  | gis2.~ gis4.\fermata
+  | \override Script.X-offset = #4
+    gis2.~\fermata
+    gis4.
     \fine
 }
 
@@ -189,7 +191,9 @@ VoiceThree = \context Voice = "three" \relative c' {
   | a r4 r8 r4 r8
   %40
   | r8 b fis gis dis e \stemUp ais, b b,
-  | e2.~ e4.\fermata
+  | \override Script.X-offset = #4
+    e2.~\fermata
+    e4.
     \fine
 }
 
