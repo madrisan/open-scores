@@ -71,7 +71,7 @@ The source code was compiled with `GNU LilyPond 2.24.1 (running Guile 2.2)` (Fed
 
  * [Chorale Prelude - Ich ruf zu dir, Herr Jesu Christ (BWV 639) - Ferruccio Busoni](https://github.com/madrisan/open-scores/releases/download/v42/Bach-Busoni-Chorale-Prelude-BWV639.pdf)
  * [Chorale Prelude - Nun komm’ der Heiden Heiland (BWV 659)](https://github.com/madrisan/open-scores/releases/download/v42/Bach-Busoni-Chorale-Prelude-BWV659.pdf)
- * [Chaconne für violine allein (BWV 1004)](https://github.com/madrisan/open-scores/releases/download/v42/Bach-Busoni-Chaconne-fur-violine-allein-BWV1004.pdf)
+ * [Chaconne für violine allein (BWV 1004)](https://github.com/madrisan/open-scores/releases/download/v42/JS-Bach-Busoni-Chaconne-fur-violine-allein-BWV1004.pdf)
 
 #### Johann Sebastian Bach / Franz Liszt
 

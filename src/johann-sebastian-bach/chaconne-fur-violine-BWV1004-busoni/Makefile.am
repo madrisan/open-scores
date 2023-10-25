@@ -1,6 +1,6 @@
 ## Process this file with automake to produce Makefile.in
 
-## Copyright (c) 2023 Davide Madrisan <davide.madrisan@gmail.com>
+## Copyright (c) 2023-2024 Davide Madrisan <davide.madrisan@gmail.com>
 ##
 ## This program is free software: you can redistribute it and/or modify
 ## it under the terms of the GNU General Public License as published by
@@ -24,13 +24,13 @@ SUFFIXES = .in
 	$(LILYPOND) --pdf --output $@ $<
 
 BUILT_SOURCES = covercolor.ly
-EXTRA_DIST = Bach-Busoni-Chaconne-fur-violine-allein-BWV1004.ly \
+EXTRA_DIST = JS-Bach-Busoni-Chaconne-fur-violine-allein-BWV1004.ly \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
 	     logo.ly
 
-all: $(BUILT_SOURCES) Bach-Busoni-Chaconne-fur-violine-allein-BWV1004
+all: $(BUILT_SOURCES) JS-Bach-Busoni-Chaconne-fur-violine-allein-BWV1004
 
 clean-local:
 	-rm -f $(BUILT_SOURCES)
