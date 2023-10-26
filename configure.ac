@@ -4,7 +4,7 @@ AC_PREREQ([2.59])
 
 AC_INIT(open-scores,
         m4_normalize(m4_include([VERSION])),
-        [davide.madrisan@gmail.com])
+        [d.madrisan@proton.me])
 
 AC_MSG_CHECKING([for $PACKAGE_NAME version])
 AC_MSG_RESULT([$PACKAGE_VERSION])

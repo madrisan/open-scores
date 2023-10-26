@@ -39,7 +39,7 @@ Global = {
 \bookpart {
   \header {
     maintainer      = "Davide Madrisan"
-    maintainerEmail = "davide.madrisan@gmail.com"
+    maintainerEmail = "d.madrisan@proton.me"
   }
   \include "./header.ily"
   \header {
