@@ -24,7 +24,7 @@ SUFFIXES = .in
 	$(LILYPOND) --pdf --output $@ $<
 
 BUILT_SOURCES = covercolor.ly
-EXTRA_DIST = JS-Bach-BWV772-801-Inventionen-und-Sinfonien.ly
+EXTRA_DIST = JS-Bach-BWV772-801-Inventionen-und-Sinfonien.ly \
 	     covercolor.ly.in \
 	     global.ly \
 	     header.ily \
