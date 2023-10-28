@@ -24,13 +24,13 @@ SUFFIXES = .in
 	$(LILYPOND) --pdf --output $@ $<
 
 BUILT_SOURCES = covercolor.ly
-EXTRA_DIST = Bach-Busoni-Chorale-Prelude-BWV639.ly \
+EXTRA_DIST = JS-Bach-Busoni-Chorale-Prelude-BWV639.ly \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
 	     logo.ly
 
-all: $(BUILT_SOURCES) Bach-Busoni-Chorale-Prelude-BWV639
+all: $(BUILT_SOURCES) JS-Bach-Busoni-Chorale-Prelude-BWV639
 
 clean-local:
 	-rm -f $(BUILT_SOURCES)
