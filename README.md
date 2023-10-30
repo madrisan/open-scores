@@ -87,11 +87,11 @@ Image of the J.S. Bach's [manuscript](images/js-bach-jesu-meine-freude-manuscrip
 
 #### Johann Sebastian Bach / Egon Petri
 
- * [Schafe können sicher weiden (BWV 208) - Egon Petri](https://github.com/madrisan/open-scores/releases/download/v42/Bach-Petri-Schafe-konnen-sicher-weiden-BWV208.pdf)
+ * [Schafe können sicher weiden (BWV 208) - Egon Petri](https://github.com/madrisan/open-scores/releases/download/v42/JS-Bach-Petri-Schafe-konnen-sicher-weiden-BWV208.pdf)
 
 #### Johann Sebastian Bach / Ludwig Stark
 
- * [Siciliano (BWV 1031)](https://github.com/madrisan/open-scores/releases/download/v42/Bach-Stark-Siciliano-BWV1031.pdf)
+ * [Siciliano (BWV 1031)](https://github.com/madrisan/open-scores/releases/download/v42/JS-Bach-Stark-Siciliano-BWV1031.pdf)
 
 #### Ludwig van Beethoven
 

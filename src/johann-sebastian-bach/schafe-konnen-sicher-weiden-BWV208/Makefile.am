@@ -24,13 +24,13 @@ SUFFIXES = .in
 	$(LILYPOND) --pdf --output $@ $<
 
 BUILT_SOURCES = covercolor.ly
-EXTRA_DIST = Bach-Petri-Schafe-konnen-sicher-weiden-BWV208.ly \
+EXTRA_DIST = JS-Bach-Petri-Schafe-konnen-sicher-weiden-BWV208.ly \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
 	     logo.ly
 
-all: $(BUILT_SOURCES) Bach-Petri-Schafe-konnen-sicher-weiden-BWV208
+all: $(BUILT_SOURCES) JS-Bach-Petri-Schafe-konnen-sicher-weiden-BWV208
 
 clean-local:
 	-rm -f $(BUILT_SOURCES)
