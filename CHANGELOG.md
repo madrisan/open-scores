@@ -3,12 +3,13 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [v43] - unreleaased
+## [v43] - unreleased
 
 ### Added
 
 - J.S. Bach: Inventionen (BWV 772-786) und Sinfonien (BWV 787-801)
 - J.S. Bach: Goldberg Variationen - Variatio 3: move some notes to staffLower
+- J.S. Bach: Prepend 'JS-' to all the transcriptions for consistency
 
 ### Changed
 

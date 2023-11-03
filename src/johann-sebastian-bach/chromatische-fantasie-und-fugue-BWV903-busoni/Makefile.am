@@ -24,7 +24,7 @@ SUFFIXES = .in
 	$(LILYPOND) --pdf --output $@ $<
 
 BUILT_SOURCES = covercolor.ly
-EXTRA_DIST = JS-Bach-BWV903-Chromatische-Fantasie-und-Fugue.ly \
+EXTRA_DIST = JS-Bach-Busoni-Chromatische-Fantasie-und-Fugue-BWV903.ly \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
@@ -32,7 +32,7 @@ EXTRA_DIST = JS-Bach-BWV903-Chromatische-Fantasie-und-Fugue.ly \
 	     parts/bach-chromatische-fantasie-und-fugue-1-fantasia.ly \
 	     parts/bach-chromatische-fantasie-und-fugue-2-fuga.ly
 
-all: $(BUILT_SOURCES) JS-Bach-BWV903-Chromatische-Fantasie-und-Fugue
+all: $(BUILT_SOURCES) JS-Bach-Busoni-Chromatische-Fantasie-und-Fugue-BWV903
 
 clean-local:
 	-rm -f $(BUILT_SOURCES)
