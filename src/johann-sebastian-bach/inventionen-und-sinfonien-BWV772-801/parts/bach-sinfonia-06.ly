@@ -142,7 +142,6 @@ VoiceThree = \context Voice = "three" \relative c' {
   \override Rest.staff-position = #0
   \stemNeutral\tieNeutral
   %1
-  %1
   | \stemDown e2. dis4.
   | e cis fis
   | b,8 cis dis e fis gis fis gis e
