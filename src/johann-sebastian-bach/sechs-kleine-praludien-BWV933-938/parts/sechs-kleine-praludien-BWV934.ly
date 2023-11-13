@@ -34,6 +34,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | g8[ f es d c d]
   %20
   | \stemUp es2.
+    \break
   }
   \repeat volta 2 {
   | \stemNeutral

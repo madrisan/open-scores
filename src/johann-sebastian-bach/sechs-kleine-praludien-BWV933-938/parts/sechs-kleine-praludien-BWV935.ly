@@ -39,7 +39,7 @@ Sopran = \context Voice = "one" \relative c' {
   | f8 e4\trill
   | f4.
   }
-  %\break
+  \break
   \repeat volta 2 {
   %25
   | a'16[ bes a c a f]
@@ -76,9 +76,10 @@ Sopran = \context Voice = "one" \relative c' {
   \fine
 }
 
-Tenor = \context Voice = "three" \relative c {
+Alto = \context Voice = "three" \relative c {
   \voiceThree
-  | s4.*23
+  | \stemDown
+    s4.*23
   %24
   | a'4.
   | s4.*23
@@ -124,7 +125,7 @@ Bass = \context Voice = "four" \relative c {
   %\break
   \repeat volta 2 {
   %25
-  | f''8[ f, f']
+  | \stemNeutral f''8[ f, f']
   | e[ a, c]
   | d[ b! g]
   | c[ e, g]
@@ -166,13 +167,13 @@ Bass = \context Voice = "four" \relative c {
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \clef treble
+      \Alto
       \Sopran
     >>
     \context Staff = "lower" <<
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \clef bass
-      \Tenor
       \Bass
     >>
   >>
