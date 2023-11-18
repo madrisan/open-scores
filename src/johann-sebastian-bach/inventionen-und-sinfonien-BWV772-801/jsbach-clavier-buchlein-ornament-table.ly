@@ -26,7 +26,7 @@ BachAccentFallendFromGrace =
 }
 
 \markup \column {
-  \wordwrap \abs-fontsize #11 {
+  \justify \abs-fontsize #11 {
     The following ornament table is a scan of the original manuscript
     \italic { “Clavier-Büchlein vor Wilhelm Friedemann Bach”, }
     written by Johann Sebastian Bach in January 1720 for the keyboard instruction of his eldest
@@ -61,7 +61,7 @@ BachAccentFallendFromGrace =
 }
 
 \markup \column {
-  \wordwrap \abs-fontsize #11 {
+  \justify \abs-fontsize #11 {
     Below is a transcription as faithfully as possible of Bach's table, including the title and the
     original captions in German.
   }

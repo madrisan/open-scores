@@ -228,18 +228,22 @@ QuiZi = \markup \center-column {
   \null\null\null
 }
 
+textflat = \markup { \hspace #-0.3 \raise #0.4 \abs-fontsize #9 \flat \hspace #-0.5 }
+textsharp = \markup { \hspace #-0.4 \raise #0.7 \abs-fontsize #8 \sharp \hspace #-0.1 }
+
 \markup \column {
-  \wordwrap \abs-fontsize #11 {
+  \justify \abs-fontsize #11 {
      In music theory, the \italic { circle of fifths } is a way of organizing the 12 chromatic
      pitches as a sequence of perfect fifths.
      (This is strictly true in the standard 12-tone equal temperament system — using a different
      system requires one interval of diminished sixth to be treated as a fifth).
 
      If C is chosen as a starting point, the sequence is:
-     C, G, D, A, E, B (=C♭) or H in german notation, F♯ (=G♭), C♯ (=D♭), A♭, E♭, B♭, F.
+     C, G, D, A, E, B (=C\textflat) or H in german,
+     F\textsharp (=G\textflat), C\textsharp (=D\textflat), A\textflat, E\textflat, B\textflat, F.
      Continuing the pattern from F returns the sequence to its starting point of C.
      This order places the most closely related key signatures adjacent to one another.
-     It is usually illustrated in the form of a circle.
+     It can be illustrated in the form of a circle.
   }
   \null\null
 }
@@ -248,34 +252,23 @@ QuiZi = \markup \center-column {
 
 \markup \column {
   \null\null
-  \wordwrap \abs-fontsize #11 {
+  \justify \abs-fontsize #11 {
     The \italic { Inventions and Sinfonias, } BWV 772–801,
     % also known as the \italic { Two- and Three-Part Inventions, }
     are both arranged in order of ascending key, each group covering eight major and seven minor keys:
   }
   \null\null
 }
-\markup \column \abs-fontsize #10 \translate #'(3 . 0) {
-  \string-lines {
-     "• C Major, c minor
-      • D Major, d minor
-      • E♭ Major, E Major, e minor
-      • F Major, f minor
-      • G Major, g minor
-      • A Major, a minor
-      • B♭ Major, b minor"
-  }
-  \null\null
 
-%  \key c \major   \key c \minor    Do
-%  \key d \major   \key d \minor    Re
-%  \key ees \major                  Re♭
-%  \key e \major   \key e \minor    Mi
-%  \key f \major   \key f \minor    Fa
-%  \key g \major   \key g \minor    Sol
-%  \key a \major   \key a \minor    La
-%  \key bes \major                  Si♭ Si
-%  \key b \minor
+\markup \column \abs-fontsize #10 \translate #'(4 . 0) {
+  \line { "C Major and c Minor" }
+  \line { "D Major and d Minor" }
+  \line { "E" \textflat " Major, E Major, and e Minor" }
+  \line { "F Major and f Minor" }
+  \line { "G Major and g Minor" }
+  \line { "A Major and a Minor" }
+  \line { "B" \textflat " Major and b Minor" }
+  \null\null
 }
 
 \language "nederlands"
