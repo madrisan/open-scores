@@ -257,13 +257,13 @@ QuiZi = \markup \center-column {
 }
 \markup \column \abs-fontsize #10 \translate #'(3 . 0) {
   \string-lines {
-     "• C Major, C minor
-      • D Major, D minor
-      • E♭ Major, E Major, E minor
-      • F Major, F minor
-      • G Major, G minor
-      • A Major, A minor
-      • B♭ Major, B minor"
+     "• C Major, c minor
+      • D Major, d minor
+      • E♭ Major, E Major, e minor
+      • F Major, f minor
+      • G Major, g minor
+      • A Major, a minor
+      • B♭ Major, b minor"
   }
   \null\null
 
