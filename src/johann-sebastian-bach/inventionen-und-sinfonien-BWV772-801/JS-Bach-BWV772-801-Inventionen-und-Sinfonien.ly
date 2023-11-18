@@ -101,11 +101,16 @@
 \include "./jsbach-clavier-buchlein-ornament-table.ly"
 \pageBreak
 
+\include "./circle-of-fifths.ly"
+\pageBreak
+
 \markup {
   \fill-line {
     \center-column {
       \null\null\null\null\null\null
       \line \abs-fontsize #42 \bold { "Inventionen" }
+      \null
+      \line \abs-fontsize #16 \bold { "(Two-Part Inventions)" }
       \null\null
       \line \abs-fontsize #24 \bold { "BWV 772" \char ##x2012 "786" }
     }
@@ -151,6 +156,8 @@
     \center-column {
       \null\null\null\null\null\null
       \line \abs-fontsize #42 \bold { "Sinfonien" }
+      \null
+      \line \abs-fontsize #16 \bold { "(Three-Part Inventions)" }
       \null\null
       \line \abs-fontsize #24 \bold { "BWV 787" \char ##x2012 "801" }
     }

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [v44] - unreleased
+
+### Changed
+
+- J.S. Bach: Inventionen und Sinfonien (BWV 772-786) - add circle of fifths image
+
 ## [v43] - 2023-11-16
 
 ### Added
