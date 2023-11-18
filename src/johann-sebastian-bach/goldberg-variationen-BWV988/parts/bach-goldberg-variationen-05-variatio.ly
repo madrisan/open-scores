@@ -52,7 +52,7 @@ Sopran = \context Voice = "one" \relative c' {
   | a'[ d, c b] c[ b a g] fis[ a' g fis]
   | g8[ b,] r \clef "bass" f,[ e d]
   %30
-  | c16[c' b c] \clef "treble" d[ c e c] fis[ c g' c,]
+  | c16[ \clef "treble" c' b c] d[ c e c] fis[ c g' c,]
   | a'[ c, b a] b8[ d' \clef "bass" d,, \clef "treble" c'']
   | b16[ g d g] b[ g d' b] g'4
     \override Score.TextMark.self-alignment-X = #CENTER

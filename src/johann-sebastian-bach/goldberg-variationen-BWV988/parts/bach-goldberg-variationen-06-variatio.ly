@@ -41,7 +41,7 @@ Sopran = \context Voice = "one" \relative c'' {
   }
   \alternative {
     {
-  |   \override Stem.details.beamed-lengths = #'(4 4 4)
+  |   \once\override Beam.positions = #'(1.5 . 0)
       d16[ c! b a g \bottom fis] \top
   |   \extendLaissezVibrer #9 g''4._\laissezVibrer
     }
