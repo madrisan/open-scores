@@ -39,7 +39,7 @@ The source code was compiled with `GNU LilyPond 2.24.1 (running Guile 2.2)` (Fed
 
 #### Johann Sebastian Bach (1685-1750)
 
- * [Inventionen und Sinfonien (BWV 772-786, BWV 787-801)](https://github.com/madrisan/open-scores/releases/download/v43/scores/JS-Bach-BWV772-801-Inventionen-und-Sinfonien.pdf)
+ * [Inventionen und Sinfonien (BWV 772-786, BWV 787-801)](https://github.com/madrisan/open-scores/releases/download/v43/JS-Bach-BWV772-801-Inventionen-und-Sinfonien.pdf)
  * [Suite Anglaise IV (BWV 809)](https://github.com/madrisan/open-scores/releases/download/v43/JS-Bach-BWV809-Suite-Anglaise-4.pdf)
  * [Partita VI (BWV 830)](https://github.com/madrisan/open-scores/releases/download/v43/JS-Bach-BWV830-Partita-6.pdf)
  * [Chromatische Fantasie und Fugue (BWV 903)](https://github.com/madrisan/open-scores/releases/download/v43/JS-Bach-Busoni-Chromatische-Fantasie-und-Fugue-BWV903.pdf) - Interpretiert von Ferruccio Busoni
