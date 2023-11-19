@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Changed
 
 - J.S. Bach: Inventionen und Sinfonien (BWV 772-786) - add circle of fifths image
+- J.S. Bach: Goldberg Variationen - Minor Fixes
 
 ## [v43] - 2023-11-16
 

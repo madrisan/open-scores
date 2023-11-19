@@ -19,9 +19,8 @@ coflayout = \layout {
   \context {
     \Staff
     \omit TimeSignature
-    \omit BarLine
-    explicitClefVisibility = #end-of-line-invisible
-    explicitKeySignatureVisibility = #end-of-line-invisible
+    %explicitClefVisibility = #end-of-line-invisible
+    %explicitKeySignatureVisibility = #end-of-line-invisible
     \remove "Accidental_engraver"
   }
   \context {
@@ -31,7 +30,7 @@ coflayout = \layout {
   }
   \context {
     \Score
-    \override BarNumber.break-visibility = #all-invisible
+    %\override BarNumber.break-visibility = #all-invisible
     \override KeyCancellation.break-visibility = #'#(#f #f #f)
   }
 }
@@ -44,10 +43,21 @@ GDur   = \markup \score { { \key g \major g'4 } \coflayout }
 DDur   = \markup \score { { \key d \major g'4 } \coflayout }
 ADur   = \markup \score { { \key a \major g'4 } \coflayout }
 EDur   = \markup \score { { \key e \major g'4 } \coflayout }
-HDur   = \markup \score { { \key h \major g'4 } \coflayout }
-FisDur = \markup \score { { \key fis \major g'4 } \coflayout }
+HDur   = \markup {
+  \score { { \key h \major g'4 } \coflayout }
+  \score { { \key ces \major g'4 } \coflayout }
+}
+FisDur = \markup \score { {
+  %\override Staff.Clef.transparent = ##t
+  %\override Staff.Clef.X-offset = #2
+  %\override Staff.ClefModifier.break-visibility = #'#(#f #f #f)
+  \key fis \major g'4 } \coflayout
+}
 GesDur = \markup \score { { \key ges \major g'4 } \coflayout }
-DesDur = \markup \score { { \key des \major g'4 } \coflayout }
+DesDur = \markup {
+  \score { { \key des \major g'4 } \coflayout }
+  \score { { \key cis \major g'4 } \coflayout }
+}
 AsDur  = \markup \score { { \key as \major g'4 } \coflayout }
 EsDur  = \markup \score { { \key es \major g'4 } \coflayout }
 BDur   = \markup \score { { \key b \major g'4 } \coflayout }
@@ -135,7 +145,7 @@ FDur   = \markup \score { { \key f \major g'4 } \coflayout }
 
 #(define-markup-command (move-markup-x layout props mymark radius winkel delta)
    (markup? number? number? number?)
-   (move-to-circle-x radius winkel (interpret-markup layout props mymark) delta))
+   (move-to-circle-x (+ radius 1.5) winkel (interpret-markup layout props mymark) delta))
 
 #(define-markup-command (move-and-scale layout props mymark faktor x-offset)
    (markup? number? number?)
@@ -167,8 +177,8 @@ QuiZi = \markup \center-column {
   \combine \move-markup \ADur #outer-radius #90
   \combine \move-markup \EDur #outer-radius #120
   \combine \move-markup \HDur #outer-radius #150
-  \combine \move-markup-x \FisDur #outer-radius #180 #0.5
-  \combine \move-markup-x \GesDur #outer-radius #0 #-0.5
+  \combine \move-markup-x \FisDur #outer-radius #180 #0.3
+  \combine \move-markup-x \GesDur #outer-radius #0 #-0.3
   \combine \move-markup \DesDur #outer-radius #210
   \combine \move-markup \AsDur #outer-radius #240
   \combine \move-markup \EsDur #outer-radius #270
@@ -185,37 +195,49 @@ QuiZi = \markup \center-column {
   \with-color #white
   \combine \draw-circle #(/ QC-radius ticker-len) #0 ##t
   %% add major letters in blue
-  \with-color #darkred
+  \with-color #(x11-color 'darkred)
   \abs-fontsize #22 \bold
-  \combine \move-markup \circle "C" #Dur-radius #0
+  \combine
+    \move-markup
+    \with-color  #(x11-color 'darkgreen) \circle
+    \with-color #(x11-color 'darkred) "C" #Dur-radius #0
   \combine \move-markup "G" #Dur-radius #30
   \combine \move-markup "D" #Dur-radius #60
   \combine \move-markup "A" #Dur-radius #90
   \combine \move-markup "E" #Dur-radius #120
-  \combine \move-markup "B H" #Dur-radius #150
-  \combine \move-markup "G♭/F♯" #Dur-radius #180
-  \combine \move-markup "D♭" #Dur-radius #210
+  \combine \move-markup \concat {
+    "B" \with-color #(x11-color 'darkgreen) "/C♭" } #Dur-radius #150
+  \combine \move-markup \concat {
+    \with-color #(x11-color 'darkgreen) "G♭" "/F♯" } #Dur-radius #180
+  \combine \move-markup \concat {
+    \with-color #(x11-color 'darkgreen) "D♭" "/C♯" } #Dur-radius #210
+  \with-color #(x11-color 'darkgreen)
   \combine \move-markup "A♭" #Dur-radius #240
   \combine \move-markup "E♭" #Dur-radius #270
   \combine \move-markup "B♭" #Dur-radius #300
   \combine \move-markup "F" #Dur-radius #330
-  \with-color #darkgreen
-  \combine \move-markup \circle "a" #moll-radius #0
+  \with-color #(x11-color 'indianred)
+  \combine \move-markup
+    \with-color #darkblue \circle \with-color #(x11-color 'indianred) "a" #moll-radius #0
   \combine \move-markup "e" #moll-radius #30
-  \combine \move-markup "b h" #moll-radius #60
+  \combine \move-markup "b" #moll-radius #60
   \combine \move-markup "f♯" #moll-radius #90
   \combine \move-markup "c♯" #moll-radius #120
-  \combine \move-markup "g♯" #moll-radius #150
-  \combine \move-markup "e♭/d♯" #moll-radius #180
-  \combine \move-markup "b" #moll-radius #210
+  \combine \move-markup \concat {
+    "g♯" \with-color #(x11-color 'forestgreen) "/a♭" } #moll-radius #150
+  \combine \move-markup \concat {
+    \with-color #(x11-color 'forestgreen) "e♭" "/d♯" } #moll-radius #180
+  \combine \move-markup \concat {
+    \with-color #(x11-color 'forestgreen) "b♭" "/a♯" } #moll-radius #210
+  \with-color #(x11-color 'forestgreen)
   \combine \move-markup "f" #moll-radius #240
   \combine \move-markup "c" #moll-radius #270
   \combine \move-markup "g" #moll-radius #300
   \combine \move-markup "d" #moll-radius #330
   \abs-fontsize #16
-  \with-color #darkred
+  \with-color #black
   \combine \move-markup "Major / Dur" #outer-radius #0
-  \with-color #darkgreen
+  \with-color #black
   \combine \move-markup "Minor / Moll" #(* moll-radius 0.6) #0
   \with-color #black
   \draw-circle #QC-radius #0.5 ##f
@@ -245,7 +267,7 @@ textsharp = \markup { \hspace #-0.4 \raise #0.7 \abs-fontsize #8 \sharp \hspace 
      This order places the most closely related key signatures adjacent to one another.
      It can be illustrated in the form of a circle.
   }
-  \null\null
+  \null\null\null
 }
 
 \markup \move-and-scale \QuiZi #0.8 #11
