@@ -96,7 +96,7 @@
   \line {
     \hspace #14
     \general-align #Y #DOWN {
-      \epsfile #X #82 #"Johann-Sebastian-Bach-oil-canvas-Elias-Gottlieb-1746.ps"
+      \epsfile #X #82 #"Johann-Sebastian-Bach-oil-canvas-Elias-Gottlieb-1746.eps"
     }
   }
   \null
