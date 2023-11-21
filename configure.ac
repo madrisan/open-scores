@@ -120,6 +120,7 @@ AC_CONFIG_FILES([\
   src/johann-sebastian-bach/musikalisches-opfer-BWV1079/Makefile \
   src/johann-sebastian-bach/partitas/Makefile \
   src/johann-sebastian-bach/partitas/BWV830/Makefile \
+  src/johann-sebastian-bach/praeludium-und-fughetta-BWV902/Makefile \
   src/johann-sebastian-bach/praludium-und-fuge-liszt-BWV543-S462/Makefile \
   src/johann-sebastian-bach/schafe-konnen-sicher-weiden-BWV208/Makefile \
   src/johann-sebastian-bach/sechs-kleine-praludien-BWV933-938/Makefile \

@@ -7,6 +7,7 @@ SUBDIRS = chaconne-fur-violine-BWV1004-busoni \
 	  italienisches-konzert-BWV971 \
 	  musikalisches-opfer-BWV1079 \
 	  partitas \
+	  praeludium-und-fughetta-BWV902 \
 	  praludium-und-fuge-liszt-BWV543-S462 \
 	  schafe-konnen-sicher-weiden-BWV208 \
 	  sechs-kleine-praludien-BWV933-938 \

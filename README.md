@@ -229,6 +229,7 @@ make -C src/johann-sebastian-bach/inventionen-und-sinfonien-BWV772-801
 make -C src/johann-sebastian-bach/italienisches-konzert-BWV971
 make -C src/johann-sebastian-bach/musikalisches-opfer-BWV1079
 make -C src/johann-sebastian-bach/partitas/BWV830
+make -C src/johann-sebastian-bach/praeludium-und-fughetta-BWV902
 make -C src/johann-sebastian-bach/praludium-und-fuge-liszt-BWV543-S462
 make -C src/johann-sebastian-bach/schafe-konnen-sicher-weiden-BWV208
 make -C src/johann-sebastian-bach/sechs-kleine-praludien-BWV933-938
