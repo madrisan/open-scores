@@ -60,9 +60,54 @@ Soprano = \context Voice = "one" \relative c'' {
   | fis a d fis, e g d' cis d a fis d r4
   }
   \repeat volta 2 {
-  | s1*28
+  | \set subdivideBeams = ##t
+    \stemNeutral a'16 b c4 b16 a b32 g a b c d e fis g8 d~
+  %30
+  | d32 a b c d e fis g a8 c,~ c16 b32 a b4.~
+  | b16 c d4 c16 b c32 a b c d e fis gis a8 e~
+  | e32 b c d e fis gis a b8 d,~ d16 c32 b c4.~
+    \set subdivideBeams = ##f
+  | c32 b a b c16 a b fis' a,8~ a16 g32 fis g16 b e b g'8~
+  | g32 f e f g16 e f c' e,8~ e16 dis32 cis dis16 fis b, fis' a,8~
+  %35
+  | a16 gis32 fis gis16 b e, a gis d'~ d c32 b c16 a dis a fis' a,
+  | a'16 g32 fis g16 e \stemUp\tieDown b e a, dis
+    \set subdivideBeams = ##t
+    e d32 c b a g fis e4~
+  | e16 fis g4 fis16 e fis32 e d e fis g a b c4~
+  | c32 b c d c b a g
+    \set subdivideBeams = ##f
+    f16 d'8 f,16~ f16 e32 d \tieUp  e8~ e4~
+  | \set subdivideBeams = ##t
+    e16 d32 cis d16 d32 e fis16 fis32 g a16 a32 b \stemNeutral c16 b32 a b16 g32 a b16 b32 c d16 d32 e
+    \set subdivideBeams = ##f
+  %40
+  | f16 e32 d e16 a fis g cis, d b8 a r4
+  | \stemUp b4 c~ c8 b16 a b8 c
+  | d e4 d16 c d4~ d16 e d c
+  | b d g8~ \stemNeutral g fis16 g a8 c,4 b16 a
+  | b d f4 e16 d \stemUp e2~
+  %45
+  | e16 d e c a c b a d2~
+  | d16 c d b g b a g c2~
+  | c16 b a g \stemNeutral\tieNeutral fis e d c b g' fis e a g fis e
+  | fis c' b a d c b a b d c b a g fis e
+  | fis g fis e d c b a b d g8~ g16 d e c
+  %50
+  | b d g8~ g16 b, c a g d' f8~ f16 d e c
+  | b d f8~ f16 d e b e b c e fis c g' c,
+  | a' e fis a c d, d' d, c' b a g a8 fis
+  | g16 cis, bes'8~ bes16 a g fis g d bes'8 ~ bes16 a g fis
+  | \set subdivideBeams = ##t
+    \tuplet 3/2 { g fis e } bes' g
+    \set subdivideBeams = ##f
+    cis g e' g, fis a c8~
+    \set subdivideBeams = ##t
+    c16 a32 b c16 b32 a
+    \set subdivideBeams = ##f
+  | b16 g' cis,8~ cis16 e d cis d a' c,8~ c16 b c a
+  | b d b g d g a fis g d b g r4
   }
-    \fine
 }
 
 Alto = \context Voice = "two" \relative c'' {
@@ -93,9 +138,23 @@ Alto = \context Voice = "two" \relative c'' {
   | s1*9
   }
   \repeat volta 2 {
-  | s1*28
+  | s1*7
+  %36
+  | \stemDown s4 g8 fis e r s4
+  | s1*3
+  %40
+  | s2 g8 fis s4
+  | g1~
+  | g1~
+  | g8 r s2.
+  | s2 r16 c b c a b g a
+  %45
+  | fis!2~ fis16 b a b g a fis g
+  | e2~ e16 a g a fis g e fis
+  | d8 r s2.
+
+  | s1*9
   }
-    \fine
 }
 
 Tenor = \context Voice = "three" \relative c' {
@@ -123,15 +182,36 @@ Tenor = \context Voice = "three" \relative c' {
   }
   \pageBreak
   \repeat volta 2 {
-  | s1*28
+  | \clef treble
+    fis'8 fis fis fis g r r16 b a g
+  %30
+  | fis8 r r16 fis e d g8. fis16 g d b g
+  | gis'8 gis gis gis a r r16 \stemNeutral\tieNeutral c b a
+  | gis8 r r16 gis fis e a8. gis16 a e c a
+  | dis8 dis dis8. cis32 b e8 e e~ e32 d c b
+  | a8 a' a8. g32 fis b8 fis dis8. cis32 b
+  %35
+  | s1*2
+  | \stemUp\tieUp g8\rest e a4~ a8 a s4
+  | \stemDown s2 s8 \staffUpper a16\rest b c \staffLower \stemUp g e c
+  | s1*2
+  %41
+  | d'8 e4 d16 c d4~ d16 e d c
+  | b 4 c~ c8 b16 a b8 c
+  | d1~
+  | d8 d b g s2
+  %45
+
+
+  | s1*12
   }
-    \fine
 }
 
 Bass = \context Voice = "four" \relative c' {
   \voiceFour
   \override MultiMeasureRest.staff-position = #0
   \stemNeutral\tieDown\slurNeutral
+  \set baseMoment = #(ly:make-moment 1/8)
   %1
   \repeat volta 2 {
   | g1~
@@ -170,9 +250,45 @@ Bass = \context Voice = "four" \relative c' {
   | d fis, g a d,4 d,
   }
   \repeat volta 2 {
-  | s1*28
+  | \stemDown d''8 d d d d s4.
+  %30
+  | s1
+  | e8 e e e e s4.
+  | s1*3
+  %35
+  | \stemNeutral e8 d c b \clef bass a g! fis e
+  | dis e b' b,
+    \set subdivideBeams = ##t
+    e4~ e32 fis g fis e fis d! e
+    \set subdivideBeams = ##f
+  | \stemDown cis4. cis8 d4 g16 fis e d
+  | \stemNeutral\tieNeutral g8 d b g c c, r4
+  | fis'8 a d, fis g d g, b
+  %40
+  | c c' a g d'~ d32
+    \set subdivideBeams = ##t
+    cis d e d c b c b a b a
+    \set subdivideBeams = ##f
+  | \tieDown g1~
+  | g1~
+  | g8 b a g fis a d, fis
+  | g4 b,\rest c'8 d, c b
+  %45
+  | a c' fis, a b c, b a
+  | g b' e, g a b, a g
+  | fis a' d, fis g16 b a g fis e d cis
+  | d e d c b a g fis g d e fis g a b c
+  | d c d e fis d e fis g8 g,16 a b8 c
+  %50
+  | d e d c b a b c
+  | d c b g c a d e
+  | fis a fis d g e c d
+  | e g cis r d, g d' r
+  | cis, g' e' r d, a' fis' r
+  %55
+  | r g,16 a bes8 e, r fis16 g a8 d,
+  | g c, d d, g8. b32 d g4
   }
-    \fine
 }
 
 \score {
@@ -209,6 +325,6 @@ Bass = \context Voice = "four" \relative c' {
     }
   }
   \midi {
-    \tempo 4 = 84
+    \tempo 4 = 88
   }
 }
