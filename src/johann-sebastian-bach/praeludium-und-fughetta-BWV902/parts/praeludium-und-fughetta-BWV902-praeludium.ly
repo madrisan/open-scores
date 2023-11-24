@@ -49,7 +49,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | cis d cis b a g fis e fis' a d8~ d16 a b g
   | fis a d8~ d16 fis, g e d a' c8~ c16 a b g
   | fis a c8~ c16 g a fis b fis g b cis g d' g,
-  | \staffUpper e' b cis e g a, a' a, g' fis e d e8 cis
+  | \staffUpper \tieNeutral e' b cis e g a, a' a, g' fis e d e8 cis
   %25
   | d16 gis, f'8~ f16 e d cis d a f'8~ f16 e d cis
   | \set subdivideBeams = ##t
@@ -77,7 +77,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | e16 fis g4 fis16 e fis32 e d e fis g a b c4~
   | c32 b c d c b a g
     \set subdivideBeams = ##f
-    f16 d'8 f,16~ f16 e32 d \tieUp  e8~ e4~
+    f16 d'8 f,16^~ f16 e32 d \tieUp  e4.~
   | \set subdivideBeams = ##t
     e16 d32 cis d16 d32 e fis16 fis32 g a16 a32 b \stemNeutral c16 b32 a b16 g32 a b16 b32 c d16 d32 e
     \set subdivideBeams = ##f
@@ -85,7 +85,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | f16 e32 d e16 a fis g cis, d b8 a r4
   | \stemUp b4 c~ c8 b16 a b8 c
   | d e4 d16 c d4~ d16 e d c
-  | b d g8~ \stemNeutral g fis16 g a8 c,4 b16 a
+  | b d g4 \stemNeutral fis16 g a8 c,4 b16 a
   | b d f4 e16 d \stemUp e2~
   %45
   | e16 d e c a c b a d2~
@@ -199,9 +199,12 @@ Tenor = \context Voice = "three" \relative c' {
   | d'8 e4 d16 c d4~ d16 e d c
   | b 4 c~ c8 b16 a b8 c
   | d1~
-  | d8 d b g s2
+  | d8 d b g c8 c\rest c4\rest
   %45
-  | s1*12
+  | c8\rest c fis, a b c\rest c4\rest
+  | c8\rest b e, g a c\rest c4\rest
+  | a8\rest  a d, fis s2
+  | s1*9
   }
 }
 
@@ -225,7 +228,7 @@ Bass = \context Voice = "four" \relative c' {
   %10
   | d1~
   | \stemDown d8 fis e d cis e a, cis
-  | e d fis d g fis e d
+  | d e fis d g fis e d
   | cis a d cis b d cis b
   | a b cis a d16 cis d e fis e fis g
   %15
@@ -260,7 +263,7 @@ Bass = \context Voice = "four" \relative c' {
     e4~ e32 fis g fis e fis d! e
     \set subdivideBeams = ##f
   | \stemDown cis4. cis8 d4 g16 fis e d
-  | \stemNeutral\tieNeutral g8 d b g c c, r4
+  | \stemNeutral\tieNeutral g8 d c16 b a g c8 c, d4\rest
   | fis'8 a d, fis g d g, b
   %40
   | c c' a g d'~ d32
@@ -270,13 +273,13 @@ Bass = \context Voice = "four" \relative c' {
   | \tieDown g1~
   | g1~
   | g8 b a g fis a d, fis
-  | g4 b,\rest c'8 d, c b
+  | \stemDown g4 b,\rest c8\rest d c b
   %45
-  | a c' fis, a b c, b a
-  | g b' e, g a b, a g
-  | fis a' d, fis g16 b a g fis e d cis
+  | a g\rest g4\rest g8\rest c b a
+  | g e\rest e4\rest e8\rest b' a g
+  | fis e\rest e4\rest g'16 b a g fis e d cis
   | d e d c b a g fis g d e fis g a b c
-  | d c d e fis d e fis g8 g,16 a b8 c
+  | d cis d e fis d e fis g8 g,16 a b8 c
   %50
   | d e d c b a b c
   | d c b g c a d e

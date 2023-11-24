@@ -42,7 +42,7 @@ The source code was compiled with `GNU LilyPond 2.24.1 (running Guile 2.2)` (Fed
  * [Inventionen und Sinfonien (BWV 772-786, BWV 787-801)](https://github.com/madrisan/open-scores/releases/download/v43/JS-Bach-BWV772-801-Inventionen-und-Sinfonien.pdf)
  * [Suite Anglaise IV (BWV 809)](https://github.com/madrisan/open-scores/releases/download/v43/JS-Bach-BWV809-Suite-Anglaise-4.pdf)
  * [Partita VI (BWV 830)](https://github.com/madrisan/open-scores/releases/download/v43/JS-Bach-BWV830-Partita-6.pdf)
- * [Chromatische Fantasie und Fugue (BWV 903)](https://github.com/madrisan/open-scores/releases/download/v43/JS-Bach-Busoni-Chromatische-Fantasie-und-Fugue-BWV903.pdf) - Interpretiert von Ferruccio Busoni
+ * [Praeludium und Fughetta (BWV902)](https://github.com/madrisan/open-scores/releases/download/v44/JS-Bach-Praeludium-und-Fughetta-BWV902.pdf)
  * [Sechs kleine Präludien (BWV 933-938)](https://github.com/madrisan/open-scores/releases/download/v43/JS-Bach-BWV933-938-Sechs-kleine-Praludien.pdf)
  * [Italienisches Konzert (BWV 971)](https://github.com/madrisan/open-scores/releases/download/v43/JS-Bach-BWV971-Italienisches-Konzert.pdf)
  * [Goldberg Variationen (BWV 988)](https://github.com/madrisan/open-scores/releases/download/v43/JS-Bach-BWV988-Goldberg-Variationen.pdf)
@@ -72,6 +72,7 @@ The source code was compiled with `GNU LilyPond 2.24.1 (running Guile 2.2)` (Fed
  * [Chorale Prelude - In dir ist Freude (BWV 615) - Ferruccio Busoni](https://github.com/madrisan/open-scores/releases/download/v43/JS-Bach-Busoni-Chorale-Prelude-BWV615.pdf)
  * [Chorale Prelude - Ich ruf zu dir, Herr Jesu Christ (BWV 639) - Ferruccio Busoni](https://github.com/madrisan/open-scores/releases/download/v43/JS-Bach-Busoni-Chorale-Prelude-BWV639.pdf)
  * [Chorale Prelude - Nun komm’ der Heiden Heiland (BWV 659)](https://github.com/madrisan/open-scores/releases/download/v43/Bach-Busoni-Chorale-Prelude-BWV659.pdf)
+ * [Chromatische Fantasie und Fugue (BWV 903)](https://github.com/madrisan/open-scores/releases/download/v43/JS-Bach-Busoni-Chromatische-Fantasie-und-Fugue-BWV903.pdf)
  * [Chaconne für violine allein (BWV 1004)](https://github.com/madrisan/open-scores/releases/download/v43/JS-Bach-Busoni-Chaconne-fur-violine-allein-BWV1004.pdf)
 
 #### Johann Sebastian Bach / Franz Liszt

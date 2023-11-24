@@ -7,13 +7,17 @@ Global = {
 staffLower = { \change Staff = "lower" }
 staffUpper = { \change Staff = "upper" }
 
+tema = \markup {
+  \normal-text\circle \teeny "T"
+}
+
 Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \stemUp\tieNeutral\slurNeutral
   %1
-  | r16 d b d g d
+  | r16 d^\tema b d g d
   | b d g, d' b d
   | e c a c fis, a
   | d b g b e, g
@@ -148,7 +152,7 @@ Tenor = \context Voice = "three" \relative c'' {
   %1
   | R1*3/8*7
   | \clef treble
-    r16 g fis a d a
+    r16 g_\tema fis a d a
   | fis a d, a' fis a
   %10
   | b g e g cis, e
@@ -177,7 +181,7 @@ Bass = \context Voice = "four" \relative c' {
   | \override MultiMeasureRest.staff-position = #-11
     R1*3/8*3
   %15
-  | r16 d b d g d
+  | r16 d^\tema b d g d
   | b d g, d' b d
   | e c a c fis, a
   | d b g b e, g
@@ -198,7 +202,7 @@ Bass = \context Voice = "four" \relative c' {
   | b,\rest \stemDown fis' e
   | dis16 fis dis fis b fis
   | \stemNeutral dis fis b, fis' dis fis
-  | g b g b e b
+  | g b^\tema g b e b
   | g b e, b' g b
   %35
   | c a fis a d, fis
