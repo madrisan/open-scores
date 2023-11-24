@@ -201,8 +201,6 @@ Tenor = \context Voice = "three" \relative c' {
   | d1~
   | d8 d b g s2
   %45
-
-
   | s1*12
   }
 }
