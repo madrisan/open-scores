@@ -61,7 +61,7 @@ Soprano = \context Voice = "one" \relative c'' {
   }
   \repeat volta 2 {
   | \set subdivideBeams = ##t
-    \stemNeutral a'16 b c4 b16 a b32 g a b c d e fis g8 d~
+    \stemNeutral\tieNeutral a'16 b c4 b16 a b32 g a b c d e fis g8 d~
   %30
   | d32 a b c d e fis g a8 c,~ c16 b32 a b4.~
   | b16 c d4 c16 b c32 a b c d e fis gis a8 e~
@@ -123,8 +123,8 @@ Alto = \context Voice = "two" \relative c'' {
   %5
   | a8 c b a g b e, g~
   | g b a g fis a d, fis
-  | g2~ g4~ g16 fis e g
-  | fis8 a4 g8~ g4~ g16 g fis e
+  | g2.~ g16 fis e g
+  | fis8 a4 g4.~ g16 g fis e
   | fis4 g~ g8 fis16 e fis8 g
   %10
   | a b4 a16 g a4~ a16 b a g
