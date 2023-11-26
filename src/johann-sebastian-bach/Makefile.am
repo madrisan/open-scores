@@ -6,6 +6,7 @@ SUBDIRS = chaconne-fur-violine-BWV1004-busoni \
 	  inventionen-und-sinfonien-BWV772-801 \
 	  italienisches-konzert-BWV971 \
 	  musikalisches-opfer-BWV1079 \
+	  organ-sonata-4-andante-BWV528-stradal \
 	  partitas \
 	  praeludium-und-fughetta-BWV902 \
 	  praludium-und-fuge-liszt-BWV543-S462 \
