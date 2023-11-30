@@ -151,9 +151,12 @@ Soprano = \context Voice = "one" \relative c' {
   | \set subdivideBeams = ##t
     <gis gis'~>2 gis'16 a,32( b <cis, cis'> a' gis! a) <d, d'>( a' gis a) <e e'>( a gis a)
     \set subdivideBeams = ##f
-  | <fis fis'>4 r8 \tieNeutral <d d'>~ q16( <e e'>32 <fis fis'> <e e'>16 <d d'>32 <cis cis'>)
-    <b gis'! b>8.( <a a'>16)
-  |\tieUp a'( a32 b c!16 a) dis,( c'! a'8~) a16 b,32( cis dis16 b) e( a, c!8~)
+  | <fis fis'>4 r8 \tieNeutral <d d'>~ q16( <e e'>32 <fis fis'>
+    \once\override Hairpin.X-offset = #2
+    \once\override Hairpin.Y-offset = #-7
+    <e e'>16\> <d d'>32 <cis cis'>)
+    <b gis'! b>8.( <a a'>16)\!
+  |\tieUp q( a'32 b c!16 a) dis,( c'! a'8~) a16 b,32( cis dis16 b) e( a, c!8~)
   | c!16( b g'8~) g32( fis e d! c! b a g) c8.( a16)
     \once\override Arpeggio.positions = #'(-5 . 0.5)
     <e b'>8(\arpeggio <dis b'>16. <e b'>32)
@@ -170,12 +173,12 @@ Soprano = \context Voice = "one" \relative c' {
   | b'32( a g fis g16 e) fis8.( g16) g8 a\rest a4\rest
   | r16 a32( g fis16 a) e( a) d,( a') c,!( a! e'8^.) a4\rest
   | r16 b32( a g a b16) fis( b e, b') d,( b fis'8)^. r4
-  | r16 fis32( e d fis g fis) cis( fis g fis b, fis' g fis) ais,8( b' ais gis)
+  | r16 fis32( e d fis g fis) cis( fis g fis) b,( fis' g fis) ais,8( b' ais gis)
   %35
   | fis32( e d cis) d( b fis d') cis( ais! fis cis') b( gis! eis b') ais!8 r r4
   | r16 b32( cis <d, d'>16 b') <e,! e'!> b' <fis fis'> b <g g'~>2\marcato
   | g'16 a,32( b <cis, cis'> b' a16) <d, d'>16( a') <e e'>( a) <fis fis'~>2\marcato
-  | fis'16 g,32( a <b, b'> g' fis g) <cis, cis'>( g' fis g) <d d'>( g fis g)
+  | fis'16^. g,32( a <b, b'> g' fis g) <cis, cis'>( g' fis g) <d d'>( g fis g)
     <e e'>16( g fis d') e,( d' cis e,)
   | cis'( e, d b') cis,( b' a c,!) a'( c, b g') a,( g' fis a,)
   %40
@@ -186,7 +189,7 @@ Soprano = \context Voice = "one" \relative c' {
   | cis( e, a d) b( d, g c!)
   | ais16( g' fis e) d8( cis16 b) b16^. b32( cis d16 b) e,( b' g'8~)
   | g16( a,32 b cis16 a) d,( a' fis'8~) fis16 g,32( a b16 g) c,!( g' e'8~)
-  | e16( ais, b cis) cis8.( b16) b4\fermata s8 cis16( d32 e)
+  | e16( ais,! b cis) cis8.( b16) b4\fermata s8 cis16( d32 e)
   %45
   | ais,8( b16 cis) ais!8.( b16) b2
     \fine
@@ -206,8 +209,8 @@ Alto = \context Voice = "two" \relative c' {
   %5
   | fis8 eis r16 gis32 fis gis16 eis! cis8. d16 gis,!8. fis16
   | fis_. fis32( gis a16 fis) \staffLower b,( \staffUpper fis' d'8~)
-    d16 \staffLower e,32 fis \staffUpper gis16 e \staffLower a,^( e' \staffUpper cis'8~)
-  | cis16 \staffLower d,32^( e fis16 d) g,! d' \staffUpper b'8~
+    d16 \staffLower e,32 fis \staffUpper gis!16 e \staffLower a,^( e' \staffUpper cis'8~)
+  | cis16 \staffLower d,32^( e fis16 d) g,!^( d' \staffUpper b'8~)
     b16 \staffLower eis,^( fis gis) eis8. \staffUpper fis16
   | fis8[ \staffLower cis] \staffUpper fis[ b] gis![ \staffLower b,] \staffUpper e[ a]
   %10
@@ -243,7 +246,7 @@ Alto = \context Voice = "two" \relative c' {
     cis'16 d,32( e <fis, fis'> d' cis d) <gis, gis'>( d' cis d) a'( d, cis d)
     \set subdivideBeams = ##f
     b'[ \staffLower d, cis b] cis16 \staffUpper a' s4
-  | a4 r16 dis32 e fis16 c! b8 r r16 dis!32( e fis16 a,)
+  | a,4\p r16 dis'32( e fis16 c!) b8 r r16 dis!32( e fis16 a,)
   | g_.\< g32( a b16 g)\! \staffLower
     \once\override Staff.TextScript.extra-offset = #'(-1 . 2)
     e^\markup { \normalsize \dynamic f }(
@@ -256,9 +259,9 @@ Alto = \context Voice = "two" \relative c' {
   %25
   | b16 c,!32( d e16 c) \staffLower f,!^( \staffUpper c' a'8~)
     a16 \staffLower dis, e fis dis!8. \staffUpper e16
-  | \staffLower e8 b e \staffUpper a \staffLower fis a, d \staffUpper g
+  | \staffLower e8^\p b e \staffUpper a \staffLower fis a, d \staffUpper g
   | \staffLower e8 g, c! \staffUpper f! \staffLower dis16 \staffUpper a'\> g fis fis8. e16\!
-  | e16_. e32( fis <g, g'>16 e') <a, a'>( e') <b b'>( e) <c c'~>2_\marcato
+  | e16_._\f e32( fis <g, g'>16 e') <a, a'>( e') <b b'>( e) <c c'~>2_\marcato
   | c'16 d,32( e <fis, fis'> e' d16) <g, g'>( d') <a a'>( d)
     \shape #'((0 . -0.6) (0 . -5) (0 . -4) (0 . 0)) Tie
     <b b'~>2_\marcato
@@ -268,7 +271,7 @@ Alto = \context Voice = "two" \relative c' {
   | \staffLower fis,^( d \staffUpper a'8) r4 r16 e'32( d c d e16) b( e) a,( e')
   | \staffLower g,^( e \staffUpper b'8) r4 r16 fis'32( e d fis g fis) cis( fis g fis b, fis' g fis)
   | ais,8 b ais gis fis32 ais! b cis d b \staffLower fis \staffUpper d'
-    cis ais \staffLower fis \staffUpper cis' b gis \staffLower eis \staffUpper b'
+    cis ais \staffLower fis \staffUpper cis' b gis! \staffLower eis \staffUpper b'
   %35
   | ais8 b ais gis fis16_. fis32(\f gis <ais,! ais'!>16 fis') <b, b'>( fis') <cis cis'>( fis)
   | \shape #'((0 . 0) (0 . -0.3) (0 . -0.3) (-0.5 . -0.5)) Tie
@@ -278,7 +281,7 @@ Alto = \context Voice = "two" \relative c' {
   | <b b'>4 r8 \once\override NoteColumn.force-hshift = #-0.6 b' a4 g
   | fis\ff e d c!
   %40
-  | b8 e e16 fis32 g fis e d16 cis4\mf r8 b
+  | b8 e e16 fis32_\> g fis e d16 cis4\mf\! r8 b
   | e a fis \staffLower a, \staffUpper d g e \staffLower g,
   | \slurUp fis16( ais b cis) ais8.( b16) b8^\p \staffUpper
     fis'[
@@ -402,8 +405,9 @@ Sustain = {
       \sustainOn s8\sustainOff\sustainOn s8\sustainOff\sustainOn s8\sustainOff
    %15
     \sustainOn s8\sustainOff\sustainOn s8\sustainOff\sustainOn s8\sustainOff\sustainOn s8\sustainOff
-      \sustainOn s8\sustainOff\sustainOn s8\sustainOff\sustainOn s8\sustainOff\sustainOn s8\sustainOff
-
+      \sustainOn s8\sustainOff\sustainOn s8\sustainOff\sustainOn s8\sustainOff\sustainOn
+      \once\override Staff.TextScript.extra-offset = #'(1.5 . -1.5)
+      s8\sustainOff_\markup { "et cetera" }
 }
 
 \score {
