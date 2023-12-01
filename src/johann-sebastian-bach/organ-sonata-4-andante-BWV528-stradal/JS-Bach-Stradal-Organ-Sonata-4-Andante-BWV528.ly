@@ -173,9 +173,9 @@ Soprano = \context Voice = "one" \relative c' {
   | b'32( a g fis g16 e) fis8.( g16) g8 a\rest a4\rest
   | r16 a32( g fis16 a) e( a) d,( a') c,!( a! e'8^.) a4\rest
   | r16 b32( a g a b16) fis( b e, b') d,( b fis'8)^. r4
-  | r16 fis32( e d fis g fis) cis( fis g fis) b,( fis' g fis) ais,8( b' ais gis)
+  | r16 fis32( e d fis g fis) cis( fis g fis) b,( fis' g fis) ais,!8( b' ais gis)
   %35
-  | fis32( e d cis) d( b fis d') cis( ais! fis cis') b( gis! eis b') ais!8 r r4
+  | fis32( e d cis) d( b fis d') cis( ais fis cis') b( gis! eis b') ais!8 r r4
   | r16 b32( cis <d, d'>16 b') <e,! e'!> b' <fis fis'> b <g g'~>2\marcato
   | g'16 a,32( b <cis, cis'> b' a16) <d, d'>16( a') <e e'>( a) <fis fis'~>2\marcato
   | fis'16^. g,32( a <b, b'> g' fis g) <cis, cis'>( g' fis g) <d d'>( g fis g)
@@ -270,10 +270,10 @@ Alto = \context Voice = "two" \relative c' {
   | d16 \staffUpper g32( a b g c!16) b8\> a16 g g16_. d'32(\!\p c b16 d) a( d) g,( d')
   | \staffLower fis,^( d \staffUpper a'8) r4 r16 e'32( d c d e16) b( e) a,( e')
   | \staffLower g,^( e \staffUpper b'8) r4 r16 fis'32( e d fis g fis) cis( fis g fis b, fis' g fis)
-  | ais,8 b ais gis fis32 ais! b cis d b \staffLower fis \staffUpper d'
+  | ais,8 b ais gis fis32 ais b cis d b \staffLower fis \staffUpper d'
     cis ais \staffLower fis \staffUpper cis' b gis! \staffLower eis \staffUpper b'
   %35
-  | ais8 b ais gis fis16_. fis32(\f gis <ais,! ais'!>16 fis') <b, b'>( fis') <cis cis'>( fis)
+  | ais8 b ais! gis fis16_. fis32(\f gis <ais,! ais'!>16 fis') <b, b'>( fis') <cis cis'>( fis)
   | \shape #'((0 . 0) (0 . -0.3) (0 . -0.3) (-0.5 . -0.5)) Tie
     <d d'~>2_\marcato\f d'16 e,32( fis <g,! g'!> fis' e16) <a,! a'!>( e') <b b'>( e)
   | \shape #'((0 . 0) (0 . -0.3) (0 . -0.3) (0 . -0.5)) Tie
