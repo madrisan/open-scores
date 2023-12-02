@@ -4,9 +4,8 @@ Global = {
   \include "../global.ly"
 }
 
-bottom = \change Staff = "lower"
-top = \change Staff = "upper"
-grayTextColor = #(x11-color "dimgray")
+staffLower = \change Staff = "lower"
+staffUpper = \change Staff = "upper"
 
 extendLaissezVibrer = #(define-music-function (parser location further) (number?)
 #{
@@ -19,7 +18,6 @@ Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
-  \override VoiceFollower.color = \grayTextColor
   %1
   | s4.
   \repeat volta 2 {
@@ -44,7 +42,7 @@ Sopran = \context Voice = "one" \relative c'' {
   \alternative {
     {
   |   \once\override Beam.positions = #'(1.5 . 0)
-      d16[ c! b a g \bottom fis] \top
+      d16[ c! b a g \staffLower fis] \staffUpper
   |   \extendLaissezVibrer #9 g''4._\laissezVibrer
     }
     {
@@ -75,8 +73,8 @@ Sopran = \context Voice = "one" \relative c'' {
   }
   \alternative {
     {
-  |   g16[fis e d c b]
-  |   \showStaffSwitch \bottom\stemUp a8 e'\rest e\rest \top\stemDown \hideStaffSwitch
+  |   g16[fis e d c \staffLower b]
+  |   a8 e'\rest e\rest \staffUpper\stemDown
     }
     { \stemDown b4. }
   }
@@ -95,16 +93,16 @@ Alto = \context Voice = "two" \relative c'' {
   | b8[ a16 g fis e]
   %5
   | d4.~
-  | d8[ \bottom\stemUp c16 b a g]
+  | d8[ \staffLower\stemUp c16 b a g]
   | a4.^~
   | a16[ g b a g fis]
-  | g8 \top\stemDown g'4~
+  | g8 \staffUpper\stemDown g'4~
   %10
   | g8[ fis16 e d c!]
   | b16[ d g a bes8~]
   | bes8[ a16 g fis e]
   | d4.~
-  | d16[ \bottom\stemUp cis b d cis b]
+  | d16[ \staffLower\stemUp cis b d cis b]
   %15
   | cis16[ b a g fis e]
   }
@@ -115,7 +113,7 @@ Alto = \context Voice = "two" \relative c'' {
     }
     {
   |   fis4.
-  |   \top \once\omit Stem \hideNotes a''~ \unHideNotes
+  |   \staffUpper \once\omit Stem \hideNotes a''~ \unHideNotes
     }
   }
   \repeat volta 2 {
@@ -141,7 +139,7 @@ Alto = \context Voice = "two" \relative c'' {
   }
   \alternative {
     {
-  |   g8 g\rest f\rest
+  |   g8 e\rest e\rest
   |   \extendLaissezVibrer #11 a''4.\laissezVibrer
     }
     { \stemUp g, }
@@ -212,8 +210,8 @@ Bass = \context Voice = "four" \relative c {
   }
   \alternative {
     {
-  |   g,8[ g'16 fis e g]
-  |   fis[ e d e fis d]
+  |   \stemDown g,8[ g'16 fis e g]
+  |   \stemNeutral fis[ e d e fis d]
     }
     { g,8[ d' g] }
   }

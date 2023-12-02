@@ -4,8 +4,8 @@ Global = {
   \include "../global.ly"
 }
 
-bottom = \change Staff = "lower"
-top = \change Staff = "upper"
+staffLower = \change Staff = "lower"
+staffUpper = \change Staff = "upper"
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
@@ -72,39 +72,39 @@ Tenor = \context Voice = "three" \relative c' {
   | s2.
   | d8\rest d16[ e] d8[ c!16 b] a[ b c d]
   | g,16[ c b a] g[ fis e d] cis8 c\rest
-  | a'\rest d,16[ e] fis[ g \top\stemDown a b] c[ d e d]
+  | a'\rest d,16[ e] fis[ g \staffUpper\stemDown a b] c[ d e d]
   %5
   | d8[( e16) fis] g8 c,\rest a4\rest
-  | \bottom\stemUp b16\rest g8.~ g16[ b c d] \top\stemDown e[ fis g e]
-  | fis16[ d \bottom\stemUp a g] fis8 c'4  c8~
-  | c16[ b \top\stemDown e d] c[ d e \bottom\stemUp fis,] g[ a b c]
+  | \staffLower\stemUp b16\rest g8.~ g16[ b c d] \staffUpper\stemDown e[ fis g e]
+  | fis16[ d \staffLower\stemUp a g] fis8 c'4  c8~
+  | c16[ b \staffUpper\stemDown e d] c[ d e \staffLower\stemUp fis,] g[ a b c]
   | d4 d\rest e\rest
   %10
-  | \top\stemDown c16\rest e[ d cis] b[ \bottom\stemUp a g e] fis[ g a b]
-  | \top\stemDown cis[ d e fis] g8 c,\rest c4\rest
-  | \bottom\stemUp a8\rest a~ a16[ \top\stemDown b cis b] a[ \bottom\stemUp g fis e]
-  | d8[ \top\stemDown\tieDown d'16 e] d4~ d16[ b cis d]
+  | \staffUpper\stemDown c16\rest e[ d cis] b[ \staffLower\stemUp a g e] fis[ g a b]
+  | \staffUpper\stemDown cis[ d e fis] g8 c,\rest c4\rest
+  | \staffLower\stemUp a8\rest a~ a16[ \staffUpper\stemDown b cis b] a[ \staffLower\stemUp g fis e]
+  | d8[ \staffUpper\stemDown\tieDown d'16 e] d4~ d16[ b cis d]
   | e[ fis e d] e[ cis d e] fis4~
   %15
-  | fis8[ g, a b] cis[ \bottom\stemUp e,]
-  | \top\stemDown d'4. e8 fis16[ cis d8]
+  | fis8[ g, a b] cis[ \staffLower\stemUp e,]
+  | \staffUpper\stemDown d'4. e8 fis16[ cis d8]
   }
   \repeat volta 2 {
-  | \bottom\stemUp\tieUp d8\rest d16[ e] d8[ c!16 b] a[ b c d]
+  | \staffLower\stemUp\tieUp d8\rest d16[ e] d8[ c!16 b] a[ b c d]
   | d,4~ d16[ e c d] e[ d f8]
   | \grace f16 e8~[ e32 f! e dis] e8[ c'] a8\rest e8
   %20
   | dis16[ e dis cis] dis[ e fis g] a[ b cis dis]
   | e2.~
-  | e8[ \top\stemDown\tieDown e16 dis] e8[ e] e[ dis16 cis]
+  | e8[ \staffUpper\stemDown\tieDown e16 dis] e8[ e] e[ dis16 cis]
   | dis4 a\rest fis'~
-  | fis16[ e dis fis] e[ d cis c] b[ \bottom\stemUp a g fis]
+  | fis16[ e dis fis] e[ d cis c] b[ \staffLower\stemUp a g fis]
   %25
   | g8 g'\rest c,4\rest c\rest
-  | \top\stemDown e16\rest a[ gis fis] gis[ f e d] e[ d c b]
+  | \staffUpper\stemDown e16\rest a[ gis fis] gis[ f e d] e[ d c b]
   | c2.~
   | c8[ g' fis e] d16[ b c a]
-  | b8[ c b \bottom\stemUp\tieUp a] g8.^\prallprall[ fis16]
+  | b8[ c b \staffLower\stemUp\tieUp a] g8.^\prallprall[ fis16]
   %30
   | g4~ g16[ b a g] fis[ e d c]
   | b[ d g b] d8[ g,~] g16[ a fis8]

@@ -4,8 +4,8 @@ Global = {
   \include "../global.ly"
 }
 
-bottom = \change Staff = "lower"
-top = \change Staff = "upper"
+staffLower = \change Staff = "lower"
+staffUpper = \change Staff = "upper"
 
 Sopran = \context Voice = "one" \relative c' {
   \voiceOne

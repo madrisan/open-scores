@@ -4,8 +4,8 @@ Global = {
   \include "../global.ly"
 }
 
-bottom = \change Staff = "lower"
-top = \change Staff = "upper"
+staffLower = \change Staff = "lower"
+staffUpper = \change Staff = "upper"
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
@@ -72,7 +72,7 @@ Tenor = \context Voice = "three" \relative c' {
   | R1*9/8
   | R1*9/8
   | g4 fis8 g4 a8 b d cis
-  | d4 a8 d4 \top\stemDown \shiftOff e8 \grace e16 fis[ g fis e d8]
+  | d4 a8 d4 \staffUpper\stemDown \shiftOff e8 \grace e16 fis[ g fis e d8]
   %5
   | g[ b a] b[ g fis] g4.~
   | g8[ fis e] fis[ g a] d,4.~
@@ -81,34 +81,34 @@ Tenor = \context Voice = "three" \relative c' {
   | d8[ b' a] g[ a fis] e16[ d cis8 d]
   %10
   | \once\stemUp \grace d8 cis4.~ cis8[ d e] a,[ b cis]
-  | \bottom\stemUp d4 fis8 g4 \top\stemDown a8 \bottom\stemUp b,4.^~
+  | \staffLower\stemUp d4 fis8 g4 \staffUpper\stemDown a8 \staffLower\stemUp b,4.^~
   | b8[ a gis] a2.^~
-  | a8[ d cis] d16[ e fis8 e] fis[ \top\stemDown a16 g fis e]
+  | a8[ d cis] d16[ e fis8 e] fis[ \staffUpper\stemDown a16 g fis e]
   | fis8[ g16 fis e d] e8[ fis16 e d cis]
     \override Beam.positions = #'(-5 . -5.3)
-    d8[ e16 d cis \bottom\stemUp b]
+    d8[ e16 d cis \staffLower\stemUp b]
     \revert Beam.positions
   %15
   | a8 c\rest c\rest d e\rest e\rest cis c\rest c\rest
-  | d d\rest d\rest \top\stemDown g e\rest e\rest fis4.
+  | d d\rest d\rest \staffUpper\stemDown g e\rest e\rest fis4.
   }
   \repeat volta 2 {
   | \tieDown a2.~^\downprall a4.~
-  | a8[ g fis] g[ b a] b4 \bottom\stemUp dis,8
+  | a8[ g fis] g[ b a] b4 \staffLower\stemUp dis,8
   | e[ g16 fis e d] c8[ e16 d c b] a8[ c16 b a g]
   %20
   | \tieUp fis4 e'8 dis [e \turn fis] b,4.~
   | b8[ dis e]~ e16[ d c b c8]~ c16[ b a g a8~]
   | a8 fis g d'4.\rest e\rest
-  | \top\stemDown\tieDown
+  | \staffUpper\stemDown\tieDown
     \override MultiMeasureRest.staff-position = #-6
     R1*9/8
   | R1*9/8
   %25
   | R1*9/8
   | b4.\rest b~ b8 c d
-  | e \bottom\stemUp\tieUp gis, b a4.~ a8 b c
-  | \top\stemDown d \bottom\stemUp fis, a d,4 fis8 b4.~
+  | e \staffLower\stemUp\tieUp gis, b a4.~ a8 b c
+  | \staffUpper\stemDown d \staffLower\stemUp fis, a d,4 fis8 b4.~
   | b4 dis,8 e fis g fis g a
   %30
   | d,4. d d~

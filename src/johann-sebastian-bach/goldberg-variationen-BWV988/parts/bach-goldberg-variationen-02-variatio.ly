@@ -4,8 +4,8 @@ Global = {
   \include "../global.ly"
 }
 
-bottom = \change Staff = "lower"
-top = \change Staff = "upper"
+staffLower = \change Staff = "lower"
+staffUpper = \change Staff = "upper"
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
@@ -80,9 +80,9 @@ Alto = \context Voice = "two" \relative c'' {
   | b16 a g b a8 g~
   | g16 fis e g fis4
   | g8 e\rest e4\rest
-  | \bottom\stemUp
+  | \staffLower\stemUp
    \once\override Beam.positions = #'(7.3 . 7.5)
-    g16^( \top\stemDown a b d) e4~
+    g16^( \staffUpper\stemDown a b d) e4~
   %10
   | e16 d cis e d cis b a
   | g4 b8\rest g'

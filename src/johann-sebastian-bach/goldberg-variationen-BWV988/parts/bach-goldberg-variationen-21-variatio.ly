@@ -4,8 +4,8 @@ Global = {
   \include "../global.ly"
 }
 
-bottom = \change Staff = "lower"
-top = \change Staff = "upper"
+staffLower = \change Staff = "lower"
+staffUpper = \change Staff = "upper"
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
@@ -45,14 +45,14 @@ Alto = \context Voice = "two" \relative c' {
   \override Rest.staff-position = #0
   \repeat volta 2 {
   %1
-  | \bottom\stemUp\tieUp b16\rest bes[ c d] es[ d c bes] a8[ es' a, d~]
-  | d16[ g, a bes] c[ bes a g] a8 a\rest a\rest \top\stemDown a
-  | bes[ a bes b] c16[ d es d] c[ \bottom\stemUp bes a g]
-  | \top\stemDown\tieDown fis'8 e\rest e\rest d~ d16[ \bottom\stemUp d c bes] c[ \top\stemDown d e fis]
+  | \staffLower\stemUp\tieUp b16\rest bes[ c d] es[ d c bes] a8[ es' a, d~]
+  | d16[ g, a bes] c[ bes a g] a8 a\rest a\rest \staffUpper\stemDown a
+  | bes[ a bes b] c16[ d es d] c[ \staffLower\stemUp bes a g]
+  | \staffUpper\stemDown\tieDown fis'8 e\rest e\rest d~ d16[ \staffLower\stemUp d c bes] c[ \staffUpper\stemDown d e fis]
   %5
-  | g8[ fis] g16[ a bes8~] bes16[ a g bes] a[ g \bottom\stemUp f e]
+  | g8[ fis] g16[ a bes8~] bes16[ a g bes] a[ g \staffLower\stemUp f e]
   | \once\override Voice.Script.X-offset = #0.8
-    d8.^\downprall[ cis16] d[ e f8] e e\rest e\rest \top\stemDown e
+    d8.^\downprall[ cis16] d[ e f8] e e\rest e\rest \staffUpper\stemDown e
   | f[ e f fis] g[ a bes a~]
   | a[ g16 f] e[ d e8] d4 d\rest
   }
@@ -60,14 +60,14 @@ Alto = \context Voice = "two" \relative c' {
   | r16 bes'[ a g] fis[ g a fis] d8[ e16 f] g8[ c,]
   %10
   | e16\rest g[ f es!] d[ f es g] f8 g as4~
-  | as16[ g as bes] \bottom\stemUp es,[ d es \top\stemDown g] \bottom\stemUp\tieUp c,[ d es c] f8[ bes,~]
-  | bes[ as16 g] as8[ \top\stemDown f'~] f[ es16 d] es8 e\rest
-  | \bottom\stemUp b16\rest fis16[ g a] g[ fis e d] \top\stemDown d'[ c d8] \bottom\stemUp g, a\rest
-  | \top\stemDown\tieDown e'8\rest es16[ d] c[ bes a g] fis8 a\rest a\rest d~
+  | as16[ g as bes] \staffLower\stemUp es,[ d es \staffUpper\stemDown g] \staffLower\stemUp\tieUp c,[ d es c] f8[ bes,~]
+  | bes[ as16 g] as8[ \staffUpper\stemDown f'~] f[ es16 d] es8 e\rest
+  | \staffLower\stemUp b16\rest fis16[ g a] g[ fis e d] \staffUpper\stemDown d'[ c d8] \staffLower\stemUp g, a\rest
+  | \staffUpper\stemDown\tieDown e'8\rest es16[ d] c[ bes a g] fis8 a\rest a\rest d~
   %15
-  | d8[ c] b[ c16 d] es8[ \bottom\stemUp g,] fis[ \top\stemDown d'~]
+  | d8[ c] b[ c16 d] es8[ \staffLower\stemUp g,] fis[ \staffUpper\stemDown d'~]
   | \override Beam.positions = #'(-7 . -7)
-    d16[ c32 \bottom\stemUp bes \top\stemDown a bes \bottom\stemUp g16]
+    d16[ c32 \staffLower\stemUp bes \staffUpper\stemDown a bes \staffLower\stemUp g16]
     \revert Beam.positions
     as[ g8 fis16] g4 d'\rest
   }

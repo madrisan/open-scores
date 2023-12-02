@@ -4,8 +4,8 @@ Global = {
   \include "../global.ly"
 }
 
-bottom = \change Staff = "lower"
-top = \change Staff = "upper"
+staffLower = \change Staff = "lower"
+staffUpper = \change Staff = "upper"
 
 Sopran = \context Voice = "one" \relative c'' {
   \override MultiMeasureRest.staff-position = #0
@@ -68,7 +68,7 @@ Alto = \context Voice = "two" \relative c' {
   \override Rest.staff-position = #0
   \mergeDifferentlyDottedOn
   %1
-  | \bottom \stemUp
+  | \staffLower \stemUp
     \repeat unfold 2 { d4\rest f\rest d }
   | c\rest e\rest cis
   | d\rest d\rest a
@@ -78,11 +78,11 @@ Alto = \context Voice = "two" \relative c' {
   | s2.*2
   | d4\rest f\rest e
   %10
-  | \top s8. \once\omit Flag \once\omit Stem \hideNotes a16~ \unHideNotes \stemDown a2
+  | \staffUpper s8. \once\omit Flag \once\omit Stem \hideNotes a16~ \unHideNotes \stemDown a2
   | <g b e g>4\arpeggio s2
   | s2.
-  | \bottom \stemUp d4\rest e\rest d
-  | d4\rest \top\stemDown s e
+  | \staffLower \stemUp d4\rest e\rest d
+  | d4\rest \staffUpper\stemDown s e
   %15
   | fis e8. fis16 g4~
   | g fis2
@@ -90,7 +90,7 @@ Alto = \context Voice = "two" \relative c' {
   %23
   | fis4. c'8 b a~
   | a4 g2
-  | \bottom\stemUp s4 e,2 \top\stemDown
+  | \staffLower\stemUp s4 e,2 \staffUpper\stemDown
   | s2.
   %27
   | s4. e'8~ e16 b' a g

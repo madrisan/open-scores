@@ -4,8 +4,8 @@ Global = {
   \include "../global.ly"
 }
 
-bottom = \change Staff = "lower"
-top = \change Staff = "upper"
+staffLower = \change Staff = "lower"
+staffUpper = \change Staff = "upper"
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
@@ -100,8 +100,8 @@ Tenor = \context Voice = "three" \relative c {
   | g4 c8\rest d c b a g
   | fis4~\prallprall fis16 e32 fis d8~ d4 c'\rest
   %5
-  | \top\stemDown g'4 g a a
-  | \shiftOff g8[ a g fis] e[ \bottom\stemUp d] cis d\rest
+  | \staffUpper\stemDown g'4 g a a
+  | \shiftOff g8[ a g fis] e[ \staffLower\stemUp d] cis d\rest
   | fis, g a fis g fis e d
   | cis d e cis d4 d8
   }

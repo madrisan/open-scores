@@ -4,8 +4,8 @@ Global = {
   \include "../global.ly"
 }
 
-bottom = \change Staff = "lower"
-top = \change Staff = "upper"
+staffLower = \change Staff = "lower"
+staffUpper = \change Staff = "upper"
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
@@ -85,8 +85,8 @@ Alto = \context Voice = "two" \relative c'' {
   | g fis4
   }
   \repeat volta 2 {
-  | \bottom\stemUp d8 d4^~
-  | d8 b \top\stemDown g'~
+  | \staffLower\stemUp d8 d4^~
+  | d8 b \staffUpper\stemDown g'~
   | g[ g c]
   %20
   | fis, e\rest e\rest
@@ -99,7 +99,7 @@ Alto = \context Voice = "two" \relative c'' {
   | c\rest d16[ g b g]
   | e4.
   | d8 c\rest c\rest
-  | \bottom\stemUp g g4^~
+  | \staffLower\stemUp g g4^~
   %30
   | g8[ c, c'^~]
   | c[ a c^~]

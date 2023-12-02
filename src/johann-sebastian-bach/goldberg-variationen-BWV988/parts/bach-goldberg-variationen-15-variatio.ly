@@ -4,8 +4,8 @@ Global = {
   \include "../global.ly"
 }
 
-bottom = \change Staff = "lower"
-top = \change Staff = "upper"
+staffLower = \change Staff = "lower"
+staffUpper = \change Staff = "upper"
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
@@ -67,27 +67,27 @@ Alto = \context Voice = "two" \relative c'' {
   \repeat volta 2 {
   %1
   | b16\rest g16[ g( f)] f[( ees) ees( d)]
-  | d4( d16)[ \bottom\stemUp\tieUp\slurUp c bes a]
+  | d4( d16)[ \staffLower\stemUp\tieUp\slurUp c bes a]
   | g[ cis cis32 d cis16] g'4~
-  | g8[ fis16 e] fis[( g) \top\stemDown\tieDown\slurDown g( a])
+  | g8[ fis16 e] fis[( g) \staffUpper\stemDown\tieDown\slurDown g( a])
   %5
   | bes8 a\rest a\rest a
-  | d,32[ c ees16 d c] bes[ \bottom\stemUp\tieUp a g a]
+  | d,32[ c ees16 d c] bes[ \staffLower\stemUp\tieUp a g a]
   | bes16[ d g8~] g[ fis^\prallprall]
-  | g d\rest \top\stemDown f16\rest fis[ g a]
+  | g d\rest \staffUpper\stemDown f16\rest fis[ g a]
   | bes[( a) a( g)] g[( fis) fis( g)]
   %10
-  | g8 f\rest f\rest \bottom\stemUp c
-  | bes[ \top\stemDown g'16 f~] f[ \bottom\stemUp e8 d16]
-  | cis8[ \top\stemDown bes'] a[ \bottom\stemUp cis,]
+  | g8 f\rest f\rest \staffLower\stemUp c
+  | bes[ \staffUpper\stemDown g'16 f~] f[ \staffLower\stemUp e8 d16]
+  | cis8[ \staffUpper\stemDown bes'] a[ \staffLower\stemUp cis,]
   | d8\rest d32[ cis d16~] d[ d8 d16~]
-  | d[ e32 d cis16 b] cis[ e \top\stemDown a8]
+  | d[ e32 d cis16 b] cis[ e \staffUpper\stemDown a8]
   %15
-  | \bottom\stemUp d,\rest d~ d16[ e32 f e d e16]
+  | \staffLower\stemUp d,\rest d~ d16[ e32 f e d e16]
   | d4 d\rest
   }
   \repeat volta 2 {
-  | \top\stemDown\tieDown g8\rest fis[ g a]
+  | \staffUpper\stemDown\tieDown g8\rest fis[ g a]
   | d,16[ d'8 c16~] c[ bes8 a16]
   | bes8[ ees,] d[ g]
   %20
@@ -99,12 +99,12 @@ Alto = \context Voice = "two" \relative c'' {
   | ees8 e8\rest e4\rest
   %25
   | r16 aes16[ aes( g )] fis[ f d' f,]
-  | ees4~ ees16[ \bottom\stemUp\tieUp d c bes]
+  | ees4~ ees16[ \staffLower\stemUp\tieUp d c bes]
   | a16[ bes c d] ees[ d ees8~]
-  | ees16[ c d8] \top\stemDown g8\rest a8
+  | ees16[ c d8] \staffUpper\stemDown g8\rest a8
   | d8.[ c16] bes[ a g f]
   %30
-  | ees16[ d c ees] d[ e fis32 g \bottom\stemUp a,16^~]
+  | ees16[ d c ees] d[ e fis32 g \staffLower\stemUp a,16^~]
   | a16[ ees'! d c] bes[ a g fis]
   | g4 a4\rest
     \override Score.TextMark.self-alignment-X = #CENTER
