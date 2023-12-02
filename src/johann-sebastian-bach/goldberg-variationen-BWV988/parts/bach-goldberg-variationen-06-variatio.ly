@@ -6,6 +6,7 @@ Global = {
 
 bottom = \change Staff = "lower"
 top = \change Staff = "upper"
+grayTextColor = #(x11-color "dimgray")
 
 extendLaissezVibrer = #(define-music-function (parser location further) (number?)
 #{
@@ -18,6 +19,7 @@ Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \override VoiceFollower.color = \grayTextColor
   %1
   | s4.
   \repeat volta 2 {
@@ -74,7 +76,7 @@ Sopran = \context Voice = "one" \relative c'' {
   \alternative {
     {
   |   g16[fis e d c b]
-  |   a8 e'\rest e\rest
+  |   \showStaffSwitch \bottom\stemUp a8 e'\rest e\rest \top\stemDown \hideStaffSwitch
     }
     { \stemDown b4. }
   }
