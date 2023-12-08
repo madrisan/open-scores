@@ -24,7 +24,7 @@ SUFFIXES = .in
 	$(LILYPOND) --pdf --output $@ $<
 
 BUILT_SOURCES = covercolor.ly
-EXTRA_DIST = JS-Bach-Praeludium-und-Fughetta-BWV902.ly \
+EXTRA_DIST = JS-Bach-BWV902-Praeludium-und-Fughetta.ly \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
@@ -32,7 +32,7 @@ EXTRA_DIST = JS-Bach-Praeludium-und-Fughetta-BWV902.ly \
 	     parts/praeludium-und-fughetta-BWV902-fughetta.ly \
 	     parts/praeludium-und-fughetta-BWV902-praeludium.ly
 
-all: $(BUILT_SOURCES) JS-Bach-Praeludium-und-Fughetta-BWV902
+all: $(BUILT_SOURCES) JS-Bach-BWV902-Praeludium-und-Fughetta
 
 clean-local:
 	-rm -f $(BUILT_SOURCES)
