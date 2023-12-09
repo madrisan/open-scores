@@ -8,6 +8,7 @@ SUBDIRS = chaconne-fur-violine-BWV1004-busoni \
 	  musikalisches-opfer-BWV1079 \
 	  organ-sonata-4-andante-BWV528-stradal \
 	  partitas \
+          praeludium-fuge-und-allegro-BWV998 \
 	  praeludium-und-fughetta-BWV902 \
 	  praludium-und-fuge-liszt-BWV543-S462 \
 	  schafe-konnen-sicher-weiden-BWV208 \
