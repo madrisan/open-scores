@@ -46,6 +46,7 @@ The source code was compiled with `GNU LilyPond 2.24.1 (running Guile 2.2)` (Fed
  * [Sechs kleine Präludien (BWV 933-938)](https://github.com/madrisan/open-scores/releases/download/v45/JS-Bach-BWV933-938-Sechs-kleine-Praludien.pdf)
  * [Italienisches Konzert (BWV 971)](https://github.com/madrisan/open-scores/releases/download/v45/JS-Bach-BWV971-Italienisches-Konzert.pdf)
  * [Goldberg Variationen (BWV 988)](https://github.com/madrisan/open-scores/releases/download/v45/JS-Bach-BWV988-Goldberg-Variationen.pdf)
+ * [Praeludium Fuge und Allegro (BWV 998)](https://github.com/madrisan/open-scores/releases/download/v46/JS-Bach-BWV998-Praeludium-Fuge-und-Allegro.pdf)
  * [Musikalisches Opfer: Ricercar a 3, Ricercar a 6 (BWV 1079)](https://github.com/madrisan/open-scores/releases/download/v45/JS-Bach-BWV1079-Musikalisches-Opfer.pdf)
  * [Die Kunst der Fuge (BWV 1080)](https://github.com/madrisan/open-scores/releases/download/v45/JS-Bach-BWV1080-Die-Kunst-der-Fuge.pdf)
    * Contrapunctus I
@@ -235,6 +236,7 @@ make -C src/johann-sebastian-bach/italienisches-konzert-BWV971
 make -C src/johann-sebastian-bach/musikalisches-opfer-BWV1079
 make -C src/johann-sebastian-bach/organ-sonata-4-andante-BWV528-stradal
 make -C src/johann-sebastian-bach/partitas/BWV830
+make -C src/johann-sebastian-bach/praeludium-fuge-und-allegro-BWV998
 make -C src/johann-sebastian-bach/praeludium-und-fughetta-BWV902
 make -C src/johann-sebastian-bach/praludium-und-fuge-liszt-BWV543-S462
 make -C src/johann-sebastian-bach/schafe-konnen-sicher-weiden-BWV208
