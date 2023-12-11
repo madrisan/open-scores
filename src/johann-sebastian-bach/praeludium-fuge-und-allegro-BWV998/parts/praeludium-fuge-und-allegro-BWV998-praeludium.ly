@@ -112,13 +112,6 @@ Alto = \context Voice = "two" \relative c' {
   | \staffLower\stemUp s4. d,8\rest d\rest ees~ ees4 d8\rest f4 d8\rest
 }
 
-Tenor = \context Voice = "three" \relative c' {
-  \voiceThree
-  \override MultiMeasureRest.staff-position = #0
-  \stemNeutral\tieUp
-  %1
-}
-
 Bass = \context Voice = "four" \relative c, {
   \voiceFour
   \override MultiMeasureRest.staff-position = #0
@@ -194,7 +187,6 @@ Bass = \context Voice = "four" \relative c, {
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \clef bass
-      \Tenor
       \Bass
     >>
   >>
@@ -213,6 +205,6 @@ Bass = \context Voice = "four" \relative c, {
     }
   }
   \midi {
-    \tempo 4. = 80
+    \tempo 4. = 78
   }
 }
