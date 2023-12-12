@@ -5,8 +5,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [v46] - 2023-12-12
 
+### Added
+
+- J.S. Bach: Praeludium, Fuge und Allegro in Es-Dur (BWV988)
+
+### Changed
+
 - J.S. Bach: Goldberg Variationen - Variatio 6 - move a note to left staff
-- J.S. Bach: Praeludium, Fuge und Allegro in Es-Dur (BWV988) - Fugue
 
 ## [v45] - 2023-11-30
 

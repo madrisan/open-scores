@@ -37,7 +37,11 @@ Soprano = \context Voice = "one" \relative c' {
   | ees[ d f ees] r bes'[ aes g]
   | f[ ees d g] ees4 f
   | f8 ees r des des c r e
-  | e f r ees ees d r f
+  | e f r ees ees d r
+    % the sharp sign is not present in the manuscript but seems to me implied here
+    \once\override Accidental.stencil = #ly:text-interface::print
+    \once\override Accidental.text = \markup\concat { \parenthesize \sharp }
+    fis
   | fis g r f f ees r g
   %20
   | g8 aes r g g[f] r ees
