@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [v47] - unreleased
+
+- Karol Szymanowski, nine-preludes op.1 - n.1
+
 ## [v46] - 2023-12-12
 
 ### Added
