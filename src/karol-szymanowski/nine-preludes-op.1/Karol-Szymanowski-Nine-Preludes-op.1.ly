@@ -90,3 +90,5 @@
 \pageBreak
 
 \include "./parts/karol-szymanowski-op-1-1.ly"
+\pageBreak
+\include "./parts/karol-szymanowski-op-1-2.ly"

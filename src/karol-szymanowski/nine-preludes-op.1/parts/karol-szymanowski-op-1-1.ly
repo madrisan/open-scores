@@ -39,6 +39,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | e(
   | fis)
   | e(
+    \noBreak
   | \slashedGrace g8 fis2)
   | e(
   %15
@@ -71,6 +72,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | q~
   %35
   | q4 <e' e'>)
+    \break
   | r4^\markup { "poco agitato" } <e e'>~_^(
   | q8 <a, a'> <b b'> <c c'>)
   | <aes' c aes'>2~^^(
@@ -324,7 +326,7 @@ centerDynamics = {
   \header {
     composer = ##f % "Karol Szymanowski"
     opus = ##f % "Op. 1"
-    title = \markup { \smallCaps "Prelude N.1" }
+    title = \markup { \smallCaps "Prelude I" }
     subtitle = ##f
     subsubtitle = ##f
   }
