@@ -65,7 +65,7 @@
         \null\null\null
         \line \abs-fontsize #26 \bold { "Op.1" }
         \null\null\null
-        \line \abs-fontsize #30 \bold { "Prelude n.1" }
+        \line \abs-fontsize #30 \bold { "Preludium I, II" }
         \null\null\null
         \null\null\null
         \null\null\null
