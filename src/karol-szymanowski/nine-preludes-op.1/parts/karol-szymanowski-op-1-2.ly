@@ -12,9 +12,9 @@ Sopran = \context Voice = "one" \relative c' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \stemUp\slurUp\tieUp
-  \tempo \markup { \bold Andante con moto }
+  \tempo \markup { \bold { PRELUDE II } ∙ Andante con moto }
   %1
-  | f4.(\(^\markup { "ben marcata la melodia" } e8_~) e d f a c4^( bes)\)
+  | f4._(\(^\markup { "ben marcata la melodia" } e8_~) e d f a c4^( bes)\)
   | bes4.\( a8~ a g bes d a'4 g\)
   | a8(\( g4 f8) a( g4 f8) g( fis4 f8)
   | f ees4^^ bes8 d\rest c4 cis8~ cis d dis e\)
@@ -32,22 +32,22 @@ Sopran = \context Voice = "one" \relative c' {
     \bar "||"
   | f,4.\( e8_~ e d f a c4 bes\)
   %15
-  | \tieNeutral <des, des'>4.\( <c c'>8~ q <bes bes'> <des des'> <f f'> <aes aes'>4 <g g'>\)
-  | aes'8( g4 g8 c^^ bes4 aes8) aes( g4 g8
+  | \tieNeutral <des, des'>4.\( <c c'>8~ q <bes bes'> <des des'> <f f'> <aes aes'>4\> <g g'>\)\!
+  | aes'8(^\markup { "a tempo" } g4 g8 c^^ bes4 aes8) aes( g4 g8
   | c^^ bes4 aes8) s1
-  | \shape #'((0 . 1.5) (0 . 0) (0 . 0.0) (-0.4 . 1.5)) Slur
+  | \once\shape #'((0 . 1.5) (0 . 0) (0 . 0.0) (-0.4 . 1.5)) Slur
     ges8( f4 f8 bes aes4 ges8) ges( f4 f8
   | bes aes4 ges8) s2 bes,4 ges
   %20
   | \numericTimeSignature \time 2/2 <ces, bes'>4( <c aes'> s2
-  | \time 3/2 <des f des'>2) des' s
+  | \time 3/2 <des f des'>2)^\markup { "a tempo" } des' s
   | r8 a4. s2 r8 bes4.
   | r8 g4. r8 g4. <a d! a'>4 q\arpeggio
   | \stemNeutral <a b d a'>2 <d, b' d> <e b' e>
   %25
   | <fis cis' fis> <b, g' b> <cis g' cis!>
-  | \time 1/2 <d g d'>~
-  | \time 3/2 <d d'>1 <g bes>2
+  | \time 1/2 <d g d'>~^\markup { \hspace #-1 "ten." }
+  | \time 3/2 \tempo "Poco meno mosso" <d d'>1 <g bes>2
   | \stemUp <d d'>1^^ cis'2
   | a bes <d f>
   %30
@@ -65,30 +65,30 @@ Alto = \context Voice = "two" \relative c' {
   \mergeDifferentlyHeadedOn
   %1
   | s1 <d f>2
-  | des d <bes' d>
-  | d4 des d des des bes~
+  | des d <bes' d>_\markup { "(poco rit.)" }
+  | d4 des d des des bes_~
   | <g bes>4 ees g2_~ g8 <e g> <g c>4
   %5
-  | r8 <f f'>4^\( <e e'>8~ q <d d'> <f f'> <a a'> <c c'>4 <b b'>\)
+  | r8_\markup { "a tempo" } <f f'>4^\( <e e'>8~ q <d d'> <f f'> <a a'> <c c'>4 <b b'>\)
   | \phrasingSlurUp
     g8\rest <bes bes'>4\( <a a'>8~ q <g g'> <bes bes'> <d d'> \ottava #1 <a' a'>4 <g g'>\)
   | \slurUp <a a'>8(\( <g g'>4 <f f'>8) <a a'>8^( <g g'>4 <f f'>8) s8 <ees ees'>4( <d d'>8)
   | <c c'> <bes bes'> <c c'> <bes bes'> <aes aes'> <g g'> <aes aes'> <g g'> <f f'>[ <e e'>]
     \tuplet 3/2 { <a a'> <g g'> <f f'> }
   | \omit TupletBracket
-    <f a f'>2\) <c' c'>4_\( q \tupletUp\tuplet 3/2 { <c d f c'>^^( <f, des' f> <g g'>) }
+    <f a f'>2\) <c' c'>4\( q \tupletUp\tuplet 3/2 { <c d f c'>^^_( <f, des' f> <g g'>) }
   %10
-  | s8 <a a'>4 q8 \tuplet 3/2 { <a bes d a'>4^^( <d, bes' d> <e e'>)\) } s8 <f f'>(_\( <e e'> <f f'>)
-  | s8 <g g'>( <f f'> <g g'>) s <aes aes'>( <g g'> <aes aes'>)\) <c c'>4\( q
+  | s8 <a a'>4 q8 \tuplet 3/2 { <a bes d a'>4^^_( <d, bes' d> <e e'>)\) } s8 <f f'>_(\( <e e'> <f f'>)
+  | s8 <g g'>_( <f f'> <g g'>) s <aes aes'>_( <g g'> <aes aes'>)\) <c c'>4\( q
   | <c d f c'>2 <f, d' f> <g d' g>
   | <a cis a'>1.\)
   | s1 <des, f>2
   %15
   | s2 <des f> des'
-  | d4 des des2 d4 des
+  | d4_\markup { \dynamic p "afflitto" } des des2 d4 des
   | des2 <bes c g'>~( <aes c f>4 <ces ees>)
   | c ces ces!2 c4 ces
-  | ces2 <aes bes f'>( <ges ees'>8 <f des'> <ees c'> <des bes'>)
+  | ces2 <aes bes f'>(^\markup { "dolcissimo" } <ges ees'>8 <f des'> <ees c'> <des bes'>)
   %20
   | ges2 c,8 ges' aes ees'
   | s2 <aes, aes'>4\( q \tuplet 3/2 { <aes bes des aes'>( <d, beses' d> <ees ees'>)\) }
@@ -133,18 +133,19 @@ Bass = \context Voice = "four" \relative c' {
   | \repeat unfold 2 { f bes,( f bes,) } bes'' e, bes g
   | a,, a' g' bes ees bes a ees a, bes' a bes'~
   %5
-  | bes a d, a d g, d g,~ g g' d' f
+  | bes a d,^\markup { "più" \dynamic f } a d g, d g,~ g g' d' f
   | f bes, f bes, f' bes d f \clef treble <e bes' d>
     \once\override Score.Clef.X-extent = #'(-0.5 . 2) \clef bass g, c, c,
   | \repeat unfold 2 { bes''' f bes, f } bes, f' bes f'
   | \clef treble des' f, des f, \clef bass f' bes, f bes, \stemDown c, c' bes' c
   | \stemNeutral f,, c' a' c~ c a' c, f, bes,, bes' f' bes
   %10
-  | cis f, cis g g, g' cis bes' a d, a d,
+  | cis f, cis g g,^\markup { "rit." } g' cis bes' a d, a d,
   | \stemDown bes'' d, bes d, ces'' f, des des, <c'' a'> a c, c,
   | d'' f, bes, bes, d'' f, bes, bes, d'' e, bes bes,
   | \stemNeutral cis'' e, a, a,~ a e' a cis e a \staffUpper cis e
     \bar "||"
+    %\break
   | \staffLower r8 a d, a~ a f d g,~ g des' f bes
   %15
   | r8 f' bes, f~ f bes, f bes, <bes'' e> bes' bes, bes,
@@ -176,7 +177,44 @@ Bass = \context Voice = "four" \relative c' {
 
 centerDynamics = {
   %1
-  | s4-\markup { \hspace #-1 \dynamic pp "legato" } s4
+  | s4^\markup { \hspace #-1 \dynamic pp "legato" } s\< s s8 s\!\> s s s\! s
+  | s4\< s s s s8 s\! s4
+  | s4\> s s s8 s\! s\< s s s\!
+  | s4\< s s s8 s\! s4-\markup { "rall." } s
+  %5
+  | s4 s s\< s2.
+  | s8 s s s\! s2-\markup { "cresc." } s2-\markup { "rit." }
+  | s2\f s\> s
+  | s s\! s4^\markup { \hspace #-3 "rall." } s
+  | s4\p\< s s\!^\markup { "dolce" } s s\>_\markup { "rit." } s8 s\!
+  %10
+  | s2\> s4 s\! s-\markup { "a tempo" } s
+  | s2\< s4 s8 s\! s4^\f s-\markup { \hspace #-2 "rit." }
+  | s4-\markup { "dim." } s\> s s s s\!
+  | s4\p\> s s s\!-\markup { "rall." } s2
+  | s16 s\pp\< s8 s4 s s s\! s^\markup { "rit." }
+  %15
+  | s4\p s4\< s s\! s8 s-\markup { \hspace #2.5 "rall." } s4
+  | s4\< s s\!\> s8 s\! s4\< s
+  | s8 s\! s4 s\>_\markup { \hspace #7 "rall." } s s s8 s\!
+  | s4\<^\markup { "più" \dynamic p " poco rit." } s s8\!\> s s8 s\! s\< s s s\!
+  | s4\> s s8 s_\markup { "molto rall. e dim." } s s\! s4 s
+  %20
+  | s4-\ppp s8 s\< s s s s\!
+  | s8\p\< s s4 s_\markup { \hspace #2.5 "cresc." } s8 s\!\>_\markup { "(rit.)" } s s s s\!
+  | s4\< s8 s\! s\>_\markup { "rit." } s s s\! s_\markup { "a tempo" } s\< s s
+  | s4 s s s8 s\! s8\f s_\markup { "rit." } s s
+  | s4\ff\> s s1
+  %25
+  | s4\! s8^\markup { "dim. e rall" } s s\> s s4 s s
+  | s2
+  | s4\!-\markup { \dynamic pp "mesto" } s8 s s\< s s s s\! s_\markup { "rit." } s4
+  | s4 s\< s s\! s\>_\markup { \hspace #2 "rall." } s
+  | s4\!\<^\markup { "a tempo" } s s s8_\markup { "cresc." } s s\! s_\markup { "rit." } s4
+  %30
+  | s16 s8.\mf\> s4 s_\markup { "dim. e rall." } s2.
+  | s16\! s8.\pp\> s4 s\! s-\markup { "rall." \dynamic ppp } s s
+
 }
 
 \score {
@@ -189,9 +227,16 @@ centerDynamics = {
       \clef treble
       \Sopran
       \Alto
-    >>
-    \context Dynamics <<
-      \Global \centerDynamics
+      \new Dynamics = "dynamics" {
+        % Will use self-alignment-Y to place element
+        \override TextScript.Y-offset = #self-alignment-interface::y-aligned-on-self
+        % Use negative value of direction,
+        % i.e. CENTER -> align to center, UP -> align to bottom, DOWN -> align to top
+        \override TextScript.self-alignment-Y = #(lambda (grob) (- (ly:grob-property grob 'direction)))
+        % use CENTER as default direction instead of DOWN
+        \override TextScript.direction = #CENTER
+        \centerDynamics
+      }
     >>
     \context Staff = "lower" <<
       \set Staff.midiInstrument = #"acoustic grand"
@@ -204,7 +249,7 @@ centerDynamics = {
   \header {
     composer = ##f % "Karol Szymanowski"
     opus = ##f % "Op. 1"
-    title = \markup { \smallCaps "Prelude II" }
+    title = "Prelude II"
     subtitle = ##f
     subsubtitle = ##f
   }
@@ -214,6 +259,15 @@ centerDynamics = {
       \override Parentheses.font-size = #-2
       \override TextScript.font-shape = #'italic
       \override TextScript.font-size = #-1
+
+      % More space between staves in the same PianoStaff
+      %\override StaffGrouper.staff-staff-spacing.minimum-distance = 14
+
+      % Make the piano staves closer together
+      \override StaffGrouper.staff-staff-spacing = #'(
+                              (basic-distance . 0)
+                              (padding . 0))
+
     }
   }
   \midi { \tempo 2=40 }

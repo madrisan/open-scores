@@ -20,7 +20,7 @@ Sopran = \context Voice = "one" \relative c'' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \stemNeutral\slurNeutral\tieNeutral
-  \tempo \markup { \bold Andante ma non troppo }
+  \tempo \markup { \bold { PRELUDE I } ∙ Andante ma non troppo }
   %1
   | R1*2/4*3
   | r4 fis~\(^\markup {
@@ -326,7 +326,7 @@ centerDynamics = {
   \header {
     composer = ##f % "Karol Szymanowski"
     opus = ##f % "Op. 1"
-    title = \markup { \smallCaps "Prelude I" }
+    title = "Prelude I"
     subtitle = ##f
     subsubtitle = ##f
   }
