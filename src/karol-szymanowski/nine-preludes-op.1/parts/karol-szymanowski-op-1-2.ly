@@ -12,7 +12,7 @@ Sopran = \context Voice = "one" \relative c' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \stemUp\slurUp\tieUp
-  \tempo \markup { \bold { PRELUDE II } ∙ Andante con moto }
+  \tempo \markup { Andante con moto }
   %1
   | f4._(\(^\markup { "ben marcata la melodia" } e8_~) e d f a c4^( bes)\)
   | bes4.\( a8~ a g bes d a'4 g\)

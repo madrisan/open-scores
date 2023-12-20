@@ -21,7 +21,7 @@
         (minimum-distance . 1)
         (padding . 2)
         (stretchability . 24))
-  print-all-headers = ##f
+  print-all-headers = ##t
   ragged-last-bottom = ##t
   ragged-bottom = ##f
   scoreTitleMarkup = \markup {
