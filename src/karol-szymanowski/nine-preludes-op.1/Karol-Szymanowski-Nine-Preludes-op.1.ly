@@ -15,15 +15,20 @@
   first-page-number = 0
   indent = 0.0
 % last-bottom-spacing.padding = #2
-  line-width = 18.8\cm
+  line-width = 19.4\cm
   markup-system-spacing =
      #'((basic-distance . 2)
         (minimum-distance . 1)
         (padding . 2)
         (stretchability . 24))
   print-all-headers = ##t
-  ragged-last-bottom = ##t
+  ragged-last-bottom = ##f
   ragged-bottom = ##f
+  score-system-spacing =
+     #'((basic-distance . 2)
+        (minimum-distance . 1)
+        (padding . 1)
+        (stretchablity . 12))
   scoreTitleMarkup = \markup {
     \fill-line {
       \if \should-print-all-headers
@@ -32,10 +37,10 @@
   }
   system-system-spacing =
      #'((basic-distance . 2)
-        (minimum-distance . 1)
-        (padding . 2)
+        (minimum-distance . 2)
+        (padding . 0)
         (stretchability . 24))
-  top-margin = 15\mm
+  top-margin = 5\mm
 }
 
 \bookpart {
@@ -99,3 +104,4 @@
 \pageBreak
 \include "./parts/karol-szymanowski-op-1-2.ly"
 \pageBreak
+\include "./parts/karol-szymanowski-op-1-3.ly"

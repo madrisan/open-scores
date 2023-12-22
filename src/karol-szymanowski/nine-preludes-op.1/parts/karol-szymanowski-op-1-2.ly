@@ -33,7 +33,7 @@ Sopran = \context Voice = "one" \relative c' {
   | f,4.\( e8_~ e d f a c4 bes\)
   %15
   | \tieNeutral <des, des'>4.\( <c c'>8~ q <bes bes'> <des des'> <f f'> <aes aes'>4\> <g g'>\)\!
-  | aes'8(^\markup { "a tempo" } g4 g8 c^^ bes4 aes8) aes( g4 g8
+  | aes'8(^\markup { \hspace #-6 "a tempo" } g4 g8 c^^ bes4 aes8) aes( g4 g8
   | c^^ bes4 aes8) s1
   | \once\shape #'((0 . 1.5) (0 . 0) (0 . 0.0) (-0.4 . 1.5)) Slur
     ges8( f4 f8 bes aes4 ges8) ges( f4 f8
@@ -46,7 +46,7 @@ Sopran = \context Voice = "one" \relative c' {
   | \stemNeutral <a b d a'>2 <d, b' d> <e b' e>
   %25
   | <fis cis' fis> <b, g' b> <cis g' cis!>
-  | \time 1/2 <d g d'>~^\markup { \hspace #-1 "ten." }
+  | \time 1/2 <d g d'>~^\markup { \hspace #-2.5 "ten." }
   | \time 3/2 \tempo "Poco meno mosso" <d d'>1 <g bes>2
   | \stemUp <d d'>1^^ cis'2
   | a bes <d f>
@@ -91,7 +91,7 @@ Alto = \context Voice = "two" \relative c' {
   | ces2 <aes bes f'>(^\markup { "dolcissimo" } <ges ees'>8 <f des'> <ees c'> <des bes'>)
   %20
   | ges2 c,8 ges' aes ees'
-  | s2 <aes, aes'>4\( q \tuplet 3/2 { <aes bes des aes'>( <d, beses' d> <ees ees'>)\) }
+  | s2 <aes, aes'>4_\( q \tuplet 3/2 { <aes bes des aes'>( <d, beses' d> <ees ees'>)\) }
   | s8 <f f'>4 q8 \tuplet 3/2 { <f g! bes f'>4( <bes, ges' bes> <c c'>) } s8 <des des'>( <c c'> <des des'>)
   | s8 <dis dis'>( <cis cis'> <dis dis'>) s8 <e e'> <dis dis'> <e e'> d\rest fis_^ eis_^ fis_^
   | s1.*2
@@ -101,7 +101,7 @@ Alto = \context Voice = "two" \relative c' {
     \once\override NoteColumn.force-hshift = #1.2 g2_~
     \unHideNotes
   | \once\override NoteColumn.force-hshift = #1.8 g8 bes4 a8~ a g bes d <f, f'>4 <ees ees'>
-  | g8\rest bes4 a8~ a g bes d <a a'>4 <g g'>
+  | a8\rest bes4 a8~ a g bes d <a a'>4 <g g'>
   | <f f'>4. <e e'>8~ q <d d'> <f f'> <a a'> <c c'>4 <bes bes'>
   %30
   | <c c'>8(_\( <bes bes'>4 <a a'>8) <c c'>8( <bes bes'>4 <a a'>8) <c c'>8( <bes bes'>4 <a a'>8)\)
@@ -191,7 +191,7 @@ centerDynamics = {
   | s2\> s4 s\! s-\markup { "a tempo" } s
   | s2\< s4 s8 s\! s4^\f s-\markup { \hspace #-2 "rit." }
   | s4-\markup { "dim." } s\> s s s s\!
-  | s4\p\> s s s\!-\markup { "rall." } s2
+  | s4\p\> s s s\!_\markup { "rall." } s2
   | s16 s\pp\< s8 s4 s s s\! s^\markup { "rit." }
   %15
   | s4\p s4\< s s\! s8 s-\markup { \hspace #2.5 "rall." } s4
@@ -214,7 +214,6 @@ centerDynamics = {
   %30
   | s16 s8.\mf\> s4 s_\markup { "dim. e rall." } s2.
   | s16\! s8.\pp\> s4 s\! s-\markup { "rall." \dynamic ppp } s s
-
 }
 
 \score {
