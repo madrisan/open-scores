@@ -45,8 +45,14 @@ Sopran = \context Voice = "one" \relative c'' {
   | a\(^\markup { "a tempo" } bes ces c des ees
   | des aes bes aes4 fes8\)
   %20
-  | ees\( e f ges g aes
-  | ges des' ees des4\) des'8~\(
+  | \shape #'((0 . 0) (0 . 1.5) (0 . 1.8) (0 . 2)) PhrasingSlur
+    ees\( e f ges g aes
+  | << {
+      ges des' ees
+    } \\ {
+      \once\omit Flag \once\omit Stem \once\override NoteColumn.force-hshift = #0 ges,8~ ges4
+    } >>
+    des'4\) des'8~\(
   | des c bes aes g f
   | aes des, ees des4 <des des'>8~\)\(
   | des' c bes aes g f
@@ -149,8 +155,20 @@ Tenor = \context Voice = "three" \relative c {
   | s2
   %20
   | ges!8 f ees eeses
-  | des a' bes ges'
-  | <c,,, c'> g'' aes c
+  | << {
+      \once\override NoteColumn.force-hshift = #-1 des
+      \once\override NoteColumn.force-hshift = #-1 a'
+      bes ges'
+    } \\ {
+      \autoBeamOff
+      \omit Flag \omit Stem
+      \once\override NoteColumn.force-hshift = #-1 des,~
+      \once\override NoteColumn.force-hshift = #-1 des
+      \undo\omit Flag \undo\omit Stem
+      \autoBeamOn
+      s4
+    } >>
+  | <c, c'>8 g'' aes c
   | \hideNotes \showStaffSwitch \omit TupletNumber
     \tuplet 3/2 {
       f4 \staffUpper \once\override NoteColumn.force-hshift = #0 ges8

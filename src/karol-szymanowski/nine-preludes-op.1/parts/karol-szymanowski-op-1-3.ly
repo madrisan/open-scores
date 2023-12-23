@@ -100,7 +100,7 @@ Tenor = \context Voice = "three" \relative c' {
   | f4 e4. f8~
   | f4 ees~ ees8 des~
   | des4 ees4. f8
-  | des4 des8 ees4 aes8
+  | des4 d8 ees4 aes8
   | des2~ des8 c
   %10
   | bes2 b8 c~
@@ -156,8 +156,8 @@ Bass = \context Voice = "four" \relative c' {
   %15
   | f8 ees des[ c] bes des
   | f ees des[ c] \once\override Arpeggio.positions = #'(-2 . 3.5) aes\arpeggio aes'
-  | \stemNeutral <aes des>4 <aes,, aes'>^^ c''
-  | bes <aes,, aes'>^^_\markup { "vibr. (quasi campana)" } beses''
+  | \stemNeutral <aes des>4 <aes,, aes'>^^_\markup { "vibr. (quasi campana)" } c''
+  | bes <aes,, aes'>^^ beses''
   | aes <aes,, aes'>_^ ges''!
   %20
   | << {

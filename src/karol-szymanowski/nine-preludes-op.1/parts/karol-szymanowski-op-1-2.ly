@@ -14,7 +14,7 @@ Sopran = \context Voice = "one" \relative c' {
   \stemUp\slurUp\tieUp
   \tempo \markup { Andante con moto }
   %1
-  | f4._(\(^\markup { "ben marcata la melodia" } e8_~) e d f a c4^( bes)\)
+  | f4._(\(^\markup { "ben marcata la melodia" } e8_~) e d_( f a) c4^( bes)\)
   | bes4.\( a8~ a g bes d a'4 g\)
   | a8(\( g4 f8) a( g4 f8) g( fis4 f8)
   | f ees4^^ bes8 d\rest c4 cis8~ cis d dis e\)
@@ -25,8 +25,10 @@ Sopran = \context Voice = "one" \relative c' {
   | f2 des bes4 e
   | s2 f s
   %10
-  | r8 cis4. s2 r8 a4.
-  | r8 d4. r8 d4. f2
+  | r8 \once\override NoteColumn.force-hshift = #0.4 cis4. s2 r8
+    \once\override NoteColumn.force-hshift = #0.4 a4.
+  | r8 \once\override NoteColumn.force-hshift = #0.2 d4. r8
+    \once\override NoteColumn.force-hshift = #0.2 d4. f2
   | s1.
   | s1.
     \bar "||"
@@ -36,20 +38,24 @@ Sopran = \context Voice = "one" \relative c' {
   | aes'8(^\markup { \hspace #-6 "a tempo" } g4 g8 c^^ bes4 aes8) aes( g4 g8
   | c^^ bes4 aes8) s1
   | \once\shape #'((0 . 1.5) (0 . 0) (0 . 0.0) (-0.4 . 1.5)) Slur
-    ges8( f4 f8 bes aes4 ges8) ges( f4 f8
-  | bes aes4 ges8) s2 bes,4 ges
+    ges8\( f4 f8 bes aes4 ges8\) ges( f4 f8
+  | bes aes4 ges8) s2 \once\override NoteColumn.force-hshift = #0.4 bes,4
+    \once\override NoteColumn.force-hshift = #0.4 ges
   %20
-  | \numericTimeSignature \time 2/2 <ces, bes'>4( <c aes'> s2
+  | \numericTimeSignature \time 2/2
+    \once\override NoteColumn.force-hshift = #0.4 <ces, bes'>4( <c aes'> s2
   | \time 3/2 <des f des'>2)^\markup { "a tempo" } des' s
-  | r8 a4. s2 r8 bes4.
-  | r8 g4. r8 g4. <a d! a'>4 q\arpeggio
-  | \stemNeutral <a b d a'>2 <d, b' d> <e b' e>
+  | r8 \once\override NoteColumn.force-hshift = #0.4 a4. s2 r8
+    \once\override NoteColumn.force-hshift = #0.3 bes4.
+  | r8 \once\override NoteColumn.force-hshift = #0.2 g4. r8
+    \once\override NoteColumn.force-hshift = #0.4 g4. <a d! a'>4 q\arpeggio
+  | \stemNeutral <a b d a'>2 <d,! b' d!> <e! b' e!>
   %25
   | <fis cis' fis> <b, g' b> <cis g' cis!>
   | \time 1/2 <d g d'>~^\markup { \hspace #-2.5 "ten." }
   | \time 3/2 \tempo "Poco meno mosso" <d d'>1 <g bes>2
-  | \stemUp <d d'>1^^ cis'2
-  | a bes <d f>
+  | \stemUp <d d'>1^^ \once\override NoteColumn.force-hshift = #0.4 cis'2
+  | \once\override NoteColumn.force-hshift = #0.6 a bes <d f>
   %30
   | f4 e f e f e
   | \ottava #1 a2 a s2
@@ -72,13 +78,13 @@ Alto = \context Voice = "two" \relative c' {
   | r8_\markup { "a tempo" } <f f'>4^\( <e e'>8~ q <d d'> <f f'> <a a'> <c c'>4 <b b'>\)
   | \phrasingSlurUp
     g8\rest <bes bes'>4\( <a a'>8~ q <g g'> <bes bes'> <d d'> \ottava #1 <a' a'>4 <g g'>\)
-  | \slurUp <a a'>8(\( <g g'>4 <f f'>8) <a a'>8^( <g g'>4 <f f'>8) s8 <ees ees'>4( <d d'>8)
+  | \slurUp <a a'>8(\( <g g'>4 <f f'>8) <a a'>8^( <g g'>4 <f f'>8) s8 <ees ees'>4( <des! des'!>8)
   | <c c'> <bes bes'> <c c'> <bes bes'> <aes aes'> <g g'> <aes aes'> <g g'> <f f'>[ <e e'>]
-    \tuplet 3/2 { <a a'> <g g'> <f f'> }
+    \tuplet 3/2 { <aes aes'> <g g'> <f f'> }
   | \omit TupletBracket
     <f a f'>2\) <c' c'>4\( q \tupletUp\tuplet 3/2 { <c d f c'>^^_( <f, des' f> <g g'>) }
   %10
-  | s8 <a a'>4 q8 \tuplet 3/2 { <a bes d a'>4^^_( <d, bes' d> <e e'>)\) } s8 <f f'>_(\( <e e'> <f f'>)
+  | s8 <a a'>4 q8 \tuplet 3/2 { <a b d a'>4^^_( <d, bes' d> <e e'>)\) } s8 <f f'>_(\( <e e'> <f f'>)
   | s8 <g g'>_( <f f'> <g g'>) s <aes aes'>_( <g g'> <aes aes'>)\) <c c'>4\( q
   | <c d f c'>2 <f, d' f> <g d' g>
   | <a cis a'>1.\)
@@ -102,11 +108,12 @@ Alto = \context Voice = "two" \relative c' {
     \unHideNotes
   | \once\override NoteColumn.force-hshift = #1.8 g8 bes4 a8~ a g bes d <f, f'>4 <ees ees'>
   | a8\rest bes4 a8~ a g bes d <a a'>4 <g g'>
-  | <f f'>4. <e e'>8~ q <d d'> <f f'> <a a'> <c c'>4 <bes bes'>
+  | <f f'>4. <e! e'!>8~ q <d d'> <f f'> <a a'> <c c'>4 <bes bes'>
   %30
   | <c c'>8(_\( <bes bes'>4 <a a'>8) <c c'>8( <bes bes'>4 <a a'>8) <c c'>8( <bes bes'>4 <a a'>8)\)
   | \ottava #1 <f' f'>4. <e e'>8~ q <d d'> <f f'> <a a'> <f' a f'>2~
-  | q1.^\fermata
+  | \once\override TextScript.outside-staff-priority = ##t
+    q1.^\fermata
 }
 
 Tenor = \context Voice = "three" \relative c' {

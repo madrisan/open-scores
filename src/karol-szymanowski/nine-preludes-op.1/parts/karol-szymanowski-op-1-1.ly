@@ -6,7 +6,7 @@ Global = {
 
 pocopococrescendo = {
   \override TextSpanner.bound-details.left.text = \markup {
-    \hspace #1 \small "poco  a  poco  crescendo "
+    \hspace #1.6 \small "poco  a  poco  crescendo "
   }
 }
 ralldim = {
@@ -67,7 +67,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | <a a'>4( <b b'>
     \noBreak
   | <gis gis'>2)
-  | <a a'>4( \once\stemUp \slashedGrace c'8 <b, b'>4
+  | <a a'>4( \once\stemUp \slashedGrace cis'8 <b, b'>4
   | <gis gis'>2~
   | q~
   %35
@@ -215,8 +215,8 @@ Bass = \context Voice = "four" \relative c' {
   | \tuplet 3/2 { <a'' fis'>( d, cis } \tuplet 3/2 { d d, d,) }
   | \tuplet 3/2 { <b''' e>( e, dis } \tuplet 3/2 { e g, e,) }
   | \tuplet 3/2 { <gis'' cis>( cis, bis } \tuplet 3/2 { cis cis, cis,) }
-  | \tuplet 3/2 { <e'' b'>( fis, eis } fis fis,)
-  | \tuplet 3/2 { <e'' ais>( fis, eis } fis fis,)
+  | \tuplet 3/2 { <e'' b'>( fis, eis } \once\undo\omit TupletNumber \once\tupletUp\tuplet 2/2 { fis fis,) }
+  | \tuplet 3/2 { <e'' ais>( fis, eis } \once\undo\omit TupletNumber \once\tupletUp\tuplet 2/2 { fis fis,) }
   %50
   | \tuplet 3/2 { <fis'' d'>( b, ais } \tuplet 3/2 { b fis b,) }
   | \tuplet 3/2 { <fis'' cis'>( b, ais } \tuplet 3/2 { b fis b,) }
