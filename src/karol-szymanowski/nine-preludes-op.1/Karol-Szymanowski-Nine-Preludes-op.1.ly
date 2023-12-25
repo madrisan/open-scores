@@ -76,7 +76,7 @@
         \null\null\null
         \line \abs-fontsize #26 \bold { "Op.1" }
         \null\null\null
-        \line \abs-fontsize #30 \bold { "I, II, III, IV" }
+        \line \abs-fontsize #30 \bold { "I, II, III, IV, V" }
         \null\null\null
         \null\null\null
         \null\null\null
@@ -107,3 +107,5 @@
 \include "./parts/karol-szymanowski-op-1-3.ly"
 \pageBreak
 \include "./parts/karol-szymanowski-op-1-4.ly"
+\pageBreak
+\include "./parts/karol-szymanowski-op-1-5.ly"

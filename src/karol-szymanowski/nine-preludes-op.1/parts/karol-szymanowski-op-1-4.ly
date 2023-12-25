@@ -50,7 +50,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | << {
       ges des' ees
     } \\ {
-      \once\omit Flag \once\omit Stem \once\override NoteColumn.force-hshift = #0 ges,8~ ges4
+      \once\omit Flag \once\omit Stem \noshift ges,8~ ges4
     } >>
     des'4\) des'8~\(
   | des c bes aes g f
@@ -171,26 +171,26 @@ Tenor = \context Voice = "three" \relative c {
   | <c, c'>8 g'' aes c
   | \hideNotes \showStaffSwitch \omit TupletNumber
     \tuplet 3/2 {
-      f4 \staffUpper \once\override NoteColumn.force-hshift = #0 ges8
+      f4 \staffUpper \noshift ges8
     }
     s4 \hideStaffSwitch \unHideNotes
   | \staffLower <c,,, c'>8 g'' aes c
   %25
   | \hideNotes \showStaffSwitch
     \tuplet 3/2 {
-      f4 \staffUpper \once\override NoteColumn.force-hshift = #0 ges8
+      f4 \staffUpper \noshift ges8
     }
     s4 \hideStaffSwitch \unHideNotes
   | \staffLower s ees
   | \hideNotes \showStaffSwitch
     \tuplet 3/2 {
-      ees4 \staffUpper \once\override NoteColumn.force-hshift = #0 fes8
+      ees4 \staffUpper \noshift fes8
     }
     s4 \hideStaffSwitch \unHideNotes
   | \staffLower s ees
   | \hideNotes \showStaffSwitch
     \tuplet 3/2 {
-      ees4 \staffUpper \once\override NoteColumn.force-hshift = #0 fes8
+      ees4 \staffUpper \noshift fes8
     }
     s4 \hideStaffSwitch \unHideNotes
   %30
