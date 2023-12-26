@@ -248,15 +248,10 @@ centerDynamics = {
       \override Parentheses.font-size = #-2
       \override TextScript.font-shape = #'italic
       \override TextScript.font-size = #-1
-
-      % More space between staves in the same PianoStaff
-      %\override StaffGrouper.staff-staff-spacing.minimum-distance = 14
-
       % Make the piano staves closer together
       \override StaffGrouper.staff-staff-spacing = #'(
                               (basic-distance . 0)
                               (padding . 0))
-
     }
   }
   \midi { \tempo 2=40 }

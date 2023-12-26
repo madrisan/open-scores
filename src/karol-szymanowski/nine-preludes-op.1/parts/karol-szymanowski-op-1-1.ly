@@ -313,7 +313,7 @@ centerDynamics = {
       \Alto
     >>
     \context Dynamics <<
-   	   \Global \centerDynamics
+      \Global \centerDynamics
     >>
     \context Staff = "lower" <<
       \set Staff.midiInstrument = #"acoustic grand"
