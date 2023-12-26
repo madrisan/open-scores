@@ -12,3 +12,4 @@ configure
 **/Makefile.in
 **/Makefile
 **/covercolor.ly
+!template/covercolor.ly
