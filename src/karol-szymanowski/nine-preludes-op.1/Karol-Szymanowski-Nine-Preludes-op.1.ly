@@ -22,7 +22,7 @@
         (padding . 2)
         (stretchability . 24))
   print-all-headers = ##t
-  ragged-last-bottom = ##f
+  ragged-last-bottom = ##t
   ragged-bottom = ##f
   score-system-spacing =
      #'((basic-distance . 2)
@@ -110,3 +110,4 @@
 \pageBreak
 \include "./parts/karol-szymanowski-op-1-5.ly"
 \pageBreak
+\include "./parts/karol-szymanowski-op-1-6.ly"
