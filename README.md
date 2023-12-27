@@ -160,7 +160,8 @@ Thanks to my harpist friend Tristan Rollet ([@Pluiesurlavitre](https://github.co
 
 #### Arnold Schoenberg (1874–1951)
 
- * [Sechs kleine Klavierstücke op.19](https://github.com/madrisan/open-scores/releases/download/v46/Arnold-Schoenberg-Sechs-Kleine-Klavierstucke-op.19.pdf)
+ * [Sechs kleine Klavierstücke op.19](https://github.com/madrisan/open-scores/releases/download/v46/Arnold-Schoenberg-Sechs-Kleine-Klavierstucke-op.19.pdf) -
+   With a preface by Giancarlo Simonacci (Italian and English translation)
 
 #### Clara Schumann Wieck (1819-1896)
 
