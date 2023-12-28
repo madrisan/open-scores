@@ -56,7 +56,7 @@ Soprano = \context Voice = "one" \relative c'' {
     ces \staffLower aes g
   | aes fes ees fes aes ces \staffUpper fes ces bes ces fes aes
   %40
-  | bes4( aes8)\fermata \stemNeutral r16 g bes a g f bes8 f d bes f' aes
+  | bes4( a8)\fermata \stemNeutral r16 g bes a g f bes8 f d bes f' aes
   | g f ees f c ees f, aes g aes ees' d
   | ees ees' d ees bes des c g aes ees aes c
   | r bes aes bes ees, g f aes c, d! f aes
