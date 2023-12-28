@@ -4,6 +4,9 @@ Global = {
   \include "../global.ly"
 }
 
+staffLower = { \change Staff = "lower" }
+staffUpper = { \change Staff = "upper" }
+
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
@@ -89,8 +92,19 @@ Alto = \context Voice = "two" \relative c'' {
   | c2 gis4~
   | gis f2
   %15
+  << {
   | d2 <a d g>8\arpeggio[ f']
-  | s2.*13
+  | s2.
+  }
+  \new Voice {
+  | s2 s8
+    \once\shape #'((0.5 . 5) (3 . 4) (0 . 1) (-0.5 . 2)) Slur
+    \once\stemUp f(
+  | \staffLower \hideNotes
+    \once\stemUp\once\omit Stem \once\override NoteColumn.force-hshift = #1 f2) s4
+    \unHideNotes \staffUpper
+  } >>
+  | s2.*12
   %29
   | s4 d' d
 }
@@ -207,7 +221,7 @@ centerDynamics = {
   | s s s\>
   | s2.
   %15
-  | s4\!-\markup { "rallent." } s s\f
+  | s4\!-\markup { "rallent." } s s\f-\markup { \hspace #4 "ten." }
   | s4\> s2
   | s2.\!\pp
   | s2.*4
