@@ -1,27 +1,25 @@
-\version "2.23.82"
-
 \header {
-  composer = "Johann Sebastian Bach (1685-1750)"
-  date = "1717-1720"
+  composer = "Domenico Scarlatti (1685-1757)"
+  date = "1742"
 
-  footer = "Mutopia-2023/01/21"
+  footer = "Mutopia-2023/05/26"
 
-  lastupdated = "2023 Jan 21"
+  lastupdated = "2023 May 26"
   license = "Creative Commons Attribution-ShareAlike 4.0"
   maintainerEmail = "d.madrisan@proton.me"
   maintainerWeb = "https://github.com/madrisan/open-scores"
 
   % Extra Mutopia Information
-  mutopiacomposer = "BachJS"
+  mutopiacomposer = "DScarlatti"
   mutopiacopyright = "Creative Commons Attribution-ShareAlike 4.0"
   mutopiainstrument = "Piano"
   mutopiamaintainer = "Davide Madrisan"
-  mutopiaopus = "BWV 1004"
-  mutopiatitle = "Chaconne für violine allein"
+  mutopiaopus = ""
+  mutopiatitle = "Sonata in X minor|major K. X"
 
-  opus = "BWV 1004"
-  title = "Chaconne für violine allein"
-  source = "Transcription for piano by Ferruccio Busoni"
+  opus = "K.XX"
+  title = "Sonata"
+  source = ""
   style = "Baroque"
 
   copyright = \markup {

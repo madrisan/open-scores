@@ -1,6 +1,6 @@
 #!/bin/bash
 # Extract and reformat data from Mutopia files written for string ensemble
-# Copyright (C) 2022 Davide Madrisan <davide.madrisan@gmail.com>
+# Copyright (C) 2022 Davide Madrisan <d.madrisan@proton.me>
 
 # usage: ./extract-data.ly < contrapunctusXXXX.ly
 # data: https://www.mutopiaproject.org/cgibin/make-table.cgi?searchingfor=Die+Kunst+der+Fuge

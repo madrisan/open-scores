@@ -6,7 +6,7 @@
 
   lastupdated = "2022 August 7"
   license = "Creative Commons Attribution-ShareAlike 4.0"
-  maintainerEmail = "davide.madrisan@gmail.com"
+  maintainerEmail = "d.madrisan@proton.me"
   maintainerWeb = "https://github.com/madrisan/open-scores"
 
   % Extra Mutopia Information
