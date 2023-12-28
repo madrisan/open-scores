@@ -135,24 +135,24 @@ Lower = \relative c {
   %5
   | bes2  a8 d  g, c
   | f, e  d c  b!16 d e f  g8 g,
-  | \tupletUp \tuplet 3/2 8 {
+  | \tupletDown\tuplet 3/2 8 {
       c16[ d e] c[ d e]
     }
-    \tupletUp \tuplet 3/2 8 {
+    \tuplet 3/2 8 {
       a,16[ b c] a[ b c]
     }
     f,8 a'  d, f
-  | \tupletUp \tuplet 3/2 8 {
+  | \tuplet 3/2 8 {
       b,!16[ c d] b[ c d]
     }
-    \tupletUp \tuplet 3/2 8 {
+    \tuplet 3/2 8 {
       g,16[ a b] g[ a b]
     }
     e,8 g'  c, e
-  | \tupletUp \tuplet 3/2 8 {
+  | \tuplet 3/2 8 {
       a,16[ b c] a[ b c]
     }
-    \tupletUp \tuplet 3/2 8 {
+    \tuplet 3/2 8 {
       fis,16[ g a] fis[ g a]
     }
     d,8 a'  fis d
@@ -171,10 +171,10 @@ Lower = \relative c {
   \repeat volta 4 {
     r16
   | c'8~  c32 g a b!  c16 b c d
-    \tupletUp \tuplet 3/2 8 {
+    \tuplet 3/2 8 {
       e16[ d c] e[ d c]
     }
-    \tupletUp \tuplet 3/2 8 {
+    \tuplet 3/2 8 {
       g'16[ f e] g[ f e]
     }
   | c'8 g~  g8~  g32 b! a g  f8 f  f~  f32 a g f

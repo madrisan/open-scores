@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Fixed
 
 - J.S. Bach: Suite Anglaise n.4 BWV809 - fix wrong alteration
+- J.S. Bach: Suite Anglaise n.4 BWV809 - better pagination
 
 ## [v46] - 2023-12-12
 
