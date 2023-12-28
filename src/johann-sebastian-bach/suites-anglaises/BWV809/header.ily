@@ -4,7 +4,7 @@
 
   footer = "Mutopia-2023/01/21"
 
-  lastupdated = "2022 December 8"
+  lastupdated = "2023 December 28"
   license = "Creative Commons Attribution-ShareAlike 4.0"
   maintainerEmail = "davide.madrisan@gmail.com"
   maintainerWeb = "https://github.com/madrisan/open-scores"

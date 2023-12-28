@@ -61,7 +61,7 @@ Upper = \relative c' {
    %35
    | g16 c a c  g c f, c'  e, c' f, c'  e, c' d, c'
    | c,16 c' d, c'  e, c' fis, c'  << { bes d, e fis } \\ g16 >>  g a a\prall g32 a
-   | b8 c  b a  << { r8 ees' d c } \\ g2~ >>
+   | bes8 c  b a  << { r8 ees' d c } \\ g2~ >>
    | << { bes8 c  d e! } \\ { g, g  f e } >>  << { a8 a } \\ { d,8 d16 e } >>  << { d'8. d16 } \\ { f,8. f16 } >>
    | << { d'8. e16 } \\ e,4 >>  << { cis'8. d16 } \\ r4 >>  << { d16 a b! cis  d e f d } \\ { r8 a,  d d } >>
    %40
