@@ -22,7 +22,7 @@
         (padding . 2)
         (stretchability . 24))
   print-all-headers = ##t
-  ragged-last-bottom = ##t
+  ragged-last-bottom = ##f
   ragged-bottom = ##f
   score-system-spacing =
      #'((basic-distance . 2)
@@ -32,11 +32,11 @@
   scoreTitleMarkup = \markup {
     \fill-line {
       \if \should-print-all-headers
-      \fontsize #3 \bold \smallCaps \fromproperty #'header:title
+      \fontsize #5 \bold \smallCaps \fromproperty #'header:title
     }
   }
   system-system-spacing =
-     #'((basic-distance . 2)
+     #'((basic-distance . 10)
         (minimum-distance . 2)
         (padding . 0)
         (stretchability . 24))
@@ -76,7 +76,7 @@
         \null\null\null
         \line \abs-fontsize #26 \bold { "Op.1" }
         \null\null\null
-        \line \abs-fontsize #30 \bold { "I, II, III, IV, V" }
+        \line \abs-fontsize #30 \bold { "I, II, III, IV, V, VI, VII" }
         \null\null\null
         \null\null\null
         \null\null\null
@@ -111,3 +111,4 @@
 \include "./parts/karol-szymanowski-op-1-5.ly"
 \pageBreak
 \include "./parts/karol-szymanowski-op-1-6.ly"
+\include "./parts/karol-szymanowski-op-1-7.ly"
