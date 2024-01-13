@@ -108,7 +108,6 @@ Alto = \context Voice = "two" \relative c' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \omit TupletBracket \omit TupletNumber
-  \set baseMoment = #(ly:make-moment 1/8)
   \stemDown\slurDown
   \mergeDifferentlyDottedOn \mergeDifferentlyHeadedOn
   \partial 4 {
@@ -378,7 +377,6 @@ centerDynamics = {
   | s4\< s s\! s
   | s1
   | s16 s8.\pp s2.
-
 }
 
 \score {
