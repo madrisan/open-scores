@@ -38,22 +38,19 @@
   \markup {
     \fill-line {
       \center-column {
-        \null\null\null
-        \null\null\null
+        \combine \null \vspace #6
         \line { \abs-fontsize #30 \bold "Johann Sebastian" }
         \null
         \line { \abs-fontsize #80 \bold "Bach" }
         \null
         \fill-line { \draw-hline }
-        \null\null\null
+        \combine \null \vspace #3
         \line { \abs-fontsize #34 \bold "Die Kunst der Fuge" }
-        \null\null\null
+        \combine \null \vspace #3
         \line { \abs-fontsize #20 "BWV 1080" }
-        \null\null\null
+        \combine \null \vspace #3
         \fill-line { \abs-fontsize #20 "For Piano or Harpsichord" }
-
-        \null\null\null\null
-        \null\null\null\null
+        \combine \null \vspace #8
       }
     }
   }

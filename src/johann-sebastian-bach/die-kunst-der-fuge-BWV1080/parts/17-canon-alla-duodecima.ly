@@ -11,7 +11,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | \override MultiMeasureRest.staff-position = #0
     R1*8
   | \repeat volta 2 {
-    \tuplet 6/4 { [a8 b a gis a b] } \tuplet 6/4 { [c! d c b c d] }
+    \tuplet 6/4 { a8[ b a gis a b] } \tuplet 6/4 { c![ d c b c d] }
   %10
   | e2~ e8 d( c b)
   | c2~ c8 b( a gis)
@@ -31,7 +31,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | e,8 g a bes c a g f
   | g4 c a b
   %25
-  |  \tuplet 6/4 { [c8 d c b c d] } e4. d16 c
+  |  \tuplet 6/4 { c8[ d c b c d] } e4. d16 c
   | b8 g a b c4. b16 a
   | gis4 e r8 a g f
   | e4 c8 e a4 cis,

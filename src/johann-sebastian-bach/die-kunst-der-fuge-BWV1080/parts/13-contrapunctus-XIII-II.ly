@@ -8,7 +8,7 @@ Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \override TupletBracket.bracket-visibility = ##f
   \override TupletNumber.transparent = ##t
-  | \partial 4 r4
+  \partial 4 r4
   | R1*7
   | r2 r4 d
   | a' a,~ \tuplet 3/2 { a8 b c b c d
