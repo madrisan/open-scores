@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Karol Szymanowski, nine-preludes op.1 - n.1-6
 - J.S. Bach: Die Kunst der Fuge (BWV 1080) - Contrapunctus XIV - add subject numbers
+- J.S. Bach: Goldberg Variationen - Use the original 14-word (Bach's number) title
 
 ### Fixed
 

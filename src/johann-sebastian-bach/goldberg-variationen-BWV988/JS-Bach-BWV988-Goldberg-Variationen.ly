@@ -53,25 +53,30 @@
     \fill-line {
       \center-column {
         \null\null\null
-        \null\null\null\null
+        \null\null\null
         \line { \abs-fontsize #30 \bold "Johann Sebastian" }
         \null
         \line { \abs-fontsize #80 \bold "Bach" }
         \null
         \fill-line { \draw-hline }
         \null\null
-        \line { \abs-fontsize #40 \bold "Goldberg Variationen" }
+        \line { \abs-fontsize #40 \bold\italic "Goldberg Variationen" }
+        \null\null\null
+        \line { \abs-fontsize #20 \bold\italic "Clavier Ubung bestehend in einer" }
+        \null
+        \line { \abs-fontsize #20 \bold\italic "Aria mit verschiedenen Verænderungen" }
+        \null
+        \line { \abs-fontsize #20 \bold\italic "vors Clavicimbal mit 2 Manualen" }
         \null\null
-        \line { \abs-fontsize #20 \bold "Aria mit verschiedenen Veraenderungen" }
+        \line {
+          \abs-fontsize #16
+          \italic "(Keyboard exercise, consisting of an Aria with diverse variations"
+        }
         \null
-        \line { \abs-fontsize #14 \italic "(Aria with diverse variations)" }
-        \null\null\null
-        \line { \abs-fontsize #24 \bold "BWV 988" }
-        \null\null\null
-        \fill-line { \abs-fontsize #20 "Clavicimbal mit 2 Manualen" }
-        \null
-        \line { \abs-fontsize #14 \italic "(for harpsichord with two manuals)" }
+        \line { \abs-fontsize #16 \italic "for harpsichord with two manuals)" }
         \null\null\null\null
+        \line { \abs-fontsize #28 \bold "BWV 988" }
+        \null\null\null
       }
     }
   }
