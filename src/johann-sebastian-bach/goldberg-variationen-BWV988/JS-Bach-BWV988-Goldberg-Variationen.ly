@@ -99,30 +99,53 @@
 \markup \center-column {
   \null\null\null
   \line {
-    \hspace #14
+    \hspace #19
     \general-align #Y #DOWN {
-      \epsfile #X #82 #"Johann-Sebastian-Bach-oil-canvas-Elias-Gottlieb-1746.eps"
+      \epsfile #X #72 #"Johann-Sebastian-Bach-oil-canvas-Elias-Gottlieb-1746.eps"
     }
   }
   \null
   \line \italic {
-    \hspace #12
+    \hspace #18
     { \bold "Johann Sebastian Bach" } \char ##x2014 "oil canvas Elias Gottlob Haußmann (1746)"
   }
   \null
 }
 
 \markup \center-column \abs-fontsize #10 \italic {
+  \null
   \line {
-    \hspace #17
-    "Haussmann's portrait of Bach depicts him holding the manuscript to BWV 1076,"
+    \hspace #2
+    "When Bach's personal copy of the printed edition of the Goldberg Variations was discovered in 1974, it was"
   }
-  \line  {
-    \hspace #17
-    "which is also the thirteenth canon in the Goldberg Canon cycle:"
+  \line {
+    \hspace #2
+    "found to include an appendix in the form of fourteen canons built on the first eight bass notes from the aria."
+  }
+  \line {
+    \hspace #2
+    "It is speculated that the number 14 refers to the ordinal values of the letters in the composer's name:"
+  }
+  \line {
+    \hspace #2
+    "B(2) + A(1) + C(3) + H(8) = 14."
+  }
+  \line {
+    \hspace #2
+    "The portrait of Bach commissioned for his entry into Mizler's"
+    "“Sozietät der Musicalischen Wissenschaften”"
+  }
+  \line {
+    \hspace #2
+    "(Bach waited until he was the 14th member to be admitted to the society), depicts him holding the"
+  }
+  \line {
+    \hspace #2
+    "manuscript to BWV 1076, which is also the thirteenth canon in the Goldberg Canon cycle:"
   }
   \null
 }
+
 \include "JS-Bach-BWV1087-13-canon-triplex-six.ly"
 \pageBreak
 
