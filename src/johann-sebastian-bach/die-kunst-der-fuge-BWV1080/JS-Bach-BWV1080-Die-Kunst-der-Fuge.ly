@@ -45,7 +45,7 @@
         \null
         \fill-line { \draw-hline }
         \combine \null \vspace #3
-        \line { \abs-fontsize #34 \bold "Die Kunst der Fuge" }
+        \line { \abs-fontsize #34 \bold "Die Kunst der Fuga" }
         \combine \null \vspace #3
         \line { \abs-fontsize #20 "BWV 1080" }
         \combine \null \vspace #3

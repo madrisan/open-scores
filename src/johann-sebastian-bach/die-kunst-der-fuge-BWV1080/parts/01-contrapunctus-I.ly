@@ -428,7 +428,7 @@ Bass = \context Voice = "four" \relative c {
   \header {
     %composer = "Johann Sebastian Bach"
     opus = "BWV 1080, 1"
-    title = \markup { \smallCaps "Die Kunst der Fuge" }
+    title = \markup { \smallCaps "Die Kunst der Fuga" }
     subtitle = \markup { \smallCaps "Contrapunctus I" }
     subsubtitle = ##f
   }
