@@ -4,6 +4,8 @@ Global = {
   \include "../global.ly"
 }
 
+\include "../macros.ly"
+
 Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
   | \override MultiMeasureRest.staff-position = #0
@@ -18,7 +20,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | a
   | d,~
   %20
-  | d~                                                                                      %20
+  | d~
   | d8.[ cis16 d8. f16] e8.[ d16 gis8. a16]
   | b8.[ c16 d8. f,16~] f8. e32 d cis8. d16
   | cis4 r4 r2
@@ -349,7 +351,9 @@ Tenor = \context Voice = "three" \relative c' {
 
 Bass = \context Voice = "four" \relative c {
   \voiceFour
-  | d2 a'
+  | d2_\markup \italic \tiny \with-color #greyTextColor {
+       \ieyeglasses "In Contrapunctus 2 there are 14 entries of the subject"
+    } a'
   | f d
   | cis d4 e
   | f2^~ f8.[ g16 f8. e16]

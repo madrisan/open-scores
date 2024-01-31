@@ -4,22 +4,17 @@ Global = {
   \include "../global.ly"
 }
 
-grayTextColor = #(x11-color "dimgray")
+\include "../macros.ly"
 
-#(define-markup-command (subject layout props dest num)
-  (number-pair? number?)
-  "Draw an annotation (a circle around the subject number)."
-  (let ((x (car dest))
-        (y (cdr dest)))
-  (interpret-markup layout props
-    (markup
-      #:override '(box-padding . 0.3)
-      #:hspace x #:lower y #:circle #:normal-text #:teeny
-      (make-with-color-markup grayTextColor
-        (cond ((eq? num 1) (make-musicglyph-markup "one"))
-              ((eq? num 2) (make-musicglyph-markup "two"))
-              ((eq? num 3) (make-musicglyph-markup "three"))
-              ((eq? num 4) (make-musicglyph-markup "four"))))))))
+% section  from      to         tot.bars   ratio
+%
+% 0.5 +
+% I           1    - 114.25       114.25
+% II        114.25 - 192.5         79.25   ~1.44 (114.25/79.25)          ; 79.25 = 0.75+78+0.50
+% III       192.5  - 248.5 (248)   55      ~1.44 (79.25 / 1.44 ~= 55.03) ; 55 = 0.50+54+0.50
+% IV        248.5  - 286.5         38      ~1.44 (55 / 1.44 ~= 38.19)    ; 38 = 0.50+37+0.50
+%        ---------------------------------------------------------------
+%                                 286.5
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
@@ -228,7 +223,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | ees8 ees d c bes a bes d
   | \mergeDifferentlyDottedOn
     g,4. a8 fis4. g8
-  | g2^\markup{\hspace #0 \raise #1 "XIV/c"} d'\rest
+  | g2 d'\rest^\markup{\hspace #0 \raise #1 "XIV/c"}
   | \override MultiMeasureRest.staff-position = #2
     R1*7
   | r2 bes^\markup \subject #'(0 . 0) #3
@@ -277,8 +272,20 @@ Sopran = \context Voice = "one" \relative c'' {
   | e4 d8 e f g a f
   | d4 e8 fis g a bes g
   | e4 r r2
-  | s1
-  | \bar "|"
+  | \once\override Score.BarNumber.stencil
+       = #(lambda (grob) (grob-interpret-markup grob #{
+            \markup {
+              \box { "239" }
+              \with-color #greyTextColor
+              \concat {
+                "[I.N.M.Hughes] "
+                \italic " (14 = 2+3+9)"
+              }
+            }
+         #}))
+    \once\override Score.BarNumber.break-visibility = ##(#t #t #t)
+    s1
+    \bar "|"
 }
 
 Alto = \context Voice = "two" \relative c' {
@@ -572,14 +579,16 @@ Alto = \context Voice = "two" \relative c' {
   | a8 g16 fis g8 a bes2~
   | bes8 a g f e d e g
   | f4 s2.
-  | \bar "|"
+    \bar "|"
+  %250
+
 }
 
 Tenor = \context Voice = "three" \relative c' {
   \voiceThree
   \showStaffSwitch
   \override MultiMeasureRest.staff-position = #6
-  \override VoiceFollower.color = \grayTextColor
+  \override VoiceFollower.color = \greyTextColor
   | R1*5
   | r2 a^\markup \subject #'(0 . 0) #1
   | \change Staff = "upper"
@@ -817,10 +826,11 @@ Tenor = \context Voice = "three" \relative c' {
   | g8 g a bes c d c bes
   | a4 r r2
   | r4 bes a8 g a4
-  | g2 bes^\markup \subject #'(0 . 0) #3
-  | a c
+  | g2 bes_\markup \italic\tiny \with-color #greyTextColor { "B" }^\markup \subject #'(0 . 0) #3
+  | a_\markup \italic\tiny \with-color #greyTextColor { "A" }
+    c_\markup \italic\tiny \with-color #greyTextColor { "C" }
   %195
-  | b4. cis8 d2~
+  | b4._\markup \italic\tiny \with-color #greyTextColor { "H" } cis8 d2~
   | d4. cis16 b cis2\prall
   | d r4 dis
   | e b e d
@@ -873,7 +883,7 @@ Tenor = \context Voice = "three" \relative c' {
   | b4. cis8 d2~
   | d4. cis16 b cis2
   | d8 e d c! b a b d
-  \bar "|"
+    \bar "|"
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -1013,7 +1023,10 @@ Bass = \context Voice = "four" \relative c {
   | g2~ g8 a bes g
   | a1~
   | a
-  | d~
+  | d~_\markup \italic \tiny \with-color #greyTextColor {
+      \ieyeglasses
+      "The second subject consists of 41 notes"
+    }
   %115
   | d4 r r2
   %---
@@ -1144,21 +1157,18 @@ Bass = \context Voice = "four" \relative c {
   | a'2. g4
   | f1
   | g
-  | \once \override TextScript.padding = #2
-  | a_\markup {
+  | \once \override TextScript.padding = #1
+  | \once\override Staff.TextScript.extra-offset = #'(8 . 0)
+    a_\markup {
       \column {
-      | \line { \italic\small { Über dieser Fuge, wo der Nahme B A C H } }
+        \line { \italic\small { Über dieser Fuge, wo der Nahme B A C H } }
         \line { \italic\small { im Contrasubject angebracht worden ist } }
         \line { \italic\small { der Verfasser gestorben } }
         \line { \tiny { \char ##x2014 in the autograph, in the hand of (?) C.P.E. Bach } }
-%     | \line { \italic\small { While working on this fugue, where } }
-%       \line { \italic\small { the name B.A.C.H. appears in the } }
-%       \line { \italic\small { countersubject, the composer died. } }
-%       \line { \tiny { In the autograph, in the hand of C.P.E. Bach } }
       }
     }
   | d,4 s2.
-  | \bar "|"
+  \bar "|"
 }
 
 \score {
@@ -1190,4 +1200,69 @@ Bass = \context Voice = "four" \relative c {
   }
   \layout { }
   \midi { \tempo 4 = 120 }
+}
+
+\score {
+  \new PianoStaff
+  <<
+    \applyContext #(override-color-for-all-grobs lightGrey)
+    \accidentalStyle Score.piano
+    \context Staff = "upper" <<
+      \set Staff.midiInstrument = #"acoustic grand"
+      \Global
+      \clef treble
+      \context Voice = "one" {
+        | \omit Staff.KeySignature
+          \omit Staff.TimeSignature
+          \override Score.BarNumber.break-visibility = ##(#t #t #t)
+          \override Score.BarNumber.color = #lightGrey
+          \set Score.barNumberVisibility = #all-bar-numbers-visible
+          \set Score.currentBarNumber = #240
+          s4_\markup \tiny\italic \with-color #lightGrey {
+            \column {
+              \concat {
+                \normal-text "[I.N.M.Hughes] "
+                \italic " 9 bars missing to reach 55 bars"
+              }
+              "Note that 55 = 14 (b·a·c·h) + 41 (j·s·b·a·c·h)"
+            }
+          }
+          s2.
+        | \set Score.currentBarNumber = #249
+          s4^\markup {
+            \hspace #0 \raise #1 "XIV/d"
+          }_\markup \tiny\italic {
+               \hspace #-2
+               \column {
+                 \concat {
+                   \normal-text "[I.N.M.Hughes] "
+                   \italic " 38 bars missing (up to bar 286)"
+                 }
+                 "Ideal order of voices in the subjects' exposition: SBTA"
+               }
+          }
+          \revert Score.BarNumber.break-visibility
+          s2.
+         \fine
+      }
+    >>
+    \context Staff = "lower" <<
+      \set Staff.midiInstrument = #"acoustic grand"
+      \Global
+      \clef bass
+      \context Voice = "two" {
+      | \omit Staff.KeySignature
+        \omit Staff.TimeSignature
+        s1
+      | s1
+        \fine
+      }
+    >>
+  >>
+  \header { }
+  \layout {
+    indent = 0
+    ragged-right = ##f
+  }
+  \midi { }
 }

@@ -4,6 +4,8 @@ Global = {
   \include "../global.ly"
 }
 
+\include "../macros.ly"
+
 Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
   | R1*4
@@ -321,7 +323,21 @@ Tenor = \context Voice = "three" \relative c' {
 
 Bass = \context Voice = "four" \relative c {
   \voiceFour
-  | s1*8
+  | s4_\markup \italic \tiny \with-color #greyTextColor {
+      \hspace #-2
+      \ieyeglasses
+      \column {
+         \concat {
+           \normal-text { "[H.A.Kellner] " }
+           "The first two notes of the entire work are D and A: 4 and 1, where 41 = J(9)+S(18)+B(2)+A(1)+C(3)+H(8)"
+         }
+         \concat {
+           \normal-text { "[H.A.Kellner] " }
+           "158 = Die(18) Kunst(80) der(26) Fuga(34) = Johann(58) Sebastian(86) Bach(14)"
+         }
+      }
+    } s2.
+  | s1*7
   | d2 a'
   %10
   | f d

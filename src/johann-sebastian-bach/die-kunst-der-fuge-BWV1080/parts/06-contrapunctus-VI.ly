@@ -4,6 +4,8 @@ Global = {
   \include "../global.ly"
 }
 
+greyTextColor = #(x11-color "dimgray")
+
 Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
   %1
@@ -330,7 +332,11 @@ Tenor = \context Voice = "three" \relative c' {
 Bass = \context Voice = "four" \relative c {
   \voiceFour
   %1
-  | d2 a'4. g8
+  | d2_\markup \italic \tiny \with-color #greyTextColor {
+      \ieyeglasses
+      "In Contrapunctus 6 there are 14 entries of the subject rectus and 14 entries inversus"
+    }
+    a'4. g8
   | f4. e8 d2
   | cis d4. e8
   | f2~ f8.[ g16 f8. e16]

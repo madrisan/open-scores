@@ -4,6 +4,8 @@ Global = {
   \include "../global.ly"
 }
 
+\include "../macros.ly"
+
 Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
   | s1*6
@@ -46,7 +48,12 @@ Soprano = \context Voice = "one" \relative c'' {
   | f e2 d4~
   %40
   | d c2 bes!4~
-  | bes4. a8 c b c4
+  | bes4.^\markup \italic\tiny \with-color #greyTextColor { "B" }
+    \once\override Staff.TextScript.extra-offset = #'(0 . 0.2)
+    a8^\markup \italic\tiny \with-color #greyTextColor { "A" }
+    c^\markup \italic\tiny \with-color #greyTextColor { "C" }
+    b^\markup \italic\tiny \with-color #greyTextColor { "H" }
+    c4
   | fis,8 d
     %\shape #'((-1 . 0) (0 . -3) (0 . -2) (0 . -1)) Tie
     g4_~ g8 g' f!4
@@ -126,7 +133,14 @@ Alto = \context Voice = "two" \relative c' {
   \voiceTwo
   \mergeDifferentlyDottedOn
   %1
-  | \stemUp a'2 d,4. e8
+  | \stemUp a'2^\markup \italic \tiny \with-color #greyTextColor {
+      \ieyeglasses
+      \concat {
+        "14-note version of the subject "
+        \scale #'(1 . -1) \subject #'(0 . 1.4) #1
+      }
+    }
+    d,4. e8
   | f4. g8 a2
   | bes a4. g8
   | \stemNeutral
@@ -427,7 +441,11 @@ Bass = \context Voice = "four" \relative c {
   | b d c b a g a b
   %40
   | c d e f g a g f
-  | e c f2 ees4
+  | e_\markup \italic \tiny \with-color #greyTextColor {
+      \hspace #-1
+      \ieyeglasses
+      "note Bach's motive on the soprano, at bar 41"
+    } c f2 ees4
   | d1~
   | d8 g, c4~ c8 c bes a
   | g d' e fis g2~
