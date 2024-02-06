@@ -2029,8 +2029,8 @@ Bass = \context Voice = "four" \relative c {
       \concat { \char ##x2211 "Contrapuncti 1,2,3,4" }
       "=" "602 / 372"
       "=" "1.618" \char ##x2248 \char ##x1D6DF
-      \abs-fontsize #8 { "(2)" }
 
+      \abs-fontsize #8 { "(2)" }
       \concat { \char ##x2211 "Contrapuncti 1,2,3,4" }
       "/"
       \concat { \char ##x2211 "Contrapuncti 5,6,7" }
@@ -2057,23 +2057,75 @@ Bass = \context Voice = "four" \relative c {
       \concat { \char ##x2211 "Canons 1,2,3,4" }
       "=" "602 / 230"
       "=" "1.618" \char ##x2248 \char ##x1D6DF
-
     }
 }
 
 \markup {
   \column {
-    \pad-around #2
+    \pad-around #1
     \wordwrap \abs-fontsize #10 \with-color #middleGrey {
       These examples also show a beautiful fractal phenomenon of \italic { self-similarity. }
       It can also be observed that the ratio (3) would be 1.614 with a 230 bar long Contrapunctus XIV.
       Likewise the ratio (4) would be 1.626.
       Both better approximations of the \char ##x1D6DF value.
-
     }
   }
 }
 
+\markup {
+  \column {
+    \pad-around #1
+    \wordwrap \abs-fontsize #10 \with-color #middleGrey {
+      Other symmetries are present within the Contrapuncti.
+    }
+  }
+}
+\markuplist \abs-fontsize #10 \with-color #middleGrey {
+  \override #'(padding . 1)
+  \table
+    #'(-1 -1 0 -1 0 1 0 -1)
+    {
+      "   "
+      \concat { "Contrapunctus I" } "/" \concat { "Contrapunctus III" } "=" "78 / 72" "=" "1.083"
+      "   "
+      \concat { "Contrapunctus IX" } "/" \concat { "Contrapunctus X" } "=" "130 / 120" "=" "1.083"
+    }
+}
+
+\markup {
+  \column {
+    \pad-around #1
+    \wordwrap \abs-fontsize #10 \with-color #middleGrey {
+      And also within the four Canons, which can be divided into two pairs that share nearly the same ratio.
+    }
+  }
+}
+\markuplist \abs-fontsize #10 \with-color #middleGrey {
+  \override #'(padding . 1)
+  \table
+    #'(-1 -1 0 -1 0 1 0 -1)
+    {
+      "   "
+      \concat { "Canon alla ottava" } "/" \concat { "Canon alla duodecima" }
+      "=" "103 / 78" "=" "1.320"
+
+      "   "
+      \concat { "Canon per augmentationem in contrario motu" } "/" \concat { "Canon alla decima" }
+      "=" "109 / 82" "=" "1.329"
+    }
+}
+
+\markup {
+  \pad-around #2
+  \center-column \fontsize #5 \with-color #middleGrey {
+    \hspace #100
+    \concat {
+      \arrow-head #X #RIGHT ##f
+      " "
+      \arrow-head #X #LEFT ##f
+    }
+  }
+}
 
 \markup {
   \pad-around #2
