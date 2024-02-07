@@ -1242,7 +1242,12 @@ Bass = \context Voice = "four" \relative c {
       We will see some examples in these notes, where \italic { “mathematician” } is to be understood
       primarily in the geometric-algebraic sense of the proportions of the composition and the relationships
       between musical voices.
-      Most of the material that follows is based on Indra Nicholas Martindale Hughes' doctoral thesis
+      Most of the material that follows is based on Indra Nicholas Martindale Hughes'
+      \with-url #"https://researchspace.auckland.ac.nz/handle/2292/392" {
+        \override #'(offset . 5)
+        \override #'(thickness . 1)
+        \underline { "doctoral thesis" }
+      }
       \italic {
         “Accident or Design? New Theories on the Unfinished Contrapunctus 14 in J. S. Bach’s
         The Art of Fugue BWV 1080”
@@ -1907,7 +1912,9 @@ Bass = \context Voice = "four" \relative c {
   \column {
     \wordwrap \abs-fontsize #10 \with-color #middleGrey {
       At the macroscopic level, as Yasuhiko Nakajima points out on his website
-      \with-url #"https://www.lcv.ne.jp/~nakgie/English//" {
+      \with-url #"https://www.lcv.ne.jp/~nakgie/English/" {
+        \override #'(offset . 5)
+        \override #'(thickness . 1)
         \underline { "The Art of Fugue Laboratory" }
       }
       one can see a symmetry by total number of bars per section.
@@ -1964,7 +1971,13 @@ Bass = \context Voice = "four" \relative c {
   \pad-around #1
   \column {
     \wordwrap \abs-fontsize #10 \with-color #middleGrey {
-      A deeper mathematical analysis of The Art of Fugue’s structure made by Loïc Sylvestre and Marco Costa
+      A deeper
+      \with-url #"https://www.jstor.org/stable/43030058?seq=1" {
+        \override #'(offset . 5)
+        \override #'(thickness . 1)
+        \underline { "mathematical analysis" }
+      }
+      of The Art of Fugue’s structure made by Loïc Sylvestre and Marco Costa
       \abs-fontsize #8 {
         [The Mathematical Architecture of Bachʹs The Art of Fugue - Il Saggiatore Musicale, 2010]
       }
