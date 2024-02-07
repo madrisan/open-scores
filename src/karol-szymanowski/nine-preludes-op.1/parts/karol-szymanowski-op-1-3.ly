@@ -254,5 +254,5 @@ centerDynamics = {
                               (padding . 0))
     }
   }
-  \midi { \tempo 2=40 }
+  \midi { \tempo 2=38 }
 }

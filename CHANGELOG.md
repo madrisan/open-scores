@@ -7,15 +7,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Added
 
-- Karol Szymanowski, nine-preludes op.1 - n.1-6
+- Karol Szymanowski, nine-preludes op.1
 
 ### Changed
 
-- J.S. Bach: Die Kunst der Fuge (BWV 1080) - Contrapunctus XIV - add subject numbers
+- J.S. Bach: Die Kunst der Fuge (BWV 1080) - Contrapunctus XIV - subjects numbers
 - J.S. Bach: Goldberg Variationen - Use the original 14-word (Bach's number) title
 - J.S. Bach: Die Kunst der Fuge (BWV 1080) - Prefer Altnikol's title "Die Kunst der Fuga"
 - J.S. Bach: Goldberg Variationen - The preface has been enriched
-- J.S. Bach: Die Kunst der Fuge (BWV 1080) - Add some annotations related to Indra Hughes' research
+- J.S. Bach: Die Kunst der Fuge (BWV 1080) - Notes on structure and Contrapunctus XIV completion
 
 ### Fixed
 
