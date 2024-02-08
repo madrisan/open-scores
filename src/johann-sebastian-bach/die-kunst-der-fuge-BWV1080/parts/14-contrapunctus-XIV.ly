@@ -1736,10 +1736,21 @@ Bass = \context Voice = "four" \relative c {
       One permutation is missing, and given Bach's love of algebraic games
       (or simply to vary the order of items in the expositions as much as possible)
       the likely order of appearance of the subjects in the fourth section should be reasonably:
-      S B T A.
+      S B T A. This leads to what is known as \italic { Zoltán Göncz's permutation matrix. }
     }
   }
 }
+
+\markup \center-column {
+  \pad-around #2
+  \line {
+    \hspace #26
+    \general-align #Y #DOWN {
+      \epsfile #X #50 #"bwv1080-subjects-1-2-3-4-permutation.eps"
+    }
+  }
+}
+
 
 \markup \fill-line {
   \pad-around #2
