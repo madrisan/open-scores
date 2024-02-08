@@ -9,7 +9,7 @@
 }
 
 \markup \column \abs-fontsize #11 {
-  \abs-fontsize #13 \bold { \concat { \char ##x23AF " Contrapuncti" } }
+  \abs-fontsize #12 \smallCaps \bold { \concat { \char ##x23AF " Contrapuncti" } }
   \null
 
   \page-link #3 { \fill-with-pattern #1 #RIGHT . "Contrapunctus I" "2" }
@@ -92,7 +92,7 @@
 
   \null
 
-  \abs-fontsize #13 \bold { \concat { \char ##x23AF " Canoni" } }
+  \abs-fontsize #12 \smallCaps \bold { \concat { \char ##x23AF " Canoni" } }
   \null
   \page-link #87 { \fill-with-pattern #1 #RIGHT . "Canon in Hypodiapason (Canon alla Ottava)" "86" }
   \line \abs-fontsize #8 \italic \with-color #middleGrey {
@@ -114,6 +114,6 @@
     "98"
   }
   \line \abs-fontsize #8 \italic \with-color #middleGrey {
-    \hspace #4 "Canon in which the following voice is both inverted and augmented"
+    \hspace #4 "canon in which the following voice is both inverted and augmented"
   }
 }
