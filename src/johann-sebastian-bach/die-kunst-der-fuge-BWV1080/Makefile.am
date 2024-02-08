@@ -27,8 +27,9 @@ BUILT_SOURCES = covercolor.ly
 EXTRA_DIST = JS-Bach-BWV1080-Die-Kunst-der-Fuge.ly \
 	     bwv1080-subjects-1-2-3-4-permutation.eps \
 	     covercolor.ly.in \
-	     header.ily \
 	     global.ly \
+	     header.ily \
+	     index.ly \
 	     logo.ly \
 	     macros.ly \
 	     parts/01-contrapunctus-I.ly \

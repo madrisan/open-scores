@@ -68,6 +68,9 @@
   }
 }
 
+\include "./index.ly"
+\pageBreak
+
 \include "./parts/01-contrapunctus-I.ly"
 \pageBreak
 \include "./parts/02-contrapunctus-II.ly"
