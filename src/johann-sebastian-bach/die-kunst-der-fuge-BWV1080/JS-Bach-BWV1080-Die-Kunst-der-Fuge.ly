@@ -100,6 +100,8 @@
 \include "./parts/13-contrapunctus-XIII-II.ly"
 \include "./parts/14-contrapunctus-XIV.ly"
 \pageBreak
+\include "./brief-notes-on-the-completion-of-contrapunctus-xiv.ly"
+\pageBreak
 \include "./parts/15-canon-in-hypodiapason.ly"
 \pageBreak
 \include "./parts/16-canon-alla-decima.ly"
