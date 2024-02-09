@@ -18,6 +18,16 @@
 % markup-system-spacing.basic-distance = #10
 }
 
+Subject = \relative {
+  \time 4/4
+  \key d \minor
+  \override Score.BarNumber.break-visibility = ##(#f #f #f)
+  \override Staff.NoteHead.style = #'baroque
+  \once\override TextScript.extra-offset = #'(-4 . -1)
+  d'2_\markup \italic \small { "common subject in « The Art of Fugue »" }
+  a' | f d | cis d4 e | f2~ f8 g f e | d4
+}
+
 \bookpart {
   \header {
     maintainer      = "Davide Madrisan"
@@ -50,10 +60,27 @@
         \line { \abs-fontsize #20 "BWV 1080" }
         \combine \null \vspace #3
         \fill-line { \abs-fontsize #20 "For Piano or Harpsichord" }
-        \combine \null \vspace #8
+        \combine \null \vspace #2
       }
     }
   }
+
+  \markup
+    \fill-line {
+      \center-column {
+        \score {
+          <<
+          \new Voice = "subject" \Subject
+          >>
+          \layout {
+            indent = #0
+            line-width = #150
+            #(layout-set-staff-size 18)
+          }
+        }
+        \combine \null \vspace #4
+      }
+    }
 
   \include "./logo.ly"
 

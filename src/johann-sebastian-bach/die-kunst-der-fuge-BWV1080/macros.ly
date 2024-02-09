@@ -59,3 +59,21 @@ middleGrey = #(x11-color 'grey45)
      (let ((grob-name (caar x)))
       (ly:context-pushpop-property context grob-name 'color color)
       (loop (cdr x)))))))
+
+% usage:
+%  | d2
+%    -\tweak layer #-1
+%    ^\markup\yellowMarker #61 #9
+
+#(define-markup-command (yellowMarker layout props colorWidth colorHeight) (number? number?)
+  (interpret-markup layout props
+   (markup #:line (#:with-dimensions (cons 0 0)(cons 0 0)
+                    (#:with-color (list 1.0 1.0 0.0) ;; => yellow
+                      ;; other options (e.g.):
+                      ;;;; red: 	(list 1.0 0.0 0.0)
+                      ;;;; green: 	(list 0.0 1.0 0.0)
+                      ;;;; cyan: 	(list 0.0 1.0 1.0)
+                      ;;;; magenta: 	(list 1.0 0.0 1.0)
+                      ;;;;;; see also: http://lilypond.org/doc/v2.18/Documentation/notation/list-of-colors
+                       (#:filled-box (cons -1.7 colorWidth)
+                                     (cons (* -1 colorHeight) 1) 0))))))
