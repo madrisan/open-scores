@@ -2014,7 +2014,10 @@ Bass = \context Voice = "four" \relative c {
 \markup \fill-line {
   \pad-around #1
   \center-column \abs-fontsize #10 \with-color #middleGrey {
-    \concat { \char ##x1D6DF " " = " " (1 + \char ##x221A 5) " " / " " 2 " " \char ##x2248 " " 1.618 }
+    \concat {
+      \char ##x1D6DF " " = " "
+      \fraction \concat { "1" "+" \char ##x221A "5" } "2"
+      " " \char ##x2248 " " 1.618 }
   }
 }
 
