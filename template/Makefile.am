@@ -20,6 +20,7 @@ AM_MAKEFLAGS = --no-print-directory
 EXTRA_DIST = covercolor.ly.in \
 	     global.ly \
 	     logo.ly \
-	     template-part.ly
+	     template.ly \
+	     translate.sh
 
 check-local: all

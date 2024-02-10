@@ -118,6 +118,7 @@ AC_CONFIG_FILES([\
   src/johann-sebastian-bach/inventionen-und-sinfonien-BWV772-801/Makefile \
   src/johann-sebastian-bach/italienisches-konzert-BWV971/Makefile \
   src/johann-sebastian-bach/musikalisches-opfer-BWV1079/Makefile \
+  src/johann-sebastian-bach/organ-sonata-4-andante-BWV528-stradal/Makefile \
   src/johann-sebastian-bach/partitas/Makefile \
   src/johann-sebastian-bach/partitas/BWV830/Makefile \
   src/johann-sebastian-bach/praeludium-fuge-und-allegro-BWV998/Makefile \
@@ -128,6 +129,7 @@ AC_CONFIG_FILES([\
   src/johann-sebastian-bach/siciliano-BWV1031/Makefile \
   src/johann-sebastian-bach/suites-anglaises/Makefile \
   src/johann-sebastian-bach/suites-anglaises/BWV809/Makefile \
+  src/karol-szymanowski/Makefile \
   src/karol-szymanowski/nine-preludes-op.1/Makefile \
   src/ludwig-van-beethoven/Makefile \
   src/ludwig-van-beethoven/klaviersonate-8-op.13/Makefile \

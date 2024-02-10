@@ -1,1 +1,1 @@
-SUBDIRS = nine-preludes-op-1
+SUBDIRS = nine-preludes-op.1
