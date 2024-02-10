@@ -29,7 +29,10 @@ EXTRA_DIST = JS-Bach-BWV924-932-Neun-kleine-Praludien.ly \
 	     header.ily \
 	     global.ly \
 	     logo.ly \
-             parts/neun-kleine-praludien-BWV924.ly
+             parts/neun-kleine-praludien-BWV924.ly \
+             parts/neun-kleine-praludien-BWV924a.ly \
+             parts/neun-kleine-praludien-BWV925.ly \
+             parts/neun-kleine-praludien-BWV926.ly \
 
 all: $(BUILT_SOURCES) JS-Bach-BWV924-932-Neun-kleine-Praludien
 
