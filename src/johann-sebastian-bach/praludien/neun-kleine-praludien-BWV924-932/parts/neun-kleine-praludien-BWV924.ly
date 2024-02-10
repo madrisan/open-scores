@@ -34,7 +34,7 @@ Soprano = \context Voice = "one" \relative c'' {
     \fine
 }
 
-Bass = \context Voice = "four" \relative c {
+Bass = \context Voice = "two" \relative c {
   \voiceTwo
   \stemNeutral
   \tieNeutral
@@ -47,8 +47,8 @@ Bass = \context Voice = "four" \relative c {
   %5
   | a c, d e^\upmordent
   | f e d^\prall c
-  | g'^\mordent g, g'\mordent g,
-  | g'^\mordent g, g'\mordent g,
+  | g'^\mordent g, g'^\mordent g,
+  | g'^\mordent g, g'^\mordent g,
   | g'^\mordent r r16 \stemDown g,[ b d] \stemUp f[ g b d]
   %10
   | b g[ b d] s2.
@@ -59,7 +59,7 @@ Bass = \context Voice = "four" \relative c {
   %15
   | <g g,>~
   | <g g,>~
-  | <g g,>~
+  | <g g,>
   | <c,, c'>_\fermata
     \fine
 }
@@ -82,7 +82,7 @@ Bass = \context Voice = "four" \relative c {
     >>
   >>
   \header {
-    composer = "Johann Sebastian Bach"
+    composer = ##f # "Johann Sebastian Bach"
     opus = "BWV 924"
     title = \markup { "Praeambulum 1" }
     subtitle = ##f
@@ -96,6 +96,6 @@ Bass = \context Voice = "four" \relative c {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 4 = 40
   }
 }
