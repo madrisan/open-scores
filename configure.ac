@@ -121,11 +121,13 @@ AC_CONFIG_FILES([\
   src/johann-sebastian-bach/organ-sonata-4-andante-BWV528-stradal/Makefile \
   src/johann-sebastian-bach/partitas/Makefile \
   src/johann-sebastian-bach/partitas/BWV830/Makefile \
+  src/johann-sebastian-bach/praludien/Makefile \
+  src/johann-sebastian-bach/praludien/neun-kleine-praludien-BWV924-932/Makefile
+  src/johann-sebastian-bach/praludien/sechs-kleine-praludien-BWV933-938/Makefile \
   src/johann-sebastian-bach/praeludium-fuge-und-allegro-BWV998/Makefile \
   src/johann-sebastian-bach/praeludium-und-fughetta-BWV902/Makefile \
   src/johann-sebastian-bach/praludium-und-fuge-liszt-BWV543-S462/Makefile \
   src/johann-sebastian-bach/schafe-konnen-sicher-weiden-BWV208/Makefile \
-  src/johann-sebastian-bach/sechs-kleine-praludien-BWV933-938/Makefile \
   src/johann-sebastian-bach/siciliano-BWV1031/Makefile \
   src/johann-sebastian-bach/suites-anglaises/Makefile \
   src/johann-sebastian-bach/suites-anglaises/BWV809/Makefile \

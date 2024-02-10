@@ -243,9 +243,10 @@ make -C src/johann-sebastian-bach/organ-sonata-4-andante-BWV528-stradal
 make -C src/johann-sebastian-bach/partitas/BWV830
 make -C src/johann-sebastian-bach/praeludium-fuge-und-allegro-BWV998
 make -C src/johann-sebastian-bach/praeludium-und-fughetta-BWV902
+make -C src/johann-sebastian-bach/praludien/neun-kleine-praludien-BWV924-932
+make -C src/johann-sebastian-bach/praludien/sechs-kleine-praludien-BWV933-938
 make -C src/johann-sebastian-bach/praludium-und-fuge-liszt-BWV543-S462
 make -C src/johann-sebastian-bach/schafe-konnen-sicher-weiden-BWV208
-make -C src/johann-sebastian-bach/sechs-kleine-praludien-BWV933-938
 make -C src/johann-sebastian-bach/siciliano-BWV1031
 make -C src/johann-sebastian-bach/suites-anglaises/BWV809
 make -C src/johannes-brahms/klavierstucke-op.119

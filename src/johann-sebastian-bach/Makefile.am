@@ -10,8 +10,8 @@ SUBDIRS = chaconne-fur-violine-BWV1004-busoni \
 	  partitas \
           praeludium-fuge-und-allegro-BWV998 \
 	  praeludium-und-fughetta-BWV902 \
+	  praludien \
 	  praludium-und-fuge-liszt-BWV543-S462 \
 	  schafe-konnen-sicher-weiden-BWV208 \
-	  sechs-kleine-praludien-BWV933-938 \
 	  siciliano-BWV1031 \
 	  suites-anglaises
