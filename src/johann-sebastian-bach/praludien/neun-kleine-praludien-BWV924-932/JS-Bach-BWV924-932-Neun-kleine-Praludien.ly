@@ -94,4 +94,6 @@
 \pageBreak
 \include "./parts/neun-kleine-praludien-BWV926.ly"
 \pageBreak
+\include "./parts/neun-kleine-praludien-BWV927.ly"
+\pageBreak
 \include "./parts/neun-kleine-praludien-BWV928.ly"
