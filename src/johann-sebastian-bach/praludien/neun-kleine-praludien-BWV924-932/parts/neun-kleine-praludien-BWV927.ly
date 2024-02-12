@@ -4,8 +4,6 @@ Global = {
   \include "../global.ly"
 }
 
-textmordent = \markup { \musicglyph "scripts.mordent" }
-
 Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
   \stemNeutral
@@ -107,6 +105,6 @@ Bass = \context Voice = "three" \relative c {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 4 = 94
   }
 }
