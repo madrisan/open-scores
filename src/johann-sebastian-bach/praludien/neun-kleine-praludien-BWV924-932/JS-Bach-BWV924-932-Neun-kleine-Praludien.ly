@@ -1,4 +1,4 @@
-\version "2.23.80"
+\version "2.25.12"
 
 #(ly:set-option 'relative-includes #t)
 
@@ -11,25 +11,32 @@
 \paper {
   #(set-paper-size "a4")
   annotate-spacing = ##f
+  binding-offset = 0\mm
   bottom-margin = 5\mm
   first-page-number = 0
   indent = 0.0
+  inner-margin = 10\mm
 % last-bottom-spacing.padding = #2
+  left-margin = 10\mm
   line-width = 18.4\cm
   markup-system-spacing =
      #'((basic-distance . 2)
         (minimum-distance . 1)
         (padding . 2)
         (stretchability . 24))
+  outer-margin = 20\mm
   print-all-headers = ##t
   ragged-last-bottom = ##f
   ragged-bottom = ##f
+  right-margin = 10\mm
   system-system-spacing =
      #'((basic-distance . 2)
         (minimum-distance . 1)
         (padding . 2)
         (stretchability . 24))
   top-margin = 10\mm
+  top-markup-spacing.basic-distance = 0
+  top-system-spacing.basic-distance = 1
 }
 
 \bookpart {
@@ -64,7 +71,7 @@
         \null
         \line { \abs-fontsize #18 \bold "(Nine Little Preludes)" }
         \null\null\null
-        \line { \abs-fontsize #20 "BWV 924-932" }
+        \line { \abs-fontsize #20 "BWV 924, 924a, 925-928, 930" }
         \null\null\null\null
         \fill-line { \abs-fontsize #20 "For Piano or Harpsichord" }
         \null\null\null
@@ -79,7 +86,9 @@
     \fill-line {
       \center-column {
         \null\null\null\null
-        \fill-line { \abs-fontsize #10 "Neue Bach-Ausgabe, Serie V, Band 5 / Wolfgang Plath, 1962" }
+        \fill-line {
+          \abs-fontsize #10 "Based on: Neue Bach-Ausgabe, Serie V, Band 5 / Wolfgang Plath, 1962"
+        }
         \null\null
       }
     }

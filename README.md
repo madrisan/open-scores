@@ -43,6 +43,7 @@ The source code was compiled with `GNU LilyPond 2.25.4 (running Guile 2.2)` (Fed
  * [Suite Anglaise IV (BWV 809)](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV809-Suite-Anglaise-4.pdf)
  * [Partita VI (BWV 830)](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV830-Partita-6.pdf)
  * [Praeludium und Fughetta in G-Dur (BWV902)](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-Praeludium-und-Fughetta-BWV902.pdf)
+ * [Neun kleine Präludien (BWV 924-932)](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV924-932-Neun-kleine-Praludien.pdf)
  * [Sechs kleine Präludien (BWV 933-938)](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV933-938-Sechs-kleine-Praludien.pdf)
  * [Italienisches Konzert (BWV 971)](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV971-Italienisches-Konzert.pdf)
  * [Goldberg Variationen (BWV 988)](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV988-Goldberg-Variationen.pdf)
