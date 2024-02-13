@@ -1,0 +1,36 @@
+name: ci
+
+on:
+  push:
+    paths-ignore:
+      - '**.md'
+      - AUTHORS
+      - VERSION
+  pull_request:
+    types: [assigned, edited, opened, synchronize, reopened]
+
+jobs:
+  build-checks:
+    runs-on: ubuntu-latest
+    container: 'fedora:39'
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - id: install_deps
+        run: |
+          dnf -y update
+          dnf -y install autoconf automake bzip2 lilypond make xz
+
+      - id: configure
+        run: |
+          autoreconf --install
+          ./configure
+
+      - id: make_dist
+        run: |
+          make dist
+
+      - id: make
+        run: |
+          make

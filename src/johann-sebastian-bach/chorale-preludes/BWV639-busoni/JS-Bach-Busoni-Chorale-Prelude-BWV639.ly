@@ -100,7 +100,7 @@ Sopran = \context Voice = "one" \relative c'' {
   \tempo \markup {
     \column {
       \line { "Andante" }
-      \line { \italic\small { \roman "Mit andacht" } }
+      \line { \italic\small { \serif "Mit andacht" } }
       \general-align #Y #-1
       \line { \hspace #2 \small "Die Oberstimme sehr ausdrucksvoll und gehalten" }
       \general-align #Y #-2
