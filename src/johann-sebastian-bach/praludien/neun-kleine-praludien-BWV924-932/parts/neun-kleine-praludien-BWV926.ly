@@ -56,6 +56,7 @@ Soprano = \context Voice = "one" \relative c' {
   | d[ a' f d cis d]
   | e[ g e bes g' e]
   | bes[ g' e cis a g']
+    \break
   | f16[ d c! bes] s2
   %40
   | s2.
@@ -71,7 +72,7 @@ Soprano = \context Voice = "one" \relative c' {
     \omit Stem \grace {
       \hideNotes a4
       \once\override Staff.TextScript.extra-offset = #'(0 . -6)
-      a^\textmordent
+      a^\textmordent^\markup { \hspace #-0.4 \teeny\sharp }
       \unHideNotes
     } \undo\omit Stem
     <a d fis>2.
@@ -146,7 +147,7 @@ Bass = \context Voice = "three" \relative c {
   | \once\stemDown a, d[ c bes] a \stemDown g[ f e] d[ f a d]
   | \stemUp f[ a] \stemDown d,[ f] a s8. s4
   | R1*3/4
-  | \stemNeutral cis,8[ e cis a] d[ b]
+  | \stemNeutral cis,8[ e cis a] d[ bes]
   | g[ g'] a[ g a g,]
   %45
   | d'4 d' d,

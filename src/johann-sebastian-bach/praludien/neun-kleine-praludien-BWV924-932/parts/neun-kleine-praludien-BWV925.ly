@@ -30,7 +30,7 @@ Soprano = \context Voice = "one" \relative c' {
   | b d g a fis8\prall e16 d d8. e16~ e d8 cis16
   %15
   | r16\fermata d fis d g a b g c b c d c e d c
-  | b4 a~ a8 g~ g16 fis8 d16
+  | b4 a~ a8 g~ g16 fis8 e16
   | fis8 e~ e d~ d4 cis
   | d2_~ d16 a b cis d4
    \override Score.TextMark.self-alignment-X = #CENTER
