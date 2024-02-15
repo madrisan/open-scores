@@ -17,7 +17,7 @@ If you prefer to create these files yourself (and midi files as well), you can s
 
 Latest release: [Open Scores for Piano v47](https://github.com/madrisan/open-scores/releases)
 
-The source code was compiled with `GNU LilyPond 2.25.4 (running Guile 2.2)` (Fedora Linux 39).
+The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fedora Linux 39).
 
 ![Open Musical Scores Logo](images/SheetMusic-icon.png)
 
