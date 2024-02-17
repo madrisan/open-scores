@@ -4,9 +4,12 @@ Global = {
   \include "../global.ly"
 }
 
+staffLower = { \change Staff = "lower" }
+staffUpper = { \change Staff = "upper" }
+
 Soprano = \context Voice = "one" \relative c' {
   \voiceOne
-  \stemUp
+  \stemNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   %1
@@ -58,9 +61,9 @@ Bass = \context Voice = "four" \relative c {
     >>
   >>
   \header {
-    composer = ##f # "@composer_firstname@ @composer_lastnam@"
-    opus = ##f # "@opus@"
-    title = \markup { "MISSING TITLE" }
+    composer = ##f # "Johann Sebastian @composer_lastnam@"
+    opus = ##f # "BWV 825"
+    title = \markup { "Allemande" }
     subtitle = ##f
   }
   \layout {

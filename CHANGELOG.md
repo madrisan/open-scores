@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Added
 
 - J.S. Bach: Neun kleine Praludien BWV924-932: Praeambulum BWV924,924a,925-928,930
+- J.S. Bach: Partita 1 BWV825
 
 ## [v47] - 2024-02-10
 
