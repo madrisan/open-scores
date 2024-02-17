@@ -69,6 +69,7 @@ test -n "$critic_missing" && AC_MSG_ERROR([
 
 AC_CONFIG_FILES([\
   Makefile \
+  lyinit/Makefile \
   src/Makefile \
   src/alfredo-casella/Makefile \
   src/alfredo-casella/deux-contrastes-op.31/Makefile \
@@ -141,7 +142,6 @@ AC_CONFIG_FILES([\
   src/robert-schumann/Makefile \
   src/rued-langgaard/Makefile \
   src/rued-langgaard/insektarium-BVN134/Makefile \
-  template/Makefile
 ])
 
 AC_OUTPUT

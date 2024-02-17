@@ -17,10 +17,18 @@
 
 AM_MAKEFLAGS = --no-print-directory
 
-EXTRA_DIST = covercolor.ly.in \
-	     global.ly \
-	     logo.ly \
-	     template.ly \
-	     translate.sh
+EXTRA_DIST = lyscaffold.sh \
+	     addons/translate.sh \
+	     data/jsbach \
+	     templates/covercolor.ly \
+	     templates/covercolor.ly.in \
+	     templates/global.ly \
+	     templates/header.ily \
+	     templates/logo.ly \
+	     templates/makefile-clean \
+	     templates/makefile-clean-parts \
+	     templates/makefile-head \
+	     templates/mainfile.ly \
+	     templates/part-four-voices.ly
 
 check-local: all

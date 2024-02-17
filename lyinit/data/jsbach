@@ -1,0 +1,7 @@
+composer_firstname='Johann Sebastian'
+composer_lastname="Bach"
+instruments="For Piano or Harpsichord"
+header_composer="Johann Sebastian Bach (1685-1750)"
+header_style="Baroque"
+mutopiacomposer="BachJS"
+mutopiainstrument="Harpsichord, Piano"
