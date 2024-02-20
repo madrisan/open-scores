@@ -4,9 +4,6 @@ Global = {
   \include "../global.ly"
 }
 
-staffLower = { \change Staff = "lower" }
-staffUpper = { \change Staff = "upper" }
-
 Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
   \stemUp\tieUp

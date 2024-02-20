@@ -4,7 +4,8 @@ Global = {
   \include "../global.ly"
 }
 
-grayTextColor = #(x11-color "dimgray")
+greyTextColor = #(x11-color "dimgray")
+
 staffLower = { \change Staff = "lower" }
 staffUpper = { \change Staff = "upper" }
 
@@ -46,7 +47,7 @@ Alto = \context Voice = "two" \relative c' {
   \voiceTwo
   \stemDown
   \override Rest.staff-position = #0
-  \override VoiceFollower.color = \grayTextColor
+  \override VoiceFollower.color = \greyTextColor
   \showStaffSwitch\tieUp
   %1
   | \staffLower\stemUp
