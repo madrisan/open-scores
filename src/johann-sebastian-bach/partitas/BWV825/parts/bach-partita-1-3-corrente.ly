@@ -4,9 +4,6 @@ Global = {
   \include "../global.ly"
 }
 
-staffLower = { \change Staff = "lower" }
-staffUpper = { \change Staff = "upper" }
-
 Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
   \stemNeutral\tieNeutral
@@ -94,20 +91,6 @@ Soprano = \context Voice = "one" \relative c'' {
     \override Score.TextMark.self-alignment-X = #CENTER
     \textEndMark \markup { \musicglyph "scripts.ufermata" }
   }
-}
-
-Alto = \context Voice = "two" \relative c' {
-  \voiceTwo
-  \stemDown
-  \override Rest.staff-position = #0
-  %1
-}
-
-Tenor = \context Voice = "three" \relative c {
-  \voiceThree
-  \stemUp
-  \override Rest.staff-position = #0
-  %1
 }
 
 Bass = \context Voice = "four" \relative c' {
@@ -206,13 +189,11 @@ Bass = \context Voice = "four" \relative c' {
       \Global
       \clef treble
       \Soprano
-      \Alto
     >>
     \context Staff = "lower" <<
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \clef bass
-      \Tenor
       \Bass
     >>
   >>
