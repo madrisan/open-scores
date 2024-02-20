@@ -4,12 +4,15 @@ Global = {
   \include "../global.ly"
 }
 
-bottom = \change Staff = "lower"
-top = \change Staff = "upper"
+greyTextColor = #(x11-color "dimgray")
+
+staffLower = { \change Staff = "lower" }
+staffUpper = { \change Staff = "upper" }
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \override Rest.staff-position = #0
+  \override VoiceFollower.color = \greyTextColor
   \stemUp
   \repeat volta 2 {
   %1
@@ -22,9 +25,10 @@ Sopran = \context Voice = "one" \relative c'' {
   | d,[ cis ] r a'
   | b,[ cis ] d4 ~
   | d8[ cis16 d ] e[ d cis d ]
-  | e[ d cis b ] a[ \bottom g! fis e ]
+  | e[ d cis b ] a[ \staffLower g! fis e ]
+    \break
   %10
-  | fis8 \top\stemUp fis'16[ g ] a[ g fis g ]
+  | \showStaffSwitch fis8 \staffUpper\stemUp fis'16[ g ] a[ g fis g ]
   | a[ g fis e ] d[ c b a ]
   | b[ d e fis ] g[ b cis! d ]
   | e[ g, fis e ] fis[ e' d cis ]
@@ -32,6 +36,7 @@ Sopran = \context Voice = "one" \relative c'' {
   %15
   | cis[ a b cis ] d,[ cis' b a ]
   | gis[ e fis gis ] a[ b cis d ]
+    \break
   | e4 a ~
   | a8[ gis16 a ] b8[ d, ]
   | cis[ e ] d16[ cis b a ]
@@ -79,6 +84,7 @@ Sopran = \context Voice = "one" \relative c'' {
 
 Alto = \context Voice = "two" \relative c' {
   \voiceTwo
+  \override VoiceFollower.color = \greyTextColor
   \stemDown
   \repeat volta 2 {
   %1
@@ -101,10 +107,11 @@ Alto = \context Voice = "two" \relative c' {
   %20
   | r16 e[ cis8~ ] cis4
   }
+  \pageBreak
   \repeat volta 2 {
   | R1*1/2
   | R1*1/2
-  | d4 a'~
+  | \staffLower\stemUp d4 \showStaffSwitch \staffUpper\stemDown a'~
   | a8[ b16 c ] d[ c b a ]
   %25
   | b4 a
@@ -119,9 +126,9 @@ Alto = \context Voice = "two" \relative c' {
   | a4 g
   | fis4 e8 r
   %35
-  | \bottom\stemUp\tieDown a,4\rest a8\rest a^~
-  | a16[ g fis a ] g8 c\rest
-  | s4 \top\stemDown d'!~
+  | \staffLower\stemUp\tieDown a,4\rest a8\rest a^~
+  | a16[ g fis a ] g8 \hideStaffSwitch c\rest
+  | s4 \staffUpper\stemDown d'!~
   | d8[ cis!16 b ] cis[ a gis b ]
   | a2~
   %40
@@ -167,7 +174,6 @@ Bass = \context Voice = "four" \relative c {
   %20
   | a,8.[ e'16 ] a4
   }
-  \pageBreak
   \repeat volta 2 {
   | a8[ b a g ]
   | fis[ e fis a ]

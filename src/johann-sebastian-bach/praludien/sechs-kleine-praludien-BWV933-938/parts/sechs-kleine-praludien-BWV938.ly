@@ -14,18 +14,20 @@ Sopran = \context Voice = "one" \relative c' {
   | e'8[ b e]
   | dis16[ b dis fis dis b]
   | b'8[ fis b]
+    \break
   %5
   | g16[ fis e d! c b]
   | a[ c e g fis e]
   | fis[ e d c b a]
   | g[ b d f! d b]
+    \break
   | e8[ fis\mordent g]
   %10
   | d4\mordent r8
   | g8[ fis\prall g]
   | a16[ b c8] r
+    \break
   | b8[ a\prall g]
-  \pageBreak
   | a[ c, b]
   %15
   | g'[ fis\prall e]
@@ -38,7 +40,7 @@ Sopran = \context Voice = "one" \relative c' {
     { b4.\mordent }
     { b4.\mordent }
   }
-  \break
+  \pageBreak
   \repeat volta 2 {
   | r16 dis,[ fis a! fis dis]
   | c'!8[ b a~]

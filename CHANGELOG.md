@@ -10,6 +10,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - J.S. Bach: Neun kleine Praludien BWV924-932: Praeambulum BWV924,924a,925-928,930
 - J.S. Bach: Partita 1 BWV825
 
+### Changed
+
+- J.S. Bach: Sechs kleine Präludien BWV935 - completely rework pagination
+
 ## [v47] - 2024-02-10
 
 ### Added

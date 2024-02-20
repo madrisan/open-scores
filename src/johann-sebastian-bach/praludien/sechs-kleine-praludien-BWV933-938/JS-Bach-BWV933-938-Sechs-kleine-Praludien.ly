@@ -11,25 +11,32 @@
 \paper {
   #(set-paper-size "a4")
   annotate-spacing = ##f
-  bottom-margin = 8\mm
+  binding-offset = 0\mm
+  bottom-margin = 5\mm
   first-page-number = 0
   indent = 0.0
+  inner-margin = 10\mm
 % last-bottom-spacing.padding = #2
-  line-width = 18.6\cm
+  left-margin = 10\mm
+  line-width = 18.4\cm
   markup-system-spacing =
      #'((basic-distance . 2)
         (minimum-distance . 1)
         (padding . 2)
-        (stretchability . 20))
+        (stretchability . 24))
+  outer-margin = 20\mm
   print-all-headers = ##t
   ragged-last-bottom = ##f
   ragged-bottom = ##f
+  right-margin = 10\mm
   system-system-spacing =
      #'((basic-distance . 2)
         (minimum-distance . 1)
         (padding . 2)
-        (stretchability . 25))
+        (stretchability . 24))
   top-margin = 10\mm
+  top-markup-spacing.basic-distance = 0
+  top-system-spacing.basic-distance = 1
 }
 
 \bookpart {
@@ -87,9 +94,13 @@
 }
 
 \include "./parts/sechs-kleine-praludien-BWV933.ly"
+\pageBreak
 \include "./parts/sechs-kleine-praludien-BWV934.ly"
 \pageBreak
 \include "./parts/sechs-kleine-praludien-BWV935.ly"
+\pageBreak
 \include "./parts/sechs-kleine-praludien-BWV936.ly"
+\pageBreak
 \include "./parts/sechs-kleine-praludien-BWV937.ly"
+\pageBreak
 \include "./parts/sechs-kleine-praludien-BWV938.ly"

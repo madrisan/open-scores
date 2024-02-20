@@ -23,7 +23,6 @@ Sopran = \context Voice = "one" \relative c'' {
   %10
   | fis[ e gis fis] e[ dis cis^\prall b] \stemUp b2
   }
-  \pageBreak
   \repeat volta 2 {
   | r16 fis[ e fis] dis[ fis b gis] a![ fis e fis] dis[ fis a fis]
   | gis8[ fis16 gis] e8[ b'] gis[ b e, gis]

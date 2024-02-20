@@ -14,6 +14,7 @@ Sopran = \context Voice = "one" \relative c' {
   | \once\override NoteColumn.force-hshift = #0.5 e4
     r8 f \once\override NoteColumn.force-hshift = #1 g4 r8 c
   | f,8 \mordent[ f ] d'[ f,] f[ e] r4
+    \noBreak
   | d4 \mordent r8 e f4 r8 f
   | e8[ g] g16[ f g a] \appoggiatura e8 d4-\prall^\markup {
       \hspace #0.6 \musicglyph "scripts.turn"

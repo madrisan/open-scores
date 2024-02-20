@@ -14,16 +14,19 @@ Sopran = \context Voice = "one" \relative c'' {
   | \appoggiatura f16 es8[ d c es g c]
   | f,[ es' d f as c,]
   | \appoggiatura c16 b8[ a g b d f]
+    \break
   %5
   | es[ c g c e c]
   | f[ c g' c, as'! c,]
   | d[ bes f bes d bes]
   | es[ bes f' bes, g' bes,]
+    \break
   | c[ as g as c es]
   %10
   | bes[ g f g bes es]
   | as,[ g f g as es]
   | d[ es f d bes as]
+    \break
   | g[ bes es bes g bes]
   | as[ es' bes es c es]
   %15
@@ -34,7 +37,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | g8[ f es d c d]
   %20
   | \stemUp es2.
-    \break
+    \pageBreak
   }
   \repeat volta 2 {
   | \stemNeutral
@@ -42,16 +45,19 @@ Sopran = \context Voice = "one" \relative c'' {
   | e[ d! c e g bes]
   | as[ f des g e c]
   | bes[ g as c f a,]
+    \break
   %25
   | bes[ d! f as! g f]
   | g[ es d c b f']
   | es[ d c es a, g ]
   | fis[ g a fis d a']
+    \break
   | d[ g, fis c' bes g]
   %30
   | c,[ fis g a es c]
   | bes[ d fis g a, fis']
   | g4 bes2-\mordent ~
+    \break
   | bes8[ des e c g' bes,]
   | as![ bes c as f e]
   %35
