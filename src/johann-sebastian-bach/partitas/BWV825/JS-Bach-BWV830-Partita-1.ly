@@ -101,6 +101,7 @@
 \include "./parts/bach-partita-1-3-corrente.ly"
 \pageBreak
 \include "./parts/bach-partita-1-4-sarabande.ly"
-%\include "./parts/bach-partita-1-5-menuet-1.ly"
-%\include "./parts/bach-partita-1-5-menuet-2.ly"
+\pageBreak
+\include "./parts/bach-partita-1-5-menuet-1.ly"
+\include "./parts/bach-partita-1-5-menuet-2.ly"
 %\include "./parts/bach-partita-1-6-giga.ly"
