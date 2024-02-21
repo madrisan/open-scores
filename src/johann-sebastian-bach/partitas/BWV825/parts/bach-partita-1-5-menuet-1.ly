@@ -21,9 +21,9 @@ Soprano = \context Voice = "one" \relative c'' {
   %5
   | d' aes es' g, f' f,
   | g' f a! es bes' d,
+    \break
   | c es d c d bes
   | c a g a f es'
-    \break
   | d bes a bes f bes
   %10
   | d bes es bes f' bes,
@@ -186,6 +186,6 @@ Bass = \context Voice = "four" \relative c' {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 4 = 140
   }
 }
