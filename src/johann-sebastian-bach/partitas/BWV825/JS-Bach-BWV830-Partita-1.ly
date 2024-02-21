@@ -104,4 +104,5 @@
 \pageBreak
 \include "./parts/bach-partita-1-5-menuet-1.ly"
 \include "./parts/bach-partita-1-5-menuet-2.ly"
-%\include "./parts/bach-partita-1-6-giga.ly"
+\pageBreak
+\include "./parts/bach-partita-1-6-giga.ly"
