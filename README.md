@@ -50,24 +50,9 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
  * [Praeludium Fuge und Allegro (BWV 998)](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV998-Praeludium-Fuge-und-Allegro.pdf)
  * [Musikalisches Opfer: Ricercar a 3, Ricercar a 6 (BWV 1079)](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV1079-Musikalisches-Opfer.pdf)
  * [Die Kunst der Fuge (BWV 1080)](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV1080-Die-Kunst-der-Fuge.pdf)
-   * Contrapunctus I
-   * Contrapunctus II
-   * Contrapunctus III
-   * Contrapunctus IV
-   * Contrapunctus V
-   * Contrapunctus VI - [per Diminutionem] in Stilo Francese
-   * Contrapunctus VII - per Augmentationem et Diminutionem
-   * Contrapunctus VIII
-   * Contrapunctus IX - alla Duodecima
-   * Contrapunctus X - alla Decima
-   * Contrapunctus XI
-   * Contrapunctus XII - rectus / inversus
-   * Contrapunctus XIII - rectus / inversus
-   * Contrapunctus XIV
-   * Canon in Hypodiapason - Canon alla Ottava
-   * Canon alla Decima - Contrapunto alla Terza
-   * Canon alla Duodecima - in Contrapunto alla Quinta
-   * Canon in Hypodiatessaron - per Augmentationem in Contrario Motu
+   * Contrapunctus I-IV
+   * Brief notes on the completion of Contrapunctus XIV :new:
+   * Canon I-IV
 
 #### Johann Sebastian Bach / Ferruccio Busoni
 
@@ -172,23 +157,10 @@ Thanks to my harpist friend Tristan Rollet ([@Pluiesurlavitre](https://github.co
 #### Robert Schumann (1810–1856)
 
  * [Kinderscenen op.15](https://github.com/madrisan/open-scores/releases/download/v47/Robert-Schumann-Kinderscenen-op.15.pdf)
-   * I. Von fremden Ländern und Menschen
-   * II. Curiose Geschichte
-   * III. Hasche-Mann
-   * IV. Bittendes Kind
-   * V. Glückes genug
-   * VI. Wichtige Begebenheit
-   * VII. Träumerei
-   * VIII. Am Camin
-   * IX. Ritter vom Steckenpferd
-   * X. Fast zu ernst
-   * XI. Fürchtenmachen
-   * XII. Kind im Einschlummern
-   * XIII. Der Dichter spricht
 
 #### Karol Maciej Szymanowski (1882-1937)
 
- * Dziewięć preludiów (Nine Preludes) Op. 1 -- *in progress*
+ * [Dziewięć preludiów (Nine Preludes) Op. 1](https://github.com/madrisan/open-scores/releases/download/v47/Karol-Szymanowski-Nine-Preludes-op.1.pdf)
 
 ## How to manually create the `.pdf` and `.midi` files
 
