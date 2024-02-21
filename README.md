@@ -21,146 +21,69 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
 
 ![Open Musical Scores Logo](images/SheetMusic-icon.png)
 
-### List by authors
+| Author | Work | Status | :link: Scores |
+|---|---|:---:|:---:|
+| Hans Erich Apostel | Kubiniana Op. 13, *10 Klavierstücke* | II, III, VI, VII, IX | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/Hans-Erich-Apostel-Kubiniana-op.13.pdf) |
+| Alban Berg | Klaviersonate Op. 1 | *in progress* |   |
+| Johannes Brahms | Rapsodie Es-Dur, *from 4 Klavierstücke Op. 119* | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/Johannes-Brahms-Klavierstucke-op.119.pdf) |
+|  | Rapsodie h-moll Op.79. I | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/Johannes-Brahms-Rhapsodie-op.op.79-nr.1.pdf) |
+|  | Rapsodie g-moll Op.79. II | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/Johannes-Brahms-Rhapsodie-op.op.79-nr.2.pdf) |
+| Johann Sebastian Bach | Clavierübung Teil I - Partiten BWV 825-830 | Partita I BWV 825 | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV825-Partita-1.pdf) |
+|  |  | Partita VI BWV 830 | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV830-Partita-6.pdf) |
+|  | Clavierübung Teil II - Italienisches Konzert BWV 971 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV971-Italienisches-Konzert.pdf) |
+|  | Clavierübung Teil IV - Goldberg Variationen BWV 988 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV988-Goldberg-Variationen.pdf) |
+|  | Clavierübung Teil V (?) - Die Kunst der Fuga BWV 1080 (1) | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV1080-Die-Kunst-der-Fuge.pdf) |
+|  | Inventionen BWV 772-786 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV772-801-Inventionen-und-Sinfonien.pdf) |
+|  | Sinfonien BWV 787-801 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV772-801-Inventionen-und-Sinfonien.pdf) |
+|  | Suite Anglaises BWV 806-811 | Suite IV BWV 809 | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV809-Suite-Anglaise-4.pdf) |
+|  | Praeludium und Fughetta in G-Dur BWV 902 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-Praeludium-und-Fughetta-BWV902.pdf) |
+|  | Neun kleine Präludien BWV 924-932 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV924-932-Neun-kleine-Praludien.pdf) |
+|  | Sechs kleine Präludien BWV 933-938 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV933-938-Sechs-kleine-Praludien.pdf) |
+|  | Praeludium Fuge und Allegro BWV 998 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV998-Praeludium-Fuge-und-Allegro.pdf) |
+|  | Musikalisches Opfer: Ricercar a 3, Ricercar a 6 BWV 1079 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV1079-Musikalisches-Opfer.pdf) |
+| Bach / Busoni | Chorale Prelude - In dir ist Freude BWV 615 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-Busoni-Chorale-Prelude-BWV615.pdf) |
+|  | Chorale Prelude - Ich ruf zu dir, Herr Jesu Christ BWV 639 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-Busoni-Chorale-Prelude-BWV639.pdf) |
+|  | Chorale Prelude - Nun komm’ der Heiden Heiland BWV 659 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/Bach-Busoni-Chorale-Prelude-BWV659.pdf) |
+|  | Chromatische Fantasie und Fugue BWV 903 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-Busoni-Chromatische-Fantasie-und-Fugue-BWV903.pdf) |
+|  | Chaconne für violine allein BWV 1004 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-Busoni-Chaconne-fur-violine-allein-BWV1004.pdf) |
+| Bach / Liszt | Präludium und Fuge BWV543 S462 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/Bach-Liszt-Praludium-und-Fuge-BWV543-S462.pdf) |
+| Bach / me | Chorale Prelude - Jesu meine Freude BWV 610 (2) | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV610-Jesu-meine-Freude.pdf) |
+|  | Chorale Prelude - Nun komm’ der Heiden Heiland BWV 659 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV659-Chorale-Prelude.pdf) |
+| Bach / Petri | Schafe können sicher weiden BWV 208 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-Petri-Schafe-konnen-sicher-weiden-BWV208.pdf) |
+| Bach / Stark | Siciliana BWV 103 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-Stark-Siciliano-BWV1031.pdf) |
+| Bach / Stradal | Organ Sonata 4 Andante BWV528 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-Stradal-Organ-Sonata-4-Andante-BWV528.pdf) |
+| Ludwig van Beethoven | Klaviersonate Nr.8 Opus 13 - "Grande Sonate Pathétique" | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/Ludwig-van-Beethoven-Klaviersonate-8-op.13.pdf) |
+| Alfredo Casella | Deux Contrastes op.31 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/Alfredo-Casella-Deux-Contrastes-op.31.pdf) |
+| Baldassare Galuppi |Sonata no. 5 in Do maggiore (3) | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/Baldassare-Galuppi-Sonata-5.pdf) |
+| Mikhail Glinka | Nocturne (4) | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/Mikhail-Glinka-Nocturne.pdf) |
+| Gluck / Sgambati | Mélodie de Gluck depuis "Orfeo ed Euridice" | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/Christoph-Willibald-Gluck-Orfeo-Melodie-Sgambati.pdf) |
+| Rued Langgaard | Insektarium, 9 Puzzle Pictures BVN 134 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/Rued-Langgaard-Insektarium-BVN-134.pdf) |
+| Franz Liszt | Trübe Wolken (Nuages Gris) S.199 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/Franz-Liszt-Nuages-Gris-S.199.pdf) |
+|  | Am Grabe Richard Wagners S.202 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/Franz-Liszt-Am-Grabe-Richard-Wagners-S.202.pdf) |
+|  | Trauervorspiel und Trauermarsch S.206 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/Franz-Liszt-Trauervorspiel-und-Trauermarsch-S.206.pdf) |
+|  | En rêve (Nocturne) S.207 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/Franz-Liszt-En-reve-Nocturne-S.207.pdf) |
+|  | Unstern (Sinistre) S.208 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/Franz-Liszt-Unstern-S.208.pdf) |
+| Ildebrando Pizzetti | Sogno | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/Ildebrando-Pizzetti-Sogno.pdf) |
+| Domenico Scarlatti | Sonata K. 1 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/Domenico-Scarlatti-Sonata-k1.pdf) |
+| Domenico Scarlatti | Sonata K. 30 (Cat's fugue) | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/Domenico-Scarlatti-Sonata-k30.pdf) |
+| Domenico Scarlatti | Sonata K. 55 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/Domenico-Scarlatti-Sonata-k55.pdf) |
+| Domenico Scarlatti | Sonata K. 87 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/Domenico-Scarlatti-Sonata-k87.pdf) |
+| Domenico Scarlatti | Sonata K. 95 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/Domenico-Scarlatti-Sonata-k95.pdf) |
+| Domenico Scarlatti | Sonata K. 141 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/Domenico-Scarlatti-Sonata-k141.pdf) |
+| Domenico Scarlatti | Sonata K. 387 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/Domenico-Scarlatti-Sonata-k387.pdf) |
+| Arnold Schoenberg | Sechs kleine Klavierstücke op.19 (5) | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/Arnold-Schoenberg-Sechs-Kleine-Klavierstucke-op.19.pdf) |
+| Clara Schumann Wieck | Soirées Musicales op.6 | 2. Nocturne | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/Clara-Schumann-Wieck-Soirees-Musicales-op.6.pdf) |
+| Robert Schumann | Kinderscenen op.15 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/Robert-Schumann-Kinderscenen-op.15.pdf) |
+| Karol Maciej Szymanowski | Dziewięć preludiów (Nine Preludes) Op. 1 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v47/Karol-Szymanowski-Nine-Preludes-op.1.pdf) |
 
-#### Hans Erich Apostel (1901-1972)
-
- * [Kubiniana Op. 13](https://github.com/madrisan/open-scores/releases/download/v47/Hans-Erich-Apostel-Kubiniana-op.13.pdf) - 10 Klavierstücke nach Zeichnungen von A. Kubin -- *in progress*: II, III, VI, VII, IX
-
-#### Alban Berg (1885-1935)
-
- * Klaviersonate Op. 1 -- *in progress*
-
-#### Johannes Brahms (1833-1897)
-
- * [Rapsodie Es-Dur](https://github.com/madrisan/open-scores/releases/download/v47/Johannes-Brahms-Klavierstucke-op.119.pdf) from 4 Klavierstücke Op. 119
- * [Rapsodie h-moll Op.79.I](https://github.com/madrisan/open-scores/releases/download/v47/Johannes-Brahms-Rhapsodie-op.op.79-nr.1.pdf)
- * [Rapsodie g-moll Op.79.II](https://github.com/madrisan/open-scores/releases/download/v47/Johannes-Brahms-Rhapsodie-op.op.79-nr.2.pdf)
-
-#### Johann Sebastian Bach (1685-1750)
-
- * [Inventionen und Sinfonien (BWV 772-786, BWV 787-801)](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV772-801-Inventionen-und-Sinfonien.pdf)
- * [Suite Anglaise IV (BWV 809)](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV809-Suite-Anglaise-4.pdf)
- * [Partita VI (BWV 830)](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV830-Partita-6.pdf)
- * [Praeludium und Fughetta in G-Dur (BWV902)](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-Praeludium-und-Fughetta-BWV902.pdf)
- * [Neun kleine Präludien (BWV 924-932)](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV924-932-Neun-kleine-Praludien.pdf)
- * [Sechs kleine Präludien (BWV 933-938)](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV933-938-Sechs-kleine-Praludien.pdf)
- * [Italienisches Konzert (BWV 971)](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV971-Italienisches-Konzert.pdf)
- * [Goldberg Variationen (BWV 988)](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV988-Goldberg-Variationen.pdf)
- * [Praeludium Fuge und Allegro (BWV 998)](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV998-Praeludium-Fuge-und-Allegro.pdf)
- * [Musikalisches Opfer: Ricercar a 3, Ricercar a 6 (BWV 1079)](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV1079-Musikalisches-Opfer.pdf)
- * [Die Kunst der Fuge (BWV 1080)](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV1080-Die-Kunst-der-Fuge.pdf)
-   * Contrapunctus I-IV
-   * Brief notes on the completion of Contrapunctus XIV :new:
-   * Canon I-IV
-
-#### Johann Sebastian Bach / Ferruccio Busoni
-
- * [Chorale Prelude - In dir ist Freude (BWV 615) - Ferruccio Busoni](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-Busoni-Chorale-Prelude-BWV615.pdf)
- * [Chorale Prelude - Ich ruf zu dir, Herr Jesu Christ (BWV 639) - Ferruccio Busoni](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-Busoni-Chorale-Prelude-BWV639.pdf)
- * [Chorale Prelude - Nun komm’ der Heiden Heiland (BWV 659)](https://github.com/madrisan/open-scores/releases/download/v47/Bach-Busoni-Chorale-Prelude-BWV659.pdf)
- * [Chromatische Fantasie und Fugue (BWV 903)](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-Busoni-Chromatische-Fantasie-und-Fugue-BWV903.pdf)
- * [Chaconne für violine allein (BWV 1004)](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-Busoni-Chaconne-fur-violine-allein-BWV1004.pdf)
-
-#### Johann Sebastian Bach / Franz Liszt
-
- * [Präludium und Fuge BWV543 S462 - Franz Liszt](https://github.com/madrisan/open-scores/releases/download/v47/Bach-Liszt-Praludium-und-Fuge-BWV543-S462.pdf)
-
-#### Johann Sebastian Bach / Davide Madrisan
-
- * [Chorale Prelude - Jesu meine Freude (BWV 610)](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV610-Jesu-meine-Freude.pdf)
- * [Chorale Prelude - Nun komm’ der Heiden Heiland (BWV 659)](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-BWV659-Chorale-Prelude.pdf)
-
-Image of the J.S. Bach's [manuscript](images/js-bach-jesu-meine-freude-manuscript.png) of the Choral "*Jesu meine Freude*" (*Das Orgel-Büchlein*, p.15).
-
-#### Johann Sebastian Bach / Egon Petri
-
- * [Schafe können sicher weiden (BWV 208) - Egon Petri](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-Petri-Schafe-konnen-sicher-weiden-BWV208.pdf)
-
-#### Johann Sebastian Bach / Ludwig Stark
-
- * [Siciliano (BWV 1031)](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-Stark-Siciliano-BWV1031.pdf)
-
-#### Johann Sebastian Bach / August Stradal
-
- * [Organ Sonata 4 Andante (BWV528)](https://github.com/madrisan/open-scores/releases/download/v47/JS-Bach-Stradal-Organ-Sonata-4-Andante-BWV528.pdf)
-
-#### Ludwig van Beethoven
-
- * [Klaviersonate Nr.8 Opus 13 - "Grande Sonate Pathétique"](https://github.com/madrisan/open-scores/releases/download/v47/Ludwig-van-Beethoven-Klaviersonate-8-op.13.pdf)
-
-#### Alfredo Casella (1883-1947)
-
- * [Deux Contrastes op.31](https://github.com/madrisan/open-scores/releases/download/v47/Alfredo-Casella-Deux-Contrastes-op.31.pdf)
-
-#### Baldassare Galuppi (1706-1785)
-
- * [Sonata no. 5 in Do maggiore](https://github.com/madrisan/open-scores/releases/download/v47/Baldassare-Galuppi-Sonata-5.pdf)
-
-You can see here the [manuscript](images/baldassare-galuppi-sonata-5-manuscript-1st-page.png) of the first page of the sonata.
-
-#### Mikhail Glinka (1804-1857)
-
- * [Nocturne](https://github.com/madrisan/open-scores/releases/download/v47/Mikhail-Glinka-Nocturne.pdf)
-
-Thanks to my harpist friend Tristan Rollet ([@Pluiesurlavitre](https://github.com/Pluiesurlavitre)) for pointing me to this beautiful romantic piece.
-
-#### Christoph Willibald Gluck (1714-1787) / Giovanni Sgambati (1841-1914)
-
- * [Mélodie de Gluck](https://github.com/madrisan/open-scores/releases/download/v47/Christoph-Willibald-Gluck-Orfeo-Melodie-Sgambati.pdf) (depuis "Orfeo ed Euridice")
-
-#### Rued Langgaard (1893-1952)
-
- * [Insektarium (BVN 134)](https://github.com/madrisan/open-scores/releases/download/v47/Rued-Langgaard-Insektarium-BVN-134.pdf) - 9 Puzzle Pictures, for solo piano
-   * I. Forficula auricularia (Earwig)
-   * II. Acridium migratorium (Migratory locust)
-   * III. Melonetha vulgaris (Cockchafer)
-   * IV. Tripula oleracea (Daddy longlegs)
-   * V. Libellula depressa (Dragon fly)
-   * VI. Anobium pertinax (Deathwatch beetle)
-   * VII. Musca domestica (Housefly)
-   * VIII. Julus terrestris (Millipede)
-   * IX. Culex pipiens (Mosquito)
-
-#### Franz Liszt (1811–1886)
-
- * [Trübe Wolken (Nuages Gris)](https://github.com/madrisan/open-scores/releases/download/v47/Franz-Liszt-Nuages-Gris-S.199.pdf) S.199
- * [Am Grabe Richard Wagners](https://github.com/madrisan/open-scores/releases/download/v47/Franz-Liszt-Am-Grabe-Richard-Wagners-S.202.pdf) S.202
- * [Trauervorspiel und Trauermarsch](https://github.com/madrisan/open-scores/releases/download/v47/Franz-Liszt-Trauervorspiel-und-Trauermarsch-S.206.pdf) S.206
- * [En rêve (Nocturne)](https://github.com/madrisan/open-scores/releases/download/v47/Franz-Liszt-En-reve-Nocturne-S.207.pdf) S.207
- * [Unstern (Sinistre)](https://github.com/madrisan/open-scores/releases/download/v47/Franz-Liszt-Unstern-S.208.pdf) S.208
-
-#### Ildebrando Pizzetti (1880-1968)
-
- * [Sogno](https://github.com/madrisan/open-scores/releases/download/v47/Ildebrando-Pizzetti-Sogno.pdf)
-
-#### Domenico Scarlatti (1685-1757)
-
- * [Sonata K. 1](https://github.com/madrisan/open-scores/releases/download/v47/Domenico-Scarlatti-Sonata-k1.pdf)
- * [Sonata K. 30](https://github.com/madrisan/open-scores/releases/download/v47/Domenico-Scarlatti-Sonata-k30.pdf) (Cat's fugue)
- * [Sonata K. 55](https://github.com/madrisan/open-scores/releases/download/v47/Domenico-Scarlatti-Sonata-k55.pdf)
- * [Sonata K. 87](https://github.com/madrisan/open-scores/releases/download/v47/Domenico-Scarlatti-Sonata-k87.pdf)
- * [Sonata K. 95](https://github.com/madrisan/open-scores/releases/download/v47/Domenico-Scarlatti-Sonata-k95.pdf)
- * [Sonata K. 141](https://github.com/madrisan/open-scores/releases/download/v47/Domenico-Scarlatti-Sonata-k141.pdf)
- * [Sonata K. 387](https://github.com/madrisan/open-scores/releases/download/v47/Domenico-Scarlatti-Sonata-k387.pdf)
-
-#### Arnold Schoenberg (1874–1951)
-
- * [Sechs kleine Klavierstücke op.19](https://github.com/madrisan/open-scores/releases/download/v47/Arnold-Schoenberg-Sechs-Kleine-Klavierstucke-op.19.pdf) -
-   With a preface by Giancarlo Simonacci (Italian and English translation)
-
-#### Clara Schumann Wieck (1819-1896)
-
- * Soirées Musicales op.6
-   * [2. Nocturne](https://github.com/madrisan/open-scores/releases/download/v47/Clara-Schumann-Wieck-Soirees-Musicales-op.6.pdf)
-
-#### Robert Schumann (1810–1856)
-
- * [Kinderscenen op.15](https://github.com/madrisan/open-scores/releases/download/v47/Robert-Schumann-Kinderscenen-op.15.pdf)
-
-#### Karol Maciej Szymanowski (1882-1937)
-
- * [Dziewięć preludiów (Nine Preludes) Op. 1](https://github.com/madrisan/open-scores/releases/download/v47/Karol-Szymanowski-Nine-Preludes-op.1.pdf)
+ 1. Die Kunst der Fuga BWV 1080
+    * Contrapunctus I-XIV
+    * Brief notes on the completion of Contrapunctus XIV :new:
+    * Canon I-IV
+ 2. Image of the J.S. Bach's [manuscript](images/js-bach-jesu-meine-freude-manuscript.png) of the Choral "*Jesu meine Freude*" (*Das Orgel-Büchlein*, p.15).
+ 3. [Manuscript](images/baldassare-galuppi-sonata-5-manuscript-1st-page.png) of the first page of the sonata.
+ 4. Thanks to my harpist friend Tristan Rollet ([@Pluiesurlavitre](https://github.com/Pluiesurlavitre)) for pointing me to this beautiful romantic piece.
+ 5. With a preface by Giancarlo Simonacci (Italian and English translation)
 
 ## How to manually create the `.pdf` and `.midi` files
 
