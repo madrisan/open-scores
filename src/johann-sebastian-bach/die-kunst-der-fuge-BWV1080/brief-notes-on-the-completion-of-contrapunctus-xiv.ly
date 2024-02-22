@@ -1,3 +1,5 @@
+\include "macros.ly"
+
 \markup \fill-line {
   \center-column \abs-fontsize #14 \bold \with-color #middleGrey {
     \null
@@ -35,6 +37,7 @@
 \markup \fill-line {
   \pad-around #2
   \center-column \abs-fontsize #12 \bold \with-color #middleGrey {
+    \vspace #1
     \musicglyph "one" "XIV and no further"
   }
 }
@@ -95,14 +98,17 @@
   }
 }
 
+\markup \fill-line {
+  \override #'(baseline-skip . 0)
+  \center-column {
+    \vspace #1
+    \line {
 \score {
   \new PianoStaff
   <<
     \applyContext #(override-color-for-all-grobs middleGrey)
     \accidentalStyle Score.piano
     \context Staff = "upper" <<
-      \set Staff.midiInstrument = #"acoustic grand"
-      \Global
       \clef treble
       \omit Staff.TimeSignature
       \context Voice = "one" \relative c'' {
@@ -136,8 +142,6 @@
       }
     >>
     \context Staff = "lower" <<
-      \set Staff.midiInstrument = #"acoustic grand"
-      \Global
       \clef bass
       \omit Staff.TimeSignature
       \context Voice = "tenor" \relative c' {
@@ -170,12 +174,13 @@
   \header { }
   \layout {
     indent = 0
+    line-width = 16\cm
     ragged-right = ##f
-    %system-system-spacing = #'((basic-distance . 0.1) (padding . 0))
-    #(layout-set-staff-size 17)
+    %system-system-spacing = #'((basic-distance . 0) (padding . 0))
+    #(layout-set-staff-size 13)
   }
   \midi { }
-}
+}}}}
 
 \markup {
   \column {
@@ -190,6 +195,10 @@
   }
 }
 
+\markup \fill-line {
+  \override #'(baseline-skip . 0)
+  \center-column {
+    \line {
 \score {
   \new PianoStaff
   <<
@@ -197,7 +206,6 @@
     \accidentalStyle Score.piano
     \context Staff = "upper" <<
       \set Staff.midiInstrument = #"acoustic grand"
-      \Global
       \clef treble
       \omit Staff.TimeSignature
       \context Voice = "one" \relative c' {
@@ -233,7 +241,6 @@
     >>
     \context Staff = "lower" <<
       \set Staff.midiInstrument = #"acoustic grand"
-      \Global
       \clef bass
       \omit Staff.TimeSignature
       \context Voice = "tenor" \relative c {
@@ -267,14 +274,16 @@
   \header { }
   \layout {
     indent = 0
+    line-width = 16\cm
     ragged-right = ##f
-    #(layout-set-staff-size 17)
+    #(layout-set-staff-size 13)
   }
   \midi { }
-}
+}}}}
 
 \markup {
   \column {
+    \vspace #1
     \wordwrap \abs-fontsize #10 \with-color #middleGrey {
       And his solution to the arduous problem of the quadruple inversus combination,
       using the 14‐note form of \circle\musicglyph "four".
@@ -284,6 +293,10 @@
   }
 }
 
+\markup \fill-line {
+  \override #'(baseline-skip . 0)
+  \center-column {
+    \line {
 \score {
   \new PianoStaff
   <<
@@ -291,7 +304,6 @@
     \accidentalStyle Score.piano
     \context Staff = "upper" <<
       \set Staff.midiInstrument = #"acoustic grand"
-      \Global
       \clef treble
       \omit Staff.TimeSignature
       \context Voice = "one" \relative c'' {
@@ -326,7 +338,6 @@
     >>
     \context Staff = "lower" <<
       \set Staff.midiInstrument = #"acoustic grand"
-      \Global
       \clef bass
       \omit Staff.TimeSignature
       \context Voice = "tenor" \relative c {
@@ -360,15 +371,17 @@
   \header { }
   \layout {
     indent = 0
+    line-width = 16\cm
     ragged-right = ##f
-    #(layout-set-staff-size 17)
+    #(layout-set-staff-size 13)
   }
   \midi { }
-}
+}}}}
 
 \markup \fill-line {
   \pad-around #2
   \center-column \abs-fontsize #12 \bold \with-color #middleGrey {
+    \vspace #2
     \musicglyph "two" "Symbology of the number 14"
   }
 }
@@ -417,8 +430,6 @@
   }
 }
 
-\pageBreak
-
 \markup {
   \column {
     \pad-around #1
@@ -436,6 +447,8 @@
     }
   }
 }
+
+\pageBreak
 
 \markup {
   \column {
@@ -482,6 +495,7 @@
 \markup \fill-line {
   \pad-around #2
   \center-column \abs-fontsize #12 \bold \with-color #middleGrey {
+    \vspace #1
     \musicglyph "three" "Subjects exposition and 4-chars permutations"
   }
 }
@@ -509,6 +523,7 @@
   \pad-around #3
   \column {
     \wordwrap \abs-fontsize #10 \with-color #middleGrey {
+      where “B” stands for bass, “T” for tenor, “A” for alto and “S” for soprano.
       One permutation is missing, and given Bach's love of algebraic games
       (or simply to vary the order of items in the expositions as much as possible)
       the likely order of appearance of the subjects in the fourth section should be reasonably:
@@ -531,6 +546,7 @@
 \markup \fill-line {
   \pad-around #2
   \center-column \abs-fontsize #12 \bold \with-color #middleGrey {
+    \vspace #1
     \musicglyph "four" "Ratio of section lengths in Contrapunctus XIV"
   }
 }
@@ -609,7 +625,6 @@
 %    \accidentalStyle Score.piano
 %    \context Staff = "upper" <<
 %      \set Staff.midiInstrument = #"acoustic grand"
-%      \Global
 %      \clef treble
 %      \context Voice = "one" {
 %        | \set Score.currentBarNumber = #239
@@ -642,7 +657,6 @@
 %    >>
 %    \context Staff = "lower" <<
 %      \set Staff.midiInstrument = #"acoustic grand"
-%      \Global
 %      \clef bass
 %      \context Voice = "two" {
 %        | \omit Staff.TimeSignature
@@ -683,6 +697,7 @@
 \markup \fill-line {
   \pad-around #3
   \center-column \abs-fontsize #12 \bold \with-color #middleGrey {
+    \vspace #1
     \musicglyph "five" "Multi-level proportions"
   }
 }
