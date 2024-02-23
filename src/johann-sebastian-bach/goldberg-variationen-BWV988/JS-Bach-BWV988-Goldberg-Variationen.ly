@@ -32,6 +32,26 @@
   top-margin = 8\mm
 }
 
+BassLine = \relative {
+  \time 4/4
+  \key g \major
+  \override Score.BarNumber.break-visibility = ##(#f #f #f)
+  \override Staff.NoteHead.style = #'baroque
+  \once\override TextScript.extra-offset = #'(-4 . -1)
+  \repeat volta 2 {
+    \clef bass
+    | g1 | fis | e | d | b | c | d | g, | g' | fis | e | a | fis | g | a | d,
+  }
+  \break
+  \repeat volta 2 {
+    | \once\override Staff.TextScript.extra-offset = #'(-6 . -2)
+      d'_\markup \italic \small {
+        "bass line of the « Aria » on which the thirty variations are based"
+      }
+    | b | c | b | g | a | b | e, | c | b | a | d | g, | c | d | g, |
+  }
+}
+
 \bookpart {
   \header {
     maintainer      = "Davide Madrisan"
@@ -52,41 +72,55 @@
   \markup {
     \fill-line {
       \center-column {
-        \null\null\null
-        \null\null\null
+        \null\null\null\null
         \line { \abs-fontsize #30 \bold "Johann Sebastian" }
         \null
         \line { \abs-fontsize #80 \bold "Bach" }
         \null
         \fill-line { \draw-hline }
         \null\null
-        \line { \abs-fontsize #40 \bold\italic "Goldberg Variationen" }
-        \null\null\null
-        \line { \abs-fontsize #20 \bold\italic "Clavier Ubung bestehend in einer" }
-        \null
-        \line { \abs-fontsize #20 \bold\italic "Aria mit verschiedenen Verænderungen" }
-        \null
-        \line { \abs-fontsize #20 \bold\italic "vors Clavicimbal mit 2 Manualen" }
+        \line { \abs-fontsize #38 \bold "Goldberg Variationen" }
         \null\null
         \line {
-          \abs-fontsize #16
-          \italic "(Keyboard exercise, consisting of an Aria with diverse variations"
+          \abs-fontsize #14 \bold\italic "Clavier Ubung bestehend in einer Aria mit verschiedenen"
         }
+        \line { \abs-fontsize #14 \bold\italic "Verænderungen vors Clavicimbal mit 2 Manualen" }
         \null
-        \line { \abs-fontsize #16 \italic "for harpsichord with two manuals)" }
-        \null\null\null\null
-        \line { \abs-fontsize #28 \bold "BWV 988" }
+        \line {
+          \abs-fontsize #14
+          \italic "Keyboard exercise, consisting of an Aria with diverse variations"
+        }
+        \line { \abs-fontsize #14 \italic "for harpsichord with two manuals" }
         \null\null\null
+        \line { \abs-fontsize #28 \bold "BWV 988" }
+        \null\null\null\null
       }
     }
   }
+
+  \markup
+    \fill-line {
+      \center-column {
+        \score {
+          <<
+          \new Voice = "subject" \BassLine
+          >>
+          \layout {
+            indent = #0
+            line-width = #150
+            #(layout-set-staff-size 14)
+          }
+        }
+        \combine \null \vspace #4
+      }
+    }
 
   \include "./logo.ly"
 
   \markup {
     \fill-line {
       \center-column {
-        \null\null\null\null
+        \null\null
         \fill-line {
           \abs-fontsize #10 "Based on a previous work of Martin Straeten, J.D. Erickson, and Hajo Dezelski"
         }
@@ -109,7 +143,7 @@
     \hspace #18
     { \bold "Johann Sebastian Bach" } \char ##x2014 "oil canvas Elias Gottlob Haußmann (1746)"
   }
-  \null
+  \null\null
 }
 
 \markup \center-column \abs-fontsize #10 \italic {

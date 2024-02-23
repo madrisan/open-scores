@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - J.S. Bach: Sechs kleine Präludien BWV935 - completely rework pagination
 - J.S. Bach: Die Kunst der Fuge - Bief Notes: better pagination of music snippets
+- J.S. Bach: Goldberg Variationen - Add the Aria bass line to the front page
 
 ## [v47] - 2024-02-10
 
