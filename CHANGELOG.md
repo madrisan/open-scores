@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Changed
 
 - J.S. Bach: Sechs kleine Präludien BWV935 - completely rework pagination
+- J.S. Bach: Die Kunst der Fuge - Bief Notes: better pagination of music snippets
 
 ## [v47] - 2024-02-10
 

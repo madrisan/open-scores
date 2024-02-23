@@ -121,6 +121,7 @@ AC_CONFIG_FILES([\
   src/johann-sebastian-bach/musikalisches-opfer-BWV1079/Makefile \
   src/johann-sebastian-bach/organ-sonata-4-andante-BWV528-stradal/Makefile \
   src/johann-sebastian-bach/partitas/Makefile \
+  src/johann-sebastian-bach/partitas/BWV825/Makefile \
   src/johann-sebastian-bach/partitas/BWV830/Makefile \
   src/johann-sebastian-bach/praludien/Makefile \
   src/johann-sebastian-bach/praludien/neun-kleine-praludien-BWV924-932/Makefile
