@@ -33,7 +33,7 @@
      #'((basic-distance . 2)
         (minimum-distance . 1)
         (padding . 2)
-        (stretchability . 24))
+        (stretchability . 32))
   top-margin = 10\mm
   top-markup-spacing.basic-distance = 0
   top-system-spacing.basic-distance = 1
@@ -104,5 +104,4 @@
 \pageBreak
 \include "./parts/bach-partita-1-5-menuet-1.ly"
 \include "./parts/bach-partita-1-5-menuet-2.ly"
-\pageBreak
 \include "./parts/bach-partita-1-6-giga.ly"

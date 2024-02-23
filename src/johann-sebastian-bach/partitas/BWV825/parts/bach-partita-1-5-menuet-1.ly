@@ -18,12 +18,13 @@ Soprano = \context Voice = "one" \relative c'' {
   | d bes es bes f' bes,
   | c a g a f a
   | c f, d' f, es' f,
+    \break
   %5
   | d' aes es' g, f' f,
   | g' f a! es bes' d,
-    \break
   | c es d c d bes
   | c a g a f es'
+    \break
   | d bes a bes f bes
   %10
   | d bes es bes f' bes,
@@ -55,7 +56,6 @@ Soprano = \context Voice = "one" \relative c'' {
   | aes' bes, g' bes, f' bes,
   | es, bes' a! bes g' bes,
   | es, bes' f bes g bes
-    \pageBreak
   %30
   | c bes d aes es' g,
   | f' es g d a'! c,
