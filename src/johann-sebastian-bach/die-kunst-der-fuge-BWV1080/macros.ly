@@ -2,6 +2,9 @@ greyTextColor = #(x11-color "dimgray")
 lightGrey = #(x11-color 'grey65)
 middleGrey = #(x11-color 'grey45)
 
+staffLower = { \change Staff = "lower" }
+staffUpper = { \change Staff = "upper" }
+
 #(define my-eyeglassespath
   '((moveto   -3.57   1.80)
      (curveto  -3.65   1.90  -3.55   2.22  -3.33   2.22)

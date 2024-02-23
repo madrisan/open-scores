@@ -185,7 +185,7 @@ Alto = \context Voice = "two" \relative c' {
   | a, r r ees'
   | d2 r4 fis!
   | g8 fis g4 r bes~
-  | bes8 a f' d b4 e8 cis
+  | bes8 a f' d b4 e8 cis!
   | a4 d8 a bes4. g8
   %65
   | a4. f8 e4. g8
@@ -292,7 +292,7 @@ Tenor = \context Voice = "three" \relative c' {
   | a2
     b4 cis
   %60
-  | d r4 r fis,
+  | \staffUpper \once\stemDown d \staffLower r4 r fis,
   | g8
     a bes4 r c
   | d2 r8 g,4 f8
