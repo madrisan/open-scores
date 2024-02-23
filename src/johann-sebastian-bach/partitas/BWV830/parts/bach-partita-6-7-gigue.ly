@@ -6,22 +6,24 @@ Global = {
 
 bottom = { \change Staff = "lower" \stemUp }
 top = { \change Staff = "upper" \stemDown }
+greyTextColor = #(x11-color "dimgray")
+
+staffLower = { \change Staff = "lower" \stemUp }
+staffUpper = { \change Staff = "upper" \stemDown }
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \override DynamicText.Y-offset = #-2.4
-  \override Hairpin.Y-offset = #-2
-  \stemNeutral\tieUp
+  \stemUp\tieUp
   \tempo \markup { \bold "(Furioso)" }
   \repeat volta 2
   {
   %1
-  | R1*8/4
-  | R1*8/4
-  | r4 r8 b^. cis4.^- ais8 g'4. e8 fis4. dis8
-  | c'!4. ais8 b4. e,8 d!4 r cis2\prallprall
+  | s1*8/4*2
+  | d4\rest d8\rest b^. cis4.^- ais8 g'4. e8 fis4. dis8
+  | c'!4. ais8 b4. e,8 d!4 f\rest cis2\prallprall
   %5
   | b8[ cis] d4~ d8[ f,!] d'4~ d8[ b] c!4~ c8[ ees,] c'4~
   | c8[ a] b4~ b8[ fis'] g4~ g8[ g,] a4~ a8[ e'] fis4~
@@ -56,17 +58,12 @@ Sopran = \context Voice = "one" \relative c'' {
   \repeat volta 2
   {
   %25
-  | R1*8/4
-  | R1*8/4
-  | \override MultiMeasureRest.staff-position = #2
-    R1*8/4
-  | \clef bass s1*8/4
-  | R1*8/4
-  %30
-  | R1*8/4
-  | \stemUp f'4\rest f8\rest b,^. a4.^- c8 dis,4. fis8 e4. g8
+  | R1*8/4*2
+  | s1*8/4*4
+  %31
+  | \stemNeutral f'4\rest f8\rest b,^. a4.^- c8 dis,4. fis8 e4. g8
   | \once\override NoteColumn.force-hshift = #1.5 ais,4. c!8 b4. dis8 e4 r fis2\prallprall
-  | g8[ e] e'4~ e8[ cis] d!4~ d16[ c b8 c16 b a8] a'16[ g! fis8 g16 fis e8]
+  | \stemUp g8[ e] e'4~ e8[ cis] d!4~ d16[ c b8 c16 b a8] a'16[ g! fis8 g16 fis e8]
   | fis[ a,] d4~ 8 b c!4~ c16[ b a8 b16 a g8] g'16[ f! e8 f16 e d8]
   %35
   | e4. 8^. f!4.^- d8 e4. c8 d4. b8
@@ -96,14 +93,23 @@ Sopran = \context Voice = "one" \relative c'' {
   \fine
 }
 
-Alto = \context Voice = "two" \relative c' {
+Alto = \context Voice = "two" \relative c {
   \voiceTwo
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \override VoiceFollower.color = \greyTextColor
+  \mergeDifferentlyDottedOn
+  \showStaffSwitch
+  \stemNeutral
   %1
-  | s1*8/4*6
-  %7
-  | s2 dis4. fis8 e4. c'8 f,!4 s8 b8
+  | r4 r8 e'^. fis4.^- dis8  c'4. a8  b4. gis8
+  | f'4. dis8  e4. a,8  g!4 r  fis!2^\prallprall
+  | \stemDown e8[ fis] g4~  g8[ e] fis4~ fis8[ dis] e4~ e8[ a,!] a'!4~
+  | a8[ fis] g4~ g8[ e] fis4~ fis8[ b,] b'4~ b8[ gis] ais4
+  %5
+  | b4. a!8 gis4. e8 a4. g!8 fis4. d8
+  | g4. fis8 e!4. cis8 fis4. e8 dis4. b8
+  | e2 dis4. fis8 e4. c'8 f,!4 s8 b8
   | gis4. a16[ fis] g!4. dis'8
     \once\override NoteColumn.force-hshift = #1.2 e4.
     c8 a4. b8
@@ -111,15 +117,15 @@ Alto = \context Voice = "two" \relative c' {
   %10
   | a4 b g a fis g~ g8 d' g,4~
   | g4. e8 fis!4. d8 e4. c8 d4. b8
-  | c4. a8 b4. \bottom g8 a4. fis8 g4. e8
+  | c4. \staffLower a8 b4. g8 a4. fis8 g4. e8
   | fis2 g4 gis fis b8\rest b^. cis4.^- ais8
-  | g'4. e8 fis4. dis8 \top c'!4. ais8 b4. \bottom e,8
+  | g'4. e8 fis4. dis8 \staffUpper c'!4. ais8 b4. \staffLower e,8
   %15
-  | d!4 d\rest cis2^\prallprall b4 \top g'8\rest d'_. cis4._- fis,8
+  | d!4 d\rest cis2^\prallprall b4 \staffUpper g'8\rest d'_. cis4._- fis,8
   | b4. d!8 gis,4 g8\rest d'8_. cis4._- 8 b4. e,8
   | a4. c!8 fis,4 r8 c'8_. b4._- 8 c4. a8
-  | b4. g8 a4. fis8 g4 \bottom g8\rest e^. f!4.^- d8
-  | e4. c8 d4 b a8[ \top e'] a4~ a8 e a4~
+  | b4. g8 a4. fis8 g4 \staffLower g8\rest e^. f!4.^- d8
+  | e4. c8 d4 b a8[ \hideStaffSwitch \staffUpper e'] a4~ a8 e a4~ \showStaffSwitch
   %20
   | a8[ g16 fis g fis e8] fis4. dis8 \once\override NoteColumn.force-hshift = #1.2 c'4. a8 b4. gis8
   | f'!4. dis8 e4. a,8 g!4 d\rest  fis2~
@@ -128,25 +134,25 @@ Alto = \context Voice = "two" \relative c' {
   | d8\rest b_. fis'4_- d8\rest cis_. g'!4_- s1
   %25
   | s1*8/4*2
-  | f4\rest f8\rest fis_. e4._- g8 ais,4. cis8 b4. d8
-  | eis,4. g!8 fis4. ais8 b4 r cis2_\prallprall
+  | \stemNeutral r4 r8 fis_. e4._- g8 \staffLower ais,4. cis8 b4. d8
+  | eis,4. g!8 fis4. ais8 b4 b\rest \staffUpper\stemUp cis2^\prallprall
   | \clef treble
     d8[ g fis e] d[ fis_.] b,4~_- b8[ gis] f'!4~ f8[ d] gis4~
   %30
   | gis8[ f! e d] c[ e_.] a,4~_- a8[ fis] ees'4~ ees8[ c fis c]
-  | \tieUp b4 \bottom g4~g fis~ fis \top\tieDown b~ b g~
-  | g fis4~ 4 f\rest f\rest b c \bottom b^~
-  | b8 c\rest \top g'\rest b_. a4._- fis8 gis4 d\rest e2\rest
+  | \tieUp b4 \staffLower g4~g fis~ fis \staffUpper\tieDown b~ b g~
+  | g fis4~ 4 f\rest f\rest b c \staffLower b^~
+  | b8 c\rest \staffUpper g'\rest b_. a4._- fis8 gis4 d\rest e2\rest
   | e4\rest e8\rest a_. g4._- e8 fis4 d\rest e2\rest
   %35
   | g8\rest g_. c4~_- 8[ a] b4~ b8[ gis] a4~ a8[ fis] g!4~
   | g8[ e] f!4~ f8[ d] e4~ e d8[ gis] a4. g!8
-  | \tieUp fis4 b2 cis4 d8[ b \bottom a g] fis[ a^.] c!4~^-
+  | \tieUp fis4 b2 cis4 d8[ \hideStaffSwitch b \staffLower a g] fis[ a^.] c!4~^- \showStaffSwitch
   | c8[ c b a] g[ b^.] e,4~^- e8[ g fis e] dis[ fis^.] a!4~^-
-  | a8[ fis g e'] a,[ e' b^. dis^.] e,[ \top e' d! c] \tieDown b2~
+  | a8[ fis g e'] a,[ e' b^. dis^.] \hideStaffSwitch e,[ \staffUpper e' d! c] \tieDown b2~ \showStaffSwitch
   %40
   | b~ b8[ e,_.] a4~_- a b,\rest b\rest e8\rest f!_.
-  | e4_- \bottom a f! d e4. \top c'8 fis,4. g!8
+  | e4_- \staffLower a f! d e4. \staffUpper c'8 fis,4. g!8
   | a4 d,\rest e2\rest r8 ais_. b4~_- 8[ ais] b4~
   | b16[ ais gis8 ais16 gis fis8] fis'16[ e dis8 e16 dis cis8] dis![ b]
     \shape #'((-0.2 . -0.5) (0 . -1.5) (0 . -1) (0 . 0)) Tie
@@ -171,21 +177,21 @@ Tenor = \context Voice = "three" \relative c' {
   \voiceThree
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \override VoiceFollower.color = \greyTextColor
   %1
-  | s1*8/4*6
-  | e2 s1.
+  | s1*8/4*7
   | s1*8/4*37
   %45
   | \showStaffSwitch
-    b4\rest b8\rest \clef treble b'^. a4.^- c8^. dis,4. fis8 e4. \top g8
-  | \bottom ais,4. c!8 b4. \top dis8 e4 b\rest fis'2
+    b4\rest b8\rest \clef treble b'^. a4.^- c8^. dis,4. fis8 e4. \staffUpper g8
+  | \staffLower ais,4. c!8 b4. \staffUpper dis8 e4 b\rest fis'2
     \hideStaffSwitch
   | \tieDown g2 b,4\rest s4. cis4._( \once\override NoteColumn.force-hshift = #0 8)
     \mergeDifferentlyDottedOn g'4.~
   | \once\omit Flag \once\override NoteColumn.force-hshift = #0 g8
     s s2 d4~ 8 b!4. s8 f'4.~
   | \once\override NoteColumn.force-hshift = #0 f4 s
-    \bottom a,8\rest a^. b4~^- b8[ gis] a4~ a8[ d,!] \tieUp d'4~
+    \staffLower\tieUp a,8\rest a^. b4~^- b8[ gis] a4~ a8[ d,!] \tieUp d'4~
   %50
   | d8[ b] c4~ c8[ a] b4~ b8[ e,^.]
 
@@ -199,14 +205,8 @@ Bass = \context Voice = "four" \relative c {
   %1
   \repeat volta 2
   {
-  | \clef treble r4 r8 e'^. fis4.^- dis8  c'4. a8  b4. gis8
-  | f'4. dis8  e4. a,8  g!4 r  fis!2^\prallprall
-  | e8[ fis] g4~  g8[ e] fis4~ fis8[ dis] e4~ e8[ a,!] a'!4~
-  | a8[ fis] g4~ g8[ e] fis4~ fis8[ b,] b'4~ b8[ gis] ais4
-  %5
-  | b4. a!8 gis4. e8 a4. g!8 fis4. d8
-  | g4. fis8 e!4. cis8 fis4. e8 dis4. b8
-  | g4\rest g8\rest \clef bass e^. fis4.^- dis8 c'4. a8 b4. gis8
+  | s1*8/4*6
+  | r4 r8 e^. fis4.^- dis8 c'4. a8 b4. gis8
   | f'!4. dis8 e4. a,8 g!4 r fis2^\prallprall
   | e8 e, e'4~ e8 cis d!4~ d16[ cis! b8 cis16 b a8] a'16[ g fis8 g16 fis e8]
   %10
@@ -233,9 +233,9 @@ Bass = \context Voice = "four" \relative c {
   %25
   | r4 r8 b'^. a4.^- c8 dis,4. fis8 e4. g8
   | ais,4. c!8 b4. dis8 e4 r fis2^\prallprall
-  | g8[ c b a] g[ b^.] e,4~^- e8[ cis] d!4~ d8[ fis] b,4~
+  | \stemDown\tieDown g8[ c b a] g[ b^.] e,4~^- e8[ cis] d!4~ d8[ fis] b,4~
   | b8[ gis] ais4~ ais8[ cis] e!4~ e8[ cis! d b'^.] e,[ b' fis^. ais^.]
-  | b2~^- b8[ a! gis fis] e4. d8^. c!4.(^\prall b8)
+  | \tieNeutral b2~^- b8[ a! gis fis] e4. d8^. c!4.(^\prall b8)
   %30
   | a4 a'~^- a8[ g! fis! e] d4. c8 b4.^\parenthesize\prall( a8)
   | \stemDown g8[ b e d] c[ e_.] a,4_~_- a8 fis g4~ \stemNeutral g8 b e,4~
@@ -243,8 +243,8 @@ Bass = \context Voice = "four" \relative c {
   | e4. g8 fis4. b8 e,4. a8^. \stemUp cis,8[( e) a,_. cis_.]
   | \stemDown d4.^- fis8 e4. a8 d,4. g8^. \stemUp b,8[( d) g,^. b^.]
   %35
-  | \stemNeutral\slurNeutral c8 e a4 d, g c, f! b, e
-  | a,4 d~ d8 gis, c4~ c8[ b16 a] f'!4~ f8[ e16 dis] a'4~
+  | \stemNeutral\slurNeutral\tieNeutral c8 e a4 d, g c, f! b, e
+  | a,4 d^~ d8 gis, c4~ c8[ b16 a] f'!4~ f8[ e16 dis] a'4~
   | a8[( g16 fis!) g8( fis16 e)] fis8[ g16 a g8 fis16 e] b'4 \clef treble a4\rest b2\rest
   | s1*8/4
   | a1\rest g4\rest r8 \clef bass e'^. d!4.^- f8

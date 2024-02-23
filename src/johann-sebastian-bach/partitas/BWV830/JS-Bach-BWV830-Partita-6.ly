@@ -85,11 +85,15 @@
 }
 
 \include "./parts/bach-partita-6-1-toccata.ly"
+\pageBreak
 \include "./parts/bach-partita-6-2-allemanda.ly"
 \pageBreak
 \include "./parts/bach-partita-6-3-corrente.ly"
+\pageBreak
 \include "./parts/bach-partita-6-4-air.ly"
+\pageBreak
 \include "./parts/bach-partita-6-5-sarabande.ly"
+\pageBreak
 \include "./parts/bach-partita-6-6-gavotta.ly"
 \pageBreak
 \include "./parts/bach-partita-6-7-gigue.ly"

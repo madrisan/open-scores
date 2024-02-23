@@ -25,6 +25,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | \once\override Beam.positions = #'(6.2 . 6.6)
     \bottom dis,,16[ fis32 a c \top dis fis g] \stemUp a8.[ a16]
     <dis, fis a>4_( <e g>_\parenthesize\mordent)
+    \break
   | \bottom \clef treble \tuplet 7/4 { e16[ g \top b c d! c b] }
     \tuplet 7/4 { \bottom a16[ c \top e fis g fis e] }
     \tuplet 7/4 { \bottom d,16[ fis \top a b c b a] }
@@ -56,6 +57,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | e[ b' cis d] cis[ b cis e,] d[ fis gis ais] b[ fis d' b]
   | \stemNeutral\slurNeutral e8[( b g!) e'] d[( b fis) d']
   | cis[( ais e ais]) b[( fis d]) r
+    \break
   | \once\override Beam.positions = #'(7.0 . 7.6)
     \bottom gis,16[ b32 d e \top b' e gis] b8.[ <b, d>16] \stemUp q4( <a c!>)\parenthesize\prall
   | \once\override Beam.positions = #'(7.0 . 7.6)
@@ -72,6 +74,7 @@ Sopran = \context Voice = "one" \relative c'' {
     \tuplet 7/4 { \bottom cis[ e \top g a bes a g] }
     \tuplet 7/4 { \bottom d[ f \top gis a b a gis] }
     \tuplet 7/4 { \bottom dis[ fis \top a b c b a] }
+    \break
   | \bottom \clef bass
     \set subdivideBeams = ##t
     \once\override Beam.positions = #'(6.5 . 7.5)
@@ -97,6 +100,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | g8.\mordent[ a!64 g fis g] a8.[ fis16] <dis fis>4^( e8)
     \once\override Staff.TextScript.extra-offset = #'(-1 . -1)
     r_\markup { \concat { \small "( " \dynamic p \small " )" } }
+    \break
   | R1*2
   | \clef bass r2 r4 r8 \stemNeutral b
   %35
@@ -123,6 +127,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | \slurUp a[( g]) r b b[( a]) g'16\rest g,[ fis e]
   | dis8[ b'~] b16[ d! c b] c[ a8 16~] a[ 8 16~]
   | a[ 8 8 g g16~] g[ 8 8 8 16]
+    \break
   %50
   | g[ g8 g fis f! f f f f16]
   | e8[ a a( g]) fis[ b b( a])
@@ -170,6 +175,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | e4~^- e8.[ e16^.] d[( cis d e]) fis4~
   | fis16[ cis d e] d[ cis d8~] d16[ cis d e] d[ cis d8~]
   | d16[ b cis d] cis[ b cis8~] cis16[ eis, gis b~] b16[ 8( ais16)]
+    \break
   | \once\override Beam.positions = #'(6.2 . 6.6)
     \set subdivideBeams = ##t
     \bottom b,,16_-[ d32 fis b \top d fis b] d8.[ d16] \stemUp d4( cis)
@@ -235,7 +241,7 @@ Alto = \context Voice = "Two" \relative c'' {
   | b8 b'8\rest s4 cis,16[ d] s4 cis8
   | s1*2
   %46
-  | \top d'4\rest d8.\rest e16 e8\parenthesize\prall[( d]) c\rest fis
+  | \top d'4\rest c8.\rest e16 e8\parenthesize\prall[( d]) b\rest fis'
   | fis\parenthesize\prall[( e]) s g g\parenthesize\prall[( fis16 g]) a8[ \bottom c,!]
   | b[ \top d e g] \bottom a,[ \top fis' b, dis]
   | e[ b e d!] cis[ e a, cis]

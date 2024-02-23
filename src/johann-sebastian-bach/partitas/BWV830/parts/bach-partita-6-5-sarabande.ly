@@ -251,7 +251,7 @@ Tenor = \context Voice = "Three" \relative c' {
   | g4 s4 e8.\rest <c e>16
   | e4( dis\prall) d!8.\mordent[ d16]
   | d4( cis\prall) c!8.[ c16]
-  | c16~[ c64 b a gis a16. c32] fis,16~[ fis64 g! fis e fis16. a32] dis,16~[ d64 e d cis d16. fis32]
+  | c16~[ c64 b a gis a16. c32] fis,16~[ fis64 g! fis e fis16. a32] dis,16~[ dis64 e d cis d16. fis32]
   | fis2 <b, e>4~
   %35
   | e2 dis4\prallmordent
