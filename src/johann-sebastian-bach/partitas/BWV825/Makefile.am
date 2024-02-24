@@ -25,7 +25,7 @@ EXTRA_DIST = JS-Bach-BWV825-Partita-1.ly \
 	     global.ly \
 	     logo.ly \
 	     parts/bach-partita-1-1-praeludium.ly \
-	     parts/bach-partita-1-2-allemanda.ly \
+	     parts/bach-partita-1-2-allemande.ly \
 	     parts/bach-partita-1-3-corrente.ly \
 	     parts/bach-partita-1-4-sarabande.ly \
 	     parts/bach-partita-1-5-menuet-1.ly \
