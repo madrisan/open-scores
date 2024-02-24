@@ -30,7 +30,7 @@ EXTRA_DIST = JS-Bach-BWV825-Partita-1.ly \
 	     parts/bach-partita-1-4-sarabande.ly \
 	     parts/bach-partita-1-5-menuet-1.ly \
 	     parts/bach-partita-1-5-menuet-2.ly \
-	     parts/bach-partita-1-6-gigue.ly
+	     parts/bach-partita-1-6-giga.ly
 
 all: $(BUILT_SOURCES) JS-Bach-BWV825-Partita-1
 

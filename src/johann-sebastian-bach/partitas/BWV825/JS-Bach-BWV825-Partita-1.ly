@@ -33,7 +33,7 @@
      #'((basic-distance . 2)
         (minimum-distance . 1)
         (padding . 2)
-        (stretchability . 32))
+        (stretchability . 28))
   top-margin = 10\mm
   top-markup-spacing.basic-distance = 0
   top-system-spacing.basic-distance = 1
