@@ -58,9 +58,9 @@ Bass = \context Voice = "four" \relative c {
     >>
   >>
   \header {
-    composer = ##f # "@composer_firstname@ @composer_lastname@"
-    opus = ##f # "@opus@"
-    title = \markup { "@partfile_title@" }
+    composer = ##f # "Johann Sebastian Bach"
+    opus = ##f # "BWV 826"
+    title = \markup { "Sinfonia" }
     subtitle = ##f
   }
   \layout {

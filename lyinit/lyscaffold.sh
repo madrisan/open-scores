@@ -34,13 +34,13 @@ Example:
      --pdfname JS-Bach-BWV830-Partita-1.pdf \\
      --source 'Muzgiz, Moscow' \\
      --year "between 1725 and 1726" \\
-     --part4 bach-partita-1-1-praeludium.ly \\
-     --part4 bach-partita-1-2-allemande.ly \\
-     --part4 bach-partita-1-3-corrente.ly \\
-     --part4 bach-partita-1-4-sarabande.ly \\
-     --part4 bach-partita-1-5-menuet-1.ly \\
-     --part4 bach-partita-1-5-menuet-2.ly \\
-     --part4 bach-partita-1-6-giga.ly
+     --part4 bach-partita-1-1-praeludium.ly Praeludium \\
+     --part4 bach-partita-1-2-allemande.ly Allemande \\
+     --part4 bach-partita-1-3-corrente.ly Corrente \\
+     --part4 bach-partita-1-4-sarabande.ly Sarabande  \\
+     --part4 bach-partita-1-5-menuet-1.ly "Menuet I" \\
+     --part4 bach-partita-1-5-menuet-2.ly "Menuet II" \\
+     --part4 bach-partita-1-6-giga.ly Giga
 
 __EOF
 }
@@ -85,6 +85,7 @@ ly_sed () {
 	  s^@mutopiacomposer@^${mutopiacomposer}^;
 	  s^@mutopiainstrument@^${mutopiainstrument}^;
 	  s^@opus@^${ly_opus}^g;
+	  s^@partfile_title@^${partfile_title}^g;
 	  s^@source@^${ly_source}^g;
 	  s^@title@^${ly_title}^g;
           " < "${1:-/dev/stdin}"
@@ -106,7 +107,9 @@ while test -n "$1"; do
       --parts|-p)
          ly_parts="true" ;;
       --part4)
-         ly_parts4_files+=("$2"); shift ;;
+         ly_parts4_files+=("$2")
+         ly_parts4_titles+=("$3")
+         shift; shift ;;
       --pdfname|-n)
          ly_pdfname="$2"; shift ;;
       --source|-s)
@@ -170,6 +173,21 @@ echo "creating the makefile '$ly_targetdir/Makefile.am' ..."
    cat $PROGPATH/templates/makefile-head
    echo
    echo "EXTRA_DIST = ${ly_mainfile}.ly \\"
+   echo -e "\t     covercolor.ly.in \\"
+   echo -e "\t     header.ily \\"
+   echo -e "\t     global.ly \\"
+
+   nparts="${#ly_parts4_files[@]}"
+
+   if [[ "${!ly_parts4_files[@]}" != "0" ]]; then
+      echo -e "\t     logo.ly \\"
+      for i in ${!ly_parts4_files[@]}; do
+          echo -en "\t     parts/${ly_parts4_files[$i]}"
+	  [ "$i" != "$(( $nparts - 1 ))" ] && echo " \\" || echo ""
+      done
+   else
+      echo -e "\t     logo.ly"
+   fi
 
    set -- $LY_COMMON_FILES
    while test -n "$1"; do
@@ -190,16 +208,19 @@ echo "creating the makefile '$ly_targetdir/Makefile.am' ..."
    fi
 ) > "$ly_targetdir/Makefile.am"
 
-for p in ${ly_parts4_files[@]}; do
-   if [ -s "$ly_targetdir/parts/$p" ]; then
-       echo "WARNING: skip non empty file: $ly_targetdir/parts/$p"
+for i in ${!ly_parts4_files[@]}; do
+   partfile="${ly_parts4_files[$i]}"
+   title="${ly_parts4_titles[$i]}"
+   if [ -s "$ly_targetdir/parts/$partfile" ]; then
+       echo "WARNING: skip non empty file: $ly_targetdir/parts/$partfile"
    else
-       echo "creating $ly_targetdir/parts/$p ..."
-       ( ly_sed < $PROGPATH/templates/part-four-voices.ly ) \
-            > "$ly_targetdir/parts/$p"
+       echo "creating $ly_targetdir/parts/$partfile ..."
+       ( partfile_title="$title"
+         ly_sed < $PROGPATH/templates/part-four-voices.ly ) \
+            > "$ly_targetdir/parts/$partfile"
    fi
    echo "updating $ly_targetdir/${ly_mainfile}.ly"
-   echo "\\include \"./parts/$p\"" >> $ly_targetdir/${ly_mainfile}.ly
+   echo "\\include \"./parts/$partfile\"" >> $ly_targetdir/${ly_mainfile}.ly
 done
 
 echo "
