@@ -70,9 +70,8 @@
         \line { \abs-fontsize #40 \bold "Partita I" }
         \null\null
         \line { \abs-fontsize #20 "BWV 825" }
-        \null\null\null
-        \null\null\null
-        \fill-line { \abs-fontsize #20 "For Piano or Harpsichord" }
+        \null\null\null\null
+        \fill-line \italic { \abs-fontsize #14 "For Piano, Harpsichord, Clavichord" }
         \null\null\null
         \null\null\null
       }

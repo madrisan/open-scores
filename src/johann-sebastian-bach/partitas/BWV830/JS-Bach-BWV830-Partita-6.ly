@@ -60,11 +60,11 @@
         \null
         \fill-line { \draw-hline }
         \null\null\null
-        \line { \abs-fontsize #44 \bold "Partita VI" }
+        \line { \abs-fontsize #40 \bold "Partita VI" }
         \null\null
         \line { \abs-fontsize #20 "BWV 830" }
         \null\null\null\null
-        \fill-line { \abs-fontsize #20 "For Piano or Harpsichord" }
+        \fill-line \italic { \abs-fontsize #14 "For Piano, Harpsichord, Clavichord" }
         \null\null\null
         \null\null\null
       }
@@ -77,7 +77,9 @@
     \fill-line {
       \center-column {
         \null\null\null\null
-        \fill-line { \abs-fontsize #10 "Based on the score: Moscow, Muzyka n.d. (1968)" }
+        \fill-line {
+          \abs-fontsize #10 "Based on the score: Moscow, Muzyka n.d. (1968)"
+        }
         \null\null
       }
     }
