@@ -4,6 +4,18 @@ Global = {
   \include "../global.ly"
 }
 
+voiceOneOssia = \relative c'' {
+  | \key c \minor
+    << {
+      \stemUp <c ees>4 g'16.\rest ees32 d16. ees32 f4 g16.\rest f32 f16. g32
+    } \\ {
+      \stemDown g,4_\markup \italic {
+        "ossia" (in the early 18th century, dotted rests are rarely indicated in the score)
+      }
+      g16.\rest c32 b16. c32 d4 g,16.\rest d'32 d16. ees32
+    } >>
+}
+
 Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
   \stemUp
@@ -286,23 +298,33 @@ Bass = \context Voice = "four" \relative c {
 }
 
 \score {
-  \new PianoStaff
   <<
-    \accidentalStyle Score.piano
-    \context Staff = "upper" <<
-      \set Staff.midiInstrument = #"acoustic grand"
-      \Global
-      \clef treble
-      \Soprano
-      \Alto
+  \new Staff = "ossia" \with {
+    fontSize = #-3
+    \include "./ossiasetup.ly"
+    \hide Clef
+    \remove Time_signature_engraver
+  }
+  { \voiceOneOssia }
+  \new PianoStaff {
+    <<
+      \accidentalStyle Score.piano
+      \context Staff = "upper" <<
+        \set Staff.midiInstrument = #"acoustic grand"
+        \Global
+        \clef treble
+        \Soprano
+        \Alto
+      >>
+      \context Staff = "lower" <<
+        \set Staff.midiInstrument = #"acoustic grand"
+        \Global
+        \clef bass
+        \Tenor
+        \Bass
+      >>
     >>
-    \context Staff = "lower" <<
-      \set Staff.midiInstrument = #"acoustic grand"
-      \Global
-      \clef bass
-      \Tenor
-      \Bass
-    >>
+  }
   >>
   \header {
     composer = ##f # "Johann Sebastian Bach"
