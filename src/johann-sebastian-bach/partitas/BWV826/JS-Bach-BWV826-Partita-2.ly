@@ -98,6 +98,9 @@
 \include "./parts/bach-partita-2-2-allemande.ly"
 \pageBreak
 \include "./parts/bach-partita-2-3-courante.ly"
-%\include "./parts/bach-partita-2-4-sarabande.ly"
-%\include "./parts/bach-partita-2-5-rondeau.ly"
+\pageBreak
+\include "./parts/bach-partita-2-4-sarabande.ly"
+\pageBreak
+\include "./parts/bach-partita-2-5-rondeau.ly"
+\pageBreak
 %\include "./parts/bach-partita-2-6-capriccio.ly"
