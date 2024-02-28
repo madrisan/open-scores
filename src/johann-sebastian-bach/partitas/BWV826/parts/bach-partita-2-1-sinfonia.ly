@@ -67,7 +67,7 @@ Soprano = \context Voice = "one" \relative c'' {
     \stemUp\tieUp bes,32 a g fis g16 bes~ bes c32 bes a! bes c a fis!8. g16
     \bar "||"
   %30
-  | \time 3/4 \tempo "Allegro"
+  | \time 3/4 \tempo "(Allegro)"
     \stemNeutral\tieNeutral g8 g16[ a] b8 c d ees
   | f16 ees d ees f8 g aes! d,
   | f b, d g,=' g'16 f ees d

@@ -158,7 +158,9 @@ Soprano = \context Voice = "one" \relative c'' {
       <ees g>4.
     } >>
     \staffUpper
-    \fine
+    \override Score.TextMark.self-alignment-X = #CENTER
+    \textEndMark \markup { \musicglyph "scripts.ufermata" }
+  \fine
 }
 
 Bass = \context Voice = "four" \relative c'' {
@@ -301,6 +303,8 @@ Bass = \context Voice = "four" \relative c'' {
   | b8. d16 c bes
   | aes c f,8 g
   | c,4.
+    \tweak direction #DOWN
+    \textEndMark \markup { \musicglyph "scripts.dfermata" }
     \fine
 }
 
