@@ -29,6 +29,7 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
 |  | Rapsodie h-moll Op.79. I | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/Johannes-Brahms-Rhapsodie-op.op.79-nr.1.pdf) |
 |  | Rapsodie g-moll Op.79. II | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/Johannes-Brahms-Rhapsodie-op.op.79-nr.2.pdf) |
 | Johann Sebastian Bach | Clavierübung Teil I - Partiten BWV 825-830 | Partita I BWV 825 | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/JS-Bach-BWV825-Partita-1.pdf) |
+|  |  | Partita II BWV 826 | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/JS-Bach-BWV826-Partita-2.pdf) |
 |  |  | Partita VI BWV 830 | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/JS-Bach-BWV830-Partita-6.pdf) |
 |  | Clavierübung Teil II - Italienisches Konzert BWV 971 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/JS-Bach-BWV971-Italienisches-Konzert.pdf) |
 |  | Clavierübung Teil IV - Goldberg Variationen BWV 988 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/JS-Bach-BWV988-Goldberg-Variationen.pdf) |

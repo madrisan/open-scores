@@ -1,10 +1,10 @@
 \header {
   composer = "Johann Sebastian Bach (1685-1750)"
-  date = ""
+  date = "1727"
 
-  footer = "Mutopia-2024/02/24"
+  footer = "Mutopia-2024/02/28"
 
-  lastupdated = "2024 February 24"
+  lastupdated = "2024 February 28"
   license = "Creative Commons Attribution-ShareAlike 4.0"
   maintainerEmail = "d.madrisan@proton.me"
   maintainerWeb = "https://github.com/madrisan/open-scores"
@@ -12,7 +12,7 @@
   % Extra Mutopia Information
   mutopiacomposer = "BachJS"
   mutopiacopyright = "Creative Commons Attribution-ShareAlike 4.0"
-  mutopiainstrument = "Harpsichord, Piano"
+  mutopiainstrument = "Piano, Harpsichord, Clavicord"
   mutopiamaintainer = "Davide Madrisan"
   mutopiaopus = "BWV 826"
   mutopiatitle = "Partita II"

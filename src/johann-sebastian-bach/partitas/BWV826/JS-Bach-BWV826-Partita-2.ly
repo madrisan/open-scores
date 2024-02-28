@@ -85,7 +85,7 @@
       \center-column {
         \null\null\null\null
         \fill-line {
-          \abs-fontsize #10 "Based on: Bach-Gesellschaft"
+          \abs-fontsize #10 "Based on: Bach-Gesellschaft Ausgabe, Leipzig (1853)"
         }
         \null\null
       }
@@ -103,4 +103,4 @@
 \pageBreak
 \include "./parts/bach-partita-2-5-rondeau.ly"
 \pageBreak
-%\include "./parts/bach-partita-2-6-capriccio.ly"
+\include "./parts/bach-partita-2-6-capriccio.ly"
