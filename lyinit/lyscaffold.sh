@@ -4,7 +4,7 @@
 
 PROGNAME="${0##*/}"
 PROGPATH="${0%/*}"
-REVISION=1
+REVISION=2
 
 die () { echo -e "$PROGNAME: error: $1" 1>&2; exit 1; }
 
@@ -31,8 +31,8 @@ Example:
      --opus 'BWV 825' \\
      --parts \\
      --title 'Partita I' \\
-     --pdfname JS-Bach-BWV830-Partita-1.pdf \\
-     --source 'Muzgiz, Moscow' \\
+     --pdfname JS-Bach-BWV825-Partita-1.pdf \\
+     --source 'Bach-Gesellschaft Ausgabe, Leipzig (1853)' \\
      --year "between 1725 and 1726" \\
      --part4 bach-partita-1-1-praeludium.ly Praeludium \\
      --part4 bach-partita-1-2-allemande.ly Allemande \\
@@ -77,7 +77,7 @@ ly_sed () {
           s^@composer_lastname@^${composer_lastname}^g;
           s^@COMPOSER_LASTNAME@^${composer_lastname^^}^g;
           s^@header_composer@^${header_composer}^;
-          s^@header_date@^${header_date}^;
+          s^@header_date@^${ly_date}^;
           s^@header_footer@^${header_footer}^;
           s^@header_lastupdate@^${header_lastupdate}^;
           s^@header_style@^${header_style}^;
@@ -229,7 +229,5 @@ tree "$ly_targetdir"
 
 echo "
 WARNING: make sure to update
- * configure.ac
- * the files Makefile.am in $ly_targetdir
- * 'date' and 'source' in $ly_targetdir/header.ily
+ * configure.ac (add \"$ly_targetdir/Makefile\" to AC_CONFIG_FILES)
 "
