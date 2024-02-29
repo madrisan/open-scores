@@ -48,6 +48,9 @@ while read line; do
              s@\\\\tb@\\\\tieNeutral@g;
              s@\\\\td@\\\\tieDown@g;
 	     s@\\\\tu@\\\\tieUp@g;
+	     # a couple of useful substs with unfortunately side effects
+	     #s@\([a-g]\+\)s\([0-9,'=~\.]*\) @\1is\2 @g;
+	     #s@\([a-g]\+\)f\([0-9,'=~\.]*\) @\1es\2 @g;
 	     s@^ @  @;
 	     # remove final | (again)
              s/|[ ]*$//;"

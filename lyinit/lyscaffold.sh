@@ -76,18 +76,18 @@ ly_sed () {
      sed "s^@composer_firstname@^${composer_firstname}^g;
           s^@composer_lastname@^${composer_lastname}^g;
           s^@COMPOSER_LASTNAME@^${composer_lastname^^}^g;
-	  s^@header_composer@^${header_composer}^;
-	  s^@header_date@^${header_date}^;
-	  s^@header_footer@^${header_footer}^;
+          s^@header_composer@^${header_composer}^;
+          s^@header_date@^${header_date}^;
+          s^@header_footer@^${header_footer}^;
           s^@header_lastupdate@^${header_lastupdate}^;
-	  s^@header_style@^${header_style}^;
-	  s^@instruments@^${instruments}^;
-	  s^@mutopiacomposer@^${mutopiacomposer}^;
-	  s^@mutopiainstrument@^${mutopiainstrument}^;
-	  s^@opus@^${ly_opus}^g;
-	  s^@partfile_title@^${partfile_title}^g;
-	  s^@source@^${ly_source}^g;
-	  s^@title@^${ly_title}^g;
+          s^@header_style@^${header_style}^;
+          s^@instruments@^${instruments}^;
+          s^@mutopiacomposer@^${mutopiacomposer}^;
+          s^@mutopiainstrument@^${mutopiainstrument}^;
+          s^@opus@^${ly_opus}^g;
+          s^@partfile_title@^${partfile_title}^g;
+          s^@source@^${ly_source}^g;
+          s^@title@^${ly_title}^g;
           " < "${1:-/dev/stdin}"
   )
 }
