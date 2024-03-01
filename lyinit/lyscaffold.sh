@@ -229,5 +229,8 @@ tree "$ly_targetdir"
 
 echo "
 WARNING: make sure to update
- * configure.ac (add \"$ly_targetdir/Makefile\" to AC_CONFIG_FILES)
+ * configure.ac
+   add \"$ly_targetdir/Makefile\" to AC_CONFIG_FILES
+ * if applicable, update the SUBDIRS variable of the Makefile.am files in
+   ${ly_targetdir//\// \/ }
 "

@@ -68,9 +68,8 @@
         \line { \abs-fontsize #40 \bold "@title@" }
         \null\null
         \line { \abs-fontsize #20 "@opus@" }
-        \null\null\null
-        \null\null\null
-        \fill-line { \abs-fontsize #20 "For Piano or Harpsichord" }
+        \null\null\null\null
+        \fill-line \italic { \abs-fontsize #14 "@instruments@" }
         \null\null\null
         \null\null\null
       }
