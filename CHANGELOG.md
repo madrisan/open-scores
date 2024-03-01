@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Added
 
 - J.S. Bach: Partita 2 BWV826
+- J.S. Bach: Partita 4 BWV828
 
 ## [v48] - 2024-02-24
 

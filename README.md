@@ -24,14 +24,19 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
 | Author | Work | Status | :link: Scores |
 |---|---|:---:|:---:|
 | Hans Erich Apostel | Kubiniana Op. 13, *10 Klavierstücke* | II, III, VI, VII, IX | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/Hans-Erich-Apostel-Kubiniana-op.13.pdf) |
-| Alban Berg | Klaviersonate Op. 1 | *in progress* |   |
+| Alban Berg | Klaviersonate Op. 1 | *stalled* |   |
 | Johannes Brahms | Rapsodie Es-Dur, *from 4 Klavierstücke Op. 119* | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/Johannes-Brahms-Klavierstucke-op.119.pdf) |
 |  | Rapsodie h-moll Op.79. I | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/Johannes-Brahms-Rhapsodie-op.op.79-nr.1.pdf) |
 |  | Rapsodie g-moll Op.79. II | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/Johannes-Brahms-Rhapsodie-op.op.79-nr.2.pdf) |
-| Johann Sebastian Bach | Clavierübung Teil I - Partiten BWV 825-830 | Partita I BWV 825 | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/JS-Bach-BWV825-Partita-1.pdf) |
-|  |  | Partita II BWV 826 | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/JS-Bach-BWV826-Partita-2.pdf) |
-|  |  | Partita VI BWV 830 | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/JS-Bach-BWV830-Partita-6.pdf) |
+| Johann Sebastian Bach :zero: | Clavierübung Teil I - Partiten BWV 825 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/JS-Bach-BWV825-Partita-1.pdf) |
+|  | Clavierübung Teil I - Partiten I BWV 825 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/JS-Bach-BWV825-Partita-1.pdf) |
+|  | Clavierübung Teil I - Partiten II BWV 826 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/JS-Bach-BWV826-Partita-2.pdf) |
+|  | Clavierübung Teil I - Partiten III BWV 827 | :x: |  |
+|  | Clavierübung Teil I - Partiten IV BWV 828 | *in progress* |  |
+|  | Clavierübung Teil I - Partiten V BWV 829 | :x: |  |
+|  | Clavierübung Teil I - Partiten VI BWV 830 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/JS-Bach-BWV830-Partita-6.pdf) |
 |  | Clavierübung Teil II - Italienisches Konzert BWV 971 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/JS-Bach-BWV971-Italienisches-Konzert.pdf) |
+|  | Clavierübung Teil II - Ouvertüre nach französischer Art BWV 831 | :x: |  |
 |  | Clavierübung Teil IV - Goldberg Variationen BWV 988 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/JS-Bach-BWV988-Goldberg-Variationen.pdf) |
 |  | Clavierübung Teil V (?) - Die Kunst der Fuga BWV 1080 :one: | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/JS-Bach-BWV1080-Die-Kunst-der-Fuge.pdf) |
 |  | Inventionen BWV 772-786 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/JS-Bach-BWV772-801-Inventionen-und-Sinfonien.pdf) |
@@ -77,6 +82,7 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
 | Robert Schumann | Kinderscenen op.15 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/Robert-Schumann-Kinderscenen-op.15.pdf) |
 | Karol Maciej Szymanowski | Dziewięć preludiów (Nine Preludes) Op. 1 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/Karol-Szymanowski-Nine-Preludes-op.1.pdf) |
 
+ 0. Next goal: Digitize all volumes of J.S. Bach's Clavierübung except the third one (which contains works for organ).
  1. Die Kunst der Fuga BWV 1080
     * Contrapunctus I-XIV
     * Brief notes on the completion of Contrapunctus XIV :new:
@@ -139,6 +145,7 @@ make -C src/johann-sebastian-bach/musikalisches-opfer-BWV1079
 make -C src/johann-sebastian-bach/organ-sonata-4-andante-BWV528-stradal
 make -C src/johann-sebastian-bach/partitas/BWV825
 make -C src/johann-sebastian-bach/partitas/BWV826
+make -C src/johann-sebastian-bach/partitas/BWV828
 make -C src/johann-sebastian-bach/partitas/BWV830
 make -C src/johann-sebastian-bach/praeludium-fuge-und-allegro-BWV998
 make -C src/johann-sebastian-bach/praeludium-und-fughetta-BWV902
