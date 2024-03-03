@@ -17,7 +17,6 @@ Soprano = \context Voice = "one" \relative c' {
   %1
   | <a, d fis>4. d16 fis g8 d16 g a4 b^\mordent cis
   | <d, a' d>2 e'4 fis fis8 g fis e
-  \noBreak
   | fis8 d16 fis \stemNeutral\tieNeutral g8[ d16 g] a4. b,8 e fis16 g fis8 e
   | cis4.^\prall a16 cis d8 a16 d e4 \grace a,8 g2~
   %5
@@ -164,7 +163,6 @@ Tenor = \context Voice = "three" \relative c {
   | e4 cis e d2 g4
   %40
   | \stemDown d2. \once\override Stem.length = #4 d2
-
 }
 
 Bass = \context Voice = "four" \relative c {
