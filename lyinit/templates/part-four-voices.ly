@@ -6,7 +6,7 @@ Global = {
 
 Soprano = \context Voice = "one" \relative c' {
   \voiceOne
-  \stemUp
+  \stemUp\tieUp
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   %1
@@ -16,21 +16,21 @@ Soprano = \context Voice = "one" \relative c' {
 
 Alto = \context Voice = "two" \relative c' {
   \voiceTwo
-  \stemDown
+  \stemDown\tieDown
   \override Rest.staff-position = #0
   %1
 }
 
 Tenor = \context Voice = "three" \relative c {
   \voiceThree
-  \stemUp
+  \stemUp\tieUp
   \override Rest.staff-position = #0
   %1
 }
 
 Bass = \context Voice = "four" \relative c {
   \voiceFour
-  \stemDown\tieNeutral
+  \stemDown\tieDown
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   %1
