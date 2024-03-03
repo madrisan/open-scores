@@ -89,6 +89,8 @@ Soprano = \context Voice = "one" \relative c' {
   | d32 fis e d c'8~ c16 b32 a b16 e~ e32 d cis b a d gis,16~
     \stemUp\tieUp \tuplet 3/2 { gis16 a d, g fis e }
   | d4~ d16 cis8 d16~ d4.
+    \override Score.TextMark.self-alignment-X = #CENTER
+    \textEndMark \markup { \musicglyph "scripts.ufermata" }
   }
   \fine
 }
@@ -286,6 +288,8 @@ Bass = \context Voice = "four" \relative c {
   %55
   | fis4 g8 e' cis d a4
   | d8 d,4.~ d4.
+    \tweak direction #DOWN
+    \textEndMark \markup { \musicglyph "scripts.dfermata" }
   }
 }
 

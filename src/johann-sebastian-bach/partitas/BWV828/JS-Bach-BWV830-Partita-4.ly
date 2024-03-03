@@ -97,7 +97,7 @@
 \pageBreak
 \include "./parts/bach-partita-4-2-allemande.ly"
 \pageBreak
-%\include "./parts/bach-partita-4-3-corrente.ly"
+\include "./parts/bach-partita-4-3-courante.ly"
 %\include "./parts/bach-partita-4-4-aria.ly"
 %\include "./parts/bach-partita-4-5-sarabande.ly"
 %\include "./parts/bach-partita-4-6-menuet.ly"

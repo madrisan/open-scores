@@ -6,6 +6,7 @@ on:
       - '**.md'
       - AUTHORS
       - VERSION
+      - lyinit/**/*
   pull_request:
     types: [assigned, edited, opened, synchronize, reopened]
 
