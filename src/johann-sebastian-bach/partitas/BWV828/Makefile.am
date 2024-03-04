@@ -26,7 +26,7 @@ EXTRA_DIST = JS-Bach-BWV830-Partita-4.ly \
 	     logo.ly \
 	     parts/bach-partita-4-1-ouverture.ly \
 	     parts/bach-partita-4-2-allemande.ly \
-	     parts/bach-partita-4-3-corrente.ly \
+	     parts/bach-partita-4-3-courante.ly \
 	     parts/bach-partita-4-4-aria.ly \
 	     parts/bach-partita-4-5-sarabande.ly \
 	     parts/bach-partita-4-6-menuet.ly \
