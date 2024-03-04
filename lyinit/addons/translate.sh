@@ -1,10 +1,49 @@
 #!/bin/bash
-# A very simple script for reformatting existing .ly code blocks
+# A very simple script for reformatting .ly code blocks
 # Copyright (c) 2023-2024 Davide Madrisan <d.madrisan@proton.me>
 
 # Usage:
-#   translate.sh score.ly
-#   translate.sh < score.ly
+#   translate.sh [--no-bar-numbers] score.ly
+#   translate.sh [--no-bar-numbers] < score.ly
+
+PROGNAME="${0##*/}"
+PROGPATH="${0%/*}"
+REVISION=2
+
+usage () {
+   cat <<__EOF
+Usage: $PROGNAME [--no-bar-numbers] score.ly
+       $PROGNAME [--no-bar-numbers] < score.ly
+       $PROGNAME --help
+
+Where:
+   --no-bar-numbers: do not add bar numbers
+
+Example:
+   $0 --no-bar-numbers score.ly
+
+__EOF
+}
+
+help () {
+   cat <<__EOF
+$PROGNAME v$REVISION - a very simple for reformatting .ly code blocks
+Copyright (C) 2024 Davide Madrisan <d.madrisan@proton.me>
+
+__EOF
+
+   usage
+}
+
+ly_bar_numbers=1
+
+while test -n "$1"; do
+   case "$1" in
+      --help|-h) help; exit 0 ;;
+      --no-bar-numbers) ly_bar_numbers="0" ;;
+   esac
+   shift
+done
 
 infile="$1"
 [ -n "$infile" -a ! -r "$infile" ] \
@@ -20,10 +59,12 @@ while read line; do
 	   continue ;;
    esac
    let "linenum+=1"
-   [ "$linenum" == 1 ] && echo "  %1"
-   (( $linenum % 5 == 0 )) && echo "  %$linenum"
-   #echo "[debug] $linenum \"$line\""
-   #echo "[debug]  | ${line/|*/}" \
+   if [ "$ly_bar_numbers" = "1" ]; then
+      [ "$linenum" == 1 ] && echo "  %1"
+      (( $linenum % 5 == 0 )) && echo "  %$linenum"
+      #echo "[debug] $linenum \"$line\""
+      #echo "[debug]  | ${line/|*/}" \
+   fi
    echo "  | $line" \
       | sed "# remove comments
              s@%.*@@;
@@ -50,13 +91,21 @@ while read line; do
              s@\\\\tb @\\\\tieNeutral @g;
              s@\\\\td @\\\\tieDown @g;
              s@\\\\tu @\\\\tieUp @g;
-             # some notation substs with unfortunately side effects
+             s@\\\\halsdown @\\\\stemDown @g;
+             s@\\\\halsneutral @\\\\stemNeutral @g;
+             s@\\\\halsup @\\\\stemUp @g;
+             s@\\\\staffdown @\\\\staffLower @g;
+             s@\\\\staffup @\\\\staffUpper @g;
+	     # some notation substitutes with potential side effects
              # (so they must be manually enabled)
              #s@\([a-g]\+\)s\([0-9,'=~\.]*\) @\1is\2 @g;
              #s@\([a-g]\+\)f\([0-9,'=~\.]*\) @\1es\2 @g;
-             #s@ h\([0-9,'=~\.\\]*\) @ b\1 @g;s@ h @ b @g;s@ h\$@ b@;
+	     # german notation to nederlands (default)
+             s@ h\([0-9,'=~\.\(\[]*\) @ b\1 @g;
+             s@ h\([0-9,'=~\.\(\[]*\)\([\\a-zA-Z]*\) @ b\1\2 @g;s@ h @ b @g;s@ h\$@ b@;
+             s@ h\([0-9,'=~\.]*\)\([\\a-zA-Z]*\)\$@ b\1\2@g;s@ h\$@ b@;
              s@^ @  @;
-             # remove final | (again)
+	     # remove final pipe char | (again)
              s/|[ ]*$//;
              # remove empty lines
              /^[ \t]*$/d;"
