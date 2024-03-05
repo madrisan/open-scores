@@ -24,7 +24,7 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
 | Author | Work | Status | :link: Scores |
 |---|---|:---:|:---:|
 | Hans Erich Apostel | Kubiniana Op. 13, *10 Klavierstücke* | II, III, VI, VII, IX | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/Hans-Erich-Apostel-Kubiniana-op.13.pdf) |
-| Alban Berg | Klaviersonate Op. 1 | *stalled* :zzz: |   |
+| Alban Berg | Klaviersonate Op. 1 | stalled :zzz: |   |
 | Johannes Brahms | Rapsodie Es-Dur, *from 4 Klavierstücke Op. 119* | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/Johannes-Brahms-Klavierstucke-op.119.pdf) |
 |  | Rapsodie h-moll Op.79. I | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/Johannes-Brahms-Rhapsodie-op.op.79-nr.1.pdf) |
 |  | Rapsodie g-moll Op.79. II | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/Johannes-Brahms-Rhapsodie-op.op.79-nr.2.pdf) |
@@ -32,7 +32,7 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
 |  | Clavierübung Teil I - Partiten I BWV 825 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/JS-Bach-BWV825-Partita-1.pdf) |
 |  | Clavierübung Teil I - Partiten II BWV 826 | to review :grey_question: | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/JS-Bach-BWV826-Partita-2.pdf) |
 |  | Clavierübung Teil I - Partiten III BWV 827 | :x: |  |
-|  | Clavierübung Teil I - Partiten IV BWV 828 | in progress :notes: |  |
+|  | Clavierübung Teil I - Partiten IV BWV 828 | to review :grey_question: | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/JS-Bach-BWV828-Partita-4.pdf) |
 |  | Clavierübung Teil I - Partiten V BWV 829 | :x: |  |
 |  | Clavierübung Teil I - Partiten VI BWV 830 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/JS-Bach-BWV830-Partita-6.pdf) |
 |  | Clavierübung Teil II - Italienisches Konzert BWV 971 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/JS-Bach-BWV971-Italienisches-Konzert.pdf) |
