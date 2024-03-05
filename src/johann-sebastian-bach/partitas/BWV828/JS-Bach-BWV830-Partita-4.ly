@@ -102,5 +102,7 @@
 \include "./parts/bach-partita-4-4-aria.ly"
 \pageBreak
 \include "./parts/bach-partita-4-5-sarabande.ly"
-%\include "./parts/bach-partita-4-6-menuet.ly"
+\pageBreak
+\include "./parts/bach-partita-4-6-menuet.ly"
+\pageBreak
 %\include "./parts/bach-partita-4-7-gigue.ly"
