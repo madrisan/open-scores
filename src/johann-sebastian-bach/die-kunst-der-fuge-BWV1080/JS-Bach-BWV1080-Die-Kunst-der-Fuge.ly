@@ -97,6 +97,8 @@ Subject = \relative {
 
 \include "./index.ly"
 \pageBreak
+\include "./list-of-subjects.ly"
+\pageBreak
 
 \include "./parts/01-contrapunctus-I.ly"
 \pageBreak

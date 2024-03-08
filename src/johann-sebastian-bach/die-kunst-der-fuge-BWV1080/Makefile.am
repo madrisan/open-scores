@@ -31,6 +31,7 @@ EXTRA_DIST = JS-Bach-BWV1080-Die-Kunst-der-Fuge.ly \
 	     global.ly \
 	     header.ily \
 	     index.ly \
+	     list-of-subjects.ly \
 	     logo.ly \
 	     macros.ly \
 	     parts/01-contrapunctus-I.ly \
