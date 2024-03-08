@@ -2,7 +2,13 @@ greyTextColor = #(x11-color "dimgray")
 lightGrey = #(x11-color 'grey65)
 middleGrey = #(x11-color 'grey45)
 
-red = \once\override NoteHead.color = #(x11-color 'red)
+red = {
+  \once\override Accidental.color = #(x11-color 'red)
+  \once\override NoteHead.color = #(x11-color 'red)
+  %\once\override Stem.color = #(x11-color 'red)
+  %\once\override Flag.color = #(x11-color 'black)
+  %\once\override Staff.LedgerLineSpanner.color = #(x11-color 'red)
+}
 
 staffLower = { \change Staff = "lower" }
 staffUpper = { \change Staff = "upper" }

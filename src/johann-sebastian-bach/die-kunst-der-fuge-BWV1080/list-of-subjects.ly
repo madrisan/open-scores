@@ -22,7 +22,7 @@ CommonSubjectII = {
 }
 CommonSubjectIII = {
   \commonSettings
-  | d''2^\markup \abs-fontsize #8 \italic { "main subject in inversion" }
+  | d''2^\markup \abs-fontsize #8 \italic { "main subject in inversion form" }
     a
   | c e | f e4 d | cis2~ cis8 a b cis | d4 s
 }
@@ -34,9 +34,10 @@ CommonSubjectIV = {
 }
 CommonSubjectV = {
   \commonSettings
-  | d'2^\markup \abs-fontsize #8 \italic  { "14-notes version of the main subject" }
-    \once\override Stem.length = #6 a'4. g8
-  | f4. e8 d2 | cis d4. e8 | f2~ f8 g f e | d4 s
+  | \red d'2^\markup \abs-fontsize #8 \italic  { "14-notes version of the main subject" }
+    \once\override Stem.length = #6 \red a'4. g8
+  | \red f4. e8 \red d2 | \red cis \red d4. \red e8 | \red \red f2~ \red f8 \red g \red f \red e
+  | \red d4 s
 }
 
 CommonSubjectVI = {
@@ -106,7 +107,7 @@ SubjectXIFirst = {
       "first subject (inversion of VIII.3)"
     }
     d' a' g
-  | r f e d | r cis d e | r f8 g f4 e | d4 s % s2
+  | r f e d | r cis d e | r f8 g f4 e | d4 s
 }
 SubjectXISecond = {
   \commonSettings
