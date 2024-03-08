@@ -2,9 +2,9 @@
   composer = "Rued Langgaard (1893-1952)"
   date = "1917"
 
-  footer = "Mutopia-2022/08/07"
+  footer = "Mutopia-2024/03/08"
 
-  lastupdated = "2022 August 7"
+  lastupdated = "2024 March 8"
   license = "Creative Commons Attribution-ShareAlike 4.0"
   maintainerEmail = "d.madrisan@proton.me"
   maintainerWeb = "https://github.com/madrisan/open-scores"
@@ -47,7 +47,7 @@
     \column {
       \abs-fontsize #8
       \concat {
-	"Typeset using " \with-url #"http://www.lilypond.org" "LilyPond " ©" 2022 ""by " \maintainer " — " \footer
+	"Typeset using " \with-url #"http://www.lilypond.org" "LilyPond " ©" 2022-2024 ""by " \maintainer " — " \footer
       }
       \concat {
 	\concat {

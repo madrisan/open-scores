@@ -108,13 +108,15 @@ Upper = \relative c'' {
      <a ees'>32 <a ees'>32-> <a ees'>32->~ <a ees'>32~
      <a ees'>32 <a ees'>32->~ <a ees'>32 <a ees'>32->]
      \set subdivideBeams = ##f
-     << { b4\rest\ff b8\rest\fermata }
-       \\ { s8
+     << { b4\rest b8\rest\fermata }
+       \\ { \hideNotes c,8_\ff \unHideNotes
             \stemUp
             \magnifyMusic 1.5 {
               \once\override Stem.length = #8
               \once\override Staff.BarLine.color = #(x11-color 'grey10)
-              d,4\harmonic-\markup \teeny \italic {
+              \improvisationOn
+              \once\override NoteHead.no-ledgers = ##t
+              f,1*1/4-\markup \teeny \italic {
                 \column {
                   "grasp the"
                   \general-align #Y #-4
@@ -122,6 +124,7 @@ Upper = \relative c'' {
                 }
               }
             }
+            \improvisationOff
 	  } >>
    | \ottava #1
      bes''''16_\pp\([ e, bes e \ottava #0 bes e,] bes[ e bes e, bes e,]

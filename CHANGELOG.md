@@ -11,6 +11,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - J.S. Bach: Partita 4 BWV828
 - J.S. Bach: Die Kunst der Fuge (BWV 1080) - Add a section containing the list of subjects"
 
+### Changed
+
+- Rued Langgaard: Insektarium - better pagination
+
 ## [v48] - 2024-02-24
 
 ### Added
