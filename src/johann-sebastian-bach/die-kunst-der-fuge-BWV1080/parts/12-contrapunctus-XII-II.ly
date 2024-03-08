@@ -106,13 +106,15 @@ Alto = \context Voice = "two" \relative c' {
   %20
   | d2. e4 f g
   | a2~ a8 g f e d2~
-  | d8
+  | \hideStaffSwitch
+    d8
     \change Staff = "lower"
     \stemUp\tieUp
     d,
     \change Staff = "upper"
     \stemDown
     d' e f g a g f4 f,
+    \showStaffSwitch
   | g2 f2. e4
   | f2 f'1_~
   %25
@@ -236,13 +238,15 @@ Tenor = \context Voice = "three" \relative c' {
     d4 e fis
   | \once\override NoteColumn.force-hshift = #0.2 g2.
     e4 f! g
-  | \stemDown\tieDown a2~ \stemUp a8 g f g
+  | \hideStaffSwitch
+    \stemDown\tieDown a2~ \stemUp a8 g f g
     \change Staff = "upper"
     \stemDown a g a bes
   | c4 d8 e f2~ f8 ees
     \change Staff = "lower"
     \stemUp
     d c
+    \showStaffSwitch
   | bes2 a8 g a bes
     \change Staff = "upper"
     \stemDown

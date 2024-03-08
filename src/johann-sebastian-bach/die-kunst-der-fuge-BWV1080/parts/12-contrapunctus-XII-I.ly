@@ -81,9 +81,9 @@ Alto = \context Voice = "two" \relative c' {
   | f2 d1
   | \stemDown cis2 d \stemUp e
   | f2. g4 f e
-  | d2 r4 e f g
+  | \once\stemDown d2 r4 e f g
   %15
-  | a2 r4 b c d
+  | \once\stemDown a2 r4 b c d
   | e d c b a gis
   | \stemDown a2. bes!4 a g
   | f2. g4 f e
