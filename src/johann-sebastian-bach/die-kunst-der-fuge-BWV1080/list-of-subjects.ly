@@ -52,7 +52,7 @@ CommonSubjectVI = {
       "in recto and inversus forms"
     }
     \once\override Stem.length = #5 a'4. g8
-  | f4. e8 d2 | cis d4. e8 | f2~ f8. g16 f8. e16 | d8 4.
+  | f4. e8 d2 | cis d4. e8 | f2~ f8. g16 f8. e16 | d8 s4.
 }
 
 SubjectVIIIFirst = \relative {
@@ -72,7 +72,7 @@ SubjectVIIIThird = \relative {
   | r4^\markup \abs-fontsize #8 \italic {
       "third subject (an inverted and rhythmically abstracted version of the proncipal Art of Fugue theme)"
     }
-    a' d, e | r f g a | r bes a g | r f8 e f4 g | a2 % s
+    \red a' \red d, e | r \red f g \red a | r \red bes \red a \red g | r \red { f8 e f4 g | a2 } % s
 }
 
 SubjectIXFirst = {
