@@ -10,11 +10,11 @@ Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
   | R1*4
   %5
-  | a2^\markup \subject #'(0 . 0) #1 d
+  | \highlightSubject { a2^\markup \subject #'(0 . 0) #1 d
   | c a
   | gis a4 b
   | c2~ c8 d c bes
-  | a d, d'2 cis4
+  | \unHighlightSubject a } d, d'2 cis4
   %10
   | d8 a c4~ c8 a bes4~
     \break
@@ -40,12 +40,12 @@ Soprano = \context Voice = "one" \relative c'' {
     R1
   | R1
   | R1
-  | a2^\markup \subject #'(0 . 0) #1 e'
+  | \highlightSubject { a2^\markup \subject #'(0 . 0) #1 e'
   %30
   | c a
   | gis a4 b
   | c2~ c8 d c bes
-  | a4 r r a~
+  | a4 } r r a~
   | a8 c! bes a bes a g fis
   %35
   | g4. bes8
@@ -63,12 +63,12 @@ Soprano = \context Voice = "one" \relative c'' {
   | c bes a r
   %45
   | R1*4
-  | e'2^\markup \subject #'(0 . 0) #1 a
+  | \highlightSubject { e'2^\markup \subject #'(0 . 0) #1 a
   % 50
   | f d
   | cis d4 e
   | f2~ f8 g f e
-  | d4. e8 cis4 d8 f
+  | d4. } e8 cis4 d8 f
   | bes,2~ bes8 bes a g
   %55
   | f2 bes
@@ -104,12 +104,12 @@ Soprano = \context Voice = "one" \relative c'' {
 
 Alto = \context Voice = "two" \relative c' {
   \voiceTwo
-  | d2-\markup \subject #'(1.5 . -1) #1 a'
+  | \highlightSubject { d2-\markup \subject #'(1.5 . -1) #1 a'
   | f d
   | cis d4 e
   | f2~ f8 g f e
   %5
-  | d4 e f g
+  | d4 } e f g
   | a
     \change Staff = "lower"
     a,8 b c a
@@ -130,13 +130,13 @@ Alto = \context Voice = "two" \relative c' {
   | s1*3
   %20
   | s1*3
-  | d2_\markup \subject #'(1.5 . 0) #1 a'
+  | \highlightSubject { d2_\markup \subject #'(1.5 . 0) #1 a'
   | f d
   %25
   | cis d4 e
   | \stemUp
     f2~ f8 g f e
-  | d4 g~ g8 e f4
+  | d4 } g~ g8 e f4
   | e a~ a8 fis g4
   | \stemDown
     fis4. d'8 gis,2
@@ -223,12 +223,12 @@ Tenor = \context Voice = "three" \relative c' {
   | \override MultiMeasureRest.staff-position = #0
     R1*5
   | s1*7
-  | a2^\markup \subject #'(2.5 . 0) #1 d
+  | \highlightSubject { a2^\markup \subject #'(2.5 . 0) #1 d
   | c a
   %15
   | gis a4 b
   | c2~ c8 d c bes
-  | a2~ a8 f g4
+  | \unHighlightSubject a2~ } a8 f g4
   | c2~ c8 a b4
   | \change Staff = "upper"
     \stemDown
@@ -262,12 +262,12 @@ Tenor = \context Voice = "three" \relative c' {
   | R1
   | s1*3
   %40
-  | e2^\markup \subject #'(2.5 . 0) #1
+  | \highlightSubject { e2^\markup \subject #'(2.5 . 0) #1
     a
   | f d
   | cis d4 e
   | f2~ f8 g f e
-  | d2. a'8 f
+  | d2. } a'8 f
   %45
   | bes4. g8 c4. a8
   | d4 g, c f,
@@ -311,14 +311,14 @@ Tenor = \context Voice = "three" \relative c' {
   | r2 f4 r
   | r2 f2~
   | f4 e8 d e4 r
-  | a,2^\markup \subject #'(2.5 . 0) #1 d
+  | \highlightSubject { a,2^\markup \subject #'(2.5 . 0) #1 d
   %75
   | bes g
   | fis g4 a
   | bes2~
     \stemDown
     bes8 d c bes
-  | a1\fermata
+  | a1\fermata }
   \fine
 }
 
@@ -339,12 +339,12 @@ Bass = \context Voice = "four" \relative c {
       }
     } s2.
   | s1*7
-  | d2_\markup \subject #'(0 . 0) #1 a'
+  | \highlightSubject { d2_\markup \subject #'(0 . 0) #1 a'
   %10
   | f d
   | cis d4 e
   | f2~ f8 g f e
-  | d2 r
+  | d2 } r
   | r4 a8 b c a f'4~
   %15
   | f8 b, e4~ e8 f e d
@@ -369,12 +369,12 @@ Bass = \context Voice = "four" \relative c {
   %30
   | a f~
   | f8 f e d c d c b
-  | a2_\markup \subject #'(0 . 0) #1 d
+  | \highlightSubject { a2_\markup \subject #'(0 . 0) #1 d
   | cis a
   | fis g4 a
   %35
   | bes2~ bes8 c bes a
-  | g2~ g8 e f4
+  | \unHighlightSubject g2~ } g8 e f4
   | bes2~ bes8 g a4
   | d2~ d8 b c4
   | f2~ f8 d e4
@@ -393,12 +393,12 @@ Bass = \context Voice = "four" \relative c {
   %50
   | R1
   | s1*5
-  | d2_\markup \subject #'(1.5 . 0) #1 a'
+  | \highlightSubject { d2_\markup \subject #'(1.5 . 0) #1 a'
   | f d
   | cis d4 e
   | f2~ f8 g f e
   %60
-  | d2~ d8 ees d c
+  | \unHighlightSubject d2~ } d8 ees d c
   | bes2~ bes8 c bes a
   | g2. g4
   | a1~

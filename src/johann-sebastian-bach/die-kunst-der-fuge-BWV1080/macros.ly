@@ -2,16 +2,16 @@ greyTextColor = #(x11-color "dimgray")
 lightGrey = #(x11-color 'grey65)
 middleGrey = #(x11-color 'grey45)
 
-red =
-#(define-music-function (music)
-   (ly:music?)
+markWithColor =
+#(define-music-function (color music)
+   (color? ly:music?)
    "Change the color of the given note."
    #{
      %\stopStaff
      %\startStaff
-     \override Accidental.color = #(x11-color 'red)
-     \override NoteHead.color = #(x11-color 'red)
-     %\override Staff.LedgerLineSpanner.color = #(x11-color 'red)
+     \override Accidental.color = #color
+     \override NoteHead.color = #color
+     %\override Staff.LedgerLineSpanner.color = #color
      #music
      %\revert Staff.LedgerLineSpanner.color
      \revert NoteHead.color
@@ -19,6 +19,58 @@ red =
      %\stopStaff
      %\startStaff
    #})
+
+unHighlightSubject = {
+  \revert Tie.color
+  \revert Stem.color
+  \revert Beam.color
+  \revert Accidental.color
+}
+
+markWithColorExtended =
+#(define-music-function (color music)
+   (color? ly:music?)
+   "Change the color of the given note."
+   #{
+     %\stopStaff
+     %\startStaff
+     \override Accidental.color = #color
+     \override Beam.color = #color
+     \override Dots.color = #color
+     \override NoteHead.color = #color
+     \override Stem.color = #color
+     \override Tie.color = #color
+     %\override Staff.LedgerLineSpanner.color = #color
+     #music
+     %\revert Staff.LedgerLineSpanner.color
+     \revert NoteHead.color
+     \revert Dots.color
+     \unHighlightSubject
+     %\stopStaff
+     %\startStaff
+   #})
+
+highlightSubject =
+#(define-music-function (music)
+   (ly:music?)
+   "Colour the given note(s) in dark blue"
+   #{
+     \markWithColorExtended #(x11-color 'darkblue) #music
+   #})
+
+highlightSubjectInv =
+#(define-music-function (music)
+   (ly:music?)
+   "Colour the given note(s) in dark blue"
+   #{
+     \markWithColorExtended #(x11-color 'darkgreen) #music
+   #})
+
+red =
+#(define-music-function (music)
+   (ly:music?)
+   "Colour the given note(s) in red."
+   #{ \markWithColor #(x11-color 'red) #music #})
 
 staffLower = { \change Staff = "lower" }
 staffUpper = { \change Staff = "upper" }
