@@ -2,13 +2,23 @@ greyTextColor = #(x11-color "dimgray")
 lightGrey = #(x11-color 'grey65)
 middleGrey = #(x11-color 'grey45)
 
-red = {
-  \once\override Accidental.color = #(x11-color 'red)
-  \once\override NoteHead.color = #(x11-color 'red)
-  %\once\override Stem.color = #(x11-color 'red)
-  %\once\override Flag.color = #(x11-color 'black)
-  %\once\override Staff.LedgerLineSpanner.color = #(x11-color 'red)
-}
+red =
+#(define-music-function (music)
+   (ly:music?)
+   "Change the color of the given note."
+   #{
+     \stopStaff
+     \startStaff
+     \override Accidental.color = #(x11-color 'red)
+     \override NoteHead.color = #(x11-color 'red)
+     \override Staff.LedgerLineSpanner.color = #(x11-color 'red)
+     #music
+     \revert Staff.LedgerLineSpanner.color
+     \revert NoteHead.color
+     \revert Accidental.color
+     \stopStaff
+     \startStaff
+   #})
 
 staffLower = { \change Staff = "lower" }
 staffUpper = { \change Staff = "upper" }

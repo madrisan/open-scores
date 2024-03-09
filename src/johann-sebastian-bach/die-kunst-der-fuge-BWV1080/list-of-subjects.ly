@@ -34,9 +34,14 @@ CommonSubjectIV = {
 }
 CommonSubjectV = {
   \commonSettings
-  | \red d'2^\markup \abs-fontsize #8 \italic  { "14-notes version of the main subject" }
+  | \red d'2^\markup \abs-fontsize #8 \italic  {
+      "14-notes version of the main subject"
+      "(the notes in red correspond to the short version)"
+    }
     \once\override Stem.length = #6 \red a'4. g8
-  | \red f4. e8 \red d2 | \red cis \red d4. \red e8 | \red \red f2~ \red f8 \red g \red f \red e
+  | \red f4. e8 \red d2
+  | \red cis \red d4. \red e8
+  | \red \red f2~ \red f8 \red g \red f \red e
   | \red d4 s
 }
 
