@@ -7,17 +7,17 @@ red =
    (ly:music?)
    "Change the color of the given note."
    #{
-     \stopStaff
-     \startStaff
+     %\stopStaff
+     %\startStaff
      \override Accidental.color = #(x11-color 'red)
      \override NoteHead.color = #(x11-color 'red)
-     \override Staff.LedgerLineSpanner.color = #(x11-color 'red)
+     %\override Staff.LedgerLineSpanner.color = #(x11-color 'red)
      #music
-     \revert Staff.LedgerLineSpanner.color
+     %\revert Staff.LedgerLineSpanner.color
      \revert NoteHead.color
      \revert Accidental.color
-     \stopStaff
-     \startStaff
+     %\stopStaff
+     %\startStaff
    #})
 
 staffLower = { \change Staff = "lower" }
