@@ -61,9 +61,17 @@ highlightSubject =
 highlightSubjectInv =
 #(define-music-function (music)
    (ly:music?)
-   "Colour the given note(s) in dark blue"
+   "Colour the given note(s) in dark green"
    #{
      \markWithColorExtended #(x11-color 'darkgreen) #music
+   #})
+
+highlightBACH =
+#(define-music-function (music)
+   (ly:music?)
+   "Colour the B.A.C.H. notes"
+   #{
+     \markWithColorExtended #(x11-color 'darkcyan) #music
    #})
 
 red =
