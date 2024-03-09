@@ -34,25 +34,25 @@ CommonSubjectIV = {
 }
 CommonSubjectV = {
   \commonSettings
-  | \red d'2^\markup \abs-fontsize #8 \italic  {
-      "14-notes version of the main subject"
-      "(the notes in red correspond to the short version)"
+  | \red a'2^\markup \abs-fontsize #8 \italic  {
+      "14-notes version,"
+      "also present in recto form and in halving/doubling note lengths in VII"
     }
-    \once\override Stem.length = #6 \red a'4. g8
-  | \red f4. e8 \red d2
-  | \red cis \red d4. \red e8
-  | \red \red f2~ \red f8 \red g \red f \red e
-  | \red d4 s
+    \once\override Stem.length = #6 \red d,4. e8
+  | \red f4. g8 \red a2
+  | \red bes \red a4. \red g8
+  | \red \red f2~ \red f8 \red e \red f \red g
+  | \red a4 s
 }
 
 CommonSubjectVI = {
   \commonSettings
-  | d'2^\markup \abs-fontsize #8 \italic  {
+  | a'2^\markup \abs-fontsize #8 \italic  {
       "dotted rhythm of V, also present in halving note lengths,"
       "in recto and inversus forms"
     }
-    \once\override Stem.length = #5 a'4. g8
-  | f4. e8 d2 | cis d4. e8 | f2~ f8. g16 f8. e16 | d8 s4.
+    \once\override Stem.length = #5 d,4. e8
+  | f4. g8 a2 | bes a4. g8 | f2~ f8. e16 f8. g16 | a8 s4.
 }
 
 SubjectVIIIFirst = \relative {
@@ -238,16 +238,32 @@ CanonIII = {
   | a( f e d) f( e d cis)
   | \red d4 s
 }
-CanonIV = {
+CanonIVSopran = {
   \commonSettings
   | \red d'8^\markup \abs-fontsize #8 \italic {
-      "subject of Canon IV [in Hypodiatessaron] is also based on the main subject"
+      "subject of Canon IV [in Hypodiatessaron] in the sopran is based on the main subject"
      }
      bes' \red a2 g4
   | \red f8 e16 d ees2 \red d4
   | \red cis8_( d16 e!) \red d2 \red e4
   | \red f8 a, \red g'2 \red f8 \red e
   | f16 s8.
+}
+CanonIVBass = {
+  \commonSettings
+  \clef bass
+  | \red a4^\markup \abs-fontsize #8 \italic {
+      "subject in the bass is base on the main theme in its inverted form"
+    }
+    cis, \red  d2~ \noBreak
+  | d e \noBreak
+  | \red fis4 g8 a g2~ \noBreak
+  | g \red a \noBreak
+  | \red bes4 a8 g \red a2~ \noBreak
+  | a \red g \noBreak
+  | \red f4 d' \red e,2~ \noBreak
+  | e \red f4 \red g \noBreak
+  | \red f8 s
 }
 
 \markup \fill-line {
@@ -311,13 +327,13 @@ CanonIV = {
     \score {
       <<
         \new Staff \with {
-          instrumentName = \markup \abs-fontsize #8 \bold { "V " }
+          instrumentName = \markup \abs-fontsize #8 \bold {
+            \right-column { "V " \raise #1.8 \line { "VII " } }
+          }
         } \relative \CommonSubjectV
         % Contrapunctus VI
         \new Staff \with {
-          instrumentName = \markup \abs-fontsize #8 \bold {
-            \right-column { "VI  " \raise #1.8 \line { "VII " } }
-          }
+          instrumentName = \markup \abs-fontsize #8 \bold { "VI " }
         } \relative \CommonSubjectVI
       >>
       \layout {
@@ -667,13 +683,25 @@ CanonIV = {
 }
 
 \markup \line {
-  \hspace #2
+  \hspace #1
   \left-column {
+    \vspace #0.5
     \score {
       <<
-        \new Staff \with {
+        \new ChoirStaff \with {
           instrumentName = \markup \abs-fontsize #8 \bold { "IV " }
-        } \relative \CanonIV
+          \override StaffGrouper.staff-staff-spacing = #'(
+                      (basic-distance . 0)
+                      (padding . 2))
+          }
+        <<
+        \new Staff {
+          \new Voice = "canonivsopran" \relative \CanonIVSopran
+        }
+        \new Staff {
+          \new Voice = "canonivbass" \relative \CanonIVBass
+        }
+        >>
       >>
       \layout {
         indent = #0
@@ -682,5 +710,4 @@ CanonIV = {
       }
     }
   }
-  \vspace #2
 }
