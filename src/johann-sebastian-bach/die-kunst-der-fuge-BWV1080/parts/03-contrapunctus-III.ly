@@ -31,6 +31,7 @@ Soprano = \context Voice = "one" \relative c'' {
   %25
   | a8 g bes2 a8 g
   | f2~ f8 e fis g
+    \break
   | a4 d,~ d8 g cis, d
   | e f g e f2~
   | f8 f e d c4. d8
@@ -65,11 +66,13 @@ Soprano = \context Voice = "one" \relative c'' {
   | d2~ d8 d e f
   | g4. fis8 g4. gis8
   | a2~ a8 a g f
+    \break
   %65
   | g4 f8 e d cis! d e
   | f g f e f g a4
   | c,2~ c8 fis,! g a
   | bes2 a~
+    \break
   | a8 fis g4~ g8 g fis e
   %70
   | fis g a4 d,2~
@@ -120,6 +123,7 @@ Alto = \context Voice = "two" \relative c' {
   | b8 e, fis gis a2^~
   | a8 bes! a g fis4 f~
   | f8 a g f e4 ees~
+    \break
   %35
   | ees8 g f ees d4. e8
   | f e f g a g a4~
