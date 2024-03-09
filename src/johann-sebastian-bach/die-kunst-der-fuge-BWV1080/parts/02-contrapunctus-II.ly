@@ -353,7 +353,7 @@ Bass = \context Voice = "four" \relative c {
   \voiceFour
   | d2_\markup \italic \tiny \with-color #greyTextColor {
        \ieyeglasses "In Contrapunctus 2 there are 14 entries of the subject"
-    }^\markup \subject #'(0 . 0) #1 a'((((
+    }^\markup \subject #'(0 . 0) #1 a'
   | f d
   | cis d4 e
   | f2^~ f8.[ g16 f8. e16]

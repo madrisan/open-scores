@@ -9,7 +9,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | \override MultiMeasureRest.staff-position = #0
     R1*4
   | s1*4
-  | d2 a
+  | d2^\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 a
   %10
   | c e
   | f e4 d
@@ -26,7 +26,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | a,4 d2 cis8 c~
   | c b ees4 c4. d8
   | g,4 c2 b8 bes~
-  | bes a a'2 d,4~
+  | bes a a'2^\markup \scale #'(1 . -1) \subject #'(2.5 . 0) #1 d,4~
   | d8 e f4~ f8 g a4~
   %25
   | a8 g bes2 a8 g
@@ -41,7 +41,7 @@ Soprano = \context Voice = "one" \relative c'' {
     R1
   | s1*11
   %43
-  | e2 a,
+  | e2^\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 a,
   | c e
   %45
   | f e4 d
@@ -86,7 +86,7 @@ Alto = \context Voice = "two" \relative c' {
   | s1*4
   %5
   | \stemUp
-    a'2 d,
+    a'2^\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 d,
   | f a
   | bes a4 g
   | f2~ f8 e f g
@@ -150,7 +150,7 @@ Alto = \context Voice = "two" \relative c' {
   | c a bes c d2~
   | d~ d8 cis d e
   %55
-  | a,2 d,4. e8
+  | a,2_\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 d,4. e8
   | f!4. g8 a4. g8
   | bes2~ bes8 a4 g8
   | f2~ f8 e fis gis
@@ -180,7 +180,7 @@ Tenor = \context Voice = "three" \relative c' {
   \voiceThree
   %1
   | \stemDown
-    d2 a
+    d2^\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 a
   | c e
   | f e4 d
   | cis2~ cis8 a b cis
@@ -204,7 +204,7 @@ Tenor = \context Voice = "three" \relative c' {
   | a,4 r r2
   | R1
   | s1*9
-  | r4 e'2 a,4~
+  | r4 e'2^\markup \scale #'(1 . -1) \subject #'(2.5 . 0) #1 a,4~
   %30
   | a8 b c4~ c8 d e4~
   | e8 d
@@ -218,7 +218,7 @@ Tenor = \context Voice = "three" \relative c' {
     a, b c
   | d2~ d8 g, a bes!
   %35
-  | c bes c2 f,4~
+  | c bes c2^\markup \scale #'(1 . -1) \subject #'(2.5 . 0) #1 f,4~
   | f8 g a4~ a8 bes c4~
   | c8 bes d2 c8 bes
   | a2~ a8 g a b
@@ -259,7 +259,7 @@ Tenor = \context Voice = "three" \relative c' {
   | e r r2
   | \override MultiMeasureRest.staff-position = #6
     R1
-  | a,2 d,
+  | a,2^\markup \scale #'(1 . -1) \subject #'(2.5 . 0) #1 d,
   | f a
   %65
   | bes! a4 g
@@ -279,7 +279,7 @@ Bass = \context Voice = "four" \relative c {
   \voiceFour
   | s1*14 %1 to 14
   %15
-  | a'2 d,
+  | a'2_\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 d,
   | f a
   | bes a4 g
   | f2~ f8 e f g
@@ -320,7 +320,7 @@ Bass = \context Voice = "four" \relative c {
   | R1
   | s1*3
   %51
-  | c2 g
+  | c2_\markup \scale #'(1 . -1) \subject #'(1.5 . 0) #1 g
   | bes d
   | ees d4 c
   | bes2~ bes8 a b cis
