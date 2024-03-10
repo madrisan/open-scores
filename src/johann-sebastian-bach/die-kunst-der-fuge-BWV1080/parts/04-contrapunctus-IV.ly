@@ -9,7 +9,7 @@ Global = {
 Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
   %1
-  | \highlightSubjectInv { a2^\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 d,
+  | \highlightSubjectFirstInv { a2^\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 d,
   | f a
   | bes a4 g
   | f2~ f8 e f g
@@ -39,7 +39,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | \override MultiMeasureRest.staff-position = #6
     R1*3
   %27
-  | \highlightSubjectInv { c'2^\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 f,
+  | \highlightSubjectFirstInv { c'2^\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 f,
   | a c
   | d c4 bes
   %30
@@ -92,7 +92,7 @@ Soprano = \context Voice = "one" \relative c'' {
     R1*4
   | s1*5
   %77
-  | \highlightSubjectInv { e2^\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 a,
+  | \highlightSubjectFirstInv { e2^\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 a,
   | c e
   | g fis4 e
   %80
@@ -175,7 +175,7 @@ Alto = \context Voice = "two" \relative c' {
   %5
   | \change Staff = "lower"
     \stemDown
-    \highlightSubjectInv { d2^\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 a
+    \highlightSubjectFirstInv { d2^\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 a
   | c
     \change Staff = "upper"
     e
@@ -210,7 +210,7 @@ Alto = \context Voice = "two" \relative c' {
   | f8 c' bes a g a g f
   %30
   | e d e4 d r
-  | \highlightSubjectInv { g2_\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 c,
+  | \highlightSubjectFirstInv { g2_\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 c,
   | e g
   | a g4 f
   | e2~ e8 d e fis
@@ -261,7 +261,7 @@ Alto = \context Voice = "two" \relative c' {
   | bes'2. c,4
   | a'2. bes4
   | g2^~ g8 bes a g
-  | \highlightSubjectInv { a2^\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 d,
+  | \highlightSubjectFirstInv { a2^\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 d,
   | f a
   %75
   | c b4 a
@@ -307,7 +307,7 @@ Alto = \context Voice = "two" \relative c' {
   | d4 e f8 a b cis
   %110
   | d4 f d a
-  | \highlightSubjectInv { f2_\markup \scale #'(1 . -1) \subject #'(1.4 . 0) #1 c!
+  | \highlightSubjectFirstInv { f2_\markup \scale #'(1 . -1) \subject #'(1.4 . 0) #1 c!
   | e gis
   | a g!4 f
   | e2~ e8 cis d e
@@ -333,7 +333,7 @@ Alto = \context Voice = "two" \relative c' {
   | d2 r4 a
   | b2 r4 f'~
   | f e r2
-  | \highlightSubjectInv { a2_\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 d,
+  | \highlightSubjectFirstInv { a2_\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 d,
   | f a
   %135
   | bes a4 g
@@ -348,7 +348,7 @@ Tenor = \context Voice = "three" \relative c' {
   | R1*4
   | s1*6
   | \stemDown
-    \highlightSubjectInv { a2_\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 d,
+    \highlightSubjectFirstInv { a2_\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 d,
   | f a
   | bes a4 g
   | f2~ f8 e f g
@@ -384,7 +384,7 @@ Tenor = \context Voice = "three" \relative c' {
   | f2 r
   | R1
   %35
-  | \highlightSubjectInv { d'2^\markup \scale #'(1 . -1) \subject #'(2.5 . 0) #1 g,
+  | \highlightSubjectFirstInv { d'2^\markup \scale #'(1 . -1) \subject #'(2.5 . 0) #1 g,
   | \stemDown bes d
   | ees2 \stemUp d4 c
   | bes2~ bes8 a bes c
@@ -431,7 +431,7 @@ Tenor = \context Voice = "three" \relative c' {
   | c2 r4 ees
   | a,2 r
   %65
-  | \highlightSubjectInv { d_\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 g,
+  | \highlightSubjectFirstInv { d_\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 g,
   | bes d
   | f e4 d
   | cis2~ cis8 a b cis
@@ -499,7 +499,7 @@ Tenor = \context Voice = "three" \relative c' {
   %105
   | r8 d' c bes a2
   | r8 bes a g f2
-  | \highlightSubjectInv { a^\markup \scale #'(1 . -1) \subject #'(2.5 . 0) #1 d,
+  | \highlightSubjectFirstInv { a^\markup \scale #'(1 . -1) \subject #'(2.5 . 0) #1 d,
   | f a
   | bes a4 g
   %110
@@ -525,7 +525,7 @@ Tenor = \context Voice = "three" \relative c' {
   | r g ees c
   | d2~ d8 d e fis
   | g4 r r2
-  | \highlightSubjectInv { d'2^\markup \scale #'(1 . -1) \subject #'(2.5 . 0) #1 g,
+  | \highlightSubjectFirstInv { d'2^\markup \scale #'(1 . -1) \subject #'(2.5 . 0) #1 g,
   %130
   | bes d
   | f e4 d
@@ -544,7 +544,7 @@ Bass = \context Voice = "four" \relative c {
   \mergeDifferentlyDottedOn
   | s1*14
   %15
-  | \highlightSubjectInv { d2_\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 a
+  | \highlightSubjectFirstInv { d2_\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 a
   | c e
   | f e4 d
   | cis2~ cis8 a b cis
@@ -571,7 +571,7 @@ Bass = \context Voice = "four" \relative c {
   | g8 a bes d g4 d\rest
   | \override MultiMeasureRest.staff-position = #-2
     R1*3
-  | \highlightSubjectInv { g2_\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 d
+  | \highlightSubjectFirstInv { g2_\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 d
   %40
   | f a
   | bes a4 g
@@ -599,7 +599,7 @@ Bass = \context Voice = "four" \relative c {
   %60
   | \override MultiMeasureRest.staff-position = #-4
     R1
-  | \highlightSubjectInv { f'2_\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 c
+  | \highlightSubjectFirstInv { f'2_\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 c
   | e g
   | bes a4 g
   | fis2~ fis8 d e fis

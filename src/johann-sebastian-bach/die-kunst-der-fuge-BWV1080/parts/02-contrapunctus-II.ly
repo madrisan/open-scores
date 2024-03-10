@@ -11,7 +11,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | \override MultiMeasureRest.staff-position = #0
     R1*8
   | s1*4
-  | \highlightSubject { a2^\markup \subject #'(0 . 0) #1 d
+  | \highlightSubjectFirst { a2^\markup \subject #'(0 . 0) #1 d
   | c a
   %15
   | gis a4 b
@@ -26,7 +26,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | cis4^\markup \subject #'(0 . 0) #1 r4 r2
   | R1*2
   %26
-  | \highlightSubject { a'2^\markup \subject #'(0 . 0) #1 d
+  | \highlightSubjectFirst { a'2^\markup \subject #'(0 . 0) #1 d
   | c a
   | gis a4 b
   | c2~ c8.[ d16 c8. b16]
@@ -49,7 +49,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | bes8.[ a16 g8. f16] g2~
   | g8.[ f16 g8. a16] bes8.[ c16 d8. e16]
   %45
-  | \highlightSubject { f2^\markup \subject #'(0 . 0) #1 c'
+  | \highlightSubjectFirst { f2^\markup \subject #'(0 . 0) #1 c'
   | a f
   | e f4 g
   | a2~ a8.[ bes16 a8. g16]
@@ -88,7 +88,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | g8.[ bes16 a8. g16~] g8.[ a16 g8. f16~]
   | f8.[ g16 f8. e16~] e8.[ f16 e8. d16~]
   | d8.[ b16 cis8. e16] a,8.[ g'16 f8. e16]
-  | \highlightSubject { d2^\markup \subject #'(0 . 0) #1 a'
+  | \highlightSubjectFirst { d2^\markup \subject #'(0 . 0) #1 a'
   %80
   | f d
   | cis d4 e
@@ -119,7 +119,7 @@ Alto = \context Voice = "two" \relative c' {
   | a8. fis16 g8. a16 bes4 a
   | gis r a2\rest
   | a\rest b
-  | \highlightSubject { \unHighlightSubject a8.[} e'16 f8. g16] \highlightSubject { a2
+  | \highlightSubjectFirst { \unHighlightSubject a8.[} e'16 f8. g16] \highlightSubjectFirst { a2
   | f d
   %25
   | \stemUp
@@ -162,7 +162,7 @@ Alto = \context Voice = "two" \relative c' {
     f'16 g8. a16] bes8.[ c16 d8. bes16]
   | c4 g c2~
   | c d4 c8. bes16
-  | \highlightSubject { a2_\markup \subject #'(1.5 . 0) #1 d
+  | \highlightSubjectFirst { a2_\markup \subject #'(1.5 . 0) #1 d
   %50
   | bes g
   | fis g4 a
@@ -224,7 +224,7 @@ Tenor = \context Voice = "three" \relative c' {
   \voiceThree
   | s1*4
   %5
-  | \highlightSubject { a2-\markup \subject #'(0 . 0) #1 d
+  | \highlightSubjectFirst { a2-\markup \subject #'(0 . 0) #1 d
   | c a
   | gis a4 b
   | c2~ c8.[ d16 c8. bes16]
@@ -272,7 +272,7 @@ Tenor = \context Voice = "three" \relative c' {
   | bes4 b cis d~
   | d8.[ c!16 b8. a16] b4 e
   | \stemDown
-    \highlightSubject { a,2_\markup \subject #'(0 . 0) #1 d
+    \highlightSubjectFirst { a,2_\markup \subject #'(0 . 0) #1 d
   | c a
   %40
   | \stemUp
@@ -328,7 +328,7 @@ Tenor = \context Voice = "three" \relative c' {
   | g r r2
   | \override MultiMeasureRest.staff-position = #6
     R1*2
-  | r4 \highlightSubject { a2^\markup \subject #'(2.5 . 0) #1 d4~
+  | r4 \highlightSubjectFirst { a2^\markup \subject #'(2.5 . 0) #1 d4~
   %70
   | d c2 a4~
   | a gis a b
@@ -351,7 +351,7 @@ Tenor = \context Voice = "three" \relative c' {
 
 Bass = \context Voice = "four" \relative c {
   \voiceFour
-  | \highlightSubject { d2_\markup \italic \tiny \with-color #greyTextColor {
+  | \highlightSubjectFirst { d2_\markup \italic \tiny \with-color #greyTextColor {
        \ieyeglasses "In Contrapunctus 2 there are 14 entries of the subject"
     }^\markup \subject #'(0 . 0) #1 a'
   | f d
@@ -390,7 +390,7 @@ Bass = \context Voice = "four" \relative c {
   | a r r2
   %30
   | R1
-  | \highlightSubject { d2_\markup \subject #'(0 . 0) #1 a'
+  | \highlightSubjectFirst { d2_\markup \subject #'(0 . 0) #1 a'
   | f d
   | cis d4 e
   | f2~ f8.[ g16 f8. e16]
@@ -403,12 +403,12 @@ Bass = \context Voice = "four" \relative c {
   %40
   | b8\rest b16\rest f'[ e8. d16] c4 f~
   | f fis2 gis4
-  | \highlightSubject { \unHighlightSubject a2 } r
+  | \highlightSubjectFirst { \unHighlightSubject a2 } r
   | s1*8
   %51
   | r8 r16 ees[ d8. c16] bes8.[ a16 g8. fis16]
   | g8.[ g'16 fis8. g16] c,2~
-  | \highlightSubject { c_\markup \subject #'(0 . 0) #1 f
+  | \highlightSubjectFirst { c_\markup \subject #'(0 . 0) #1 f
   | d bes
   %55
   | a bes4 c
@@ -418,7 +418,7 @@ Bass = \context Voice = "four" \relative c {
   | bes'1
   %60
   | a4 d,\rest d2\rest
-  | \highlightSubject { d_\markup \subject #'(0 . 0) #1 a'
+  | \highlightSubjectFirst { d_\markup \subject #'(0 . 0) #1 a'
   | f d
   | cis d4 e
   | f2~ f8.[ g16 f8. e16]

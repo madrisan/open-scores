@@ -10,7 +10,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
   | R1*4
   %5
-  | \highlightSubject { a2^\markup \subject #'(0 . 0) #1 d
+  | \highlightSubjectFirst { a2^\markup \subject #'(0 . 0) #1 d
   | c a
   | gis a4 b
   | c2~ c8 d c bes
@@ -40,7 +40,7 @@ Soprano = \context Voice = "one" \relative c'' {
     R1
   | R1
   | R1
-  | \highlightSubject { a2^\markup \subject #'(0 . 0) #1 e'
+  | \highlightSubjectFirst { a2^\markup \subject #'(0 . 0) #1 e'
   %30
   | c a
   | gis a4 b
@@ -63,7 +63,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | c bes a r
   %45
   | R1*4
-  | \highlightSubject { e'2^\markup \subject #'(0 . 0) #1 a
+  | \highlightSubjectFirst { e'2^\markup \subject #'(0 . 0) #1 a
   % 50
   | f d
   | cis d4 e
@@ -104,7 +104,7 @@ Soprano = \context Voice = "one" \relative c'' {
 
 Alto = \context Voice = "two" \relative c' {
   \voiceTwo
-  | \highlightSubject { d2-\markup \subject #'(1.5 . -1) #1 a'
+  | \highlightSubjectFirst { d2-\markup \subject #'(1.5 . -1) #1 a'
   | f d
   | cis d4 e
   | f2~ f8 g f e
@@ -130,7 +130,7 @@ Alto = \context Voice = "two" \relative c' {
   | s1*3
   %20
   | s1*3
-  | \highlightSubject { d2_\markup \subject #'(1.5 . 0) #1 a'
+  | \highlightSubjectFirst { d2_\markup \subject #'(1.5 . 0) #1 a'
   | f d
   %25
   | cis d4 e
@@ -223,7 +223,7 @@ Tenor = \context Voice = "three" \relative c' {
   | \override MultiMeasureRest.staff-position = #0
     R1*5
   | s1*7
-  | \highlightSubject { a2^\markup \subject #'(2.5 . 0) #1 d
+  | \highlightSubjectFirst { a2^\markup \subject #'(2.5 . 0) #1 d
   | c a
   %15
   | gis a4 b
@@ -262,7 +262,7 @@ Tenor = \context Voice = "three" \relative c' {
   | R1
   | s1*3
   %40
-  | \highlightSubject { e2^\markup \subject #'(2.5 . 0) #1
+  | \highlightSubjectFirst { e2^\markup \subject #'(2.5 . 0) #1
     a
   | f d
   | cis d4 e
@@ -311,7 +311,7 @@ Tenor = \context Voice = "three" \relative c' {
   | r2 f4 r
   | r2 f2~
   | f4 e8 d e4 r
-  | \highlightSubject { a,2^\markup \subject #'(2.5 . 0) #1 d
+  | \highlightSubjectFirst { a,2^\markup \subject #'(2.5 . 0) #1 d
   %75
   | bes g
   | fis g4 a
@@ -339,7 +339,7 @@ Bass = \context Voice = "four" \relative c {
       }
     } s2.
   | s1*7
-  | \highlightSubject { d2_\markup \subject #'(0 . 0) #1 a'
+  | \highlightSubjectFirst { d2_\markup \subject #'(0 . 0) #1 a'
   %10
   | f d
   | cis d4 e
@@ -369,7 +369,7 @@ Bass = \context Voice = "four" \relative c {
   %30
   | a f~
   | f8 f e d c d c b
-  | \highlightSubject { a2_\markup \subject #'(0 . 0) #1 d
+  | \highlightSubjectFirst { a2_\markup \subject #'(0 . 0) #1 d
   | cis a
   | fis g4 a
   %35
@@ -393,7 +393,7 @@ Bass = \context Voice = "four" \relative c {
   %50
   | R1
   | s1*5
-  | \highlightSubject { d2_\markup \subject #'(1.5 . 0) #1 a'
+  | \highlightSubjectFirst { d2_\markup \subject #'(1.5 . 0) #1 a'
   | f d
   | cis d4 e
   | f2~ f8 g f e
