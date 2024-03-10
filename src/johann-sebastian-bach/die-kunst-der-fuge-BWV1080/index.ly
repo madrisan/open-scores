@@ -58,10 +58,10 @@
 \markup { \indexItem #39 "Contrapunctus VIII" "38"
   "triple fugue with three subjects, having independent expositions"
 }
-\markup { \indexItem #46 "Contrapunctus IX alla Duodecima" "45"
+\markup { \indexItem #47 "Contrapunctus IX alla Duodecima" "46"
   "double fugue, with two subjects occurring dependently and in invertible counterpoint at the twelfth"
 }
-\markup { \indexItem #49 "Contrapunctus X alla Decima" "48"
+\markup { \indexItem #52 "Contrapunctus X alla Decima" "51"
   "double fugue, with two subjects occurring dependently and in invertible counterpoint at the tenth"
 }
 \markup { \indexItem #54 "Contrapunctus XI" "53"
