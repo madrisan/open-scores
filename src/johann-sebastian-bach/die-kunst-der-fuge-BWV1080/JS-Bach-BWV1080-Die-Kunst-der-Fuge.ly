@@ -114,6 +114,7 @@ Subject = \relative {
 \include "./parts/07-contrapunctus-VII.ly"
 \pageBreak
 \include "./parts/08-contrapunctus-VIII.ly"
+\pageBreak
 \include "./parts/09-contrapunctus-IX.ly"
 \pageBreak
 \include "./parts/10-contrapunctus-X.ly"

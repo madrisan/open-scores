@@ -2,6 +2,15 @@ greyTextColor = #(x11-color "dimgray")
 lightGrey = #(x11-color 'grey65)
 middleGrey = #(x11-color 'grey45)
 
+BachSignatureColor = #(x11-color 'darkcyan)
+
+subjectColor = #(x11-color 'darkblue)
+subjectInvColor = #(x11-color 'darkgreen)
+
+subjectFirstColor = #(x11-color 'darkblue)
+subjectSecondColor = #(x11-color 'darkgreen)
+subjectThirdColor = #(x11-color 'firebrick)
+
 markWithColor =
 #(define-music-function (color music)
    (color? ly:music?)
@@ -20,6 +29,12 @@ markWithColor =
      %\startStaff
    #})
 
+red =
+#(define-music-function (music)
+   (ly:music?)
+   "Colour the given note(s) in red."
+   #{ \markWithColor #(x11-color 'red) #music #})
+
 unHighlightSubject = {
   \revert Tie.color
   \revert Stem.color
@@ -37,11 +52,13 @@ markWithColorExtended =
      \override Beam.color = #color
      \override Dots.color = #color
      \override NoteHead.color = #color
+     \override Rest.color = #color
      \override Stem.color = #color
      \override Tie.color = #color
      %\override Staff.LedgerLineSpanner.color = #color
      #music
      %\revert Staff.LedgerLineSpanner.color
+     \revert Rest.color
      \revert NoteHead.color
      \revert Dots.color
      \revert Accidental.color
@@ -50,38 +67,39 @@ markWithColorExtended =
      %\startStaff
    #})
 
-subjectColor = #(x11-color 'darkblue)
-subjectInvColor = #(x11-color 'darkgreen)
+highlightBACH =
+#(define-music-function (music)
+   (ly:music?)
+   "Colour the B.A.C.H. signature"
+   #{ \markWithColorExtended \BachSignatureColor #music #})
 
 highlightSubject =
 #(define-music-function (music)
    (ly:music?)
-   "Colour the given note(s) in dark blue"
-   #{
-     \markWithColorExtended \subjectColor #music
-   #})
-
+   "Colour the given note(s) to highlight a fugue subjets"
+   #{ \markWithColorExtended \subjectColor #music #})
 highlightSubjectInv =
 #(define-music-function (music)
    (ly:music?)
-   "Colour the given note(s) in dark green"
-   #{
-     \markWithColorExtended \subjectInvColor #music
-   #})
+   "Colour the given note(s) to highlight a fugue inverted subjets"
+   #{ \markWithColorExtended \subjectInvColor #music #})
 
-highlightBACH =
+highlightSubjectFirst =
 #(define-music-function (music)
    (ly:music?)
-   "Colour the B.A.C.H. notes"
-   #{
-     \markWithColorExtended #(x11-color 'darkcyan) #music
-   #})
-
-red =
+   "Colour the given note(s) to highlight a fugue first subjets"
+   #{ \markWithColorExtended \subjectFirstColor #music #})
+highlightSubjectSecond =
 #(define-music-function (music)
    (ly:music?)
-   "Colour the given note(s) in red."
-   #{ \markWithColor #(x11-color 'red) #music #})
+   "Colour the given note(s) to highlight a fugue first subjets"
+   #{ \markWithColorExtended \subjectSecondColor #music #})
+highlightSubjectThird =
+#(define-music-function (music)
+   (ly:music?)
+   "Colour the given note(s) to highlight a fugue first subjets"
+   #{ \markWithColorExtended \subjectThirdColor #music #})
+
 
 staffLower = { \change Staff = "lower" }
 staffUpper = { \change Staff = "upper" }

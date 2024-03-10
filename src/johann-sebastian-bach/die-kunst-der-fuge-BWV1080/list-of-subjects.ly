@@ -59,13 +59,14 @@ SubjectVIIIFirst = \relative {
   \commonSettings
   | r2^\markup \abs-fontsize #8 \italic { "first subject" }
     d''
-  | c4 f b, bes | a d g,2^\prallmordent | f4 g a8 g a4 | d,4 s
+  | c4 f b, bes | a d g,2^\prallmordent_\markup \abs-fontsize #8 \italic { "| the short version ends here" }
+  | f4 g a8 g a4 | d,4 s
 }
 SubjectVIIISecond = \relative {
   \commonSettings
   | s2^\markup \abs-fontsize #8 \italic { "second subject" }
     r4 bes'~
-  | bes8 gis a a a fis g g | g e f f f e d cis | d f e d cis d b cis | d2
+  | bes8 gis a a a fis g g | g e f f f e d cis | d s4.
 }
 SubjectVIIIThird = \relative {
   \commonSettings
