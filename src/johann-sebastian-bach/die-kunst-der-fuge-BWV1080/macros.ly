@@ -24,7 +24,6 @@ unHighlightSubject = {
   \revert Tie.color
   \revert Stem.color
   \revert Beam.color
-  \revert Accidental.color
 }
 
 markWithColorExtended =
@@ -45,17 +44,21 @@ markWithColorExtended =
      %\revert Staff.LedgerLineSpanner.color
      \revert NoteHead.color
      \revert Dots.color
+     \revert Accidental.color
      \unHighlightSubject
      %\stopStaff
      %\startStaff
    #})
+
+subjectColor = #(x11-color 'darkblue)
+subjectInvColor = #(x11-color 'darkgreen)
 
 highlightSubject =
 #(define-music-function (music)
    (ly:music?)
    "Colour the given note(s) in dark blue"
    #{
-     \markWithColorExtended #(x11-color 'darkblue) #music
+     \markWithColorExtended \subjectColor #music
    #})
 
 highlightSubjectInv =
@@ -63,7 +66,7 @@ highlightSubjectInv =
    (ly:music?)
    "Colour the given note(s) in dark green"
    #{
-     \markWithColorExtended #(x11-color 'darkgreen) #music
+     \markWithColorExtended \subjectInvColor #music
    #})
 
 highlightBACH =

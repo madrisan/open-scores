@@ -48,8 +48,8 @@ CommonSubjectV = {
 CommonSubjectVI = {
   \commonSettings
   | a'2^\markup \abs-fontsize #8 \italic  {
-      "dotted rhythm of V, also present in halving note lengths,"
-      "in recto and inversus forms"
+      "dotted rhythm of V, recto and inversus, also present in halving note lengths"
+      "without final dotted rhythm"
     }
     \once\override Stem.length = #5 d,4. e8
   | f4. g8 a2 | bes a4. g8 | f2~ f8. e16 f8. g16 | a8 s4.

@@ -52,10 +52,10 @@
 \markup { \indexItem #26 "Contrapunctus VI [per Diminutionem] in Stylo Francese" "25"
     "fugue with many stretto entries a 4 in Stylo Francese"
 }
-\markup { \indexItem #32 "Contrapunctus VII per per Augmentationem et Diminutionem" "31"
+\markup { \indexItem #33 "Contrapunctus VII per per Augmentationem et Diminutionem" "32"
   "fugue that uses augmented (doubling all note lengths) and diminished versions of the main subject and its inversion"
 }
-\markup { \indexItem #37 "Contrapunctus VIII" "36"
+\markup { \indexItem #39 "Contrapunctus VIII" "38"
   "triple fugue with three subjects, having independent expositions"
 }
 \markup { \indexItem #44 "Contrapunctus IX alla Duodecima" "43"
