@@ -527,7 +527,7 @@ Bass = \context Voice = "four" \relative c {
   | a4 r r2
   | \override MultiMeasureRest.staff-position = #-4
     R1*7
-  | \highlightSubjectSecond { d1_\markup \subject #'(0.5 . 0) #1
+  | \highlightSubjectSecond { d1_\markup \subject #'(0.5 . 0) #2
   %90
   | a'
   | f

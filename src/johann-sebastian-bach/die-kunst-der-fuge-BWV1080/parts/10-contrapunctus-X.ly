@@ -4,22 +4,25 @@ Global = {
   \include "../global.ly"
 }
 
+\include "../macros.ly"
+
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
+  \stemUp\tieDown
   | R1*5
   | \override MultiMeasureRest.staff-position = #4
     R1*2
-  | r2 r4 c
+  | r2 \highlightSubjectFirstInv { r4 c
   | b e r gis,
   %10
   | a e a8 g f e
   | d c b4~ b8 cis d e
-  | f e f d e fis g a
+  | \unHighlightSubject f } e f d e fis g a
   | bes a bes g a4 d~
   | d8 c d b c4 cis
   %15
   | d g, f a
-  | d4. e8 f g a4~
+  | \tieUp d4. e8 f g a4~
   | a bes8 a g f g4
   | c,1~
   | c8 fis, g a bes2~
@@ -27,12 +30,13 @@ Sopran = \context Voice = "one" \relative c'' {
   | bes a~
   | a8 d4 cis8 d2~
   | d4 cis d2\rest
-  | a'2 d,4. e8
+    \break
+  | \highlightSubjectSecond { a'2^\markup \subject #'(2.5 . 0) #2 d,4. e8
   | f4. g8 a2
   %25
   | bes a4. g8
   | f2~ f8 e fis gis
-  | a g!16 f e4~ e8 d c b
+  | \unHighlightSubject a } g!16 f e4~ e8 d c b
   | a gis a b cis d e f
   | g a bes g e a g a
   %30
@@ -52,6 +56,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | c8 b cis d e4 a,~
   | a8 a d cis d2~
   | d4 d cis2
+    \break
   | d8 bes c!4~ c8 a bes4~
   %45
   | bes8 a d4~ d8 cis d4~
@@ -79,10 +84,10 @@ Sopran = \context Voice = "one" \relative c'' {
   | c2. c4
   %65
   | f2~ f8 g f g
-  | e4 a, bes f
+  | e4 \highlightSubjectFirst { a,^\markup \subject #'(2.2 . 0) #1 bes f
   | r d' c f
   | bes,8 c d e f g a4~
-  | a8 g f e d2
+  | a8 g f e d2 }
   %70
   | c~ c8 c d e
   | f2~ f8 fis g a
@@ -90,22 +95,23 @@ Sopran = \context Voice = "one" \relative c'' {
   | g2~ g8 gis a b
   | c2 r8 e, f! g
   %75
-  | a2 d,4. e8
+  | \highlightSubjectSecond { a2^\markup \subject #'(2.5 . 0) #2 d,4. e8
   | f4. g8 a2
   | bes a4. g8
   | f2~ f8 e f g
-  | a f g4~ g8 d e g
+  | \unHighlightSubject a } f g4~ g8 d e g
   %80
   | c,2 bes~
   | bes8 g a c f2~
   | f4 b, e2~
   | e4 d r8 e f a
+    \break
   | d,2 c~
   %85
-  | c8 a b cis d4 a
+  | c8 a b \highlightSubjectFirst { cis^\markup \subject #'(1.5 . 0) #1 d4 a
   | r f' e a
   | d,8 e f g a bes c4~
-  | c8 bes a g f2
+  | c8 bes a g f2 }
   | \once\override NoteColumn.force-hshift = #0
     e r
   %90
@@ -116,20 +122,22 @@ Sopran = \context Voice = "one" \relative c'' {
   | f, bes r f~
   %95
   | f ees2 d4~
+    \break
   | d c2 bes4~
   | bes a~ a8 g g'4~
   | g8 e fis4 f2~
   | f4 ees8 d ees2~
+    \break
   %100
   | ees4 d8 c d ees f4~
   | f8 d e! f g4 bes,~
   | bes8 g a bes c d ees c
-  | d4 f bes,4. c8
+  | d4 \highlightSubjectSecond { f^\markup \subject #'(-1 . 0) #1 bes,4. c8
   | d4. e!8 f2
   %105
   | g f4. ees!8
   | d2~ d8 c d e!
-  | f4 f,8 g a bes c d
+  | f4 } f,8 g a bes c d
   | ees f g ees c f ees f
   | d ees f d bes g g'4~
   %110
@@ -141,6 +149,7 @@ Sopran = \context Voice = "one" \relative c'' {
   %115
   | e a4 g8 f e f g
   | a g a bes c d ees c
+    \break
   | d2 c4 f8 e
   | f4. cis8 d2~
   | d2. cis4
@@ -150,11 +159,12 @@ Sopran = \context Voice = "one" \relative c'' {
 
 Alto = \context Voice = "two" \relative c' {
   \voiceTwo
+  \stemDown\tieUp
   %1
-  | r4 cis d a
+  | \highlightSubjectFirst { r4_\markup \subject #'(0 . 0) #1 cis d a
   | r f' e a
   | d,8 e f g a bes c4~
-  | c8 bes a g fis d g4~
+  | c8 bes a g fis d \unHighlightSubject g4~ }
   %5
   | g8 e fis a bes2~
   | bes8 g a cis d2~
@@ -169,11 +179,11 @@ Alto = \context Voice = "two" \relative c' {
     R1
   | \override MultiMeasureRest.staff-position = #-8
     R1
-  | r4 gis a e
+  | \highlightSubjectFirst { r4_\markup \subject #'(1.5 . 0) #1 gis a e
   %15
   | r bes' a d
-  | g,8 a b cis d e f4~
-  | f8 e d c bes a bes4~
+  | g,8 a b cis d e f4_~
+  | \tieDown f8 e d c bes \unHighlightSubject a bes4~ }
   | bes a8 g f g f ees
   | d2~ d4 e!8 f
   %20
@@ -189,34 +199,34 @@ Alto = \context Voice = "two" \relative c' {
   | \override MultiMeasureRest.staff-position = #-6
     R1*5
   | s1*2
-  | d2 a4. b8
+  | \highlightSubjectSecond { d2_\markup \subject #'(0.8 . 0) #2 a4. b8
   %35
   | c4. d8 e2
   | f e4. d8
   | cis2~ cis8 a b cis
-  | d2~ d8 d c! b
+  | \unHighlightSubject d2~ } d8 d c! b
   | c2~ c8 c bes! a
   %40
   | bes2~ bes8 bes a g
   | a2~ a8 g f e
   | f2. f4
   | e2. e4
-  | a2 d,4. e8
+  | \highlightSubjectSecond { a2_\markup \subject #'(1.2 . 0) #2 d,4. e8
   %45
   | f4. g8 a2
   | bes a4. g8
   | f2~ f8 e f g
-  | a4 d~ d8 c bes a
+  | a4 } d~ d8 c bes a
   | g4 c~ c8 bes a g
   %50
   | f4 bes2 a4
   | e' r r2
-  | r4 d, f c
+  | \highlightSubjectFirst { r4_\markup \subject #'(1.5 . 0) #1 d, f c
   | r a' g c
   | f,8 g a b c d e4^~
   %55
   | e8 d c b a2~
-  | a8 fis gis4 r2
+  | a8 fis gis4 } r2
   | \override MultiMeasureRest.staff-position = #-2
     R1
   | \override MultiMeasureRest.staff-position = #-6
@@ -231,7 +241,7 @@ Alto = \context Voice = "two" \relative c' {
   | a4 d g,2~
   | g8 g f e f e d cis
   | d e f4~ f8 e d4~
-  | d d'8 cis d e f4~
+  | d \highlightSubjectFirst { \unHighlightSubject d'8 } cis d e f4~
   | f a, bes d,8 e
   %70
   | f e f g a4. g8
@@ -240,11 +250,11 @@ Alto = \context Voice = "two" \relative c' {
   | g b c d e2~
   | e4. d8 c4. b8
   %75
-  | c2 f,4. g8
+  | \highlightSubjectSecond { c2_\markup \subject #'(1.2 . 0) #1 f,4. g8
   | a4. bes8 c2
   | d c4. bes8
   | a2~ a8 g a bes
-  | c2 r
+  | c2 } r
   %80
   | r8 e, f a d,4 e
   | f4. e8 d a bes d
@@ -295,10 +305,10 @@ Alto = \context Voice = "two" \relative c' {
   | f8 a g f e4 d
   | cis8 d e4~ e8 e d4~
   %115
-  | d cis d a
+  | d \highlightSubjectFirst { cis d a
   | r f' e a
   | d,8 e f g a bes c4~
-  | c8 bes a g f g a4~
+  | c8 bes a g \unHighlightSubject f } g a4~
   | a1~
   %120
   | a2\fermata r
@@ -307,12 +317,12 @@ Alto = \context Voice = "two" \relative c' {
 Tenor = \context Voice = "three" \relative c' {
   \voiceThree
   | R1*2
-  | f,2\rest f4\rest fis
+  | f,2\rest \highlightSubjectFirst { f4\rest^\markup \subject #'(1 . 0) #1 fis
   | g d r bes'
   %5
   | a d g,8 a bes c
   | d e f4~ f8 e d c
-  | bes a d2 cis8 b
+  | bes a d2 } cis8 b
   | cis d e4~ e8 d e4~
   | e2. d4
   %10
@@ -320,12 +330,12 @@ Tenor = \context Voice = "three" \relative c' {
   | a g8 fis g2
   | f!8 g a b c2
   | bes8 c d e f2
-  | e4 f8 d e a, bes4
+  | e4 f8 d e a, \highlightSubjectFirstInv { bes4^\markup \scale #'(1 . -1) \subject #'(2.5 . 0) #1
   %15
   | a d r fis,
   | g d a'8 g f e
   | d c bes4~ bes8 c d e
-  | f g f2 g8 a
+  | \unHighlightSubject f } g f2 g8 a
   | bes2~ bes8 a g f
   %20
   | e4 f8 g a4 d
@@ -335,12 +345,12 @@ Tenor = \context Voice = "three" \relative c' {
     R1*2
   | \override MultiMeasureRest.staff-position = #10
     R1
-  | d2 a4. b8
+  | \highlightSubjectSecond { d2 a4. b8
   | c4. d8 e2
   | f e4. d8
   | cis2~ cis8 a b cis!
   %30
-  | d e f4~ f8 e d e
+  | \unHighlightSubject d } e f4~ f8 e d e
   | cis d e4~ e8 a, d4~
   | d8
     \change Staff = "upper"
@@ -356,11 +366,11 @@ Tenor = \context Voice = "three" \relative c' {
   | a2 r
   | \override MultiMeasureRest.staff-position = #8
     R1*6
-  | r4 fis g d
+  | \highlightSubjectFirst { r4^\markup \subject #'(1.5 . 0) #1 fis g d
   %45
   | r bes' a d
   | g,8 a bes c d e f4~
-  | f8 e d c bes2\trill
+  | f8 e d c bes2\trill }
   | a2. d8 c
   | bes a g2 c8 bes
   %50
@@ -384,12 +394,12 @@ Tenor = \context Voice = "three" \relative c' {
   | d r r2
   | \override MultiMeasureRest.staff-position = #4
     R1*5
-  | a'2 d,4. e8
+  | \highlightSubjectSecond { a'2^\markup \subject #'(2.5 . 0) #2 d,4. e8
   | f4. g8 a2
   | bes a4. g8
   | f2~ f8 e f g
   %70
-  | a c d e f4. e8
+  | \unHighlightSubject a } c d e f4. e8
   | d4. c8 bes4. a8
   | g d' e fis g4. f8
   | e4. d8 c4. b8
@@ -446,11 +456,11 @@ Tenor = \context Voice = "three" \relative c' {
   | a g f4 \stemDown bes4. a8
   | g1
   | f4. g8 a bes c a
-  | \stemUp bes4 f g d
+  | \stemUp bes4 \highlightSubjectFirst { f^\markup \subject #'(-0.8 . 0) #1 g d
   | r bes' a d
   %105
   | g,8 a bes c d ees f4~
-  | f8 ees d c bes2
+  | f8 ees d c bes2 }
   | a4 f' ees d
   | c2 f
   | bes,8 c d bes ees d c bes
@@ -461,10 +471,10 @@ Tenor = \context Voice = "three" \relative c' {
   | g d e f g a bes g
   | a1
   %115
-  | r4 a bes f
+  | \highlightSubjectFirst { r4^\markup \subject #'(1.8 . 0) #1 a bes f
   | r d' c f
   | bes,8 c d e f g a4~
-  | a8 g f e d4. e8
+  | a8 g f e d4. } e8
   | f4 e8 d e f g4~
   %120
   | g fis\fermata f,2\rest
@@ -475,11 +485,11 @@ Bass = \context Voice = "four" \relative c {
   | s1*2
   | \override MultiMeasureRest.staff-position = #-4
     R1*4
-  | r4 f e a
+  | \highlightSubjectFirstInv { r4_\markup \scale #'(1 . -1) \subject #'(1.5 . 0) #1 f e a
   | r cis, d a
   | e'8 d c b a g f4~
   %10
-  | f8 g a b c4 a
+  | f8 g a b c4 } a
   | b e~ e8 a, b cis
   | d2 c!8 d e fis
   | g2 d8 e f g
@@ -501,12 +511,12 @@ Bass = \context Voice = "four" \relative c {
   | d4 d, r2
   %--
   | R1*4
-  | a'2 d,4. e8
+  | \highlightSubjectSecond { a'2_\markup \subject #'(0.5 . 0) #2 d,4. e8
   | f4. g8 a2
   | bes a4. g8
   | f2~ f8 e f g
   %35
-  | a2~ a8 g f e
+  | \unHighlightSubject a2~ } a8 g f e
   | d2 g~
   | g8 g f e f2~
   | f8 e f g a2~
@@ -526,12 +536,12 @@ Bass = \context Voice = "four" \relative c {
   %50
   | e4 d8 cis d2~
   | d cis
-  | d a4. b8
+  | \highlightSubjectSecond { d_\markup \subject #'(1.2 . 0) #2 a4. b8
   | c4. d8 e2
   | f e4. d8
   %55
   | c2~ c8 b c d
-  | e dis e4 r e
+  | \unHighlightSubject e } dis e4 r e
   | fis8 gis a2 gis8 fis
   | g!4 f! e d
   | cis d8 bes g4 a
@@ -554,20 +564,20 @@ Bass = \context Voice = "four" \relative c {
   | b\rest c8\rest e fis gis
   | a2 b,\rest
   %75
-  | b4\rest a' bes f
+  | \highlightSubjectFirst { b4\rest_\markup \subject #'(0.5 . 0) #1 a' bes f
   | r d c f
   | bes,8 c d e f g a4~
-  | a8 g f e d2
+  | a8 g f e d2 }
   | c b\rest
   %80
   | \override MultiMeasureRest.staff-position = #-6
     R1*5
   %85
-  | g'2 d4. e8
+  | \highlightSubjectSecond { g'2_\markup \subject #'(0 . 0) #2 d4. e8
   | f4. g8 a2
   | bes a4. g8
   | f2~ f8 e f g
-  | \once\override NoteColumn.force-hshift = #0 a2
+  | \once\override NoteColumn.force-hshift = #0 a2 }
     d,8\rest a' g a
   %90
   | bes4 fis a d,
@@ -582,11 +592,11 @@ Bass = \context Voice = "four" \relative c {
   | d r
   %--
   | R1*4
-  | r4 d' ees bes
+  | \highlightSubjectFirst { r4_\markup \subject #'(0.5 . 0) #1 d' ees bes
   | r g' f bes
   %105
   | ees,8 f g a bes c d4~
-  | d8 c bes a g2
+  | d8 c bes a g2 }
   | f r
   | \override MultiMeasureRest.staff-position = #-4
     R1*7
