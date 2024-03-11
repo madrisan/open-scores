@@ -8,10 +8,10 @@ subjectFirstColor = #(x11-color 'darkblue)
 subjectFirstInvColor = #(x11-color 'royalblue)
 
 subjectSecondColor = #(x11-color 'darkred)
-subjectSecondInvColor = #(x11-color 'chocolate)
+subjectSecondInvColor = #(x11-color 'maroon)
 
-subjectThirdColor = #(x11-color 'darkred)
-subjectThirdInvColor = #(x11-color 'maroon)
+subjectThirdColor = #(x11-color 'darkgreen)
+subjectThirdInvColor = #(x11-color 'forestgreen)
 
 markWithColor =
 #(define-music-function (color music)
@@ -106,7 +106,7 @@ highlightSubjectThirdInv =
 #(define-music-function (music)
    (ly:music?)
    "Colour the given note(s) to highlight fugues third interted subjets"
-   #{ \markWithColorExtended \subjectThirdCInvolor #music #})
+   #{ \markWithColorExtended \subjectThirdInvColor #music #})
 
 staffLower = { \change Staff = "lower" }
 staffUpper = { \change Staff = "upper" }
