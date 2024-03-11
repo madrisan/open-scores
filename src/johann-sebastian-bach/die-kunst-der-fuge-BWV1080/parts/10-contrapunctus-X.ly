@@ -12,7 +12,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | R1*5
   | \override MultiMeasureRest.staff-position = #4
     R1*2
-  | r2 \highlightSubjectFirstInv { r4 c
+  | r2 \highlightSubjectFirstInv { r4 c^\markup \scale #'(1 . -1) \subject #'(2.5 . 0) #1
   | b e r gis,
   %10
   | a e a8 g f e
@@ -132,7 +132,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | ees4 d8 c d ees f4~
   | f8 d e! f g4 bes,~
   | bes8 g a bes c d ees c
-  | d4 \highlightSubjectSecond { f^\markup \subject #'(-1 . 0) #1 bes,4. c8
+  | d4 \highlightSubjectSecond { f^\markup \subject #'(-1 . 0) #2 bes,4. c8
   | d4. e!8 f2
   %105
   | g f4. ees!8
@@ -262,10 +262,10 @@ Alto = \context Voice = "two" \relative c' {
   | f2 r
   | r8 fis g bes e,4 fis
   %85
-  | g8 fis g4 \stemUp bes f
+  | g8 fis \highlightSubjectFirst { g4 \stemUp bes f
   | r4 d' c \stemNeutral f
   | bes,8 c d e f g a4~
-  | a8 g f e d2
+  | a8 g f e d2 }
   | \once\override NoteColumn.force-hshift = #0 cis
     r
   %90
@@ -345,7 +345,7 @@ Tenor = \context Voice = "three" \relative c' {
     R1*2
   | \override MultiMeasureRest.staff-position = #10
     R1
-  | \highlightSubjectSecond { d2 a4. b8
+  | \highlightSubjectSecond { d2^\markup \subject #'(2.3 . 0) #2 a4. b8
   | c4. d8 e2
   | f e4. d8
   | cis2~ cis8 a b cis!
@@ -406,7 +406,7 @@ Tenor = \context Voice = "three" \relative c' {
   | a8 e' fis gis a4. g8
   %75
   | f e f c d c d bes
-  | a g f4~ f8 e f a~
+  | a g f4~ f8 e \highlightSubjectFirst { \unHighlightSubject f } a~
   | a g f g a4. bes8
   | c2. f,4~
   | f8 d e g c4. bes8
@@ -592,7 +592,7 @@ Bass = \context Voice = "four" \relative c {
   | d r
   %--
   | R1*4
-  | \highlightSubjectFirst { r4_\markup \subject #'(0.5 . 0) #1 d' ees bes
+  | \highlightSubjectFirst { r4 d'_\markup \subject #'(0.5 . 0) #1 ees bes
   | r g' f bes
   %105
   | ees,8 f g a bes c d4~
