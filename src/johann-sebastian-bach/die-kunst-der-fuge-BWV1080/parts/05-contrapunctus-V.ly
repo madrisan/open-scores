@@ -194,12 +194,12 @@ Alto = \context Voice = "two" \relative c' {
   | g2 f
   %40
   | e d
-  | c4 r g'2
+  | c4 r \highlightSubjectFirst { g'2_\markup \subject #'(1.2 . 0) #1
   | d'4. c8 bes4. a8
   | g2 fis
   | g4. a8 bes2~
   %45
-  | bes8 c bes a g bes a g
+  | bes8 c bes a \unHighlightSubject g } bes a g
   | a4 c f,4. g8
   | f ees d c d4 r
   | r8 a bes c d c ees4
@@ -421,12 +421,12 @@ Bass = \context Voice = "four" \relative c {
   | \highlightSubjectFirst { \unHighlightSubject a~ } a8 g! f4
   | e1~
   | e2 b\rest
-  | a' d,4. e8
+  | \highlightSubjectFirstInv { a'_\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 d,4. e8
   | f4. g8 a2
   %25
   | bes a4. g8
   | f2~ f8 e f g
-  | a2 c,8\rest a' g f
+  | a2 } c,8\rest a' g f
   | e2 d~
   | d8 d c bes a2
   %30

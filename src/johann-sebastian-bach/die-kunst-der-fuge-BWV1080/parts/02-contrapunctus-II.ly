@@ -101,13 +101,13 @@ Alto = \context Voice = "two" \relative c' {
   \voiceTwo
   | s1*8
   | \stemUp
-    d2^\markup \subject #'(0 . 0) #1 a'
+    \highlightSubjectFirst { d2^\markup \subject #'(0 . 0) #1 a'
   %10
   | f d
   | cis d4 e
   | f2~ f8.[ g16 f8. e16]
   | \stemDown
-    d8.[ e16 f8. g16] a2~
+    \unHighlightSubject d8.[ } e16 f8. g16] a2~
   | a8.[ g16 f8. e16~] e8.[ f16 e8. d16~]
   %15
   | d8.[ d16 e8. f16] e4 d
@@ -119,7 +119,7 @@ Alto = \context Voice = "two" \relative c' {
   | a8. fis16 g8. a16 bes4 a
   | gis r a2\rest
   | a\rest b
-  | \highlightSubjectFirst { \unHighlightSubject a8.[} e'16 f8. g16] \highlightSubjectFirst { a2
+  | a8.[ \highlightSubjectFirst { e'16 f8. g16] a2
   | f d
   %25
   | \stemUp

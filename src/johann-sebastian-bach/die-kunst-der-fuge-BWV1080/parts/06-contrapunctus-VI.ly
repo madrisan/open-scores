@@ -54,7 +54,8 @@ Soprano = \context Voice = "one" \relative c'' {
   | g8~[ g32 e' f g] f8.[ e16] d8.[ c16] bes4
   | a8 r r4 r2
   %35
-  | \highlightSubjectFirstInv { d2^\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 g,4. a8
+  | \highlightSubjectFirstInv { d2^\markup \scale #'(1 . -1) \subject-augmentatio #'(0 . 0) #1 "+"
+    g,4. a8
   | bes4. c8 d2
   | ees d4. c8
   | bes2~ bes8. a16 bes8. c16
@@ -87,7 +88,7 @@ Soprano = \context Voice = "one" \relative c'' {
     R1*2
   | s1*2
   %64
-  | r2 \highlightSubjectFirstInv { a2^\markup \scale #'(1 . -1) \subject #'(0 . 0) #1
+  | r2 \highlightSubjectFirstInv { a2^\markup \scale #'(1 . -1) \subject-augmentatio #'(0 . 0) #1 "+"
   %65
   | \once\override NoteColumn.force-hshift = #0.5 d,4.
     e8 f4. g8
@@ -102,14 +103,14 @@ Soprano = \context Voice = "one" \relative c'' {
   | a,4\fermata r8 e'32[ f g16] f e d cis d4~
   | d8. e16 cis8. d16 d4 r
   %75
-  | r2 d
+  | r2 \highlightSubjectFirstInv { d^\markup \scale #'(1 . -1) \subject-augmentatio #'(2.5 . 0) #1 "+" }
     << {
-  |   g,4. a8 bes4. c8
+  |   \highlightSubjectFirstInv { g,4. a8 bes4. c8
   |   \once\override NoteColumn.force-hshift = #0.9 d2
       \once\override NoteColumn.force-hshift = #0.8 ees
   |   \once\override NoteColumn.force-hshift = #0.8 d4.
       c8 \tieDown bes2^~
-  |   \stemDown bes8. a16 bes8. cis16 d2
+  |   \stemDown bes8. a16 bes8. cis16 d2 }
     } \new Voice {
   |     \stemUp \tieUp g2\rest a8.\rest d,16 g8. fis16
   |     % this weird \shiftOn is required to remove a few build warnings
@@ -132,7 +133,7 @@ Alto = \context Voice = "two" \relative c' {
   | f4~ f16 g f e d4 } e8. f16
   | g4 f~ f8.[ e16 f8. g16]
   | a2~ a8.[ b16] c8~[ c32 b a gis]
-  | \highlightSubjectFirst { a2_\markup \subject #'(-2 . 0) #1 e'4. d8
+  | \highlightSubjectFirst { a2_\markup \subject-augmentatio #'(-3 . 0) #1 "+" e'4. d8
   | c4. b8 a2
   %10
   | gis a4. b8
@@ -145,7 +146,7 @@ Alto = \context Voice = "two" \relative c' {
   | bes8.[ g16 f8. e16] d8. cis'16 d4~
   | d8.[ b16 cis8. a16] f8.[ e16 f8. g16]
   | a4~ a8. bes16 \stemDown a8. g'16 \stemNeutral f e d cis
-  | \stemUp d4^~ d16 c b a b8. g16 c4^~
+  | \stemUp d4^~ d16 c b a b8. \highlightSubjectFirst { \unHighlightSubject g16 } c4^~
   %20
   | c8.[ b32 a] b8.^\trill c16 c8. bes16 a8.[^\trill g32 a]
   | \stemDown bes8.[ d16 c8. bes16] a4~ a8. g16
@@ -153,7 +154,7 @@ Alto = \context Voice = "two" \relative c' {
   | g8. e16 f4~ f8.[ e16 f8. g16]
   | a4 d g, r
   %25
-  | \highlightSubjectFirst { f2_\markup \subject #'(1 . 0) #1 c'4. bes8
+  | \highlightSubjectFirst { f2_\markup \subject-augmentatio #'(1 . 0) #1 "+" c'4. bes8
   | a4. g8 f2
   | e f4. g8
   | a2~ a8.[ bes16 a8. g16]
@@ -161,7 +162,7 @@ Alto = \context Voice = "two" \relative c' {
   %30
   | e2~ e8.[ c16 f8. e16]
   | d2. cis4
-  | \highlightSubjectFirstInv { a'4_\markup \scale #'(1 . -1) \subject #'(-1.6 . 0) #1 d,8.[ e16] f8.[ g16] a4
+  | \highlightSubjectFirstInv { a'4^\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 d,8.[ e16] f8.[ g16] a4
   | bes a8. g16 f4~ f16 e f g
   | \unHighlightSubject a8.[ } bes16 c8. d16] g,8. ees'16 a,8.[ bes32 c]
   %35
@@ -191,7 +192,8 @@ Alto = \context Voice = "two" \relative c' {
   | a8. d,16 g8. f16 e8. d16 cis4
   | d2~ d16[ d e f] e d cis b
   | cis4~ cis16 a b cis d8. e16 f8. g16
-    \highlightSubjectFirstInv { a2_\markup \scale #'(1 . -1) \subject #'(1.3 . 0) #1 \stemUp d,4. e8
+    \highlightSubjectFirstInv { a2_\markup \scale #'(1 . -1) \subject-augmentatio #'(1.3 . 0) #1 "+"
+    \stemUp d,4. e8
   | f4. g8 a2
   %60
   | bes a4. g8
@@ -200,7 +202,7 @@ Alto = \context Voice = "two" \relative c' {
   | bes[ c bes a] g g, a bes c[ d c bes] a bes a g
   | f8~ f32 a b cis] \stemDown d4~ d8. cis!16 d8. e16
   %65
-  | f4 r \highlightSubjectFirst { d^\markup \subject #'(0 . 0) #1 a'8. g16
+  | f4 r \highlightSubjectFirst { d_\markup \subject #'(1.3 . 0) #1 a'8. g16
   | f8. e16 d4 cis d8. e16
   | f4~ f16 g f e \unHighlightSubject d8. } a16 bes8. c16
   | d2~ d8.[ a16 d8. c16]
@@ -235,7 +237,7 @@ Tenor = \context Voice = "three" \relative c' {
   | g8~[ g32 d' e f] g8.[ f16] e8.[ f16] e8.[ d16]
   %15
   | cis4 a~ a r
-  | \highlightSubjectFirst { d2^\markup \subject #'(2.2 . 0) #1
+  | \highlightSubjectFirst { d2^\markup \subject-augmentatio #'(2.2 . 0) #1 "+"
     \change Staff = "upper"
     \stemDown
     a'4. g8
@@ -247,7 +249,8 @@ Tenor = \context Voice = "three" \relative c' {
     \stemDown
     f2_~ f8. g16 f8. e16
   %20
-  | d4 } d\rest \highlightSubjectFirstInv { c2_\markup \scale #'(1 . -1) \subject #'(1.2 . 0) #1
+  | d4 } d\rest
+    \highlightSubjectFirstInv { c2_\markup \scale #'(1 . -1) \subject-augmentatio #'(1.2 . 0) #1 "+"
   | \change Staff = "lower"
     \stemUp
     f,4. g8 a4. bes8
@@ -265,7 +268,7 @@ Tenor = \context Voice = "three" \relative c' {
     R1
   | \override MultiMeasureRest.staff-position = #8
     R1
-  | \highlightSubjectFirst { d,2^\markup \subject #'(2.4 . 0) #1 a'4. g8
+  | \highlightSubjectFirst { d,2^\markup \subject-augmentatio #'(2.4 . 0) #1 "+" a'4. g8
   | f4. e8 d2
   | cis d4. e8
   | f2~ f8.[ g16 f8. ees16]
@@ -334,11 +337,11 @@ Bass = \context Voice = "four" \relative c {
   \voiceFour
   %1
   | \highlightSubjectFirst { d2
-    %_\markup \italic \tiny \with-color #greyTextColor {
-    %    \ieyeglasses
-    %  "In Contrapunctus 6 there are 14 entries (15?) of the subject rectus and 14 (13?) entries inversus"
-    %}
-    ^\markup \subject #'(0 . 0) #1
+    _\markup \italic \tiny \with-color #greyTextColor {
+        \ieyeglasses
+      "In Contrapunctus 6 there are 14 entries of the subject rectus and 14 entries inversus"
+    }
+    ^\markup \subject-augmentatio #'(0 . 0) #1 "+"
     a'4. g8
   | f4. e8 d2
   | cis d4. e8
@@ -392,7 +395,9 @@ Bass = \context Voice = "four" \relative c {
   %45
   | g8.[ g'16 f8. e16] d8~[ d32 a' b cis] d8. c16
   | \stemDown bes8.[ a16 bes8. g16] a4 d,\rest
-  | \stemUp \highlightSubjectFirstInv { a2_\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 d,4. e8
+  | \stemUp
+    \highlightSubjectFirstInv { a2_\markup \scale #'(1 . -1) \subject-augmentatio #'(0 . 0) #1 "+"
+    d,4. e8
   | \stemDown f4. g8 a2
   | bes a4. g8
   %50

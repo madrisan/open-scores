@@ -134,12 +134,12 @@ Soprano = \context Voice = "one" \relative c'' {
   | d8 ees d cis d4. e8
   %110
   | f4 a f f\rest
-  | d a2 c4~
+  | \highlightSubjectFirstInv { d^\markup \scale #'(1 . -1) \subject #'(-1 . 0) #1 a2 c4~
   | c e2 f4~
   | f e2 d4~
   | d cis~ cis8 a b cis
   %115
-  | d2 r4 d
+  | d2 } r4 d
   | bes2 r
   | r8 bes c d c bes a g
   | a1~
@@ -655,12 +655,12 @@ Bass = \context Voice = "four" \relative c {
   %105
   | b4\rest a' f2
   | r4 f d2~
-  | d4 f2 bes,4~
+  | d4 \highlightSubjectFirstInv { f2_\markup \scale #'(1 . -1) \subject #'(0.5 . 0) #1 bes,4~
   | bes d2 f4~
   | f g~ g8 f4 e8
   %110
   | d2~ d8 cis d e
-  | f2~ f8 f e d
+  | f2~ } f8 f e d
   | c2~ c8 b4 bes8
   | a1~
   | a8 g' a bes a g f e

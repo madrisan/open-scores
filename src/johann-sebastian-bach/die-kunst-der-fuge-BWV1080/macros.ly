@@ -161,6 +161,28 @@ staffUpper = { \change Staff = "upper" }
               ((eq? num 3) (make-musicglyph-markup "three"))
               ((eq? num 4) (make-musicglyph-markup "four"))))))))
 
+#(define-markup-command (subject-augmentatio layout props dest num ratio)
+  (number-pair? number? string?)
+  "Draw an annotation (a circle around the subject number)."
+  (let ((x (car dest))
+        (y (cdr dest)))
+  (interpret-markup layout props
+   (make-concat-markup
+    (append
+     (list
+      (markup
+        #:override '(box-padding . 0.3)
+        #:hspace x #:lower y #:circle #:normal-text #:teeny
+        (make-with-color-markup greyTextColor
+        (cond ((eq? num 1) (make-musicglyph-markup "one"))
+              ((eq? num 2) (make-musicglyph-markup "two"))
+              ((eq? num 3) (make-musicglyph-markup "three"))
+              ((eq? num 4) (make-musicglyph-markup "four")))))
+      (markup
+       #:normal-text #:teeny #:raise 0.4
+       (make-with-color-markup greyTextColor
+         ratio))))))))
+
 #(define (override-color-for-all-grobs color)
   (lambda (context)
    (let loop ((x all-grob-descriptions))

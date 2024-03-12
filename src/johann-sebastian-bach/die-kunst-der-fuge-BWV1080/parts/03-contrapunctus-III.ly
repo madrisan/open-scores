@@ -60,12 +60,12 @@ Soprano = \context Voice = "one" \relative c'' {
   %55
   | g8 fis g a~ a fis g4
   | R1*2
-  | d2 a4. b8
+  | \highlightSubjectFirstInv { d2^\markup \scale #'(1 . -1) \subject #'(-0.8 . 0) #1 a4. b8
   | c4. d8 e4. d8
   %60
   | f2~ f8 e4 d8
   | cis4 c~ c8 a b cis
-  | d2~ d8 d e f
+  | \unHighlightSubject d2~ } d8 d e f
   | g4. fis8 g4. gis8
   | a2~ a8 a g f
     \break
@@ -152,7 +152,7 @@ Alto = \context Voice = "two" \relative c' {
   | c a bes c d2~
   | d~ d8 cis d e
   %55
-  | \highlightSubjectFirstInv { a,2_\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 d,4. e8
+  | \highlightSubjectFirstInv { a,2_\markup \scale #'(1 . -1) \subject #'(1.3 . 0) #1 d,4. e8
   | f!4. g8 a4. g8
   | bes2~ bes8 a4 g8
   | f2~ f8 e fis gis

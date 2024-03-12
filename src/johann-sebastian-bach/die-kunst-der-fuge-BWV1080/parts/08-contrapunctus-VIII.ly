@@ -30,11 +30,11 @@ Soprano = \context Voice = "one" \relative c'' {
   | c8 ees d c d bes c a
   | bes1~
   | bes8 d c bes c a bes g
-  | a4 d gis, \highlightSubjectFirst { g^\markup \subject #'(-0.4 . 0) #1
+  | a4 d gis, g
   | f bes e, ees
   %30
   | d g cis, c~
-  | c8 c \unHighlightSubject bes } a bes d c ees
+  | c8 c bes a bes d c ees
   | d a' g fis g bes a c
   | bes2~ bes8 g a f
   | g2 c4\rest cis
@@ -133,12 +133,12 @@ Soprano = \context Voice = "one" \relative c'' {
   | e8 a,8 c ees d bes c a
   | bes4 r8 g' fis4 f
   | r8 ees d c d4 ees~
-  | ees8 d cis d e fis \highlightSubjectSecond { g^\markup \subject #'(0 . 0) #2 g
+  | ees8 d cis d e fis g g
   | g e f! f f d ees ees
   %115
-  | ees cis d d d b } \highlightSubjectSecond { c^\markup \subject #'(0 . 0) #2 c
+  | ees cis d d d b c c
   | c a bes! bes bes g aes aes
-  | aes fis g2 } fis4
+  | aes fis g2 fis4
   | g2 fis8 g a4~
   | a g8 g g e f f
   %120
@@ -201,10 +201,10 @@ Soprano = \context Voice = "one" \relative c'' {
   | e8 d cis e d e f4~
   | f8 e d f e d cis b
   | cis4 f b,8 d cis e
-  | a,4 \highlightSubjectSecond { a'8^\markup \subject #'(-1 . 0) #2 a a fis g g
+  | a,4 a'8 a a fis g g
   %170
   | g e f! f f d e e
-  | e4 } \highlightSubjectThird { a,^\markup \subject #'(-0.8 . 0) #3 d, e
+  | e4 \highlightSubjectThird { a,^\markup \subject #'(-0.8 . 0) #3 d, e
   | b'\rest f g a
   | b\rest bes a g
   | b\rest f8 e f4 g
@@ -377,7 +377,9 @@ Alto = \context Voice = "two" \relative c' {
   | d4 r r2
   | r4 bes' a2
   | d,4 g2 fis4
-  | g8 d \highlightSubjectSecond { g^\markup \subject #'(0 . 0) #2 g g e! f! f
+  | g8 d
+    % this is not really a subject because it belongs to a fugue episode
+    \highlightSubjectSecond { g^\markup \subject #'(0 . 0) #2 g g e! f! f
   %75
   | f d ees ees ees cis d d
   | d b c! c c bes a g
@@ -405,9 +407,9 @@ Alto = \context Voice = "two" \relative c' {
     \stemDown\tieDown
     c\rest c\rest cis'
   | d r r c!
-  | \highlightSubjectSecond { bes8_\markup \subject #'(0 . 0) #2 bes bes g a a a f
+  | bes8 bes bes g a a a f
   %90
-  | g g g e f4 \unHighlightSubject d8 } g
+  | g g g e f4 d8 g
   | e4 r r g8 g
   | g e f4 r g
   | a2 r
@@ -440,11 +442,11 @@ Alto = \context Voice = "two" \relative c' {
   | f!4 fis g4. fis8
   | g4 r8 d' c a d aes
   | g4 aes~ aes8 g fis g
-  | a!4 bes r \highlightSubjectFirst { bes_\markup \subject #'(0 . 0) #1
+  | a!4 bes r bes
   | a d gis, g
   %115
   | f bes e, ees
-  | d } g cis, c
+  | d g cis, c
   | b bes a2%\prallmordent
   | g4 d'8 d d bes c c
   | c a bes bes a4 d8 d
@@ -567,11 +569,11 @@ Alto = \context Voice = "two" \relative c' {
     \stemDown\tieDown
     r8 f' f e e g g fis
   | fis a a g g4 bes!
-  | a c bes8 a bes4~
+  | a c bes8 a \highlightSubjectSecond { bes4~_\markup \subject #'(1.2 . 0) #2
   | bes8 gis a a a fis g g
   | g e f! f f ees d cis
   %185
-  | d f e! d cis d b cis
+  | \unHighlightSubject d } f e! d cis d b cis
   | d bes! a g a[ d16 c] bes a g8
   | \change Staff = "lower"
     \stemUp\tieUp
@@ -602,11 +604,11 @@ Bass = \context Voice = "four" \relative c {
   %20
   | \stemUp bes, a bes g
   | \stemNeutral a8 a' g f g e f d
-  | e2 d4 g
+  | \highlightSubjectFirst { e2_\markup \subject #'(0.8 . 0) #1 d4 g
   | cis, c b e
   | a,2 r4 a'8 g
   %25
-  | fis4 d e fis
+  | fis4 d e } fis
   | \once\stemDown g, a bes g
   | c d e c
   | f,8 g' f e f d e cis
@@ -656,9 +658,8 @@ Bass = \context Voice = "four" \relative c {
   | bes a g f e f d e
   | f e d c b c a b
   | c d e f g a
-    \once\override NoteHead.color = \subjectFirstColor bes!
-    g
-  | \highlightSubjectFirst { a4 d g, ges
+    \highlightSubjectFirst { bes!_\markup \subject #'(0 . 0) #1 g
+  |  a4 d g, ges
   | f bes ees,2\prallmordent
   %70
   | d4 ees f8 ees f4
@@ -671,7 +672,9 @@ Bass = \context Voice = "four" \relative c {
   | g aes fis g~
   | g8 e f! f f d e e
   | d4 d'\rest d2\rest
-  | d4\rest \highlightSubjectSecond { g~_\markup \subject #'(0 . 0) #2 g8 e f f
+  | d4\rest
+    % this is not really a subject because it belongs to a fugue episode
+    \highlightSubjectSecond { g~_\markup \subject #'(0 . 0) #2 g8 e f f
   %80
   | f dis e e e cis d d
   | d b c! c c b a gis

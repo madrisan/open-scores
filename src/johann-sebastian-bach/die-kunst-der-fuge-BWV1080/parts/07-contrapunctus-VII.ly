@@ -10,7 +10,8 @@ Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
   %1
   | R1
-  | \highlightSubjectFirstInv { a'2^\markup \scale #'(1 . -1) \subject #'(2.5 . 0) #1 d,4. e8
+  | \highlightSubjectFirstInv { a'2^\markup \scale #'(1 . -1) \subject-augmentatio #'(2.5 . 0) #1 "+"
+    d,4. e8
   | f4. g8 a2
   | bes a4. g8
   %5
@@ -26,7 +27,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | d16 f e d cis4~ cis16 cis d e f4~
   | f16 e f g a4 g~ g16 bes a g
   | fis4~ fis16 fis g a d,4 ees
-  | \highlightSubjectFirst { d r a^\markup \subject #'(-0.5 . 0) #1 d8. c16
+  | d r \highlightSubjectFirst { a^\markup \subject #'(-0.5 . 0) #1 d8. c16
   | bes8. a16 g4 fis g8. a16
   %15
   | bes4~ bes16 c bes a \unHighlightSubject  g4~ } g16 aes g f
@@ -56,7 +57,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | cis8. d16 e8. cis16 d[ f e d] cis e a, g
   | f[ g f e] d f bes a g[ f e f] g bes d cis
   | d4 r16 d c bes a4 r16 cis d e
-  | f g f e \highlightSubjectFirst { d4^\markup \subject #'(2.5 . 0) #1 a'4. g8
+  | f g f e \highlightSubjectFirst { d4^\markup \subject-augmentatio #'(2.5 . 0) #1 "+" a'4. g8
   | f4. e8 d2
   %40
   | cis d4 e
@@ -69,7 +70,7 @@ Soprano = \context Voice = "one" \relative c'' {
     R1
   | s1*4
   %50
-  | \highlightSubjectFirst { d1^\markup \subject #'(0 . 0) #1
+  | \highlightSubjectFirst { d1^\markup \subject-augmentatio #'(0 . 0) #1 "++"
   | a'2. g4
   | f2. \once\override NoteColumn.force-hshift = #-0.4 e4
   | d1
@@ -119,7 +120,8 @@ Alto = \context Voice = "two" \relative c' {
   | c8 d16 e f4~ f16 f ees d ees4~
   | ees16 d c bes c4~ c16[ c bes a] g8 c
   | fis,16 d e fis g4~ g16 g fis e fis!4
-  | g8. f!16 ees4 \highlightSubjectFirstInv { d2_\markup \scale #'(1 . -1) \subject #'(1.5 . 0) #1
+  | g8. f!16 ees4
+    \highlightSubjectFirstInv { d2_\markup \scale #'(1 . -1) \subject-augmentatio #'(1.5 . 0) #1 "+"
   %15
   | \change Staff = "lower"
     \stemUp
@@ -160,7 +162,7 @@ Alto = \context Voice = "two" \relative c' {
     R1*2
   %35
   | \once\override NoteColumn.force-hshift = #0.7
-    \highlightSubjectFirstInv { a'1^\markup \scale #'(1 . -1) \subject #'(0.8 . 0) #1
+    \highlightSubjectFirstInv { a'1^\markup \scale #'(1 . -1) \subject-augmentatio #'(0.8 . 0) #1 "++"
   | d,2. e4
   | f2. g4
   | a1
@@ -238,10 +240,10 @@ Tenor = \context Voice = "three" \relative c' {
   | \stemUp a bes8. c16 d4~ d16 ees d c
   | \unHighlightSubject b } d ees f g4~ g8[ d~] d16 d c bes
   %20
-  | \highlightSubjectFirst { c4^\markup \scale #'(1 . -1) \subject #'(2.5 . 0) #1 f8. ees16 d8. c16 bes4
+  | \highlightSubjectFirst { c4^\markup \subject #'(2.5 . 0) #1 f8. ees16 d8. c16 bes4
   | a4. bes16 c d4~ d16 ees d c
   | \unHighlightSubject bes4~ } bes16 bes a g f8[ bes~] bes16 bes a g
-  | a g f e \highlightSubjectFirst { f2.^\markup \subject #'(2.5 . 0) #1
+  | a g f e \highlightSubjectFirst { f2.^\markup \subject-augmentatio #'(2.5 . 0) #1 "++"
   | c'2. bes4
   %25
   | a2. g4
@@ -320,7 +322,7 @@ Bass = \context Voice = "four" \relative c {
     R1*2
   | s1*2
   %5
-  | \highlightSubjectFirstInv { d1_\markup \scale #'(1 . -1) \subject #'(0.8 . 0) #1
+  | \highlightSubjectFirstInv { d1_\markup \scale #'(1 . -1) \subject-augmentatio #'(0.8 . 0) #1 "++"
   | a2. b4
   | c2. d4
   | e1
