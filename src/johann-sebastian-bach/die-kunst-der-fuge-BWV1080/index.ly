@@ -71,31 +71,31 @@
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #62 {
+    \page-link #64 {
       \pad-markup #0.5 {
-        \fill-with-pattern #1 #RIGHT . "Contrapunctus XII [rectus]" "61"
+        \fill-with-pattern #1 #RIGHT . "Contrapunctus XII [rectus]" "63"
       }
     }
   }
 }
-\markup { \indexItem #65 "Contrapunctus XII inversus" "64"
+\markup { \indexItem #67 "Contrapunctus XII inversus" "66"
   "mirror fugues, in which a piece is notated once and then with voices and counterpoint completely inverted"
 }
 \markup \column \abs-fontsize #11 {
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #68 {
+    \page-link #70 {
       \pad-markup #0.5 {
-        \fill-with-pattern #1 #RIGHT . "Contrapunctus XIII [rectus]" "67"
+        \fill-with-pattern #1 #RIGHT . "Contrapunctus XIII [rectus]" "69"
       }
     }
   }
 }
-\markup { \indexItem #72 "Contrapunctus XIII inversus" "71"
+\markup { \indexItem #74 "Contrapunctus XIII inversus" "73"
   "mirror fugues, in which a piece is notated once and then with voices and counterpoint completely inverted"
 }
-\markup { \indexItem #75 "Contrapunctus XIV" "74"
+\markup { \indexItem #78 "Contrapunctus XIV" "77"
   "four-voice triple fugue (not completed by Bach, but likely to have become a quadruple fugue: see below)"
 }
 

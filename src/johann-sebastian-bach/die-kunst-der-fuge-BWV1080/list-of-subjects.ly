@@ -153,20 +153,20 @@ SubjectXIIIFirst = {
   | r2^\markup \abs-fontsize #8 \italic {
       "subject from the rectus (the notes in red correspond to the main subject)"
     }
-    r4 \red a' | d \red d,~ \tuplet 3/2 { d8 e f } \tuplet 3/2 { e f g }
-  | \omit TupletNumber \tuplet 3/2 { \red f g a } g4~ \tuplet 3/2 { g8 a bes } \tuplet 3/2 { \red a bes c }
-  | \tuplet 3/2 { \red bes a g } \red a4~ \tuplet 3/2 { a8 g f } \tuplet 3/2 { \red g f e }
-  | \red f8.[ a16 d8. a16] f8.[ \red e16 \red f8. \red g16] | \red a4
+    r4 \red d'' | a \red a'~ \tuplet 3/2 { a8 g f } \tuplet 3/2 { g f e }
+  | \omit TupletNumber \tuplet 3/2 { \red f e d } e4~ \tuplet 3/2 { e8 d cis } \tuplet 3/2 { \red d cis b }
+  | \tuplet 3/2 { \red cis d e } \red d4~ \tuplet 3/2 { d8 e f } \tuplet 3/2 { \red e f g }
+  | \red f8.[ d16 a8. d16] f8.[ \red g16 \red f8. \red e16] | \red d4
 }
 SubjectXIIISecond = {
   \commonSettings
   | r2^\markup \abs-fontsize #8 \italic {
       "subject from the inversus (the notes in red correspond to the main subject in its inverted form)"
     }
-    r4 \red d'' | a \red a'~ \tuplet 3/2 { a8 g f } \tuplet 3/2 { g f e }
-  | \omit TupletNumber \tuplet 3/2 { \red f e d } e4~ \tuplet 3/2 { e8 d cis } \tuplet 3/2 { \red d cis b }
-  | \tuplet 3/2 { \red cis d e } \red d4~ \tuplet 3/2 { d8 e f } \tuplet 3/2 { \red e f g }
-  | \red f8.[ d16 a8. d16] f8.[ \red g16 \red f8. \red e16] | \red d4
+    r4 \red a' | d \red d,~ \tuplet 3/2 { d8 e f } \tuplet 3/2 { e f g }
+  | \omit TupletNumber \tuplet 3/2 { \red f g a } g4~ \tuplet 3/2 { g8 a bes } \tuplet 3/2 { \red a bes c }
+  | \tuplet 3/2 { \red bes a g } \red a4~ \tuplet 3/2 { a8 g f } \tuplet 3/2 { \red g f e }
+  | \red f8.[ a16 d8. a16] f8.[ \red e16 \red f8. \red g16] | \red a4
 }
 
 SubjectXIVFirst = {

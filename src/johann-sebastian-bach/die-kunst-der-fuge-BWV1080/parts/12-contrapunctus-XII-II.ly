@@ -83,7 +83,7 @@ Alto = \context Voice = "two" \relative c' {
   \showStaffSwitch
   | s1*3/2*4
   %5
-  | \highlightSubjectFirstInv { d2_\markup \scale #'(1 . -1) \subject #'(1.2 . 0) #1 a1
+  | \highlightSubjectFirstInv { d2_\markup \scale #'(1 . -1) \subject #'(1.3 . 0) #1 a1
   | bes2 d1
   | ees2 d c
   | bes2. a4 b cis
@@ -127,7 +127,7 @@ Alto = \context Voice = "two" \relative c' {
   | R1*3/2*4
   | \change Staff = "lower"
     \stemUp\tieDown
-    \highlightSubjectSecondInv { c8^\markup \scale #'(1 . -1) \subject #'(-0.3 . 0) #2 bes a g
+    \highlightSubjectSecondInv { c8^\markup \scale #'(1 . -1) \subject #'(1.4 . 0) #2 bes a g
     \stemDown f2_~ \stemUp f8 e f g
   | \showStaffSwitch a4 bes c2.
     \change Staff = "upper"
@@ -144,6 +144,7 @@ Alto = \context Voice = "two" \relative c' {
   | g2~ g8 a g f g4 a
   | bes8 c bes a bes4 c d ees
   | d f ees d cis8 b a b
+    \pageBreak
   %40
   | cis4 d e f e g
   | f e d8 e d cis d4 e
@@ -212,7 +213,7 @@ Tenor = \context Voice = "three" \relative c' {
   | \override MultiMeasureRest.staff-position = #0
     R1*3/2*9
   %10
-  | \highlightSubjectFirstInv { a2^\markup \scale #'(1 . -1) \subject #'(-1.5 . 0) #1 d,1
+  | \highlightSubjectFirstInv { a2^\markup \scale #'(1 . -1) \subject #'(2.5 . 0) #1 d,1
   | \stemDown f2 a1
   | \stemUp bes2 a \stemDown g
   | f2. e4 f g
@@ -279,7 +280,7 @@ Tenor = \context Voice = "three" \relative c' {
   | g bes g e~ e8 d e fis
   | g4 d s2 s
   %50
-  | \highlightSubjectSecondInv { a'8^\markup \scale #'(1 . -1) \subject #'(0 . 0) #2 g f e d2. \stemDown e4
+  | \highlightSubjectSecondInv { a'8^\markup \scale #'(1 . -1) \subject #'(1.6 . 0) #2 g f e d2. \stemDown e4
   | \stemUp f g a2. \stemDown bes8 c
   | \stemUp bes2 a2. g4
   | f g \stemDown f e f g

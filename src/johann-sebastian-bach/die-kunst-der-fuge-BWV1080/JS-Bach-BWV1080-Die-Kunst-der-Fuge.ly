@@ -109,6 +109,7 @@ Subject = \relative {
 \include "./parts/04-contrapunctus-IV.ly"
 \pageBreak
 \include "./parts/05-contrapunctus-V.ly"
+\pageBreak
 \include "./parts/06-contrapunctus-VI.ly"
 \pageBreak
 \include "./parts/07-contrapunctus-VII.ly"
@@ -128,6 +129,7 @@ Subject = \relative {
 \include "./parts/13-contrapunctus-XIII-I.ly"
 \pageBreak
 \include "./parts/13-contrapunctus-XIII-II.ly"
+\pageBreak
 \include "./parts/14-contrapunctus-XIV.ly"
 \pageBreak
 \include "./brief-notes-on-the-completion-of-contrapunctus-xiv.ly"

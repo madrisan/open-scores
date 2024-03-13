@@ -51,7 +51,6 @@ Sopran = \context Voice = "one" \relative c'' {
   | bes aes g aes bes4 bes2 c8 d
   | ees1.~
   | ees4 f8 g f4 ees d2~
-    \pageBreak
   %40
   | d1~ d4 e!8 f
   | e d cis d cis4 d e2

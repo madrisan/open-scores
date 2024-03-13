@@ -4,344 +4,372 @@ Global = {
   \include "../global.ly"
 }
 
+\include "../macros.ly"
+
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \override TupletBracket.bracket-visibility = ##f
-  \override TupletNumber.transparent = ##t
-  \partial 4 r4
-  | R1*7
-  | r2 r4 d
-  | a' a,~ \tuplet 3/2 { a8 b c b c d
+  \partial 4 \highlightSubjectFirst { d4^\markup \subject #'(-0.8 . 0) #1
+  %1
+  | a a'~ \tuplet 3/2 { a8 g f } \tuplet 3/2 { g f e }
+  | \override TupletNumber.transparent = ##t
+    \tuplet 3/2 { f e d } e4~ \tuplet 3/2 { e8 d cis } \tuplet 3/2 { d cis b }
+  | \tuplet 3/2 { cis d e } d4~ \tuplet 3/2 { d8 e f } \tuplet 3/2 { e f g }
+  | f8.*8/9[ d16*4/3 a8.*8/9 d16*4/3] f8.*8/9[ g16*4/3 f8.*8/9 e16*4/3] }
+  %5
+  | \tuplet 3/2 { \highlightSubjectFirst { \unHighlightSubject d8 } g e } \tuplet 3/2 { f g a } bes4 cis,
+  | d4~ \tuplet 3/2 {d8 e f } e2~
+  | e4~ \tuplet 3/2 { e8 f g } f8.*8/9[ a,16*4/3 b8.*8/9 cis16*4/3]
+  | d2~ d8.*8/9[ cis16*4/3 d8.*8/9 e16*4/3]
+  | f4 r r fis
   %10
-  | c d e } d4~ \tuplet 3/2 { d8 e f e f g
-  | f e d} e4~ \tuplet 3/2 { e8 d c d c b}
-  | c8.*8/9[ e16*4/3 a8.*8/9 e16*4/3] c8.*8/9[ b16*4/3 c8.*8/9 d16*4/3]
-  | e2 r4 cis
-  | d f8.*8/9 e16*4/3 d4 c'
+  | \tuplet 3/2 { g8 fis e } \tuplet 3/2 { fis g e } \tuplet 3/2 { fis g a } \tuplet 3/2 { bes a g }
+  | a4 r r fis
+  | g bes g d8.*8/9 c16*4/3
+  | bes4 d bes g
+  | a a' r2
   %15
-  | bes d, r b
-  | c e8.*8/9 d16*4/3 c4 bes'!
-  | a4.*10/9 g8*2/3 f8.*8/9[ e16*4/3 d8.*8/9 f16*4/3]
-  | bes,4 bes' g e
-  | cis4.*10/9 d16*2/3 e a,8.*8/9[ e'16*4/3 f8.*8/9 g16*4/3]
+  | r4 e c a
+  | bes bes' r2
+  | R1*2
+  | r2 r4 \highlightSubjectFirstInv { a^\markup \scale #'(1 . -1) \subject #'(-1 . 0) #1
   %20
-  | a4.*10/9 g8*2/3 \tuplet 3/2 { f8 e d} e8.*8/9 bes'16*4/3
-  | \tuplet 3/2 { a8 g f g cis, e g f e~} e8.*8/9 f16*4/3
-  | \tuplet 3/2 { e8 f g f d a b cis d cis d e}
-  | d4 f d a
-  | bes8.*8/9[ d16*4/3 g8.*8/9 d16*4/3] bes8.*8/9[ g16*4/3 a8.*8/9 b16*4/3]
+  | d d,~ \tuplet 3/2 { d8 e f } \tuplet 3/2 { e f g }
+  | \tuplet 3/2 { f g a } g4~ \tuplet 3/2 {  g8 a bes a bes c
+  | bes a g} a4~ \tuplet 3/2 { a8 g f g f e}
+  | f8.*8/9[ a16*4/3 d8.*8/9 a16*4/3] f8.*8/9[ e16*4/3 fis8.*8/9 gis16*4/3]
+  | a4 } g!8.*8/9 f!16*4/3 e4 fis
   %25
-  | c4 ees c g
-  | a8.*8/9[ c16*4/3 f8.*8/9 c16*4/3] a8.*8/9[ f16*4/3 g8.*8/9 a16*4/3]
-  | bes4 bes'~ \tuplet 3/2 { bes8 aes g aes g f
-  | g f ees} f4~ \tuplet 3/2 { f8 ees d ees d c}
-  | d4 f d a
+  | g8.*8/9[ b16*4/3 e8.*8/9 b16*4/3] g8.*8/9[ fis16*4/3 g8.*8/9 a16*4/3]
+  | b4 a8.*8/9 g16*4/3 fis4 gis
+  | a8.*8/9[ b16*4/3 c8.*8/9 bes16*4/3] a8.*8/9[ g16*4/3 f8.*8/9 a16*4/3]
+  | g4~ \tuplet 3/2 { g8 a bes a bes c bes c d
+  | c c, bes a bes c} f2~
   %30
-  | \shape #'((0 . 0) (0 . 0.7) (0 . 0.7) (0 . 0)) Tie
-    bes1~
-  | \shape #'((0 . 0) (0 . 0.7) (0 . 0.7) (0 . 0)) Tie
-    bes~
-  | bes2 r4 bes
-  | f f'~ \tuplet 3/2 { f8 ees d ees d c
-  | d c bes} c4~ \tuplet 3/2 { c8 bes a bes a g
+  | \tuplet 3/2 { f8 e d e f d} e4 a
+  | \tuplet 3/2 { g8 a bes a g bes} a4 e
+  | \tuplet 3/2 { f8 c' a f a f} c8.*8/9[ g'16*4/3 f8.*8/9 ees16*4/3]
+  | \tuplet 3/2 { d8 c bes c bes a} f'2~
+  | f1~
   %35
-  | a bes c} bes4~ \tuplet 3/2 { bes8 c d c d ees}
-  | d8.*8/9[ bes16*4/3 f8.*8/9 bes16*4/3] d8.*8/9[ ees16*4/3 d8.*8/9 c16*4/3]
-  | \tuplet 3/2 { bes8 g a bes c d} ees8.*8/9[ d16*4/3 c8.*8/9 ees16*4/3]
-  | \tuplet 3/2 { d8 ees f ees g ees c b a b c d
-  | c bes! a bes g a bes c d ees d c
+  | f~
+  | f2 r4 \highlightSubjectFirst { a^\markup \subject #'(-0.8 . 0) #1
+  | e e'~ \tuplet 3/2 { e8 d c d c b
+  | c b a} b4~ \tuplet 3/2 { b8 a gis a gis fis
+  | gis a b} a4~ \tuplet 3/2 { a8 b c b c d}
   %40
-  | d g, bes d bes d} g8.*8/9[ fis16*4/3 g8.*8/9 a16*4/3]
-  | bes8.*8/9[ g16*4/3 d8.*8/9 g16*4/3] bes8.*8/9[ c16*4/3 bes8.*8/9 a16*4/3]
-  | g4 e g bes
-  | a8.*8/9[ f16*4/3 c8.*8/9 f16*4/3] a8.*8/9[ bes16*4/3 a8.*8/9 g16*4/3]
-  | f4 d f a
+  | c8.*8/9[ a16*4/3 e8.*8/9 a16*4/3] c8.*8/9[ d16*4/3 c8.*8/9 b16*4/3]
+  | a4 } c a e8.*8/9 f16*4/3
+  | g8.*8/9[ e16*4/3 b8.*8/9 e16*4/3] g8.*8/9[ bes!16*4/3 a8.*8/9 g16*4/3]
+  | f4 d' bes f8.*8/9 g16*4/3
+  | a8.*8/9[ f16*4/3 c8.*8/9 f16*4/3] a8.*8/9[ g16*4/3 bes8.*8/9 a16*4/3]
   %45
-  | g d cis r
-  | r8 cis16 d e f g a bes4 r
-  | \tuplet 3/2 { r8 e, a g f e f e d cis! d e}
-  | f4 r r bes,
-  | \tuplet 3/2 { a8 g f g a f} g16*2/3 f e4*4/3 f8*2/3
+  | g2 r4 cis,
+  | d r r8*4/3 r16*2/3 f,
+    \override TupletNumber.transparent = ##f
+    \tuplet 3/2 { g8 f e }
+    \override TupletNumber.transparent = ##t
+  | bes'4 r r g'
+  | d' d,~ \tuplet 3/2 { d8 e f e f g
+  | f g a} g4~ \tuplet 3/2 { g8 a bes a bes c
   %50
-  | e4 r r e'
-  | a, r r a
-  | bes8.*8/9[ d16*4/3 g8.*8/9 d16*4/3] bes8.*8/9[ g16*4/3 a8.*8/9 bes16*4/3]
-  | e,4 r r b'
-  | c8.*8/9[ e16*4/3 a8.*8/9 e16*4/3] c8.*8/9[ a16*4/3 bes!8.*8/9 c16*4/3]
+  | bes a g} a4~ \tuplet 3/2 { a8 g f g f e}
+  | f8.*8/9[ a16*4/3 d8.*8/9 a16*4/3] f8.*8/9[ e16*4/3 fis8.*8/9 gis16*4/3]
+  | a4 c, e a
+  | \mergeDifferentlyDottedOn
+    e8.*8/9[ g16*4/3 c8.*8/9 g16*4/3] e8.*8/9[ d16*4/3 e8.*8/9 fis16*4/3]
+  | g4 bes, d g
   %55
-  | f,4 r r c'
-  | d8.*8/9[ f16*4/3 bes8.*8/9 f16*4/3] d8.*8/9[ bes16*4/3 c8.*8/9 d16*4/3]
-  | g,4 r r d'
-  | cis r r8*4/3 r16*2/3 g' f8.*8/9 e16*4/3
-  | bes'2\fermata r4 \tuplet 3/2 { r8 bes cis,}
+  | d8.*8/9[ f16*4/3 bes8.*8/9 f16*4/3] d8.*8/9[ c16*4/3 d8.*8/9 e16*4/3]
+  | f2 r4 d
+  | cis8.*8/9[ e16*4/3 a8.*8/9 e16*4/3] cis8.*8/9[ b16*4/3 cis8.*8/9 d16*4/3]
+  | e4 r r8*4/3 r16*2/3 g f8.*8/9 e16*4/3
+  | bes'2\fermata r4 g
   %60
-  | d4~ \tuplet 3/2 { d8 e f} e4\trill~ \tuplet 3/2 { e8 d e}
-  | f4~ \tuplet 3/2 { f8 g a} g4\trill~ \tuplet 3/2 { g8 f g}
+  | \tuplet 3/2 { f8 e d cis e d c d c bes c bes
+  | a f' e d e f g e d cis d e
+  | f a f d f d a bes c bes a g}
   | a1~
-  | \tuplet 3/2 { a8 bes c bes g d e fis g fis g a
-  | g f! e f e d} e4 r
+  | \tieDown a4^~ \tuplet 3/2 { a8 bes c} bes4 r \tieNeutral
   %65
-  | r2 r4 d
-  | a a'~ \tuplet 3/2 { a8 g f g f e
-  | f e d} e4~ \tuplet 3/2 { e8 d cis d cis b!
-  | cis d e} d4~ \tuplet 3/2 { d8 e f e f g}
-  | f8.*8/9[ d16*4/3 a8.*8/9 d16*4/3] f8.*8/9[ g16*4/3 f8.*8/9 e16*4/3]
+  | \tuplet 3/2 { r8 a d f d f a f d a bes c
+  | bes d g bes a g fis g a} g8.*8/9 bes,16*4/3
+  | a4^~ \tuplet 3/2 { a8 bes c bes a g fis g a}
+  | g8.*8/9 e'16*4/3 \tuplet 3/2 { f8 g a} cis,2\trill
+  | d4 r r8*4/3 r16*2/3 cis d8.*8/9 e16*4/3
   %70
-  | \tuplet 3/2 { d8 c bes} c4~ \tuplet 3/2 { c8 bes a bes c d}
-  | a2.\fermata
+  | \tuplet 3/2 { fis8 g a} d,2 \tuplet 3/2 { e8 d cis}
+  | fis2.\fermata
   \bar "|."
 }
 
 Alto = \context Voice = "two" \relative c' {
   \voiceTwo
   \override TupletBracket.bracket-visibility = ##f
-  \partial 4 a'4
-  %1
-  | d d,~ \tuplet 3/2 { d8 e f } \tuplet 3/2 { e f g }
-  | \override TupletNumber.transparent = ##t
-    \tuplet 3/2 { f g a } g4~ \tuplet 3/2 { g8 a bes a bes c
-  | bes a g} a4~ \tuplet 3/2 { a8 g f g f e}
-  | f8.*8/9[ a16*4/3 d8.*8/9 a16*4/3] f8.*8/9[ e16*4/3 f8.*8/9 g16*4/3]
+  \override TupletNumber.transparent = ##t
+  \partial 4 r4
+  | R1*3 %1 to 3
+  | r2 r4 \highlightSubjectFirstInv { a'_\markup \scale #'(1 . -1) \subject #'(1.2 . 0) #1
   %5
-  | \tuplet 3/2 { a8 e g f e d} cis4 bes'
-  | a~ \tuplet 3/2 { a8 g f} g2~
-  | g4~ \tuplet 3/2 { g8 f e} f8.*8/9[ d'16*4/3 c8.*8/9 bes16*4/3]
-  | a2~ a8.*8/9[ bes16*4/3 a8.*8/9 g16*4/3]
-  | f4 r r f
+  | d d,~ \tuplet 3/2 { d8 e f } \tuplet 3/2 {  e f g }
+  | \tuplet 3/2 { f g a } g4~ \tuplet 3/2 { g8 a bes } \tuplet 3/2 { a bes c }
+  | \tuplet 3/2 { bes a g } a4~ \tuplet 3/2 { a8 g f } \tuplet 3/2 { g f e }
+  | f8.*8/9[ a16*4/3 d8.*8/9 a16*4/3] f8.*8/9[ e16*4/3 f8.*8/9 g16*4/3] }
+  | \tuplet 3/2 { \highlightSubjectFirstInv { \unHighlightSubject a8 } bes c }
+    \tuplet 3/2 { bes a g } fis4 ees'
   %10
-  | \tuplet 3/2 { e8 f g f e g f e d cis d e}
-  | d4 r r
+  | d r
     \change Staff = "lower"
-    \stemUp
-    f
-  | e c e
+    \stemUp\tieUp
+    f,\rest d~
+  | d \tuplet 3/2 { ees8 d f } ees2
+  | d1~
+  | d8.*8/9[
     \change Staff = "upper"
-    \stemDown
-    a8.*8/9 b16*4/3
-  | c4 a c e
-  | d d, r2
+    \stemDown\tieDown
+    g16*4/3 bes8.*8/9 g16*4/3] d8.*8/9[ c16*4/3 d8.*8/9 e16*4/3]
+  | f8.*8/9[ c16*4/3 a8.*8/9 c16*4/3] f8.*8/9[ a16*4/3 g8.*8/9 f16*4/3]
   %15
-  | r4 g bes d
-  | c c, r2
-  %--
-  | R1*2
-  | r2 r4
-    \change Staff = "lower"
-    \stemUp
-    d
+  | e8.*8/9[ a16*4/3 c8.*8/9 a16*4/3] e8.*8/9[ d16*4/3 e8.*8/9 fis16*4/3]
+  | g8.*8/9[ d16*4/3 bes8.*8/9 d16*4/3] g8.*8/9[ bes16*4/3 a8.*8/9 g16*4/3]
+  | f8.*8/9[ e16*4/3 f8.*8/9 g16*4/3] a8.*8/9[ g16*4/3 f8.*8/9 a16*4/3]
+  | e8.*8/9[ d16*4/3 e8.*8/9 f16*4/3] g8.*8/9[ f16*4/3 e8.*8/9 g16*4/3]
+  | d8.*8/9[ cis16*4/3 d8.*8/9 e16*4/3] f8.*8/9[ g16*4/3 a8.*8/9 g16*4/3]
   %20
+  | f8.*8/9[ g16*4/3 f8.*8/9 e16*4/3] d4 bes'
   | a
-    \change Staff = "upper"
-    \stemDown
-    a'~ \tuplet 3/2 { a8 g f } \tuplet 3/2 { g f e }
     \change Staff = "lower"
     \stemUp\tieUp
-  | \tuplet 3/2 { f e d } e4~ \tuplet 3/2 { e8 d cis d cis b
-  | cis d e} d4~ \tuplet 3/2 { d8 e f e f g}
-  | \change Staff = "upper"
-    \stemDown
-    f8.*8/9[
-    \change Staff = "lower"
-    \stemUp
-    d16*4/3 a8.*8/9 d16*4/3]
+    cis, c\rest ees
+  | d d\rest g\rest d
     \change Staff = "upper"
-    \stemDown
-    f8.*8/9[ g16*4/3 f8.*8/9 e16*4/3]
+    \stemDown\tieDown
+  | a' r r a
   | \change Staff = "lower"
-    \stemUp
-    d4 e!8.*8/9 fis16*4/3 g4
+    \stemUp\tieUp
+    e e\rest g\rest
     \change Staff = "upper"
-    \stemDown
-    f
+    \stemDown\tieDown
+    a
   %25
-  | ees8.*8/9[ c16*4/3
-    \change Staff = "lower"
-    \stemUp
-    g8.*8/9 c16*4/3]
-    \change Staff = "upper"
-    \stemDown
-    ees8.*8/9[ f16*4/3
-    ees8.*8/9 d16*4/3]
-  | c4 d8.*8/9 e!16*4/3 f4 ees
-  | d8.*8/9[ c16*4/3 bes8.*8/9 c16*4/3] d8.*8/9[ ees16*4/3 f8.*8/9 d16*4/3]
-  | ees4~ \tuplet 3/2 { ees8 d c d c bes c bes a
+  | b r r b
   | \change Staff = "lower"
-    \stemUp
-    bes
+    \stemUp\tieUp
+    fis f\rest b\rest
     \change Staff = "upper"
-    \stemDown
-    bes' c d c bes} f2_~
+    \stemDown\tieDown
+    b
+  | \change Staff = "lower"
+    \stemUp\tieUp
+    e, e\rest d2\rest
+  | d\rest d4\rest \highlightSubjectFirst { f^\markup \subject #'(2.5 . 0) #1
+  | c
+    \change Staff = "upper"
+    \stemDown\tieDown
+    \shape #'((0 . -1) (0 . -1) (0 . -1) (0 . 0)) Tie
+    c'~ \tuplet 3/2 { c8 bes a } \tuplet 3/2 { bes a g }
   %30
-  | \tuplet 3/2 { f8 g aes } \tuplet 3/2 { g f aes } g4 d
-  | \tuplet 3/2 { ees8 d c } \tuplet 3/2 { d ees c } d4 g
-  | \tuplet 3/2 { f8 bes, d } \tuplet 3/2 { f d f } bes8.*8/9[ e,!16*4/3 f8.*8/9 g16*4/3]
-  | \tuplet 3/2 { a8 bes c } \tuplet 3/2 { bes c d }
-    \tieDown f,2~
-  | f1~
+  | \tuplet 3/2 { a g f } g4~ \tuplet 3/2 { g8 f e } \tuplet 3/2 { f e d }
+  | \tuplet 3/2 { e f g } f4~ \tuplet 3/2 { f8 g a } \tuplet 3/2 { g a bes }
+  | a8.*8/9[ f16*4/3 c8.*8/9 f16*4/3] a8.*8/9[ bes16*4/3 a8.*8/9 g16*4/3]
+  | f4 } a d8.*8/9[ c16*4/3 bes8.*8/9 d16*4/3]
+  | c4~ \tuplet 3/2 { c8 d ees } \tuplet 3/2 { d c bes } \tuplet 3/2 { a bes c }
   %35
-  | f~
-  | f2 r4 d
-  | g
+  | \tuplet 3/2 { bes a g } \tuplet 3/2 { a g bes } \tuplet 3/2 { a bes c } \tuplet 3/2 { d c bes }
+  | c4 a f c'
+  | g r b r
+  | \change Staff = "lower"
+    \stemUp\tieUp
+    \shape #'((0 . 0) (0 . 0.5) (0 . 0.5) (0 . 0)) Tie e,1~
+  | \shape #'((0 . 0) (0 . 0.5) (0 . 0.5) (0 . 0)) Tie e~
+  %40
+  | \shape #'((0 . 0) (0 . 0.5) (0 . 0.5) (0 . 0)) Tie e~
+  | e2
+    \change Staff = "upper"
+    \stemDown\tieDown
+    r4 e
+  | \change Staff = "lower"
+    \stemUp\tieUp
+    b2 c4\rest e
+  | f2
+    \change Staff = "upper"
+    \stemDown\tieDown
+    r4 f
+  | \change Staff = "lower"
+    \stemUp\tieUp
+    c2 d4\rest f
+  %45
+  | \change Staff = "upper"
+    \stemDown\tieDown
+    g8.*8/9[
     \change Staff = "lower"
     \stemUp\tieUp
-    g,~ \tuplet 3/2 { g8 a bes a bes c
-  | bes c d} c4~ \tuplet 3/2 { c8 d ees d ees f
-  | ees d c} d4~ \tuplet 3/2 { d8 c bes c bes a}
-  %40
-  | bes8.*8/9[ d16*4/3 g8.*8/9 d16*4/3] bes8.*8/9[ a16*4/3 bes8.*8/9 c16*4/3]
-  | d4 bes d
+    e16*4/3 cis8.*8/9 e16*4/3]
     \change Staff = "upper"
-    \stemDown
-    g8.*8/9 f16*4/3
-  | e!8.*8/9[ g16*4/3 c8.*8/9 g16*4/3] e8.*8/9[ c16*4/3 d8.*8/9 e16*4/3]
-  | f4
+    \stemDown\tieDown
+    g8.*8/9[ f16*4/3 g8.*8/9 a16*4/3]
+  | bes8[ g e g] bes8.*8/9[ a16*4/3 b8.*8/9 cis16*4/3]
+  | d8.*8/9[ bes!16*4/3 g8.*8/9 bes16*4/3] d8.*8/9[ cis16*4/3 d8.*8/9 e16*4/3]
+  | \tuplet 3/2 { f8 d a } \tuplet 3/2 { f g a } bes2
+  | a4
     \change Staff = "lower"
     \stemUp
-    a,
+    \once\override NoteColumn.force-hshift = #0.3 cis,
     \change Staff = "upper"
     \stemDown
-    c f8.*8/9 e16*4/3
-  | d8.*8/9[ f16*4/3 bes8.*8/9 f16*4/3] d8.*8/9[ e16*4/3 cis8.*8/9 d16*4/3]
-  %45
-  | e2 r4 bes'
-  | a r r8*4/3 r16*2/3 f' \tuplet 3/2 { e8 f g}
-  | cis,4 r r e,
+    b'\rest ees,
+  %50
+  | d8.*8/9 e!16*4/3 \tuplet 3/2 { f8 e d } cis8.*8/9 a'16*4/3 \tuplet 3/2 { bes8 a g }
   | \change Staff = "lower"
     \stemUp
-    a,
+    a4 f d a'
+  | e g\rest g\rest
     \change Staff = "upper"
     \stemDown
-    a'~ \tuplet 3/2 { a8 g f } \tuplet 3/2 { g f e }
-  | \tuplet 3/2 { f e
+    e
+  | e' e, c g'
+  | d r r d
+  %55
+  | d'
+    \change Staff = "lower"
+    \stemUp
+    d, bes f'
+  | c a c f
+  | e cis e
+    \change Staff = "upper"
+    \stemDown
+    a
+  | g8.*8/9[ e16*4/3 cis8.*8/9 e16*4/3] g8.*8/9[ bes16*4/3 a8.*8/9 g16*4/3]
+  | e'2\fermata
     \change Staff = "lower"
     \stemUp\tieUp
-    d } e4~ \tuplet 3/2 { e8 d cis } \tuplet 3/2 { d cis b }
-  %50
+    e,4\rest e
+  %60
+  | \tuplet 3/2 { f8 g a } e4~ \tuplet 3/2 { e8 fis g } d4
   | \change Staff = "upper"
     \stemDown
-    \tuplet 3/2 { cis d e } d4~ \tuplet 3/2 { d8 e f } \tuplet 3/2 { e f g }
-  | f8.*8/9[
+    a' r r
     \change Staff = "lower"
+    \stemUp
+    \highlightSubjectFirst { e^\markup \subject #'(-1 . 0) #1
+  | a,
+    \change Staff = "upper"
+    \stemDown\tieDown
+    a'_~ \tuplet 3/2 { a8 g f } \tuplet 3/2 { g f e }
+  | \tuplet 3/2 { f e d } e4~ \tuplet 3/2 { e8 d cis} \tuplet 3/2 { d cis b }
+  | \tuplet 3/2 { cis d e } d4~ \tuplet 3/2 { d8 e f } \tuplet 3/2 { e f g }
+  %65
+  | f8.*8/9[ d16*4/3 a8.*8/9 d16*4/3] f8.*8/9[ g16*4/3 f8.*8/9 e16*4/3]
+  | \change Staff = "lower"
     \stemUp\tieUp
-    d16*4/3 a8.*8/9 d16*4/3]
+    \once\override NoteColumn.force-hshift = #1 \unHighlightSubject d1~ }
+  | d~
+  | d4 cis e
     \change Staff = "upper"
     \stemDown
-    f8.*8/9[ g16*4/3 f8.*8/9 e16*4/3]
-  | d4 bes' g d
-  | g8.*8/9[ e16*4/3 b8.*8/9 e16*4/3] g8.*8/9[ a16*4/3 g8.*8/9 f16*4/3]
-  | e4 c' a e
-  %55
-  | a8.*8/9[ f16*4/3 c8.*8/9 f16*4/3] a8.*8/9[ bes16*4/3 a8.*8/9 g16*4/3]
-  | f2 r4 a
-  | bes8.*8/9[ g16*4/3 d8.*8/9 g16*4/3] bes8.*8/9[ c16*4/3 bes8.*8/9 a16*4/3]
-  | g4 r r8*4/3 r16*2/3 e f8.*8/9 g16*4/3
-  | cis,2\fermata r4 e
-  %60
-  | \tuplet 3/2 { f8 g a bes g a b a b cis b cis
-  | d f, g a g f e g a bes a g
-  | f d f a f a d cis b cis d e}
-  | d1_~
-  | d4_~ \tuplet 3/2 { d8 cis b} cis4 r
-  %65
-  | \tuplet 3/2 { r8d a f a f d f a d cis b
-  | cis a e cis d e f e d} e8.*8/9 cis'!16*4/3
-  | d4_~ \tuplet 3/2 { d8 cis b cis d e f e d}
-  | e8.*8/9 g,16*4/3 \tuplet 3/2 { f8 e d} bes'2\trill
-  | a4 r r8*4/3 r16*2/3 bes a8.*8/9 g16*4/3
+    bes'
+  | \tuplet 3/2 { a8 d a } \tuplet 3/2 { f a f} d4
+    \mergeDifferentlyDottedOn
+    d'
   %70
-  | \tuplet 3/2 { f8 e d} a'2 \tuplet 3/2 { g8 a bes}
-  | fis2.\fermata
+  | a_~ \tuplet 3/2 { a8 fis e } \tuplet 3/2 { d c bes! } a8.*8/9 a'16*4/3
+  | a2.\fermata
   \bar "|."
 }
 
 Bass = \context Voice = "four" \relative c {
-  \voiceFour\tieUp
+  \voiceFour
   \override TupletBracket.bracket-visibility = ##f
   \override TupletNumber.transparent = ##t
   \partial 4 d4\rest
   | \override MultiMeasureRest.staff-position = #0
-    R1*3
-  | d2\rest d4\rest d
-  %5
-  | \stemUp a \stemNeutral a'~ \tuplet 3/2 { a8 g f g f e
-  | f e d} e4~ \tuplet 3/2 { e8 d cis d cis b
-  | cis d e} d4~ \tuplet 3/2 { d8 e f e f g}
-  | f8.*8/9[ d16*4/3 a8.*8/9 d16*4/3] f8.*8/9[ g16*4/3 f8.*8/9 e16*4/3]
-  | \tuplet 3/2 { d8 cis b cis d e} f4 gis,
+    R1*7
+  | d2\rest d4\rest \highlightSubjectFirst { a'_\markup \subject #'(0.8 . 0) #1
+  | d, d'^~ \tuplet 3/2 { d8 c bes c bes a
   %10
-  | a r r a'~
-  | a \tuplet 3/2 { gis8 a fis} gis2^\trill
-  | a1_~
-  | a8.*8/9[ e16*4/3 c8.*8/9 e16*4/3] a8.*8/9[ bes16*4/3 a8.*8/9 g16*4/3]
-  | f8.*8/9[ a16*4/3 d8.*8/9 a16*4/3] f8.*8/9[ d16*4/3 e8.*8/9 fis16*4/3]
+  | bes a g} a4^~ \tuplet 3/2 { a8 g fis g fis e
+  | fis g a} g4~ \tuplet 3/2 { g8 a bes a bes c }
+  | bes8.*8/9[ g16*4/3 d8.*8/9 g16*4/3] bes8.*8/9[ c16*4/3 bes8.*8/9 a16*4/3]
+  | g2 } d4\rest bes'
+  | \stemNeutral a f8.*8/9 g16*4/3 a4 b,
   %15
-  | g8.*8/9[ d16*4/3 bes8.*8/9 d16*4/3] g8.*8/9[ a16*4/3 g8.*8/9 f16*4/3]
-  | e8.*8/9[ g16*4/3 c8.*8/9 g16*4/3] e8.*8/9[ c16*4/3 d8.*8/9 e16*4/3]
-  | f8.*8/9[ g16*4/3 f8.*8/9 e16*4/3] d8.*8/9[ e16*4/3 f8.*8/9 d16*4/3]
-  | g8.*8/9[ a16*4/3 g8.*8/9 f16*4/3] e8.*8/9[ f16*4/3 g8.*8/9 e16*4/3]
-  | a8.*8/9[ bes16*4/3 a8.*8/9 g16*4/3] f8.*8/9[ e16*4/3 d8.*8/9 e16*4/3]
+  | c a' r c
+  | bes g8.*8/9 a16*4/3 bes4 cis,
+  | d4. e8 f8.*8/9[ g16*4/3 a8.*8/9 f16*4/3]
+  | c'4 c, e g
+  | bes4.*10/9 a16*2/3 g d'8.*8/9[ g,16*4/3 f8.*8/9 e16*4/3]
   %20
-  | f8.*8/9[ e16*4/3 f8.*8/9 g16*4/3] a4 cis,
-  | d bes'! d,\rest gis
-  | a d,\rest d\rest a'
-  | d, b\rest b\rest d
-  | g d\rest d\rest d
+  | d4.*10/9 e8*2/3 \tuplet 3/2 { f8 g a} g8.*8/9 cis,16*4/3
+  | \tuplet 3/2 { d8 e f e bes' g e fis g~ } g8.*8/9 fis16*4/3
+  | \tuplet 3/2 { g8 f! e f a d c bes a bes a g }
+  | a4 f a d
+  | c8.*8/9[ a16*4/3 e8.*8/9 a16*4/3] c8.*8/9[ e16*4/3 d8.*8/9 c16*4/3]
   %25
-  | c r r c
-  | f d\rest d\rest c
-  | g' d\rest d2\rest
-  | d\rest d4\rest f
-  | bes bes,~ \tuplet 3/2 { bes8 c d c d ees
+  | b4 g b e
+  | d8.*8/9[ b16*4/3 fis8.*8/9 b16*4/3] d8.*8/9[ f!16*4/3 e8.*8/9 d16*4/3]
+  | c4 c,~ \tuplet 3/2 { c8 d e d e f
+  | e f g} f4~ \tuplet 3/2 { f8 g a g a bes }
+  | a4 f a d
   %30
-  | d ees f} ees4~ \tuplet 3/2 { ees8 f g } \tuplet 3/2 { f g aes }
-  | \tuplet 3/2 { g f ees} f4~ \tuplet 3/2 { f8 ees d } \tuplet 3/2 { ees d c}
-  | d8.*8/9[ f16*4/3 bes8.*8/9 f16*4/3] d8.*8/9[ c16*4/3 d8.*8/9 e!16*4/3]
-  | f4 d a8.*8/9[ bes16*4/3 c8.*8/9 a16*4/3]
-  | bes4~ \tuplet 3/2 { bes8 a g } \tuplet 3/2 { a bes c } \tuplet 3/2 { d c bes }
+  | c1~
+  | c~
+  | c2 r4 \highlightSubjectFirstInv { c_\markup \scale #'(1 . -1) \subject #'(0 . 0) #1
+  | f f,^~ \tuplet 3/2 { f8 g a g a bes
+  | a bes c} bes4~ \tuplet 3/2 { bes8 c d c d ees
   %35
-  | \tuplet 3/2 { c d ees d ees c d c bes a bes c }
-  | bes4 d f bes,
-  | ees b\rest \stemDown c b\rest
-  | \tieDown g'1~
-  | g~
+  | d c bes } c4~ \tuplet 3/2 { c8 bes a bes a g }
+  | a8.*8/9[ c16*4/3 f8.*8/9 c16*4/3] a8.*8/9[ g16*4/3 a8.*8/9 b16*4/3] }
+  | \tuplet 3/2 { \highlightSubjectFirstInv { \unHighlightSubject c8 } e d c b a }
+    gis8.*8/9[ a16*4/3 b8.*8/9 gis16*4/3]
+  | \tuplet 3/2 { a8 gis fis gis e gis b c d c b a
+  | b c d c e d c b a gis a b
   %40
-  | g~
-  | g2 d4\rest g
-  | c2 d,4\rest g
-  | f2 d4\rest f
-  | bes2 d,4\rest f
+  | a e' c a c a} e8.*8/9[ f16*4/3 e8.*8/9 d16*4/3]
+  | c8.*8/9[ e16*4/3 a8.*8/9 e16*4/3] c8.*8/9[ b16*4/3 c8.*8/9 d16*4/3]
+  | e4 g e \stemDown cis
+  | \stemNeutral
+    d8.*8/9[ f16*4/3 bes8.*8/9 f16*4/3] d8.*8/9[ c16*4/3 d8.*8/9 e16*4/3]
+  | f4 a f d
   %45
-  | e8.*8/9[ g16*4/3 bes8.*8/9 g16*4/3] e8.*8/9[ f16*4/3 e8.*8/9 d16*4/3]
-  | cis8[ e g e] cis8.*8/9[ d16*4/3 cis8.*8/9 b16*4/3]
-  | a8.*8/9[ cis16*4/3 e8.*8/9 cis16*4/3] a8.*8/9[ bes16*4/3 a8.*8/9 g16*4/3]
-  | \stemDown \tuplet 3/2 { f8 a d } \stemNeutral \tuplet 3/2 { f e d } cis4.*10/9^\trill b16*2/3 cis
-  | d4 bes'! d,\rest gis
+  | e a bes d,\rest
+  | d8\rest bes'16 a g f e d cis4 r
+  | \tuplet 3/2 { r8 g' d e f g f g a bes a g }
+  | f4 d\rest d\rest cis'
+  | \tuplet 3/2 { d8 e f e d f }
+    \change Staff = "upper"
+    \stemDown
+    e16*2/3 fis g4*4/3 fis8*2/3
   %50
-  | a8.*8/9 g!16*4/3 \tuplet 3/2 { f8 g a} bes8.*8/9 d,16*4/3 \tuplet 3/2 { cis8 d e}
-  | d4 f a d,
-  | g d\rest d\rest g
-  | g, g' b e,
-  | a d,\rest d\rest a'
+  | g4
+    \change Staff = "lower"
+    \stemUp
+    d,\rest d\rest \clef bass g
+  | \stemDown d' d,\rest d\rest d' \stemNeutral
+  | c8.*8/9[ a16*4/3 e8.*8/9 a16*4/3] c8.*8/9[ e16*4/3 d8.*8/9 c16*4/3]
+  | g'4 c,\rest c\rest c
+  | bes8.*8/9[ g16*4/3 d8.*8/9 g16*4/3] bes8.*8/9[ d16*4/3 c8.*8/9 bes16*4/3]
   %55
-  | a, a' c f,
-  | bes d bes fis
-  | g bes g d
-  | e8.*8/9[ g16*4/3 bes8.*8/9 g16*4/3] e8.*8/9[ cis16*4/3 d8.*8/9 e16*4/3]
-  | g,2\fermata r4 g'
+  | f'4 d,\rest d\rest bes'
+  | a8.*8/9[ f16*4/3 c8.*8/9 f16*4/3] a8.*8/9[ c16*4/3 bes8.*8/9 a16*4/3]
+  | e'4 c,\rest c\rest a'
+  | bes c,\rest c8*4/3\rest c16*2/3\rest e f8.*8/9 g16*4/3
+  | cis,2\fermata r4 \tuplet 3/2 { r8 cis! bes' }
   %60
-  | \tuplet 3/2 { f8 e d} g4~ \tuplet 3/2 { g8 f e} a4
-  | d, d\rest d\rest g
-  | d' d,~ \tuplet 3/2 { d8 e f e f g
-  | f g a} g4~ \tuplet 3/2 { g8 a bes a bes c
-  | bes a g} a4~ \tuplet 3/2 { a8 g f g f e }
+  | a4~ \tuplet 3/2 { a8 g fis } g4~ \tuplet 3/2 { g8 a g }
+  | f!4~ \tuplet 3/2 { f8 e d } e4~ \tuplet 3/2 { e8 f e }
+  | d1~
+  | \tuplet 3/2 { d8 cis b cis e a g f e f e d
+  | e f g fis g a} g4 d\rest
   %65
-  | f8.*8/9[ a16*4/3 d8.*8/9 a16*4/3] f8.*8/9[ e16*4/3 f8.*8/9 g16*4/3]
-  | a1~
-  | a~
-  | a4 bes g cis,
-  | \tuplet 3/2 { d8 a d f d f} a4 a,
+  | d2\rest d4\rest \highlightSubjectFirstInv { a'_\markup \scale #'(1 . -1) \subject #'(0 . 0) #1
+  | \once\override NoteColumn.force-hshift = #0 d
+    d,~ \tuplet 3/2 { d8 e fis e fis g
+  | fis g a} g4~ \tuplet 3/2 { g8 a bes a bes c
+  | bes a g} a4~ \tuplet 3/2 { a8 g f g f e}
+  | f8.*8/9[ a16*4/3 d8.*8/9 a16*4/3] f8.*8/9[ e16*4/3 fis8.*8/9 g16*4/3] }
   %70
-  | d~ \tuplet 3/2 { d8 fis g a bes c } d8.*8/9 d,16*4/3
+  | \tuplet 3/2 { \highlightSubjectFirstInv { \unHighlightSubject a8 } bes c }
+    bes4~ \tuplet 3/2 { bes8 c d cis b a }
   | d2.\fermata
   \bar "|."
 }
@@ -373,5 +401,5 @@ Bass = \context Voice = "four" \relative c {
     }
   }
   \layout { }
-  \midi { \tempo 4 = 135 }
+  \midi { \tempo 4 = 144 }
 }
