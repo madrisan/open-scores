@@ -4,27 +4,30 @@ Global = {
   \include "../global.ly"
 }
 
+\include "../macros.ly"
+
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
+  \showStaffSwitch
   | \override MultiMeasureRest.staff-position = #0
     R1*3/2*9
   | \override MultiMeasureRest.staff-position = #2
     R1*3/2*4
-  | a2 d1
+  | \highlightSubjectFirst { a2^\markup \subject #'(-0.5 . 0) #1 d1
   %15
   | c2 a1
   | \stemDown gis2 a b
   | \stemUp c2. d4 c bes!
-  | a2. bes4 a g
+  | a2. } bes4 a g
   | f2. g4 f e
   %20
   | f g a2. b8 cis
-  | d e f g a2~ a8 bes a g
+  | \highlightSubjectSecond { d^\markup \subject #'(-0.8 . 0) #2 e f g a2~ a8 bes a g
   | f4 e d2. cis8 b
   | cis2 d2. e4
   | f2. g4 f ees
   %25
-  | d1 r8 d e fis
+  | d1 } r8 d e fis
   | g fis g a bes4 r r2
   | r r d,2~
   | d4 c bes a g fis!
@@ -48,6 +51,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | bes aes g aes bes4 bes2 c8 d
   | ees1.~
   | ees4 f8 g f4 ees d2~
+    \pageBreak
   %40
   | d1~ d4 e!8 f
   | e d cis d cis4 d e2
@@ -77,11 +81,11 @@ Alto = \context Voice = "two" \relative c' {
   \showStaffSwitch
   | s1*3/2*9
   %10
-  | \stemUp d2 a'1
+  | \stemUp \highlightSubjectFirst { d2^\markup \subject #'(0 . 0) #1 a'1
   | f2 d1
   | \stemDown cis2 d \stemUp e
   | f2. g4 f e
-  | \once\stemDown d2 r4 e f g
+  | \once\stemDown d2 } r4 e f g
   %15
   | \once\stemDown a2 r4 b c d
   | e d c b a gis
@@ -111,10 +115,10 @@ Alto = \context Voice = "two" \relative c' {
     \stemUp\tieUp
     d ees d c
   | bes4 a8 g f2~
-    f8 g
+    f8 \hideStaffSwitch g
     \change Staff = "upper"
     \stemDown\tieDown
-    a bes
+    a \showStaffSwitch bes
   | c2 d8 ees d c
     \change Staff = "lower"
     \stemUp\tieUp
@@ -135,10 +139,10 @@ Alto = \context Voice = "two" \relative c' {
     \change Staff = "lower"
     \stemUp\tieUp
     cis2
-  | d~ d8
+  | d~ \hideStaffSwitch d8
     \change Staff = "upper"
     \stemDown\tieDown
-    e f g a2~
+    e \hideStaffSwitch f g a2~
   | a4 e f a bes4. a16 g
   %45
   | f8 e f g f e d2 cis4
@@ -147,11 +151,11 @@ Alto = \context Voice = "two" \relative c' {
   | e cis e g~ g8 a g f
   | e4 a r2 r
   %50
-  | d,8 e f g a2. g4
+  | \highlightSubjectSecond { d,8_\markup \subject #'(0.8 . 0) #2 e f g a2. g4
   | f e d2. cis8 b
   | cis2 d2. e4
   | f e f g f e
-  | d r e r r8 fis! g a
+  | d } r e r r8 fis! g a
   %55
   | bes4 a g fis e2
   | r8 e fis g fis1\fermata
@@ -164,12 +168,12 @@ Tenor = \context Voice = "three" \relative c' {
   | \override MultiMeasureRest.staff-position = #6
     R1*3/2*4
   %5
-  | a2 d1
+  | \highlightSubjectFirst { a2^\markup \subject #'(2.5 . 0) #1 d1
   | c2 a1
   | \stemDown gis2
     a b
   | \stemUp c2. d4 c b
-  | a2. bes!4 a g
+  | a2. } bes!4 a g
   %10
   | f8 g f e d4 a' b cis
   | d2 r4
@@ -211,7 +215,7 @@ Tenor = \context Voice = "three" \relative c' {
     R1*3/2*3
   | \change Staff = "upper"
     \stemDown
-    bes8 c d ees
+    \highlightSubjectSecond { bes8_\markup \subject #'(0 . 0) #2 c d ees
     \showStaffSwitch
     \stemUp
     \shape #'((0 . 0) (0 . 0.5) (0 . 0) (-2 . -0.5)) Tie
@@ -229,7 +233,7 @@ Tenor = \context Voice = "three" \relative c' {
     \change Staff = "lower"
     \stemUp\tieUp
     c
-  | bes2~ bes8 a bes c d4 bes
+  | \unHighlightSubject bes2~ } bes8 a bes c d4 bes
   | ees2~ ees8 d ees f ees4 d
   | c8 bes c d c4 bes a g
   | a f g a bes8 c d c
@@ -272,12 +276,12 @@ Tenor = \context Voice = "three" \relative c' {
 Bass = \context Voice = "four" \relative c {
   \voiceFour
   %1
-  | d2 a'1
+  | \highlightSubjectFirst { d2_\markup \subject #'(1.2 . 0) #1 a'1
   | f2 d1
   | cis2 d e
   | f2. g4 f e
   %5
-  | d2 r4 e f g
+  | d2 } r4 e f g
   | a2 r4 b c d
   | \stemUp
     e d c b a gis
@@ -318,12 +322,12 @@ Bass = \context Voice = "four" \relative c {
   | g4 ees bes'2 r
   | \override MultiMeasureRest.staff-position = #-4
     R1*3/2*5
-  | d8 e f g a2~ a8 bes a g
+  | \highlightSubjectSecond { d8_\markup \subject #'(-1.5 . 0) #2 e f g a2~ a8 bes a g
   | f4 e d2. cis8 b
   | cis2 d2. e4
   %45
   | f2. g4 f e
-  | d2~ d8 cis d e f4 d
+  | \unHighlightSubject d2~ } d8 cis d e f4 d
   | g2~ g8 fis g a g4 f
   | e2~ e8 d e f g4 e
   | a2~ a8 g a bes a4 e

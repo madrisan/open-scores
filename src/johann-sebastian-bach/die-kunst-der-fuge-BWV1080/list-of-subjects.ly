@@ -134,18 +134,18 @@ SubjectXIThird = {
 
 SubjectXIIFirst = {
   \commonSettings
-  | d'2*2/3^\markup \abs-fontsize #8 \italic {
+  | \time 3/2
+    d'2^\markup \abs-fontsize #8 \italic {
       "first subject (a ritmical variation of the main theme)"
     }
-    a'1*2/3
-  | f2*2/3 d1*2/3 | cis2*2/3 d e | f2.*2/3 g4*2/3 f e | d2*2/3 s4*2/3
+    a'1
+  | f2 d1 | cis2 d e | f2. g4 f e | d2 s4
 }
 SubjectXIISecond = {
   \commonSettings
-  | d'2*2/3^\markup \abs-fontsize #8 \italic { "second subject" }
-    r4*2/3 e f g | a2*2/3 r4*2/3 b c d | e d c b a gis | a g8*2/3[ f] e2.*2/3\trill d8*2/3 s % e
- %| f4*2/3 e8*2/3[ d] cis2.*2/3 b8*2/3 cis | d2*2/3 r4*2/3 f, g a
-  | s2
+  | \time 3/2
+    d'8^\markup \abs-fontsize #8 \italic { "second subject" }
+    e f g a2~ a8 bes a g | f4 e d2. cis8 b | cis2 d2. e4 | f2. g4 f e | d2 s4
 }
 
 SubjectXIIIFirst = {
