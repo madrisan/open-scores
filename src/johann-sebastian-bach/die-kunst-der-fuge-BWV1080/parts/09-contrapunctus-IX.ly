@@ -324,28 +324,32 @@ Alto = \context Voice = "two" \relative c' {
 
 Tenor = \context Voice = "three" \relative c' {
   \voiceThree
+  \showStaffSwitch
+  \override VoiceFollower.color = \greyTextColor
   | \override MultiMeasureRest.staff-position = #0
     R1*14
   %15
   | s1*7
   | \highlightSubjectFirst { r4^\markup \subject #'(1 . 0) #1 a
-    \change Staff = "upper"
+    \staffUpper
     \stemDown\tieDown
     \shape #'((0.5 . 1.1) (0 . 1.2) (0 . 1.2) (-0.5 . 0.5)) Tie
     a'2~
-  | a4 gis8 fis e
-    \change Staff = "lower"
+  | \hideStaffSwitch
+    a4 gis8 fis e
+    \staffLower
     \stemUp\tieUp
     d c b
+    \showStaffSwitch
   | a gis a b c a b c
   %25
   | d cis d e f d e f
-  | \change Staff = "upper"
+  | \staffUpper
     \stemDown\tieDown
     f4_( e) b8\rest e d e
   | f a g f g f e d
   | c f e d e d cis b
-  | \change Staff = "lower"
+  | \staffLower
     \stemUp\tieUp
     a4 } bes!8 a bes2~
   %30
@@ -427,7 +431,7 @@ Tenor = \context Voice = "three" \relative c' {
   %105
   | bes1~
   | bes4
-    \change Staff = "upper"
+    \staffUpper
     \stemDown\tieDown
     c bes aes
   | \unHighlightSubject g1~ }
@@ -435,7 +439,7 @@ Tenor = \context Voice = "three" \relative c' {
   | c1~
   %110
   | c8 ees d c d c bes a
-  | \change Staff = "lower"
+  | \staffLower
     \stemUp\tieUp
     bes2 c4 a
   | bes c bes a

@@ -81,6 +81,7 @@ Sopran = \context Voice = "one" \relative c'' {
 Alto = \context Voice = "two" \relative c' {
   \voiceTwo
   \showStaffSwitch
+  \override VoiceFollower.color = \greyTextColor
   | s1*3/2*4
   %5
   | \highlightSubjectFirstInv { d2_\markup \scale #'(1 . -1) \subject #'(1.3 . 0) #1 a1
@@ -90,13 +91,13 @@ Alto = \context Voice = "two" \relative c' {
   | d2. c!4 d e
   %10
   | \unHighlightSubject f8 } e f g a4 d, c
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
     bes
   | a2 c,4\rest g' f e
   | \stemDown d e f g \stemUp a bes
   | a2. bes4 a g
-  | \change Staff = "upper"
+  | \staffUpper
     \stemDown
     d' e f g a g
   %15
@@ -111,10 +112,10 @@ Alto = \context Voice = "two" \relative c' {
     \pageBreak
   | \hideStaffSwitch
     d8
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
     d,
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     d' e f g a g f4 f,
     \showStaffSwitch
@@ -125,20 +126,20 @@ Alto = \context Voice = "two" \relative c' {
   | c8 b c d e f e d c b a gis
   | a2 r \hideStaffSwitch r
   | R1*3/2*4
-  | \change Staff = "lower"
+  | \staffLower
     \stemUp\tieDown
     \highlightSubjectSecondInv { c8^\markup \scale #'(1 . -1) \subject #'(1.4 . 0) #2 bes a g
     \stemDown f2_~ \stemUp f8 e f g
   | \showStaffSwitch a4 bes c2.
-    \change Staff = "upper"
+    \staffUpper
     \stemDown d8 ees
   | d2 c2.
-    \change Staff = "lower"
+    \staffLower
     \stemUp
     bes4
   %35
   | a2. g4 a
-    \change Staff = "upper"
+    \staffUpper
     b!
   | \stemDown \unHighlightSubject c2~ } c8 d c bes a4 c
   | g2~ g8 a g f g4 a
@@ -149,55 +150,55 @@ Alto = \context Voice = "two" \relative c' {
   | cis4 d e f e g
   | f e d8 e d cis d4 e
   | f8 e d4~ d8 c bes a
-    \change Staff = "lower"
+    \staffLower
     \stemUp
     \once\override NoteColumn.force-hshift = #0.6 g4
     d^~
   | \once\override NoteColumn.force-hshift = #0.4 d
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
-    \change Staff = "lower"
+    \staffLower
     \stemUp
     e \stemDown f d \stemUp a'2
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
   | r r8 bes'8 a g f d e cis
   %45
   | d2. c!4 d e
   | f8 e d4 a' r r a,~
   | a
-    \change Staff = "lower"
+    \staffLower
     \stemUp
     e8 f e4
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     c'8 b a b c d
   | e d cis2 e4 c g~
   | \hideStaffSwitch
     g8 a g
-    \change Staff = "lower"
+    \staffLower
     \stemUp
     f e4
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     \showStaffSwitch
     bes'2 bes4
   %50
   | a2~ a8 c \hideStaffSwitch bes
-    \change Staff = "lower"
+    \staffLower
     \stemUp
     a g bes a g
-  | \change Staff = "upper"
+  | \staffUpper
     \stemDown
     \showStaffSwitch
     d'4 r
     a'8 g f e d2_~
   | d8 cis d e f2~ f8 g a bes
   | a d, c bes
-    \change Staff = "lower"
+    \staffLower
     \stemUp
     a g a bes a4
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     e'
   | f cis~ cis8 d e d cis b cis d
@@ -210,6 +211,7 @@ Alto = \context Voice = "two" \relative c' {
 Tenor = \context Voice = "three" \relative c' {
   \voiceThree
   \showStaffSwitch
+  \override VoiceFollower.color = \greyTextColor
   | \override MultiMeasureRest.staff-position = #0
     R1*3/2*9
   %10
@@ -244,20 +246,20 @@ Tenor = \context Voice = "three" \relative c' {
     e4 f! g
   | \hideStaffSwitch
     \stemDown\tieDown a2~ \stemUp a8 g f g
-    \change Staff = "upper"
+    \staffUpper
     \stemDown a g a bes
   | c4 d8 e f2~ f8 ees
-    \change Staff = "lower"
+    \staffLower
     \stemUp
     d c
     \showStaffSwitch
   | bes2 a8 g a bes
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     c2~
   %35
   | c8 bes a g a4 b8 c d4
-    \change Staff = "lower"
+    \staffLower
     \stemUp
     d,
   | e2 f2. e8 d
@@ -319,10 +321,10 @@ Bass = \context Voice = "four" \relative c {
   %30
   | a4 g!8 f e4 fis g a
   | bes2^~ bes8 a g bes a c bes d
-  | \change Staff = "upper"
+  | \staffUpper
     \stemDown\tieDown
     c2~ c8 bes a g
-    \change Staff = "lower"
+    \staffLower
     f2~
   | f f,8 g a bes a4 f
   | bes8 c d e f2~ f8 e f g

@@ -159,6 +159,8 @@ Sopran = \context Voice = "one" \relative c'' {
 
 Alto = \context Voice = "two" \relative c' {
   \voiceTwo
+  \showStaffSwitch
+  \override VoiceFollower.color = \greyTextColor
   \stemDown\tieUp
   %1
   | \highlightSubjectFirst { r4_\markup \subject #'(0 . 0) #1 cis d a
@@ -282,11 +284,11 @@ Alto = \context Voice = "two" \relative c' {
   | d4 g4~ g8 f ees d
   %100
   | c4 f4~ f8
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
     ees d c
   | bes4. a8 bes c
-    \change Staff = "upper"
+    \staffUpper
     \stemDown\tieDown
     d e!
   | f4 c r2
@@ -316,6 +318,8 @@ Alto = \context Voice = "two" \relative c' {
 
 Tenor = \context Voice = "three" \relative c' {
   \voiceThree
+  \showStaffSwitch
+  \override VoiceFollower.color = \greyTextColor
   | R1*2
   | f,2\rest \highlightSubjectFirst { f4\rest^\markup \subject #'(1 . 0) #1 fis
   | g d r bes'
@@ -352,12 +356,14 @@ Tenor = \context Voice = "three" \relative c' {
   %30
   | \unHighlightSubject d } e f4~ f8 e d e
   | cis d e4~ e8 a, d4~
-  | d8
-    \change Staff = "upper"
+  | \hideStaffSwitch
+    d8
+    \staffUpper
     \stemDown\tieDown
     e f4~ f8 g a4~
+    \showStaffSwitch
   | a8 g f e f4 e
-  | \change Staff = "lower"
+  | \staffLower
     \stemUp\tieUp
     a, b8 cis d2
   %35
@@ -382,11 +388,11 @@ Tenor = \context Voice = "three" \relative c' {
   %55
   | a e e' d8 c
   | b4 e,8 fis gis a b c
-  | \change Staff = "upper"
+  | \staffUpper
     \stemDown\tieDown
     d e f d b e d e
   | cis
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
     a d4 g, bes
   | e, d2 cis!4
@@ -419,25 +425,26 @@ Tenor = \context Voice = "three" \relative c' {
   %85
   | g,4 d'8
     e
-    \change Staff = "upper"
+    \staffUpper
     \stemDown\tieDown
     f e d cis
-  | \change Staff = "lower"
+  | \staffLower
     \stemUp\tieUp
     d a
-    \change Staff = "upper"
+    \staffUpper
     \stemDown\tieDown
-    a'4~ a8 e
-    \change Staff = "lower"
+    a'4~ a8 e \hideStaffSwitch
+    \staffLower
     \stemUp\tieUp
     d cis
+    \hideStaffSwitch
   | g'4 d r8 d c bes
   | a4. cis8 d4 a
-  | \change Staff = "upper"
+  | \staffUpper
     \stemDown\tieDown
     \once\override NoteColumn.force-hshift = #0.7
     a'8 e
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
     d e f4 cis
   %90

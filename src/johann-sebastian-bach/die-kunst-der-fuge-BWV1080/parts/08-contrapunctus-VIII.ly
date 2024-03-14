@@ -59,6 +59,7 @@ Soprano = \context Voice = "one" \relative c'' {
   %50
   | b4 g' a bes!
   | gis e' r2
+    \break
   | r8 e d c b c a b
   | cis4 d e8 d e4
   | a, bes8 a g f g4~
@@ -229,8 +230,9 @@ Soprano = \context Voice = "one" \relative c'' {
 
 Alto = \context Voice = "two" \relative c' {
   \voiceTwo
+  \override VoiceFollower.color = \greyTextColor
   %1
-  | \change Staff = "lower"
+  | \staffLower
     \stemUp
     a2\rest \highlightSubjectFirst { d^\markup \subject #'(-1 . 0) #1
   | c4 f b, bes
@@ -243,32 +245,34 @@ Alto = \context Voice = "two" \relative c' {
   | e2 e8\rest d! c b
   | c2 c8\rest b a gis
   | a c b d gis,
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     f' e d
+    \showStaffSwitch
   %10
   | c b c e a d, cis e
   | d f e g f c b f'
   | e4 c d g
-  | \change Staff = "lower"
+  | \staffLower
     \stemUp\tieUp
     c, a b e
   | a,8 c bes! d c2~
   %15
   | c8 bes a g a f g e
-  | f
-    \change Staff = "upper"
+  | \hideStaffSwitch f
+    \staffUpper
     \stemDown
-    c'' bes a bes g a f
+    c'' bes a bes g a f \showStaffSwitch
   | e4 bes' a g
   | f
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
     e, fis g~
-  | g8
-    \change Staff = "upper"
+  | \hideStaffSwitch g8
+    \staffUpper
     \stemDown\tieDown
     g' f e f d e cis
+    \showStaffSwitch
   %20
   | d1~
   | d4 cis \highlightSubjectFirst { a'2_\markup \subject #'(1.3 . 0) #1
@@ -276,36 +280,38 @@ Alto = \context Voice = "two" \relative c' {
   | e a d,2%\prallmordent
   | c4 d e8 d e4
   %25
-  | \change Staff = "lower"
+  | \staffLower
     \stemUp\tieUp
     a, } fis g a~
+    \hideStaffSwitch
   | a8
-    \change Staff = "upper"
+    \staffUpper
     \stemDown\tieDown
     a' g fis g e f d
+    \showStaffSwitch
   | e4 f g e
   | f a r8 b, cis e
   | a,4 f' r8 g, a c
   %30
-  | \change Staff = "lower"
+  | \staffLower
     \stemUp\tieUp
     f,4 d' d8\rest e, fis a
   | d,4 fis g a
   | bes a bes c
-  | \change Staff = "upper"
+  | \staffUpper
     \stemDown\tieDown
     d8 f e d cis4 d
   | e8 d cis b cis4 e
   %35
   | a
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
     cis,, d bes'
   | e, a2 g4
   | c, f2 e4
   | a g\rest g\rest g
   | \appoggiatura g8 f2
-    \change Staff = "upper"
+    \staffUpper
     \stemDown\tieDown
     r4 \highlightSubjectSecond { bes'~_\markup \subject #'(0 . 0) #2
   %40
@@ -313,35 +319,35 @@ Alto = \context Voice = "two" \relative c' {
   | g e f! f f e d cis
   | d2. } c!4~
   | c8 c bes a
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
     bes d c bes
   | a4
-    \change Staff = "upper"
+    \staffUpper
     \stemDown\tieDown
     r g'2
   %45
   | f4 d ees2~
   | ees8 d c bes a bes g a
   | b4 c2
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
     bes4~
   | bes8 a g f e f d e
   | f4 f\rest
-    \change Staff = "upper"
+    \staffUpper
     \stemDown\tieDown
     \highlightSubjectFirst { a'2^\markup \subject #'(0 . 0) #1
   %50
   | g4 c fis, f
   | e a d,2\prallmordent
   | c4 d e8 d e4
-  | \change Staff = "lower"
+  | \staffLower
     \stemUp\tieUp
     a,2 } a4\rest g~
   | g8 f g a bes a c bes
   %55
-  | \change Staff = "upper"
+  | \staffUpper
     \stemDown\tieDown
     a2 r4 d~
   | d8 g, a bes c bes d c
@@ -359,21 +365,22 @@ Alto = \context Voice = "two" \relative c' {
   | c, d8 e f e f4
   | e r r d
   | c a' bes
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
     bes,
   | a
-    \change Staff = "upper"
+    \staffUpper
     \stemDown\tieDown
     f' g
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
     g,
   %70
-  | f8
-    \change Staff = "upper"
+  | \hideStaffSwitch f8
+    \staffUpper
     \stemDown\tieDown
     f' ees d c d bes c
+    \showStaffSwitch
   | d4 r r2
   | r4 bes' a2
   | d,4 g2 fis4
@@ -385,10 +392,10 @@ Alto = \context Voice = "two" \relative c' {
   | d b c! c c bes a g
   | a2 } b4 cis
   | d8 a d4~ d8 b c! c
-  | \change Staff = "lower"
+  | \staffLower
     \stemUp\tieUp
     c a bes! bes a4
-    \change Staff = "upper"
+    \staffUpper
     \stemDown\tieDown
     \highlightSubjectFirst { a'_\markup \subject #'(1.2 . 0) #1
   %80
@@ -399,11 +406,11 @@ Alto = \context Voice = "two" \relative c' {
   | d2 } r4 c~
   %85
   | c bes c d
-  | \change Staff = "lower"
+  | \staffLower
     \stemUp\tieUp
     g, b cis d
   | a
-    \change Staff = "upper"
+    \staffUpper
     \stemDown\tieDown
     c\rest c\rest cis'
   | d r r c!
@@ -422,10 +429,10 @@ Alto = \context Voice = "two" \relative c' {
   | d a~ a8 f g g
   %100
   | g4
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
     e
-    \change Staff = "upper"
+    \staffUpper
     \stemDown\tieDown
     g8\rest f' e d
   | c b a4~ a8 a4 gis8
@@ -458,7 +465,7 @@ Alto = \context Voice = "two" \relative c' {
   | a2 r
   %125
   | r
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
     \highlightSubjectFirst { d,2^\markup \subject #'(-1.8 . 0) #1
   | c4 f b, bes
@@ -467,12 +474,12 @@ Alto = \context Voice = "two" \relative c' {
   | d, } d' c b
   %130
   | c
-    \change Staff = "upper"
+    \staffUpper
     \stemDown\tieDown
     f e d
-  | e a g \highlightSubjectSecond { f~-\markup \subject #'(-2 . 0) #2
+  | e a g \highlightSubjectSecond { \hideStaffSwitch f~-\markup \subject #'(-2 . 0) #2
   | f8
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
     dis e e e cis d d
   | d b c! c c b a gis
@@ -480,17 +487,18 @@ Alto = \context Voice = "two" \relative c' {
   %135
   | a8 c b a gis a fis gis
   | a
-    \change Staff = "upper"
+    \staffUpper
     \stemDown\tieDown
     e' a2 g4~
+    \showStaffSwitch
   | g8 f e d cis d b cis
   | d4 r
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
     d\rest fis,
   | g8 a bes c d c e d
   %140
-  | \change Staff = "upper"
+  | \staffUpper
     \stemDown\tieDown
     e f g a bes a c bes
   | c4 r r2
@@ -509,17 +517,17 @@ Alto = \context Voice = "two" \relative c' {
   | r2 \highlightSubjectFirst { c_\markup \subject #'(1.2 . 0) #1
   | b4 e ais, a
   | g c
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
     f,2%\prallmordent
   %155
   | e4 f g8 f g4
   | c, }
-    \change Staff = "upper"
+    \staffUpper
     \stemDown\tieDown
     c'~ c8 bes! a c
   | bes4
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
     a g fis
   | g8 f! ees d c4 e\rest
@@ -527,13 +535,13 @@ Alto = \context Voice = "two" \relative c' {
   %160
   | c\rest bes c d
   | d\rest
-    \change Staff = "upper"
+    \staffUpper
     \stemDown\tieDown
     ees d c
-  | \change Staff = "lower"
+  | \staffLower
     \stemUp\tieUp
     b\rest bes8 a bes4 c
-  | \change Staff = "upper"
+  | \staffUpper
     \stemDown\tieDown
     \unHighlightSubject d8 } ees d cis d f e g
   | f e f4~ f8 e d f
@@ -543,7 +551,7 @@ Alto = \context Voice = "two" \relative c' {
   | gis a b2 a8 gis
   | a e a a a fis g g
   | g e f!
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
     d b d cis e
   %170
@@ -554,18 +562,18 @@ Alto = \context Voice = "two" \relative c' {
   | d e f g a4 d
   %175
   | fis, a
-    \change Staff = "upper"
+    \staffUpper
     \stemDown\tieDown
     d fis
   | g4. f!8 e4 ees~
   | ees8 d c ees d4 d~
   | d
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
     bes8 bes bes4 g8 g
   | g4 bes8 bes e,4 a\rest
   %180
-  | \change Staff = "upper"
+  | \staffUpper
     \stemDown\tieDown
     r8 f' f e e g g fis
   | fis a a g g4 bes!
@@ -575,7 +583,7 @@ Alto = \context Voice = "two" \relative c' {
   %185
   | \unHighlightSubject d } f e! d cis d b cis
   | d bes! a g a[ d16 c] bes a g8
-  | \change Staff = "lower"
+  | \staffLower
     \stemUp\tieUp
     f4 e8 d e f g4~
   | g fis^\fermata f2\rest

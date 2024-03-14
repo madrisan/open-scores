@@ -37,10 +37,10 @@ Sopran = \context Voice = "one" \relative c'' {
   | d4 ees8 f g4 f ees d
   | \once\override NoteColumn.force-hshift = #0.2 c2~
     c8 d ees! c d bes c a
-  | \change Staff = "lower"
+  | \staffLower
     \stemUp\tieUp
     bes2~ bes8 c d ees!
-    \change Staff = "upper"
+    \staffUpper
     \stemUp\tieUp
     f2~
   | f f'8 ees d c d4 f
@@ -78,6 +78,7 @@ Sopran = \context Voice = "one" \relative c'' {
 Alto = \context Voice = "two" \relative c' {
   \voiceTwo
   \showStaffSwitch
+  \override VoiceFollower.color = \greyTextColor
   | s1*3/2*9
   %10
   | \stemUp \highlightSubjectFirst { d2^\markup \subject #'(0 . 0) #1 a'1
@@ -110,21 +111,21 @@ Alto = \context Voice = "two" \relative c' {
     \shape #'((0 . 0) (0 . 1) (0 . 2.5) (-0.2 . 1)) Tie
     d2~
     \stemDown d8 ees f ees
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
     d ees d c
   | bes4 a8 g f2~
     f8 \hideStaffSwitch g
-    \change Staff = "upper"
+    \staffUpper
     \stemDown\tieDown
     a \showStaffSwitch bes
   | c2 d8 ees d c
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
     bes2~
   %35
   | bes8 c d ees d4 c8 bes a4
-    \change Staff = "upper"
+    \staffUpper
     \stemDown\tieDown
     a'
   | g2 f2. g8 aes
@@ -135,11 +136,11 @@ Alto = \context Voice = "two" \relative c' {
   | g8 a bes c bes d a c bes4 g
   | a bes a f cis8 d e cis
   | d2~ d8 f e d
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
     cis2
   | d~ \hideStaffSwitch d8
-    \change Staff = "upper"
+    \staffUpper
     \stemDown\tieDown
     e \hideStaffSwitch f g a2~
   | a4 e f a bes4. a16 g
@@ -164,6 +165,7 @@ Alto = \context Voice = "two" \relative c' {
 Tenor = \context Voice = "three" \relative c' {
   \voiceThree
   \showStaffSwitch
+  \override VoiceFollower.color = \greyTextColor
   | \override MultiMeasureRest.staff-position = #6
     R1*3/2*4
   %5
@@ -176,12 +178,12 @@ Tenor = \context Voice = "three" \relative c' {
   %10
   | f8 g f e d4 a' b cis
   | d2 r4
-    \change Staff = "upper"
+    \staffUpper
     \stemDown\tieDown
     e f g
   | \stemUp a g f e \stemDown d cis
   | d2. cis4 d e
-  | \change Staff = "lower"
+  | \staffLower
     \stemUp\tieUp
     a, g f e d e
   %15
@@ -195,10 +197,10 @@ Tenor = \context Voice = "three" \relative c' {
   | d2~ d8 e f g a2~
   | \hideStaffSwitch
     a8
-    \change Staff = "upper"
+    \staffUpper
     \stemDown\tieDown
     a'
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
     a, g f e d e f4 f'
   | \showStaffSwitch
@@ -212,7 +214,7 @@ Tenor = \context Voice = "three" \relative c' {
   | R1*3/2
   | \override MultiMeasureRest.staff-position = #2
     R1*3/2*3
-  | \change Staff = "upper"
+  | \staffUpper
     \stemDown
     \highlightSubjectSecond { bes8_\markup \subject #'(0 . 0) #2 c d ees
     \showStaffSwitch
@@ -220,16 +222,16 @@ Tenor = \context Voice = "three" \relative c' {
     \shape #'((0 . 0) (0 . 0.5) (0 . 0) (-2 . -0.5)) Tie
     f2~ \stemDown f8 g f ees
   | d4 c bes2.
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
     a8 g
   | a2 bes2.
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     c4
   %35
   | d2. ees4 d
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
     c
   | \unHighlightSubject bes2~ } bes8 a bes c d4 bes
@@ -240,11 +242,11 @@ Tenor = \context Voice = "three" \relative c' {
   | bes4 a g fis g e
   | f! g a8 g a bes a4 g
   | f8 g a4~ a8 b cis d
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     e4 a_~
   | a g f a
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
     d,2
   | r r8 cis,! d e f a g bes
@@ -252,10 +254,10 @@ Tenor = \context Voice = "three" \relative c' {
   | a2. bes4 a g
   | f8 g a4 d, r r d'~
   | d
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     g8 fis g4
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
     bes,8 c d c bes a
   | g a bes2 g4 b e~

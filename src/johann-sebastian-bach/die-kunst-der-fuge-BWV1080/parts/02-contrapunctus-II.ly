@@ -99,7 +99,8 @@ Soprano = \context Voice = "one" \relative c'' {
 
 Alto = \context Voice = "two" \relative c' {
   \voiceTwo
-  | s1*8
+  \showStaffSwitch
+  \override VoiceFollower.color = \greyTextColor  | s1*8
   | \stemUp
     \highlightSubjectFirst { d2^\markup \subject #'(0 . 0) #1 a'
   %10
@@ -150,16 +151,16 @@ Alto = \context Voice = "two" \relative c' {
   | c,8.[ f16 e8. d16~] d8.[ e16 d8. cis16]
   | d2. g4
   %45
-  | c,2~
+  | \hideStaffSwitch c,2~
     \once\override Beam.positions = #'(-5 . -5)
     c8.[
-    \change Staff = "lower"
+    \staffLower
     \stemUp
-    bes16 a8. g16]
-  | f8.[
-    \change Staff = "upper"
+    bes16 a8. g16] \showStaffSwitch
+  | \hideStaffSwitch f8.[
+    \staffUpper
     \stemDown
-    f'16 g8. a16] bes8.[ c16 d8. bes16]
+    f'16 \showStaffSwitch g8. a16] bes8.[ c16 d8. bes16]
   | c4 g c2~
   | c d4 c8. bes16
   | \highlightSubjectFirst { a2_\markup \subject #'(1.5 . 0) #1 d
@@ -186,11 +187,11 @@ Alto = \context Voice = "two" \relative c' {
   | a r r2
   | r8 r16 bes[ a8. g16~] g8.[ a16 g8. f16]
   | e4
-    \change Staff = "lower"
+    \staffLower
     \stemUp
     a, bes2
   | a4
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     a' bes! cis
   %65
@@ -222,22 +223,24 @@ Alto = \context Voice = "two" \relative c' {
 
 Tenor = \context Voice = "three" \relative c' {
   \voiceThree
+  \showStaffSwitch
+  \override VoiceFollower.color = \greyTextColor
   | s1*4
   %5
   | \highlightSubjectFirst { a2-\markup \subject #'(0 . 0) #1 d
   | c a
   | gis a4 b
   | c2~ c8.[ d16 c8. bes16]
-  | \revert Tie.color a2~ } a8.[
-    \change Staff = "upper"
+  | \revert Tie.color \hideStaffSwitch a2~ } a8.[
+    \staffUpper
     \stemDown
     g'16 f8. e16]
   %10
   | \once\override Beam.positions = #'(-5 . -5)
     d8.[ c16
-    \change Staff = "lower"
+    \staffLower
     \stemUp
-    bes8. a16]
+    bes8. a16] \showStaffSwitch
     bes8.[ a16 g8. f16]
   | e2 a8\rest a16\rest a[ b8. cis16]
   | d2. cis4
@@ -293,23 +296,21 @@ Tenor = \context Voice = "three" \relative c' {
   | \stemUp
     c4 ees d2~
   | d4 d
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     e! f_~
   | f8.[ f16 ees8. d16]
-    \change Staff = "lower"
+    \staffLower
     \stemUp
     c8.[ bes16 a8. g16]
   | f4 r r2
   %55
   | r4 c d ees
   | f bes2
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     ees4
-  | f2 r8 r16
-    \change Staff = "lower"
-    \stemUp
+  | f2 \staffLower\stemUp d8\rest d16\rest
     c[ bes8. a16]
   | g4 ees' cis d~
   | d8 c\rest b4\rest a2\rest
@@ -317,10 +318,11 @@ Tenor = \context Voice = "three" \relative c' {
   | e'4\rest d2 cis4
   | d2 e
   | a,4 b8. cis16 d4 r
-  | r e,
+  | r \override NoteColumn.force-hshift = #0.3 e,
     \stemDown
+    \override NoteColumn.force-hshift = #-0.3
     f g
-  | a2 r
+  | \revert NoteColumn.force-hshift a2 r
   %65
   | r8 r16
     \stemUp

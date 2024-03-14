@@ -104,6 +104,8 @@ Soprano = \context Voice = "one" \relative c'' {
 
 Alto = \context Voice = "two" \relative c' {
   \voiceTwo
+  \showStaffSwitch
+  \override VoiceFollower.color = \greyTextColor
   | \highlightSubjectFirst { d2-\markup \subject #'(1.5 . -1) #1 a'
   | f d
   | cis d4 e
@@ -111,9 +113,9 @@ Alto = \context Voice = "two" \relative c' {
   %5
   | d4 } e f g
   | a
-    \change Staff = "lower"
+    \staffLower
     a,8 b c a
-    \change Staff = "upper"
+    \staffUpper
     f'4~
   | f8 b, e4~ e8 f e d
   | e4 fis g2~
@@ -148,14 +150,12 @@ Alto = \context Voice = "two" \relative c' {
   | d1~
   %35
   | d8 d g4~ g8 g
-    \change Staff = "lower"
-    \stemUp
+    \staffLower\stemUp
     c,4~
   | c8 a bes4 a2^~
   | a8 f g4 c2^~
   | c8 a b4
-    \change Staff = "upper"
-    \stemDown
+    \staffUpper\stemDown
     e2~
   | e8 cis d4 g2~
   %40
@@ -205,23 +205,25 @@ Alto = \context Voice = "two" \relative c' {
   %75
   | c8 fis, g bes ees,2
   | d4
-    \change Staff = "lower"
+    \staffLower
     \stemUp
     a bes c
   | d
-    \change Staff = "lower"
-    \stemUp g,~ g8
-    \change Staff = "upper"
+    \staffLower
+    \stemUp g,~ \hideStaffSwitch g8
+    \staffUpper
     \stemDown
-    bes' a g~
+    bes' \showStaffSwitch a g~
   | g8 fis e g fis2\fermata
   \fine
 }
 
 Tenor = \context Voice = "three" \relative c' {
   \voiceThree
-  | \override MultiMeasureRest.staff-position = #0
-    R1*5
+  \showStaffSwitch
+  \override MultiMeasureRest.staff-position = #0
+  \override VoiceFollower.color = \greyTextColor
+  | R1*5
   | s1*7
   | \highlightSubjectFirst { a2^\markup \subject #'(2.5 . 0) #1 d
   | c a
@@ -230,17 +232,16 @@ Tenor = \context Voice = "three" \relative c' {
   | c2~ c8 d c bes
   | \unHighlightSubject a2~ } a8 f g4
   | c2~ c8 a b4
-  | \change Staff = "upper"
-    \stemDown
+  | \staffUpper\stemDown
     e2_~ e8 cis d4
   %20
   | g2_~ g8 e f4
   | e4. a8 d,4. e8
-  | cis4 d8
-    \change Staff = "lower"
-    \stemNeutral
+  | \hideStaffSwitch cis4 d8
+    \staffLower\stemNeutral
     a
     \stemUp
+    \showStaffSwitch
     b4. cis8
   | d4 a2.~
   | a2 bes

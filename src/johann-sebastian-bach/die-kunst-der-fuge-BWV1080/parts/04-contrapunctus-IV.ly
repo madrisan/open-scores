@@ -172,13 +172,15 @@ Soprano = \context Voice = "one" \relative c'' {
 
 Alto = \context Voice = "two" \relative c' {
   \voiceTwo
+  \showStaffSwitch
+  \override VoiceFollower.color = \greyTextColor
   | s1*4
   %5
-  | \change Staff = "lower"
+  | \staffLower
     \stemDown
     \highlightSubjectFirstInv { d2^\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 a
   | c
-    \change Staff = "upper"
+    \staffUpper
     e
   | f e4 d
   | cis2~ cis8 a b cis
@@ -346,6 +348,8 @@ Alto = \context Voice = "two" \relative c' {
 Tenor = \context Voice = "three" \relative c' {
   \voiceThree
   \mergeDifferentlyDottedOn
+  \showStaffSwitch
+  \override VoiceFollower.color = \greyTextColor
   | R1*4
   | s1*6
   | \stemDown
@@ -366,13 +370,13 @@ Tenor = \context Voice = "three" \relative c' {
   | r8 b, cis d e4 r
   | r8 a bes! c d2~
   | d8 b c d
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     e2_~
   %25
   | e8 cis d e f2_~
   | f8 f e! d
-    \change Staff = "lower"
+    \staffLower
     \stemUp
     c2^~
   | c2. bes4
@@ -410,18 +414,18 @@ Tenor = \context Voice = "three" \relative c' {
   | a2 r8 bes a g
   %55
   | f2
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
-    a8\rest g'
-    \change Staff = "lower"
+    a8\rest g' \hideStaffSwitch
+    \staffLower
     \stemUp
-    f e
+    f e \showStaffSwitch
   | d2
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     a8\rest ees' d c
   | bes4 g' e2
-  | \change Staff = "lower"
+  | \staffLower
     \stemUp
     r8 c bes a g2~
   | g d'8\rest d c bes
@@ -437,16 +441,16 @@ Tenor = \context Voice = "three" \relative c' {
   | f e4 d
   | cis2~ cis8 a b cis
   | d4 } a
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     \shape #'((0 . 0) (0 . -1) (0 . -1) (0 . 0)) Tie
     f'2_~
   %70
   | f4
-    \change Staff = "lower"
+    \staffLower
     \stemUp
     g,
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     \shape #'((0 . 0) (0 . -1) (0 . -1) (0 . 0)) Tie
     e'2_~
@@ -457,7 +461,7 @@ Tenor = \context Voice = "three" \relative c' {
   %75
   | dis e dis e fis e fis dis
   | b c b c d4 b
-  | \change Staff = "lower"
+  | \staffLower
     \stemUp
     a e' c r
   | r e c e~
@@ -477,10 +481,10 @@ Tenor = \context Voice = "three" \relative c' {
   %90
   | r d b2
   | r8 b cis d e4
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     bes'!
-  | \change Staff = "lower"
+  | \staffLower
     \stemUp
     e,8 d e4 cis2
   | r4 a f2

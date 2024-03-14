@@ -225,6 +225,8 @@ Alto = \context Voice = "two" \relative c' {
 
 Tenor = \context Voice = "three" \relative c' {
   \voiceThree
+  \showStaffSwitch
+  \override VoiceFollower.color = \greyTextColor
   | s1*6
   | \highlightSubjectFirstInv { d4^\markup \scale #'(1 . -1) \subject #'(2.5 . 0) #1 a8. b16 c8. d16 e4
   | f e8. d16 c4~ c16 b c d
@@ -238,20 +240,20 @@ Tenor = \context Voice = "three" \relative c' {
   %15
   | cis4 a~ a r
   | \highlightSubjectFirst { d2^\markup \subject-augmentatio #'(2.2 . 0) #1 "+"
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     a'4. g8
-    \change Staff = "lower"
+    \staffLower
     \stemUp
   | f4. e8 d2
   | cis d4. e8
-  | \change Staff = "upper"
+  | \staffUpper
     \stemDown
     f2_~ f8. g16 f8. e16
   %20
   | d4 } d\rest
     \highlightSubjectFirstInv { c2_\markup \scale #'(1 . -1) \subject-augmentatio #'(1.2 . 0) #1 "+"
-  | \change Staff = "lower"
+  | \staffLower
     \stemUp
     f,4. g8 a4. bes8
   | c2 d
@@ -295,7 +297,7 @@ Tenor = \context Voice = "three" \relative c' {
   | d[ a' bes c] bes a g fis g2~
   | g16 bes a g \stemDown f2 bes4
   | \stemUp a r
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     \highlightSubjectFirst { d_\markup \subject #'(-2 . 0) #1 a'8. g16
   | f8. e16 d4 cis d8. e16
@@ -304,7 +306,7 @@ Tenor = \context Voice = "three" \relative c' {
   | d8. a16 d8~[ d32 c bes a] bes8. g16 c4_~
   | c a\rest a2\rest
   | a\rest
-    \change Staff = "lower"
+    \staffLower
     \stemUp
     \highlightSubjectFirst { f4^\markup \subject #'(2 . 0) #1 c'8. bes16
   | a8. g16 f4 e f8. g16
@@ -365,7 +367,7 @@ Bass = \context Voice = "four" \relative c {
   %20
   | f8. d16 g8. f16 e8~[ e32 c d e] f8. ees16
   | \once\override NoteColumn.force-hshift = #0.4 d8. c16 d8. e!16 f8. e16 f8. g16
-  | a4~ a8~[ a32 f g a] bes8. a16 g8. f16
+  | a4_~ a8~[ a32 f g a] bes8. a16 g8. f16
   | e!8. c16 \tieDown f4~ f8.[ g16 f8. e16]
   | d2 c8~[ c32 g' a bes] c8. bes16
   %25

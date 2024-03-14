@@ -267,33 +267,38 @@ Alto = \context Voice = "two" \relative c' {
 
 Tenor = \context Voice = "three" \relative c' {
   \voiceThree
+  \showStaffSwitch
+  \override VoiceFollower.color = \greyTextColor
   | \override MultiMeasureRest.staff-position = #0
     R1*3
   | s1*6
   %10
   | \highlightSubjectFirstInv { d2^\markup \scale #'(1 . -1) \subject #'(2.5 . 0) #1 a4. b8
   | c4.
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     d8 e2
   | f e4. d8
-  | \change Staff = "lower"
+  | \staffLower
     \stemUp
     cis2~~ cis8 a b cis
   | \unHighlightSubject d2~ } d8 d cis b
   %15
   | cis4 d8 e f e f
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     g
   | a4 e a2
-    \change Staff = "lower"
+    \staffLower
   | \override MultiMeasureRest.staff-position = #0
-    R1
+    % we cannot use here a MultiMeasureRest R1 because the change Staff ignores it (why?)
+    % and the line drawn for showing the staff change would be a mess
+    \once\override Voice.Rest.X-offset = #8
+    d,,1\rest
   | \override MultiMeasureRest.staff-position = #8
     R1*2
   %20
-  | \stemUp \highlightSubjectFirst { a,2^\markup \subject #'(2.5 . 0) #1 e'4. d8
+  | \stemUp \highlightSubjectFirst { a'2^\markup \subject #'(2.5 . 0) #1 e'4. d8
   | c4. b8 a2
   | gis a4. b8
   | c2~ c8 d c bes!
@@ -344,11 +349,11 @@ Tenor = \context Voice = "three" \relative c' {
   | e4 a,~ a8 a b cis
   %60
   | d4 r r
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     a'
   | \once\override NoteColumn.force-hshift = #-0.3 bes
-    \change Staff = "lower"
+    \staffLower
     \stemUp
     bes, a8 g a bes
   | c2~ c8 c bes a
@@ -361,7 +366,7 @@ Tenor = \context Voice = "three" \relative c' {
   | d2. e4~
   | e8 d e fis g2
   %70
-  | \change Staff = "upper"
+  | \staffUpper
     \stemDown
     \highlightSubjectFirstInv { a_\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 d,4. e8
   | f4. g8 a2
@@ -371,7 +376,7 @@ Tenor = \context Voice = "three" \relative c' {
   %75
   | g8 cis, d f bes,2_~
   | bes8 a g a
-    \change Staff = "lower"
+    \staffLower
     \stemUp
     f2
   | \highlightSubjectFirst { e^\markup \subject #'(-0.8 . 0) #1 a4. g8

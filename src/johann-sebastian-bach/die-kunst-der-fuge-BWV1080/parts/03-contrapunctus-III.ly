@@ -172,7 +172,7 @@ Alto = \context Voice = "two" \relative c' {
   %70
   | d4. c8 bes2~
   | bes8
-    \change Staff = "lower"
+    \staffLower
     \stemUp
     a bes2.^~
   | bes8 a bes g a2^\fermata
@@ -180,6 +180,8 @@ Alto = \context Voice = "two" \relative c' {
 
 Tenor = \context Voice = "three" \relative c' {
   \voiceThree
+  \showStaffSwitch
+  \override VoiceFollower.color = \greyTextColor
   %1
   | \stemDown
     \highlightSubjectFirstInv { d2^\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 a
@@ -210,14 +212,15 @@ Tenor = \context Voice = "three" \relative c' {
   %30
   | a8 b c4~ c8 d e4~
   | e8 d
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     f2 e8 d
   | c2_~ c8 b cis d
-  | \unHighlightSubject e2_~ } e8
-    \change Staff = "lower"
+  | \hideStaffSwitch
+    \unHighlightSubject e2_~ } e8
+    \staffLower
     \stemUp
-    a, b c
+    a, b c \showStaffSwitch
   | d2~ d8 g, a bes!
   %35
   | c bes \highlightSubjectFirstInv { c2^\markup \scale #'(1 . -1) \subject #'(2.5 . 0) #1 f,4~
@@ -227,12 +230,12 @@ Tenor = \context Voice = "three" \relative c' {
   | \unHighlightSubject c } g c2 b8 bes~
   %40
   | bes a
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     f'4 d4. e8
   | a,4 d2 cis8 c_~
   | c b g'4 e4. fis8
-  | \change Staff = "lower"
+  | \staffLower
     \stemUp
     b,4. cis8 d4. d8
   | c b c a b4. c8

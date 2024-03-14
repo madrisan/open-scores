@@ -105,8 +105,10 @@ Sopran = \context Voice = "one" \relative c'' {
 
 Alto = \context Voice = "two" \relative c' {
   \voiceTwo
+  \showStaffSwitch
   \override TupletBracket.bracket-visibility = ##f
   \override TupletNumber.transparent = ##t
+  \override VoiceFollower.color = \greyTextColor
   \partial 4 r4
   | R1*3 %1 to 3
   | r2 r4 \highlightSubjectFirstInv { a'_\markup \scale #'(1 . -1) \subject #'(1.2 . 0) #1
@@ -119,13 +121,13 @@ Alto = \context Voice = "two" \relative c' {
     \tuplet 3/2 { bes a g } fis4 ees'
   %10
   | d r
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
     f,\rest d~
   | d \tuplet 3/2 { ees8 d f } ees2
   | d1~
   | d8.*8/9[
-    \change Staff = "upper"
+    \staffUpper
     \stemDown\tieDown
     g16*4/3 bes8.*8/9 g16*4/3] d8.*8/9[ c16*4/3 d8.*8/9 e16*4/3]
   | f8.*8/9[ c16*4/3 a8.*8/9 c16*4/3] f8.*8/9[ a16*4/3 g8.*8/9 f16*4/3]
@@ -138,33 +140,33 @@ Alto = \context Voice = "two" \relative c' {
   %20
   | f8.*8/9[ g16*4/3 f8.*8/9 e16*4/3] d4 bes'
   | a
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
     cis, c\rest ees
   | d d\rest g\rest d
-    \change Staff = "upper"
+    \staffUpper
     \stemDown\tieDown
   | a' r r a
-  | \change Staff = "lower"
+  | \staffLower
     \stemUp\tieUp
     e e\rest g\rest
-    \change Staff = "upper"
+    \staffUpper
     \stemDown\tieDown
     a
   %25
   | b r r b
-  | \change Staff = "lower"
+  | \staffLower
     \stemUp\tieUp
     fis f\rest b\rest
-    \change Staff = "upper"
+    \staffUpper
     \stemDown\tieDown
     b
-  | \change Staff = "lower"
+  | \staffLower
     \stemUp\tieUp
     e, e\rest d2\rest
   | d\rest d4\rest \highlightSubjectFirst { f^\markup \subject #'(2.5 . 0) #1
   | c
-    \change Staff = "upper"
+    \staffUpper
     \stemDown\tieDown
     \shape #'((0 . -1) (0 . -1) (0 . -1) (0 . 0)) Tie
     c'~ \tuplet 3/2 { c8 bes a } \tuplet 3/2 { bes a g }
@@ -178,94 +180,94 @@ Alto = \context Voice = "two" \relative c' {
   | \tuplet 3/2 { bes a g } \tuplet 3/2 { a g bes } \tuplet 3/2 { a bes c } \tuplet 3/2 { d c bes }
   | c4 a f c'
   | g r b r
-  | \change Staff = "lower"
+  | \staffLower
     \stemUp\tieUp
     \shape #'((0 . 0) (0 . 0.5) (0 . 0.5) (0 . 0)) Tie e,1~
   | \shape #'((0 . 0) (0 . 0.5) (0 . 0.5) (0 . 0)) Tie e~
   %40
   | \shape #'((0 . 0) (0 . 0.5) (0 . 0.5) (0 . 0)) Tie e~
   | e2
-    \change Staff = "upper"
+    \staffUpper
     \stemDown\tieDown
     r4 e
-  | \change Staff = "lower"
+  | \staffLower
     \stemUp\tieUp
     b2 c4\rest e
   | f2
-    \change Staff = "upper"
+    \staffUpper
     \stemDown\tieDown
     r4 f
-  | \change Staff = "lower"
+  | \staffLower
     \stemUp\tieUp
     c2 d4\rest f
   %45
-  | \change Staff = "upper"
+  | \staffUpper
     \stemDown\tieDown
     g8.*8/9[
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
     e16*4/3 cis8.*8/9 e16*4/3]
-    \change Staff = "upper"
+    \staffUpper
     \stemDown\tieDown
     g8.*8/9[ f16*4/3 g8.*8/9 a16*4/3]
   | bes8[ g e g] bes8.*8/9[ a16*4/3 b8.*8/9 cis16*4/3]
   | d8.*8/9[ bes!16*4/3 g8.*8/9 bes16*4/3] d8.*8/9[ cis16*4/3 d8.*8/9 e16*4/3]
   | \tuplet 3/2 { f8 d a } \tuplet 3/2 { f g a } bes2
   | a4
-    \change Staff = "lower"
+    \staffLower
     \stemUp
     \once\override NoteColumn.force-hshift = #0.3 cis,
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     b'\rest ees,
   %50
   | d8.*8/9 e!16*4/3 \tuplet 3/2 { f8 e d } cis8.*8/9 a'16*4/3 \tuplet 3/2 { bes8 a g }
-  | \change Staff = "lower"
+  | \staffLower
     \stemUp
     a4 f d a'
   | e g\rest g\rest
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     e
   | e' e, c g'
   | d r r d
   %55
   | d'
-    \change Staff = "lower"
+    \staffLower
     \stemUp
     d, bes f'
   | c a c f
   | e cis e
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     a
   | g8.*8/9[ e16*4/3 cis8.*8/9 e16*4/3] g8.*8/9[ bes16*4/3 a8.*8/9 g16*4/3]
   | e'2\fermata
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
     e,4\rest e
   %60
   | \tuplet 3/2 { f8 g a } e4~ \tuplet 3/2 { e8 fis g } d4
-  | \change Staff = "upper"
+  | \staffUpper
     \stemDown
     a' r r
-    \change Staff = "lower"
+    \staffLower
     \stemUp
     \highlightSubjectFirst { e^\markup \subject #'(-1 . 0) #1
   | a,
-    \change Staff = "upper"
+    \staffUpper
     \stemDown\tieDown
     a'_~ \tuplet 3/2 { a8 g f } \tuplet 3/2 { g f e }
   | \tuplet 3/2 { f e d } e4~ \tuplet 3/2 { e8 d cis} \tuplet 3/2 { d cis b }
   | \tuplet 3/2 { cis d e } d4~ \tuplet 3/2 { d8 e f } \tuplet 3/2 { e f g }
   %65
   | f8.*8/9[ d16*4/3 a8.*8/9 d16*4/3] f8.*8/9[ g16*4/3 f8.*8/9 e16*4/3]
-  | \change Staff = "lower"
+  | \staffLower
     \stemUp\tieUp
     \once\override NoteColumn.force-hshift = #1 \unHighlightSubject d1~ }
   | d~
   | d4 cis e
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     bes'
   | \tuplet 3/2 { a8 d a } \tuplet 3/2 { f a f} d4
@@ -279,8 +281,10 @@ Alto = \context Voice = "two" \relative c' {
 
 Bass = \context Voice = "four" \relative c {
   \voiceFour
+  \showStaffSwitch
   \override TupletBracket.bracket-visibility = ##f
   \override TupletNumber.transparent = ##t
+  \override VoiceFollower.color = \greyTextColor
   \partial 4 d4\rest
   | \override MultiMeasureRest.staff-position = #0
     R1*7
@@ -336,12 +340,12 @@ Bass = \context Voice = "four" \relative c {
   | \tuplet 3/2 { r8 g' d e f g f g a bes a g }
   | f4 d\rest d\rest cis'
   | \tuplet 3/2 { d8 e f e d f }
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     e16*2/3 fis g4*4/3 fis8*2/3
   %50
   | g4
-    \change Staff = "lower"
+    \staffLower
     \stemUp
     d,\rest d\rest \clef bass g
   | \stemDown d' d,\rest d\rest d' \stemNeutral

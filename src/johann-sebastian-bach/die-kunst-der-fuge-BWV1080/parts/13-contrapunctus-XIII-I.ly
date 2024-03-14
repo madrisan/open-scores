@@ -99,7 +99,9 @@ Sopran = \context Voice = "one" \relative c'' {
 
 Alto = \context Voice = "two" \relative c' {
   \voiceTwo
+  \showStaffSwitch
   \override TupletBracket.bracket-visibility = ##f
+  \override VoiceFollower.color = \greyTextColor
   \partial 4 \highlightSubjectFirstInv { a'4_\markup \scale #'(1 . -1) \subject #'(1.5 . 0) #1
   %1
   | d d,~ \tuplet 3/2 { d8 e f } \tuplet 3/2 { e f g }
@@ -116,11 +118,11 @@ Alto = \context Voice = "two" \relative c' {
   %10
   | \tuplet 3/2 { e8 f g f e g f e d cis d e}
   | d4 r r
-    \change Staff = "lower"
+    \staffLower
     \stemUp
     f
   | e c e
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     a8.*8/9 b16*4/3
   | c4 a c e
@@ -131,51 +133,52 @@ Alto = \context Voice = "two" \relative c' {
   %--
   | R1*2
   | r2 r4
-    \change Staff = "lower"
+    \staffLower
     \stemUp
     \highlightSubjectFirst { d^\markup \subject #'(-1.2 . 0) #1
   %20
   | a
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     a'~ \tuplet 3/2 { a8 g f } \tuplet 3/2 { g f e }
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
   | \tuplet 3/2 { f e d } e4~ \tuplet 3/2 { e8 d cis d cis b
   | cis d e} d4~ \tuplet 3/2 { d8 e f e f g}
-  | \change Staff = "upper"
+  | \staffUpper
     \stemDown
     f8.*8/9[
-    \change Staff = "lower"
+    \staffLower
     \stemUp
     d16*4/3 a8.*8/9 d16*4/3]
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     f8.*8/9[ g16*4/3 f8.*8/9 e16*4/3]
-  | \change Staff = "lower"
+  | \staffLower
     \stemUp
     d4 } e!8.*8/9 fis16*4/3 g4
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     f
   %25
   | ees8.*8/9[ c16*4/3
-    \change Staff = "lower"
+    \staffLower
     \stemUp
     g8.*8/9 c16*4/3]
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     ees8.*8/9[ f16*4/3
     ees8.*8/9 d16*4/3]
   | c4 d8.*8/9 e!16*4/3 f4 ees
   | d8.*8/9[ c16*4/3 bes8.*8/9 c16*4/3] d8.*8/9[ ees16*4/3 f8.*8/9 d16*4/3]
-  | ees4~ \tuplet 3/2 { ees8 d c d c bes c bes a
-  | \change Staff = "lower"
+  | ees4~ \tuplet 3/2 { ees8 d c d c bes c bes \hideStaffSwitch a
+  | \staffLower
     \stemUp
     bes
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     bes' c d c bes} f2_~
+    \showStaffSwitch
   %30
   | \tuplet 3/2 { f8 g aes } \tuplet 3/2 { g f aes } g4 d
   | \tuplet 3/2 { ees8 d c } \tuplet 3/2 { d ees c } d4 g
@@ -187,7 +190,7 @@ Alto = \context Voice = "two" \relative c' {
   | f~
   | f2 r4 \highlightSubjectFirstInv { d_\markup \scale #'(1 . -1) \subject #'(1.2 . 0) #1
   | g
-    \change Staff = "lower"
+    \staffLower
     \stemUp\tieUp
     g,~ \tuplet 3/2 { g8 a bes a bes c
   | bes c d} c4~ \tuplet 3/2 { c8 d ees d ees f
@@ -195,15 +198,15 @@ Alto = \context Voice = "two" \relative c' {
   %40
   | bes8.*8/9[ d16*4/3 g8.*8/9 d16*4/3] bes8.*8/9[ a16*4/3 bes8.*8/9 c16*4/3]
   | d4 } bes d
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     g8.*8/9 f16*4/3
   | e!8.*8/9[ g16*4/3 c8.*8/9 g16*4/3] e8.*8/9[ c16*4/3 d8.*8/9 e16*4/3]
   | f4
-    \change Staff = "lower"
+    \staffLower
     \stemUp
     a,
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     c f8.*8/9 e16*4/3
   | d8.*8/9[ f16*4/3 bes8.*8/9 f16*4/3] d8.*8/9[ e16*4/3 cis8.*8/9 d16*4/3]
@@ -211,27 +214,31 @@ Alto = \context Voice = "two" \relative c' {
   | e2 r4 bes'
   | a r r8*4/3 r16*2/3 f' \tuplet 3/2 { e8 f g}
   | cis,4 r r e,
-  | \change Staff = "lower"
+  | \staffLower
     \stemUp
     a,
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     a'~ \tuplet 3/2 { a8 g f } \tuplet 3/2 { g f e }
-  | \tuplet 3/2 { f e
-    \change Staff = "lower"
+  | \hideStaffSwitch
+    \tuplet 3/2 { f e
+    \staffLower
     \stemUp\tieUp
+    \showStaffSwitch
     d } e4~ \tuplet 3/2 { e8 d cis } \tuplet 3/2 { d cis b }
   %50
-  | \change Staff = "upper"
+  | \staffUpper
     \stemDown
     \tuplet 3/2 { cis d e } d4~ \tuplet 3/2 { d8 e f } \tuplet 3/2 { e f g }
-  | f8.*8/9[
-    \change Staff = "lower"
+  | \hideStaffSwitch
+    f8.*8/9[
+    \staffLower
     \stemUp\tieUp
     d16*4/3 a8.*8/9 d16*4/3]
-    \change Staff = "upper"
+    \staffUpper
     \stemDown
     f8.*8/9[ g16*4/3 f8.*8/9 e16*4/3]
+    \showStaffSwitch
   | d4 bes' g d
   | g8.*8/9[ e16*4/3 b8.*8/9 e16*4/3] g8.*8/9[ a16*4/3 g8.*8/9 f16*4/3]
   | e4 c' a e
