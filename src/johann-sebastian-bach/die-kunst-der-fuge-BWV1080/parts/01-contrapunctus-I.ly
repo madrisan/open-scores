@@ -17,7 +17,6 @@ Soprano = \context Voice = "one" \relative c'' {
   | \unHighlightSubject a } d, d'2 cis4
   %10
   | d8 a c4~ c8 a bes4~
-    \break
   | bes8 e, a2.~
   | a8 c!4 b8 c2~
   | c8 d, c'4~ c8 a b4~
@@ -25,14 +24,18 @@ Soprano = \context Voice = "one" \relative c'' {
   %15
   | b c4 d
   | g,8 bes a4~ a8 bes a g~
-  | g e f d bes'2~
+  | g^\markup { "First episode" }
+    e f d bes'2~
   | bes8 g a4 d2~
   | d8 b c4 f!2~
   %20
   | f8 d e4 a, d~
   | d8 b c4 f, bes |
   | a2 d,4 g~ |
-  | g8 e f d' e,2_~ |
+  | g8^\markup {
+      "Second exposition (counter-exposition) ASBT, bars 23−44"
+    }
+    e f d' e,2_~ |
   | e8 d a'2 g4 |
   %25
   | a2 b\rest
@@ -60,7 +63,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | e8 cis d4~ d4. e8
   | f e g4~ g8 f e d
   | cis a d4~ d8 b c4~
-  | c bes a r
+  | c^\markup { "Episode, bars 44−60" } bes a r
   %45
   | R1*4
   | \highlightSubjectFirst { e'2^\markup \subject #'(0 . 0) #1 a
@@ -77,7 +80,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | g8 e a g f e d cis
   | d c bes a g2~
   %60
-  | g8 e f d a'2~
+  | g8 e f d a'2~^\markup { "Episode, bars 60 to the end" }
   | a8 fis g bes c2~
   | c8 a bes d ees4 d
   | cis a'~ a8 d, g4~
@@ -106,7 +109,9 @@ Alto = \context Voice = "two" \relative c' {
   \voiceTwo
   \showStaffSwitch
   \override VoiceFollower.color = \greyTextColor
-  | \highlightSubjectFirst { d2-\markup \subject #'(1.5 . -1) #1 a'
+  | \highlightSubjectFirst {
+    d2^\markup { "Exposition ASBT, bars 1−17" }
+      _\markup \subject #'(1.5 . -1) #1 a'
   | f d
   | cis d4 e
   | f2~ f8 g f e
@@ -114,18 +119,18 @@ Alto = \context Voice = "two" \relative c' {
   | d4 } e f g
   | a
     \staffLower
-    a,8 b c a
+    \highlightMotif { a,8 b c a
     \staffUpper
     f'4~
   | f8 b, e4~ e8 f e d
-  | e4 fis g2~
+  | e4 fis \unHighlightMotifWithStem g2~ }
   | g4 f e2
   %10
   | d4. e8 f4. d8
   | g4. g8 f e d cis
   | d4 g2 c,4
-  | f4. e8 f4. gis,8
-  | e'2. d8 c
+  | f4. e8 f4. \staffLower gis,8
+  | \staffUpper e'2. d8 c
   %15
   | d f e d c4 r
   | R1
@@ -168,7 +173,10 @@ Alto = \context Voice = "two" \relative c' {
   | f8 d g4~ g8 e a4~
   | a8 f bes4~ bes8 g a4~
   | a8 f g2 f8 d
-  | a'2 d~
+  | \highlightMotif { a'2^\markup {
+      "(false extrance)"
+    }
+    \unHighlightMotifWithStem d~ }
   | d8 cis b cis d a e'4~
   %50
   | e8 a, d4 r8 f, bes4~
@@ -325,37 +333,44 @@ Tenor = \context Voice = "three" \relative c' {
 
 Bass = \context Voice = "four" \relative c {
   \voiceFour
-  | s4_\markup \italic \tiny \with-color #greyTextColor {
+  | s4_\markup {
       \hspace #-2
       \ieyeglasses
       \column {
          \concat {
            \normal-text { "[H.A.Kellner] " }
-           "158 = Die(18) Kunst(80) der(26) Fuga(34) = Johann(58) Sebastian(86) Bach(14)"
+           "158 = Die(18) + Kunst(80) + der(26) + Fuga(34) = Johann(58) + Sebastian(86) + Bach(14)"
          }
+         \raise #0.8
          \concat {
            \normal-text { "[H.A.Kellner] " }
-           "The first two notes of the entire work are D and A: 4 and 1, where 41 = J(9)+S(18)+B(2)+A(1)+C(3)+H(8)"
+           "The first two notes of the entire work are D and A: 4 and 1, "
+           "where 41 = J(9)+S(18)+B(2)+A(1)+C(3)+H(8)"
          }
       }
     } s2.
   | s1*7
-  | \highlightSubjectFirst { d2_\markup \subject #'(0 . 0) #1 a'
+  | \highlightSubjectFirst { d2_\markup \subject #'(1.2 . 0) #1 a'
   %10
   | f d
   | cis d4 e
   | f2~ f8 g f e
   | d2 } r
-  | r4 a8 b c a f'4~
+  | r4 \highlightMotif {
+    \once\override HorizontalBracketText.text = \markup {
+      "same counterpoint used with the first answer"
+    }
+    a8
+    \startGroup
+    b c a f'4~
   %15
   | f8 b, e4~ e8 f e d
-  | e g fis a g2
-  | d2. e8 d
-  | e4 f8
-    e fis4 g8 fis
-  | gis4 a8 gis a4 bes8 a
+  | e g fis a g2 \stopGroup }
+  | d2. e8 \startGroup d
+  | e4 \stopGroup f8 \startGroup e fis4 \stopGroup g8 \startGroup fis
+  | gis4 \stopGroup a8 \startGroup gis a4 \stopGroup bes8 \startGroup a
   %20
-  | b4 c8 b cis4 d8 gis,
+  | b4 \stopGroup c8 \startGroup b cis4 \stopGroup d8 gis,
   | a2~
     a8 f g4~
   | g8 e f4~ f8 d e4
@@ -366,9 +381,11 @@ Bass = \context Voice = "four" \relative c {
   | d f e d a'4. f8
   | bes4. g8 d'4. f8
   | a4. a,8 e4 r
-  | b'2\rest e
+  | b'2\rest \highlightMotif { e_\markup {
+      "(false entrance of the bass)"
+    }
   %30
-  | a f~
+  | a \unHighlightMotif f~ }
   | f8 f e d c d c b
   | \highlightSubjectFirst { a2_\markup \subject #'(0 . 0) #1 d
   | cis a
@@ -402,7 +419,7 @@ Bass = \context Voice = "four" \relative c {
   | \unHighlightSubject d2~ } d8 ees d c
   | bes2~ bes8 c bes a
   | g2. g4
-  | a1~
+  | a1~_\markup { "dominant pedal" }
   | a~
   %65
   | a2. a4
@@ -415,7 +432,15 @@ Bass = \context Voice = "four" \relative c {
   | b2\rest a'4 b,\rest
   | b2\rest gis'
   | a2. a,4
-  | d1~
+  | d1~_\markup {
+      \column {
+        \line { "tonal pedal" }
+        \raise #0.8
+        \line { "(secondary dominant pedal" }
+        \raise #1.6
+        \line { " in bars 74−76 in G minor key)" }
+      }
+    }
   %75
   | d~
   | d~
@@ -444,12 +469,25 @@ Bass = \context Voice = "four" \relative c {
     >>
   >>
   \header {
-    %composer = "Johann Sebastian Bach"
+    composer = "Johann Sebastian Bach"
     opus = "BWV 1080, 1"
     title = \markup { \smallCaps "Die Kunst der Fuga" }
     subtitle = \markup { \smallCaps "Contrapunctus I" }
-    subsubtitle = ##f
+    subsubtitle = "Four-voice fugue on principal subject"
   }
-  \layout { }
+  \layout {
+    \context {
+      \Voice
+      \consists "Horizontal_bracket_engraver"
+      \override HorizontalBracket.direction = #DOWN
+      \override HorizontalBracket.color = #greyTextColor
+      \override HorizontalBracketText.color = #greyTextColor
+      \override HorizontalBracketText.font-shape = #'italic
+      \override HorizontalBracketText.font-size = #-2
+      \override TextScript.color = #greyTextColor
+      \override TextScript.font-shape = #'italic
+      \override TextScript.font-size = #-2
+    }
+  }
   \midi { \tempo 4=84 }
 }

@@ -2,7 +2,8 @@ greyTextColor = #(x11-color "dimgray")
 lightGrey = #(x11-color 'grey65)
 middleGrey = #(x11-color 'grey45)
 
-BachSignatureColor = #(x11-color 'darkcyan)
+motifColor = #(x11-color 'darkcyan)
+%motifColor = #(x11-color 'black)
 
 subjectFirstColor = #(x11-color 'darkblue)
 subjectFirstInvColor = #(x11-color 'royalblue)
@@ -37,6 +38,15 @@ red =
    "Colour the given note(s) in red."
    #{ \markWithColor #(x11-color 'red) #music #})
 
+unHighlightMotif = {
+  \revert Tie.color
+  \revert Stem.color
+  \revert Beam.color
+}
+unHighlightMotifWithStem = {
+  \revert Tie.color
+  \revert Beam.color
+}
 unHighlightSubject = {
   \revert Tie.color
   \revert Stem.color
@@ -69,11 +79,11 @@ markWithColorExtended =
      %\startStaff
    #})
 
-highlightBACH =
+highlightMotif =
 #(define-music-function (music)
    (ly:music?)
-   "Colour the B.A.C.H. signature"
-   #{ \markWithColorExtended \BachSignatureColor #music #})
+   "Colour an important motif like the B.A.C.H. signature"
+   #{ \markWithColorExtended \motifColor #music #})
 
 highlightSubjectFirst =
 #(define-music-function (music)

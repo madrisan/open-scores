@@ -48,23 +48,23 @@
 \markup { \indexItem #16 "Contrapunctus IV" "15"
   "four-voice fugue on principal subject in inversion, employing counter-subjects"
 }
-\markup \indexItem #21 "Contrapunctus V" "20" "fugue with many stretto entries"
-\markup { \indexItem #25 "Contrapunctus VI [per Diminutionem] in Stylo Francese" "24"
+\markup \indexItem #22 "Contrapunctus V" "21" "fugue with many stretto entries"
+\markup { \indexItem #26 "Contrapunctus VI [per Diminutionem] in Stylo Francese" "25"
     "fugue with many stretto entries a 4 in Stylo Francese"
 }
-\markup { \indexItem #32 "Contrapunctus VII per per Augmentationem et Diminutionem" "31"
+\markup { \indexItem #33 "Contrapunctus VII per per Augmentationem et Diminutionem" "32"
   "fugue that uses augmented (doubling all note lengths) and diminished versions of the main subject and its inversion"
 }
-\markup { \indexItem #38 "Contrapunctus VIII" "37"
+\markup { \indexItem #39 "Contrapunctus VIII" "38"
   "triple fugue with three subjects, having independent expositions"
 }
-\markup { \indexItem #46 "Contrapunctus IX alla Duodecima" "45"
+\markup { \indexItem #47 "Contrapunctus IX alla Duodecima" "46"
   "double fugue, with two subjects occurring dependently and in invertible counterpoint at the twelfth"
 }
-\markup { \indexItem #51 "Contrapunctus X alla Decima" "50"
+\markup { \indexItem #52 "Contrapunctus X alla Decima" "51"
   "double fugue, with two subjects occurring dependently and in invertible counterpoint at the tenth"
 }
-\markup { \indexItem #56 "Contrapunctus XI" "55"
+\markup { \indexItem #57 "Contrapunctus XI" "56"
   "triple fugue, employing the three subjects of Contrapunctus VIII in inversion"
 }
 \markup \column \abs-fontsize #11 {
