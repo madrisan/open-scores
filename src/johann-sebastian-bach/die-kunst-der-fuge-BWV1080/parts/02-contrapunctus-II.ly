@@ -475,6 +475,24 @@ Bass = \context Voice = "four" \relative c {
     opus = "BWV 1080, 2"
     title = ##f
     subtitle = \markup { \smallCaps "Contrapunctus II" }
+    subsubtitle = \markup {
+      \center-column {
+        \line { "Four-voice fugue on principal subject, accompanied by a “French” style dotted rhythm" }
+        \line \normal-text \tiny \with-color #(rgb-color 1.0 1.0 1.0) {
+          \on-color \expositionColor \pad-markup #0.8 "Exposition BTAS"
+          \on-color \episodeColor \pad-markup #1 "1"
+          \on-color \secondExpositionColor \pad-markup #0.8 "Second exposition ASBT"
+          \on-color \episodeColor \pad-markup #1 "2"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "SAB"
+          \on-color \episodeColor \pad-markup #1 "3"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "B"
+          \on-color \episodeColor \pad-markup #1 "4"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "T"
+          \on-color \episodeColor \pad-markup #1 "5"
+          \on-color \endColor \pad-markup #0.8 "S"
+        }
+      }
+    }
   }
   \layout { }
   \midi { \tempo 4=140 }

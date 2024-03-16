@@ -723,6 +723,24 @@ Bass = \context Voice = "four" \relative c {
     opus = "BWV 1080, 4"
     title = ##f
     subtitle = \markup { \smallCaps "Contrapunctus IV" }
+    subsubtitle = \markup {
+      \center-column {
+        \line { "Four-voice fugue on principal subject in inversion, employing counter-subjects" }
+        \line \normal-text \tiny \with-color \white {
+          \on-color \expositionColor \pad-markup #0.8 "Exposition SATB"
+          \on-color \episodeColor \pad-markup #1 "1"
+          \on-color \secondExpositionColor \pad-markup #0.8 "Second exposition SATB"
+          \on-color \episodeColor \pad-markup #1 "2"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "BT"
+          \on-color \episodeColor \pad-markup #1 "3"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "AS"
+          \on-color \episodeColor \pad-markup #1 "4"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "T•B•SA"
+          \on-color \episodeColor \pad-markup #1 "5"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "TA"
+        }
+      }
+    }
   }
   \layout { }
   \midi { \tempo 4=180 }

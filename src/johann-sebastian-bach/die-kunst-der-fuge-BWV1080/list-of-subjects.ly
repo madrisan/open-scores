@@ -97,7 +97,7 @@ SubjectXFirst = {
   | r4^\markup \abs-fontsize #8 \italic {
       "first subject"
     }
-    cis' d a | r f' e a | d,8 e f g a bes c4~ | c8 bes a g fis d g4
+    cis' d a | r f' e a | d,8 e f g a bes c4 | % c8 bes a g fis d g4
 }
 SubjectXSecond = {
   \commonSettings

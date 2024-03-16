@@ -1,9 +1,42 @@
 greyTextColor = #(x11-color "dimgray")
-lightGrey = #(x11-color 'grey65)
-middleGrey = #(x11-color 'grey45)
+lightGrey =     #(x11-color 'grey65)
+middleGrey =    #(x11-color 'grey45)
+%white =        #(rgb-color 1.0 1.0 1.0)
+
+episodeColor =             #(x11-color 'dimgrey)
+expositionColor =          #(rgb-color 0.70 0.00 0.00)
+secondExpositionColor =    #(rgb-color 0.83 0.13 0.18)
+subjectPresentationColor = #(rgb-color 0.00 0.40 0.13)
+subjectStrettoColor =      #(rgb-color 0.90 0.45 0.00)
+endColor =                 #(rgb-color 0.00 0.00 0.40)
+
+#(define-markup-command (episodeBullet layout props) ()
+  "Prints out a bullet for marking the start of a fugue exposition"
+  (interpret-markup layout props
+    #{ \markup \with-color #episodeColor \char ##x2022 #}))
+#(define-markup-command (expositionBullet layout props) ()
+  "Prints out a bullet for marking the start of a fugue exposition"
+  (interpret-markup layout props
+    #{ \markup \with-color #expositionColor \char ##x2022 #}))
+#(define-markup-command (secondExpositionBullet layout props) ()
+  "Prints out a bullet for marking the start of a fugue exposition"
+  (interpret-markup layout props
+    #{ \markup \with-color #secondExpositionColor \char ##x2022 #}))
+#(define-markup-command (subjectPresentationBullet layout props) ()
+  "Prints out a bullet for marking the start of a fugue exposition"
+  (interpret-markup layout props
+    #{ \markup \with-color #subjectPresentationColor \char ##x2022 #}))
+
+#(define-markup-command (on-color layout props color arg) (color? markup?)
+   (let* ((stencil (interpret-markup layout props arg))
+          (X-ext (ly:stencil-extent stencil X)))
+     (ly:stencil-add
+       (stencil-with-color
+         (ly:round-filled-box X-ext '(2 . -1) 0)
+         color)
+       stencil)))
 
 motifColor = #(x11-color 'darkcyan)
-%motifColor = #(x11-color 'black)
 
 subjectFirstColor = #(x11-color 'darkblue)
 subjectFirstInvColor = #(x11-color 'royalblue)
@@ -154,7 +187,6 @@ staffUpper = { \change Staff = "upper" }
        \path #0.15
        \my-eyeglassespath
     #}))
-
 
 #(define-markup-command (subject layout props dest num)
   (number-pair? number?)

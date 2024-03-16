@@ -24,7 +24,7 @@ Soprano = \context Voice = "one" \relative c'' {
   %15
   | b c4 d
   | g,8 bes a4~ a8 bes a g~
-  | g^\markup { "First episode" }
+  | g^\markup { \episodeBullet "First episode" }
     e f d bes'2~
   | bes8 g a4 d2~
   | d8 b c4 f!2~
@@ -33,7 +33,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | d8 b c4 f, bes |
   | a2 d,4 g~ |
   | g8^\markup {
-      "Second exposition (counter-exposition) ASBT, bars 23−44"
+      \secondExpositionBullet "Second exposition (counter-exposition) ASBT, bars 23−44"
     }
     e f d' e,2_~ |
   | e8 d a'2 g4 |
@@ -63,7 +63,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | e8 cis d4~ d4. e8
   | f e g4~ g8 f e d
   | cis a d4~ d8 b c4~
-  | c^\markup { "Episode, bars 44−60" } bes a r
+  | c^\markup { \episodeBullet "Episode, bars 44−60" } bes a r
   %45
   | R1*4
   | \highlightSubjectFirst { e'2^\markup \subject #'(0 . 0) #1 a
@@ -80,7 +80,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | g8 e a g f e d cis
   | d c bes a g2~
   %60
-  | g8 e f d a'2~^\markup { "Episode, bars 60 to the end" }
+  | g8 e f d a'2~^\markup { \episodeBullet "Episode, bars 60 to the end" }
   | a8 fis g bes c2~
   | c8 a bes d ees4 d
   | cis a'~ a8 d, g4~
@@ -108,10 +108,10 @@ Soprano = \context Voice = "one" \relative c'' {
 Alto = \context Voice = "two" \relative c' {
   \voiceTwo
   \showStaffSwitch
-  \override VoiceFollower.color = \greyTextColor
   | \highlightSubjectFirst {
-    d2^\markup { "Exposition ASBT, bars 1−17" }
-      _\markup \subject #'(1.5 . -1) #1 a'
+    d2^\markup {
+       \expositionBullet "Exposition ASBT, bars 1−17"
+    }_\markup \subject #'(1.5 . -1) #1 a'
   | f d
   | cis d4 e
   | f2~ f8 g f e
@@ -174,7 +174,7 @@ Alto = \context Voice = "two" \relative c' {
   | a8 f bes4~ bes8 g a4~
   | a8 f g2 f8 d
   | \highlightMotif { a'2^\markup {
-      "(false extrance)"
+      "(false extrance of the Alto)"
     }
     \unHighlightMotifWithStem d~ }
   | d8 cis b cis d a e'4~
@@ -230,7 +230,6 @@ Tenor = \context Voice = "three" \relative c' {
   \voiceThree
   \showStaffSwitch
   \override MultiMeasureRest.staff-position = #0
-  \override VoiceFollower.color = \greyTextColor
   | R1*5
   | s1*7
   | \highlightSubjectFirst { a2^\markup \subject #'(2.5 . 0) #1 d
@@ -382,7 +381,7 @@ Bass = \context Voice = "four" \relative c {
   | bes4. g8 d'4. f8
   | a4. a,8 e4 r
   | b'2\rest \highlightMotif { e_\markup {
-      "(false entrance of the bass)"
+      "(false entrance of the Bass)"
     }
   %30
   | a \unHighlightMotif f~ }
@@ -469,24 +468,39 @@ Bass = \context Voice = "four" \relative c {
     >>
   >>
   \header {
-    composer = "Johann Sebastian Bach"
+    composer = ##f % "Johann Sebastian Bach"
     opus = "BWV 1080, 1"
     title = \markup { \smallCaps "Die Kunst der Fuga" }
     subtitle = \markup { \smallCaps "Contrapunctus I" }
-    subsubtitle = "Four-voice fugue on principal subject"
+    subsubtitle = \markup {
+      \center-column {
+        \line { "Four-voice fugue on principal subject" }
+        \line \normal-text \tiny \with-color #(rgb-color 1.0 1.0 1.0) {
+          \on-color \expositionColor \pad-markup #0.8 "Exposition ASBT"
+          \on-color \episodeColor \pad-markup #1 "1"
+          \on-color \secondExpositionColor \pad-markup #0.8 "Second exposition ASBT"
+          \on-color \episodeColor \pad-markup #1 "2"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "S"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "B"
+          \on-color \episodeColor \pad-markup #1 "3"
+          \on-color \endColor \pad-markup #0.8 "T"
+        }
+      }
+    }
   }
   \layout {
     \context {
       \Voice
       \consists "Horizontal_bracket_engraver"
-      \override HorizontalBracket.direction = #DOWN
       \override HorizontalBracket.color = #greyTextColor
+      \override HorizontalBracket.direction = #DOWN
       \override HorizontalBracketText.color = #greyTextColor
       \override HorizontalBracketText.font-shape = #'italic
       \override HorizontalBracketText.font-size = #-2
       \override TextScript.color = #greyTextColor
       \override TextScript.font-shape = #'italic
       \override TextScript.font-size = #-2
+      \override VoiceFollower.color = #greyTextColor
     }
   }
   \midi { \tempo 4=84 }
