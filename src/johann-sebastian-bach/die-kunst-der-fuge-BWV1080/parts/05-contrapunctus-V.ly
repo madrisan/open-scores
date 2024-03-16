@@ -48,11 +48,12 @@ Soprano = \context Voice = "one" \relative c'' {
   | f e2 d4~
   %40
   | d c2 bes!4~
-  | \highlightBACH {
+  | \highlightMotif {
       bes4.^\markup \italic\tiny \with-color #greyTextColor { "B" }
       \once\override Staff.TextScript.extra-offset = #'(0 . 0.2)
       a8^\markup \italic\tiny \with-color #greyTextColor { "A" }
       c^\markup \italic\tiny \with-color #greyTextColor { "C" }
+      \once\override Staff.TextScript.extra-offset = #'(0 . -0.1)
       b^\markup \italic\tiny \with-color #greyTextColor { "H" }
     }
     c4
@@ -403,7 +404,7 @@ Tenor = \context Voice = "three" \relative c' {
 Bass = \context Voice = "four" \relative c {
   \voiceFour
   | s1*3
-  | \highlightSubjectFirst { d2_\markup \subject #'(0 . 0) #1 a'4. g8
+  | \highlightSubjectFirst { d2_\markup \subject #'(1.2 . 0) #1 a'4. g8
   %5
   | f4. e8 d2
   | cis d4. e8

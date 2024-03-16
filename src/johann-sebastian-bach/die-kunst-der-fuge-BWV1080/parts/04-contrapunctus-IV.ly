@@ -9,7 +9,7 @@ Global = {
 Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
   %1
-  | \highlightSubjectFirstInv { a2^\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 d,
+  | \highlightSubjectFirstInv { a2^\markup \scale #'(1 . -1) \subject #'(-0.5 . 0) #1 d,
   | f a
   | bes a4 g
   | f2~ f8 e f g
@@ -39,7 +39,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | \override MultiMeasureRest.staff-position = #6
     R1*3
   %27
-  | \highlightSubjectFirstInv { c'2^\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 f,
+  | \highlightSubjectFirstInv { c'2^\markup \scale #'(1 . -1) \subject #'(-0.8 . 0) #1 f,
   | a c
   | d c4 bes
   %30
@@ -93,7 +93,7 @@ Soprano = \context Voice = "one" \relative c'' {
     R1*4
   | s1*5
   %77
-  | \highlightSubjectFirstInv { e2^\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 a,
+  | \highlightSubjectFirstInv { e2^\markup \scale #'(1 . -1) \subject #'(2.4 . 0) #1 a,
   | c e
   | g fis4 e
   %80
@@ -178,7 +178,7 @@ Alto = \context Voice = "two" \relative c' {
   %5
   | \staffLower
     \stemDown
-    \highlightSubjectFirstInv { d2^\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 a
+    \highlightSubjectFirstInv { d2^\markup \scale #'(1 . -1) \subject #'(1.8 . 0) #1 a
   | c
     \staffUpper
     e
@@ -213,7 +213,7 @@ Alto = \context Voice = "two" \relative c' {
   | f8 c' bes a g a g f
   %30
   | e d e4 d r
-  | \highlightSubjectFirstInv { g2_\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 c,
+  | \highlightSubjectFirstInv { g2_\markup \scale #'(1 . -1) \subject #'(1.2 . 0) #1 c,
   | e g
   | a g4 f
   | e2~ e8 d e fis
@@ -264,7 +264,7 @@ Alto = \context Voice = "two" \relative c' {
   | bes'2. c,4
   | a'2. bes4
   | g2^~ g8 bes a g
-  | \highlightSubjectFirstInv { a2^\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 d,
+  | \highlightSubjectFirstInv { a2^\markup \scale #'(1 . -1) \subject #'(2.4 . 0) #1 d,
   | f a
   %75
   | c b4 a
@@ -336,7 +336,7 @@ Alto = \context Voice = "two" \relative c' {
   | d2 r4 a
   | b2 r4 f'~
   | f e r2
-  | \highlightSubjectFirstInv { a2_\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 d,
+  | \highlightSubjectFirstInv { a2_\markup \scale #'(1 . -1) \subject #'(1.2 . 0) #1 d,
   | f a
   %135
   | bes a4 g
@@ -549,7 +549,7 @@ Bass = \context Voice = "four" \relative c {
   \mergeDifferentlyDottedOn
   | s1*14
   %15
-  | \highlightSubjectFirstInv { d2_\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 a
+  | \highlightSubjectFirstInv { d2_\markup \scale #'(1 . -1) \subject #'(1.3 . 0) #1 a
   | c e
   | f e4 d
   | cis2~ cis8 a b cis

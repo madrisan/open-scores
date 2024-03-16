@@ -111,7 +111,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | bes g cis cis cis g e'e
   | e cis d4 r16 c[ bes a] g f' e d
   | cis2 r8 a b cis
-  | d cis e d f4 bes,~
+  | d^\markup { \hspace #0 \raise #1 "VIII/c" } cis e d f4 bes,~
   %95
   | bes8 a d c ees d fis, c'
   | bes d ees g f d e cis
@@ -313,7 +313,8 @@ Alto = \context Voice = "two" \relative c' {
   | \appoggiatura g8 f2
     \staffUpper
     \stemDown\tieDown
-    r4 \highlightSubjectSecond { bes'~_\markup \subject #'(0 . 0) #2
+    r4^\markup { \hspace #0 \raise #1 "VIII/b" }
+    \highlightSubjectSecond { bes'~_\markup \subject #'(0 . 0) #2
   %40
   | bes8 gis a a a fis g g
   | g e f! f f e d cis
