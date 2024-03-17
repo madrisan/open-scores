@@ -462,7 +462,30 @@ Bass = \context Voice = "four" \relative c {
     opus = "BWV 1080, 6"
     title = ##f
     subtitle = \markup { \smallCaps "Contrapunctus VI" }
-    subsubtitle = "[per Diminutionem] in Stilo Francese"
+    subsubtitle = \markup {
+      \center-column {
+        \line { "[per Diminutionem] in Stilo Francese" }
+        \line \normal-text \tiny \with-color \white {
+          \on-color \subjectStrettoColor \pad-markup #0.8 "Stretto BSA"
+          \on-color \episodeColor \pad-markup #1 "1"
+          \on-color \subjectStrettoColor \pad-markup #0.8 "TAS"
+          \on-color \episodeColor \pad-markup #1 "2"
+          \on-color \subjectStrettoColor \pad-markup #0.8 "BTS"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "T"
+          \on-color \subjectStrettoColor \pad-markup #0.8 "AT"
+          \on-color \episodeColor \pad-markup #1 "3"
+          \on-color \subjectStrettoColor \pad-markup #0.8 "TASBT"
+          \on-color \episodeColor \pad-markup #1 "4"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "A"
+          \on-color \episodeColor \pad-markup #1 "5"
+          \on-color \subjectStrettoColor \pad-markup #0.8 "BT"
+          \on-color \episodeColor \pad-markup #1 "6"
+          \on-color \subjectStrettoColor \pad-markup #0.8 "SAT"
+          \on-color \episodeColor \pad-markup #1 "7"
+          \on-color \subjectStrettoColor \pad-markup #0.8 "TSA"
+        }
+      }
+    }
   }
   \layout { }
   \midi { \tempo 4=100 }

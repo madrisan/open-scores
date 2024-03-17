@@ -285,10 +285,10 @@ Tenor = \context Voice = "three" \relative c' {
     cis2~~ cis8 a b cis
   | \unHighlightSubject d2~ } d8 d cis b
   %15
-  | cis4 d8 e f e f
+  | cis4 d8 e f e \hideStaffSwitch f
     \staffUpper
     \stemDown
-    g
+    g \showStaffSwitch
   | a4 e a2
     \staffLower
   | \override MultiMeasureRest.staff-position = #0
@@ -552,6 +552,26 @@ Bass = \context Voice = "four" \relative c {
     opus = "BWV 1080, 5"
     title = ##f
     subtitle = \markup { \smallCaps "Contrapunctus V" }
+    subsubtitle = \markup {
+      \center-column {
+        \line { "Four-voice fugue with many stretto entries" }
+        \line \normal-text \tiny \with-color \white {
+          \on-color \expositionColor \pad-markup #0.8 "Exposition ABST"
+          \on-color \episodeColor \pad-markup #1 "1"
+          \on-color \secondExpositionColor \pad-markup #0.8 "Second exposition STBA"
+          \on-color \episodeColor \pad-markup #1 "2"
+          \on-color \subjectStrettoColor \pad-markup #0.8 "Stretto BS"
+          \on-color \subjectStrettoColor \pad-markup #0.8 "TA"
+          \on-color \subjectStrettoColor \pad-markup #0.8 "BT"
+          \on-color \episodeColor \pad-markup #1 "3"
+          \on-color \subjectStrettoColor \pad-markup #0.8 "SA"
+          \on-color \episodeColor \pad-markup #1 "4"
+          \on-color \subjectStrettoColor \pad-markup #0.8 "ST"
+          \on-color \subjectStrettoColor \pad-markup #0.8 "TA"
+          \on-color \endColor \pad-markup #0.8 "BA"
+        }
+      }
+    }
   }
   \layout { }
   \midi { \tempo 4=120 }
