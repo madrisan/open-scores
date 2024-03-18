@@ -611,6 +611,28 @@ Bass = \context Voice = "four" \relative c {
     title = \markup {
       Contrapunctus IX
     }
+    subsubtitle = \markup {
+      \center-column {
+        \line \normal-text \tiny \with-color \white {
+          \on-color \expositionColor \pad-markup #0.8 "Exposition A1 S1 B1 T1"
+          \on-color \episodeColor \pad-markup #1 "1"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "S2 T1"
+          \on-color \episodeColor \pad-markup #1 "2" % F major
+          \on-color \subjectPresentationColor \pad-markup #0.8 "T2 A1"  % bar 45
+          \on-color \episodeColor \pad-markup #1 "3" % D minor
+          \on-color \subjectPresentationColor \pad-markup #0.8 "A2 B1"  % bar 59
+          \on-color \episodeColor \pad-markup #1 "4" % A minor
+          \on-color \subjectPresentationColor \pad-markup #0.8 "T2 A1"  % bar 73
+          \on-color \episodeColor \pad-markup #1 "5" % D minor
+          \on-color \subjectPresentationColor \pad-markup #0.8 "B2 S1"  % bar 89
+          \on-color \episodeColor \pad-markup #1 "6" % G minor
+          \on-color \subjectPresentationColor \pad-markup #0.8 "T2 A1"  % bar 99
+          \on-color \episodeColor \pad-markup #1 "7" % D minor
+          \on-color \subjectPresentationColor \pad-markup #0.8 "A2 T1"  % bar 119
+          \on-color \endColor \pad-markup #0.8 "Coda"
+        }
+      }
+    }
   }
   \layout { }
   \midi { \tempo 4=220 }

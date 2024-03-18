@@ -423,7 +423,21 @@ Bass = \context Voice = "four" \relative c {
     opus = "BWV 1080, 7"
     title = ##f
     subtitle = \markup { \smallCaps "Contrapunctus VII" }
-    subsubtitle = "per Augmentationem et Diminutionem"
+    subsubtitle = \markup {
+      \center-column {
+        \line { "per Augmentationem et Diminutionem" }
+        \line \normal-text \tiny \with-color \white {
+          \on-color \subjectStrettoColor \pad-markup #0.8 "Stretto TSABAT"
+          \on-color \subjectStrettoColor \pad-markup #0.8 "SAT"
+          \on-color \subjectStrettoColor \pad-markup #0.8 "TB"
+          \on-color \subjectStrettoColor \pad-markup #0.8 "ATSBA"
+          \on-color \episodeColor \pad-markup #1 "1"
+          \on-color \subjectStrettoColor \pad-markup #0.8 "ATSSAATB"
+          \on-color \subjectStrettoColor \pad-markup #0.8 "SAAT"
+          \on-color \endColor \pad-markup #0.8 "Coda"
+        }
+      }
+    }
   }
   \layout { }
   \midi { \tempo 4=100 }

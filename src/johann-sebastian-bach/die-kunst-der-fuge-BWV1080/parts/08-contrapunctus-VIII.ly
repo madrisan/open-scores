@@ -615,9 +615,9 @@ Bass = \context Voice = "four" \relative c {
   | \stemNeutral a8 a' g f g e f d
   | \highlightSubjectFirst { e2_\markup \subject #'(0.8 . 0) #1 d4 g
   | cis, c b e
-  | a,2 r4 a'8 g
+  | a,2 } r4 a'8 g
   %25
-  | fis4 d e } fis
+  | fis4 d e fis
   | \once\stemDown g, a bes g
   | c d e c
   | f,8 g' f e f d e cis
@@ -843,6 +843,39 @@ Bass = \context Voice = "four" \relative c {
     title = ##f
     subtitle = \markup { \smallCaps "Contrapunctus VIII" }
     subsubtitle = "[Triple Fugue]"
+    subsubtitle = \markup {
+      \center-column {
+        \line { "[Triple Fugue]" }
+        \line \normal-text \tiny \with-color \white {
+          \on-color \expositionColor \pad-markup #0.8 "Exposition 1 A1 B1 S1"
+          \on-color \episodeColor \pad-markup #1 "1"
+          \on-color \subjectStrettoColor \pad-markup #0.8 "Stretto A1 B1"
+          \on-color \episodeColor \pad-markup #1 "2"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "B1"
+        }
+        \line \normal-text \tiny \with-color \white {
+          \on-color \expositionColor \pad-markup #0.8 "Exposition 2 S1 A2 B1 S2 A1 B2"
+          \on-color \episodeColor \pad-markup #1 "3"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "S1 A2"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "B1 S2"
+          \on-color \episodeColor \pad-markup #1 "4"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "S1 A2"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "S1 A2"
+        }
+        \line \normal-text \tiny \with-color \white {
+          \on-color \expositionColor \pad-markup #0.8 "Exposition 3 A3 B3 S3"
+          \on-color \episodeColor \pad-markup #1 "5"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "A1"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "B1"
+          \on-color \episodeColor \pad-markup #1 "6"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "S1 A2 B3"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "A1 B2 S3"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "B1 S2 A3"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "B1 S2 A3"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "A2 S1 B3"
+        }
+      }
+    }
   }
   \layout { }
   \midi { \tempo 4=140 }
