@@ -16,8 +16,8 @@ Sopran = \context Voice = "one" \relative c'' {
   | b e r gis,
   %10
   | a e a8 g f e
-  | d c b4~ b8 cis d e
-  | \unHighlightSubject f } e f d e fis g a
+  | d c \unHighlightSubject b4~ } b8 cis d e
+  | f e f d e fis g a
   | bes a bes g a4 d~
   | d8 c d b c4 cis
   %15
@@ -86,8 +86,8 @@ Sopran = \context Voice = "one" \relative c'' {
   | f2~ f8 g f g
   | e4 \highlightSubjectFirst { a,^\markup \subject #'(2.2 . 0) #1 bes f
   | r d' c f
-  | bes,8 c d e f g a4~
-  | a8 g f e d2 }
+  | bes,8 c d e f g \unHighlightSubject a4~ }
+  | a8 g f e d2
   %70
   | c~ c8 c d e
   | f2~ f8 fis g a
@@ -110,8 +110,8 @@ Sopran = \context Voice = "one" \relative c'' {
   %85
   | c8 a b \highlightSubjectFirst { cis^\markup \subject #'(1.5 . 0) #1 d4 a
   | r f' e a
-  | d,8 e f g a bes c4~
-  | c8 bes a g f2 }
+  | d,8 e f g a bes \unHighlightSubject c4~ }
+  | c8 bes a g f2
   | \once\override NoteColumn.force-hshift = #0
     e r
   %90
@@ -165,8 +165,8 @@ Alto = \context Voice = "two" \relative c' {
   %1
   | \highlightSubjectFirst { r4_\markup \subject #'(0 . 0) #1 cis d a
   | r f' e a
-  | d,8 e f g a bes c4~
-  | c8 bes a g fis d \unHighlightSubject g4~ }
+  | d,8 e f g a bes \unHighlightSubject c4~ }
+  | c8 bes a g fis d g4~
   %5
   | g8 e fis a bes2~
   | bes8 g a cis d2~
@@ -184,8 +184,8 @@ Alto = \context Voice = "two" \relative c' {
   | \highlightSubjectFirst { r4_\markup \subject #'(1.5 . 0) #1 gis a e
   %15
   | r bes' a d
-  | g,8 a b cis d e f4_~
-  | \tieDown f8 e d c bes \unHighlightSubject a bes4~ }
+  | g,8 a b cis d e \unHighlightSubject f4_~ }
+  | \tieDown f8 e d c bes a bes4~
   | bes a8 g f g f ees
   | d2~ d4 e!8 f
   %20
@@ -225,10 +225,10 @@ Alto = \context Voice = "two" \relative c' {
   | e' r r2
   | \highlightSubjectFirst { r4_\markup \subject #'(1.5 . 0) #1 d, f c
   | r a' g c
-  | f,8 g a b c d e4^~
+  | f,8 g a b c d \unHighlightSubject e4^~ }
   %55
   | e8 d c b a2~
-  | a8 fis gis4 } r2
+  | a8 fis gis4 r2
   | \override MultiMeasureRest.staff-position = #-2
     R1
   | \override MultiMeasureRest.staff-position = #-6
@@ -266,8 +266,8 @@ Alto = \context Voice = "two" \relative c' {
   %85
   | g8 fis \highlightSubjectFirst { g4 \stemUp bes f
   | r4 d' c \stemNeutral f
-  | bes,8 c d e f g a4~
-  | a8 g f e d2 }
+  | bes,8 c d e f g \unHighlightSubject a4~ }
+  | a8 g f e d2
   | \once\override NoteColumn.force-hshift = #0 cis
     r
   %90
@@ -309,8 +309,8 @@ Alto = \context Voice = "two" \relative c' {
   %115
   | d \highlightSubjectFirst { cis d a
   | r f' e a
-  | d,8 e f g a bes c4~
-  | c8 bes a g \unHighlightSubject f } g a4~
+  | d,8 e f g a bes \unHighlightSubject c4~ }
+  | c8 bes a g f g a4~
   | a1~
   %120
   | a2\fermata r
@@ -325,8 +325,8 @@ Tenor = \context Voice = "three" \relative c' {
   | g d r bes'
   %5
   | a d g,8 a bes c
-  | d e f4~ f8 e d c
-  | bes a d2 } cis8 b
+  | d e \unHighlightSubject f4~ } f8 e d c
+  | bes a d2 cis8 b
   | cis d e4~ e8 d e4~
   | e2. d4
   %10
@@ -338,8 +338,8 @@ Tenor = \context Voice = "three" \relative c' {
   %15
   | a d r fis,
   | g d a'8 g f e
-  | d c bes4~ bes8 c d e
-  | \unHighlightSubject f } g f2 g8 a
+  | d c \unHighlightSubject bes4~ } bes8 c d e
+  | f g f2 g8 a
   | bes2~ bes8 a g f
   %20
   | e4 f8 g a4 d
@@ -375,8 +375,8 @@ Tenor = \context Voice = "three" \relative c' {
   | \highlightSubjectFirst { r4^\markup \subject #'(1.5 . 0) #1 fis g d
   %45
   | r bes' a d
-  | g,8 a bes c d e f4~
-  | f8 e d c bes2\trill }
+  | g,8 a bes c d e \unHighlightSubject f4~ }
+  | f8 e d c bes2\trill
   | a2. d8 c
   | bes a g2 c8 bes
   %50
@@ -466,8 +466,8 @@ Tenor = \context Voice = "three" \relative c' {
   | \stemUp bes4 \highlightSubjectFirst { f^\markup \subject #'(-0.8 . 0) #1 g d
   | r bes' a d
   %105
-  | g,8 a bes c d ees f4~
-  | f8 ees d c bes2 }
+  | g,8 a bes c d ees \unHighlightSubject f4~ }
+  | f8 ees d c bes2
   | a4 f' ees d
   | c2 f
   | bes,8 c d bes ees d c bes
@@ -480,8 +480,8 @@ Tenor = \context Voice = "three" \relative c' {
   %115
   | \highlightSubjectFirst { r4^\markup \subject #'(1.8 . 0) #1 a bes f
   | r d' c f
-  | bes,8 c d e f g a4~
-  | a8 g f e d4. } e8
+  | bes,8 c d e f g \unHighlightSubject a4~ }
+  | a8 g f e d4. e8
   | f4 e8 d e f g4~
   %120
   | g fis\fermata f,2\rest
@@ -494,9 +494,9 @@ Bass = \context Voice = "four" \relative c {
     R1*4
   | \highlightSubjectFirstInv { r4_\markup \scale #'(1 . -1) \subject #'(1.5 . 0) #1 f e a
   | r cis, d a
-  | e'8 d c b a g f4~
+  | e'8 d c b a g \unHighlightSubject f4~ }
   %10
-  | f8 g a b c4 } a
+  | f8 g a b c4 a
   | b e~ e8 a, b cis
   | d2 c!8 d e fis
   | g2 d8 e f g
@@ -573,8 +573,8 @@ Bass = \context Voice = "four" \relative c {
   %75
   | \highlightSubjectFirst { b4\rest_\markup \subject #'(0.5 . 0) #1 a' bes f
   | r d c f
-  | bes,8 c d e f g a4~
-  | a8 g f e d2 }
+  | bes,8 c d e f g \unHighlightSubject a4~ }
+  | a8 g f e d2
   | c b\rest
   %80
   | \override MultiMeasureRest.staff-position = #-6
@@ -602,8 +602,8 @@ Bass = \context Voice = "four" \relative c {
   | \highlightSubjectFirst { r4 d'_\markup \subject #'(0.5 . 0) #1 ees bes
   | r g' f bes
   %105
-  | ees,8 f g a bes c d4~
-  | d8 c bes a g2 }
+  | ees,8 f g a bes c \unHighlightSubject d4~ }
+  | d8 c bes a g2
   | f r
   | \override MultiMeasureRest.staff-position = #-4
     R1*7
@@ -643,6 +643,32 @@ Bass = \context Voice = "four" \relative c {
     subtitle = "alla Decima"
     title = \markup {
       Contrapunctus X
+    }
+    subsubtitle = \markup {
+      \center-column {
+        \line \normal-text \tiny \with-color \white {
+          \on-color \expositionColor \pad-markup #0.8 "Exposition 1 A1 T1 B1 S1"
+          \on-color \episodeColor \pad-markup #1 "1"
+          \on-color \subjectStrettoColor \pad-markup #0.8 "Stretto A1 T1"  % bar 14-17
+          \on-color \expositionColor \pad-markup #0.8 "Exposition 2 S2 T2 B3 A2"  % bar 23-38
+          \on-color \episodeColor \pad-markup #1 "2"
+        }
+        \line \normal-text \tiny \with-color \white {
+          \on-color \subjectPresentationColor \pad-markup #0.8 "T1 A2"  % bar 44
+          \on-color \episodeColor \pad-markup #1 "3"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "A1 B2"  % bar 52
+          \on-color \episodeColor \pad-markup #1 "4"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "T2 S1"  % bar 66
+          \on-color \episodeColor \pad-markup #1 "5"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "S2 A1 B1"  % bar 75
+          \on-color \episodeColor \pad-markup #1 "6"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "B2 A1 S1"  % bar 84
+          \on-color \episodeColor \pad-markup #1 "7"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "B1 T1 S2"  % bar 103
+          \on-color \episodeColor \pad-markup #1 "8"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "T1 A1"  % bar 115
+        }
+      }
     }
   }
   \layout { }
