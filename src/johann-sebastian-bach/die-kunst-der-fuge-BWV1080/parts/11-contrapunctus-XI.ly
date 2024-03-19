@@ -112,7 +112,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | g f! e d c d bes c
   | a2~ a8 bes a bes
   | c4 f2 e4
-    \break
+  \break
   | f2 d\rest
   | \override MultiMeasureRest.staff-position = #0
     R1*3
@@ -271,22 +271,22 @@ Alto = \context Voice = "two" \relative c' {
   | c \stemDown <bes g>8 <c a> bes4 a
   | g cis, r a'~
   | a8 d4 c8
-    \stemUp
-    \once\override NoteColumn.force-hshift = #0.8 bes
-    a4 bes8
+  \stemUp
+  \once\override NoteColumn.force-hshift = #0.8 bes
+  a4 bes8
   | \staffLower
-    \stemUp\tieUp
-    cis,4
-    \staffUpper
-    \stemDown\tieDown
-    bes' a g
+  \stemUp\tieUp
+  cis,4
+  \staffUpper
+  \stemDown\tieDown
+  bes' a g
   %25
   | f d'2 cis8 c
   | b4 bes a2
   | \once\override NoteColumn.force-hshift = #0.6 a
     \staffLower
     \stemUp\tieUp
-    \highlightSubjectSecond { a,^\markup \subject #'(-1 . 0) #2
+    \highlightSubjectSecond { a,^\markup \subject #'(-0.5 . 0) #2
   | bes4 f c' cis
   | d a e'2
   %30
@@ -334,7 +334,7 @@ Alto = \context Voice = "two" \relative c' {
     \once\override NoteColumn.force-hshift = #0.5 g,
     \staffUpper
     \stemDown\tieDown
-    r r2
+  r r2
   | r4 a' gis g~
   | g8 f r f g f g a
   | bes f bes d c b c d
@@ -361,7 +361,7 @@ Alto = \context Voice = "two" \relative c' {
   | d8[ c16 bes] a8 g fis4 g
   | fis8 a4 g bes a8
   | \once\override NoteColumn.force-hshift = #1 bes
-    a4 bes8 a g f e
+  a4 bes8 a g f e
   | f4 \highlightSubjectFirstInv { a_\markup \scale #'(1 . -1) \subject #'(1.2 . 0) #1 d, e
   %85
   | r f g a
@@ -369,7 +369,7 @@ Alto = \context Voice = "two" \relative c' {
   | r f8 e f4 g
   | \unHighlightSubject a8 } bes c2 bes4^~
   | \once\override NoteColumn.force-hshift = #-0.3 bes
-    a r2
+  a r2
   %90
   | r r4 bes,~
   | bes8 a c c c b d d
@@ -542,7 +542,7 @@ Tenor = \context Voice = "three" \relative c' {
   | f d'
     \staffUpper
     \voiceOne\stemDown\tieDown
-     g f
+    g f
   | e8 f4
     \staffLower
     \stemUp\tieUp
@@ -560,7 +560,7 @@ Tenor = \context Voice = "three" \relative c' {
     \staffUpper
     \stemDown\tieDown
     g4~
-  | \once\override NoteColumn.force-hshift = #-0.4 g
+  | \once\override NoteColumn.force-hshift = #1.4 g
     f
     \staffLower \once\override Voice.Rest.X-offset = #-0.8 d,2\rest
     \stemUp\tieUp
@@ -637,7 +637,7 @@ Tenor = \context Voice = "three" \relative c' {
     \staffLower
     \stemUp\tieUp
     r a,8 bes
-  | a4. g8 f d g4~
+    | a4. g8 f d g4~
   %85
   | g f~ f8 d ees4
   | d g8 f e! d e c
@@ -904,7 +904,7 @@ Bass = \context Voice = "four" \relative c {
   %65
   | g r r2
   | r4 r8 e fis e fis gis
-  | a e a4~ a8 gis \highlightSubjectSecondInv { a4
+  | a e a4~ a8 gis \highlightSubjectSecondInv { a4_\markup \scale #'(1 . -1) \subject #'(0 . 0) #2
   | gis c fis, f
   | e a d,2
   %70
@@ -1073,6 +1073,39 @@ Bass = \context Voice = "four" \relative c {
     subtitle = ""
     title = \markup {
       Contrapunctus XI
+    }
+    subsubtitle = \markup {
+      \center-column {
+        \line \normal-text \tiny \with-color \white {
+          \on-color \expositionColor \pad-markup #0.8 "Exposition 1/a A1 S1 B1 T1"
+          \on-color \episodeColor \pad-markup #1 "1"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "S1"  % bar 22
+          \on-color \expositionColor \pad-markup #0.8 "Exposition 2 A2 T2 B2 S2"   % bar 27
+          \on-color \episodeColor \pad-markup #1 "2"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "B2"  % bar 67
+        }
+        \line \normal-text \tiny \with-color \white {
+          \on-color \expositionColor \pad-markup #0.8 "Exposition 1/b T1 S1 B1 A1"   % bar 71
+          \on-color \subjectPresentationColor \pad-markup #0.8 "B2 T3"  % bar 89
+          \on-color \subjectPresentationColor \pad-markup #0.8 "A2 S3"  % bar 93
+          \on-color \subjectPresentationColor \pad-markup #0.8 "A1"     % bar 101
+          \on-color \subjectPresentationColor \pad-markup #0.8 "A3 T2"  % bar 105
+          \on-color \subjectPresentationColor \pad-markup #0.8 "S2 A3"  % bar 113
+          \on-color \episodeColor \pad-markup #1 "3"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "B1"     % bar 132
+          \on-color \subjectPresentationColor \pad-markup #0.8 "T2 A3"  % bar 136
+          \on-color \episodeColor \pad-markup #1 "4"
+        }
+        \line \normal-text \tiny \with-color \white {
+          \on-color \subjectPresentationColor \pad-markup #0.8 "A3 T1 S2"  % bar 145
+          \on-color \episodeColor \pad-markup #1 "5"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "A1 S1"     % bar 158
+          \on-color \subjectPresentationColor \pad-markup #0.8 "B1 T1"     % bar 164
+          \on-color \episodeColor \pad-markup #1 "6"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "B2 T3 A1"  % bar 174
+          \on-color \subjectPresentationColor \pad-markup #0.8 "B3 T2 S2"  % bar 179
+        }
+      }
     }
   }
   \layout { }
