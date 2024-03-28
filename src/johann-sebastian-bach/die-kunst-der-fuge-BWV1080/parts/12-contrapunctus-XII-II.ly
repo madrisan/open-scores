@@ -234,13 +234,13 @@ Tenor = \context Voice = "three" \relative c' {
   | d4 a'2 g4 a b
   %25
   | c4. b16 c d2 r
-  | e,8 d c b a2~ a8 gis a b
+  | \highlightSubjectSecondInv { e,8 d c b a2~ a8 gis a b
   | c4 d e2. f8 g
   | f2 e2. d4
   | \once\override NoteColumn.force-hshift = #0.2 c2.
     b4 c d
   %30
-  | \once\override NoteColumn.force-hshift = #0.2 e2.
+  | \once\override NoteColumn.force-hshift = #0.2 e2. }
     d4 e fis
   | \once\override NoteColumn.force-hshift = #0.2 g2.
     e4 f! g
@@ -351,9 +351,9 @@ Bass = \context Voice = "four" \relative c {
   | d~
   | d~
   | d~
-  | d4 e8 f e d cis b a2~
+  | d4 e8 f \highlightSubjectSecondInv { e_\markup \scale #'(1 . -1) \subject #'(-1.5 . 0) #2 d cis b a2~
   %55
-  | a4 b cis d e8 d cis4
+  | a4 b cis d \unHighlightSubject e8 } d cis4
   | d1.\fermata
   \bar "|."
 }
@@ -383,6 +383,19 @@ Bass = \context Voice = "four" \relative c {
     subtitle = "inversus"
     title = \markup {
       Contrapunctus XII
+    }
+    subsubtitle = \markup {
+      \center-column {
+        \line \normal-text \tiny \with-color \white {
+          \on-color \expositionColor \pad-markup #0.8 "Exposition 1 S1 A1 T1 B1"
+          \on-color \episodeColor \pad-markup #1 "1"
+          \on-color \expositionColor \pad-markup #0.8 "Exposition 2 B2 T2 A2 S2"   % bar 21-45
+          \on-color \episodeColor \pad-markup #1 "2"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "T2"   % bar 50
+          \on-color \subjectPresentationColor \pad-markup #0.8 "B2"   % bar 54 (incomplete subject)
+          \on-color \endColor \pad-markup #0.8 "Coda"
+        }
+      }
     }
   }
   \layout { }

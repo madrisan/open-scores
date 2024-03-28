@@ -68,9 +68,9 @@ Sopran = \context Voice = "one" \relative c'' {
   | a~
   | a~
   | a~
-  | a4 g8 fis g a bes c d2~
+  | a4 g8 fis \highlightSubjectSecond { g^\markup \subject #'(0.8 . 0) #2 a bes c d2~
   %55
-  | d4 c bes a g8 a bes4
+  | d4 c bes a \unHighlightSubject g8 } a bes4
   | a1.\fermata
   \bar "|."
 }
@@ -100,12 +100,12 @@ Alto = \context Voice = "two" \relative c' {
   | a4 d,2 ees4 d c
   %25
   | bes4. c16 bes a2 r
-  | g'8 a bes c d2~ d8 ees d c
+  | \highlightSubjectSecond { g'8_\markup \subject #'(-1.8 . 0) #2 a bes c d2~ d8 ees d c
   | bes4 a g2. fis8 e
   | fis2 g2. a4
   | bes2. c4 bes a
   %30
-  | g2. aes4 g f
+  | g2. } aes4 g f
   | ees2. g4 f ees
   | \stemUp\tieUp
     \shape #'((0 . 0) (0 . 1) (0 . 2.5) (-0.2 . 1)) Tie
@@ -369,6 +369,19 @@ Bass = \context Voice = "four" \relative c {
     subtitle = "[rectus]"
     title = \markup {
       Contrapunctus [12]
+    }
+    subsubtitle = \markup {
+      \center-column {
+        \line \normal-text \tiny \with-color \white {
+          \on-color \expositionColor \pad-markup #0.8 "Exposition 1 B1 T1 A1 S1"
+          \on-color \episodeColor \pad-markup #1 "1"
+          \on-color \expositionColor \pad-markup #0.8 "Exposition 2 S2 A2 T2 B2"   % bar 21-45
+          \on-color \episodeColor \pad-markup #1 "2"
+          \on-color \subjectPresentationColor \pad-markup #0.8 "A2"   % bar 50
+          \on-color \subjectPresentationColor \pad-markup #0.8 "S2"   % bar 54 (incomplete subject)
+          \on-color \endColor \pad-markup #0.8 "Coda"
+        }
+      }
     }
   }
   \layout { }
