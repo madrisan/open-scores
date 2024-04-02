@@ -69,13 +69,13 @@ Sopran = \context Voice = "one" \relative c'' {
     \override TupletNumber.transparent = ##f
     \tuplet 3/2 { g8 f e }
     \override TupletNumber.transparent = ##t
-  | bes'4 r r g'
+  | bes'4 r r \highlightSubjectFirstInv { g'
   | d' d,~ \tuplet 3/2 { d8 e f e f g
-  | f g a} g4~ \tuplet 3/2 { g8 a bes a bes c
+  | f g a } g4~ \tuplet 3/2 { g8 a bes a bes c
   %50
-  | bes a g} a4~ \tuplet 3/2 { a8 g f g f e}
+  | bes a g } a4~ \tuplet 3/2 { a8 g f g f e }
   | f8.*8/9[ a16*4/3 d8.*8/9 a16*4/3] f8.*8/9[ e16*4/3 fis8.*8/9 gis16*4/3]
-  | a4 c, e a
+  | a4 } c, e a
   | \mergeDifferentlyDottedOn
     e8.*8/9[ g16*4/3 c8.*8/9 g16*4/3] e8.*8/9[ d16*4/3 e8.*8/9 fis16*4/3]
   | g4 bes, d g
@@ -203,10 +203,10 @@ Alto = \context Voice = "two" \relative c' {
   %45
   | \staffUpper
     \stemDown\tieDown
-    g8.*8/9[
+    \hideStaffSwitch g8.*8/9[
     \staffLower
     \stemUp\tieUp
-    e16*4/3 cis8.*8/9 e16*4/3]
+    e16*4/3 \showStaffSwitch cis8.*8/9 e16*4/3]
     \staffUpper
     \stemDown\tieDown
     g8.*8/9[ f16*4/3 g8.*8/9 a16*4/3]
@@ -402,6 +402,21 @@ Bass = \context Voice = "four" \relative c {
     subtitle = "inversus"
     title = \markup {
       Contrapunctus [XIII]
+    }
+    subsubtitle = \markup {
+      \center-column {
+        \line \normal-text \tiny \with-color \white {
+          \on-color \expositionColor \pad-markup #0.8 "Exposition 1 S A B"
+          \on-color \episodeColor \pad-markup #1 "1"                  % bar 13-19
+          \on-color \subjectPresentationColor \pad-markup #0.8 "S"    % bar 20
+          \on-color \episodeColor \pad-markup #1 "2"                  % bar 24
+          \on-color \expositionColor \pad-markup #0.8 "Exposition 2 A B S"  % bar 29-41
+          \on-color \episodeColor \pad-markup #1 "3"                  % bar 41-47
+          \on-color \subjectPresentationColor \pad-markup #0.8 "S"    % bar 47-52
+          \on-color \episodeColor \pad-markup #1 "4"                  % bar 52-61
+          \on-color \endColor \pad-markup #0.8 "Final presentation A B"
+        }
+      }
     }
   }
   \layout { }

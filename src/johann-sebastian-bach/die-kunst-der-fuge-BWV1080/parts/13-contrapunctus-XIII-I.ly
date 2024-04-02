@@ -147,10 +147,11 @@ Alto = \context Voice = "two" \relative c' {
   | cis d e} d4~ \tuplet 3/2 { d8 e f e f g}
   | \staffUpper
     \stemDown
+    \hideStaffSwitch
     f8.*8/9[
     \staffLower
     \stemUp
-    d16*4/3 a8.*8/9 d16*4/3]
+    d16*4/3 a8.*8/9 \showStaffSwitch d16*4/3]
     \staffUpper
     \stemDown
     f8.*8/9[ g16*4/3 f8.*8/9 e16*4/3]
@@ -161,10 +162,10 @@ Alto = \context Voice = "two" \relative c' {
     \stemDown
     f
   %25
-  | ees8.*8/9[ c16*4/3
+  | ees8.*8/9[ \hideStaffSwitch c16*4/3
     \staffLower
     \stemUp
-    g8.*8/9 c16*4/3]
+    g8.*8/9 \showStaffSwitch c16*4/3]
     \staffUpper
     \stemDown
     ees8.*8/9[ f16*4/3
@@ -213,7 +214,7 @@ Alto = \context Voice = "two" \relative c' {
   %45
   | e2 r4 bes'
   | a r r8*4/3 r16*2/3 f' \tuplet 3/2 { e8 f g}
-  | cis,4 r r e,
+  | cis,4 r r \highlightSubjectFirst { e,
   | \staffLower
     \stemUp
     a,
@@ -224,8 +225,7 @@ Alto = \context Voice = "two" \relative c' {
     \tuplet 3/2 { f e
     \staffLower
     \stemUp\tieUp
-    \showStaffSwitch
-    d } e4~ \tuplet 3/2 { e8 d cis } \tuplet 3/2 { d cis b }
+    d } e4~ \showStaffSwitch \tuplet 3/2 { e8 d cis } \tuplet 3/2 { d cis b }
   %50
   | \staffUpper
     \stemDown
@@ -239,7 +239,7 @@ Alto = \context Voice = "two" \relative c' {
     \stemDown
     f8.*8/9[ g16*4/3 f8.*8/9 e16*4/3]
     \showStaffSwitch
-  | d4 bes' g d
+  | d4 } bes' g d
   | g8.*8/9[ e16*4/3 b8.*8/9 e16*4/3] g8.*8/9[ a16*4/3 g8.*8/9 f16*4/3]
   | e4 c' a e
   %55
@@ -382,6 +382,21 @@ Bass = \context Voice = "four" \relative c {
     subtitle = "[rectus]"
     title = \markup {
       Contrapunctus [XIII]
+    }
+    subsubtitle = \markup {
+      \center-column {
+        \line \normal-text \tiny \with-color \white {
+          \on-color \expositionColor \pad-markup #0.8 "Exposition 1 A B S"
+          \on-color \episodeColor \pad-markup #1 "1"                  % bar 13-19
+          \on-color \subjectPresentationColor \pad-markup #0.8 "A"    % bar 20
+          \on-color \episodeColor \pad-markup #1 "2"                  % bar 24
+          \on-color \expositionColor \pad-markup #0.8 "Exposition 2 B S A"  % bar 29-41
+          \on-color \episodeColor \pad-markup #1 "3"                  % bar 41-47
+          \on-color \subjectPresentationColor \pad-markup #0.8 "A"    % bar 47-52
+          \on-color \episodeColor \pad-markup #1 "4"                  % bar 52-61
+          \on-color \endColor \pad-markup #0.8 "Final presentation B S"
+        }
+      }
     }
   }
   \layout { }
