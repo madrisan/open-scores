@@ -1080,7 +1080,7 @@ Bass = \context Voice = "four" \relative c {
           \on-color \expositionColor \pad-markup #0.8 "Exposition 1/a A1 S1 B1 T1"
           \on-color \episodeColor \pad-markup #1 "1"
           \on-color \subjectPresentationColor \pad-markup #0.8 "S1"  % bar 22
-          \on-color \expositionColor \pad-markup #0.8 "Exposition 2 A2 T2 B2 S2"   % bar 27
+          \on-color \secondExpositionColor \pad-markup #0.8 "Exposition 2 A2 T2 B2 S2"   % bar 27
           \on-color \episodeColor \pad-markup #1 "2"
           \on-color \subjectPresentationColor \pad-markup #0.8 "B2"  % bar 67
         }

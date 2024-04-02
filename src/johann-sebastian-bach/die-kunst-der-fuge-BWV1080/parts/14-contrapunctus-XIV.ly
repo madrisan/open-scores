@@ -1195,7 +1195,7 @@ Bass = \context Voice = "four" \relative c {
     title = \markup {
       [Contrapunctus XIV]
     }
-    subsubtitle = \markup {
+    subsubtitle = \markup {  % ASIS
       \center-column {
         \line \normal-text \tiny \with-color \white {
           \on-color \expositionColor \pad-markup #0.8 "Exposition 1 B1 A1 T1 S1"  % bars 1-21
@@ -1215,7 +1215,7 @@ Bass = \context Voice = "four" \relative c {
           \on-color \episodeColor \pad-markup #1 "4"
         }
         \line \normal-text \tiny \with-color \white {
-          \on-color \expositionColor \pad-markup #0.8 "Exposition 2 A2 S2 B2 T2"  % bars 114-141
+          \on-color \secondExpositionColor \pad-markup #0.8 "Exposition 2 A2 S2 B2 T2"  % bars 114-141
           \on-color \episodeColor \pad-markup #1 "5"                              % bars 141-147
           \on-color \subjectPresentationColor \pad-markup #0.8 "S2 B1"            % bars 147-153
           \on-color \episodeColor \pad-markup #1 "6"
@@ -1227,9 +1227,9 @@ Bass = \context Voice = "four" \relative c {
           \on-color \episodeColor \pad-markup #1 "9"
         }
         \line \normal-text \tiny \with-color \white {
-          \on-color \expositionColor \pad-markup #0.8 "Exposition 3/a T3 A3 S3 B3"   % bars 193-207
+          \on-color \thirdExpositionColor \pad-markup #0.8 "Exposition 3/a T3 A3 S3 B3"   % bars 193-207
           \on-color \episodeColor \pad-markup #1 "10"
-          \on-color \expositionColor \pad-markup #0.8 "Exposition 3/b T3 A3 S3 B3"   % bars 210-222
+          \on-color \thirdExpositionColor \pad-markup #0.8 "Exposition 3/b T3 A3 S3 B3"   % bars 210-222
           \on-color \subjectPresentationColor \pad-markup #0.8 "B3 T3 A3"            % bars 222-229
           \on-color \episodeColor \pad-markup #1 "11"
           \on-color \subjectPresentationColor \pad-markup #0.8 "A2 B1 T3"            % bars 233-239

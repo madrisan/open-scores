@@ -6,6 +6,8 @@ middleGrey =    #(x11-color 'grey45)
 episodeColor =             #(x11-color 'dimgrey)
 expositionColor =          #(rgb-color 0.70 0.00 0.00)
 secondExpositionColor =    #(rgb-color 0.83 0.13 0.18)
+thirdExpositionColor =     #(rgb-color 0.99 0.26 0.36)
+
 subjectPresentationColor = #(rgb-color 0.00 0.40 0.13)
 subjectStrettoColor =      #(rgb-color 0.90 0.45 0.00)
 endColor =                 #(rgb-color 0.00 0.00 0.40)

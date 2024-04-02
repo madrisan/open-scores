@@ -854,7 +854,7 @@ Bass = \context Voice = "four" \relative c {
           \on-color \subjectPresentationColor \pad-markup #0.8 "B1"
         }
         \line \normal-text \tiny \with-color \white {
-          \on-color \expositionColor \pad-markup #0.8 "Exposition 2 S1 A2 B1 S2 A1 B2"
+          \on-color \secondExpositionColor \pad-markup #0.8 "Exposition 2 S1 A2 B1 S2 A1 B2"
           \on-color \episodeColor \pad-markup #1 "3"
           \on-color \subjectPresentationColor \pad-markup #0.8 "S1 A2"
           \on-color \subjectPresentationColor \pad-markup #0.8 "B1 S2"
@@ -863,7 +863,7 @@ Bass = \context Voice = "four" \relative c {
           \on-color \subjectPresentationColor \pad-markup #0.8 "S1 A2"
         }
         \line \normal-text \tiny \with-color \white {
-          \on-color \expositionColor \pad-markup #0.8 "Exposition 3 A3 B3 S3"
+          \on-color \thirdExpositionColor \pad-markup #0.8 "Exposition 3 A3 B3 S3"
           \on-color \episodeColor \pad-markup #1 "5"
           \on-color \subjectPresentationColor \pad-markup #0.8 "A1"
           \on-color \subjectPresentationColor \pad-markup #0.8 "B1"
