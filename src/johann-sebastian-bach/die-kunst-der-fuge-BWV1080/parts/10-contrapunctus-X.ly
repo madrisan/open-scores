@@ -283,7 +283,7 @@ Alto = \context Voice = "two" \relative c' {
   | bes8 g a4~ a8 g f ees
   | d4 g4~ g8 f ees d
   %100
-  | c4 f4~ f8
+  | c4 f4~ \hideStaffSwitch f8
     \staffLower
     \stemUp\tieUp
     ees d c
@@ -291,11 +291,12 @@ Alto = \context Voice = "two" \relative c' {
     \staffUpper
     \stemDown\tieDown
     d e!
+    \showStaffSwitch
   | f4 c r2
   | r8 c' bes a g fis g a
   | bes a bes g c ees d c
   %105
-  | bes4 ees r8 ees d c
+  | bes4 ees g,8\rest ees' d c
   | bes a g a bes a bes g
   | c4 r r f,
   | g8 a bes2 a4~
