@@ -10,13 +10,14 @@ die () { echo -e "$PROGNAME: error: $1" 1>&2; exit 1; }
 
 usage () {
    cat <<__EOF
-Usage: $PROGNAME -t <targetdir> [-p]
+Usage: $PROGNAME --targetdir <targetdir> --parts [options]
        $PROGNAME --help
        $PROGNAME --version
 
-Where:
+Options:
    -c|--composer  : the data file for the composer
    -d|--targetdir : the directory where to create the partition
+   -k|--key       : the tonality of the score(s) (default: c \\major)
    -n|--pdfname   : the name of the file containing the partition
    -o|--opus      : opus of the composition
    -p|--parts     : the partition is splitted into several files
@@ -28,6 +29,7 @@ Where:
 Example:
    $0 -c $PROGPATH/data/jsbach \\
      --targetdir src/johann-sebastian-bach/partitas/BWV825 \\
+     --key 'bes \\major' \\
      --opus 'BWV 825' \\
      --parts \\
      --title 'Partita I' \\
@@ -62,6 +64,7 @@ lilypond_version () {
 ly_opus="Unset --opus"
 ly_title="Unset --title"
 
+ly_key="c \\\\major"
 ly_parts="false"
 
 ly_sed () {
@@ -82,6 +85,7 @@ ly_sed () {
           s^@header_lastupdate@^${header_lastupdate}^;
           s^@header_style@^${header_style}^;
           s^@instruments@^${instruments}^;
+          s^@key@^${ly_key}^;
           s^@mutopiacomposer@^${mutopiacomposer}^;
           s^@mutopiainstrument@^${mutopiainstrument}^;
           s^@opus@^${ly_opus}^g;
@@ -102,6 +106,8 @@ while test -n "$1"; do
          exit 0 ;;
       --composer|-c)
          ly_data="$2"; shift ;;
+      --key|-k)
+         ly_key="$2"; shift ;;
       --opus|-o)
          ly_opus="$2"; shift ;;
       --parts|-p)

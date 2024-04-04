@@ -1,5 +1,5 @@
 Global = {
-  \key c \major
+  \key @key@
   \time 4/4
   \include "../global.ly"
 }
