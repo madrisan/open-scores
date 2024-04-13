@@ -96,7 +96,8 @@
 \include "./parts/bach-partita-5-1-praeludium.ly"
 \pageBreak
 \include "./parts/bach-partita-5-2-allemande.ly"
-%\include "./parts/bach-partita-5-3-courante.ly"
+\pageBreak
+\include "./parts/bach-partita-5-3-courante.ly"
 %\include "./parts/bach-partita-5-4-sarabande.ly"
 %\include "./parts/bach-partita-5-5-minuetto.ly"
 %\include "./parts/bach-partita-5-6-passepied.ly"
