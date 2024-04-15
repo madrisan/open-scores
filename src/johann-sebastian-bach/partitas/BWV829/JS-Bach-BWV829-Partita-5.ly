@@ -98,7 +98,8 @@
 \include "./parts/bach-partita-5-2-allemande.ly"
 \pageBreak
 \include "./parts/bach-partita-5-3-courante.ly"
-%\include "./parts/bach-partita-5-4-sarabande.ly"
+\pageBreak
+\include "./parts/bach-partita-5-4-sarabande.ly"
 %\include "./parts/bach-partita-5-5-minuetto.ly"
 %\include "./parts/bach-partita-5-6-passepied.ly"
 %\include "./parts/bach-partita-5-7-gigue.ly"
