@@ -70,34 +70,7 @@ Soprano = \context Voice = "one" \relative c'' {
     \override Score.TextMark.self-alignment-X = #CENTER
     \textEndMark \markup { \musicglyph "scripts.ufermata" }
   }
-
-%  | a'16 fis8.( g16)
-%  | a4 a( b8.) c16
-%  | \grace b8 a4.. b16 \grace a8 g4~
-%  | g8. fis16 a8. g16 fis8. \prall e16
-%  | \grace e8 dis4.. fis16 fis8. \prall e16
-%  | fis4 fis( g8.) a16
-%  | \grace g8 fis4.. fis16 gis8. a16
-%  | b8. c16 gis4.. gis16
-%  | a4. r16 a e8. fis16
-%  | g fis e g fis2~
-%  | fis4. r16 dis e8. a16
-%  | g8. fis16 e4( dis8.) e16
-%  | e4~ e16 g fis a g fis e d
-%  | c8 b~ b16 d c b a'8. g16
-%  | f8 e~ e16 g fis e c'8. a16
-%  | b8. \tuplet 3/2 { a32 g fis } e8.[ e16] fis8.[ g16]
-%  | fis g a fis d2~
-%  | d2.~
-%  | d4. r16 fis d8. e16
-%  | fis4 \grace a8 gis4.. a16
-%  | b f e d e d c b a gis fis e
-%  | d' c b d c2~
-%  | c16 b a c b8. <e c>16 <d b>4~
-%  | <d b>8. <a c>16 <g b>4( <fis a>8.) \prall g16
-%  | <g d b>4..
-
-    \fine
+  \fine
 }
 
 Alto = \context Voice = "two" \relative c'' {
@@ -262,6 +235,6 @@ Bass = \context Voice = "four" \relative c' {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 4 = 90
   }
 }
