@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - J.S. Bach: Partita 2 BWV826
 - J.S. Bach: Partita 4 BWV828
+- J.S. Bach: Partita 5 BWV829
 - J.S. Bach: Die Kunst der Fuge (BWV 1080) - Add a section containing the list of subjects"
 - J.S. Bach: Die Kunst der Fuge (BWV 1080) - Color all the Counterpoint subjects"
 
