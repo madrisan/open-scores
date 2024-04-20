@@ -1,5 +1,6 @@
 SUBDIRS = BWV825 \
 	  BWV826 \
+	  BWV827 \
 	  BWV828 \
 	  BWV829 \
 	  BWV830

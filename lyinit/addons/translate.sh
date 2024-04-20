@@ -98,8 +98,8 @@ while read line; do
              s@\\\\staffup @\\\\staffUpper @g;
 	     # some notation substitutes with potential side effects
              # (so they must be manually enabled)
-             #s@\([a-g]\+\)s\([0-9,'=~\.]*\) @\1is\2 @g;
-             #s@\([a-g]\+\)f\([0-9,'=~\.]*\) @\1es\2 @g;
+             s@\([a-g]\+\)s\([0-9,'=~\.]*\) @\1is\2 @g;
+             s@\([a-g]\+\)f\([0-9,'=~\.]*\) @\1es\2 @g;
 	     # german notation to nederlands (default)
              s@ h\([0-9,'=~\.\(\[]*\) @ b\1 @g;
              s@ h\([0-9,'=~\.\(\[]*\)\([\\a-zA-Z]*\) @ b\1\2 @g;s@ h @ b @g;s@ h\$@ b@;

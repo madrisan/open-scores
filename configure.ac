@@ -123,6 +123,7 @@ AC_CONFIG_FILES([\
   src/johann-sebastian-bach/partitas/Makefile \
   src/johann-sebastian-bach/partitas/BWV825/Makefile \
   src/johann-sebastian-bach/partitas/BWV826/Makefile \
+  src/johann-sebastian-bach/partitas/BWV827/Makefile \
   src/johann-sebastian-bach/partitas/BWV828/Makefile \
   src/johann-sebastian-bach/partitas/BWV829/Makefile \
   src/johann-sebastian-bach/partitas/BWV830/Makefile \
