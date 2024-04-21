@@ -95,7 +95,8 @@
 
 \include "./parts/bach-partita-3-1-fantasia.ly"
 \pageBreak
-%\include "./parts/bach-partita-3-2-allemande.ly"
+\include "./parts/bach-partita-3-2-allemande.ly"
+\pageBreak
 %\include "./parts/bach-partita-3-3-corrente.ly"
 %\include "./parts/bach-partita-3-4-sarabande.ly"
 %\include "./parts/bach-partita-3-5-burlesca.ly"
