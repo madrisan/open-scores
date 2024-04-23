@@ -98,7 +98,9 @@
 \include "./parts/bach-partita-3-2-allemande.ly"
 \pageBreak
 \include "./parts/bach-partita-3-3-corrente.ly"
-%\include "./parts/bach-partita-3-4-sarabande.ly"
+\pageBreak
+\include "./parts/bach-partita-3-4-sarabande.ly"
+\pageBreak
 %\include "./parts/bach-partita-3-5-burlesca.ly"
 %\include "./parts/bach-partita-3-6-scherzo.ly"
 %\include "./parts/bach-partita-3-7-gigue.ly"
