@@ -19,7 +19,7 @@ SUFFIXES = .in
 
 BUILT_SOURCES = covercolor.ly
 
-EXTRA_DIST = JS-Bach-BWV830-Partita-4.ly \
+EXTRA_DIST = JS-Bach-BWV828-Partita-4.ly \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
@@ -32,7 +32,7 @@ EXTRA_DIST = JS-Bach-BWV830-Partita-4.ly \
 	     parts/bach-partita-4-6-menuet.ly \
 	     parts/bach-partita-4-7-gigue.ly
 
-all: $(BUILT_SOURCES) JS-Bach-BWV830-Partita-4
+all: $(BUILT_SOURCES) JS-Bach-BWV828-Partita-4
 
 clean-local:
 	 -rm -f $(BUILT_SOURCES)
