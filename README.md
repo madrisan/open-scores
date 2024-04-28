@@ -30,10 +30,10 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
 |  | Rapsodie g-moll Op.79. II | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/Johannes-Brahms-Rhapsodie-op.op.79-nr.2.pdf) |
 | Johann Sebastian Bach :zero: | Clavierübung Teil I - Partiten BWV 825 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/JS-Bach-BWV825-Partita-1.pdf) |
 |  | Clavierübung Teil I - Partiten I BWV 825 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/JS-Bach-BWV825-Partita-1.pdf) |
-|  | Clavierübung Teil I - Partiten II BWV 826 | to review :grey_question: | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/JS-Bach-BWV826-Partita-2.pdf) |
-|  | Clavierübung Teil I - Partiten III BWV 827 | :x: |  |
-|  | Clavierübung Teil I - Partiten IV BWV 828 | to review :grey_question: | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/JS-Bach-BWV828-Partita-4.pdf) |
-|  | Clavierübung Teil I - Partiten V BWV 829 | to review :grey_question: | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/JS-Bach-BWV829-Partita-5.pdf) |
+|  | Clavierübung Teil I - Partiten II BWV 826 | to review | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/JS-Bach-BWV826-Partita-2.pdf) |
+|  | Clavierübung Teil I - Partiten III BWV 827 | to review | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/JS-Bach-BWV827-Partita-3.pdf)  |
+|  | Clavierübung Teil I - Partiten IV BWV 828 | to review | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/JS-Bach-BWV828-Partita-4.pdf) |
+|  | Clavierübung Teil I - Partiten V BWV 829 | to review | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/JS-Bach-BWV829-Partita-5.pdf) |
 |  | Clavierübung Teil I - Partiten VI BWV 830 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/JS-Bach-BWV830-Partita-6.pdf) |
 |  | Clavierübung Teil II - Italienisches Konzert BWV 971 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v48/JS-Bach-BWV971-Italienisches-Konzert.pdf) |
 |  | Clavierübung Teil II - Ouvertüre nach französischer Art BWV 831 | :x: |  |
@@ -146,6 +146,7 @@ make -C src/johann-sebastian-bach/musikalisches-opfer-BWV1079
 make -C src/johann-sebastian-bach/organ-sonata-4-andante-BWV528-stradal
 make -C src/johann-sebastian-bach/partitas/BWV825
 make -C src/johann-sebastian-bach/partitas/BWV826
+make -C src/johann-sebastian-bach/partitas/BWV827
 make -C src/johann-sebastian-bach/partitas/BWV828
 make -C src/johann-sebastian-bach/partitas/BWV829
 make -C src/johann-sebastian-bach/partitas/BWV830
