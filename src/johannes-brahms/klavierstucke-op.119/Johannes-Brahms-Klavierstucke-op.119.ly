@@ -12,25 +12,32 @@
 \paper {
   #(set-paper-size "a4")
   annotate-spacing = ##f
-  bottom-margin = 8\mm
+  binding-offset = 0\mm
+  bottom-margin = 5\mm
   first-page-number = 0
   indent = 0.0
+  %inner-margin = 10\mm
 % last-bottom-spacing.padding = #2
-  line-width = 17\cm
+  %left-margin = 10\mm
+  line-width = 19\cm
   markup-system-spacing =
      #'((basic-distance . 2)
         (minimum-distance . 1)
         (padding . 2)
-        (stretchability . 20))
+        (stretchability . 24))
+  %outer-margin = 20\mm
   print-all-headers = ##t
   ragged-last-bottom = ##f
   ragged-bottom = ##f
+  %right-margin = 10\mm
   system-system-spacing =
      #'((basic-distance . 2)
         (minimum-distance . 1)
         (padding . 2)
-        (stretchability . 25))
-  top-margin = 15\mm
+        (stretchability . 24))
+  top-margin = 10\mm
+  top-markup-spacing.basic-distance = 0
+  top-system-spacing.basic-distance = 1
 }
 
 \bookpart {

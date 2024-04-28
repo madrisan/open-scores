@@ -4,9 +4,9 @@
   composer = "Johannes Brahms (1833-1897)"
   date = "1893"
 
-  footer = "Mutopia-2023/02/09"
+  footer = "Mutopia-2024/04/25"
 
-  lastupdated = "2023 Feb 9"
+  lastupdated = "2024 Apr 25"
   license = "Creative Commons Attribution-ShareAlike 4.0"
   maintainerEmail = "d.madrisan@proton.me"
   maintainerWeb = "https://github.com/madrisan/open-scores"
@@ -49,7 +49,7 @@
     \column {
       \abs-fontsize #8
       \concat {
-	"Typeset using " \with-url #"http://www.lilypond.org" "LilyPond " ©" 2022-2023 ""by " \maintainer " — " \footer
+	"Typeset using " \with-url #"http://www.lilypond.org" "LilyPond " ©" 2022-2024 ""by " \maintainer " — " \footer
       }
       \concat {
 	\concat {

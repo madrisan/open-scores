@@ -74,6 +74,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | \stemUp\slurUp d''4\rest f16[( d bes a!])
   %35
   | d[( bes f e!]) bes'[( f d c])
+    \break
   | \stemDown
     \once\override Stem.cross-staff = ##t
     \once\override Stem.length = #22
@@ -112,6 +113,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | <ees_~ fis_~ a!~ ees'~>4\sf q16[ d' c b!]
   %60
   | <c, ees fis c'>8_. r <b! d g>_. r
+    \break
     \clef bass
   | <c, c'_~>2\sfp(\>
   | <d c' d>)
@@ -157,6 +159,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | \tuplet 6/4 { <a,! a'!>8[( <e'! g> <a, a'> <d f> <a a'> <c e>]) }
   | \tuplet 6/4 { <g g'>8[( <c e!> <g g'> <d' f> <g, g'> <a! c>]) }
   | <g b! d g>4^>(\sf <c, c'>_.)
+    \break
     \clef bass
   %85
   | <c, c'~>2\fp(\>
@@ -172,7 +175,6 @@ Sopran = \context Voice = "one" \relative c'' {
   | \stemDown <ees_~ c'_~ ees~>
   | q
     \key aes \major
-    \break
   | \stemUp
     \once\shape #'((0 . 0) (0 . 1) (0 . 1.5) (0 . -2)) Slur
     <c, ees aes c>8[^(_\markup {
@@ -364,6 +366,7 @@ Sopran = \context Voice = "one" \relative c'' {
   %215
   | <fes bes des fes>^> \stemUp <ees ces' ees>_> \ottava #0
   | \stemDown <ees bes' ees>^> <ees a! ees'>^>
+    \break
   | \stemNeutral <ees g! bes ees>->\ff <f, bes d f>8-.[ <g bes ees g>-.]
   | <aes c! ees aes>4-> <g bes ees g>8-.[ <f c' ees f>-.]
   | <g bes ees g>4-> <f aes d f>8-.[ <ees g bes ees>-.]
@@ -508,6 +511,7 @@ Alto = \context Voice = "two" \relative c' {
   | <aes, ees' aes>4 <g! ees' g!>
   | <fis ees' fis>2
     \bar "||"
+    \break
     \key ees \major
   | \stemDown <g' c g'>4^>^(\p <g d' g>^>
   | <g ees' g>^> <g d' g>^>)
@@ -537,6 +541,7 @@ Alto = \context Voice = "two" \relative c' {
   | aes s
   | <c ees fis a!>^( q
   | q q)
+    \break
   %185
   | \stemNeutral\slurUp
     r
@@ -701,7 +706,8 @@ Tenor = \context Voice = "three" \relative c {
   | ees g)
   | s2
   | s4 c,
-  | g,,( g''
+  | \once\shape #'((0 . 1) (0 . 0) (0 . 0) (0 . 3)) Slur
+    g,,( g''
   | c ees
   %180
   | aes c)
