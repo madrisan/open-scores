@@ -136,7 +136,7 @@ Tenor = \context Voice = "three" \relative c {
   | b8 c, e a b c d a b fis g a~
   | a b, d g a b c g a e fis g~
   | g8 a, c fis g a b fis g dis e fis~
-  | fis \staffUpper\stemDown e' d \staffLower\stemUp g, fis g \staffUpper\stemDown\tieDown c\rest e d cis b cis~
+  | fis \staffUpper\stemDown e' b \staffLower\stemUp g fis g \staffUpper\stemDown\tieDown c\rest e d cis b cis~
   %40
   | cis d a \staffLower\stemUp fis eis fis \staffUpper\stemDown b\rest d cis b ais b~
   | b cis ais \staffLower\stemUp e dis e \staffUpper\stemDown e' cis b \staffLower\stemUp ais gis ais
@@ -153,7 +153,7 @@ Tenor = \context Voice = "three" \relative c {
   | a,4.~ a4 cis8 d4.~ d4 a8
   | d4 d8 d4 b8 b4 gis8 gis4 gis8
   %50
-  | a4.~ a4 gis8 a16 f e d cis b a4
+  | a4.~ a4 gis8 a16 f e d \staffLower\stemUp cis b a4
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -220,7 +220,7 @@ Bass = \context Voice = "four" \relative c {
   | f a cis d a f d f gis a f d
   | b d gis a, d f gis, b d f e d
   %50
-  | c b a e'4 e,8 a cis e a4
+  | c b a e'4 e,8 \stemDown a cis e a4
     \tweak direction #DOWN
     \textEndMark \markup { \musicglyph "scripts.dfermata" }
   }
@@ -260,6 +260,6 @@ Bass = \context Voice = "four" \relative c {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 4. = 140
   }
 }

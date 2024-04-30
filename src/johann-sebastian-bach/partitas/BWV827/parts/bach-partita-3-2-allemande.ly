@@ -29,7 +29,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | s4 c16. fis,32 g16._\tweak extra-offset #'(0.4 . 3.4) \upmordent a32 dis,16.\prall cis32 b8~ b32 b cis dis cis16.\prall b32
   | s4 fis'
     \break
-    g32\rest e fis g fis16.\prall e32 ais4
+    g32\rest e fis! g fis16.\prall e32 ais4
   | c32\rest a g fis g8~ g fis16. dis32 << { dis8[( e)] } \\ { \once\stemUp b4 } >>
   }
   \pageBreak
@@ -100,7 +100,7 @@ Alto = \context Voice = "two" \relative c'' {
   }
   \new Voice {
   | \stemUp\tieUp \autoBeamOff
-    \once\override Voice.Rest.X-offset = #1.2 f'8*3/4 \rest
+    \once\override Voice.Rest.X-offset = #1.3 f'8*3/4 \rest
     \once\omit Flag \once\omit Stem g 32~ g8
     s4
     \once\override Voice.Rest.X-offset = #1.3 e8*3/4 \rest
@@ -196,7 +196,7 @@ Bass = \context Voice = "four" \relative c {
     \set subdivideBeams = ##f
   | c4~ c16. c32 b16. a32  b4 a
   | g fis b,16\rest b'16 g16. a32 cis,16. e32 ais16. fis!32
-  | c'8 b16.^\prall a32 b8 b, e,4
+  | c'!8 b16.^\prall a32 b8 b, e,4
   }
   \repeat volta 2 {
   \partial 4 \stemNeutral r16 e gis b
@@ -253,6 +253,6 @@ Bass = \context Voice = "four" \relative c {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 4 = 50
   }
 }

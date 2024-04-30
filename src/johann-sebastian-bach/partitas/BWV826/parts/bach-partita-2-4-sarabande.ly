@@ -16,9 +16,9 @@ Soprano = \context Voice = "one" \relative c'' {
   | a,16 ees' f g b, f' g aes c, g' f ees
   | \stemNeutral\tieNeutral d ees f d b4\prall g
   %5
-  | ees'16 g, aes bes aes g f8~ f16 c' d ees
+  | ees'16 g, aes! bes aes g f8~ f16 c' d ees
   | d f, g aes g f ees8~ ees16 bes' c des
-  | c g f ees d c' bes aes \stemUp f'8. aes,16
+  | c g f ees d! c' bes aes \stemUp f'8. aes,16
   | aes4 g2
   }
   \repeat volta 2 {
@@ -30,7 +30,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | bes16 des c bes g' bes, aes g aes c f g
   | a ges f ees c' ees, des c des f bes aes
   %15
-  | ges f ees f des c b c aes' g f ees
+  | ges f e f des c b c aes' g f e
   | f c des e f bes, aes g f4~
   | f16 ees' d c d aes' bes, f' g aes, g f
   | ees d' c b c g' aes, ees' f g, f ees
@@ -89,7 +89,7 @@ Bass = \context Voice = "four" \relative c {
   | c g' a bes a bes c8~ c16 ees, d c
   | bes f' g a bes d bes,8~ bes16 aes' g f
   | e8 g c e, f c'
-  | ees ges a, f' bes, des
+  | ees! ges a, f' bes, des
   %15
   | bes g aes f c' c,
   | f f, aes c f ees

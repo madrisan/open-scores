@@ -54,7 +54,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | g f e f bes f e f aes f e f g f e f f4~ f32 ees d ees f d ees f
   %20
   | bes, d f g aes8~ aes32 g f aes g f ees d ees bes ees f g8~ g32 f ees g f ees d c
-  | bes' a g fis ees!16 d~ d32 g a c cis,16 d~ d32 fis! g a c, ees d cis fis d e fis g a bes c
+  | bes' a g fis ees!16 d~ d32 g a c cis,16 d~ d32 fis! g a c, ees d c fis d e fis g a bes c
   | bes a g fis~ fis16 g~ g d8 ees16~ ees b8 c16~ c32 bes aes g aes16 c
   | fis,32 ees' d c bes'16. a32 g8 fis16.\prall g32 g4~ g32 f g aes g f ees d
   | f ees d c g'8~ g32 ees f g f ees d c ees d c bes g'8~ g32 d ees f ees d c bes
@@ -98,7 +98,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | ees c' g f ees f g aes g c g f
   | ees c' g f ees f g aes g c g f
   %55
-  | e bes' g f e f g aes g bes g f
+  | e bes' g f e f g aes! g bes g f
   | e bes' g f e g bes des c bes aes g
   | aes f' c bes aes bes c des c f c bes
   | aes f' c bes aes bes c des c f c bes
@@ -137,10 +137,10 @@ Soprano = \context Voice = "one" \relative c'' {
   | g aes bes8~ bes16 c bes aes g f e d
   | c g' c, bes c d e f e g c, bes
   | c g' f e f c f g aes bes c d
-  | ees d c d ees8 f16 g aes8 des,
+  | ees! d c d ees8 f16 g aes8 des,
   | f b, d g, g'16 f ees d
   %90
-  | \stemUp ees8. c16 c4 b8.\prall c16
+  | \stemUp ees8. c16 c4 b8.\prallprall c16
   | c2.\fermata
     \fine
 }
@@ -227,7 +227,7 @@ Bass = \context Voice = "four" \relative c {
   %25
   | a c a fis g bes g ees
   | c16 d32 ees f g aes bes c16 c, c'8~ c32 c, d ees f g aes bes c16 c, c'8~
-  | c8 c, bes bes' fis d g ees
+  | c8 c, bes bes' fis d g ees!
   | \stemDown\tieDown cis4 r d2~
   | d1
     \bar "||"
@@ -249,7 +249,7 @@ Bass = \context Voice = "four" \relative c {
   | d' c bes8~ bes16 d c bes a g fis g
   | c bes a8~ a16 c bes a g fis e d
   | bes'8 d g, bes e, cis'
-  | d d,~ d c16 bes a g fis e
+  | d d,~ d c!16 bes a g fis e
   | d4~ d16 e fis g a bes c a
   | fis8 ees'~ ees16 a, bes c bes a g fis
   | g4 r16 g' aes bes aes g f! ees

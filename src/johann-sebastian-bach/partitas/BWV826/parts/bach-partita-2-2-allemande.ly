@@ -19,7 +19,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | c16 d ees8 f,16 ees' d c d ees f8 g,16 f' ees d
   | ees16 f g8 aes,16 g' f ees f g aes8 b,16 aes' g f
   %5
-  | \stemUp\tieUp ees4~ ees8. c16 d4~ d8. b16
+  | \stemUp\tieUp ees4~ ees8. c16 d4~ d8. b!16
   | c4. c16 b c4~ c16 c bes aes
   | g16 c32 d ees16 c g8 aes bes4~ bes8 g'~
   | \stemNeutral\tieNeutral g16 c,32 d ees16 c a f' c32 d ees16 \stemUp\tieUp d4~ d8 d

@@ -12,6 +12,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \stemNeutral\tieNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \omit TupletBracket
   %1
   | c'8 c, d\prall
   | ees4 f8
@@ -109,6 +110,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | r16 c' d, f c' b
   %80
   | \stemUp\tieUp c4.
+  << {
   | ees~
   | ees4 d16 ees32 f
   | d4.~
@@ -116,8 +118,18 @@ Soprano = \context Voice = "one" \relative c'' {
   %85
   | \appoggiatura d16 c4.~
   | c8 \tuplet 3/2 { d16 c bes } \tuplet 3/2 { c[ bes a] }
+  }
+  \new Voice {
+  | \stemDown\tieDown e8\rest e\rest g
+  | c4.~
+  | c4 f,8
+  | bes4.~
+  %85
+  | bes8 a16 g fis g
+  | a4 s8
+  } >>
   | \stemNeutral\tieNeutral \omit TupletBracket \omit TupletNumber
-    \tuplet 3/2 { bes[ a g] c[ bes a] bes[ a g] }
+    \tuplet 3/2 { bes16[ a g] c[ bes a] bes[ a g] }
   | fis8. a16 d c
   | bes a bes d c ees
   %90

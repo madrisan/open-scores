@@ -136,7 +136,7 @@ Bass = \context Voice = "four" \relative c {
   | g8. g,16 c8. d16 e8. c16
   | f8. f,16 f'8. f,16 f'4~
   %10
-  | f16 d e f d e c b a g f e
+  | f16 d e f e d c b a g f e
   | d8. d,16 d'8. d,16 d'4~
   | d16 b c d c b a g! f e d c
   | b8. gis'16 a8. c,16 f8. d16
@@ -242,6 +242,6 @@ Bass = \context Voice = "four" \relative c {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 4 = 110
   }
 }

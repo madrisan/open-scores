@@ -27,9 +27,9 @@ Soprano = \context Voice = "one" \relative c'' {
   | g2.~
   | g8 \tuplet 3/2 { g16 f e } f8 \tuplet 3/2 { f16 e d } e8 \tuplet 3/2 { e16 d c }
   | c16 e d8 g\rest c b\prallmordent c
-  | f,8 \tuplet 3/2 { g16 f e } f8 \tuplet 3/2 { a16 g f } \tuplet 3/2 { g16[ f e] } \tuplet 3/2 { f16[ e d] }
+  | f,8\mordent \tuplet 3/2 { g16 f e } f8 \tuplet 3/2 { a16 g f } \tuplet 3/2 { g16[ f e] } \tuplet 3/2 { f16[ e d] }
   %10
-  | e8 \tuplet 3/2 { f16 e d } e8 c' b\prallmordent c
+  | e8\mordent \tuplet 3/2 { f16 e d } e8 c' b\prallmordent c
   | d,8\mordent \tuplet 3/2 { f16 e d } \tuplet 3/2 { g[ f e] } \tuplet 3/2 { f[ e d] }
     \tuplet 3/2 { e[ d c] } \tuplet 3/2 { d[ c b] }
   | c4.
@@ -195,6 +195,6 @@ Bass = \context Voice = "four" \relative c' {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 4 = 70
   }
 }

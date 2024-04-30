@@ -179,7 +179,7 @@ Alto = \context Voice = "two" \relative c' {
     \once\override Beam.positions = #'(2 . -1.4)
     \staffUpper bes' \staffLower g,
   | s2
-  | \staffUpper\stemDown d'16 c d ees f g aes8~
+  | \staffUpper\stemDown d'!16 c d ees f g aes8~
   | aes16 c bes aes g f ees d
   | c b c d ees f g8~
   | g16 bes aes g f ees d c
@@ -343,7 +343,7 @@ Bass = \context Voice = "four" \relative c {
   %45
   | f, c' f4~
   | f16 ees d f ees d c bes!
-  | \stemNeutral aes8 g a4^\mordent
+  | \stemNeutral aes8 g aes4^\mordent
   | g2
   }
   \repeat volta 2 {
