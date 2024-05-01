@@ -150,6 +150,61 @@ Alto = \context Voice = "two" \relative c'' {
   %45
   | s1*9/16
   | s8. << { s8 \stemDown b16_~ \omit Flag b8. } \\ { s16 gis8_~ gis8. } >>
+  | s1*9/16*2
+  %49
+  | s1*9/16*6
+  %55
+  | fis16 g a b, a' g fis g a
+  | c, a' g fis g a d, e fis
+  | g b d cis! b a g fis e
+  | fis a c b a g fis e d
+  | e fis g fis e d e d cis
+  %60
+  | d a' g fis e d c b a
+  | b8. dis a'~
+  | a16 b a gis fis e d cis b
+  | cis8. eis \stemDown b'
+  | b \once\override NoteColumn.force-hshift = #1.3 ais fis
+  %65
+  | d e cis
+  | b~ b16 cis d e fis gis
+  | a8.~ a16 b, c d e fis
+  | g8. \staffLower\stemUp\tieUp g,4.~
+  | g8. fis dis!
+  %70
+  | e b' e
+  | a,4.~ a8.~
+  | a e'\rest \staffUpper\stemDown\tieDown fis~
+  | fis e b'~
+  | b ais e'
+  %75
+  | d4. cis8.
+  | b4. gis'8.
+  | e b\rest e~
+  | e16 fis, g a b cis d e fis
+  | b, cis d gis,4.~
+  %80
+  | gis16 e fis gis a b cis d e
+  | a, b cis fis,4.~
+  | fis16 d e fis gis a b cis d
+  | gis, a b e,4.~
+  | e8. g16\rest cis b a b g~
+  %85
+  | g4. fis8 f16\rest
+  | s1*9/16*3
+  | fis'16 cis
+    \once\shape #'((0 . 0.5) (0 . 0.5) (0 . 0.5) (-0.2 . 0.6)) Tie
+    d~ \once\stemUp \once\omit Flag d8. s
+  %90
+  | fis16 cis
+    \once\shape #'((0 . 0.5) (0 . 0.5) (0 . 0.5) (-0.2 . 0.6)) Tie
+    d~ \once\stemUp \once\omit Flag d8. s
+  | f16 cis d~ \once\stemUp \once\omit Flag d8. s
+  | f16 cis
+    \once\shape #'((0 . 0.5) (0 . 0.5) (0 . 0.5) (-0.2 . 0.6)) Tie
+    d~ \once\stemUp \once\omit Flag d8. s
+  | s1*9/16
+  | \stemDown s8. s8 e16~ \omit Flag e8.
 }
 
 Tenor = \context Voice = "three" \relative c' {
@@ -200,6 +255,20 @@ Tenor = \context Voice = "three" \relative c' {
   %45
   | s1*9/16
   | s8. e8.~ \shiftOff e8.
+  | s1*9/16*2
+  %49
+  | s1*9/16*40
+  %89
+  | \staffUpper\stemDown s8. a f\rest
+  | s8. a f\rest
+  | s8. gis f\rest
+  | s8. a f\rest
+  | s1*9/16
+  | << {
+      \stemDown\tieDown s8. s16 cis'8~ \omit Flag cis8.
+    } \\ {
+      \stemDown\tieDown s8. a8.~ a
+    } >>
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -254,7 +323,7 @@ Bass = \context Voice = "four" \relative c {
   \repeat volta 2 {
   | \stemDown cis'16 d e fis, e' d cis d e
   | g, e' d cis d e a, b cis
-  | d \staffUpper fis a gis fis e d cis b
+  | \staffUpper d fis a gis fis e d cis b
   | cis e g! fis e d \staffLower cis b a
   | b cis d cis b a b a gis
   | \stemNeutral\tieNeutral a16 e' d cis b a g! fis e

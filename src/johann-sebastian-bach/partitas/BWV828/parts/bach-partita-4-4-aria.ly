@@ -20,9 +20,9 @@ Soprano = \context Voice = "one" \relative c'' {
   | d8[ e16 fis g8 fis]
   | fis8^\prall e r a8
   %5
-  | fis8 e4 d8~
+  | fis8\parenthesize\prall e4 d8~
   | d8 cis4 d8~
-  | d8 e16 fis g8 fis
+  | d8[ e16 fis g8 fis]
   | fis8^\prall e r e
   %10
   | \stemNeutral\tieNeutral fis16 gis a4 gis16 a
@@ -99,7 +99,7 @@ Alto = \context Voice = "two" \relative c' {
   %5
   | d a\rest cis g\rest
   | s2
-  | s4. d'8
+  | a4. <a d>8
   | d cis \staffLower\stemUp c\rest cis \staffUpper
   | s2*7
   | s4.
@@ -135,17 +135,11 @@ Tenor = \context Voice = "three" \relative c' {
   %5
   | <d fis a> f\rest <e g a> f\rest
   | <fis a> f\rest <g a> f\rest
-  | << {
-      \stemDown \once\override NoteColumn.force-hshift = #0.2 fis8 e16 d cis8 d
-    } \\ {
-      \once\override NoteColumn.force-hshift = #-1
-      \once\override Dots.extra-offset = #'(0 . 1)
-      \stemUp a'4. a8
-    } >>
+  | fis8[ e16 d cis8 d]
   | s2*8
   | s4.
   \partial 8 s8
-  | a8 s cis s
+  | s4 cis'8 s
   | d s g, s
   | fis4 s
   %20
@@ -213,7 +207,7 @@ Bass = \context Voice = "four" \relative c' {
   | e[ g, a cis]
   | d[ e, fis ais]
   | b16 d cis b cis d e fis
-  | g8 fis16 e fis8 g
+  | g8[ fis16 e fis8 g]
   %40
   | a g16 fis e d cis b
   | \stemDown a8 e\rest e4\rest

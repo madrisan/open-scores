@@ -12,29 +12,34 @@ Soprano = \context Voice = "one" \relative c'' {
   \stemNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
-  \omit TupletBracket \omit TupletNumber
+  \omit TupletBracket
   %1
   \repeat volta 2 {
   | fis4.^\mordent g32 fis e fis g4
   | e a2^\mordent
-  | \tuplet 3/2 { d,8 e fis g fis e a g fis }
+  | \tupletDown\tuplet 3/2 { d,8 e fis } \tuplet 3/2 { g fis e } \tuplet 3/2 { a g fis }
+    \omit TupletNumber
   | e2^\prallmordent d4
   %5
   | fis4.^\mordent g32 fis e fis g4
   | e4 a2
-  | \tuplet 3/2 { d,8 e fis g fis e a g fis }
-  | e2.
+  | \undo\omit TupletNumber
+    \tuplet 3/2 { d,8 e fis } \omit TupletNumber \tuplet 3/2 { g fis e } \tuplet 3/2 { a g fis }
+  | \slurDown\once\stemUp\appoggiatura fis8 e2.
   }
   \break
   \repeat volta 2 {
   | \stemNeutral\tieNeutral
-    \tuplet 3/2 { a,8 b cis d cis b cis b a }
+    \undo\omit TupletNumber
+    \tuplet 3/2 { a,8 b cis } \omit TupletNumber \tuplet 3/2 { d cis b } \tuplet 3/2 { cis b a }
   %10
   | a'4 e8 d cis b
-  | \tuplet 3/2 { a8 b cis d cis b cis b a }
+  | \undo\omit TupletNumber
+    \tuplet 3/2 { a8 b cis } \omit TupletNumber \tuplet 3/2 { d cis b } \tuplet 3/2 { cis b a }
   | g'2.
-  | \tuplet 3/2 { fis8 e d cis d e d cis b
-  | ais8 b cis b ais gis } fis4~
+  | \undo\omit TupletNumber
+    \tuplet 3/2 { fis8 e d } \omit TupletNumber \tuplet 3/2 { cis d e } \tuplet 3/2 { d cis b }
+  | \tuplet 3/2 { ais b cis b ais gis } fis4~
   %15
   | \tuplet 3/2 {
       fis8 gis ais b cis d e d cis
@@ -43,17 +48,19 @@ Soprano = \context Voice = "one" \relative c'' {
   |   fis8 e fis ais, cis d e d cis
   |   d8 cis b
     }
-    cis4 ais
+    cis4 ais\reverseturn
   %20
   | \stemUp b2.
   | fis4.^\mordent g32 fis e fis g4
   | a4 <a c>2
-  | \stemNeutral \tuplet 3/2 { b8 cis d cis d e d e fis
-  | e8 d cis d cis b a cis e }
+  | \stemNeutral \undo\omit TupletNumber
+    \tuplet 3/2 { b8 cis d } \omit TupletNumber \tuplet 3/2 { cis d e } \tuplet 3/2 { d e fis }
+  | \tuplet 3/2 { e8 d cis } \tuplet 3/2 { d cis b } \tuplet 3/2 { a cis e }
   %25
-  | a4. b32 a g a b4
+  | a4.\mordent b32 a g a b4
   | \stemUp <a, cis>4 <e' g>2
-  | \stemNeutral \tuplet 3/2 { fis8 e d e fis g a, b cis }
+  | \undo\omit TupletNumber
+    \stemNeutral \tuplet 3/2 { fis8 e d } \omit TupletNumber \tuplet 3/2 { e fis g } \tuplet 3/2 { a, b cis }
   | d2.
     \override Score.TextMark.self-alignment-X = #CENTER
     \textEndMark \markup { \musicglyph "scripts.ufermata" }
@@ -108,7 +115,7 @@ Tenor = \context Voice = "three" \relative c' {
   | s4 <fis a d> d'
   | s2.
   | s4 <b, g'> <e g>~
-  | g8 e fis d d,4
+  | g8 e fis \tieDashed d~ \magnifyMusic 0.8 { d4 }
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -151,9 +158,10 @@ Bass = \context Voice = "four" \relative c {
   | a'8.[ e16 a,8. cis16 e8. g16]
   %25
   | fis4 d g~
-  | \tuplet 3/2 { g8 fis e d cis b cis b a }
+  | \undo\omit TupletNumber
+    \tuplet 3/2 { g8 fis e } \omit TupletNumber \tuplet 3/2 { d cis b } \tuplet 3/2 { cis b a }
   | \stemDown d4 g, a
-  | d4. s
+  | d4. d8 d,4
     \tweak direction #DOWN
     \textEndMark \markup { \musicglyph "scripts.dfermata" }
   }

@@ -15,10 +15,13 @@ Soprano = \context Voice = "one" \relative c' {
   \repeat volta 2 {
   \partial 8 fis8
   %1
-  | <a, d fis>4. d16 fis g8 d16 g a4 b^\mordent cis
+  | \once\override Staff.Script.extra-offset = #'(0 . -5.5)
+    % FIXME: work-around to insert a horizontal space to accommodate the mordant
+    \hideNotes \magnifyMusic 1.4 { \once\stemDown \grace a,8 ^\mordent } \unHideNotes
+    <a d fis>4. d16 fis g8 d16 g a4 b^\mordent cis
   | <d, a' d>2 e'4 fis fis8 g fis e
   | fis8 d16 fis \stemNeutral\tieNeutral g8[ d16 g] a4. b,8 e fis16 g fis8 e
-  | cis4.^\prall a16 cis d8 a16 d e4 \grace a,8 g2~
+  | \once\stemUp \slurDown\appoggiatura d cis4.^\prall a16 cis d8 a16 d e4 \appoggiatura a,8 g2~
   %5
   | g8 fis16 e fis8 ais b4.^\mordent cis8 d cis e4
   | \once\stemUp\tieUp \slurDown\appoggiatura e8 d4. b16 d e8 cis16 e fis4 gis4.^\mordent a8
@@ -48,27 +51,27 @@ Soprano = \context Voice = "one" \relative c' {
   %20
   | \stemNeutral c4.^\prall a16 c e8[ c16 e] a8 c,4 b a8
   | b4.^\mordent g16 b d8[ b16 d] g8 b,4 a g8
-  | a4. fis16 a c8[ a16 c] fis8 a,4 g fis8
+  | a4.\parenthesize\mordent fis16 a c8[ a16 c] fis8 a,4 g fis8
   | g8 c4 b8[ dis e] a, g'4 fis8 e dis
   | \stemUp e2. g~
   %25
   | g4 fis8[ g e g] fis2.~
   | fis4 e8[ fis d fis] e2.~
-  | e8[ a,16 d] fis8[ d16 fis] \stemNeutral a8 c,4 b cis d8
+  | e8[ a,16 d] fis8[ d16 fis] \stemNeutral\tieNeutral\slurNeutral a8 c,4 b cis d8
   | d4( cis16)[ b a b] cis[ b a b] c8[ fis16 g] a[ g fis e] d8[ c]
-  | c4( b16)[ a g a] b[ a g a] b8[ e16 fis] g[ fis e d] c8 b
+  | c4( b16)[ a g a] b[ a g a] b8[ e16 fis] g[ fis e d] cis8 b
   %30
   | b16^([ a) d e] fis[ e d cis] b8[ a] a16^([ g) cis d] e[ d cis b] a8[ g]
-  | fis4. d16 fis g8 d16 g a4 \appoggiatura a16 b4. c8
+  | \appoggiatura g8 fis4. d16 fis g8 d16 g a4 \appoggiatura a16 b4. c8
 
   | b4. e,8 e16\prall d e8 a4 d,8 e fis d
-  | g2.~ g2 fis4~
-  | fis4 e8[^\prall d16 cis d8 e] cis8[ a16 cis] d8[ a16 d] e8[ a,16 e']
-  | fis8 a,16 fis' g4. fis16 e fis8[ d16 fis] g8[ d16 g] a8[ d,16 a']
-  | b8 d,16 b' c4. b16 a b8[ g16 b] cis8[ g16 cis] d8 g,16 d']
-  | e4~ e16 d cis b a8[ d~] d16 cis b a g8[ b~] b16 a g fis
+  | \stemUp\tieUp g2.~ g2 fis4~
+  | fis4 \stemNeutral\tieNeutral e8[^\prall d16 cis d8 e] cis8[ a16 cis] d8[ a16 d] e8[ a,16 e']
+  | fis8 a,16 fis' \appoggiatura fis8 g4. fis16 e fis8[ d16 fis] g8[ d16 g] a8[ d,16 a']
+  | b8 d,16 b' \appoggiatura b8 c4. b16 a b8[ g16 b] cis8[ g16 cis] d8 g,16 d']
+  | \once\stemUp\slurDown \appoggiatura d8 e4~ e16 d cis b a8[ d~] d16 cis b a g8[ b~] b16 a g fis
   | e8[ g~] g16 fis e d cis8 a'4 d,8 fis4 e8^\prall d16 e
-  | d2.~ d2
+  | << { d2.^~ d2 } \\ { a2. a2 } >>
     \override Score.TextMark.self-alignment-X = #CENTER
     \textEndMark \markup { \musicglyph "scripts.ufermata" }
   }
@@ -84,8 +87,9 @@ Alto = \context Voice = "two" \relative c'' {
   | s1.
   | s2 b4 cis d a~
   | a s s1
-  | s1.*7
-  %11
+  | s1.*6
+  %10
+  | s1 s4 a
   | fis2. s2.
   | s1.*4
   %16
@@ -108,7 +112,7 @@ Alto = \context Voice = "two" \relative c'' {
   | b s4 s1
   | s1.*3
   | s2. s8 d~ d4 cis
-  | \staffLower\stemUp <fis, a>2 q2
+  | a2. a2
 }
 
 Tenor = \context Voice = "three" \relative c {
@@ -126,9 +130,9 @@ Tenor = \context Voice = "three" \relative c {
   | s1.*3
   | d2 fis4 gis g\rest e
   %10
-  | d8 \staffUpper\stemDown fis8
-   fis16 \tweak Y-offset #0.5 \prall e fis8 b4 e,8[ fis gis e] a4
-  | \staffLower\stemUp a,16\prall gis a8 d4 cis b a gis
+  | \staffUpper\stemDown fis8 fis
+    fis16 \tweak Y-offset #0.5 \prall e fis8 b4 e,8[ fis gis e] \staffLower\stemUp d8\rest a
+  | a16\prall gis a8 d4 cis b a gis
   | \tieDown a4~ \stemDown a gis g fis e
   | d \stemUp\tieUp e'2 d2.~
   | d4 cis2~ cis4 b2~
@@ -162,7 +166,7 @@ Tenor = \context Voice = "three" \relative c {
   | g4 fis2~ fis4 e2~
   | e4 cis e d2 g4
   %40
-  | \stemDown d2. \once\override Stem.length = #4 d2
+  | fis2. fis2
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -223,8 +227,11 @@ Bass = \context Voice = "four" \relative c {
   | cis4 d cis b cis d
   | cis4 a g fis g a
   %40
-  | \once\override Voice.Rest.X-offset = #0.5
-    e4\rest d a' d,2
+  | << {
+      \stemDown d2 \once\override Stem.length = #4.5 a4 \once\override Stem.length = #4.5 d2
+    } \\ {
+      \once\override Voice.Rest.X-offset = #0.5 d,4\rest d2~ d
+    } >>
     \tweak direction #DOWN
     \textEndMark \markup { \musicglyph "scripts.dfermata" }
   }
