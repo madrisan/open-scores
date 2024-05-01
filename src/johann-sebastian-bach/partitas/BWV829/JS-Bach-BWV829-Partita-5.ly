@@ -24,7 +24,7 @@
         (minimum-distance . 1)
         (padding . 2)
         (stretchability . 24))
-  %outer-margin = 20\mm
+  %outer-margin = 20\mmx
   print-all-headers = ##t
   ragged-last-bottom = ##f
   ragged-bottom = ##f

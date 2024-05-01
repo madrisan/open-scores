@@ -13,12 +13,12 @@ Soprano = \context Voice = "one" \relative c'' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \repeat volta 2 {
-    \partial 16*5 d16[ \grace c16 b8. c16]
+    \partial 16*5 d16[ \appoggiatura c16 b8. c16]
   %1
-  | \grace c8 d4 d( e8.) f16
-  | \grace e8 d4. e8 \grace d c4~
+  | \appoggiatura c8 d4 d( e8.) f16
+  | \appoggiatura e8 d4. e8 \appoggiatura d c4~
   | c8.[ d16 b8.( a16) b8.( c16)]
-  | \grace b8 a4. fis'8[ d8. e16]
+  | \appoggiatura b8 a4. fis'8[ d8. e16]
   %5
   | fis4 g( a8.) b16
   | e,4. fis8 g4~
@@ -26,26 +26,26 @@ Soprano = \context Voice = "one" \relative c'' {
   | c4( b8.[) d16 g8. a16]
   | b4 b4. b8
   %10
-  | \grace fis8 e4. e8 a4~
-  | a8. b16 \grace a8 gis4. \prall a8
+  | \appoggiatura fis8 e4. e8 a4~
+  | a8. b16 \appoggiatura a8 gis4. \prall a8
   | a4~ a16 g fis a g fis e g
   | fis4 b,4. e8
   | a,4~ a16 a b cis d e fis32 e d16
   %15
-  | b'8. b,16 d4( cis8.) d16
+  | b'8. b,16 d4( cis8.\parenthesize\prall) d16
   | d4.
   }
   \break
   \repeat volta 2 {
-    \partial 16*5 a'16[ \grace g16 fis8. g16]
-  | \grace g8 a4 a( b8.) c16
-  | \grace b8 a4. b8 \grace a8 g4~
+    \partial 16*5 a'16[ \appoggiatura g16 fis8. g16]
+  | \appoggiatura g8 a4 a( b8.) c16
+  | \appoggiatura b8 a4. b8 \appoggiatura a8 g4~
   | g8.[ fis16 a8. g16 fis8.\prall e16]
   %20
-  | \grace e8 dis4. fis8[ dis8.\prall e16]
+  | \appoggiatura e8 dis4. fis8[ dis8.\prall e16]
   | fis4 fis( g8.) a16
-  | \grace g8 fis4. fis8[ gis8. a16]
-  | b8. c16 \grace a16 gis4. gis8
+  | \appoggiatura g8 fis4. fis8[ gis8. a16]
+  | b8. c16 \appoggiatura a16 gis4.. gis16
   | a4. b16\rest a[ e8. fis16]
   %25
   | g16 fis e g fis2~
@@ -58,9 +58,9 @@ Soprano = \context Voice = "one" \relative c'' {
   | b8.*5/6 a32 g fis e8.[ e16 fis8. g16]
   | fis16 g a fis d2~
   | d2.~
-  | d4. g16\rest fis[ \grace e16 d8. e16]
+  | d4. g16\rest fis[ \appoggiatura e16 d8. e16]
   %35
-  | fis4 \grace a8 gis4. a8
+  | fis4 \appoggiatura a8 gis4. a8
   | b16 f e d e d c b a gis fis e
    \break
   | d' c b d c2~
@@ -77,17 +77,17 @@ Alto = \context Voice = "two" \relative c'' {
   \voiceTwo
   \stemDown\tieDown
   \override Rest.staff-position = #0
-  \partial 16*5 b16[ \grace a16 g8. a16]
+  \partial 16*5 b16[ \appoggiatura a16 g8. a16]
   %1
-  | \grace a8 b4 b( c8.) d16
-  | \grace c8 b4. c8 \grace b8 a4~
+  | \appoggiatura a8 b4 b( c8.) d16
+  | \appoggiatura c8 b4. c8 \appoggiatura b8 a4~
   | a g8.[( fis16) g8.( a16)]
-  | \grace g8 fis4. a8[ fis8. g16]
+  | \appoggiatura g8 fis4. a8[ fis8. g16]
   %5
   | a4 b( c8.) d16
   | d8. g,16 c4. b8
   | a4 b8.[ a16 b8. fis16]
-  | f4( g8) e\rest e4\rest
+  | fis4( g8) e\rest e4\rest
   | g8\rest g16\rest a'[ g8. fis16 e8. d16]
   %10
   | cis2~ cis8. cis16
@@ -98,14 +98,14 @@ Alto = \context Voice = "two" \relative c'' {
   %15
   | e8\rest e16\rest g fis4( e)
   | fis4.
-    \partial 16*5 fis'16[ \grace e16 d8. e16]
-  | \grace e8 fis4 fis( g8.) a16
-  | \grace g8 fis4. g8 \grace fis8 e4~
+    \partial 16*5 fis'16[ \appoggiatura e16 d8. e16]
+  | \appoggiatura e8 fis4 fis( g8.) a16
+  | \appoggiatura g8 fis4. g8 \appoggiatura fis8 e4~
   | e4 e, a
   %20
-  | b4. dis8[ b8. cis16]
+  | b4. dis!8[ b8. cis16]
   | dis4 dis( e8.) fis16
-  | \grace e8 dis4.dis8[ b8. c16]
+  | \appoggiatura e8 dis4.dis8[ b8. c16]
   | d4~ d8.[ f16 e8. d16]
   | e2 e,4\rest
   %25
@@ -117,9 +117,9 @@ Alto = \context Voice = "two" \relative c'' {
   %30
   | c4 c8 \staffUpper\stemDown d e fis
   | g4~ g8.[ g16 a8. b16]
-  | a4 e8\rest g16\rest <fis a>[ \grace { \once\stemUp <e g>16 } <d fis>8. <e g>16]
-  | \grace { \once\stemUp <e g>8 } <fis a>4 q( <g b>8.) <a c>16
-  | <g b>4( <fis a>8.) a16 \grace g16 fis8. g16
+  | a4 e8\rest g16\rest <fis a>[ \appoggiatura { \once\stemUp <e g>16 } <d fis>8. <e g>16]
+  | \appoggiatura { \once\stemUp <e g>8 } <fis a>4 q( <g b>8.) <a c>16
+  | <g b>4( <fis a>8.) a16 \appoggiatura g16 fis8. g16
   %35
   | a4 b4. c8
   | d8 c,\rest b4\rest b\rest
@@ -146,7 +146,7 @@ Bass = \context Voice = "four" \relative c' {
     \partial 16*5 r16 r4
   %1
   | r8 r16 g16[ f8. e16 d8. c16]
-  | \grace { \once\stemUp a'16 s } gis8. e16 a4~ a8. g16
+  | \appoggiatura { \once\stemUp a'16 s } gis8. e16 a4~ a8. g16
   | fis8. d16 g4 c,
   | d d, r
   %5
@@ -168,8 +168,8 @@ Bass = \context Voice = "four" \relative c' {
   \repeat volta 2 {
     \partial 16*5 r16 r4
   | r8 r16 d''16[ c8. b16 a8. g16]
-  | \grace { e'16 s } dis8. b16 e4. d8
-  | cis2.
+  | \appoggiatura { e'16 s } dis8. b16 e4. d8
+  | c2.
   %20
   | b4 b, r
   | \clef treble r8 r16 b''[ a8. g16 fis8. e16]

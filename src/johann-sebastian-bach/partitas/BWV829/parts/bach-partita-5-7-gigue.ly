@@ -23,7 +23,7 @@ Soprano = \context Voice = "one" \relative c'' {
   %5
   | g fis g b e, g a g a c fis, a
   | b a c b a g fis e fis g e fis
-  | g8 c4 fis,8 g4~
+  | g4 c8 fis, g4~
   | g8 fis a d, e fis
   | g a\rest a\rest a4.\rest
   %10
@@ -82,7 +82,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | c16 d c b c a b a b c d8
   %55
   | g, c e\rest e16\rest c b a b g
-  | e fis fis8. \prall e32 fis \stemNeutral g8 d' e
+  | e fis fis8. \prallprall e32 fis \stemNeutral g8 d' e
   | a, e' fis b, fis' g
   | \stemUp c,4.~ c16 d c b c a
   | b8 cis4 d8 a d~
@@ -168,10 +168,10 @@ Alto = \context Voice = "two" \relative c'' {
   | e4.\rest \staffUpper\stemDown g8\rest g\rest g16\rest e'
   %50
   | a,8 d g,\rest g16\rest d' c b c a
-  | fis gis gis8. \prall fis32 gis a16 gis a b c a
+  | fis gis gis8. \prallprall fis32 gis a16 gis a b c a
   | b a b cis d b cis8 a d
   | b,16\rest a' g fis g e fis g f e f d
-  | e fis! fis8. \prall e32 fis g4~ g16 fis~
+  | e fis! fis8. \prallprall e32 fis g4~ g16 fis~
   %55
   | fis e8 a16 g a fis8 d \staffLower\stemUp g,~
   | g a4 d,8 a'\rest a\rest
@@ -263,8 +263,8 @@ Bass = \context Voice = "four" \relative c' {
   | c b a gis a r
   | R1*6/8*3
   %22
-  | r4. r8 r d
-  | e8. c16 a fis \stemDown d'8 g, b,\rest
+  | r4. r8 r d,
+  | e8. c16 a fis \stemDown d'8 g, b\rest
   | c8. a16 fis d b' a b d g, b
   %25
   | c b c e a, c d c d fis b, d

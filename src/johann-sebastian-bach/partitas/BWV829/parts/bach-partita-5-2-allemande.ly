@@ -12,6 +12,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \stemNeutral\tieNeutral\stemNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \set minimumBeamSubdivisionInterval = \musicLength 8
   \omit TupletBracket \omit TupletNumber
   \repeat volta 2 {
     \partial 16 g'16
@@ -63,7 +64,7 @@ Soprano = \context Voice = "one" \relative c'' {
     \stemUp ais4 \tuplet 3/2 { c16\rest a[ b] } \tuplet 3/2 { c[ b a] }
   %20
   | \tuplet 3/2 { b[ a g] } \tuplet 3/2 { fis[ g e_~] } <e g>8 <dis fis> <b e>4~\arpeggio
-    \stemNeutral \tuplet 3/2 { e16[ b a] } \tuplet 3/2 { g[ fis g] }
+    \stemNeutral\tieNeutral \tuplet 3/2 { e16[ b a] } \tuplet 3/2 { g[ fis g] }
   | cis16.[ g32 d'16. g,32] e'16.[ g,32 fis16.\parenthesize\prall e32] fis16.[ d32 g16. d32]
     a'16. d,32 \tuplet 3/2 { c'16[ b a] }
   | b16.[ f32 c'16. f,32] d'16.[ f,32 e16.\prall d32] e8.\mordent e16 c'4~\mordent
@@ -73,7 +74,6 @@ Soprano = \context Voice = "one" \relative c'' {
     \tuplet 3/2 { bes16[ a g] } \tuplet 3/2 { a[ g fis] } \tuplet 3/2 { g[ fis e] } cis'16. d32
   %25
   | \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/8)
     g,32 fis e fis g fis e16
     \set subdivideBeams = ##f
     d4~ \tuplet 3/2 { d16[ d e] } \tuplet 3/2 { fis[ fis g] } \tuplet 3/2 { a[ a b] }

@@ -186,7 +186,9 @@ Bass = \context Voice = "four" \relative c {
   | b16 cis dis e fis g
   | a b cis dis e dis
   | e8 g, b
-  | e,16 b g b e, e'
+  | \override Beam.positions = #'(4 . 4)
+    e,16 b g b e, e'
+    \revert Beam.positions
   | a, b cis a d a
   %50
   | e' a, fis' a, g' a,
@@ -196,8 +198,11 @@ Bass = \context Voice = "four" \relative c {
   | d' g, e' g, f' g,
   %55
   | c d c b a g
-  | fis e d c b a
-  | g b d g fis e
+  | \override Beam.positions = #'(4.5 . 2.5)
+    fis e d c b a
+  | \override Beam.positions = #'(4 . 4)
+    g b d g fis e
+    \revert Beam.positions
   | dis8 b dis
   | e,16 g b e d c
   %60

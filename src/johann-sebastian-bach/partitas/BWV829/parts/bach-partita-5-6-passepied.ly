@@ -16,7 +16,7 @@ Soprano = \context Voice = "one" \relative c' {
   \partial 8 d8
   %1
   | g4 \mordent g32 a b16
-  | \grace b8 a4 g8
+  | \appoggiatura b8 a4 g8
   | fis g e
   | d a' g
     \break
@@ -27,7 +27,7 @@ Soprano = \context Voice = "one" \relative c' {
   | c16 b a g d8
   | g4 \mordent g32 a b16
   %10
-  | \grace b8 a4 g8
+  | \appoggiatura b8 a4 g8
   | fis g e
   | \stemNeutral d16 fis e d e fis
   | g e' d cis b a
@@ -45,15 +45,15 @@ Soprano = \context Voice = "one" \relative c' {
   %20
   | a g fis e g8
     \break
-  | \stemNeutral \once\stemUp \grace c,='' b4 c32 d e16
+  | \stemNeutral\slurDown \once\stemUp \appoggiatura c,='' b4 c32 d e16
   | g,4 g'8
-  | \once\stemUp \grace c,8 b4 c32 d e16
+  | \once\stemUp \appoggiatura c,8 b4 c32 d e16
   | g,4 f'8~
   %25
   | \stemUp f f e
   | c' fis,! g
   | a,16 b c8 b
-  | \grace b8 a4 d8
+  | \appoggiatura b8 a4 d8
   | g4 \mordent g32 a b16
   %30
   | e,=''4 d8
@@ -64,7 +64,9 @@ Soprano = \context Voice = "one" \relative c' {
   | d c b a c a
     \break
   %35
-  | c b a g c a
+  | \override Beam.positions = #'(4 . 4)
+    c b a g c a
+    \revert Beam.positions
   | c b a g a b
   | e,4 fis32 g a16
   | d,4 d'8
@@ -72,13 +74,17 @@ Soprano = \context Voice = "one" \relative c' {
   | g,4 \mordent fis32 g a16
   %40
   | d,='4 d'8
-  | \stemUp \grace c b4 c32 d e16
+  | \stemUp\slurUp \appoggiatura c b4 c32 d e16
   | f4 g8
   | e f d
   | f16 e d c e c
   %45
-  | \stemNeutral e d c b d b
-  | d c b a c a
+  | \stemNeutral
+    \override Beam.positions = #'(-3 . -3)
+    e d c b d b
+  | \override Beam.positions = #'(-4 . -4)
+    d c b a c a
+    \revert Beam.positions
   | d8 g, fis
   | g4
     \override Score.TextMark.self-alignment-X = #CENTER
@@ -102,7 +108,7 @@ Alto = \context Voice = "two" \relative c' {
   | d4.~
   | d8 c' b
   | a g fis
-  | g4 a,8\rest
+  | g4 g,8\rest
   | a\rest b cis~
   %10
   | cis d4~
