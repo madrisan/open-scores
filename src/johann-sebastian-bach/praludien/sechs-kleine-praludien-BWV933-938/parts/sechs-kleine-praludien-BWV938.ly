@@ -59,7 +59,7 @@ Sopran = \context Voice = "one" \relative c' {
     a4\mordent^\markup { \teeny\sharp } r8
   | r16 e[ a gis a c]
   %35
-  | fis,![ c' e, c' d, d']
+  | fis,![ c' e, c' d, c']
   | b[ d, g! fis g b]
   | e,[ b' d, b' c, b']
   | a[ g fis a e a]
