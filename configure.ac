@@ -120,7 +120,7 @@ AC_CONFIG_FILES([\
   src/johann-sebastian-bach/italienisches-konzert-BWV971/Makefile \
   src/johann-sebastian-bach/musikalisches-opfer-BWV1079/Makefile \
   src/johann-sebastian-bach/organ-sonata-4-andante-BWV528-stradal/Makefile \
-  src/johann-sebastian-bach/ouverture-nach-franzosischer-art-BWV831 \
+  src/johann-sebastian-bach/ouverture-nach-franzosischer-art-BWV831/Makefile \
   src/johann-sebastian-bach/partitas/Makefile \
   src/johann-sebastian-bach/partitas/BWV825/Makefile \
   src/johann-sebastian-bach/partitas/BWV826/Makefile \
