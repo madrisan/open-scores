@@ -7,6 +7,7 @@ SUBDIRS = chaconne-fur-violine-BWV1004-busoni \
 	  italienisches-konzert-BWV971 \
 	  musikalisches-opfer-BWV1079 \
 	  organ-sonata-4-andante-BWV528-stradal \
+	  ouverture-nach-franzosischer-art-BWV831 \
 	  partitas \
           praeludium-fuge-und-allegro-BWV998 \
 	  praeludium-und-fughetta-BWV902 \

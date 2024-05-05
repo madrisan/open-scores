@@ -143,6 +143,7 @@ make -C src/johann-sebastian-bach/inventionen-und-sinfonien-BWV772-801
 make -C src/johann-sebastian-bach/italienisches-konzert-BWV971
 make -C src/johann-sebastian-bach/musikalisches-opfer-BWV1079
 make -C src/johann-sebastian-bach/organ-sonata-4-andante-BWV528-stradal
+make -C src/johann-sebastian-bach/ouverture-nach-franzosischer-art-BWV831
 make -C src/johann-sebastian-bach/partitas/BWV825
 make -C src/johann-sebastian-bach/partitas/BWV826
 make -C src/johann-sebastian-bach/partitas/BWV827
