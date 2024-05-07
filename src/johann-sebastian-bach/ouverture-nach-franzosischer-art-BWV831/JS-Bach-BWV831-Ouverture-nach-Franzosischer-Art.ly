@@ -29,6 +29,11 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   %right-margin = 10\mm
+  score-markup-spacing =
+     #'((basic-distance . 10)
+        (minimum-distance . 8)
+        (padding . 2)
+        (stretchability . 24))
   system-system-spacing =
      #'((basic-distance . 2)
         (minimum-distance . 1)
@@ -98,8 +103,9 @@
 \include "./parts/bach-ouverture-nach-franzosischer-art-1-ouverture.ly"
 \pageBreak
 \include "./parts/bach-ouverture-nach-franzosischer-art-2-courante.ly"
-\pageBreak
+%\pageBreak
 \include "./parts/bach-ouverture-nach-franzosischer-art-3-gavotte-1.ly"
+\pageBreak
 \include "./parts/bach-ouverture-nach-franzosischer-art-3-gavotte-2.ly"
 \pageBreak
 \include "./parts/bach-ouverture-nach-franzosischer-art-4-passepied-1.ly"
@@ -107,6 +113,7 @@
 \pageBreak
 \include "./parts/bach-ouverture-nach-franzosischer-art-5-sarabande.ly"
 \include "./parts/bach-ouverture-nach-franzosischer-art-6-bourree-1.ly"
+\pageBreak
 \include "./parts/bach-ouverture-nach-franzosischer-art-6-bourree-2.ly"
 \pageBreak
 \include "./parts/bach-ouverture-nach-franzosischer-art-7-gigue.ly"

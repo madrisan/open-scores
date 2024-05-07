@@ -28,8 +28,8 @@
   ragged-bottom = ##f
   %right-margin = 10\mm
   score-markup-spacing =
-     #'((basic-distance . 2)
-        (minimum-distance . 1)
+     #'((basic-distance . 10)
+        (minimum-distance . 8)
         (padding . 2)
         (stretchability . 24))
   system-system-spacing =
