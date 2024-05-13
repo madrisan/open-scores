@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Added
 
 - J.S. Bach: Ouverture nach Französischer Art (BWV831)
+- Bach/Kempff: Siciliano (BWV1031)
 
 ## [v49] - 2024-05-04
 

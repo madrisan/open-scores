@@ -4,7 +4,7 @@
 
 PROGNAME="${0##*/}"
 PROGPATH="${0%/*}"
-REVISION=2
+REVISION=3
 
 die () { echo -e "$PROGNAME: error: $1" 1>&2; exit 1; }
 
@@ -214,20 +214,27 @@ echo "creating the makefile '$ly_targetdir/Makefile.am' ..."
    fi
 ) > "$ly_targetdir/Makefile.am"
 
-for i in ${!ly_parts4_files[@]}; do
-   partfile="${ly_parts4_files[$i]}"
-   title="${ly_parts4_titles[$i]}"
-   if [ -s "$ly_targetdir/parts/$partfile" ]; then
-       echo "WARNING: skip non empty file: $ly_targetdir/parts/$partfile"
-   else
-       echo "creating $ly_targetdir/parts/$partfile ..."
-       ( partfile_title="$title"
-         ly_sed < $PROGPATH/templates/part-four-voices.ly ) \
-            > "$ly_targetdir/parts/$partfile"
-   fi
-   echo "updating $ly_targetdir/${ly_mainfile}.ly"
-   echo "\\include \"./parts/$partfile\"" >> $ly_targetdir/${ly_mainfile}.ly
-done
+if [ "$ly_parts" = "true" ]; then
+   for i in ${!ly_parts4_files[@]}; do
+      partfile="${ly_parts4_files[$i]}"
+      title="${ly_parts4_titles[$i]}"
+      if [ -s "$ly_targetdir/parts/$partfile" ]; then
+          echo "WARNING: skip non empty file: $ly_targetdir/parts/$partfile"
+      else
+          echo "creating $ly_targetdir/parts/$partfile ..."
+          ( partfile_title="$title"
+            ly_sed < $PROGPATH/templates/part-four-voices.ly ) \
+               > "$ly_targetdir/parts/$partfile"
+      fi
+      echo "updating $ly_targetdir/${ly_mainfile}.ly"
+      echo "\\include \"./parts/$partfile\"" >> $ly_targetdir/${ly_mainfile}.ly
+   done
+else
+   echo "updating $ly_targetdir/${ly_mainfile}.ly ..."
+   ( partfile_title="$title"
+     ly_sed < $PROGPATH/templates/single-four-voices.ly ) \
+        >> $ly_targetdir/${ly_mainfile}.ly
+fi
 
 echo "
 + new project structure"

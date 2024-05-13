@@ -14,5 +14,6 @@ SUBDIRS = chaconne-fur-violine-BWV1004-busoni \
 	  praludien \
 	  praludium-und-fuge-liszt-BWV543-S462 \
 	  schafe-konnen-sicher-weiden-BWV208 \
-	  siciliano-BWV1031 \
+	  siciliano-BWV1031-kempff \
+	  siciliano-BWV1031-stark \
 	  suites-anglaises
