@@ -119,24 +119,44 @@ Soprano = \context Voice = "one" \relative c' {
     %\bar "||"
     \break
   \repeat volta 2 {
-  | \stemUp\slurUp\tieUp d'8.^\markup { \dynamic mf "cantabile" }( ees16 d8 d g ees
+  | \stemUp\slurUp\tieUp
+    \once\shape #'((0 . 0) (0 . 0) (0 . 0) (-5 . -1.5)) PhrasingSlur
+    d'8.\(^\markup {
+      \dynamic mf "cantabile"
+    }
+    ees16 d8 d g ees
   %5
-  | c2.)
-  | c8.( d16 c8 c a' c,
-  | \acciaccatura c8 bes8. a16 g8) d'4\rest d8\rest
-  | bes\( d ees~ ees c' ees,
-  | ees d\) f\rest f\( bes f~
+  | c2.
+  | c8.\)( d16 c8 c a' c,
+  | \acciaccatura c8 bes8.^\> a16 g8)\! d'4\rest d8\rest
+  | \once\override DynamicLineSpanner.outside-staff-priority = ##f
+    \once\override Hairpin.rotation = #'(8 -1 0)
+    \once\override Hairpin.shorten-pair = #'(2.2 . 0)
+    bes\(^\< d ees~\! ees c' ees,
+  | \once\override DynamicLineSpanner.outside-staff-priority = ##f
+    \once\override Hairpin.rotation = #'(-9 1 0)
+    \once\override Hairpin.shorten-pair = #'(0 . 0.5)
+    ees^\> d\)\! f\rest f\( bes f~
   %10
   | f g f~ f ees d
-  | c16\)^\p f\( a c bes d \stemNeutral c bes a g f ees
+  | c16\)^\p
+    \once\shape #'((0 . -0.5) (0 . 0) (0 . 0) (0 . -3)) PhrasingSlur
+    f\( a c bes d \stemNeutral c bes a g f ees
   | d\) f,[_(_\pp a_. c_. bes_. d_.] c_. bes_. a_. g_. f_. ees_.)
-  | \stemUp f'8.^\markup { "dolce" }( g16 f8 f bes f
+  | \stemUp f'8.\(^\markup {
+      "dolce"
+    }
+    g16 f8 f bes g
   | ees2.
   %15
-  | ees8.) f16 ees8 ees c' ees,
+  | ees8.\)\( f16 ees8 ees c' ees,
   | \once\shape #'((0 . -1) (0 . 0.5) (0 . 0.5) (0 . -2)) Slur
-    d16( f, g a bes c d f bes8 d,
-  | d8) c4~ c8 a'( c,~
+    d16\)( f, g a bes c d f bes8 d,
+  | \once\override DynamicLineSpanner.outside-staff-priority = ##f
+    \once\override Hairpin.shorten-pair = #'(2.2 . 0.4)
+    d8)^\> c4~\! c8
+    \once\override Hairpin.shorten-pair = #'(0 . -2)
+    a'(^\> c,~\!
   | c16 a bes d g a bes8. a16 g8
   | a8. g16 f8~ f16 e g f e d)
   %20
@@ -148,7 +168,7 @@ Soprano = \context Voice = "one" \relative c' {
     \once\override TextScript.extra-offset = #'(0 . -2)
     ees16[(_\markup { "dim." } g) fis^. g^. a( g)]
   %21
-  | d[( g) fis^. g^. a( g)] c,( ees d c bes a)
+  | d[( g) fis^. g^. a( g)] c,( ees! d c bes a)
   }
   \break
   %26
@@ -156,7 +176,7 @@ Soprano = \context Voice = "one" \relative c' {
     d8.( ees16 d8 d 8 g ees
   | c2.
   | c8.)( d16 c8 c8 a' c,
-  | bes16) g( a bes c d ees f ees d c bes)
+  | bes16) g( a bes c_\< d ees f\! ees d c bes)
   %30
   | a16( cis d) a bes g
     \once\shape #'((0 . 1) (0 . 2) (0 . 2) (0 . 1.5)) Slur
@@ -170,7 +190,7 @@ Soprano = \context Voice = "one" \relative c' {
     g8) d'[( bes] g[ g' bes,])
   %35
   | \tempo "Adagio"
-    g'16\rest bes,( a bes g' bes,) bes16.( c32 bes16[ a8 g16]
+    g'16\rest bes,( a bes g' bes,) bes16.( cis!32 bes16[ a8 g16]
   | g2.)
   \fine
 }
@@ -181,7 +201,7 @@ Alto = \context Voice = "two" \relative c' {
   \override Rest.staff-position = #0
   %1
   | s1*6/8*3
-  | \staffLower\stemUp bes16( \staffUpper\stemDown g' bes) g_. fis_. g_.
+  | \staffLower\stemUp bes16(^\p \staffUpper\stemDown g' bes) g_. fis_. g_.
     \staffLower\stemUp bes,16( \staffUpper\stemDown g' bes) g_. fis_. g_.
   %5
   | \staffLower\stemUp a,16( \staffUpper\stemDown c ees) c_. a_. c_.
@@ -199,21 +219,27 @@ Alto = \context Voice = "two" \relative c' {
   | \staffUpper\stemDown d16( bes' d) bes_. a_. bes_.
     \staffLower\stemUp d,( \staffUpper\stemDown bes' d) bes_. a_. bes_.
   | \staffLower\stemUp c,( \staffUpper\stemDown ees g) ees_. \staffLower\stemUp c^. \staffUpper\stemDown ees_.
-    \staffLower\stemUp c( \staffUpper\stemDown ees g) ees_. \staffLower\stemUp c^. \staffUpper\stemDown ees_.
+    \staffLower\stemUp c( \staffUpper\stemDown ees g)^\> ees_. \staffLower\stemUp c^. \staffUpper\stemDown ees_.\!
   %15
   | \staffLower\stemUp c( \staffUpper\stemDown f c') a_. g_. a_. f( c' ees) c_. f,_. c'_.
   | \once\override Beam.positions = #'(-5.2 . -6)
-    bes8[ c,16\rest f g a] bes c d bes \staffLower\stemUp f \staffUpper\stemDown bes
-  | bes g a e f g a bes c a d, a'~
-  | a fis g a bes c d d g f! e! d
-  | c c f e! d c bes c bes a g f
+    bes8[ c,16\rest f_\( g a] bes c d bes \staffLower\stemUp f
+    \staffUpper\stemDown
+    \once\override DynamicLineSpanner.outside-staff-priority = ##f
+    \once\override Hairpin.shorten-pair = #'(-0.5 . -1.5)
+    bes^\<
+  | bes\! g a e f g a bes c a d, a'~
+  | a fis
+    \once\override Hairpin.Y-offset = #-4
+    g\< a bes c\! d d g f! e! d
+  | c c f e! d c bes c bes a g f\)
   %20
   | e(_\f gis a) e_. f_. d_. \staffLower\stemUp\slurUp cis4(^\p d8)
   | \staffUpper\stemDown\slurDown e16(_\mf gis a) e_. f_. d_. \staffLower\stemUp\slurUp cis4(^\pp d8)
   | \staffUpper\stemDown e!8 \staffLower\stemUp a, d\rest^\mf s4.
   | s2.
   | \staffLower\stemUp
-    \once\shape #'((0 . -2.2) (0 . -4) (0 . -2) (-1 . -4)) Slur
+    \once\shape #'((0 . -4) (0 . -4) (0 . -2) (-1 . -4)) Slur
     d,16[( \staffUpper\stemDown a' d \staffLower\stemUp c!]
     \hideNotes bes a c4) \unHideNotes s8
   %25
@@ -233,10 +259,10 @@ Alto = \context Voice = "two" \relative c' {
   | fis( e! fis g a bes c8 bes a)
   | \once\shape #'((1.4 . 1) (0 . 1.2) (0 . 0.8) (0 . 0.8)) Tie
     g4.~ g16. a32 g16[ fis8.]
-  | \once\override Voice.Rest.X-offset = #1
+  | \once\override Voice.Rest.X-offset = #1.2
     c16\rest g'_. bes_. g_. fis_. g_. bes,_. g'_. bes_. g_. fis_. g_.
   %35
-  | g16\rest g( fis g bes g) g16.( a32 fis8.[ g16]
+  | g16\rest g( fis g bes g) g16.( a32 fis!8.[ g16]
   | g2.)
 }
 
@@ -252,7 +278,7 @@ Tenor = \context Voice = "three" \relative c' {
       \once\override NoteColumn.force-hshift = #0.4 bes8( c d
       \once\override Beam.positions = #'(-5.2 . -5.8)
       ees d c
-  | \once\override NoteColumn.force-hshift = #-0.4 bes)
+  | \once\override NoteColumn.force-hshift = #-0.3 bes)
     }
 }
 
@@ -291,7 +317,7 @@ Bass = \context Voice = "four" \relative c {
   | <a a'>4 r8 a'4 b,8\rest
   | \stemDown\tieDown a'16( a,~ a <g g'> <f f'> <d d'>) <g g'>4 r8
   | \stemNeutral\slurNeutral <f f'>4 r8 <e e'>^.^( <cis cis'>^. <a a'>^.)
-  | \stemDown\slurDown d16( a' d c <bes bes'> <a a'>) \stemNeutral\slurUp <c c'>4 r8
+  | \stemDown\slurDown d16( a' d c <bes bes'> <g g'>) \stemNeutral\slurUp <c c'>4 r8
   %21
   | <bes bes'>4 r8 <a a'>8^.( <fis fis'>^. <d d'>^.)
   }
@@ -303,7 +329,7 @@ Bass = \context Voice = "four" \relative c {
   | \stemNeutral <d d'>4^\f r8 d'4^\p r8
   | <d, d'>4^\mf r8 d'4^\pp r8
   | <d, d'>4 r8 <fis, fis'>4 r8
-  | <g g'>8(^\markup { "rit." } <a a'> <bes bes'> <c c'> <d d'> <d, d'>)
+  | <g g'>8_(^\markup { "rit." } <a a'> <bes bes'> <c c'> <d d'> <d, d'>)
   | <g g'>4 r8 <ees' ees'>4^\markup { "rit." } r8
   %35
   | <cis cis'>4. <d d'>4 <d, d'>8
@@ -404,6 +430,6 @@ Sustain = {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 8 = 104
   }
 }
