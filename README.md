@@ -51,7 +51,8 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
 |  | Chorale Prelude - Nun komm’ der Heiden Heiland BWV 659 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/Bach-Busoni-Chorale-Prelude-BWV659.pdf) |
 |  | Chromatische Fantasie und Fugue BWV 903 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/JS-Bach-Busoni-Chromatische-Fantasie-und-Fugue-BWV903.pdf) |
 |  | Chaconne für violine allein BWV 1004 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/JS-Bach-Busoni-Chaconne-fur-violine-allein-BWV1004.pdf) |
-| Bach / Kempff | Siciliano BWV 1031 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v50/JS-Bach-Kempff-Siciliano-BWV1031.pdf) |
+| Bach / Kempff | Largo from Harpsichord Concerto BWV 1056 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v50/JS-Bach-Kempff-Cembalo-Konzert-Largo-BWV1056.pdf) |
+|  | Siciliano BWV 1031 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v50/JS-Bach-Kempff-Siciliano-BWV1031.pdf) |
 | Bach / Liszt | Präludium und Fuge BWV543 S462 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/Bach-Liszt-Praludium-und-Fuge-BWV543-S462.pdf) |
 | Bach / me | Chorale Prelude - Jesu meine Freude BWV 610 :three: | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/JS-Bach-BWV610-Jesu-meine-Freude.pdf) |
 |  | Chorale Prelude - Nun komm’ der Heiden Heiland BWV 659 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/JS-Bach-BWV659-Chorale-Prelude.pdf) |
@@ -131,6 +132,7 @@ make -C src/franz-liszt/nuages-gris-s.199
 make -C src/franz-liszt/trauervorspiel-und-trauermarsch-s.206
 make -C src/franz-liszt/unstern-s.208
 make -C src/ildebrando-pizzetti/sogno
+make -C src/johann-sebastian-bach/cembalo-konzert-largo-BWV1056-kempff
 make -C src/johann-sebastian-bach/chaconne-fur-violine-busoni-BWV1004
 make -C src/johann-sebastian-bach/chorale-preludes/BWV615-Busoni
 make -C src/johann-sebastian-bach/chorale-preludes/BWV639-Busoni
@@ -157,7 +159,8 @@ make -C src/johann-sebastian-bach/praludien/neun-kleine-praludien-BWV924-932
 make -C src/johann-sebastian-bach/praludien/sechs-kleine-praludien-BWV933-938
 make -C src/johann-sebastian-bach/praludium-und-fuge-liszt-BWV543-S462
 make -C src/johann-sebastian-bach/schafe-konnen-sicher-weiden-BWV208
-make -C src/johann-sebastian-bach/siciliano-BWV1031
+make -C src/johann-sebastian-bach/siciliano-BWV1031-kempff
+make -C src/johann-sebastian-bach/siciliano-BWV1031-stark
 make -C src/johann-sebastian-bach/suites-anglaises/BWV809
 make -C src/johannes-brahms/klavierstucke-op.119
 make -C src/johannes-brahms/rhapsodie-op.79-nr.1

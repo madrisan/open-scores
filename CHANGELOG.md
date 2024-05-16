@@ -3,12 +3,13 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [v50] - unreleased
+## [v50] - unreleased - Milestone 1
 
 ### Added
 
-- J.S. Bach: Ouverture nach Französischer Art (BWV831)
-- Bach/Kempff: Siciliano (BWV1031)
+- J.S. Bach: Ouverture nach Französischer Art (BWV 831)
+- Bach/Kempff: Siciliano (BWV 1031)
+- Bach/Kempff: Largo from Harpsichord Concerto BWV 1056
 
 ## [v49] - 2024-05-04
 
