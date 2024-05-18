@@ -35,7 +35,7 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
 |  | Clavierübung Teil I - Partiten V BWV 829 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/JS-Bach-BWV829-Partita-5.pdf) |
 |  | Clavierübung Teil I - Partiten VI BWV 830 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/JS-Bach-BWV830-Partita-6.pdf) |
 |  | Clavierübung Teil II - Italienisches Konzert BWV 971 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/JS-Bach-BWV971-Italienisches-Konzert.pdf) |
-|  | Clavierübung Teil II - Ouvertüre nach französischer Art BWV 831 | :white_check_mark | [pdf](https://github.com/madrisan/open-scores/releases/download/v50/JS-Bach-BWV831-Ouverture-nach-Franzosischer-Art.pdf) |
+|  | Clavierübung Teil II - Ouvertüre nach französischer Art BWV 831 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v50/JS-Bach-BWV831-Ouverture-nach-Franzosischer-Art.pdf) |
 |  | Clavierübung Teil IV - Goldberg Variationen BWV 988 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/JS-Bach-BWV988-Goldberg-Variationen.pdf) |
 |  | Clavierübung Teil V (?) - Die Kunst der Fuga BWV 1080 :one: | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/JS-Bach-BWV1080-Die-Kunst-der-Fuge.pdf) |
 |  | Inventionen BWV 772-786 :two: | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/JS-Bach-BWV772-801-Inventionen-und-Sinfonien.pdf) |
