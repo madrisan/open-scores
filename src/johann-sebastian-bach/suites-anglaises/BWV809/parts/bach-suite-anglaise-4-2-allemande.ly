@@ -102,9 +102,6 @@ Upper = \relative c'' {
     << { g f' bes, e } \\ { g,8 bes } >>
     << { f'4. f16\rest } \\ { c4. a16\rest } \\ { a4. c,16\rest } >>
   }
-
-% la si do re mi fa sol
-%  a b  c  d  e  f  g
 }
 
 Lower = \relative c {
@@ -194,22 +191,36 @@ Lower = \relative c {
   | b,!8 d  g, b!  e,4  r16 bes'' a! g
   | f16 a d bes  c8 c,  << { f4  f8 r16 } \\ { r16 << { \stemUp f, a c } \\ { f,8.~ f8. } >> } >> \partial 16
   }
-
-% la si do re mi fa sol
-%  a b  c  d  e  f  g
 }
 
 \score {
   \new PianoStaff
   <<
     \accidentalStyle Score.piano
-    \new Staff = "upper" \Upper
-    \new Staff = "lower" \Lower
+    \context Staff = "upper" <<
+      \set Staff.midiInstrument = #"acoustic grand"
+      \Global
+      \clef treble
+      \Upper
+    >>
+    \context Staff = "lower" <<
+      \set Staff.midiInstrument = #"acoustic grand"
+      \Global
+      \clef bass
+      \Lower
+    >>
   >>
   \header {
-    subtitle = "Allemande."
+    title = "Allemande"
   }
-  \layout { }
+  \layout {
+    \context {
+      \PianoStaff
+      \override Parentheses.font-size = #-2
+      \override TextScript.font-shape = #'italic
+      \override TextScript.font-size = #-1
+    }
+  }
   \midi {
     \tempo 4 = 50
   }

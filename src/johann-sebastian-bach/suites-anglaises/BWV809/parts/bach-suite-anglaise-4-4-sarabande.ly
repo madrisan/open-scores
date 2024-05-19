@@ -71,9 +71,6 @@ Upper = \relative c'' {
   | << { f'8 e f2 } \\ { \stemUp \once \override NoteColumn.force-hshift = #0.2 c4 c2 }
        \\ { \stemDown \once \override NoteColumn.force-hshift = #1 bes4 a2 } >>
   }
-
-% la si do re mi fa sol
-%  a b  c  d  e  f  g
 }
 
 Lower = \relative c {
@@ -111,22 +108,36 @@ Lower = \relative c {
   | << { g8 a a f c c } \\ { e!8 f a, bes c c, } >>
   | << { c'4 f2 } \\ { f,4 f2 } >>
   }
-
-% la si do re mi fa sol
-%  a b  c  d  e  f  g
 }
 
 \score {
   \new PianoStaff
   <<
     \accidentalStyle Score.piano
-    \new Staff = "upper" \Upper
-    \new Staff = "lower" \Lower
+    \context Staff = "upper" <<
+      \set Staff.midiInstrument = #"acoustic grand"
+      \Global
+      \clef treble
+      \Upper
+    >>
+    \context Staff = "lower" <<
+      \set Staff.midiInstrument = #"acoustic grand"
+      \Global
+      \clef bass
+      \Lower
+    >>
   >>
   \header {
-    subtitle = "Sarabande."
+    title = "Sarabande"
   }
-  \layout { }
+  \layout {
+    \context {
+      \PianoStaff
+      \override Parentheses.font-size = #-2
+      \override TextScript.font-shape = #'italic
+      \override TextScript.font-size = #-1
+    }
+  }
   \midi {
     \tempo 4 = 50
   }

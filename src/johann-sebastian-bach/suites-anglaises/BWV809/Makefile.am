@@ -1,6 +1,6 @@
 ## Process this file with automake to produce Makefile.in
 
-## Copyright (c) 2022 Davide Madrisan <d.madrisan@proton.me>
+## Copyright (c) 2022,2024 Davide Madrisan <d.madrisan@proton.me>
 ##
 ## This program is free software: you can redistribute it and/or modify
 ## it under the terms of the GNU General Public License as published by
@@ -29,13 +29,13 @@ EXTRA_DIST = JS-Bach-BWV809-Suite-Anglaise-4.ly \
 	     header.ily \
 	     global.ly \
 	     logo.ly \
-	     parts/bach-suite-anglaise-4-allemande.ly \
-	     parts/bach-suite-anglaise-4-courante.ly \
-	     parts/bach-suite-anglaise-4-gigue.ly \
-	     parts/bach-suite-anglaise-4-menuet-ii.ly \
-	     parts/bach-suite-anglaise-4-menuet-i.ly \
-	     parts/bach-suite-anglaise-4-prelude.ly \
-	     parts/bach-suite-anglaise-4-sarabande.ly
+	     parts/bach-suite-anglaise-4-1-prelude.ly \
+	     parts/bach-suite-anglaise-4-2-allemande.ly \
+	     parts/bach-suite-anglaise-4-3-courante.ly \
+	     parts/bach-suite-anglaise-4-4-sarabande.ly \
+	     parts/bach-suite-anglaise-4-5-menuet-1.ly \
+	     parts/bach-suite-anglaise-4-5-menuet-2.ly \
+	     parts/bach-suite-anglaise-4-6-giga.ly
 
 all: $(BUILT_SOURCES) JS-Bach-BWV809-Suite-Anglaise-4
 

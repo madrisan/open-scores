@@ -15,7 +15,7 @@
   mutopiainstrument = "Harpsichord, Piano"
   mutopiamaintainer = "Davide Madrisan"
   mutopiaopus = "BWV 809"
-  mutopiatitle = "Suite Anglaise no. 4 in F major"
+  mutopiatitle = "Suite Anglaise IV"
 
   opus = "BWV 809"
   title = "Suite Anglaise IV"
@@ -47,7 +47,7 @@
     \column {
       \abs-fontsize #8
       \concat {
-	"Typeset using " \with-url #"http://www.lilypond.org" "LilyPond " ©" 2022 ""by " \maintainer " — " \footer
+        "Typeset using " \with-url #"http://www.lilypond.org" "LilyPond " ©" 2022-2024 ""by " \maintainer " — " \footer
       }
       \concat {
 	\concat {

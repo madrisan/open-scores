@@ -84,9 +84,6 @@ Upper = \relative c'' {
   | bes, g f'  bes, g e'  f a, c  \once \stemUp f,4
   }
   \fine
-
-% la si do re mi fa sol
-%  a b  c  d  e  f  g
 }
 
 Lower = \relative c {
@@ -163,22 +160,36 @@ Lower = \relative c {
   % ...
   }
   \fine
-
-% la si do re mi fa sol
-%  a b  c  d  e  f  g
 }
 
 \score {
   \new PianoStaff
   <<
     \accidentalStyle Score.piano
-    \new Staff = "upper" \Upper
-    \new Staff = "lower" \Lower
+    \context Staff = "upper" <<
+      \set Staff.midiInstrument = #"acoustic grand"
+      \Global
+      \clef treble
+      \Upper
+    >>
+    \context Staff = "lower" <<
+      \set Staff.midiInstrument = #"acoustic grand"
+      \Global
+      \clef bass
+      \Lower
+    >>
   >>
   \header {
-    subtitle = "Gigue."
+    title = "Giga"
   }
-  \layout { }
+  \layout {
+    \context {
+      \PianoStaff
+      \override Parentheses.font-size = #-2
+      \override TextScript.font-shape = #'italic
+      \override TextScript.font-size = #-1
+    }
+  }
   \midi {
     \tempo 4 = 200
   }
