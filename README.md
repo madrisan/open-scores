@@ -40,7 +40,12 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
 |  | Clavierübung Teil V (?) - Die Kunst der Fuga BWV 1080 :one: | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/JS-Bach-BWV1080-Die-Kunst-der-Fuge.pdf) |
 |  | Inventionen BWV 772-786 :two: | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/JS-Bach-BWV772-801-Inventionen-und-Sinfonien.pdf) |
 |  | Sinfonien BWV 787-801 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/JS-Bach-BWV772-801-Inventionen-und-Sinfonien.pdf) |
-|  | Suite Anglaises BWV 806-811 | Suite IV BWV 809 | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/JS-Bach-BWV809-Suite-Anglaise-4.pdf) |
+|  | Suite Anglaises I BWV 806 | *milestone 2* |  |
+|  | Suite Anglaises II BWV 807 | *milestone 2* |  |
+|  | Suite Anglaises III BWV 808 | *milestone 2* |  |
+|  | Suite Anglaises IV BWV 809 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/JS-Bach-BWV809-Suite-Anglaise-4.pdf) |
+|  | Suite Anglaises V BWV 810 | *milestone 2* |  |
+|  | Suite Anglaises VI BWV 811 | *milestone 2* |  |
 |  | Praeludium und Fughetta in G-Dur BWV 902 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/JS-Bach-Praeludium-und-Fughetta-BWV902.pdf) |
 |  | Neun kleine Präludien BWV 924-932 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/JS-Bach-BWV924-932-Neun-kleine-Praludien.pdf) |
 |  | Sechs kleine Präludien BWV 933-938 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/JS-Bach-BWV933-938-Sechs-kleine-Praludien.pdf) |
@@ -83,7 +88,9 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
 | Robert Schumann | Kinderscenen op.15 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/Robert-Schumann-Kinderscenen-op.15.pdf) |
 | Karol Maciej Szymanowski | Dziewięć preludiów (Nine Preludes) Op. 1 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v49/Karol-Szymanowski-Nine-Preludes-op.1.pdf) |
 
- 0. Next goal: Digitize all volumes of J.S. Bach's Clavierübung except the third one (which contains works for organ)
+ 0. Milestones:
+    1. Digitize all volumes of J.S. Bach's Clavierübung except the third one (which contains works for organ) :white_check_mark: :new:
+    2. Digitize the J.S. Bach's Suites Anglaises
  1. Die Kunst der Fuga BWV 1080
     * Contrapunctus I-XIV
     * Brief notes on the completion of Contrapunctus XIV :new:
