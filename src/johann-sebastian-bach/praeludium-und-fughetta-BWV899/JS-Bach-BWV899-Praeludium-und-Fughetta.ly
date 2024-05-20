@@ -1,4 +1,4 @@
-\version "2.24.1"
+\version "2.25.12"
 
 #(ly:set-option 'relative-includes #t)
 
@@ -11,25 +11,37 @@
 \paper {
   #(set-paper-size "a4")
   annotate-spacing = ##f
+  binding-offset = 0\mm
   bottom-margin = 5\mm
   first-page-number = 0
   indent = 0.0
+  %inner-margin = 10\mm
 % last-bottom-spacing.padding = #2
-  line-width = 18.4\cm
+  %left-margin = 10\mm
+  line-width = 19\cm
   markup-system-spacing =
      #'((basic-distance . 2)
         (minimum-distance . 1)
         (padding . 2)
         (stretchability . 24))
+  %outer-margin = 20\mm
   print-all-headers = ##t
   ragged-last-bottom = ##f
   ragged-bottom = ##f
+  %right-margin = 10\mm
+  score-markup-spacing =
+     #'((basic-distance . 10)
+        (minimum-distance . 8)
+        (padding . 2)
+        (stretchability . 24))
   system-system-spacing =
      #'((basic-distance . 2)
         (minimum-distance . 1)
         (padding . 2)
         (stretchability . 24))
   top-margin = 10\mm
+  top-markup-spacing.basic-distance = 0
+  top-system-spacing.basic-distance = 1
 }
 
 \bookpart {
@@ -65,9 +77,9 @@
         \null
         \line \abs-fontsize #42 \bold { "Fughetta" }
         \null\null
-        \line \abs-fontsize #24 \bold { "in G-Dur" }
+        \line \abs-fontsize #24 \bold { "D-moll" }
         \null\null\null
-        \line \abs-fontsize #22 \bold { "BWV 902" }
+        \line \abs-fontsize #22 { "BWV 899" }
         \null\null\null
         \line { \abs-fontsize #18 \italic "For Piano, Harpsichord, Clavichord" }
         \null\null\null
@@ -83,7 +95,7 @@
       \center-column {
         \null\null
         \fill-line \abs-fontsize #10 {
-          "Based on the score published by Muzgiz, n.d. Plate 23481 - Moscow"
+          "Based on the score published by Breitkopf und Härtel - Leipzig, 1890"
         }
         \null\null
       }
@@ -92,6 +104,6 @@
 }
 \pageBreak
 
-\include "./parts/praeludium-und-fughetta-BWV902-praeludium.ly"
-\pageBreak
-\include "./parts/praeludium-und-fughetta-BWV902-fughetta.ly"
+\include "./parts/praeludium-und-fughetta-BWV899-1-praeludium.ly"
+%\pageBreak
+\include "./parts/praeludium-und-fughetta-BWV899-2-fughetta.ly"

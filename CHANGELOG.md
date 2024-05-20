@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Added
 
 - J.S. Bach: Ouverture nach Französischer Art (BWV 831)
+- J.S. Bach: Praeludium und Fughetta in d-moll (BWV 899)
 - Bach/Kempff: Siciliano (BWV 1031)
 - Bach/Kempff: Largo from Harpsichord Concerto BWV 1056
 

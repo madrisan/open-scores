@@ -11,6 +11,7 @@ SUBDIRS = cembalo-konzert-largo-BWV1056-kempff \
 	  ouverture-nach-franzosischer-art-BWV831 \
 	  partitas \
           praeludium-fuge-und-allegro-BWV998 \
+	  praeludium-und-fughetta-BWV899 \
 	  praeludium-und-fughetta-BWV902 \
 	  praludien \
 	  praludium-und-fuge-liszt-BWV543-S462 \
