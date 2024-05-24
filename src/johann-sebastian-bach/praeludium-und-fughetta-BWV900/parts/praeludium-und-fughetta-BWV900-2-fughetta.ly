@@ -114,7 +114,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | g16 a g fis g e dis e a e dis e
   | b' c b a b g fis g c g fis g
   %100
-  | a b a g a fis e fis b fis dis fis
+  | a b a g a fis e fis b fis dis! fis
   | g a g fis g e dis e a g fis e
   | dis4 d16\rest a fis dis s4
   | r8 <ais' cis e>8 e'4 dis8.\parenthesize\prallprall e16
