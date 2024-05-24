@@ -65,7 +65,7 @@ Soprano = \context Voice = "one" \relative c'' {
   %45
   | f4.~
   | f16 f e d cis b!
-  | a4~ a16 a
+  | \tieDown a4~ a16 a
   | g4~ g16 g
   | g g f8. g16
   %50
@@ -108,7 +108,7 @@ Alto = \context Voice = "two" \relative c' {
   | e4.~
   %20
   | e8 a, d~
-  | d8 \change Staff = "lower" \stemUp\tieUp c16 bes a g
+  | d8 \change Staff = "lower" \stemUp\tieUp cis16 b a g
   | f g a c bes a
   | g f g8 c~
   | c bes a
@@ -142,7 +142,7 @@ Alto = \context Voice = "two" \relative c' {
   | a8. a16 g8
   | a16\rest f e8. e16
   %55
-  | f4.
+  | fis4.
 }
 
 Tenor = \context Voice = "three" \relative c {

@@ -27,7 +27,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | c16 f e f c d ees8~ ees16 ees d c
   | d2.~
   %15
-  | d16 g f! g d e f8~ f16 f e d
+  | d16 g fis g d e f8~ f16 f e d
   | e2.~
   | e2 e4\rest
   | e16\rest e d e b c d8~ d4~
@@ -65,7 +65,7 @@ Alto = \context Voice = "two" \relative c' {
   | a16 g fis g d e f8~ f e16 d
   | e4~ e16 f e f g4
   | f~ f8. g16 a4~
-  | a8. b16 c b a g fis4
+  | a8. bes16 c bes a g fis4
   %15
   | g4~ g8. a16 b4~
   | b8. c16 d c b a gis4
@@ -81,7 +81,7 @@ Alto = \context Voice = "two" \relative c' {
   %25
   | b16\rest e d cis d2
   | a4\rest a16\rest a8 gis16 a8. g16
-  | << \stemDown a2. \\ { \stemDown \once\override NoteColumn.force-hshift = #0.4 f2. } >>
+  | << \stemDown a2. \\ { \stemDown \once\override NoteColumn.force-hshift = #0.4 fis2. } >>
 
 }
 
@@ -113,7 +113,7 @@ Tenor = \context Voice = "three" \relative c' {
   | d16 c b c gis a b8~ b a16 gis
   | a4 a\rest e~
   %20
-  | e16 d cis d a bes c8~ c16 c bes a
+  | e16 d cis d a bes! c8~ c16 c bes a
   | bes g' fis g d8 ees~ ees16 d cis d
   | cis a' gis a e g f4 e16 d
   | e4 f g
