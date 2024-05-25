@@ -17,7 +17,7 @@ If you prefer to create these files yourself (and midi files as well), you can s
 
 Latest release: [Open Scores for Piano v50](https://github.com/madrisan/open-scores/releases)
 
-The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fedora Linux 39).
+The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fedora Linux 40).
 
 ![Open Musical Scores Logo](images/SheetMusic-icon.png)
 
@@ -89,12 +89,12 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
 | Robert Schumann | Kinderscenen op.15 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v50/Robert-Schumann-Kinderscenen-op.15.pdf) |
 | Karol Maciej Szymanowski | Dziewięć preludiów (Nine Preludes) Op. 1 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v50/Karol-Szymanowski-Nine-Preludes-op.1.pdf) |
 
- 0. Milestones:
-    1. Digitize all volumes of J.S. Bach's Clavierübung except the third one (which contains works for organ) :white_check_mark: :new:
-    2. Digitize the J.S. Bach's Suites Anglaises
+ 0. [Milestones](https://github.com/users/madrisan/projects/2)
+    * Milestone 1: Digitize all volumes of J.S. Bach's Clavierübung except the third one (which contains works for organ) :white_check_mark: :new:
+    * Milestone 2: Digitize the J.S. Bach's Suites Anglaises
  1. Die Kunst der Fuga BWV 1080
     * Contrapunctus I-XIV
-    * Brief notes on the completion of Contrapunctus XIV :new:
+    * Brief notes on the completion of Contrapunctus XIV
     * Canon I-IV
  2. Contains in the preface "A guide to ornaments, written in Bach's hand"
  3. Image of the J.S. Bach's [manuscript](images/js-bach-jesu-meine-freude-manuscript.png) of the Choral "*Jesu meine Freude*" (*Das Orgel-Büchlein*, p.15)
