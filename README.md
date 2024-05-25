@@ -47,6 +47,7 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
 |  | Suite Anglaises V BWV 810 | *milestone 2* |  |
 |  | Suite Anglaises VI BWV 811 | *milestone 2* |  |
 |  | Praeludium und Fughetta in d-moll BWV 899 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v50/JS-Bach-Praeludium-und-Fughetta-BWV899.pdf) |
+|  | Praeludium und Fughetta in e-moll BWV 900 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v50/JS-Bach-Praeludium-und-Fughetta-BWV900.pdf) |
 |  | Praeludium und Fughetta in G-Dur BWV 902 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v50/JS-Bach-Praeludium-und-Fughetta-BWV902.pdf) |
 |  | Neun kleine Präludien BWV 924-932 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v50/JS-Bach-BWV924-932-Neun-kleine-Praludien.pdf) |
 |  | Sechs kleine Präludien BWV 933-938 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v50/JS-Bach-BWV933-938-Sechs-kleine-Praludien.pdf) |
