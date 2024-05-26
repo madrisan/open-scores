@@ -100,9 +100,10 @@
 
 \include "./parts/bach-suite-anglaise-2-1-prelude.ly"
 \pageBreak
-%\include "./parts/bach-suite-anglaise-2-2-allemande.ly"
-%\include "./parts/bach-suite-anglaise-2-3-courante.ly"
-%\include "./parts/bach-suite-anglaise-2-4-sarabande.ly"
-%\include "./parts/bach-suite-anglaise-2-5-bourree-1.ly"
-%\include "./parts/bach-suite-anglaise-2-5-bourree-2.ly"
-%\include "./parts/bach-suite-anglaise-2-6-gigue.ly"
+\include "./parts/bach-suite-anglaise-2-2-allemande.ly"
+\pageBreak
+\include "./parts/bach-suite-anglaise-2-3-courante.ly"
+\include "./parts/bach-suite-anglaise-2-4-sarabande.ly"
+\include "./parts/bach-suite-anglaise-2-5-bourree-1.ly"
+\include "./parts/bach-suite-anglaise-2-5-bourree-2.ly"
+\include "./parts/bach-suite-anglaise-2-6-gigue.ly"
