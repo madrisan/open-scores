@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [v51] - unreleased
 
-- J.S. Bach: Suite Anglaise II
+- J.S. Bach: Suite Anglaise 2 BWV807
 
 ## [v50] - 2024-05-25 - Milestone 1
 

@@ -255,7 +255,9 @@ Bass = \context Voice = "four" \relative c {
         \shape #'((0 . 0) (0 . 0) (0 . -0.3) (2.5 . 0)) LaissezVibrerTie
         c,4.\laissezVibrer
       }
-      { a'4.~_\markup {
+      {
+        \once\override Staff.TextScript.extra-offset = #'(-3 . 0)
+        a'4.~_\markup {
           \center-column {
             \general-align #Y #2
             \line { "Dal segno" { \tiny \raise #0.4 \musicglyph #"scripts.segno" } }
