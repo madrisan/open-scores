@@ -13,6 +13,7 @@ SUBDIRS = cembalo-konzert-largo-BWV1056-kempff \
           praeludium-fuge-und-allegro-BWV998 \
 	  praeludium-und-fughetta-BWV899 \
 	  praeludium-und-fughetta-BWV900 \
+	  praeludium-und-fughetta-BWV901 \
 	  praeludium-und-fughetta-BWV902 \
 	  praludien \
 	  praludium-und-fuge-liszt-BWV543-S462 \

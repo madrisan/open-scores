@@ -6,16 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [v51] - unreleased
 
 - J.S. Bach: Suite Anglaise 2 BWV807
+- J.S. Bach: Praeludium und Fughetta f-dur (BWV901)
 
 ## [v50] - 2024-05-25 - Milestone 1
 
 ### Added
 
-- J.S. Bach: Ouverture nach Französischer Art (BWV 831)
-- J.S. Bach: Praeludium und Fughetta in d-moll (BWV 899)
-- J.S. Bach: Praeludium und Fughetta in e-moll (BWV 900)
-- Bach/Kempff: Siciliano (BWV 1031)
-- Bach/Kempff: Largo from Harpsichord Concerto BWV 1056
+- J.S. Bach: Ouverture nach Französischer Art (BWV831)
+- J.S. Bach: Praeludium und Fughetta d-moll (BWV899)
+- J.S. Bach: Praeludium und Fughetta e-moll (BWV900)
+- Bach/Kempff: Siciliano (BWV1031)
+- Bach/Kempff: Largo from Harpsichord Concerto BWV1056
 
 ## [v49] - 2024-05-04
 
@@ -24,8 +25,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - J.S. Bach: Partita 2 BWV826
 - J.S. Bach: Partita 4 BWV828
 - J.S. Bach: Partita 5 BWV829
-- J.S. Bach: Die Kunst der Fuge (BWV 1080) - Add a section containing the list of subjects
-- J.S. Bach: Die Kunst der Fuge (BWV 1080) - Color all the Counterpoint subjects
+- J.S. Bach: Die Kunst der Fuge (BWV1080) - Add a section containing the list of subjects
+- J.S. Bach: Die Kunst der Fuge (BWV1080) - Color all the Counterpoint subjects
 
 ### Changed
 

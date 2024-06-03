@@ -135,6 +135,7 @@ AC_CONFIG_FILES([\
   src/johann-sebastian-bach/praeludium-fuge-und-allegro-BWV998/Makefile \
   src/johann-sebastian-bach/praeludium-und-fughetta-BWV899/Makefile \
   src/johann-sebastian-bach/praeludium-und-fughetta-BWV900/Makefile \
+  src/johann-sebastian-bach/praeludium-und-fughetta-BWV901/Makefile \
   src/johann-sebastian-bach/praeludium-und-fughetta-BWV902/Makefile \
   src/johann-sebastian-bach/praludium-und-fuge-liszt-BWV543-S462/Makefile \
   src/johann-sebastian-bach/schafe-konnen-sicher-weiden-BWV208/Makefile \
