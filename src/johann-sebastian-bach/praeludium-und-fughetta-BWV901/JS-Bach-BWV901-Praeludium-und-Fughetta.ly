@@ -30,13 +30,13 @@
   ragged-bottom = ##f
   %right-margin = 10\mm
   score-markup-spacing =
-     #'((basic-distance . 10)
-        (minimum-distance . 8)
+     #'((basic-distance . 4)
+        (minimum-distance . 0)
         (padding . 2)
         (stretchability . 24))
   system-system-spacing =
-     #'((basic-distance . 2)
-        (minimum-distance . 1)
+     #'((basic-distance . 7)
+        (minimum-distance . 4)
         (padding . 2)
         (stretchability . 24))
   top-margin = 10\mm
@@ -95,7 +95,7 @@
       \center-column {
         \null\null
         \fill-line {
-          \abs-fontsize #10 "Based on: Based on: Bach-Gesellschaft Ausgabe, Leipzig (1890)"
+          \abs-fontsize #10 "Based on Bach-Gesellschaft Ausgabe, Leipzig (1890)"
         }
         \null\null
       }
