@@ -6,8 +6,6 @@ Global = {
 
 grayTextColor = #(x11-color "dimgray")
 
-% Compare with the Fugue XVII in A-flat major from the second volume of the Well-Tempered Clavier.
-
 Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
   \stemUp\tieUp
@@ -174,6 +172,6 @@ Bass = \context Voice = "four" \relative c {
   \footnote ""
   \small\italic \concat {
     "*" \hspace #.3 \vspace #1
-    "Compare with the Fugue XVII in A-flat major from the second volume of the Well-Tempered Clavier"
+    "Compare with the Fugue XVII (BWV 886) in A-flat major from the second volume of the Well-Tempered Clavier"
   }
 }

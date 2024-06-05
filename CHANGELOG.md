@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - J.S. Bach: Suite Anglaise 2 BWV807
 - J.S. Bach: Praeludium und Fughetta f-dur (BWV901)
+           + Das wohltemperierte Klavier – Zweiter Teil: Fuga XVII (BWV 886)
 
 ## [v50] - 2024-05-25 - Milestone 1
 

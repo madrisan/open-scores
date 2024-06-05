@@ -78,11 +78,14 @@
         \line \abs-fontsize #42 \bold { "Fughetta" }
         \null\null
         \line \abs-fontsize #24 \bold { "F-dur" }
-        \null\null\null
+        \null\null
         \line \abs-fontsize #22 { "BWV 901" }
-        \null\null\null
-        \line { \abs-fontsize #18 \italic "For Piano, Harpsichord, Clavichord" }
-        \null\null\null
+        \null\null
+        \line { \abs-fontsize #16 \italic "For Piano, Harpsichord, Clavichord" }
+        \null\null
+        \line \abs-fontsize #14 \bold { "Das wohltemperierte Klavier – Zweiter Teil" }
+        \null
+        \line \abs-fontsize #14 \bold { "Fuga XVII (BWV 886)" }
         \null\null\null
       }
     }
@@ -105,3 +108,5 @@
 
 \include "./parts/praeludium-und-fughetta-BWV901-1-praeludium.ly"
 \include "./parts/praeludium-und-fughetta-BWV901-2-fughetta.ly"
+\pageBreak
+\include "./parts/das-wohltemperierte-klavier-2-BWV886-2-fuga.ly"

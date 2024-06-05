@@ -25,7 +25,8 @@ EXTRA_DIST = JS-Bach-BWV901-Praeludium-und-Fughetta.ly \
 	     global.ly \
 	     logo.ly \
 	     parts/praeludium-und-fughetta-BWV901-1-praeludium.ly \
-	     parts/praeludium-und-fughetta-BWV901-2-fughetta.ly
+	     parts/praeludium-und-fughetta-BWV901-2-fughetta.ly \
+	     parts/das-wohltemperierte-klavier-2-BWV886-2-fuga.ly
 
 all: $(BUILT_SOURCES) JS-Bach-BWV901-Praeludium-und-Fughetta
 
