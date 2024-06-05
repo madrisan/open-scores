@@ -55,7 +55,7 @@ Tenor = \context Voice = "three" \relative c' {
     \change Staff = "upper" d g
   | \change Staff = "lower" \once\stemUp c,4 s8
     \change Staff = "upper" f'16 g a bes c ees,
-  | d4~ d16 g c,4~ c16 f
+    d4~ d16 g c,4~ c16 f
   | bes,4~ bes16 bes a4.~ a16 a g f g bes e,8. a16 f a
   %15
   | d,8. g16 e g c,4 b8\rest
