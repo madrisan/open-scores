@@ -27,7 +27,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | c8 e f4 e ees
   %25
   | d des c8 f4 ees8~
-  | ees ees, d[ d'~] d d, c[ c'~]
+  | ees ees, d[ d'~] d d,! c[ c'~]
   | c c, b[ b'] c16 b c d ees d c ees
   | d c d ees f ees d f e d e f g f e g
   | f8 c f2 e8 ees~
@@ -35,7 +35,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | ees c'16 bes a g f ees des4 f8\rest des
   | ees8 ges c, f bes, c'\rest b4\rest
   | g4\rest bes, ~bes16 bes aes ges! f ges aes f
-  | ges aes ges f ees f ges ees f8 ges aes f
+  | ges aes ges f ees f ges ees f8 ges! aes f
   | bes[ d] ees8. f16 des8 c bes ees
   %35
   | c f des ges c, des16 ees f8 f,
@@ -67,7 +67,7 @@ Alto = \context Voice = "two" \relative c'' {
   %1
   | \stemNeutral\tieNeutral r8 ees c f bes, c16 des ees8 ees,
   | aes8 bes16 c des4~ des16 ees c des bes c des ees
-  | \stemDown\tieDown c bes c d ees4 d des
+  | \stemDown\tieDown c bes c d ees4 d! des
   | c ces bes8 ees4 d8
   %5
   | ees bes g c f, g16 aes bes4~
@@ -80,7 +80,7 @@ Alto = \context Voice = "two" \relative c'' {
   | des bes'16 aes g f ees des c4 f8\rest c
   | des f bes, ees aes, c'\rest b4\rest
   | f8\rest f16 ees des c bes aes g aes f g aes g aes8~
-  | aes16 g aes bes g f ges8~ ges16 f ges ees f g! aes f
+  | aes16 g aes bes g f ges8~ ges16 f ges! ees f g! aes f
   %15
   | g8 aes4 g8~ g e f4~
   | f e f8 aes g c
@@ -88,14 +88,14 @@ Alto = \context Voice = "two" \relative c'' {
   | aes16 bes g aes f g aes bes g8 ees aes4
   | g ges f fes
   %20
-  | ees8 aes4 ges8~ ges16 aes f ges ees f ges aes
+  | ees8 aes4 ges8~ ges16 aes f ges! ees f ges aes
   | f8 bes4 aes8~ aes16 bes g! aes f g aes bes
   | g4 \stemDown\tieDown e8\rest f g4 g8\rest \once\override NoteColumn.force-hshift = #1.4 aes
   | aes e\rest e\rest bes'~ bes aes f ees~
   | ees c' aes des g, aes16 bes c8 \change Staff = "lower" \once\stemUp c,
   %25
   | \change Staff = "upper" f8 g16 aes bes4~ bes16 c aes bes g aes bes c
-  | aes bes g aes f g aes bes g aes f ges ees f g aes
+  | aes bes g aes f g aes bes g aes f g ees f g aes
   | f g ees f d ees f g ees4 \change Staff = "lower" \stemUp g8\rest ees
   | f[ aes d, g] c, d'\rest c4\rest
   | g16\rest e f \change Staff = "upper" \stemDown g
@@ -110,7 +110,7 @@ Alto = \context Voice = "two" \relative c'' {
   %35
   | f g\rest bes4 a! aes
   | g! ges f8 bes4 aes8
-  | ges4. ees8 aes16 ges f aes ges aes ges f
+  | ges4. ees8 aes16 ges! f aes ges aes ges f
   | ees f ges ees f ges f ees des ees f des ees fes ees des
   | \stemUp \shiftOn c4 s4. ees4 ees8
   %40
@@ -118,7 +118,7 @@ Alto = \context Voice = "two" \relative c'' {
   | g4 r16 ees' d c d8 bes~ bes16 des c bes
   | c8 aes~ aes16 ces bes aes g!8 aes bes g
   | aes f~ f16 aes g f g8 ees~ ees16 bes' aes ges
-  | f8 bes <fes aes>[ <des! fes!>] <ees bes'>[ <fes aes> <ges bes> <ees aes>]
+  | f8 beses <fes aes>[ <des! fes!>] <ees beses'!>[ <fes aes> <ges beses!> <ees aes>]
   %45
   | s4 a\rest <beses! des> a\rest
   | <des fes> a\rest <bes des ees> e,\rest
@@ -149,7 +149,7 @@ Tenor = \context Voice = "three" \relative c' {
   %10
   | ees4 e8\rest g aes c f, bes
   | ees, e\rest e4\rest e8\rest ees aes4~
-  | aes g8 ges~ ges ees'16 des c bes aes ges
+  | aes g8 ges~ ges ees'16 des c bes aes ges!
   | f8 f\rest e4\rest b\rest ees
   | d des c ces
   %15
@@ -172,8 +172,8 @@ Tenor = \context Voice = "three" \relative c' {
   | g a\rest c16\rest f, g aes bes8 g'\rest f4\rest
   | s1*7
   %32
-  | c8\rest bes ges ces f, ges16 aes bes8 bes,
-  | \stemNeutral ees f16 ges aes4~ aes16 bes ges aes f ges aes bes
+  | c8\rest bes ges ces f, ges!16 aes bes8 bes,
+  | \stemNeutral ees f16 ges aes4~ aes16 bes ges! aes f ges aes bes
   | ges aes f ges ees f g! a bes c aes bes g a bes c
   %35
   | a f g a bes c des ees f ges f ees d bes c d
@@ -246,18 +246,34 @@ Bass = \context Voice = "four" \relative c' {
   | s1*4
   %37
   | \stemDown\tieDown b4\rest b8\rest aes' f bes ees, f16 ges
-  | aes8 aes, des ees16 f ges4~ ges16 aes fes ges
-  | \stemNeutral ees fes ges aes des, ees ces des bes c des ees aes, bes ges aes
+  | aes8 aes, des ees16 f ges4~ ges16 aes
+    \once\omit Accidental
+    fes^\markup {
+      \concat \small \normal-text {
+         \hspace #0.3 \raise #0
+         \musicglyph #"accidentals.flat"
+      }
+    }
+    ges
+  | \stemNeutral ees
+    \once\omit Accidental
+    fes^\markup {
+      \concat \small \normal-text {
+         \hspace #0.3 \raise #0
+         \musicglyph #"accidentals.flat"
+      }
+    }
+    ges aes des, ees ces des bes ces des ees aes, bes ges aes
   %40
   | f! ges aes bes ees,8 r r2
   | \override MultiMeasureRest.staff-position = #-4
     R1
   | \stemDown g2\rest b8\rest aes' g c
   | f, g16 aes bes8 bes, ees f16 g aes4~
-  | aes16 bes ges aes fes ges aes beses ges aes fes ges ees fes ges! aes
+  | aes16 bes ges aes fes ges! aes beses ges aes fes ges ees fes ges! aes
   %45
-  | \stemNeutral des, des' ces des beses des fes, beses des, beses' aes beses fes beses des, fes
-  | bes, fes' ees fes des fes bes, des g,4\fermata b16\rest ees f! g
+  | \stemNeutral des, des' ces des beses des fes, beses des, beses'! aes beses fes! beses des, fes
+  | bes,! fes' ees fes des fes bes, des g,4\fermata b16\rest ees f! g
   | aes c bes aes g f ees des \stemDown c8 des ees f
   | ees d ees e f8. g16 aes8 f
   << {
@@ -269,6 +285,8 @@ Bass = \context Voice = "four" \relative c' {
     \stemUp\tieUp \once\override NoteColumn.force-hshift = #0.6 g'4 ges
     \once\override NoteColumn.force-hshift = #0.6 f4 fes
     ees2~ ees
+  } \\ {
+    s2. r8 aes
   } >>
     \fine
 }
@@ -307,6 +325,6 @@ Bass = \context Voice = "four" \relative c' {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 4 = 90
   }
 }

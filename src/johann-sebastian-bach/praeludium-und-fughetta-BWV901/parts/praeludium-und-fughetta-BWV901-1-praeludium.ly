@@ -13,10 +13,16 @@ Soprano = \context Voice = "one" \relative c' {
   | f8 a c f4.~ f16 e d c bes a g f e d c bes
   | \stemUp\tieUp f''16\rest c d e f g a[ bes] c4~ c16 ees, d c d f g a bes e, f g
   | c,4.~ c16 g a c e f bes,4.~ bes16 a g bes e g
-  | a, c bes a g f d'4.~ d16 b a g f e c'4.~
+  | a, c bes a g f d'4.~ d16 b! a g f e c'4.~
   %5
   | c8 a d b!4. c~ c16 b! a g f e
-  | f8 a d g,4.~ g16 g a b c d e f g a bes c
+  | f8 a d g,4.~ g16 g a b c d e f g a
+    bes^\markup {
+      \concat \tiny \normal-text {
+         "(" \raise #0.4 \musicglyph #"accidentals.natural" ")"
+      }
+    }
+    c
   | fis,8 d16 e fis g a4.~ a8 s4 s4.
   | \stemNeutral cis,8 e g~ \stemUp g b,!16 cis! d e \stemNeutral f a f d cis d f bes f d cis d
   | e g e bes a bes ees a ees c b c d fis d a g a d g d bes a bes
@@ -36,12 +42,19 @@ Tenor = \context Voice = "three" \relative c' {
   \voiceThree
   \stemUp\tieUp
   \override Rest.staff-position = #0
+  \mergeDifferentlyDottedOn
   %1
   | a4. a8\rest a\rest a bes4. b\rest
   | \change Staff = "upper"\stemDown\tieDown
     c4. c8\rest c\rest c d4. d8\rest d\rest d
   | e4~ e16 c f4 c8 d4~ d16 d e4.
-  | f4 c8\rest g'16\rest c b a g f g4 b,8\rest e16\rest bes' a g f e
+  | f4 c8\rest g'16\rest c b a g f g4 b,8\rest e16\rest
+    bes'_\markup {
+      \concat \tiny \normal-text {
+         \hspace #-0.8 "(" \raise #0.4 \musicglyph #"accidentals.natural" ")"
+      }
+    }
+    a g f e
   %5
   | f4.~ f8 d g e4.~ e
   | d4.~ d8 e f e b\rest b\rest c4.\rest
@@ -124,6 +137,6 @@ Bass = \context Voice = "four" \relative c {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 4. = 60
   }
 }

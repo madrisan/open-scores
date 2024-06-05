@@ -49,7 +49,7 @@ Alto = \context Voice = "two" \relative c'' {
   %1
   | r8 c a d g, a16 bes c8 c,
   | f g16 a bes4~ bes16 c a bes g[ a bes c]
-  | a b a b c4 b bes
+  | a g a b c4 b bes
   | a aes g8 c4 b8
   %5
   | c g e a d, e16 f g4~
@@ -164,14 +164,25 @@ Bass = \context Voice = "four" \relative c {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 4 = 90
   }
 }
 
 \markup {
   \footnote ""
-  \small\italic \concat {
-    "*" \hspace #.3 \vspace #1
-    "Compare with the Fugue XVII (BWV 886) in A-flat major from the second volume of the Well-Tempered Clavier"
+  \column \small\italic {
+     \line {
+       \concat {
+       "*" \hspace #.3 \vspace #1
+       "Man vergleiche die As-dur Fuge im zweiten Theile des Wohltemperirten Claviers"
+       }
+     }
+     \vspace #-0.3
+     \line {
+       \concat {
+       "*" \hspace #.3 \vspace #1
+       "Compare with the Fugue XVII (BWV 886) in A-flat major from the second volume of the Well-Tempered Clavier"
+       }
+     }
   }
 }
