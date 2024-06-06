@@ -10,16 +10,11 @@ Soprano = \context Voice = "one" \relative c' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \override Script.direction = #UP
-  \partial 8 {
-    \once\override Staff.TextScript.extra-offset = #'(3.5 . 0)
-    e8^\markup {
-      \tiny \musicglyph #"scripts.segno"
-    }
-  }
-  %\bar ".|:"
+  \partial 8 e8
   %1
   \repeat volta 2 {
-  | a4 a8 a b c
+  | \mark \markup { \tiny \musicglyph #"scripts.segno"}
+    a4 a8 a b c
   | b d, b' e, f d
   | c e a d, b' a
   | gis a b e, e' d
