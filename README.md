@@ -41,13 +41,14 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
 |  | Inventionen BWV 772-786 :two: | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v51/JS-Bach-BWV772-801-Inventionen-und-Sinfonien.pdf) |
 |  | Sinfonien BWV 787-801 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v51/JS-Bach-BWV772-801-Inventionen-und-Sinfonien.pdf) |
 |  | Suite Anglaises I BWV 806 | *milestone 2* |  |
-|  | Suite Anglaises II BWV 807 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v51/JS-Bach-BWV809-Suite-Anglaise-2.pdf) |
+|  | Suite Anglaises II BWV 807 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v51/JS-Bach-BWV807-Suite-Anglaise-2.pdf) |
 |  | Suite Anglaises III BWV 808 | *milestone 2* |  |
 |  | Suite Anglaises IV BWV 809 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v51/JS-Bach-BWV809-Suite-Anglaise-4.pdf) |
 |  | Suite Anglaises V BWV 810 | *milestone 2* |  |
 |  | Suite Anglaises VI BWV 811 | *milestone 2* |  |
 |  | Praeludium und Fughetta in d-moll BWV 899 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v51/JS-Bach-Praeludium-und-Fughetta-BWV899.pdf) |
 |  | Praeludium und Fughetta in e-moll BWV 900 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v51/JS-Bach-Praeludium-und-Fughetta-BWV900.pdf) |
+|  | Praeludium und Fughetta in F-Dur BWV 901 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v51/JS-Bach-Praeludium-und-Fughetta-BWV901.pdf) |
 |  | Praeludium und Fughetta in G-Dur BWV 902 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v51/JS-Bach-Praeludium-und-Fughetta-BWV902.pdf) |
 |  | Neun kleine Präludien BWV 924-932 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v51/JS-Bach-BWV924-932-Neun-kleine-Praludien.pdf) |
 |  | Sechs kleine Präludien BWV 933-938 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v51/JS-Bach-BWV933-938-Sechs-kleine-Praludien.pdf) |
@@ -163,6 +164,8 @@ make -C src/johann-sebastian-bach/partitas/BWV828
 make -C src/johann-sebastian-bach/partitas/BWV829
 make -C src/johann-sebastian-bach/partitas/BWV830
 make -C src/johann-sebastian-bach/praeludium-fuge-und-allegro-BWV998
+make -C src/johann-sebastian-bach/praeludium-und-fughetta-BWV900
+make -C src/johann-sebastian-bach/praeludium-und-fughetta-BWV901
 make -C src/johann-sebastian-bach/praeludium-und-fughetta-BWV902
 make -C src/johann-sebastian-bach/praludien/neun-kleine-praludien-BWV924-932
 make -C src/johann-sebastian-bach/praludien/sechs-kleine-praludien-BWV933-938
