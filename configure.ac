@@ -115,6 +115,8 @@ AC_CONFIG_FILES([\
   src/johann-sebastian-bach/chorale-preludes/BWV659-busoni/Makefile \
   src/johann-sebastian-bach/chorale-preludes/jesu-meine-freude-BWV610/Makefile \
   src/johann-sebastian-bach/chromatische-fantasie-und-fugue-BWV903-busoni/Makefile \
+  src/johann-sebastian-bach/das-wohltemperierte-klavier-I/Makefile \
+  src/johann-sebastian-bach/das-wohltemperierte-klavier-I/BWV846/Makefile \
   src/johann-sebastian-bach/die-kunst-der-fuge-BWV1080/Makefile \
   src/johann-sebastian-bach/goldberg-variationen-BWV988/Makefile \
   src/johann-sebastian-bach/inventionen-und-sinfonien-BWV772-801/Makefile \

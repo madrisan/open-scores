@@ -2,6 +2,7 @@ SUBDIRS = cembalo-konzert-largo-BWV1056-kempff \
 	  chaconne-fur-violine-BWV1004-busoni \
 	  chorale-preludes \
 	  chromatische-fantasie-und-fugue-BWV903-busoni \
+	  das-wohltemperierte-klavier-I \
 	  die-kunst-der-fuge-BWV1080 \
 	  goldberg-variationen-BWV988 \
 	  inventionen-und-sinfonien-BWV772-801 \
