@@ -49,12 +49,12 @@ Soprano = \context Voice = "one" \relative c'' {
   | \stemUp c ees d ees f d c d b d c d ees c b c
   | g c b c aes f' ees f g, ees' d ees f, d' c d
   | ees, c' b c aes f ees f g ees d ees f d c d
-  | <c e>8~\arpeggio[ e32 c d e]
+  | <c e>8~\arpeggio\fermata[ e32 c d e]
     \set subdivideBeams = ##t
     f64[ g aes bes c bes aes g f16 g32 e!]
     % FIXME: workaround to force a horizontal space after the previous note
     \override Arpeggio.X-offset = #-3
-    <c f>8~\arpeggio[ f32 g f e!]
+    <c f>8~\arpeggio\fermata[ f32 g f e!]
     f[ g aes g f64 ees! d ees f d ees f]
     \set subdivideBeams = ##f
     \break
@@ -126,10 +126,10 @@ Bass = \context Voice = "four" \relative c {
   | ees \clef treble g' f g aes f ees f d f ees f g ees d ees
   | c ees d ees f d c d ees c b c d b a b
   | c ees d ees f d c d ees c b c d b a b
-  | \clef bass <c, g' bes>4\arpeggio r
+  | \clef bass <c, g' bes>4\arpeggio\fermata r
     % FIXME: workaround to force a horizontal space after the previous note
     \override Arpeggio.X-offset = #-3
-    <c f aes>\arpeggio r
+    <c f aes>\arpeggio\fermata r
   %35
   | r16 \stemDown\tieDown c,8.~ c2.
   | R1
@@ -171,6 +171,6 @@ Bass = \context Voice = "four" \relative c {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 4 = 144
   }
 }

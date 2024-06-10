@@ -102,6 +102,8 @@
   }
 }
 
+\include "macros.ly"
+
 \include "./parts/das-wohltemperierte-klavier-I-02-1-praeludium.ly"
 \pageBreak
 \include "./parts/das-wohltemperierte-klavier-I-02-2-fuga.ly"

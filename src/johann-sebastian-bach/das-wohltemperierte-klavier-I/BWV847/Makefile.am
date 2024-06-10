@@ -27,7 +27,7 @@ EXTRA_DIST = JS-Bach-BWV846-Das-Wohltemperierte-Klavier-I-02.ly \
 	     parts/das-wohltemperierte-klavier-I-02-1-praeludium.ly \
 	     parts/das-wohltemperierte-klavier-I-02-2-fuga.ly
 
-all: $(BUILT_SOURCES) JS-Bach-BWV846-Das-Wohltemperierte-Klavier-I-02
+all: $(BUILT_SOURCES) JS-Bach-BWV847-Das-Wohltemperierte-Klavier-I-02
 
 clean-local:
 	 -rm -f $(BUILT_SOURCES)
