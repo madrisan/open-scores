@@ -72,13 +72,13 @@
         \null
         \fill-line { \draw-hline }
         \null\null
-        \line { \abs-fontsize #33 \bold "Das Wohltemperierte Klavier" }
-        \null\null\null
-        \line { \abs-fontsize #24 \bold "Praeludium und Fuga I" }
-        \null
-        \line { \abs-fontsize #24 \bold "(C-Dur)" }
+        \line { \abs-fontsize #34 \bold "Das Wohltemperierte Klavier" }
         \null\null
-        \line { \abs-fontsize #21 "BWV 846" }
+        \line { \abs-fontsize #34 \bold "Teil I" }
+        \null\null
+        \line { \abs-fontsize #20 \italic "(The Well-Tempered Clavier – volume I)" }
+        \null\null
+        \line { \abs-fontsize #22 "BWV 846 – BWV 869" }
         \null\null\null\null
         \fill-line \italic { \abs-fontsize #14 "For Piano, Harpsichord, Clavichord" }
         \null\null\null
@@ -94,7 +94,7 @@
       \center-column {
         \null\null\null\null
         \fill-line {
-          \abs-fontsize #10 "Based on: Based on: Carl Czerny - Leipzig Berline: C.F. Peters"
+          \abs-fontsize #10 "Based on: Carl Czerny - Leipzig Berline: C.F. Peters"
         }
         \null\null
       }
@@ -104,6 +104,10 @@
 
 \include "macros.ly"
 
-\include "./parts/das-wohltemperierte-klavier-I-01-1-praeludium.ly"
+\include "./BWV846/das-wohltemperierte-klavier-I-01-1-praeludium.ly"
 \pageBreak
-\include "./parts/das-wohltemperierte-klavier-I-01-2-fuga.ly"
+\include "./BWV846/das-wohltemperierte-klavier-I-01-2-fuga.ly"
+\pageBreak
+\include "./BWV847/das-wohltemperierte-klavier-I-02-1-praeludium.ly"
+\pageBreak
+\include "./BWV847/das-wohltemperierte-klavier-I-02-2-fuga.ly"

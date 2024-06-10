@@ -2,9 +2,9 @@
   composer = "Johann Sebastian Bach (1685-1750)"
   date = "1722"
 
-  footer = "Mutopia-2024/06/07"
+  footer = "Mutopia-2024/06/10"
 
-  lastupdated = "2024 June 07"
+  lastupdated = "2024 June 10"
   license = "Creative Commons Attribution-ShareAlike 4.0"
   maintainerEmail = "d.madrisan@proton.me"
   maintainerWeb = "https://github.com/madrisan/open-scores"
@@ -14,11 +14,11 @@
   mutopiacopyright = "Creative Commons Attribution-ShareAlike 4.0"
   mutopiainstrument = "Harpsichord, Piano"
   mutopiamaintainer = "Davide Madrisan"
-  mutopiaopus = "BWV 847"
-  mutopiatitle = "Präludium und Fuga"
+  mutopiaopus = "Teil I"
+  mutopiatitle = "Das Wohltemperierte Klavier"
 
-  opus = "BWV 847"
-  title = "Präludium und Fuga"
+  opus = "Teil I"
+  title = "Das Wohltemperierte Klavier"
   source = "Based on: Carl Czerny - Leipzig @source@ Berline: C.F. Peters"
   style = "Baroque"
 

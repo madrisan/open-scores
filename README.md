@@ -46,6 +46,7 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
 |  | Suite Anglaises IV BWV 809 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v51/JS-Bach-BWV809-Suite-Anglaise-4.pdf) |
 |  | Suite Anglaises V BWV 810 | *milestone 2* |  |
 |  | Suite Anglaises VI BWV 811 | *milestone 2* |  |
+|  | Das Wohltemperierte Klavier - Teil I | *milestone 3* |  |
 |  | Praeludium und Fughetta in d-moll BWV 899 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v51/JS-Bach-BWV899-Praeludium-und-Fughetta.pdf) |
 |  | Praeludium und Fughetta in e-moll BWV 900 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v51/JS-Bach-BWV900-Praeludium-und-Fughetta.pdf) |
 |  | Praeludium und Fughetta in F-Dur BWV 901 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v51/JS-Bach-BWV901-Praeludium-und-Fughetta.pdf) |
@@ -94,6 +95,7 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
  0. [Milestones](https://github.com/users/madrisan/projects/2)
     * Milestone 1: Digitize all volumes of J.S. Bach's Clavierübung except the third one (which contains works for organ) :white_check_mark: :new:
     * Milestone 2: Digitize the J.S. Bach's Suites Anglaises
+    * Milestone 3: Digitize J.S. Bach's Das Wohltemperierte Klavier, Teil I
  1. Die Kunst der Fuga BWV 1080
     * Contrapunctus I-XIV
     * Brief notes on the completion of Contrapunctus XIV
