@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - J.S. Bach: Das wohltemperierte Klavier – Zweiter Teil: Praeludium und Fuga I
 - J.S. Bach: Das wohltemperierte Klavier – Zweiter Teil: Praeludium und Fuga II
+- J.S. Bach: Das wohltemperierte Klavier – Zweiter Teil: Praeludium III
 
 ## [v51] - 2924-06-06
 

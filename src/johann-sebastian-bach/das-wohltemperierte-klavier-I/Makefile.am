@@ -19,14 +19,14 @@ SUFFIXES = .in
 
 BUILT_SOURCES = covercolor.ly
 
-EXTRA_DIST = JS-Bach-BWV846-BWV869-Das-Wohltemperierte-Klavier-I.ly \
+EXTRA_DIST = JS-Bach-BWV846-869-Das-Wohltemperierte-Klavier-I.ly \
 	     covercolor.ly.in \
 	     global.ly \
 	     header.ily \
 	     logo.ly \
 	     macros.ly
 
-all: $(BUILT_SOURCES) JS-Bach-BWV846-BWV869-Das-Wohltemperierte-Klavier-I
+all: $(BUILT_SOURCES) JS-Bach-BWV846-869-Das-Wohltemperierte-Klavier-I
 
 clean-local:
 	-rm -f $(BUILT_SOURCES)
