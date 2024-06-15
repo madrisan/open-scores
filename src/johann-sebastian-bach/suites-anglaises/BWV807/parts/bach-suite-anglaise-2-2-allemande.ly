@@ -109,11 +109,11 @@ Tenor = \context Voice = "three" \relative c' {
     \once\override NoteColumn.force-hshift = #0 f[ d]
     \change Staff = "lower" \stemUp b \change Staff = "upper" \stemDown\tieDown gis'
   | s4 a16 gis a b d, f e f^~ f f e d
-  | e8 d\rest s2.
+  | \change Staff = "lower" \stemUp e8 f\rest s2. \change Staff = "upper" \stemDown\tieDown
   | s1*2
   %6
   << {
-  | \stemDown\tieDown s2 s8 b'8~ b8. b16
+  | \stemDown\tieDown s2 s8 b8~ b8. b16
   } \\ {
   | \mergeDifferentlyDottedOn
     s2 e,16\rest g8.

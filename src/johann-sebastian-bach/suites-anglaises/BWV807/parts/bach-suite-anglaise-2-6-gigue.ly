@@ -95,10 +95,10 @@ Soprano = \context Voice = "one" \relative c' {
   | g a b b, e dis
   | e4. r8 r e
   | e cis a g f! e
-  | f d f a f a
+  | f d f a\parenthesize\mordent f a
   | d b g f e d
   %65
-  | e c e g e g
+  | e c e g\parenthesize\mordent e g
   | c a f e d c
   | b' gis e d c b
   | c e a d, b' a

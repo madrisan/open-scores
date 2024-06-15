@@ -137,11 +137,11 @@ Tenor = \context Voice = "three" \relative c' {
   | \revert NoteColumn.force-hshift b4 g2
   | s2.
   %22
-  | f8\rest bes a[ g f e]
+  | f8\rest bes a[_\markup { "m.s." } g f e]
   | \change Staff = "lower" \stemUp
     d4 d\rest d\rest
   | \change Staff = "upper" \stemDown
-    e8\rest a g[ f e d]
+    e8\rest a g[_\markup { "m.s." } f e d]
   %25
   | s2.*2
   | \once\override Voice.Rest.X-offset = #0.6 c4\rest e d
