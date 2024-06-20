@@ -21,9 +21,9 @@ Soprano = \context Voice = "one" \relative c' {
   | f4. ees8 d c bes a bes c f, aes
   | g4 g'~ g8 f ees d c d ees bes
   | a c d ees f ees f g f ees d c
-  | d4 bes \stemUp bes'4.\arpeggio \stemNeutral a8 g a bes f
+  | \once\stemUp \grace c8 d4 \once\stemUp \grace c8 bes4 \stemUp bes'4.\arpeggio \stemNeutral a8 g a bes f
   %10
-  | ees4.\prall d8 c d ees bes a bes c g
+  | \once\stemUp \grace f8 ees4.\prall d8 c d ees bes a bes c g
   | fis g a ees d e fis4 g bes8 a
   | bes4 g g'4.\mordent aes8 g f ees d
   | \stemUp ees2. g4 a2~
@@ -36,13 +36,13 @@ Soprano = \context Voice = "one" \relative c' {
   \repeat volta 2 {
   \partial 8 a'8
   | a2. fis4 g4. a8
-  | bes4. a8 s1
+  | \once\stemUp \grace a8 bes4. a8 s1
   | s g4.\prall f16 g
   %20
   | \stemNeutral f2~ f8 g aes g f ees d ees
   | c b a g c b c ees d ees f d
   | f ees d c d e f g g4.\prall^\markup { \hspace #0.4 \flat } f16 g
-  | aes4.\mordent b,8 c4.\mordent d8 \stemUp d4.\downprall c8
+  | \once\stemUp \grace g8 aes4.\mordent b,8 \once\stemUp \grace b8 c4.\mordent d8 \stemUp d4.\downprall c8
   | c2~ \stemNeutral c8 d ees d c bes a bes
   %25
   | bes a g f g a bes c c4.\prall bes16 c
@@ -52,7 +52,7 @@ Soprano = \context Voice = "one" \relative c' {
   | fis2.\prall g8 a g f ees d
   %30
   | ees2 c8 ees g bes a fis g a
-  | d, fis a c bes4.\prall a8 a4.\prall g8
+  | d, fis a c \once\stemUp \grace c8 bes4.\prall a8 a4.\prall g8
   | g2.~ g2~ g8
     \override Score.TextMark.self-alignment-X = #CENTER
     \textEndMark \markup { \musicglyph "scripts.ufermata" }
