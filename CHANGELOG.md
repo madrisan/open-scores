@@ -10,6 +10,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - J.S. Bach: Das wohltemperierte Klavier – Zweiter Teil: Praeludium III
 - J.S. Bach: Suite Anglaise 3 BWV808 - Prélude
 
+### Fixed
+
+- J.S. Bach: Partita 6 BWV830 - Air: workaround the issue of \appoggiatura in an alternative block
+
 ## [v51] - 2924-06-06
 
 ### Added

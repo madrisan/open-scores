@@ -133,7 +133,7 @@ Bass = \context Voice = "four" \relative c {
   | g[ e c a] b4 b,
   }
   \alternative {
-    { e2 }
+    { \once\omit Slur \appoggiatura s8 e2 }
     { e4 r16 \clef treble b''[( cis dis]) e8[ g e c] }
   }
   | d![ fis d b] \clef bass c[ e c a]
