@@ -4,7 +4,7 @@
 
 # :musical_score: Open Scores for Piano encoded using LilyPond
 
-**Open Scores for Piano and and Piano trascriptions encoded using the LilyPond language and tools**
+**Piano sheet music and piano transcriptions with source code in LilyPond language**
 
 [LilyPond](https://lilypond.org/) is a music engraving program, devoted to producing the highest-quality sheet music possible.
 It brings the aesthetics of traditionally engraved music to computer printouts.
@@ -94,7 +94,7 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
 
  0. [Milestones](https://github.com/users/madrisan/projects/2)
     * Milestone 1: Digitize all volumes of J.S. Bach's Clavierübung except the third one (which contains works for organ) :white_check_mark: :new:
-    * Milestone 2: Digitize the J.S. Bach's Suites Anglaises
+    * Milestone 2: Digitize the J.S. Bach's Suites Anglaises :dart:
     * Milestone 3: Digitize J.S. Bach's Das Wohltemperierte Klavier, Teil I
  1. Die Kunst der Fuga BWV 1080
     * Contrapunctus I-XIV
