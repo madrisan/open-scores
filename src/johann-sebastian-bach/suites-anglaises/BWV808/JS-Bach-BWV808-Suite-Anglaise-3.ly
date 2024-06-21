@@ -108,4 +108,5 @@
 \pageBreak
 \include "./parts/bach-suite-anglaise-3-5-gavotte-1.ly"
 \include "./parts/bach-suite-anglaise-3-5-gavotte-2.ly"
+\pageBreak
 \include "./parts/bach-suite-anglaise-3-6-gigue.ly"

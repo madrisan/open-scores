@@ -9,9 +9,18 @@ Soprano = \context Voice = "one" \relative c' {
   \stemUp\tieUp
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \repeat volta 2 {
+  \partial 8 r8
   %1
-  | R1*12/8
-    \fine
+  | R1*12/8*19
+  | r4. r4. r4
+  }
+  \break
+  \repeat volta 2 {
+  \partial 8 r8
+  | R1*12/8*23
+  | r4. r4. r4
+  }
 }
 
 Alto = \context Voice = "two" \relative c' {
@@ -33,9 +42,17 @@ Bass = \context Voice = "four" \relative c {
   \stemDown\tieDown
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \repeat volta 2 {
+  \partial 8 r8
   %1
-  | R1*12/8
-    \fine
+  | R1*12/8*19
+  | r4. r4. r4
+  }
+  \repeat volta 2 {
+  \partial 8 r8
+  | R1*12/8*23
+  | r4. r4. r4
+  }
 }
 
 \score {
