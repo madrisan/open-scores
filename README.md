@@ -42,7 +42,7 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
 |  | Sinfonien BWV 787-801 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v51/JS-Bach-BWV772-801-Inventionen-und-Sinfonien.pdf) |
 |  | Suite Anglaises I BWV 806 | *milestone 2* |  |
 |  | Suite Anglaises II BWV 807 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v51/JS-Bach-BWV807-Suite-Anglaise-2.pdf) |
-|  | Suite Anglaises III BWV 808 | *milestone 2* |  |
+|  | Suite Anglaises III BWV 808 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v52/JS-Bach-BWV808-Suite-Anglaise-3.pdf) |
 |  | Suite Anglaises IV BWV 809 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v51/JS-Bach-BWV809-Suite-Anglaise-4.pdf) |
 |  | Suite Anglaises V BWV 810 | *milestone 2* |  |
 |  | Suite Anglaises VI BWV 811 | *milestone 2* |  |
@@ -176,7 +176,9 @@ make -C src/johann-sebastian-bach/schafe-konnen-sicher-weiden-BWV208
 make -C src/johann-sebastian-bach/siciliano-BWV1031-kempff
 make -C src/johann-sebastian-bach/siciliano-BWV1031-stark
 make -C src/johann-sebastian-bach/suites-anglaises/BWV807
+make -C src/johann-sebastian-bach/suites-anglaises/BWV808
 make -C src/johann-sebastian-bach/suites-anglaises/BWV809
+make -C src/johann-sebastian-bach/suites-anglaises/BWV810
 make -C src/johannes-brahms/klavierstucke-op.119
 make -C src/johannes-brahms/rhapsodie-op.79-nr.1
 make -C src/johannes-brahms/rhapsodie-op.79-nr.2
