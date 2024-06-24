@@ -3,11 +3,17 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [v53] - unreleased
+
+- J.S. Bach: Suite Anglaise 5 BWV810
+
 ## [v52] - 2024-06-24
+
+### Added
 
 - J.S. Bach: Das wohltemperierte Klavier – Zweiter Teil: Praeludium und Fuga I
 - J.S. Bach: Das wohltemperierte Klavier – Zweiter Teil: Praeludium und Fuga II
-- J.S. Bach: Das wohltemperierte Klavier – Zweiter Teil: Praeludium III
+- J.S. Bach: Das wohltemperierte Klavier – Zweiter Teil: Praeludium une Fuga III
 - J.S. Bach: Suite Anglaise 3 BWV808
 
 ### Fixed
