@@ -109,8 +109,95 @@ Soprano = \context Voice = "one" \relative c'' {
   | \stemNeutral b16 ais b d fis d b fis' d b fis g
   | a g a c fis c a fis' c a fis a
   | g8 r r r e <dis fis>
-
-  | s1*6/8*74
+  %85
+  | <e gis> r r r <f b> <e gis>
+  | a16 gis a cis e cis a e' cis a e fis
+  | g fis g bes e bes g e' bes g e g
+  | fis a d, e fis a fis a d, e fis a
+  | fis a dis, e fis a fis a dis, e fis a
+  %90
+  | g b e, fis g b g b e, fis g b
+  | gis b e, fis! gis b gis b e, fis gis b
+  | \stemUp \once\override Beam.damping = #+inf.0 a8 <c e>8. e16 a,8 f'16 e f d
+  | \stemNeutral\tieNeutral gis,8 b8. b16 e,8 e'16 d e b
+  | c e a, b c e c e fis, g a c
+  %95
+  | a c dis, e fis a fis a dis, fis g a
+  | b gis e b d8~ d16 f e d c b
+  | c8 r16 c b a fis'8 r16 fis e dis
+  | b'8 r16 a g fis e g b e ais,8~
+  | ais16 fis gis ais b cis dis b cis dis e fis
+  %100
+  | g e fis g a b \stemUp\tieUp c4.
+  | b16 a g8. b16 a4.
+  | g16 fis e8. g16 fis4.
+  | e16 d cis8. e16 dis8 d4~
+  | d16 d c b a gis a b b8.\prall a32 b
+  %105
+  | c4 f16\rest cis d e e8.\prall d32 e
+  | fis4 b16\rest fis g a a8.\prall g32 a
+  | \stemNeutral b16 fis g dis e g a, c! dis! e fis g
+  | a8 b, a' g b, g'
+  | fis a, fis' e g, e'
+  %110
+  | \stemUp fis,16 ais cis e dis cis b dis fis a g fis
+  | b a g fis e d c b a g fis e
+  | \stemNeutral dis fis b, cis dis fis dis fis b, cis dis fis
+  | e g b, dis e g e g b, dis e g
+  | fis a dis, e fis a fis a dis, e fis a
+  %115
+  | g b e, fis g b g b e, fis g b
+  | g! ais e fis g ais g ais e fis g ais
+  | \stemUp b8 b8. b16 e,8 c'16 b c a
+  | dis,8 fis8. fis16 b,8 b'16 a b fis
+  | f'8\rest e8. e16 b8 g'16 fis g e
+  %120
+  | ais,8 cis8. cis16 fis,8 fis'16 e fis cis
+  | d cis d e d c b8 e8. d16
+  | c b c d c b \once\override Beam.damping = #+inf.0 a8 a'8. a16
+  | a g a c b a g fis g b a g
+  | \stemNeutral fis e fis g fis e dis cis dis e cis dis
+  %125
+  | e dis e fis g e cis d cis b a cis
+  | d cis d e fis d b c b a g b
+  | cis b cis d e cis ais b ais gis fis ais
+  | \stemUp b ais b cis d b g8 f'\rest f\rest
+  | d\rest e,8. e16 <cis e>8 f'\rest f\rest
+  %130
+  | f16\rest fis, b8 f'8\rest f16\rest ais,32 b cis8 f8\rest
+  | f16\rest b,32 cis d8 g8\rest g16\rest cis,32 d e8 g8\rest
+  | g16\rest cis, e g fis e d4.~
+  | d16 b d f e d c4.~
+  | c16 a c e d c b4.~
+  %135
+  | b16 g b d c b a4.~
+  | \once\override Beam.damping = #+inf.0 a8 b'8. b16 e,8 c'16 b c a
+  | dis,8 fis8. fis16 b,8 b'16 a b fis
+  | \stemNeutral g a g fis e g a g a b c a
+  | fis g fis e d fis g fis g a b g
+  %140
+  | e fis e d c e fis e fis g a fis
+  | \stemUp dis8 dis8. dis16 <b e>8 g'\rest g\rest
+  | f\rest a,8. a16 <fis a>8 f'\rest f\rest
+  | f16\rest b, e8 f8\rest g16\rest dis32 e fis8 g\rest
+  | a16\rest e32 fis g8 a\rest b16\rest fis32 g a8 c\rest
+  %145
+  | d16\rest fis, a c b a g fis e dis! e b
+  | c4.~ c16 e d c d a
+  | b4.~ b16 d c b c g
+  | a4.~ a16 c b a b fis
+  | g4.~ g16 g fis e fis cis!
+  %150
+  | dis4.~ dis16 b e fis g8~
+  | <e g>4.~ q8 cis16 e g ais
+  | b b, cis dis! e fis g e fis g a b
+  | c4.~ c16 fis, a c dis,! fis
+  | e g b e e, d' b'\rest e, a c fis, a
+  %155
+  | dis, fis b, dis e8~ e16 fis fis8.[\prall e16]
+  | \stemNeutral e2.
+    \override Score.TextMark.self-alignment-X = #CENTER
+    \textEndMark \markup { \musicglyph "scripts.ufermata" }
     \fine
 }
 
@@ -199,6 +286,64 @@ Alto = \context Voice = "two" \relative c'' {
   | fis s4. <cis e>8 q
   | s1*6/8*2
   | e8 s4. b8 b
+  %85
+  | b8 s4. <b d>8 q
+  | s1*6/8*6
+  %92
+  | s8 <e a>8. s16 s4.
+  | s1*6/8*7
+  %100
+  | s4. g16\rest b' a g a fis~
+  | fis8. fis16 e8~ e16 g fis e fis d~
+  | d8. d16 c8~ c16 e d c d b~
+  | b8. b16 a8~ a16 c b a b gis
+  | e4.~ e8 gis!4
+  %105
+  | e16\rest gis a e g8 g\rest cis!4
+  | g16\rest cis d a c8 g8\rest fis'4
+  | s1*6/8*10
+  %117
+  | s8 <dis, fis> s2
+  | s1*6/8
+  | g16 fis g a g fis e d e fis e d
+  %120
+  | cis b cis d cis b ais gis ais b gis ais
+  | b8 b'8. a16 g fis g a g fis
+  | e8 a8. g16 fis e fis g fis e
+  | dis8 dis8. dis16 e8 e\rest e\rest
+  | s1*6/8*4
+  %128
+  | b8\rest fis'8. fis16 b,8 g'16 fis g e
+  | ais,8 cis8. cis16 fis,8 fis'16 e fis cis
+  | d8. fis16 e d e8. g16 fis e
+  | fis8. a16 g fis g8. d'16 cis! b
+  | ais8 g\rest g\rest g16\rest cis! b ais b fis
+  | gis8 e\rest e\rest e16\rest b' a gis a e
+  | fis8 e\rest e\rest e16\rest a g fis g dis
+  %135
+  | e8 d\rest d\rest d16\rest g fis e fis cis
+  | dis8 <dis' fis> g,\rest b <e a> g,\rest
+  | s1*6/8*4
+  %141
+  | e8\rest  b'8. b16 e,8 c'16 b c a
+  | dis,8 fis8. fis16 b,8 b'16 a b fis
+  | g8. b16 a g a8. c16 b a
+  | b8. d16 c b c8. g'16 fis e
+  %145
+  | dis4 g,8\rest g4.\rest
+  | e16\rest e g b a g fis4.~
+  | fis16 d f a g f e4.~
+  | e16 dis e g fis e dis8 d\rest d\rest
+  | c16\rest fis e dis e cis ais8 a\rest a\rest
+  %150
+  | s4. s4 g'16 cis,
+  | e ais,~ <ais cis>4~ q8 cis!4*1/4 \autoBeamOff e8.*1/3 g8 \autoBeamOn
+  | <dis fis>16 s8. s2
+  | e16\rest b' a g fis e dis8 a\rest g\rest
+  | g4.\rest c'4 e,8\rest
+  %155
+  | e\rest e\rest e16\rest a g e' dis!4
+
 }
 
 Tenor = \context Voice = "three" \relative c {
@@ -226,7 +371,27 @@ Tenor = \context Voice = "three" \relative c {
   | <a d>8 s4. fis8 g
   %45
   | a s4. a8 fis
-
+  | s1*6/8*36
+  %82
+  | <fis b>8 s4. d8 e
+  | fis s4. fis8 dis!
+  | s1*6/8*2
+  %86
+  | <e a>8 s4. cis8 d
+  | s1*6/8*37
+  %124
+  | c'8\rest a8. a16 <fis a>8 f'\rest f\rest
+  | s1*6/8*25
+  %150
+  | \change Staff = "upper" \stemDown g,16\rest c b a b \change Staff = "lower" \stemUp fis g4.~
+  | g8. e16 g cis,
+    << {
+      \once\override NoteColumn.force-hshift = #0 e
+      g~ g4
+    } \\ {
+      \once\override NoteColumn.force-hshift = #0 e4.
+    } >>
+  | fis16 s8. s2
 }
 
 Bass = \context Voice = "four" \relative c' {
@@ -311,20 +476,109 @@ Bass = \context Voice = "four" \relative c' {
   | fis,8 b8.^\mordent b16 e,8 c'16 b c a
   | d,8 g8. g16 c,8 a'16 g a fis
   | b,8 e8. e16 a,8 fis'16 e fis d
-  | g,8. a16 b8. c16[ d c d d,]
   %70
+  | g,8. a16 b8. c16[ d c d d,]
   | g8 g'8. fis16 g e fis e fis fis,
   | b8 b'8. a!16 b g a g a a,
   | d8 d'8. b16 g'8. g16 e cis
   | fis8 fis, fis' fis fis, fis'
-  | fis fis, fis' fis fis, fis'
   %75
+  | fis fis, fis' fis fis, fis'
   | fis fis, fis' fis16 g! fis e d cis
   | b cis b a g fis e d e fis g e
   | a b a g fis e d cis d e fis d
   | g a g fis e d cis b cis d e cis
-
-  | R1*6/8*77
+  %80
+  | fis e fis ais cis ais fis cis' ais fis cis d
+  | e d e g cis g e cis' g e cis e
+  | \stemDown d8 r r r b cis
+  | dis r r r dis b
+  | e16 dis e g b g e b' g e b c!
+  %85
+  | d cis d f b f d b' f d b d
+  | cis8 r r r a b
+  | cis r r r cis a
+  | \stemNeutral d16 fis a, cis d fis d fis a, cis d fis
+  | dis16 fis b, cis dis fis dis fis b, cis dis fis
+  %90
+  | e g b, dis e g e g b, dis e g
+  | d f gis, a b d b d gis, a b d
+  | c e a, b c e c f a, b c f
+  | d f b, c d f gis b e, fis gis e
+  | a,8 a'8. a16 e8 c'16 b c a
+  %95
+  | dis,8 fis8. fis16 b,8 b'16 a b fis
+  | gis8 r16 a gis fis e d c b a gis
+  | a c e a dis,8~ dis16 b cis dis e fis
+  | g e fis g a b c8 r16 cis d e
+  | fis,8 r16 fis gis ais b,8 r16 b cis dis
+  %100
+  | \once\stemUp e,8 e''8. e16 a,8 fis'16 e fis d
+  | g,8 c8. c16 fis,8 d'16 c d b
+  | e,8 a8. a16 d,8 b'16 a b g
+  | cis,8 fis8. fis16 b,8 gis'16 fis gis e
+  | a,8. b16 c8. d16[ e d e e,]
+  %105
+  | a8 a'8. g!16 fis g a g a a,
+  | d8 d'8. c!16 b c d c d d,
+  | g a b fis g e c'8. c16 a fis
+  | dis fis b fis e dis e g cis g fis e
+  | fis a dis a g fis g b e d cis b
+  %110
+  | ais \change Staff = "upper" \stemDown cis e g fis e dis fis a c b a
+  | g fis e d c b  \change Staff = "lower" \stemNeutral a g fis e dis cis
+  | b8 dis fis a fis dis
+  | b e g b g e
+  | a fis dis b a' fis
+  %115
+  | b g e b g' e
+  | ais16 e g fis e d cis g' fis e dis cis
+  | dis fis a c b a g b a g fis e
+  | c' b a g fis e dis cis b8 r
+  | R1*6/8*4
+  %123
+  | r8 b'8. b16 e,8 c'16 b c a
+  | \stemDown dis,8 fis8. fis16 b,8 b'16 a b fis
+  | \stemNeutral g a g fis e g a gis a b cis a
+  | fis g fis e d fis g fis g a b g
+  | e fis e d cis e fis g fis e d cis
+  | d e d cis b d e d e fis e d
+  | cis b cis d cis b ais gis ais b gis ais
+  %130
+  | b8 b' b, b b' b,
+  | b b' b, b b' b,
+  | b b' b, b'16 ais b cis d b
+  | e f e d c b a gis a b c a
+  | d e d c b a g fis g a b g
+  %135
+  | c d c b a g fis e fis g a fis
+  | b fis a c b a g fis g b a g
+  | fis e fis g fis e dis cis dis e cis dis
+  | e b e fis g e c d c b a c
+  | d a d e fis d b c b a g b
+  %140
+  | c g c d e c a b a g fis a
+  | b fis a c b a g fis g b a g
+  | fis e fis g fis e dis cis dis e cis dis
+  | e8 e' e, e e' e,
+  | e e' e, e e' e,
+  %145
+  | e e' e, e'16 dis e fis g e
+  | a b a g fis e d c d e fis d
+  | g a g f e d c b c d e c
+  | fis g fis e dis cis b8 b' b,
+  | b b' b, b ais' b,
+  %150
+  | \stemDown\tieDown b4.~ b~
+  | b~ \once\override NoteColumn.force-hshift = #0.2 b~
+  | b8 b'8. b16 e,8 c'!16 b c a
+  | dis,8 fis8. fis16 b,8 b'16 a b fis
+  | g8 gis8.^\prall gis16 a8 c8. c16
+  %155
+  | b c b a g fis e a b8 b,
+  | \stemNeutral e,2.
+    \tweak direction #DOWN
+    \textEndMark \markup { \musicglyph "scripts.dfermata" }
     \fine
 }
 
@@ -362,6 +616,6 @@ Bass = \context Voice = "four" \relative c' {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 4. = 70
   }
 }
