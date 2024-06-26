@@ -101,8 +101,11 @@
 \include "./parts/bach-suite-anglaise-5-1-prelude.ly"
 \pageBreak
 \include "./parts/bach-suite-anglaise-5-2-allemande.ly"
+\pageBreak
 \include "./parts/bach-suite-anglaise-5-3-courante.ly"
+\pageBreak
 \include "./parts/bach-suite-anglaise-5-4-sarabande.ly"
+\pageBreak
 \include "./parts/bach-suite-anglaise-5-5-passepied-1.ly"
 \include "./parts/bach-suite-anglaise-5-5-passepied-2.ly"
 \include "./parts/bach-suite-anglaise-5-6-gigue.ly"
