@@ -1,5 +1,5 @@
 Global = {
-  \key e \major
+  \key e \minor
   \time 3/8
   \include "../global.ly"
 }
@@ -9,8 +9,20 @@ Soprano = \context Voice = "one" \relative c' {
   \stemUp\tieUp
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \partial 8 r8
   %1
-  | R1*3/8
+  | R1*3/8*15
+  | r8 r8
+    \bar "||"
+  \partial 8 r8
+  | R1*3/8*31
+  | r8 r8
+    \bar "||"
+  \partial 8 r8
+  | R1*3/8*31
+  | r8 r8
+    \override Score.TextMark.self-alignment-X = #CENTER
+    \textEndMark \markup { \musicglyph "scripts.ufermata" }
     \fine
 }
 
@@ -33,8 +45,20 @@ Bass = \context Voice = "four" \relative c {
   \stemDown\tieDown
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \partial 8 r8
   %1
-  | R1*3/8
+  | R1*3/8*15
+  | r8 r8
+    \bar "||"
+  \partial 8 r8
+  | R1*3/8*31
+  | r8 r8
+    \bar "||"
+  \partial 8 r8
+  | R1*3/8*31
+  | r8 r8
+    \tweak direction #DOWN
+    \textEndMark \markup { \musicglyph "scripts.dfermata" }
     \fine
 }
 

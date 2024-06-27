@@ -10,8 +10,14 @@ Soprano = \context Voice = "one" \relative c' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   %1
-  | R1*3/4
-    \fine
+  \repeat volta 2 {
+  | R1*3/4*8
+  }
+  \repeat volta 2 {
+  | R1*3/4*16
+    \override Score.TextMark.self-alignment-X = #CENTER
+    \textEndMark \markup { \musicglyph "scripts.ufermata" }
+  }
 }
 
 Alto = \context Voice = "two" \relative c' {
@@ -34,8 +40,14 @@ Bass = \context Voice = "four" \relative c {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   %1
-  | R1*3/4
-    \fine
+  \repeat volta 2 {
+  | R1*3/4*8
+  }
+  \repeat volta 2 {
+  | R1*3/4*16
+    \tweak direction #DOWN
+    \textEndMark \markup { \musicglyph "scripts.dfermata" }
+  }
 }
 
 \score {
