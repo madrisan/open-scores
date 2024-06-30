@@ -5,7 +5,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [v53] - unreleased
 
+### Added
+
 - J.S. Bach: Suite Anglaise 5 BWV810
+
+### changed
+
+- Ildebrando Pizzetti: Sogno - Better pagination
 
 ## [v52] - 2024-06-24
 

@@ -15,25 +15,37 @@ Global = {
 \paper {
   #(set-paper-size "a4")
   annotate-spacing = ##f
-  bottom-margin = 15\mm
+  binding-offset = 0\mm
+  bottom-margin = 5\mm
   first-page-number = 0
   indent = 0.0
+  %inner-margin = 10\mm
 % last-bottom-spacing.padding = #2
-  line-width = 17\cm
+  %left-margin = 10\mm
+  line-width = 19\cm
   markup-system-spacing =
      #'((basic-distance . 2)
         (minimum-distance . 1)
         (padding . 2)
-        (stretchability . 20))
+        (stretchability . 24))
+  %outer-margin = 20\mm
   print-all-headers = ##t
   ragged-last-bottom = ##f
   ragged-bottom = ##f
+  %right-margin = 10\mm
+  score-markup-spacing =
+     #'((basic-distance . 10)
+        (minimum-distance . 8)
+        (padding . 2)
+        (stretchability . 24))
   system-system-spacing =
      #'((basic-distance . 2)
         (minimum-distance . 1)
         (padding . 2)
-        (stretchability . 20))
-  top-margin = 15\mm
+        (stretchability . 24))
+  top-margin = 10\mm
+  top-markup-spacing.basic-distance = 0
+  top-system-spacing.basic-distance = 1
 }
 
 \bookpart {
@@ -81,7 +93,7 @@ Global = {
       \center-column {
         \null\null\null\null\null
         \fill-line {
-          \abs-fontsize #12 "Based on the score published by Angelo Giglia, Genova"
+          \abs-fontsize #10 "Based on the score published by Angelo Giglia, Genova"
         }
         \null\null
       }
@@ -110,8 +122,8 @@ Sopran = \context Voice = "one" \relative c' {
   | <c_~ f!~ c'~>\)
   %5
   | <c_~ f!~ c'~>
+  \break
   | q4 r r2
-    \break
   | R1
   | \shape #'(
       (( 0 . 0) (0 . 0) (0 . 0) (0 . 0))
@@ -127,13 +139,14 @@ Sopran = \context Voice = "one" \relative c' {
     bes2.\)
     \shape #'(
       (( 0 . -0.8) (0 . 0) (0 . 0) (0 . 0))
-      (( 0 . -0.5) (0 . 0.5) (0 . 0) (0 . -1))
+      (( 0 . 2) (0 . 2) (0 . 1) (0 . -1))
     ) PhrasingSlur
     aes4~\(
   | aes^\< bes \once\override NoteColumn.force-hshift = #-0.7 c des
   | %aes'2~\!\> aes4( ges)
     aes'2.\!\>( ges4)
-  | \once\override Staff.TextScript.extra-offset = #'(-0.8 . -3)
+    \break
+  | \once\override Staff.TextScript.extra-offset = #'(-0.8 . -4)
     bes,2\!^\markup {
       \small "dolciss. e molto rit."
     } c4 f~
@@ -150,19 +163,21 @@ Sopran = \context Voice = "one" \relative c' {
     ) Slur
     \shape #'(
       (( 1 . 1) (0 . 0) (0 . 0) (0 . 1))
-      ((0.5 . 1) (1 . 0) (0 . 0) (11 . -2))
+      ((-1 . 1.3) (1 . 0) (0 . 0.5) (10 . -2))
     ) PhrasingSlur
     aes1^>(\(
   | g!1
-  \pageBreak
+  %\pageBreak
   | ges2) \tuplet 6/4 { aes8^-[( ges^- f^- ges^- aes^- ges^-] }
   %20
   | bes2. ges4
   | f2.)\) f4\rest
-  | \shape #'(
+  \break
+  | \once\shape #'(
       (( 1 . 1) (0 . 0) (0 . 0) (0 . 0.5))
-      (( 0 . 1.1) (0 . 0.4) (0 . 0) (-1 . 0))
+      (( 0 . 0) (0 . 0.4) (0 . 0) (-1 . 0))
     ) PhrasingSlur
+    \once\override Staff.TextScript.extra-offset = #'(0 . -2.6)
     f1^>(\(^\markup {
       \small "animando"
     }
@@ -170,26 +185,31 @@ Sopran = \context Voice = "one" \relative c' {
   | ees2) \tuplet 6/4 {
       \shape #'(
         (( 0 . 0) (0 . 0) (0 . 0) (0 . 0))
-        (( 0 . -6) (0 . 1) (0 . 1) (0 . 0))
+        (( 0 . -2) (0 . 0.5) (0 . 0.5) (0 . 0))
       ) PhrasingSlur
       f8^-\)[\( ees^- des^- ees^- f^- des~^-]
     }
   %25
   | <aes des aes'>4 <bes bes'> <c c'> <des des'>
-  | <c' c'>2~ q4 <bes bes'>~
+  | \once\tieNeutral <c' c'>2~ q4 \tieNeutral <bes bes'>~
   | \once\override Hairpin.Y-offset = #0
     \once\override Hairpin.rotation = #'(4 -1 0)
     q\> <aes aes'> <g! g'!> <f f'>\!
-  | \slurDown \acciaccatura ees'!8\) ees,!2.\(
+  | \once\shape #'(
+      (( 0 . -1) (0 . -1) (0 . -0.8) (0 . 0))) Slur
+    \once\slurDown \acciaccatura ees'!8\) ees,!2.\(
     \shape #'(
       (( 0 . 0) (0 . 0) (0 . 0) (0 . 0))
       (( 0 . 2) (0 . 2) (0 . 2) (0 . 2))
     ) PhrasingSlur
     des4
-  | \acciaccatura ees8 f,2 g!4 c~^-
+  | \once\shape #'(
+      (( -0.3 . 1) (-0.5 . 0) (0 . 0) (0 . 0))) Slur
+    \once\slurDown \acciaccatura ees8 f,2 g!4 c~^-
   %30
   | \slurNeutral \tuplet 3/2 { c8[( bes^- aes^-)] } aes2.~
   | aes8\) f'\rest f4\rest f2\rest
+  \break
   | \shape #'(
       (( 0 . 0) (0 . 0) (0 . 0) (0 . 0))
       (( 0 . 2) (0 . 2) (0 . 2) (0 . 2))
@@ -199,9 +219,13 @@ Sopran = \context Voice = "one" \relative c' {
   | c'2. bes4
   %35
   | bes2.\)
-    << \shape #'((0 . 0) (0 . 0) (0 . -5.5) (-1 . -1.5)) PhrasingSlur aes4~^>\( \\ >>
+    << \shape #'(
+         ((0 . 2) (0 . 2) (0 . 2) (0 . 2))
+         ((0 . 1) (0 . 1) (0 . 1) (0 . 1))
+       ) PhrasingSlur
+       aes4~^>\( \\ >>
   | << {
-      aes bes \once\override NoteColumn.force-hshift = #-0.7 c des
+      aes bes \once\override NoteColumn.force-hshift = #-0.8 c des
     } \\ {
       b'2\rest \once\override Voice.Rest.X-offset = #0.8 b4\rest \stemUp\tieUp bes~^\pp
     } >>
@@ -218,7 +242,7 @@ Sopran = \context Voice = "one" \relative c' {
     ) Slur
     \shape #'(
       (( 0 . 0) (0 . 0) (0 . 0) (0 . 2.5))
-      (( -1 . 1) (0 . -4) (0 . -4) (-0.5 . 0.5))
+      (( -1 . 0) (0 . 0) (0 . 0) (-0.5 . 0))
     ) PhrasingSlur
     des1^(^\(^\markup {
       \small\italic "animando"
@@ -342,7 +366,7 @@ Alto = \context Voice = "two" \relative c' {
   | \stemUp s2. <c f>4^~^-
   | q r r q^~^-
   | q r
-    \shape #'((0 . 0) (0 . 0.5) (0 . 0.5) (0 . 0)) Slur
+    \shape #'((1.2 . 0.6) (0 . 1.4) (0 . 1) (0 . 0.2)) Slur
     q2^~(
   | <bes f'>1)^\fermata
 }
@@ -401,7 +425,7 @@ Tenor = \context Voice = "three" \relative c' {
       }
     } >>
     s1
-  | \shape #'((0 . 1.5) (0 . 2) (0 . -1) (-2.5 . 7)) PhrasingSlur
+  | \shape #'((0 . 1.5) (0 . 1.3) (0 . -1.5) (-2 . 8)) PhrasingSlur
     \stemUp e''!4\( f g! aes
   | \stemDown s8 <f, bes des>4\) q8[ <g! bes des>] <f bes des>4 q8
   | s8 <ees g des'>4 q8[ <f g des'>] <ees g des'>4 q8
@@ -543,7 +567,7 @@ centerDynamics = {
   | s8\< s4. s2
   %25
   | s8\!\f\< s4. s2
-  | s8\! s\ff s2.
+  | s16\! s s s\ff s2.
   | s1*4
   %31
   | s8 s4 s8-\markup { \hspace #-0.5 \small "rit." } s2
