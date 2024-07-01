@@ -109,4 +109,5 @@
 \include "./parts/bach-suite-anglaise-5-5-passepied-1.ly"
 \pageBreak
 \include "./parts/bach-suite-anglaise-5-5-passepied-2.ly"
+\pageBreak
 \include "./parts/bach-suite-anglaise-5-6-gigue.ly"
