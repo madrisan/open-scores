@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Added
 
 - J.S. Bach: Suite Anglaise 5 BWV810
+- J.S. Bach: Fantasie und Fuge BWV904
 
 ### changed
 

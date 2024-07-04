@@ -4,6 +4,7 @@ SUBDIRS = cembalo-konzert-largo-BWV1056-kempff \
 	  chromatische-fantasie-und-fugue-BWV903-busoni \
 	  das-wohltemperierte-klavier-I \
 	  die-kunst-der-fuge-BWV1080 \
+	  fantasie-und-fuge-BWV904 \
 	  goldberg-variationen-BWV988 \
 	  inventionen-und-sinfonien-BWV772-801 \
 	  italienisches-konzert-BWV971 \

@@ -51,6 +51,7 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
 |  | Praeludium und Fughetta in e-moll BWV 900 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v52/JS-Bach-BWV900-Praeludium-und-Fughetta.pdf) |
 |  | Praeludium und Fughetta in F-Dur BWV 901 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v52/JS-Bach-BWV901-Praeludium-und-Fughetta.pdf) |
 |  | Praeludium und Fughetta in G-Dur BWV 902 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v52/JS-Bach-BWV902-Praeludium-und-Fughetta-BWV902.pdf) |
+|  | Fantasie und Fuge BWV 904 | | |
 |  | Neun kleine Präludien BWV 924-932 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v52/JS-Bach-BWV924-932-Neun-kleine-Praludien.pdf) |
 |  | Sechs kleine Präludien BWV 933-938 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v52/JS-Bach-BWV933-938-Sechs-kleine-Praludien.pdf) |
 |  | Praeludium Fuge und Allegro BWV 998 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v52/JS-Bach-BWV998-Praeludium-Fuge-und-Allegro.pdf) |
@@ -153,6 +154,7 @@ make -C src/johann-sebastian-bach/chorale-preludes/BWV659-Busoni
 make -C src/johann-sebastian-bach/chorale-preludes/jesu-meine-freude-BWV610
 make -C src/johann-sebastian-bach/chromatische-fantasie-und-fugue-BWV903-busoni
 make -C src/johann-sebastian-bach/die-kunst-der-fuge-BWV1080
+make -C src/johann-sebastian-bach/fantasie-und-fuge-BWV904
 make -C src/johann-sebastian-bach/goldberg-variationen-BWV988
 make -C src/johann-sebastian-bach/inventionen-und-sinfonien-BWV772-801
 make -C src/johann-sebastian-bach/italienisches-konzert-BWV971
