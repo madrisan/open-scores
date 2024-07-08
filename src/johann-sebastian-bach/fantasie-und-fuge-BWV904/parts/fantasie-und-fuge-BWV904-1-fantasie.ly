@@ -166,7 +166,7 @@ Mezzosoprano = \context Voice = "two" \relative c'' {
   | \once\override NoteColumn.force-hshift = 0.3 f
     \change Staff = "lower" d,4\rest \once\stemUp b'4~
   %10
-  | \once\override Stem.length = #5 \once\override NoteColumn.force-hshift = 1
+  | \once\override Stem.length = #5 \once\override NoteColumn.force-hshift = 1.4
     b2
     \change Staff = "upper" \stemUp \once\override NoteColumn.force-hshift = 0.2 <gis' b>~
   | \once\override NoteColumn.force-hshift = 0.2 q4 a2 gis4
@@ -424,12 +424,12 @@ Tenor = \context Voice = "four" \relative c' {
       \revert NoteColumn.force-hshift
   |   s1
     } \\ {
-  |   \stemUp e2 e
+  |   \stemUp e'2 e
   |   a, b
   |   c a'\rest
   |   s1
   %35
-  |   e2 e^~
+  |   e,2 e^~
   |   e8 d c b \once\stemUp a2
     } >>
   | f'4\rest \stemUp\tieUp fis, b2~
