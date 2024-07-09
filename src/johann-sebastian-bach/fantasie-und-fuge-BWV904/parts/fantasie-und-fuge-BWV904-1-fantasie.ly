@@ -676,6 +676,6 @@ Bass = \context Voice = "five" \relative c' {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 4 = 140
   }
 }
