@@ -34,7 +34,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | a2 b~
   %20
   | b4 e8 d e4 f8 e
-  | d4 f8 e f2~
+  | d4 f8 e f2~\arpeggio
   | f4 e8 d e4 f8 e
   | d2 g~
   | g4 f8 e f4 g8 f
@@ -181,8 +181,8 @@ Mezzosoprano = \context Voice = "two" \relative c'' {
   | fis f
   %20
   | e a~
-  | a \stemUp \shiftOn d
-  | c \stemDown c~
+  | a << { \stemUp \shiftOn d\arpeggio } \\ { \stemDown g,\arpeggio } >>
+  | << { \shiftOn c } \\ g >> \stemDown c~
   | \once\override NoteColumn.force-hshift = 0.8 c4 b8 a b4 c8 b
   | a2 d~
   %25
@@ -193,7 +193,12 @@ Mezzosoprano = \context Voice = "two" \relative c'' {
   | b2. c8 b
   %30
   | a1
-  | \stemUp b2 \once\override Tie.staff-position = #1 c!~
+  | \stemUp \shiftOn b2
+    \once\shape #'(
+      ((0 . 0) (0 . 0) (0 . 0) (0 . 0))
+      ((0 . 0.8) (0 . 0.8) (0 . 0.8) (-0.6 . 0.8))
+    ) Tie
+    c!~
   | c \stemDown b
   | \once\override NoteColumn.force-hshift = 1 b2 a
   | b b
@@ -259,14 +264,17 @@ Mezzosoprano = \context Voice = "two" \relative c'' {
   %80
   | d2 s
   | e1
-  | \stemDown\tieDown fis2 g
+  | \stemDown\tieDown fis2 gis
   | a a~
-  | a g~
+  | \once\override NoteColumn.force-hshift = #0.8 a g~
   %85
   | \once\override NoteColumn.force-hshift = #1.3 g8 e c e f d a c
   | b d cis b cis e d cis
-  | d1~
-  | \change Staff = "lower" \stemUp\tieUp d2 c!~
+  | % FIXME: We must use a Slur here, because a Tie with a Change Staff in the middle
+    %        is displayed below the stave
+    \once\shape #'(((0 . 0.2) (0 . 0) (0 . 6) (-1 . 1.5))) Slur
+    d1(
+  | \change Staff = "lower" \stemUp\tieUp d2) c!~
   | c4 b8 a b4 c8 b
   %90
   | a c \change Staff = "upper" \stemDown\tieDown e g f!2~
@@ -634,7 +642,7 @@ Bass = \context Voice = "five" \relative c' {
 }
 
 \score {
-  \new PianoStaff
+  \new PianoStaff \with { connectArpeggios = ##t }
   <<
     \accidentalStyle Score.piano
     \context Staff = "upper" <<

@@ -72,7 +72,9 @@
         \null
         \fill-line { \draw-hline }
         \null\null\null
-        \line { \abs-fontsize #40 \bold "Fantasie und Fuge a-Moll" }
+        \line { \abs-fontsize #40 \bold "Fantasie und Fuge" }
+        \null
+        \line { \abs-fontsize #36 \bold "a-Moll" }
         \null\null\null
         \line { \abs-fontsize #24 "BWV 904" }
         \null\null\null\null
