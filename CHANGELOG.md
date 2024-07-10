@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - J.S. Bach: Suite Anglaise 5 BWV810
 - J.S. Bach: Fantasie und Fuge BWV904
+- J.S. Bach: Chorale Prelude BWV668 (arranged for piano by Ruoshi Sun)
 
 ### changed
 
