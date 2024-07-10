@@ -24,6 +24,7 @@ EXTRA_DIST = JS-Bach-BWV904-Fantasie-und-Fuge.ly \
 	     header.ily \
 	     global.ly \
 	     logo.ly \
+	     macros.ly \
 	     parts/fantasie-und-fuge-BWV904-1-fantasie.ly \
 	     parts/fantasie-und-fuge-BWV904-2-fuge.ly
 

@@ -100,6 +100,8 @@
   }
 }
 
+\include "macros.ly"
+
 \include "./parts/fantasie-und-fuge-BWV904-1-fantasie.ly"
 \pageBreak
 \include "./parts/fantasie-und-fuge-BWV904-2-fuge.ly"

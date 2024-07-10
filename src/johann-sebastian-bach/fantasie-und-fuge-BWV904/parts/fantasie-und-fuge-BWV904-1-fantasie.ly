@@ -4,6 +4,8 @@ Global = {
   \include "../global.ly"
 }
 
+\include "../macros.ly"
+
 Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
   \stemUp\tieUp
@@ -150,6 +152,8 @@ Mezzosoprano = \context Voice = "two" \relative c'' {
   \voiceTwo
   \stemDown\tieDown
   \override Rest.staff-position = #0
+  \override VoiceFollower.color = \greyTextColor
+  \override VoiceFollower.style = #'dashed-line
   %1
   | c1
   | d2 e~
@@ -263,8 +267,10 @@ Mezzosoprano = \context Voice = "two" \relative c'' {
   | q4 d2 cis4
   %80
   | d2 s
-  | e1
-  | \stemDown\tieDown fis2 gis
+  | \change Staff = "lower" e1
+  | \showStaffSwitch \change Staff = "upper"
+    \stemDown\tieDown fis2 gis
+    \hideStaffSwitch
   | a a~
   | \once\override NoteColumn.force-hshift = #0.8 a g~
   %85
@@ -303,7 +309,7 @@ Mezzosoprano = \context Voice = "two" \relative c'' {
     d4 s2.
   | s2 \once\override NoteColumn.force-hshift = #0.4 e,
   | \once\override NoteColumn.force-hshift = #0.4 f
-    \change Staff = "lower" \stemUp d,4\rest b'_~
+    \showStaffSwitch \change Staff = "lower" \stemUp d,4\rest b'_~
   | \once\override NoteColumn.force-hshift = #0.7 b2
     \change Staff = "upper" \stemDown e~
   %110
@@ -315,6 +321,9 @@ Alto = \context Voice = "three" \relative c'' {
   \voiceTwo
   \stemDown\tieDown
   \override Rest.staff-position = #0
+  \override VoiceFollower.color = \greyTextColor
+  \override VoiceFollower.style = #'dashed-line
+  \showStaffSwitch
   %1
   | a1
   | \once\override NoteColumn.force-hshift = #0.3 b
@@ -358,8 +367,9 @@ Alto = \context Voice = "three" \relative c'' {
     a2~
   | a1
   %80
-  | a2 d~
-  | d s
+  | a2 \showStaffSwitch \change Staff = "lower" \stemUp\tieUp d~
+  | d s \hideStaffSwitch
+    \change Staff = "upper" \stemDown\tieDown
   | s1*18
   %100
   | a'1
