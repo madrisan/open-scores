@@ -3,6 +3,7 @@
 #(ly:set-option 'relative-includes #t)
 
 \include "./covercolor.ly"
+\include "./macros.ly"
 
 \header {
   tagline = ##f
@@ -96,38 +97,39 @@ Global = {
   \include "./global.ly"
 }
 
-greyTextColor = #(x11-color "dimgray")
-
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #5
   \override Rest.staff-position = #0
   %1
   | R1*7
-  | g2 g4 a8 c16 b
+  | \highlightCFOrn { g2^\markup {
+      \hspace #2 "c.f. [cum ornamentis]"
+    }
+    g4 a8 c16 b
   | b4 a8. b16 c4 b
   %10
   | a4~\trill a16 g a8 g2~
-  | g f'\rest
+  | g } f'\rest
   | R1*7
   %19
-  | f2\rest b,
+  | f2\rest \highlightCF { b,
   | c4 b a g
-  | fis g a2~
+  | fis g \unHighlightCF a2~ }
   | a f'\rest
   | R1*3
   | \once\override Voice.MultiMeasureRest.X-offset = #1.4 R1
   | R1*2
   %29
-  | f2\rest d
+  | f2\rest \highlightCF { d
   | c4 b a8 g fis4
-  | g8 fis e4 d2~
+  | g8 fis e4 } d2~
   | d f'2\rest
   | R1*7
   %40
-  | f2\rest b,
+  | f2\rest \highlightCF { b,
   | c4 b a g8 a
-  | b4 a g2~
+  | b4 a \unHighlightCF g2~ }
   | g1~
   | g~
   %45
@@ -145,35 +147,39 @@ Alto = \context Voice = "two" \relative c'' {
   \stemNeutral\tieNeutral
   %1
   | R1
-  | r8 g g fis e4 fis8 e
-  | d e fis4 g4. fis8
+  | r8 \highlightCFInv {
+    g_\markup {
+     \whiteout "c.f. [per dimin., inversus]"
+    }
+    g fis e4 fis8 e
+  | \unHighlightCF d } e fis4 g4. fis8
   | e a d, g~ g fis16 e fis8 g
   %5
-  | a4 g8 a b d,[ d cis]
-  | b4 cis8 b a b cis4
+  | a4 g8 a b \highlightCFInv { d,[ d cis]
+  | b4 cis8 b \unHighlightCF a } b cis4
   | d4. c16 b c4. b16 a
   | \stemDown\tieDown b8 b[ b c] d4 e8 fis
   | g b, e d c d d4
   %10
   | e8 c d c b c d4~
   | d8 c16 b c8 a b e\rest e4\rest
-  | \stemNeutral\tieNeutral r8 e d e fis g a g
-  | fis4 g8 gis a g fis e16 dis
+  | \stemNeutral\tieNeutral r8 \highlightCFInv { e d e fis g a g
+  | fis4 } g8 gis a g fis e16 dis
   | e2.~ e8 d16 cis
   %15
-  | d8 fis[ g fis] e d cis dis
-  | e4. fis16 g a4. g16 fis
+  | d8 \highlightCF { fis[ g fis] e d cis dis
+  | e4. } fis16 g a4. g16 fis
   | g4. fis16 e fis8 d g4~
   | g~ g16 e d e fis8 g a g16 fis
   | \stemDown g8 d[ d e] f g16 f \change Staff = "lower" \stemUp e8 d
   %20
-  | c \change Staff = "upper" \stemDown g'[ g fis] e fis g4
+  | c \change Staff = "upper" \stemDown g'[ g fis] e fis \highlightCF { \unHighlightCF g4 }
   | b,8\rest d[ d cis16 b] e8 cis16 d e8 cis
   | d16 e fis8 e16 fis g8 fis f\rest f4\rest
-  | \stemNeutral\tieNeutral r2 r8 a, b cis
+  | \stemNeutral\tieNeutral r2 r8 \highlightCFInv { a, b cis
   | d4 f e8 fis gis4
   %25
-  | a8 f e d cis16 dis e4 dis8
+  | \unHighlightCF a8 } f e d cis16 dis e4 dis8
   | e8. fis16 g8. a16 b8 a4 b16 a
   | g4 a d, e
   | fis8 a g fis e d c4
@@ -185,19 +191,19 @@ Alto = \context Voice = "two" \relative c'' {
   | \stemNeutral\tieNeutral r8 e d e fis g16 fis e8 fis
   | g4. fis16 e fis8 b, e4~
   %35
-  | e dis e8 fis[ g fis]
-  | e8 d16 e fis8 e d4. c8
-  | b cis d e16 d cis8 d e fis16 e
+  | e dis e8 \highlightCF { fis[ g fis]
+  | e8 d16 e fis8 e d4. } \highlightCFInv { c8
+  | b cis d e16 d cis8[ d] \unHighlightCF e } fis16 e
   | d8 e fis gis a4 a\rest
-  | r8 a b a g fis16 g a8 g
+  | r8 \highlightCF { a b a g fis16 g a8 g
   %40
-  | \stemDown\tieDown fis4 e8 fis16 g fis2
+  | \stemDown\tieDown fis4 } e8 fis16 g fis2
   | e8 fis g4~ g8 fis g fis
-  | g4. fis8~ fis e f e
-  | d c16 d e8 d c c\rest c4\rest
-  | b4 b\rest b8\rest b c b
+  | g4. fis8~ fis \highlightCF { e f e
+  | d c16 d e8 d c } c\rest c4\rest
+  | b4 b\rest b8\rest \highlightCF { b c b
   %45
-  | a8 g16 a b8 a g2\fermata
+  | a8 g16 a b8 a g2\fermata }
 }
 
 Tenor = \context Voice = "three" \relative c' {
@@ -209,8 +215,12 @@ Tenor = \context Voice = "three" \relative c' {
   \showStaffSwitch
   \stemNeutral\tieNeutral
   %1
-  | r8 g g a b4 a8 b
-  | c b a4 g8 gis a ais
+  | r8 \highlightCF {
+      g^\markup {
+        \whiteout "cantus firmus [per diminutionem]"
+      }
+    g a b4 a8 b
+  | c b a4 \unHighlightCF g8 } gis a ais
   | b4. a8 b cis d4~
   | \stemUp\tieUp d8 c b e a,2~
   %5
@@ -221,8 +231,8 @@ Tenor = \context Voice = "three" \relative c' {
   | e g,[ g fis] e a4 g8~
   %10
   | g g4 fis8 g g[ g f]
-  | e4. 	ees8 d b'[ c b]
-  | a g fis g a b c4~
+  | e4. 	ees8 d \highlightCF { b'[ c b]
+  | a g fis g \unHighlightCF a } b c4~
   | c b e, a~
   | a8 g16 fis g4. fis16 e fis4~
   %15
@@ -234,9 +244,9 @@ Tenor = \context Voice = "three" \relative c' {
   %20
   | g8 \change Staff = "lower" \stemUp\tieUp g,16[ a] b8 c16 d e8 d d8 e16 d
   | c8 b16 a b8 g~ g g16 fis e8 fis16 g
-  | a8 d4 cis8 d d[ c b]
+  | a8 d4 cis8 \highlightCF { d d[ c b]
   | a4 fis g8 fis e4
-  | d8 c' b a gis a b4
+  | \unHighlightCF d8 } c' b a gis a b4
   %25
   | c b e,16[ fis g8 a b]
   | c4 e dis8 e fis4~
@@ -246,23 +256,23 @@ Tenor = \context Voice = "three" \relative c' {
   %30
   | c8\rest a a g fis b a4
   | g8 a b a~ a fis g a~
-  | a g16 fis g4~ g8 fis b4
+  | a g16 fis g4~ g8 fis \highlightCF { b4
   | c b a g8 a
-  | b4 a g2
+  | b4 a g2 }
   %35
   | fis8 g a b16 a g8 a b4~
-  | b ais b8 fis[ e fis]
-  | g a16 g fis8 gis a b16 a g8 a
-  | b cis d4 cis8 fis,[ g fis]
-  | e8 d16 e fis8 e d4 c'\rest
+  | b ais b8 \highlightCFInv { fis[ e fis]
+  | g a16 g fis8 gis \unHighlightCF a } b16 a g8 a
+  | b cis d4 cis8 \highlightCF { fis,[ g fis]
+  | e8 d16 e fis8 e d4 } c'\rest
   %40
-  | c8\rest b c b a g16 a b8 a
-  | g a b c16 d e8 d[ d c]
+  | c8\rest \highlightCF { b c b a g16 a b8 a
+  | \unHighlightCF g } a b c16 d e8 d[ d c]
   | d4 e8 b b4. c8
-  | g4 g8\rest b c c,[ b c]
-  | d e16 d c8 d e f[ g f]
+  | g4 g8\rest b c \highlightCFInv { c,[ b c]
+  | d e16 d c8 d e } \highlightCF { f[ g f]
   %45
-  | ees8 d16 ees f!8 e d2\fermata
+  | ees8 d16 ees f!8 e \unHighlightCF d2\fermata }
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -271,10 +281,10 @@ Bass = \context Voice = "four" \relative c {
   \override Rest.staff-position = #0
   %1
   | R1*3
-  | g2\rest g8\rest d' d e
+  | g2\rest g8\rest \highlightCF { d' d e
   %5
   | fis4 e8 fis g fis e4
-  | d8 dis e eis fis4. e8
+  | \unHighlightCF d8 } dis e eis fis4. e8
   | fis b, e4~ e8 a, d4
   | g,8 g\rest g4\rest g8\rest g' g fis
   | e8. d16 c8 d a fis g b
@@ -283,11 +293,11 @@ Bass = \context Voice = "four" \relative c {
   | c2 g8 g\rest g4\rest
   | \override MultiMeasureRest.staff-position = #-6
     R1
-  | a8\rest d e d c b a b
-  | c4. b16 ais b2~
+  | a8\rest \highlightCF { d e d c b a b
+  | c4. } b16 ais b2~
   %15
-  | b4 a\rest a8\rest b a b
-  | c d e d cis a d4~
+  | b4 a\rest a8\rest \highlightCFInv { b a b
+  | c d e d \unHighlightCF cis } a d4~
   | d8 cis16 b cis8 c~ c b16 a b8 g
   | a8 b16 c d4~ d8 e fis d
   | g2~ g8 g[ g f]
@@ -300,23 +310,26 @@ Bass = \context Voice = "four" \relative c {
   %25
   | a4 gis a8 g fis4
   | e8 a g[ c] b cis dis b
-  | e4 fis g,8\rest g' fis e
+  | e4 fis g,8\rest \highlightCF { g' fis e
   | d4 b c8 b a4
-  | g8 fis e a d, d'[ d e]
+  | \unHighlightCF g8 } fis e a d, d'[ d e]
   %30
   | fis d g[ g,] d' d[ d cis]
   | b a g a16 g fis8 d e fis
   | g a b cis d4 g,\rest
   | R1
-  | a8\rest c d c b a16 b c8 b
+  | a8\rest \highlightCF { c_\markup {
+      \whiteout "c.f. [per diminutionem]"
+    }
+    d c b a16 b c8 b
   %35
-  | a4 b e, e'8 d
+  | a4 } b e, e'8 d
   | cis4 fis,8 fis' b, a g a
   | e4 b' a g\rest
-  | g\rest b a b
+  | g\rest \highlightCFInv { b a b
   | cis d8 cis b4 cis
   %40
-  | d8 dis e2 dis4
+  | \unHighlightCF d8 } dis e2 dis4
   | e8 e[ e d] c d16 c b8 a
   | g b cis dis e, e' d c
   | b a16 b c8 g e fis g a
@@ -350,7 +363,13 @@ Choral = \relative {
     \center-column {
       \line { \abs-fontsize #14 \bold "Vor deinen Thron tret' ich hiermit" }
       \null
-      \line { \abs-fontsize #10 \italic "Genf 1547 von Loys Bourgeois" }
+      \line {
+        \abs-fontsize #8 \italic
+        \concat {
+          "Genf 1547 von Loys Bourgeois (" \char ##x2055 " um 1515 Paris, Kantor zu Genf / St. Pierre, "
+          \char ##x2020 " nach 1561 [Paris?])"
+        }
+      }
       \null
       \line {
         \score {
@@ -386,9 +405,14 @@ Choral = \relative {
         }
       }
       \null\null
-      \line { \abs-fontsize #10 \italic "Bodo von Hodenberg" }
-      \null\null\null
-      \null\null\null
+      \line {
+        \abs-fontsize #8 \italic
+        \concat {
+          "Bodo von Hodenberg (" \char ##x2055 " 1604 Celle, "
+          \char ##x2020 " 1650 als Landdrost und Berghauptmann zu Osterode am Harz)  (*)"
+        }
+      }
+      \null\null\null\null\null
     }
   }
 }
@@ -413,8 +437,8 @@ Choral = \relative {
     >>
   >>
   \header {
-    composer = "Johann Sebastian Bach"
-    opus = "BWV 668"
+    composer = ##f % "Johann Sebastian Bach"
+    opus = ##f % "BWV 668"
     title = \markup { "Vor deinen Thron tret' ich hiermit" }
     subtitle = \markup {
       \column {
@@ -427,10 +451,60 @@ Choral = \relative {
   \layout {
     \context {
       \PianoStaff
+      \override Parentheses.font-size = #-2
       \override TextScript.font-shape = #'italic
+      \override TextScript.font-size = #-1
     }
   }
   \midi {
     \tempo 4 = 35
+  }
+}
+
+% Before your throne I now appear,
+% O God, and beg you humbly
+% Turn not your gracious face
+% From me, a poor sinner.
+% Confer on me a blessed end,
+% On the last day waken me Lord,
+% That I may see you eternally:
+% Amen, amen, hear me.
+
+\markup {
+  \footnote ""
+  \column \small\italic {
+     \line {
+       \concat {
+         "*" \hspace #.3 \vspace #1
+         "Before your throne I now appear, "
+         "O God, with fervent supplication:"
+       }
+     }
+     \line {
+       \concat {
+         " " \hspace #.3
+         "Alas, turn not thy loving "
+         "Face from me, poor sinner!"
+       }
+     }
+     \line {
+       \concat {
+         " " \hspace #.3
+         "Grant me a blessed end; "
+         "Take my soul into your hands,"
+       }
+     }
+     \line {
+       \concat {
+         " " \hspace #.3
+         "That I may behold thee there eternally bright. "
+       }
+     }
+     \line {
+       \concat {
+         " " \hspace #.3
+         "Yes, amen, yes, hear me!"
+       }
+     }
   }
 }
