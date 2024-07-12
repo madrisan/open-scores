@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [v53] - unreleased
+## [v53] - 2024-07-12
 
 ### Added
 
@@ -11,7 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - J.S. Bach: Fantasie und Fuge BWV904
 - J.S. Bach: Chorale Prelude BWV668 (arranged for piano by Ruoshi Sun)
 
-### changed
+### Changed
 
 - Ildebrando Pizzetti: Sogno - Better pagination
 
