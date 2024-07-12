@@ -44,7 +44,7 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
 |  | Suite Anglaises II BWV 807 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v53/JS-Bach-BWV807-Suite-Anglaise-2.pdf) |
 |  | Suite Anglaises III BWV 808 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v53/JS-Bach-BWV808-Suite-Anglaise-3.pdf) |
 |  | Suite Anglaises IV BWV 809 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v53/JS-Bach-BWV809-Suite-Anglaise-4.pdf) |
-|  | Suite Anglaises V BWV 810 | *milestone 2* |  |
+|  | Suite Anglaises V BWV 810 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v53/JS-Bach-BWV810-Suite-Anglaise-5.pdf) |
 |  | Suite Anglaises VI BWV 811 | *milestone 2* |  |
 |  | Das Wohltemperierte Klavier - Teil I | *milestone 3* |  |
 |  | Praeludium und Fughetta in d-moll BWV 899 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v53/JS-Bach-BWV899-Praeludium-und-Fughetta.pdf) |
