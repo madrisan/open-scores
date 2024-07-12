@@ -66,8 +66,8 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
 | Bach / Liszt | Präludium und Fuge BWV543 S462 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v52/Bach-Liszt-Praludium-und-Fuge-BWV543-S462.pdf) |
 | Bach / me | Chorale Prelude - Jesu meine Freude BWV 610 :three: | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v52/JS-Bach-BWV610-Jesu-meine-Freude.pdf) |
 |  | Chorale Prelude - Nun komm’ der Heiden Heiland BWV 659 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v52/JS-Bach-BWV659-Chorale-Prelude.pdf) |
-| Bach / Ruoshi Sun | Chorale Prelude - Vor deinen Thron tret' ich hiermit BWV 668 | | |
 | Bach / Petri | Schafe können sicher weiden BWV 208 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v52/JS-Bach-Petri-Schafe-konnen-sicher-weiden-BWV208.pdf) |
+| Bach / Ruoshi Sun | Chorale Prelude - Vor deinen Thron tret' ich hiermit BWV 668 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v53/JS-Bach-BWV668-Chorale-Prelude.pdf) |
 | Bach / Stark | Siciliano BWV 1031 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v52/JS-Bach-Stark-Siciliano-BWV1031.pdf) |
 | Bach / Stradal | Organ Sonata 4 Andante BWV 528 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v52/JS-Bach-Stradal-Organ-Sonata-4-Andante-BWV528.pdf) |
 | Ludwig van Beethoven | Klaviersonate Nr.8 Opus 13 - "Grande Sonate Pathétique" | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v52/Ludwig-van-Beethoven-Klaviersonate-8-op.13.pdf) |
