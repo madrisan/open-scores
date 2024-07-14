@@ -54,6 +54,7 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
 |  | Fantasie und Fuge BWV 904 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v53/JS-Bach-BWV904-Fantasie-und-Fuge.pdf) |
 |  | Neun kleine Präludien BWV 924-932 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v53/JS-Bach-BWV924-932-Neun-kleine-Praludien.pdf) |
 |  | Sechs kleine Präludien BWV 933-938 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v53/JS-Bach-BWV933-938-Sechs-kleine-Praludien.pdf) |
+|  | Fuga d-Moll BWV948 | | |
 |  | Praeludium Fuge und Allegro BWV 998 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v53/JS-Bach-BWV998-Praeludium-Fuge-und-Allegro.pdf) |
 |  | Musikalisches Opfer: Ricercar a 3, Ricercar a 6 BWV 1079 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v53/JS-Bach-BWV1079-Musikalisches-Opfer.pdf) |
 | Bach / Busoni | Chorale Prelude - In dir ist Freude BWV 615 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v53/JS-Bach-Busoni-Chorale-Prelude-BWV615.pdf) |

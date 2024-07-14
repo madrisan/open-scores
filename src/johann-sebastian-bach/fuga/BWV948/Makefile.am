@@ -23,7 +23,8 @@ EXTRA_DIST = JS-Bach-BWV948-Fuga-d-Moll.ly \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
-	     logo.ly
+	     logo.ly \
+	     macros.ly
 
 all: $(BUILT_SOURCES) JS-Bach-BWV948-Fuga-d-Moll
 

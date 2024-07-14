@@ -98,6 +98,8 @@
   }
 }
 
+\include "./macros.ly"
+
 Global = {
   \key d \minor
   \time 4/4
@@ -109,13 +111,13 @@ Soprano = \context Voice = "one" \relative c'' {
   \stemUp\tieUp
   | R1*4
   %5
-  | r2 r4 r8 a16 b
+  | r2 r4 \highlightSubject { r8 a16 b
   | c8 a e' a, gis4 r16 e' d e
   | c e a, c f d a c b d g, b e c g b
   | a c f, a d b fis a gis b e, gis b d gis, b
   | d f! b, d gis, f' e d c e a, c e, b' a gis
   %10
-  | a c fis, a r c b a gis b e, gis r bes a g
+  | \unHighlightSubject a } c fis, a r c b a gis b e, gis r bes a g
   | fis a d, fis r aes g f e g cis, e r g f e
   | d8 d16 e f8 f16 g a8 a16 b cis8 b16 cis
   | d8 bes g bes c! a f a
@@ -124,13 +126,13 @@ Soprano = \context Voice = "one" \relative c'' {
   %15
   | f d'~ d16 d c! b! a gis a b b8\parenthesize\trill a16 b
   | c8 a e' a, gis4 r8 g16 a
-  | bes!8 g d' g, fis4 r8 f16 g
+  | bes!8 g d' g, fis4 \highlightSubject { r8 f16 g
   | a8 f c' f,  e4 r16 c' bes c
   | a c f, a d bes f a g bes e, g c a e g
   %20
   | f a d, f bes g d f e g c, e g bes e, g
   | bes d g, bes e, d' c bes a c f, a c, g' f e
-  | f a d, f b, a' g f e g c, e g c e, g
+  | \unHighlightSubject f } a d, f b, a' g f e g c, e g c e, g
   | \stemNeutral c e g, c e g c, e d g b, d g, b a g
   | \stemUp r4 f'~ f e4~
   %25
@@ -141,12 +143,12 @@ Soprano = \context Voice = "one" \relative c'' {
   | g4 f2 e16 d' c bes
   %30
   | \stemNeutral a bes a g f g f g a8 f c' f,
-  | e c r g'16 a bes8 g d' g,
+  | e c \highlightSubject { r g'16 a bes8 g d' g,
   | fis4 r16 d' c d bes d g, bes ees c g bes
   | a c f, a d bes f a g bes ees, g c a e g
   | fis a d, fis a c fis, a c ees a, c fis,! ees' d c
   %35
-  | bes d g, bes d, a' g fis g8 \stemUp r ees'4~
+  | bes d g, bes d, a' g fis g8 } \stemUp r ees'4~
   | ees8 f, d'4~ d8 ees, c'4~
   | c8 d, bes'4~ bes8 c, a'4
   | bes8 bes16 c d8 d16 e! f8 f16 g a8 g16 a
@@ -155,13 +157,13 @@ Soprano = \context Voice = "one" \relative c'' {
   | g ees c ees f16 a c, f a, c f, a
   | \stemNeutral c ees a, c f, ees' d c f bes d, f a, ees'! d c
   | d8 bes f' bes, a4 r8 c16 d
-  | e!8 c g' c, b4 r8 d16 e
+  | e!8 c g' c, b4 \highlightSubject { r8 d16 e
   | \stemUp f8 d a' d, cis4 r16 a' g a
   %45
   | f a d, f bes! g d f e g c, e a f c e
   | d f bes, d g e b d cis e a, cis e g cis, e
   | g bes! e, g cis, bes' a g f a d, f a, e' d cis!
-  | d f b, d gis, d' c b a8 a16 b c8 c16 d
+  | \unHighlightSubject d } f b, d gis, d' c b a8 a16 b c8 c16 d
   | e8 e16 fis gis8 fis16 gis a8 f d f
   %50
   | g! e c e f d b! d
@@ -182,11 +184,13 @@ Soprano = \context Voice = "one" \relative c'' {
   | g f2 e4~
   | e16 g cis, e a8 g~ g2
   %65
-  | a8 d, r16 d cis d <g, bes>4 r4^\markup { \normalsize \char ##x274A }
+  | a8 d, r16 d cis d <g, bes!>4 r4^\markup { \normalsize \char ##x274A }
   | %\override Beam.damping = #+inf.0
     \override Stem.details.beamed-lengths = #'(4 5 6.8)
     \magnifyMusic 0.75 {
-      g32 a bes a g f e d
+      g32^\markup {
+        "Verlängerter Schluss (Extended closing)"
+      } a bes a g f e d
       \once\override Beam.damping = #+inf.0 cis d e d cis \change Staff = "lower" bes g e
       cis e g bes \change Staff = "upper" cis! e g bes \stemDown e g bes g e cis g e
   \break
@@ -222,13 +226,17 @@ Soprano = \context Voice = "one" \relative c'' {
   |   \stemUp bes g fis g d g bes,! d \change Staff = "lower" g, a bes a g f e! d
       cis e g bes \change Staff = "upper" cis e g bes \stemDown cis e g bes g e cis bes
   %80
-  |   \stemUp <cis, e g bes>4 s4 <a' cis>4. r16 <bes e>
+  |   \arpeggioArrowDown
+      \override PianoStaff.Arpeggio.color = \greyTextColor
+      \stemUp <cis, e g bes>4\arpeggio s4 <a' cis>4. r16 <bes e>
   |   <c ees>4. r16 q <g b>4. d'16\rest <a d>
   |   <e! gis>4. b'16\rest q <g bes>4
     }
     \revert Stem.details.beamed-lengths
     r16^\markup { \normalsize \char ##x274A } g a e
-  | f4~ f8 e e2\parenthesize\prallprall
+  | f4~ f8 e
+    \once\override Script.color = \greyTextColor
+    e2\prallprall
   | d1\fermata
     \fine
 }
@@ -237,12 +245,12 @@ Alto = \context Voice = "two" \relative c' {
   \voiceTwo
   \stemDown\tieDown
   %1
-  | r4 r8 d16 e f8 d a' d,
+  | r4 \highlightSubject { r8 d16 e f8 d a' d,
   | cis4 r16 a' g a f a d, f bes g d f
   | e g c, e a f c e d f bes, d g e b d
   | cis e a, cis e g cis, e g bes! e, g cis,! bes' a g
   %5
-  | f a d, f a, e' d cis d f b, d gis, d' c b
+  | f a d, f a, e' d cis \unHighlightSubject d } f b, d gis, d' c b
   | a8 a16 b c8 c16 d e8 e16 fis gis8 fis16 gis
   | a8 f! d f g! e c e
   | f d b! d d r r d
@@ -325,20 +333,20 @@ Tenor = \context Voice = "three" \relative c' {
   | g ees d a' bes \change Staff = "upper" \stemDown\tieDown bes'~ bes16 d c bes
   | \override Tie.extra-offset = #'(0 . -1)
     a4~ a16 c bes a g4~ g16 bes a g
-  | f4~ f16 a g f ees4~ ees16 g f ees
+  | f4~ f16 a g f ees4~ ees16 g \highlightSubject { f ees
     \revert Tie.extra-offset
   | d8 bes f' bes, a4 f'16\rest f ees f
   %40
   | d f bes, d g ees bes d c ees a, c f d a c
   | bes d g, bes ees c \change Staff = "lower" \stemUp g bes a c f, a c ees a, c
   | ees g c, ees a, g' f ees d f bes, d f, c' bes a
-  | bes8 bes16 c d8 d16 e f8 f,16 g a8 a16 b
+  | \unHighlightSubject bes8 } bes16 c d8 d16 e f8 f,16 g a8 a16 b
   | c8 c16 d e8 e16 f g8 g,16 a b8 b16 cis
   %45
   | d8 \change Staff = "upper" \stemDown d16 e f8 f16 g a8 a16 b cis!8 b16 cis
   | d8 bes g bes c! a f a
   | bes g e g g4 g8\rest g
-  | e g a cis, d f a g
+  | e g a cis, d f \highlightSubject { \unHighlightSubject a } g
   | f c\rest e c\rest e4 a
   %50
   | b4 g8\rest e' e4 g,8\rest c
@@ -348,12 +356,12 @@ Tenor = \context Voice = "three" \relative c' {
     \change Staff = "lower" \stemUp\tieUp
   | s1*2
   %56
-  | r4 r8 a, bes g d' g,
+  | r4 \highlightSubject { r8 a, bes g d' g,
   | fis4 d'16\rest d c d bes d g, bes ees c g bes
   | a c f, a d bes f a g bes ees,! g c a e g
   | fis a d, fis a c fis, a c ees a, c fis,! ees' d c
   %60
-  | bes d g, bes d, a' g fis g bes e,! g cis, g' f e
+  | \unHighlightSubject bes } d g, bes d, a' g fis g bes e,! g cis, g' f e
   | s1*2
   | s2 d'
   | c bes4 b
@@ -362,7 +370,10 @@ Tenor = \context Voice = "three" \relative c' {
   | s1*17
   %83
   | a4 b a4. g8~
-  | g4 fis8\parenthesize\prall e fis2\fermata
+  | g4
+    \once\override Script.color = \greyTextColor
+    fis8\prall
+    e fis2\fermata
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -373,13 +384,13 @@ Bass = \context Voice = "four" \relative c {
   %1
   | R1*10
   %11
-  | r2 r4 r8 d16 e
+  | r2 r4 \highlightSubject { r8 d16 e
   | f8 d a' d, cis4 r16 a' g a
   | f a d, f bes! g d f e g c, e a f c e
   | d f bes, d g e b d cis e a, cis e g cis, e
   %15
   | g bes! e, g cis,! bes' a g f a d, f a, e' d cis!
-  | d f b, d gis, f' e d c e a, c e, d' c b!
+  | \unHighlightSubject d } f b, d gis, f' e d c e a, c e, d' c b!
   | a8 a16 b c8 c16 d e e' d c b a g fis
   | g8 g,16 a bes8 bes16 c d d' c bes a g f! e
   | \stemDown f8 f,16 g a8 a16 bes c8 c16 d e8 d16 e
@@ -387,13 +398,13 @@ Bass = \context Voice = "four" \relative c {
   | f8 d bes d e c a c
   | d bes g bes bes4 b8\rest bes
   | g bes c c, f a c c,
-  | d f g g c,4 g'8\rest c16 d
+  | d f g g c,4 \highlightSubject { g'8\rest c16 d
   | \stemNeutral e8 c g' c, b4 r16 g' f g
   %25
   | e g c, e a f c e d f b, d g e b d
   | c e a, c f d a c b d g, b d f b, d
   | f a d, f b, a' g f e g c, e g, d' c b!
-  | c g e g c g' a g fis a d, fis g, a' g f
+  | \unHighlightSubject c } g e g c g' a g fis a d, fis g, a' g f
   | \stemDown e! g c, e f, g' f e d4 e
   %30
   | f d bes c
@@ -415,11 +426,11 @@ Bass = \context Voice = "four" \relative c {
   | \override MultiMeasureRest.staff-position = #0
     R1*4
   %49
-  | r4 r8 a,16 b! c8 a e' a,
+  | r4 \highlightSubject { r8 a,16 b! c8 a e' a,
   | gis4 r16 e' d e c e a, c f d a c
   | b d g, b e c g b a c f, a d b fis a
   | gis b e, gis b d gis, b d f b, d gis,! f' e d
-  | c32 b a b c d e fis gis fis e fis gis a b c d c b c d e f! d b c d c b c d b
+  | \unHighlightSubject c32 b a } b c d e fis gis fis e fis gis a b c d c b c d e f! d b c d c b c d b
   | gis8 r r s s2
   %55
   | s1
@@ -430,16 +441,18 @@ Bass = \context Voice = "four" \relative c {
   %60
   | g4 f,\rest g2\rest
   | \stemNeutral d'4 d' bes g
-  | a r8 g f d a' d,
+  | a \highlightSubject { r8 g f d a' d,
   | cis4 \stemDown r16 a' g a f a d, f bes! g d f
   | e g 	c,! e a f c e d f bes, d g e b d
   %65
   | cis e a, cis e g cis, e g bes! e, g cis,! bes' a g
-  | \stemNeutral f a d, f a, f' e d cis4 r
+  | \stemNeutral f a d, f a, f' e d cis4 } r
   | s1*13
   %81
   \magnifyMusic 0.75 {
-  |  <cis e g bes>4 s g'4. r16 g
+  |  \override PianoStaff.Arpeggio.arpeggio-direction = #DOWN
+     \override PianoStaff.Arpeggio.color = \greyTextColor
+     <cis e g bes>4\arpeggio s g'4. r16 g
   |  fis4. r16 fis f4. r16 f
   |  d4. r16 d cis4
   }
@@ -450,7 +463,7 @@ Bass = \context Voice = "four" \relative c {
 }
 
 \score {
-  \new PianoStaff
+  \new PianoStaff \with { connectArpeggios = ##t }
   <<
     \accidentalStyle Score.piano
     \context Staff = "upper" <<
