@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [v54] - unrealeased
+
+### Added
+
+- J.S. Bach: Fuga d-Moll BWV948
+
 ## [v53] - 2024-07-12
 
 ### Added
@@ -21,7 +27,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - J.S. Bach: Das wohltemperierte Klavier – Zweiter Teil: Praeludium und Fuga I
 - J.S. Bach: Das wohltemperierte Klavier – Zweiter Teil: Praeludium und Fuga II
-- J.S. Bach: Das wohltemperierte Klavier – Zweiter Teil: Praeludium une Fuga III
+- J.S. Bach: Das wohltemperierte Klavier – Zweiter Teil: Praeludium und Fuga III
 - J.S. Bach: Suite Anglaise 3 BWV808
 
 ### Fixed
