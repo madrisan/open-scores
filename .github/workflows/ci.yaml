@@ -10,28 +10,41 @@ on:
   pull_request:
     types: [assigned, edited, opened, synchronize, reopened]
 
+env:
+  lilypond_version: 2.24.3
+
 jobs:
   build-checks:
     runs-on: ubuntu-latest
-    container: 'fedora:39'
+    container: 'alpine:3.20'
 
     steps:
+      - id: install_pkg_deps
+        run: |
+          apk update
+          apk add autoconf automake bzip2 git lilypond make python3 py3-pip tar xz
+
       - uses: actions/checkout@v2
 
-      - id: install_deps
-        run: |
-          dnf -y update
-          dnf -y install autoconf automake bzip2 lilypond make xz
-
-      - id: configure
+      - id: build_checks
         run: |
           autoreconf --install
           ./configure
+#          make dist && make
 
-      - id: make_dist
+      - id: install_mupub
         run: |
+          git clone https://github.com/MutopiaProject/MutopiaProject /opt/MutopiaProject/MutopiaProject
+          git clone https://github.com/MutopiaProject/MutopiaWeb /opt/MutopiaProject/MutopiaWeb
+          git clone https://github.com/madrisan/mupub.git /opt/MutopiaProject/mupub
+          cd /opt/MutopiaProject/mupub
+          git checkout ci
+          pip3 install --break-system-packages -r requirements.txt
           make dist
-
-      - id: make
-        run: |
-          make
+          pip3 install --break-system-packages dist/mupub-1.0.8-py2.py3-none-any.whl
+          mupub init <<'END'
+          /opt/MutopiaProject/MutopiaWeb/datafiles
+          /opt/MutopiaProject/MutopiaProject
+          END
+          mupub --version
+          cat ~/.mupub/mu-config.cfg
