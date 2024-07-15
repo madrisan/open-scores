@@ -49,3 +49,8 @@ jobs:
           mkdir ~/.mupub/lycache
           mupub --version
           cat ~/.mupub/mu-config.cfg
+
+      - id: mupub_check
+        run: |
+          cd /__w/open-scores/open-scores/src/johann-sebastian-bach/fuga/BWV948
+          mupub check --header-file header.ily JS-Bach-BWV948-Fuga-d-Moll.ly
