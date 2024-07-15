@@ -46,5 +46,6 @@ jobs:
           /opt/MutopiaProject/MutopiaWeb/datafiles
           /opt/MutopiaProject/MutopiaProject
           END
+          mkdir ~/.mupub/lycache
           mupub --version
           cat ~/.mupub/mu-config.cfg
