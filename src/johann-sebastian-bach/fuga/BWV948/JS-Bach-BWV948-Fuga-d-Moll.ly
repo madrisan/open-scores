@@ -143,8 +143,8 @@ Soprano = \context Voice = "one" \relative c'' {
   | g4 f2 e16 d' c bes
   %30
   | \stemNeutral a bes a g f g f g a8 f c' f,
-  | e c \highlightSubject { r g'16 a bes8 g d' g,
-  | fis4 r16 d' c d bes d g, bes ees c g bes
+  | e c \highlightSubject { b'\rest g16 a bes8 g d' g,
+  | fis4 b16\rest d c d bes d g, bes ees c g bes
   | a c f, a d bes f a g bes ees, g c a e g
   | fis a d, fis a c fis, a c ees a, c fis,! ees' d c
   %35
@@ -236,7 +236,7 @@ Soprano = \context Voice = "one" \relative c'' {
     r16^\markup { \normalsize \char ##x274A } g a e
   | f4~ f8 e
     \once\override Script.color = \greyTextColor
-    e2\prallprall
+    e2\parenthesize\prallprall
   | d1\fermata
     \fine
 }
@@ -244,6 +244,8 @@ Soprano = \context Voice = "one" \relative c'' {
 Alto = \context Voice = "two" \relative c' {
   \voiceTwo
   \stemDown\tieDown
+  \override VoiceFollower.color = \greyTextColor
+  \override VoiceFollower.style = #'dashed-line
   %1
   | r4 \highlightSubject { r8 d16 e f8 d a' d,
   | cis4 r16 a' g a f a d, f bes g d f
@@ -273,7 +275,10 @@ Alto = \context Voice = "two" \relative c' {
   | a f d f f4 r8 f
   | d f~ f16 f e d c8 c b d
   | c4 r8 ees d4 r8 d
-  | c4 r16 e d c bes d g,_\markup { \tiny "l.H." } bes r d_\markup { \tiny "r.H." }  c bes
+  | c4 r16 e d c bes d
+    %g,_\markup { \tiny "l.H." } bes r d_\markup { \tiny "r.H." }  c bes
+    \change Staff = "lower" \stemUp g, bes
+    \change Staff = "upper" \stemDown r d c bes
   | s1*24
   %54
   | s4. g'8 f e\rest f c\rest
@@ -285,16 +290,22 @@ Alto = \context Voice = "two" \relative c' {
   %60
   | r1
   | g16\rest bes a g f a d, f r a g f e g cis, e
-  | r16 g f e f e d_\markup { \tiny "l.H." } cis d8 d16 e f8 f16_\markup { \tiny "r.H." } g
+  | r16 g f e f e
+    \change Staff = "lower" \stemUp
+    d cis d8 d16 e f8
+    \change Staff = "upper" \stemDown
+    f16 g
   | a8 a16 b cis8 b16 cis d8 bes g bes
   | c a f a bes g e g
   %65
   | g r
     \once\override TextScript.extra-offset = #'(-3.5 . 1.8)
-    cis,16_\markup { \tiny "l.H." } e a, cis e g cis, e a, g' f e
+    \showStaffSwitch \change Staff = "lower" \stemUp
+    cis,16 e a, cis e g cis, e a, g' f e
   | d f a, d
+    \change Staff = "upper" \stemDown
     \once\override TextScript.extra-offset = #'(0.5 . 0.5)
-    f4_\markup { \tiny "r.H." } e r4
+    f4 \hideStaffSwitch e r4
   | s1*13
   %80
   | s4
@@ -313,6 +324,8 @@ Alto = \context Voice = "two" \relative c' {
 Tenor = \context Voice = "three" \relative c' {
   \voiceThree
   \stemUp\tieUp
+  \override VoiceFollower.color = \greyTextColor
+  \override VoiceFollower.style = #'dashed-line
   %1
   | s1*18
   | r4 r8 a g4 r4
@@ -335,10 +348,11 @@ Tenor = \context Voice = "three" \relative c' {
     a4~ a16 c bes a g4~ g16 bes a g
   | f4~ f16 a g f ees4~ ees16 g \highlightSubject { f ees
     \revert Tie.extra-offset
-  | d8 bes f' bes, a4 f'16\rest f ees f
+  | d8 bes f' \change Staff = "lower" \stemUp bes, a4
+    g'16\rest f ees f
   %40
   | d f bes, d g ees bes d c ees a, c f d a c
-  | bes d g, bes ees c \change Staff = "lower" \stemUp g bes a c f, a c ees a, c
+  | bes d g, bes ees c g bes a c f, a c ees a, c
   | ees g c, ees a, g' f ees d f bes, d f, c' bes a
   | \unHighlightSubject bes8 } bes16 c d8 d16 e f8 f,16 g a8 a16 b
   | c8 c16 d e8 e16 f g8 g,16 a b8 b16 cis
@@ -366,13 +380,13 @@ Tenor = \context Voice = "three" \relative c' {
   | s2 d'
   | c bes4 b
   %65
-  | a8 r r4 s2
+  | a8 r \showStaffSwitch \change Staff = "upper" b4\rest s2 \hideStaffSwitch \change Staff = "lower"
   | s1*17
   %83
   | a4 b a4. g8~
   | g4
     \once\override Script.color = \greyTextColor
-    fis8\prall
+    fis8\parenthesize\prall
     e fis2\fermata
 }
 
