@@ -6,6 +6,20 @@ Global = {
 
 \include "../macros.ly"
 
+sopranoOssia = \relative c'' { }
+%sopranoOssia = \relative c'' {
+%  \set minimumBeamSubdivisionInterval = \musicLength 8
+%  | \stopStaff s1*3
+%  %4
+%  | \startStaff \stemUp
+%    \set subdivideBeams = ##t
+%    c16 b \tuplet 5/4 { c32 b c b c }
+%    \set subdivideBeams = ##f
+%    b4 a16 b c d e a, e' fis
+%    \stopStaff
+%  | s1
+%}
+
 Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
   \stemUp\tieUp
@@ -330,9 +344,12 @@ Tenor = \context Voice = "three" \relative c' {
   | cis c b bes
   | a } d2 cis4
   | \highlightSubjectFirst { d8 e f d a'4 b8\rest d,
-  | bes'4 r8 d, a'4
-    \change Staff = "upper"
-    \once\override Voice.Rest.X-offset = #0.2 g,16\rest \stemDown g' f e
+  | bes'4 r8 d,
+    \change Staff = "upper" \stemDown
+    \once\override NoteColumn.force-hshift = #0.3
+    \once\override Stem.length = #4
+    a'4
+    \once\override Voice.Rest.X-offset = #0.2 g,16\rest g' f e
   %70
   | d \change Staff = "upper"\stemDown e f d \stemUp g8 g g f16 e g f e d
   | \once\stemDown e2_~ \once\override NoteColumn.force-hshift = #0.8 \unHighlightSubject e8 } a, d d
@@ -444,23 +461,32 @@ Bass = \context Voice = "four" \relative c {
 }
 
 \score {
-  \new PianoStaff
   <<
-    \accidentalStyle Score.piano
-    \context Staff = "upper" <<
-      \set Staff.midiInstrument = #"acoustic grand"
-      \Global
-      \clef treble
-      \Soprano
-      \Alto
+  \new Staff = "ossia" \with {
+    \include "../ossiasetup.ly"
+    \hide Clef
+    \remove Time_signature_engraver
+  }
+  { \sopranoOssia }
+  \new PianoStaff {
+    <<
+      \accidentalStyle Score.piano
+      \context Staff = "upper" <<
+        \set Staff.midiInstrument = #"acoustic grand"
+        \Global
+        \clef treble
+        \Soprano
+        \Alto
+      >>
+      \context Staff = "lower" <<
+        \set Staff.midiInstrument = #"acoustic grand"
+        \Global
+        \clef bass
+        \Tenor
+        \Bass
+      >>
     >>
-    \context Staff = "lower" <<
-      \set Staff.midiInstrument = #"acoustic grand"
-      \Global
-      \clef bass
-      \Tenor
-      \Bass
-    >>
+  }
   >>
   \header {
     composer = ##f # "Johann Sebastian Bach"
