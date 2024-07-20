@@ -77,6 +77,8 @@ AC_CONFIG_FILES([\
   src/arnold-schoenberg/sechs-kleine-klavierstucke-op.19/Makefile \
   src/baldassare-galuppi/Makefile \
   src/baldassare-galuppi/sonata-5-c-major/Makefile \
+  src/carl-philipp-emanuel-bach/Makefile \
+  src/carl-philipp-emanuel-bach/solfeggio-H.220/Makefile \
   src/christoph-willibald-gluck/Makefile \
   src/christoph-willibald-gluck/orfeo-melodie-sgambati/Makefile \
   src/clara-schumann-wieck/Makefile \

@@ -20,6 +20,7 @@ AM_MAKEFLAGS = --no-print-directory
 SUBDIRS = alfredo-casella \
 	  arnold-schoenberg \
 	  baldassare-galuppi \
+	  carl-philipp-emanuel-bach \
 	  christoph-willibald-gluck \
 	  clara-schumann-wieck \
 	  domenico-scarlatti \

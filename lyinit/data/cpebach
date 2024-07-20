@@ -1,0 +1,7 @@
+composer_firstname='Carl Philipp Emanuel'
+composer_lastname="Bach"
+instruments="For Piano, Harpsichord"
+header_composer="Carl Philipp Emanuel Bach (1714-1788)"
+header_style="Classical"
+mutopiacomposer="BachCPE"
+mutopiainstrument="Harpsichord, Piano"

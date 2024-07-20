@@ -28,6 +28,7 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
 | Johannes Brahms | Rapsodie Es-Dur, *from 4 Klavierstücke Op. 119* | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v53/Johannes-Brahms-Klavierstucke-op.119.pdf) |
 |  | Rapsodie h-moll Op.79. I | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v53/Johannes-Brahms-Rhapsodie-op.op.79-nr.1.pdf) |
 |  | Rapsodie g-moll Op.79. II | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v53/Johannes-Brahms-Rhapsodie-op.op.79-nr.2.pdf) |
+| Carl Philipp Emanuel Bach | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v54/CPE-Bach-H.220-Solfeggio-c-Moll.pdf) |
 | Johann Sebastian Bach :zero: | Clavierübung Teil I - Partiten I BWV 825 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v53/JS-Bach-BWV825-Partita-1.pdf) |
 |  | Clavierübung Teil I - Partiten II BWV 826 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v53/JS-Bach-BWV826-Partita-2.pdf) |
 |  | Clavierübung Teil I - Partiten III BWV 827 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v53/JS-Bach-BWV827-Partita-3.pdf)  |
