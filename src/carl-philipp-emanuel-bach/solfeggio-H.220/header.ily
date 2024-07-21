@@ -19,8 +19,8 @@
 
   opus = "Wq 117/2, H.220"
   title = "Solfeggio in c-Moll"
-  source = "Based on: Les Éditions Outremontaises - Montréal, 2006"
-  style = "Baroque"
+  source = "Les Éditions Outremontaises - Montréal, 2006"
+  style = "Classical"
 
   copyright = \markup {
     \override #'(font-name . "DejaVu Sans, Bold")

@@ -35,9 +35,9 @@
         (padding . 2)
         (stretchability . 24))
   system-system-spacing =
-     #'((basic-distance . 2)
+     #'((basic-distance . 1)
         (minimum-distance . 1)
-        (padding . 2)
+        (padding . 1)
         (stretchability . 24))
   top-margin = 10\mm
   top-markup-spacing.basic-distance = 0
@@ -109,9 +109,10 @@ Soprano = \context Voice = "one" \relative c' {
   \stemUp\tieUp
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \tempo "Prestissimo" 4 = 180
   %1
   | s4 c16 ees d c b s8. g'16 f ees d
-  | ees s8. c'16 ees d c d c b a g f ees d
+  | ees s8. c'16-1 ees-3 d c d-5 c b a g-1 f-3 ees d
   | ees16 s8. c'16 ees d c b s8. g'16 f ees d
   | ees16 s8. c'16 ees d c d c b a g f ees d
   %5
@@ -125,31 +126,31 @@ Soprano = \context Voice = "one" \relative c' {
   | bes16 s8. g'16 bes a g fis s8.d'16 c bes a
   | bes16 s8. g'16 bes a! g a g fis e d c bes a!
   | bes g bes d \stemNeutral g d bes g r g' d b g b d g
-  | \stemUp b16\rest g, g' g, b'16\rest g, g' g, b'16\rest g, g' g, b'16\rest g, g' g,
+  | \stemUp b16\rest g, g' g, b'16\rest g, g' g, b'16\rest g, f' g, b'16\rest g, f' g,
   %15
-  | \stemNeutral ees' c ees g c g ees c r c' g e c e g c
+  | \stemNeutral ees'_\f c ees g c g ees c r c' g e c e g c
   | \stemUp e16\rest c, c' c, e'16\rest c, c' c, d'16\rest c, bes' c, d'16\rest c, bes' c,
-  | aes'16 s8. s2.
+  | aes'16_\f s8. s2.
   | s4 f,16 aes g f g f e d s4
   | s4 f16 aes g f e s8. c'16 bes aes g
   %20
   | aes s8. f'16 aes g f g f e d c bes aes g
   | aes f' c aes f c' aes f c aes' f c aes f' c aes
-  | \stemNeutral r2 aes''16 f e f g f e f
-  | r2 aes,16 f e f g f e f
-  | r2 d''16 f, g aes g f ees! d
+  | \stemNeutral r2 aes''16_\f f e f g f e f
+  | r2 aes,16_\p f e f g f e f
+  | r2 d''16\f f, g aes g f ees! d
   %25
-  | ees g c g bes aes g f ees4 d\prall
+  | ees g c g-1 bes-4 aes g f ees4 d\prall
   | \stemUp b'16\rest g, g' g, b'\rest g, g' g, b'\rest g, f' g, b'\rest g, f' g,
   | b'\rest g, e' g, b'\rest g, e' g, b'\rest ees, c' ees, b'\rest ees, c' ees,
   | b'\rest f, d' f, b'\rest f, d' f, b'\rest des, bes' des, b'\rest des, bes' des,
   | e\rest ees, c' ees, e'\rest ees, c' ees, \stemNeutral r c' c' c, r c c' c,
   %30
   | r16 c ees g c g ees c g' ees c g f' d b f
-  | \stemUp ees s8. c16 ees d c b s8. g'16 f ees d
+  | \stemUp ees s8. c16-1 ees-4 d c b s8. g'16 f ees d
   | ees s8. c'16 ees d c d c b a g f ees d
   | ees s8. c'16 ees d c b s8. g'16 f ees d
-  | ees s8. c'16 ees d b c s8. s16 g, ees d
+  | ees s8. c'16 ees d b c^> s8. s16 g,-5 ees d
   %35
   | c8 r r4 r2
     \fine
@@ -174,10 +175,10 @@ Alto = \context Voice = "two" \relative c' {
   | s2 s16 d fis! a! s4
   | s16 g bes d s2.
   | s1
-  | <ees, c'>4_. q_. <d b'>_. q_.
+  | <ees, c'>4_._\p q_. <d b'>_. q_.
   %15
   | s1
-  | <aes' f'>4_. q_. <g e'>_. q_.
+  | <aes' f'>4_._\p q_. <g e'>_. q_.
   | s1*2
   | s2 s16 c, e! g s4
   %20
@@ -185,10 +186,10 @@ Alto = \context Voice = "two" \relative c' {
   | aes16 s8. f16 s8. c16 s8. aes16 s8.
   | s1*4
   %26
-  | <ees' c'>4_. q_. <d b'>_. q_.
-  | <c bes'>_. q <f a>_. q_.
-  | <bes, aes'>_. q_. <ees g>_. q
-  | <aes, fis'>_. q_. s2
+  | <ees' c'>4_._\p q_. <d b'>_. q_.
+  | <c bes'>_. q <f a>_._\f q_.
+  | <bes, aes'>_._\p q_. <ees g>_._\f q
+  | <aes, fis'>_._\p q_. s2
   %30
   | s1*2
   | s16 c ees g s2.
@@ -209,7 +210,7 @@ Tenor = \context Voice = "three" \relative c {
   | bes16 s8. s2.
   | s1*6
   %17
-  | s4 f16 aes g f e s8. c'16 bes aes g
+  | s4 f16-1 aes-4 g f e s8. c'16 bes aes g
   | aes s8. s2 c16 bes aes g
   | aes16 s8. s2.
 }
@@ -220,7 +221,7 @@ Bass = \context Voice = "four" \relative c {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   %1
-  | s16 c ees g s4 s16 g b d s4
+  | s16^\mf c ees g s4 s16 g b d s4
   | s1*3
   %5
   | s2 s16 f, aes c s4
@@ -247,7 +248,7 @@ Bass = \context Voice = "four" \relative c {
   %25
   | \stemNeutral <c, c'>4 f' g g,
   | s1*3
-  | s2 <fis' ees'>4^. q^.
+  | s2 <fis' ees'>4^.^\f q^.
   %30
   | <g ees'> r r g,
   | r16 c ees g s4 s16 g b d s4
