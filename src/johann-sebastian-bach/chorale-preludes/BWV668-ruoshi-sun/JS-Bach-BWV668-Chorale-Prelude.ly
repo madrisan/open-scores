@@ -123,7 +123,7 @@ Sopran = \context Voice = "one" \relative c'' {
   %29
   | f2\rest \highlightCF { d
   | c4 b a8 g fis4
-  | g8 fis e4 } \once\override Tie.staff-position = #-2 d2~
+  | g8 fis e4 \once\override Tie.staff-position = #-2 \unHighlightCF d2~ }
   | d f'2\rest
   | R1*7
   %40
@@ -152,12 +152,12 @@ Alto = \context Voice = "two" \relative c'' {
      \whiteout "c.f. [per dimin., inversus]"
     }
     g fis e4 fis8 e
-  | \unHighlightCF d } e fis4 g4. fis8
+  | d e fis4 g4. } fis8
   | e a d, g~ g fis16 e fis8 g
   %5
   | a4 g8 a b \highlightCFInv { d,[ d cis]
-  | b4 cis8 b \unHighlightCF a } b cis4
-  | d4. c16 b c4. b16 a
+  | b4 cis8 b a b cis4
+  | d4. } c16 b c4. b16 a
   | \stemDown\tieDown b8 b[ b c] d4 e8 fis
   | g b, e d c d d4
   %10
