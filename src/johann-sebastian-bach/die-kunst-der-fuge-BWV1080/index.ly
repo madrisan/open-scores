@@ -55,47 +55,47 @@
 \markup { \indexItem #32 "Contrapunctus VII per per Augmentationem et Diminutionem" "31"
   "fugue that uses augmented (doubling all note lengths) and diminished versions of the main subject and its inversion"
 }
-\markup { \indexItem #38 "Contrapunctus VIII" "37"
+\markup { \indexItem #37 "Contrapunctus VIII" "36"
   "triple fugue with three subjects, having independent expositions"
 }
-\markup { \indexItem #46 "Contrapunctus IX alla Duodecima" "45"
+\markup { \indexItem #45 "Contrapunctus IX alla Duodecima" "44"
   "double fugue, with two subjects occurring dependently and in invertible counterpoint at the twelfth"
 }
-\markup { \indexItem #51 "Contrapunctus X alla Decima" "50"
+\markup { \indexItem #50 "Contrapunctus X alla Decima" "49"
   "double fugue, with two subjects occurring dependently and in invertible counterpoint at the tenth"
 }
-\markup { \indexItem #56 "Contrapunctus XI" "55"
+\markup { \indexItem #55 "Contrapunctus XI" "54"
   "triple fugue, employing the three subjects of Contrapunctus VIII in inversion"
 }
 \markup \column \abs-fontsize #11 {
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #64 {
+    \page-link #63 {
       \pad-markup #0.5 {
-        \fill-with-pattern #1 #RIGHT . "Contrapunctus XII [rectus]" "63"
+        \fill-with-pattern #1 #RIGHT . "Contrapunctus XII [rectus]" "62"
       }
     }
   }
 }
-\markup { \indexItem #67 "Contrapunctus XII inversus" "66"
+\markup { \indexItem #66 "Contrapunctus XII inversus" "65"
   "mirror fugues, in which a piece is notated once and then with voices and counterpoint completely inverted"
 }
 \markup \column \abs-fontsize #11 {
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #70 {
+    \page-link #69 {
       \pad-markup #0.5 {
-        \fill-with-pattern #1 #RIGHT . "Contrapunctus XIII [rectus]" "69"
+        \fill-with-pattern #1 #RIGHT . "Contrapunctus XIII [rectus]" "68"
       }
     }
   }
 }
-\markup { \indexItem #74 "Contrapunctus XIII inversus" "73"
+\markup { \indexItem #73 "Contrapunctus XIII inversus" "72"
   "mirror fugues, in which a piece is notated once and then with voices and counterpoint completely inverted"
 }
-\markup { \indexItem #78 "Contrapunctus XIV" "77"
+\markup { \indexItem #77 "Contrapunctus XIV" "76"
   "four-voice triple fugue (not completed by Bach, but likely to have become a quadruple fugue: see below)"
 }
 
@@ -103,8 +103,8 @@
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #87 {
-      \fill-with-pattern #1 #RIGHT . "Brief notes on the completion of Contrapunctus XIV" "86"
+    \page-link #86 {
+      \fill-with-pattern #1 #RIGHT . "Brief notes on the completion of Contrapunctus XIV" "85"
     }
   }
 }
@@ -114,15 +114,15 @@
   \abs-fontsize #12 \smallCaps \bold { \concat { \char ##x23AF " Canoni" } }
 }
 
-\markup { \indexItem #92 "Canon in Hypodiapason (Canon alla Ottava)" "91"
+\markup { \indexItem #91 "Canon in Hypodiapason (Canon alla Ottava)" "90"
   "canon in imitation at the octave"
 }
-\markup { \indexItem #96 "Canon alla Decima [in] Contrapunto alla Terza" "95"
+\markup { \indexItem #95 "Canon alla Decima [in] Contrapunto alla Terza" "94"
   "canon in imitation at the tenth"
 }
-\markup { \indexItem #101 "Canon alla Duodecima in Contrapunto alla Quinta" "100"
+\markup { \indexItem #98 "Canon alla Duodecima in Contrapunto alla Quinta" "99"
   "canon in imitation at the twelfth"
 }
-\markup { \indexItem #104 "Canon [in Hypodiatesseron] per augmentationem in Contratio Motu" "103"
+\markup { \indexItem #103 "Canon [in Hypodiatesseron] per augmentationem in Contratio Motu" "102"
   "canon in which the following voice is both inverted and augmented"
 }
