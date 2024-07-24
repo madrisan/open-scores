@@ -73,12 +73,12 @@
         \null
         \fill-line { \draw-hline }
         \null\null\null
-        \line { \abs-fontsize #26 \bold "Vor deinen Thron tret' ich hiermit" }
+        \line { \abs-fontsize #28 \bold "Vor deinen Thron tret' ich hiermit" }
         \null
         \line { \abs-fontsize #18 "(Before your throne I now appear)" }
-        \null\null\null
-        \line { \abs-fontsize #20 "BWV 668" }
         \null\null\null\null
+        \line { \abs-fontsize #24 "BWV 668" }
+        \null\null\null\null\null\null
         \fill-line { \abs-fontsize #12 "Transcribed for Piano Solo by Ruoshi Sun" }
 
         \null\null\null

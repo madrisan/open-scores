@@ -73,12 +73,13 @@
         \fill-line { \draw-hline }
         \null\null\null
         \line { \abs-fontsize #40 \bold "Solfeggio in c-Moll" }
+        \null\null
+        \line { \abs-fontsize #34 \bold "“Solfeggietto”" }
         \null\null\null
         \line { \abs-fontsize #24 "Wq 117/2, H.220" }
         \null\null\null\null
         \fill-line \italic { \abs-fontsize #14 "For Piano, Harpsichord" }
-        \null\null\null
-        \null\null\null
+        \null\null\null\null\null
       }
     }
   }

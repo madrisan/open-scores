@@ -74,11 +74,11 @@
         \null\null\null
         \line { \abs-fontsize #44 \bold "Fuga d-Moll" }
         \null\null\null
-        \line { \abs-fontsize #28 "BWV 948" }
+        \line { \abs-fontsize #24 "BWV 948" }
         \null\null\null\null
         \fill-line \italic { \abs-fontsize #14 "For Piano, Harpsichord, Clavichord" }
-        \null\null\null
-        \null\null\null
+        \null\null\null\null
+        \null\null\null\null
       }
     }
   }
