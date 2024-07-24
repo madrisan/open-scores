@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Fixed
 
 - J.S. Bach: Chorale Prelude BWV668 - fix colorize of cantus firmus
+- J.S. Bach: Die Kunst der Fuge (BWV1080) - fix in the list of subjects
 
 ## [v53] - 2024-07-12
 

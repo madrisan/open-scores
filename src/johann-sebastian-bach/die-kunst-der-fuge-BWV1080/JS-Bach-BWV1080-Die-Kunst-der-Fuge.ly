@@ -55,11 +55,11 @@ Subject = \relative {
         \null
         \fill-line { \draw-hline }
         \combine \null \vspace #3
-        \line { \abs-fontsize #34 \bold "Die Kunst der Fuga" }
+        \line { \abs-fontsize #40 \bold "Die Kunst der Fuga" }
         \combine \null \vspace #3
-        \line { \abs-fontsize #20 "BWV 1080" }
+        \line { \abs-fontsize #24 "BWV 1080" }
         \combine \null \vspace #3
-        \fill-line { \abs-fontsize #20 "For Piano or Harpsichord" }
+        \fill-line { \abs-fontsize #14 "For Piano or Harpsichord" }
         \combine \null \vspace #2
       }
     }

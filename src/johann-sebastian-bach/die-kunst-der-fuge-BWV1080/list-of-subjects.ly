@@ -577,6 +577,14 @@ CanonIVBass = {
   }
 }
 
+\markup \fill-line {
+  \center-column \abs-fontsize #12 \smallCaps \bold {
+    \null\null
+    "Triple Fugue (unfinished, but likely to have become a quadruple fugue)"
+    \vspace #1
+  }
+}
+
 % Contrapunctus XIV
 \markup \line {
   \hspace #0
