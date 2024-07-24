@@ -10,6 +10,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - J.S. Bach: Fuga d-Moll BWV948
 - C.P.E Bach: Solfeggio in c-Moll H.220
 
+### Changed
+
+- Bach/Stark: Siciliano (BWV 1031) - simplify hand position in bar 6
+
+### Fixed
+
+- J.S. Bach: Chorale Prelude BWV668 - fix colorize of cantus firmus
+
 ## [v53] - 2024-07-12
 
 ### Added

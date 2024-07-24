@@ -178,9 +178,8 @@ Alto = \context Voice = "two" \relative c' {
     g( bes g \bottom fis g)
     c, \top c' es c bes c
   | f,!^. c'(  bes a bes f)
-    \bottom d \top bes' d bes
-    \bottom \clef treble a_\markup { \italic\small "r.H." } bes \clef bass
-  | \top g^.( bes es bes as bes)
+    \bottom d \top bes' d bes a bes
+  | g^.( bes es bes as bes)
     g^.( bes c a! bes g)
   | a8[ \bottom f] \top g\rest s4.
   | es16\rest f\< a c bes d\!
