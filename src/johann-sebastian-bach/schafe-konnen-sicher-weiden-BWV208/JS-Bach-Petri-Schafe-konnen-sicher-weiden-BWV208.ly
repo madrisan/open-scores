@@ -10,19 +10,41 @@
 }
 
 \paper {
+  #(set-paper-size "a4")
   annotate-spacing = ##f
-  bottom-margin = 13\mm
+  binding-offset = 0\mm
+  bottom-margin = 5\mm
   first-page-number = 0
   indent = 0.0
-  line-width = 18\cm
+  %inner-margin = 10\mm
+% last-bottom-spacing.padding = #2
+  %left-margin = 10\mm
+  line-width = 19\cm
+  markup-system-spacing =
+     #'((basic-distance . 2)
+        (minimum-distance . 1)
+        (padding . 2)
+        (stretchability . 24))
+  %outer-margin = 20\mm
   print-all-headers = ##t
   ragged-last-bottom = ##f
   ragged-bottom = ##f
-  %system-system-spacing = #'((basic-distance . 2) (padding . 10))
-  top-margin = 13\mm
-%  markup-system-spacing.basic-distance = #10
-%  last-bottom-spacing.padding = #2
+  %right-margin = 10\mm
+  score-markup-spacing =
+     #'((basic-distance . 10)
+        (minimum-distance . 8)
+        (padding . 2)
+        (stretchability . 24))
+  system-system-spacing =
+     #'((basic-distance . 1)
+        (minimum-distance . 1)
+        (padding . 1)
+        (stretchability . 24))
+  top-margin = 10\mm
+  top-markup-spacing.basic-distance = 0
+  top-system-spacing.basic-distance = 1
 }
+
 
 \bookpart {
   \header {
@@ -53,18 +75,22 @@
         \fill-line { \draw-hline }
         \null\null\null
         \line { \abs-fontsize #33 \bold "Schafe können sicher weiden" }
-        \null\null
-        \line { \abs-fontsize #14 \bold "from the Cantata" }
         \null
-        \line { \abs-fontsize #18 \bold "Was mir behagt, ist nur die muntre Jagd" }
+        \line { \abs-fontsize #16 "(Sheep May Safely Graze)" }
         \null\null\null
-        \line { \abs-fontsize #22 \bold "BWV 208" }
+        \line { \abs-fontsize #16 \bold "Aria from the “Jagdkantate Cantata” (“Hunting Cantata”)" }
+        \null
+        \line { \abs-fontsize #16 \bold "Was mir behagt, ist nur die muntre Jagd" }
+        \null
+        \line { \abs-fontsize #16 "(The lively hunt is all my heart's desire)" }
+        \null\null\null
+        \line { \abs-fontsize #24 "BWV 208" }
         \null\null
-        \null\null
-        \line { \abs-fontsize #16 \italic "arranged for Piano Solo by" }
-        \null\null
-        \line { \abs-fontsize #30 \bold "Egon Petri" }
-        \null\null\null\null
+        \null
+        \line { \abs-fontsize #14 \italic "arranged for Piano Solo by" }
+        \null
+        \line { \abs-fontsize #20 \bold "Egon Petri" }
+        \null\null\null
       }
     }
   }

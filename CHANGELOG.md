@@ -13,6 +13,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Changed
 
 - Bach/Stark: Siciliano (BWV 1031) - simplify hand position in bar 6
+- Minor updates to a few cover pages
+- Bach/Petri: Schafe können sicher weiden BWV 208 - update cover page and pagination
 
 ### Fixed
 
