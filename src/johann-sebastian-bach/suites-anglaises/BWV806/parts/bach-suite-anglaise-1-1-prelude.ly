@@ -247,7 +247,7 @@ Bass = \context Voice = "four" \relative c' {
   %35
   | a~ a~
   | a~ a~
-  | a~ \stemNeutral a,
+  | a \stemNeutral a,
     \fine
 }
 
