@@ -24,6 +24,8 @@ EXTRA_DIST = JS-Bach-BWV806-Suite-Anglaise-1.ly \
 	     header.ily \
 	     global.ly \
 	     logo.ly \
+	     macros-schleifer.ly \
+	     macros-slidenotes.ly \
 	     parts/bach-suite-anglaise-1-1-prelude.ly \
 	     parts/bach-suite-anglaise-1-2-allemande.ly \
 	     parts/bach-suite-anglaise-1-3-courante-1.ly \
