@@ -28,7 +28,8 @@ EXTRA_DIST = JS-Bach-BWV659-Chorale-Prelude.ly \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
-	     logo.ly
+	     logo.ly \
+	     macros.ly
 
 all: $(BUILT_SOURCES) JS-Bach-BWV659-Chorale-Prelude
 

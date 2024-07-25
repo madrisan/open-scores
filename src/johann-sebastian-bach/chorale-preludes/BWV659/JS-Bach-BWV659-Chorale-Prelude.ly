@@ -3,24 +3,46 @@
 #(ly:set-option 'relative-includes #t)
 
 \include "./covercolor.ly"
+\include "./macros.ly"
 
 \header {
   tagline = ##f
 }
 
 \paper {
+  #(set-paper-size "a4")
   annotate-spacing = ##f
-  bottom-margin = 10\mm
+  binding-offset = 0\mm
+  bottom-margin = 5\mm
   first-page-number = 0
   indent = 0.0
-  line-width = 16.8\cm
+  %inner-margin = 10\mm
+% last-bottom-spacing.padding = #2
+  %left-margin = 10\mm
+  line-width = 19\cm
+  markup-system-spacing =
+     #'((basic-distance . 2)
+        (minimum-distance . 1)
+        (padding . 2)
+        (stretchability . 24))
+  %outer-margin = 20\mm
   print-all-headers = ##t
-  ragged-last-bottom = ##t
+  ragged-last-bottom = ##f
   ragged-bottom = ##f
-  %system-system-spacing = #'((basic-distance . 2) (padding . 10))
+  %right-margin = 10\mm
+  score-markup-spacing =
+     #'((basic-distance . 10)
+        (minimum-distance . 8)
+        (padding . 2)
+        (stretchability . 24))
+  system-system-spacing =
+     #'((basic-distance . 1)
+        (minimum-distance . 1)
+        (padding . 1)
+        (stretchability . 24))
   top-margin = 10\mm
-%  markup-system-spacing.basic-distance = #10
-%  last-bottom-spacing.padding = #2
+  top-markup-spacing.basic-distance = 0
+  top-system-spacing.basic-distance = 1
 }
 
 \bookpart {
@@ -101,9 +123,10 @@ Sopran = \context Voice = "one" \relative c'' {
   | R1
   | R1
   | R1
-  | r4 g^\markup { \dynamic mf \italic "cantus firmus" } g fis8[ g16 a]
+  | r4
+    \highlightCF { g^\markup { \dynamic mf \italic "cantus firmus" } g fis8[ g16 a]
   %5
-  | bes4~ bes16[ g \grace a16 g32 fis g16]
+  | bes4~ bes16[ g \grace a16 g32 fis g16] }
     c4~ c16[ a \grace bes16 a32 g a16]
   | d4~ d16[ g,32 a bes c d16] ees8. d16 c16[ bes32 a a16 bes32 c]
   | \appoggiatura g16 fis8[ e!16 d] g4~ g32[ a g fis! g16 c32 a] g8[ fis16.\prall g32]
@@ -112,9 +135,9 @@ Sopran = \context Voice = "one" \relative c'' {
   %10
   | \override MultiMeasureRest.staff-position = #5
     R1
-  | g8[^\markup { \dynamic mf \italic "c.f." }
+  | \highlightCF { g8[^\markup { \dynamic mf \italic "c.f." }
     bes16 a] bes4\prall c~ c16[ bes a bes]
-  | c16[ d ees8~] ees16[ c bes c] d[ ees f8~] f16[ d c d]
+  | c16[ d ees8~] ees16[ c bes c] d[ ees f8~] f16[ d c d] }
   | ees16[ f g8~] g16[ c, d ees] \appoggiatura bes16 a8[ g16 f] f'4~
   | f16[ g32 f ees f d16] ees4~ ees16[^\markup { "dolce" } a32 bes c16 ees,] d4~
   %15
@@ -124,11 +147,10 @@ Sopran = \context Voice = "one" \relative c'' {
   | \override MultiMeasureRest.staff-position = #0
     R1
   | R1
-  | bes8[^\markup { \dynamic mf \italic "c.f." } c32 bes a bes] c8[ d32 c bes c]
-    d16[ bes a bes] \appoggiatura bes16  f'8.[ ees32 d]
+  | \highlightCF { bes8[^\markup { \dynamic mf \italic "c.f." } c32 bes a bes] c8[ d32 c bes c]
+    d16[ bes a bes] } \appoggiatura bes16  f'8.[ ees32 d]
   %20
   | c16[ d32 c b!16 c] d16[ ees32 d c16 d] ees16[ c b! c] \appoggiatura c16  g'8.[ f32 ees]
-  \pageBreak
   | d16[ g32\f a bes!16 f] ees16[( d) d( c)]
     c16[ fis32_\markup { "dim." } g a16 ees] d16[( c) c( bes)]
   | bes[ g'16. f!32 ees d] c[ d c b! c8~] c16[ ees32 d c d ees16~] ees32[ c aes g aes8~]
@@ -140,8 +162,8 @@ Sopran = \context Voice = "one" \relative c'' {
   | R1
   | \override MultiMeasureRest.staff-position = #6
     R1
-  | a'4\rest g,^\markup { \dynamic mf \italic "c.f." } g\prall fis8[ g16 a]
-  | bes4~ bes16[ g \grace a16 g32 fis g16]
+  | a'4\rest \highlightCF { g,^\markup { \dynamic mf \italic "c.f." } g\prall fis8[ g16 a]
+  | bes4~ bes16[ g \grace a16 g32 fis g16] }
     c4~ c16[ a \grace bes16 a32 g a16]
   %30
   | d4~ d16[ g,32 a bes c d16] ees8. d16 c16[ bes32 a a16 bes32 c]
@@ -152,7 +174,6 @@ Sopran = \context Voice = "one" \relative c'' {
   | g[ fis g a c,8~] c32[ ees d c d c bes a]
     bes16[ g'32 ees cis d g,16] bes8[( a32\prall g a16])
   | g1\fermata
-
   \fine
 }
 
@@ -160,7 +181,8 @@ Alto = \context Voice = "two" \relative c' {
   \voiceTwo
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
-  \showStaffSwitch
+  \override VoiceFollower.color = \greyTextColor
+  \override VoiceFollower.style = #'dashed-line
   %1
   | \stemUp b'2\rest a4\rest d,
   | d c f4. ees16[ d]
@@ -169,7 +191,7 @@ Alto = \context Voice = "two" \relative c' {
     \stemDown\tieDown d4 c d2
   %5
   | d4 b8\rest
-    \bottom\stemUp\tieUp
+    \showStaffSwitch \bottom\stemUp\tieUp
     bes~ bes a16 g a4
   | \top\stemDown\tieDown
     a4\rest a8\rest g'~ g[ fis g ees]
@@ -181,7 +203,7 @@ Alto = \context Voice = "two" \relative c' {
   | \once\override NoteColumn.force-hshift = #1 d4.
     \stemDown
     ees16 f g[ f ees d] c8 b\rest
-  | e8\rest g f4~ f4 r8 bes
+  | e8\rest g f4~ f4 r8 \highlightCF { bes }
   | bes4 b8\rest g f4 s8 \stemUp aes
   | % in the original:
     % \shiftOn g4 g8\rest \stemDown g f4 f8\rest f
@@ -195,10 +217,10 @@ Alto = \context Voice = "two" \relative c' {
   %15
   | g8 c,\rest g' c,\rest c g\rest g\rest ees'
   | d[ g]-\markup { "allarg." } f16[ d ees8~] ees[ d16 ees] f8[ ees16 d]
-  | c4. d16 ees f2~
+  | c4. d16 ees f2^~
   | f8[ ees16 d] ees8[ c'] fis,[ g] a4~
   | a8 g f!4~
-    f8[ ees \hideStaffSwitch \bottom\stemUp d \top\stemDown g]
+    f8[ ees \hideStaffSwitch \bottom\stemUp d \top\stemDown \highlightCF { g] }
   %20
   | \showStaffSwitch
     % a e\rest e\rest b'! c s e,\rest a
@@ -207,10 +229,10 @@ Alto = \context Voice = "two" \relative c' {
   | g4 f16\rest f[ g f] g8 f\rest f16\rest d[ ees d]
   | ees8 e\rest e\rest ees d[ fis! g a]
   | % d'[ g] r d~ c16 b! c16[( d) d( ees)]
-  | d[ g,] d\rest d~ d8[ c16 b!] \stemUp\tieUp\slurUp c16[( d) d( ees)]
+  | d[ g,] d\rest d~ d8[ c16 b!] \stemUp\tieUp\slurDown c16[( d) d( ees)]
   %25
   | ees2~ ees8[ d16 c] d16[( ees) ees( f!)]
-  | f2~^\f f16[ ees g( f)] f[( ees) ees( d)]
+  | f2~^\f f16[ ees \slurDown g( f)] f[( ees) ees( d)]
   | d[ aes' aes( g)] g[( f) f( ees)]
     ees8.\p f16 d8.^\prall g16
   | ees16[ f f( ees)]
@@ -239,12 +261,13 @@ Tenor = \context Voice = "three" \relative c {
   \voiceThree
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
-  \showStaffSwitch
+  \override VoiceFollower.color = \greyTextColor
+  \override VoiceFollower.style = #'dashed-line
   %1
   | \top\stemDown\tieDown g'4\rest g g4 fis
   | bes4. a16[ g] a4 g~
   | g c2 bes8 a
-  | \bottom\stemUp\tieUp g[ fis g a] bes[ a16 g] a4~
+  | \showStaffSwitch \bottom\stemUp\tieUp g[ fis g a] bes[ a16 g] a4~
   %5
   | %a8[ g16 fis] g4 b4\rest c8\rest c~
     a8[ g16 fis] g4 s4 s8 c~
@@ -264,7 +287,7 @@ Tenor = \context Voice = "three" \relative c {
     e8\rest bes[ c a]
     \once\override Beam.positions = #'(6.5 . 7.5)
     bes8[
-    \top\stemDown
+    \hideStaffSwitch \top\stemDown
     d'16 c]
     \bottom\stemUp d,8[ f]
   | % in the original:
@@ -273,24 +296,28 @@ Tenor = \context Voice = "three" \relative c {
     bes,8[
     \top\stemDown
     ees'16 d]
-    \bottom\stemUp
+    \showStaffSwitch \bottom\stemUp
     c,4~ c8[ bes16 a]
     \top\stemDown
     bes'[ c d,8_~]
   | % in the original:
     % d8[ c16 b!] c4~ c8[ bes16 a!] bes4~
     d8[ c'16 b!]
-    \once\shape #'((0.5 . 0.5) (0 . 0.5) (0 . 0.5) (0 . 0.5)) Tie
-    c4_~ \shiftOff
+    \once\shape #'((0.8 . -1) (0 . -1) (0 . -1) (-0.8 . -1)) Tie
+    c4~ \shiftOff
     \once\override Beam.positions = #'(-3.5 . -4.5)
     c8[
-    \bottom\stemUp
+    \hideStaffSwitch \bottom\stemUp
     bes,16 a!] bes4~
   %15
   | bes8 d\rest ees d\rest a b\rest b\rest a
   | bes4. a8 f4 bes~
-  | bes a~ a8[ b!16-\markup { \small "r.H" } c] d[ c b a]
-  | g4~-\markup { \small "l.H" } g8[ a16 bes!] c[ d] ees4 d16[ c]
+  | bes a~ a8[
+    \change Staff = "upper" \stemDown
+    b!16 c] d[ c b a]
+    \showStaffSwitch
+    \change Staff = "lower" \stemUp
+  | g4~ g8[ a16 bes!] c[ d] ees4 d16[ c]
   | bes8 ees4 d16[ c] bes4. bes8
   %20
   | f' f\rest f\rest
@@ -304,11 +331,10 @@ Tenor = \context Voice = "three" \relative c {
   | bes8[-\markup { \hspace #-2.2 \small "l.H" } g~] g[ fis] g2~
   %25
   | g8[ g16-\markup { \small "r.H" } fis] g[( a) a( bes)] bes2~
-  | \top\stemDown\slurDown\tieDown
-    bes8[\p a16( g)] a[( b!) b( c)] c2~\f
+  | bes8[\p \hideStaffSwitch \top\stemDown\slurDown\tieDown a16( g)] a[( b!) b( c)] c2~\f
   | c2~ c8.[ d16] b!8.[ a!32 b]
-  | c8 g\rest \bottom\stemUp\tieUp a2.\rest
-  | d8\rest d, g4 s4. c8~
+  | c8 g\rest \showStaffSwitch \bottom\stemUp\tieUp a2.\rest
+  | e'8\rest d, g4 s4. c8~
   %30
   | c8[ bes16 a] bes8[ d~] d16[ c8 bes16] a[ g c bes]
   | a4 a8\rest g~ g[ c] a4
@@ -422,8 +448,8 @@ Choral = \relative {
           }
         }
       }
-      \null\null\null
-      \null\null\null
+      \null\null\null\null
+      \null\null\null\null
     }
   }
 }

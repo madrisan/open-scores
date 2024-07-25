@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Minor updates to a few cover pages
 - Bach/Petri: Schafe können sicher weiden BWV 208 - update cover page and pagination
 - J.S. Bach: Sechs kleine Präludien (BWV 933-938) - minor update in #6
+- J.S. Bach: Chorale Prelude BWV659 - several enhancements and pagination updates
 
 ### Fixed
 
