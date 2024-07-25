@@ -32,13 +32,17 @@ Sopran = \context Voice = "one" \relative c' {
   %15
   | g'[ fis\prall e]
   | fis[ a, g]
-  | e'\mordent[ fis16 e d cis]
+  | e'\parenthesize\mordent[ fis16 e d cis]
   | fis8[ g16 fis e d]
   | cis[ e d cis b ais]
   }
   \alternative {
-    { b4.\mordent }
-    { b4.\mordent }
+    { \once \override TextScript.script-priority = #-100
+      b4.^\mordent^\markup { \teeny\parenthesize\sharp }
+    }
+    { \once \override TextScript.script-priority = #-100
+      b4.^\mordent^\markup { \teeny\parenthesize\sharp }
+    }
   }
   \pageBreak
   \repeat volta 2 {
@@ -56,7 +60,7 @@ Sopran = \context Voice = "one" \relative c' {
   | g,[ c f,! b e, a]
   | gis[ a c b a gis]
   | \once \override TextScript.script-priority = #-100
-    a4\mordent^\markup { \teeny\sharp } r8
+    a4\mordent^\markup { \teeny\parenthesize\sharp } r8
   | r16 e[ a gis a c]
   %35
   | fis,![ c' e, c' d, c']
@@ -78,10 +82,10 @@ Sopran = \context Voice = "one" \relative c' {
   }
   \alternative {
     { \once \override TextScript.script-priority = #-100
-      e4.\mordent^\markup { \teeny\sharp } }
+      e4.\mordent^\markup { \teeny\parenthesize\sharp } }
   %50
     { \once \override TextScript.script-priority = #-100
-      e4.\mordent^\markup { \teeny\sharp } }
+      e4.\mordent^\markup { \teeny\parenthesize\sharp } }
   }
   \override Score.TextMark.self-alignment-X = #CENTER
   \textEndMark \markup { \musicglyph "scripts.ufermata" }
@@ -95,10 +99,10 @@ Bass = \context Voice = "four" \relative c {
   \repeat volta 2 {
   %1
   | \once \override TextScript.script-priority = #-100
-    e8^\mordent^\markup { \teeny\sharp }[ e,] r
+    e8^\mordent^\markup { \teeny\parenthesize\sharp }[ e,] r
   | r16 e'[ g b g e]
   | \once \override TextScript.script-priority = #-100
-    b'8^\mordent^\markup { \teeny\sharp }[ b,] r
+    b'8^\mordent^\markup { \teeny\parenthesize\sharp }[ b,] r
   | r16 b'[ dis fis dis b]
   %5
   | e8[ g e]
@@ -125,10 +129,10 @@ Bass = \context Voice = "four" \relative c {
   }
   \repeat volta 2 {
   | \once \override TextScript.script-priority = #-100
-    b^\mordent^\markup { \teeny\sharp } b, r
+    b^\mordent^\markup { \teeny\parenthesize\sharp } b, r
   | r16 b[ dis fis dis b]
   | \once \override TextScript.script-priority = #-100
-    e8^\mordent^\markup { \teeny\sharp } e, r
+    e8^\mordent^\markup { \teeny\parenthesize\sharp } e, r
   %25
   | r16 e'[ gis b gis e]
   | a[ a, b c d e]

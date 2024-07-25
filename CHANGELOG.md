@@ -9,12 +9,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - J.S. Bach: Fuga d-Moll BWV948
 - C.P.E Bach: Solfeggio in c-Moll H.220
+- J.S. Bach: Suite Anglaise 1 BWV806
 
 ### Changed
 
 - Bach/Stark: Siciliano (BWV 1031) - simplify hand position in bar 6
 - Minor updates to a few cover pages
 - Bach/Petri: Schafe können sicher weiden BWV 208 - update cover page and pagination
+- J.S. Bach: Sechs kleine Präludien (BWV 933-938) - minor update in #6
 
 ### Fixed
 
