@@ -27,9 +27,10 @@ schleifer =
     (set-car! point-2 (+ (car point-2) -1))
     (set-car! point-3 (+ (car point-3) -2))
     coords))
-    s1*0( $start
-    \once \override Rest.transparent = ##t
-    \once \override Rest.X-extent = #'(0 . 0.2)
-    \grace r1
+    s1*0(
+      $start
+      \once \override Rest.transparent = ##t
+      \once \override Rest.X-extent = #'(0 . 0.2)
+      \grace r1
     s1*0)
 #})
