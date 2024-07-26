@@ -16,11 +16,14 @@ Usage: $PROGNAME --targetdir <targetdir> --parts [options]
 
 Options:
    -c|--composer  : the data file for the composer
+   -C|--no-cover  : do not create the cover
    -d|--targetdir : the directory where to create the partition
+   -H|--no-header : do not create the header file
    -k|--key       : the tonality of the score(s) (default: c \\major)
    -n|--pdfname   : the name of the file containing the partition
    -o|--opus      : opus of the composition
    -p|--parts     : the partition is splitted into several files
+   -P|--parts-only: only create the files in folder part
    -s|--source    : the source of the partition
    -t|--title     : title of the composition
    -y|--year      : the date of the composition
@@ -66,6 +69,7 @@ ly_title="Unset --title"
 
 ly_key="c \\\\major"
 ly_parts="false"
+ly_parts_only="false"
 
 ly_sed () {
   [ -n "$1" -a ! -r "$1" ] && die "ly_sed: cannot read input file: $1"
@@ -112,6 +116,8 @@ while test -n "$1"; do
          ly_opus="$2"; shift ;;
       --parts|-p)
          ly_parts="true" ;;
+      --parts-only|P)
+         ly_parts_only="true" ;;
       --part4)
          ly_parts4_files+=("$2")
          ly_parts4_titles+=("$3")
@@ -134,7 +140,7 @@ done
 
 [ "$ly_data" ] || die "you must set a --composer"
 [ "$ly_date" ] || die "you must set a --year"
-[ "$ly_pdfname" ] || die "you must set a --pdfname"
+[ -z "$ly_pdfname" -a "$ly_parts_only" == "false" ] && die "you must set a --pdfname"
 [ "$ly_source" ] || die "you must set a --source"
 [ "$ly_targetdir" ] || die "you must set a --targetdir"
 
@@ -143,11 +149,15 @@ done
 # remove the .pdf suffix if any
 ly_mainfile="${ly_pdfname%\.pdf}"
 
-LY_STATIC_FILES="\
+if [ "$ly_parts_only" = "false" ]; then
+   LY_STATIC_FILES="\
 covercolor.ly
 covercolor.ly.in
 global.ly
 logo.ly"
+else
+   LY_STATIC_FILES=""
+fi
 
 ly_version="$(lilypond_version)"
 [ "$ly_version" ] || die "cannot get the Lilyond version"
@@ -157,62 +167,64 @@ echo "creating the target folder '$ly_targetdir' ..."
 mkdir -p "$ly_targetdir"
 [ "$ly_parts" = "true" ] && mkdir -p "$ly_targetdir/parts"
 
-echo "copying common files ..."
+[ "$LY_STATIC_FILES" ] && echo "copying common files ..."
 for f in $LY_STATIC_FILES; do
    cp -v $PROGPATH/templates/$f "$ly_targetdir"
 done
 
-echo "creating '$ly_targetdir/header.ily' ..."
-(
-   ly_sed < $PROGPATH/templates/header.ily
-) > "$ly_targetdir/header.ily"
+if [ "$ly_parts_only" = "false" ]; then
+   echo "creating '$ly_targetdir/header.ily' ..."
+   (
+      ly_sed < $PROGPATH/templates/header.ily
+   ) > "$ly_targetdir/header.ily"
 
-echo "creating '$ly_targetdir/${ly_mainfile}.ly'"
-(
-   echo "\\version \"$ly_version\""
-   echo
-   ly_sed < $PROGPATH/templates/mainfile.ly
-) > "$ly_targetdir/${ly_mainfile}.ly"
+   echo "creating '$ly_targetdir/${ly_mainfile}.ly'"
+   (
+      echo "\\version \"$ly_version\""
+      echo
+      ly_sed < $PROGPATH/templates/mainfile.ly
+   ) > "$ly_targetdir/${ly_mainfile}.ly"
 
-echo "creating the makefile '$ly_targetdir/Makefile.am' ..."
-(
-   cat $PROGPATH/templates/makefile-head
-   echo
-   echo "EXTRA_DIST = ${ly_mainfile}.ly \\"
-   echo -e "\t     covercolor.ly.in \\"
-   echo -e "\t     header.ily \\"
-   echo -e "\t     global.ly \\"
+   echo "creating the makefile '$ly_targetdir/Makefile.am' ..."
+   (
+      cat $PROGPATH/templates/makefile-head
+      echo
+      echo "EXTRA_DIST = ${ly_mainfile}.ly \\"
+      echo -e "\t     covercolor.ly.in \\"
+      echo -e "\t     header.ily \\"
+      echo -e "\t     global.ly \\"
 
-   nparts="${#ly_parts4_files[@]}"
+      nparts="${#ly_parts4_files[@]}"
 
-   if [[ "${!ly_parts4_files[@]}" != "0" ]]; then
-      echo -e "\t     logo.ly \\"
-      for i in ${!ly_parts4_files[@]}; do
-          echo -en "\t     parts/${ly_parts4_files[$i]}"
-	  [ "$i" != "$(( $nparts - 1 ))" ] && echo " \\" || echo ""
+      if [[ "${!ly_parts4_files[@]}" != "0" ]]; then
+         echo -e "\t     logo.ly \\"
+         for i in ${!ly_parts4_files[@]}; do
+             echo -en "\t     parts/${ly_parts4_files[$i]}"
+             [ "$i" != "$(( $nparts - 1 ))" ] && echo " \\" || echo ""
+         done
+      else
+         echo -e "\t     logo.ly"
+      fi
+
+      set -- $LY_COMMON_FILES
+      while test -n "$1"; do
+         [ "$f" = "covercolor.ly" ] && { shift; continue; }
+         echo -en "\t     $1"
+         [ "$2" ] && echo " \\" || echo ""
+         shift
       done
-   else
-      echo -e "\t     logo.ly"
+
+      echo
+      echo "all: \$(BUILT_SOURCES) $ly_mainfile"
+
+      echo
+      if [ "$ly_parts" = "true" ]; then
+         cat $PROGPATH/templates/makefile-clean-parts
+      else
+         cat $PROGPATH/templates/makefile-clean
+      fi
+   ) > "$ly_targetdir/Makefile.am"
    fi
-
-   set -- $LY_COMMON_FILES
-   while test -n "$1"; do
-      [ "$f" = "covercolor.ly" ] && { shift; continue; }
-      echo -en "\t     $1"
-      [ "$2" ] && echo " \\" || echo ""
-      shift
-   done
-
-   echo
-   echo "all: \$(BUILT_SOURCES) $ly_mainfile"
-
-   echo
-   if [ "$ly_parts" = "true" ]; then
-      cat $PROGPATH/templates/makefile-clean-parts
-   else
-      cat $PROGPATH/templates/makefile-clean
-   fi
-) > "$ly_targetdir/Makefile.am"
 
 if [ "$ly_parts" = "true" ]; then
    for i in ${!ly_parts4_files[@]}; do
@@ -226,8 +238,10 @@ if [ "$ly_parts" = "true" ]; then
             ly_sed < $PROGPATH/templates/part-four-voices.ly ) \
                > "$ly_targetdir/parts/$partfile"
       fi
-      echo "updating $ly_targetdir/${ly_mainfile}.ly"
-      echo "\\include \"./parts/$partfile\"" >> $ly_targetdir/${ly_mainfile}.ly
+      if [ "$ly_parts_only" == "false" ]; then
+         echo "updating $ly_targetdir/${ly_mainfile}.ly"
+         echo "\\include \"./parts/$partfile\"" >> $ly_targetdir/${ly_mainfile}.ly
+      fi
    done
 else
    echo "updating $ly_targetdir/${ly_mainfile}.ly ..."
