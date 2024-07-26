@@ -107,11 +107,13 @@
 \include "./parts/bach-suite-anglaise-1-3-courante-2.ly"
 \pageBreak
 \include "./parts/bach-suite-anglaise-1-4-double-1.ly"
-\pageBreak
+%\pageBreak
 \include "./parts/bach-suite-anglaise-1-4-double-2.ly"
 \pageBreak
 \include "./parts/bach-suite-anglaise-1-5-sarabande.ly"
+\pageBreak
 \include "./parts/bach-suite-anglaise-1-6-bourree-1.ly"
+%\pageBreak
 \include "./parts/bach-suite-anglaise-1-6-bourree-2.ly"
 \pageBreak
 \include "./parts/bach-suite-anglaise-1-7-gigue.ly"
