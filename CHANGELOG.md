@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - J.S. Bach: Fuga d-Moll BWV948
 - C.P.E Bach: Solfeggio in c-Moll H.220
 - J.S. Bach: Suite Anglaise 1 BWV806
+- J.S. Bach: Das wohltemperierte Klavier – Erster Teil: Praeludium und Fuga IV
 
 ### Changed
 
@@ -41,9 +42,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Added
 
-- J.S. Bach: Das wohltemperierte Klavier – Zweiter Teil: Praeludium und Fuga I
-- J.S. Bach: Das wohltemperierte Klavier – Zweiter Teil: Praeludium und Fuga II
-- J.S. Bach: Das wohltemperierte Klavier – Zweiter Teil: Praeludium und Fuga III
+- J.S. Bach: Das wohltemperierte Klavier – Erster Teil: Praeludium und Fuga I
+- J.S. Bach: Das wohltemperierte Klavier – Erster Teil: Praeludium und Fuga II
+- J.S. Bach: Das wohltemperierte Klavier – Erster Teil: Praeludium und Fuga III
 - J.S. Bach: Suite Anglaise 3 BWV808
 
 ### Fixed
