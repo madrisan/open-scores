@@ -16,10 +16,12 @@ Soprano = \context Voice = "one" \relative c' {
   | R1
   | d'2\rest c8\rest \highlightSubject { g a b
   | c8. d32 c b8 e a, d~ d16 e d c
+  \break
   | \unHighlightSubject b } g a b c b c d e d e fis g8 b,
   %5
   | c a d16 c b a g8. g16 f e f g
   | a g a b c2 b4
+  \break
   | f'8\rest \highlightSubject { c d e f8. g32 f e8 a
   | d, g~ g16 a g f \unHighlightSubject e8 } a~ a16 b a g
   | f2 e8 fis g4~
@@ -42,6 +44,7 @@ Soprano = \context Voice = "one" \relative c' {
   | d16 e d c \unHighlightSubject b } c d e f g a g f e d c
   | b4 c8 d \once\override NoteColumn.force-hshift = #-0.8 g, c4 b8
   | c4 b8 bes a d4 c8
+  \break
   %25
   | d e f4~ f16 a g f e f e d
   | c2 c16\rest g32[a b!16 c] d[e f8]~

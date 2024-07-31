@@ -30,7 +30,9 @@ EXTRA_DIST = JS-Bach-BWV846-869-Das-Wohltemperierte-Klavier-I.ly \
 	     BWV847/das-wohltemperierte-klavier-I-02-1-praeludium.ly \
 	     BWV847/das-wohltemperierte-klavier-I-02-2-fuga.ly \
 	     BWV848/das-wohltemperierte-klavier-I-03-1-praeludium.ly \
-	     BWV848/das-wohltemperierte-klavier-I-03-2-fuga.ly
+	     BWV848/das-wohltemperierte-klavier-I-03-2-fuga.ly \
+	     BWV849/das-wohltemperierte-klavier-I-04-1-praeludium.ly \
+	     BWV849/das-wohltemperierte-klavier-I-04-2-fuga.ly
 
 all: $(BUILT_SOURCES) JS-Bach-BWV846-869-Das-Wohltemperierte-Klavier-I
 

@@ -141,10 +141,12 @@ Soprano = \context Voice = "one" \relative c'' {
   \repeat unfold 2 {
   | \change Staff = "upper" \stemDown fisis' \change Staff = "lower" \stemUp ais, d\rest ais c\rest ais
   }
+  \break
   | s8. fis16 a bis
   | \change Staff = "upper" \stemNeutral \stemDown cis e fisis \stemUp ais[ cis e]
   | \stemNeutral bis dis fis dis bis gis
   | fis dis bis s8.
+  \break
   | eis!16 gis cis gis eis cis
   | s4.
   %100
@@ -319,8 +321,8 @@ Bass = \context Voice = "four" \relative c {
     >>
   >>
   \header {
-    composer = ##f # "Johann Sebastian Bach"
-    opus = ##f # "BWV 848"
+    composer = ##f % "Johann Sebastian Bach"
+    opus = "BWV 848"
     title = \markup { "Praeludium III." }
     subtitle = ##f
   }

@@ -53,3 +53,5 @@ unHighlightSubject = {
 %      #:override '(box-padding . 0.3)
 %      #:hspace x #:lower y #:circle #:normal-text #:teeny
 %      (make-with-color-markup greyTextColor "T" )))))
+
+voiceFive  = #(context-spec-music (make-voice-props-set 4)  'Voice)
