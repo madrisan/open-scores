@@ -41,7 +41,7 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
 |  | Clavierübung Teil V (?) - Die Kunst der Fuga BWV 1080 :one: | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v54/JS-Bach-BWV1080-Die-Kunst-der-Fuge.pdf) |
 |  | Inventionen BWV 772-786 :two: | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v54/JS-Bach-BWV772-801-Inventionen-und-Sinfonien.pdf) |
 |  | Sinfonien BWV 787-801 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v54/JS-Bach-BWV772-801-Inventionen-und-Sinfonien.pdf) |
-|  | Suite Anglaises I BWV 806 | *milestone 2* |  |
+|  | Suite Anglaises I BWV 806 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v54/JS-Bach-BWV806-Suite-Anglaise-1.pdf) |
 |  | Suite Anglaises II BWV 807 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v54/JS-Bach-BWV807-Suite-Anglaise-2.pdf) |
 |  | Suite Anglaises III BWV 808 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v54/JS-Bach-BWV808-Suite-Anglaise-3.pdf) |
 |  | Suite Anglaises IV BWV 809 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v54/JS-Bach-BWV809-Suite-Anglaise-4.pdf) |
