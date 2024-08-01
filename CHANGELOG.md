@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [v55] - unreleased
+
+### Added
+
+- J.S. Bach: Fuga C-Dur BWV952
+
 ## [v54] - 2024-08-01
 
 ### Added

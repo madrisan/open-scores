@@ -50,6 +50,7 @@ make -C src/johann-sebastian-bach/chromatische-fantasie-und-fugue-BWV903-busoni
 make -C src/johann-sebastian-bach/die-kunst-der-fuge-BWV1080
 make -C src/johann-sebastian-bach/fantasie-und-fuge-BWV904
 make -C src/johann-sebastian-bach/fuga/BWV948
+make -C src/johann-sebastian-bach/fuga/BWV952
 make -C src/johann-sebastian-bach/goldberg-variationen-BWV988
 make -C src/johann-sebastian-bach/inventionen-und-sinfonien-BWV772-801
 make -C src/johann-sebastian-bach/italienisches-konzert-BWV971
