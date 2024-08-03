@@ -4,6 +4,7 @@ greyTextColor = #(x11-color "dimgray")
 %  subjectColor = #(x11-color 'black)
 % to disable the subject coloring feature
 subjectColor = #(x11-color 'darkblue)
+motifColor = #(x11-color 'darkcyan)
 
 markWithColorExtended =
 #(define-music-function (color music)
@@ -38,6 +39,12 @@ highlightSubject =
    (ly:music?)
    "Colour the given note(s) to highlight fugues (first) subjets"
    #{ \markWithColorExtended \subjectColor #music #})
+
+highlightMotif =
+#(define-music-function (music)
+   (ly:music?)
+   "Colour the given note(s) to highlight fugues (first) subjets"
+   #{ \markWithColorExtended \motifColor #music #})
 
 unHighlightSubject = {
   \revert Tie.color
