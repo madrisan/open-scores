@@ -160,8 +160,8 @@ Bass = \context Voice = "four" \relative c {
     >>
   >>
   \header {
-    composer = ##f # "Johann Sebastian Bach"
-    opus = ##f # "BWV 831"
+    composer = ##f % "Johann Sebastian Bach"
+    opus = ##f % "BWV 831"
     title = \markup { "Passepied II" }
     subtitle = ##f
   }

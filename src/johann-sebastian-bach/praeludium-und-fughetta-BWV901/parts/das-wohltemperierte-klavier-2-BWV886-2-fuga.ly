@@ -311,8 +311,8 @@ Bass = \context Voice = "four" \relative c' {
     >>
   >>
   \header {
-    composer = ##f # "Johann Sebastian Bach"
-    opus = ##f # "BWV 886"
+    composer = ##f % "Johann Sebastian Bach"
+    opus = ##f % "BWV 886"
     title = \markup { "Fuga XVII (BWV 886)" }
     subtitle = "Das wohltemperierte Klavier – Zweiter Teil"
   }

@@ -159,7 +159,7 @@ LowerExtra = \context Voice = "five" \relative c' {
     >>
   >>
   \header {
-    composer = ##f # "Johann Sebastian Bach"
+    composer = ##f % "Johann Sebastian Bach"
     opus = "BWV 925"
     title = \markup { "Praeludium ex d" \small \raise #1.2 \natural }
     subtitle = ##f

@@ -188,8 +188,8 @@ Bass = \context Voice = "four" \relative c' {
     >>
   >>
   \header {
-    composer = ##f # "Johann Sebastian @composer_lastnam@"
-    opus = ##f # "BWV 825"
+    composer = ##f % "Johann Sebastian @composer_lastnam@"
+    opus = ##f % "BWV 825"
     title = \markup { "Giga" }
     subtitle = ##f
   }

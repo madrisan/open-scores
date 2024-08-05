@@ -58,8 +58,8 @@ Bass = \context Voice = "four" \relative c {
     >>
   >>
   \header {
-    composer = ##f # "@composer_firstname@ @composer_lastname@"
-    opus = ##f # "@opus@"
+    composer = ##f % "@composer_firstname@ @composer_lastname@"
+    opus = ##f % "@opus@"
     title = \markup { "@partfile_title@" }
     subtitle = ##f
   }
