@@ -99,31 +99,39 @@ Alto = \context Voice = "two" \relative c {
   %10
   | bis4 r8 gis ~ gis16 fisis eis fisis gis fisis eis dis
   | eis4 ~ eis16 dis cis eis dis cis bis dis cis bis cis ais
-  | bis8 dis gis4 \change Staff = "lower" \stemUp d8\rest b!16 gis eis4
+  | bis8 dis gis4
+    \change Staff = "lower" \voiceOne
+    d8\rest b!16 gis eis4
   | g8\rest eis16 gis b!4 ais8[ b!] ais cisis,!
   | dis4 g4\rest b2\rest
   %15
   | s1
-  | \change Staff = "upper" \stemDown cis4 r8 eis ais4 ~ ais16 cis dis ais
+  | \change Staff = "upper" \voiceTwo
+    cis4 r8 eis ais4 ~ ais16 cis dis ais
   | bis8 a,8\rest r8 dis gis4 ~ gis16 bis cis gis
   | ais8 g,8\rest b8\rest cis \once\override Tie.extra-offset = #'(0 . -0.5) fisis4~ fisis16 ais bis fisis
   | gis4 r8 \highlightSubject { bis, cis16 bis ais bis gis'8 eis
   %20
   | bis8 ais16 gis ais8 fisis'! gis,[ eis'] fisis, disis'!
-  | \change Staff = "lower" \stemUp\tieUp \unHighlightSubject eis,4. } disis8 eis[ disis!] eis ais
+  | \change Staff = "lower" \voiceOne
+    \unHighlightSubject eis,4. } disis8 eis[ disis!] eis ais
   | gis fisis16 eis fisis8 ais gis16 ais bis gis eis fis gis eis
   | cisis dis eis cisis ais cisis eis ais dis, fis ais cisis dis eis fis dis
   | bis cis dis bis gis4 ~ gis16 gis ais bis cis8 d\rest
   %25
-  | \change Staff = "upper" \stemDown\tieDown r4 bis'2 ais4~
+  | \change Staff = "upper" \voiceTwo
+    r4 bis'2 ais4~
   | ais8 gis fisis[ ais] dis,16 g,16\rest a8\rest
-    \change Staff = "lower" \stemUp\tieUp c8\rest \highlightSubject { gis
+    \change Staff = "lower" \voiceOne
+    c8\rest \highlightSubject { gis
   | ais16 gis fis gis eis'8 cis gis fis16 eis fis8 dis'
-  | eis, cis' dis, bis' cis4 } c8\rest \change Staff = "upper" \stemDown\tieDown gis''16 eis
+  | eis, cis' dis, bis' cis4 } c8\rest
+    \change Staff = "upper" \voiceTwo
+    gis''16 eis
   | cis4 r8 cis16 ais fisis4 r8 cis'8
   %30
   | b!4 ais gis8 r8 r4
-  | \change Staff = "lower" \stemUp\tieUp
+  | \change Staff = "lower" \voiceOne
     b,8\rest b16 gis eis8 b'\rest b\rest ais16 fis dis8 c'\rest
   | c\rest ais16 fis dis8 a'\rest a\rest gis16 eis cisis8 b'\rest
   | a\rest gis16 eis cisis8 a'\rest a\rest fis16 dis bis8 a'\rest
@@ -133,14 +141,21 @@ Alto = \context Voice = "two" \relative c {
   | d'8\rest ais'16 cis, gis' cis, fis cis eis cis dis cis dis8 gis, |
   | d'8\rest gis16 gis, fis' gis, eis' gis, dis' gis, cis bis cis gis eis' dis
   | eis gis, gis' fis gis gis, ais' gis, bis' cis dis bis gis bis dis eis
-  | \change Staff = "upper" \stemDown
+  | \change Staff = "upper" \voiceTwo
     fis eis dis eis cis'8 gis eis dis16 cis dis gis, cis dis
   %40
-  | eis dis cis dis bis'8 gis \change Staff = "lower" dis cis16 bis cis gis bis cis
-  | dis cis bis cis \change Staff = "upper" ais'8 fisis \change Staff = "lower" cis bis16 ais bis gis ais bis
+  | eis dis cis dis bis'8 gis
+    \change Staff = "lower"
+    dis cis16 bis cis gis bis cis
+  | dis cis bis cis
+    \change Staff = "upper"
+    ais'8 fisis
+    \change Staff = "lower"
+    cis bis16 ais bis gis ais bis
   | cis dis eis dis fis eis dis cis fis8 ais,16 bis cis bis ais gis
   | ais4 ~ ais16 gis fis ais gis fis eis gis fis eis fis dis
-  | \change Staff = "upper" \stemDown\tieDown d4\rest b'8\rest cis16
+  | \change Staff = "upper" \voiceTwo
+    d4\rest b'8\rest cis16
     \highlightSubject { dis eis dis cis dis bis'8 gis
   %45
   | dis cis16 bis cis8 ais' bis,[ gis'] ais, fisis'
@@ -150,19 +165,15 @@ Alto = \context Voice = "two" \relative c {
   | fis4. fis16 dis gis,4 r8 bis
   %50
   | eis4. eis16 cisis! fis,4 r8 ais
-  | dis4~ dis16 fis gis dis eis4 \change Staff = "lower" \stemUp\tieUp c8\rest cis~
+  | dis4~ dis16 fis gis dis eis4
+    \change Staff = "lower" \voiceOne
+    c8\rest cis~
   | cis16 bis ais bis cis bis ais gis ais4~ ais16 gis fis ais
   | gis fis eis gis fis eis dis fis eis gis ais bis cis bis ais gis
   | fisis gis ais fisis dis4 ~ dis16 dis eis fis gis ais bis gis
-  | \change Staff = "upper" \stemDown cis8[ cis]
+  | \change Staff = "upper" \voiceTwo
+    cis8[ cis]
     \once\override NoteColumn.force-hshift = #1.1 <fis ais> <fis gis> cis2
-}
-
-Tenor = \context Voice = "three" \relative c {
-  \voiceThree
-  \stemUp\tieUp
-  \override Rest.staff-position = #0
-  %1
 }
 
 Bass = \context Voice = "four" \relative c' {
@@ -241,13 +252,12 @@ Bass = \context Voice = "four" \relative c' {
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \clef bass
-      \Tenor
       \Bass
     >>
   >>
   \header {
-    composer = ##f # "Johann Sebastian Bach"
-    opus = ##f # "BWV 848"
+    composer = ##f % "Johann Sebastian Bach"
+    opus = ##f % "BWV 848"
     title = \markup { "Fuga III." }
     subtitle = "(a 3 voci)"
   }

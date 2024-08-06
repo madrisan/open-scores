@@ -104,6 +104,7 @@ Tenor = \context Voice = "three" \relative c' {
   \showStaffSwitch
   \override Rest.staff-position = #0
   \override VoiceFollower.color = \greyTextColor
+  \override VoiceFollower.style = #'dashed-line
   | R1*3
   | r8 \highlightSubject { g a b c8. d32 c b8 e
   %5
@@ -205,8 +206,8 @@ Bass = \context Voice = "four" \relative c {
     >>
   >>
   \header {
-    composer = ##f # "Johann Sebastian Bach"
-    opus = ##f # "BWV 846"
+    composer = ##f % "Johann Sebastian Bach"
+    opus = ##f % "BWV 846"
     title = \markup { "Fuga I." }
     subtitle = "a 4 voci"
   }

@@ -22,7 +22,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | e dis cis2
   | b cis
   %20
-  | dis d\rest
+  | dis \once\override Voice.Rest.X-offset = #-0.4 d\rest
   | es4\rest e dis cis
   | b dis gis2~
   | gis4 fis gis a
@@ -37,6 +37,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | gis2 ais4 b
   %30
   | cis2 b~
+    \noBreak
   | b ais
   | \once\override Tie.extra-offset = #'(0 . 1.4)
     b1~
@@ -87,7 +88,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | eis } e
   | dis8 cis dis e dis cis b dis
   %70
-  | cis b cis dis dis e dis cis
+  | cis b cis dis cis e dis cis
   | bis2 b
   | ais a
   | gis d'\rest
@@ -150,6 +151,9 @@ Mezzosoprano = \context Voice = "two" \relative c'' {
   \voiceTwo
   \stemUp\tieUp
   \override MultiMeasureRest.staff-position = #0
+  \override VoiceFollower.color = \greyTextColor
+  \override VoiceFollower.style = #'dashed-line
+  \showStaffSwitch
   %1
   | R1*11
   | g2\rest \highlightSubject { gis
@@ -243,7 +247,7 @@ Mezzosoprano = \context Voice = "two" \relative c'' {
     s2 \shiftOff gis~
   | \once\override NoteColumn.force-hshift = #-0.2 gis8 g\rest g4\rest f2\rest
   | \change Staff = "upper" \stemDown\tieDown
-    \once\override Voice.Rest.X-offset = #1.4 g'4\rest
+    \once\override Voice.Rest.X-offset = #1.5 g'4\rest
     gis cis cis
   | cis4 bis8 ais bis cis dis bis
   | gis fis gis a gis fis e gis
@@ -286,7 +290,7 @@ Mezzosoprano = \context Voice = "two" \relative c'' {
   | \stemUp\tieUp fis e8 dis e2~
   | e4 fis8 gis a4 gis~
   | gis e a a
-  | a gis8 fis gis4 ais8 bis
+  | a gis8 fis gis4 ais8 bis!
   | cis2 ais
   %110
   | gis gis
@@ -303,6 +307,9 @@ Alto = \context Voice = "three" \relative c' {
   \voiceThree
   \stemUp\tieUp
   \override MultiMeasureRest.staff-position = #-4
+  \override VoiceFollower.color = \greyTextColor
+  \override VoiceFollower.style = #'dashed-line
+  \showStaffSwitch
   %1
   | R1*6
   | e2\rest \highlightSubject { cis
@@ -351,7 +358,7 @@ Alto = \context Voice = "three" \relative c' {
   %45
   | gis
   | s1*3
-  | \change Staff = "lower" \stemUp
+  | \hideStaffSwitch \change Staff = "lower" \stemUp
     c,4\rest cis fis fis
   %50
   | fis eis8 dis eis2
@@ -379,7 +386,7 @@ Alto = \context Voice = "three" \relative c' {
   | gis fis!8 e fis2~
   | fis8 a gis fis eis dis eis cis
   | fis eis fis gis a gis a b
-  | \change Staff = "upper" \stemDown
+  | \showStaffSwitch \change Staff = "upper" \stemDown
     cis bis cis dis e dis e fis
   | gis fis gis a gis fis e gis
   %75
@@ -389,14 +396,20 @@ Alto = \context Voice = "three" \relative c' {
     \once\override Voice.Rest.X-offset = #0.6 e\rest
   | s1*4
   %82
-  | \change Staff = "lower" \stemUp
+  | \hideStaffSwitch \change Staff = "lower" \stemUp\tieUp
     c4\rest gis cis cis
   | cis bis8 ais bis2
-  | s1*11
+  | cis1
+  %85
+  | b2. fis'4
+  | eis2 fis
+  | b, cis~
+  | cis~ cis8 cis b a
+  | s1*6
   %95
-  | e4\rest b e e
+  | e'4\rest b e e
   | e d8 cis b4 f'\rest
-  | \change Staff = "upper" \stemDown f,\rest cis' fis fis
+  | \change Staff = "upper" \stemDown\tieDown f,\rest cis' fis fis
   | fis e8 dis e2
   | \once\override Tie.extra-offset = #'(0 . -1)
     fis2.~ fis8 gis
@@ -427,7 +440,7 @@ Tenor = \context Voice = "four" \relative c {
   \stemUp\tieUp
   \override Rest.staff-position = #0
   %1
-  | s1*3
+  | \override MultiMeasureRest.staff-position = #2 R1*3
   | \highlightSubject { gis'1
   %5
   | fisis2 b
@@ -706,8 +719,8 @@ Bass = \context Voice = "five" \relative c {
     >>
   >>
   \header {
-    composer = ##f # "Johann Sebastian Bach"
-    opus = ##f # "BWV 849"
+    composer = ##f % "Johann Sebastian Bach"
+    opus = ##f % "BWV 849"
     title = \markup { "Fuga IV." }
     subtitle = "(a 5 voci)"
   }

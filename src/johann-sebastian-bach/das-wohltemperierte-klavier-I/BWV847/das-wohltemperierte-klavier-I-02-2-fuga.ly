@@ -55,6 +55,9 @@ Alto = \context Voice = "two" \relative c'' {
   \voiceTwo
   \stemDown\tieDown
   \override Rest.staff-position = #0
+  \override VoiceFollower.color = \greyTextColor
+  \override VoiceFollower.style = #'dashed-line
+  \showStaffSwitch
   %1
   | r8 \highlightSubject { c16 b c8 g as c16 b c8 d
   | g,8 c16 b c8 d f,16 g as4 g16 f
@@ -73,7 +76,8 @@ Alto = \context Voice = "two" \relative c'' {
   | bes8 c bes as bes g f es
   | f8 des' c bes c as g f
   %15
-  | g8 \change Staff = "upper" \stemDown\tieDown \highlightSubject { g'16 fis g8 c, es g16 fis! g8 a
+  | g8 \hideStaffSwitch \change Staff = "upper" \stemDown\tieDown
+    \highlightSubject { g'16 fis g8 c, es g16 fis! g8 a
   | d,8 g16 fis g8 a! c,16 d es4 d16 c
   | bes8 } c\rest c16\rest d e fis g a bes8~ bes16 e,! f g
   | a bes c8~ c16 fis, g a! bes8 es,!16 d es8 g,
@@ -93,13 +97,6 @@ Alto = \context Voice = "two" \relative c'' {
   %30
   | f4 e8\rest f f es16 d << { \stemDown es8 f } \\ { \stemUp s \shiftOn aes } >>
   | <b, d> c\rest <b d> c\rest <g c>2
-}
-
-Tenor = \context Voice = "three" \relative c {
-  \voiceThree
-  \stemUp\tieUp
-  \override Rest.staff-position = #0
-  %1
 }
 
 Bass = \context Voice = "four" \relative c' {
@@ -157,13 +154,12 @@ Bass = \context Voice = "four" \relative c' {
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \clef bass
-      \Tenor
       \Bass
     >>
   >>
   \header {
-    composer = ##f # "Johann Sebastian Bach"
-    opus = ##f # "BWV 847"
+    composer = ##f % "Johann Sebastian Bach"
+    opus = ##f % "BWV 847"
     title = \markup { "Fuga II." }
     subtitle = "(a 3 voci)"
   }

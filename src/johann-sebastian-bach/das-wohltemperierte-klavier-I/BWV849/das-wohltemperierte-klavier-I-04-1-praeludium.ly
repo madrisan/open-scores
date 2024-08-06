@@ -41,7 +41,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | dis8 cis bis ais gis fis e dis e gis cis4~
   | cis8 b a gis a fis fis' e d cis d a
   %25
-  | \stemUp\tieUp a' gis fis e fis dis bis'2 gis4
+  | a' gis fis e fis dis \stemUp\tieUp bis'2 gis4
   | gis2.~ gis8 fis e dis e cis
   | fis2.~ fis8 e dis cis dis gis,
   | e'2.~ e8 dis e fis gis a
@@ -57,14 +57,16 @@ Soprano = \context Voice = "one" \relative c'' {
   << {
   | e2.~ e4. bis8 cis4
   | \tweak Accidental.Y-offset 0.4
+    \once\override Tie.extra-offset = #'(0 . 1.5)
     fisis2.~ fisis2 <bis, gis'>4
   } \\ {
   | s1 s4
-    \once\stemUp \once\omit Stem
+    \once\stemUp
+    \once\override Tie.extra-offset = #'(0 . -0.4)
     cis^~
-    \once\omit Stem cis s4 s1
+    \stemUp \shiftOn cis8 dis e dis cis b \stemDown ais gis fisis eis fis dis
   } >>
-  | cis2.~ cis4. dis8 bis4
+  | cis'2.~ cis4. dis8 bis4
   | \once\override Tie.extra-offset = #'(0 . 1)
     cis2~
     cis8 bis cis2.\fermata
@@ -76,7 +78,7 @@ Alto = \context Voice = "two" \relative c' {
   \stemDown\tieDown
   \override Rest.staff-position = #0
   %1
-  | s2. <e gis>2 s4
+  | s2. <e gis>2 fis4
   | e2.~ e2 fis4~
   | fis2. <gis dis'>2 <gis cis>4
   | gis2.~ gis2 gis4
@@ -105,10 +107,7 @@ Alto = \context Voice = "two" \relative c' {
       cis'4~ cis2.
     } >>
   | e,4\rest d8\rest cis d2 s
-  %20
-  | s1.*3
-  | s2. cis
-  | s1.
+  | s1.*5
   %25
   | s2 s8 \once\omit Flag \once\omit Stem dis'~ dis2.~
   | dis4. e8 bis4 cis2.~
@@ -120,10 +119,15 @@ Alto = \context Voice = "two" \relative c' {
   | g'8\rest dis' cis bis cis4~ cis2 bis!4
   %35
   | e,8\rest b' ais gis fisis gis fisis2.~
-  | fisis8 gis ais gis b! ais~ ais2.~
-  | ais8 dis e dis cis b ais gis fisis eis fis dis
-  | e b' a gis fis a e4. fis8 \stemUp \shiftOn dis[ fis~]
-  | fis gis a fis~ fis4 \shiftOff <eis gis>2.
+  | fisis8 gis ais gis b! ais!~ ais2.~
+  | ais8 s s4 s1
+  << {
+  | \stemDown e8 b' a gis fis a e4. fis8 \stemUp dis[ fis_~]
+  | \shiftOn fis gis a fis~ fis4 \shiftOff gis2.
+  } \\ {
+  | s1 s4 d
+  | cis2 dis4 eis2.
+  } >>
 }
 
 Tenor = \context Voice = "three" \relative c' {
@@ -158,8 +162,8 @@ Tenor = \context Voice = "three" \relative c' {
   %20
   | cis8 b a gis a fis fis'4. e8 dis cis
   | b4. cis8 dis4~ dis4. gis,8 cis bis
-  | cis2.~ cis4. bis8 cis aisis
-  | s1.
+  | cis2.~ cis4. bis8 cis ais
+  | bis4. cis8 dis4 cis2.
   | a4. b8 cis4 d2.\prall
   %25
   | bis2. fis'4 e\rest e\rest
@@ -249,7 +253,7 @@ Bass = \context Voice = "four" \relative c {
     >>
   >>
   \header {
-    composer = ##f # "Johann Sebastian Bach"
+    composer = ##f % "Johann Sebastian Bach"
     opus = "BWV 849"
     title = \markup { "Praeludium IV." }
     subtitle = ##f
