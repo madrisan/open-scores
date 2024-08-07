@@ -191,44 +191,55 @@ Soprano = \context Voice = "one" \relative c'' {
       g32^\markup {
         "Verlängerter Schluss (Extended closing)"
       } a bes a g f e d
-      \once\override Beam.damping = #+inf.0 cis d e d cis \change Staff = "lower" bes g e
-      cis e g bes \change Staff = "upper" cis! e g bes \stemDown e g bes g e cis g e
+      \once\override Beam.damping = #+inf.0 cis[ d e d cis] \change Staff = "lower" \stemDown bes[ g e]
+      cis[ e g bes] \change Staff = "upper" \stemUp cis! e g bes
+      \stemDown e g bes g e cis \stemUp g[ e]
   \break
   |   \once\override Beam.positions = #'(1.8 . 1)
-      \stemUp f d cis d \change Staff = "lower" a d f, a d, e f e d c! b a
+      \stemUp f[ d cis d \change Staff = "lower" a d] \stemDown f, a d, e f e d c! b a
   %\break
-      gis b d f gis b \change Staff = "upper" d f \stemDown gis b d f gis b gis d
-  |   \stemUp c! a gis a e a c, e \change Staff = "lower" a, b c b a g! fis e
-      dis fis! a c \change Staff = "upper" dis fis a c \stemDown dis fis a fis dis c a fis!
+      gis b d f \stemUp gis[ b \change Staff = "upper" d f] \stemDown gis b d f \stemUp gis[ b gis d]
+  |   \stemUp c! a gis a e a c, e \change Staff = "lower" \stemDown a, b c b a g! fis e
+      dis fis! a c \change Staff = "upper" \stemUp dis[ fis a c]
+      \stemDown dis fis a fis dis \stemUp c[ a fis!]
   %70
-  |   \stemUp g e dis e \change Staff = "lower" b e g,! b e, fis g fis e d cis b
-      ais cis! e g ais cis \change Staff = "upper" e g \stemDown ais cis e g ais cis ais e
-  |   \stemUp d b ais b fis b d, fis \change Staff = "lower" b, cis d cis b a gis fis
+  |   \stemUp g e dis e \change Staff = "lower" b e g,! b \stemDown e, fis g fis e d cis b
+      ais cis! e g \stemUp ais[ cis \change Staff = "upper" e g]
+      \stemDown ais cis e g \stemUp ais[ cis ais e]
+  |   \stemUp d b ais b fis b d, fis \change Staff = "lower" \stemDown b, cis d cis b a gis fis
   %\break
-      eis gis! b! d b d \change Staff = "upper" eis gis \stemDown b! d eis gis b gis eis b
-  |   \stemUp a fis eis fis cis fis a, cis \change Staff = "lower" fis, gis a gis fis e dis cis
-      bis dis! fis! a \change Staff = "upper" bis dis fis! a \stemDown bis dis fis a bis a fis dis
-  |   \stemUp e! cis bis cis gis cis e, gis cis, dis e dis cis \change Staff = "lower" b ais gis
-      fisis ais cis \change Staff = "upper" e fisis ais, cis! e \stemDown fisis! ais cis! e fisis e cis ais
-  |   \stemUp b gis fisis gis dis gis b, dis \change Staff = "lower" gis, ais b ais gis fis eis dis
+      eis gis! b! d b d \change Staff = "upper" \stemUp eis[ gis] b![ d] \stemDown eis gis b gis eis b
+  |   \stemUp a fis eis fis cis fis a, cis \change Staff = "lower" \stemDown fis, gis a gis fis e dis cis
+      bis dis! fis! a \change Staff = "upper" \stemUp bis[ dis fis! a]
+      \stemDown bis dis fis a \stemUp bis[ a fis dis]
+  |   \stemUp e! cis bis cis gis cis e, gis \stemDown cis, dis e dis cis \change Staff = "lower" b ais gis
+      fisis[ ais cis \change Staff = "upper" e] \once\stemUp fisis ais,[ cis! e]
+      \stemUp fisis! ais cis! e fisis e cis ais
+  |   \stemDown b gis fisis gis dis gis b, dis
+      \change Staff = "lower" \stemUp gis,[ ais b ais gis fis eis dis]
   %\break
-      cisis eis! gis! b! \change Staff = "upper" cisis eis gis! b! \stemDown cisis eis gis b gis eis cisis eis
+      \stemDown cisis eis! gis! b! \change Staff = "upper" \stemUp cisis[ eis gis! b!]
+      \stemDown cisis eis gis b gis eis cisis eis
   %75
-  |   fis dis cisis dis ais dis fis, ais \stemUp dis, eis fis! eis dis \change Staff = "lower" cis bis ais
-      a c \change Staff = "upper" ees ges a c ees ges \stemDown a! c! a ees! c! ees a c,
-  |   \stemUp des bes a bes f bes des, f \change Staff = "lower" bes, c des c bes aes g! f
-      e! g bes des! \change Staff = "upper" e g bes des! \stemDown e g bes bes, des! e! des bes
-  |   \stemUp aes f e! f c f \change Staff = "lower" aes, c f, g aes! g f ees d! c
+  |   \stemUp fis dis cisis dis ais[ dis! fis, ais]
+      \stemDown dis, eis fis! eis dis \change Staff = "lower" cis \stemUp bis[ ais]
+      \stemDown a c \change Staff = "upper" ees ges \stemUp a[ c ees ges]
+      \stemDown a! c! a ees! \stemUp c![ ees a c,]
+  |   \stemUp des bes a bes f bes des, f \change Staff = "lower" \stemDown bes, c des c bes aes
+      \stemUp g![ f] \stemDown e! g bes des! \change Staff = "upper" \stemUp e[ g bes des!]
+      \stemDown e g bes bes, \stemUp des![ e! des bes]
+  |   \stemUp aes f e! f c f \change Staff = "lower" \stemDown aes,[ c] f,[ g aes! g f ees] \stemUp d! c
   %\break
-      b 	d f aes! \change Staff = "upper" b d f aes! b,! d f aes! b d f d
-  |   ees c b c g c ees, g c, d ees! d c \change Staff = "lower" bes a g
-      fis a \change Staff = "upper" c ees! fis a c ees! \stemDown fis a! c a fis ees! c a
-  |   \stemUp bes g fis g d g bes,! d \change Staff = "lower" g, a bes a g f e! d
-      cis e g bes \change Staff = "upper" cis e g bes \stemDown cis e g bes g e cis bes
+      \stemDown b d f aes! \change Staff = "upper" \stemUp b[ d f aes!]
+      \stemDown b,! d f aes! \stemUp b[ d f d]
+  |   ees c b c g c \stemDown ees,[ g] \stemUp c, d ees! d c \change Staff = "lower" bes \stemDown a[ g]
+      fis a \change Staff = "upper" c ees! \stemUp fis[ a c ees!] \stemDown fis[ a!] \stemUp c a fis ees! c a
+  |   \stemUp bes g fis g d g \stemDown bes,![ d] \change Staff = "lower" \stemUp g,[ a bes a g f] \stemDown e! d
+      cis e g bes \change Staff = "upper" \stemUp cis[ e g bes] \stemDown cis e g bes g e \stemUp cis[ bes]
   %80
   |   \arpeggioArrowDown
       \override PianoStaff.Arpeggio.color = \greyTextColor
-      \stemUp <cis, e g bes>4\arpeggio s4 <a' cis>4. r16 <bes e>
+      <cis, e g bes>4\arpeggio s4 <a' cis>4. r16 <bes e>
   |   <c ees>4. r16 q <g b>4. d'16\rest <a d>
   |   <e! gis>4. b'16\rest q <g bes>4
     }
@@ -357,8 +368,8 @@ Alto = \context Voice = "two" \relative c' {
   | s4
     \revert Stem.details.beamed-length
     \magnifyMusic 0.75 {
-      \stemUp \change Staff = "lower" cis,32 e g bes
-      \change Staff = "upper" cis! e g e
+      \stemUp \change Staff = "lower" \stemDown cis,32[ e g bes]
+      \change Staff = "upper" \stemUp cis! e g e
       \stemDown e4. e16\rest e
   | a4. g16\rest a d,4. d16\rest d
   | b4. b16\rest b e4
@@ -451,7 +462,10 @@ Bass = \context Voice = "four" \relative c {
   | gis4 r16 e' d e c e a, c f d a c
   | b d g, b e c g b a c f, a d b fis a
   | gis b e, gis b d gis, b d f b, d gis,! f' e d
-  | \unHighlightSubject c32 b a } b c d e fis gis fis e fis gis a b c d c b c d e f! d b c d c b c d b
+  | \stemDown \unHighlightSubject c32 b a } b c d e fis
+    gis fis e fis gis a \stemUp b[ c]
+    d c b c d e f! d
+    \stemDown b c d c b c d b
   | gis8 r r s s2
   %55
   | s1

@@ -10,6 +10,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - J.S. Bach: Fuga H-Moll BWV951 (on a theme by Albinoni)
 - J.S. Bach: Fuga C-Dur BWV952
 
+### Changed
+
+- J.S. Bach: Fuga d-Moll BWV948 - make hands positions explicit in extended closing
+
 ### Fixed
 
 - J.S. Bach: Fuga d-Moll BWV948 - minor fixes
