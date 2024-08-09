@@ -28,7 +28,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | dis8 bis cis dis e dis b4. cis8 ais4
   | \tieNeutral <b, dis gis>2.~ q2 b'4~
   %15
-  | b8 gis ais cis e4~ e8 dis e gis fis e
+  | b8 gis ais cis e4^~ e8 dis e gis fis e
   | \tieUp dis2.~  dis2 cis4~
   | cis8  ais bis dis fis gis a gis fis e fis dis
   | \once\override Tie.extra-offset = #'(0.4 . 0.6)
