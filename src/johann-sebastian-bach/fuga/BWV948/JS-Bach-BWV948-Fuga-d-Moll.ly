@@ -221,7 +221,7 @@ Soprano = \context Voice = "one" \relative c'' {
       \stemDown cisis eis! gis! b! \change Staff = "upper" \stemUp cisis[ eis gis! b!]
       \stemDown cisis eis gis b gis eis cisis eis
   %75
-  |   \stemUp fis dis cisis dis ais[ dis! fis, ais]
+  |   \stemUp fis dis cisis dis ais dis! fis, ais
       \stemDown dis, eis fis! eis dis \change Staff = "lower" cis \stemUp bis[ ais]
       \stemDown a c \change Staff = "upper" ees ges \stemUp a[ c ees ges]
       \stemDown a! c! a ees! \stemUp c![ ees a c,]
