@@ -30,6 +30,7 @@ Soprano = \context Voice = "one" \relative c' {
   | a gis fis gis e4 a
   | \stemNeutral fis8 eis fis a gis a b fis
   | gis eis fis dis eis cis cis'4
+  \break
   | cis8 d! e cis d b cis ais
   | b cis d b cis a! b gis
   %15
