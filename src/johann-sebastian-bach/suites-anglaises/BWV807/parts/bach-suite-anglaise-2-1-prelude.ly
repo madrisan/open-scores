@@ -235,8 +235,8 @@ Alto = \context Voice = "two" \relative c' {
     \revert NoteColumn.force-hshift
   | s2.*11
   %47
-  | \change Staff = "lower" \stemUp a,,4\rest a8\rest c[ d b]
-  | c4 \change Staff = "upper" \stemDown d8\rest a'[ a gis!]
+  | \change Staff = "lower" \voiceThree a,,4\rest a8\rest c[ d b]
+  | c4 \change Staff = "upper" \voiceTwo d8\rest a'[ a gis!]
   | a d,\rest d\rest a'[ gis! e]
   %50
   | d4 c8[ b] c[ b]
@@ -308,8 +308,8 @@ Alto = \context Voice = "two" \relative c' {
     \revert NoteColumn.force-hshift
   | s2.*11
   %157
-  | \change Staff = "lower" \stemUp a,,4\rest a8\rest c[ d b]
-  | c4 \change Staff = "upper" \stemDown d8\rest a'[ a gis!]
+  | \change Staff = "lower" \voiceThree a,,4\rest a8\rest c[ d b]
+  | c4 \change Staff = "upper" \voiceTwo d8\rest a'[ a gis!]
   | a d,\rest d\rest a'[ gis! e]
   | d4 c8[ b] c[ b]
 }

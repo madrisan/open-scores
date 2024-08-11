@@ -15,11 +15,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - J.S. Bach: Fuga d-Moll BWV948 - make hands positions explicit in extended closing
 - J.S. Bach: Das wohltemperierte Klavier - Fuga IV: rework to make hands positions explicit
+- J.S. Bach: Suite Anglaise n.2 BWV807 - better pagination for Bourrée II
 
 ### Fixed
 
 - J.S. Bach: Fuga d-Moll BWV948 - minor fixes
 - J.S. Bach: Das wohltemperierte Klavier – sparse fixes
+- J.S. Bach: Suite Anglaise n.2 BWV807 - fix two "too many colliding rests" warnings
 
 ## [v54] - 2024-08-01
 
