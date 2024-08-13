@@ -86,7 +86,7 @@ Alto = \context Voice = "two" \relative c' {
   | \shiftOn ces8 aes s2
   | \stemDown e4\rest \grace aes16 g4.\prall s8
   | d4\rest \grace f16 e4.\prall s8
-  | c4\rest \grace d16 cis4.\prall s8
+  | b4\rest \grace d16 cis4.\prall s8
   %20
   | << {
       \stemDown s4 d8. e32 fis

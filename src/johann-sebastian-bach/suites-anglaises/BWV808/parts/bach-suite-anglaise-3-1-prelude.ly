@@ -348,7 +348,8 @@ Alto = \context Voice = "two" \relative c'' {
   | s4.
   | r8 <f a> q
   %90
-  | bes4.~
+  | \override Tie.extra-offset = #'(0 . -1)
+    bes4.~
   | \override NoteColumn.force-hshift = #1.5 bes8 \override NoteColumn.force-hshift = #1.3 bes bes
   | \revert NoteColumn.force-hshift c4.~
   | \override NoteColumn.force-hshift = #1.5 c8 \override NoteColumn.force-hshift = #1.3 c c
