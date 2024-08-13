@@ -51,7 +51,7 @@ Soprano = \context Voice = "one" \relative c'' {
   %20
   | \grace d8 cis4.\prall b8 a cis fis,4 gis4.\arpeggio a8
   | gis4.\prall fis8 e4 \stemNeutral b'8( cis16 d) cis4.\prall b8
-  | \once\stemUp \appoggiatura b8 e4. fis8 g e \stemUp a4 gis4.\prall a8
+  | \once\stemUp \appoggiatura b8 e4. fis8 g e \stemUp a4 g4.\prall a8
   | \grace g8 fis4. gis8 a d, cis b
     \once\override Staff.Script.extra-offset = #'(0.5 . 0)
     b4.\upmordent a8

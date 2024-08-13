@@ -86,7 +86,7 @@
   \include "./logo.ly"
 
   \markup {
-    \fill-line {
+    \fill-line {s
       \center-column {
         \null\null\null\null
         \fill-line {
@@ -103,7 +103,7 @@
 \include "./parts/bach-suite-anglaise-1-2-allemande.ly"
 \pageBreak
 \include "./parts/bach-suite-anglaise-1-3-courante-1.ly"
-\pageBreak
+%\pageBreak
 \include "./parts/bach-suite-anglaise-1-3-courante-2.ly"
 \pageBreak
 \include "./parts/bach-suite-anglaise-1-4-double-1.ly"

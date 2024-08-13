@@ -22,6 +22,7 @@ Soprano = \context Voice = "one" \relative c {
   %5
   | b cis d cis d b \grace b8 cis4.~ cis4 d8
   | e fis g fis g e fis4\mordent e8 d4 e8
+  \break
   | fis gis a b gis a gis4.~\parenthesize\prall gis4 a8\mordent
   | b a gis fis gis e dis e fis~ fis4.~
   | fis8 b, e~ e e dis e dis cis b cis a
@@ -55,6 +56,7 @@ Soprano = \context Voice = "one" \relative c {
   | e'' d cis b d cis d2.~
   | d4. cis~ cis8 d cis b c a
   | gis!4.~ gis8 b gis e e' a,~ a b gis
+  \break
   %35
   | a' gis fis e fis d cis4 d8 cis4\prall b8
   << {
@@ -125,7 +127,10 @@ Alto = \context Voice = "two" \relative c'' {
   %30
   | b8 a g fis g e fis2.
   | e8 d cis s4. s s
-  | gis4 a8 b e fis gis4.~ gis4 a8
+  | \change Staff = "lower" \stemUp
+    gis4 a8 b
+    \change Staff = "upper" \stemDown
+    e fis gis4.~ gis4 a8
   | b4.~ b8 a g fis4. f~
   | f8 e d s4. e d
   %35
@@ -183,7 +188,7 @@ Tenor = \context Voice = "three" \relative c' {
   | s1*12/8*4
   %31
   | s4. b8 cis a gis4 a8 gis4 fis8
-  | e4 fis8 gis4 a8 b4 r8 r4.
+  | \stemDown e4 fis8 gis4 \stemUp a8 b4 r8 r4.
   | s1*12/8
   | s4. cis!8 d b cis4. b
   %35
@@ -241,7 +246,7 @@ Bass = \context Voice = "four" \relative c' {
   %30
   | a8 cis e a a, cis d,4. dis\upmordent
   | e4 r8 b'4.\rest g2.\rest
-  | \stemDown g\rest e'8 d cis b cis a
+  | \stemDown \once\override Voice.Rest.X-offset = #0.4 g\rest e'8 d cis b cis a
   | \stemNeutral gis fis e a b cis d cis e d e f
   | \stemDown\tieDown e2.~ e
   %35

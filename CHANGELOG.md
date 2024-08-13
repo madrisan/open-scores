@@ -23,6 +23,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - J.S. Bach: Das wohltemperierte Klavier – sparse fixes
 - J.S. Bach: Suite Anglaise n.2 BWV807 - fix two "too many colliding rests" warnings
 - J.S. Bach: Suite Anglaise n.3 BWV808 - minor fixes
+- J.S. Bach: Suite Anglaise 1 BWV806 - sparse fixes
 
 ## [v54] - 2024-08-01
 

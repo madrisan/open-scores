@@ -57,9 +57,8 @@ Soprano = \context Voice = "one" \relative c'' {
   %20
   | cis( d cis b) a( gis fis gis) a( cis b a)
   | gis( fis e fis) gis( a b cis) d( cis b\prall a)
-  \break
   | e'( d cis d) e( fis g fis) g( b a g)
-  | fis( e fis gis) a d, cis\prall b \stemUp b4. a8
+  | fis( e fis gis) a d, cis\prall b \stemUp b4.\downmordent a8
   | \once\override Tie.extra-offset = #'(0 . 1)
     a2.~
     \once\override Tie.extra-offset = #'(0 . 0.4)
@@ -146,7 +145,8 @@ Alto = \context Voice = "two" \relative c' {
       \once\override Voice.Rest.X-offset = #0.6 g,4\rest d'2
     } >>
     s2.
-  | s1*3/2*4
+  | s1*3/2*3
+  | s1 gis2
   | << {
       d8\rest e~
       \once\shape #'((0 . -0.5) (0 . -0.5) (-0.5 . -0.5) (-1 . -0.5)) Tie

@@ -47,7 +47,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | d2. \stemNeutral fis4\mordent \once\stemUp \grace fis8 g4.\mordent fis8
   | \once\stemUp \grace fis8 e4.\prall d8
     \once\stemUp \grace d8 cis4\parenthesize\prall b8 ais
-    \once\stemUp \grace a8 b4.\mordent cis8
+    \once\stemUp \grace ais8 b4.\mordent cis8
   | ais4.\prall gis8 fis cis' fis4 \stemUp e4.\prall fis8
   | d4.\prall cis8 b ais b cis cis4.\downprall b8
   | b2. \schleifer b4 e4. d8
@@ -57,7 +57,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | \stemUp e4. fis8 g e a4\arpeggio g4.\downmordent a8
   | \once\override Staff.Script.extra-offset = #'(3 . -1)
     fis4.^\turn
-    gis8 \slurUp a( d,) cis( b)
+    gis8 \slurUp a( d,) cis[( b)]
     \once\override Staff.Script.extra-offset = #'(0.5 . 0)
     b4.\downmordent a8
   | a2.~ a2~ a8
@@ -174,7 +174,7 @@ Bass = \context Voice = "four" \relative c' {
   | e'4. e'8[ fis a] gis[ b a gis fis e]
   | a b a gis fis gis a fis gis b ais cis
   %5
-  | b cis b a gis a b gis cis \change Staff = "upper" \stemDown d dis fis
+  | b cis b a gis a b gis cis \change Staff = "upper" \stemDown e dis fis
   | \change Staff = "lower" \stemNeutral
     s1*3/2
   | r8 b,, cis dis e fis gis a b a b b,

@@ -41,9 +41,9 @@ Soprano = \context Voice = "one" \relative c'' {
       b8\rest
       ais \grace ais8 b2
     } >>
-  | c8. d32 e \slurDown d8( cis)
+  | c8. d32 e \slurDown d8( c)
     \once\shape #'((0 . 0.2) (0 . 0.3) (0 . 0.3) (0 . 0.5)) Slur
-    \appoggiatura cis
+    \appoggiatura c
     b \appoggiatura cis ais
   | b2.~
   %15

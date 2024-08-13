@@ -38,6 +38,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | fis2~\arpeggio \stemNeutral fis8 fis' e d cis4.\prall d8
   | e( d cis b) b'4.\mordent gis8 \once\stemUp \grace gis8 a4.\mordent b8
   | \stemUp \grace a8 gis4. fis8 e( d cis b) \stemNeutral a( gis) a( fis)
+  \break
   | d'4.\mordent e8 \stemUp cis4.\prall b8 b4.\prallprall a8
   | a2~ a d4\rest a8 gis
   %20
@@ -165,7 +166,8 @@ Bass = \context Voice = "four" \relative c' {
    % << { \stemDown fis4 gis } \\ { \stemUp a b } >>
   | \stemNeutral a4. b8 gis4 fis cis' cis,
   %15
-  | \stemDown fis,2 fis'4 gis ais fis
+  | << { \stemDown fis,2 } \\ { \stemUp d'8\rest cis d e! } >>
+    \stemDown fis4 gis ais fis
   | b4. cis8 d fis e d
     << { cis4 dis }
     \new Voice = "slides" { \slideNotes d e }

@@ -25,7 +25,9 @@ Soprano = \context Voice = "one" \relative c'' {
   %10
   | a b cis dis e cis fis e dis cis b a
   | gis e' dis cis b a gis( a32 b) fis8.\parenthesize\prall[ e16]
-  | e fis gis a b gis cis b a gis fis e
+  | \once\override Staff.TextScript.extra-offset = #'(1 . -1)
+    e_\markup { "piano" }
+    fis gis a b gis cis b a gis fis e
   | dis e fis gis a fis b a gis fis e dis
   | cis dis e fis gis e a gis fis e dis cis
   %15
@@ -58,7 +60,9 @@ Soprano = \context Voice = "one" \relative c'' {
   | e d cis b a g fis e' d cis b a
   %35
   | gis e fis gis a gis a16( b) gis8.\trill( fis32 gis)
-  | a16 b cis d e cis fis e d cis b a
+  | \once\override Staff.TextScript.extra-offset = #'(1 . -2)
+    a16_\markup { "piano" }
+    b cis d e cis fis e d cis b a
   | gis a b cis d b e d cis b a gis
   | fis gis a b cis a d cis b a gis fis
   | e d' cis b a gis a( b) b8.\trill a16

@@ -340,7 +340,7 @@ Bass = \context Voice = "four" \relative c' {
   \partial 16 r16
   | r16 e'8.~ e4~ \stemNeutral e16 g cis, e ais, cis fis, e'
   | \stemDown d4~ d8 d cis4 fis8 fis,
-  | \stemNeutral\tieNeutral b2~ b16 d gis, b eis, gis cis, b'
+  | \stemNeutral\tieNeutral b2~ b16 d gis,! b eis, gis cis, b'
   %20
   | \stemDown\tieDown a4~ a8 a \stemNeutral gis16 cis dis! eis fis eis fis gis
   | a gis a b cis8 cis, fis4 r8 fis
@@ -349,7 +349,7 @@ Bass = \context Voice = "four" \relative c' {
   | cis4 c\rest ais'16 b ais gis! fis e d cis
   %25
   | b4 r gis'16 a gis fis e d cis b
-  | a4 a\rest \stemNeutral fis'16 gis fis e d cis b a
+  | a4 a\rest \stemNeutral fis'16 g fis e d cis b a
   | e'8. d16 cis a cis e a8. g16 fis d fis a
   | d8 cis b a b a gis fis
   | \stemDown\tieDown e4~ e~ e2~
