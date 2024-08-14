@@ -13,44 +13,57 @@ Soprano = \context Voice = "one" \relative c'' {
   | gis8 fis e dis e cis cis'4. b8 a4
   | gis2.~ gis2 fis4
   | dis'8 cis bis ais bis gis gis'4. fis8 e4
-  \noBreak
-  | <bis dis>2.~ q2 <bis gis'>4
+  \break
+  | <bis dis>2.~ q2 <bis! gis'>4
   %5
   | cis8 bis cis e a4~ a8 gis fis e dis cis
   | b a b dis gis4~ gis8 fis e dis cis b
   | a gis a cis fis4~ fis8 e dis cis b a
   | gis2.~ gis4. fis8 a4~
+  \break
   | a8 gis fis e fis dis dis' cis bis ais bis gis
   %10
   | \stemNeutral a'! gis fis e fis dis \stemUp e2.~
+  \break
   | e4. dis8 cis4 cis4. b8 ais4~
   | ais8 gis fisis eis fisis dis dis'2.~
+  \break
   | dis8 bis cis dis e dis b4. cis8 ais4
   | \tieNeutral <b, dis gis>2.~ q2 b'4~
   %15
   | b8 gis ais cis e4^~ e8 dis e gis fis e
+  \break
   | \tieUp dis2.~  dis2 cis4~
   | cis8  ais bis dis fis gis a gis fis e fis dis
+  \break
   | \once\override Tie.extra-offset = #'(0.4 . 0.6)
     e2.~ e~
   | e8 d eis gis b4~ b8 d,! cis b a gis
+  \break
   %20
   | \stemNeutral\tieNeutral a2.~ a8 gis a cis fis4~
   | fis8 e dis cis b a gis fis gis b e4~
+  \break
   | e8 dis cis b a gis fis e fis a dis4~
   | dis8 cis bis ais gis fis e dis e gis cis4~
+  \break
   | cis8 b a gis a fis fis' e d cis d a
   %25
   | a' gis fis e fis dis \stemUp\tieUp bis'2 gis4
+  \break
   | gis2.~ gis8 fis e dis e cis
   | fis2.~ fis8 e dis cis dis gis,
+  \break
   | e'2.~ e8 dis e fis gis a
   | bis,4.\prall cis8 dis4 <dis, fis>2.~
+  \break
   %30
   | \stemNeutral\tieNeutral fis8 e dis cis dis bis a' gis fis e fis dis
   | bis' a! gis fis gis dis dis' cis bis! ais bis gis
+  \break
   | gis'4 fis8 e dis cis bis cis dis fis a,4~
   | a8 gis a fis a'4~ a gis8 fis e dis
+  \break
   | \stemUp\tieUp e2~  e8 a e4. fis8 dis4
   %35
   | cis2.~ cis4. e8 dis4
@@ -60,11 +73,14 @@ Soprano = \context Voice = "one" \relative c'' {
     \once\override Tie.extra-offset = #'(0 . 1.5)
     fisis2.~ fisis2 <bis, gis'>4
   } \\ {
+  \break
   | s1 s4
     \once\stemUp
     \once\override Tie.extra-offset = #'(0 . -0.4)
     cis^~
-    \stemUp \shiftOn cis8 dis e dis cis b \stemDown ais gis fisis eis fis dis
+    \stemUp \shiftOn cis8 dis e dis cis b
+    \stemDown ais_\markup { \hspace #-1 \tiny "l.H" }
+    gis fisis eis fis dis
   } >>
   | cis'2.~ cis4. dis8 bis4
   | \once\override Tie.extra-offset = #'(0 . 1)
@@ -95,8 +111,9 @@ Alto = \context Voice = "two" \relative c' {
   | gis2.~ gis2 fisis4
   | s1.
   %15
-  | s2. ais4. b8 cis4~
-  | cis8 cis b ais b fis~ <dis fis>2.
+  | s2. ais!4. b8 cis4~
+  | \once\override NoteColumn.force-hshift = #1.4
+    cis8 cis b ais b fis~ <dis fis>2.
   | fis8 d\rest d4\rest d\rest bis'!4. cis8 gis4
   | << {
       \stemDown\tieDown g8\rest dis' cis bis cis
@@ -118,7 +135,7 @@ Alto = \context Voice = "two" \relative c' {
   | s1.*4
   | g'8\rest dis' cis bis cis4~ cis2 bis!4
   %35
-  | e,8\rest b' ais gis fisis gis fisis2.~
+  | e,8\rest b' ais gis fisis gis fisis!2.~
   | fisis8 gis ais gis b! ais!~ ais2.~
   | ais8 s s4 s1
   << {
@@ -196,12 +213,12 @@ Bass = \context Voice = "four" \relative c {
   | dis2. gis4. fis8 gis4
   %10
   | cis,2.~ cis4. dis8 e4
-  | \stemNeutral ais,8 dis cis b cis ais fisis b ais gis ais fisis
+  | \stemNeutral ais,8 dis cis b cis ais! fisis b ais! gis ais! fisis!
   | cis2.~ cis8 cis' b ais b gis
   | \stemDown e'4. dis8 cis4 dis2 dis,4
   | gis2.~ gis
   %15
-  | cis8 dis cis b cis ais fis4. gis8 ais4
+  | cis8 dis cis b cis ais fis4. gis8 ais!4
   | \stemNeutral b2.~ b8 b' a! gis a fis
   | \stemDown dis e dis cis dis bis gis4. ais8 bis!4
   | cis2.~ cis8 dis e fis gis a
@@ -210,7 +227,7 @@ Bass = \context Voice = "four" \relative c {
   | fis1.
   | gis4. a8 b4 e,2.~
   | e4. dis8 cis4 dis2.
-  | gis4. ais8 bis4 cis4. b8 a gis
+  | gis4. ais8 bis!4 cis4. b8 a gis
   | fis2.~ fis4. e8 fis4
   %25
   | dis!4. fis8 a4~ a8 gis fis e fis dis
@@ -222,7 +239,7 @@ Bass = \context Voice = "four" \relative c {
   | a!4. b8 gis4 fis4. gis8 e4
   | dis4. e8 fis4 bis,4. dis8 fis4
   | e8 e' fis gis a fis dis e fis dis bis cis
-  | dis bis gis ais bis cis dis e fis gis ais bis
+  | dis bis gis ais bis! cis dis e fis gis ais bis
   | \stemDown\tieDown cis b a gis a fis gis2 gis,4
   %35
   | ais2.~ ais4. b8 cis4

@@ -388,7 +388,7 @@ Alto = \context Voice = "three" \relative c' {
   | a8 gis fis e dis cis bis cis
   %60
   | c'4\rest gis cis cis
-  | cis bis8 ais b2
+  | cis bis8 ais bis2
   | cis a
   | fis gis
   | eis fis
@@ -514,7 +514,7 @@ Tenor = \context Voice = "four" \relative c {
   | \stemDown cis1~
   | cis4 b ais gis~
   %40
-  | gis fisis8 eis fis2
+  | gis fisis8 eis fisis2
   | gis8 ais gis fisis gis ais b gis
   | a b a gis ais b cis ais
   | b cis b ais bis cis dis bis
@@ -632,7 +632,7 @@ Bass = \context Voice = "five" \relative c {
   | \override MultiMeasureRest.staff-position = #-6
     s1*6
   %29
-  | g'2\rest \highlightSubject { b
+  | d2\rest \highlightSubject { b'
   | ais dis
   | cis1 }
   | b~
