@@ -89,7 +89,10 @@ Alto = \context Voice = "two" \relative c' {
     \hideStaffSwitch \change Staff = "upper" \voiceTwo
     <d, g>16
   | g4 b,\rest b2\rest
-  | \showStaffSwitch \change Staff = "lower" \voiceThree e4\rest \highlightSubject { d32
+  | \showStaffSwitch \change Staff = "lower" \voiceThree e4\rest
+    \highlightSubject {
+    \once\override Beam.positions = #'(7 . 7)
+    d32
     \hideStaffSwitch \change Staff = "upper" \voiceTwo
     e fis g fis e fis d b'8. b16 a8. g16
   | \unHighlightSubject fis8. } a16 d2 c4~
@@ -141,8 +144,8 @@ Tenor = \context Voice = "three" \relative c' {
     e4 c\rest
     \showStaffSwitch \change Staff = "lower" \voiceThree
     \clef treble
-    \stemDown a'8. f16
-    \stemUp \once\omit Flag \shiftOff f8. s16
+    \stemDown a'8. fis16
+    \stemUp \once\omit Flag \shiftOff fis8. s16
   | \hideStaffSwitch \change Staff = "upper" \voiceTwo
     d4 s2.
   | \change Staff = "lower" \voiceThree
