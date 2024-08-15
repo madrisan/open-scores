@@ -67,7 +67,7 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
 | Bach / Kempff | Largo from Harpsichord Concerto BWV 1056 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v55/JS-Bach-Kempff-Cembalo-Konzert-Largo-BWV1056.pdf) |
 |  | Siciliano BWV 1031 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v55/JS-Bach-Kempff-Siciliano-BWV1031.pdf) |
 | Bach / Liszt | Präludium und Fuge BWV543 S462 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v55/Bach-Liszt-Praludium-und-Fuge-BWV543-S462.pdf) |
-| Bach / me | Chorale Prelude - Jesu meine Freude BWV 610 :three: | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v55/JS-Bach-BWV610-Jesu-meine-Freude.pdf) |
+| Bach / Madrisan | Chorale Prelude - Jesu meine Freude BWV 610 :three: | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v55/JS-Bach-BWV610-Jesu-meine-Freude.pdf) |
 |  | Chorale Prelude - Nun komm’ der Heiden Heiland BWV 659 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v55/JS-Bach-BWV659-Chorale-Prelude.pdf) |
 | Bach / Petri | Schafe können sicher weiden BWV 208 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v55/JS-Bach-Petri-Schafe-konnen-sicher-weiden-BWV208.pdf) |
 | Bach / Ruoshi Sun | Chorale Prelude - Vor deinen Thron tret' ich hiermit BWV 668 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v55/JS-Bach-BWV668-Chorale-Prelude.pdf) |
@@ -108,8 +108,8 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
  2. Contains in the preface "A guide to ornaments, written in Bach's hand"
  3. Image of the J.S. Bach's [manuscript](images/js-bach-jesu-meine-freude-manuscript.png) of the Choral "*Jesu meine Freude*" (*Das Orgel-Büchlein*, p.15)
  4. [Manuscript](images/baldassare-galuppi-sonata-5-manuscript-1st-page.png) of the first page of the sonata
- 5. Thanks to my harpist friend Tristan Rollet ([@Pluiesurlavitre](https://github.com/Pluiesurlavitre)) for pointing me to this beautiful romantic piece
- 6. With a preface by Giancarlo Simonacci (Italian and English translation).
+ 5. Thanks to my amateur harpist friend *Tristan Rollet* ([@Pluiesurlavitre](https://github.com/Pluiesurlavitre)) for pointing me to this beautiful romantic piece
+ 6. With a preface by *Giancarlo Simonacci* ([Wikipedia :it:](https://it.wikipedia.org/wiki/Giancarlo_Simonacci)), in Italian with English translation by *Davide Madrisan*
 
 ## How to manually create the `.pdf` and `.midi` files
 
