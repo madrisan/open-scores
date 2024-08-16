@@ -234,7 +234,7 @@ Bass = \context Voice = "four" \relative c' {
   | a2 gis4 a8 g
   %15
   | f4. f8 e4. c8
-  | d4 a\rest \highlightSubject { b16\rest e fis gis a e d e
+  | d4 a\rest \highlightSubject { b16\rest e fis! gis! a e d e
   | \stemNeutral\tieNeutral c f! e f d e c d b e d e c d b c
   | \unHighlightSubject a } a' g! a f g e f d g f g e f d e
   | c c' b c a b g a fis b a b g a fis g
@@ -280,7 +280,7 @@ Bass = \context Voice = "four" \relative c' {
   \header {
     composer = ##f % "Johann Sebastian Bach"
     opus = "BWV 952"
-    title = \markup { "" }
+    title = \markup { "Fuga a 3" }
     subtitle = ##f
   }
   \layout {
