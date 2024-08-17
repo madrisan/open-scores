@@ -78,6 +78,7 @@ make -C src/johann-sebastian-bach/suites-anglaises/BWV807
 make -C src/johann-sebastian-bach/suites-anglaises/BWV808
 make -C src/johann-sebastian-bach/suites-anglaises/BWV809
 make -C src/johann-sebastian-bach/suites-anglaises/BWV810
+make -C src/johann-sebastian-bach/suites-anglaises/BWV811
 make -C src/johannes-brahms/klavierstucke-op.119
 make -C src/johannes-brahms/rhapsodie-op.79-nr.1
 make -C src/johannes-brahms/rhapsodie-op.79-nr.2

@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [v56] - unreleased
 
+### Added
+
+- J.S. Bach: Suite Anglaise n.6 BWV811
+
 ### Changed
 
 - J.S. Bach: Fuga C-Dur BWV952 - minor changes
