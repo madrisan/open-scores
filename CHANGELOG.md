@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Changed
 
 - J.S. Bach: Fuga C-Dur BWV952 - minor changes
+- J.S. Bach: Chromatische Fantasie und Fugue - major updates and improvements
 
 ## [v55] - 2024-08-15
 

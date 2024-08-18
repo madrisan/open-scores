@@ -4,10 +4,12 @@ Global = {
   \include "../global.ly"
 }
 
+\include "../macros.ly"
+
 Soprano = \context Voice = "one"  \relative c'' {
   %1
   \voiceOne
-  | a4 bes b
+  | \highlightSubject { a4 bes b
   | c c8 b c4
   | e, f fis
   | g g8 fis g a
@@ -15,7 +17,7 @@ Soprano = \context Voice = "one"  \relative c'' {
   | bes!4 a g
   | f! g8 f e d
   | e4 a, cis
-  | d8 d16 e f8 f16 g a8 a16 b
+  | \unHighlightSubject d8 } d16 e f8 f16 g a8 a16 b
   | c2.~
   %10
   | c8 a16 bes! c8 c16 d! e8 e16 fis
@@ -114,14 +116,14 @@ Soprano = \context Voice = "one"  \relative c'' {
   | dis d2
   | cis4 c2
   %90
-  | b4 c cis
+  | \highlightSubject { b4 c cis
   | d! d8 cis d4
   | fis, g gis
   | a a8[ gis] a8[ b!]
   | c!4 b a
   %95
   | g a8 g fis e
-  | fis16 g a b c a b c r c b a
+  | \unHighlightSubject fis16 } g a b c a b c r c b a
   | g2 r16 a, e' g
   | fis2 r16 g, d' f
   | e c e g c8 r r16 d, a' c
@@ -177,11 +179,11 @@ Soprano = \context Voice = "one"  \relative c'' {
   | cis16 r16 r8 r4 r16 b d f
   | e c' b a g f e d c b a g
   | c2 r16 fis, a c
-  | bes4 b4\rest b4\rest
+  | bes4 b4\rest d,4\rest
   | \override MultiMeasureRest.staff-position = #0
     R1*3/4
   %145
-  | r8 a16 c! bes!8 bes16 a g8 g16 f
+  | r8 a'16 c! bes!8 bes16 a g8 g16 f
   | g8 g16 bes a8 a16 g f8 f16 e
   | f4 b16\rest c, d e f a g f
   | e4 b'16\rest bes, c d ees g f ees
@@ -191,7 +193,7 @@ Soprano = \context Voice = "one"  \relative c'' {
   | bes4 r16 f g a bes d c bes
   | a4 r16 a b cis d f e d
   | cis!16 r16 r8 r4 r4
-  | a'4 bes b
+  | \highlightSubject { a'4 bes b
   %155
   | c c8 b c4
   | e, f fis
@@ -199,7 +201,7 @@ Soprano = \context Voice = "one"  \relative c'' {
   | \stemDown bes!4 a g
   | f \stemUp g8 f e d
   %160
-  | e16 r r8 a,32[ b! cis d e f g e] cis!8. d16
+  | e16 } r r8 a,32[ b! cis d e f g e] cis!8. d16
   | d2.^\fermata
   \fine
 % la si do re mi fa sol
@@ -209,20 +211,14 @@ Soprano = \context Voice = "one"  \relative c'' {
 Tenor = \context Voice = "two"  \relative c'' {
   %1
   \voiceTwo
+  \override VoiceFollower.color = \greyTextColor
+  \override VoiceFollower.style = #'dashed-line
   | \change Staff = "lower"
     \override MultiMeasureRest.staff-position = #0
-    R1*3/4
-  | R1*3/4
-  | R1*3/4
-  | R1*3/4
-  %5
-  | R1*3/4
-  | R1*3/4
-  | R1*3/4
-  | R1*3/4
+    R1*3/4*8
+  %9
   | \change Staff = "upper"
-    d,8. e16 f4 fis
-  %10
+    \highlightSubject { d,8. e16 f4 fis
   | g g8 fis g4
   | b,! c cis
   | d4 d8[ cis d e]
@@ -231,16 +227,16 @@ Tenor = \context Voice = "two"  \relative c'' {
     \change Staff = "lower"
     b! a]
   %15
-  | \stemUp b!4 e, gis
-  | a8[ a16 b!] c8[ c16 d]
-    \change Staff = "upper"
-    \stemDown
+  | \stemNeutral\tieNeutral b!4 e, gis
+  | \unHighlightSubject a8[ } a16 b!] c8[ c16 d]
     e8[ e16 fis]
   | g!2.~
   | g8[ g,16 a] bes8[ bes16 c] d8[ d16 e!]
-  | f2.~
+  | \stemUp f2.^~
   %20
-  | f8 d16 e! f8 f16 g a8 a16 b
+  | f8 d16 e!
+    \showStaffSwitch \change Staff = "upper" \voiceTwo
+    f8 f16 g a8 a16 b
   | c2.-\shape #'((0.5 . -1) (0 . -2) (0 . -3) (0 . -1)) ~
   | c8 d16 c bes8 bes16 a g8 f16 e
   | cis'2~\tweak extra-offset #'(1 . 1.8)\trill cis8.^\trill b32 cis
@@ -256,71 +252,72 @@ Tenor = \context Voice = "two"  \relative c'' {
   | e4
     \change Staff = "lower"
     \voiceThree
-    c8\rest \stemUp a, bes c
+    b,8\rest \stemUp a bes c
   | d8 c d ees! f ees
   | d2.
   | c4^~ c8 bes a g
   %35
   | a f^~ f8 e16 d e8 bes'^~
   | bes16 bes a g  a4. b!8
-  | c4 e16\rest d c bes a16 bes c8^~
-  | c16 c b a b4 e8\rest cis
-  | \change Staff = "upper"
-    \voiceTwo
-    d4 r16 e d c b e d e
+  | c4 e16\rest d c bes a16 bes
+    \hideStaffSwitch \change Staff = "upper" \stemDown\tieDown
+    c8~
+  | c16 c b a b4 a8\rest cis
+  | d4 c16\rest
+    \showStaffSwitch \change Staff = "lower" \voiceOne
+    e d c b e d e
   %40
-  | a,8 e' a2~
-  | a8 b16 a gis8 gis16 fis e4~
+  | a,8 e'
+    \change Staff = "upper" \voiceTwo
+    a2~
+  | a8 b16 a gis8 gis16 fis \highlightSubject { e4~
   | e f fis
   | g g8 fis g4
-  | b, c cis
+  | \showStaffSwitch \change Staff = "lower" \voiceOne
+    b, c cis
   %45
   | d d8 cis d e
-  | \appoggiatura { d16 e } f4 f8 e e d
-  | \change Staff = "lower"
-    \stemUp d c d c b! a
+  | \change Staff = "upper" \voiceTwo
+    \appoggiatura { d16 e } f4 f8 e e d
+  | d \hideStaffSwitch \change Staff = "lower" \stemUp c d c b! a
   | b!4 gis gis
-  | \change Staff = "upper"
-    r16 a' e c
-    \change Staff = "lower" a
+  | g'16\rest
+    \showStaffSwitch \change Staff = "upper"
+    a e c
+    \showStaffSwitch \change Staff = "lower" a }
     \change Staff = "upper"
     r r8 a4\rest
   %50
   | r16 g' d b
-    \change Staff = "lower" g
-    \change Staff = "upper"
-    r r8 a4\rest
-  | r r16 a' f d
-    \change Staff = "lower"
+    \change Staff = "lower" \voiceOne g
+    c'\rest b8\rest f4\rest
+  | f\rest g16\rest a f d
     b!8[ g]
-    \change Staff = "upper"
-  | s4 r16 bes' g e
-    \change Staff = "lower" cis8[ a]
-    \change Staff = "upper"
-  | \stemDown r16 d' c! bes
+  | a'4\rest c16\rest bes! g e cis8[ a]
+  | \clef treble
+    e''16\rest d c! bes
     a[
-    \change Staff = "lower"
-    g f e]
-    s4
+    \hideStaffSwitch \change Staff = "lower"
+    g f e] d16[ f c f]
   | \change Staff = "upper"
     \override MultiMeasureRest.staff-position = #-4
     R1*3/4
   %55
   | \override MultiMeasureRest.staff-position = #-6
-    R1*3/4
-  | R1*3/4
-  | R1*3/4
-  | R1*3/4
-  | R1*3/4
+    R1*3/4*5
   %60
-  | a4 bes! b!
+  | \stemDown
+    \highlightSubject { a4 bes! b!
   | c c8 b! c4
-  | e, f fis
-  | g! g8 fis g4
+  | \showStaffSwitch \change Staff = "lower" \voiceThree e, f fis
+  | \change Staff = "upper" \voiceTwo g! g8 fis g4
   | g16 a bes!8 bes a a g
   %65
-  | g f g f e d
-  | e4 e'2~
+  | \change Staff = "lower" \voiceThree
+    g f g f e d
+  | e4 }
+    \showStaffSwitch \change Staff = "upper" \voiceTwo
+    e'2~
   | e4 d2~
   | d4 c!2~
   | c!4 bes2
@@ -332,21 +329,30 @@ Tenor = \context Voice = "two"  \relative c'' {
   | g8. a16 b4 cis
   %75
   | d4~ d8 d16 cis d4
-  | r16 a b c b a g f e4~
-  | e2 r4
-  | r16 e fis g fis e d c \change Staff = "lower"
-    \stemUp b4^~
+  | r16 a b c b a g f
+    \change Staff = "lower" \voiceThree
+    e4~
+  | e2
+    \change Staff = "upper" \voiceTwo
+    r4
+  | r16 e fis g fis e d c
+    \change Staff = "lower" \voiceThree
+    b4^~
   | b2 b4\rest
   %80
-  | \change Staff = "upper"
-    \voiceTwo
-    R1*3/4
-  | r8 fis'16 a g8 g16 fis e8 e16 d
+  | \once\override MultiMeasureRest.staff-position = #6 R1*3/4
+  | \hideStaffSwitch \change Staff = "upper" \voiceTwo
+    r8 fis'16 a g8 g16 fis e8 e16 d
   | e8 r r4 fis~
   | fis r r
-  | r8 fis16 gis a8 a16 b cis8 cis16 dis
+  | r8
+    \change Staff = "lower" \voiceThree
+    \clef treble
+    fis16 gis a8 a16 b cis8 cis16 dis
+    \clef bass
   %85
-  | e8 b e e16 dis e4~
+  | \change Staff = "upper" \voiceTwo
+    e8 b e e16 dis e4~
   | e8 a, d d16 cis d4~
   | d g, c4~
   | c fis, b4~
@@ -360,24 +366,22 @@ Tenor = \context Voice = "two"  \relative c'' {
   %95
   | e2.~
   | e2 dis4
-  | \change Staff = "lower"
-    \voiceThree
-    a16\rest e' b! g e16 a'16\rest f8\rest f4\rest
-  | c16\rest d a fis d16 g'16\rest d8\rest d4\rest
+  | a16\rest e' b!
+    \change Staff = "lower" \voiceThree
+    g e16 a'16\rest f8\rest d4\rest
+  | \change Staff = "upper" \voiceTwo
+    b16\rest d a
+    \change Staff = "lower" \voiceThree
+    fis d16 g'16\rest d8\rest d4\rest
   | a4\rest c16\rest e c a fis8 d
   %100
   | d'4\rest c16\rest f! d b! gis8 e
-  | \change Staff = "upper"
-    \voiceTwo
-    r16 a' g f e r16 r8 r4
-  | R1*3/4
-  | \override MultiMeasureRest.staff-position = #-6
-    R1*3/4
-  | R1*3/4
-  %105
-  | R1*3/4
-  | R1*3/4
-  | g8. a16 bes4 b
+  | r16 a' g f e d c b! a[ c g c]
+  | \change Staff = "upper" \voiceTwo
+    \override MultiMeasureRest.staff-position = #-8
+    R1*3/4*5
+  %107
+  | \highlightSubject { g'8. a16 bes4 b
   | c4 c8 b c16 aes g f
   | \mergeDifferentlyDottedOn
     ees8. e16 f4 fis
@@ -387,21 +391,26 @@ Tenor = \context Voice = "two"  \relative c'' {
   | bes4 a g
   | f g8 f e d
   | e g16 f e f g e cis d e cis
-  | a8 d16 cis d8 d16 cis d8 d16 cis
+  | a8 d16 cis \unHighlightSubject d8 } d16 cis d8 d16 cis
   %115
-  | \change Staff = "lower"
-    \voiceThree
-    d4 r c~
-  | c8 bes a g fis f
+  | d4 r c~
+  | c8
+    \change Staff = "lower" \voiceThree
+    bes a g fis f
   | e gis16 a b!8 b16 c d8 c16 b
   | a
-    \change Staff = "upper"
-    \voiceTwo
-    bes' a g fis2
-  | r16 a g f e2
+    \hideStaffSwitch \change Staff = "upper" \voiceTwo
+    bes' a g
+    \showStaffSwitch \change Staff = "lower" \voiceThree
+    fis2
+  | \hideStaffSwitch \change Staff = "upper" \voiceTwo
+    r16 a g f
+    \showStaffSwitch \change Staff = "lower" \voiceThree
+    e2
+    \hideStaffSwitch \change Staff = "upper" \voiceTwo
   %120
   | r16 g f e d8 r r4
-  | R1*3/4
+  | \override MultiMeasureRest.staff-position = #-6 R1*3/4
   | r16 e' d c b2
   | r16 d c bes a2
   | r16 c bes a g2
@@ -413,15 +422,17 @@ Tenor = \context Voice = "two"  \relative c'' {
   | fis4 r r8 f
   %130
   | e4 r r8 ees
-  | d4 ees e
+  | \showStaffSwitch \change Staff = "lower" \voiceThree
+    \highlightSubject { d4 ees
+    \change Staff = "upper" \voiceTwo
+    e
   | f f8 e f4
-  | \change Staff = "lower"
+  | \showStaffSwitch \change Staff = "lower"
     \voiceThree
     a, bes! b!
-  | c c8 b! c4
+  | c c8 b! c4 }
   %135
-  | \change Staff = "upper"
-    \voiceTwo
+  | \change Staff = "upper" \voiceTwo
     <fis a c>4 <g bes>4 <d a'>~
   | <d a'> g2
   | bes4 a g
@@ -432,24 +443,25 @@ Tenor = \context Voice = "two"  \relative c'' {
   | g16 r r8 r4 r
   | r16 g a bes a g f ees d4
   | r16 g f ees
-    \change Staff = "lower"
-    \voiceThree
-    d c bes a g f! e! d
-  | \change Staff = "upper"
-    \voiceTwo
-    cis'2.\trill
+    d c bes a
+    \clef bass
+    g f! e! d
+    \clef treble
+  | cis'2.\trill
   %145
   | d2.~
   | d4 cis2
   | r16 e d c
-    \change Staff = "lower"
-    \voiceThree
+    \showStaffSwitch \change Staff = "lower" \voiceThree
     b2
-  | r16 d c bes a2
+  | \change Staff = "upper" \voiceTwo
+    r16 d c bes
+    \change Staff = "lower" \voiceThree
+    a2
+    \change Staff = "upper" \voiceTwo
   | r16 c bes a g8 r r4
   %150
-  | \change Staff = "upper"
-    \voiceTwo
+  | \hideStaffSwitch \change Staff = "upper" \voiceTwo
     \override MultiMeasureRest.staff-position = #-6
     R1*3/4
   | e'16\rest a g f e!2
@@ -500,13 +512,13 @@ Bass = \context Voice = "three"  \relative c' {
   | R1*3/4
   | R1*3/4
   | R1*3/4
-  | R1*3/4
+  | \override MultiMeasureRest.staff-position = #-6 R1*3/4
   %15
   | R1*3/4
   | R1*3/4
   | R1*3/4
   | R1*3/4
-  | a4 bes b!
+  | \highlightSubject { a4 bes b!
   %20
   | c c8 b c4
   | e, f fis
@@ -515,7 +527,7 @@ Bass = \context Voice = "three"  \relative c' {
   | f g8 f e d
   %25
   | e4 a, cis
-  | d \stemUp d, \stemNeutral d'
+  | d } \stemUp d, \stemNeutral d'
   | e8 g16 f e8 e16 d c8 c16 bes!
   | a8 c'16 bes a8 a16 g f8 f16 e
   | d8 f16 e d8 d16 c bes8 bes16 a
@@ -545,10 +557,11 @@ Bass = \context Voice = "three"  \relative c' {
   | a4 d,16\rest e' c a fis8 d\rest
   %50
   | g4 c,16\rest d' b g e8 d\rest
-  | f8 d\rest d4\rest d\rest
-  | \stemDown c8 \stemNeutral d\rest d4\rest d\rest
-  | d'2 d16[ f c f]
-  | b,16 d e g f e d c b d a d
+  | f8 d\rest d4\rest b\rest
+  | \stemDown c'8 a\rest e4\rest f,\rest
+  | d''2 f,4\rest
+  | \clef bass
+    \stemNeutral b16 d e g f e d c b d a d
   %55
   | gis, b c e d c b a gis b fis b
   | e, gis a c b a gis fis e gis d gis
@@ -560,22 +573,22 @@ Bass = \context Voice = "three"  \relative c' {
   | a8 a16 b c8 c16 d e8 e16 fis
   | gis4 a2
   | e8 e,16 fis g!8 g16 a b8 b32 cis d16
-  | cis4^\prall cis'2
+  | cis4^\prall cis'2^\parenthesize\trill
   %65
-  | d2 d4^~
+  | d2 \once\override Tie.staff-position = #5 d4_~
   | d8 e,16 f g8 g16 a b8 b16 cis
   | d8 d16 c bes8 bes16 a g8 g16 f
   | g8 g16 bes a8 a16 g f8 f16 e
   | fis8 fis16 a g8 g16 f e8 e16 d
   %70
-  | e4 r8 e^. a^. a,^.
+  | e4 d8\rest e^. a^. a,^.
   | d a' d c bes4\trill
-  | a4 r8 a^. d^. d,^.
+  | a4 d,8\rest a'^. d^. d,^.
   | g g, bes d g f
   | e4 r8 e^. a^. a,^.
   %75
   | d d, f a d e
-  | f fis g4 gis
+  | \highlightSubject { f fis g4 gis
   | a a8 gis a4
   | c,8 cis d4 dis
   | e e8 dis e fis
@@ -583,10 +596,10 @@ Bass = \context Voice = "three"  \relative c' {
   | g^( fis) fis^( e) e^( d)
   | d cis e d cis b
   | cis b ais cis fis, ais
-  | b4 r8 b16 cis d8 d16 e
-  | fis4 d\rest d\rest
+  | b4 } d8\rest b16 cis d8 d16 e
+  | fis4 b\rest b\rest
   %85
-  | d8\rest e16 fis g e g a b e, b' cis
+  | d,8\rest e16 fis g e g a b e, b' cis
   | d8 d,16 e fis d fis g! a d, a' b
   | c! d e d c e c b a c a g
   | fis e' dis cis b d b a gis b gis fis!
@@ -607,12 +620,12 @@ Bass = \context Voice = "three"  \relative c' {
   | e8 e16 d c8 c16 b a8 a16 g
   | a4~a16 fis g a b8 b,
   | \stemDown e4 r16 b'' g e cis8 r
-  | d4 r16 a' fis! d b8 r
+  | d4 g,16\rest a' fis! d b8 r
   | c4 r r
   %100
   | g'8 b,8\rest b4\rest b\rest
-  | a'8 d,\rest d16\rest d'[ c b!] a[ c g c]
-  | fis,16 a bes d c bes a g fis a e a
+  | a'8 c,\rest b4\rest b\rest
+  | fis'16 a bes d c bes a g fis a e a
   | d, fis g bes a g fis e d fis c fis
   | bes, d e! g c,e fis a d, fis g bes
   %105
@@ -663,14 +676,14 @@ Bass = \context Voice = "three"  \relative c' {
   | d8 d16 c bes8 bes16 a g8 g16 f
   | e8 e'16 d c8 c16 b a8 a16 gis
   %140
-  | a4 bes b
+  | \highlightSubject { a4 bes b
   | c c8 b c4
   | e, f fis
   | g \stemDown g8 fis g a
   | \stemUp bes a a g g f
   %145
   | f e g f e d
-  | e4 r16 e f g a g a8
+  | e4 } r16 e f g a g a8
   | \stemDown d,16 d' e f g8-. f-. e-. d-.
   | c8 d16 e f8-. ees-. d-. c-.
   | bes16 a g f e! fis g a bes d c bes
@@ -719,11 +732,17 @@ Bass = \context Voice = "three"  \relative c' {
     %subtitle = ""
     title = \markup {
       %\override #'(font-name . "TeX Gyre Schola") {
-        "Fugue"
+        "Fuga a tre"
       %}
     }
   }
-  \layout { }
+  \layout {
+    \context {
+      \PianoStaff
+      \override Parentheses.font-size = #-2
+      \override TextScript.font-size = #-1
+    }
+  }
   \midi {
     \tempo 4 = 100
   }

@@ -29,6 +29,7 @@ EXTRA_DIST = JS-Bach-Busoni-Chromatische-Fantasie-und-Fugue-BWV903.ly \
 	     header.ily \
 	     global.ly \
 	     logo.ly \
+	     macros.ly \
 	     parts/bach-chromatische-fantasie-und-fugue-1-fantasia.ly \
 	     parts/bach-chromatische-fantasie-und-fugue-2-fuga.ly
 

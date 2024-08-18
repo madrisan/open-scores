@@ -18,9 +18,9 @@ Upper = \relative c'' {
   \override TupletBracket.bracket-visibility = ##f
   \omit TupletNumber
   %1
-  | r32 \stemUp d,[ e\< f] \stemDown g[ a b cis]\!
+  | r32 \stemDown d,[ e\< f] g \stemUp a[ b cis]\!
     \stemUp d\f c bes a g f e d  \stemDown cis[ d e f] \stemUp g[ a bes e--]  r4
-  | r16 \stemDown a,32[\< b cis d e f]\!  \stemUp g[\f f e d cis b]
+  | r16 \stemDown a,32[\< b cis d] \stemUp e[ f]\! g[\f f e d cis b]
     a64 \stemDown g[ f e]  d32[ e f] \stemUp a[ cis! d] \stemDown f16--  r4
   | << {
       \override TupletBracket.bracket-visibility = ##f
@@ -69,6 +69,7 @@ Upper = \relative c'' {
     } \\ {
       d8 r s2.
     } >>
+    \pageBreak
   | \stemUp
     \tuplet 3/2 8 { r16 d g }  \tuplet 3/2 8 { f e d }
     \tuplet 3/2 8 { r d b' }   \tuplet 3/2 8 { f e d }
@@ -156,9 +157,10 @@ Upper = \relative c'' {
     >>
     \stemNeutral
     \bar "||"
+    \pageBreak
   | << {
-      b,32\rest^\markup { \italic "(sopra)" }  e,[\< f g a] \voiceTwo b![ cis d] e
-      \voiceOne f[ g a bes\! a g f] e[ f g f e d s d] e[ d cis b! a s bes a]
+      \voiceTwo b,32\rest e,[\< f g a b! cis d]
+      \voiceOne e[ f g a bes\! a g f] e[ f g f e d s d] e[ d cis b! a s bes a]
     } \\ {
       s4 s4  s8 s16 cis!32 s32  s8 s32 g s16
     }
@@ -170,15 +172,16 @@ Upper = \relative c'' {
     }
     >>
   | s1
-  | s4 s8 s32 e[ f g] f[ g a e f] \voiceTwo cis[ d a] s4
+  | s4 s8 s32 e-2[ f g] f[ g a e f cis d a] s4
   %25
   | s8. \voiceOne d32[ c] b![ f'! e d] \voiceTwo gis[ fis e b'! ]
     a[ gis] \voiceOne d'[ c b! f'! e d] \voiceTwo gis16 \voiceOne a64[ g fis g g16.\trill\< fis64 g\!]
   | \tuplet 3/2 8 { a16[ d a] } \tuplet 3/2 8 { f[ a f] }
-    \tuplet 3/2 8 { d[ f d] }   \voiceTwo \tuplet 3/2 8 { a[ d a] } \voiceOne
+    \tuplet 3/2 8 { d[ f d] }   \voiceTwo \tuplet 3/2 8 { a[ d a] }
     \tuplet 3/2 8 { f[ a f] }   \tuplet 3/2 8 { d[ f d] }
     s4
-  | s8^\markup { \italic "(continuando)" } \tuplet 3/2 8 { d16[ f a] }
+  | \voiceOne
+    s8^\markup { \italic "(continuando)" } \tuplet 3/2 8 { d16[ f a] }
     \tuplet 3/2 8 { \once\stemDown d16-^_\markup { \small\italic "l. H." } a[ f] } \tuplet 3/2 8 { d s8 }
     s8 s32 e[ g bes]
     \tuplet 3/2 8 { \once\stemDown e16-^ b[ g] } e32 s16.
@@ -670,10 +673,10 @@ Upper = \relative c'' {
       }
       e--]
   |   fis,8 b8\rest b4\rest
-      b16\rest  d32[ e fis g a bes]  c[ d ees d c bes a g]
+      \stemDown b16\rest  d32[ e fis g a bes] \stemUp c[ d ees d c bes a g]
   |   \stemDown fis16--[ a-- c-- ees--]
       \clef treble
-      \stemUp fis16^-[ a^- c^- ees^-]  fis16^-[ a^- c^- a^-]
+      \stemUp fis16^-[ a^- c^- ees^-]  \once\stemDown fis16^- a^-[ c^- a^-]
       fis16^-[-\markup { \italic "ritenendo" } a32 fis] d16^-[ fis32 d]
   |   c8( b!) b16\rest b32\rest b^-[ cis^- d^- e^- f^-]
       g8[-\markup { \italic "(risolvendo)" } a] f8[ e16 d]
@@ -783,15 +786,15 @@ Lower = \relative c {
       s4 s8. s32 g'32  s4 s16 cis,32 s32 s8
     }
     >>
-  | a32[ b! cis d ] \voiceOne e[^\< f g f] e[\! g f e d cis b a]
-    \voiceTwo b[ cis d\< e f]\! \voiceOne g[ a bes] a[ g f a g f e d]
+  | \voiceTwo a32[ b! cis d ] \voiceOne e[^\< f g f] e[\! g f e d] \voiceTwo cis[ b a]
+    b[ cis d\< e f]\! \voiceOne g[ a bes] a[ g f a g f e d]
   | \voiceTwo cis32[ d\< e f g]\! \voiceOne a[ bes a]
-    \voiceTwo g[ a\< b! cis d\!] s16. s4 f,32^\markup { \small\italic "r. H." } [ g a f d f e d]
+    \voiceTwo g[ a\< b! cis d\!] s16. s4 f,32 [ g a f d f e d]
   %25
   | gis[ fis e b'! a g] s16 s4 s4 s4
   | s2.^\markup { \italic "(" \dynamic f \italic ", sempre in tempo)" }
-    \tuplet 3/2 8 { a16[ d a] } \tuplet 3/2 8 { f[ a f] }
-  | \tuplet 3/2 8 { d^\<\sustainOn f a } s8
+    \voiceOne \tuplet 3/2 8 { a16[ d a] } \tuplet 3/2 8 { f[ a f] }
+  | \voiceTwo \tuplet 3/2 8 { d^\<\sustainOn f a } s8
     s8\! \tuplet 3/2 8 { s16 a\hide\sustainOff f^\< }
     \tuplet 3/2 8 { d[\sustainOn e g] } cis32 s16.
     s8\! s32[ cis g e]\hide\sustainOff
@@ -846,6 +849,7 @@ Lower = \relative c {
     } >>
     %\set tieWaitForNote = ##f
     \bar "||"
+  %\pageBreak
   | \omit Staff.TimeSignature
     d32\rest_\markup { \italic "dolce, (quasi Arpa)" }
     \stemUp dis[^\( fis a b!]
