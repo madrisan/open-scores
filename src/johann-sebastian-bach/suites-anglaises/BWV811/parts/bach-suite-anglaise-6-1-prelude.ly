@@ -169,8 +169,41 @@ Soprano = \context Voice = "one" \relative c' {
   | c, g' bes bes, f' bes bes, ees g
   | \stemNeutral c,16 d ees g d ees c d ees f g a bes a c bes a g
   %125
+  | f bes a g f ees d ees f c d bes ees f g d ees c
+  | f g a! d, ees c d a' bes f g ees d c ees d c d
+  | bes d f bes, d f \stemUp bes8 bes bes bes bes bes
+  | bes16 g ees g ees c a'8 a a a a a
+  | aes16 f d f d bes g'8 g g g g g
+  %130
+  | g4. c8 bes a a g fis
+  | fis a\rest a\rest s2.
+  | s1*9/8*9
+  %141
+  | \stemNeutral r16 d, e fis g a bes8 a g a bes16 a g fis
+  | g f ees d c b c b c d ees8 bes c16 bes a bes
+  | g8 bes bes bes bes bes e!16 f g e f g
+  | \stemUp a,8 a a a a a d16 e f d e f
+  %145
+  | \stemNeutral g a bes g a bes e, f g e f g cis, d e cis d e
+  | a,4.~ a16 a b cis d e f e g f e d
+  | cis8 d\rest d\rest d4\rest d8\rest d4\rest d8\rest
+  | s1*9/8*2
+  %150
+  | c16\rest \stemUp a b cis d e f8 e d e d cis
+  | d16 c bes a g f e g a bes a g c bes a g f e
+  | d f g a g f bes a g f e d c4.~
+  | \repeat unfold 3 { c16 e f a e f }
+  | \repeat unfold 3 { c16 e f a e f }
+  %155
+  | d8 e16 f g a bes8 a g a g f
+  | c'4 e,8 f4 g8 g4~\prallprall g32 f g a
+  | f4 d'8\rest  r16 d, e f g a bes, c d e f g
+  | \stemNeutral r f' e d c bes a8 b c b d e
+  | \stemUp c2.~ c4.
+  %160
 
-  | R1*9/8*71
+
+  | R1*9/8*36
     \fine
 }
 
@@ -319,6 +352,29 @@ Alto = \context Voice = "two" \relative c' {
   | c bes bes
   | s1*9/8*3
   %127
+  | s4. g8\rest d' d d d d
+  | c g\rest g\rest g\rest c c c c c
+  | bes g\rest g\rest g\rest bes bes bes bes bes
+  %130
+  | ees d c c2.~
+  | c16 c d fis c d bes d ees g d ees c e fis a e fis
+  | \stemNeutral\tieNeutral d fis g bes fis g e g a c g a fis g a c fis, a
+  | bes a g f ees d ees c a' d, ees c d bes g' c, d bes
+  | c4.~ c16 ees d c bes a bes d c bes a g
+  %135
+  | fis8 d d' d e,! d' d fis, d'
+  | d g, d' d a bes c16 bes d c bes a
+  | bes8 d bes g d' bes g d' bes
+  | \repeat unfold 3 { g d' bes }
+  | g16 a bes e! bes a g a bes e bes a fis a c ees d c
+  %140
+  | d c bes a g f e d e fis g a fis e fis g a c,
+  | s1*9/8*3
+  | \stemDown\tieDown s4. b4\rest g'8 f4 e8\rest
+  | s1*9/8*11
+  %156
+  | e4 c8 c4 d8 c4.
+  | <a c>4 c8\rest s2.
 
 }
 
@@ -442,6 +498,32 @@ Tenor = \context Voice = "three" \relative c {
   | s4. c'16\rest d8 c bes16 c\rest c8 bes a16
   | s1*9/8*25
   %141
+  | bes4 a8 g a bes c bes a
+  | g4.~ g~ g4 fis8
+  | g4. c4\rest d8 c d <bes e!>
+  | <c f>4. c4\rest <cis e>8 d4.~
+  %145
+  | d4 c8 bes4 a8 g4.~
+  | g16 g f e d e f4.~ f8 d g
+  | c16\rest a b cis
+    \change Staff = "upper" \voiceTwo
+    d e f8 e d e d cis
+  | d4.~ d4 bes'8 c,4 a'8
+  | bes,16 d e f e d g4.~ g16 a, b cis b a
+  %150
+  | d4.~ d8 e f g f e
+  | \change Staff = "lower" \voiceThree
+    d4. c2.
+  | bes~ bes16 bes a g f g
+  | a2.~ a4.~
+  | a g f~
+  %155
+  | f16 f g a bes c d8 c bes c bes a
+  | g4 g8 f4.~ f8 f e
+  | f16 c d e f g \stemNeutral a8 g f g f e
+  | \stemUp a4.~ a8. g16 f8~ f g a
+  | g4. d'16\rest g,8 a bes16 e\rest a,8 bes c16
+
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -449,6 +531,7 @@ Bass = \context Voice = "four" \relative c {
   \stemDown\tieDown
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \override Script.direction = #UP
   %1
   | d2.~ \once\override NoteColumn.force-hshift = #0.7 d4.~
   | d2.~ \once\override NoteColumn.force-hshift = #0.2 d4.~
@@ -607,8 +690,48 @@ Bass = \context Voice = "four" \relative c {
   | ees, a bes d a bes d, a' bes d a bes ees, a bes d a bes
   | a,4.~ a16 bes c a bes c f,8 f' ees
   %125
-
-  | R1*9/8*71
+  | d4^\prall c8 bes bes' aes g f ees
+  | ees'16 d c bes c a bes8 d, ees f ees f
+  | bes,4.~ bes16 d f bes, d f bes d f bes, d f
+  | ees,8 r r f,16 a c f, a c f a c f, a c
+  | d,8 r r ees,16 g bes ees, g bes ees g bes ees, g bes
+  %130
+  | c, ees g c, ees g a, c ees a, c ees fis, a c fis, a c
+  | \repeat unfold 2 { d,8 d' d, d d' d,  d d' d, }
+  | g16 a bes g a bes c8 bes a bes a g
+  | d'16 d' c bes a g fis8 g a g a bes
+  %135
+  | c16 a fis d fis a bes g e! cis e g a fis ees c ees fis
+  | g e cis bes cis e fis ees c a c ees fis d fis a g fis
+  | g fis g bes fis g bes, fis' g bes fis g c, fis g bes fis g
+  | d fis g bes fis g ees fis g bes fis g d fis g bes fis g
+  | cis,4. r4 r8 c4.
+  %140
+  | bes16 d e! fis g a bes8 a g a g fis
+  | \stemDown g4 f8 ees4 d8 c4 d8
+  | ees4.~ ees8 d c d c d
+  | g,4. g4\rest g'8 bes a g
+  | f4. c4\rest a'8 bes4 c!8
+  %145
+  | bes4 a8 g4 f8 e4 d8
+  | cis4. d4 c8 bes!4.
+  | a8 a\rest a\rest r4 r8 r4 r8
+  | \stemNeutral\tieNeutral r16 d e fis g a bes8 a g a g fis
+  | g4.~ g16 e d cis d e f4.~
+  %150
+  | f~ f4 bes!8 g4 a8
+  | \stemDown\tieDown bes2. a4.~
+  | a g4 f8 e4.
+  | f e d
+  | c bes a
+  %155
+  | bes4 b8\rest b4\rest b8\rest b4\rest b8\rest
+  | b16\rest bes c d c bes a8 c bes c4.
+  | f,8 g\rest g\rest s2.
+  | f'4.~ f16 e f8. e16 d8 e f
+  | e4.~ e8 f g f g a
+  %160
+  | R1*9/8*36
     \fine
 }
 
