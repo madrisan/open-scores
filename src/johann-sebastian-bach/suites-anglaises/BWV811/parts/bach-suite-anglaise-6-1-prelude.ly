@@ -199,11 +199,51 @@ Soprano = \context Voice = "one" \relative c' {
   | c'4 e,8 f4 g8 g4~\prallprall g32 f g a
   | f4 d'8\rest  r16 d, e f g a bes, c d e f g
   | \stemNeutral r f' e d c bes a8 b c b d e
-  | \stemUp c2.~ c4.
+  | \stemUp c2.~ c4.~
   %160
-
-
-  | R1*9/8*36
+  | c2.~ c4 c8
+  | b16 a b c d e \stemNeutral f8 e d e16 c d e f g
+  | a f e d e f g e d c d e f d c b c d
+  | e b c e b c f, b c e b c g b c e b c
+  | a b c e b c g b c e b c fis, b c e b c
+  %165
+  | f, a b d a b ees, g a c fis, g d f g bes f g
+  | \stemUp\tieUp c4.~ c16 g a b c d ees8 d c
+  | bes4.~ bes4 bes8 d c bes
+  | a4.~ a4 a8 d16 e d e f8
+  | g,4. cis,16 d e f g a bes8 a g
+  %170
+  | \stemNeutral\tieNeutral f16 d cis b cis d g e d cis d e a f e d e f
+  | b g f e f g cis a g f g a d bes a g a bes
+  | e bes a g f e f a bes c bes a g d' e f e d
+  | cis4.~ cis16 b cis d e f g f e f g e
+  | f d e fis g a bes8 a g a g fis
+  %175
+  | g4.~ \stemUp g16 a, b c d e f e d e f d
+  | e c d e f g a8 g f g f e
+  | f bes d, e a c, d g bes,
+  | c f a, bes e g, a d f,
+  | \stemNeutral g16 a bes d bes a g a bes d a g f g a d g, f
+  %180
+  | e f g bes g f e f g bes f e d e f b e, d
+  | cis8 d16 e f g a b cis d e f g f e f g e
+  | f d c bes c d e c bes a bes c d bes a g a bes
+  | c a g f g a bes g f e f g a f e d e f
+  | g4.~ g16 bes a g f e f a g f e d
+  %185
+  | cis d e a cis, e d e f bes d, f e f g c! e, g
+  | f g a d fis, a g a b e gis, b a b cis d e f
+  | g e cis a cis e f d b gis b d e cis bes g bes cis
+  | d b gis f gis b cis bes g e g bes cis e d cis b a
+  | d8 a f d a' f d a' f
+  %190
+  | d a' f d gis f d a' f
+  | d16 e f b f e d e f b e, d cis e g bes a g
+  | a g f e d c! b a b cis d e cis b cis d e g,
+  | r16 a' b cis d e f8 e d e f16 e d cis
+  | a' g f e d cis \stemUp d e d e f8 a, d cis
+  %195
+  | d4. r4 r8 r4 r8
     \fine
 }
 
@@ -375,7 +415,33 @@ Alto = \context Voice = "two" \relative c' {
   %156
   | e4 c8 c4 d8 c4.
   | <a c>4 c8\rest s2.
-
+  | s1*9/8
+  | f16\rest a g f e d c8 d e d e f
+  %160
+  | e f g g f ees ees d4~
+  | d4. s2.
+  | s1*9/8*4
+  %166
+  | e4. s2.
+  | e16\rest g fis e d
+    \change Staff = "lower" \voiceThree
+    c
+    \change Staff = "upper" \voiceTwo
+    s4 \shiftOn \once\stemUp g'8 \shiftOff
+    \once\override Beam.positions = #'(-1 . -2.1)
+    bes a g
+  | d16\rest f e d c
+    \change Staff = "lower" \voiceThree
+    bes
+    \change Staff = "upper" \voiceTwo
+    s4 a'8~ a4.
+  | s4. s4 g8
+    \once\override Beam.positions = #'(-2 . -3.1)
+    g f e
+  | s1*9/8*24
+  %194
+  | s4. s4 bes'8 a4 g8
+  | f4. s2.
 }
 
 Tenor = \context Voice = "three" \relative c {
@@ -523,7 +589,25 @@ Tenor = \context Voice = "three" \relative c {
   | f16 c d e f g \stemNeutral a8 g f g f e
   | \stemUp a4.~ a8. g16 f8~ f g a
   | g4. d'16\rest g,8 a bes16 e\rest a,8 bes c16
-
+  %160
+  | f16\rest bes,8 c d16 c4 bes8 a4.
+  | g4. s2.
+  | f'4 f8 e4 e8 d4 d8
+  | \repeat unfold 2 { c4 c8 c4 c8 c4 c8 }
+  %165
+  | d4. c g
+  | s1*9/8
+  | s4.
+    \change Staff = "upper" \voiceTwo
+    s4 f'8 e4.
+  | s1*9/8
+  | s2. cis!4.
+  | \change Staff = "lower" \voiceThree
+    s1*9/8*23
+  %193
+  | f,4 e8 d e f g f e
+  | d4. e4\rest d16 e f4 e8
+  | d4. s2.
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -731,7 +815,53 @@ Bass = \context Voice = "four" \relative c {
   | f'4.~ f16 e f8. e16 d8 e f
   | e4.~ e8 f g f g a
   %160
-  | R1*9/8*36
+  | g a bes a4 g8 fis4.
+  | g r16 b c d e f g8 f e
+  | r g,4 r8 g4 r8 g4
+  | r8 c,4 r8 d4 r8 e4
+  | r8 f4 r8 g4 r8 a4
+  %165
+  | b8 a g c fis, a g4 g,8
+  | c16 c' bes a g f e8 fis g fis g a
+  | g4 r8 bes16 a g f e d \once\stemNeutral c4.
+  | f4 r8 a16 g f e d c \stemNeutral\tieNeutral b4.
+  | r16 e f g a b r8 r e, a4 a,8
+  %170
+  | d8 f a, e' g a, f' a d,
+  | g g, g' g a, g' g bes, g'
+  | cis, e a d, f a bes, d g
+  | a16 a, b cis d e f8 e d e d cis
+  | d4.~ d16 e fis g a bes c bes a bes c a
+  %175
+  | \stemDown\tieDown b g a b c
+    \change Staff = "upper"
+    d e8 d c d c b
+  | c4.~ c16 d e f g a bes a g a bes g
+  | a f e d e f g e d c d e f d c bes c d
+  | e
+    \change Staff = "lower"
+    c bes a bes c d bes a g a bes c a g f g a
+  | \stemNeutral bes4. r4 r8 a4.
+  %180
+  | g r4 r8 gis4.
+  | a16 a, b cis d e f8 e d e d cis
+  | d g bes, c f a, bes e g,
+  | a d f, g c e, f bes d,
+  | e16 a g f e d cis8 d e d e f
+  %185
+  | e f g f g a g a bes
+  | a b c b cis d cis16 f! e d cis b
+  | a8 a' a, a a' a, a a' a,
+  | a a' a, a a' a, g g' g,
+  | f16 cis' d f cis d g, cis d f cis d a cis d f cis d
+  %170
+  | bes cis d f cis d b cis d f cis d a cis d f cis d
+  | gis,4. r4 r8 g4.
+  | f16 a b cis d e f8 e d e d cis
+  | \stemDown d4 c8 bes4 a8 g4 a8
+  | f4. e4\rest g8 a4 a8
+  %175
+  | d,4. r4 r8 r4 r8
     \fine
 }
 
