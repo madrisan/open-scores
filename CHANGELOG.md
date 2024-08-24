@@ -7,12 +7,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Added
 
-- J.S. Bach: Suite Anglaise n.6 BWV811
+- J.S. Bach: Suite Anglaise 6 BWV811
 
 ### Changed
 
 - J.S. Bach: Fuga C-Dur BWV952 - minor changes
 - J.S. Bach: Chromatische Fantasie und Fugue - major updates particularly for hand positions
+
+### Fixed
+
+- J.S. Bach: Suite Anglaise 2 BWV807 - minor fixes
 
 ## [v55] - 2024-08-15
 

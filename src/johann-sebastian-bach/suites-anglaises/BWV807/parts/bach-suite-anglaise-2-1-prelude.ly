@@ -255,14 +255,14 @@ Alto = \context Voice = "two" \relative c' {
   %65
   | b ais ais ais ais ais
   | b16 s8. s4
-    \change Staff = "upper" \stemUp g'8\rest b
+    \change Staff = "upper" \stemUp g'8\rest \shiftOn b
   | b16 s8. s2
   | s2 f8\rest a
   | a16 s8. s2
   %70
   | s2.*10
   %80
-  | \stemDown a,8\rest b' b b b b
+  | \stemDown g,8\rest b' b b b b
   | b a a a a a
   | b16 s8. s2
   | s2.*7

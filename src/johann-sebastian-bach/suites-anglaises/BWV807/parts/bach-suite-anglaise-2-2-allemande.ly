@@ -22,7 +22,10 @@ Soprano = \context Voice = "one" \relative c'' {
   | \revert Stem.details.beamed-lengths
     g8. a16 fis8. fis16 fis a g fis e dis e fis
   | a, c b c dis, c' b a g fis e fis g a b g
-  | \stemNeutral c8.\mordent b16 \stemUp a4~ a16 a g fis g e fis g
+  | \stemNeutral c8.\mordent b16
+    \stemUp
+    a4~ a16
+    a g fis g e fis g
   %10
   | \stemNeutral cis, e d! e ais, g' fis e dis cis b8 b'8.\mordent b16
   | e16 c b a fis'8.\mordent fis16 fis( g32 a g16 fis) \stemUp fis8.\prall e16
@@ -73,10 +76,10 @@ Alto = \context Voice = "two" \relative c'' {
     \stemUp \shiftOn e8. e16
   | c4 c \once\override Tie.staff-position = #-0.1 b^~ b16 s8.
   | s4 \stemDown dis, s2
-  | \stemUp s4 d16\rest g fis e dis8 b\rest s4
+  | s4 d16\rest g fis e dis8 b\rest s4
   %10
   | s1
-  | s2. \once\stemDown dis'4
+  | s2. dis'4
   | a16\rest d! c b
     << { c16 gis a c \stemUp \shiftOn b4.. } \\ { f16\rest \stemDown gis a8 gis4 } >>
   }
