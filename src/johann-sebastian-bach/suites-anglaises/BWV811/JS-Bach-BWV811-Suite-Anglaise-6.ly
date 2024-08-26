@@ -105,6 +105,7 @@
 \include "./parts/bach-suite-anglaise-6-3-courante.ly"
 \pageBreak
 \include "./parts/bach-suite-anglaise-6-4-sarabande.ly"
+%\pageBreak
 \include "./parts/bach-suite-anglaise-6-5-double.ly"
 \pageBreak
 \include "./parts/bach-suite-anglaise-6-6-gavotte-1.ly"
