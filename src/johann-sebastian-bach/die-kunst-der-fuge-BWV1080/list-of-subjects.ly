@@ -71,7 +71,7 @@ SubjectVIIISecond = \relative {
 SubjectVIIIThird = \relative {
   \commonSettings
   | r4^\markup \abs-fontsize #8 \italic {
-      "third subject (an inverted and rhythmically abstracted version of the proncipal Art of Fugue theme)"
+      "third subject (an inverted and rhythmically abstracted version of the principal Art of Fugue theme)"
     }
     \red a' \red d, e | r \red f g \red a | r \red bes \red a \red g | r \red { f8 e f4 g | a2 } % s
 }

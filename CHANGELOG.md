@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Fixed
 
 - J.S. Bach: Suite Anglaise 2 BWV807 - minor fixes
+- J.S. Bach: Die Kunst der Fuge (BWV1080) - fix a typo
 
 ## [v55] - 2024-08-15
 
