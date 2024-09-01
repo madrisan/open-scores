@@ -28,8 +28,8 @@
          }
        } #}))
 
-\markup \indexItem "Praeludium und Fuga I"   #'Praeludium01 "C-Dur" "846"
-\markup \indexItem "Praeludium und Fuga II"  #'Praeludium02 "c-Moll" "847"
-\markup \indexItem "Praeludium und Fuga III" #'Praeludium03 "Cis-Dur" "848"
-\markup \indexItem "Praeludium und Fuga IV"  #'Praeludium04 "cis-Moll" "849"
-\markup \indexItem "Praeludium und Fuga V"   #'Praeludium05 "D-Dur" "850"
+\markup \indexItem "Praeludium und Fuga I"   #'Praeludium01 "C–Dur (C major)" "846"
+\markup \indexItem "Praeludium und Fuga II"  #'Praeludium02 "c–Moll (C minor)" "847"
+\markup \indexItem "Praeludium und Fuga III" #'Praeludium03 "Cis–Dur (C–sharp major)" "848"
+\markup \indexItem "Praeludium und Fuga IV"  #'Praeludium04 "cis–Moll (C–sharp minor)" "849"
+\markup \indexItem "Praeludium und Fuga V"   #'Praeludium05 "D–Dur (D major)" "850"
