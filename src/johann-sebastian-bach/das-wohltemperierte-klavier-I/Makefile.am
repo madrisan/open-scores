@@ -23,6 +23,7 @@ EXTRA_DIST = JS-Bach-BWV846-869-Das-Wohltemperierte-Klavier-I.ly \
 	     covercolor.ly.in \
 	     global.ly \
 	     header.ily \
+	     index.ly \
 	     logo.ly \
 	     macros.ly \
 	     BWV846/das-wohltemperierte-klavier-I-01-1-praeludium.ly \

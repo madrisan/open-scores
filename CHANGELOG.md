@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - J.S. Bach: Fuga C-Dur BWV952 - minor changes
 - J.S. Bach: Chromatische Fantasie und Fugue - major updates particularly for hand positions
+- J.S. Bach: Das wohltemperierte Klavier – add a simple index with pdf links to pages
 
 ### Fixed
 

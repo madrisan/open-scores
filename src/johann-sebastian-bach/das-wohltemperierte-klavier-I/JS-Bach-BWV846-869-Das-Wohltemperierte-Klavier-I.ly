@@ -104,6 +104,9 @@
 
 \include "macros.ly"
 
+\include "./index.ly"
+\pageBreak
+
 \include "./BWV846/das-wohltemperierte-klavier-I-01-1-praeludium.ly"
 \pageBreak
 \include "./BWV846/das-wohltemperierte-klavier-I-01-2-fuga.ly"

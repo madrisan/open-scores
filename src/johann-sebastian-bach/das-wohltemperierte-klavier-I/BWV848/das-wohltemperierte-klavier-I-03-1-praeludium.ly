@@ -9,6 +9,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \stemNeutral\tieNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'Praeludium03
   %1
   | eis16 cis gis cis eis cis
   | \repeat unfold 3 { fis cis }

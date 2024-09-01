@@ -9,6 +9,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \stemUp\tieUp
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'Praeludium01
   %1
   | \repeat unfold 2 { d8\rest g,16 c e g, c e }
   | \repeat unfold 2 { d8\rest a16 d f a, d f }

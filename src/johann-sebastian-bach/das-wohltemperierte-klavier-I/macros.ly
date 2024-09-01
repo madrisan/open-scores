@@ -1,4 +1,5 @@
 greyTextColor = #(x11-color "dimgray")
+middleGrey =    #(x11-color 'grey45)
 
 % set ""subjectFirstColor to
 %  subjectFirstColor = #(x11-color 'black)
