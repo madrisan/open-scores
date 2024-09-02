@@ -258,8 +258,8 @@ Bass = \context Voice = "four" \relative c' {
   \header {
     composer = ##f % "Johann Sebastian Bach"
     opus = ##f % "BWV 848"
-    title = \markup { "Fuga III." }
-    subtitle = "(a 3 voci)"
+    title = \markup { "Fuga III " \char ##x007E " à 4" }
+    subtitle = ##f
   }
   \layout {
     \context {

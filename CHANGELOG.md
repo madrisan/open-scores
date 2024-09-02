@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [v57] - unreleased
+
+### Changed
+
+- J.S. Bach: Das wohltemperierte Klavier – number of voices of the fugues as in Bach's manuscript
+
 ## [v56] - 2024-09-01
 
 ### Added
