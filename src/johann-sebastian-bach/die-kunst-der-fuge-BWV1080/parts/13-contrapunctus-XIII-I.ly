@@ -8,6 +8,7 @@ Global = {
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
+  \label #'ContrapunctusXIIIrectus
   \override TupletBracket.bracket-visibility = ##f
   \override TupletNumber.transparent = ##t
   \partial 4 r4

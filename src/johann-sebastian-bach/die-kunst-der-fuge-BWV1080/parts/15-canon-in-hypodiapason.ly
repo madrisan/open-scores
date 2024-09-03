@@ -6,6 +6,7 @@ Global = {
 
 Upper = \context Voice = "one" \relative c'' {
   \voiceOne
+  \label #'CanonI
   \stemNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0

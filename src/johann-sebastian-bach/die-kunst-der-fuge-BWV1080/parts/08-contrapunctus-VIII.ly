@@ -8,6 +8,7 @@ Global = {
 
 Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
+  \label #'ContrapunctusVIII
   | \override MultiMeasureRest.staff-position = #0
     R1*10
   | r2 \highlightSubjectFirst { d^\markup \subject #'(-1 . 0) #1

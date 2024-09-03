@@ -1,5 +1,7 @@
 \include "macros.ly"
 
+\label #'BriefNotesContrapunctusXIV
+
 \markup \fill-line {
   \center-column \abs-fontsize #14 \bold \with-color #middleGrey {
     \null

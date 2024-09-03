@@ -8,6 +8,7 @@ Global = {
 
 Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
+  \label #'ContrapunctusI
   | R1*4
   %5
   | \highlightSubjectFirst { a2^\markup \subject #'(0 . 0) #1 d

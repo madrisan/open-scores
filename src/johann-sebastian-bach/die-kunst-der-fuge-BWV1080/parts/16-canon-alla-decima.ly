@@ -6,6 +6,7 @@ Global = {
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
+  \label #'CanonII
   \stemNeutral
   \override Rest.staff-position = #0
   | \override MultiMeasureRest.staff-position = #0

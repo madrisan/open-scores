@@ -8,6 +8,7 @@ Global = {
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
+  \label #'ContrapunctusXIIIinversus
   \override TupletBracket.bracket-visibility = ##f
   \partial 4 \highlightSubjectFirst { d4^\markup \subject #'(-0.8 . 0) #1
   %1

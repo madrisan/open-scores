@@ -6,6 +6,7 @@ Global = {
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
+  \label #'CanonIII
   \override Rest.staff-position = #0
   \override TupletBracket.bracket-visibility = ##f
   | \override MultiMeasureRest.staff-position = #0

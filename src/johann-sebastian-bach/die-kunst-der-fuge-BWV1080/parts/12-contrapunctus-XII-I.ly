@@ -8,6 +8,7 @@ Global = {
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
+  \label #'ContrapunctusXIIrectus
   \showStaffSwitch
   | \override MultiMeasureRest.staff-position = #0
     R1*3/2*9
