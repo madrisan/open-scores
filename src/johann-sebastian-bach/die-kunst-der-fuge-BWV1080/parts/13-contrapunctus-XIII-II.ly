@@ -244,7 +244,7 @@ Alto = \context Voice = "two" \relative c' {
     a
   | g8.*8/9[ e16*4/3 cis8.*8/9 e16*4/3] g8.*8/9[ bes16*4/3 a8.*8/9 g16*4/3]
   | e'2\fermata
-    \staffLower
+    \staffLower \voiceThree
     \stemUp\tieUp
     e,4\rest e
   %60

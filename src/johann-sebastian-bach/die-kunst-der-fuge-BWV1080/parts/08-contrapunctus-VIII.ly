@@ -570,12 +570,12 @@ Alto = \context Voice = "two" \relative c' {
   | g4. f!8 e4 ees~
   | ees8 d c ees d4 d~
   | d
-    \staffLower
+    \staffLower \voiceThree
     \stemUp\tieUp
     bes8 bes bes4 g8 g
   | g4 bes8 bes e,4 a\rest
   %180
-  | \staffUpper
+  | \staffUpper \voiceTwo
     \stemDown\tieDown
     r8 f' f e e g g fis
   | fis a a g g4 bes!
@@ -585,7 +585,7 @@ Alto = \context Voice = "two" \relative c' {
   %185
   | \unHighlightSubject d } f e! d cis d b cis
   | d bes! a g a[ d16 c] bes a g8
-  | \staffLower
+  | \staffLower \voiceThree
     \stemUp\tieUp
     f4 e8 d e f g4~
   | g fis^\fermata f2\rest

@@ -214,14 +214,14 @@ CanonI = {
 CanonII = {
   \commonSettings
   \time 12/8
-  | a'4.^\markup \abs-fontsize #8 \italic {
+  | \red a'4.^\markup \abs-fontsize #8 \italic {
       "subject of Canon II alla Decima is based again on the inverted main theme (red notes)"
     }
-    d,2. f4.~
-  | f a2. bes4.~
-  | bes a2. g4.~
-  | g f~ f4 e8 f4 g8
-  | a8 s4
+    \red d,2. \red f4.~
+  | f \red a2. \red bes4.~
+  | bes \red a2. \red g4.~
+  | g \red f~ f4 \red e8 \red f4 \red g8
+  | \red a8 s4
 }
 CanonIII = {
   \commonSettings
