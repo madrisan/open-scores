@@ -131,3 +131,8 @@
 \pageBreak
 \include "./BWV850/das-wohltemperierte-klavier-I-05-2-fuga.ly"
 \pageBreak
+
+\include "./BWV851/das-wohltemperierte-klavier-I-06-1-praeludium.ly"
+\pageBreak
+\include "./BWV851/das-wohltemperierte-klavier-I-06-2-fuga.ly"
+\pageBreak

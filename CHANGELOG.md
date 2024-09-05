@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [v57] - unreleased
 
+### Added
+
+- J.S. Bach: Das wohltemperierte Klavier – Erster Teil: Praeludium und Fuga VI
+
 ### Changed
 
 - J.S. Bach: Das wohltemperierte Klavier – number of voices of the fugues as in Bach's manuscript
