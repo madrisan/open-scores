@@ -5,6 +5,7 @@ middleGrey =    #(x11-color 'grey45)
 %  subjectFirstColor = #(x11-color 'black)
 % to disable the subject coloring feature
 subjectFirstColor = #(x11-color 'darkblue)
+subjectFirstInvColor = #(x11-color 'royalblue)
 
 markWithColorExtended =
 #(define-music-function (color music)
@@ -38,6 +39,12 @@ highlightSubject =
    "Colour the given note(s) to highlight fugues (first) subjets"
    #{ \markWithColorExtended \subjectFirstColor #music #})
 
+highlightSubjectInv =
+#(define-music-function (music)
+   (ly:music?)
+   "Colour the given note(s) to highlight fugues (first) inverted subjets"
+   #{ \markWithColorExtended \subjectFirstInvColor #music #})
+
 unHighlightSubject = {
   \revert Tie.color
   \revert Stem.color
@@ -56,3 +63,25 @@ unHighlightSubject = {
 %      (make-with-color-markup greyTextColor "T" )))))
 
 voiceFive  = #(context-spec-music (make-voice-props-set 4)  'Voice)
+
+#(define-markup-command (subject layout props dest num)
+  (number-pair? number?)
+  "Draw an annotation (a circle around the subject number)."
+  (let ((x (car dest))
+        (y (cdr dest)))
+  (interpret-markup layout props
+    (markup
+      #:override '(box-padding . 0.3)
+      #:hspace x #:lower y #:circle #:normal-text #:teeny
+      (make-with-color-markup greyTextColor
+        (cond ((eq? num 1) (make-musicglyph-markup "one"))
+              ((eq? num 2) (make-musicglyph-markup "two"))
+              ((eq? num 3) (make-musicglyph-markup "three"))
+              ((eq? num 4) (make-musicglyph-markup "four"))))))))
+
+#(define-markup-command (subjectBullet layout props) ()
+  (interpret-markup layout props
+    #{ \markup \with-color #subjectFirstColor \char ##x25a0 #}))
+#(define-markup-command (subjectInvBullet layout props) ()
+  (interpret-markup layout props
+    #{ \markup \with-color #subjectFirstInvColor \char ##x25a0 #}))

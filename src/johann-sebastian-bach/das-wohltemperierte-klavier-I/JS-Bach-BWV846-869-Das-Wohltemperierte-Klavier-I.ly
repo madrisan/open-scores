@@ -94,7 +94,7 @@
       \center-column {
         \null\null\null\null
         \fill-line {
-          \abs-fontsize #10 "Based on: Carl Czerny - Leipzig Berline: C.F. Peters"
+          \abs-fontsize #10 "Based on J.S. Bach's manuscript and Carl Czerny - Leipzig Berline: C.F. Peters"
         }
         \null\null
       }

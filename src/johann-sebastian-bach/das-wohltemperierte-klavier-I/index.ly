@@ -33,3 +33,4 @@
 \markup \indexItem "Praeludium und Fuga III" #'Praeludium03 "Cis–Dur (C–sharp major)" "848"
 \markup \indexItem "Praeludium und Fuga IV"  #'Praeludium04 "cis–Moll (C–sharp minor)" "849"
 \markup \indexItem "Praeludium und Fuga V"   #'Praeludium05 "D–Dur (D major)" "850"
+\markup \indexItem "Praeludium und Fuga VI"  #'Praeludium06 "d–Moll (D minor)" "851"
