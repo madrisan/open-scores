@@ -101,6 +101,8 @@
     }
   }
 }
+\pageBreak
+\include "manuscript-cover.ly"
 
 \include "macros.ly"
 
