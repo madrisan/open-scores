@@ -72,7 +72,7 @@
         \null
         \fill-line { \draw-hline }
         \null\null
-        \line { \abs-fontsize #34 \bold "Das Wohltemperierte Klavier" }
+        \line { \abs-fontsize #34 \bold "Das Wohltemperirte Clavier" }
         \null\null
         \line { \abs-fontsize #34 \bold "Teil I" }
         \null\null
@@ -138,3 +138,5 @@
 \pageBreak
 \include "./BWV851/das-wohltemperierte-klavier-I-06-2-fuga.ly"
 \pageBreak
+
+\include "./manuscript-music.ly"

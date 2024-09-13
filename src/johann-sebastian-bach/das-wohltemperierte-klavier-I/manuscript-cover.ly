@@ -2,7 +2,7 @@
   \line {
     \hspace #0
     \general-align #Y #DOWN {
-      \epsfile #X #70 #"manuscript-page001.eps"
+      \epsfile #X #70 #"manuscript-page00.eps"
     }
   }
   \fill-line {

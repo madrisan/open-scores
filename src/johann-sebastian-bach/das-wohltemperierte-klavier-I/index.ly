@@ -14,7 +14,7 @@
   (string? symbol? string? string?)
   "Format a block of the index"
   (interpret-markup layout props
-    #{ \markup \column \abs-fontsize #11 {
+    #{ \markup \column \abs-fontsize #10 {
          \override #'(line-width . 95)
          \line {
            \hspace #3.2
@@ -22,8 +22,8 @@
              \fill-with-pattern #1 #RIGHT . #title \page-ref #pagelabel "00" "?"
            }
          }
-         \pad-around #1
-         \line \abs-fontsize #9 \italic \with-color #middleGrey {
+         \pad-around #0.5
+         \line \abs-fontsize #8 \italic \with-color #middleGrey {
            \concat { \hspace #6 "BWV " #bwv "  —  " #tone }
          }
        } #}))
@@ -34,3 +34,14 @@
 \markup \indexItem "Praeludium und Fuga IV"  #'Praeludium04 "cis–Moll (C–sharp minor)" "849"
 \markup \indexItem "Praeludium und Fuga V"   #'Praeludium05 "D–Dur (D major)" "850"
 \markup \indexItem "Praeludium und Fuga VI"  #'Praeludium06 "d–Moll (D minor)" "851"
+
+\markup \column \abs-fontsize #10 {
+  \null
+  \override #'(line-width . 95)
+  \line {
+    \hspace #3.2
+    \page-link #37 {
+      \fill-with-pattern #1 #RIGHT . "Johann Sebastian Bach's autograph" "36"
+    }
+  }
+}
