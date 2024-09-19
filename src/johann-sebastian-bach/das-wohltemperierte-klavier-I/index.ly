@@ -34,14 +34,15 @@
 \markup \indexItem "Praeludium und Fuga IV"  #'Praeludium04 "cis–Moll (C–sharp minor)" "849"
 \markup \indexItem "Praeludium und Fuga V"   #'Praeludium05 "D–Dur (D major)" "850"
 \markup \indexItem "Praeludium und Fuga VI"  #'Praeludium06 "d–Moll (D minor)" "851"
+\markup \indexItem "Praeludium und Fuga VII" #'Praeludium07 "ees–Dur (E-flat major)" "852"
 
 \markup \column \abs-fontsize #10 {
   \null
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #37 {
-      \fill-with-pattern #1 #RIGHT . "Johann Sebastian Bach's autograph" "36"
+    \page-link #41 {
+      \fill-with-pattern #1 #RIGHT . "Johann Sebastian Bach's autograph" "40"
     }
   }
 }
