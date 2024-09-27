@@ -41,8 +41,8 @@
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #44 {
-      \fill-with-pattern #1 #RIGHT . "Johann Sebastian Bach's autograph" "43"
+    \page-link #50 {
+      \fill-with-pattern #1 #RIGHT . "Johann Sebastian Bach's autograph" "49"
     }
   }
 }

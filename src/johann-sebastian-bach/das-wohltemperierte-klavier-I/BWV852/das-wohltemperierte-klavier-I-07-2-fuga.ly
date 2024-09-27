@@ -123,7 +123,7 @@ Alto = \context Voice = "two" \relative c' {
   %25
   | \change Staff = "lower" \voiceThree
     bes,8
-    \change Staff = "upper" \voiceTwo
+    \hideStaffSwitch \change Staff = "upper" \voiceTwo
     r r16 d' b g
     \change Staff = "lower" \voiceThree
     c,8
