@@ -148,5 +148,7 @@
 \pageBreak
 \include "./BWV853/das-wohltemperierte-klavier-I-08-2-fuga.ly"
 \pageBreak
+\include "./BWV853/das-wohltemperierte-klavier-I-08-2-fuga-original-tonality.ly"
+\pageBreak
 
 \include "./manuscript-music.ly"
