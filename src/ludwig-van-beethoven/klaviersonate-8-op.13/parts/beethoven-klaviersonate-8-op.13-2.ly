@@ -21,17 +21,21 @@ Sopran = \context Voice = "one" \relative c' {
   | c4\( bes
   | ees4. des8\)
   | c8[\( ees aes bes]\)
+    \noBreak
   | ees,4.\( e8
+    \break
   %5
   | f4\) bes,8.\( c32 des\)
   | ees4\( a,
   | des\) c16_.\( bes_. aes_. g_.\)
+    \noBreak
   | <g bes>4
     \override Beam.positions = #'(0.5 . 0.5)
     \tuplet 3/2 { aes16[ \bottom ees_! aes_!] }
     \top \override Beam.positions = #'(2.5 . 2.8)
     \tuplet 3/2 { c_![ ees_! aes_!] }
     \revert Beam.positions
+    \break
   | \phrasingSlurUp c4\( bes
   %10
   | ees4. des8\)
@@ -364,7 +368,7 @@ Bass = \context Voice = "four" \relative c {
   | \stemDown\slurNeutral\tieUp bes4 bes'
   | \shiftOff
     \once\shape #'((0 . -0.4) (0 . -1.2) (0 . -1.2) (0 . 0)) Tie
-    ees,2~
+    ees,2_~
   | ees
   | <aes, aes'>4\( des'
   %30
@@ -395,7 +399,7 @@ Bass = \context Voice = "four" \relative c {
   | \repeat unfold 2 {
       \tuplet 3/2 { <cis e fis ais>[ q q] }
     }
-    \tuplet 3/2 { <b ees gis b>[ q q] } \stemDown\tieDown \tuplet 3/2 { <b, b'> q q }
+    \tuplet 3/2 { <b e gis b>[ q q] } \stemDown\tieDown \tuplet 3/2 { <b, b'> q q }
   | <e e'>8 g\rest g4\rest
   %45
   | <e e'>8 g\rest g4\rest

@@ -8,6 +8,8 @@ bottom = \change Staff = "lower"
 top = \change Staff = "upper"
 cresc = \markup { "cresc." }
 
+\include "../macros.ly"
+
 Sopran = \context Voice = "one" \relative c' {
   \voiceOne
   %\override DynamicText.Y-offset = #-2.4
@@ -59,9 +61,10 @@ Sopran = \context Voice = "one" \relative c' {
   \repeat volta 2 {
   | \bar ".|:"
     \tempo "Allegro di molto e con brio"
-    c2.\p <bes e>4_!
+    c2.\p
+    <bes e>4_!\startGroup
   | <aes f'>_! <e' g>_! <f aes>_! <d b'>_!
-  | <ees c'>_! <e c'>2 <bes' e>4-!
+  | <ees c'>_!\stopGroup <e c'>2 <bes' e>4-!
   | <aes f'>-! <e' g>-! <f aes>-! <d b'>-!
   %15
   | <c ees g c>2 \stemUp g'
@@ -169,6 +172,7 @@ Sopran = \context Voice = "one" \relative c' {
   | c^\prall( bes!) bes-! bes-!
   | \once\override Staff.TextScript.extra-offset = #'(0 . -1)
     c^\prall(_\markup { \dynamic pp } bes) bes-! bes-!
+    \pageBreak
   | \stemUp\tieUp s2 ees~
   %90
   | ees ees
@@ -413,6 +417,7 @@ Sopran = \context Voice = "one" \relative c' {
   \repeat unfold 2 {
   | aes\prall( g) g-! g-!
   }
+  \break
   %255
   \repeat unfold 2 {
   | \stemUp r8 c,, ees c c'2~
@@ -431,6 +436,7 @@ Sopran = \context Voice = "one" \relative c' {
   %265
   | r8\f ees! g ees  c' ees, g ees
   | r8 d f d  b' d, f d
+    \break
   }
   %279
   | c4\p c'2\( b8 c
@@ -495,11 +501,11 @@ Alto = \context Voice = "two" \relative c' {
     \once\override Staff.TextScript.extra-offset = #'(0.6 . -1)
     e8_\markup { \whiteout "cresc." }
     f s4 s8
+    \revert Stem.length
+    \undo\omit Flag
   %5
   | s1*4
-  | \override Stem.length = #26
-    s4 f8\rest f'16 f ees8 s4.
-    \revert Stem.length
+  | s4 f8\rest f'16 f ees8 s4.
   %10
   | s1*5
   %15
