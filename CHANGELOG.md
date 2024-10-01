@@ -19,6 +19,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Fixed
 
 - J.S. Bach: Die Kunst der Fuge (BWV1080) - fix some "too many colliding rests" warnings
+- Ludwig van Beethoven: Klaviersonate Nr.8 c-moll Opus 13 - fixes
 
 ## [v56] - 2024-09-01
 

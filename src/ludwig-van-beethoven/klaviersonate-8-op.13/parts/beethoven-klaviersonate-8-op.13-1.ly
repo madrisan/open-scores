@@ -369,7 +369,7 @@ Sopran = \context Voice = "one" \relative c' {
   | <aes c f>-! <f des'>_!
   %220
   | <f c'>_! <f b>_!
-  | <ees c'>4 b_\(\p c b
+  | <e c'>4 b_\(\p c b
   | c b c b\)
     \break
   | r4 \clef bass c,4_! f-! g-!
@@ -506,7 +506,7 @@ Alto = \context Voice = "two" \relative c' {
   | s2
     \once\override Staff.TextScript.extra-offset = #'(-3 . -2)
     <g, b f'>_cresc
-  | <g c>2 <f a>
+  | <g c>2 <f aes>
   | g fis
   | s1*5
   %23
