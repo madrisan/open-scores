@@ -8,8 +8,6 @@ bottom = \change Staff = "lower"
 top = \change Staff = "upper"
 cresc = \markup { "cresc." }
 
-\include "../macros.ly"
-
 Sopran = \context Voice = "one" \relative c' {
   \voiceOne
   %\override DynamicText.Y-offset = #-2.4
