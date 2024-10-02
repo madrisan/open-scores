@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - J.S. Bach: Das wohltemperierte Klavier – Erster Teil: Praeludium und Fuga VI
 - J.S. Bach: Das wohltemperierte Klavier – Erster Teil: Praeludium und Fuga VII
 - J.S. Bach: Das wohltemperierte Klavier – Erster Teil: Praeludium und Fuga VIII
+- J.S. Bach: Das wohltemperierte Klavier – Erster Teil: add J.S. Bach manuscript
 
 ### Changed
 

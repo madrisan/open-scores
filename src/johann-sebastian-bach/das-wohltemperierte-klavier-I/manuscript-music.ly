@@ -10,6 +10,11 @@
 %done
 
 \markup {
+  \with-dimensions #'(0 . 0) #'(0 . 0)
+  \with-color #(rgb-color 1.00 0.89 0.71)
+  \filled-box #'(-200 . 200) #'(-200 . 200) #0
+}
+\markup {
   \fill-line {
     \center-column {
       \null\null\null\null
@@ -310,6 +315,13 @@
 \pageBreak
 
 \markup \fill-line {
+  \fill-line {
+    \center-column {
+      \null \fill-line \abs-fontsize #12 \bold { "Fuga VII." } \null
+    }
+  }
+}
+\markup \fill-line {
   \null
   \epsfile #X #96 #"manuscript-page27.eps"
   \null
@@ -324,6 +336,13 @@
 \pageBreak
 
 \markup \fill-line {
+  \fill-line {
+    \center-column {
+      \null \fill-line \abs-fontsize #12 \bold { "Praeludium VIII." } \null
+    }
+  }
+}
+\markup \fill-line {
   \null
   \epsfile #X #96 #"manuscript-page29.eps"
   \null
@@ -337,6 +356,13 @@
 }
 \pageBreak
 
+\markup \fill-line {
+  \fill-line {
+    \center-column {
+      \null \fill-line \abs-fontsize #12 \bold { "Fuga VIII." } \null
+    }
+  }
+}
 \markup \fill-line {
   \null
   \epsfile #X #96 #"manuscript-page31.eps"
@@ -359,6 +385,13 @@
 \pageBreak
 
 \markup \fill-line {
+  \fill-line {
+    \center-column {
+      \null \fill-line \abs-fontsize #12 \bold { "Praeludium IX." } \null
+    }
+  }
+}
+\markup \fill-line {
   \null
   \epsfile #X #96 #"manuscript-page34.eps"
   \null
@@ -366,12 +399,26 @@
 \pageBreak
 
 \markup \fill-line {
+  \fill-line {
+    \center-column {
+      \null \fill-line \abs-fontsize #12 \bold { "Fuga IX." } \null
+    }
+  }
+}
+\markup \fill-line {
   \null
   \epsfile #X #96 #"manuscript-page35.eps"
   \null
 }
 \pageBreak
 
+\markup \fill-line {
+  \fill-line {
+    \center-column {
+      \null \fill-line \abs-fontsize #12 \bold { "Praeludium X." } \null
+    }
+  }
+}
 \markup \fill-line {
   \null
   \epsfile #X #96 #"manuscript-page36.eps"
@@ -387,6 +434,13 @@
 \pageBreak
 
 \markup \fill-line {
+  \fill-line {
+    \center-column {
+      \null \fill-line \abs-fontsize #12 \bold { "Fuga X." } \null
+    }
+  }
+}
+\markup \fill-line {
   \null
   \epsfile #X #96 #"manuscript-page38.eps"
   \null
@@ -401,12 +455,26 @@
 \pageBreak
 
 \markup \fill-line {
+  \fill-line {
+    \center-column {
+      \null \fill-line \abs-fontsize #12 \bold { "Praeludium XI." } \null
+    }
+  }
+}
+\markup \fill-line {
   \null
   \epsfile #X #96 #"manuscript-page40.eps"
   \null
 }
 \pageBreak
 
+\markup \fill-line {
+  \fill-line {
+    \center-column {
+      \null \fill-line \abs-fontsize #12 \bold { "Fuga XI." } \null
+    }
+  }
+}
 \markup \fill-line {
   \null
   \epsfile #X #96 #"manuscript-page41.eps"
@@ -415,12 +483,26 @@
 \pageBreak
 
 \markup \fill-line {
+  \fill-line {
+    \center-column {
+      \null \fill-line \abs-fontsize #12 \bold { "Praeludium XII." } \null
+    }
+  }
+}
+\markup \fill-line {
   \null
   \epsfile #X #96 #"manuscript-page42.eps"
   \null
 }
 \pageBreak
 
+\markup \fill-line {
+  \fill-line {
+    \center-column {
+      \null \fill-line \abs-fontsize #12 \bold { "Fuga XII." } \null
+    }
+  }
+}
 \markup \fill-line {
   \null
   \epsfile #X #96 #"manuscript-page43.eps"
@@ -443,6 +525,13 @@
 \pageBreak
 
 \markup \fill-line {
+  \fill-line {
+    \center-column {
+      \null \fill-line \abs-fontsize #12 \bold { "Praeludium XIII." } \null
+    }
+  }
+}
+\markup \fill-line {
   \null
   \epsfile #X #96 #"manuscript-page46.eps"
   \null
@@ -457,12 +546,31 @@
 \pageBreak
 
 \markup \fill-line {
+  \fill-line {
+    \center-column {
+      \null \fill-line \abs-fontsize #12 \bold { "Fuga XIII. (missing)" } \null
+    }
+  }
+}
+\markup \fill-line {
   \null
   \epsfile #X #96 #"manuscript-page48.eps"
   \null
 }
 \pageBreak
 
+\markup \fill-line {
+  \fill-line {
+    \center-column {
+      \null \fill-line \abs-fontsize #12 \bold {
+        \concat {
+          "Praeludium XIV. (first 6 " \char ##x00BE " bars missing)"
+        }
+      }
+      \null
+    }
+  }
+}
 \markup \fill-line {
   \null
   \epsfile #X #96 #"manuscript-page49.eps"
