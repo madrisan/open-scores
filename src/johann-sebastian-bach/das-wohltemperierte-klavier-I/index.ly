@@ -2,7 +2,7 @@
 
 \markup \fill-line {
   \center-column \abs-fontsize #18 \smallCaps \bold {
-    \line { "Das Wohltemperierte Klavier — Teil I" }
+    \line { "Das Wohltemperirte Clavier — Teil I" }
     \null
     "Index"
     \null
@@ -35,7 +35,8 @@
 \markup \indexItem "Praeludium und Fuga V"    #'Praeludium05 "D–Dur (D major)" "850"
 \markup \indexItem "Praeludium und Fuga VI"   #'Praeludium06 "d–Moll (D minor)" "851"
 \markup \indexItem "Praeludium und Fuga VII"  #'Praeludium07 "ees–Dur (E-flat major)" "852"
-\markup \indexItem "Praeludium und Fuga VIII" #'Praeludium08 "ees–Moll (E-flat minor)" "853"
+\markup \indexItem "Praeludium und Fuga VIII" #'Praeludium08
+                   "ees–Moll (E-flat minor) + Fuga in dis-Moll (D-sharp minor)" "853"
 
 \markup \column \abs-fontsize #10 {
   \null
