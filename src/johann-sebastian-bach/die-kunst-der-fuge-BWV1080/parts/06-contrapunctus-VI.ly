@@ -227,7 +227,6 @@ Alto = \context Voice = "two" \relative c' {
 Tenor = \context Voice = "three" \relative c' {
   \voiceThree
   \showStaffSwitch
-  \override VoiceFollower.color = \greyTextColor
   | s1*6
   | \highlightSubjectFirstInv { d4^\markup \scale #'(1 . -1) \subject #'(2.5 . 0) #1 a8. b16 c8. d16 e4
   | f e8. d16 c4~ c16 b c d
@@ -488,6 +487,12 @@ Bass = \context Voice = "four" \relative c {
       }
     }
   }
-  \layout { }
+  \layout {
+    \context {
+      \Voice
+      \override VoiceFollower.color = #greyTextColor
+      \override VoiceFollower.style = #'dashed-line
+    }
+  }
   \midi { \tempo 4=100 }
 }

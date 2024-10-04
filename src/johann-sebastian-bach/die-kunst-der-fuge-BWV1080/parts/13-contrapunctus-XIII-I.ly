@@ -102,7 +102,6 @@ Alto = \context Voice = "two" \relative c' {
   \voiceTwo
   \showStaffSwitch
   \override TupletBracket.bracket-visibility = ##f
-  \override VoiceFollower.color = \greyTextColor
   \partial 4 \highlightSubjectFirstInv { a'4_\markup \scale #'(1 . -1) \subject #'(1.5 . 0) #1
   %1
   | d d,~ \tuplet 3/2 { d8 e f } \tuplet 3/2 { e f g }
@@ -400,6 +399,12 @@ Bass = \context Voice = "four" \relative c {
       }
     }
   }
-  \layout { }
+  \layout {
+    \context {
+      \Voice
+      \override VoiceFollower.color = #greyTextColor
+      \override VoiceFollower.style = #'dashed-line
+    }
+  }
   \midi { \tempo 4 = 135 }
 }

@@ -243,7 +243,6 @@ Sopran = \context Voice = "one" \relative c'' {
 Alto = \context Voice = "two" \relative c' {
   \voiceTwo
   \showStaffSwitch
-  \override VoiceFollower.color = \greyTextColor
   %1
   | \highlightSubjectFirst { r4_\markup \subject #'(0 . 0) #1 d a' g
   | r f e d
@@ -514,7 +513,6 @@ Alto = \context Voice = "two" \relative c' {
 Tenor = \context Voice = "three" \relative c' {
   \voiceThree
   \showStaffSwitch
-  \override VoiceFollower.color = \greyTextColor
   | \override MultiMeasureRest.staff-position = #0
     R1*8
   | \override MultiMeasureRest.staff-position = #6
@@ -1109,6 +1107,12 @@ Bass = \context Voice = "four" \relative c {
       }
     }
   }
-  \layout { }
+  \layout {
+    \context {
+      \Voice
+      \override VoiceFollower.color = #greyTextColor
+      \override VoiceFollower.style = #'dashed-line
+    }
+  }
   \midi { \tempo 4 = 75 }
 }

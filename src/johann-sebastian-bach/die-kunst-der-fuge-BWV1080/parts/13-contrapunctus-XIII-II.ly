@@ -109,7 +109,6 @@ Alto = \context Voice = "two" \relative c' {
   \showStaffSwitch
   \override TupletBracket.bracket-visibility = ##f
   \override TupletNumber.transparent = ##t
-  \override VoiceFollower.color = \greyTextColor
   \partial 4 r4
   | R1*3 %1 to 3
   | r2 r4 \highlightSubjectFirstInv { a'_\markup \scale #'(1 . -1) \subject #'(1.2 . 0) #1
@@ -285,7 +284,6 @@ Bass = \context Voice = "four" \relative c {
   \showStaffSwitch
   \override TupletBracket.bracket-visibility = ##f
   \override TupletNumber.transparent = ##t
-  \override VoiceFollower.color = \greyTextColor
   \partial 4 d4\rest
   | \override MultiMeasureRest.staff-position = #0
     R1*7
@@ -420,6 +418,12 @@ Bass = \context Voice = "four" \relative c {
       }
     }
   }
-  \layout { }
+  \layout {
+    \context {
+      \Voice
+      \override VoiceFollower.color = #greyTextColor
+      \override VoiceFollower.style = #'dashed-line
+    }
+  }
   \midi { \tempo 4 = 144 }
 }

@@ -339,7 +339,7 @@ Bass = \context Voice = "four" \relative c {
       \column {
          \concat {
            \normal-text { "[H.A.Kellner] " }
-           "158 = Die(18) + Kunst(80) + der(26) + Fuga(34) = Johann(58) + Sebastian(86) + Bach(14)"
+           "Die(18) + Kunst(80) + der(26) + Fuga(34) = Johann(58) + Sebastian(86) + Bach(14) = 158"
          }
          \raise #0.8
          \concat {
@@ -502,6 +502,7 @@ Bass = \context Voice = "four" \relative c {
       \override TextScript.font-shape = #'italic
       \override TextScript.font-size = #-2
       \override VoiceFollower.color = #greyTextColor
+      \override VoiceFollower.style = #'dashed-line
     }
   }
   \midi { \tempo 4=84 }

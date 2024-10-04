@@ -16,6 +16,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - J.S. Bach: Das wohltemperierte Klavier – number of voices of the fugues as in Bach's manuscript
 - J.S. Bach: Die Kunst der Fuge (BWV1080) - automatic page number in the index using \page-ref
+- J.S. Bach: Die Kunst der Fuge (BWV1080) - use a dashed-line as VoiceFollower style
 
 ### Fixed
 
