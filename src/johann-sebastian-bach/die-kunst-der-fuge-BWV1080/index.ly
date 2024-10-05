@@ -54,7 +54,7 @@
 \markup { \indexItem "Contrapunctus VI [per Diminutionem] in Stylo Francese" #'ContrapunctusVI
     "four-voice fugue with many stretto entries a 4 in Stylo Francese"
 }
-\markup { \indexItem "Contrapunctus VII per per Augmentationem et Diminutionem" #'ContrapunctusVII
+\markup { \indexItem "Contrapunctus VII per Augmentationem et Diminutionem" #'ContrapunctusVII
   "fugue that uses augmented (doubling all note lengths) and diminished versions of the main subject and its inversion"
 }
 \markup { \indexItem "Contrapunctus VIII" #'ContrapunctusVIII
