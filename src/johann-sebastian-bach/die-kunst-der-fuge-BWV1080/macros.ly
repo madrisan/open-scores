@@ -12,22 +12,26 @@ subjectPresentationColor = #(rgb-color 0.00 0.40 0.13)
 subjectStrettoColor =      #(rgb-color 0.90 0.45 0.00)
 endColor =                 #(rgb-color 0.00 0.00 0.40)
 
+#(define-markup-command (endBullet layout props) ()
+  "Prints out a bullet for marking a fuga end (coda)"
+  (interpret-markup layout props
+    #{ \markup \with-color #endColor \char ##x25a0 #}))
 #(define-markup-command (episodeBullet layout props) ()
   "Prints out a bullet for marking the start of a fugue exposition"
   (interpret-markup layout props
-    #{ \markup \with-color #episodeColor \char ##x2022 #}))
+    #{ \markup \with-color #episodeColor \char ##x25a0 #}))
 #(define-markup-command (expositionBullet layout props) ()
   "Prints out a bullet for marking the start of a fugue exposition"
   (interpret-markup layout props
-    #{ \markup \with-color #expositionColor \char ##x2022 #}))
+    #{ \markup \with-color #expositionColor \char ##x25a0 #}))
 #(define-markup-command (secondExpositionBullet layout props) ()
   "Prints out a bullet for marking the start of a fugue exposition"
   (interpret-markup layout props
-    #{ \markup \with-color #secondExpositionColor \char ##x2022 #}))
+    #{ \markup \with-color #secondExpositionColor \char ##x25a0 #}))
 #(define-markup-command (subjectPresentationBullet layout props) ()
   "Prints out a bullet for marking the start of a fugue exposition"
   (interpret-markup layout props
-    #{ \markup \with-color #subjectPresentationColor \char ##x2022 #}))
+    #{ \markup \with-color #subjectPresentationColor \char ##x25a0 #}))
 
 #(define-markup-command (on-color layout props color arg) (color? markup?)
    (let* ((stencil (interpret-markup layout props arg))
