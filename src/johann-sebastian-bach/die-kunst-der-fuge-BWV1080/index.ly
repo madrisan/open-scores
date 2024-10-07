@@ -37,6 +37,17 @@
 }
 
 \markup \column \abs-fontsize #11 {
+  \pad-around #0.4
+  \override #'(line-width . 95)
+  \line {
+    \hspace #3.2
+    \page-link #3 {
+      \fill-with-pattern #1 #RIGHT . "Structure of the Fuges" \page-ref #'ListOfSubjects "000" "4"
+    }
+  }
+}
+
+\markup \column \abs-fontsize #11 {
   \pad-around #2
   \abs-fontsize #12 \smallCaps \bold { \concat { \char ##x23AF " Contrapuncti" } }
 }
