@@ -41,7 +41,7 @@
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #3 {
+    \page-link #5 {
       \fill-with-pattern #1 #RIGHT . "Structure of the Fuges" \page-ref #'ListOfSubjects "000" "4"
     }
   }
