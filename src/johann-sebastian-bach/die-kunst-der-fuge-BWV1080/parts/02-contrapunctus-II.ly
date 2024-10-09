@@ -17,14 +17,20 @@ Soprano = \context Voice = "one" \relative c'' {
   %15
   | gis a4 b
   | c2~ c8.[ d16 c8. b16]
-  | \unHighlightSubject a1~ }
+  | \unHighlightSubject a1~^\markup { \episodeBullet "First episode, bars 17-22" }
+    }
   | a
   | d,~
   %20
   | d~
   | d8.[ cis16 d8. f16] e8.[ d16 gis8. a16]
   | b8.[ c16 d8. f,16~] f8. e32 d cis8. d16
-  | cis4^\markup \subject #'(0 . 0) #1 r4 r2
+  | cis4^\markup \subject #'(0 . 0) #1
+    r4^\markup {
+      \hspace #-5
+      \secondExpositionBullet "Second exposition ASBT, bars 23−42"
+    }
+    r2
   | R1*2
   %26
   | \highlightSubjectFirst { a'2^\markup \subject #'(0 . 0) #1 d
@@ -46,11 +52,14 @@ Soprano = \context Voice = "one" \relative c'' {
   %40
   | R1
   | f8\rest f16\rest e[ dis8. e16] a,4 d~
-  | d8.[ c16 bes!8. a16] bes2~
+  | d8.[^\markup { \episodeBullet "Second episode, bars 42-44" }
+    c16 bes!8. a16] bes2~
   | bes8.[ a16 g8. f16] g2~
   | g8.[ f16 g8. a16] bes8.[ c16 d8. e16]
   %45
-  | \highlightSubjectFirst { f2^\markup \subject #'(0 . 0) #1 c'
+  | \highlightSubjectFirst { f2^\markup \subject #'(-0.6 . 0) #1
+    ^\markup { \subjectPresentationBullet "Subject Presentation SAB, bars 45-57" }
+    c'
   | a f
   | e f4 g
   | a2~ a8.[ bes16 a8. g16]
@@ -63,7 +72,8 @@ Soprano = \context Voice = "one" \relative c'' {
   %55
   | r8 r16 g'[ f8. ees16] d8.[ c16 bes8. a16]
   | bes2 ees~
-  | ees8.[ d16 cis8. d16] g,4 c~
+  | ees8.[^\markup { \episodeBullet "Third episode, bars 57-60" }
+    d16 cis8. d16] g,4 c~
   | c bes a2~
   | a8.[ f'16 g8. f16] e8.[ d16 cis8. d16]
   %60
@@ -73,7 +83,8 @@ Soprano = \context Voice = "one" \relative c'' {
   | bes8.[ bes16 a8. g16] f8.[ e16 d8. cis16]
   | d8.[ d'16 e8. f16] g2~
   %65
-  | g4 f8. e16 f4 a
+  | g4^\markup { \episodeBullet "Fourth episode, bars 65-68" }
+    f8. e16 f4 a
   | d,2 e!4 fis
   | g2. d4~
   | d8.[ e16 d8. c16~] c8.[ d16 c8. bes16~]
@@ -82,7 +93,8 @@ Soprano = \context Voice = "one" \relative c'' {
   | gis4. r16 gis a4. r16 a
   | d8. e16 f4 e2~
   | e8. a16 gis8. a16 e8. fis16 g4~
-  | g f2 e8. d16
+  | g^\markup { \episodeBullet "Fith episode, bars 73-78" }
+    f2 e8. d16
   | cis4 e a,2~
   %75
   | a4 d,2 g4~
@@ -101,7 +113,11 @@ Soprano = \context Voice = "one" \relative c'' {
 Alto = \context Voice = "two" \relative c' {
   \voiceTwo
   \showStaffSwitch
-  | s1*8
+  | s4^\markup {
+      \expositionBullet "Exposition BTAS, bars 1−17"
+    }
+    s2.
+    s1*7
   | \stemUp
     \highlightSubjectFirst { d2^\markup \subject #'(0 . 0) #1 a'
   %10
@@ -212,7 +228,9 @@ Alto = \context Voice = "two" \relative c' {
   | a2. b4
   | cis2 gis
   | a r4 cis!
-  | d8.[ f16 e8. d16] cis8.[ a16 b8. cis16]
+  | d8.[
+    ^\markup { \endBullet "Final Episode with subject S, bars 79-84" }
+    f16 e8. d16] cis8.[ a16 b8. cis16]
   %80
   | d4 c2 bes4~
   | bes8.[ bes16 a8. g16] f4 bes
@@ -330,7 +348,10 @@ Tenor = \context Voice = "three" \relative c' {
   | g r r2
   | \override MultiMeasureRest.staff-position = #6
     R1*2
-  | r4 \highlightSubjectFirst { a2^\markup \subject #'(2.5 . 0) #1 d4~
+  | r4 \highlightSubjectFirst {
+    a2^\markup \subject #'(2.5 . 0) #1
+    _\markup { \subjectPresentationBullet "Subject Presentation T, bars 69-73" }
+    d4~
   %70
   | d c2 a4~
   | a gis a b
@@ -361,7 +382,21 @@ Bass = \context Voice = "four" \relative c {
   | f2^~ f8.[ g16 f8. e16]
   %\break
   %5
-  | \revert Beam.color d8.[} e16 d8. c16~] c8.[ d16 c8. b16~]
+  | \revert Beam.color d8.[_\markup
+      {
+        \hspace #-1
+        \line {
+          \column {
+            \line { "The rhythmic variation motive from the" }
+            \raise #0.8
+            \line { "subject is used throughout the fugue as" }
+            \raise #1.6
+            \line { "counterpoint to the subjects" }
+          }
+        }
+      }
+    }
+    e16 d8. c16~] c8.[ d16 c8. b16~]
   | b8.[ a16 b8. c16] d8.[ e16 f8. d16]
   | e8.[ f16 e8. d16] c8.[ b16 a8. gis16]
   | a8.[a'16 gis8. a16] d,4 g~
@@ -397,7 +432,17 @@ Bass = \context Voice = "four" \relative c {
   | cis d4 e
   | f2~ f8.[ g16 f8. e16]
   %35
-  | d4 } r r2
+  | d4_\markup {
+         \hspace #1
+         \line {
+           \column {
+             \line { "A 3 measure episode leads to" }
+             \raise #0.8
+             \line { "the tenor entrance" }
+           }
+         }
+       }
+    } r r2
   | r4 g~ g8.[ f16 e8. d16]
   | e2 b\rest
   | \override MultiMeasureRest.staff-position = #-4
@@ -420,7 +465,9 @@ Bass = \context Voice = "four" \relative c {
   | bes'1
   %60
   | a4 d,\rest d2\rest
-  | \highlightSubjectFirst { d_\markup \subject #'(0 . 0) #1 a'
+  | \highlightSubjectFirst { d_\markup \subject #'(1.2 . 0) #1
+    _\markup { \subjectPresentationBullet "Subject Presentation B, bars 61-65" }
+    a'
   | f d
   | cis d4 e
   | f2~ f8.[ g16 f8. e16]
@@ -479,17 +526,17 @@ Bass = \context Voice = "four" \relative c {
       \center-column {
         \line { "Four-voice fugue on principal subject, accompanied by a “French” style dotted rhythm" }
         \line \normal-text \tiny \with-color #(rgb-color 1.0 1.0 1.0) {
-          \on-color \expositionColor \pad-markup #0.8 "Exposition BTAS"
-          \on-color \episodeColor \pad-markup #1 "1"
-          \on-color \secondExpositionColor \pad-markup #0.8 "Second exposition ASBT"
-          \on-color \episodeColor \pad-markup #1 "2"
-          \on-color \subjectPresentationColor \pad-markup #0.8 "SAB"
-          \on-color \episodeColor \pad-markup #1 "3"
-          \on-color \subjectPresentationColor \pad-markup #0.8 "B"
-          \on-color \episodeColor \pad-markup #1 "4"
-          \on-color \subjectPresentationColor \pad-markup #0.8 "T"
-          \on-color \episodeColor \pad-markup #1 "5"
-          \on-color \endColor \pad-markup #0.8 "S"
+          \on-color \expositionColor \pad-markup #0.8 "Exposition BTAS"                % bars  1-17
+          \on-color \episodeColor \pad-markup #1 "1"                                   % bars 17-22
+          \on-color \secondExpositionColor \pad-markup #0.8 "Second exposition ASBT"   % bars 23-42
+          \on-color \episodeColor \pad-markup #1 "2"                                   % bars 42-44
+          \on-color \subjectPresentationColor \pad-markup #0.8 "SAB"                   % bars 45-57
+          \on-color \episodeColor \pad-markup #1 "3"                                   % bars 57-60
+          \on-color \subjectPresentationColor \pad-markup #0.8 "B"                     % bars 61-65
+          \on-color \episodeColor \pad-markup #1 "4"                                   % bars 65-68
+          \on-color \subjectPresentationColor \pad-markup #0.8 "T"                     % bars 69-73
+          \on-color \episodeColor \pad-markup #1 "5"                                   % bars 73-78
+          \on-color \endColor \pad-markup #0.8 "S"                                     % bars 79-
         }
       }
     }
@@ -497,6 +544,9 @@ Bass = \context Voice = "four" \relative c {
   \layout {
     \context {
       \Voice
+      \override TextScript.color = #greyTextColor
+      \override TextScript.font-shape = #'italic
+      \override TextScript.font-size = #-2
       \override VoiceFollower.color = #greyTextColor
       \override VoiceFollower.style = #'dashed-line
     }
