@@ -5,6 +5,7 @@ Global = {
 }
 
 \include "../macros.ly"
+\include "../macros-fugues-structure.ly"
 
 Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
@@ -476,16 +477,7 @@ Bass = \context Voice = "four" \relative c {
     subsubtitle = \markup {
       \center-column {
         \line { "Four-voice fugue on principal subject" }
-        \line \normal-text \tiny \with-color #(rgb-color 1.0 1.0 1.0) {
-          \on-color \expositionColor \pad-markup #0.8 "Exposition ASBT"
-          \on-color \episodeColor \pad-markup #1 "1"
-          \on-color \secondExpositionColor \pad-markup #0.8 "Second exposition ASBT"
-          \on-color \episodeColor \pad-markup #1 "2"
-          \on-color \subjectPresentationColor \pad-markup #0.8 "S"
-          \on-color \subjectPresentationColor \pad-markup #0.8 "B"
-          \on-color \episodeColor \pad-markup #1 "3"
-          \on-color \endColor \pad-markup #0.8 "T"
-        }
+        \fugueStructureBoxesI
       }
     }
   }

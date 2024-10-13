@@ -371,15 +371,7 @@ Bass = \context Voice = "four" \relative c {
     }
     subsubtitle = \markup {
       \center-column {
-        \line \normal-text \tiny \with-color \white {
-          \on-color \expositionColor \pad-markup #0.8 "Exposition 1 B1 T1 A1 S1"
-          \on-color \episodeColor \pad-markup #1 "1"
-          \on-color \secondExpositionColor \pad-markup #0.8 "Exposition 2 S2 A2 T2 B2"   % bar 21-45
-          \on-color \episodeColor \pad-markup #1 "2"
-          \on-color \subjectPresentationColor \pad-markup #0.8 "A2"   % bar 50
-          \on-color \subjectPresentationColor \pad-markup #0.8 "S2"   % bar 54 (incomplete subject)
-          \on-color \endColor \pad-markup #0.8 "Coda"
-        }
+        \fugueStructureBoxesXII_I
       }
     }
   }

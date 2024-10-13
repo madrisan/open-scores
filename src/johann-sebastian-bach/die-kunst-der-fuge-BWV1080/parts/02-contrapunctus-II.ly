@@ -525,19 +525,7 @@ Bass = \context Voice = "four" \relative c {
     subsubtitle = \markup {
       \center-column {
         \line { "Four-voice fugue on principal subject, accompanied by a “French” style dotted rhythm" }
-        \line \normal-text \tiny \with-color #(rgb-color 1.0 1.0 1.0) {
-          \on-color \expositionColor \pad-markup #0.8 "Exposition BTAS"                % bars  1-17
-          \on-color \episodeColor \pad-markup #1 "1"                                   % bars 17-22
-          \on-color \secondExpositionColor \pad-markup #0.8 "Second exposition ASBT"   % bars 23-42
-          \on-color \episodeColor \pad-markup #1 "2"                                   % bars 42-44
-          \on-color \subjectPresentationColor \pad-markup #0.8 "SAB"                   % bars 45-57
-          \on-color \episodeColor \pad-markup #1 "3"                                   % bars 57-60
-          \on-color \subjectPresentationColor \pad-markup #0.8 "B"                     % bars 61-65
-          \on-color \episodeColor \pad-markup #1 "4"                                   % bars 65-68
-          \on-color \subjectPresentationColor \pad-markup #0.8 "T"                     % bars 69-73
-          \on-color \episodeColor \pad-markup #1 "5"                                   % bars 73-78
-          \on-color \endColor \pad-markup #0.8 "S"                                     % bars 79-
-        }
+        \fugueStructureBoxesII
       }
     }
   }

@@ -275,7 +275,7 @@ Alto = \context Voice = "two" \relative c' {
     d'
   %70
   | a_~ \tuplet 3/2 { a8 fis e } \tuplet 3/2 { d c bes! } a8.*8/9 a'16*4/3
-  | a2.\fermata
+  | a2._\fermata
   \bar "|."
 }
 
@@ -404,17 +404,7 @@ Bass = \context Voice = "four" \relative c {
     }
     subsubtitle = \markup {
       \center-column {
-        \line \normal-text \tiny \with-color \white {
-          \on-color \expositionColor \pad-markup #0.8 "Exposition 1 S A B"
-          \on-color \episodeColor \pad-markup #1 "1"                  % bar 13-19
-          \on-color \subjectPresentationColor \pad-markup #0.8 "S"    % bar 20
-          \on-color \episodeColor \pad-markup #1 "2"                  % bar 24
-          \on-color \secondExpositionColor \pad-markup #0.8 "Exposition 2 A B S"  % bar 29-41
-          \on-color \episodeColor \pad-markup #1 "3"                  % bar 41-47
-          \on-color \subjectPresentationColor \pad-markup #0.8 "S"    % bar 47-52
-          \on-color \episodeColor \pad-markup #1 "4"                  % bar 52-61
-          \on-color \endColor \pad-markup #0.8 "Final presentation A B"
-        }
+        \fugueStructureBoxesXIII_II
       }
     }
   }

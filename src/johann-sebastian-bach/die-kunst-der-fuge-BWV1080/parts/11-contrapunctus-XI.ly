@@ -1075,35 +1075,9 @@ Bass = \context Voice = "four" \relative c {
     }
     subsubtitle = \markup {
       \center-column {
-        \line \normal-text \tiny \with-color \white {
-          \on-color \expositionColor \pad-markup #0.8 "Exposition 1/a A1 S1 B1 T1"
-          \on-color \episodeColor \pad-markup #1 "1"
-          \on-color \subjectPresentationColor \pad-markup #0.8 "S1"  % bar 22
-          \on-color \secondExpositionColor \pad-markup #0.8 "Exposition 2 A2 T2 B2 S2"   % bar 27
-          \on-color \episodeColor \pad-markup #1 "2"
-          \on-color \subjectPresentationColor \pad-markup #0.8 "B2"  % bar 67
-        }
-        \line \normal-text \tiny \with-color \white {
-          \on-color \expositionColor \pad-markup #0.8 "Exposition 1/b T1 S1 B1 A1"   % bar 71
-          \on-color \subjectPresentationColor \pad-markup #0.8 "B2 T3"  % bar 89
-          \on-color \subjectPresentationColor \pad-markup #0.8 "A2 S3"  % bar 93
-          \on-color \subjectPresentationColor \pad-markup #0.8 "A1"     % bar 101
-          \on-color \subjectPresentationColor \pad-markup #0.8 "A3 T2"  % bar 105
-          \on-color \subjectPresentationColor \pad-markup #0.8 "S2 A3"  % bar 113
-          \on-color \episodeColor \pad-markup #1 "3"
-          \on-color \subjectPresentationColor \pad-markup #0.8 "B1"     % bar 132
-          \on-color \subjectPresentationColor \pad-markup #0.8 "T2 A3"  % bar 136
-          \on-color \episodeColor \pad-markup #1 "4"
-        }
-        \line \normal-text \tiny \with-color \white {
-          \on-color \subjectPresentationColor \pad-markup #0.8 "A3 T1 S2"  % bar 145
-          \on-color \episodeColor \pad-markup #1 "5"
-          \on-color \subjectPresentationColor \pad-markup #0.8 "A1 S1"     % bar 158
-          \on-color \subjectPresentationColor \pad-markup #0.8 "B1 T1"     % bar 164
-          \on-color \episodeColor \pad-markup #1 "6"
-          \on-color \subjectPresentationColor \pad-markup #0.8 "B2 T3 A1"  % bar 174
-          \on-color \subjectPresentationColor \pad-markup #0.8 "B3 T2 S2"  % bar 179
-        }
+        \fugueStructureBoxesXI_lineone
+        \fugueStructureBoxesXI_linetwo
+        \fugueStructureBoxesXI_linethree
       }
     }
   }

@@ -555,21 +555,7 @@ Bass = \context Voice = "four" \relative c {
     subsubtitle = \markup {
       \center-column {
         \line { "Four-voice fugue with many stretto entries" }
-        \line \normal-text \tiny \with-color \white {
-          \on-color \expositionColor \pad-markup #0.8 "Exposition ABST"
-          \on-color \episodeColor \pad-markup #1 "1"
-          \on-color \secondExpositionColor \pad-markup #0.8 "Second exposition STBA"
-          \on-color \episodeColor \pad-markup #1 "2"
-          \on-color \subjectStrettoColor \pad-markup #0.8 "Stretto BS"
-          \on-color \subjectStrettoColor \pad-markup #0.8 "TA"
-          \on-color \subjectStrettoColor \pad-markup #0.8 "BT"
-          \on-color \episodeColor \pad-markup #1 "3"
-          \on-color \subjectStrettoColor \pad-markup #0.8 "SA"
-          \on-color \episodeColor \pad-markup #1 "4"
-          \on-color \subjectStrettoColor \pad-markup #0.8 "ST"
-          \on-color \subjectStrettoColor \pad-markup #0.8 "TA"
-          \on-color \endColor \pad-markup #0.8 "BA"
-        }
+        \fugueStructureBoxesV
       }
     }
   }

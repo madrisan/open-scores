@@ -380,20 +380,7 @@ Bass = \context Voice = "four" \relative c {
     subsubtitle = \markup {
       \center-column {
         \line { "Four-voice fugue on principal subject in inversion, employing intense chromaticism" }
-        \line \normal-text \tiny \with-color #(rgb-color 1.0 1.0 1.0) {
-          \on-color \expositionColor \pad-markup #0.8 "Exposition TASB"
-          \on-color \episodeColor \pad-markup #1 "1"
-          \on-color \subjectPresentationColor \pad-markup #0.8 "S"
-          \on-color \episodeColor \pad-markup #1 "2"
-          \on-color \subjectPresentationColor \pad-markup #0.8 "T"
-          \on-color \episodeColor \pad-markup #1 "3"
-          \on-color \subjectPresentationColor \pad-markup #0.8 "T"
-          \on-color \episodeColor \pad-markup #1 "4"
-          \on-color \subjectPresentationColor \pad-markup #0.8 "S"
-          \on-color \episodeColor \pad-markup #1 "5"
-          \on-color \subjectPresentationColor \pad-markup #0.8 "BAST"
-          \on-color \endColor \pad-markup #0.8 "Coda"
-        }
+        \fugueStructureBoxesIII
       }
     }
   }

@@ -224,7 +224,8 @@ Soprano = \context Voice = "one" \relative c'' {
   | a d g,2%\prallmordent
   %185
   | f4 g a8 g a4
-  | \unHighlightSubject d,1~ }
+  | \once\override Tie.staff-position = #-3
+    \unHighlightSubject d,1~ }
   | d16[ b cis d] e f g e cis4.\trill d8
   | d2\fermata b'\rest
 }
@@ -846,34 +847,9 @@ Bass = \context Voice = "four" \relative c {
     subsubtitle = \markup {
       \center-column {
         \line { "[Triple Fugue]" }
-        \line \normal-text \tiny \with-color \white {
-          \on-color \expositionColor \pad-markup #0.8 "Exposition 1 A1 B1 S1"
-          \on-color \episodeColor \pad-markup #1 "1"
-          \on-color \subjectStrettoColor \pad-markup #0.8 "Stretto A1 B1"
-          \on-color \episodeColor \pad-markup #1 "2"
-          \on-color \subjectPresentationColor \pad-markup #0.8 "B1"
-        }
-        \line \normal-text \tiny \with-color \white {
-          \on-color \secondExpositionColor \pad-markup #0.8 "Exposition 2 S1 A2 B1 S2 A1 B2"
-          \on-color \episodeColor \pad-markup #1 "3"
-          \on-color \subjectPresentationColor \pad-markup #0.8 "S1 A2"
-          \on-color \subjectPresentationColor \pad-markup #0.8 "B1 S2"
-          \on-color \episodeColor \pad-markup #1 "4"
-          \on-color \subjectPresentationColor \pad-markup #0.8 "S1 A2"
-          \on-color \subjectPresentationColor \pad-markup #0.8 "S1 A2"
-        }
-        \line \normal-text \tiny \with-color \white {
-          \on-color \thirdExpositionColor \pad-markup #0.8 "Exposition 3 A3 B3 S3"
-          \on-color \episodeColor \pad-markup #1 "5"
-          \on-color \subjectPresentationColor \pad-markup #0.8 "A1"
-          \on-color \subjectPresentationColor \pad-markup #0.8 "B1"
-          \on-color \episodeColor \pad-markup #1 "6"
-          \on-color \subjectPresentationColor \pad-markup #0.8 "S1 A2 B3"
-          \on-color \subjectPresentationColor \pad-markup #0.8 "A1 B2 S3"
-          \on-color \subjectPresentationColor \pad-markup #0.8 "B1 S2 A3"
-          \on-color \subjectPresentationColor \pad-markup #0.8 "B1 S2 A3"
-          \on-color \subjectPresentationColor \pad-markup #0.8 "A2 S1 B3"
-        }
+        \fugueStructureBoxesVIII_lineone
+        \fugueStructureBoxesVIII_linetwo
+        \fugueStructureBoxesVIII_linethree
       }
     }
   }
