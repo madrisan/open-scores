@@ -11,6 +11,7 @@ thirdExpositionColor =     #(rgb-color 0.99 0.26 0.36)
 subjectPresentationColor = #(rgb-color 0.00 0.40 0.13)
 subjectStrettoColor =      #(rgb-color 0.90 0.45 0.00)
 endColor =                 #(rgb-color 0.00 0.00 0.40)
+unknownColor =             #(rgb-color 0.00 0.00 0.00)
 
 #(define-markup-command (endBullet layout props) ()
   "Prints out a bullet for marking a fuga end (coda)"
