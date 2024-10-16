@@ -23,9 +23,29 @@ CommonSubjectII = {
 }
 CommonSubjectIII = {
   \commonSettings
-  | d''2^\markup \abs-fontsize #8 \italic { "main subject in inversion form" }
-    a
-  | c e | f e4 d | cis2~ cis8 a b cis | d4 s
+  | a'2^\markup \abs-fontsize #8 \italic { "main subject in inversion form" }
+    d,
+  | f a | bes a4 g | f2~ f8 e f g | a4 s4*3
+    \noBreak
+    \bar "!"
+    << {
+      | \stemUp\tieUp
+        a'4\rest^\markup \italic { "variant 1 of the subject" }
+        \red a2 \red d,4~
+      | d8 e \red f4~ f8 g \red a4~
+      | a8 g \red bes2 \red a8 \red g
+      | \red f2~ \red f8 \red e \red fis \red g
+      | \red a4
+    }
+    \new Voice {
+      | \stemDown\tieDown
+        \red a,2_\markup \italic { "variant 2 of the subject" }
+        \red d,4. e8
+      | \red f4. g8 \red  a4. g8
+      | \red bes2~ bes8 \red a4 \red g8
+      | \red f2~ \red f8 \red e \red fis \red gis
+      | \red a
+    } >>
 }
 CommonSubjectIV = {
   \commonSettings
