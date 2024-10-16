@@ -5,6 +5,7 @@ Global = {
 }
 
 \include "../macros.ly"
+\include "../macros-fugues-structure.ly"
 
 Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
