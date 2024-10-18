@@ -5,6 +5,7 @@ Global = {
 }
 
 \include "../macros.ly"
+\include "../macros-fugues-structure.ly"
 
 Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
@@ -24,20 +25,24 @@ Soprano = \context Voice = "one" \relative c'' {
   | a gis a b c4 cis~
   | cis d8 e f4 e~
   | e8 a, b cis d4. e8
-  | cis4 f d4. e8
+  | cis4^\markup { \episodeBullet "First episode, bars 19-27" }
+    f d4. e8
   %20
   | a,4 d2 cis8 c~
   | c b ees4 c4. d8
   | g,4 c2 b8 bes~
-  | bes a \highlightSubjectFirstInv { a'2^\markup \scale #'(1 . -1) \subject #'(2.5 . 0) #1 d,4~
+  | bes a \highlightSubjectFirstInv {
+    a'2%^\markup { \subjectPresentationBullet "Subject Presentation S" }
+       ^\markup \scale #'(1 . -1) \subject #'(2.5 . 0) #1 d,4~
   | d8 e f4~ f8 g a4~
   %25
   | a8 g bes2 a8 g
   | f2~ f8 e fis g
     \break
-  | a4 } d,~ d8 g cis, d
+  | a4 } d,~ d8^\markup { \episodeBullet "Second episode, bars 27-34" } g cis, d
   | e f g e f2~
-  | f8 f e d c4. d8
+  | f8 f e^\markup { \subjectPresentationBullet "Subject Presentation T" }
+    d c4. d8
   %30
   | e4 r r2
   | \override MultiMeasureRest.staff-position = #6
@@ -49,12 +54,14 @@ Soprano = \context Voice = "one" \relative c'' {
   %45
   | f e4 d
   | c2~ c8 a b cis
-  | \unHighlightSubject d } c! b a b4 c~
+  | \unHighlightSubject d } c!^\markup { \episodeBullet "Fifth episode, bars 47 to the end" }
+     b a b4 c~
   | c8 b c d e d c bes
   | a4 bes~ bes8 a bes c
   %50
   | d c bes aes g2~
-  | g8 fis g a bes a bes c
+  | g8^\markup { \subjectPresentationBullet "Subject Presentation BAST" }
+    fis g a bes a bes c
   | d cis d e f4 fis~
   | fis g8 a bes4 a~
   | a8 d, e fis g2~
@@ -76,7 +83,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | c,2~ c8 fis,! g a
   | bes2 a~
     \break
-  | a8 fis g4~ g8 g fis e
+  | a8^\markup { \endBullet "A 4 measures coda" } fis g4~ g8 g fis e
   %70
   | fis g a4 d,2~
   | d4. cis8 d2_~
@@ -94,7 +101,7 @@ Alto = \context Voice = "two" \relative c' {
   | bes a4 g
   | f2~ f8 e f g
   | \stemDown
-    a4 } g2 fis8 f
+    a4 } g2 fis8_\markup { "cs" } f
   %10
   | e dis e fis g4 gis~
   | gis a8 b c4 b~
@@ -111,20 +118,21 @@ Alto = \context Voice = "two" \relative c' {
   | g fis bes4 g4. a8
   | d,4 g2 fis8 f~
   | f e aes4 f4. g8
-  | c,4 c'2 b8 bes
+  | c,4 c'2_\markup { "cs" } b8 bes
   | a gis a b c4 cis~
   %25
   | cis d8 e f d e4~
   | e8 a, b cis d2~
   | d8 c bes a bes2~
   | bes4 a~ a8 d gis, a
-  | b2~ b8[ a16 g] fis8 f
+  | b2~ b8[ a16_\markup { "cs" } gis] fis8 f
   %30
   | e dis e fis g4 gis~
   | \stemUp
     gis a8 b c a b4~
   | b8 e, fis gis a2^~
-  | a8 bes! a g fis4 f~
+  | a8^\markup { \episodeBullet "Third episode, bars 33-39" }
+    bes! a g fis4 f~
   | f8 a g f e4 ees~
     \break
   %35
@@ -132,7 +140,8 @@ Alto = \context Voice = "two" \relative c' {
   | f e f g a g a4~
   | a8 g bes a g f g4~
   | g8 c, d e f e f4~
-  | f8 e16 d e4 f4. g8
+  | f8^\markup { \episodeBullet "Fourth episode, bars 39-47" }
+    e16 d e4 f4. g8
   %40
   | c,4 a'2 gis8 g^~
   | g8 fis16 e fis4 g4. a8
@@ -184,12 +193,20 @@ Tenor = \context Voice = "three" \relative c' {
   \showStaffSwitch
   %1
   | \stemDown
-    \highlightSubjectFirstInv { d2^\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 a
+    \highlightSubjectFirstInv {
+    d2_\markup { \expositionBullet "Exposition TASB, bars 1−19" }
+      ^\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 a
   | c e
   | f e4 d
   | cis2~ cis8 a b cis
   %5
-  | d4 } c!2 b8 bes
+  | d4 } c!2_\markup \override #'(baseline-skip . 1.7) {
+      \column {
+        "A chromatic countersubject (cs)"
+        "accompanies each voice"
+      }
+    }
+    b8 bes
   | a gis a b c4 cis~
   | cis d8 e f4 e~
   | e8 a, b cis d cis d e
@@ -208,7 +225,8 @@ Tenor = \context Voice = "three" \relative c' {
   | a,4 r r2
   | R1
   | s1*9
-  | r4 \highlightSubjectFirstInv { e'2^\markup \scale #'(1 . -1) \subject #'(2.5 . 0) #1 a,4~
+  | r4 \highlightSubjectFirstInv {
+    e'2^\markup \scale #'(1 . -1) \subject #'(2.5 . 0) #1 a,4~
   %30
   | a8 b c4~ c8 d e4~
   | e8 d
@@ -288,7 +306,7 @@ Bass = \context Voice = "four" \relative c {
   | f a
   | bes a4 g
   | f2~ f8 e f g
-  | \unHighlightSubject a } a, r a bes a b cis
+  | \unHighlightSubject a } a, r a bes_\markup { "cs" } a b cis
   %20
   | d d, r d' ees d e fis
   | g g, r g aes g a b
@@ -387,6 +405,9 @@ Bass = \context Voice = "four" \relative c {
   \layout {
     \context {
       \Voice
+      \override TextScript.color = #greyTextColor
+      \override TextScript.font-shape = #'italic
+      \override TextScript.font-size = #-2
       \override VoiceFollower.color = #greyTextColor
       \override VoiceFollower.style = #'dashed-line
     }
