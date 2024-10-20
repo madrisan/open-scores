@@ -32,7 +32,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | c b ees4 c4. d8
   | g,4 c2 b8 bes~
   | bes a \highlightSubjectFirstInv {
-    a'2%^\markup { \subjectPresentationBullet "Subject Presentation S" }
+    a'2^\markup { \subjectPresentationBullet "(Subject Presentation S)" }
        ^\markup \scale #'(1 . -1) \subject #'(2.5 . 0) #1 d,4~
   | d8 e f4~ f8 g a4~
   %25
@@ -41,7 +41,7 @@ Soprano = \context Voice = "one" \relative c'' {
     \break
   | a4 } d,~ d8^\markup { \episodeBullet "Second episode, bars 27-34" } g cis, d
   | e f g e f2~
-  | f8 f e^\markup { \subjectPresentationBullet "Subject Presentation T" }
+  | f8 f e^\markup { \subjectPresentationBullet "(Subject Presentation T)" }
     d c4. d8
   %30
   | e4 r r2
