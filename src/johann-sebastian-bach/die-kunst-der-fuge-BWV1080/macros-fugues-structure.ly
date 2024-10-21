@@ -66,17 +66,17 @@ fugueStructureBoxesIII = \markup \fugueStructureBoxes {
 }
 
 fugueStructureBoxesIV = \markup \fugueStructureBoxes {
-  \on-color \expositionColor \pad-markup #0.8 "Exposition SATB"                    % bars  1-19
-  \on-color \episodeColor \pad-markup #1 "1"
-  \on-color \secondExpositionColor \pad-markup #0.8 "Second exposition SATB"
-  \on-color \episodeColor \pad-markup #1 "2"
-  \on-color \subjectPresentationColor \pad-markup #0.8 "BT"
-  \on-color \episodeColor \pad-markup #1 "3"
-  \on-color \subjectPresentationColor \pad-markup #0.8 "AS"
-  \on-color \episodeColor \pad-markup #1 "4"
-  \on-color \subjectPresentationColor \pad-markup #0.8 "T•B•SA"
-  \on-color \episodeColor \pad-markup #1 "5"
-  \on-color \subjectPresentationColor \pad-markup #0.8 "TA"
+  \on-color \expositionColor \pad-markup #0.8 "Exposition SATB"                    % bars   1- 19
+  \on-color \episodeColor \pad-markup #1               \concat { "1" \sub " 19" }  % bars  19- 26
+  \on-color \secondExpositionColor \pad-markup #0.8    \concat { "Second exposition SATB" \sub " 27" } % bars 27-43
+  \on-color \episodeColor \pad-markup #1               \concat { "2" \sub " 43" }  % bars  43- 60
+  \on-color \subjectPresentationColor \pad-markup #0.8 "BT"                        % bars  61- 69
+  \on-color \episodeColor \pad-markup #1               \concat { "3" \sub " 69" }  % bars  69- 72
+  \on-color \subjectPresentationColor \pad-markup #0.8 "AS"                        % bars  73- 81
+  \on-color \episodeColor \pad-markup #1               \concat { "4" \sub " 81" }  % bars  81-106
+  \on-color \subjectStrettoColor      \pad-markup #0.8 \concat { "T•B•SA" \sub "107" }  % bars 107-115
+  \on-color \episodeColor \pad-markup #1               \concat { "5" \sub " 116" } % bars 116-128
+  \on-color \subjectPresentationColor \pad-markup #0.8 "TA"                        % bars 129-138
 }
 
 fugueStructureBoxesV = \markup \fugueStructureBoxes {
