@@ -91,6 +91,8 @@ AC_CONFIG_FILES([\
   src/domenico-scarlatti/sonata-k095/Makefile \
   src/domenico-scarlatti/sonata-k141/Makefile \
   src/domenico-scarlatti/sonata-k387/Makefile \
+  src/ferruccio-busoni/Makefile \
+  src/ferruccio-busoni/drei-albumblätter-BV289/Makefile \
   src/francis-poulenc/Makefile \
   src/francis-poulenc/2-improvisations-fp.113/Makefile \
   src/franz-liszt/Makefile \

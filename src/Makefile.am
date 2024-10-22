@@ -24,6 +24,7 @@ SUBDIRS = alfredo-casella \
 	  christoph-willibald-gluck \
 	  clara-schumann-wieck \
 	  domenico-scarlatti \
+	  ferruccio-busoni \
 	  francis-poulenc \
 	  franz-liszt \
 	  hans-erich-apostel \
