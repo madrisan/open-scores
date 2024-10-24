@@ -31,7 +31,7 @@ make -C src/domenico-scarlatti/sonata-k055
 make -C src/domenico-scarlatti/sonata-k087
 make -C src/domenico-scarlatti/sonata-k095
 make -C src/domenico-scarlatti/sonata-k387
-make -C src/ferruccio-busoni/drei-albumblätter-BV289
+make -C src/ferruccio-busoni/drei-albumblatter-BV289
 make -C src/francis-poulenc/2-improvisations-fp.113
 make -C src/franz-liszt/am-grabe-richard-wagners-s.202
 make -C src/franz-liszt/en-reve-nocturne-s.207

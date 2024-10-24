@@ -1,1 +1,1 @@
-SUBDIRS = drei-albumblätter-BV289
+SUBDIRS = drei-albumblatter-BV289

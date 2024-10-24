@@ -19,16 +19,16 @@ SUFFIXES = .in
 
 BUILT_SOURCES = covercolor.ly
 
-EXTRA_DIST = Ferruccio-Busoni-BV289-Drei-Albumblätter.ly \
+EXTRA_DIST = Ferruccio-Busoni-BV289-Drei-Albumblatter.ly \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
 	     logo.ly \
-	     parts/drei-albumblätter-BV289-1-erstes-blatt.ly \
-	     parts/drei-albumblätter-BV289-2-zweites-blatt.ly \
-	     parts/drei-albumblätter-BV289-3-drittes-blatt.ly
+	     parts/drei-albumblatter-BV289-1-erstes-blatt.ly \
+	     parts/drei-albumblatter-BV289-2-zweites-blatt.ly \
+	     parts/drei-albumblatter-BV289-3-drittes-blatt.ly
 
-all: $(BUILT_SOURCES) Ferruccio-Busoni-BV289-Drei-Albumblätter
+all: $(BUILT_SOURCES) Ferruccio-Busoni-BV289-Drei-Albumblatter
 
 clean-local:
 	 -rm -f $(BUILT_SOURCES)

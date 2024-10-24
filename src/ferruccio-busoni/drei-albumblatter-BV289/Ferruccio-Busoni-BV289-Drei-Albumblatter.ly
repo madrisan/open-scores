@@ -100,8 +100,8 @@
   }
 }
 
-\include "./parts/drei-albumblätter-BV289-1-erstes-blatt.ly"
+\include "./parts/drei-albumblatter-BV289-1-erstes-blatt.ly"
 \pageBreak
-\include "./parts/drei-albumblätter-BV289-2-zweites-blatt.ly"
+\include "./parts/drei-albumblatter-BV289-2-zweites-blatt.ly"
 \pageBreak
-\include "./parts/drei-albumblätter-BV289-3-drittes-blatt.ly"
+\include "./parts/drei-albumblatter-BV289-3-drittes-blatt.ly"
