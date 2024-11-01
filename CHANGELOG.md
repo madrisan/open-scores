@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [v57] - unreleased
+## [v57] - 2024-11-01
 
 ### Added
 
@@ -11,7 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - J.S. Bach: Das wohltemperierte Klavier – Erster Teil: Praeludium und Fuga VII
 - J.S. Bach: Das wohltemperierte Klavier – Erster Teil: Praeludium und Fuga VIII
 - J.S. Bach: Das wohltemperierte Klavier – Erster Teil: add J.S. Bach manuscript
-- Ferruccio Busoni: Drei Albumblätter
+- Frédérich Chopin: Valse (Morgan Library & Museum Manuscript 2024)
 
 ### Changed
 

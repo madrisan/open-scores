@@ -26,6 +26,7 @@ SUBDIRS = alfredo-casella \
 	  domenico-scarlatti \
 	  ferruccio-busoni \
 	  francis-poulenc \
+	  frederic-chopin \
 	  franz-liszt \
 	  hans-erich-apostel \
 	  ildebrando-pizzetti \

@@ -1,4 +1,4 @@
-composer_firstname='Johann Sebastian'
+composer_firstname="Johann Sebastian"
 composer_lastname="Bach"
 instruments="For Piano, Harpsichord, Clavichord"
 header_composer="Johann Sebastian Bach (1685-1750)"
