@@ -72,11 +72,10 @@
         \null
         \fill-line { \draw-hline }
         \null\null\null
-        \line { \abs-fontsize #40 \bold "Valse" }
-        \null\null
-        \line \italic { \abs-fontsize #16 "Morgan Library & Museum Manuscript" }
-        \null\null\null\null
+        \line { \abs-fontsize #40 \bold "Valse in A minor" }
+        \null\null\null\null\null
         \fill-line \italic { \abs-fontsize #14 "For Piano" }
+        \null\null\null
         \null\null\null
         \null\null\null
       }
@@ -101,7 +100,7 @@
 \pageBreak
 
 \markup \center-column {
-  \vspace #4
+  \vspace #2
   \line {
     \hspace #1.5
     \general-align #Y #DOWN {
@@ -114,7 +113,7 @@
     \center-column {
       \null\null
       \fill-line \abs-fontsize #10 {
-        \italic "The manuscript found at the Morgan Library & Museum in New York, 2024"
+        \italic "The manuscript found in 2019 at the Morgan Library & Museum in New York"
       }
     }
   }
@@ -125,11 +124,30 @@
   \column {
     \null\null\null
     \wordwrap \abs-fontsize #11 {
-      Artur Szklener, director of the Fryderyk Chopin Institute in Warsaw — dedicated to researching and promoting
-      the composer’s life and work — suggests it could be a trace of Chopin’s teaching, a musical jest, or even a
-      piece created to make ends meet.
-      \hspace #2 [ \italic { EL PAÍS — Culture, 2024-10-30 }]
+      Artur Szklener, Director of the \italic { Fryderyk Chopin Institute,}  has noted
+      \italic { features of the brilliant style } consistent with the composer's activity in the first half
+      of the 1830s, and suggested that the manuscript's neatness argues against it having been co-written
+      with a student during a lesson, while highlighting the absence of dedication and signature
+      – the word \italic Chopin is not written in his hand –
+      as might be expected of a gift of a manuscript of this type.
+      \hspace #1
+      The relatively numerous performance indications
+      (such as \italic sforzato, \italic { sempre forte } or finally \italic fortississimo),
+      the appearance of fingering markings in such a short and simple passage for the pianist are quite
+      surprising, but could indicate that the manuscript might have been given to an amateur pianist.
+      \hspace #1
+      He regards the piece as more likely a \italic { sketch of the first musical thought, }
+      \italic { a trace of Chopin's activity in the pianistic community, }
+      than a complete work, while accepting that the ornamentation of the melody and accompaniment's
+      \italic { shifting seconds } are hallmarks of the composer's language, albeit combined
+      with the overrepresentation of almost banal features, such as the nearly exclusive \italic a
+      sound in the bass or the extremely simple figures that hark back to the brilliant style,
+      but also deviate even from Chopin's Warsaw compositions.
    }
+    \null\null
+    \line \abs-fontsize #11 {
+      [ \italic { freely taken from Wikipedia and an article by Dr Artur Szklener }]
+    }
   }
 }
 \pageBreak
@@ -146,7 +164,7 @@ Soprano = \context Voice = "one" \relative c' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \override Stem.cross-staff = ##t
-  \omit TupletNumber
+  %\omit TupletNumber
   \repeat volta 2 {
   \partial 4 s4
   %1
@@ -156,9 +174,7 @@ Soprano = \context Voice = "one" \relative c' {
     \once\override Hairpin.shorten-pair = #'(0 . 1.4)
     \crossStaff { f4^\fz\> }
   | \crossStaff { e\! } s2
-  | %\once\shape #'((0 . -1) (0 . 1) (0 . 1.5) (0 . 2.2)) PhrasingSlur
-    %\hideNotes c,2\( \unHideNotes \crossStaff { f'4^\fz\) }
-    \repeat unfold 3 {
+  | \repeat unfold 3 {
       s2 \crossStaff { f4^\fz }
     }
   %6
@@ -213,12 +229,15 @@ Tenor = \context Voice = "three" \relative c' {
   \override Stem.cross-staff = ##t
   \partial 4 a4
   %1
-  | a4\rest e8( c' dis, c')
+  | g4\rest^\p
+    \once\shape #'((0 . 0) (0 . 4) (0 . 5) (-0.5 . 5.5)) PhrasingSlur
+    e8\( c' dis, c'
   | d, b' f b
-    \crossStaff { gis4 }
+    \crossStaff { gis4\) }
   | \crossStaff { a }
-    e8 c' dis, c'
-  | d, b' f b \crossStaff { gis4 }
+    \once\shape #'((0 . 0) (0 . 4) (0 . 5) (-0.5 . 5.5)) PhrasingSlur
+    e8\( c' dis, c'
+  | d, b' f b \crossStaff { gis4\) }
   %5
   | d8 b' f b \crossStaff { gis4 }
   | d8^\markup { "cresc." }
@@ -227,7 +246,7 @@ Tenor = \context Voice = "three" \relative c' {
   %21
   | c4\rest <e, g c> q
   | c'\rest b c\rest
-  | c\rest fis gis4
+  | c\rest fis, gis4
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -256,7 +275,7 @@ Bass = \context Voice = "four" \relative c {
   | a, <e' gis d'> q
   %15
   | a, <e' c'> q
-  | a, <e' gis d'> q
+  | e, <e' gis d'> q
   | a, <e' c'> q
   | a, <e' d'> q
   | a, <e' c'> aes,
@@ -264,7 +283,7 @@ Bass = \context Voice = "four" \relative c {
   | g <g' d'> q
   | c,2.
   | d2 b4
-  | e,8 e'2.*5/6
+  | \once\stemUp \slashedGrace e,8 e'2.
   | a4 a,
   }
     \fine
@@ -290,8 +309,8 @@ Bass = \context Voice = "four" \relative c {
     >>
   >>
   \header {
-    composer = "Frédéric Chopin (?)"
-    opus = "1830 (?)"
+    composer = "Frédéric Chopin"
+    opus = "1830-1835 (?)"
     title = \markup { "Valse" }
     subtitle = ##f
   }
