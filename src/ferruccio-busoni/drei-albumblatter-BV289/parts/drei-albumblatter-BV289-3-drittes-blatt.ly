@@ -56,17 +56,25 @@ Soprano = \context Voice = "one" \relative c' {
     \stemUp b2 a
   | g fis!
   | e( e
-  %30
-  | e) \clef treble
-    \stemNeutral
-    e''4^\markup {
-      "(Voce del Tenore nel Corale)"
-    }
-    _\markup {
-      \whiteout "dolce cantabile"
-    }
-    dis
-  | R1*71
+  | e) \clef treble s
+  | s1*7
+  %42
+  | f''2\rest gis4 fis
+  | e2 e
+  | e d!
+  %45
+  | d cis
+  | c b
+  | bes bes
+  | bes a
+  | a gis
+  %50
+  | gis gis~
+  | gis <c! c'!>_\markup { "dolcissimo" }
+  | s1
+  | <ees ees'>2 s
+
+  | R1*52
     \fine
 }
 
@@ -132,7 +140,42 @@ Alto = \context Voice = "two" \relative c' {
   | cis8 dis e4 f fis
   | b,8 f' e4 e dis
   | b2 b
-  | b s
+  | b
+    \stemNeutral\phrasingSlurNeutral\tieNeutral
+    e''4^\markup {
+      "(Voce del Tenore nel Corale)"
+    }
+    _\markup {
+      \whiteout "dolce cantabile"
+    }\(
+    dis
+  %35
+  | cis2 dis4 e
+  | fis gis2^- fis4\)
+  | fis\( b, cis8 dis e4^-~
+  | e dis\) b2^-
+  | b4\( cis2 b8 a
+  %40
+  | b2\) b
+  | \stemDown\phrasingSlurDown\tieDown
+    b4\( cis2 b4
+  | a8 gis fis4\) gis2
+  | a4\(_\markup {
+      "espress. il Contralto"
+    }
+    g! fis2
+  | gis4 a b cis~
+  %45
+  | cis b\) b\( e,
+  | fis8 gis a2_- gis4\)
+  | ges\( f fes ees\)
+  | ees8\( f ges2_- f4\)
+  | e!4 a, b8\( c d4~
+  %50
+  | d cis\) cis2~\pp
+  | cis aes''4( ges)
+  | <b,! f' b!>2 <c g' c>4 <des aes' des>
+  | bes'4 aes8 g <f aes f'>2
 }
 
 Tenor = \context Voice = "three" \relative c {
@@ -194,6 +237,29 @@ Tenor = \context Voice = "three" \relative c {
   | e g, c( b16 a g fis)
   | g2 g
   | g s
+  %35
+  | \stemNeutral
+    e'8( a e' fis e cis a e~)
+  | e( a e' fis e c a e)
+  | gis( b e fis e cis ais g)
+  | b,( fis' b cis dis fis, dis b)
+  | a( e' a b a e a,) r8
+  %40
+  | \stemUp\slurDown
+    gis dis' e fis g! e b g!
+  | fis( cis' fis gis a fis cis a)
+  | \slurUp
+    fis'( e e dis dis cis cis bis)
+  | cis,( e a cis) d,!( fis a d)
+  | e, b' fis b g( b d g)
+  %45
+  | fis, e' gis, e' a, e' s4
+  | s1*5
+  | s2 f,16 \magnifyMusic 0.7 { f' f, f' } ees,[ \magnifyMusic 0.8 { ees' ees, ees'] }
+  | des,16 \magnifyMusic 0.7 { des' des, des' }  aes16[ \magnifyMusic 0.7 { aes' aes, aes'] }
+    f,16 \magnifyMusic 0.7 { f' f, f' }  des,16[ \magnifyMusic 0.7 { des' des, des'] }
+  | c,16 \magnifyMusic 0.7 { c' c, c' }  f,16[ \magnifyMusic 0.7 { f' f, f'] }
+    d,16 \magnifyMusic 0.7 { d' d, d' }  b,16[ \magnifyMusic 0.7 { b' b, b'] }
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -201,6 +267,7 @@ Bass = \context Voice = "four" \relative c {
   \stemDown\tieDown
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \mergeDifferentlyHeadedOn
   %1
   \partial 2 e,2
   | e d4 cis
@@ -246,9 +313,27 @@ Bass = \context Voice = "four" \relative c {
   | e8 d! c b a4 b
   | e2( e
   | e) r2
-  %35
+  | s1*7
+  %42
+  | fis2 e4 dis
+  | cis2 d!
+  | e4 fis g2
+  %45
+  | fis4 gis a a'
+  | \slurUp g( fis f e)
+  | e8( fis g2^- ges4)
+  | f( fes ees d)
+  | \stemNeutral\tieNeutral cis( c f b,
+  %50
+  | e a) a2~
+  | a \stemDown f,4_\markup {
+      "legato mormorando"
+    }
+    ees
+  | des aes' f des
+  | c f d! b!
 
-  | R1*71
+  | R1*52
     \fine
 }
 
