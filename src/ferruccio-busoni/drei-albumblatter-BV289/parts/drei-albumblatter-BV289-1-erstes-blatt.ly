@@ -301,7 +301,7 @@ forceBreaks = {
     composer = "Ferruccio Busoni ‒ Zürich, 1917"
     opus = ##f % "BV 289"
     title = \markup { "Erstes Blatt" }
-    subsubtitle = "An Herrn Albert Biolley"
+    subsubtitle = \markup { \normal-text "An Herrn Albert Biolley" }
   }
   \layout {
     \context {

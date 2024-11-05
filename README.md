@@ -74,6 +74,7 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
 | Bach / Stark | Siciliano BWV 1031 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v57/JS-Bach-Stark-Siciliano-BWV1031.pdf) |
 | Bach / Stradal | Organ Sonata 4 Andante BWV 528 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v57/JS-Bach-Stradal-Organ-Sonata-4-Andante-BWV528.pdf) |
 | Ludwig van Beethoven | Klaviersonate Nr.8 Opus 13 - "Grande Sonate Pathétique" | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v57/Ludwig-van-Beethoven-Klaviersonate-8-op.13.pdf) |
+| Ferruccio Busoni | Drei Albumblätter  BV 289 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v58/Ferruccio-Busoni-BV289-Drei-Albumblatter.pdf) |
 | Alfredo Casella | Deux Contrastes op.31 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v57/Alfredo-Casella-Deux-Contrastes-op.31.pdf) |
 | Frédéric Chopin | Valse (Morgan Library & Museum Manuscript 2024) | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v57/Frederic-Chopin-Valse.pdf) |
 | Baldassare Galuppi |Sonata no. 5 in Do maggiore :four: | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v57/Baldassare-Galuppi-Sonata-5.pdf) |
