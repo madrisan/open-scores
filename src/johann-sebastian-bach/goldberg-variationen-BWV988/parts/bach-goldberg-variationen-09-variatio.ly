@@ -46,7 +46,7 @@ Alto = \context Voice = "two" \relative c'' {
   \repeat volta 2 {
   %1
   | \once\override MultiMeasureRest.staff-position = #-6 R1
-  | g8[ fis g a] b[ fis b a]
+  | g8[ fis g a] b[ fis_\markup { "m.s." } b a]
   | g[ b] e4~ e8[ fis16 e] d4
   | e8[ d e fis] g[ d g fis]
   %5
@@ -129,6 +129,12 @@ Bass = \context Voice = "four" \relative c {
     subtitle = \markup { "Canone alla Terza" }
     subsubtitle = ##f
   }
-  \layout { }
+  \layout {
+    \context {
+      \PianoStaff
+      \override TextScript.font-shape = #'italic
+      \override TextScript.font-size = #-1
+    }
+  }
   \midi { \tempo 4=100 }
 }

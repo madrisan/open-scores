@@ -9,6 +9,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Ferruccio Busoni: Drei Albumblätter BV289
 
+### Changed
+
+- J.S. Bach: Goldberg Variationen - Update pagination.
+
 ### Fixed
 
 - Frédérich Chopin: Valse - fixes and rewrite introduction notice

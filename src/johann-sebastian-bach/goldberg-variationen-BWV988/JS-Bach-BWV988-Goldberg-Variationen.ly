@@ -11,25 +11,37 @@
 \paper {
   #(set-paper-size "a4")
   annotate-spacing = ##f
+  binding-offset = 0\mm
   bottom-margin = 5\mm
   first-page-number = 0
   indent = 0.0
+  %inner-margin = 10\mm
 % last-bottom-spacing.padding = #2
+  %left-margin = 10\mm
   line-width = 19.2\cm
   markup-system-spacing =
      #'((basic-distance . 2)
         (minimum-distance . 1)
         (padding . 2)
         (stretchability . 24))
+  %outer-margin = 20\mm
   print-all-headers = ##t
   ragged-last-bottom = ##f
   ragged-bottom = ##f
+  %right-margin = 10\mm
+  score-markup-spacing =
+     #'((basic-distance . 10)
+        (minimum-distance . 8)
+        (padding . 2)
+        (stretchability . 24))
   system-system-spacing =
      #'((basic-distance . 2)
         (minimum-distance . 1)
         (padding . 2)
         (stretchability . 24))
   top-margin = 8\mm
+  top-markup-spacing.basic-distance = 0
+  top-system-spacing.basic-distance = 1
 }
 
 BassLine = \relative {

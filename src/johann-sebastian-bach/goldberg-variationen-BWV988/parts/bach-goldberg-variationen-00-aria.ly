@@ -192,6 +192,21 @@ Bass = \context Voice = "four" \relative c' {
   }
 }
 
+forceBreaks = {
+  % page 1
+  \repeat unfold 3 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 3 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 3 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 3 { s2.\noBreak } s2.\pageBreak
+
+  % page 2
+  \repeat unfold 3 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 2 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 2 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 2 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 2 { s2.\noBreak } s2.\pageBreak
+}
+
 \score {
   \new PianoStaff
   <<
@@ -210,6 +225,7 @@ Bass = \context Voice = "four" \relative c' {
       \Tenor
       \Bass
     >>
+    \new Devnull \forceBreaks
   >>
   \header {
     composer = "Johann Sebastian Bach"
