@@ -11,7 +11,10 @@ Soprano = \context Voice = "one" \relative c' {
   \override Rest.staff-position = #0
   %1
   \tempo "Andante"
-  | r4 r8 c\( b c d e
+  | r4 r8
+     \once\override Staff.TextScript.extra-offset = #'(-1 . -1)
+    c\(_\markup { "dolce" }
+    b c d e
   | cis_- d\) r f\( e dis g fis
   | f_- e\) r16 g\( fis e g8_- ees\) r16 g\( f e
   | g8_- cis,\) r16 g'\( f ees\) bes'4^~^>^\( bes16 a aes g\)
@@ -29,7 +32,8 @@ Soprano = \context Voice = "one" \relative c' {
     <bes des>16^.\( <bes des>^. <bes d>^. <bes d>^. <bes ees>^. <bes ees>^.^\< <bes e>^. <bes f'>^.\!\)
   | <bes f'>16^.\( <bes f'>^. <b f'>^. <b f'>^. <c! f>^. <c f>^. <des f>^. <des f>^.\)
     <des f>16^.\( <des f>^. <des fis>^. <des fis>^. <des g>^. <des g>^.^\< <c g'>^. <c aes'>^.\!\)
-  | <aes c ees aes>4.\(_\markup { "sempre sotto voce" }
+  |  \once\override Staff.TextScript.extra-offset = #'(0 . -1)
+    <aes c ees aes>4.\(_\markup { "sempre sotto voce" }
     <g c ees g>8\) \stemUp\slurUp <c ees>4 r
   | <f, f'>4.\( <fes fes'>8\) q\( <ees ees'>\) r4
   | s1
@@ -39,7 +43,7 @@ Soprano = \context Voice = "one" \relative c' {
   | b c d e!\) cis^-( d) g\rest f\(
   | \time 2/4 e[ dis g fis]\)
   | \time 4/4 f^-( e) s2.
-  | <aes, d>8_-_([ <g c>)] r8 c\( c b a b\)
+  | <aes, d>8_-_([ <g c>)] r8 c\( c b aes b\)
   %20
   | \override Hairpin.to-barline = ##f
     <f b>4_(\< <cis cis'>2)\!\> q4
@@ -64,7 +68,7 @@ Alto = \context Voice = "two" \relative c' {
   | <beses c>2 <ges ces>4 s
   | \stemNeutral <d! g b d!>4.^\( <des f! bes des>8 <c e fis c'> <b d f b>\) r4
   %15
-  | <b cis g' b>4. <bes cis e bes'>8 \once\stemUp
+  | <b cis g' b>4.( <bes cis e bes'>8) \once\stemUp
     \once\shape #'((1.5 . 1.2) (0 . 1.4) (0 . 1.2) (-1 . 0.2)) Slur
     bes'4.( \stemDown aes8)
   | g4 gis a bes

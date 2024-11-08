@@ -38,7 +38,7 @@ Soprano = \context Voice = "one" \relative c'' {
   %15
   | f'\rest <g, c> <c e!> <e, c'> r <f d'> <bes f'> <f bes>
   | r8 <e a> <a cis> <cis, a'> r <d b'> <g! d'> <d g>
-  | r <cis fis> <fis ais> <ais, fis'> r <b gis'> <e! b'> <b e>
+  | r <cis fis!> <fis ais> <ais, fis'> r <b gis'> <e! b'> <b e>
   | d'4\rest d8\rest <gis, e'>^.\( r <gis e'>^. r <fis dis'>^.\)
   | r e^\p_\( <gis d'> e <g cis> e <fis e'> e\)
   %20
@@ -61,6 +61,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | %\set minimumBeamSubdivisionInterval = \musicLength 8
     \set maximumBeamSubdivisionInterval = \musicLength 16
     \set subdivideBeams = ##t
+    \once\override Staff.TextScript.extra-offset = #'(0 . -2)
     bis16.^-_\markup { "poco aumentando" }
     \set stemLeftBeamCount = #3 \set stemRightBeamCount = #2
     gis32( ais b cis dis) d16.^-
@@ -68,7 +69,9 @@ Soprano = \context Voice = "one" \relative c'' {
     bes32( c d ees f)
     e16.^-
     \set stemLeftBeamCount = #3 \set stemRightBeamCount = #2
-    c32( d e f g) <b, f'>8_\markup { "rit." }
+    c32( d e f g)
+    \once\override Staff.TextScript.extra-offset = #'(0 . -2)
+    <b, f'!>8_\markup { "rit." }
     \set subdivideBeams = ##f
     \tuplet 3/2 { cis16^-[\< eis^- gis^-]\! }
   | gis8.(_\markup { "dolce" } g16) e8.^.( dis16^.) cis8.^.( b16^.) \stemUp a8.( gis32 fis)
@@ -108,7 +111,7 @@ Alto = \context Voice = "two" \relative c' {
   %1
   | s1*2
   | \change Staff = "lower" \voiceThree
-   e,8 s s2.
+   e,8_. s s2.
   | \change Staff = "upper" \voiceTwo
     s1*4
   | r8 c'_. f_. c_. cis_. a_. c4~
@@ -167,14 +170,14 @@ Tenor = \context Voice = "three" \relative c {
     ais8.
     \change Staff = "lower" \voiceThree
     e16 g8. a!16 g8. e16 g8. a16
-  | b8. cis16 dis2~ dis16
+  | b8. cis16 dis2~^\markup { "ten." } dis16
     \change Staff = "upper" \voiceTwo
     fis f e
   %15
   | ees8.
     \change Staff = "lower" \voiceThree
     c16 g8. a16 b8.\arpeggio c16 des4^-(
-  | c8.) a16 e8. fis16 gis8.\arpeggio a16 bes4^-(
+  | c8.) a16 e8. fis!16 gis8.\arpeggio a16 bes4^-(
   | a8.) fis!16 cis8. dis16 eis8.\arpeggio fis16 g4^-~
   | \autoBeamOff g8
     \change Staff = "upper" \voiceTwo
@@ -212,7 +215,7 @@ Bass = \context Voice = "four" \relative c {
   \omit TupletBracket \omit TupletNumber
   %1
   | R1
-  | r8 a16 b c b8. a16 g8.~ g4~
+  | r8 a16( b c b8.) a16( g8.~) g4~
   | g r r2
   | fis4~ fis8. g16 a8. b16 c8. a16
   %5
@@ -230,7 +233,7 @@ Bass = \context Voice = "four" \relative c {
   %15
   | c2 g4.(\arpeggio gis8)
   | a2 e4.(\arpeggio eis8)
-  | fis2 cis4..\(\arpeggio dis16
+  | fis!2 cis4..\(\arpeggio dis16
   | e!4_.\) r8 b'_.\( r a_. r b_.\)
   | s1*2
   %21
@@ -239,9 +242,11 @@ Bass = \context Voice = "four" \relative c {
   | e8 \clef treble \stemNeutral
     <b' gis'>_.[( <b e gis>_. q_.]) <c! e g>_.([ q_.)] <cis e fis>_.( q_.)
   | <d fis a!>( <dis fis gis>) <e gis b>([ <eis gis ais>)] <fis! ais cis>( <g bes c>) <gis cis>[( <b gis'>)]
-  | <e b'!>4^\markup { \normal-text \bold "a tempo" }
+  | \once\override Staff.TextScript.extra-offset = #'(0 . 1.5)
+    <e b'!>4^\markup { \normal-text \bold "a tempo" }
     b8\rest <g,! e' b'>\arpeggio b'\rest <a, e' g> b'\rest
     \clef bass \stemUp
+     \once\override Staff.TextScript.extra-offset = #'(0 . 2)
     s^\markup { \hspace #-4 "espr." }
   %25
   | \stemDown\tieDown b,,4\rest g'! a b,
