@@ -205,6 +205,7 @@ BassLine = \relative {
 \include "./parts/bach-goldberg-variationen-05-variatio.ly"
 \pageBreak
 \include "./parts/bach-goldberg-variationen-06-variatio.ly"
+\pageBreak
 \include "./parts/bach-goldberg-variationen-07-variatio.ly"
 \pageBreak
 \include "./parts/bach-goldberg-variationen-08-variatio.ly"

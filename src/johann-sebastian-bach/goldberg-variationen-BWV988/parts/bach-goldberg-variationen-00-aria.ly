@@ -34,7 +34,6 @@ Sopran = \context Voice = "one" \relative c'' {
   | \grace cis16 d8^~[ d32 e d cis] \appoggiatura cis8 d2
   }
   \break
-  \pageBreak
   \repeat volta 2 {
   | \stemNeutral\tieUp
     a4\mordent a4~\downprall a16[ a32( b c d e16)]
@@ -198,10 +197,9 @@ forceBreaks = {
   \repeat unfold 3 { s2.\noBreak } s2.\break\noPageBreak
   \repeat unfold 3 { s2.\noBreak } s2.\break\noPageBreak
   \repeat unfold 3 { s2.\noBreak } s2.\pageBreak
-
   % page 2
   \repeat unfold 3 { s2.\noBreak } s2.\break\noPageBreak
-  \repeat unfold 2 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 2 { s2.\noBreak } s2.%\break\noPageBreak
   \repeat unfold 2 { s2.\noBreak } s2.\break\noPageBreak
   \repeat unfold 2 { s2.\noBreak } s2.\break\noPageBreak
   \repeat unfold 2 { s2.\noBreak } s2.\pageBreak

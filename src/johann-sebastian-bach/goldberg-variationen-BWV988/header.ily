@@ -4,7 +4,7 @@
 
   footer = "Mutopia-2023/08/01"
 
-  lastupdated = "2023 August 1"
+  lastupdated = "2024 November 11"
   license = "Creative Commons Attribution-ShareAlike 4.0"
   maintainerEmail = "d.madrisan@proton.me"
   maintainerWeb = "https://github.com/madrisan/open-scores"
@@ -47,7 +47,7 @@
     \column {
       \abs-fontsize #8
       \concat {
-        "Typeset using " \with-url #"http://www.lilypond.org" "LilyPond " ©" 2022-2023 ""by " \maintainer " — " \footer
+        "Typeset using " \with-url #"http://www.lilypond.org" "LilyPond " ©" 2022-2024 ""by " \maintainer " — " \footer
       }
       \concat {
 	\concat {

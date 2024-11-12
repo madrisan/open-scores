@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [v59] - unreleased
+
+### Changed
+
+- J.S. Bach: Goldberg Variationen - Update pagination (again)
+
 ## [v58] - 2024-11-11
 
 ### Added
@@ -11,7 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 
-- J.S. Bach: Goldberg Variationen - Update pagination.
+- J.S. Bach: Goldberg Variationen - Update pagination
 
 ### Fixed
 

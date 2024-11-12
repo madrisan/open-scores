@@ -81,7 +81,7 @@ Alto = \context Voice = "two" \relative c'' {
   | g16 fis e g fis4
   | g8 e\rest e4\rest
   | \staffLower\stemUp
-   \once\override Beam.positions = #'(7.3 . 7.5)
+   \once\override Beam.positions = #'(8.3 . 8.5)
     g16^( \staffUpper\stemDown a b d) e4~
   %10
   | e16 d cis e d cis b a
