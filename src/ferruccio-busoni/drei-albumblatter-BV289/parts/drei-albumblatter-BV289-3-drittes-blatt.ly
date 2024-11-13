@@ -621,6 +621,7 @@ forceBreaks = {
     subtitle = "In der Art eines Choralvorspiels"
     subsubtitle = \markup { \normal-text "An Felice Boghen" }
   }
+
   \layout {
     \context {
       \PianoStaff
@@ -630,6 +631,6 @@ forceBreaks = {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 4 = 78
   }
 }
