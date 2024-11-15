@@ -181,7 +181,7 @@ Bass = \context Voice = "four" \relative c' {
     composer = ##f % "Johann Sebastian Bach"
     opus = ##f % "BWV 988"
     title = \markup { \smallCaps "Variatio 18 a 1 Clav." }
-    subtitle = \markup { "Canone alla Sesta" }
+    subtitle = \markup { "Canone alla Sexta" }
     subsubtitle = ##f
   }
   \layout { }

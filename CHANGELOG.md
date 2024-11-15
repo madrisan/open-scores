@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Changed
 
 - J.S. Bach: Goldberg Variationen - Update pagination (again)
+- J.S. Bach: Goldberg Variationen - Integrate Bach's annotations of his personal printed copy
 
 ### Fixed
 

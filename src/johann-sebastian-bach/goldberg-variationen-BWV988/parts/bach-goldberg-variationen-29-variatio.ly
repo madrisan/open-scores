@@ -21,9 +21,9 @@ Sopran = \context Voice = "one" \relative c'' {
   | g8\rest \repeat unfold 5 { a16\rest e }
   | g8\rest \repeat unfold 4 { a16\rest d, } a'\rest c,!
   | b16 f'\rest f8\rest \stemNeutral
-    \undo\omit TupletNumber \tupletDown\tuplet 3/2 { b,16\rest a[ b ] } \tuplet 3/2 { c[ b a] }
+    \undo\omit TupletNumber \tuplet 3/2 { b,16\rest a[ b ] } \tuplet 3/2 { c[ b a] }
     \omit TupletNumber \tuplet 3/2 { b[ a g ]} \tuplet 3/2 { e'[ d c] }
-  | \tuplet 3/2 { d r g, } \tuplet 3/2 { fis[ c ] r }
+  | \undo\omit TupletNumber \tupletUp \tuplet 3/2 { d r g, } \omit TupletNumber \tuplet 3/2 { fis[ c ] r }
     \tuplet 3/2 { r r g' } \tuplet 3/2 { a[ fis ] r }
     \tuplet 3/2 { r r b } \tuplet 3/2 { cis[ a] r }
   %10
@@ -51,7 +51,8 @@ Sopran = \context Voice = "one" \relative c'' {
   }
   \break
   \repeat volta 2 {
-  | \stemNeutral \tuplet 3/2 { r16 r b'' } \tuplet 3/2 { a[ fis] r }
+  | \stemNeutral
+    \undo\omit TupletNumber\tupletUp \tuplet 3/2 { r16 r b'' } \omit TupletNumber  \tuplet 3/2 { a[ fis] r }
     \tuplet 3/2 { r r g } \tuplet 3/2 { fis[ d] r }
     \tuplet 3/2 { r r e } \tuplet 3/2 { d[ b] r }
   | \tuplet 3/2 { r r e } \tuplet 3/2 { d[ b] r }
@@ -73,8 +74,9 @@ Sopran = \context Voice = "one" \relative c'' {
     \tuplet 3/2 { dis[ c! b] } \tuplet 3/2 { a[g fis] }
   | \stemUp e[ e'] f\rest e f\rest c f\rest c f\rest g, f'\rest g, \clef "bass"
   %25
-  | \stemNeutral \tuplet 3/2 { r e,[ f] } \tuplet 3/2 { fis[ g gis] }
-    \tuplet 3/2 { r b[ c] } \tuplet 3/2 { d c b ] } \clef "treble"
+  | \stemNeutral
+    \undo\omit TupletNumber \tuplet 3/2 { r e,[ f] } \tuplet 3/2 { fis[ g gis] }
+    \omit TupletNumber \tuplet 3/2 { r b[ c] } \tuplet 3/2 { d c b ] } \clef "treble"
     \tuplet 3/2 { c[ d e] } \tuplet 3/2 { fis[ g a] } \clef "bass"
   | \tuplet 3/2 { r d,,[ es] } \tuplet 3/2 { e[ f fis] }
     \tuplet 3/2 { r a[ b] } \tuplet 3/2 { c[ b a] } \clef "treble"

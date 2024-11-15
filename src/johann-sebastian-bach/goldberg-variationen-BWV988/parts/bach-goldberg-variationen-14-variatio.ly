@@ -19,17 +19,17 @@ Sopran = \context Voice = "one" \relative c {
   | b8[ g b d g b,]
   | c[ e g c e, g]
   | fis[ a d, fis a c]
-  | b[ g b d] g r
-  | \clef "treble" r16 b'32[ a b16] r r e,32[ d e16] r r a,32[ g a16] r
+  | b[ g b d] \clef "treble" g r
+  | r16 b'32[ a b16^.] r r e,32[ d e16^.] r r a,32[ g a16^.] r
   %10
-  | r a'32[ g a16] r r d,32[ cis d16] r r g,32[ fis g16] r
-  | r g'32[ fis g16] r r b,32[ a b16] r r e,32[ d e16] r
-  | r \clef "bass" g,32[ fis g16] r r cis,32[ b cis16] r r g32[ fis g16] r \clef "treble"
+  | r a'32[ g a16^.] r r d,32[ cis d16^.] r r g,32[ fis g16^.] r
+  | r g'32[ fis g16^.] r r b,32[ a b16^.] r r e,32[ d e16^.] r
+  | r \clef "bass" g,32[ fis g16^.] r r cis,32[ b cis16^.] r r g32[ fis g16^.] r \clef "treble"
   | r32 d''[ e fis a fis e d] r d[ e fis a fis e d] r d[ e fis a fis e d]
   | b'8-. r \clef "bass" f,-. r e-. r \clef "treble"
   %15
-  | r16 e'32[ d e16 a32 g] a16[ d,32 cis d16 g32 fis] g16[ cis,32 b cis16 fis32 e]
-  | fis16[ d cis d] fis32[ e d16 a'32 g fis16] d'8 r
+  | r16 e'32[ d e16^. a32 g] a16^.[ d,32 cis d16^. g32 fis] g16^.[ cis,32 b cis16^. fis32 e]
+  | fis16^.[ d cis d] fis32[ e d16 a'32 g fis16] d'8 r
   }
   \repeat volta 2 {
   | fis16[ a d a] fis[ a d, fis] a[ fis g a]
@@ -72,15 +72,15 @@ Bass = \context Voice = "four" \relative c' {
   | e[ c g c] e[ c g' e] c[ d c b]
   | a[ fis d fis] a[ fis d' a] fis[ a g fis]
   | g[ d b d] g[ d b' g] d'[ c b a]
-  | g8 r16 g'32[ fis g16] r r cis,32[ b cis16] r r fis,32[ e]
+  | g8 r16 g'32[ fis g16^.] r r cis,32[ b cis16^.] r r fis,32[ e]
   %10
-  | fis16 r r fis'32[ e fis16] r r b,32[ a b16] r r e,32[ d]
-  | e16 r r e'32[ d e16] r r g,32[ fis g16] r r cis,32[ b]
-  | cis16 r r \clef "bass" e,32[ d e16] r r a,32[ g a16] r r fis32[ e]
+  | fis16^. r r fis'32[ e fis16^.] r r b,32[ a b16^.] r r e,32[ d]
+  | e16^.	 r r e'32[ d e16^.] r r g,32[ fis g16^.] r r cis,32[ b]
+  | cis16^. r r \clef "bass" e,32[ d e16^.] r r a,32[ g a16^.] r r fis32[ e]
   | fis8-. r \clef "treble" d'''^. r c^. r \clef "bass"
   | r32 g,[ a b d b a g] r g[ a bes d bes a g] r gis[ a b d b a gis]
   %15
-  | a16[ cis32 b cis16 fis,32 e] fis16[ b32 a b16 e,32 d] e16[ a32 g a16 d,32 cis]
+  | a16^.[ cis32 b cis16^. fis,32 e] fis16^.[ b32 a b16^. e,32 d] e16^.[ a32 g a16^. d,32 cis]
   | d32[ e fis g  a g fis e] d16[ fis a, d] d,8 r
   }
   \repeat volta 2 {

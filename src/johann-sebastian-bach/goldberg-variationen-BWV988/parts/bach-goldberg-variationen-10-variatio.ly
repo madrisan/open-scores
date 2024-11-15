@@ -91,9 +91,12 @@ Tenor = \context Voice = "three" \relative c' {
   \override Rest.staff-position = #0
   \repeat volta 2 {
   %1
-  | s1*4
+  | \change Staff = "upper" \voiceTwo
+    \override MultiMeasureRest.staff-position = #-6
+    R1*4
   %5
-  | d2^\mordent d4.^\prallprall c16[ d ]
+  | \change Staff = "lower" \voiceThree
+    d2^\mordent d4.^\prallprall c16[ d ]
   | e4 c a c
   | a4 d d, c'
   | b4 ^\prall a8[ b] g[ b a c]

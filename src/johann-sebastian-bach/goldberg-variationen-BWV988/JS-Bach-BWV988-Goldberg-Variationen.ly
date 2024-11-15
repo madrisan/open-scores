@@ -130,11 +130,14 @@ BassLine = \relative {
   \include "./logo.ly"
 
   \markup {
-    \fill-line {
+    \fill-line \abs-fontsize #10 {
       \center-column {
         \null\null
         \fill-line {
-          \abs-fontsize #10 "Based on a previous work of Martin Straeten, J.D. Erickson, and Hajo Dezelski"
+          "Based on a previous work of Martin Straeten, J.D. Erickson, and Hajo Dezelski"
+        }
+        \fill-line {
+           "and on the Source gallica.bnf.fr / Bibliothèque nationale de France"
         }
         \null\null
       }

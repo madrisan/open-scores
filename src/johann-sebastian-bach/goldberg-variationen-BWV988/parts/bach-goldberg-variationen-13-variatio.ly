@@ -4,6 +4,8 @@ Global = {
   \include "../global.ly"
 }
 
+greyTextColor = #(x11-color "dimgray")
+
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
@@ -28,8 +30,18 @@ Sopran = \context Voice = "one" \relative c'' {
   | a32-.[ d,( cis d e d cis d )] a[ d g, d' fis, d' e, d'] fis,[ d' a d fis, d' d, c']
   | b32-.[ d ( cis d e d cis d )] b[ d a d g, d' fis, d'] g,[ d' b d g, d' e, d']
   %15
-  | cis32-.[ g( fis g a g fis g)] e'-.[ cis( b cis d cis b cis)] g'-.[ e( d e a g fis e)]
-  | << { fis16[( cis) cis( d)] d[( g,) g( fis)] fis4 } \\ { r4 r8 cis d4 } >>
+  | \override Slur.color = \greyTextColor
+    cis32-.[ g( fis g a g fis g)] e'-.[ cis( b cis d cis b cis)]
+    g'-.[
+    \once\override Slur.extra-offset = #'(0 . 0.5)
+    e( d e a g fis e)]
+  | << {
+      \override Slur.color = \greyTextColor
+      fis16[( cis) cis( d)] d[( g,) g( fis)] fis4
+    } \\ {
+      r4 r8 cis d4
+    } >>
+    \revert Slur.color
   }
   \repeat volta 2 {
   | \slurDown
@@ -43,7 +55,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | dis32-.[ a' ( g a b a g a )] b,-.[ g' ( fis g a g fis g )] a,-.[ fis'( e fis g a g fis )]
   | g16[( dis) dis( e)] e[( a,) a( g )] g8^~\mordent[ g32 b c d]
   %25
-  | \slurDown e'32[ f e dis e8~] e16[ a, \once\stemUp \appoggiatura b32 a16 g]
+  | \slurDown e32[ f e dis e8~] e16[ a, \once\stemUp \appoggiatura b32 a16 g]
     \once\stemUp \appoggiatura a32 g16[ fis! fis e']
   | d32[ e d cis d8~] d16[ g, \once\stemUp \appoggiatura a32 g16 f]
     \once\stemUp \appoggiatura g32 f16[ e e d'] \slurNeutral
@@ -54,6 +66,8 @@ Sopran = \context Voice = "one" \relative c'' {
   | e32-.[ c( b c d c b c )] d-.[ b( a b c b a b )] cis-.[ bes( a bes c bes a g)]
   | fis32-.[ c'( b c d c b c )] fis-.[ c( b c d c b c )] a'-.[ c,( b c d c b a)]
   | b16[( fis) fis( g)] g[( c,) c( b)] b4
+    \override Score.TextMark.self-alignment-X = #CENTER
+    \textEndMark \markup { \musicglyph "scripts.ufermata" }
   }
   \fine
 }
@@ -160,6 +174,8 @@ Bass = \context Voice = "four" \relative c' {
   | c,8[ e f fis] g[ fis16 e]
   | d4. fis8[ e d]
   | g,4 e\rest g
+    \tweak direction #DOWN
+    \textEndMark \markup { \musicglyph "scripts.dfermata" }
   }
   \fine
 }

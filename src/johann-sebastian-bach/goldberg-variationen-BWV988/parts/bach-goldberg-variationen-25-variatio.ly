@@ -14,12 +14,15 @@ Sopran = \context Voice = "one" \relative c'' {
   %1
   | r16 d[ \once\stemUp \grace es d32 cis d16] \once\stemUp \appoggiatura d bes'8~[ bes32 a g f]
     es16[ d8 cis!16~]
-  | cis[ c \once\stemUp \grace d! c32 b c16] \once\stemUp \appoggiatura f as8~[ as32 g f es] des16[ c8 b!16~]
-  | b[ bes \once\stemUp \appoggiatura c bes32 a bes16] fis'[ g8 cis,16~] cis[ d8 g,16]
+  | cis[ c \once\stemUp \grace d! c32 b c16]
+    \once\stemUp \once\slurDown \appoggiatura c as'8~[ as32 g f es] des16[ c8 b!16~]
+  | b[ bes \once\stemUp \grace c bes32 a bes16] fis'[ g8 cis,16~] cis[ d8 g,16]
   | g[ a32 bes a8] r4 r
   %5
-  | r16 d,[ \grace ees d32 cis d16] d'8~[ d32 c! bes a] g[ f as16~ as32 d, f16~]
-  | f[ es \appoggiatura f es32 d es16] es'8~[ es32 d c bes] a[ g bes16~ bes32 e, g16~]
+  | r16 d,[ \grace ees d32 cis d16]
+    \once\stemUp \once\slurUp \appoggiatura d16 d'8~[ d32 c! bes a] g[ f as16~ as32 d, f16~]
+  | f[ es \grace f es32 d es16]
+    \once\stemUp \once\slurUp \appoggiatura es16 es'8~[ es32 d c bes] a[ g bes16~ bes32 e, g16~]
   | g[ fis \grace g16 fis32 e fis16]
     \tuplet 3/2 { b[ c es!] } \tuplet 3/2 { cis[d fis,!] }
     \tuplet 3/2 { bes[ a d,] } \tuplet 3/2 { es[ b c~] }
@@ -30,8 +33,9 @@ Sopran = \context Voice = "one" \relative c'' {
   | b[ bes~ bes32 a gis16~] gis[ a~ a32 d, c bes] c[ a bes g! f e f d']
   | f,\prallprall[ e f16 e8] r32 d[ cis d e f g a] bes[ a d16~ d32 cis e16~]
   | e[ a, \once\stemUp \grace bes a32 gis a16] \once\stemUp \appoggiatura a a'8~[ a32 bes (a gis )]
-    a-.[ d, c bes c-. c (bes a )]
-  | a16[ bes \once\stemUp \grace c bes32 a bes16] bes'8~[ bes32 es,! d cis] d[ c'! b8 d,16]
+    a-.[ d,( c bes) c-. c (bes a )]
+  | a16[ bes \once\stemUp \grace c bes32 a bes16]
+    \once\stemUp \appoggiatura bes bes'8~[ bes32 es,! d cis] d[ c'! b8 d,16]
   %15
   | cis[ bes!8 a16] es'![ d~ d32 cis! e g] bes16[ a~ a64 g f e d32 cis]
   }
@@ -41,23 +45,23 @@ Sopran = \context Voice = "one" \relative c'' {
   }
   \break
   \repeat volta 2 {
-  | r16 a'[ \once\stemUp \appoggiatura bes a32 gis a16] es![ d~ d32 e fis g] a[ c, es8 d16~]
-  | d[ f \once\stemUp \appoggiatura g f32 es f16] as,[ g~ g32 a b c] d[ f, as8 g16~]
+  | r16 a'[ \once\stemUp \grace bes a32 gis a16] es![ d~ d32 e fis g] a[ c, es8 d16~]
+  | d[ f \once\stemUp \grace g f32 es f16] as,[ g~ g32 a b c] d[ f, as8 g16~]
   %20
   | g[ c8 b16] c32[ es des8 c16~] c32[ f es16~ es32 f es d]
   | es[ a! ( bes16 es, d )] r4 r
-  | r16 bes[ \once\stemUp \appoggiatura ces bes32 as bes16] bes[ bes'~ bes32 ces bes as]
+  | r16 bes[ \once\stemUp \grace ces bes32 as bes16] bes[ bes'~ bes32 ces bes as]
     bes16[ des,~ des32 ces bes16~]
-  | bes[ ces \once\stemUp \appoggiatura des16 ces32 bes ces16] ces[ ces'~ ces32 fes, es d] es[ des' c8 es,16]
+  | bes[ ces \once\stemUp \grace des16 ces32 bes ces16] ces[ ces'~ ces32 fes, es d] es[ des' c8 es,16]
   | d![ ces8 bes16] fes'[ es~ es32 d f as] ces16[ bes~ bes64 as ges f es32 d]
   %25
   | d8([ es)] r4 r
-  | r16 g,[ \appoggiatura as g32 fis g16] \appoggiatura g16 es'8~[ es32 d c bes] as!16[ g8 fis!16]~
+  | r16 g,[ \grace as g32 fis g16] \appoggiatura g16 es'8~[ es32 d c bes] as!16[ g8 fis!16]~
   | fis[ f \grace g16 f32 e f16] des'8~[ des32 c bes as] ges16[ f8 e!16~]
-  | e[ es \appoggiatura f es32 d es16] c'8~[ c32 bes as g] fis16[ es'~ es32 d cis16]
+  | e[ es \grace f es32 d es16] c'8~[ c32 bes as g] fis16[ es'~ es32 d cis16]
   | \slurNeutral cis[(d ) es,( d)] r32 e[ fis g a bes c d] es![ d g16~ g32 fis a16~]
   %30
-  | a[ d, \once\stemUp \appoggiatura es d32 cis d16] d'8~[ d32 c! bes a] g[ d' f,16~ f32 es d c]
+  | a[ d, \once\stemUp \grace es d32 cis d16] d'8~[ d32 c! bes a] g[ d' f,16~ f32 es d c]
   | d32[ as' g f es d c b] c[ f es d c bes a! g] a[ d c bes a g fis e]
   | fis[ bes a g fis e d cis] d[ g fis e d c bes a] bes[ es d c bes a g fis]
   }

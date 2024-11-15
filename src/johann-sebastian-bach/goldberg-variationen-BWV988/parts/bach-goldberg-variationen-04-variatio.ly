@@ -91,7 +91,10 @@ Alto = \context Voice = "two" \relative c' {
   }
   \alternative {
     { g16[ e fis8] f\rest }
-    { g16\repeatTie[ e fis8] f\rest }
+    {
+      \shape #'((-1.5 . 0) (-0.8 . -0.5) (0 . 0) (0 . 0)) RepeatTie
+      g16\repeatTie[ e fis8] f\rest
+    }
   }
   \repeat volta 2 {
   | R1*3/8

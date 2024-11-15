@@ -19,9 +19,9 @@ Sopran = \context Voice = "one" \relative c'' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   %1
-  | s4.
+  | d'4.\rest
   \repeat volta 2 {
-  | a'4.~
+  | a~
   | a8[ g16 fis e d]
   | c4.~
   %5
@@ -47,7 +47,7 @@ Sopran = \context Voice = "one" \relative c'' {
     }
     {
   |   d,
-  |   \stemDown a''
+  |   << { \stemDown a'' } \\ { e'\rest } >>
     }
   }
   \break
