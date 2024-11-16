@@ -198,6 +198,33 @@ BassLine = \relative {
 \include "JS-Bach-BWV1087-13-canon-triplex-six.ly"
 \pageBreak
 
+\markup \center-column {
+  \vspace #1
+  \line {
+    \hspace #10
+    \general-align #Y #DOWN {
+      \image #X #90 #"last-page-jsbach-manuscript-bwv1087.png"
+    }
+  }
+}
+\markup {
+  \fill-line {
+    \center-column {
+      \null\null
+      \fill-line \abs-fontsize #10 \italic {
+        \concat {
+          "Last page of Bach's personal copy of the printed edition "
+          "of the Goldberg Variations discovered in 1974"
+        }
+      }
+      \fill-line \abs-fontsize #8 \italic {
+        "(Source gallica.bnf.fr / Bibliothèque nationale de France)"
+      }
+    }
+  }
+}
+\pageBreak
+
 \include "./parts/bach-goldberg-variationen-00-aria.ly"
 \include "./parts/bach-goldberg-variationen-01-variatio.ly"
 \pageBreak
