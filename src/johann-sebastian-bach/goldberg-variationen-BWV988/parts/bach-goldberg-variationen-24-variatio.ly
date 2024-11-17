@@ -9,6 +9,7 @@ staffUpper = \change Staff = "upper"
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
+  \label #'VariatioXXIV
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \mergeDifferentlyDottedOn
@@ -194,7 +195,7 @@ Bass = \context Voice = "four" \relative c' {
     composer = ##f % "Johann Sebastian Bach"
     opus = ##f % "BWV 988"
     title = \markup { \smallCaps "Variatio 24 a 1 Clav." }
-    subtitle = \markup { "Canone all'ottava" }
+    subtitle = \markup { "Canone all'Ottava" }
     subsubtitle = ##f
   }
   \layout { }

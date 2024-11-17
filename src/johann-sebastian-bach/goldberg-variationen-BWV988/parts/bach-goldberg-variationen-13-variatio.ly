@@ -8,6 +8,7 @@ greyTextColor = #(x11-color "dimgray")
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
+  \label #'VariatioXIII
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \stemNeutral\slurDown

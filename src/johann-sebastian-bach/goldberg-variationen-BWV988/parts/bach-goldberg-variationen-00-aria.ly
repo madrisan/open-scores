@@ -11,6 +11,7 @@ Sopran = \context Voice = "one" \relative c'' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \stemNeutral\slurNeutral\tieNeutral
+  \label #'Aria
   \repeat volta 2 {
   %1
   | g'4 g( a8.\mordent) b16

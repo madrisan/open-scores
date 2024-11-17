@@ -6,6 +6,7 @@ Global = {
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
+  \label #'VariatioXXII
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \tempo "Alla breve"

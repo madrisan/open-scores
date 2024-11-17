@@ -225,6 +225,9 @@ BassLine = \relative {
 }
 \pageBreak
 
+\include "./index.ly"
+\pageBreak
+
 \include "./parts/bach-goldberg-variationen-00-aria.ly"
 \include "./parts/bach-goldberg-variationen-01-variatio.ly"
 \pageBreak

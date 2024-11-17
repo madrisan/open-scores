@@ -9,6 +9,7 @@ staffUpper = { \change Staff = "upper" \stemDown\tieDown }
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
+  \label #'VariatioIII
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \stemNeutral\slurNeutral\tieNeutral

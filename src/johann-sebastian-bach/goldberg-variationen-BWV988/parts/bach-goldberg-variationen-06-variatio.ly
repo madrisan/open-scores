@@ -16,6 +16,7 @@ extendLaissezVibrer = #(define-music-function (parser location further) (number?
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
+  \label #'VariatioVI
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   %1

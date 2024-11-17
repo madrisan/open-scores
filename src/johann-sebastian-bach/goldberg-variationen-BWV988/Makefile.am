@@ -28,6 +28,7 @@ EXTRA_DIST = JS-Bach-BWV988-Goldberg-Variationen.ly \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
+	     index.ly \
 	     last-page-jsbach-manuscript-bwv1087.png \
 	     logo.ly \
 	     parts/bach-goldberg-variationen-00-aria.ly \
