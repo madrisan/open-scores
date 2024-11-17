@@ -116,3 +116,8 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
 ## How to manually create the `.pdf` and `.midi` files
 
 See the file [DEVELOPERS.md](DEVELOPERS.md)
+
+<br />
+<p align="center">
+<img src="images/apostel-ars-longa-vita-brevis.png" alt="Apostel's card: Ars Longa Vita Brevis!" width="80%"/>
+</p>
