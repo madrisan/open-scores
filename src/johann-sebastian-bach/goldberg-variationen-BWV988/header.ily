@@ -2,9 +2,9 @@
   composer = "Johann Sebastian Bach (1685-1750)"
   date = "Published in 1741"
 
-  footer = "Mutopia-2023/08/01"
+  footer = "Mutopia-2024/11/15"
 
-  lastupdated = "2024 November 11"
+  lastupdated = "2024 November 15"
   license = "Creative Commons Attribution-ShareAlike 4.0"
   maintainerEmail = "d.madrisan@proton.me"
   maintainerWeb = "https://github.com/madrisan/open-scores"
