@@ -50,7 +50,10 @@ Soprano = \context Voice = "one" \relative c' {
   \break
   \repeat volta 2 {
   | fis,8_. b_. d_. fis, gis16 ais b cis
-  | d e d cis b cis dis cis dis e cis dis
+  | d e d cis
+    \change Staff = "lower" \voiceThree \stemUp b
+    \change Staff = "upper" \voiceOne \stemNeutral cis
+    dis cis dis e cis dis
   | e dis e fis dis e fis4.~
   %25
   | fis8 e16 dis e8~ e b e~
@@ -193,7 +196,7 @@ Soprano = \context Voice = "one" \relative c' {
   %130
   | \stemNeutral fis, b d fis, gis16 ais b cis
   | d cis b cis d8~ d g,^. c^.
-  | d, cis' r b16 a g a b8~
+  | d, c' r b16 a g a b8~
   | b e,_. a_. b,_. a'_. r
   | g16 fis e fis g e s8 \stemUp\tieUp e'4~
   %135
@@ -298,7 +301,7 @@ Alto = \context Voice = "two" \relative c' {
   | a4. 	\once\override NoteColumn.force-hshift = #1.4 fis8 s4
   | s1*6/8
   %35
-  | s4. \once\override NoteColumn.force-hshift = #1.4 g8 s4
+  | s4. \once\override NoteColumn.force-hshift = #1.4 gis8 s4
   | s1*6/8
   | s4. \once\override NoteColumn.force-hshift = #1.4 ais8 s4
   | s1*6/8*4

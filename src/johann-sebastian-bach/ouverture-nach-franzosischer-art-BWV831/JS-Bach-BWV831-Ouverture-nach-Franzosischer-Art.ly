@@ -92,7 +92,7 @@
       \center-column {
         \null\null\null\null
         \fill-line {
-          \abs-fontsize #10 "Based on: Moscow: Muzyka (1990)"
+          \abs-fontsize #10 "Based on: Moscow Muzyka (1990)"
         }
         \null\null
       }
