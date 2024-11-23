@@ -1,11 +1,11 @@
 \markup \fill-line {
   \center-column \abs-fontsize #18 \smallCaps \bold {
     "Index"
-    \null\null\null\null
+    \null\null\null
   }
 }
 
-middleGrey =    #(x11-color 'grey45)
+middleGrey = #(x11-color 'grey45)
 
 #(define-markup-command (indexItem layout props title pagelabel infos)
   (string? symbol? string?)
@@ -26,8 +26,12 @@ middleGrey =    #(x11-color 'grey45)
          }
        } #}))
 
-\markup { \indexItem "Aria" #'Aria "" }
+separator = \markup \with-color \middleGrey {
+  \fill-line { \char ##x25BE }
+}
 
+\markup { \indexItem "Aria" #'Aria "" }
+\separator
 \markup { \indexItem "Variatio 1 à 1 Clav." #'VariatioI "" }
 \markup { \indexItem "Variatio 2 à 1 Clav." #'VariatioII "" }
 \markup { \indexItem "Variatio 3 à 1 Clav." #'VariatioIII " — Canone all'unisono" }
@@ -43,6 +47,7 @@ middleGrey =    #(x11-color 'grey45)
 \markup { \indexItem "Variatio 13 à 2 Clav." #'VariatioXIII "" }
 \markup { \indexItem "Variatio 14 à 2 Clav." #'VariatioXIV "" }
 \markup { \indexItem "Variatio 15 à 1 Clav." #'VariatioXV " — Canone alla Quinta" }
+\separator
 \markup { \indexItem "Variatio 16 à 1 Clav." #'VariatioXVI " — Ouverture" }
 \markup { \indexItem "Variatio 17 à 2 Clav." #'VariatioXVII "" }
 \markup { \indexItem "Variatio 18 à 1 Clav." #'VariatioXVIII " — Canone alla Sexta" }
@@ -58,3 +63,12 @@ middleGrey =    #(x11-color 'grey45)
 \markup { \indexItem "Variatio 28 à 2 Clav." #'VariatioXXVIII "" }
 \markup { \indexItem "Variatio 29 à 1 ovvero 2 Clav." #'VariatioXXIX "" }
 \markup { \indexItem "Variatio 30 à 1 Clav." #'VariatioXXX " — Quodlibet" }
+\separator
+\markup \column \abs-fontsize #11 {
+  \override #'(line-width . 95)
+  \pad-around #1
+  \line \with-color #middleGrey {
+    \hspace #3.2
+    "(Aria da Capo)"
+  }
+}
