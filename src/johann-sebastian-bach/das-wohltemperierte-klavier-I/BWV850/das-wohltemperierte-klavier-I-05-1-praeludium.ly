@@ -13,45 +13,45 @@ Soprano = \context Voice = "one" \relative c'' {
   %1
   | r16 d e fis a, fis' e d a' d, e fis a, fis' e d
   | g e fis g b, d cis b cis e fis g a, g' fis e
-  | fis d e fis a, cis b a b d e fis b, a' gis fis
-  | gis e fis gis b, d cis b a cis d e fis, e' d cis
+  | fis d e fis a,^1 cis^4 b a b d e fis b, a' gis fis
+  | gis e fis gis b, d^4 cis b a cis d e fis, e' d cis
   %5
   | d b cis d fis, a gis fis gis b cis d e, d' cis b
-  | cis a b cis e, g fis e fis a b cis fis, e' dis cis
-  | dis b cis dis fis, a g! fis e g a b cis, d' cis b
-  | ais e fis g cis, g' fis e d b' cis d fis, a gis fis
-  | eis gis a b eis, d' cis b gis' eis fis gis cis, b' a gis
+  | cis a b cis e, g^3 fis e fis a b cis fis, e' dis cis
+  | dis b cis dis fis, a^4 g! fis e g a b cis, d'^5 cis b
+  | ais e fis g cis, g' fis e d b'^3 cis d fis,^2 a gis fis
+  | eis^1 gis^2 a b eis, d'^3 cis b gis' eis fis gis cis, b' a gis
   %10
-  | a fis gis a cis, e dis cis dis fis g a b, a' g fis
-  | g e fis g b, d c b c dis e fis a, c b a
+  | a fis gis a cis,^1 e^3 dis cis dis fis g a b, a' g fis
+  | g e fis g b,^1 d^3 c b c dis e fis a,^1 c^4 b a
   | g e' fis g b, d cis b cis e fis g a, g' fis e
-  | fis d e fis a, c b a b g a b cis, b' a g
-  | fis d e fis a, c b a b d e fis b, a' gis fis
+  | fis d e fis a,^1 c^4 b a b g^1 a^4 b cis, b' a g
+  | fis^3 d^1 e^3 fis^4 a,^1 c^4 b^3 a^2 b^1 d e fis b, a' gis fis
   %15
-  | gis e fis gis b, d c b a c d e a, g' fis e
-  | dis a b c fis, c' b a g e' fis g b, d cis b
-  | ais cis d e ais, g' fis e cis' ais b cis fis, e' d cis
+  | gis e fis gis b, d^4 c b a c d e a, g'^5 fis e
+  | dis a b c fis, c' b a g e' fis g b, d^4 cis b
+  | ais cis d e ais, g'^4 fis^3 e^1 cis' ais b cis fis, e' d cis
   | d b cis d fis, a gis fis gis b c d e, d' c b
-  | c a b c e, g fis e fis a b c d, c' b a
+  | c a b c e, g^3 fis e fis a b c d, c' b a
   %20
   | b g a b d, b' a g d' g, a b d, b' a g
   | c a b c e, g fis e fis a b c d, c' b a
-  | b g a b d, fis e d e g a b e, d' cis b
-  | cis a b cis e, g fis e d fis g a b, a' g fis
+  | b g a b d,^1 fis^4 e d e g a b e, d'^4 cis b
+  | cis^3 a^1 b^4 cis e,^1 g^4 fis e d fis g a b, a' g fis
   | g e fis g b, d cis b cis e fis g a, g' fis e
   %25
-  | fis d e fis a, fis' e d a' fis g a d, c' b a
-  | b g a b d, b' a g d' b cis d gis, f' e d
-  | cis a b cis e, g fis e a d e fis b, a' g fis
-  | g cis, d e a, g' fis e fis b, cis d gis, fis' e d
-  | cis g a bes e, g f e f d' e f cis e d cis
+  | fis d e fis a, fis'^4 e^3 d^1 a' fis g a d, c' b a
+  | b g a b d, b'^4 a^2 g^1 d' b cis d gis, f' e d
+  | cis^3 a^1 b^4 cis e, g^4 fis e^2 a^1 d e fis b, a' g fis
+  | g cis, d e a, g' fis e fis b,^1 cis^3 d gis, fis' e d^3
+  | cis^5 g a bes e,^1 g^3 f^1 e f d'^3 e f cis e d cis
   %30
   | d bes' a g f e d cis d f e d b' gis a b
   \noBreak
-  | f d e f b, gis a b e, fis gis a b cis d e
+  | f^3 d^1 e^4 f b,^3 gis^2 a b e, fis gis^3 a^1 b cis d^1 e^4
   | \stemUp\tieUp f4. e8_~ e d_~ d[ cis]
-  | <d, f gis b d>4~\arpeggio d'32 cis b a g fis e fis g a b cis d e f e
-    \stemUp d cis b a g \stemDown fis[ e d]
+  | <d, f gis b d>4~\arpeggio d'32 cis b a^1 gis^3 fis e fis gis^3 a^1 b cis d^1 e^4 f e
+    \stemUp d cis b a gis \stemDown fis[ e d]
   | \stemUp <cis' e g bes>8 f\rest <d f gis b> f\rest d4 cis
   %35
   | <fis,! a d>1\fermata
@@ -78,7 +78,7 @@ Tenor = \context Voice = "three" \relative c {
   | s1*26
   | \shiftOff a8 r g' r fis r d r
   | a8 r cis r d r b r
-  | g'16\rest e f g cis, e d cis d f g a e g f e
+  | g'16\rest e f g cis, e d cis d^2 f^1 g^2 a^1 e^2 g^1 f^2 e^3
   %30
   | f d e f a, c bes a s2
   | s1

@@ -18,6 +18,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Ferruccio Busoni: Drei Albumblätter BV289 - fixed midi tempos
 - J.S. Bach: Ouverture nach Französischer Art (BWV831) - a few fixes
 - J.S. Bach: Das Wohltemperierte Klavier – Erster Teil: Praeludium IV - fix overlapping ties
+- J.S. Bach: Das Wohltemperierte Klavier – Erster Teil: Praeludium V - add fingering
 
 ## [v58] - 2024-11-11
 
