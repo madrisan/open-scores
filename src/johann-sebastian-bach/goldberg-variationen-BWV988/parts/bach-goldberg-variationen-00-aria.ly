@@ -4,6 +4,8 @@ Global = {
   \include "../global.ly"
 }
 
+\include "../macros.ly"
+
 staffLower = \change Staff = "lower"
 staffUpper = \change Staff = "upper"
 
@@ -131,10 +133,10 @@ Tenor = \context Voice = "three" \relative c' {
   | g8\rest e g4 fis8^\prall e
   %20
   | dis e fis2
-  | c8\rest a g^\prallprall fis g4
-  | b8\rest a g^\prallprall fis g b
+  | c8\rest a g^\prallprall fis \highlightTheme { g4 }
+  | b8\rest \highlightTheme { \revert Beam.color a } g^\prallprall fis g b
   | g4\rest g\rest g8\rest dis
-  | e4 s2
+  | \highlightTheme { \unHighlightColor e4 } s2
   %25
   | b'4\rest c\rest a~
   | a8 fis \grace e16 d8[ e16 fis] g[ fis g8~]
@@ -147,46 +149,54 @@ Bass = \context Voice = "four" \relative c' {
   \stemNeutral
   \repeat volta 2 {
   %1
-  |\stemDown g2.
+  | \once\override Staff.TextScript.extra-offset = #'(-0.4 . -0.6)
+    \stemDown \highlightTheme { g2.
+      _\markup \tiny \italic {
+        \line {
+          \concat {
+            " " \bulletTheme " Bass theme, known as " \italic "“Ruggiero's bass”."
+           }
+         }
+       }
   | fis
   | e
-  | d2_~ d8 c
+  | \revert Tie.color d2_~ } d8 c
   %5
-  | b2.
-  | c2~ c8 d
-  | e8 c8 d2
-  | g,4. d'8[ e8.\prallmordent fis16]
-  | g2._~
+  | \highlightTheme { b2.
+  | \revert Tie.color c2~ } c8 d
+  | e8 c8 \highlightTheme { d2
+  | g,4. } d'8[ e8.\prallmordent fis16]
+  | \highlightTheme { \revert Tie.color g2._~ }
   %10
-  | g4 fis8^\prallprall e fis b
-  | e,4. e8 fis g
-  | a4. b8 a g
-  | fis2.
+  | g4 \highlightTheme { \revert Beam.color \revert Script.color fis8^\prallprall } e fis b
+  | \highlightTheme { e,4. } e8 fis g
+  | \highlightTheme { a4. } b8 a g
+  | \highlightTheme { fis2.
   | g
   %15
   | a
-  | d,
+  | d, }
   }
   \repeat volta 2 {
-  | d'2 c4
-  | b4. a8 b4
-  | c4. b8 a4
+  | \highlightTheme { d'2 } c4
+  | \highlightTheme { b4. } a8 b4
+  | \highlightTheme { c4. } b8 a4
   %20
-  | b4. a8 g fis
+  | \highlightTheme { b4. } a8 g fis
   | e2 d4
   | c2 b4
-  | a8 c b a b4
-  | e8 b e, b' e d
+  | a8 c \highlightTheme { \revert Beam.color b } a b4
+  | \highlightTheme { \revert Beam.color e8 } b e, b' e d
   %25
-  | c2.
+  | \highlightTheme { c2.
   | b
-  | a4. g8 fis e
-  | \stemUp d8 a' d c b a
-  | \stemDown g8 d' g f e d
+  | a4. } g8 fis e
+  | \stemUp \highlightTheme { \revert Beam.color d8 } a' d c b a
+  | \stemDown \highlightTheme { \revert Beam.color g8 } d' g f e d
   %30
-  | c g' c b a g
-  | fis d g b d d,
-  | g4. d8 \stemUp \once\override Script.padding = #.8 g,4
+  | \highlightTheme { \revert Beam.color c } g' c b a g
+  | fis \highlightTheme { \revert Beam.color d } g b d d,
+  | \highlightTheme { g4. } d8 \stemUp \once\override Script.padding = #.8 g,4
     \tweak direction #DOWN
     \textEndMark \markup { \musicglyph "scripts.dfermata" }
   }

@@ -31,6 +31,7 @@ EXTRA_DIST = JS-Bach-BWV988-Goldberg-Variationen.ly \
 	     index.ly \
 	     last-page-jsbach-manuscript-bwv1087.png \
 	     logo.ly \
+	     macros.ly \
 	     parts/bach-goldberg-variationen-00-aria.ly \
 	     parts/bach-goldberg-variationen-01-variatio.ly \
 	     parts/bach-goldberg-variationen-02-variatio.ly \

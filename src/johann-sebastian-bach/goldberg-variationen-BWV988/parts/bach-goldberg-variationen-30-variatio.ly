@@ -4,8 +4,7 @@ Global = {
   \include "../global.ly"
 }
 
-staffLower = \change Staff = "lower"
-staffUpper = \change Staff = "upper"
+\include "../macros.ly"
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
@@ -16,7 +15,8 @@ Sopran = \context Voice = "one" \relative c'' {
     \partial 8 { d8\rest }
   %1
   | b2\rest d4\rest d8\rest d,
-  | g8[ a b c] d[ c16 b] a8 r
+  | \highlightMelodySecond { \unHighlightColor g8[ } a b c] d[ c16 b]
+    \highlightMelodySecond { \unHighlightColor a8 } r
   | d4 d e e
   | d8[ e d c] b\prall[ a] g4
   %5
@@ -52,8 +52,8 @@ Alto = \context Voice = "two" \relative c' {
     \partial 8 { e8\rest }
   %1
   | R1
-  | g4 g a a
-  | g8 a g f e d c b'
+  | \highlightMelodySecond { g4 g a a
+  | g8 a g f e d \unHighlightColor c } b'
   | a g a fis g4 g8 d
   %5
   | \stemUp g8 a b c d8 c16 b
@@ -95,21 +95,23 @@ Tenor = \context Voice = "three" \relative c {
   \override Rest.staff-position = #0
   \repeat volta 2 {
   %1
-    \partial 8 { d8 }
-  | g a b c d[ c16 b] a8[ g16 a]
+    \partial 8 { \highlightMelodyFirst d8 }
+  | \highlightMelodyFirst { g a b c d[ c16 b] \unHighlightColor a8[ } g16 a]
   | b8 a g2 fis8\prall[ e16 fis]
-  | g4 c8\rest d c b a g
-  | fis4~\prallprall fis16 e32 fis d8~ d4 c'\rest
+  | g4 c8\rest \highlightMelodyThird { d c b a g
+  | fis4~\prallprall fis16 e32 fis \unHighlightColor d8~ } d4 c'\rest
   %5
-  | \staffUpper\stemDown g'4 g a a
-  | \shiftOff g8[ a g fis] e[ \staffLower\stemUp d] cis d\rest
+  | \change Staff = "upper" \stemDown g'4 g a a
+  | \shiftOff g8[ a g fis] e[
+    \change Staff = "lower"
+    \stemUp d] cis d\rest
   | fis, g a fis g fis e d
   | cis d e cis d4 d8
   }
   \repeat volta 2 {
     \partial 8 { fis' }
   | d[ fis d fis] g[ d d g]
-  %10
+  %10s
   | e r r4 fis fis
   | g g fis8[g fis e]
   | dis[ e16 fis] \clef bass b,4~ b8[ a16 b] g8[a16 b]
@@ -127,12 +129,25 @@ Bass = \context Voice = "four" \relative c {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \repeat volta 2 {
-    \partial 8 { g8\rest }
+    \partial 8 {
+      \once\override Staff.TextScript.extra-offset = #'(-4 . -0.6)
+      f,8\rest
+      _\markup \tiny \italic {
+        \line {
+          \concat {
+            " " \bulletTheme " Theme | German folksongs: "
+            " " \bulletMelodyFirst " Ich bin so lang nicht bei dir g’west "
+            " " \bulletMelodySecond " Kraut und Rüben"
+            " " \bulletMelodyThird " Mein junges Leben hat ein End"
+          }
+        }
+      }
+    }
   %1
-  | g'2 fis
+  | \highlightTheme { g'2 fis
   | e d4. c8
   | b2 c
-  | d g,4 b8\rest b'16[ a]
+  | d g,4 } b8\rest b'16[ a]
   %5
   | g8[ fis16 g] e8[ d16 e] fis4. b8
   | e,4. fis16[ g] a4~ a16[ g fis e]
@@ -158,6 +173,16 @@ Bass = \context Voice = "four" \relative c {
   \fine
 }
 
+forceBreaks = {
+  % page 1
+  \partial 8 { s8 }
+  \repeat unfold 2 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s1\break\noPageBreak
+  s1 s2. s8\noBreak \partial 8 { s8 }\noBreak s1\noBreak s1\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s2 s4.\break\pageBreak
+}
+
 \score {
   \new PianoStaff
   <<
@@ -176,6 +201,7 @@ Bass = \context Voice = "four" \relative c {
       \Tenor
       \Bass
     >>
+    \new Devnull \forceBreaks
   >>
   \header {
     composer = ##f % "Johann Sebastian Bach"
