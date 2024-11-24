@@ -69,7 +69,8 @@ Soprano = \context Voice = "one" \relative c'' {
   %35
   | cis2.~ cis4. e8 dis4
   << {
-  | e2.~ e4. bis8 cis4
+  | \once\override Tie.extra-offset = #'(0 . 0.2)
+    e2.~ e4. bis8 cis4
   | \tweak Accidental.Y-offset 0.4
     \once\override Tie.extra-offset = #'(0 . 1.5)
     fisis2.~ fisis2 <bis, gis'>4
@@ -77,7 +78,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \break
   | s1 s4
     \once\stemUp
-    \once\override Tie.extra-offset = #'(0 . -0.4)
+    \once\shape #'((0 . -0.8) (0 . -0.8) (0 . -0.8) (-1 . -1)) Tie
     cis^~
     \stemUp \shiftOn cis8 dis e dis cis b
     \stemDown ais_\markup { \hspace #-1 \tiny "l.H" }
