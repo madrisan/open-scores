@@ -9,6 +9,7 @@ staffUpper = { \change Staff = "upper" }
 
 Soprano = \context Voice = "one" \relative c' {
   \voiceOne
+  \label #'Ouverture
   \stemNeutral\tieNeutral\slurNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
@@ -289,7 +290,7 @@ Alto = \context Voice = "two" \relative c' {
   | \staffLower\clef treble \stemNeutral r4 b8 b,_. fis'_. a!_.
   | b,_. e_. g!_. b, cis16 dis e fis
   %25
-  | g a g fis e fis gis fis gis a fis gis
+  | g a g fis e fis gis^2 fis^4 gis^3 a fis gis
   | ais gis ais b gis ais b8 fis b~
   | b16 \staffUpper\stemDown\tieDown b ais gis ais8~ ais4.
   | b16 ais b cis ais b cis8 ais g

@@ -6,6 +6,7 @@ Global = {
 
 Soprano = \context Voice = "one" \relative c' {
   \voiceOne
+  \label #'BourreeII
   \stemNeutral\tieNeutral\slurNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0

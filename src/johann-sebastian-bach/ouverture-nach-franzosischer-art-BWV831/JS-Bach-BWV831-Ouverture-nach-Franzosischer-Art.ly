@@ -100,6 +100,9 @@
   }
 }
 
+\include "./index.ly"
+\pageBreak
+
 \include "./parts/bach-ouverture-nach-franzosischer-art-1-ouverture.ly"
 \pageBreak
 \include "./parts/bach-ouverture-nach-franzosischer-art-2-courante.ly"

@@ -6,6 +6,7 @@ Global = {
 
 Soprano = \context Voice = "one" \relative c {
   \voiceOne
+  \label #'GavotteII
   \stemNeutral\tieNeutral
   \override Glissando.style = #'dashed-line
   \override MultiMeasureRest.staff-position = #0

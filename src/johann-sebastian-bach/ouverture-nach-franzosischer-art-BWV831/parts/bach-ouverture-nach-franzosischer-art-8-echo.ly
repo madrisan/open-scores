@@ -9,6 +9,7 @@ forte = \markup { "forte" }
 
 Soprano = \context Voice = "one" \relative c' {
   \voiceOne
+  \label #'Echo
   \stemUp\tieUp
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0

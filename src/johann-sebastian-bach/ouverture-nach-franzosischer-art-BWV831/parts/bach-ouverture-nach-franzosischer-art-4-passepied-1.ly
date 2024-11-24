@@ -6,6 +6,7 @@ Global = {
 
 Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
+  \label #'PassepiedI
   \stemUp\tieUp
   \override Glissando.style = #'dashed-line
   \override MultiMeasureRest.staff-position = #0

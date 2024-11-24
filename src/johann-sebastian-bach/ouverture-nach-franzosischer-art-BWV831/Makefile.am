@@ -23,6 +23,7 @@ EXTRA_DIST = JS-Bach-BWV831-Ouverture-nach-Franzosischer-Art.ly \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
+	     index.ly \
 	     logo.ly \
 	     parts/bach-ouverture-nach-franzosischer-art-1-ouverture.ly \
 	     parts/bach-ouverture-nach-franzosischer-art-2-courante.ly \
