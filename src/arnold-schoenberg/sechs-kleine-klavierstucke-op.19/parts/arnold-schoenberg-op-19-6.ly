@@ -13,6 +13,7 @@ rH = \markup { \small\italic "r.H" }
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
+  \label #'KlavierstuckeVI
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \stemDown\slurNeutral\tieNeutral

@@ -30,6 +30,7 @@ EXTRA_DIST = Arnold-Schoenberg-Sechs-Kleine-Klavierstucke-op.19.ly \
 	     header.ily \
 	     global.ly \
 	     logo.ly \
+	     index.ly \
 	     parts/arnold-schoenberg-op-19-1.ly \
 	     parts/arnold-schoenberg-op-19-2.ly \
 	     parts/arnold-schoenberg-op-19-3.ly \

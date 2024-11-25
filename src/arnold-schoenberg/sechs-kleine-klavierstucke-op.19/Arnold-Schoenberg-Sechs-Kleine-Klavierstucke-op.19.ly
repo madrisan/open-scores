@@ -87,10 +87,16 @@
   }
 }
 
+\pageBreak
+\include "index.ly"
+\pageBreak
+\label #'LetterToBusoni
 \include "schoenberg-busoni-letter.ly"
 \pageBreak
+\label #'PrefaceIT
 \include "preface.ly"
 \pageBreak
+\label #'PrefaceEN
 \include "preface-en.ly"
 \pageBreak
 \include "parts/arnold-schoenberg-op-19-1.ly"

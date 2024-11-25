@@ -20,6 +20,7 @@ moltorit = {
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
+  \label #'KlavierstuckeV
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \stemUp\slurNeutral\tieUp

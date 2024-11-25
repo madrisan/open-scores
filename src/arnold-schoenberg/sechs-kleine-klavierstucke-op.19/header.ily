@@ -2,7 +2,7 @@
   composer = "Arnold Schoenberg (1874–1951)"
   date = "1913"
 
-  footer = "Mutopia-2023/05/15"
+  footer = "Mutopia-2024/11/24"
 
   lastupdated = "2023 May 15"
   license = "Creative Commons Attribution-ShareAlike 4.0"
@@ -47,7 +47,7 @@
     \column {
       \abs-fontsize #8
       \concat {
-	"Typeset using " \with-url #"http://www.lilypond.org" "LilyPond " ©" 2022-2023 ""by " \maintainer " — " \footer
+	"Typeset using " \with-url #"http://www.lilypond.org" "LilyPond " ©" 2022-2024 ""by " \maintainer " — " \footer
       }
       \concat {
 	\concat {

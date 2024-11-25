@@ -18,6 +18,7 @@ rH = \markup \italic\small { "r.H" }
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
+  \label #'KlavierstuckeI
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \override DynamicText.Y-offset = #-2.4
