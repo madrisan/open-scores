@@ -94,18 +94,26 @@ BassLine = \relative {
         \line { \abs-fontsize #38 \bold "Goldberg Variationen" }
         \null\null
         \line {
-          \abs-fontsize #14 \bold\italic "Clavier Ubung bestehend in einer Aria mit verschiedenen"
+          \abs-fontsize #12 \bold\italic "Clavier Ubung bestehend in einer Aria mit verschiedenen"
         }
-        \line { \abs-fontsize #14 \bold\italic "Verænderungen vors Clavicimbal mit 2 Manualen" }
+        \line { \abs-fontsize #12 \bold\italic "Verænderungen vors Clavicimbal mit 2 Manualen" }
+        \line {
+          \abs-fontsize #12 \bold\italic
+          "Denen Liebhabern zur Gemüths-Ergetzung verfertiget von J.S. Bach"
+        }
         \null
         \line {
-          \abs-fontsize #14
+          \abs-fontsize #12
           \italic "Keyboard exercise, consisting of an Aria with diverse variations"
         }
-        \line { \abs-fontsize #14 \italic "for harpsichord with two manuals" }
+        \line { \abs-fontsize #12 \italic "for harpsichord with two manuals." }
+        \line {
+          \abs-fontsize #12 \italic
+          "Composed for connoisseurs, for the refreshment of their spirits, by J.S. Bach"
+        }
         \null\null\null
         \line { \abs-fontsize #28 \bold "BWV 988" }
-        \null\null\null\null
+        \null\null\null
       }
     }
   }
@@ -144,58 +152,9 @@ BassLine = \relative {
     }
   }
 }
+\pageBreak
 
-\markup \center-column {
-  \null\null\null
-  \line {
-    \hspace #19
-    \general-align #Y #DOWN {
-      \epsfile #X #72 #"Johann-Sebastian-Bach-oil-canvas-Elias-Gottlieb-1746.eps"
-    }
-  }
-  \null
-  \line \italic {
-    \hspace #18
-    { \bold "Johann Sebastian Bach" } \char ##x2014 "oil canvas Elias Gottlob Haußmann (1746)"
-  }
-  \null\null
-}
-
-\markup \center-column \abs-fontsize #10 \italic {
-  \null
-  \line {
-    \hspace #2
-    "When Bach's personal copy of the printed edition of the Goldberg Variations was discovered in 1974, it was"
-  }
-  \line {
-    \hspace #2
-    "found to include an appendix in the form of fourteen canons built on the first eight bass notes from the aria."
-  }
-  \line {
-    \hspace #2
-    "It is speculated that the number 14 refers to the ordinal values of the letters in the composer's name:"
-  }
-  \line {
-    \hspace #2
-    "B(2) + A(1) + C(3) + H(8) = 14."
-  }
-  \line {
-    \hspace #2
-    "The portrait of Bach commissioned for his entry into Mizler's"
-    "“Sozietät der Musicalischen Wissenschaften”"
-  }
-  \line {
-    \hspace #2
-    "(Bach waited until he was the 14th member to be admitted to the society), depicts him holding the"
-  }
-  \line {
-    \hspace #2
-    "manuscript to BWV 1076, which is also the thirteenth canon in the Goldberg Canon cycle:"
-  }
-  \null
-}
-
-\include "JS-Bach-BWV1087-13-canon-triplex-six.ly"
+\include "preface.ly"
 \pageBreak
 
 \markup \center-column {

@@ -1,6 +1,6 @@
 ## Process this file with automake to produce Makefile.in
 
-## Copyright (c) 2023 Davide Madrisan <d.madrisan@proton.me>
+## Copyright (c) 2023-2024 Davide Madrisan <d.madrisan@proton.me>
 ##
 ## This program is free software: you can redistribute it and/or modify
 ## it under the terms of the GNU General Public License as published by
@@ -62,7 +62,8 @@ EXTRA_DIST = JS-Bach-BWV988-Goldberg-Variationen.ly \
 	     parts/bach-goldberg-variationen-27-variatio.ly \
 	     parts/bach-goldberg-variationen-28-variatio.ly \
 	     parts/bach-goldberg-variationen-29-variatio.ly \
-	     parts/bach-goldberg-variationen-30-variatio.ly
+	     parts/bach-goldberg-variationen-30-variatio.ly \
+	     preface.ly
 
 all: $(BUILT_SOURCES) JS-Bach-BWV988-Goldberg-Variationen
 

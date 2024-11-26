@@ -13,6 +13,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - J.S. Bach: Goldberg Variationen - Add an index page
 - J.S. Bach: Goldberg Variationen - Mark with colors the Aria bass theme and the folksongs in 988/30
 - J.S. Bach: Ouverture nach Französischer Art (BWV831) - add and index page
+- Arnold Schoenberg: Sechs kleine Klavierstücke op.19 - add and index page
+- J.S. Bach: Goldberg Variationen - Add a foreword page (in english)
 
 ### Fixed
 
