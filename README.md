@@ -1,6 +1,7 @@
 ![Release Status](https://img.shields.io/badge/status-in--progress-brightgreen.svg)
 [![License](https://img.shields.io/badge/License-CC--BY--NC--4.0-blue.svg)](https://spdx.org/licenses/CC-BY-4.0.html)
 [![Latest Release](https://img.shields.io/badge/download-latest--version-blue.svg)](https://github.com/madrisan/open-scores/releases)
+![GitHub All Releases](https://img.shields.io/github/downloads/madrisan/open-scores/total.svg?style=flat-square)
 
 # :musical_score: Open Scores for Piano encoded using LilyPond
 
