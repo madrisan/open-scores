@@ -218,7 +218,14 @@ Alto = \context Voice = "two" \relative c' {
   | s2 b4 c!
   | <b e> <c e> <b d> <a c>
   %40
-  | <a d>~ a16. c32 b c b a <gis b>8. c16 q32 c q c q c q c
+  | \set minimumBeamSubdivisionInterval = \musicLength 8
+    \set maximumBeamSubdivisionInterval = \musicLength 16
+    \set subdivideBeams = ##t
+    <a d>4~
+    a16.
+    \set stemLeftBeamCount = #3 \set stemRightBeamCount = #2
+    c32 b c b a <gis b>8. c16 q32 c q c q c q c
+    \set subdivideBeams = ##f
   | a2 c16 d32 e c16 d32 e b16 c32 d a16 b32 c
   | e,2\rest gis8 a16 b a8. gis16
   | e1
@@ -281,7 +288,11 @@ Bass = \context Voice = "four" \relative c' {
   | d dis r16 e d e r c b c
   | r gis fis gis r a gis a r gis fis gis r a g a
   %40
-  | d,32 e f g a b c d~ <d, d'>4~ d'8. e16 d32 e d e d e d e
+  | \set minimumBeamSubdivisionInterval = \musicLength 8
+    \set maximumBeamSubdivisionInterval = \musicLength 16
+    \set subdivideBeams = ##t
+    d,32 e f g a b c d~ <d, d'>4~ d'8. e16 d32 e d e d e d e
+    \set subdivideBeams = ##f
   | c16 d32 e c16 d32 e b16 c32 d a16 b32 c e,2_~
   | e1
   | a,\fermata
