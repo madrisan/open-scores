@@ -159,7 +159,7 @@ Soprano = \context Voice = "one" \relative c'' {
   %40
   | f!~ f e2
   | <c e> s
-  | e16\rest c b a g fis gis a f'\rest b, cis d! cis8.\trill b16
+  | e16\rest c b a b fis gis a f'\rest b, cis d! cis8.\trill b16
   | <a cis>1\fermata
     \fine
 }
