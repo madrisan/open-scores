@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [v59] - unreleased
 
+### Added
+
+- Dietric Buxtehude: Canzonetta in a BuxWV225
+
 ### Changed
 
 - J.S. Bach: Goldberg Variationen - Update pagination (again)

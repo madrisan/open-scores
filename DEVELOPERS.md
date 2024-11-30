@@ -25,6 +25,7 @@ make -C src/arnold-schoenberg/sechs-kleine-klavierstucke-op.19
 make -C src/baldassare-galuppi/sonata-5-c-major
 make -C src/christoph-willibald-gluck/orfeo-melodie-sgambati
 make -C src/clara-schumann-wieck/soirees-musicales-op.6
+make -C src/dietric-buxtehude/canzonetta-in-a-BuxWV225
 make -C src/domenico-scarlatti/sonata-k001
 make -C src/domenico-scarlatti/sonata-k030
 make -C src/domenico-scarlatti/sonata-k055

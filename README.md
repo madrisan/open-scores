@@ -25,10 +25,6 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
 | Author | Work | Status | :link: Scores |
 |---|---|:---:|:---:|
 | Hans Erich Apostel | Kubiniana Op. 13, *10 Klavierstücke* | II, III, VI, VII, IX | [pdf](https://github.com/madrisan/open-scores/releases/download/v58/Hans-Erich-Apostel-Kubiniana-op.13.pdf) |
-| Alban Berg | Klaviersonate Op. 1 | stalled :zzz: |   |
-| Johannes Brahms | Rapsodie Es-Dur, *from 4 Klavierstücke Op. 119* | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v58/Johannes-Brahms-Klavierstucke-op.119.pdf) |
-|  | Rapsodie h-moll Op.79. I | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v58/Johannes-Brahms-Rhapsodie-op.op.79-nr.1.pdf) |
-|  | Rapsodie g-moll Op.79. II | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v58/Johannes-Brahms-Rhapsodie-op.op.79-nr.2.pdf) |
 | Carl Philipp Emanuel Bach | Solfeggio c-Moll (“Solfeggietto”) Wq 117/2, H.220 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v58/CPE-Bach-H.220-Solfeggio-c-Moll.pdf) |
 | Johann Sebastian Bach :zero: | Clavierübung Teil I - Partiten I BWV 825 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v58/JS-Bach-BWV825-Partita-1.pdf) |
 |  | Clavierübung Teil I - Partiten II BWV 826 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v58/JS-Bach-BWV826-Partita-2.pdf) |
@@ -75,7 +71,12 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
 | Bach / Stark | Siciliano BWV 1031 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v58/JS-Bach-Stark-Siciliano-BWV1031.pdf) |
 | Bach / Stradal | Organ Sonata 4 Andante BWV 528 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v58/JS-Bach-Stradal-Organ-Sonata-4-Andante-BWV528.pdf) |
 | Ludwig van Beethoven | Klaviersonate Nr.8 Opus 13 - "Grande Sonate Pathétique" | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v58/Ludwig-van-Beethoven-Klaviersonate-8-op.13.pdf) |
+| Alban Berg | Klaviersonate Op. 1 | :zzz: |   |
+| Johannes Brahms | Rapsodie Es-Dur, *from 4 Klavierstücke Op. 119* | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v58/Johannes-Brahms-Klavierstucke-op.119.pdf) |
+|  | Rapsodie h-moll Op.79. I | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v58/Johannes-Brahms-Rhapsodie-op.op.79-nr.1.pdf) |
+|  | Rapsodie g-moll Op.79. II | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v58/Johannes-Brahms-Rhapsodie-op.op.79-nr.2.pdf) |
 | Ferruccio Busoni | Drei Albumblätter  BV 289 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v58/Ferruccio-Busoni-BV289-Drei-Albumblatter.pdf) |
+| Dietric Buxtehude | Canzonetta in a BuxWV 225 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v59/Dietric-Buxtehude-BuxWV225-Canzonetta-in-a.pdf) |
 | Alfredo Casella | Deux Contrastes op.31 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v58/Alfredo-Casella-Deux-Contrastes-op.31.pdf) |
 | Frédéric Chopin | Valse (Morgan Library & Museum Manuscript 2024) | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v58/Frederic-Chopin-Valse.pdf) |
 | Baldassare Galuppi |Sonata no. 5 in Do maggiore :four: | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v58/Baldassare-Galuppi-Sonata-5.pdf) |

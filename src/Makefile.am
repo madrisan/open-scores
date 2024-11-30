@@ -23,6 +23,7 @@ SUBDIRS = alfredo-casella \
 	  carl-philipp-emanuel-bach \
 	  christoph-willibald-gluck \
 	  clara-schumann-wieck \
+	  dietric-buxtehude \
 	  domenico-scarlatti \
 	  ferruccio-busoni \
 	  francis-poulenc \

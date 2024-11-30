@@ -83,6 +83,8 @@ AC_CONFIG_FILES([\
   src/christoph-willibald-gluck/orfeo-melodie-sgambati/Makefile \
   src/clara-schumann-wieck/Makefile \
   src/clara-schumann-wieck/soirees-musicales-op.6/Makefile \
+  src/dietric-buxtehude/Makefile \
+  src/dietric-buxtehude/canzonetta-in-a-BuxWV225/Makefile \
   src/domenico-scarlatti/Makefile \
   src/domenico-scarlatti/sonata-k001/Makefile \
   src/domenico-scarlatti/sonata-k030/Makefile \
