@@ -144,7 +144,7 @@ Alto = \context Voice = "two" \relative c' {
   | \stemDown e8 b' a gis fis a e4. fis8 \stemUp dis[ fis_~]
   | \shiftOn fis gis a fis~ fis4 \shiftOff gis2.
   } \\ {
-  | s1 s4 d
+  | s1 s4 dis
   | cis2 dis4 eis2.
   } >>
 }
