@@ -9,6 +9,7 @@ Soprano = \context Voice = "one" \relative c' {
   \stemNeutral\tieNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'Praeludium08
   %1
   | bes'2 r4 r8 bes es4. ges8
   | ces,2 r4 r8 es as4. ces8
@@ -158,7 +159,9 @@ Bass = \context Voice = "four" \relative c {
   | <es as>2 q q
   | <es f>2 q es
   %40
-  | <es, bes' es>1.\fermata
+  | \once\override TextScript.staff-padding = #6
+    \once\override TextScript.self-alignment-X = #CENTER
+    <es, bes' es>1.\fermata_\markup { \hspace #0.0 "Verte Sequitur Fuga" }
     \fine
 }
 

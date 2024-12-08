@@ -27,6 +27,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - J.S. Bach: Das Wohltemperierte Klavier – Erster Teil: Praeludium IV - fix overlapping ties
 - J.S. Bach: Das Wohltemperierte Klavier – Erster Teil: Praeludium V - add fingering
 - J.S. Bach: Das Wohltemperierte Klavier – Erster Teil: Praeludium IV - fix missing sharp
+- J.S. Bach: Das wohltemperierte Klavier – Erster Teil: Praeludium VIII - fix link in index page
 
 ## [v58] - 2024-11-11
 
