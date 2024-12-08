@@ -12,8 +12,9 @@ Soprano = \context Voice = "one" \relative c'' {
   \set Timing.beamExceptions = #'()
   \set Timing.baseMoment = #(ly:make-moment 1/4)
   \set Timing.beatStructure = 1,1,1,1
+  \set Score.rehearsalMarkFormatter = #format-mark-box-alphabet
   %1
-  | r8 e[ a, a'] g16 e f d
+  | r8\mark #1 e[ a, a'] g16 e f d
   | \stemUp e d c b c b c f b, e a, d
   | gis, d' b gis d' b gis b e, d' c b
   | \stemNeutral c b a gis a b c f, b e, a b
@@ -77,7 +78,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | a b c a gis a c a b gis a fis
   | gis f e d c b c a' b, a' b, gis'
   %55
-  | a8 e e16 f e8 e8 e
+  | \mark #2 a8 e e16 f e8 e8 e
   | \grace e f d d16 e d8 d d
   | \grace d e g g16 a g8 g g
   | \grace g a fis fis16 g fis8 fis fis
@@ -145,7 +146,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | c8.\mordent d16 d4.\prallprall c8
     \break
   %110
-  | \stemNeutral c8 e a, a' g16 e f d
+  | \stemNeutral c8\mark #1 e a, a' g16 e f d
   | \stemUp e d c b c b c f b, e a, d
   | gis, d' b gis d' b gis b e, d' c b
   | \stemNeutral c b a gis a b c f, b e, a b
@@ -203,7 +204,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | c b a gis a b c d c a b gis
   | a b c a gis a c a b gis a fis
   | gis f e d c b c a' b, a' b, gis'
-  | a2.
+  | \mark #2 a2.
     \fine
 }
 
