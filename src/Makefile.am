@@ -31,6 +31,7 @@ SUBDIRS = alfredo-casella \
 	  franz-liszt \
 	  hans-erich-apostel \
 	  ildebrando-pizzetti \
+	  jan-pieterszoon-sweelinck \
 	  johannes-brahms \
 	  johann-sebastian-bach \
 	  karol-szymanowski \

@@ -41,6 +41,7 @@ make -C src/franz-liszt/trauervorspiel-und-trauermarsch-s.206
 make -C src/franz-liszt/unstern-s.208
 make -C src/frederic-chopin/valse
 make -C src/ildebrando-pizzetti/sogno
+make -C src/jan-pieterszoon-sweelinck/fantasia-cromatica-SwWV258
 make -C src/johann-sebastian-bach/cembalo-konzert-largo-BWV1056-kempff
 make -C src/johann-sebastian-bach/chaconne-fur-violine-busoni-BWV1004
 make -C src/johann-sebastian-bach/chorale-preludes/BWV615-Busoni
