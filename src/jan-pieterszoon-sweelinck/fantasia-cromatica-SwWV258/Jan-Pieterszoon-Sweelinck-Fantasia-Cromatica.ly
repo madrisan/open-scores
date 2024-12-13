@@ -112,6 +112,8 @@ Soprano = \context Voice = "one" \relative c'' {
   \stemUp\tieUp
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \set minimumBeamSubdivisionInterval = \musicLength 8
+  \set maximumBeamSubdivisionInterval = \musicLength 16
   %1
   | R1*4
   | a1
@@ -230,8 +232,71 @@ Soprano = \context Voice = "one" \relative c'' {
   | R1
   %100
   | d4\rest a a b
+  | c a c b8 a
+  | g4 c a g8 f
+  | e4 e e fis
+  | g2. g4
+  %105
+  | a4 f f g
+  | a f a g8 f
+  | e4 e e fis
+  | g e g f8 e
+  | d4 d d e
+  %110
+  | f d f e8 d
+  | c4 f f16 d e f g e f g
+  | a bes a g f e f g a4 g8 f
+  | e16 g a b c4 c d
+  | e c e d8 c
+  %115
+  | b8 c16 d e8 d c4 b8 a
+  | g2. a4
+  | b4 d c b8 a
+  | gis4 \once\tieDashed a~ a16 gis a gis a gis fis gis
+  | a1
+  %120
+  | R1
+  | r2 r4 a
+  | e' d cis b
+  | a g f e
+  | g2. a4
+  %125
+  | bes c d2~
+  | d4 cis8 b cis4. d8
+  | e2 d4 cis
+  | d a a2
+  | d4\rest b e4. d8
+  %130
+  | c4 b e2~
+  | e4 e d cis
+  | d a d2~
+  | d4 d cis b
+  | cis1
+  %135
+  | d4\rest a d4. c8
+  | b4 a g f
+  | e g c4. b8
+  | a4 g f e
+  | f g a2
+  %140
+  | a1
+  | a
+  | gis
+  | g
+  | fis
+  %145
+  | f
+  | e2 \stemNeutral d16 e f g a b c d
+  | e f g f d e f e f e f e f e d e
+  | f d d e f a, b c d d, e f
+    \set subdivideBeams = ##t
+    g32 a bes a g f e d
+    \set subdivideBeams = ##f
+  | cis4 a' a a
+  %150
+  | gis g fis f
 
-  | R1*97
+  | R1*47
     \fine
 }
 
@@ -371,6 +436,71 @@ Alto = \context Voice = "two" \relative c' {
   | e f e d
   %100
   | e2 d
+  | c4\rest c c d
+  | e e e d
+  | c2 a\rest
+  | d1
+  %105
+  | d
+  | d
+  | cis
+  | c
+  | b
+  %110
+  | bes
+  | a2 a\rest
+  | \override MultiMeasureRest.staff-position = #-8
+    R1
+  | g4\rest e' e f
+  | g1
+  %115
+  | g2 g4 f
+  | e1
+  | c4\rest b e2
+  | c8\rest e d c b2
+  | a a4\rest d
+  %120
+  | f e d c
+  | \change Staff = "lower" \voiceThree
+    b a g f
+  | \hideStaffSwitch \change Staff = "upper" \voiceTwo
+    R1*4
+  %126
+  | e'2\rest d4\rest a'
+  | c4. b8 a4 g
+  | f8 g16 f e4. f16 e d e f d
+  | e2 c4\rest b
+  %130
+  | e4. d8 c4 b
+  | \once\tieDashed a1~
+  | a2 e'\rest
+  | e\rest d4\rest e
+  | a4. g8 fis4 e
+  %135
+  | d2 b4\rest a
+  | d4. c8 b4 a
+  | g2 a\rest
+  | a4\rest g c4. b8
+  | a4 d4. e8 cis4
+  %140
+  | d d d d
+  | cis2 c
+  | a4\rest e' e e
+  | d1
+  | a4\rest d d d
+  %145
+  | c1
+  | c2 s
+  | \change Staff = "lower" \voiceThree
+    c2. c4
+  | bes a2 g4
+  | a a a8 b
+    \change Staff = "upper" \voiceTwo
+    c d
+  %150
+  | e8
+    \change Staff = "lower" \voiceThree
+    e,16 f \stemNeutral g a b c d8 d,16 e f g a b
 }
 
 Tenor = \context Voice = "three" \relative c {
@@ -495,7 +625,62 @@ Tenor = \context Voice = "three" \relative c {
   | \once\override Voice.Rest.X-offset = #0.3
     c4\rest a a b
   | c a c b8 a
+  %110
   | gis4 a f e8 d
+  | e4 a a b
+  | c a c b8 a
+  | g4 a g a
+  | bes g bes a8 g
+  %115
+  | f4. g8 a2
+  | \override MultiMeasureRest.staff-position = #5
+    R1*5
+  %111
+  | c4\rest a a b
+  | c a c b!8 a
+  | g1
+  | c4\rest c c d
+  %115
+  | e c e d8 c
+  | b4 c c b8 a
+  | gis2 a4 g8 f
+  | e1
+  | f
+  %120
+  | s1*2
+  | e1
+  | a2\rest a4\rest a
+  | d c b a
+  %125
+  | g f e d
+  | e2 a
+  | a1
+  | a
+  | gis
+  %130
+  | g
+  | fis
+  | f
+  | e
+  | e4\rest e a4. g8
+  %135
+  | fis4 e d2
+  | d1
+  | e1*1/2 g4\rest g
+  | c4. b8 a4 g
+  | f e8 d e2
+  %140
+  | d8 e f g a2
+  | s1
+  | b
+  | bes
+  | a
+  %145
+  | a2 a4 a
+  | g2 s
+  | g1
+  | \once\override NoteColumn.force-hshift = #0.4 f2 d
+  | \once\override NoteColumn.force-hshift = #0.4 e d\rest
 
 }
 
@@ -601,8 +786,68 @@ Bass = \context Voice = "four" \relative c {
   | c4 d e f
   %100
   | e cis d c8 b
+  | a2 b\rest
+  | a4\rest a a b
+  | c a c b8 a
+  | g2 g'4 f8 e
+  %105
+  | d4 d d e
+  | f16 g f e d c d e f d e f g e f g
+  | a8 g16 f e d cis b a8 e' a a,
+  | e'16 f e d c b c d e c d e f d e f
+  | g8 f16 e d c b a g8 d' g g,
+  %110
+  | d'16 e d c bes a bes c d e f d e c d e
+  | f4 d f e8 d
+  | c4 d a16 b! c a b c d b
+  | \once\tieDashed c1~
+  | c2 b\rest
+  %115
+  | c4\rest c c d
+  | e c e d8 c
+  | b2 a
+  | R1
+  | d
+  %120
+  | d
+  | d
+  | cis
+  | c
+  | b
+  %125
+  | bes
+  | a
+  | a4\rest a f' e
+  | d c8 d16 e f2
+  | e1~
+  %130
+  | e
+  | g,2\rest a4\rest a
+  | d4. c8 bes4 a
+  | g2 \once\tieDashed a~
+  | a a4\rest a
+  %135
+  | d4. c8 b4 a
+  | g a b2
+  | c4. b8 a4 g
+  | f e f c'
+  | d bes a2
+  %140
+  | f4\rest d' d8 e f g
+  | a g16 f e d cis b a e' d e a, a' g a
+  | e b cis d e fis gis a gis8 e4 fis8
+  | g16 d e f g bes, c d g, d' e f g g, bes c
+  | d e fis g a fis g e fis d e cis d d, d' e
+  %145
+  | f f, c' bes a g f e f g a b c d e f
+  | c d e f g a b c s2
+  | c,1
+  | d2 bes
+  | a g\rest
+  %150
+  | s1
 
-  | R1*97
+  | R1*47
     \fine
 }
 
