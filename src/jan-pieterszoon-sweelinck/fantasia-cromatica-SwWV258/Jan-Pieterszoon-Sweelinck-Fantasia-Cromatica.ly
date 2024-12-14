@@ -186,6 +186,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | a a
   | gis g
   | fis f
+  \pageBreak
   | e2. fis4
   | gis8 a b cis d4 d,8 e
   %65
@@ -215,6 +216,7 @@ Soprano = \context Voice = "one" \relative c'' {
   %85
   | d4 g g8 f e d
   | c1
+  \break
   | d'4\rest c c8 b a g
   | f2 g4 bes
   | bes8 a g f g f16 e d e f g
@@ -223,7 +225,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | a g g8 f e d
   | c4 e e8 d c b
   | a4 d4. e8 cis4
-  | d2 r
+  | d2 \once\override Voice.Rest.X-offset = #-0.6 r
   %95
   | d'4\rest a a b
   | c a c b8 a
@@ -295,8 +297,73 @@ Soprano = \context Voice = "one" \relative c'' {
   | cis4 a' a a
   %150
   | gis g fis f
-
-  | R1*47
+  | \stemUp e e' e e
+  | dis d cis c
+  | b d d d
+  | cis c b bes
+  %155
+  | \stemNeutral a c c c
+  | b bes a a
+  | \stemUp g bes bes bes
+  | a a g g
+  | fis g g g
+  %160
+  | fis f e e
+  | \stemNeutral\tieNeutral d16 e f g a b c d e a, a b c b c a
+  | b gis gis a b a b g a fis fis g a g a f
+  | g g g a b c d e d c b a b a b g
+  | a g fis g a b c d e f! g a
+    \set maximumBeamSubdivisionInterval = \musicLength 8
+    \set subdivideBeams = ##t
+    g32 f e d c b a g
+    \set subdivideBeams = ##f
+  %165
+  | f16 e f g a b c d c a f' e d c b a
+  | g e e' d c b a g f d d' c b a g f
+  | \tuplet 6/4 { e16 d c d e f } \tuplet 6/4 { g f g a g f }
+    \tuplet 6/4 { e d e f e f } \tuplet 6/4 { g f g a g a }
+  | \omit TupletNumber
+    \tuplet 6/4 { b a b c b c }
+    \tuplet 6/4 { d c b a g \once\override Accidental.transparent = ##t f^\shouldbesharp }
+    \tuplet 6/4 { e' d cis b a g } \tuplet 6/4 { c b a g f! e }
+  | d4~ \tuplet 6/4 { d16 c b c d e } \tuplet 6/4 { fis e d e fis g } \tuplet 6/4 { a g fis g a b }
+  %170
+  | \tuplet 6/4 { cis b a b cis d } \tuplet 6/4 { e d c d e f }
+    \tuplet 6/4 { g f g a g f } \tuplet 6/4 { g f g f e d }
+  | cis1
+  | e4\rest \stemUp\tieUp d d d
+  | cis c b bes
+  | a2 d4\rest g,
+  %175
+  | g4 g fis f
+  | e ees d4. e8
+  | f4. g8 a2
+  | d4\rest d d d
+  | cis c b bes
+  %180
+  | a4. b8 cis d e c
+  | d4. e8 f4 e8 d
+  | cis[ d e d16 c] b8[ c d c16 b]
+  | a8[ b c b16 a] g8 a4 g8
+  | f4 e2 d4
+  %185
+  | cis2 d'\rest
+  | d8\rest a a a gis g fis f
+  | e4 f e d
+  | cis16 d e d e d b cis d cis d cis d cis b cis
+  | d8 d' d d cis c b bes
+  %190
+  | \override MultiMeasureRest.staff-position = #2
+    a4 bes a g
+  | fis8 d' d d cis c b bes
+  | a4 bes bes bes
+  | a2 g~
+  | \stemNeutral g8 fis16 e fis g a bes a g a g a g fis e
+  %195
+  | fis16 d e fis g a b c d e fis g \undo\omit TupletNumber \tuplet 6/4 { a g a g fis e }
+  | \tuplet 6/4 { g fis g fis e d } \tuplet 6/4 { e d e d c b }
+    \tuplet 6/4 { c b c b a g } \tuplet 6/4 { a g a g fis e }
+  | <d fis>1\fermata
     \fine
 }
 
@@ -318,9 +385,9 @@ Alto = \context Voice = "two" \relative c' {
   | a b c d
   | e b2 cis4
   | d a2 b4
-  | c16
-    \change Staff = "lower" \voiceThree
-    b a b c a b g a g f g a f g e
+  | c16 b a b c a b g
+    \showStaffSwitch \change Staff = "lower" \voiceThree
+    a g f g a f g e
   %10
   | f4 g a g8 f
   | e4. fis8 g4 a
@@ -364,15 +431,23 @@ Alto = \context Voice = "two" \relative c' {
   | dis d
   %45
   | cis c
-  | b b4\rest e
-  | a, b c8 d e f
+  | \change Staff = "lower" \voiceThree
+    b
+    \change Staff = "upper" \voiceTwo
+    b4\rest e
+  | \change Staff = "lower" \voiceThree
+    a, b c8 d e
+    \hideStaffSwitch \change Staff = "upper" \voiceTwo
+    f
   | g2 g
-  | f4. g8_\shouldbesharp a4 b
+  | f4.
+    \once\override Staff.TextScript.extra-offset = #'(0.4 . 1)
+    g8_\shouldbesharp a4 b
   %50
   | e,4. fis8 g4 a
   | d,8 e16 f g8 d e2
   | b e
-  | c\rest d
+  | b\rest d
   | e c
   %55
   | d2. e4
@@ -387,10 +462,13 @@ Alto = \context Voice = "two" \relative c' {
   | b bes
   | a2. b4
   | c1
-  | b
+  | \showStaffSwitch \change Staff = "lower" \voiceThree
+    b
   %65
   | a
-  | g4 c d d,\rest
+  | g4
+    \change Staff = "upper" \voiceTwo
+    c d d,\rest
   | f\rest d' c2
   | c4
     \showStaffSwitch
@@ -405,10 +483,12 @@ Alto = \context Voice = "two" \relative c' {
   | a4 d d8 c b a
   | g4 a8 b c b c d
   %75
-  | e d c b c4 d
+  | \change Staff = "lower" \voiceThree
+    e d c b c4 d
   | e b e2~
   | e4 d8 c d2
-  | e8 d c b a2
+  | \change Staff = "upper" \voiceTwo
+    e8 d c b a2
   | d1
   %80
   | e4 g,\rest e' d8 c
@@ -427,9 +507,9 @@ Alto = \context Voice = "two" \relative c' {
   | b bes
   | a4 c c8 b a g
   | f4 bes2 a8 g
-  | f4 d' d e
+  | f4 d' \stemUp d e
   %95
-  | f d f e8 d
+  | \stemDown f d f e8 d
   | c4 d e f
   | e d8 c b2
   | a4 d c d
@@ -439,7 +519,7 @@ Alto = \context Voice = "two" \relative c' {
   | c4\rest c c d
   | e e e d
   | c2 a\rest
-  | d1
+  | \once\override NoteColumn.force-hshift = #0.6 d1
   %105
   | d
   | d
@@ -450,48 +530,69 @@ Alto = \context Voice = "two" \relative c' {
   | bes
   | a2 a\rest
   | \override MultiMeasureRest.staff-position = #-8
-    R1
+    \once\override MultiMeasureRest.X-offset = #-0.6 R1
   | g4\rest e' e f
   | g1
   %115
   | g2 g4 f
   | e1
-  | c4\rest b e2
-  | c8\rest e d c b2
-  | a a4\rest d
+  | c4\rest
+    \change Staff = "lower" \voiceThree
+    b
+    \change Staff = "upper" \voiceTwo
+    e2
+  | c8\rest e
+    \hideStaffSwitch \change Staff = "lower" \voiceThree
+    d c b2
+  | a
+    \showStaffSwitch \change Staff = "upper" \voiceTwo
+    a4\rest d
   %120
   | f e d c
   | \change Staff = "lower" \voiceThree
     b a g f
   | \hideStaffSwitch \change Staff = "upper" \voiceTwo
-    R1*4
-  %126
+    R1*2
+  | \once\override MultiMeasureRest.X-offset = #0.6 R1
+  %125
+  | R1
   | e'2\rest d4\rest a'
   | c4. b8 a4 g
   | f8 g16 f e4. f16 e d e f d
-  | e2 c4\rest b
+  | e2 c4\rest
+    \showStaffSwitch \change Staff = "lower" \voiceThree
+    b
   %130
-  | e4. d8 c4 b
+  | \change Staff = "upper" \voiceTwo
+    e4.
+    \change Staff = "lower" \voiceThree
+    d8 c4 b
   | \once\tieDashed a1~
-  | a2 e'\rest
+  | a2
+    \change Staff = "upper" \voiceTwo
+    e'\rest
   | e\rest d4\rest e
   | a4. g8 fis4 e
   %135
-  | d2 b4\rest a
-  | d4. c8 b4 a
+  | d2 b4\rest
+    \change Staff = "lower" \voiceThree
+    a
+  | \change Staff = "upper" \voiceTwo
+    d4. c8 b4 a
   | g2 a\rest
-  | a4\rest g c4. b8
+  | \once\override Voice.Rest.X-offset = #-0.9 d4\rest
+    g, \once\override NoteColumn.force-hshift = #-0.4 c4. b8
   | a4 d4. e8 cis4
   %140
   | d d d d
   | cis2 c
-  | a4\rest e' e e
+  | d,4\rest e' e e
   | d1
-  | a4\rest d d d
+  | c,4\rest d' d d
   %145
   | c1
-  | c2 s
-  | \change Staff = "lower" \voiceThree
+  | \once\override NoteColumn.force-hshift = #-0.4 c2 s
+  | \hideStaffSwitch \change Staff = "lower" \voiceThree
     c2. c4
   | bes a2 g4
   | a a a8 b
@@ -501,6 +602,77 @@ Alto = \context Voice = "two" \relative c' {
   | e8
     \change Staff = "lower" \voiceThree
     e,16 f \stemNeutral g a b c d8 d,16 e f g a b
+  | c8 a16 b \stemDown c
+    \change Staff = "upper" \voiceTwo
+    d e f g8 c,16 d e f g a
+  | b8 b,16 cis d e f g a8[ a,8~] a16 b c! d
+  | e8 b~ b16 c d e fis8 d~ d16 e fis g
+  | a8 e a16 g f e d
+    \change Staff = "lower" \voiceThree
+    \stemDown c b a g f e d
+  %155
+  | \stemNeutral
+    c b a g a b c d e a, c d e c e f
+  | g a b c d g, bes c d d, f g a f a b!
+  | \stemDown c
+    \change Staff = "upper" \voiceTwo
+    d e f g8 f16 e d
+    \change Staff = "lower" \voiceThree
+    \stemDown c bes a g f e d
+  | \stemNeutral c b a g f g a b c d e f g a b c
+  | d a d c b a g f e c g' f e d c b
+  %160
+  | a a' d, e f g a b cis a b cis
+    \set maximumBeamSubdivisionInterval = \musicLength 8
+    \set subdivideBeams = ##t
+    d16 cis d32 cis b cis
+    \set subdivideBeams = ##f
+  | \change Staff = "upper" \voiceTwo
+    s1*10
+  %171
+  | e4\rest a a a
+  | gis g fis f
+  | e2 c4\rest f
+  | f f e e
+  %175
+  | d2 a4\rest d~
+  | d c bes
+    \showStaffSwitch \change Staff = "lower" \voiceThree
+    a8 g
+  | \change Staff = "upper" \voiceTwo
+    g4\rest a a a
+  | \showStaffSwitch \change Staff = "lower" \voiceThree
+    gis g
+    \change Staff = "upper" \voiceTwo
+    e'\rest a
+  | a a gis g
+  %180
+  | fis f e a~
+  | a g a2~
+  | a e\rest
+  | c\rest c8\rest e e e
+  | c2 b\rest
+  %185
+  | f8\rest a' a a gis g fis f
+  | e2. d4
+  | c2. a4
+  | \change Staff = "lower" \voiceThree
+    a1
+  | \hideStaffSwitch \change Staff = "upper" \voiceTwo
+    s1
+  %190
+  | b8\rest d d d cis c b bes
+  | g4\rest a'2 g4
+  | \once\override Staff.TextScript.extra-offset = #'(0.4 . 2)
+    \once\override Accidental.transparent = ##t f_\shouldbesharp d2 d4
+  | d1
+  | \showStaffSwitch \change Staff = "lower" \voiceThree
+    d
+  %195
+  | s
+  | d
+  | \change Staff = "upper" \voiceTwo
+    a
 }
 
 Tenor = \context Voice = "three" \relative c {
@@ -508,6 +680,8 @@ Tenor = \context Voice = "three" \relative c {
   \stemUp\tieUp
   \override Rest.staff-position = #0
   \override MultiMeasureRest.staff-position = #0
+  \override VoiceFollower.color = \greyTextColor
+  \override VoiceFollower.style = #'dashed-line
   \set minimumBeamSubdivisionInterval = \musicLength 8
   \set maximumBeamSubdivisionInterval = \musicLength 16
   %1
@@ -557,7 +731,7 @@ Tenor = \context Voice = "three" \relative c {
   %45
   | a
   | e
-  | a2\rest a
+  | d2\rest \once\stemDown a'
   | e4 f^\shouldbesharp g a
   | b fis2 gis4
   %50
@@ -579,10 +753,10 @@ Tenor = \context Voice = "three" \relative c {
   | e4. fis8 g4 g
   | d e f g
   | a2 a4 a
-  | gis2 g
+  | \once\override NoteColumn.force-hshift = #1 gis2 g
   %65
-  | fis f
-  | e2 g4\rest g
+  | \once\override NoteColumn.force-hshift = #1 fis f
+  | \once\override NoteColumn.force-hshift = #0.4 e2 g4\rest g
   | d4. e8 f g \once\tieDashed a4~
   | a \stemDown g f2
   | \once\override NoteColumn.force-hshift = #-0.4 e4 d e2
@@ -594,10 +768,10 @@ Tenor = \context Voice = "three" \relative c {
   | R1*2
   | f2\rest a
   %75
-  | a a
+  | \stemDown a a
   | gis g
   | fis f
-  | e f
+  | \stemUp e f
   | a4\rest a bes8 a g f
   %80
   | e4 a a8 g f e
@@ -616,9 +790,12 @@ Tenor = \context Voice = "three" \relative c {
   | a\rest g4 g8 f
   | e d c d e2
   | f4 f e2
-  | d8 e f d bes'4 a8 g
+  | d8 e f d
+    \showStaffSwitch \change Staff = "upper" \voiceTwo
+    bes'4 a8 g
   %95
-  | a1
+  | \change Staff = "lower" \voiceThree
+    a1
   | a
   | \override MultiMeasureRest.staff-position = #2
     R
@@ -629,16 +806,23 @@ Tenor = \context Voice = "three" \relative c {
   | gis4 a f e8 d
   | e4 a a b
   | c a c b8 a
-  | g4 a g a
-  | bes g bes a8 g
+  | g4 a g
+    \change Staff = "upper" \voiceTwo
+    a
+  | bes
+    \change Staff = "lower" \voiceThree
+    g bes a8 g
   %115
   | f4. g8 a2
   | \override MultiMeasureRest.staff-position = #5
     R1*5
   %111
   | c4\rest a a b
-  | c a c b!8 a
-  | g1
+  | c a
+    \change Staff = "upper" \voiceTwo
+    c b!8 a
+  | \change Staff = "lower" \voiceThree
+    g1
   | c4\rest c c d
   %115
   | e c e d8 c
@@ -650,7 +834,10 @@ Tenor = \context Voice = "three" \relative c {
   | s1*2
   | e1
   | a2\rest a4\rest a
-  | d c b a
+  | \change Staff = "upper" \voiceTwo
+    d c
+    \change Staff = "lower" \voiceThree
+    b a
   %125
   | g f e d
   | e2 a
@@ -667,21 +854,73 @@ Tenor = \context Voice = "three" \relative c {
   | fis4 e d2
   | d1
   | e1*1/2 g4\rest g
-  | c4. b8 a4 g
+  | \change Staff = "upper" \voiceTwo
+    \once\override NoteColumn.force-hshift = #0.2 c4. b8 a4
+    \change Staff = "lower" \voiceThree
+    g
   | f e8 d e2
   %140
   | d8 e f g a2
-  | s1
-  | b
+  | R1
+  | \hideStaffSwitch \change Staff = "upper" \voiceTwo
+    b
   | bes
   | a
   %145
   | a2 a4 a
-  | g2 s
+  | g2
+    \change Staff = "lower" \voiceThree
+    s
   | g1
   | \once\override NoteColumn.force-hshift = #0.4 f2 d
   | \once\override NoteColumn.force-hshift = #0.4 e d\rest
-
+  | s1*11
+  %161
+  | d'4 <c e> c8 d e c
+  | e b e, e' d a d, d'
+  | e c b a b c d b
+  | d a4 a8 b a b c
+  %165
+  | d d c b a b c d
+  | g, a b c f, g a b
+  | c4 b g b
+  | fis b2 a4
+  | b2 a4 fis
+  %170
+  | e4 a2 g4
+  | a4. g16 f e2
+  |\override MultiMeasureRest.staff-position = #2
+    R1
+  | a2\rest a4\rest d
+  | d d cis c
+  %175
+  | b bes a2~
+  | a a2\rest
+  | f2 e
+  | s2 fis4 f
+  | e2 b'4\rest d
+  %180
+  | d d cis c
+  | b bes a8 b c d
+  | e d cis d e[ d16 c b8 c]
+  | d8[ c16 b a8 b] c4 b
+  | a8\rest a a a gis g fis f
+  %185
+  | e2. d4
+  | cis2. d4
+  | e8 a a a gis g fis f
+  | e1
+  | fis4. g8 a4 g
+  %190
+  | fis2 f\rest
+  | a4 fis2 g4
+  | a g d4. e8
+  | f g a f bes2
+  | \tieDown a1~
+  %195
+  | a~
+  | a
+  | d,
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -757,7 +996,10 @@ Bass = \context Voice = "four" \relative c {
   %70
   | \once\tieDashed d~
   | d
-  | R1*6
+  | R1*3
+  | \once\override MultiMeasureRest.X-offset = #-0.8 R1
+  | \once\override MultiMeasureRest.X-offset = #-1.4 R
+  | \once\override MultiMeasureRest.X-offset = #-0.6 R
   | g,2\rest d'
   | d d
   %80
@@ -844,10 +1086,49 @@ Bass = \context Voice = "four" \relative c {
   | c,1
   | d2 bes
   | a g\rest
-  %150
-  | s1
-
-  | R1*47
+  | s1*11
+  %161
+  | r4 a' a a
+  | gis g fis f
+  | e g g g
+  | fis f e e
+  %165
+  | d f f f
+  | e e d d
+  | c e e e
+  | dis d cis c
+  | b d d d
+  %170
+  | cis c b bes
+  | a1
+  | R1*4
+  %176
+  | b2\rest a4\rest d
+  | d d cis c
+  | b bes \once\tieDashed a2~
+  | a8 b c d e f g4
+  %180
+  | d8 e f g a2
+  | b,2\rest b4\rest a'
+  | a a gis g
+  | fis f e2
+  | a,1
+  %185
+  | a
+  | a
+  | a
+  | a
+  | d
+  %190
+  | d
+  | d
+  | d4 g,4. a8 bes c
+  | d e f d g4 g,
+  | d'1~
+  %195
+  | d~
+  | d
+  | d,\fermata
     \fine
 }
 
