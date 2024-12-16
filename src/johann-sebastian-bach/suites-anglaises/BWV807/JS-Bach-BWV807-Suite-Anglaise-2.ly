@@ -103,9 +103,11 @@
 \include "./parts/bach-suite-anglaise-2-2-allemande.ly"
 \pageBreak
 \include "./parts/bach-suite-anglaise-2-3-courante.ly"
-%\pageBreak
-\include "./parts/bach-suite-anglaise-2-4-sarabande.ly"
-%\pageBreak
+\pageBreak
+\include "./parts/bach-suite-anglaise-2-4-sarabande-1.ly"
+\pageBreak
+\include "./parts/bach-suite-anglaise-2-4-sarabande-2.ly"
+\pageBreak
 \include "./parts/bach-suite-anglaise-2-5-bourree-1.ly"
 \pageBreak
 \include "./parts/bach-suite-anglaise-2-5-bourree-2.ly"

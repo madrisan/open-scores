@@ -27,7 +27,8 @@ EXTRA_DIST = JS-Bach-BWV807-Suite-Anglaise-2.ly \
 	     parts/bach-suite-anglaise-2-1-prelude.ly \
 	     parts/bach-suite-anglaise-2-2-allemande.ly \
 	     parts/bach-suite-anglaise-2-3-courante.ly \
-	     parts/bach-suite-anglaise-2-4-sarabande.ly \
+	     parts/bach-suite-anglaise-2-4-sarabande-1.ly \
+	     parts/bach-suite-anglaise-2-4-sarabande-2.ly \
 	     parts/bach-suite-anglaise-2-5-bourree-1.ly \
 	     parts/bach-suite-anglaise-2-5-bourree-2.ly \
 	     parts/bach-suite-anglaise-2-6-gigue.ly
