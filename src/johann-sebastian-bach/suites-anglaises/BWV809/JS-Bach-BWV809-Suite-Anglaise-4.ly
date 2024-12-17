@@ -98,6 +98,9 @@
   }
 }
 
+\include "./index.ly"
+\pageBreak
+
 \include "./parts/bach-suite-anglaise-4-1-prelude.ly"
 \pageBreak
 \include "./parts/bach-suite-anglaise-4-2-allemande.ly"

@@ -10,6 +10,7 @@ Soprano = \context Voice = "one" \relative c' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \override Script.direction = #UP
+  \label #'SuiteIIGigue
   \partial 8 e8
   %1
   \repeat volta 2 {

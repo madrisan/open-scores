@@ -13,6 +13,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \set Timing.baseMoment = #(ly:make-moment 1/4)
   \set Timing.beatStructure = 1,1,1,1
   \set Score.rehearsalMarkFormatter = #format-mark-box-alphabet
+  \label #'SuiteIIPrelude
   %1
   | r8\mark #1 e[ a, a'] g16 e f d
   | \stemUp e d c b c b c f b, e a, d

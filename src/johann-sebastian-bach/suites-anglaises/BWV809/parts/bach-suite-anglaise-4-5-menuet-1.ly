@@ -7,6 +7,7 @@ Global = {
 Upper = \relative c'' {
   \clef treble
   \Global
+  \label #'SuiteIVMenuetI
   f,8 g  g4.\prall f16 g
   \repeat volta 2 {
   | a8 bes c4 f

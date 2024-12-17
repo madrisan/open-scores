@@ -7,9 +7,9 @@ Global = {
 Upper = \relative c'' {
   \clef treble
   \Global
+  \label #'SuiteIVAllemande
   \partial 16
   \repeat volta 4 {
-
   \stemUp f16
   | << { f8~ f32 f e d } \\ c8 \\ a >> c16 d c bes
     \tupletUp \tuplet 3/2 8 {

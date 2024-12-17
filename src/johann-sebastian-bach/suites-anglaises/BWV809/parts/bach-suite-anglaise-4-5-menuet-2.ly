@@ -7,6 +7,7 @@ Global = {
 Upper = \relative c'' {
   \clef treble
   \Global
+  \label #'SuiteIVMenuetII
   \repeat volta 2 {
   | f4 e d
   | cis\prall \appoggiatura cis8 d2

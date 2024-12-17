@@ -10,6 +10,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \mergeDifferentlyDottedOn
+  \label #'SuiteIIIGigue
   \repeat volta 2 {
   \partial 8 d8
   %1

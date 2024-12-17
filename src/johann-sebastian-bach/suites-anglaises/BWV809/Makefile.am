@@ -28,6 +28,7 @@ EXTRA_DIST = JS-Bach-BWV809-Suite-Anglaise-4.ly \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
+	     index.ly \
 	     logo.ly \
 	     parts/bach-suite-anglaise-4-1-prelude.ly \
 	     parts/bach-suite-anglaise-4-2-allemande.ly \

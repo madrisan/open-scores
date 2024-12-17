@@ -12,6 +12,7 @@ Soprano = \context Voice = "one" \relative c {
   %\set Timing.beamExceptions = #'()
   %\set Timing.baseMoment = #(ly:make-moment 3/16)
   %\set Timing.beatStructure = 1,1,1,1,1,1,1,1
+  \label #'SuiteIPrelude
   %1
   | \change Staff = "lower"
     \stemDown a16[ cis e] \stemUp a[ gis fis] \stemDown e[ gis b] \stemUp d[ cis b]

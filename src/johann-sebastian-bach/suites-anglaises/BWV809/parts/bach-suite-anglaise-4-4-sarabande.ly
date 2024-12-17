@@ -7,6 +7,7 @@ Global = {
 Upper = \relative c'' {
   \clef treble
   \Global
+  \label #'SuiteIVSarabande
   \repeat volta 2 {
     << { c8. ees32 d  ees2 }
         \\ { \once \stemUp \override NoteColumn.force-hshift = #0.4 a,4

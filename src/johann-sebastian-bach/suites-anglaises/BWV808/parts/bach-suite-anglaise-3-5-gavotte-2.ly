@@ -9,6 +9,7 @@ Soprano = \context Voice = "one" \relative c' {
   \stemNeutral\tieNeutral\slurNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'SuiteIIIGavotteII
   \repeat volta 2 {
   \partial 2 d4 e8( c)
   %1

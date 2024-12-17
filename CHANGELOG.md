@@ -10,6 +10,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Jan Pieterszoon Sweelinck: Fantasia Cromatica SwWV 258
 - J.S. Bach: Suite Anglaise 2 BWV807: Add Sarabande with agréments
 
+### Changed
+
+- J.S. Bach: Suite Anglaise 1 BWV806: add index page
+- J.S. Bach: Suite Anglaise 2 BWV807: add index page
+- J.S. Bach: Suite Anglaise 3 BWV808: add index page
+- J.S. Bach: Suite Anglaise 4 BWV809: add index page
+- J.S. Bach: Suite Anglaise 5 BWV810: add index page
+- J.S. Bach: Suite Anglaise 6 BWV811: add index page
+
 ## [v59] - 2024-12-08
 
 ### Added
@@ -23,8 +32,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - J.S. Bach: Goldberg Variationen - Add Bach's manuscript image of BWV1087
 - J.S. Bach: Goldberg Variationen - Add an index page
 - J.S. Bach: Goldberg Variationen - Mark with colors the Aria bass theme and the folksongs in 988/30
-- J.S. Bach: Ouverture nach Französischer Art (BWV831) - add and index page
-- Arnold Schoenberg: Sechs kleine Klavierstücke op.19 - add and index page
+- J.S. Bach: Ouverture nach Französischer Art (BWV831) - add an index page
+- Arnold Schoenberg: Sechs kleine Klavierstücke op.19 - add an index page
 - J.S. Bach: Goldberg Variationen - Add a foreword page (in english)
 - J.S. Bach: Suite Anglaise 2 BWV807: Add A B repetition marks to Prelude
 

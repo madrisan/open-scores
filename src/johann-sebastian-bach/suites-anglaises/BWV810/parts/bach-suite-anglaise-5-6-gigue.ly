@@ -9,6 +9,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \stemUp\tieUp
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'SuiteVGigue
   %1
   \repeat volta 2 {
   | b16 c b a g fis
@@ -174,11 +175,11 @@ Alto = \context Voice = "two" \relative c' {
   %42
   | e,8. fis16 d8~
   | d16 e cis4
-  | b8 \change Staff = "lower" \stemUp a a\rest
+  | b8 \change Staff = "lower" \voiceThree \stemUp a a\rest
   %45
   | a\rest g fis
   | a\rest e16 dis e8
-  | \change Staff = "upper" \stemDown
+  | \change Staff = "upper" \voiceTwo \stemDown
     s1*3/8*2
   | \magnifyMusic 0.8 { R1*3/8*4 }
   | b'16 ais b cis d e
@@ -225,13 +226,6 @@ Alto = \context Voice = "two" \relative c' {
   | gis <e b'> g\rest
   | s <e a> <d e>
   | s <dis fis> fis
-}
-
-Tenor = \context Voice = "three" \relative c {
-  \voiceThree
-  \stemUp\tieUp
-  \override Rest.staff-position = #0
-  %1
 }
 
 Bass = \context Voice = "four" \relative c' {
@@ -366,7 +360,6 @@ Bass = \context Voice = "four" \relative c' {
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \clef bass
-      \Tenor
       \Bass
     >>
   >>

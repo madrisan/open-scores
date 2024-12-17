@@ -5,6 +5,7 @@ Global = {
 }
 
 Upper = \relative c' {
+   \label #'SuiteIVPrelude
    \tempo \markup { \italic Vitement }
    %1
    | r16 c-. d-. e-.  f-. g-. a-. f-.  bes-. c-. bes-. a-.  g-. c-. bes-. c-.

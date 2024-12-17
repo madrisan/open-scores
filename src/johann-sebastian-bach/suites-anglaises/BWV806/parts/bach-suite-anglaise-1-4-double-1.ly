@@ -11,6 +11,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \stemUp\tieUp
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'SuiteIDoubleI
   \repeat volta 2 {
   \partial 8 a8
   %1

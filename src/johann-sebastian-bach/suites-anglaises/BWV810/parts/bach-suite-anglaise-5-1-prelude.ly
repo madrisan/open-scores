@@ -9,6 +9,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \stemUp\tieUp
   \override MultiMeasureRest.staff-position = #2
   \override Rest.staff-position = #0
+  \label #'SuiteVPrelude
   %1
   | R1*6/8*2
   | f8\rest e8. e16 b8 g'16 fis g e

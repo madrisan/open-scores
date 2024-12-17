@@ -23,6 +23,7 @@ EXTRA_DIST = JS-Bach-BWV806-Suite-Anglaise-1.ly \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
+	     index.ly \
 	     logo.ly \
 	     macros-schleifer.ly \
 	     macros-slidenotes.ly \

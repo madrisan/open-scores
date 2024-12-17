@@ -23,6 +23,7 @@ EXTRA_DIST = JS-Bach-BWV811-Suite-Anglaise-6.ly \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
+	     index.ly \
 	     logo.ly \
 	     parts/bach-suite-anglaise-6-1-prelude.ly \
 	     parts/bach-suite-anglaise-6-2-allemande.ly \

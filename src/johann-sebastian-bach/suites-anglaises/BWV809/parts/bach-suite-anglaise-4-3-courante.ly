@@ -7,6 +7,7 @@ Global = {
 Upper = \relative c'' {
   \clef treble
   \Global
+  \label #'SuiteIVCourante
   \partial 8
   \repeat volta 4 {
     f8

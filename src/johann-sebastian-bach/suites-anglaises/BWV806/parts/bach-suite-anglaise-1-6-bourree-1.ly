@@ -9,6 +9,7 @@ Soprano = \context Voice = "one" \relative c' {
   \stemNeutral\tieNeutral\slurNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'SuiteIBoureeI
   \partial 4 e4
   %1
   | a8( gis) b( a) cis( b a gis)
