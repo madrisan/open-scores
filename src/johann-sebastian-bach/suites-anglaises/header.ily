@@ -2,9 +2,9 @@
   composer = "Johann Sebastian Bach (1685-1750)"
   date = "between 1725 and 1726"
 
-  footer = "Mutopia-2024/05/20"
+  footer = "Mutopia-2024/07/16"
 
-  lastupdated = "2024 May 20"
+  lastupdated = "2024 July 16"
   license = "Creative Commons Attribution-ShareAlike 4.0"
   maintainerEmail = "d.madrisan@proton.me"
   maintainerWeb = "https://github.com/madrisan/open-scores"
@@ -14,11 +14,11 @@
   mutopiacopyright = "Creative Commons Attribution-ShareAlike 4.0"
   mutopiainstrument = "Harpsichord, Piano"
   mutopiamaintainer = "Davide Madrisan"
-  mutopiaopus = "BWV 807"
-  mutopiatitle = "Suite Anglaise II"
+  mutopiaopus = "BWV 806-811"
+  mutopiatitle = "Suites Anglaises"
 
-  opus = "BWV 807"
-  title = "Suite Anglaise II"
+  opus = "BWV 806-811"
+  title = "Suites Anglaises"
   source = "Based on the Johann Christian Bach's manuscript"
   style = "Baroque"
 

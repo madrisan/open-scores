@@ -1,7 +1,7 @@
 Global = {
   \key a \major
   \time 12/8
-  \include "../global.ly"
+  \include "../../global.ly"
 }
 
 Soprano = \context Voice = "one" \relative c {
@@ -14,6 +14,7 @@ Soprano = \context Voice = "one" \relative c {
   %\set Timing.beatStructure = 1,1,1,1,1,1,1,1
   \label #'SuiteIPrelude
   %1
+  \tempo "Prélude"
   | \change Staff = "lower"
     \stemDown a16[ cis e] \stemUp a[ gis fis] \stemDown e[ gis b] \stemUp d[ cis b]
     \stemDown a[ cis \change Staff = "upper" e] \stemDown a[ gis fis] \stemDown e[ gis b] \stemUp d[ cis b]
@@ -278,9 +279,17 @@ Bass = \context Voice = "four" \relative c' {
   >>
   \header {
     composer = ##f % "Johann Sebastian Bach"
-    opus = ##f % "BWV 806"
-    title = \markup { "Prélude" }
-    subtitle = ##f
+    opus = "BWV 806"
+    title = \markup {
+      \fill-line {
+        \center-column {
+          \line \abs-fontsize #18 \caps {
+            "Suite I" \abs-fontsize #14 { \caps "avec Prélude" }
+          }
+        }
+      }
+    }
+    subtitle = ##f % \markup \abs-fontsize #14 { "Prélude" }
   }
   \layout {
     \context {

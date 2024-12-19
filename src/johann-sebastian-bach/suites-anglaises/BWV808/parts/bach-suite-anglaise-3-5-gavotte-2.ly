@@ -1,6 +1,6 @@
 Global = {
   \key g \major
-  \include "../global.ly"
+  \include "../../global.ly"
   \time 2/2
 }
 

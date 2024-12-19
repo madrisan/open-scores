@@ -18,6 +18,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - J.S. Bach: Suite Anglaise 4 BWV809: add index page
 - J.S. Bach: Suite Anglaise 5 BWV810: add index page
 - J.S. Bach: Suite Anglaise 6 BWV811: add index page
+- J.S. Bach: Suite Anglaise BWV806-811: merge the six suites into a single document
 
 ## [v59] - 2024-12-08
 

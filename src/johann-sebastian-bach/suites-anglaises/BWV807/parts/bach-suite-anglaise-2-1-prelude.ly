@@ -1,7 +1,7 @@
 Global = {
   \key a \minor
   \time 3/4
-  \include "../global.ly"
+  \include "../../global.ly"
 }
 
 Soprano = \context Voice = "one" \relative c'' {
@@ -15,6 +15,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \set Score.rehearsalMarkFormatter = #format-mark-box-alphabet
   \label #'SuiteIIPrelude
   %1
+  \tempo "Prélude"
   | r8\mark #1 e[ a, a'] g16 e f d
   | \stemUp e d c b c b c f b, e a, d
   | gis, d' b gis d' b gis b e, d' c b
@@ -599,17 +600,17 @@ Bass = \context Voice = "four" \relative c' {
   >>
   \header {
     composer = ##f % "Johann Sebastian Bach"
-    opus = ##f % "BWV 807"
+    opus = "BWV 807"
     title = \markup {
       \fill-line {
         \center-column {
-          \line { "Suite II – avec Prélude" }
-          \null
-          \line { "Prélude" }
+          \line \abs-fontsize #18 \caps {
+            "Suite II" \abs-fontsize #14 { \caps "avec Prélude" }
+          }
         }
       }
     }
-    subtitle = ##f
+    subtitle = ##f % \markup \abs-fontsize #14 { "Prélude" }
   }
   \layout {
     \context {

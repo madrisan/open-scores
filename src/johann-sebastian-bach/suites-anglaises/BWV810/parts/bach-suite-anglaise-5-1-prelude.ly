@@ -1,7 +1,7 @@
 Global = {
   \key e \minor
   \time 6/8
-  \include "../global.ly"
+  \include "../../global.ly"
 }
 
 Soprano = \context Voice = "one" \relative c'' {
@@ -208,6 +208,7 @@ Alto = \context Voice = "two" \relative c'' {
   \override Rest.staff-position = #0
   \mergeDifferentlyDottedOn
   %1
+  \tempo "Prélude"
   | g8\rest b8. b16 e,8 c'16 b c a
   | dis,8 fis8. fis16 b,8 b'16 a b fis
   | g fis g a g fis e d e fis e d
@@ -604,9 +605,17 @@ Bass = \context Voice = "four" \relative c' {
   >>
   \header {
     composer = ##f % "Johann Sebastian Bach"
-    opus = ##f % "BWV 810"
-    title = \markup { "Prélude" }
-    subtitle = ##f
+    opus = "BWV 810"
+    title = \markup {
+      \fill-line {
+        \center-column {
+          \line \abs-fontsize #18 \caps {
+            "Suite V" \abs-fontsize #14 { \caps "avec Prélude" }
+          }
+        }
+      }
+    }
+    subtitle = ##f % \markup \abs-fontsize #14 { "Prélude" }
   }
   \layout {
     \context {

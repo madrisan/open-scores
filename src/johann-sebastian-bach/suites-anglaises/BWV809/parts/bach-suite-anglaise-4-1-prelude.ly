@@ -1,14 +1,16 @@
 Global = {
    \key f \major
    \time 4/4
-   \include "../global.ly"
+   \include "../../global.ly"
 }
 
 Upper = \relative c' {
    \label #'SuiteIVPrelude
-   \tempo \markup { \italic Vitement }
+   \tempo \markup { "Prélude" }
    %1
-   | r16 c-. d-. e-.  f-. g-. a-. f-.  bes-. c-. bes-. a-.  g-. c-. bes-. c-.
+   | \once\override Staff.TextScript.extra-offset = #'(-2 . -1.5)
+     r16_\markup { \italic "Vitement" }
+     c-. d-. e-.  f-. g-. a-. f-.  bes-. c-. bes-. a-.  g-. c-. bes-. c-.
    %2-19
    \repeat unfold 2 {
    | a8[f]  f'8.[f16]  f8.\mordent[g16]  e8.\prall[f16]
@@ -329,17 +331,17 @@ Lower = \relative c {
   >>
   \header {
     composer = ##f % "Johann Sebastian Bach"
-    opus = ##f % "BWV 809"
+    opus = "BWV 809"
     title = \markup {
       \fill-line {
         \center-column {
-          \line { "Suite IV – avec Prélude" }
-          \null
-          \line { "Prélude" }
+          \line \abs-fontsize #18 \caps {
+            "Suite IV" \abs-fontsize #14 { \caps "avec Prélude" }
+          }
         }
       }
     }
-    subtitle = ##f
+    subtitle = ##f % \markup \abs-fontsize #14 { "Prélude" }
   }
   \layout {
     \context {

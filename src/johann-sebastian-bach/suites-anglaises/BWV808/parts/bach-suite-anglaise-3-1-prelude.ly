@@ -1,7 +1,7 @@
 Global = {
   \key g \minor
   \time 3/8
-  \include "../global.ly"
+  \include "../../global.ly"
 }
 
 Soprano = \context Voice = "one" \relative c'' {
@@ -10,6 +10,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \override MultiMeasureRest.staff-position = #0
   \label #'SuiteIIIPrelude
   %1
+  \tempo "Prélude"
   | r8 d d
   | bes bes bes
   | a16 g a bes a bes
@@ -798,9 +799,17 @@ Bass = \context Voice = "four" \relative c' {
   >>
   \header {
     composer = ##f % "Johann Sebastian Bach"
-    opus = ##f % "BWV 808"
-    title = \markup { "Prélude" }
-    subtitle = ##f
+    opus = "BWV 808"
+    title = \markup {
+      \fill-line {
+        \center-column {
+          \line \abs-fontsize #18 \caps {
+            "Suite III" \abs-fontsize #14 { \caps "avec Prélude" }
+          }
+        }
+      }
+    }
+    subtitle = ##f % \markup \abs-fontsize #14 { "Prélude" }
   }
   \layout {
     \context {

@@ -1,7 +1,7 @@
 Global = {
   \key d \minor
   \time 9/8
-  \include "../global.ly"
+  \include "../../global.ly"
 }
 
 Soprano = \context Voice = "one" \relative c' {
@@ -11,6 +11,7 @@ Soprano = \context Voice = "one" \relative c' {
   \override Rest.staff-position = #0
   \label #'SuiteVIPrelude
   %1
+  \tempo "Prélude"
   | r4 r8 d f a cis, g' bes
   | a4 d,8 f a d~ d e cis
   | d a c~ \once\override Tie.extra-offset = #'(0 . 1) c4.~
@@ -887,9 +888,17 @@ Bass = \context Voice = "four" \relative c {
   >>
   \header {
     composer = ##f % "Johann Sebastian Bach"
-    opus = ##f % "BWV 811"
-    title = \markup { "Prélude" }
-    subtitle = ##f
+    opus = "BWV 811"
+    title = \markup {
+      \fill-line {
+        \center-column {
+          \line \abs-fontsize #18 \caps {
+            "Suite VI" \abs-fontsize #14 { \caps "avec Prélude" }
+          }
+        }
+      }
+    }
+    subtitle = ##f % \markup \abs-fontsize #14 { "Prélude" }
   }
   \layout {
     \context {

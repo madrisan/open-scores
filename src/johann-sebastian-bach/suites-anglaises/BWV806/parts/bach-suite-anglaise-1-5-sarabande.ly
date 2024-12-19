@@ -1,7 +1,7 @@
 Global = {
   \key a \major
   \time 3/4
-  \include "../global.ly"
+  \include "../../global.ly"
 }
 
 \include "../macros-schleifer.ly"

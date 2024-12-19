@@ -1,7 +1,7 @@
 Global = {
   \key f \major
   \time 3/4
-  \include "../global.ly"
+  \include "../../global.ly"
 }
 
 Upper = \relative c'' {

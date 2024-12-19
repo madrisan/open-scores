@@ -159,12 +159,6 @@ AC_CONFIG_FILES([\
   src/johann-sebastian-bach/siciliano-BWV1031-kempff/Makefile \
   src/johann-sebastian-bach/siciliano-BWV1031-stark/Makefile \
   src/johann-sebastian-bach/suites-anglaises/Makefile \
-  src/johann-sebastian-bach/suites-anglaises/BWV806/Makefile \
-  src/johann-sebastian-bach/suites-anglaises/BWV807/Makefile \
-  src/johann-sebastian-bach/suites-anglaises/BWV808/Makefile \
-  src/johann-sebastian-bach/suites-anglaises/BWV809/Makefile \
-  src/johann-sebastian-bach/suites-anglaises/BWV810/Makefile \
-  src/johann-sebastian-bach/suites-anglaises/BWV811/Makefile \
   src/karol-szymanowski/Makefile \
   src/karol-szymanowski/nine-preludes-op.1/Makefile \
   src/ludwig-van-beethoven/Makefile \

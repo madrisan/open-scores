@@ -1,7 +1,7 @@
 Global = {
   \key a \major
   \time 4/4
-  \include "../global.ly"
+  \include "../../global.ly"
 }
 
 voiceFive  = #(context-spec-music (make-voice-props-set 4)  'Voice)
