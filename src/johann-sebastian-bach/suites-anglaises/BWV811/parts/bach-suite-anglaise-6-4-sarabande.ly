@@ -21,6 +21,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | cis2. b4 a2
   %5
   | c! b2. cis4
+  \break
   | d e cis2.\prall d4
   | e8 f e f f2.\prall e4
   | e1.

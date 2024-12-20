@@ -112,6 +112,7 @@ Bass = \context Voice = "four" \relative c'' {
   | cis' d, b' d, a' d, g d
     \alternative {
       { fis
+        \once\override Staff.TextScript.extra-offset = #'(0 . -2)
         d_\markup { \hspace #0.5 "(Gavotte I da capo)" }
         e d
       }

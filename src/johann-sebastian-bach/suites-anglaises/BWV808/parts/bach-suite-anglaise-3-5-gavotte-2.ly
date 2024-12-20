@@ -81,7 +81,7 @@ Tenor = \context Voice = "three" \relative c' {
   | b d\rest d d\rest
   %15
   | b d\rest
-    \once\override Staff.TextScript.extra-offset = #'(2 . -2)
+    \once\override Staff.TextScript.extra-offset = #'(-3 . -2)
     d_\markup {
       "Repetatur Gavotte I"
     } d\rest

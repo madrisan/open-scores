@@ -125,7 +125,9 @@ Bass = \context Voice = "four" \relative c' {
   | dis8 e a,
   | b4.~
   | b8 cis dis
-  | e a,_\markup { \hspace #1 "Repetatur Passepied I" } b
+  | e
+    \once\override Staff.TextScript.extra-offset = #'(-3 . -2)
+    a,_\markup { \hspace #1 "Repetatur Passepied I" } b
   | e,4
     \tweak direction #DOWN
     \textEndMark \markup { \musicglyph "scripts.dfermata" }
