@@ -51,7 +51,8 @@ EXTRA_DIST = JS-Bach-BWV806-811-Suites-Anglaises.ly \
 	     BWV808/parts/bach-suite-anglaise-3-1-prelude.ly \
 	     BWV808/parts/bach-suite-anglaise-3-2-allemande.ly \
 	     BWV808/parts/bach-suite-anglaise-3-3-courante.ly \
-	     BWV808/parts/bach-suite-anglaise-3-4-sarabande.ly \
+	     BWV808/parts/bach-suite-anglaise-3-4-sarabande-1.ly \
+	     BWV808/parts/bach-suite-anglaise-3-4-sarabande-2.ly \
 	     BWV808/parts/bach-suite-anglaise-3-5-gavotte-1.ly \
 	     BWV808/parts/bach-suite-anglaise-3-5-gavotte-2.ly \
 	     BWV808/parts/bach-suite-anglaise-3-6-gigue.ly \

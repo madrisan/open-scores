@@ -152,9 +152,12 @@
 \pageBreak
 \include "./BWV808/parts/bach-suite-anglaise-3-3-courante.ly"
 \pageBreak
-\include "./BWV808/parts/bach-suite-anglaise-3-4-sarabande.ly"
+\include "./BWV808/parts/bach-suite-anglaise-3-4-sarabande-1.ly"
 \pageBreak
+\include "./BWV808/parts/bach-suite-anglaise-3-4-sarabande-2.ly"
+%\pageBreak
 \include "./BWV808/parts/bach-suite-anglaise-3-5-gavotte-1.ly"
+\pageBreak
 \include "./BWV808/parts/bach-suite-anglaise-3-5-gavotte-2.ly"
 \pageBreak
 \include "./BWV808/parts/bach-suite-anglaise-3-6-gigue.ly"

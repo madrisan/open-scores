@@ -228,7 +228,7 @@ forceBreaks = {
   \header {
     composer = ##f % "Johann Sebastian Bach"
     opus = ##f % "BWV 807"
-    title = \markup { \italic "Les agréments de la même Sarabande" }
+    title = \markup \abs-fontsize #14 { \italic "Les agréments de la même Sarabande" }
     subtitle = ##f
   }
   \layout {

@@ -26,7 +26,7 @@ Soprano = \context Voice = "one" \relative c'' {
       { \once\stemUp\once\slurDown \appoggiatura c8 bes2 }
     }
   }
-  \break
+  \pageBreak
   \repeat volta 2 {
   \partial 2 d4 f8 ees
   | f4 d8 bes g'4 ees8 bes

@@ -25,11 +25,13 @@ Soprano = \context Voice = "one" \relative c' {
   | d4 c8 a b g a fis
   | g4 d e8 d g d
   | e d g d e d a'4
+  \break
   | a2 a4 b8 g
   | c4 b8 g e' c d b
   %10
   | c b a g a b c b
   | a g fis g a g fis e
+  \break
   | d2. e8 c
   | d4 g8 a b4 a8 fis
   | g4 d b'8 fis g d
