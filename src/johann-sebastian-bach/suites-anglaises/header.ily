@@ -2,16 +2,16 @@
   composer = "Johann Sebastian Bach (1685-1750)"
   date = "between 1725 and 1726"
 
-  footer = "Mutopia-2024/12/20"
+  footer = "Mutopia-2024/12/26"
 
   lastupdated = "2024 December 20"
-  license = "Creative Commons Attribution-ShareAlike 4.0"
+  license = "Creative Commons Attribution Non Commercial Share Alike 4.0 International"
   maintainerEmail = "d.madrisan@proton.me"
   maintainerWeb = "https://github.com/madrisan/open-scores"
 
   % Extra Mutopia Information
   mutopiacomposer = "BachJS"
-  mutopiacopyright = "Creative Commons Attribution-ShareAlike 4.0"
+  mutopiacopyright = "Creative Commons Attribution Non Commercial Share Alike 4.0 International"
   mutopiainstrument = "Harpsichord, Piano"
   mutopiamaintainer = "Davide Madrisan"
   mutopiaopus = "BWV 806-811"
@@ -52,8 +52,8 @@
       \concat {
 	\concat {
 	  \abs-fontsize #8 {
-	    \with-url #"http://creativecommons.org/licenses/by-sa/40/"
-	               "Creative Commons Attribution ShareAlike 4.0 International License"
+	    \with-url #"https://spdx.org/licenses/CC-BY-NC-SA-4.0.html"
+	               "Creative Commons Attribution Non Commercial Share Alike 4.0 International"
 		       " — free to distribute, modify, and perform"
           }
 	}
