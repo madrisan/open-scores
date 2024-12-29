@@ -71,7 +71,8 @@ middleGrey = #(x11-color 'grey45)
 \markup { \indexItem "Prélude" #'SuiteIIIPrelude }
 \markup { \indexItem "Allemande" #'SuiteIIIAllemande }
 \markup { \indexItem "Courante" #'SuiteIIICourante }
-\markup { \indexItem "Sarabande" #'SuiteIIISarabande }
+\markup { \indexItem "Sarabande" #'SuiteIIISarabandeI }
+\markup { \indexItem "Les agréments de la même Sarabande" #'SuiteIIISarabandeII }
 \markup { \indexItem "Gavotte I" #'SuiteIIIGavotteI }
 \markup { \indexItem "Gavotte II ou la Musette" #'SuiteIIIGavotteII }
 \markup { \indexItem "Gigue" #'SuiteIIIGigue }
