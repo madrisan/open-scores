@@ -671,7 +671,7 @@ Alto = \context Voice = "two" \relative c' {
   %195
   | s
   | d
-  | \change Staff = "upper" \voiceTwo
+  | \hideStaffSwitch\change Staff = "upper" \voiceTwo
     a
 }
 
