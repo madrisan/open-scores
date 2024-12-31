@@ -9,6 +9,8 @@
 %"
 %done
 
+\label #'Manuscript
+
 \markup {
   \with-dimensions #'(0 . 0) #'(0 . 0)
   \with-color #(rgb-color 1.00 0.89 0.71)
