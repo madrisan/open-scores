@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Jan Pieterszoon Sweelinck: Fantasia Cromatica SwWV 258
 - J.S. Bach: Suite Anglaise 2 BWV807: Add Sarabande with agréments
 - J.S. Bach: Suite Anglaise 3 BWV808: Add Sarabande with agréments
+- J.S. Bach: Das wohltemperierte Klavier – Erster Teil: Praeludium und Fuga IX
 
 ### Changed
 

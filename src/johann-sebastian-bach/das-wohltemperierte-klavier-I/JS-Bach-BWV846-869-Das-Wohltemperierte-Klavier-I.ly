@@ -151,4 +151,9 @@
 \include "./BWV853/das-wohltemperierte-klavier-I-08-2-fuga-original-tonality.ly"
 \pageBreak
 
+\include "./BWV854/das-wohltemperierte-klavier-I-09-1-praeludium.ly"
+\pageBreak
+\include "./BWV854/das-wohltemperierte-klavier-I-09-2-fuga.ly"
+\pageBreak
+
 \include "./manuscript-music.ly"
