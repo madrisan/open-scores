@@ -1,7 +1,7 @@
 Global = {
   \key bes \major
   \time 4/4
-  \include "../global.ly"
+  \include "../../global.ly"
 }
 
 greyTextColor = #(x11-color "dimgray")
@@ -13,6 +13,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
   \stemNeutral
   \showStaffSwitch
+  \label #'PartitaIPraeludium
   %1
   | r16 bes[ bes32 \prall a bes16] c bes d bes es[ bes bes32 \prall a bes16] d bes es bes
   | f'[ bes, bes32 \prall a bes16] g' bes, a' bes, bes'[ a32 g f16 bes] c,32[ d es8 d32 c]
@@ -48,6 +49,7 @@ Alto = \context Voice = "two" \relative c' {
   \stemDown
   \override Rest.staff-position = #0
   \override VoiceFollower.color = \greyTextColor
+  \override VoiceFollower.style = #'dashed-line
   \showStaffSwitch\tieUp
   %1
   | \staffLower\stemUp
@@ -151,8 +153,8 @@ Bass = \context Voice = "four" \relative c' {
   \header {
     composer = ##f % "Johann Sebastian @composer_lastnam@"
     opus = ##f % "BWV 825"
-    title = \markup { "Praeludium" }
-    subtitle = ##f
+    title = \markup { "Partita I" }
+    subtitle = \markup { "Praeludium" }
   }
   \layout {
     \context {

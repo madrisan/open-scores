@@ -1,7 +1,7 @@
 Global = {
   \key g \major
   \time 3/4
-  \include "../global.ly"
+  \include "../../global.ly"
 }
 
 staffLower = { \change Staff = "lower" }
@@ -12,6 +12,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \stemNeutral\tieNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'PartitaVPraeambulum
   %1
   | d16 c b a g8 r <b, d> r
   | <c e> r <b d> r r4
@@ -308,8 +309,8 @@ Bass = \context Voice = "four" \relative c' {
   \header {
     composer = ##f % "Johann Sebastian Bach"
     opus = ##f % "BWV 829"
-    title = \markup { "Praeambulum" }
-    subtitle = ##f
+    title = \markup { "Partita V" }
+    subtitle = \markup { "Praeambulum" }
   }
   \layout {
     \context {

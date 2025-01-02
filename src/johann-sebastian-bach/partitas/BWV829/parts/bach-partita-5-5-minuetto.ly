@@ -1,7 +1,7 @@
 Global = {
   \key g \major
   \time 3/4
-  \include "../global.ly"
+  \include "../../global.ly"
 }
 
 staffLower = { \change Staff = "lower" }
@@ -12,6 +12,7 @@ Soprano = \context Voice = "one" \relative c' {
   \stemUp\tieUp
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'PartitaVMinuetto
   \repeat volta 2 {
   %1
   | d8 s s g s s
@@ -220,7 +221,7 @@ Bass = \context Voice = "four" \relative c {
   \header {
     composer = ##f % "Johann Sebastian Bach"
     opus = ##f % "BWV 829"
-    title = \markup { "Tempo di Minuetta" }
+    title = \markup { "Tempo di Menuetto" }
     subtitle = ##f
   }
   \layout {

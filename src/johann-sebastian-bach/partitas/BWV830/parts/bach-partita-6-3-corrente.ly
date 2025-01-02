@@ -1,7 +1,7 @@
 Global = {
   \key e \minor
   \time 3/8
-  \include "../global.ly"
+  \include "../../global.ly"
 }
 
 bottom = { \change Staff = "lower" \stemUp }
@@ -11,6 +11,7 @@ Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #-2
   \override Rest.staff-position = #0
+  \label #'PartitaVICorrente
   \set baseMoment = #(ly:make-moment 1/8)
   \stemNeutral\slurNeutral\tieNeutral
   \repeat volta 2 {

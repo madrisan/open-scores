@@ -1,7 +1,7 @@
 Global = {
   \key e \minor
   \time 2/2
-  \include "../global.ly"
+  \include "../../global.ly"
 }
 
 bottom = { \change Staff = "lower" \stemUp }
@@ -11,6 +11,7 @@ Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #-2
   \override Rest.staff-position = #0
+  \label #'PartitaVIToccata
   \set baseMoment = #(ly:make-moment 1/8)
   \set subdivideBeams = ##t
   \stemNeutral
@@ -547,14 +548,10 @@ Bass = \context Voice = "four" \relative c {
     >>
   >>
   \header {
-    composer = "Johann Sebastian Bach"
-    opus = "BWV 830"
+    composer = ##f % "Johann Sebastian Bach"
+    opus = ##f % "BWV 830"
+    title = \markup { "Partita VI" }
     subtitle = "Toccata"
-    title = \markup {
-      %\override #'(font-name . "TeX Gyre Schola") {
-        "Partita VI"
-      %}
-    }
   }
   \layout {
     \context {

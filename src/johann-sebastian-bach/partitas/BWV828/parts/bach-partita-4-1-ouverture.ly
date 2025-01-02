@@ -1,7 +1,7 @@
 Global = {
   \key d \major
   \time 2/2
-  \include "../global.ly"
+  \include "../../global.ly"
 }
 
 staffLower = { \change Staff = "lower" }
@@ -13,6 +13,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \set minimumBeamSubdivisionInterval = \musicLength 8
+  \label #'PartitaIVOuverture
   \stemUp
   \repeat volta 2 {
   %1
@@ -251,13 +252,14 @@ Alto = \context Voice = "two" \relative c'' {
   | s1*9/8*4
   %38
   | \stemUp a'4 r8 \override Stem.details.beamed-lengths = #'(4.5)
-    \staffLower\stemUp
+    \staffLower\voiceThree\stemUp
     \once\override NoteColumn.force-hshift = #0.4 e fis g
     \revert Stem.details.beamed-lengths
     \once\override NoteColumn.force-hshift = #0.4 e fis g
-  | \staffUpper\stemDown fis4 \staffLower\stemUp e8\rest \stemUp g4 e8\rest fis4 e8\rest
+  | \staffUpper\voiceTwo\stemDown fis4
+    \staffLower\voiceThree\stemUp e8\rest \stemUp g4 e8\rest fis4 e8\rest
   %40
-  | \staffUpper\stemDown e4 b8\rest fis'4 c8\rest e4 e8\rest
+  | \staffUpper\voiceTwo\stemDown e4 b8\rest fis'4 c8\rest e4 e8\rest
   | d4 e8\rest s2.
   | s1*9/8*4
   %46
@@ -293,21 +295,21 @@ Alto = \context Voice = "two" \relative c'' {
   | d4 c8\rest s2.
   | s1*9/8*17
   %91
-  | \staffLower\stemUp s2. cis4 d8\rest
+  | \staffLower\voiceThree\stemUp s2. cis4 d8\rest
   | d4 d8\rest d4.\rest <d f>4 d8\rest
   | <d f>4 d8\rest d4.\rest <d gis>4 d8\rest
   | <e a>4 d8\rest s2.
   | s1*9/8*6
   %101
-  | \staffUpper\stemDown s2. a''16 g fis e dis cis
+  | \staffUpper\voiceTwo\stemDown s2. a''16 g fis e dis cis
   | b4. r16 b cis d e fis g fis e d cis b
   | a4. \stemUp fis'16 fis, g a b cis d cis b a g fis~
   | \stemDown fis4. e d8 e4~
   %105
   | e8. g16 fis e d8. fis16 e d cis4 a8
   | b4. cis8. e16 d cis b8. d16 cis b
-  | \staffLower\stemUp\tieUp a4.~ a16 g a g fis \tieDown g~ g g a g fis g~
-  | g fis gis ais b cis \staffUpper\stemDown d4. e~
+  | \staffLower\voiceThree\stemUp\tieUp a4.~ a16 g a g fis \tieDown g~ g g a g fis g~
+  | g fis gis ais b cis \staffUpper\voiceTwo\stemDown d4. e~
   | e8 cis d~ d cis d~ d cis d~
   %110
   | d4 c8\rest s2.
@@ -324,29 +326,30 @@ Tenor = \context Voice = "three" \relative c'' {
   \mergeDifferentlyHeadedOn
   \repeat volta 2 {
   %1
-  | \staffUpper\stemDown\tieDown
+  | \staffUpper\voiceTwo\stemDown\tieDown
     \once\override NoteColumn.force-hshift = #0.5
     a2~ \shiftOff a8. d,16 e8. fis16
   | g4~
     \set subdivideBeams = ##t
     g32 e fis g a b cis d
     \set subdivideBeams = ##f
-    \staffLower\stemUp\tieUp
+    \staffLower\voiceThree\stemUp\tieUp
     b8\rest g16\rest e d8. cis16
   | d2~ d8. s8. s8
-  | \staffLower\stemUp\tieUp e8\rest e16\rest b cis8. d16 e8. \staffUpper\stemDown e16\rest a4\arpeggio
+  | \stemUp\tieUp e8\rest e16\rest b cis8. d16 e8.
+    \staffUpper\voiceTwo\stemDown e16\rest a4\arpeggio
   %5
   | a2 a4. a8
   | \once\override Voice.Rest.X-offset = #0.5 b,8\rest b16\rest d e8. fis16 g8. d16\rest c4\rest
-  | \staffLower\stemUp a8\rest a16\rest fis16 gis8. ais16 b8 b\rest b4\rest
+  | \staffLower\voiceThree\stemUp a8\rest a16\rest fis16 gis8. ais16 b8 b\rest b4\rest
   | s1
-  | s2 \staffUpper\stemDown\tieDown e4\rest d'~
+  | s2 \staffUpper\voiceTwo\stemDown\tieDown e4\rest d'~
   %10
   | <d gis>16 s8. s2 cis4~
   | cis8. s16 s2.
   | s1*5
   %17
-  | \staffLower\stemUp\tieUp s4 cis, b e~
+  | \staffLower\voiceThree\stemUp\tieUp s4 cis, b e~
   | \alternative {
       { e2 s }
       { e4\repeatTie s2 s4. }
@@ -354,23 +357,24 @@ Tenor = \context Voice = "three" \relative c'' {
   }
   | s1*9/8*3
   %23
-  | \staffUpper\stemDown d8 e16 fis g a b8 g\rest g\rest a g\rest g\rest
+  | \staffUpper\voiceTwo\stemDown d8 e16 fis g a b8 g\rest g\rest a g\rest g\rest
   | \once\override NoteColumn.force-hshift = #0.8 gis a16 gis fis e a8 e\rest e\rest gis e\rest e\rest
   | \once\override NoteColumn.force-hshift = #0 fis8
     gis16 fis e fis gis8 a16 gis fis gis a8 gis16 fis e d
-  | \staffLower\stemUp s1*9/8*8
+  | \staffLower\voiceThree\stemUp s1*9/8*8
   %34
   | a4 a8\rest b cis d b cis d
   | <e, a cis>4 b'8\rest d4 d8\rest cis4 d8\rest
-  | \staffUpper\stemDown <gis, b>4 \staffLower\stemUp b8\rest cis4 c8\rest b4 c8\rest
-  | \staffUpper\stemDown a4 b8\rest s2.
+  | \staffUpper\voiceTwo\stemDown <gis, b>4
+    \staffLower\voiceThree\stemUp b8\rest cis4 c8\rest b4 c8\rest
+  | \staffUpper\voiceTwo\stemDown a4 b8\rest s2.
   | fis'4 b8\rest
-    \staffLower\stemDown
+    \staffLower\voiceThree\stemDown
     \once\override NoteColumn.force-hshift = #0.4 e,4.
     \once\override NoteColumn.force-hshift = #0.4 e
   | \stemUp d4 s8 s2.
   %40
-  | \staffLower\stemUp cis4 c8\rest s2.
+  | \stemUp cis4 c8\rest s2.
   | s1*9/8
   | d4 d8\rest d4.\rest d4 d8\rest
   | cis4 d8\rest d4.\rest cis4 d8\rest
@@ -384,9 +388,9 @@ Tenor = \context Voice = "three" \relative c'' {
     \set subdivideBeams = ##t
     \staffUpper e'16[ d c b a g fis e dis cis \staffLower b a g fis e d cis! b]
     \set subdivideBeams = ##f
-  | \staffUpper\stemDown\tieDown r8 a''16 b cis d e fis e d cis b a4.~
+  | \staffUpper\voiceTwo\stemDown\tieDown r8 a''16 b cis d e fis e d cis b a4.~
   | a8 e\rest e\rest s2.
-  | \staffLower\stemUp s1*9/8*5
+  | \staffLower\voiceThree\stemUp s1*9/8*5
   %63
   | s4. \mergeDifferentlyHeadedOff fis,8 b d e ais, cis
   | d e16 d cis b e8 ais, cis d gis, b
@@ -404,7 +408,7 @@ Tenor = \context Voice = "three" \relative c'' {
     g fis g
   %70
   | e8 g\rest b\rest s2.
-  | \staffLower\stemUp\tieUp s1*9/8*2
+  | \stemUp\tieUp s1*9/8*2
   | s2. b,4.~
   | b8 fis16 gis a b cis4 c8\rest <gis b>4 c8\rest
   | <e, a>4 r8 s4. a4.~
@@ -630,8 +634,8 @@ Bass = \context Voice = "four" \relative c {
   \header {
     composer = ##f % "Johann Sebastian Bach"
     opus = ##f % "BWV 828"
-    title = \markup { "Ouverture" }
-    subtitle = ##f
+    title = \markup { "Partita IV" }
+    subtitle = \markup { "Ouverture" }
   }
   \layout {
     \context {

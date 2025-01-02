@@ -1,7 +1,7 @@
 Global = {
   \key bes \major
   \time 3/4
-  \include "../global.ly"
+  \include "../../global.ly"
 }
 
 staffLower = { \change Staff = "lower" }
@@ -12,6 +12,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \stemNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'PartitaIMenuetI
   %1
   \repeat volta 2 {
   | d8 bes a bes f bes

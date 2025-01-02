@@ -1,7 +1,7 @@
 Global = {
   \key a \minor
   \time 3/4
-  \include "../global.ly"
+  \include "../../global.ly"
 }
 
 Soprano = \context Voice = "one" \relative c'' {
@@ -9,6 +9,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \stemNeutral\tieNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'PartitaIIICorrente
   \repeat volta 2 {
   \partial 4 r16 d c b
   %1

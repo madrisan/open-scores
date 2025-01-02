@@ -1,7 +1,7 @@
 Global = {
   \key g \major
   \time 4/4
-  \include "../global.ly"
+  \include "../../global.ly"
 }
 
 staffLower = { \change Staff = "lower" }
@@ -12,6 +12,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \stemNeutral\tieNeutral\stemNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'PartitaVAllemande
   \set minimumBeamSubdivisionInterval = \musicLength 8
   \omit TupletBracket \omit TupletNumber
   \repeat volta 2 {

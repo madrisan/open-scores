@@ -1,7 +1,7 @@
 Global = {
   \key d \major
   \time 2/4
-  \include "../global.ly"
+  \include "../../global.ly"
 }
 
 staffLower = { \change Staff = "lower" }
@@ -12,6 +12,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \stemUp\tieDown
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'PartitaIVAria
   \repeat volta 2 {
   \partial 8 a8
   %1

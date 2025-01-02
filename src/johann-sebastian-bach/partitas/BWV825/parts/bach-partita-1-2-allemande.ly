@@ -1,7 +1,7 @@
 Global = {
   \key bes \major
   \time 4/4
-  \include "../global.ly"
+  \include "../../global.ly"
 }
 
 staffLower = { \change Staff = "lower" }
@@ -12,6 +12,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \stemNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'PartitaIAllemande
   %1
   \repeat volta 4 {
   \partial 16 f16
@@ -101,8 +102,10 @@ Tenor = \context Voice = "three" \relative c' {
   \override Rest.staff-position = #0
   \partial 16 s16
   %1
-  | s1*16
-  | e16\rest d c8 a'16\rest c, d8 f16\rest a, bes8 e16\rest f, g8
+  | s1*3
+  | s2. bes8 a
+  | s1*12
+  | e'16\rest d c8 a'16\rest c, d8 f16\rest a, bes8 e16\rest f, g8
   | e'16\rest g, aes8~ aes g s4..
     \partial 16 s16
   | s1*8
@@ -121,12 +124,12 @@ Bass = \context Voice = "four" \relative c {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \repeat volta 4 {
-  \partial 16 s16
+  \partial 16 r16
   %1
   | bes4 r r2
   | bes4 r a'2\rest
-  | \clef bass bes4 r a2\rest
-  | \clef bass bes,4 r r2
+  | \clef bass bes,4 r a2\rest
+  | \clef bass bes4 r r2
   %5
   | <bes g'>4 r <a fis'> r
   | <g g'> r a'2\rest

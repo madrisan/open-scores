@@ -1,7 +1,7 @@
 Global = {
   \key c \minor
   \time 4/4
-  \include "../global.ly"
+  \include "../../global.ly"
 }
 
 voiceOneOssia = \relative c'' {
@@ -21,6 +21,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \stemUp
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'PartitaIISinfonia
   \tempo "Grave. Adagio"
   %1
   | <c ees>4 g'16\rest ees16 d16. ees32 f4 g16\rest f16 f16. g32
@@ -301,7 +302,7 @@ Bass = \context Voice = "four" \relative c {
   <<
   \new Staff = "ossia" \with {
     fontSize = #-3
-    \include "./ossiasetup.ly"
+    \include "../../ossiasetup.ly"
     \hide Clef
     \remove Time_signature_engraver
   }
@@ -329,8 +330,8 @@ Bass = \context Voice = "four" \relative c {
   \header {
     composer = ##f % "Johann Sebastian Bach"
     opus = ##f % "BWV 826"
-    title = \markup { "Sinfonia" }
-    subtitle = ##f
+    title = \markup { "Partita II" }
+    subtitle = \markup { "Sinfonia" }
   }
   \layout {
     \context {

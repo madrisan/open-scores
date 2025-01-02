@@ -1,7 +1,7 @@
 Global = {
   \key g \major
   \time 3/8
-  \include "../global.ly"
+  \include "../../global.ly"
 }
 
 Soprano = \context Voice = "one" \relative c'' {
@@ -9,6 +9,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \stemNeutral\tieNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'PartitaVCorrente
   \repeat volta 2 {
     \partial 16*3 d16 e fis
   %1
@@ -238,7 +239,7 @@ Bass = \context Voice = "four" \relative c {
   \header {
     composer = ##f % "Johann Sebastian Bach"
     opus = ##f % "BWV 829"
-    title = \markup { "Courante" }
+    title = \markup { "Corrente" }
     subtitle = ##f
   }
   \layout {

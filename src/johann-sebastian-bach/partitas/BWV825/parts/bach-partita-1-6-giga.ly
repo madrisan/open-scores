@@ -1,7 +1,7 @@
 Global = {
   \key bes \major
   \time 4/4
-  \include "../global.ly"
+  \include "../../global.ly"
 }
 
 Soprano = \context Voice = "one" \relative c' {
@@ -9,6 +9,7 @@ Soprano = \context Voice = "one" \relative c' {
   \stemNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'PartitaIGigue
   %1
   \repeat volta 2 {
   | \repeat unfold 4 { r8*2/3 d bes' }
@@ -190,7 +191,7 @@ Bass = \context Voice = "four" \relative c' {
   \header {
     composer = ##f % "Johann Sebastian @composer_lastnam@"
     opus = ##f % "BWV 825"
-    title = \markup { "Giga" }
+    title = \markup { "Gigue" }
     subtitle = ##f
   }
   \layout {

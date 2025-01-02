@@ -1,7 +1,7 @@
 Global = {
   \key bes \major
   \time 3/4
-  \include "../global.ly"
+  \include "../../global.ly"
 }
 
 Soprano = \context Voice = "one" \relative c'' {
@@ -9,6 +9,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \stemNeutral\tieNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'PartitaICorrente
   \repeat volta 4 {
   \partial 8 bes8
   %1

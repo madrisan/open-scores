@@ -1,7 +1,7 @@
 Global = {
   \key bes \major
   \time 3/4
-  \include "../global.ly"
+  \include "../../global.ly"
 }
 
 Soprano = \context Voice = "one" \relative c'' {
@@ -9,6 +9,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \stemUp\tieUp
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'PartitaISarabande
   \set baseMoment = #(ly:make-moment 1/8)
   \repeat volta 4 {
   %1

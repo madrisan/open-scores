@@ -1,7 +1,7 @@
 Global = {
   \key e \minor
   \time 8/4
-  \include "../global.ly"
+  \include "../../global.ly"
 }
 
 bottom = { \change Staff = "lower" \stemUp }
@@ -98,6 +98,7 @@ Alto = \context Voice = "two" \relative c {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \override VoiceFollower.color = \greyTextColor
+  \label #'PartitaVIGigue
   \mergeDifferentlyDottedOn
   \showStaffSwitch
   \stemNeutral

@@ -1,7 +1,7 @@
 Global = {
   \key a \minor
   \time 3/4
-  \include "../global.ly"
+  \include "../../global.ly"
 }
 
 staffLower = { \change Staff = "lower" }
@@ -12,6 +12,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \stemNeutral\tieNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'PartitaIIIBurlesca
   %1
   \repeat volta 2 {
   | a8 b b\prall a16 b c8 gis

@@ -61,12 +61,7 @@ make -C src/johann-sebastian-bach/italienisches-konzert-BWV971
 make -C src/johann-sebastian-bach/musikalisches-opfer-BWV1079
 make -C src/johann-sebastian-bach/organ-sonata-4-andante-BWV528-stradal
 make -C src/johann-sebastian-bach/ouverture-nach-franzosischer-art-BWV831
-make -C src/johann-sebastian-bach/partitas/BWV825
-make -C src/johann-sebastian-bach/partitas/BWV826
-make -C src/johann-sebastian-bach/partitas/BWV827
-make -C src/johann-sebastian-bach/partitas/BWV828
-make -C src/johann-sebastian-bach/partitas/BWV829
-make -C src/johann-sebastian-bach/partitas/BWV830
+make -C src/johann-sebastian-bach/partitas
 make -C src/johann-sebastian-bach/praeludium-fuge-und-allegro-BWV998
 make -C src/johann-sebastian-bach/praeludium-und-fughetta-BWV900
 make -C src/johann-sebastian-bach/praeludium-und-fughetta-BWV901

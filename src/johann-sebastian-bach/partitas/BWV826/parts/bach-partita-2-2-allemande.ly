@@ -1,7 +1,7 @@
 Global = {
   \key c \minor
   \time 2/2
-  \include "../global.ly"
+  \include "../../global.ly"
 }
 
 Soprano = \context Voice = "one" \relative c'' {
@@ -9,6 +9,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \stemNeutral\tieNeutral\slurNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'PartitaIIAllemande
   \set Timing.baseMoment = #(ly:make-moment 1/4)
   \set Timing.beatStructure = 1,1,1,1
   \repeat volta 2 {

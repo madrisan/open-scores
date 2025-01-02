@@ -1,7 +1,7 @@
 Global = {
   \key a \minor
   \time 4/4
-  \include "../global.ly"
+  \include "../../global.ly"
 }
 
 staffLower = { \change Staff = "lower" }
@@ -12,6 +12,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \stemNeutral\tieNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'PartitaIIIAllemande
   \set minimumBeamSubdivisionInterval = \musicLength 8
   \repeat volta 2 {
   \partial 4 e8~ e32 d c b

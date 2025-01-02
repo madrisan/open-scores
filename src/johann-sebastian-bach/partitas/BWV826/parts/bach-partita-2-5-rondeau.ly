@@ -1,7 +1,7 @@
 Global = {
   \key c \minor
   \time 3/8
-  \include "../global.ly"
+  \include "../../global.ly"
 }
 
 staffLower = { \change Staff = "lower" }
@@ -12,6 +12,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \stemNeutral\tieNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'PartitaIIRondeau
   \omit TupletBracket
   %1
   | c'8 c, d\prall

@@ -1,7 +1,7 @@
 Global = {
   \key e \minor
   \time 4/4
-  \include "../global.ly"
+  \include "../../global.ly"
 }
 
 bottom = { \change Staff = "lower" \stemUp }
@@ -11,6 +11,7 @@ Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #-2
   \override Rest.staff-position = #0
+  \label #'PartitaVIAllemande
   \set baseMoment = #(ly:make-moment 1/8)
   \stemNeutral\slurNeutral\tieNeutral
   \partial 8 r16 g'
@@ -229,7 +230,7 @@ Bass = \context Voice = "four" \relative c {
     %opus = "BWV 830"
     title = \markup {
       %\override #'(font-name . "TeX Gyre Schola") {
-        "Allemanda"
+        "Allemande"
       %}
     }
   }

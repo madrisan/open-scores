@@ -1,10 +1,10 @@
 \header {
   composer = "Johann Sebastian Bach (1685-1750)"
-  date = "between 1725 and 1730 or 1731"
+  date = ""
 
-  footer = "Mutopia-2024/04/04"
+  footer = "Mutopia-2024/12/30"
 
-  lastupdated = "2024 April 04"
+  lastupdated = "2024 December 30"
   license = "Creative Commons Attribution Non Commercial Share Alike 4.0 International"
   maintainerEmail = "d.madrisan@proton.me"
   maintainerWeb = "https://github.com/madrisan/open-scores"
@@ -14,12 +14,12 @@
   mutopiacopyright = "Creative Commons Attribution Non Commercial Share Alike 4.0 International"
   mutopiainstrument = "Harpsichord, Piano"
   mutopiamaintainer = "Davide Madrisan"
-  mutopiaopus = "BWV 829"
-  mutopiatitle = "Partita V"
+  mutopiaopus = "BWV 825-830"
+  mutopiatitle = "Partitas"
 
-  opus = "BWV 829"
-  title = "Partita V"
-  source = "Bach-Gesellschaft Ausgabe, Leipzig (1853)"
+  opus = "BWV 825-830"
+  title = "Partitas"
+  source = "Muzgiz, Moscow 1968"
   style = "Baroque"
 
   copyright = \markup {

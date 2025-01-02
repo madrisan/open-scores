@@ -1,7 +1,7 @@
 Global = {
   \key c \minor
   \time 3/4
-  \include "../global.ly"
+  \include "../../global.ly"
 }
 
 Soprano = \context Voice = "one" \relative c'' {
@@ -9,6 +9,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \stemUp
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'PartitaIISarabande
   %1
   \repeat volta 2 {
   | g16 c d ees f, ees' d8~ d16 f, g aes
