@@ -347,7 +347,15 @@ Bass = \context Voice = "four" \relative c' {
   \header {
     composer = ##f % "Johann Sebastian Bach"
     opus = ##f % "BWV 827"
-    title = \markup { "Partita III" }
+    title = \markup {
+      \fill-line {
+        \center-column {
+          \line \abs-fontsize #18 \caps {
+            "Partita III"
+          }
+        }
+      }
+    }
     subtitle = \markup { "Fantasia" }
   }
   \layout {

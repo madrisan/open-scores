@@ -153,7 +153,15 @@ Bass = \context Voice = "four" \relative c' {
   \header {
     composer = ##f % "Johann Sebastian @composer_lastnam@"
     opus = ##f % "BWV 825"
-    title = \markup { "Partita I" }
+    title = \markup {
+      \fill-line {
+        \center-column {
+          \line \abs-fontsize #18 \caps {
+            "Partita I"
+          }
+        }
+      }
+    }
     subtitle = \markup { "Praeludium" }
   }
   \layout {

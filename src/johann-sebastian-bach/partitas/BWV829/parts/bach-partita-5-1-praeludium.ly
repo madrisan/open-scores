@@ -309,7 +309,15 @@ Bass = \context Voice = "four" \relative c' {
   \header {
     composer = ##f % "Johann Sebastian Bach"
     opus = ##f % "BWV 829"
-    title = \markup { "Partita V" }
+    title = \markup {
+      \fill-line {
+        \center-column {
+          \line \abs-fontsize #18 \caps {
+            "Partita V"
+          }
+        }
+      }
+    }
     subtitle = \markup { "Praeambulum" }
   }
   \layout {

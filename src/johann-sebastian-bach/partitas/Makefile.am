@@ -59,7 +59,7 @@ EXTRA_DIST = JS-Bach-BWV825-830-Partiten.ly \
 	     \
 	     BWV829/parts/bach-partita-5-1-praeludium.ly \
 	     BWV829/parts/bach-partita-5-2-allemande.ly \
-	     BWV829/parts/bach-partita-5-3-courante.ly \
+	     BWV829/parts/bach-partita-5-3-corrente.ly \
 	     BWV829/parts/bach-partita-5-4-sarabande.ly \
 	     BWV829/parts/bach-partita-5-5-minuetto.ly \
 	     BWV829/parts/bach-partita-5-6-passepied.ly \

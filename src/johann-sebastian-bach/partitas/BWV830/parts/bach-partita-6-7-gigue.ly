@@ -98,6 +98,7 @@ Alto = \context Voice = "two" \relative c {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \override VoiceFollower.color = \greyTextColor
+  \override VoiceFollower.style = #'dashed-line
   \label #'PartitaVIGigue
   \mergeDifferentlyDottedOn
   \showStaffSwitch
@@ -179,6 +180,7 @@ Tenor = \context Voice = "three" \relative c' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \override VoiceFollower.color = \greyTextColor
+  \override VoiceFollower.style = #'dashed-line
   %1
   | s1*8/4*7
   | s1*8/4*37

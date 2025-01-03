@@ -104,7 +104,10 @@ Tenor = \context Voice = "three" \relative c' {
   %1
   | s1*3
   | s2. bes8 a
-  | s1*12
+  %5
+  | g4 s fis s
+  | g s2.
+  | s1*10
   | e'16\rest d c8 a'16\rest c, d8 f16\rest a, bes8 e16\rest f, g8
   | e'16\rest g, aes8~ aes g s4..
     \partial 16 s16
@@ -128,12 +131,12 @@ Bass = \context Voice = "four" \relative c {
   %1
   | bes4 r r2
   | bes4 r a'2\rest
-  | \clef bass bes,4 r a2\rest
-  | \clef bass bes4 r r2
+  | \clef bass bes,4 r a'2\rest
+  | \clef bass bes,4 r r2
   %5
-  | <bes g'>4 r <a fis'> r
-  | <g g'> r a'2\rest
-  | \clef bass g,8 g'4 f8 e e'4 d8
+  | \stemDown bes4 r a r
+  | g r a'2\rest
+  | \clef bass \stemNeutral g,8 g'4 f8 e e'4 d8
   | c c,4 bes8 a a'4 g8
   | f \clef treble f'[ a c] bes bes, d f
   %10
