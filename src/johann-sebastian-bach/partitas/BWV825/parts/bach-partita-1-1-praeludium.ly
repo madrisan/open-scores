@@ -104,7 +104,7 @@ Alto = \context Voice = "two" \relative c' {
   | bes8 g c4~ c8 f, bes4~
   | bes8 a16 g \showStaffSwitch a4
     \change Staff = "upper" \voiceTwo \tieDown
-    es'32 \rest f[ g a bes16 f] g d es8~
+    d32 \rest f[ g a bes16 f] g d es8~
   | es es' d c bes d c bes
   | a c bes4~ bes8
     \hideStaffSwitch \change Staff = "lower" \voiceThree
@@ -116,17 +116,17 @@ Alto = \context Voice = "two" \relative c' {
     \hideStaffSwitch \change Staff = "lower" \voiceThree
     \once\override NoteColumn.force-hshift = #-0.5 c
   %20
-  | \once\override Beam.positions = #'(7 . 8)
-    bes
+  | \once\override Beam.positions = #'(6.5 . 7.5)
+    \once\override NoteColumn.force-hshift = #0 bes
     \change Staff = "upper" \voiceTwo
     f'
     \change Staff = "lower" \voiceThree
-    \override NoteColumn.force-hshift = #1.3
+    %\override NoteColumn.force-hshift = #1.3
     es es
     %\once\override Beam.positions = #'(-6 . -4)
-    \override NoteColumn.force-hshift = #-0.3
+    %\override NoteColumn.force-hshift = #-0.3
     d
-    \revert NoteColumn.force-hshift
+    %\revert NoteColumn.force-hshift
     \change Staff = "upper" \voiceTwo
     d' <c es> <c es>
   | <bes d f>1
@@ -141,8 +141,9 @@ Tenor = \context Voice = "three" \relative c' {
   | b8\rest bes4 aes8 <g bes> q <f aes>
     \once\override NoteColumn.force-hshift = #0 <ees g>
   %20
-  | \once\override NoteColumn.force-hshift = #0.3 <d f>[
-    <aes' d>~] <g d'> <ges c> <f bes> d ees f
+  | \stemDown
+    \once\override NoteColumn.force-hshift = #0 <d f>[
+    <aes' d>_~ <g d'> <ges c>] g,\rest d ees f
   | bes,1\fermata
 }
 
@@ -180,8 +181,12 @@ Bass = \context Voice = "four" \relative c' {
   | c'[ f, f32^\prall e f16] d' f, ees' f, f'8 g16 es \stemDown f8 f,
   | bes g\rest g4\rest bes8 g\rest g4\rest
   %20
-  | \once\override NoteColumn.force-hshift = #0.3 bes8
-    g\rest g4\rest g8\rest d ees f
+  | \once\override NoteColumn.force-hshift = #0.4 \once\stemUp bes8
+    \once\override Voice.Rest.X-offset = #0.5
+    c\rest c4\rest
+    \stemUp
+    \once\override NoteColumn.force-hshift = #0.5 f8
+    d ees f
   | bes,1
     \fine
 }
