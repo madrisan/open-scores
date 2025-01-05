@@ -4,6 +4,10 @@ Global = {
   \include "../../global.ly"
 }
 
+barpattern = {
+  \repeat unfold 4 { r8*2/3 d bes' }
+}
+
 Soprano = \context Voice = "one" \relative c' {
   \voiceOne
   \stemNeutral
@@ -14,87 +18,68 @@ Soprano = \context Voice = "one" \relative c' {
   \repeat volta 2 {
   | \repeat unfold 4 { r8*2/3 d bes' }
   | \repeat unfold 4 { r es, bes' }
-  | <es, a>1_\markup { \italic simile }
-  | <f bes>
-    \break
-  %5
-  | <bes d>
-  | <bes c>
-  | <a c>
-  | <a bes>
-    \break
-  | <g bes>
+  | \repeat unfold 4 { r es, a }
+  | \repeat unfold 4 { r f bes }
+%5
+  | \repeat unfold 4 { r bes d }
+  | \repeat unfold 4 { r bes c }
+  | \repeat unfold 4 { r a c }
+  | \repeat unfold 4 { r a bes }
+  | \repeat unfold 4 { r g bes }
   %10
-  | <f as>
-  | <e g>
-  | <e f>
-  | <d f>
-  | <e g>
+  | \repeat unfold 4 { r f as }
+  | \repeat unfold 4 { r e g }
+  | \repeat unfold 4 { r e f }
+  | \repeat unfold 4 { r d f }
+  | \repeat unfold 4 { r e g }
   %15
-  | <e f>
+  | \repeat unfold 4 { r e f }
   | r8*2/3 a,! c r a'! c r2
   }
-  \pageBreak
+  %\pageBreak
   \repeat volta 2 {
-  | <f, c'>1
-  | <f d'>
-  | <es d'>
+  | \repeat unfold 4 { r8*2/3 f, c' }
+  | \repeat unfold 4 { r f, d' }
+  | \repeat unfold 4 { r es, d' }
   %20
-  | r8*2/3 d c' r e, c' r fis, c' r a c
-    \break
-  | <g bes>1
-  | <fis a>
-  | <fis g>
-  | <fis a>
-    \break
+  | r8*2/3 d, c' r e, c' r fis, c' r a c
+  | \repeat unfold 4 { r g bes }
+  | \repeat unfold 4 { r fis a }
+  | \repeat unfold 4 { r fis g }
+  | \repeat unfold 4 { r fis a }
   %25
   | r8*2/3 g bes r a c r bes d r g, e'!
   | r a, fis' r bes, g' r c, a' r c, fis
   | r b, g' r bes, e r a, fis' r c fis
-  | <bes, g'>1
-  | <as f'>
+  | \repeat unfold 4 { r bes, g' }
+  | \repeat unfold 4 { r as, f' }
   %30
-  | <g es'>
-  | r8*2/3 a e' r a, e' r bes d r bes des
-    \break
-  | <a c>1
-  | <a c>
-  | <as b>
+  | \repeat unfold 4 { r g, es' }
+  | r8*2/3 a, e' r a, e' r bes d r bes des
+  | \repeat unfold 4 { r a c }
+  | \repeat unfold 4 { r a c }
+  | \repeat unfold 4 { r as b }
   %35
-  | <g bes>
-  | <ges a>
-  | <f as>
-  | <e g>
-  | <es ges>
+  | \repeat unfold 4 { r g bes }
+  | \repeat unfold 4 { r ges a }
+  | \repeat unfold 4 { r f as }
+  | \repeat unfold 4 { r e g }
+  | \repeat unfold 4 { r es ges }
   %40
-  | <des es>
-  | <c es>
-  | <bes des>
-  | <a c>
-  | <a bes>
+  | \repeat unfold 4 { r des es }
+  | \repeat unfold 4 { r c es }
+  | \repeat unfold 4 { r bes des }
+  | \repeat unfold 4 { r a c }
+  | \repeat unfold 4 { r a bes }
   %45
-  | <g bes>
-  | <a c>
-  | <a bes>
+  | \repeat unfold 4 { r g bes }
+  | \repeat unfold 4 { r a c }
+  | \repeat unfold 4 { r a bes }
   | r8*2/3 d f r d' f r2
     \override Score.TextMark.self-alignment-X = #CENTER
     \textEndMark \markup { \musicglyph "scripts.ufermata" }
   }
   \fine
-}
-
-Alto = \context Voice = "two" \relative c' {
-  \voiceTwo
-  \stemDown
-  \override Rest.staff-position = #0
-  %1
-}
-
-Tenor = \context Voice = "three" \relative c {
-  \voiceThree
-  \stemUp
-  \override Rest.staff-position = #0
-  %1
 }
 
 Bass = \context Voice = "four" \relative c' {
@@ -178,13 +163,11 @@ Bass = \context Voice = "four" \relative c' {
       \Global
       \clef treble
       \Soprano
-      \Alto
     >>
     \context Staff = "lower" <<
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \clef bass
-      \Tenor
       \Bass
     >>
   >>

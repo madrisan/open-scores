@@ -40,7 +40,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | d'32 c bes a bes16 g f~ f64 g f e f32 d bes'16 e,8.\prall f16
   | f4 <a, c f>2
   }
-  \pageBreak
+  \break
   \repeat volta 4 {
   | \stemUp\tieUp c'8. c16 c8~ c32 bes a bes
     \set subdivideBeams = ##t

@@ -101,7 +101,7 @@
 \include "./index.ly"
 \pageBreak
 
-%%% Partitas I
+%%% Partita I
 
 \include "./BWV825/parts/bach-partita-1-1-praeludium.ly"
 \pageBreak
@@ -112,11 +112,13 @@
 \include "./BWV825/parts/bach-partita-1-4-sarabande.ly"
 \pageBreak
 \include "./BWV825/parts/bach-partita-1-5-menuet-1.ly"
+%\pageBreak
 \include "./BWV825/parts/bach-partita-1-5-menuet-2.ly"
+\pageBreak
 \include "./BWV825/parts/bach-partita-1-6-giga.ly"
 \pageBreak
 
-%%% Partitas II
+%%% Partita II
 
 \include "./BWV826/parts/bach-partita-2-1-sinfonia.ly"
 \pageBreak
@@ -131,7 +133,7 @@
 \include "./BWV826/parts/bach-partita-2-6-capriccio.ly"
 \pageBreak
 
-%%% Partitas III
+%%% Partita III
 
 \include "./BWV827/parts/bach-partita-3-1-fantasia.ly"
 \pageBreak
@@ -148,7 +150,7 @@
 \include "./BWV827/parts/bach-partita-3-7-gigue.ly"
 \pageBreak
 
-%%% Partitas IV
+%%% Partita IV
 
 \include "./BWV828/parts/bach-partita-4-1-ouverture.ly"
 \pageBreak
@@ -165,7 +167,7 @@
 \include "./BWV828/parts/bach-partita-4-7-gigue.ly"
 \pageBreak
 
-%%% Partitas V
+%%% Partita V
 
 \include "./BWV829/parts/bach-partita-5-1-praeludium.ly"
 \pageBreak
@@ -182,7 +184,7 @@
 \include "./BWV829/parts/bach-partita-5-7-gigue.ly"
 \pageBreak
 
-%%% Partitas VI
+%%% Partita VI
 
 \include "./BWV830/parts/bach-partita-6-1-toccata.ly"
 \pageBreak

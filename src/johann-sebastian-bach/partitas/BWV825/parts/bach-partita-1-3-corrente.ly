@@ -47,7 +47,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | d bes' g e4.\parenthesize\prall f8
   | <a, c f>2 r8
   }
-  \pageBreak
+  \break
   \repeat volta 4 {
   \partial 8 f'8
   | f8*2/3 a e f c f a c g

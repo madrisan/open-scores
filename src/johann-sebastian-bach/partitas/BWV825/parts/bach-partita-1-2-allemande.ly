@@ -4,9 +4,6 @@ Global = {
   \include "../../global.ly"
 }
 
-staffLower = { \change Staff = "lower" }
-staffUpper = { \change Staff = "upper" }
-
 Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
   \stemNeutral
@@ -16,13 +13,29 @@ Soprano = \context Voice = "one" \relative c'' {
   %1
   \repeat volta 4 {
   \partial 16 f16
-  | f d bes a bes d f, bes \staffLower\stemUp d, f bes, d f \staffUpper\stemDown aes d f
-  | g es bes a bes es g, bes \staffLower\stemUp \clef treble es, g bes, es g \staffUpper\stemDown bes es g
-  | a es c bes c es a, c \staffLower\stemUp \clef treble es, a c, es a \staffUpper\stemDown c es a
+  | f d bes a bes d f, bes
+    \change Staff = "lower" \voiceTwo \stemUp
+    d, f bes, d f
+    \change Staff = "upper" \voiceOne \stemDown
+    aes d f
+  | g es bes a bes es g, bes
+    \change Staff = "lower" \voiceTwo
+    \clef treble \stemUp es, g bes, es g
+    \change Staff = "upper" \voiceOne \stemDown
+    bes es g
+  | a es c bes c es a, c
+    \change Staff = "lower" \voiceTwo
+    \clef treble \stemUp es, a c, es a
+    \change Staff = "upper" \voiceOne \stemDown
+    c es a
   %5
   | \stemNeutral bes f d c d f bes, d f, bes d, f r g8 f16
   | r c' e, d e g c, e r a, c ees d c c' d,
-  | es g c b c es a, c \staffLower\stemUp \clef treble fis, a \staffUpper\stemNeutral c es d c a' c,
+  | es g c b c es a, c
+    \change Staff = "lower" \voiceTwo \stemUp
+    \clef treble fis, a
+    \change Staff = "upper" \voiceOne \stemDown
+    c es d c a' c,
   | \stemNeutral r c bes a bes d e\parenthesize\mordent f g c, bes a bes g' bes, f'
   | bes, f' e d e g a\parenthesize\mordent bes c f, e d e c' e, bes'
   %10
@@ -40,10 +53,18 @@ Soprano = \context Voice = "one" \relative c'' {
   }
   \break
   \repeat volta 4 {
-  \partial 16 \stemNeutral c'16
-  | c16 a f e f a c, f a, c \staffLower\stemUp f, a c \staffUpper\stemDown ees! a bes
+  \partial 16 \stemUp c'16
+  | c16 a f e f a c, f \stemDown a, c
+    \change Staff = "lower" \voiceTwo \stemUp
+    f, a c
+    \change Staff = "upper" \voiceOne \stemDown
+    ees! a bes
   %20
-  | \stemNeutral c a es d es a c, es a, c \staffLower\stemUp fis, a d \staffUpper\stemDown fis a c
+  | \stemNeutral c a es d es a c, es \stemDown a, c
+    \change Staff = "lower" \voiceTwo \stemUp
+    fis, a d
+    \change Staff = "upper" \voiceOne \stemDown
+    fis a c
   | \stemUp bes2~ bes16 bes a g a c fis, g
   | fis4 c16 es a, c fis, a d fis g d a' d,
   | bes'4 f16 aes d, f b, d g b c g d' f,
@@ -78,8 +99,14 @@ Alto = \context Voice = "two" \relative c' {
   \partial 16 s16
   %1
   | s1*12
-  | d16\rest f e d \staffLower\stemUp c bes a g s2
-  | \staffUpper\stemDown f'16\rest a g f \staffLower\stemUp e d c bes! s2 \staffUpper\stemDown
+  | d16\rest f e d
+    \change Staff = "lower" \voiceThree \stemUp
+    c bes a g s2
+  | \change Staff = "upper" \voiceTwo \stemDown
+    f'16\rest a g f
+    \change Staff = "lower" \voiceThree \stemUp
+    e d c bes! s2
+    \change Staff = "upper" \voiceTwo \stemDown
   | s1*2
   %17
   | r16 bes' a8 g16\rest a bes8 e,8. f16 g8. g16
@@ -202,7 +229,7 @@ Bass = \context Voice = "four" \relative c {
     >>
   >>
   \header {
-    composer = ##f % "Johann Sebastian @composer_lastnam@"
+    composer = ##f % "Johann Sebastian Bach
     opus = ##f % "BWV 825"
     title = \markup { "Allemande" }
     subtitle = ##f

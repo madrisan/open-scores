@@ -22,6 +22,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - J.S. Bach: Suite Anglaise 6 BWV811: add index page
 - J.S. Bach: Suite Anglaise BWV806-811: merge the six suites into a single document
 - J.S. Bach: Partiten: merge the six partitas into a single document
+- J.S. Bach: Partiten: review pagination and fixes
 - Change license to C-BY-NC-SA 4.0 (https://spdx.org/licenses/CC-BY-NC-SA-4.0.html)
 
 ## [v59] - 2024-12-08

@@ -19,13 +19,11 @@ Soprano = \context Voice = "one" \relative c'' {
   | d bes es bes f' bes,
   | c a g a f a
   | c f, d' f, es' f,
-    \break
   %5
   | d' aes es' g, f' f,
   | g' f a! es bes' d,
   | c es d c d bes
   | c a g a f es'
-    \break
   | d bes a bes f bes
   %10
   | d bes es bes f' bes,
@@ -52,7 +50,6 @@ Soprano = \context Voice = "one" \relative c'' {
   | bes! es d bes c a
   %25
   | g4. a16 bes a g f! es
-    \break
   | d8 bes' a bes f' bes,
   | aes' bes, g' bes, f' bes,
   | es, bes' a! bes g' bes,
@@ -62,12 +59,10 @@ Soprano = \context Voice = "one" \relative c'' {
   | f' es g d a'! c,
   | bes' a g f es d
   | c bes a g f es
-    \break
   | \staffLower\stemUp d \staffUpper\stemNeutral f' g f c f
   %35
   | b, f' a, f' g, f'
   | \staffLower\stemUp c, \staffUpper\stemNeutral es' f es bes es
-    \break
   | a, es' g, es' f, es'
   | d f d bes f a
   | \alternative {
@@ -153,6 +148,21 @@ Bass = \context Voice = "four" \relative c' {
   \fine
 }
 
+forceBreaks = {
+  % page 1
+  \repeat unfold 4 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 4 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 4 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 4 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 4 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 4 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 4 { s2.\noBreak } s2.\pageBreak
+
+  % page 1
+  \repeat unfold 4 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 4 { s2.\noBreak } s2.\break\noPageBreak
+}
+
 \score {
   \new PianoStaff
   <<
@@ -171,6 +181,7 @@ Bass = \context Voice = "four" \relative c' {
       \Tenor
       \Bass
     >>
+    \new Devnull \forceBreaks
   >>
   \header {
     composer = ##f % "Johann Sebastian @composer_lastnam@"

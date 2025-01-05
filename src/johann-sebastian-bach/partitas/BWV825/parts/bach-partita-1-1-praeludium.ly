@@ -6,13 +6,11 @@ Global = {
 
 greyTextColor = #(x11-color "dimgray")
 
-staffLower = { \change Staff = "lower" }
-staffUpper = { \change Staff = "upper" }
-
 Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
   \stemNeutral
   \showStaffSwitch
+  \set minimumBeamSubdivisionInterval = \musicLength 8
   \label #'PartitaIPraeludium
   %1
   | r16 bes[ bes32 \prall a bes16] c bes d bes es[ bes bes32 \prall a bes16] d bes es bes
@@ -30,11 +28,19 @@ Soprano = \context Voice = "one" \relative c'' {
   | c, ees! d c bes32[ c d8 c32 bes] a[ bes c8 bes32 a]
   | bes16[ d d32^\prall c d16] bes'4~ bes8 a~ a16 g8 f16
   | e[ c c32 \prall b c16] d c e c f[ c c32 \prall b c16] e c f c
-  | g'32[ f e8 d32 c] bes'[ a g8 f32 e] c'[ e, f g f e f d] e8. \prall f16
+  | g'32[ f e8 d32 c] bes'[ a g8 f32 e]
+    \set subdivideBeams = ##t
+    c'[ e, f g f e f d]
+    \set subdivideBeams = ##f
+    e8. \prall f16
   | f8. a,32 bes \stemNeutral c[ d es8 d32 c] d[ c bes8 d32 es] f[ g aes8 g32 f]
   %15
   | g[ f es8 d32 es] f[ g a bes c16 es,] f32[ es d8 c32 d] es[ f g a bes16 d,]
-  | es32[ d c8 d32 es] d[ c bes a bes a g f] \stemUp d'4~ d8. c16
+  | es32[ d c8 d32 es]
+    \set subdivideBeams = ##t
+    d[ c bes a bes a g f]
+    \set subdivideBeams = ##f
+    \stemUp d'4~ d8. c16
   | bes16 a g'8 f es d bes' a g
   | f ees! d c d32[ c bes16 es32 d c16] bes8 a16. \prall bes32
   | bes16[ bes bes32 \prall a bes16] c bes d bes es[ bes bes32 \prall a bes16] d bes es bes
@@ -52,35 +58,77 @@ Alto = \context Voice = "two" \relative c' {
   \override VoiceFollower.style = #'dashed-line
   \showStaffSwitch\tieUp
   %1
-  | \staffLower\stemUp
+  | \change Staff = "lower" \voiceThree
     d4 es8 f g4 f8 es
   | d4 ees8[ c] d \clef bass bes4 a8
   | bes8 \clef treble d g4~ g8 c, f4~
-  | f8 e16 d e4 \staffUpper\stemDown\tieDown f2~
+  | f8 e16 d e4
+    \change Staff = "upper" \voiceTwo
+    \stemDown\tieDown f2~
   %5
   | f2 a8 bes4.
   | a4 bes8 g a\rest c a f
   | bes2~ bes4 d8\rest es
   | d4 d8\rest d8 c4~ c8. bes16
-  | \hideStaffSwitch a16[ \staffLower\stemUp d, d32^\prall cis d16] e d fis \showStaffSwitch d
-    \clef bass \staffUpper\stemDown
-    g[ \hideStaffSwitch \staffLower\stemUp \clef treble d d32^\prall cis d16] fis d g \showStaffSwitch d
+  | \hideStaffSwitch a16[
+    \change Staff = "lower" \voiceThree
+    d, d32^\prall cis d16] e d fis \showStaffSwitch d
+    \clef bass
+    \change Staff = "upper" \voiceTwo
+    g[
+    \hideStaffSwitch \change Staff = "lower" \voiceThree
+    \clef treble d d32^\prall cis d16] fis d g d
   %10
-  | \staffUpper\stemDown a'8 c bes a~ a g~ g fis
+  | %\showStaffSwitch
+    \change Staff = "upper" \voiceTwo
+    a'8 c bes a~ a g~ g fis
   | g g \rest d'16 \rest d[ d32\prall c d16] g16 c,8 c16 d8 bes~
-  | \hideStaffSwitch bes \staffLower\stemUp \clef treble e, f \showStaffSwitch g
-    \clef bass \staffUpper\stemDown a \hideStaffSwitch \staffLower\stemUp \clef treble f g a \showStaffSwitch
-  | \staffUpper\stemDown bes \hideStaffSwitch \staffLower\stemUp e, f g a4
-    \showStaffSwitch \staffUpper\stemDown g
-  | a8 \hideStaffSwitch \staffLower\stemUp\tieUp c, a f bes2~
+  | \hideStaffSwitch bes
+    \change Staff = "lower" \voiceThree
+    \clef treble e, f \showStaffSwitch g
+    \clef bass
+    \change Staff = "upper" \voiceTwo
+    a \hideStaffSwitch
+    \change Staff = "lower" \voiceThree
+    \clef treble f g a \showStaffSwitch
+  | \change Staff = "upper" \voiceTwo
+    bes \hideStaffSwitch
+    \change Staff = "lower" \voiceThree
+    e, f g a4
+    \showStaffSwitch \change Staff = "upper" \voiceTwo
+    g
+  | a8
+    \hideStaffSwitch \change Staff = "lower" \voiceThree \tieUp
+    c, a f bes2~
   %15
   | bes8 g c4~ c8 f, bes4~
-  | bes8 a16 g \showStaffSwitch a4 \staffUpper\stemDown\tieDown es'32 \rest f[ g a bes16 f] g d es8~
+  | bes8 a16 g \showStaffSwitch a4
+    \change Staff = "upper" \voiceTwo \tieDown
+    es'32 \rest f[ g a bes16 f] g d es8~
   | es es' d c bes d c bes
-  | a c bes4~ bes8 c, d es
-  | d d es f f \rest es d c
+  | a c bes4~ bes8
+    \hideStaffSwitch \change Staff = "lower" \voiceThree
+    c, d
+    \change Staff = "upper" \voiceTwo
+    es
+    \showStaffSwitch
+  | d d es f f \rest es d
+    \hideStaffSwitch \change Staff = "lower" \voiceThree
+    \once\override NoteColumn.force-hshift = #-0.5 c
   %20
-  | bes f' es es d d' <c es> <c es>
+  | \once\override Beam.positions = #'(7 . 8)
+    bes
+    \change Staff = "upper" \voiceTwo
+    f'
+    \change Staff = "lower" \voiceThree
+    \override NoteColumn.force-hshift = #1.3
+    es es
+    %\once\override Beam.positions = #'(-6 . -4)
+    \override NoteColumn.force-hshift = #-0.3
+    d
+    \revert NoteColumn.force-hshift
+    \change Staff = "upper" \voiceTwo
+    d' <c es> <c es>
   | <bes d f>1
 }
 
@@ -90,9 +138,11 @@ Tenor = \context Voice = "three" \relative c' {
   \override Rest.staff-position = #0
   %1
   | s1*18
-  | b8\rest bes4 aes8 <g bes> q <f aes> <ees g>
+  | b8\rest bes4 aes8 <g bes> q <f aes>
+    \once\override NoteColumn.force-hshift = #0 <ees g>
   %20
-  | <d f>[ <aes' d>~] <g d'> <ges c> <f bes> d ees f
+  | \once\override NoteColumn.force-hshift = #0.3 <d f>[
+    <aes' d>~] <g d'> <ges c> <f bes> d ees f
   | bes,1\fermata
 }
 
@@ -101,6 +151,7 @@ Bass = \context Voice = "four" \relative c' {
   \stemDown\tieDown
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \set minimumBeamSubdivisionInterval = \musicLength 8
   %1
   | \clef treble
     bes1~
@@ -111,7 +162,10 @@ Bass = \context Voice = "four" \relative c' {
   | bes[ f f32^\prall e f16] a f bes f c'[ f, f32^\prall e f16] d' f, e' f,
   | f'[ e32 d c16 f] g,32[ a bes8 a32 g] a[ g f8 a32 bes] \clef treble c[ d es8 d32 c]
   | d[ c bes8 d32 es] f[ g aes8 g32 f] g[ f es8 d32 es] f[ g a bes c16 es,]
-  | f32[ es d8 c32 d] es[ f g a bes16 d,] es32[ d c16_~ c32 bes a bes] c[ d es d c bes a g]
+  | f32[ es d8 c32 d] es[ f g a bes16 d,] es32[ d c16_~ c32 bes a bes]
+    \set subdivideBeams = ##t
+    c[ d es d c bes a g]
+    \set subdivideBeams = ##f
   | \stemDown d'16 g,\rest g8\rest g4\rest \clef bass d8 g\rest g4\rest
   %10
   | \clef bass \stemNeutral r16 d d32^\prall cis d16 e d fis d g8 bes, c d
@@ -123,10 +177,11 @@ Bass = \context Voice = "four" \relative c' {
   | es4 r8 es d4 r8 g
   | \stemDown c,4 r8 f bes, d es c
   | \stemNeutral f16[ f, f32^\prall e f16] g f a f bes[ f f32^\prall e f16] a f bes f
-  | c'[ f, f32^\prall e f16] d' f, ees' f, f'8 g16 es f8 f,
-  | \stemDown bes g\rest g4\rest bes8 g\rest g4\rest
+  | c'[ f, f32^\prall e f16] d' f, ees' f, f'8 g16 es \stemDown f8 f,
+  | bes g\rest g4\rest bes8 g\rest g4\rest
   %20
-  | bes8 g\rest g4\rest g8\rest d ees f
+  | \once\override NoteColumn.force-hshift = #0.3 bes8
+    g\rest g4\rest g8\rest d ees f
   | bes,1
     \fine
 }
@@ -151,7 +206,7 @@ Bass = \context Voice = "four" \relative c' {
     >>
   >>
   \header {
-    composer = ##f % "Johann Sebastian @composer_lastnam@"
+    composer = ##f % "Johann Sebastian Bach
     opus = ##f % "BWV 825"
     title = \markup {
       \fill-line {
