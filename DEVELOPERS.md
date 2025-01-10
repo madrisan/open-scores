@@ -72,12 +72,7 @@ make -C src/johann-sebastian-bach/praludium-und-fuge-liszt-BWV543-S462
 make -C src/johann-sebastian-bach/schafe-konnen-sicher-weiden-BWV208
 make -C src/johann-sebastian-bach/siciliano-BWV1031-kempff
 make -C src/johann-sebastian-bach/siciliano-BWV1031-stark
-make -C src/johann-sebastian-bach/suites-anglaises/BWV806
-make -C src/johann-sebastian-bach/suites-anglaises/BWV807
-make -C src/johann-sebastian-bach/suites-anglaises/BWV808
-make -C src/johann-sebastian-bach/suites-anglaises/BWV809
-make -C src/johann-sebastian-bach/suites-anglaises/BWV810
-make -C src/johann-sebastian-bach/suites-anglaises/BWV811
+make -C src/johann-sebastian-bach/suites-anglaises
 make -C src/johannes-brahms/klavierstucke-op.119
 make -C src/johannes-brahms/rhapsodie-op.79-nr.1
 make -C src/johannes-brahms/rhapsodie-op.79-nr.2
