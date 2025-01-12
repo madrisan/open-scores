@@ -25,6 +25,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - J.S. Bach: Partiten: review pagination and fixes
 - Change license to C-BY-NC-SA 4.0 (https://spdx.org/licenses/CC-BY-NC-SA-4.0.html)
 
+### Fixed
+
+- J.S. Bach: Das wohltemperierte Klavier – Erster Teil: Praeludium II
+
 ## [v59] - 2024-12-08
 
 ### Added

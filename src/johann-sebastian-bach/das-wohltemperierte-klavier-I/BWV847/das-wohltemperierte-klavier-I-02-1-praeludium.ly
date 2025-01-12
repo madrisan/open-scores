@@ -120,14 +120,15 @@ Bass = \context Voice = "four" \relative c {
     \change Staff = "upper" \stemDown \clef bass g c g fis g ees' c g' ees c aes g aes
   | \change Staff = "lower" \stemUp g, a fis'
     \change Staff = "upper" \stemDown \clef treble c' \stemNeutral ees c b c fis c a' fis ees c b c
+  \pageBreak
   | \change Staff = "lower" g,1~^\fermata
   | g16 \tieNeutral d'' c d ees c b c a c b c d b a b
   | g b a b c aes g aes f a g a b g f g
   %30
   | ees \clef treble g' f g aes f ees f d f ees f g ees d ees
   | c ees d ees f d c d ees c b c d b a b
-  | c ees d ees f d c d ees c b c d b a b
-  | \clef bass <c, g' bes>4\arpeggio\fermata r
+  | \clef bass c ees d ees f, d' c d ees, c' b c d, b' a b
+  | <c, g' bes>4\arpeggio\fermata r
     % FIXME: workaround to force a horizontal space after the previous note
     \override Arpeggio.X-offset = #-3
     <c f aes>\arpeggio\fermata r
