@@ -110,7 +110,9 @@ Alto = \context Voice = "two" \relative c' {
   | s1*2
   %17
   | r16 bes' a8 g16\rest a bes8 e,8. f16 g8. g16
-  | d16\rest e f b, c8 bes s4..
+  | d16\rest e f b, c8
+    \once\override NoteColumn.force-hshift = #0 bes
+    s4..
     \partial 16 s16
   | s1*2
   %21
@@ -136,7 +138,11 @@ Tenor = \context Voice = "three" \relative c' {
   | g s2.
   | s1*10
   | e'16\rest d c8 a'16\rest c, d8 f16\rest a, bes8 e16\rest f, g8
-  | e'16\rest g, aes8~ aes g s4..
+  | e'16\rest g, aes8~ aes
+    \change Staff = "upper" \stemDown
+    \once\override NoteColumn.force-hshift = #0.3 g
+    \change Staff = "lower"
+    s4..
     \partial 16 s16
   | s1*8
   %27
@@ -174,7 +180,7 @@ Bass = \context Voice = "four" \relative c {
   | c,8 r b'4\rest a'16 c f e aes, d c b
   %15
   | g bes des c f, c' bes aes e bes' aes g f e d c
-  | \clef treble e'8 g \clef bass c, bes a bes c c,
+  | e'8 g c, bes a bes c c,
   | f8. a16 bes8. a16 g8. f16 e8. e16
   | f8. d16 \stemDown c8 c, \stemUp <f f'>4..
   }
@@ -186,13 +192,13 @@ Bass = \context Voice = "four" \relative c {
   | \stemNeutral g8 a bes g c bes c a
   | d4 r r8 c bes a
   | g4 r r8 f' es d
-  | c \clef treble c' es g f \clef bass f, aes c
+  | c c' es g f f, aes c
   %25
   | bes, bes' d f es es, g bes
   | aes, aes' c es d d, f aes
   | \stemDown g,4  s2.
-  | \stemNeutral g,8 b'\rest a4\rest s2
-  | g,8 b'\rest a4\rest ees'16 g c d fis, ees' d c
+  | \stemNeutral g,8 d'\rest b4\rest s2
+  | g8 d'\rest d4\rest ees'16 g c d fis, ees' d c
   %30
   | g \clef treble d' ees f a, g' f ees b f' ees d c ees d c
   | d8 f \clef bass g, f es f g g,
@@ -201,9 +207,9 @@ Bass = \context Voice = "four" \relative c {
   | es d c bes a c f, a
   %35
   | bes d g, c f, bes es, f
-  | bes, aes' d f bes,, bes' \clef treble es g
-  | \stemUp \clef bass bes,, \clef treble c' ees a bes16 d, c bes f'8 \clef bass f,
-  | \stemDown bes2 <bes, bes'>4..
+  | bes, aes' d f bes,, bes' es g
+  | \stemUp \clef bass bes,, \clef treble c' ees a bes16 d, c bes \stemDown f'8 \clef bass f,
+  | bes2 <bes, bes'>4..
     \tweak direction #DOWN
     \textEndMark \markup { \musicglyph "scripts.dfermata" }
   }

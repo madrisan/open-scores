@@ -28,6 +28,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Fixed
 
 - J.S. Bach: Das wohltemperierte Klavier – Erster Teil: Praeludium II
+- J.S. Bach: Partita I BWV825: staff fixes
 
 ## [v59] - 2024-12-08
 

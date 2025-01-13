@@ -73,20 +73,6 @@ Soprano = \context Voice = "one" \relative c'' {
   \fine
 }
 
-Alto = \context Voice = "two" \relative c' {
-  \voiceTwo
-  \stemDown
-  \override Rest.staff-position = #0
-  %1
-}
-
-Tenor = \context Voice = "three" \relative c {
-  \voiceThree
-  \stemUp
-  \override Rest.staff-position = #0
-  %1
-}
-
 Bass = \context Voice = "four" \relative c' {
   \voiceFour
   \stemNeutral\tieNeutral
@@ -158,8 +144,7 @@ forceBreaks = {
   \repeat unfold 4 { s2.\noBreak } s2.\break\noPageBreak
   \repeat unfold 4 { s2.\noBreak } s2.\pageBreak
 
-  % page 1
-  \repeat unfold 4 { s2.\noBreak } s2.\break\noPageBreak
+  % page 2
   \repeat unfold 4 { s2.\noBreak } s2.\break\noPageBreak
 }
 
@@ -172,13 +157,11 @@ forceBreaks = {
       \Global
       \clef treble
       \Soprano
-      \Alto
     >>
     \context Staff = "lower" <<
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \clef bass
-      \Tenor
       \Bass
     >>
     \new Devnull \forceBreaks
