@@ -252,14 +252,17 @@ Alto = \context Voice = "two" \relative c'' {
   | s1*9/8*4
   %38
   | \stemUp a'4 r8 \override Stem.details.beamed-lengths = #'(4.5)
-    \staffLower\voiceThree\stemUp
+    \change Staff = "lower" \voiceThree
     \once\override NoteColumn.force-hshift = #0.4 e fis g
     \revert Stem.details.beamed-lengths
     \once\override NoteColumn.force-hshift = #0.4 e fis g
-  | \staffUpper\voiceTwo\stemDown fis4
-    \staffLower\voiceThree\stemUp e8\rest \stemUp g4 e8\rest fis4 e8\rest
+  | \change Staff = "upper" \voiceTwo
+    fis4
+    \change Staff = "lower" \voiceThree
+    e8\rest \stemUp g4 e8\rest fis4 e8\rest
   %40
-  | \staffUpper\voiceTwo\stemDown e4 b8\rest fis'4 c8\rest e4 e8\rest
+  | \change Staff = "upper" \voiceTwo
+    e4 b8\rest fis'4 c8\rest e4 e8\rest
   | d4 e8\rest s2.
   | s1*9/8*4
   %46
@@ -295,21 +298,26 @@ Alto = \context Voice = "two" \relative c'' {
   | d4 c8\rest s2.
   | s1*9/8*17
   %91
-  | \staffLower\voiceThree\stemUp s2. cis4 d8\rest
+  | \change Staff = "lower" \voiceThree
+    s2. cis4 d8\rest
   | d4 d8\rest d4.\rest <d f>4 d8\rest
   | <d f>4 d8\rest d4.\rest <d gis>4 d8\rest
   | <e a>4 d8\rest s2.
   | s1*9/8*6
   %101
-  | \staffUpper\voiceTwo\stemDown s2. a''16 g fis e dis cis
+  | \change Staff = "upper" \voiceTwo
+    s2. a''16 g fis e dis cis
   | b4. r16 b cis d e fis g fis e d cis b
   | a4. \stemUp fis'16 fis, g a b cis d cis b a g fis~
   | \stemDown fis4. e d8 e4~
   %105
   | e8. g16 fis e d8. fis16 e d cis4 a8
   | b4. cis8. e16 d cis b8. d16 cis b
-  | \staffLower\voiceThree\stemUp\tieUp a4.~ a16 g a g fis \tieDown g~ g g a g fis g~
-  | g fis gis ais b cis \staffUpper\voiceTwo\stemDown d4. e~
+  | \change Staff = "lower" \voiceThree
+    a4.~ a16 g a g fis \tieDown g~ g g a g fis g~
+  | g fis gis ais b cis
+    \change Staff = "upper" \voiceTwo
+    d4. e~
   | e8 cis d~ d cis d~ d cis d~
   %110
   | d4 c8\rest s2.
@@ -326,30 +334,36 @@ Tenor = \context Voice = "three" \relative c'' {
   \mergeDifferentlyHeadedOn
   \repeat volta 2 {
   %1
-  | \staffUpper\voiceTwo\stemDown\tieDown
+  | \change Staff = "upper" \voiceThree \stemDown \tieDown
     \once\override NoteColumn.force-hshift = #0.5
     a2~ \shiftOff a8. d,16 e8. fis16
   | g4~
     \set subdivideBeams = ##t
     g32 e fis g a b cis d
     \set subdivideBeams = ##f
-    \staffLower\voiceThree\stemUp\tieUp
+    \change Staff = "lower" \voiceFour \stemUp \tieUp
     b8\rest g16\rest e d8. cis16
   | d2~ d8. s8. s8
   | \stemUp\tieUp e8\rest e16\rest b cis8. d16 e8.
-    \staffUpper\voiceTwo\stemDown e16\rest a4\arpeggio
+    \change Staff = "upper" \voiceThree \stemDown
+    e16\rest a4\arpeggio
   %5
   | a2 a4. a8
   | \once\override Voice.Rest.X-offset = #0.5 b,8\rest b16\rest d e8. fis16 g8. d16\rest c4\rest
-  | \staffLower\voiceThree\stemUp a8\rest a16\rest fis16 gis8. ais16 b8 b\rest b4\rest
+  | \change Staff = "lower" \voiceFour \stemUp
+    a8\rest a16\rest fis16 gis8. ais16 b8 b\rest b4\rest
   | s1
-  | s2 \staffUpper\voiceTwo\stemDown\tieDown e4\rest d'~
+  | s2
+    \change Staff = "upper" \voiceThree \stemDown \tieDown
+    e4\rest d'~
   %10
   | <d gis>16 s8. s2 cis4~
-  | cis8. s16 s2.
+  | \once\override NoteColumn.force-hshift = #0 cis8.
+    s16 s2.
   | s1*5
   %17
-  | \staffLower\voiceThree\stemUp\tieUp s4 cis, b e~
+  | \change Staff = "lower" \voiceFour
+    s4 cis, b e~
   | \alternative {
       { e2 s }
       { e4\repeatTie s2 s4. }
@@ -357,22 +371,31 @@ Tenor = \context Voice = "three" \relative c'' {
   }
   | s1*9/8*3
   %23
-  | \staffUpper\voiceTwo\stemDown d8 e16 fis g a b8 g\rest g\rest a g\rest g\rest
-  | \once\override NoteColumn.force-hshift = #0.8 gis a16 gis fis e a8 e\rest e\rest gis e\rest e\rest
+  | \change Staff = "upper" \voiceThree \stemDown
+    d8 e16 fis g a b8 g\rest g\rest a g\rest g\rest
+  | \once\override NoteColumn.force-hshift = #0.8 gis
+    a16 gis fis e a8 e\rest e\rest gis e\rest e\rest
   | \once\override NoteColumn.force-hshift = #0 fis8
-    gis16 fis e fis gis8 a16 gis fis gis a8 gis16 fis e d
-  | \staffLower\voiceThree\stemUp s1*9/8*8
+    gis16 fis e fis
+    \once\override NoteColumn.force-hshift = #0 gis8
+    a16 gis fis gis a8 gis16 fis e d
+  | \change Staff = "lower" \voiceThree \stemUp
+    s1*9/8*8
   %34
   | a4 a8\rest b cis d b cis d
   | <e, a cis>4 b'8\rest d4 d8\rest cis4 d8\rest
-  | \staffUpper\voiceTwo\stemDown <gis, b>4
-    \staffLower\voiceThree\stemUp b8\rest cis4 c8\rest b4 c8\rest
-  | \staffUpper\voiceTwo\stemDown a4 b8\rest s2.
+  | \change Staff = "upper" \voiceThree \stemDown
+    <gis, b>4
+    \change Staff = "lower" \voiceThree \stemUp
+    b8\rest cis4 c8\rest b4 c8\rest
+  | \change Staff = "upper" \voiceThree \stemDown
+    a4 b8\rest s2.
   | fis'4 b8\rest
-    \staffLower\voiceThree\stemDown
+    \change Staff = "lower" \voiceFour
     \once\override NoteColumn.force-hshift = #0.4 e,4.
     \once\override NoteColumn.force-hshift = #0.4 e
-  | \stemUp d4 s8 s2.
+  | \stemUp
+    \shiftOff d4 s8 s2.
   %40
   | \stemUp cis4 c8\rest s2.
   | s1*9/8
@@ -386,11 +409,16 @@ Tenor = \context Voice = "three" \relative c'' {
   %55
   | \set maximumBeamSubdivisionInterval = \musicLength 4.
     \set subdivideBeams = ##t
-    \staffUpper e'16[ d c b a g fis e dis cis \staffLower b a g fis e d cis! b]
+    \change Staff = "upper" \voiceThree
+    e'16[ d c b a g fis e dis cis
+    \change Staff = "lower" \voiceFour \stemUp
+    b a g fis e d cis! b]
     \set subdivideBeams = ##f
-  | \staffUpper\voiceTwo\stemDown\tieDown r8 a''16 b cis d e fis e d cis b a4.~
+  | \change Staff = "upper" \voiceThree \stemDown \tieDown
+    r8 a''16 b cis d e fis e d cis b a4.~
   | a8 e\rest e\rest s2.
-  | \staffLower\voiceThree\stemUp s1*9/8*5
+  | \change Staff = "lower" \voiceFour \stemUp
+    s1*9/8*5
   %63
   | s4. \mergeDifferentlyHeadedOff fis,8 b d e ais, cis
   | d e16 d cis b e8 ais, cis d gis, b
@@ -457,8 +485,8 @@ Bass = \context Voice = "four" \relative c {
     <d, d'>4~ d32 d' e fis g a b cis
     \set subdivideBeams = ##f
     d2~
-  | \stemDown\tieDown d2~ d8. cis16 b8. a16
-  | b2~ b8. e,16 fis8. g16
+  | \stemDown\tieNeutral d2~ d8. cis16 b8. a16
+  | \tieDown b2 b8. e,16 fis8. g16
   | a2~ a8. e16 cis8. a16
   %5
   | \stemNeutral\tieNeutral d4^~ d16 cis32 b a g fis e d8. d'16 e8.^\parenthesize\mordent fis16
@@ -489,7 +517,11 @@ Bass = \context Voice = "four" \relative c {
         a32[ b cis d \staffUpper e fis g fis e fis g a b cis d e]
         \set subdivideBeams = ##f
       }
-      { \time 9/8 \staffLower a,,4 r8 r4. r4. }
+      {
+        \time 9/8
+        \change Staff = "lower" \voiceFour
+        a,,4 r8 r4. r4.
+      }
     }
   }
   | R1*9/8*5
@@ -513,12 +545,12 @@ Bass = \context Voice = "four" \relative c {
     b16\rest a[ b cis d e fis g a b cis \staffUpper d e fis g a b cis]
     \set subdivideBeams = ##f
   | \staffLower s4.*3
-  | << \once\stemDown d,,4 \\ \once\stemUp a' >> r8 r4. r
+  | << \once\stemDown d,,4 \\ \once\stemUp a' >> d,8\rest d4.\rest d\rest
   %40
   | d,4 r8 r4. r
   | \stemUp
     \set subdivideBeams = ##t
-    r16 d,[ e fis g a b cis d e fis g a b c \staffUpper d e fis]
+    r16 d[ e fis g a b cis d e fis g a b c \staffUpper d e fis]
     \set subdivideBeams = ##f
   | \staffLower\stemDown b,4 b,8\rest b4 b8\rest b'4 b,8\rest
   | b'4 d,8\rest a4 d8\rest a'4 d,8\rest
