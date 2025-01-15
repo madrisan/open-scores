@@ -26,24 +26,14 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
 |---|---|:---:|:---:|
 | Hans Erich Apostel | Kubiniana Op. 13, *10 Klavierstücke* | II, III, VI, VII, IX | [pdf](https://github.com/madrisan/open-scores/releases/download/v59/Hans-Erich-Apostel-Kubiniana-op.13.pdf) |
 | Carl Philipp Emanuel Bach | Solfeggio c-Moll (“Solfeggietto”) Wq 117/2, H.220 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v59/CPE-Bach-H.220-Solfeggio-c-Moll.pdf) |
-| Johann Sebastian Bach :zero: | Clavierübung Teil I - Partiten I BWV 825 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v59/JS-Bach-BWV825-Partita-1.pdf) |
-|  | Clavierübung Teil I - Partiten II BWV 826 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v59/JS-Bach-BWV826-Partita-2.pdf) |
-|  | Clavierübung Teil I - Partiten III BWV 827 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v59/JS-Bach-BWV827-Partita-3.pdf)  |
-|  | Clavierübung Teil I - Partiten IV BWV 828 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v59/JS-Bach-BWV828-Partita-4.pdf) |
-|  | Clavierübung Teil I - Partiten V BWV 829 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v59/JS-Bach-BWV829-Partita-5.pdf) |
-|  | Clavierübung Teil I - Partiten VI BWV 830 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v59/JS-Bach-BWV830-Partita-6.pdf) |
+| Johann Sebastian Bach :zero: | Clavierübung Teil I - Partiten BWV 825-830 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v59/JS-Bach-BWV825-830-Partiten.pdf) |
 |  | Clavierübung Teil II - Italienisches Konzert BWV 971 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v59/JS-Bach-BWV971-Italienisches-Konzert.pdf) |
 |  | Clavierübung Teil II - Ouvertüre nach französischer Art BWV 831 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v59/JS-Bach-BWV831-Ouverture-nach-Franzosischer-Art.pdf) |
 |  | Clavierübung Teil IV - Goldberg Variationen BWV 988 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v59/JS-Bach-BWV988-Goldberg-Variationen.pdf) |
 |  | Clavierübung Teil V (?) - Die Kunst der Fuga BWV 1080 :one: | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v59/JS-Bach-BWV1080-Die-Kunst-der-Fuge.pdf) |
 |  | Inventionen BWV 772-786 :two: | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v59/JS-Bach-BWV772-801-Inventionen-und-Sinfonien.pdf) |
 |  | Sinfonien BWV 787-801 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v59/JS-Bach-BWV772-801-Inventionen-und-Sinfonien.pdf) |
-|  | Suite Anglaises I BWV 806 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v59/JS-Bach-BWV806-Suite-Anglaise-1.pdf) |
-|  | Suite Anglaises II BWV 807 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v59/JS-Bach-BWV807-Suite-Anglaise-2.pdf) |
-|  | Suite Anglaises III BWV 808 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v59/JS-Bach-BWV808-Suite-Anglaise-3.pdf) |
-|  | Suite Anglaises IV BWV 809 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v59/JS-Bach-BWV809-Suite-Anglaise-4.pdf) |
-|  | Suite Anglaises V BWV 810 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v59/JS-Bach-BWV810-Suite-Anglaise-5.pdf) |
-|  | Suite Anglaises VI BWV 811 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v59/JS-Bach-BWV811-Suite-Anglaise-6.pdf)  |
+|  | Suites Anglaises BWV 806-811 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v59/JS-Bach-BWV806-811-Suites-Anglaises.pdf) |
 |  | Das Wohltemperierte Klavier - Teil I | *milestone 3* |  |
 |  | Praeludium und Fughetta in d-moll BWV 899 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v59/JS-Bach-BWV899-Praeludium-und-Fughetta.pdf) |
 |  | Praeludium und Fughetta in e-moll BWV 900 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v59/JS-Bach-BWV900-Praeludium-und-Fughetta.pdf) |
