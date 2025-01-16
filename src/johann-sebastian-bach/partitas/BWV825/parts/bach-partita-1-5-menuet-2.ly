@@ -19,20 +19,20 @@ Soprano = \context Voice = "one" \relative c'' {
   | g aes r
   | \stemUp g es' d
   | c4 bes8 a g f
-    \break
+    %\break
   %5
   | <f bes>2 f4
   | g aes r
   | \stemUp g ees' d
   | \slurDown\grace d8 c2.
   }
-  \break
+  %\break
   \repeat volta 2 {
   | f2 c4
   %10
   | d ees e\rest
   | fis, d' c
-    \break
+    %\break
   | bes\parenthesize\prall a8 bes g4
   | \stemNeutral <bes ees>2 <aes d>4
   | \stemUp g'4 f f\rest
@@ -98,12 +98,16 @@ Bass = \context Voice = "four" \relative c' {
   %1
   \repeat volta 2 {
   | bes2.~
-  | bes2 d4~
+  | bes2
+    \once\override Tie.extra-offset = #'(0 . -0.2)
+    d4~
   | d c bes
   | f2 c4\rest
   %5
   | bes'2.~
-  | bes2 d4~
+  | bes2
+    \once\override Tie.extra-offset = #'(0 . -0.2)
+    d4~
   | d c bes
   | <f f'>2.
   }

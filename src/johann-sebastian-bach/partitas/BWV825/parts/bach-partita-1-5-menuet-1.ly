@@ -134,20 +134,6 @@ Bass = \context Voice = "four" \relative c' {
   \fine
 }
 
-forceBreaks = {
-  % page 1
-  \repeat unfold 4 { s2.\noBreak } s2.\break\noPageBreak
-  \repeat unfold 4 { s2.\noBreak } s2.\break\noPageBreak
-  \repeat unfold 4 { s2.\noBreak } s2.\break\noPageBreak
-  \repeat unfold 4 { s2.\noBreak } s2.\break\noPageBreak
-  \repeat unfold 4 { s2.\noBreak } s2.\break\noPageBreak
-  \repeat unfold 4 { s2.\noBreak } s2.\break\noPageBreak
-  \repeat unfold 4 { s2.\noBreak } s2.\pageBreak
-
-  % page 2
-  \repeat unfold 4 { s2.\noBreak } s2.\break\noPageBreak
-}
-
 \score {
   \new PianoStaff
   <<
@@ -164,7 +150,6 @@ forceBreaks = {
       \clef bass
       \Bass
     >>
-    \new Devnull \forceBreaks
   >>
   \header {
     composer = ##f % "Johann Sebastian @composer_lastnam@"

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [v61] - unreleased
+
+### Changed
+
+- J.S. Bach: Partita I BWV825: Better pagination.
+
 ## [v60] - 2024-01-16
 
 ### Added

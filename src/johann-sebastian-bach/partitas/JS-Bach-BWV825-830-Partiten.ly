@@ -112,9 +112,8 @@
 \include "./BWV825/parts/bach-partita-1-4-sarabande.ly"
 \pageBreak
 \include "./BWV825/parts/bach-partita-1-5-menuet-1.ly"
-%\pageBreak
-\include "./BWV825/parts/bach-partita-1-5-menuet-2.ly"
 \pageBreak
+\include "./BWV825/parts/bach-partita-1-5-menuet-2.ly"
 \include "./BWV825/parts/bach-partita-1-6-giga.ly"
 \pageBreak
 
