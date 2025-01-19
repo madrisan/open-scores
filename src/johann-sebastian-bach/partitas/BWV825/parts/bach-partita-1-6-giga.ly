@@ -4,12 +4,41 @@ Global = {
   \include "../../global.ly"
 }
 
+leftHandColor = #(x11-color 'darkblue)
+
+markWithColorExtended =
+#(define-music-function (color music)
+   (color? ly:music?)
+   "Change the color of the given note."
+   #{
+     \override Accidental.color = #color
+     \override Beam.color = #color
+     \override NoteHead.color = #color
+     \override Stem.color = #color
+     #music
+     \revert NoteHead.color
+     \revert Accidental.color
+     \unHighlightLeftHand
+   #})
+
+highlightLeftHand =
+#(define-music-function (music)
+   (ly:music?)
+   "Colour the left hand to make it more visible"
+   #{ \markWithColorExtended \leftHandColor #music #})
+
+unHighlightLeftHand = {
+  \revert Stem.color
+  \revert Beam.color
+}
+
 Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
   \stemUp
+  \highlightLeftHand {
   %1
-  \repeat volta 2 {
-  | f4^\markup { "m.s." } s2 f4
+    \repeat volta 2 {
+  | f4^\markup { \with-color #leftHandColor "m.s." } s2 f4
   | g aes, g g'
   | c,4 ges f c'
   | d s2 d4
@@ -28,8 +57,8 @@ Soprano = \context Voice = "one" \relative c'' {
   %15
   | aes s2.
   | s4 f s2
-  }
-  \repeat volta 2 {
+    }
+    \repeat volta 2 {
   | a'4 ees,! s a'
   | bes aes, s bes'
   | g bes, a! g'
@@ -49,6 +78,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | es, bes' g' d,
   | c f bes, e'
   | f f, f' f,
+  \break
   | es' f, es' f,
   | d' f, d' f,
   %35
@@ -68,6 +98,8 @@ Soprano = \context Voice = "one" \relative c'' {
   | f s2 ees4
   | des s2.
   | s4 bes s2
+    }
+    \unHighlightLeftHand
   }
 }
 
@@ -140,7 +172,7 @@ Alto = \context Voice = "two" \relative c' {
   | \repeat unfold 4 { r g bes }
   | \repeat unfold 4 { r a c }
   | \repeat unfold 4 { r a bes }
-  | r8*2/3 d f r d' f bes2
+  | r8*2/3 d! f r d' f bes2
     \override Score.TextMark.self-alignment-X = #CENTER
     \textEndMark \markup { \musicglyph "scripts.ufermata" }
   }
@@ -152,7 +184,8 @@ Bass = \context Voice = "four" \relative c' {
   \stemNeutral\tieNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
-  \repeat volta 2 {
+  \highlightLeftHand {
+    \repeat volta 2 {
   %1
   | s4 bes bes, s4
   | s1*2
@@ -164,8 +197,8 @@ Bass = \context Voice = "four" \relative c' {
   %15
   | s b' c c,
   | f, s2.
-  }
-  \repeat volta 2 {
+    }
+    \repeat volta 2 {
   | s2 f'4 s
   | s2 bes4 s
   | s1*8
@@ -178,12 +211,14 @@ Bass = \context Voice = "four" \relative c' {
   |   s4 ges f s
     }
   %45
- | s des c s
- | s ges f s
- | s e' f f,
- | bes s2.
+  | s des c s
+  | s ges f s
+  | s e' f f,
+  | bes s2.
     \tweak direction #DOWN
     \textEndMark \markup { \musicglyph "scripts.dfermata" }
+    }
+    \unHighlightLeftHand
   }
   \fine
 }
