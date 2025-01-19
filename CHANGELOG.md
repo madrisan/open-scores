@@ -7,8 +7,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 
-- J.S. Bach: Partita I BWV825: Better pagination.
-- J.S. Bach: Partita I BWV825: Giga: Complete reworking of the left hand to facilitate reading.
+- J.S. Bach: Partita I BWV825: Better pagination
+- J.S. Bach: Partita I BWV825: Giga: Complete reworking of the left hand to facilitate reading
+
+### Fixed
+
+J.S. Bach: Partita I BWV825: Fix note in Corrente
 
 ## [v60] - 2024-01-16
 

@@ -127,7 +127,7 @@ Bass = \context Voice = "four" \relative c' {
   %20
   | bes, d f bes, d f a, d f
   | g, bes d g, bes d f, bes d
-  | es, g c e g f e d c
+  | e, g c e g f e d c
   | f8. d16 a8. bes16 c8. c,16
   | f8. c'16 a8. c16 f,8. a16
   %25
