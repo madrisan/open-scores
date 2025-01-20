@@ -30,23 +30,23 @@ Soprano = \context Voice = "one" \relative c'' {
     c es a
   %5
   | \stemNeutral bes f d c d f bes, d f, bes d, f r g8 f16
-  | r c' e, d e g c, e r a, c ees d c c' d,
-  | es g c b c es a, c
+  | r c' e, d e g c, e r a, c ees d c c' d,^1
+  | es^2 g^1 c b c es a, c
     \change Staff = "lower" \voiceTwo \stemUp
     \clef treble fis, a
     \change Staff = "upper" \voiceOne \stemDown
     c es d c a' c,
-  | \stemNeutral r c bes a bes d e\parenthesize\mordent f g c, bes a bes g' bes, f'
-  | bes, f' e d e g a\parenthesize\mordent bes c f, e d e c' e, bes'
+  | \stemNeutral r c bes a bes^2 d^1 e^3\parenthesize\mordent f g c, bes a bes g' bes, f'
+  | bes, f' e d e g a\parenthesize\mordent bes c f,^2 e!^1 d^2 e c' e, bes'
   %10
-  | e, bes' a g f a e a d, a' d, c bes d a d
-  | g, a' g f e g d g c, g' c, bes a c g c
-  | f,=' g' f e d f c f bes, f' bes, a g bes f bes
+  | e, bes' a g f a e a d, a' d,^3 c bes d a d
+  | g, a' g f e g d g c, g' c,^3 bes a c g c
+  | f,=' g' f e d f c f bes, f' bes,^3 a g bes f bes
   | \stemNeutral e,4\prall r8 c f g16 a bes8 a16\prall g
   | a4 r16 c, f g a f b c d f, c' b
   %15
-  | \stemUp c4 \stemNeutral r8 g c d16 e f8 e16\prall d
-  | e8 f16 g aes8 g16 \prall f g8 aes16 bes c8 bes16\prall aes |
+  | \stemUp c4 \stemNeutral r8 g^1 c^2 d16 e f8 e16\prall d
+  | e8^1 f16 g aes8 g16^2 \prall f g8^1 aes16 bes c8 bes16\prall aes |
   | bes g e c bes g c e f c a f r g bes e
   | \stemUp f8. es16 d8. d16 e\rest d c8 f16\rest a, bes8
   | a f r16 f8 e16 <a, c f>4..
@@ -65,24 +65,24 @@ Soprano = \context Voice = "one" \relative c'' {
     fis, a d
     \change Staff = "upper" \voiceOne \stemDown
     fis a c
-  | \stemUp bes2~ bes16 bes a g a c fis, g
+  | \stemUp bes2~^4 bes16 bes^5 a^3 g a c fis,^2 g^4
   | fis4 c16 es a, c fis, a d fis g d a' d,
-  | bes'4 f16 aes d, f b, d g b c g d' f,
-  | es g a b c es bes es aes, es' aes, g f aes es aes
+  | bes'4 f16 aes d, f b,^1 d^2 g^1 b c g d' f,^1
+  | es^2 g a b c es bes es aes, es' aes,^3 g f aes^5 es aes
   %25
   | d, f g a bes d aes d g, d' g, f es g d g
   | c, es f g aes c g c f, c' f, es d f c f
   | b,4\parenthesize\prall r8 g c d16 es f8 es16\prall d
   | es4 r16 g, c d es c fis g a c, g' fis
-  | g4 \stemNeutral r8 d g a16 b c8 b16\prall a
+  | g4 \stemNeutral r8 d g a16 b c8 b16^3\prall a
   %30
-  | b8 c16 d es8 d16\prall c d8 es16 f g8 f16\prall es
-  | f='' d b g f d g b c g es c r d f b
+  | b8^3 c16^1 d es8 d16\prall c^1 d8^2 es16 f g8 f16\prall es
+  | f='' d b g^1 f^2 d g b c g es c r d f b
   | c g es c es g c d es c a g a c f, c'
   | d f bes, a bes d f g aes f d c d f bes, f'
-  | g='' bes es, d es g a\parenthesize\mordent bes c f, es d es f c es
+  | g='' bes es, d es g a\parenthesize\mordent bes c f, es d es f c^1 es^5
   %35
-  | d aes g d e g bes g a es' d c d bes f a
+  | d aes^3 g^2 d^1 e^2 g^3 bes^4 g^1 a es' d c d bes f a
   | bes d f g aes f d bes r bes es g bes g e des
   | r c es a c a ges es d bes' g e f bes, a es'
   | d aes g c bes f es a <bes f d>4..
@@ -137,7 +137,7 @@ Tenor = \context Voice = "three" \relative c' {
   | g4 s fis s
   | g s2.
   | s1*10
-  | e'16\rest d c8 a'16\rest c, d8 f16\rest a, bes8 e16\rest f, g8
+  | e'16\rest d c8 a'16\rest c, d8 f16\rest a,^2 bes8 e16\rest f,^3 g8
   | e'16\rest g, aes8~ aes
     \change Staff = "upper" \stemDown
     \once\override NoteColumn.force-hshift = #0.3 g
@@ -175,14 +175,14 @@ Bass = \context Voice = "four" \relative c {
   %10
   | \clef bass e, \clef treble e'[ g bes] a a, c e
   | \clef bass d, \clef treble d' f a g \clef bass g, bes d
-  | c,16 c' bes a g f e d c a' g f e g c, e
-  | c,8 r b'4\rest f'16 e d c b g' g, f'
-  | c,8 r b'4\rest a'16 c f e aes, d c b
+  | c,16 c' bes a g_1 f e d c a' g f e g c, e
+  | c,8 r b'4\rest f'16_1 e d c b g' g, f'
+  | c,8 r b'4\rest a'16 c f e! aes, d c b
   %15
-  | g bes des c f, c' bes aes e bes' aes g f e d c
+  | g bes des^2 c^1 f, c' bes aes e bes'^2 aes!^3 g^1 f e! d c
   | e'8 g c, bes a bes c c,
-  | f8. a16 bes8. a16 g8. f16 e8. e16
-  | f8. d16 \stemDown c8 c, \stemUp <f f'>4..
+  | f8. a16 bes8. a16_3 g8. f16 e8. e16
+  | f8. d16_3 \stemDown c8 c, \stemUp <f f'>4..
   }
   \repeat volta 4 {
   \partial 16 r16
@@ -208,7 +208,7 @@ Bass = \context Voice = "four" \relative c {
   %35
   | bes d g, c f, bes es, f
   | bes, aes' d f bes,, bes' es g
-  | \stemUp \clef bass bes,, \clef treble c' ees a bes16 d, c bes \stemDown f'8 \clef bass f,
+  | \stemUp \clef bass bes,, \clef treble c' ees a bes16 d,_3 c bes \stemDown f'8 \clef bass f,
   | bes2 <bes, bes'>4..
     \tweak direction #DOWN
     \textEndMark \markup { \musicglyph "scripts.dfermata" }
