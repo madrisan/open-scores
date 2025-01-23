@@ -45,6 +45,7 @@ Latest release: [Open Scores for Piano v60](https://github.com/madrisan/open-sco
 |  | Neun kleine Präludien BWV 924-932 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v60/JS-Bach-BWV924-932-Neun-kleine-Praludien.pdf) |
 |  | Sechs kleine Präludien BWV 933-938 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v60/JS-Bach-BWV933-938-Sechs-kleine-Praludien.pdf) |
 |  | Fuga d-Moll BWV948 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v60/JS-Bach-BWV948-Fuga-d-Moll.pdf) |
+|  | Fuga H-Moll BWV951 - on a Theme by Tomaso Albinoni | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v60/JS-Bach-BWV951-Fuga-H-Moll.pdf) |
 |  | Fuga C-Dur BWV952 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v60/JS-Bach-BWV952-Fuga-C-Dur.pdf) |
 |  | Praeludium Fuge und Allegro BWV 998 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v60/JS-Bach-BWV998-Praeludium-Fuge-und-Allegro.pdf) |
 |  | Musikalisches Opfer: Ricercar a 3, Ricercar a 6 BWV 1079 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v60/JS-Bach-BWV1079-Musikalisches-Opfer.pdf) |
