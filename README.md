@@ -13,12 +13,14 @@ LilyPond is free software and part of the [GNU Project](https://gnu.org/).
 
 ## Scores in *pdf* format
 
-The following *pdf* files can be generated from source code, but have been added here for convenience.
-If you prefer to create these files yourself (and midi files as well), you can skip to the next section.
+> [!TIP]
+> The following *pdf* files can be generated from source code, but have been added here for convenience.
+> If you prefer to create these files yourself (and *midi* files as well), see the file [DEVELOPERS.md](DEVELOPERS.md)
 
 Latest release: [Open Scores for Piano v60](https://github.com/madrisan/open-scores/releases)
 
-The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fedora Linux 40).
+> [!NOTE]
+> The source code was compiled with `GNU LilyPond 2.25.20 (running Guile 3.0)` (Fedora Linux 41).
 
 ![Open Musical Scores Logo](images/SheetMusic-icon.png)
 
@@ -104,10 +106,6 @@ The source code was compiled with `GNU LilyPond 2.25.12 (running Guile 2.2)` (Fe
  4. [Manuscript](images/baldassare-galuppi-sonata-5-manuscript-1st-page.png) of the first page of the sonata
  5. Thanks to my amateur harpist friend *Tristan Rollet* ([@Pluiesurlavitre](https://github.com/Pluiesurlavitre)) for pointing me to this beautiful romantic piece
  6. With a preface by *Giancarlo Simonacci* ([Wikipedia :it:](https://it.wikipedia.org/wiki/Giancarlo_Simonacci)), in Italian with English translation by *Davide Madrisan*
-
-## How to manually create the `.pdf` and `.midi` files
-
-See the file [DEVELOPERS.md](DEVELOPERS.md)
 
 <br />
 <p align="center">
