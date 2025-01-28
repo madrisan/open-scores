@@ -133,6 +133,7 @@ AC_CONFIG_FILES([\
   src/johann-sebastian-bach/fuga/BWV948/Makefile \
   src/johann-sebastian-bach/fuga/BWV951/Makefile \
   src/johann-sebastian-bach/fuga/BWV952/Makefile \
+  src/johann-sebastian-bach/fuga/BWV953/Makefile \
   src/johann-sebastian-bach/goldberg-variationen-BWV988/Makefile \
   src/johann-sebastian-bach/inventionen-und-sinfonien-BWV772-801/Makefile \
   src/johann-sebastian-bach/italienisches-konzert-BWV971/Makefile \

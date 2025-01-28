@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [v61] - unreleased
 
+### Added
+
+- J.S. Bach: Fuga C-Dur BWV953
+
 ### Changed
 
 - J.S. Bach: Partita I BWV825: Better pagination
