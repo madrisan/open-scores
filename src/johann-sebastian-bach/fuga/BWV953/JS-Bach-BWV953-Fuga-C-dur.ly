@@ -104,23 +104,25 @@ Global = {
   \include "global.ly"
 }
 
+\include "./macros.ly"
+
 Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
   \stemUp\tieUp
   \override MultiMeasureRest.staff-position = #0
   %1
-  | r4 r16 c b c  a c b c g c b c
+  | r4 \highlightSubject { r16 c b c  a c b c g c b c
   | f, c' b c e, c' b c d, c' b a b c a b
-  | c e d c b8 r c r b r
+  | \unHighlightSubject c } e d c b8 r c r b r
   | e r d r c a d[ c]
   %5
   | b r c r c r c r
   | c r c r f d g[ f]
   | e c f[ e] d b e[ d]
-  | c a d[ c] b16 c b a g g' fis g
+  | c a d[ c] b16 c b a \highlightSubject { g g' fis g
   | e g fis g d g fis g c, g' fis g b, g' fis g
   %10
-  | a, g' fis e fis g e fis g, f' e d e f d e
+  | a, g' fis e fis g e fis \unHighlightSubject g, } f' e d e f d e
   | f, e' d c d e c d e, d' c b c d b c
   | d, c' b a b c a b gis a gis fis e e' d e
   | c d c b a8 cis d r c r
@@ -139,9 +141,9 @@ Soprano = \context Voice = "one" \relative c'' {
   | c8 r g a b2~
   %25
   | b16 c b c fis c g' c, a'2~
-  | a8 d, g16 a fis g e g fis g d g fis g
+  | a8 d, \highlightSubject { g16 a fis g e g fis g d g fis g
   | c, g' fis g b, g' fis g a, g' fis e fis g e fis
-  | b, a' g fis g a fis g c, b' a g a b g a
+  | \unHighlightSubject b, } a' g fis g a fis g c, b' a g a b g a
   | b8 g r b,16 d g8 c, b[ d]
   %30
   | g a, b[ b'] c a d,[ c']
@@ -161,10 +163,10 @@ Alto = \context Voice = "two" \relative c'' {
   \override MultiMeasureRest.staff-position = #-10
   %1
   | R1*2
-  | r4 r16 g fis g e g fis g d g fis g
+  | r4 \highlightSubject { r16 g fis g e g fis g d g fis g
   | c, g' fis g b, g' fis g a, g' fis e fis g e fis
   %5
-  | g a g fis e8 r fis r e r
+  | \unHighlightSubject g } a g fis e8 r fis r e r
   | a r g r a r d r
   | g, r c r fis, r b r
   | e, r a r d, r r4
@@ -173,7 +175,7 @@ Alto = \context Voice = "two" \relative c'' {
   %11
   | \override MultiMeasureRest.staff-position = #-9
     R1*2
-  | r4 r16 a' g a f a gis a e a gis a
+  | r4 \highlightSubject { r16 a' g a f a gis a e a gis a
   | \change Staff = "lower" \stemUp
     d,
     \change Staff = "upper" \stemDown
@@ -187,7 +189,7 @@ Alto = \context Voice = "two" \relative c'' {
     \change Staff = "upper" \stemDown
     a' gis fis gis a fis gis
   %15
-  | a f e d e bes' a g f d cis b! cis d b cis
+  | \unHighlightSubject a } f e d e bes' a g f d cis b! cis d b cis
   | \change Staff = "lower" \stemUp
     d
     \change Staff = "upper" \stemDown
@@ -230,11 +232,7 @@ Alto = \context Voice = "two" \relative c'' {
     \change Staff = "upper" \stemDown
     e' d c d e c d
   | \change Staff = "lower" \stemUp
-    e,
-    \change Staff = "upper" \stemDown
-    d'
-    \change Staff = "lower" \stemUp
-    c b c d b c
+    e, d' c b c d b c
     d, c' b a b c a b
   | c4
     \change Staff = "upper" \stemDown
@@ -259,9 +257,9 @@ Bass = \context Voice = "four" \relative c' {
   \override Rest.staff-position = #0
   %1
   | R1*4
-  | r4 r16 c b c  a c b c  g c b c
+  | r4 \highlightSubject { r16 c b c  a c b c  g c b c
   | f, c' b c e, c' b c d, c' b a b c a b
-  | c, b' a g a b g a b, a' g fis g a fis g
+  | \unHighlightSubject c, } b' a g a b g a b, a' g fis g a fis g
   | a, g' fis e fis g e fis g fis g a b g a b
   | \stemNeutral c8 c, b[ b'] a a, g[ g']
   %10
@@ -273,10 +271,10 @@ Bass = \context Voice = "four" \relative c' {
   %15
   | a8 r r4 a8 r r4
   | a8 r r4 a8 r r4
-  | \stemDown r4 r16 e' dis e c e dis e b e dis e
+  | \stemDown r4 \highlightSubject { r16 e' dis e c e dis e b e dis e
   | a, e' dis e g, e' dis e fis, e' dis cis dis e cis dis
   %20
-  | \stemNeutral e,8 fis g e a16 d cis b cis d b cis
+  | \stemNeutral \unHighlightSubject e,8 } fis g e a16 d cis b cis d b cis
   | d,8 e fis d g fis gis e
   | a16 g fis e fis g e fis dis8 cis dis b
   | e b c[ fis,] g a b[ b']
@@ -289,9 +287,9 @@ Bass = \context Voice = "four" \relative c' {
   | \override MultiMeasureRest.staff-position = #-6
     R1*2
   %33
-  | r4 r16 c, b c a c b c g c b c
+  | r4 \highlightSubject { r16 c, b c a c b c g c b c
   | f, c' b c e, c' b c d, c' b a b c a b
-  | c8 d e fis g g,a b
+  | \unHighlightSubject c8 } d e fis g g,a b
   | c e, f g c,2\fermata
     \fine
 }
@@ -342,6 +340,6 @@ forceBreaks = {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 4 = 110
   }
 }
