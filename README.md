@@ -47,6 +47,7 @@ Latest release: [Open Scores for Piano v60](https://github.com/madrisan/open-sco
 |  | Fuga d-Moll BWV948 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v60/JS-Bach-BWV948-Fuga-d-Moll.pdf) |
 |  | Fuga H-Moll BWV951 - on a Theme by Tomaso Albinoni | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v60/JS-Bach-BWV951-Fuga-H-Moll.pdf) |
 |  | Fuga C-Dur BWV952 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v60/JS-Bach-BWV952-Fuga-C-Dur.pdf) |
+|  | Fuga C-Dur BWV953 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v61/JS-Bach-BWV953-Fuga-C-Dur.pdf) |
 |  | Praeludium Fuge und Allegro BWV 998 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v60/JS-Bach-BWV998-Praeludium-Fuge-und-Allegro.pdf) |
 |  | Musikalisches Opfer: Ricercar a 3, Ricercar a 6 BWV 1079 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v60/JS-Bach-BWV1079-Musikalisches-Opfer.pdf) |
 | Bach / Busoni | Chorale Prelude - In dir ist Freude BWV 615 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v60/JS-Bach-Busoni-Chorale-Prelude-BWV615.pdf) |

@@ -19,14 +19,14 @@ SUFFIXES = .in
 
 BUILT_SOURCES = covercolor.ly
 
-EXTRA_DIST = JS-Bach-BWV953-Fuga-C-dur.ly \
+EXTRA_DIST = JS-Bach-BWV953-Fuga-C-Dur.ly \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
 	     logo.ly \
 	     macros.ly
 
-all: $(BUILT_SOURCES) JS-Bach-BWV953-Fuga-C-dur
+all: $(BUILT_SOURCES) JS-Bach-BWV953-Fuga-C-Dur
 
 clean-local:
 	 -rm -f $(BUILT_SOURCES)
