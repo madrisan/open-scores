@@ -5,6 +5,7 @@ SUBDIRS = cembalo-konzert-largo-BWV1056-kempff \
 	  das-wohltemperierte-klavier-I \
 	  die-kunst-der-fuge-BWV1080 \
 	  fantasie-und-fuge-BWV904 \
+	  fantasie-und-fuge-BWV944 \
 	  fuga \
 	  goldberg-variationen-BWV988 \
 	  inventionen-und-sinfonien-BWV772-801 \

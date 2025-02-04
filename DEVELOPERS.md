@@ -53,6 +53,7 @@ make -C src/johann-sebastian-bach/chorale-preludes/jesu-meine-freude-BWV610
 make -C src/johann-sebastian-bach/chromatische-fantasie-und-fugue-BWV903-busoni
 make -C src/johann-sebastian-bach/die-kunst-der-fuge-BWV1080
 make -C src/johann-sebastian-bach/fantasie-und-fuge-BWV904
+make -C src/johann-sebastian-bach/fantasie-und-fuge-BWV944
 make -C src/johann-sebastian-bach/fuga/BWV948
 make -C src/johann-sebastian-bach/fuga/BWV951
 make -C src/johann-sebastian-bach/fuga/BWV952
