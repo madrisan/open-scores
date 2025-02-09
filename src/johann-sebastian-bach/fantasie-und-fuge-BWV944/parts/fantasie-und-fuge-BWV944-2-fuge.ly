@@ -121,8 +121,61 @@ Soprano = \context Voice = "one" \relative c'' {
   | r e r
   %105
   | r16 e d c a' g f e d f e d
+  | g4 r r16 f e d
+  | e4 r16 e d c b4
+  | r8 c4 c8~ c16 b c b
+  | \once\stemNeutral c2.
+  %110
+  | bes4 a2~
+  | a16 c b! a d b c d e, d' c b
+  | c4 b2~
+  | b16 d cis b e cis d e fis, e' dis cis
+  | dis2.
+  %115
+  | e16 g fis e a2~
+  | a8 g4 g8~ g16 g fis e
+  | dis fis dis e fis dis e fis a,! c b a
+  | g b g a g b a b e, g fis e
+  | dis fis dis e fis dis e fis fis4
+  | s2.*17
+  %137
+  | R1*3/4
+  | a16 c b a e' b c d e, d' c b
+  | c d c b \stemNeutral a e' f g a g f e
+  %140
+  | f e d e f e d c b d c b
+  | e d c d e d c b a c b a
+  | d c b c d c b a gis b a gis
+  | a
+    \change Staff = "lower"
+    e, a
+    \change Staff = "upper"
+    c e a, c e a g a fis
+  | \stemUp g2.~
+  %145
+  | g~
+  | g4 f~ f16 ees f d
+  | aes'2.~
+  | aes4 g~ g16 f g e!
+  | bes'2.~
+  %150
+  | bes4 aes~ aes16 g a fis
+  | c'2.~
+  | c4 bes~ bes16 a bes g
+  | ees'4~ ees16 d c bes a c bes a
+  | bes4~ bes16 a g f e g fis e
+  %155
+  | fis4~ fis16 g fis g a4~
+  | a8 g4 g fis8
+  | g2.
+  | f4 e2~
+  | e16 g fis e a fis g a b, a' g fis
+  %160
+  | g4 fis2~
+  | fis16 a gis fis b gis a b cis,! b' a gis
+  | a4 ais d\rest
 
-  | R1*3/4*92
+  | R1*3/4*36
     \fine
 }
 
@@ -275,14 +328,153 @@ Alto = \context Voice = "two" \relative c' {
   | \repeat unfold 3 { r16 d c b c4 r }
   %105
   | R1*3/4
+  | r16 b a g c d e f g,4~
+  | g r r16 a g f
+  | e4 d d
+  | \change Staff = "lower" \voiceThree
+    g,16 b a g d' a b c d, c' b a
+  %110
+  | g
+    \change Staff = "upper" \voiceTwo
+    f' e d g e f g a, g' f e
+  | f4 e2~
+  | e16 g fis e a fis g a b, a' g fis
+  | g4 fis2~
+  | fis4 a c!
+  %115
+  | b4 c8 a dis4\downmordent
+  | e cis ais
+  | b8 r r4 r
+  | s2.
+  | s2
+    \change Staff = "lower" \voiceThree
+    a,16 c b a
+  %120
+  | g b g a b g a b e, g fis e
+  | dis fis dis e fis dis e fis r4
+  | e16 g fis e b' fis g a b, a' g fis
+  | g a g fis e b' c d e d c b
+  | c b a b c b a g fis a g fis
+  %125
+  | b a g a b a g fis e g fis e
+  | a g fis g a g fis e dis fis e dis
+  | e b e g b e, g b e d e b
+  | c e, a c
+    \change Staff = "upper" \voiceTwo \stemNeutral
+    e a, c e a g! a e
+  | f a, d f a d, f a d c! b a
+  %130
+  | \override Rest.staff-position = #0
+    gis4 r g~
+  | g16 e f g a,8 g' cis, g'
+  | fis4 r f~
+  | f16 d e f g,8 f' b, f'
+  | e16 f e d c8 r r16 a b c
+  %135
+  | d e d c b8 r r16 gis a b
+  | c d e f
+    \change Staff = "lower" \voiceThree
+    gis,4.\prall gis8
+  | a16 c b a e' b c d e, d' c b
+  | c4 b4. e8~
+  | e16 f e d c d c b a b c a
+  %140
+  | \stemNeutral d e f e d c b a g f' e d
+  | c d e d c b a g f e' d c
+  | b c d c b a gis fis e d' c b
+  | s2.
+  | \stemUp e16 b, e g b e, g b
+    \change Staff = "upper" \voiceTwo
+    e d e b
+  %145
+  | cis2.~
+  | cis16 b cis a d4~ d8. d16~
+  | d2.~
+  | d16 c d bes ees4~ ees8. e16~
+  | e2.~
+  %150
+  | e16 d e c f4~ f8. fis16~
+  | fis2.~
+  | fis16 e fis d g4~ g8. g16~
+  | g8 c fis,4 c\rest
+  | e8\rest g cis,4 g\rest
+  %155
+  | b16\rest d c bes a4~ a16 c bes a
+  | bes4 a a
+  | bes16
+    \change Staff = "lower" \voiceThree
+    f e d a' e f g a, g' f e
+  | d
+    \change Staff = "upper" \voiceTwo
+    c' b a d b c d
+    \change Staff = "lower" \voiceThree
+    e,
+    \change Staff = "upper" \voiceTwo
+    d' c b
+  | c4
+    \change Staff = "lower" \voiceThree
+    b2~
+  %160
+  | b16
+    \change Staff = "upper" \voiceTwo
+    d cis b e cis d e
+    \change Staff = "lower" \voiceThree
+    fis,
+    \change Staff = "upper" \voiceTwo
+    e' d cis
+  | d4 cis2~
+  | cis16 fis e d g! e fis g cis, e d cis
+  | b4 ais f\rest
+  | b16 b' a g c a b c fis, a g fis
+  %165
+  | e4 dis c\rest
+  | e16 e' d c f d e f b, d c b
+  | a4 gis g,\rest
+  | a'8 g! fis e dis4
+  | b d f
+  %170
+  | e f8 d gis4\prallmordent
+  | a fis dis
+  | e8 b\rest b4\rest g\rest
+  | \override MultiMeasureRest.staff-position = #-10
+    R1*3/4
+  | \change Staff = "lower" \voiceThree
+    gis16 b gis a b gis a b d, f e d
+  %175
+  | c e c d e c d e a, c b a
+  | gis b gis a b gis a b f'4\rest
+  | a\rest <e a> a\rest
+  | a a\rest a\rest
+  | <b, e> f'\rest f\rest
+  %180
+  | e f\rest f\rest
+  | b, f'\rest f\rest
+  | e, f'\rest f\rest
+  | a, f'\rest f\rest
+  | <fis, a dis> f'\rest f\rest
+  %185
+  \repeat unfold 2 {
+  | <gis, b e> f'\rest f\rest
+  | <a, c e> f'\rest f\rest
+  | <fis, a dis> f'\rest f\rest
+  }
+  %191
+  | \stemNeutral r16 e, gis b d f! gis b
+    \change Staff = "upper" \voiceTwo
+    d f gis b
+  | \change Staff = "lower" \voiceThree
+    <e,, a>4 a\rest \stemNeutral r16 a b cis
+  | d e f e d c! b a gis b e, gis
+  | c, d e d c b a b c d e f
+  %195
+  | gis,8 d' b d e, d'
+  | r16 a c e a
+    \change Staff = "upper" \voiceTwo
+    c dis fis a c dis fis
+  | e,8\rest <c e> <b d>2
+  | <a cis>4 c\rest c\rest
 
-}
 
-Tenor = \context Voice = "three" \relative c {
-  \voiceThree
-  \stemUp\tieUp
-  \override Rest.staff-position = #0
-  %1
 }
 
 Bass = \context Voice = "four" \relative c' {
@@ -390,16 +582,82 @@ Bass = \context Voice = "four" \relative c' {
   | d f b, f' g, f'
   | e d c d e c
   | f g a bes a g
-  %95
+  %100
   | fis e d e fis d
   | g a b a b g
   | \clef treble c4~ c16 b c d e f g a
   | a,4~ a16 g a b c d e f
   | \clef bass e,4~ e16 d c d e f g a
-  %100
+  %105
   | f,8 f' c f a, f'
+  | f, f' e16 e' d c b8 g
+  | c16 a g f e8 f g g,
+  | c16 e d c g' d e f g, f' e d
+  | \stemDown e4 fis f,\rest
+  %110
+  | g' \stemNeutral cis, r
+  | d gis r
+  | a dis, r
+  | e ais r
+  | b16 dis cis b fis' dis e fis a, c b a
+  %115
+  | g b a g dis' a b c fis, a g fis
+  | e g fis e ais e fis g cis, e dis cis
+  | b2.~
+  | b~
+  | b~
+  %120
+  | \stemDown\tieDown b~
+  | b2 a16 c b a
+  | g4~ g16 a b c dis, fis b dis,
+  | e4 f\rest r16 e' fis! g
+  | a8 a, r16 a b c d c b a
+  %125
+  | g4 g16\rest g a b c b a g
+  | fis4 f16\rest fis g a b a g fis
+  | g4 g16\rest a g fis e fis gis e
+  | a gis a b c d c b a b cis a
+  | d cis d e f g f e d e f d
+  %130
+  | e b e gis b e, gis b e d e b
+  | \stemNeutral\tieNeutral cis4 r16 d cis b a g fis e
+  | d a d fis a d, fis a d c c a
+  | b4 r16 c b a g f e d
+  | c4 r16 b' a g fis e d c
+  %135
+  | b4 r16 a' gis fis e d c b
+  | \stemDown\tieDown a c b a e' b c d e, d' c b
+  | c8 d e fis gis e
+  | a2 gis4
+  | a s b,\rest
+  %140
+  | s2.*3
+  | c'4 r8 a c a
+  | f,4\rest f8\rest e' g e
+  %145
+  | a16 e, a cis e a, cis e a g a e
+  | f4^~ f16 e f d bes'4
+  | \stemNeutral\tieNeutral r16 f, bes d f bes, d f bes aes bes f
+  | g4~ g16 f g ees c'4
+  | r16 g, c e! g c, e g c bes c g
+  %150
+  | aes4~ aes16 g aes f d'4
+  | r16 a, d fis a d, fis a d c d a
+  | bes4~ bes16 a bes g ees' f! ees d
+  | c d ees d c bes a g fis a g fis
+  | g a bes a g f! e d cis e d cis
+  %155
+  | d c ees d c bes a g fis a g fis
+  | g bes a g d' a bes c d, c' bes a
+  | \stemDown g4 cis c,\rest
+  | d' gis, e\rest
+  | a dis b\rest
+  %160
+  | e ais, f\rest
+  | \stemNeutral b eis r
+  | fis e r
 
-  | R1*3/4*92
+  | s1*3/4*36
     \fine
 }
 
@@ -418,7 +676,6 @@ Bass = \context Voice = "four" \relative c' {
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \clef bass
-      \Tenor
       \Bass
     >>
   >>
