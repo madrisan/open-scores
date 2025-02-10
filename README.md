@@ -42,6 +42,7 @@ Latest release: [Open Scores for Piano v60](https://github.com/madrisan/open-sco
 |  | Praeludium und Fughetta in F-Dur BWV 901 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v60/JS-Bach-BWV901-Praeludium-und-Fughetta.pdf) |
 |  | Praeludium und Fughetta in G-Dur BWV 902 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v60/JS-Bach-BWV902-Praeludium-und-Fughetta-BWV902.pdf) |
 |  | Fantasie und Fuge BWV 904 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v60/JS-Bach-BWV904-Fantasie-und-Fuge.pdf) |
+|  | Fantasie und Fuge BWV 944 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v61/JS-Bach-BWV944-Fantasie-und-Fuge.pdf) |
 |  | Neun kleine Präludien BWV 924-932 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v60/JS-Bach-BWV924-932-Neun-kleine-Praludien.pdf) |
 |  | Sechs kleine Präludien BWV 933-938 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v60/JS-Bach-BWV933-938-Sechs-kleine-Praludien.pdf) |
 |  | Fuga d-Moll BWV948 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v60/JS-Bach-BWV948-Fuga-d-Moll.pdf) |

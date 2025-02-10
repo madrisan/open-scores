@@ -174,8 +174,49 @@ Soprano = \context Voice = "one" \relative c'' {
   | g4 fis2~
   | fis16 a gis fis b gis a b cis,! b' a gis
   | a4 ais d\rest
-
-  | R1*3/4*36
+  | b16 d cis b e cis d e fis, e' d cis
+  | d4 dis r
+  %165
+  | e16 g fis e a fis g a b, a' g fis
+  | g4 gis r
+  | a16 c, b a d b c d e, d' c b
+  | c2~ c16 c b a
+  | gis2.
+  %170
+  | a16 c b a d2~
+  | d8 c4 c8~ c16 c b a
+  | gis b gis a b gis a b d, f! e d
+  | c e c d e c d e a, c b a
+  | R1*3/4*3
+  %177
+  | \stemNeutral a'16 c b a e' c d e a, g' f e
+  | f e d e f e d c b c d c
+  | b a gis a b a gis fis e d c b
+  %180
+  | \clef bass
+    c b a b c b a g fis g a g
+  | fis e dis e fis e dis cis b a gis fis
+  | e b' gis a b gis a b e, d' c b
+  | c e c d e c d e a, g' fis e
+  | r16 a fis g a fis g a dis, c' b a
+  %185
+  | gis b gis a b gis a b e, d' c b
+  | \clef treble
+    c e c d e c d e a, g' fis e
+  | dis a' fis g a fis g a dis, c' b a
+  | gis b gis a b gis a b e, d' c b
+  | c e c d e c d e a, g' fis e
+  %190
+  | dis a' fis g a fis g a dis, c' b a
+  | gis r r8 r4 r
+  | r16 g f e a e f g a, g' f e
+  | f e d e f e d c b d c b
+  | e d c d e d c b a c b a
+  %195
+  | d c b c d c b a gis b a gis
+  | c b\rest b8\rest b4\rest r4
+  | r8 a a4( gis8.)\prallmordent a16
+  | a4 d\rest d\rest
     \fine
 }
 
@@ -656,9 +697,46 @@ Bass = \context Voice = "four" \relative c' {
   | e ais, f\rest
   | \stemNeutral b eis r
   | fis e r
-
-  | s1*3/4*36
-    \fine
+  | d cis r
+  | b a' r
+  %165
+  | g fis r
+  | e d' r
+  | c b r
+  | a16 c b a dis a b c fis, a gis fis
+  | e gis fis e b' gis a b d, f e d
+  %170
+  | c e d c gis' d e f b, d c b
+  | a c b a dis a b c fis, a gis fis
+  | e2.~
+  | e2.~
+  | \stemDown \tieDown e2.~
+  %175
+  | e2.~
+  | e2 d16 f e d
+  | c4 c' g\rest
+  | d' g,\rest g\rest
+  | gis g\rest g\rest
+  %180
+  | a g\rest g\rest
+  | dis f\rest f\rest
+  \repeat unfold 9 {
+  | e f\rest f\rest
+  }
+  | s2.
+  %192
+  | cis'4 g\rest s
+  | s2.*4
+  << {
+  | e2.
+  | a4 f\rest f\rest
+  }
+  \new Voice {
+  | \voiceThree f'4\rest e2~
+  | e4 f\rest f\rest
+  }
+  >>
+  \fine
 }
 
 \score {
