@@ -56,6 +56,7 @@ Latest release: [Open Scores for Piano v60](https://github.com/madrisan/open-sco
 |  | Chorale Prelude - Nun komm’ der Heiden Heiland BWV 659 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v60/Bach-Busoni-Chorale-Prelude-BWV659.pdf) |
 |  | Chromatische Fantasie und Fugue BWV 903 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v60/JS-Bach-Busoni-Chromatische-Fantasie-und-Fugue-BWV903.pdf) |
 |  | Chaconne für violine allein BWV 1004 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v60/JS-Bach-Busoni-Chaconne-fur-violine-allein-BWV1004.pdf) |
+| Bach / Erdos | Cantata BWV 106 Actus Tragicus - Sonatina | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v61/JS-Bach-Cantata-BWV106-Actus-Tragicus-Sonatina.pdf) |
 | Bach / Kempff | Largo from Harpsichord Concerto BWV 1056 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v60/JS-Bach-Kempff-Cembalo-Konzert-Largo-BWV1056.pdf) |
 |  | Siciliano BWV 1031 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v60/JS-Bach-Kempff-Siciliano-BWV1031.pdf) |
 | Bach / Liszt | Präludium und Fuge BWV543 S462 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v60/Bach-Liszt-Praludium-und-Fuge-BWV543-S462.pdf) |

@@ -1,4 +1,5 @@
-SUBDIRS = cembalo-konzert-largo-BWV1056-kempff \
+SUBDIRS = cantata-BWV106-actus-tragicus-sonatina \
+	  cembalo-konzert-largo-BWV1056-kempff \
 	  chaconne-fur-violine-BWV1004-busoni \
 	  chorale-preludes \
 	  chromatische-fantasie-und-fugue-BWV903-busoni \

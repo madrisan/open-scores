@@ -116,6 +116,7 @@ AC_CONFIG_FILES([\
   src/johannes-brahms/rhapsodie-op.79-nr.1/Makefile \
   src/johannes-brahms/rhapsodie-op.79-nr.2/Makefile \
   src/johann-sebastian-bach/Makefile \
+  src/johann-sebastian-bach/cantata-BWV106-actus-tragicus-sonatina/Makefile \
   src/johann-sebastian-bach/cembalo-konzert-largo-BWV1056-kempff/Makefile \
   src/johann-sebastian-bach/chaconne-fur-violine-BWV1004-busoni/Makefile \
   src/johann-sebastian-bach/chorale-preludes/Makefile \
