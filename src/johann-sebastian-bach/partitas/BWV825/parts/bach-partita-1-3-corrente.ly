@@ -45,7 +45,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | f=' a e f c f a c e,
   | f a e f c f a c es,
   | d bes' g e4.\parenthesize\prall f8
-  | <a, c f>2 r8
+  | << f2 \\ <a, c> >> r8
   }
   \break
   \repeat volta 4 {
@@ -88,7 +88,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | bes d a bes f bes d f aes,
   | g es' c a4.\prall bes8
   %60
-  | <d, f bes>2 r8
+  | << bes2 \\ <d, f> >> r8
     \override Score.TextMark.self-alignment-X = #CENTER
     \textEndMark \markup { \musicglyph "scripts.ufermata" }
   }

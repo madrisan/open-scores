@@ -89,7 +89,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | a'! c, a' c,
   %40
   | g'! bes, g' bes,
-  | aes' s2 aes4
+  | a' s2 a4
   | bes s2 bes4
   | c s2 c4
   | des s2 des4
@@ -163,7 +163,7 @@ Alto = \context Voice = "two" \relative c' {
   | \repeat unfold 4 { r e g }
   | \repeat unfold 4 { r es ges }
   %40
-  | \repeat unfold 4 { r des es }
+  | \repeat unfold 4 { r des e }
   | \repeat unfold 4 { r c es }
   | \repeat unfold 4 { r bes des }
   | \repeat unfold 4 { r a c }

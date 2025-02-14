@@ -142,16 +142,16 @@ Tenor = \context Voice = "three" \relative c' {
     \change Staff = "upper" \stemDown
     \once\override NoteColumn.force-hshift = #0.3 g
     \change Staff = "lower"
-    s4..
+    \once\stemUp f4..
     \partial 16 s16
   | s1*8
   %27
-  | c16\rest g f ees d c b a g ees' d c b d g, b
+  | a16\rest g f ees d c b a g ees' d c b d g, b
   | s4 g'16 f ees d c bes a g fis d' d, c'
   | s4 b'16 a g f! s2
   %30
   | s1*8
-  | f'8\rest ees d c s4..
+  | f'8\rest ees d c \stemUp bes4..
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -182,14 +182,14 @@ Bass = \context Voice = "four" \relative c {
   | g bes des^2 c^1 f, c' bes aes e bes'^2 aes!^3 g^1 f e! d c
   | e'8 g c, bes a bes c c,
   | f8. a16 bes8. a16_3 g8. f16 e8. e16
-  | f8. d16_3 \stemDown c8 c, \stemUp <f f'>4..
+  | f8. d16_3 \stemDown c8 c,  f4..
   }
   \repeat volta 4 {
   \partial 16 r16
-  | f4 r b2\rest
+  | \stemNeutral f4 r b2\rest
   %20
   | fis4 r b2\rest
-  | \stemNeutral g8 a bes g c bes c a
+  | g8 a bes g c bes c a
   | d4 r r8 c bes a
   | g4 r r8 f' es d
   | c c' es g f f, aes c
@@ -209,7 +209,7 @@ Bass = \context Voice = "four" \relative c {
   | bes d g, c f, bes es, f
   | bes, aes' d f bes,, bes' es g
   | \stemUp \clef bass bes,, \clef treble c' ees a bes16 d,_3 c bes \stemDown f'8 \clef bass f,
-  | bes2 <bes, bes'>4..
+  | bes2 bes,4..
     \tweak direction #DOWN
     \textEndMark \markup { \musicglyph "scripts.dfermata" }
   }

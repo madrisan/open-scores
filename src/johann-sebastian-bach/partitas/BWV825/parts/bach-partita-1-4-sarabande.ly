@@ -38,7 +38,7 @@ Soprano = \context Voice = "one" \relative c'' {
     f a32 g f e d16 c f32 e d c bes16 a c32 bes a g f16
     \set subdivideBeams = ##f
   | d'32 c bes a bes16 g f~ f64 g f e f32 d bes'16 e,8.\prall f16
-  | f4 <a, c f>2
+  | f4 << f2 \\ <a, c> >>
   }
   \break
   \repeat volta 4 {
@@ -79,7 +79,7 @@ Soprano = \context Voice = "one" \relative c'' {
     bes32 d, es f g a bes c d16 es32 d c d es c
     \set subdivideBeams = ##f
     bes16 g a\mordent bes
-  | bes4 <d, f bes>2
+  | bes4 << bes2 \\ <d, f> >>
     \override Score.TextMark.self-alignment-X = #CENTER
     \textEndMark \markup { \musicglyph "scripts.ufermata" }
   }
@@ -169,9 +169,9 @@ Bass = \context Voice = "four" \relative c' {
   %20
   | <c g'> <c, c'> r
   | c'16 d ees g c g f ees d c bes! g'
-  | a, bes c f a c bes a g f \clef treble f' a,
+  | a, bes c f a c bes a g f f' a,
   | bes8. g'16 e8. f16 g,8. e'16
-  | \clef bass f,4~ f8~ f32 g32 f es es8.^\downprall d16
+  | f,4~ f8~ f32 g32 f es es8.^\downprall d16
   %25
   | d4 d,8. d'16 c8.^\upprall bes16
   | es4 e4..^\upprall d!32 e
