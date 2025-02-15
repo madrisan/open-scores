@@ -238,7 +238,10 @@ Alto = \context Voice = "two" \relative c' {
   | b4 c,16\rest c' b a g f e d
   | c4 d\rest b16\rest e d c
   | b4 c\rest a16\rest d c b
-  | a8 a'~ a[ a] gis4
+  | \change Staff = "lower" \voiceThree
+    a8
+    \change Staff = "upper" \voiceTwo
+    a'~ a[ a] gis4
   | a r8 e' c e
   %20
   | d f b, f' e, f'
@@ -250,9 +253,10 @@ Alto = \context Voice = "two" \relative c' {
   | g4 f2
   | \change Staff = "lower" \voiceThree
     b,4 b\rest
-    \change Staff = "upper" \voiceTwo
     e~
-  | e16 b' a gis a4 f\rest
+  | e16
+    \change Staff = "upper" \voiceTwo
+    b' a gis a4 f\rest
   | r16 b a gis a4 r
   | r16 b a gis a4 r
   %30
@@ -344,7 +348,10 @@ Alto = \context Voice = "two" \relative c' {
   | r r a~
   %85
   | a4 r16 a g f e! d cis b
-  | cis4 r16 bes' a g f e d cis
+  | \change Staff = "lower" \voiceThree
+    cis4
+    \change Staff = "upper" \voiceTwo
+    r16 bes' a g f e d cis
   | \change Staff = "lower" \voiceThree
     d8 d4 d cis8
   | r8 d~ d16 e d c b8 r
@@ -355,7 +362,11 @@ Alto = \context Voice = "two" \relative c' {
     \change Staff = "upper" \voiceTwo
     f8~
   | f4~ f16 f e d c b a g
-  | c e d c g' d e f g, f' e d
+  | c e d c g' d e f
+    \change Staff = "lower" \voiceThree
+    g,
+    \change Staff = "upper" \voiceTwo
+    f' e d
   | e f e d c g' a bes c bes a g
   %95
   | a g f g a g f e d f e d
@@ -364,7 +375,11 @@ Alto = \context Voice = "two" \relative c' {
   | c g c e g c, e g c bes c g
   | a4 r r
   %100
-  | r16 a, d fis a d, fis a d c d a
+  | r16
+    \change Staff = "lower" \voiceThree
+    a,
+    \change Staff = "upper" \voiceTwo
+    d fis a d, fis a d c d a
   | b4 r r
   | \repeat unfold 3 { r16 d c b c4 r }
   %105
@@ -414,17 +429,25 @@ Alto = \context Voice = "two" \relative c' {
   %135
   | d e d c b8 r r16 gis a b
   | c d e f
-    \change Staff = "lower" \voiceThree
     gis,4.\prall gis8
-  | a16 c b a e' b c d e, d' c b
-  | c4 b4. e8~
+  | a16 c b a e' b c d
+    \change Staff = "lower" \voiceThree
+    \once\override Beam.positions = #'(11 . 11)
+    e,
+    \change Staff = "upper" \voiceTwo \stemUp
+    d' c b
+  | \change Staff = "lower" \voiceThree
+    c4 b4. e8~
   | e16 f e d c d c b a b c a
   %140
   | \stemNeutral d e f e d c b a g f' e d
   | c d e d c b a g f e' d c
   | b c d c b a gis fis e d' c b
   | s2.
-  | \stemUp e16 b, e g b e, g b
+  | \change Staff = "upper" \voiceTwo
+    e16
+    \change Staff = "lower" \voiceThree
+    \stemUp b, e g b e, g b
     \change Staff = "upper" \voiceTwo
     e d e b
   %145
@@ -465,11 +488,18 @@ Alto = \context Voice = "two" \relative c' {
     e' d cis
   | d4 cis2~
   | cis16 fis e d g! e fis g cis, e d cis
-  | b4 ais f\rest
-  | b16 b' a g c a b c fis, a g fis
+  | \change Staff = "lower" \voiceThree
+    b4 ais
+    f\rest
+  | b16
+    \change Staff = "upper" \voiceTwo
+    b' a g c a b c fis, a g fis
   %165
-  | e4 dis c\rest
-  | e16 e' d c f d e f b, d c b
+  | \change Staff = "lower" \voiceThree
+    e4 dis c\rest
+  | e16
+    \change Staff = "upper" \voiceTwo
+    e' d c f d e f b, d c b
   | a4 gis g,\rest
   | a'8 g! fis e dis4
   | b d f
@@ -536,7 +566,7 @@ Bass = \context Voice = "four" \relative c' {
   %25
   | f f, a c f e d c b c b a
   | gis4 a,\rest gis'
-  | \stemNeutral\tieNeutral a~ a16 gis a b c d e f
+  | \stemNeutral a~ a16 \tieNeutral gis a b c d e f
   | f,4~ f16 e f g a b c d
   | c,4~ c16 b a b c d e f
   %30
@@ -697,8 +727,8 @@ Bass = \context Voice = "four" \relative c' {
   | e ais, f\rest
   | \stemNeutral b eis r
   | fis e r
-  | d cis r
-  | b a' r
+  | \stemDown d cis r
+  | b \stemNeutral a' r
   %165
   | g fis r
   | e d' r
