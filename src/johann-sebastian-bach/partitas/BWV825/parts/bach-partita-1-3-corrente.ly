@@ -40,7 +40,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | bes4~ bes8. g'16 bes,8. g'16
   | bes,=4~\prall bes8. bes16 g'8*2/3 a, bes
   | a c bes c f e bes' a g='
-  | f a e g c g a c e,
+  | f a e f c f a c e,
   %25
   | f=' a e f c f a c e,
   | f a e f c f a c es,
@@ -80,7 +80,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | bes8*2/3 f d bes8. bes'16 bes8.\prall a32 bes
   | c8*2/3 a es c8. c'16 c8.\prall bes32 c
   | des8*2/3 a bes g bes des e f bes,
-  | a\prall g f es'4~ es8*2/3 d c
+  | a\prall g f es'4~ es8*2/3 des c
   %55
   | des g c, des a bes es, d\prall es
   | d f c d bes d f bes es,
