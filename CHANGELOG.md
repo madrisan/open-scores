@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [v61] - unreleased
+## [v61] - 2024-02-17
 
 ### Added
 
@@ -19,7 +19,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Fixed
 
-- J.S. Bach: Partita I BWV825: Remove a wrong flat mark in the Corrente
 - J.S. Bach: Partita I BWV825: fixes/enhancements
 
 ## [v60] - 2024-01-16
