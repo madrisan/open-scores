@@ -83,7 +83,7 @@
         \null\null\null
         \line { \abs-fontsize #24 "BWV 951" }
         \null\null\null\null
-        \fill-line \italic { \abs-fontsize #14 "For Piano" }
+        \fill-line \italic { \abs-fontsize #14 "For keyboard instruments" }
         \null\null\null
       }
     }
