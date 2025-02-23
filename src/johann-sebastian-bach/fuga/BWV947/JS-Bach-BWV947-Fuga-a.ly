@@ -200,7 +200,9 @@ Soprano = \context Voice = "one" \relative c'' {
   | << { \stemUp \shiftOn a4 } \\ { \stemUp c } >> <a c> <g! b> q
   | <f a> q <e gis> <e a>
   %75
-  | <f a> <e gis> a8 a[ a a]
+  | <f a> <e gis>
+    \once\override NoteColumn.force-hshift = #-0.4 a8
+    a[ a a]
   | b b b16 c d b c8 b16 c a c b a
   | gis e gis b e d c b << { \stemDown e,4 } \\ { \stemUp c'4 } >> <a c>
   | <g! b> q <f a> q
@@ -301,14 +303,16 @@ Alto = \context Voice = "two" \relative c' {
   | a4 g8\rest a b4 g8\rest b
   | a4 d,8\rest
     \change Staff = "lower" \voiceThree
-    a b4 s8 b
+    \once\override NoteColumn.force-hshift = #-0.3 a
+    b4 s8
+    \once\override NoteColumn.force-hshift = #-0.3 b
   | \change Staff = "upper" \voiceTwo
     e4 <d f!>2 <c e>4~
   | q <b d>2 <a c>4
   %75
-  | <b d> q <a c>
+  | <b d> q \stemUp \shiftOn e r8
     \change Staff = "lower" \voiceThree
-    r8 a
+    a,
   | a4 r8 gis a4 r8 a
   | b4 r8 b
     \change Staff = "upper" \voiceTwo
@@ -349,12 +353,12 @@ Tenor = \context Voice = "three" \relative c' {
   | \change Staff = "upper" \voiceTwo
     d8 d d d e16 d e f e f g e
   | f g d f e f c e d e b! d c d
-    \change Staff = "lower" \voiceThree
+    \hideStaffSwitch \change Staff = "lower" \voiceThree
     a c
   | \stemNeutral b4 s2.
   | s1*5
   %33
-  | \hideStaffSwitch \change Staff = "upper" \voiceTwo
+  | \change Staff = "upper" \voiceTwo
     c4
     \showStaffSwitch \change Staff = "lower" \voiceThree
     c~ c b
@@ -403,7 +407,10 @@ Tenor = \context Voice = "three" \relative c' {
   | a4 s2.
   | s1
   %75
-  | s2. s8 e
+  | \hideStaffSwitch \change Staff = "upper" \voiceTwo
+    s2 <a c>4
+    \change Staff = "lower" \voiceThree
+    s8 \shiftOnn e
   | f4 s8 e e4 s8 e
   | gis4 s8 gis a4 s
   | s1*2
