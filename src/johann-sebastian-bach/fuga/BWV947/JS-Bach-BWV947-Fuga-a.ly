@@ -159,8 +159,54 @@ Soprano = \context Voice = "one" \relative c'' {
   | e4. e8 d4. d8
   %40
   | e8 d16 e c8 d g,4 a'\rest
-
-  | R1*40
+  | r r16 b, e d c e b e c8 cis
+  | d cis d16 a d c b d a d b4
+  | \repeat unfold 4 { c16 e b d }
+  | \repeat unfold 4 { a c gis b }
+  %45
+  | a gis a b a gis a b gis8 a gis8.\parenthesize\prall a16
+  | a4 e~ e dis
+  | e b'8\rest dis, e4 b'8\rest dis,
+  | e4 b'8\rest e, e e a a
+  | a a gis gis a4 b8\rest gis
+  %50
+  | a4 b8\rest gis a4 b8\rest b
+  | c4 b8\rest b c4 b8\rest b
+  | c4 c8\rest cis d4 c8\rest cis
+  | d4 c8\rest cis d \stemDown d,4 cis8
+  | \stemUp d d'[ d d] e e e16 f g e
+  %55
+  | f8 e16 f d8 e f e16 f d8 e
+  | f e f g a g16 a f8 g
+  | a g16 a f8 g a a a16 bes c a
+  | bes8 a16 bes g8 a bes16 a bes c a8. g16
+  | g4 r8 g e d16 e c8 c'
+  %60.
+  | a8 g16 a f g a f g8 f16 g e g f e
+  | f8 e16 f d e f d e8 d16 e c e d c
+  | d8 c16 d b c d b c d b c a c b d
+  | c d b c a c b d c d b d c d b d
+  | c b c d b8. a16 a4 d\rest
+  %65
+  | r16 a b c d e f a, b4 d\rest
+  | r16 g, a b c d e g, a f a c f e d c
+  | b g b d g f e d c a c e a g f e
+  | f4 a8\rest f f4 a8\rest e
+  | e4 g8\rest d d4 g8\rest c,
+  %70
+  | c c c b c4 r8 c
+  | d4 r8 d d4 r8 e
+  | c b16 c a c b a gis e gis b e d c b
+  | << { \stemUp \shiftOn a4 } \\ { \stemUp c } >> <a c> <g! b> q
+  | <f a> q <e gis> <e a>
+  %75
+  | <f a> <e gis> a8 a[ a a]
+  | b b b16 c d b c8 b16 c a c b a
+  | gis e gis b e d c b << { \stemDown e,4 } \\ { \stemUp c'4 } >> <a c>
+  | <g! b> q <f a> q
+  | <e gis> <e a> <f a> <e gis>
+  %80
+  | <e a> b'\rest b2\rest
     \fine
 }
 
@@ -213,6 +259,63 @@ Alto = \context Voice = "two" \relative c' {
   | d8 c16 b c4 b4. b8
   %40
   | e,4 r g c
+  | b4. gis8 a gis a16 e a g
+  | f a e a f8 fis g4~ g16 d g f
+  | \repeat unfold 4 { e g d f }
+  | \repeat unfold 4 { c e b d }
+  %45
+  | c b c d c b c d b8 c b8. a16
+  | a4 b c b
+  | b b8\rest b b4 b8\rest b
+  | b4 b8\rest b c c e e
+  | f! f e e e4 a,8 b
+  %50
+  | c8 b16 c a8 b c b c d
+  | e8 d16 e c8 d e8 d16 e c8 d
+  | e c e16 f g e f8 e16 f d8 e
+  | f8 e16 f d8 e
+    \stemUp
+    \once\override NoteColumn.force-hshift = #0.8 f16
+    g a bes e,8. d16
+  | \stemDown d8 a'[ a a] bes bes a a
+  %55
+  | a4 r8 a a4 r8 a
+  | a4 r8 c! c4 r8 c
+  | c4 r8 c c4 r8 d
+  | d4 r8 d d4~ d8 c
+  | b! a16 b g8 b c4 d,4\rest
+  %60
+  | g4\rest d'2 c4~
+  | c b2 a4~
+  | a gis a r8 gis
+  | a4 r8 gis a gis a gis
+  | a4. gis8 e4 r
+  %65
+  | d r g r
+  | c, r8 c c4 b8\rest d
+  | d4 r8 e e4 e\rest
+  | \stemUp \shiftOn d' c8\rest d d4 c8\rest c
+  | c4 b8\rest b b4 b8\rest a
+  %70
+  | \stemDown a a g g g4 f8\rest g
+  | a4 g8\rest a b4 g8\rest b
+  | a4 d,8\rest
+    \change Staff = "lower" \voiceThree
+    a b4 s8 b
+  | \change Staff = "upper" \voiceTwo
+    e4 <d f!>2 <c e>4~
+  | q <b d>2 <a c>4
+  %75
+  | <b d> q <a c>
+    \change Staff = "lower" \voiceThree
+    r8 a
+  | a4 r8 gis a4 r8 a
+  | b4 r8 b
+    \change Staff = "upper" \voiceTwo
+    \once\stemUp \shiftOn a'4 <d, f>~
+  | q <c e>2 <b d>4~
+  | q <a c> <b d> q
+  | <a c>
 }
 
 Tenor = \context Voice = "three" \relative c' {
@@ -261,9 +364,50 @@ Tenor = \context Voice = "three" \relative c' {
   | \clef treble b'8\rest d, d d e e e16 f g e
   | f8 e16 f d8 e f e f g
   | a e a4~ a8 gis16 fis gis a b gis
+  %40
   | a4. g16 f e4 a~
-  | a8 gis16 fis gis8 \clef bass
-
+  | a8 gis16 fis gis8 s8 s2
+  | s1*4
+  %46
+  | r8 e, e e fis fis fis16 g! a fis
+  | g8 fis16 g e8 fis g8 fis16 g e8 fis
+  | g fis g gis a a a a
+  | b b b16 c d b c8 b16 c r8 e,
+  %50
+  | e4 r8 e e4 r8 g!
+  | g4 r8 g g4 r8 g
+  | g4 r8 a a4 r8 a
+  | a4 a\rest a2\rest
+  | r8 d d d d d cis cis
+  %55
+  | d4 c8\rest cis d4 c8\rest cis
+  | d4 d8\rest e f4 e8\rest e
+  | f4 e8\rest e f4 e8\rest fis
+  | g4 f8\rest fis g4~ g8 fis
+  | g4 d8\rest g g4 d\rest
+  %60
+  | s1*4
+  | s2 c4 e\rest
+  %65
+  | a, c\rest d d\rest
+  | g, a8\rest g a4 a8\rest a
+  | b4 b8\rest b c4 c\rest
+  | \change Staff = "upper" \voiceTwo
+    a'4 e8\rest a g4 e8\rest g
+  | f4 d8\rest f e4 d8\rest e
+  %70
+  | \change Staff = "lower" \voiceThree
+    d d d d e e[ e e]
+  | fis fis fis16 g a fis gis8 fis16 gis e8 gis
+  | e4 a,8\rest \shiftOnn e gis4 a8\rest gis
+  | a4 s2.
+  | s1
+  %75
+  | s2. s8 e
+  | f4 s8 e e4 s8 e
+  | gis4 s8 gis a4 s
+  | s1*2
+  | e4
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -307,10 +451,54 @@ Bass = \context Voice = "four" \relative c {
   | r8 a' a a b b b16 c d b
   %40
   | c8 b16 c a8 b c b c d
-  | e4. s8 s2
-
-  | \override MultiMeasureRest.staff-position = #-4
-    R1*39
+  | e4. \clef bass e8 a,4. a8
+  | d4 d,8\rest d' g,4. g8
+  | c4. g8 c4. g8
+  | a4. e8 a4. e8
+  %45
+  | f4 d e8 a e4\parenthesize\prall
+  | a, g! a b
+  | e r8 b e4 r8 b
+  | e4 r8 e a, a c c
+  | d d e e a,4 r8 e'
+  %50
+  | a,4 r8 e a4 r8 g!
+  | c4 r8 g c4 r8 g
+  | c4 r8 a d4 r8 a
+  | d4 r8 a d16 e f g a8 a,
+  | d f[ f f] g g a a
+  %55
+  | d,4 c8\rest a' d,4 c8\rest a'
+  | d,4 b8\rest c'! f,4 d8\rest c'
+  | f,4 c8\rest c' f,4 c8\rest d'
+  | g,4 r8 d' bes g d'4
+  | g,4 r8 g c4 r8 c
+  %60
+  | f!2 e
+  | d c
+  | b a4 d,8\rest e'
+  | a,4 d,8\rest e' a, e' a, e'
+  | a, d e e, a16 a, c e a g! f e
+  %65
+  | f4 r r16 g, b d g f e d
+  | e4 r8 e f4 r8 fis
+  | g4 r8 gis a4 r
+  | d,16\rest a' b c d e f a, b g a b c d e g,
+  | a f g a b c d f, g e f g a b c e,
+  %70
+  | f d e f g8 g, c4 b8\rest c
+  | c4 b8\rest c b4 d8\rest e
+  | a,4 r8 a e'4 r8 e
+  | a g!16 a \stemNeutral f! g a f g8 f16 g e g f e
+  | f8 e16 f d e f d e8 d16 e c16 e d c
+  %75
+  | d b c d e8 e, a4 \stemDown r8 c
+  | d4 r8 \once\override NoteColumn.force-hshift = #1 e a,4 r8 a
+  | e'4 r8 e a g!16 a f g a f
+  | g8 f16 g e g f e f8 e16 f d e f d
+  | \stemNeutral e8 d16 e c e d c d b c d e8 e,
+  %80
+  | \stemDown a4 d\rest d2\rest
     \fine
 }
 
