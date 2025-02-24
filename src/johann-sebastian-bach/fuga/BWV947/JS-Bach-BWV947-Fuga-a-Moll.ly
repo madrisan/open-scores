@@ -72,7 +72,7 @@
         \null
         \fill-line { \draw-hline }
         \null\null\null
-        \line { \abs-fontsize #40 \bold "Fuga in a" }
+        \line { \abs-fontsize #40 \bold "Fuga in a-Moll" }
         \null\null
         \line { \abs-fontsize #20 "BWV 947" }
         \null\null\null\null
@@ -104,35 +104,35 @@ Global = {
   \include "global.ly"
 }
 
-greyTextColor = #(x11-color "dimgray")
+\include "./macros.ly"
 
 Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
   \stemUp\tieUp
   \override MultiMeasureRest.staff-position = #0
   %1
-  | b8\rest a a a b b b16 c d b
+  | b8\rest \highlightSubject { a a a b b b16 c d b
   | c8 b16 c a8 b c b c d
-  | e b e4~ e8 dis16 cis dis e fis dis
+  | \unHighlightSubject e } b e4~ e8 dis16 cis dis e fis dis
   | e4. d16 c b8 a b e16 d
   %5
   | c4. c8 d4. d8
   | e d16 e c8 d g,4 c
   | b4. b8 a4. a8
   | b a16 b g8 a d,4 f'\rest
-  | r8 e e e fis fis fis16 g a fis
+  | r8 \highlightSubject { e e e fis fis fis16 g a fis
   %10
   | g8 fis16 g e8 fis g fis g gis
-  | a4. a16 g f8 e f fis
+  | a4. } a16 g f8 e f fis
   | g4 d8 g16 f e g d g e8 cis
   | d cis d16 a d c b d a d b8 gis
   | a gis a b c b c gis
   %15
   | a16 gis a b gis8.\prall a16 a8 e a4~
   | a8 gis16 fis gis a b gis a4. g16 f
-  | e4 a~ a8 g16 fis g8 g
+  | e4 a~ a8 \highlightSubject { g16 fis g8 g
   | a a a16 b c a b8 a16 b g8 a
-  | b a b c d16 c d e d8 c16 b
+  | b a b c \unHighlightSubject d16 } c d e d8 c16 b
   %20
   | a8 g a b c4. b16 a
   | g8 fis g a b a b c
@@ -149,10 +149,10 @@ Soprano = \context Voice = "one" \relative c'' {
   | b d a d b d fis, d' g, d' fis, d' g, d' a d
   | b4 g8\rest b, c b c d
   | e d e b c16 b c d b8.\trill c16
-  | \stemUp r8 c' c c d d d16 e f d
+  | \stemUp r8 \highlightSubject { c' c c d d d16 e f d
   | e8 d16 e c8 d e d e fis
   %35
-  | g d g4~ g8 fis16 e fis g a fis
+  | \unHighlightSubject g } d g4~ g8 fis16 e fis g a fis
   | g4. f16 e d8 c d e
   | f4. f8 g4. g8
   | a g16 a f8 g c,4 f
@@ -174,10 +174,10 @@ Soprano = \context Voice = "one" \relative c'' {
   | c4 b8\rest b c4 b8\rest b
   | c4 c8\rest cis d4 c8\rest cis
   | d4 c8\rest cis d \stemDown d,4 cis8
-  | \stemUp d d'[ d d] e e e16 f g e
+  | \stemUp d \highlightSubject { d'[ d d] e e e16 f g e
   %55
   | f8 e16 f d8 e f e16 f d8 e
-  | f e f g a g16 a f8 g
+  | f e f g \unHighlightSubject a } g16 a f8 g
   | a g16 a f8 g a a a16 bes c a
   | bes8 a16 bes g8 a bes16 a bes c a8. g16
   | g4 r8 g e d16 e c8 c'
@@ -202,9 +202,9 @@ Soprano = \context Voice = "one" \relative c'' {
   %75
   | <f a> <e gis>
     \once\override NoteColumn.force-hshift = #-0.4 a8
-    a[ a a]
+    \highlightSubject { a[ a a]
   | b b b16 c d b c8 b16 c a c b a
-  | gis e gis b e d c b << { \stemDown e,4 } \\ { \stemUp c'4 } >> <a c>
+  | \unHighlightSubject gis } e gis b e d c b << { \stemDown e,4 } \\ { \stemUp c'4 } >> <a c>
   | <g! b> q <f a> q
   | <e gis> <e a> <f a> <e gis>
   %80
@@ -219,10 +219,10 @@ Alto = \context Voice = "two" \relative c' {
   \override VoiceFollower.style = #'dashed-line
   %1
   | R1*2
-  | r8 e e e fis fis fis16 g a fis
+  | r8 \highlightSubject { e e e fis fis fis16 g a fis
   | g8 fis16 g e8 fis g fis g gis
   %5
-  | a e a4~ a8 gis16 fis gis a b gis
+  | \unHighlightSubject a } e a4~ a8 gis16 fis gis a b gis
   | a4. g16 f e4 a~
   | a8 g16 fis g4 fis4. \once\stemUp fis8
   | b,4 r d4. b'8
@@ -243,9 +243,9 @@ Alto = \context Voice = "two" \relative c' {
   %15
   | c b c d b8.\prall a16 a8 c c c
   | d d d d e d16 e c8 d
-  | g,4 c b8 e e e
+  | g,4 c b8 \highlightSubject { e e e
   | fis fis fis16 g a fis g8 fis16 g e8 fis
-  | g fis g a b16 a b c b8 a16 g
+  | g fis g a \unHighlightSubject b16 } a b c b8 a16 g
   | fis8 e fis g a4. g16 fis
   %20
   | e8 d e fis g4. fis16 e
@@ -254,9 +254,9 @@ Alto = \context Voice = "two" \relative c' {
   | s1*10
   %34
   | R1
-  | r8 g' g g a a a16 b c a
+  | r8 \highlightSubject { g' g g a a a16 b c a
   | b8 a16 b g8 a b a b cis
-  | d a d4~ d8 cis16 b cis d e cis
+  | \unHighlightSubject d } a d4~ d8 cis16 b cis d e cis
   | d4. c16 b a4 d~
   | d8 c16 b c4 b4. b8
   %40
@@ -270,10 +270,10 @@ Alto = \context Voice = "two" \relative c' {
   | a4 b c b
   | b b8\rest b b4 b8\rest b
   | b4 b8\rest b c c e e
-  | f! f e e e4 a,8 b
+  | f! f e e e4 \highlightSubject { a,8 b
   %50
   | c8 b16 c a8 b c b c d
-  | e8 d16 e c8 d e8 d16 e c8 d
+  | \unHighlightSubject e8 } d16 e c8 d e8 d16 e c8 d
   | e c e16 f g e f8 e16 f d8 e
   | f8 e16 f d8 e
     \stemUp
@@ -330,9 +330,9 @@ Tenor = \context Voice = "three" \relative c' {
   \override VoiceFollower.style = #'dashed-line
   %1
   | R1*4
-  | r8 a a a b b b16 c d b
+  | r8 \highlightSubject { a a a b b b16 c d b
   | c8 b16 c a8 b c b c d
-  | e b e4~ e8 dis16 cis dis
+  | \unHighlightSubject e } b e4~ e8 dis16 cis dis
     \change Staff = "upper" \voiceTwo
     e fis dis
   | \showStaffSwitch \change Staff = "lower" \voiceThree
@@ -365,18 +365,18 @@ Tenor = \context Voice = "three" \relative c' {
   | c4. b8 c4. c8
   | d4. d8 e4 d
   | d r r2
-  | \clef treble b'8\rest d, d d e e e16 f g e
+  | \clef treble b'8\rest \highlightSubject { d, d d e e e16 f g e
   | f8 e16 f d8 e f e f g
-  | a e a4~ a8 gis16 fis gis a b gis
+  | \unHighlightSubject a } e a4~ a8 gis16 fis gis a b gis
   %40
   | a4. g16 f e4 a~
   | a8 gis16 fis gis8 s8 s2
   | s1*4
   %46
-  | r8 e, e e fis fis fis16 g! a fis
+  | r8 \highlightSubject { e, e e fis fis fis16 g! a fis
   | g8 fis16 g e8 fis g8 fis16 g e8 fis
-  | g fis g gis a a a a
-  | b b b16 c d b c8 b16 c r8 e,
+  | g fis g gis a } \highlightSubject { a a a
+  | b b b16 c d b c8 b16 c } r8 e,
   %50
   | e4 r8 e e4 r8 g!
   | g4 r8 g g4 r8 g
@@ -401,9 +401,9 @@ Tenor = \context Voice = "three" \relative c' {
   | f4 d8\rest f e4 d8\rest e
   %70
   | \change Staff = "lower" \voiceThree
-    d d d d e e[ e e]
+    d d d d e \highlightSubject { e[ e e]
   | fis fis fis16 g a fis gis8 fis16 gis e8 gis
-  | e4 a,8\rest \shiftOnn e gis4 a8\rest gis
+  | e4 } a,8\rest \shiftOnn e gis4 a8\rest gis
   | a4 s2.
   | s1
   %75
@@ -423,14 +423,14 @@ Bass = \context Voice = "four" \relative c {
   \override MultiMeasureRest.staff-position = #-4
   %1
   | R1*6
-  | d8\rest e e e fis fis fis16 g a fis
+  | d8\rest \highlightSubject { e e e fis fis fis16 g a fis
   | g8 fis16 g e8 fis g fis g gis
-  | a4. g8 a4 b
+  | \unHighlightSubject a4. } g8 a4 b
   | R1*5
   %15
-  | r2 r8 a, a a
+  | r2 r8 \highlightSubject { a, a a
   | b b b16 c d b c8 b16 c a8 b
-  | c b c d e4 e~
+  | c b c d e4 } e~
   | e dis g4. fis8
   | e4. d16 c b8 a b c
   %20
@@ -455,10 +455,10 @@ Bass = \context Voice = "four" \relative c {
   | g, b,\rest b2\rest
   | \override MultiMeasureRest.staff-position = #-9
     R1*2
-  | r8 a' a a b b b16 c d b
+  | r8 \highlightSubject { a' a a b b b16 c d b
   %40
   | c8 b16 c a8 b c b c d
-  | e4. \clef bass e8 a,4. a8
+  | \unHighlightSubject e4. } \clef bass e8 a,4. a8
   | d4 d,8\rest d' g,4. g8
   | c4. g8 c4. g8
   | a4. e8 a4. e8
@@ -530,7 +530,7 @@ Bass = \context Voice = "four" \relative c {
   >>
   \header {
     composer = ##f % "Johann Sebastian Bach"
-    opus = ##f % "BWV 947"
+    opus = "BWV 947"
     title = \markup { "" }
     subtitle = ##f
   }

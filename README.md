@@ -45,6 +45,7 @@ Latest release: [Open Scores for Piano v61](https://github.com/madrisan/open-sco
 |  | Fantasie und Fuge BWV 944 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v61/JS-Bach-BWV944-Fantasie-und-Fuge.pdf) |
 |  | Neun kleine Präludien BWV 924-932 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v61/JS-Bach-BWV924-932-Neun-kleine-Praludien.pdf) |
 |  | Sechs kleine Präludien BWV 933-938 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v61/JS-Bach-BWV933-938-Sechs-kleine-Praludien.pdf) |
+|  | Fuga a-Moll BWV947 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/JS-Bach-BWV947-Fuga-a-Moll.pdf) |
 |  | Fuga d-Moll BWV948 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v61/JS-Bach-BWV948-Fuga-d-Moll.pdf) |
 |  | Fuga H-Moll BWV951 - on a Theme by Tomaso Albinoni | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v61/JS-Bach-BWV951-Fuga-H-Moll.pdf) |
 |  | Fuga C-Dur BWV952 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v61/JS-Bach-BWV952-Fuga-C-Dur.pdf) |
