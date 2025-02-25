@@ -47,7 +47,7 @@
     \column {
       \abs-fontsize #8
       \concat {
-        "Typeset using " \with-url #"http://www.lilypond.org" "LilyPond " ©" 2022-2024 ""by " \maintainer " — " \footer
+        "Typeset using " \with-url #"http://www.lilypond.org" "LilyPond " ©" 2022-2025 ""by " \maintainer " — " \footer
       }
       \concat {
 	\concat {
