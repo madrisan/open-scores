@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Added
 
 - J.S. Bach: Fuga a BWV947
+- Bach/Rodrigues: Cantata BWV54 - Aria
 
 ## [v61] - 2024-02-17
 
@@ -15,7 +16,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - J.S. Bach: Fuga C-Dur BWV953
 - J.S. Bach: Fantasie und fuge BWV944
-- J.S. Bach: Cantata Actus Tragicus BWV106
+- Bach/Erdos: Cantata Actus Tragicus BWV106
 
 ### Changed
 
