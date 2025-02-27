@@ -139,8 +139,44 @@ Soprano = \context Voice = "one" \relative c' {
   | ees'8 ees ees ees f f f f
   | g g g g aes aes <f bes> bes
   %20
- %| bes bes bes bes bes g16 a bes8 f
-  | R1*36
+  | bes bes bes bes bes g16 a bes8 f
+  | c16 a bes g a8 c~ c16 bes c a bes8 d~
+  | d16 c d bes c f, ees'8~ ees16 d ees c d4~
+  | <bes d>16 <a c> <bes d> <g bes> c8 f <g, e'>16 <a f'> <g e'> <bes g'> <e, c'> <f d'> <e c'> <f d'>
+  | <g e'>16 <a f'> <g e'> <bes g'> <e, c'> <f d'> <e c'> <g e'>
+    <a f'> <f d'> <g ees'> <ees c'> <f d'> <d bes'> <ees c'> <c a'>
+  %25
+  | bes'8. c16 a8. bes16 <d, f bes>8 <d f> f f
+  | aes! aes aes16( f d aes' aes g g8) bes g
+  | <bes des>16 aes <bes des> aes <bes des> <aes c> <bes des> <g bes> <aes c>4~ c16 bes c aes
+  | bes4~ bes16 aes bes g aes ees f bes c f, g f~
+  | f8 d'\rest f, f g bes16 aes bes8 ees
+  %30
+  | <f, d'>16 <g ees'> <f d'> <aes f'> <d, bes'> <ees c'> <d bes'> <ees c'>
+    <f d'>16 <g ees'> <f d'> <aes f'> <d, bes'> <ees c'> <d bes'> <f d'>
+  | <g bes ees>4 f'\rest d2\rest
+  | d\rest  d4\rest d,16 c d bes
+  | aes'8 aes aes aes bes bes bes bes
+  | c c c c des des des16 c des bes
+  %35
+  | c4~ c16 bes c aes bes8 c16 d ees4~
+  | ees16 d ees c d8 f~ f16 ees f d ees8 g~
+  | g16 f g ees f8 aes~ aes16 g aes f g4~
+  | g16 f g ees f8 bes a16 bes a c f, g f g
+  | a bes a c f, g f a bes g aes f g ees f d
+  %40
+  | ees8. f16 d8. ees16 <ees, ees'>4 f'\rest
+  | d2\rest g8\rest  g16\rest c, bes8 aes16 g
+  | g8. aes16
+    \once\override Voice.Script.X-offset = #2
+    f8.\downprall ees16
+    \once\override Staff.TextScript.extra-offset = #'(-1 . 0)
+    ees4\fermata^\markup { "Fine" } s
+  | s1*2
+  %45
+  | s2 r4 fis16 e fis d
+
+  | R1*10
     \fine
 }
 
@@ -175,8 +211,37 @@ Alto = \context Voice = "two" \relative c {
   | a16 g'( f ees d8 c16 bes bes4*1/2) d8 ees ees
   | g4\rest a16 g a f ees' d ees c d c d bes
   | f' ees f d ees d ees c g' f g ees aes g aes f
-  %20
   | g ees f d ees f g ees f d ees c d c d bes
+  | s1*4
+  %25
+  | g8 g16 ees f4 f,\rest d'16 c d bes
+  | f'8 f d d ees ees g16 f g ees
+  | ees2~ ees8 f16( g aes4~)
+  | aes16 g( aes f g4~) g8. c,16 d8 ees16 f
+  | d8 f16( ees d c d bes ees8) g g16 f g ees
+  %30
+  | \once\override MultiMeasureRest.staff-position = #-9
+    R1
+  | c8\rest d16\rest f( g aes f g aes g aes4) bes16( des,
+  | c aes' g f f8. ees16 ees4) f,\rest
+  | d'8 d d16 c d bes aes' g aes f g f g ees
+  | bes' aes bes g aes g aes f c' bes c aes bes4~
+  %35
+  | bes16 aes bes g aes4~ aes16 g aes f g f g ees
+  | f8 aes~ aes16 g aes f g8 bes~ bes16 aes bes g
+  | c4~ c16 bes c aes d8
+    \override Tie.extra-offset = #'(-0.4 . -0.4)
+    f~ f16 ees f d
+  | ees d ees c d c d bes c d c ees a, bes a bes
+  | c d c ees a, bes a c d bes c aes bes g aes f
+  %40
+  | g8. aes16 f8. ees16 bes' g aes f g ees f d
+  | ees g f aes g bes aes bes c bes aes bes g8 f16 ees
+  | ees8. f16 d8. ees16 ees4\fermata \slurUp ees8( f
+  | g aes bes g e d16 c) f8( aes16 g
+  | g8. f16 ees d ees c b d g,8) r aes'16( g
+  %45
+  | f ees d ees32 f b,8. c16 c4) g\rest
 
 }
 
@@ -214,8 +279,43 @@ Tenor = \context Voice = "three" \relative c {
   | s2. bes'16( a! bes f
   | ees'8 ees) ees16( c a ees' ees d d8) s4
   %20
-  | s2 d4\rest bes16 a bes f
-
+  | s2 f4\rest bes,16 a bes f
+  | \change Staff = "upper" \voiceTwo
+    ees'8 ees ees16 c
+    \change Staff = "lower" \voiceThree
+    a
+    \change Staff = "upper" \voiceTwo
+    ees'
+    ees d d8 f bes
+  | g8. f16 ees8
+    \change Staff = "lower" \voiceThree
+    d16 c c4 f8 g16 f
+  | f2.~ f4~
+  | f2~ f8 f, f'4\rest
+  %25
+  | s1*3
+  | s4 ees s2
+  | s1*2
+  %31
+  | ees8 ees c c c d d bes
+  | c c d4 g,8 g <f aes> q
+  | f f f f a\rest <ees ees'> q q
+  | r <aes ees'> <f aes> q r <f bes> <g bes> q
+  %35
+  | r <ees aes> <f aes> q r <f d'!> <ees bes'> q
+  | r aes <f d'> q r <g bes> g g
+  | r <ees aes> c' c r <f, d'> ees' ees
+  | r bes f' f c <c ees> q q
+  | c <c ees> q q <bes f'> q <bes ees> q
+  %40
+  | c c bes bes g r bes16 g aes f
+  | g ees f d ees g f g aes8 ees bes' g
+  | c4 <f, bes> <g bes>\fermata <g c>8 <g bes>
+  | d' d d d c4 c
+  | <b d>8 q <g c> q <f aes> r <f aes> <f b!>
+  %45
+  | <f aes> f d b\arpeggio
+  | <fis' a> q <a c> q
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -246,12 +346,43 @@ Bass = \context Voice = "four" \relative c {
   | <bes, a' c>8 q q q <bes bes'> q bes bes
   | bes bes' bes f bes bes <bes, d'>\arpeggio q
   %20
-  | R1*36
+  | <bes, bes'> <bes' bes'> q q q q bes bes
+  | <bes bes'> q <bes c'> bes <bes bes'> q bes bes'
+  | <ees, bes' ees> q <ees g c> <ees g> f <f a> <f bes> f
+  | f f <f c'> q <f g bes> q q q
+  | q q q q <f c'> c' <f, bes> q
+  %25
+  | <ees d'> <ees ees'> <f c' ees> <f ees'> <bes, bes'> bes <bes bes'> q
+  | d16 c d bes <f' bes>8 bes, <ees bes'> q <ees ees'> q
+  | g16 f g ees ees'8 <ees, ees'> <aes c> q <f c' f> q
+  | <d! d'!> q <ees g bes> q <c c'> q <aes f' c'> q
+  | <bes bes'> q <aes bes'> q <g bes'>\arpeggio ees <ees' bes'> q
+  %30
+  | <aes bes> q <f aes> q <aes bes> q <f aes> q
+  | r8 g16 f e d e c f8 bes16 aes g f g ees
+  | aes8 f bes <bes,, bes'> <ees, ees'> ees'' ees ees
+  | ees ees ees ees <ees,, ees'> ees'' ees ees
+  | \repeat unfold 2 { <ees,, ees'> ees'' ees ees }
+  | \repeat unfold 4 { ees,, ees'' ees ees }
+  %37
+  | aes,, aes' aes' aes bes,, bes' bes' bes
+  | bes,, bes' bes' bes bes, bes' bes bes
+  | bes, bes' bes bes bes bes ees, ees
+  %40
+  | aes aes aes aes ees ees d d
+  | c c bes bes aes aes bes bes
+  | c aes bes bes ees,4\fermata ees'16 d ees c
+  | bes'8 bes bes bes bes16 aes bes g aes g aes f
+  | ees8 ees ees ees ees16 d ees c d c d b
+  %45
+  | c8 f, g g,\arpeggio d'' d d d
+
+  | R1*10
     \fine
 }
 
 \score {
-  \new PianoStaff
+  \new PianoStaff \with { connectArpeggios = ##t }
   <<
     \accidentalStyle Score.piano
     \context Staff = "upper" <<
