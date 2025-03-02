@@ -147,8 +147,8 @@ Soprano = \context Voice = "one" \relative c' {
     <a f'> <f d'> <g ees'> <ees c'> <f d'> <d bes'> <ees c'> <c a'>
   %25
   | bes'8. c16 a8. bes16 <d, f bes>8 <d f> f f
-  | aes! aes aes16( f d aes' aes g g8) bes g
-  | <bes des>16 aes <bes des> aes <bes des> <aes c> <bes des> <g bes> <aes c>4~ c16 bes c aes
+  | aes! aes aes16( f d aes' aes g g8) bes( g
+  | <bes des>16) aes <bes des> aes <bes des> <aes c> <bes des> <g bes> <aes c>4~ c16 bes c aes
   | bes4~ bes16 aes bes g aes ees f bes c f, g f~
   | f8 d'\rest f, f g bes16 aes bes8 ees
   %30
@@ -170,14 +170,27 @@ Soprano = \context Voice = "one" \relative c' {
   | g8. aes16
     \once\override Voice.Script.X-offset = #2
     f8.\downprall ees16
-    \once\override Staff.TextScript.extra-offset = #'(-1 . 0)
-    ees4\fermata^\markup { "Fine" } s
+    \once \override Score.RehearsalMark.padding = #'2
+    \once \override Score.RehearsalMark.X-offset = #'1
+    \mark \markup { \tiny \musicglyph #"scripts.segno"}
+    ees4\fermata %^\markup { "Fine" }
+    s
   | s1*2
   %45
   | s2 r4 fis16 e fis d
-
-  | R1*10
-    \fine
+  | c'8 c c c d d d d
+  | f! f f f g g g16 ees f d
+  | ees8. f16 d8. c16 c4 g8( f16 ees
+  | d8 ees f16 d b c b8 a16 g c8 ees16 d
+  %50
+  | d8. c16 bes a bes g e'16 d e4) fis16( a
+  | ees d bes' a! fis8. g16 g4) f'\rest
+  | f,8 f f f g g g g
+  | bes bes bes bes cis!16 d cis e a, b a b
+  | cis d cis e a, b a cis d bes c a bes g a f
+  %55
+  | g8. a16 fis8. g16 g4 d'\rest
+  \fine
 }
 
 Alto = \context Voice = "two" \relative c {
@@ -202,11 +215,12 @@ Alto = \context Voice = "two" \relative c {
   | aes' g aes f g f g ees bes' a bes g a g a f
   | c' bes c a
     \change Staff = "lower" \voiceThree
-    f8
+    \once\shape #'((1 . 1.5) (0 . 4) (0 . -2) (0 . -1.5)) Slur
+    f8_(
     \change Staff = "upper" \voiceTwo
-    g16 aes32 bes g4~ g16 f g ees
+    g16 aes32 bes g4~) g16 f( g ees
   %15
-  | f4~ f16 bes( a bes ees,8.) g16( f8 ees16 d
+  | f4~) f16 bes( a bes ees,8.) g16( f8 ees16 d
   | d8) f16( ees d16 c d bes g'8) bes,16( c a!4~)
   | a16 g'( f ees d8 c16 bes bes4*1/2) d8 ees ees
   | g4\rest a16 g a f ees' d ees c d c d bes
@@ -214,11 +228,11 @@ Alto = \context Voice = "two" \relative c {
   | g ees f d ees f g ees f d ees c d c d bes
   | s1*4
   %25
-  | g8 g16 ees f4 f,\rest d'16 c d bes
-  | f'8 f d d ees ees g16 f g ees
+  | g8 g16 ees f4 f,\rest d'16( c d bes
+  | f'8 f) d d ees ees g16 f g ees
   | ees2~ ees8 f16( g aes4~)
-  | aes16 g( aes f g4~) g8. c,16 d8 ees16 f
-  | d8 f16( ees d c d bes ees8) g g16 f g ees
+  | aes16 g( aes f g4~) g8. c,16( d8 ees16 f
+  | d8) f16( ees d c d bes ees8) g g16 f g ees
   %30
   | \once\override MultiMeasureRest.staff-position = #-9
     R1
@@ -242,7 +256,19 @@ Alto = \context Voice = "two" \relative c {
   | g8. f16 ees d ees c b d g,8) r aes'16( g
   %45
   | f ees d ees32 f b,8. c16 c4) g\rest
-
+  | \once\override Voice.Rest.X-offset = #0.6
+    a\rest fis'!16 e fis d c' b c a! b a b g
+  | d' b c a b a b g f' ees! f d ees c d b!
+  | c8. d16 b8. c16 c4 d,
+  | s1
+  %50
+  | s2 c4 c8 c
+  | bes c d4 s \stemUp b16 a b g
+  | \stemDown d'8 d b16 a b g f' e f d e d e c
+  | g' e f d e cis' d e bes a bes g cis, d cis d
+  | e f e g cis, d cis e fis d ees c d bes c a
+  %55
+  | bes8. c16 c8 c <b d>4 c\rest
 }
 
 Tenor = \context Voice = "three" \relative c {
@@ -279,17 +305,19 @@ Tenor = \context Voice = "three" \relative c {
   | s2. bes'16( a! bes f
   | ees'8 ees) ees16( c a ees' ees d d8) s4
   %20
-  | s2 f4\rest bes,16 a bes f
+  | s2 f4\rest bes,16( a bes f)
   | \change Staff = "upper" \voiceTwo
-    ees'8 ees ees16 c
+    ees'8( ees) ees16 c
     \change Staff = "lower" \voiceThree
     a
     \change Staff = "upper" \voiceTwo
     ees'
     ees d d8 f bes
-  | g8. f16 ees8
+  | g8.
+    \once\shape #'((0 . 0) (0 . 1) (0 . 9) (0.5 . 4.5)) Slur
+    f16( ees8
     \change Staff = "lower" \voiceThree
-    d16 c c4 f8 g16 f
+    d16 c c4) f8 g16 f
   | f2.~ f4~
   | f2~ f8 f, f'4\rest
   %25
@@ -314,8 +342,26 @@ Tenor = \context Voice = "three" \relative c {
   | d' d d d c4 c
   | <b d>8 q <g c> q <f aes> r <f aes> <f b!>
   %45
-  | <f aes> f d b\arpeggio
-  | <fis' a> q <a c> q
+  | <f aes> f d b\arpeggio <fis' a> q <a c> q
+  | \change Staff = "upper" \voiceTwo
+    <fis' a> q
+    \change Staff = "lower" \voiceThree
+    <a, d> q <d, g> <d' g> <g, g'> q
+  | <d b'> <b' g'> <d g> q <g, c> <c g'> <g c> q
+  | <c ees> <c aes'> <d g> q <ees g>4 g,
+  | <g b>8 <g b d> <g b> g aes!4 g8 a
+  %50
+  | <f a> q <d f g> <d f> e4 e8 fis
+  | <d g> g <fis a>4
+    \change Staff = "upper" \voiceTwo
+    <b d>8 q
+    \change Staff = "lower" \voiceThree
+    g g
+  | g g g g <g c> q q q
+  | <g d'> q g g <g, e'>\arpeggio <e' g> q q
+  | <e g> q q g <a, fis'>\arpeggio <fis' a> g g
+  %55
+  | g <ees c'> a8. g16 g4 a\rest
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -324,7 +370,8 @@ Bass = \context Voice = "four" \relative c {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   %1
-  | \repeat unfold 2 { <ees,, ees'>8 ees'' ees ees }
+  | <ees,, ees'>8_\markup { \hspace #-1 \musicglyph #"pedal.Ped" ad lib. }
+    ees'' ees ees <ees,, ees'>8 ees'' ees ees
   | \repeat unfold 2 { <ees,, ees'> ees'' ees ees }
   | \repeat unfold 2 { <ees,, ees'> ees'' ees ees ees,, ees'' ees ees }
   %5
@@ -376,8 +423,19 @@ Bass = \context Voice = "four" \relative c {
   | ees8 ees ees ees ees16 d ees c d c d b
   %45
   | c8 f, g g,\arpeggio d'' d d d
-
-  | R1*10
+  | <d,, d'> d''' d, d g, g' g g
+  | g,\arpeggio g' g g c, c' ees, ees
+  | aes f g g, c16 b c a b a b g
+  | f'8 f f f f16 ees f d ees d ees c
+  %50
+  | bes!8 bes bes bes bes16 a bes g a g a fis
+  | g8 c d d, f f f' f
+  | b, b g g c c c c
+  | g' g e e a,,\arpeggio a' a a
+  | a a a a d,\arpeggio d' g, g
+  %55
+  | c, c' d d g,4_\markup { "D.C. al segno" { \tiny \raise #0.4 \musicglyph #"scripts.segno" } }
+    g\rest
     \fine
 }
 
@@ -417,6 +475,6 @@ Bass = \context Voice = "four" \relative c {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 4 = 40
   }
 }
