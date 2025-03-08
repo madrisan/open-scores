@@ -93,7 +93,7 @@ Alto = \context Voice = "two" \relative c' {
   | <g cis>8 r r4 <fis b>8 r r4
   | <g b>8 r r4 <gis b>8 r r4
   | <a c>8 r r4 <b d>8 r r4
-  | c8 s4. s2
+  | c8_\markup{ \bold "Presto" } s4. s2
   | s1*10
   %34
   | s2 r16 a b c!  b c b a
@@ -112,8 +112,13 @@ Alto = \context Voice = "two" \relative c' {
 Tenor = \context Voice = "three" \relative c {
   \voiceThree
   \stemUp\tieUp
-  \override Rest.staff-position = #0
   %1
+  | s1*37
+  | s2 r16 dis! e fis e fis e dis
+  | r16 e fis g fis g fis e  r fis g a g a g fis
+  %40
+  | e8 r r4 a,16 b c d e fis g a~
+  | a8. a16 g8 fis s2
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -122,7 +127,55 @@ Bass = \context Voice = "four" \relative c {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   %1
-  | R1*41
+  | e16 g a b  a b a g  e g a b  a b a g
+  | e16 a b c  b c b a  e a b c  b c b a
+  | dis,16 a' b c  b c b a  dis, a' b c b c b a
+  | e16 g a b  a b a g  e g a b  a b a g
+  %5
+  | e16 fis g a  g a g fis  d! fis g a  g a g fis
+  | d16 e fis g  fis g fis e  c e fis g  fis g fis e
+  | c16 fis g a  g a g fis  b, g' a b  a b a g
+  | b,16 e fis! g  fis g fis e  a, fis' g a  g a g fis
+  | g,16 a' b c  b c b a  g b c d  c d c b
+  %10
+  | g16 cis d e  d e d cis  fis, dis' e fis  e fis e dis
+  | e,16 fis g a  g a g fis  e g a b  a b a g
+  | e16 a b c  b c b a  d, b' c d  c d c b
+  | c,16 d e f  e f e d  c e f! g  f g f e
+  | c16 fis! g a  g a g fis  b, gis' a b a b a gis
+  %15
+  | a16 b c d  c d c b  g! a b c  b c b a
+  | fis!16 a b c  b c b a  e a b c  b c b a
+  | dis,16 a' b c  b c b a  dis,! fis g! a  g a g fis
+  | d!16 gis a b  a b a gis  cis, e fis g  fis g fis e
+  | c!16 fis g a  g a g fis  b, e fis g  fis g fis e
+  %20
+  | ais,16 e' fis g  fis g fis e  b fis' g a!  g a g fis
+  | e16 g a b  a b a g  d gis a b  a b a gis
+  | c,16  a' b c  b c b a  gis b c d  c d c b
+  | \stemNeutral a16 c d e  d e d c  a c d e  d e d c
+  | a16 d e f  e f e d  a d e f  e f e d
+  %25
+  | gis,16 d' e f  e f e d  gis, b c d  c d c b
+  | a16 b c d  c d c b  a b c d  c d c b
+  | g!16 cis d e  d e d cis  fis, dis' e fis  e fis e dis
+  | e16 e, fis g  fis g fis e  d! e f g!  f g f e
+  | c16 fis! gis a  gis a gis fis  b, gis' a b  a b a gis
+  %30
+  | a16 a, b c  b c b a  g! a b c  b c b a
+  | fis16 a b c  b c b a  e a b c  b c b a
+  | dis,16 a' b c  b c b a  e! g a b  a b a g
+  | c,4 r r16 a'' b c  b c b a
+  | cis,4 r  b16 fis' g a  g a g fis
+  %35
+  | b,16 g' a b  a b a g  b, a' b c  b c b a
+  | b,16 b' c d  c d c b  b, a' b c  b c b a
+  | b,16 g' a b  a b a g  b, fis' g a  g a g fis
+  | g16 b a g  fis e dis fis \stemDown b,2
+  | b2 b
+  %40
+  | c8 g\rest g4\rest s2
+  | b2 <e, e'>
     \tweak direction #DOWN
     \textEndMark \markup { \musicglyph "scripts.dfermata" }
     \fine
