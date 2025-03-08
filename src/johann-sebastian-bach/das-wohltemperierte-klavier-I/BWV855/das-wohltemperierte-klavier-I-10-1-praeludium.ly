@@ -36,6 +36,7 @@ Soprano = \context Voice = "one" \relative c' {
   | e4~ e32 fis e dis e cis dis16 dis4.\trill e8
   | e1~
   | e~
+    \break
   | e16 a b c  \stemNeutral b c b a  e a b c  b c b a
   | b16 a gis a  b a gis a  d,8 b'~  b16 a gis! a
   %25
@@ -59,6 +60,8 @@ Soprano = \context Voice = "one" \relative c' {
   %40
   | e16 d! c b  a g fis e  c' b a g  fis e dis cis
   | dis16 b fis'8 d'16\rest e,8 dis!16  e2
+    \override Score.TextMark.self-alignment-X = #CENTER
+    \textEndMark \markup { \musicglyph "scripts.ufermata" }
     \fine
 }
 
@@ -105,8 +108,6 @@ Alto = \context Voice = "two" \relative c' {
   %40
   | g8 r r4 s2
   | s16 b,8.~ b8 a  <gis b>2
-    \override Score.TextMark.self-alignment-X = #CENTER
-    \textEndMark \markup { \musicglyph "scripts.ufermata" }
 }
 
 Tenor = \context Voice = "three" \relative c {
