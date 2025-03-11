@@ -5,7 +5,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [v63] - unreleased
 
-- J.S. Bach: Das wohltemperierte Klavier – Erster Teil: Praeludium X (right hand)
+### Added
+
+- J.S. Bach: Das wohltemperierte Klavier – Erster Teil: Praeludium und Fuga X
+
+### Fixed
+
+- Bach/Rodrigues: Cantata BWV54 - Aria - a few minor fixes
 
 ## [v62] - 2025-03-05
 

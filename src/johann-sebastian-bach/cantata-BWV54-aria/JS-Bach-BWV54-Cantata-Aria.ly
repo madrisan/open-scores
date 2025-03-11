@@ -204,7 +204,9 @@ Alto = \context Voice = "two" \relative c {
   | aes16 g aes f g f g ees f8 aes~ aes16 g aes f
   %5
   | g8 bes~ bes16 aes bes g c4~ c16 bes c aes
-  | d8 f~ f16 ees f d ees d ees c d c d bes
+  | d8
+    \once\override Tie.extra-offset = #'(0 . -0.4) f~
+    f16 ees f d ees d ees c d c d bes
   | c d c ees a, bes a bes c d c ees a, bes a c
   | d bes c aes bes g aes f g8. aes16 f8. ees16
   | bes'16 g aes f g ees f d ees g f aes g bes aes bes
@@ -326,7 +328,11 @@ Tenor = \context Voice = "three" \relative c {
   | s1*2
   %31
   | ees8 ees c c c d d bes
-  | c c d4 g,8 g <f aes> q
+  | c c d4
+    \change Staff = "upper" \voiceTwo
+    \once\override NoteColumn.force-hshift = #0.4  g,8
+    \change Staff = "lower" \voiceThree
+    g <f aes> q
   | f f f f a\rest <ees ees'> q q
   | r <aes ees'> <f aes> q r <f bes> <g bes> q
   %35
