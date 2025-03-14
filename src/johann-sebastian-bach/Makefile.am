@@ -1,5 +1,4 @@
-SUBDIRS = cantata-BWV106-actus-tragicus-sonatina \
-	  cantata-BWV54-aria \
+SUBDIRS = cantatas \
 	  cembalo-konzert-largo-BWV1056-kempff \
 	  chaconne-fur-violine-BWV1004-busoni \
 	  chorale-preludes \
