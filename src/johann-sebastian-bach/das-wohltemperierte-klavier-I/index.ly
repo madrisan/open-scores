@@ -39,6 +39,7 @@
                    "ees–Moll (E-flat minor) + Fuga in dis-Moll (D-sharp minor)" "853"
 \markup \indexItem "Praeludium und Fuga IX"   #'Praeludium09 "E–Dur (E major)" "854"
 \markup \indexItem "Praeludium und Fuga X"    #'Praeludium10 "e–Moll (E minor)" "855"
+\markup \indexItem "Praeludium und Fuga XI"   #'Praeludium11 "F–Dur (F major)" "856"
 
 \markup \column \abs-fontsize #10 {
   \null\null
