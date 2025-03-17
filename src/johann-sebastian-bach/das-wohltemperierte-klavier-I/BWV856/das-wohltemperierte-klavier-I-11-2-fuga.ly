@@ -115,11 +115,90 @@ Tenor = \context Voice = "three" \relative c {
 Bass = \context Voice = "four" \relative c {
   \voiceFour
   \stemDown\tieDown
-  \override MultiMeasureRest.staff-position = #0
-  \override Rest.staff-position = #0
+  \override MultiMeasureRest.staff-position = #-4
+  \override Script.direction = #UP
   %1
-  \partial 8 r8
-  | R1*3/8*72
+  \partial 8 b8\rest
+  | R4.*8
+  | r8 r c
+  %10
+  | d8 c bes
+  | c8 e,16 f g a
+  | bes8 c16 bes a g
+  | \stemNeutral a16 g f g a bes
+  | c16 b a b c d
+  %15
+  | e16 g f e d c
+  | b4.\prall
+  | c8 d16 e f8
+  | bes4.
+  | a16 c bes a g f
+  %20
+  | e4.\trill
+  | \override Rest.staff-position = #0
+    f4 r8
+  | \override MultiMeasureRest.staff-position = #0
+    R4.*3
+  %25
+  | r8 r c'
+  | d8 c bes
+  | c8 e,16 f g a
+  | bes8 c16 bes a g
+  | a16 c bes a g f
+  %30
+  | e4.\trill
+  | f8 g a
+  | d,4 r8
+  | e8 f g
+  | cis,4 cis'8
+  %35
+  | d8 c! bes
+  | a4.~
+  | a4.~
+  | a4.~
+  | a4.~
+  %40
+  | a4 a8
+  | bes8 a g
+  | a8 cis,16 d e f
+  | g8 a16 g f e
+  | f8. g16 f e
+  %45
+  | d16 g a8 a,
+  | d,4 d'8
+  | es8 d c!
+  | d8 fis,16 g a bes
+  | c16 bes d c bes a
+  %50
+  | \stemDown
+    \revert Rest.staff-position
+    bes8 r r
+  | fis'8 r r
+  | g8 r r
+  | es8 r r
+  | d8 r r
+  %55
+  | r16 c d8[ d]
+  | g,8 a bes
+  | c8 d e
+  | f8 g a
+  | \stemNeutral\tieNeutral bes4.~
+  %60
+  | bes16 g c bes a g
+  | f16 c f es d c
+  | bes16 c bes a g f
+  | e4 r8
+  | f8 g a
+  %65
+  | \stemDown bes4 r8
+  | a4 r8
+  | g4 r8
+  | f8 g a
+  | bes8 c d
+  %70
+  | e8 c f
+  | \stemNeutral bes,8 c c,
+  | f4.\fermata
     \fine
 }
 
