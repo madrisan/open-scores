@@ -98,18 +98,107 @@ Soprano = \context Voice = "one" \relative c'' {
     \fine
 }
 
-Alto = \context Voice = "two" \relative c' {
-  \voiceTwo
-  \stemDown\tieDown
-  \override Rest.staff-position = #0
-  %1
-}
-
 Tenor = \context Voice = "three" \relative c {
   \voiceThree
   \stemUp\tieUp
-  \override Rest.staff-position = #0
   %1
+  \partial 8 c'8
+  | d8 c bes
+  | c8 e,16 f g a
+  | bes8 c16 bes a g
+  | a16 g f g a bes
+  %5
+  | c16 bes a bes c d
+  | \stemDown e16 g f e d c
+  | \stemUp b4.\prall
+  | c8 bes! a
+  | bes16 a g a bes c
+  %10
+  | a4
+    \change Staff = "upper" \voiceTwo
+    d8
+  | e8 g c,
+  | c4.~
+  | c4 f8
+  | e4 a8
+  %15
+  | g4 c8~
+  | c16 c b a g f
+  | e8. bes'!16 a g
+  | f e d e f g
+  | a8 r r
+  %20
+  | R4.
+  | b,8\rest b\rest f'
+  | a8 g f
+  | g8 b,16 c d e
+  | f8 g16 f e d
+  %25
+  | e16 d c d e c
+  | f4 r8
+  | r8 r c'
+  | d8 c bes
+  | c8 e,16 f g a
+  %30
+  | bes8 c16 bes a g
+  | a4.~
+  | a8 bes16 a g f
+  | g4.~
+  | g8 a16 g f e
+  %35
+  | f16 e f g a g
+  | a16 bes a g f e
+  | d16 cis d f e d
+  | cis8 r a'
+  | bes8 a g
+  %40
+  | a8 cis,16 d e f
+  | g8 a16 g f e
+  | f4 r8
+  | cis4.~
+  | cis16 a b cis d e
+  %45
+  | f16 e cis4
+  | d4 r8
+  | R4.
+  | r8 r d
+  | es8 d c
+  %50
+  | d8
+    \change Staff = "lower" \voiceFour \stemUp
+    fis,16 g a bes
+  | c16 bes d c bes a
+  | bes16 d c bes a g
+  | fis8 a\rest a\rest
+  | g16 a bes c d a
+  %55
+  | bes8 g fis
+  | g16
+    \change Staff = "upper" \voiceThree \stemDown \tieDown
+    d' g f! e d
+  | e4.
+  | c16\rest c f es d c
+  | d4.
+  %60
+  | c8 d e
+  | f8 g a
+  | bes4.~
+  | bes16 g c bes a g
+  | a4.~
+  %65
+  | a8
+    \change Staff = "lower" \voiceFour \stemUp \tieUp
+    d,, g~
+  | g16 f bes a g f
+  | g8 bes,16 c d e
+  | f4.~
+  | f4 bes8~
+  %70
+  | bes8
+    \change Staff = "upper" \voiceThree \stemDown \tieDown
+    e f~
+  | f8 e4
+  | f4.
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -198,7 +287,7 @@ Bass = \context Voice = "four" \relative c {
   %70
   | e8 c f
   | \stemNeutral bes,8 c c,
-  | f4.\fermata
+  | f4._\fermata
     \fine
 }
 
@@ -211,7 +300,6 @@ Bass = \context Voice = "four" \relative c {
       \Global
       \clef treble
       \Soprano
-      \Alto
     >>
     \context Staff = "lower" <<
       \set Staff.midiInstrument = #"acoustic grand"

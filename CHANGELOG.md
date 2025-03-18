@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Added
 
 - J.S. Bach: Das wohltemperierte Klavier – Erster Teil: Praeludium und Fuga X
-- J.S. Bach: Das wohltemperierte Klavier – Erster Teil: Praeludium XI
+- J.S. Bach: Das wohltemperierte Klavier – Erster Teil: Praeludium und Fuga XI
 
 ### Fixed
 
