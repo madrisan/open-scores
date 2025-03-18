@@ -10,9 +10,9 @@ Soprano = \context Voice = "one" \relative c' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \label #'Praeludium06
-  \set Staff.beamExceptions = #'()
-  \set Staff.baseMoment = #(ly:make-moment 1/8)
-  \set Staff.beatStructure = 1,1,1,1,1,1,1,1
+  \set Voice.beamExceptions = #'()
+  \set Voice.beatBase = #1/8
+  \set Voice.beatStructure = 1,1,1,1,1,1,1,1
   %1
   | r8 r16 a'16
     \scaleDurations 2/3 {
@@ -101,7 +101,7 @@ Bass = \context Voice = "four" \relative c {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \set Voice.beamExceptions = #'()
-  \set Voice.baseMoment = #(ly:make-moment 1/4)
+  \set Voice.beatBase = #1/4
   \set Voice.beatStructure = 1,1,1,1
   \omit TupletNumber
   %1
@@ -124,7 +124,7 @@ Bass = \context Voice = "four" \relative c {
   %15
   | d,4.~ \tuplet 3/2 { d16 fis a } d4.~ \tuplet 3/2 { d16 g bes }
   | \unset Voice.beamExceptions
-    \unset Voice.baseMoment
+    \unset Voice.beatBase
     \unset Voice.beatStructure
     \repeat unfold 2 { cis8 d, cis' d, }
   | \repeat unfold 2 { c' d, c' d, }
