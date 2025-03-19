@@ -5,6 +5,8 @@ Global = {
   \include "../global.ly"
 }
 
+\include "../macros.ly"
+
 Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
   \stemUp\tieUp
@@ -12,12 +14,12 @@ Soprano = \context Voice = "one" \relative c'' {
   \partial 8 b8\rest
   %1
   | R4.*3
-  | b8\rest b\rest f
+  | b8\rest b\rest \highlightSubject { f
   %5
   | a8 g f
   | g8 b,16 c d e
   | f8 g16 f e d
-  | e16 d c d e f
+  | \unHighlightSubject e16 } d c d e f
   | g8 f e
   %10
   | f16 e d e f g
@@ -28,12 +30,12 @@ Soprano = \context Voice = "one" \relative c'' {
   %15
   | b8 e4
   | d4.~
-  | d16[ d c8] c
+  | d16[ d c8] \highlightSubject { c
   | d8 c bes
   | c8 e,16 f g a
   %20
   | bes8 c16 bes a g
-  | a16 g f g a bes
+  | \unHighlightSubject a16 } g f g a bes
   | c16 bes a bes c d
   | e16 g f e d c
   | b4.\prall
@@ -51,12 +53,12 @@ Soprano = \context Voice = "one" \relative c'' {
   | e4.~
   %35
   | e8 a, d
-  | cis4 a'8
+  | cis4 \highlightSubject { a'8
   | bes8 a g
   | a8 cis,16 d e f
   | g8 a16 g f e
   %40
-  | f16 a g f e d
+  | \unHighlightSubject f16 } a g f e d
   | cis4.~
   | cis16 d32 c! bes16 a g f
   | bes8 a g
@@ -68,11 +70,11 @@ Soprano = \context Voice = "one" \relative c'' {
   | fis,16 e! d e fis g
   | a4.~
   %50
-  | a16 g a bes c d
+  | a16 g a bes c \highlightSubject { d
   | es8 d c
   | d8 fis,16 g a bes
   | c16 bes d c bes a
-  | bes16 fis g a bes cis
+  | \unHighlightSubject bes16 } fis g a bes cis
   %55
   | \stemNeutral d16 g bes,8\prall a16 g
   | \stemUp g8 bes4~
@@ -102,20 +104,21 @@ Tenor = \context Voice = "three" \relative c {
   \voiceThree
   \stemUp\tieUp
   %1
-  \partial 8 c'8
+  \partial 8 \highlightSubject { c'8
   | d8 c bes
   | c8 e,16 f g a
   | bes8 c16 bes a g
-  | a16 g f g a bes
+  | \unHighlightSubject a16 } g f g a bes
   %5
   | c16 bes a bes c d
   | \stemDown e16 g f e d c
   | \stemUp b4.\prall
   | c8 bes! a
-  | bes16 a g a bes c
+  | bes16 a g a
+    \change Staff = "upper" \voiceTwo
+    bes c
   %10
   | a4
-    \change Staff = "upper" \voiceTwo
     d8
   | e8 g c,
   | c4.~
@@ -129,14 +132,16 @@ Tenor = \context Voice = "three" \relative c {
   | a8 r r
   %20
   | R4.
-  | b,8\rest b\rest f'
+  | \change Staff = "lower" \voiceFour \stemUp
+    d,8\rest d\rest \highlightSubject { f
   | a8 g f
   | g8 b,16 c d e
   | f8 g16 f e d
   %25
-  | e16 d c d e c
-  | f4 r8
-  | r8 r c'
+  | \unHighlightSubject e16 } d c d e c
+  | f4 g8\rest
+  | \change Staff = "upper" \voiceTwo
+    g8\rest g\rest c
   | d8 c bes
   | c8 e,16 f g a
   %30
@@ -147,28 +152,31 @@ Tenor = \context Voice = "three" \relative c {
   | g8 a16 g f e
   %35
   | f16 e f g a g
-  | a16 bes a g f e
+  | a16 bes a g
+    \change Staff = "lower" \voiceFour \stemUp
+    f e
   | d16 cis d f e d
-  | cis8 r a'
+  | cis8 d\rest \highlightSubject { a'
   | bes8 a g
   %40
   | a8 cis,16 d e f
-  | g8 a16 g f e
-  | f4 r8
+  | \change Staff = "upper" \voiceTwo
+    g8 a16 g f e
+  | f4 } r8
   | cis4.~
   | cis16 a b cis d e
   %45
   | f16 e cis4
   | d4 r8
   | R4.
-  | r8 r d
+  | r8 r \highlightSubject { d
   | es8 d c
   %50
   | d8
     \change Staff = "lower" \voiceFour \stemUp
     fis,16 g a bes
   | c16 bes d c bes a
-  | bes16 d c bes a g
+  | \unHighlightSubject bes16 } d c bes a g
   | fis8 a\rest a\rest
   | g16 a bes c d a
   %55
@@ -209,12 +217,12 @@ Bass = \context Voice = "four" \relative c {
   %1
   \partial 8 b8\rest
   | R4.*8
-  | r8 r c
+  | r8 r \highlightSubject { c
   %10
   | d8 c bes
   | c8 e,16 f g a
   | bes8 c16 bes a g
-  | \stemNeutral a16 g f g a bes
+  | \stemNeutral \unHighlightSubject a16 } g f g a bes
   | c16 b a b c d
   %15
   | e16 g f e d c
@@ -229,11 +237,11 @@ Bass = \context Voice = "four" \relative c {
   | \override MultiMeasureRest.staff-position = #0
     R4.*3
   %25
-  | r8 r c'
+  | r8 r \highlightSubject { c'
   | d8 c bes
   | c8 e,16 f g a
   | bes8 c16 bes a g
-  | a16 c bes a g f
+  | \unHighlightSubject a16 } c bes a g f
   %30
   | e4.\trill
   | f8 g a
@@ -247,21 +255,21 @@ Bass = \context Voice = "four" \relative c {
   | a4.~
   | a4.~
   %40
-  | a4 a8
+  | a4 \highlightSubject { a8
   | bes8 a g
   | a8 cis,16 d e f
   | g8 a16 g f e
-  | f8. g16 f e
+  | \unHighlightSubject f8. } g16 f e
   %45
   | d16 g a8 a,
-  | d,4 d'8
+  | d,4 \highlightSubject { d'8
   | es8 d c!
   | d8 fis,16 g a bes
   | c16 bes d c bes a
   %50
   | \stemDown
     \revert Rest.staff-position
-    bes8 r r
+    bes8 } r r
   | fis'8 r r
   | g8 r r
   | es8 r r

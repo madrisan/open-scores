@@ -14,24 +14,29 @@ Soprano = \context Voice = "one" \relative c'' {
   | f16 c a g a c  f, a c es d c  d bes f e! f bes  d, f a c bes a
   | bes16 g e d e g  c, e g bes a g  a g f e f a  c, e f a g f
   | b2.\upprall  c16 g e d e g  c, e g bes a g
-  | cis2.\downprall  d16 a f e f a  d, f a c bes! a
+  | cis2.\downprall
+    d16 a f e f a  d, f a c bes! a
   %5
   | bes16 g e d e g  c, e g bes a g  a f d cis d f  bes, d f a g f
   | g16 e cis b cis e  a, cis e g f e  f8 a d  a f d
-  | g8 bes d  bes g d  g cis e  cis g e
+  | g8 bes d  bes g d
+    g cis e  cis g e
   | d'16 a f e f a  d, f a c! bes a  f' d bes a bes d  f, bes d f e d
   | gis2.\downprall  a16 	e cis b cis e  a, cis e g fis e
   %10
-  | fis2.\upprall  g16 d b a b d  g, b d f es d
+  | fis2.\upprall
+    g16 d b a b d  g, b d f es d
   | es16 c a g a c  f, a c es d c  d bes! g f g bes  es, g bes d c bes
   | c16 a fis e! fis a  d, fis a c bes a
     \once\override Script.extra-offset = #'(0.6 . 0)
     \tieUp bes2.~\upprall
-  | \stemUp bes2. a~
+  | \stemUp bes2.
+    a~
   | a16 a f e! f a \stemNeutral\tieNeutral d, f a c bes a  g d' bes a bes d  g, bes d f e d
   %15
   | e16 g e d e g  c, e g bes a g  c a f e f a  d, f a c bes a
-  | bes16 g e d e g  c, e g bes a g  a f c bes c f  a, c es g f es
+  | bes16 g e d e g  c, e g bes a g
+    a f c bes c f  a, c es g f es
   | d4.~\prall d16 c bes a g f  bes8 g' e!  c bes g'
   | a,16 g f e f a  d, f d bes g e'  f bes, a g a c  f,4 r8
     \fine
@@ -90,6 +95,23 @@ Bass = \context Voice = "four" \relative c {
     \fine
 }
 
+
+forceBreaks = {
+  % page 1
+  \repeat unfold 5 { s4. \noBreak } s4.\break
+  \repeat unfold 5 { s4. \noBreak } s4.\break
+  \repeat unfold 5 { s4. \noBreak } s4.\break
+  \repeat unfold 5 { s4. \noBreak } s4.\break
+  \repeat unfold 5 { s4. \noBreak } s4.\break
+  \repeat unfold 5 { s4. \noBreak } s4.\pageBreak
+  % page 2
+  \repeat unfold 5 { s4. \noBreak } s4.\break
+  \repeat unfold 5 { s4. \noBreak } s4.\break
+  \repeat unfold 5 { s4. \noBreak } s4.\break
+  \repeat unfold 5 { s4. \noBreak } s4.\break
+  \repeat unfold 5 { s4. \noBreak } s4.\break
+}
+
 \score {
   \new PianoStaff
   <<
@@ -108,6 +130,7 @@ Bass = \context Voice = "four" \relative c {
       \Tenor
       \Bass
     >>
+    \new Devnull \forceBreaks
   >>
   \header {
     composer = ##f % "Johann Sebastian Bach"
