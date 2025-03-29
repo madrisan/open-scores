@@ -170,26 +170,57 @@ Soprano = \context Voice = "one" \relative c'' {
   | a fis16 gis a8 b b4 r
   | r2 b4 r8 e~
   | e d16 cis d8 cis d a b a16 b
-  %45
+  %50
   | cis8 b16 cis d4~ d8 cis4 b8~
   | b a4 gis8~ gis16 b a gis fis4~
   | fis16 a gis fis e4~ e16 gis fis e dis4
   | e16 e fis g a d, e fis g8 a16 g fis8 gis16 fis
   | b4\rest b8\rest a~ a16 gis! a b cis fis, gis a
-  %50
+  %55
   | b8 cis16 d e a, b cis d8 e16 d cis8 d!16 cis
   | b4 a'8\rest b,~ b a4 gis8
   | a r r4 r8 e' e e
   | cis4 r8 d cis d16 cis b8 cis16 b
   | a4~ a8 gis~ gis fis4 e8
-  %55
+  %60
   | a16 b cis d e fis gis a fis e d cis b a gis fis
   | gis4 r r r8 eis!
   | fis eis16 fis gis8 fis16 gis a8 b16 a gis8 a16 gis
   | fis8 gis16 fis e8 fis16 e d8 cis16 d e8 d16 e
-
-  | \override MultiMeasureRest.staff-position = #0
-    s1*24
+  | \stemDown fis8
+    \change Staff = "lower"
+    a, \stemUp gis a16 gis
+    fis8
+    \change Staff = "upper" \stemDown
+    d' b e
+  %65
+  | \stemUp a4 b2 b4
+  | b dis e8 b16 a gis4
+  | a fis8 gis fis4 e
+  | \highlightSubject { a8 a a a b4 r8 a
+  | b8 a16 b cis8 b16 cis \unHighlightSubject d8 } cis16 b a c b a
+  %70
+  | g b a g fis a g fis e8 a16 g fis8 g16 fis
+  | e8 fis16 e dis8. dis16 e4 r8 b'~
+  | b a16 gis! a8 gis a e fis e16 fis
+  | gis8 cis b e a, d gis, cis
+  | fis, b e, a~ a gis16 fis gis8 e'~
+  %75
+  | e d16 cis d8 cis d a b a16 b
+  | cis d cis b a cis b a gis a gis a b4
+  | a a8 b a4 d
+  | e8 fis16 e d8 e16 d cis4 e~
+  | e8 d16 cis d cis d a d cis d a d a fis c'~
+  %80
+  | c4 b16 c b a gis b e, gis fis a gis b
+  | a8 cis d16 cis b cis d fis e g fis e d e
+  | fis a gis b a gis fis gis e gis fis e d fis e d
+  | cis e d cis b d cis b a cis b a b cis b a
+  | gis e fis gis a b cis8~ cis4~ cis16 d e fis
+  %85
+  | gis b e, d cis a' a, cis b gis' gis, b a fis' fis, a
+  | gis a b cis d8. cis16 b2
+  | a1\fermata
     \fine
 }
 
@@ -284,9 +315,43 @@ Alto = \context Voice = "two" \relative c' {
   | e'8 e e eis fis4 a,\rest
   | R1
   | \highlightSubject { a8 a a a b4 r8 cis
-  | d cis16 d e8 d16 e
+  | \once\override NoteColumn.force-hshift = #0.3 d cis16 d e8 d16 e
     \stemUp \unHighlightSubject fis8 } e16 fis gis8 fis16 gis
-
+  %65
+  | \stemDown cis,8 b16 cis dis8 cis16 dis e8 dis16 e fis8 e16 fis
+  | gis8 fis16 gis a8 b16 a gis4 r8 e~
+  | e d!16 cis d8 cis d a b a16 b
+  | cis8 d16 e fis gis fis e d8 b e4
+  | d8 fis g4 a r
+  %70
+  | R1
+  | r2 \highlightSubject { b,8 b b b
+  | cis4 b8\rest b cis b16 cis dis8 cis16 dis
+  | \unHighlightSubject e } d e fis gis fis gis a fis e fis gis e d e fis
+  | d cis d e cis b cis d b4 r
+  %75
+  | R1
+  | r2 r4 r8 e~
+  | e fis16 g fis8 e fis e16 fis gis8 fis16 gis
+  | a4 r r16 fis gis a b e, fis gis
+  | a4 r r2
+  %80
+  | << { \stemDown fis4 fis } \\ { \once\override NoteColumn.force-hshift = #0.3 dis2 } >>
+    e8 r r4
+  | cis16 e a, cis b a gis a b d cis e d cis b cis
+  | d fis e gis fis gis a fis gis e fis gis fis d e fis
+  | e
+    \change Staff = "lower" \stemUp
+    cis d e d b cis d cis e d cis d e d cis
+  | b d cis b cis d e
+    \change Staff = "upper" \stemDown
+    fis
+    gis a fis gis a b cis a
+  %85
+  | b8 gis a fis gis e fis dis
+  | e16 fis gis e fis gis a8~ a4
+    << { \stemUp gis8. a16 } \\ { e16 fis b, d } >>
+  | <cis e>1
 }
 
 Tenor = \context Voice = "three" \relative c' {
@@ -398,9 +463,9 @@ Tenor = \context Voice = "three" \relative c' {
   | \override MultiMeasureRest.staff-position = #0
     R1*3
   %76
-  | r2 e'8 e e e
+  | r2 \highlightSubjectInv { e'8 e e e
   | cis4 r8 d cis d16 cis b8 cis16 b
-  | a4 r r8 d16 cis b8 cis16 b
+  | a4 } r r8 d16 cis b8 cis16 b
   | a4 r f2\rest
   %80
   | <fis a>4 <fis b> <e b'>8 r r4

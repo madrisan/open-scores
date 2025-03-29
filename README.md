@@ -47,6 +47,7 @@ Latest release: [Open Scores for Piano v62](https://github.com/madrisan/open-sco
 |  | Sechs kleine Präludien BWV 933-938 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/JS-Bach-BWV933-938-Sechs-kleine-Praludien.pdf) |
 |  | Fuga a-Moll BWV947 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/JS-Bach-BWV947-Fuga-a-Moll.pdf) |
 |  | Fuga d-Moll BWV948 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/JS-Bach-BWV948-Fuga-d-Moll.pdf) |
+|  | Fuga A-Dur BWV949 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v63/JS-Bach-BWV949-Fuga-A-Dur.pdf) |
 |  | Fuga H-Moll BWV951 - on a Theme by Tomaso Albinoni | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/JS-Bach-BWV951-Fuga-H-Moll.pdf) |
 |  | Fuga C-Dur BWV952 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/JS-Bach-BWV952-Fuga-C-Dur.pdf) |
 |  | Fuga C-Dur BWV953 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/JS-Bach-BWV953-Fuga-C-Dur.pdf) |
