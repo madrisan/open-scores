@@ -112,6 +112,7 @@ AC_CONFIG_FILES([\
   src/jan-pieterszoon-sweelinck/Makefile \
   src/jan-pieterszoon-sweelinck/fantasia-cromatica-SwWV258/Makefile \
   src/johannes-brahms/Makefile \
+  src/johannes-brahms/klavierstucke-op.118/Makefile \
   src/johannes-brahms/klavierstucke-op.119/Makefile \
   src/johannes-brahms/rhapsodie-op.79-nr.1/Makefile \
   src/johannes-brahms/rhapsodie-op.79-nr.2/Makefile \

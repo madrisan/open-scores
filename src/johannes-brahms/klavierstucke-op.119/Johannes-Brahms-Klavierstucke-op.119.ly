@@ -86,18 +86,11 @@
     \fill-line {
       \center-column {
         \null\null\null\null
-        \fill-line { \abs-fontsize #12 "Based on the Edizioni Curci - Milano" }
+        \fill-line { \abs-fontsize #10 "Based on the Edizioni Curci - Milano" }
         \null\null
       }
     }
   }
 }
-
-Global = {
-  \key ees \major
-  \time 2/4
-  \include "./global.ly"
-}
-
 
 \include "./parts/4-rapsodie.ly"
