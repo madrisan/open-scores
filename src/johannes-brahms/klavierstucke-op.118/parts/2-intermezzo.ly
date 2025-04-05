@@ -9,6 +9,7 @@ Soprano = \context Voice = "one" \relative c' {
   \stemUp\tieUp
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \omit TupletBracket
   %1
   \tempo "Andante teneramente."
   \partial 4 { cis'8( b) }
@@ -85,7 +86,8 @@ Soprano = \context Voice = "one" \relative c' {
   | cis4 fis,8 gis a fis
   | eis4 gis4. cis8~\)
   }
-  | cis fis \stemNeutral <eis, ais eis'>4 <dis ais' dis>
+  %\break
+  | cis^\markup { "più lento" } fis \stemNeutral <eis, ais eis'>4 <dis ais' dis>
   | <cis ais' cis> <fis ais fis'> <eis ais eis'>
   | <dis ais' dis> <cis ais' cis> <c ges' bes c>~
   %60
@@ -95,10 +97,72 @@ Soprano = \context Voice = "one" \relative c' {
   | <dis gis b dis> \stemUp cis'2~
   | cis4 cis4.\fermata d8\rest
   %65
-  | d4\rest cis( fis
-  | e d) d\rest
-
-  | R1*3/4*49
+  | d4\rest^\markup { "Tempo primo" } cis( fis
+  | e d) f\rest
+  | d cis f\rest
+  | cis b d\rest
+  | cis8( cis' b a gis fis
+  %70
+  | e4) a,8( cis e d)
+  | cis4 fis,8( ais cis b)
+  | a\( fis d bis cis
+    \change Staff = "lower" \voiceTwo \stemUp
+    eis,\)
+  | \change Staff = "upper" \voiceOne
+    r4 \tuplet 3/2 { r8 a\( cis } \omit TupletNumber \tuplet 3/2 { fis a cis\) }
+  | <e, e'>4 <d d'> r
+  | d( cis) s
+  %75
+  | cis'4.\fermata( b8) cis[( b])
+  | <fis d'>2 cis'8( b)
+  | \stemNeutral <fis a'>2\arpeggio <b gis'>8.( <a fis'>16)
+  | <a fis'>8.[ <gis f'>16] <gis f'>8_( <a e'> <fis! d'> <d b'>)
+  | <cis a'>4_( <b gis'>) \stemUp cis'8( b)
+  %80
+  | <a d>2 cis8( b)
+  | b'4.\( a8 gis fis\)
+  | <dis fis>8.( e16) <bis e>8( cis) <e, cis'>[( <dis fis>])
+  | <a dis a'>4( <gis e' gis>) e'\(
+  | fis e\) e\(
+  %85
+  | fis e\) e\(
+  | b' a gis~
+  | <gis b> e\) a\(
+  | b a\) a\(
+  | c a\) <c, fis! a>
+  %90
+  | \stemNeutral fis'!4\( c4. a8\)
+  | \stemUp gis2\( fis8 e
+  | gis2\)\( a4
+  | ais2 gis!8 fis
+  | b2 bis4
+  %95
+  | cis2 b8 a~
+  | <a d>4.\) cis4( b8)
+  | \once\stemNeutral <fis a'>2\arpeggio <a, e' a>4
+  | gis'4( fis) e8( d)
+  | \stemNeutral cis4_( b) <a e' a>
+  %100
+  | g'4( f) e8( d)
+  | \stemUp c4_( b) gis''!8( a)
+  | <d, fis!>2 gis8( a)
+  | b,2 b8.( cis16)
+  | cis8.( d16) d8[( cis d gis,)]
+  %105
+  | <d gis>4( <cis a'>) a'\(
+  | b a\) a\(
+  | b a\) a\(
+  | d\) cis4.\( b8\)
+  | gis4( a) a\(
+  %110
+  | b a\) a\(
+  | b a\) <d, fis a>(
+  | \stemNeutral fis') d4.( b8)
+  | gis4( a) e~
+  | e2 e4~
+  %115
+  | \once\override NoteColumn.force-hshift = #0.3
+    e2\arpeggio\fermata
     \fine
 }
 
@@ -212,13 +276,99 @@ Alto = \context Voice = "two" \relative c'' {
   | \stemDown fis4 s2
   | s2.
   | s4 <cis gis' b cis> <cis fis b>
-  | <cis fis ais> <cis eis gis>4.
+  | <cis fis ais> <cis eis gis>4. s8
+  | s2.*9
+  %74
+  | a'2 s4
+  | \omit TupletNumber
+    s2 \tuplet 3/2 {
+      \change Staff = "lower" \voiceThree
+      cis,8
+      \change Staff = "upper" \voiceTwo
+      e a~
+    }
+  | <dis, fis a>2 <d gis>4
+  | fis8[( d)
+    \change Staff = "lower" \voiceThree
+    a( fis)]
+    \change Staff = "upper" \voiceTwo
+    a' gis
+  | s2.*2
+  %80
+  | s2 e4
+  | a8[( d,)
+    \change Staff = "lower" \voiceThree
+    a( fis)]
+    \change Staff = "upper" \voiceTwo
+    <e' a>4
+  | <a b fis'> <a b dis> <gis cis>8. <fis dis'>16
+  | <fis b>8. <e bis'>16 e4 s
+  | s2 <g, c>4~
+  %85
+  | q2 <g cis>4~
+  | q2 <gis d'>4~
+  | <d' e> q q
+  | d2 <c f>4~
+  | q2 \tieNeutral <c dis>4~
+  %90
+  | q2 s4
+  | s2.*2
+  | gis'8[ b,
+    \change Staff = "lower" \voiceThree
+    gis e c' a]
+  | \change Staff = "upper" \voiceTwo
+    ais'[ cis, ais
+    \change Staff = "lower" \voiceThree
+    e e' cis]
+  %95
+  | \change Staff = "upper" \voiceTwo
+    b'[ d, b
+    \change Staff = "lower" \voiceThree
+    e, dis' bis]
+  | \change Staff = "upper" \voiceTwo
+    cis'[ e, cis
+    \change Staff = "lower" \voiceThree
+    e, g' cis,]
+  | \change Staff = "upper" \voiceTwo
+    s4. gis'
+  | s2.
+  | <a, b>2
+    \change Staff = "lower" \voiceThree
+    <e a>4
+  %100
+  | <fis a>2 s4
+  | \change Staff = "upper" \voiceTwo
+    <a b>2
+    \change Staff = "lower" \voiceThree
+    <e a>4
+  | <f a>2
+    \change Staff = "upper" \voiceTwo
+    <a' e'>4~
+  | a8[( gis a fis]) <a e'>4~
+  | <fis a>8[( gis <b, a'> fis']) <e a>4
+  %105
+  | <e gis>4 <d fis> <d e>
+  | s2 <cis fis>4~
+  | fis2 <d fis>4~
+  | q2 q4(
+  | <fis a>) <e gis>2
+  %110
+  | d4 cis <cis fis>~
+  | q2 <d fis>4~
+  | q2 s4
+  | s2.
+  | <cis e>2 cis8 b
+  %115
+  | \once\override Stem.length = #15
+    \crossStaff { d2 } cis8 b
+  | \crossStaff { a'2\arpeggio }
 }
 
 Tenor = \context Voice = "three" \relative c {
   \voiceThree
   \stemUp\tieUp
   \override Rest.staff-position = #0
+  \omit TupletBracket
   \mergeDifferentlyHeadedOff
   \partial 4 s4
   %1
@@ -278,10 +428,88 @@ Tenor = \context Voice = "three" \relative c {
       s4. \once\omit Flag \once\omit Stem eis8_~ eis4
     } >>
   | s2.*3
-  | s2 s8 cis~
-  | cis fis
+  | s2 s8 cis~(_\markup { "espress." }
+  %65
+  | cis fis)
     \change Staff = "lower" \voiceThree
     e4 d!
+  | cis b8(
+    \change Staff = "upper" \voiceTwo
+    d a' gis)
+  | \change Staff = "lower" \voiceThree
+    b,4 a8(
+    \change Staff = "upper" \voiceTwo
+    cis gis' fis)
+  | \change Staff = "lower" \voiceThree
+    a,( gis
+    \change Staff = "upper" \voiceTwo
+    e' d b gis)
+  | \change Staff = "lower" \voiceThree
+    a4\rest cis8
+    \change Staff = "upper" \voiceTwo
+    cis' b a
+  %70
+  | gis4 fis e\rest
+  | e d d\rest
+  | cis a gis
+  | \change Staff = "lower" \voiceThree
+    <b, gis'>( <a fis'>) r
+  | s4
+    \tuplet 3/2 { r8 fis[ a }
+    \tuplet 3/2 { d fis
+      \change Staff = "upper" \voiceTwo
+      a~]
+    }
+    \omit TupletNumber
+  %75
+  | a2 s4
+  | \change Staff = "lower" \voiceThree
+    s2.*3
+  | <fis a>8[ <gis b>] q[ <a cis>] s4
+  %80
+  | s4 e8 fis g4
+  | s2.*2
+  | b,8 e e[ fis] fis a
+  | e,[ b' e b] e,[ g
+  %85
+  | c e c g] e[ g
+  | cis e cis g] s4
+  | gis' a b
+  | a,8[ e' gis e] a,[ c
+  | f a f c] f, c'
+  %90
+  | dis[ a' dis, c] s4
+  | s2.*7
+  | s2 a4~
+  | a8 a4 a8~
+    \once\override NoteColumn.force-hshift = #0.3 a4~
+  %100
+  | \once\override NoteColumn.force-hshift = #0.3 a8
+    a4 a8~ a4~
+  | a8 a4 a8~
+    \once\override NoteColumn.force-hshift = #0.3 a4~
+  | \once\override NoteColumn.force-hshift = #0.3 a8
+    a4 a8 s4
+  | s2.*3
+  %106
+  | a8[( e' a gis]) fis[( a
+  | cis a fis e]) d[( fis
+  | a fis d cis]) b[( d
+  | fis a]) e[( gis b d])
+  %110
+  | a,4 s fis
+  | s2 d4
+  | s2 b4
+  | s2.
+  | s2 gis''4
+  %115
+  | \crossStaff {
+      \once\override NoteColumn.force-hshift = #1.1
+      \once\override Stem.length = #6
+      \stemDown <fis a>2
+    }
+    \stemUp \override NoteColumn.force-hshift = #0 gis4
+  | \crossStaff { a2 }
   }
 
 Bass = \context Voice = "four" \relative c' {
@@ -364,7 +592,7 @@ Bass = \context Voice = "four" \relative c' {
   | \tuplet 3/2 { cis,[\( gis' cis eis gis b]\) } eis8 r
   }
   | \phrasingSlurDown \stemNeutral
-    <fis,, cis' ais'>4\( <cis' ais' cis> <fis ais fis'>
+    <fis,, cis' ais'>4\( <cis' ais' cis>_\markup { "legato" } <fis ais fis'>
   | <eis ais eis'> <dis ais dis'> <cis ais' cis>
   | <fis ais fis'> <eis ais eis'> <ees ges bes ees>
   %60
@@ -376,8 +604,69 @@ Bass = \context Voice = "four" \relative c' {
   %65
   | \stemDown \slurUp
     \tuplet 3/2 { fis,( cis' a'!) \slurDown e'( a, fis) d'( a fis) }
-
-  | R1*3/4*51
+  | \tuplet 3/2 { cis'( a fis) b( fis b, b, b' d) }
+  | \tuplet 3/2 { b'( fis cis) a'( fis a, a, a' cis) }
+  | <b d>4 \tuplet 3/2 { gis8( b' fis) cis,( eis' cis) }
+  | \tuplet 3/2 { fis,( cis' a' cis a fis a fis cis) }
+  %70
+  | \tuplet 3/2 { d,^\( a' d fis a d, fis ais d,\) }
+  | \tuplet 3/2 { b,^\( fis' b d fis b, d g b,\) }
+  | \tuplet 3/2 { cis,_\( cis' a fis' cis cis,\) eis'_\( b cis,\) }
+  | fis2 s4
+  | <fis' a> s2
+  %75
+  | \once\stemUp e,4~ \tuplet 3/2 { e8 e' a } s4
+  | e2^~\fermata \stemNeutral <a, e'>4
+  | a, s <a' d>
+  | a,8( d') a( fis) d[( d')]
+  | d4 \once\stemDown cis b,8( d')
+  %80
+  | e,( e') e4 e
+  | fis, s e
+  | \stemNeutral
+    <dis b'>8^( dis') <fis, b>[( fis']) <a, b>^( b')
+  | \stemDown gis,4 a b
+  | e,2 e4~
+  %85
+  | e2 e4~
+  | e2 \stemNeutral <e b'>8[ e']
+  | \stemDown gis![ e a e b' e,]
+  | a,2 a4~
+  | a2 f4~
+  %90
+  | f2 \stemNeutral\phrasingSlurNeutral dis8[\( c']
+  | a'[ dis, a' c fis c]\)
+  | a\( c a e c a\)
+  | e4 s2
+  | e4 s2
+  %95
+  | e4 s2
+  | e4 s2
+  | fis4 s2
+  | \stemDown\phrasingSlurDown d8[ fis' <d a'> <fis d'>] cis,\( b
+  | d2\) cis8\( b
+  %100
+  | d2\) cis8\( b
+  | d2\) c8\( b
+  | d2\) <cis' e a e'>4
+  | \stemNeutral\slurNeutral
+    <d, a'> <dis' fis>8( a') <cis, e a e'>4
+  | <d, b'> <dis' fis>8([ a')] e,( e')
+  %105
+  | <e gis>( cis') <b, fis'>[( b')] <e,, b'> e'
+  | \stemDown a,2 a4~
+  | a2 a4~
+  | a2 a4~
+  | a a2
+  %110
+  | a8[( e' a gis,]) fis[( cis'
+  | a' cis, fis, e]) d[( a'
+  | fis' a, d, cis]) b[( b'
+  | d fis a d fis d])
+  | e,,[^\( cis' e a]\) \stemNeutral e,,4
+  %115
+  | \stemDown e8[ e' a d] << { \stemDown e,[ d'] } \\ { \stemUp e,4 } >>
+  | <a, cis'>2\arpeggio\fermata
     \fine
 }
 
