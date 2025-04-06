@@ -19,12 +19,13 @@ Soprano = \context Voice = "one" \relative c' {
   | <cis, a'> <b gis'>\) cis'8( b)
   %5
   | <a d>2 cis8( b)
-  | a'2 cis,8.\(( dis16)
+  | a'2 cis,8.\(_( dis16)
   | dis8.( e16) e4 <a,, dis fis>
   | <a dis a'> <gis e' gis>\) cis'8( b)
   | <fis d'>2 cis'8( b)
   %10
-  | a'2\arpeggio <fis, a>8.\(( <f b>16)
+  | a'2\arpeggio <fis, a>8.
+    \(( <f b>16)
   | <f b>8.( <e e'>16) <e e'>4 <fis d'>\)
   | <cis a'>( <b gis'>) cis'8( b)
   | <a d>2 cis8( b)
@@ -35,8 +36,8 @@ Soprano = \context Voice = "one" \relative c' {
   | fis e) e(
   | fis e)
     \once\shape #'((0 . -0.6) (0 . -1) (0 . -2) (-0.8 . -2.5)) Slur
-    e\((
-  | b') a gis~
+    e\(
+  | b' a gis~
   %20
   | <gis b> e\) a\(
   | b  a\) a\(
@@ -50,8 +51,11 @@ Soprano = \context Voice = "one" \relative c' {
   | cis2 b!8 a_~
   | <a d>4. \) << { cis4( b8) } \\ gis!4. >>
   %30
-  | \stemNeutral <fis a'>2\arpeggio \stemUp <a, e' a>4_\markup { \whiteout "espress." }
-  | gis'( fis) e8( d)
+  | \stemNeutral <fis a'>2\arpeggio^\f
+    \once\override Staff.TextScript.extra-offset = #'(-0.5 . -0.5)
+    \stemUp <a, e' a>4_\markup { \whiteout "espress." }
+  | \once\shape #'((0 . 2) (0 . 2) (0 . 2) (0 . 2)) Slur
+    gis'( fis) e8( d)
   | cis4_( b) a'
   | g( f) e8^\markup { \italic calando } ( d)
   | c4_( b) gis''!8( a
@@ -59,7 +63,9 @@ Soprano = \context Voice = "one" \relative c' {
   | <d, fis!>2) gis8( a)
   | b,2 b8.( cis16)
   | cis8.( d16) d8( cis d gis,)
-  | <d gis>4(  <cis a'>) a'\(
+  | <d gis>4(  <cis a'>) a'\(^\markup {
+      "cresc. un poco animato"
+    }
   | b  a\) a\(
   %40
   | b  a\) a(
@@ -68,10 +74,16 @@ Soprano = \context Voice = "one" \relative c' {
   | b a) a(
   | b  a) <d, fis a>(
   %45
-  | \stemNeutral fis'->) d4.( b8)
+  | \stemNeutral fis'->) d4.(^\markup { "rit." } b8)
   | \stemUp gis4( a) e~->^\markup { "più lento" }
   | e2 e4~->
-  | \once\override NoteColumn.force-hshift = #0.3 e2 \stemNeutral cis'4~\(
+  | \once\override NoteColumn.force-hshift = #0.3 e2
+    \stemNeutral
+    \once\shape #'(
+      ((0 . 0.2) (0 . 0.4) (0 . 0.5) (0 . 1))
+      ((0.2 . -0.2) (0 . 0.6) (0 . 0.6) (0 . 1))
+    ) PhrasingSlur
+    cis'4~\(_\p
     \bar "||"
     \break
   \repeat volta 2 {
@@ -107,7 +119,7 @@ Soprano = \context Voice = "one" \relative c' {
   | cis4 fis,8( ais cis b)
   | a\( fis d bis cis
     \change Staff = "lower" \voiceTwo \stemUp
-    eis,\)
+    eis,!\)
   | \change Staff = "upper" \voiceOne
     r4 \tuplet 3/2 { r8 a\( cis } \omit TupletNumber \tuplet 3/2 { fis a cis\) }
   | <e, e'>4 <d d'> r
@@ -122,7 +134,7 @@ Soprano = \context Voice = "one" \relative c' {
   | <a d>2 cis8( b)
   | b'4.\( a8 gis fis\)
   | <dis fis>8.( e16) <bis e>8( cis) <e, cis'>[( <dis fis>])
-  | <a dis a'>4( <gis e' gis>) e'\(
+  | <a dis a'>4( <gis e' gis>) e'\(^\markup { "espress." }
   | fis e\) e\(
   %85
   | fis e\) e\(
@@ -133,23 +145,27 @@ Soprano = \context Voice = "one" \relative c' {
   %90
   | \stemNeutral fis'!4\( c4. a8\)
   | \stemUp gis2\( fis8 e
-  | gis2\)\( a4
+  | gis2\)\(^\markup { "legato" } a4
   | ais2 gis!8 fis
   | b2 bis4
   %95
   | cis2 b8 a~
   | <a d>4.\) cis4( b8)
-  | \once\stemNeutral <fis a'>2\arpeggio <a, e' a>4
+  | \once\stemNeutral <fis a'>2\arpeggio^\f <a, e' a>4_\markup { "espress. " }
   | gis'4( fis) e8( d)
-  | \stemNeutral cis4_( b) <a e' a>
+  | \stemNeutral cis4_( b)
+    \once\override Staff.TextScript.extra-offset = #'(-1 . -1)
+    <a e' a>_\markup { \dynamic p "dim. " }
   %100
-  | g'4( f) e8( d)
+  | g'4( f)^\markup { "calando" } e8( d)
   | \stemUp c4_( b) gis''!8( a)
   | <d, fis!>2 gis8( a)
   | b,2 b8.( cis16)
   | cis8.( d16) d8[( cis d gis,)]
   %105
-  | <d gis>4( <cis a'>) a'\(
+  | <d gis>4( <cis a'>) a'\(^\markup {
+      "cresc. un poco animato"
+    }
   | b a\) a\(
   | b a\) a\(
   | d\) cis4.\( b8\)
@@ -157,8 +173,8 @@ Soprano = \context Voice = "one" \relative c' {
   %110
   | b a\) a\(
   | b a\) <d, fis a>(
-  | \stemNeutral fis') d4.( b8)
-  | gis4( a) e~
+  | \stemNeutral fis') d4.(^\markup { "rit." } b8)
+  | gis4( a) e~^>^\markup { \hspace #-1 "più lento" }
   | e2 e4~
   %115
   | \once\override NoteColumn.force-hshift = #0.3
@@ -180,7 +196,7 @@ Alto = \context Voice = "two" \relative c'' {
     a' gis
   | fis2\arpeggio fis4
   | <e gis> <e a> fis
-  | s2 e4
+  | s2 e4_\markup { \hspace #-1 \dynamic p \whiteout "dol." }
   %5
   | a8[( d,)
     \change Staff = "lower" \voiceThree
@@ -189,7 +205,7 @@ Alto = \context Voice = "two" \relative c'' {
     <e' a>4
   | <a b fis'>2 <fis b>4
   | <fis b> <e cis'> s
-  | s2 a8 gis
+  | s2 a8\pp gis
   | fis[( d)
     \change Staff = "lower" \voiceThree
     a( fis)]
@@ -198,7 +214,7 @@ Alto = \context Voice = "two" \relative c'' {
   %10
   | fis2\arpeggio a4
   | gis! gis8 a s4
-  | s2 e4
+  | s2 e4_\markup { "dolce " }
   | a8[( d,)
     \change Staff = "lower" \voiceThree
     a( fis)]
@@ -207,7 +223,7 @@ Alto = \context Voice = "two" \relative c'' {
   | s2.
   %15
   | s4 bis'8 cis a,4
-  | s2 <g c>4~
+  | s2 <g c>4~_\p
   | q2 <g cis>4~
   | q2 <gis d'>4~
   | <d' e> q q
@@ -217,25 +233,35 @@ Alto = \context Voice = "two" \relative c'' {
   | q2 s4
   | s2.*2
   %25
-  | gis'8_\( b, gis
+  | \override Beam.positions = #'( -6.5 . -6.5)
+    \once\shape #'((0 . 2) (0 . -0.5) (0 . -0.5) (0 . 0)) PhrasingSlur
+    gis'8_\( b, gis
     \change Staff = "lower" \voiceThree
     e c' a\)
   | \change Staff = "upper" \voiceTwo
+    \override Beam.positions = #'( -6.3 . -6.3)
+    \once\shape #'((0 . 2) (0 . -0.5) (0 . -0.5) (0 . 0.5)) PhrasingSlur
     ais'_\( cis, ais
     \change Staff = "lower" \voiceThree
     e e' cis\)
   | \change Staff = "upper" \voiceTwo
+    \once\shape #'((0 . 2) (0 . -0.5) (0 . -0.5) (0 . 0)) PhrasingSlur
     b'_\( d, b
     \change Staff = "lower" \voiceThree
     e, dis' bis\)
   | \change Staff = "upper" \voiceTwo
+    \override Beam.positions = #'( -5.4 . -4.8)
+    \once\shape #'((0 . 3) (0 . -1.5) (0 . -1) (0 . 1.2)) PhrasingSlur
     cis'\( e, cis
     \change Staff = "lower" \voiceThree
     e, g' cis,\)
   | \change Staff = "upper" \voiceTwo
+    \override Beam.positions = #'( -5.8 . -5.8)
+    \once\shape #'((0 . 3) (0 . -0.8) (0 . -0.8) (0 . 1)) PhrasingSlur
     a'_\( d,
     \change Staff = "lower" \voiceThree
     a e, e' gis!\)
+    \revert Beam.positions
   %30
   | s2.
   | \change Staff = "upper" \voiceTwo
@@ -244,13 +270,13 @@ Alto = \context Voice = "two" \relative c'' {
     <e a>4
   | <fis a>2
     \change Staff = "upper" \voiceTwo
-    <a e'>4
+    <a e'>4_\markup { \dynamic p \whiteout "dim. " }
   | <a b>2
     \change Staff = "lower" \voiceThree
     <e a>4
   | <f a>2
     \change Staff = "upper" \voiceTwo
-    <a' e'>4~
+    <a' e'>4~_\markup { "dolce "  }
   %35
   | a8( gis a fis) <a e'>4~
   | <fis a>8( gis <b, a'> fis') <e a>4
@@ -295,7 +321,7 @@ Alto = \context Voice = "two" \relative c'' {
     a' gis
   | s2.*2
   %80
-  | s2 e4
+  | s2 e4_\markup { "dolce " }
   | a8[( d,)
     \change Staff = "lower" \voiceThree
     a( fis)]
@@ -311,25 +337,29 @@ Alto = \context Voice = "two" \relative c'' {
   | d2 <c f>4~
   | q2 \tieNeutral <c dis>4~
   %90
-  | q2 s4
+  | q2_\markup { "cresc." } s4
   | s2.*2
-  | gis'8[ b,
+  | \override Beam.positions = #'( -6.5 . -6.5)
+    gis'8[\( b,
     \change Staff = "lower" \voiceThree
-    gis e c' a]
+    gis e c' a]\)
   | \change Staff = "upper" \voiceTwo
-    ais'[ cis, ais
+    \override Beam.positions = #'( -6.8 . -6.2)
+    ais'[\( cis, ais
     \change Staff = "lower" \voiceThree
-    e e' cis]
+    e e' cis]\)
   %95
   | \change Staff = "upper" \voiceTwo
-    b'[ d, b
+    b'[\( d, b
     \change Staff = "lower" \voiceThree
-    e, dis' bis]
+    e, dis' bis]\)
   | \change Staff = "upper" \voiceTwo
-    cis'[ e, cis
+    \override Beam.positions = #'( -6.5 . -5)
+    cis'[\( e, cis
     \change Staff = "lower" \voiceThree
-    e, g' cis,]
-  | \change Staff = "upper" \voiceTwo
+    e, g' cis,]\)
+  | \revert Beam.positions
+    \change Staff = "upper" \voiceTwo
     s4. gis'
   | s2.
   | <a, b>2
@@ -343,7 +373,7 @@ Alto = \context Voice = "two" \relative c'' {
     <e a>4
   | <f a>2
     \change Staff = "upper" \voiceTwo
-    <a' e'>4~
+    <a' e'>4~_\markup { "dolce " }
   | a8[( gis a fis]) <a e'>4~
   | <fis a>8[( gis <b, a'> fis']) <e a>4
   %105
@@ -357,10 +387,10 @@ Alto = \context Voice = "two" \relative c'' {
   | q2 <d fis>4~
   | q2 s4
   | s2.
-  | <cis e>2 cis8 b
+  | <cis e>2 cis8(\p b)
   %115
   | \once\override Stem.length = #15
-    \crossStaff { d2 } cis8 b
+    \crossStaff { d2 } cis8( b)
   | \crossStaff { a'2\arpeggio }
 }
 
@@ -373,11 +403,11 @@ Tenor = \context Voice = "three" \relative c {
   \partial 4 s4
   %1
   | s2.*3
-  | s4 e8 fis g!4
+  | s4 e8( fis) g!4
   %5
   | s2.*2
   | s2 b,4
-  | e,8( b'4 e8~) e4
+  | e,8( b'4 e8_~) e4
   | s2.*3
   %12
   | s4 e8 fis g4
@@ -388,9 +418,11 @@ Tenor = \context Voice = "three" \relative c {
   | cis e cis g] s4
   | gis' a b
   %20
-  | a,8 e' gis e a,[ c
-  | f a f c] f,[ c'
-  | dis a' dis, c] dis,[\( c']
+  | a,8 e' gis e a,[( c
+  | f a f c]) f,[( c'
+  | dis a' dis, c])
+    \once\shape #'((0 . 0) (0 . 1) (0 . 1) (0 . 0)) PhrasingSlur
+    dis,[\( c']
   | s2 s8 \once\omit Stem \once\omit Flag c'\)
   | s2.*6
   %30
@@ -416,23 +448,28 @@ Tenor = \context Voice = "three" \relative c {
   | s2 b4
   %45
   | s2.
-  | s2 gis''4
+  | s2 gis''4^\p
   | s2 << { e,8 d' } \\ { \stemUp gis4 } >>
   | \crossStaff { \stemDown a2\arpeggio } s4
-  | s2.*11
+  | \stemUp s4 cis fis
+  | e^. d^. d\rest
+  | d^. cis^. d\rest
+  | cis^. b^. d\rest
+  | d\rest cis a'
+  | s2.*6
   %60
   | \change Staff = "upper" \voiceTwo
     << {
-      s4 \once\override NoteColumn.force-hshift = #1 cis_~ \stemDown cis
+      s4 \once\override NoteColumn.force-hshift = #1 cis,_~ \stemDown cis
     } \\ {
       s4. \once\omit Flag \once\omit Stem eis8_~ eis4
     } >>
   | s2.*3
-  | s2 s8 cis~(_\markup { "espress." }
+  | s2 s8 cis~(_\markup { \hspace #-1 "espress. " }
   %65
   | cis fis)
     \change Staff = "lower" \voiceThree
-    e4 d!
+    e4 d!^\markup { "cresc." }
   | cis b8(
     \change Staff = "upper" \voiceTwo
     d a' gis)
@@ -465,22 +502,26 @@ Tenor = \context Voice = "three" \relative c {
   | a2 s4
   | \change Staff = "lower" \voiceThree
     s2.*3
-  | <fis a>8[ <gis b>] q[ <a cis>] s4
+  | <fis a>8[( <gis b>]) q[( <a cis>]) s4
   %80
   | s4 e8 fis g4
   | s2.*2
   | b,8 e e[ fis] fis a
-  | e,[ b' e b] e,[ g
+  | e,[ b' e b] e,[\( g
   %85
-  | c e c g] e[ g
-  | cis e cis g] s4
+  | c e c g]\) e[\( g
+  | cis e cis g]\) s4
   | gis' a b
-  | a,8[ e' gis e] a,[ c
-  | f a f c] f, c'
+  | a,8[ e' gis e] a,[\( c
+  | f a f c]\) f,\( c'
   %90
-  | dis[ a' dis, c] s4
-  | s2.*7
-  | s2 a4~
+  | dis[ a' dis, c]\) s4
+  | s2.*6
+  | \change Staff = "upper" \voiceTwo
+    a''8\( d,
+    \change Staff = "lower" \voiceThree
+    a e, e' gis!\)
+  | s2 a,4~
   | a8 a4 a8~
     \once\override NoteColumn.force-hshift = #0.3 a4~
   %100
@@ -554,7 +595,8 @@ Bass = \context Voice = "four" \relative c' {
   | e4 s2
   | \once\stemDown fis4 s2
   %30
-  | d8^\( fis' <d a'> <fis d'>\) \stemDown\slurDown cis,[( b]
+  | \once\shape #'((0 . 0) (0 . 1) (0 . 1) (0 . 0)) PhrasingSlur
+    d8^\( fis' <d a'> <fis d'>\) \stemDown\slurDown cis,[( b]
   | d2) cis8[( b]
   | d2) cis8[( b]
   | d2) c8[( b]
@@ -583,13 +625,13 @@ Bass = \context Voice = "four" \relative c' {
     \tuplet 3/2 { fis'8\([ cis' a'] } \omit TupletNumber \tuplet 3/2 { cis[ a fis fis' a, fis] }
   %50
   | \tuplet 3/2 { e'([ a, fis] d'[\) a fis b, fis' a]) }
-  | \tuplet 3/2 { d^.\(([ a fis] cis'^.[\) a fis cis e a]) }
-  | \tuplet 3/2 { cis^.\([ fis, d] b'^.[\) fis gis, cis eis b'] }
+  | \tuplet 3/2 { d\(([ a fis] cis'[\) a fis cis e a]) }
+  | \tuplet 3/2 { cis\([ fis, d] b'[\) fis gis, cis eis b'] }
   | \tuplet 3/2 { fis,[ a' fis] cis'[ a fis a' a, fis] }
   | \tuplet 3/2 { d,[\( a' d fis a d,]\) fis,[\( d' a']\) }
   %55
   | \tuplet 3/2 { gis,[\( e' gis]\) gis,[\( dis' fis bis fis dis]\) }
-  | \tuplet 3/2 { cis,[\( gis' cis eis gis b]\) } eis8 r
+  | \tuplet 3/2 { cis,[\( gis' cis eis_\markup { "rit." } gis b]\) } eis8 r
   }
   | \phrasingSlurDown \stemNeutral
     <fis,, cis' ais'>4\( <cis' ais' cis>_\markup { "legato" } <fis ais fis'>
@@ -624,13 +666,13 @@ Bass = \context Voice = "four" \relative c' {
   | e,( e') e4 e
   | fis, s e
   | \stemNeutral
-    <dis b'>8^( dis') <fis, b>[( fis']) <a, b>^( b')
+    <dis b'>8^( dis') <fis, b>[^( fis']) <a, b>^( b')
   | \stemDown gis,4 a b
   | e,2 e4~
   %85
   | e2 e4~
-  | e2 \stemNeutral <e b'>8[ e']
-  | \stemDown gis![ e a e b' e,]
+  | e2 \stemNeutral <e b'>8[^\( e']
+  | \stemDown gis![ e a e b' e,]\)
   | a,2 a4~
   | a2 f4~
   %90
@@ -643,7 +685,7 @@ Bass = \context Voice = "four" \relative c' {
   | e4 s2
   | e4 s2
   | fis4 s2
-  | \stemDown\phrasingSlurDown d8[ fis' <d a'> <fis d'>] cis,\( b
+  | \stemDown\phrasingSlurDown d8[^\( fis' <d a'> <fis d'>]\) cis,\( b
   | d2\) cis8\( b
   %100
   | d2\) cis8\( b
@@ -661,13 +703,19 @@ Bass = \context Voice = "four" \relative c' {
   %110
   | a8[( e' a gis,]) fis[( cis'
   | a' cis, fis, e]) d[( a'
-  | fis' a, d, cis]) b[( b'
-  | d fis a d fis d])
+  | fis' a, d, cis])
+    \once\shape #'((0 . 2.4) (0 . 2) (0 . 1) (0 . 0)) PhrasingSlur
+    b[^\( b'
+  | d fis a d fis d]\)
   | e,,[^\( cis' e a]\) \stemNeutral e,,4
   %115
-  | \stemDown e8[ e' a d] << { \stemDown e,[ d'] } \\ { \stemUp e,4 } >>
+  | \stemDown e8[\( e' a d]\) << { \stemDown e,[ d'] } \\ { \stemUp e,4 } >>
   | <a, cis'>2\arpeggio\fermata
     \fine
+}
+
+dynamics = {
+  \partial 4 { s4\p }
 }
 
 \score {
@@ -681,6 +729,7 @@ Bass = \context Voice = "four" \relative c' {
       \Soprano
       \Alto
     >>
+    \context Dynamics = "dynamics" \dynamics
     \context Staff = "lower" <<
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
