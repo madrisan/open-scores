@@ -4,6 +4,8 @@ Global = {
   \include "../global.ly"
 }
 
+rit = { \override TextSpanner.bound-details.left.text = \markup { "rit " } }
+
 Soprano = \context Voice = "one" \relative c' {
   \voiceOne
   \stemUp\tieUp
@@ -109,7 +111,7 @@ Soprano = \context Voice = "one" \relative c' {
   | <dis gis b dis> \stemUp cis'2~
   | cis4 cis4.\fermata d8\rest
   %65
-  | d4\rest^\markup { "Tempo primo" } cis( fis
+  | d4\rest^\markup { "Tempo primo" } cis(^\p fis
   | e d) f\rest
   | d cis f\rest
   | cis b d\rest
@@ -127,7 +129,7 @@ Soprano = \context Voice = "one" \relative c' {
   %75
   | cis'4.\fermata( b8) cis[( b])
   | <fis d'>2 cis'8( b)
-  | \stemNeutral <fis a'>2\arpeggio <b gis'>8.( <a fis'>16)
+  | \stemNeutral <fis a'>2\arpeggio <b gis'>8.(_\rfz <a fis'>16)
   | <a fis'>8.[ <gis f'>16] <gis f'>8_( <a e'> <fis! d'> <d b'>)
   | <cis a'>4_( <b gis'>) \stemUp cis'8( b)
   %80
@@ -230,7 +232,8 @@ Alto = \context Voice = "two" \relative c'' {
   %20
   | d2 <c f>4~
   | q2 \tieNeutral <c dis>4~
-  | q2 s4
+  | \once\override Staff.TextScript.extra-offset = #'(0 . -2)
+    q2_\markup { \hspace #2 "cresc." } s4
   | s2.*2
   %25
   | \override Beam.positions = #'( -6.5 . -6.5)
@@ -279,7 +282,7 @@ Alto = \context Voice = "two" \relative c'' {
     <a' e'>4~_\markup { "dolce "  }
   %35
   | a8( gis a fis) <a e'>4~
-  | <fis a>8( gis <b, a'> fis') <e a>4
+  | <fis a>8^( gis <b, a'> fis') <e a>4
   | <e gis> <d fis> <d e>
   | s2 <cis fis>4~
   | fis2 <d fis>4~
@@ -291,15 +294,23 @@ Alto = \context Voice = "two" \relative c'' {
   | q2 s4
   %45
   | s2.
-  | <cis e>2 cis8( b)
-  | d2 cis8( b)
+  | \once\override Stem.length = #5
+    <cis e>2 cis8( b)
+  | \crossStaff {
+      \once\override Stem.length = #18
+      d2
+    }
+    cis8( b)
   | \crossStaff { \stemDown a'2\arpeggio } s4
-  | s2.*8
-  %57
-  | <fis ais>4 s2
+  | s2.*5
+  %54
+  | gis4_.( fis_.) d\rest
+  | e_.( dis_.) c\rest
+  | cis s2
+  | <fis ais>4\pp s2
   | s2.*2
   | s4 \stemUp \shiftOn cis8[ eis ais gis]
-  | \stemDown fis4 s2
+  | \stemDown fis4\pp s2
   | s2.
   | s4 <cis gis' b cis> <cis fis b>
   | <cis fis ais> <cis eis gis>4. s8
@@ -313,7 +324,8 @@ Alto = \context Voice = "two" \relative c'' {
       \change Staff = "upper" \voiceTwo
       e a~
     }
-  | <dis, fis a>2 <d gis>4
+  | \once\override Staff.TextScript.extra-offset = #'(0 . -1.2)
+    <dis, fis a>2 <d gis>4\pp
   | fis8[( d)
     \change Staff = "lower" \voiceThree
     a( fis)]
@@ -340,21 +352,25 @@ Alto = \context Voice = "two" \relative c'' {
   | q2_\markup { "cresc." } s4
   | s2.*2
   | \override Beam.positions = #'( -6.5 . -6.5)
+    \once\shape #'((0 . 0.5) (0 . -0.6) (0 . -0.6) (0 . 0)) PhrasingSlur
     gis'8[\( b,
     \change Staff = "lower" \voiceThree
     gis e c' a]\)
   | \change Staff = "upper" \voiceTwo
     \override Beam.positions = #'( -6.8 . -6.2)
+    \once\shape #'((0 . 2.5) (0 . -0.8) (0 . -0.8) (0 . 1)) PhrasingSlur
     ais'[\( cis, ais
     \change Staff = "lower" \voiceThree
     e e' cis]\)
   %95
   | \change Staff = "upper" \voiceTwo
+    \once\shape #'((0 . 2.5) (0 . -1) (0 . -1) (0 . 1)) PhrasingSlur
     b'[\( d, b
     \change Staff = "lower" \voiceThree
     e, dis' bis]\)
   | \change Staff = "upper" \voiceTwo
     \override Beam.positions = #'( -6.5 . -5)
+    \once\shape #'((0 . 2.5) (0 . -1) (0 . -1) (0 . 1.5)) PhrasingSlur
     cis'[\( e, cis
     \change Staff = "lower" \voiceThree
     e, g' cis,]\)
@@ -375,7 +391,7 @@ Alto = \context Voice = "two" \relative c'' {
     \change Staff = "upper" \voiceTwo
     <a' e'>4~_\markup { "dolce " }
   | a8[( gis a fis]) <a e'>4~
-  | <fis a>8[( gis <b, a'> fis']) <e a>4
+  | <fis a>8[^( gis <b, a'> fis']) <e a>4
   %105
   | <e gis>4 <d fis> <d e>
   | s2 <cis fis>4~
@@ -389,7 +405,7 @@ Alto = \context Voice = "two" \relative c'' {
   | s2.
   | <cis e>2 cis8(\p b)
   %115
-  | \once\override Stem.length = #15
+  | \once\override Stem.length = #17.8
     \crossStaff { d2 } cis8( b)
   | \crossStaff { a'2\arpeggio }
 }
@@ -397,6 +413,7 @@ Alto = \context Voice = "two" \relative c'' {
 Tenor = \context Voice = "three" \relative c {
   \voiceThree
   \stemUp\tieUp
+  \override DynamicLineSpanner.Y-offset = #1
   \override Rest.staff-position = #0
   \omit TupletBracket
   \mergeDifferentlyHeadedOff
@@ -428,12 +445,12 @@ Tenor = \context Voice = "three" \relative c {
   %30
   | s2 a,4~
   | a8 a4 a8~
-    \once\override NoteColumn.force-hshift = #0.3 a4~
-  | \once\override NoteColumn.force-hshift = #0.3 a8
+    \once\override NoteColumn.force-hshift = #0.4 a4~
+  | \once\override NoteColumn.force-hshift = #0.4 a8
     a4~ a8~ a4~
   | a8 a4 a8~
-    \once\override NoteColumn.force-hshift = #0.3 a4~
-  | \once\override NoteColumn.force-hshift = #0.3 a8
+    \once\override NoteColumn.force-hshift = #0.4 a4~
+  | \once\override NoteColumn.force-hshift = #0.4 a8
     a4 a8 s4
   %35
   | s2 e''4
@@ -448,8 +465,14 @@ Tenor = \context Voice = "three" \relative c {
   | s2 b4
   %45
   | s2.
-  | s2 gis''4^\p
-  | s2 << { e,8 d' } \\ { \stemUp gis4 } >>
+  | s2
+    gis''4^\p
+  | \crossStaff {
+      \once\override NoteColumn.force-hshift = #1
+      \once\override Stem.length = #6
+      \stemDown <fis a>2
+    }
+    << { e,8 d' } \\ { \stemUp gis4 } >>
   | \crossStaff { \stemDown a2\arpeggio } s4
   | \stemUp s4 cis fis
   | e^. d^. d\rest
@@ -493,6 +516,7 @@ Tenor = \context Voice = "three" \relative c {
     <b, gis'>( <a fis'>) r
   | s4
     \tuplet 3/2 { r8 fis[ a }
+    \omit TupletNumber
     \tuplet 3/2 { d fis
       \change Staff = "upper" \voiceTwo
       a~]
@@ -518,6 +542,7 @@ Tenor = \context Voice = "three" \relative c {
   | dis[ a' dis, c]\) s4
   | s2.*6
   | \change Staff = "upper" \voiceTwo
+    \once\shape #'((0 . 4) (0 . -1) (0 . -1) (0 . 1.5)) PhrasingSlur
     a''8\( d,
     \change Staff = "lower" \voiceThree
     a e, e' gis!\)
@@ -611,10 +636,12 @@ Bass = \context Voice = "four" \relative c' {
   | a2 a4~
   | a a2
   | a8( e' a gis,) fis[( cis'
-  | a' cis, fis, e)] d[ a'
-  | fis' a, d, cis] b[ b'
+  | a' cis, fis, e)] d[( a'
+  | fis' a, d, cis])
+    \once\shape #'((0 . 3) (0 . 1) (0 . 1) (0 . 0)) Slur
+    b[( b'
   %45
-  | d fis a d fis d]
+  | d fis a d fis d])
   | e,,[ cis' e a] \stemNeutral e,,4
   | \stemDown\slurDown e8( e' a d) e,4
   | <a, cis'>2\arpeggio r4
@@ -631,7 +658,13 @@ Bass = \context Voice = "four" \relative c' {
   | \tuplet 3/2 { d,[\( a' d fis a d,]\) fis,[\( d' a']\) }
   %55
   | \tuplet 3/2 { gis,[\( e' gis]\) gis,[\( dis' fis bis fis dis]\) }
-  | \tuplet 3/2 { cis,[\( gis' cis eis_\markup { "rit." } gis b]\) } eis8 r
+  | \tuplet 3/2 {
+      cis,[\( gis' cis eis_\markup {
+        "rit. . . . . . ."
+      }
+      gis b]\)
+    }
+    eis8 r
   }
   | \phrasingSlurDown \stemNeutral
     <fis,, cis' ais'>4\( <cis' ais' cis>_\markup { "legato" } <fis ais fis'>
@@ -684,7 +717,7 @@ Bass = \context Voice = "four" \relative c' {
   %95
   | e4 s2
   | e4 s2
-  | fis4 s2
+  | \once\stemDown fis4 s2
   | \stemDown\phrasingSlurDown d8[^\( fis' <d a'> <fis d'>]\) cis,\( b
   | d2\) cis8\( b
   %100
@@ -715,7 +748,80 @@ Bass = \context Voice = "four" \relative c' {
 }
 
 dynamics = {
+  %\override Dynamics.Hairpin.height = #0.5
   \partial 4 { s4\p }
+  | s2.
+  | s4 s s\<
+  | s s\!\> s
+  | s s8.\! s16 s4
+  %5
+  | s2.
+  | s4 s s\<
+  | s s\!\> s
+  | s s\! s
+  | s2.
+  %10
+  | s4 s s\<
+  | s s\!\> s
+  | s s\! s
+  | s2.
+  | s4 s s\<
+  %15
+  | s s\!\> s
+  | s s\! s
+  | s2.*16
+  %33
+  | s4 s8 s\> s4
+  | s s\! s
+  | s8\< s\! s\> s\! s4
+  | s8\< s\! s\> s\! s4\<
+  | s s s\!
+  | s2.*5
+  %38
+  | s4 s s\<
+  | s s s
+  | s\! s s8 s\>
+  | s4 s\! s
+  | s2.*6
+  %53
+  | s4\<
+    \once\override Hairpin.shorten-pair = #'(0 . 2)
+    s\!\> s\!
+  | s2.
+  | s2 s4\>
+  | s4\! s2
+  | s2.*12
+  %69
+  | s4\f s2
+  | s2.*3
+  | s4 \tuplet 3/2 { s8 s\> s } s4
+  | s\!\p\rit
+    s\startTextSpan s
+  | s2.
+  | s4\stopTextSpan s s
+  | s2.*3
+  %80
+  | \once\override Hairpin.Y-offset = #1.5
+    s4\> s\! s
+  | s2.
+  | s4 s\< s
+  | s s\!\> s
+  | s\! s s
+  | s2.*16
+  %101
+  | \override Hairpin.Y-offset = #-6
+    s4 s\> s
+  | s s\! s
+  | s8\< s\! s\> s\! s4
+  | s8\< s\! s\> s\! s4\<
+  | s s s
+  | s\! s s
+  | s2.*4
+  %111
+  | s4\< s s
+  | s s s\!
+  | s s s\>
+  | s s\!
 }
 
 \score {
