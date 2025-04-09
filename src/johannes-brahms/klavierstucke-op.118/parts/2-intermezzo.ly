@@ -575,7 +575,7 @@ Tenor = \context Voice = "three" \relative c {
       \stemDown <fis a>2
     }
     \stemUp \override NoteColumn.force-hshift = #0 gis4
-  | \crossStaff { a2 }
+  | \crossStaff { \stemDown a2 }
   }
 
 Bass = \context Voice = "four" \relative c' {
