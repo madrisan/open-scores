@@ -66,6 +66,7 @@ Soprano = \context Voice = "one" \relative c' {
   | b,2 b8.( cis16)
   | cis8.( d16) d8( cis d gis,)
   | <d gis>4(  <cis a'>) a'\(^\markup {
+      \hspace #-2
       "cresc. un poco animato"
     }
   | b  a\) a\(
@@ -76,7 +77,7 @@ Soprano = \context Voice = "one" \relative c' {
   | b a) a(
   | b  a) <d, fis a>(
   %45
-  | \stemNeutral fis'->) d4.(^\markup { "rit." } b8)
+  | \stemNeutral fis'->) d4.(^\markup { "rit. . . ." } b8)
   | \stemUp gis4( a) e~->^\markup { "più lento" }
   | e2 e4~->
   | \once\override NoteColumn.force-hshift = #0.3 e2
@@ -86,10 +87,10 @@ Soprano = \context Voice = "one" \relative c' {
       ((0.2 . -0.2) (0 . 0.6) (0 . 0.6) (0 . 1))
     ) PhrasingSlur
     cis'4~\(_\p
-    \bar "||"
-    \break
+    %\bar "||"
   \repeat volta 2 {
-  | cis8^\markup { "in tempo" } fis e4 d
+  | \tempo "in tempo"
+    cis8 fis e4 d
   %50
   | cis b8 d gis fis
   | b,4 a8 cis fis e
@@ -100,18 +101,21 @@ Soprano = \context Voice = "one" \relative c' {
   | cis4 fis,8 gis a fis
   | eis4 gis4. cis8~\)
   }
-  %\break
-  | cis^\markup { "più lento" } fis \stemNeutral <eis, ais eis'>4 <dis ais' dis>
+  | cis^\markup { "più lento" }\(
+    fis \stemNeutral <eis, ais eis'>4 <dis ais' dis>
   | <cis ais' cis> <fis ais fis'> <eis ais eis'>
   | <dis ais' dis> <cis ais' cis> <c ges' bes c>~
   %60
-  | <f a c> \stemUp cis'2~
-  | cis8 fis \stemNeutral <eis, ais eis'>4 <dis a' dis>
+  | <f a c>
+    \once\shape #'((0 . 0.5) (0 . 1) (0 . 1) (0 . 0.5)) Tie
+    \stemUp cis'2~
+  | cis8\)\( fis \stemNeutral <eis, ais eis'>4 <dis a' dis>
   | <cis gis' cis> <fis gis bis fis'> <eis gis cis eis>
   | <dis gis b dis> \stemUp cis'2~
-  | cis4 cis4.\fermata d8\rest
+  | cis4\) cis4.\fermata d8\rest
   %65
-  | d4\rest^\markup { "Tempo primo" } cis(^\p fis
+  | \tempo "Tempo I"
+    d4\rest cis(^\p fis
   | e d) f\rest
   | d cis f\rest
   | cis b d\rest
@@ -157,7 +161,7 @@ Soprano = \context Voice = "one" \relative c' {
   | gis'4( fis) e8( d)
   | \stemNeutral cis4_( b)
     \once\override Staff.TextScript.extra-offset = #'(-1 . -1)
-    <a e' a>_\markup { \dynamic p "dim. " }
+    <a e' a>_\markup { \hspace #-1 \dynamic p "dim. " }
   %100
   | g'4( f)^\markup { "calando" } e8( d)
   | \stemUp c4_( b) gis''!8( a)
@@ -175,7 +179,7 @@ Soprano = \context Voice = "one" \relative c' {
   %110
   | b a\) a\(
   | b a\) <d, fis a>(
-  | \stemNeutral fis') d4.(^\markup { "rit." } b8)
+  | \stemNeutral fis') d4.(^\markup { "rit. . . ." } b8)
   | gis4( a) e~^>^\markup { \hspace #-1 "più lento" }
   | e2 e4~
   %115
@@ -198,7 +202,7 @@ Alto = \context Voice = "two" \relative c'' {
     a' gis
   | fis2\arpeggio fis4
   | <e gis> <e a> fis
-  | s2 e4_\markup { \hspace #-1 \dynamic p \whiteout "dol." }
+  | s2 e4_\markup { \hspace #-1 \dynamic p \whiteout "dolce" }
   %5
   | a8[( d,)
     \change Staff = "lower" \voiceThree
@@ -309,7 +313,9 @@ Alto = \context Voice = "two" \relative c'' {
   | cis s2
   | <fis ais>4\pp s2
   | s2.*2
-  | s4 \stemUp \shiftOn cis8[ eis ais gis]
+  | s4 \stemUp
+    \once\override NoteColumn.force-hshift = #0.5
+    cis8[ eis ais gis]
   | \stemDown fis4\pp s2
   | s2.
   | s4 <cis gis' b cis> <cis fis b>
@@ -325,7 +331,7 @@ Alto = \context Voice = "two" \relative c'' {
       e a~
     }
   | \once\override Staff.TextScript.extra-offset = #'(0 . -1.2)
-    <dis, fis a>2 <d gis>4\pp
+    <dis, fis a>2_\markup { "dolce" } <d gis>4\pp
   | fis8[( d)
     \change Staff = "lower" \voiceThree
     a( fis)]
@@ -406,7 +412,7 @@ Alto = \context Voice = "two" \relative c'' {
   | <cis e>2 cis8(\p b)
   %115
   | \once\override Stem.length = #17.8
-    \crossStaff { d2 } cis8( b)
+    \crossStaff { d2 } cis8(^\> b)\!
   | \crossStaff { a'2\arpeggio }
 }
 
@@ -483,12 +489,16 @@ Tenor = \context Voice = "three" \relative c {
   %60
   | \change Staff = "upper" \voiceTwo
     << {
-      s4 \once\override NoteColumn.force-hshift = #1 cis,_~ \stemDown cis
+      s4 \once\override NoteColumn.force-hshift = #0.5 cis,_~ \stemDown cis
     } \\ {
       s4. \once\omit Flag \once\omit Stem eis8_~ eis4
+    } \\ {
+      s4
+      \stemDown \once\override NoteColumn.force-hshift = #0.5 cis
+      s
     } >>
   | s2.*3
-  | s2 s8 cis~(_\markup { \hspace #-1 "espress. " }
+  | s2 s8 cis~(_\markup { \hspace #-0.5 \whiteout "espress. " }
   %65
   | cis fis)
     \change Staff = "lower" \voiceThree
@@ -645,11 +655,15 @@ Bass = \context Voice = "four" \relative c' {
   | e,,[ cis' e a] \stemNeutral e,,4
   | \stemDown\slurDown e8( e' a d) e,4
   | <a, cis'>2\arpeggio r4
-    \bar "||"
+    %\bar "||"
   \repeat volta 2 {
   | \slurDown \phrasingSlurNeutral
     \omit TupletBracket
-    \tuplet 3/2 { fis'8\([ cis' a'] } \omit TupletNumber \tuplet 3/2 { cis[ a fis fis' a, fis] }
+    \tuplet 3/2 {
+      \once\shape #'((0 . -2) (0 . 1.5) (0 . 2) (0 . 1.5)) PhrasingSlur
+      fis'8\([ cis' a']
+    }
+    \omit TupletNumber \tuplet 3/2 { cis[ a fis fis' a, fis] }
   %50
   | \tuplet 3/2 { e'([ a, fis] d'[\) a fis b, fis' a]) }
   | \tuplet 3/2 { d\(([ a fis] cis'[\) a fis cis e a]) }
@@ -667,18 +681,25 @@ Bass = \context Voice = "four" \relative c' {
     eis8 r
   }
   | \phrasingSlurDown \stemNeutral
-    <fis,, cis' ais'>4\( <cis' ais' cis>_\markup { "legato" } <fis ais fis'>
+    <fis,, cis' ais'>4\(_\markup { \hspace #-2 "una corda" }
+    <cis' ais' cis>_\markup { "legato" } <fis ais fis'>
   | <eis ais eis'> <dis ais dis'> <cis ais' cis>
   | <fis ais fis'> <eis ais eis'> <ees ges bes ees>
   %60
-  | <f a! c> <ais, eis' ais> <cis eis b'>\)
+  | \once\override Staff.TextScript.extra-offset = #'(0 . 1)
+    <f a! c>^\markup { "rit." } <ais, eis' ais> <cis eis b'>\)
   | <fis, cis' ais'>\( <cis' ais' cis> <fis a fis'>
   | <eis gis eis'> <dis gis dis'> <cis gis' cis>
-  | <fis gis b! fis'> <eis gis b eis> <dis fis dis'>
-  | <cis fis cis'>\) <cis eis gis b>4.\fermata r8
+  | <fis gis b! fis'>^\markup { "rit." } <eis gis b eis>\startTextSpan <dis fis dis'>
+  | <cis fis cis'>\)\stopTextSpan <cis eis gis b>4.\fermata r8
   %65
   | \stemDown \slurUp
-    \tuplet 3/2 { fis,( cis' a'!) \slurDown e'( a, fis) d'( a fis) }
+    \tuplet 3/2 { fis,(_\markup {
+        \hspace #-2 "tre corde"
+      }
+      cis' a'!)
+      \slurDown e'( a, fis) d'( a fis)
+    }
   | \tuplet 3/2 { cis'( a fis) b( fis b, b, b' d) }
   | \tuplet 3/2 { b'( fis cis) a'( fis a, a, a' cis) }
   | <b d>4 \tuplet 3/2 { gis8( b' fis) cis,( eis' cis) }
@@ -762,14 +783,17 @@ dynamics = {
   | s2.
   %10
   | s4 s s\<
-  | s s\!\> s
+  | s s\! s\>
   | s s\! s
   | s2.
   | s4 s s\<
   %15
-  | s s\!\> s
+  | s s\! s\>
   | s s\! s
-  | s2.*16
+  | s2.*2
+  | s4\< s s
+  | s4\!\> s\! s
+  | s2.*12
   %33
   | s4 s8 s\> s4
   | s s\! s
@@ -807,7 +831,10 @@ dynamics = {
   | s4 s\< s
   | s s\!\> s
   | s\! s s
-  | s2.*16
+  | s2.*2
+  %87
+  | s4\< s s\!
+  | s2.*13
   %101
   | \override Hairpin.Y-offset = #-6
     s4 s\> s
@@ -824,10 +851,99 @@ dynamics = {
   | s s\!
 }
 
+dynamicsUp = {
+  \override Dynamics.Hairpin.height = #0.4
+  \override Hairpin.Y-offset = #-2
+  \override Hairpin.to-barline = ##f
+  \partial 4 { s4 }
+  | s2.*15
+  | s2 s4\<
+  | s4\!\> s\! s\<
+  | s\!\> s\! s
+  | s2.
+  %20
+  | s4 s s\<
+  | s\!\> s\! s\<
+  | s\!\> s\! s
+  | s2.*5
+  %28
+  | \once\override Hairpin.shorten-pair = #'(0 . 2)
+    s4\< s s
+  | s s s
+  | s\! s s
+  | s2.*7
+  %38
+  | s4 s s\<
+  | s\!\> s\!
+    \override Hairpin.Y-offset = #-4
+    s\<
+  | s\!\> s\! s
+  | s2.*43
+  %84
+  | s4 s
+    \override Hairpin.Y-offset = #-5
+    s\<
+  | s\!\> s\! s\<
+  | s\!\> s\! s
+  | s2.
+  | s4\> s\! s\<
+  | s\!\> s\! s\<
+  | s\!\> s\! s
+  | s2.*5
+  %96
+  | s4 s s\<
+  | s s s8 s\!
+}
+
+dynamicsDown = {
+  \override Dynamics.Hairpin.height = #0.4
+  \override Hairpin.Y-offset = #1
+  \partial 4 { s4 }
+  | s2.*49
+  | \override Hairpin.Y-offset = #4
+    \tuplet 3/2 { s8\> s s\! } s4 s
+  | \override Hairpin.Y-offset = #5
+    \tuplet 3/2 { s8\> s s\! } s4 s
+  | \tuplet 3/2 { s8\> s s\! } s4 s
+  | s2.*43
+  %96
+  | s4\< s s
+  | s s s
+  | s s\!
+}
+
+forceBreaks = {
+  % page 1
+  \partial 4 { s4 } \repeat unfold 5 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 5 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 5 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 5 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 5 { s2.\noBreak } s2.\pageBreak
+  % page 2
+  \repeat unfold 5 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 4 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 6 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 3 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 3 { s2.\noBreak } s2.\pageBreak
+  % page 3
+  \repeat unfold 4 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 5 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 4 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 5 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 4 { s2.\noBreak } s2.\pageBreak
+  % page 4
+  \repeat unfold 5 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 5 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 6 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 5 { s2.\noBreak } s2.\break\noPageBreak
+  %\repeat unfold 7 { s2.\noBreak } s2.\pageBreak
+}
+
 \score {
   \new PianoStaff \with { connectArpeggios = ##t }
   <<
     \accidentalStyle Score.piano
+    \context Dynamics = "dynamicsUp" \dynamicsUp
     \context Staff = "upper" <<
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
@@ -843,6 +959,8 @@ dynamics = {
       \Tenor
       \Bass
     >>
+    \context Dynamics = "dynamicsDown" \dynamicsDown
+    \new Devnull \forceBreaks
   >>
   \header {
     composer = ##f % "Johannes Brahms"
