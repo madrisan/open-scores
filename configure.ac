@@ -101,6 +101,7 @@ AC_CONFIG_FILES([\
   src/franz-liszt/am-grabe-richard-wagners-s.202/Makefile \
   src/franz-liszt/en-reve-nocturne-s.207/Makefile \
   src/franz-liszt/nuages-gris-s.199/Makefile \
+  src/franz-liszt/sancta-dorothea-s.187/Makefile \
   src/franz-liszt/trauervorspiel-und-trauermarsch-s.206/Makefile \
   src/franz-liszt/unstern-s.208/Makefile \
   src/frederic-chopin/Makefile \

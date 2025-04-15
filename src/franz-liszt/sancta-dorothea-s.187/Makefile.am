@@ -1,9 +1,3 @@
-## Process this file with automake to produce Makefile.in
-
-## Copyright (c) 2023 Davide Madrisan <d.madrisan@proton.me>
-##
-## This program is free software: you can redistribute it and/or modify
-## it under the terms of the GNU General Public License as published by
 ## the Free Software Foundation, either version 3 of the License, or
 ## (at your option) any later version.
 ##
@@ -15,11 +9,25 @@
 ## You should have received a copy of the GNU General Public License
 ## along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-AM_MAKEFLAGS = --no-print-directory
+SUFFIXES = .in
+.in:; @echo "Generating $@...";\
+	sed "s,@rgb_color@,$(RGB_COLOR),g;" \
+	$< > $@
 
-SUBDIRS = sancta-dorothea-s.187 \
-	  nuages-gris-s.199 \
-	  am-grabe-richard-wagners-s.202 \
-	  en-reve-nocturne-s.207 \
-	  trauervorspiel-und-trauermarsch-s.206 \
-	  unstern-s.208
+%: %.ly
+	$(LILYPOND) --pdf --output $@ $<
+
+BUILT_SOURCES = covercolor.ly
+
+EXTRA_DIST = Franz-Liszt-Sancta-Dorothea-S.187.ly \
+	     covercolor.ly.in \
+	     header.ily \
+	     global.ly \
+	     logo.ly
+
+all: $(BUILT_SOURCES) Franz-Liszt-Sancta-Dorothea-S.187
+
+clean-local:
+	 -rm -f $(BUILT_SOURCES)
+	 -rm -f *.midi
+	 -rm -f *.pdf

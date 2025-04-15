@@ -10,6 +10,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - J.S. Bach: Das wohltemperierte Klavier – Erster Teil: Praeludium und Fuga X
 - J.S. Bach: Das wohltemperierte Klavier – Erster Teil: Praeludium und Fuga XI
 - J.S. Bach: Fuga A-Dur BWV949
+- Johannes Brahms: Klavierstücke op.118 n.2
+- Franz Liszt: Sancta Dorothea S.187
 
 ### Fixed
 

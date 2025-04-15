@@ -83,7 +83,8 @@ Latest release: [Open Scores for Piano v62](https://github.com/madrisan/open-sco
 | Mikhail Glinka | Nocturne :five: | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Mikhail-Glinka-Nocturne.pdf) |
 | Gluck / Sgambati | Mélodie de Gluck depuis "Orfeo ed Euridice" | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Christoph-Willibald-Gluck-Orfeo-Melodie-Sgambati.pdf) |
 | Rued Langgaard | Insektarium, 9 Puzzle Pictures BVN 134 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Rued-Langgaard-Insektarium-BVN-134.pdf) |
-| Franz Liszt | Trübe Wolken (Nuages Gris) S.199 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Franz-Liszt-Nuages-Gris-S.199.pdf) |
+| Franz Liszt | Sancta Dorothea S.187 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v63/Franz-Liszt-Sancta-Dorothea-S.187.pdf) |
+|  | Trübe Wolken (Nuages Gris) S.199 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Franz-Liszt-Nuages-Gris-S.199.pdf) |
 |  | Am Grabe Richard Wagners S.202 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Franz-Liszt-Am-Grabe-Richard-Wagners-S.202.pdf) |
 |  | Trauervorspiel und Trauermarsch S.206 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Franz-Liszt-Trauervorspiel-und-Trauermarsch-S.206.pdf) |
 |  | En rêve (Nocturne) S.207 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Franz-Liszt-En-reve-Nocturne-S.207.pdf) |
