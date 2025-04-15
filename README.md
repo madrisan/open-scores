@@ -71,7 +71,8 @@ Latest release: [Open Scores for Piano v62](https://github.com/madrisan/open-sco
 | Bach / Stradal | Organ Sonata 4 Andante BWV 528 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/JS-Bach-Stradal-Organ-Sonata-4-Andante-BWV528.pdf) |
 | Ludwig van Beethoven | Klaviersonate Nr.8 Opus 13 - "Grande Sonate Pathétique" | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Ludwig-van-Beethoven-Klaviersonate-8-op.13.pdf) |
 | Alban Berg | Klaviersonate Op. 1 | :zzz: |   |
-| Johannes Brahms | Rapsodie Es-Dur, *from 4 Klavierstücke Op. 119* | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Johannes-Brahms-Klavierstucke-op.119.pdf) |
+| Johannes Brahms | Intermezzo Es-Dur, *from 6 Klavierstücke Op. 118* | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Johannes-Brahms-Klavierstucke-op.119.pdf) |
+|  | Rapsodie A-Dur, *from 4 Klavierstücke Op. 119* | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v63/Johannes-Brahms-Klavierstucke-op.118.pdf) |
 |  | Rapsodie h-moll Op.79. I | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Johannes-Brahms-Rhapsodie-op.op.79-nr.1.pdf) |
 |  | Rapsodie g-moll Op.79. II | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Johannes-Brahms-Rhapsodie-op.op.79-nr.2.pdf) |
 | Ferruccio Busoni | Drei Albumblätter  BV 289 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Ferruccio-Busoni-BV289-Drei-Albumblatter.pdf) |
