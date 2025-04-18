@@ -90,7 +90,7 @@
       \center-column {
         \null\null\null\null
         \fill-line {
-          \abs-fontsize #10 "Based on: Leipzig: Breitkopf @source@ Härtel, 1927"
+          \abs-fontsize #10 "Based on the Breitkopf Härtel edition, Leipzig 1927"
         }
         \null\null
       }
@@ -538,6 +538,6 @@ sustainPedal = {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 4 = 126
   }
 }
