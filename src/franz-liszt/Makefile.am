@@ -21,5 +21,6 @@ SUBDIRS = sancta-dorothea-s.187 \
 	  nuages-gris-s.199 \
 	  am-grabe-richard-wagners-s.202 \
 	  en-reve-nocturne-s.207 \
+	  recueillement-s.204 \
 	  trauervorspiel-und-trauermarsch-s.206 \
 	  unstern-s.208

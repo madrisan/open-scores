@@ -86,17 +86,18 @@ Latest release: [Open Scores for Piano v62](https://github.com/madrisan/open-sco
 | Franz Liszt | Sancta Dorothea S.187 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v63/Franz-Liszt-Sancta-Dorothea-S.187.pdf) |
 |  | Trübe Wolken (Nuages Gris) S.199 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Franz-Liszt-Nuages-Gris-S.199.pdf) |
 |  | Am Grabe Richard Wagners S.202 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Franz-Liszt-Am-Grabe-Richard-Wagners-S.202.pdf) |
+|  | Recueillement S.204 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v63/Franz-Liszt-Recueillement-S.204.pdf) |
 |  | Trauervorspiel und Trauermarsch S.206 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Franz-Liszt-Trauervorspiel-und-Trauermarsch-S.206.pdf) |
 |  | En rêve (Nocturne) S.207 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Franz-Liszt-En-reve-Nocturne-S.207.pdf) |
 |  | Unstern (Sinistre) S.208 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Franz-Liszt-Unstern-S.208.pdf) |
 | Ildebrando Pizzetti | Sogno | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Ildebrando-Pizzetti-Sogno.pdf) |
 | Domenico Scarlatti | Sonata K. 1 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Domenico-Scarlatti-Sonata-k1.pdf) |
-| Domenico Scarlatti | Sonata K. 30 (Cat's fugue) | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Domenico-Scarlatti-Sonata-k30.pdf) |
-| Domenico Scarlatti | Sonata K. 55 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Domenico-Scarlatti-Sonata-k55.pdf) |
-| Domenico Scarlatti | Sonata K. 87 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Domenico-Scarlatti-Sonata-k87.pdf) |
-| Domenico Scarlatti | Sonata K. 95 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Domenico-Scarlatti-Sonata-k95.pdf) |
-| Domenico Scarlatti | Sonata K. 141 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Domenico-Scarlatti-Sonata-k141.pdf) |
-| Domenico Scarlatti | Sonata K. 387 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Domenico-Scarlatti-Sonata-k387.pdf) |
+|  | Sonata K. 30 (Cat's fugue) | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Domenico-Scarlatti-Sonata-k30.pdf) |
+|  | Sonata K. 55 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Domenico-Scarlatti-Sonata-k55.pdf) |
+|  | Sonata K. 87 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Domenico-Scarlatti-Sonata-k87.pdf) |
+|  | Sonata K. 95 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Domenico-Scarlatti-Sonata-k95.pdf) |
+|  | Sonata K. 141 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Domenico-Scarlatti-Sonata-k141.pdf) |
+|  | Sonata K. 387 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Domenico-Scarlatti-Sonata-k387.pdf) |
 | Arnold Schoenberg | Sechs kleine Klavierstücke op.19 :six: | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Arnold-Schoenberg-Sechs-Kleine-Klavierstucke-op.19.pdf) |
 | Clara Schumann Wieck | Soirées Musicales op.6 | 2. Nocturne | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Clara-Schumann-Wieck-Soirees-Musicales-op.6.pdf) |
 | Robert Schumann | Kinderscenen op.15 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v62/Robert-Schumann-Kinderscenen-op.15.pdf) |
