@@ -100,6 +100,7 @@ AC_CONFIG_FILES([\
   src/franz-liszt/Makefile \
   src/franz-liszt/am-grabe-richard-wagners-s.202/Makefile \
   src/franz-liszt/en-reve-nocturne-s.207/Makefile \
+  src/franz-liszt/la-lugubre-gondola-s.200/Makefile \
   src/franz-liszt/nuages-gris-s.199/Makefile \
   src/franz-liszt/sancta-dorothea-s.187/Makefile \
   src/franz-liszt/recueillement-s.204/Makefile \

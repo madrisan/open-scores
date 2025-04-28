@@ -19,6 +19,7 @@ AM_MAKEFLAGS = --no-print-directory
 
 SUBDIRS = sancta-dorothea-s.187 \
 	  nuages-gris-s.199 \
+	  la-lugubre-gondola-s.200 \
 	  am-grabe-richard-wagners-s.202 \
 	  en-reve-nocturne-s.207 \
 	  recueillement-s.204 \
