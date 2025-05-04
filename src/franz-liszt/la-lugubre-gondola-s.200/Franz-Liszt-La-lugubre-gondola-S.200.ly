@@ -120,20 +120,21 @@ Soprano = \context Voice = "one" \relative c' {
   %5
   | r4
     \once\shape #'((0 . 1) (0 . -1) (0 . -3) (0 . 0)) PhrasingSlur
-    a^\markup { "recitando" }\(
+    a\mf^\markup { "recitando" }\(
     fis'4. ees8
-  | d4 c2\) c4~
+  | d4 c2\) c4~\<
   | c c2\( des4
-  | c b2 ais4
-  | cis2 b4\) r\fermata
+  | c\!\> b2 ais4
+  | cis2\! b4\) r\fermata
   %10
-  | r4 f d' aes~
+  | r4 f\( d' aes~
   | aes f d' aes~
   | aes f d'2
-  | aes f
+  | aes f\)
     \clef treble
+  \break
   | \stemNeutral \phrasingSlurNeutral
-    r4 b\( aes'4. f8
+    r4^\markup { "recitando" } b_\mf\( aes'4. f8
   %15
   | ees4 d2\) d4~
   | d d2\( ees4
@@ -164,14 +165,15 @@ Soprano = \context Voice = "one" \relative c' {
   | a2 bes
   | r a
   | bes b
+  \break
   %35
-  | c des~
-  | des4 b c aes'
+  | c^\markup { "accentato il canto" } des~
+  | des4 b\< c aes'\!
   | g2.^> f4
   | e4 ees des b
   | c4.\( des16 ees des8\) r des4_>~
   %40
-  | des b c bes'~
+  | des b\< c bes'~\!
   | bes aes g f
   | e ees des4. f8
   | \stemUp c'2.^\markup {
@@ -183,22 +185,24 @@ Soprano = \context Voice = "one" \relative c' {
   | d4\rest c2^> b4
   | bes a bes b
   | \stemNeutral\tieNeutral
-    r4 aes'~\( aes8 f e ees
+    r4 aes'~\(_\sf
+    \override Hairpin.Y-offset = #-2
+    aes8\> f e ees\!
   | d des c b aes f e ees
   | d4 des c b\)
   %50
-  | r2 aes\(
-  | g4 aes a ais
+  | r2 aes\(_\p
+  | g4\< aes a ais\!
     \bar "||"
     \break
   | \key e \minor
     b2 c^~\)
-  | c4 ais b g'
+  | c4 ais\< b g'\!
   | fis2.^> e4
   %55
   | dis d c ais
   | b4.\( c16 d c8\) r c4~_>
-  | c4 ais b a'~_>
+  | c4 ais\< b a'~_>\!
   | a g fis e
   | dis d c4. e8
   %60
@@ -208,21 +212,23 @@ Soprano = \context Voice = "one" \relative c' {
   | r4 b2^> ais4
   | a gis a ais
   | \stemNeutral\tieNeutral
-    r4 g'~\( g8 e dis d
+    r4 g'~\(_\sf g8 e dis d
   %65
   | cis c b ais g e dis d
   | cis4 c b ais\)
-  | r2 g\(
+  | r2 g\(_\p
   | ais4 b bis cis\)
     \bar "||"
     \break
   | \tempo "Un poco meno lento" 4 = 104
     \key b \minor
-    <ais cis fis ais>1~\arpeggio
+    <ais cis fis ais>1~\arpeggio_\markup {
+      "dolcissimo, dolente"
+    }
   %70
-  | <a cis fis a>\arpeggio
+  | <a cis fis a>
   | <ais cis fis ais>~\arpeggio
-  | <a cis fis a>2.\arpeggio <cis cis'>4
+  | <a cis fis a>2. <cis cis'>4
   | <dis fis b dis>1~\arpeggio
   | <d fis b d>
   %75
@@ -243,7 +249,9 @@ Soprano = \context Voice = "one" \relative c' {
   | fis'2. dis4
   | cis2 b
   | ais <a cis fis>\)
-  | <gis b e gis>1~\arpeggio
+  | <gis b e gis>1~\arpeggio_\markup {
+      "sempre dolcissimo"
+    }
   %90
   | <g b e g>
   | <gis b e gis>1~\arpeggio
@@ -274,16 +282,16 @@ Soprano = \context Voice = "one" \relative c' {
   | \key aes \major
     g4 <c c'> <des des'>2^>~
   %110
-  | q4 <b b'>_\( <c c'> <aes' aes'>
+  | \stemUp
+    q4 <b b'>_\( <c c'> <aes' aes'>
   | <g g'>2.\) <f f'>4
   | <e e'> <ees ees'> <des des'> <b b'>
-  | <c c'>4. <des des'>16 <ees ees'> <des des'>8 r q4~
-  | q <b b'> <c c'> <bes' bes'>~
+  | <c c'>4.\( <des des'>16 <ees ees'> <des des'>8\) r q4~_>
+  | q <b b'>\( <c c'>\< <bes' bes'>~\)\!
   %115
-  | \stemUp
-    q8[ <aes aes'> <g g'> <aes aes'> <bes bes'> <aes aes'> <g g'> <f f'>]
+  | q8[\( <aes aes'> <g g'> <aes aes'> <bes bes'> <aes aes'> <g g'> <f f'>]
   | <e e'>[ <f f'> <g g'> <f f'> <ees ees'> <des des'> <f f'> <aes aes'>]
-  | <c c'>2.^^ <b b'>4
+  | <c c'>2.^^\) <b b'>4
   | <bes bes'> <a a'> <bes bes'> <b b'>
   | r4 <c c'>2^^ <b b'>4
   %120
@@ -326,24 +334,23 @@ Soprano = \context Voice = "one" \relative c' {
   | g fis2 f4~
   | f e2 dis4~
   | dis e2 f4
-  | f\rest fis g2~
-  | g4 ges f2
+  | f\rest fis\< g2~
+  | g4\! ges\> f2
   %150
-  | e4\rest e f2~
-  | f4 e dis2
-  \repeat unfold 2 {
-  | \stemNeutral
-    r4 b\( dis g,!
+  | e4\rest\! e\< f2~
+  | f4\! e\> dis2
+  | r4\! \stemNeutral b\( dis g,!
   | gis2 b\)
-  }
+  | r4 b\(\pp dis g,!
+  | gis2 b\)
   %156
-  | r2 c\(
+  | r2 c\(\mf
   | b ais
   | a1
   | gis2\) r
-  | r2 cis4 c
+  | r2 cis4\pp\( c
   | b2 ais
-  | a1~
+  | a1~\)
   | a2 gis^\markup { \hspace #-3 "ritenuto" }
   | g1~\(
   | g4 a2 b4
@@ -377,7 +384,14 @@ Alto = \context Voice = "two" \relative c' {
   | <c e a> <des f bes>
   | <d fis b> <g c>
   %145
-
+  | <fis b> <f bes>
+  | <e a> <dis gis>
+  | <e a> <f bes>
+  | <fis b>1
+  | <f bes>
+  %150
+  | <e a>
+  | <dis gis>
 }
 
 Tenor = \context Voice = "three" \relative c {
@@ -416,7 +430,6 @@ Tenor = \context Voice = "three" \relative c {
     aes f e ees]
   | d[ des c b aes' f e ees]
   | d4 des c b
-
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -438,10 +451,10 @@ Bass = \context Voice = "four" \relative c {
   | <f d' aes'>\arpeggio^! r r2
   | R1\fermata
   %10
-  | r4 f d' aes~
+  | r4 f\( d' aes~
   | aes f d' aes~
   | aes f d'2
-  | aes f
+  | aes f\)
   | R1
   %15
   | r2 <aes f' b>4\arpeggio r
@@ -450,16 +463,18 @@ Bass = \context Voice = "four" \relative c {
   | R1
     \bar "||"
   | \key aes \major
-    r4 e des' g,~
+    r4 e%_\markup {
+    %  \hspace #-2 \normal-text "(" \musicglyph #"pedal.Ped" \normal-text ")"
+    %}
+    des' g,~
   %20
   | g e des' g,~
   | g e des'2
   | g, e
   | R1*12
   %35
-  \repeat unfold 2 {
-  | e8 c' aes' des,~ des c aes' c,
-  }
+  | e8_\markup { \hspace #2 "sempre legato" } c' aes' des,~ des c aes' c,
+  | e, c' aes' des,~ des c aes' c,
   \repeat unfold 2 {
   | f, c' aes' des,~ des c aes' c,
   }
@@ -508,11 +523,15 @@ Bass = \context Voice = "four" \relative c {
     }
   %76
   | cis fis cis' fis~ fis cis fis, cis~
-  | cis[ cis'] fis[ cis' fis cis fis,] cis[
-  \repeat unfold 3 {
+  | cis[_\markup {
+      \musicglyph #"pedal.Ped" "ogni battuta"
+    }
+    cis'] fis[ cis' fis cis fis,] cis[
   | \override Beam.damping = #+inf.0
     cis, cis'] fis[ cis' fis cis fis,] cis[
-  }
+  | cis,_\markup{ "sempre legato" }
+    cis'] fis[ cis' fis cis fis,] cis[
+  | cis, cis'] fis[ cis' fis cis fis,] cis[
   %81
   \revert Beam.damping
   \repeat unfold 3 {
@@ -524,8 +543,14 @@ Bass = \context Voice = "four" \relative c {
   }
   %88
   | cis[ fis b dis^~] dis[ b fis cis]
+  \repeat unfold 2 {
   | b[ e b' e^~] e[ b e, b~]
-  \repeat unfold 7 {
+  }
+  | b[_\markup {
+      \musicglyph #"pedal.Ped" "ogni battuta"
+    }
+    e b' e^~] e[ b e, b~]
+  \repeat unfold 5 {
   | b[ e b' e^~] e[ b e, b~]
   }
   | b[ b'] e[ b' e b e,] b[
@@ -571,7 +596,10 @@ Bass = \context Voice = "four" \relative c {
   | bes aes e des'
   %130
   | bes aes e des'
-  | <e, bes' des>8\arpeggio a8\rest r4 r2
+  | <e, bes' des>8\arpeggio_\markup {
+      \hspace #-2 \musicglyph #"pedal.Ped"
+    }
+    a8\rest r4 r2
   | R1*8
     \bar "||"
   %140
@@ -596,30 +624,181 @@ Bass = \context Voice = "four" \relative c {
     \fine
 }
 
+dynamics = {
+  | s4 s\mp s2
+  | s1*8
+  %10
+  | s4 s\mp s2
+  | s1*5
+  %16
+  | s4\< s2.
+  | s4\! s2 s4\>
+  | s2 s4\! s
+  | s4 s\mp s2
+  | s1*89
+  %109
+  | s4 s-\markup { \hspace #-2 \dynamic mf "appassionato" } s2
+  | s4 s\< s2
+  | s4\! s2.
+  | s1*5
+  %117
+  | s4 s-\markup { "rinforzando" } s2
+  | s1
+  | s8 s\ff s2.
+  | s1
+  | s4 s-\markup { \dynamic fff "legato" } s2
+  | s1*3
+  %125
+  | s4 s\ff s s4\>
+  | s1
+  | s1\!
+  | s1*12
+  %140
+  | s2 s2-\markup { \dynamic mf \whiteout "pesante" }
+}
+
 forceBreaks = {
   % page 1
-  %\repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
-  %\repeat unfold 6 { s1\noBreak } s1\break\noPageBreak
-  %\repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
-  %\repeat unfold 6 { s1\noBreak } s1\break\noPageBreak
-  %\repeat unfold 7 { s1\noBreak } s1\pageBreak
+  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 6 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 4 { s1\noBreak } s1\pageBreak
   % page 2
-  %\repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
-  %\repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
-  %\repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
-  %\repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
-  %\repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
-  %\repeat unfold 6 { s1\noBreak } s1\pageBreak
-  % page 2
-  %\repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
-  %\repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
-  %\repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
-  %\repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
-  %\repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
-  %\repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
-  %\repeat unfold 4 { s1\noBreak } s1\pageBreak
+  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\pageBreak
   % page 3
-  %\repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\pageBreak
+  % page 4
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\pageBreak
+  % page 5
+
+}
+
+sustainPedal = {
+  \set Staff.pedalSustainStyle = #'mixed
+  | s4 s\sustainOn s2
+  | s1*2
+  | s2. s4\sustainOff
+  | s1*5
+  %9
+  | s4 s\sustainOn s2
+  | s1*2
+  | s2. s4\sustainOff
+  | s1*5
+  %19
+  | s4 s\sustainOn s2
+  | s1*2
+  | s2 s4 s\sustainOff
+  | s1*12
+  %35
+  | s4\sustainOn s2.
+  | s4 s8 s\sustainOff s4 s
+  | s4\sustainOn s2.
+  | s4\sustainOff s2.
+  | s4\sustainOn s2.
+  %40
+  | s4 s s\sustainOff s
+  | s4\sustainOn s s\sustainOff s
+  | s1
+  | s4\sustainOn s s s\sustainOff
+  | s1
+  %45
+  | s4\sustainOn s s s\sustainOff
+  | s1
+  | s4 s\sustainOn s2
+  | s4 s\sustainOff s2
+  | s1*3
+  %52
+  | s4\sustainOn s2.
+  | s4 s s\sustainOff s
+  | s4\sustainOn s s s\sustainOff
+  | s1
+  %56
+  | s4\sustainOn s2.
+  | s4 s\sustainOff s2
+  | s1*2
+  %60
+  | s4\sustainOn s s s\sustainOff
+  | s1
+  | s4\sustainOn s s s\sustainOff
+  | s1
+  | s4\sustainOn s2.
+  %65
+  | s8 s\sustainOff s2.
+  | s1*3
+  | s4\sustainOn s2.
+  %70
+  | s4\sustainOff\sustainOn s2.
+  | s4\sustainOff\sustainOn s2.
+  | s4\sustainOff\sustainOn s2.
+  | s4\sustainOff\sustainOn s2.
+  | s4\sustainOff\sustainOn s2.
+  %75
+  | s4\sustainOff\sustainOn s2.
+  | s4\sustainOff\sustainOn s2.
+  | s1*6
+  %83
+  | s4\sustainOn s2.
+  | s1*2
+  | s4 s s s8 s\sustainOff
+  | s1*2
+  %89
+  | s4\sustainOn s2.
+  | s4\sustainOff\sustainOn s2.
+  | s1*12
+  %103
+  | s4\sustainOn s2.
+  | s1*2
+  | s4 s s s8 s\sustainOff
+  | s1*2
+  %109
+  | s4\sustainOn s2.
+  | s4\sustainOff\sustainOn s2.
+  | s4\sustainOff\sustainOn s s s8 s\sustainOff
+  | s1
+  | s4\sustainOn s2.
+  | s4\sustainOff\sustainOn s2.
+  %115
+  | s4\sustainOff\sustainOn s s s8 s\sustainOff
+  | s1
+  | s4\sustainOn s s s8 s\sustainOff
+  | s1
+  | s4\sustainOn s s s8 s\sustainOff
+  | s1
+  %121
+  | s4\sustainOn s2.
+  | s4 s s s\sustainOff
+  | s1*2
+  %125
+  | s4 s\sustainOn s s8 s\sustainOff
+  | s4 s\sustainOn s2
+  | s4\sustainOff s4\sustainOn s2
+  | s4 s \sustainOff s2
+  | s4\sustainOn s2.
+  %130
+  | s4 s s s8 s\sustainOff
+  | s1*17
+  %148
+  | s4\sustainOn s2.
+  | s4\sustainOff\sustainOn s s s8 s\sustainOff
+  | s4\sustainOff\sustainOn s s s8 s\sustainOff
+  | s4\sustainOff\sustainOn s s s8 s\sustainOff
+
 }
 
 \score {
@@ -633,6 +812,7 @@ forceBreaks = {
       \Soprano
       \Alto
     >>
+    \context Dynamics = "dynamics" \dynamics
     \context Staff = "lower" <<
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
@@ -641,6 +821,7 @@ forceBreaks = {
       \Bass
     >>
     \new Devnull \forceBreaks
+    \context Dynamics = "sustainPedal" \sustainPedal
   >>
   \header {
     composer = "Franz Liszt"
