@@ -795,10 +795,9 @@ sustainPedal = {
   | s1*17
   %148
   | s4\sustainOn s2.
+  | s4\sustainOff\sustainOn s2.
+  | s4\sustainOff\sustainOn s2.
   | s4\sustainOff\sustainOn s s s8 s\sustainOff
-  | s4\sustainOff\sustainOn s s s8 s\sustainOff
-  | s4\sustainOff\sustainOn s s s8 s\sustainOff
-
 }
 
 \score {
