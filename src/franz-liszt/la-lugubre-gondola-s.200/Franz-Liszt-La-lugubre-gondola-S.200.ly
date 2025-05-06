@@ -212,9 +212,9 @@ Soprano = \context Voice = "one" \relative c' {
   | r4 b2^> ais4
   | a gis a ais
   | \stemNeutral\tieNeutral
-    r4 g'~\(_\sf g8 e dis d
+    r4 g'~\(_\sf g8 e dis\> d
   %65
-  | cis c b ais g e dis d
+  | cis c b ais g e dis d\!
   | cis4 c b ais\)
   | r2 g\(_\p
   | ais4 b bis cis\)
@@ -308,7 +308,7 @@ Soprano = \context Voice = "one" \relative c' {
     fis d'2^\markup { \whiteout "diminuendo" }
   | b4 aes f des'
   \repeat unfold 2 {
-  | bes aes! e des'
+  | bes aes e des'
   }
   %131
   | <e, g des'>8\arpeggio a\rest
@@ -524,7 +524,7 @@ Bass = \context Voice = "four" \relative c {
   %76
   | cis fis cis' fis~ fis cis fis, cis~
   | cis[_\markup {
-      \musicglyph #"pedal.Ped" "ogni battuta"
+      \hspace #1 \musicglyph #"pedal.Ped" "ogni battuta"
     }
     cis'] fis[ cis' fis cis fis,] cis[
   | \override Beam.damping = #+inf.0
@@ -547,7 +547,7 @@ Bass = \context Voice = "four" \relative c {
   | b[ e b' e^~] e[ b e, b~]
   }
   | b[_\markup {
-      \musicglyph #"pedal.Ped" "ogni battuta"
+      \hspace #1 \musicglyph #"pedal.Ped" "ogni battuta"
     }
     e b' e^~] e[ b e, b~]
   \repeat unfold 5 {
@@ -592,7 +592,7 @@ Bass = \context Voice = "four" \relative c {
   | r4 aes, f' b,~
   | b g e' b~
   | b fis d'2
-  | b4 a f des'
+  | b4 aes f des'
   | bes aes e des'
   %130
   | bes aes e des'
@@ -751,7 +751,8 @@ sustainPedal = {
   %75
   | s4\sustainOff\sustainOn s2.
   | s4\sustainOff\sustainOn s2.
-  | s1*6
+  | s4\sustainOff s2.
+  | s1*5
   %83
   | s4\sustainOn s2.
   | s1*2
@@ -760,7 +761,8 @@ sustainPedal = {
   %89
   | s4\sustainOn s2.
   | s4\sustainOff\sustainOn s2.
-  | s1*12
+  | s4\sustainOff s2.
+  | s1*11
   %103
   | s4\sustainOn s2.
   | s1*2
@@ -836,7 +838,5 @@ sustainPedal = {
       \override TextScript.font-size = #-1
     }
   }
-  \midi {
-    \tempo 4 = 100
-  }
+  \midi { }
 }
