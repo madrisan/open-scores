@@ -152,13 +152,13 @@ Soprano = \context Voice = "one" \relative c' {
   | e2. eis4\)
   | fis1
   | gis2 a
-  | \afterGrace fis1 { eis16 gis }
+  | \afterGrace fis1 { eis16^\( gis }
   %30
-  | fis2 e!
+  | fis2\) e!
   | fis1
   | gis2 a
-  | \afterGrace fis1 { eis16 gis }
-  | fis2 e!
+  | \afterGrace fis1 { eis16^\( gis }
+  | fis2\) e!
   %35
   | cis dis
   | e1
@@ -223,14 +223,14 @@ Soprano = \context Voice = "one" \relative c' {
   %75
   | <cis eis>1\arpeggio
   | gis'2 ais
-  | \afterGrace fis1 { eis16 gis }
-  | fis2 eis
+  | \afterGrace fis1 { eis16^\( gis }
+  | fis2\) eis
   | dis1
   %80
   | eis2 fis
   | \clef "bass"
-    \afterGrace <fis, b dis>1 { cisis'16 eis }
-  | dis2 disis
+    \afterGrace <fis, b dis>1 { cisis'16^\( eis }
+  | dis2\) disis
   | <eis, gis cis eis>1\arpeggio
   | \stemNeutral ais2\( bis
   %85
@@ -238,9 +238,9 @@ Soprano = \context Voice = "one" \relative c' {
   | \stemNeutral gis2 fisis\)
   | <eis gis cis eis>1
   | \stemNeutral ais2\( bis
-  | \afterGrace gis1 { \stemUp fisis16 ais }
+  | \afterGrace gis1 { \stemUp fisis16_( ais }
   %90
-  | \stemNeutral gis2 fisis\)
+  | \stemNeutral gis2) fisis\)
   | <eis gis cis eis>1
   | R1
   | \clef "treble"
@@ -521,9 +521,9 @@ Bass = \context Voice = "four" \relative c {
   | gis2 fisis\)
   | <cis gis' cis>1
   | ais'2\( bis
-  | \afterGrace gis1 { fisis16 ais }
+  | \afterGrace gis1 { fisis16_( ais }
   %90
-  | gis2 fisis\)
+  | gis2) fisis\)
   | <cis gis' cis>1^\(
   | \clef "treble"
     <gis''' cis eis>~\)

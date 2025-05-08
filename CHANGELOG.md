@@ -9,6 +9,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Franz-Liszt: La lugubre gondola S.200/2
 
+### Fixed
+
+- Franz Liszt: Recueillement S.204 - minor fixes (missing slurs)
+
 ## [v63] - 2025-04-22
 
 ### Added
