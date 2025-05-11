@@ -94,7 +94,7 @@
 \include "schoenberg-busoni-letter.ly"
 \pageBreak
 \label #'PrefaceIT
-\include "preface.ly"
+\include "preface-it.ly"
 \pageBreak
 \label #'PrefaceEN
 \include "preface-en.ly"
