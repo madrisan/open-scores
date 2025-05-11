@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [v65] - unrealised
+
+### Changed
+
+- J.S. Bach: Die Kunst der Fuge (BWV1080) - annotations for simple fugues I-IV
+
 ## [v64] - 2025-05-09
 
 ### Added

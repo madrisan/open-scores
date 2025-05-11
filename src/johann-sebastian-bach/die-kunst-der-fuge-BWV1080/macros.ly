@@ -29,6 +29,10 @@ unknownColor =             #(rgb-color 0.00 0.00 0.00)
   "Prints out a bullet for marking the start of a fugue exposition"
   (interpret-markup layout props
     #{ \markup \with-color #secondExpositionColor \char ##x25a0 #}))
+#(define-markup-command (subjectStrettoBullet layout props) ()
+  "Prints out a bullet for marking the start of a fugue exposition of type stretto"
+  (interpret-markup layout props
+    #{ \markup \with-color #subjectStrettoColor \char ##x25a0 #}))
 #(define-markup-command (subjectPresentationBullet layout props) ()
   "Prints out a bullet for marking the start of a fugue exposition"
   (interpret-markup layout props

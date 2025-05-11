@@ -61,8 +61,8 @@ fugueStructureBoxesIII = \markup \fugueStructureBoxes {
   \on-color \episodeColor \pad-markup #1               \concat { "4" \sub " 39" }  % bars 39-47
   \on-color \subjectPresentationColor \pad-markup #0.8 "S"
   \on-color \episodeColor \pad-markup #1               \concat { "5" \sub " 47" }
-  \on-color \subjectPresentationColor \pad-markup #0.8 "BAST"
-  \on-color \endColor \pad-markup #0.8 "Coda"
+  \on-color \subjectPresentationColor \pad-markup #0.8 \concat { "BAST" \sub " 51" }
+  \on-color \endColor \pad-markup #0.8 \concat { "Coda" \sub " 69" }
 }
 
 fugueStructureBoxesIV = \markup \fugueStructureBoxes {
@@ -70,13 +70,13 @@ fugueStructureBoxesIV = \markup \fugueStructureBoxes {
   \on-color \episodeColor \pad-markup #1               \concat { "1" \sub " 19" }  % bars  19- 26
   \on-color \secondExpositionColor \pad-markup #0.8    \concat { "Second exposition SATB" \sub " 27" } % bars 27-43
   \on-color \episodeColor \pad-markup #1               \concat { "2" \sub " 43" }  % bars  43- 60
-  \on-color \subjectPresentationColor \pad-markup #0.8 "BT"                        % bars  61- 69
+  \on-color \subjectPresentationColor \pad-markup #0.8 \concat { "BT" \sub " 61" } % bars  61- 69
   \on-color \episodeColor \pad-markup #1               \concat { "3" \sub " 69" }  % bars  69- 72
-  \on-color \subjectPresentationColor \pad-markup #0.8 "AS"                        % bars  73- 81
+  \on-color \subjectPresentationColor \pad-markup #0.8 \concat { "AS" \sub " 73" } % bars  73- 81
   \on-color \episodeColor \pad-markup #1               \concat { "4" \sub " 81" }  % bars  81-106
   \on-color \subjectStrettoColor      \pad-markup #0.8 \concat { "T•B•SA" \sub "107" }  % bars 107-115
-  \on-color \episodeColor \pad-markup #1               \concat { "5" \sub " 116" } % bars 116-128
-  \on-color \subjectPresentationColor \pad-markup #0.8 "TA"                        % bars 129-138
+  \on-color \episodeColor \pad-markup #1               \concat { "5" \sub " 115" } % bars 115-128
+  \on-color \subjectPresentationColor \pad-markup #0.8 \concat { "TA" \sub " 129" } % bars 129-138
 }
 
 fugueStructureBoxesV = \markup \fugueStructureBoxes {

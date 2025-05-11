@@ -10,7 +10,12 @@ Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
   \label #'ContrapunctusIV
   %1
-  | \highlightSubjectFirstInv { a2^\markup \scale #'(1 . -1) \subject #'(-0.5 . 0) #1 d,
+  | \highlightSubjectFirstInv {
+    a2^\markup \scale #'(1 . -1) \subject #'(-0.5 . 0) #1
+    d,^\markup {
+      \hspace #-3
+      \expositionBullet "Exposition SATB, bars 1−19"
+    }
   | f a
   | bes a4 g
   | f2~ f8 e f g
@@ -31,7 +36,8 @@ Soprano = \context Voice = "one" \relative c'' {
   | e4 e' c2~
   | c8 c b a b cis d4
   | e2~ e8 cis d e
-  | a,2. d4
+  | a,2.^\markup { \episodeBullet "First episode, bars 19-43" }
+    d4
   %20
   | bes2. c4
   | a2. bes4
@@ -40,7 +46,11 @@ Soprano = \context Voice = "one" \relative c'' {
   | \override MultiMeasureRest.staff-position = #6
     R1*3
   %27
-  | \highlightSubjectFirstInv { c'2^\markup \scale #'(1 . -1) \subject #'(-0.8 . 0) #1 f,
+  | \highlightSubjectFirstInv { c'2^\markup \scale #'(1 . -1) \subject #'(-0.8 . 0) #1
+    f,^\markup {
+      \hspace #-6
+      \secondExpositionBullet "Second exposition SATB, bars 27−43"
+    }
   | a c
   | d c4 bes
   %30
@@ -59,7 +69,8 @@ Soprano = \context Voice = "one" \relative c'' {
   | r4 a' f2
   | r4 g cis,8 d e4~
   | e8 a, b cis d2~
-  | d8 b c! d e2~
+  | d8^\markup { \episodeBullet "Second episode, bars 43-60" }
+    b c! d e2~
   | e8 g f e d2~
   %45
   | d8 f e d c2~
@@ -82,7 +93,8 @@ Soprano = \context Voice = "one" \relative c'' {
   | bes4 g' e2~
   %60
   | e8 a g f e d c bes
-  | a f' e dis e2~
+  | a^\markup { \subjectPresentationBullet "Subjects presentation BT" }
+    f' e dis e2~
   | e8 f e dis e2~
   | e8 g fis e fis g a4
   | d,2. d4
@@ -99,7 +111,8 @@ Soprano = \context Voice = "one" \relative c'' {
   | g fis4 e
   %80
   | dis2~ dis8 b cis dis
-  | \unHighlightSubject e2~ } e8 f! g e
+  | \unHighlightSubject e2~^\markup { \episodeBullet "Third episode, bars 81-106" } }
+    e8 f! g e
   | f e d4~ d8 e f d
   | e d c4~ c8 d ees c
   | d c b4~ b8 c d b
@@ -130,7 +143,10 @@ Soprano = \context Voice = "one" \relative c'' {
   %105
   | c2 r4 c
   | a2 r8 g' f e
-  | d ees d cis d2~
+  | d^\markup {
+      \subjectStrettoBullet "Third exposition T•B•SA (stretto), bars 107−115"
+    }
+    ees d cis d2~
   | d8 ees d cis d2~
   | d8 ees d cis d4. e8
   %110
@@ -140,7 +156,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | f e2 d4~
   | d cis~ cis8 a b cis
   %115
-  | d2 } r4 d
+  | d2^\markup { \episodeBullet "Fourth episode, bars 115-128" } } r4 d
   | bes2 r
   | r8 bes c d c bes a g
   | a1~
@@ -156,7 +172,10 @@ Soprano = \context Voice = "one" \relative c'' {
   | d4 c!8 bes c2~
   | c~ c8 bes c a
   | bes d ees c d g d c~
-  | c bes c ees d c bes a
+  | c^\markup {
+      \subjectPresentationBullet "Subjects presentation TA"
+    }
+    bes c ees d c bes a
   %130
   | g fis g4 r a
   | gis2 a4 r
@@ -455,7 +474,10 @@ Tenor = \context Voice = "three" \relative c' {
     e'2_~
   | e4 f d2_~
   | d8 f e d cis2_~
-  | cis8 ees d cis d g f e
+  | cis8 ees^\markup {
+      \hspace #1 \subjectPresentationBullet "Subjects presentation AS"
+    }
+    d cis d g f e
   | d ees d cis d g f e
   %75
   | dis e dis e fis e fis dis
@@ -658,7 +680,8 @@ Bass = \context Voice = "four" \relative c {
   %105
   | b4\rest a' f2
   | r4 f d2~
-  | d4 \highlightSubjectFirstInv { f2_\markup \scale #'(1 . -1) \subject #'(0.5 . 0) #1 bes,4~
+  | d4
+    \highlightSubjectFirstInv { f2_\markup \scale #'(1 . -1) \subject #'(0.5 . 0) #1 bes,4~
   | bes d2 f4~
   | f g~ g8 f4 e8
   %110
@@ -732,6 +755,9 @@ Bass = \context Voice = "four" \relative c {
   \layout {
     \context {
       \Voice
+      \override TextScript.color = #greyTextColor
+      \override TextScript.font-shape = #'italic
+      \override TextScript.font-size = #-2
       \override VoiceFollower.color = #greyTextColor
       \override VoiceFollower.style = #'dashed-line
     }

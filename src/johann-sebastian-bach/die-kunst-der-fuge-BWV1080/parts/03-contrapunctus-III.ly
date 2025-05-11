@@ -39,7 +39,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | a8 g bes2 a8 g
   | f2~ f8 e fis g
     \break
-  | a4 } d,~ d8^\markup { \episodeBullet "Second episode, bars 27-34" } g cis, d
+  | a4 } d,~ d8^\markup { \episodeBullet "Second episode, bars 27-33" } g cis, d
   | e f g e f2~
   | f8 f e^\markup { \subjectPresentationBullet "(Subject Presentation T)" }
     d c4. d8

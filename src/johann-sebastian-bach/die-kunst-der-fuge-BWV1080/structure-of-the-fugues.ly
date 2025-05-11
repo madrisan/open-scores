@@ -119,6 +119,7 @@
             \on-color \subjectPresentationColor \pad-markup #0.6 "   " "Subject presentation "
             \on-color \subjectStrettoColor \pad-markup #0.6 "   " "Stretti "
             \on-color \endColor \pad-markup #0.6 "   " "Coda "
+            \on-color \unknownColor \pad-markup #0.6 "   " "Missing"
       }
       \null
     }
@@ -126,6 +127,13 @@
       \vspace #1
       \line \abs-fontsize #8 \italic {
         "(the subscript number in the boxes indicates the starting bar of the corresponding section)"
+      }
+      \null
+    }
+    \fill-line {
+      \vspace #1
+      \line \abs-fontsize #8 \italic {
+        "The letter “B” stands for bass, “T” for tenor, “A” for alto and “S” for soprano."
       }
       \null
     }
