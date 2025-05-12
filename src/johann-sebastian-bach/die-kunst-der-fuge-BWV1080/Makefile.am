@@ -25,7 +25,8 @@ SUFFIXES = .in
 
 BUILT_SOURCES = covercolor.ly
 EXTRA_DIST = JS-Bach-BWV1080-Die-Kunst-der-Fuge.ly \
-	     brief-notes-on-the-completion-of-contrapunctus-xiv.ly \
+	     brief-notes-on-the-completion-of-contrapunctus-xiv-en.ly \
+	     brief-notes-on-the-completion-of-contrapunctus-xiv-it.ly \
 	     bwv1080-subjects-1-2-3-4-permutation.eps \
 	     covercolor.ly.in \
 	     global.ly \

@@ -1,6 +1,6 @@
 \include "macros.ly"
 
-\label #'BriefNotesContrapunctusXIV
+\label #'BriefNotesContrapunctusXIVen
 
 \markup \fill-line {
   \center-column \abs-fontsize #14 \bold \with-color #middleGrey {
@@ -288,7 +288,7 @@
     \vspace #1
     \wordwrap \abs-fontsize #10 \with-color #middleGrey {
       And his solution to the arduous problem of the quadruple inversus combination,
-      using the 14‐note form of \circle\musicglyph "four".
+      using the 14‐note form of { \smaller\circle\musicglyph "four". }
     }
     \pad-around #1
     \wordwrap \abs-fontsize #10 \with-color #middleGrey { " " }
@@ -952,7 +952,7 @@
   \column {
     \wordwrap \abs-fontsize #10 \with-color #middleGrey {
       The completion of the Contrapunctus XIV remains an interesting and challenging problem in itself,
-      but in light of the above considerations, Nakajima's words seem agreeable.
+      but in light of the above considerations, Nakajima's words seem agreeable:
     }
   }
 }

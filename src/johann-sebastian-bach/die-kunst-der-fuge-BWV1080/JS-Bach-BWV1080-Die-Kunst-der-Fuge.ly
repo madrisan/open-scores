@@ -162,7 +162,9 @@ Subject = \relative {
 \pageBreak
 \include "./parts/14-contrapunctus-XIV.ly"
 \pageBreak
-\include "./brief-notes-on-the-completion-of-contrapunctus-xiv.ly"
+\include "./brief-notes-on-the-completion-of-contrapunctus-xiv-en.ly"
+\pageBreak
+\include "./brief-notes-on-the-completion-of-contrapunctus-xiv-it.ly"
 \pageBreak
 \include "./parts/15-canon-in-hypodiapason.ly"
 \pageBreak

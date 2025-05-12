@@ -118,9 +118,19 @@
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #86 {
+    \page-link #88 {
       \fill-with-pattern #1 #RIGHT . "Brief notes on the completion of Contrapunctus XIV"
-                         \page-ref #'BriefNotesContrapunctusXIV "000" "?"
+                         \page-ref #'BriefNotesContrapunctusXIVen "000" "?"
+    }
+  }
+}
+\markup \column \abs-fontsize #11 {
+  \override #'(line-width . 95)
+  \line {
+    \hspace #3.2
+    \page-link #93 {
+      \fill-with-pattern #1 #RIGHT . "Brevi note sul completamento del Contrapunctus XIV"
+                         \page-ref #'BriefNotesContrapunctusXIVit "000" "?"
     }
   }
 }
