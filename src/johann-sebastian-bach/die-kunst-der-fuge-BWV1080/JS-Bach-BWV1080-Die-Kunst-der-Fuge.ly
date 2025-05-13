@@ -85,7 +85,7 @@ Subject = \relative {
         \combine \null \vspace #3
         \line { \abs-fontsize #24 "BWV 1080" }
         \combine \null \vspace #3
-        \fill-line { \abs-fontsize #14 "For Piano or Harpsichord" }
+        \fill-line { \abs-fontsize #14 "For keyboard instruments" }
         \combine \null \vspace #2
       }
     }

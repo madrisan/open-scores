@@ -120,12 +120,13 @@ Alto = \context Voice = "two" \relative c' {
   %5
   | d4 } e f g
   | a
-    \staffLower
+    \staffLower\voiceThree
     \highlightMotif { a,8 b c a
-    \staffUpper
-    f'4~
+    f'4^~
   | f8 b, e4~ e8 f e d
-  | e4 fis \unHighlightMotifWithStem g2~ }
+  | e4 fis
+    \staffUpper\voiceTwo
+    \unHighlightMotifWithStem g2~ }
   | g4 f e2
   %10
   | d4. e8 f4. d8
@@ -142,12 +143,11 @@ Alto = \context Voice = "two" \relative c' {
   | \highlightSubjectFirst { d2_\markup \subject #'(1.5 . 0) #1 a'
   | f d
   %25
-  | cis d4 e
-  | \stemUp
-    f2~ f8 g f e
+  | cis d4 \stemUp\tieUp e
+  | f2~ f8 g f e
   | d4 } g~ g8 e f4
   | e a~ a8 fis g4
-  | \stemDown
+  | \stemDown\tieDown
     fis4. d'8 gis,2
   %30
   | a4 e~ e8[ e d c]
@@ -157,10 +157,14 @@ Alto = \context Voice = "two" \relative c' {
   | d1~
   %35
   | d8 d g4~ g8 g
-    \staffLower\stemUp
+
     c,4~
-  | c8 a bes4 a2^~
-  | a8 f g4 c2^~
+  | c8 a bes4 a2~
+  | a8
+    \hideStaffSwitch \staffLower\stemUp
+    f g4
+    \showStaffSwitch \staffUpper\stemDown
+    c2~
   | c8 a b4
     \staffUpper\stemDown
     e2~
@@ -182,8 +186,12 @@ Alto = \context Voice = "two" \relative c' {
   | d8 cis b cis d a e'4~
   %50
   | e8 a, d4 r8 f, bes4~
-  | bes8 e, a4~ a8 g f e
-  | d a' d b g e c'4~
+  | bes8 e, a4~ a8 g
+    \hideStaffSwitch \staffLower\stemUp
+    f e
+  | d
+    \staffUpper\stemDown
+    a' d b g e c'4~
   | c bes a2
   | g4. f8 e2~
   %55
@@ -194,7 +202,7 @@ Alto = \context Voice = "two" \relative c' {
   | d2. e4
   %60
   | a, r r ees'
-  | d2 r4 fis!
+  | d2 r4 \once\override NoteColumn.force-hshift = #0 fis!
   | g8 fis g4 r bes~
   | bes8 a f' d b4 e8 cis!
   | a4 d8 a bes4. g8
@@ -242,9 +250,12 @@ Tenor = \context Voice = "three" \relative c' {
   | \unHighlightSubject a2~ } a8 f g4
   | c2~ c8 a b4
   | \staffUpper\stemDown
-    e2_~ e8 cis d4
+    e2_~ e8
+    \hideStaffSwitch \staffLower\voiceFour\stemUp
+    cis d4
   %20
-  | g2_~ g8 e f4
+  | \showStaffSwitch \staffUpper\voiceThree\stemDown
+    g2_~ g8 e f4
   | e4. a8 d,4. e8
   | \hideStaffSwitch cis4 d8
     \staffLower\stemNeutral
@@ -252,17 +263,30 @@ Tenor = \context Voice = "three" \relative c' {
     \stemUp
     \showStaffSwitch
     b4. cis8
-  | d4 a2.~
+  | \parenthesize d4 a2.~
   | a2 bes
   %25
-  | r8 e, a4~ a8 bes a g
+  | r8 e, a4~ a8
+    \hideStaffSwitch \staffUpper\voiceTwo
+    bes a g
   | a4 b c2~
-  | c8 a bes4 a d~
-  | d8 b c4 b e4~
-  | e8 a, d4~ d8 d c b
+  | c8 a bes4
+    \showStaffSwitch \staffLower\voiceThree
+    a d~
+  | d8 b
+    \staffUpper\voiceTwo
+    c4 b e4~
+  | \staffLower\voiceThree
+    e8 a, d4~ d8 d c b
   %30
   | c d b8\rest a c4 a
-  | b2 c4 gis
+  | b2
+    \staffUpper
+    \once\stemDown
+    \once\override NoteColumn.force-hshift = #0.4
+    c4
+    \staffLower
+    gis
   | a8 g fis e fis4 g~
   | g8 g f e f e d cis!
   | d4 r r2
@@ -305,13 +329,23 @@ Tenor = \context Voice = "three" \relative c' {
   %60
   | \staffUpper \once\stemDown d \staffLower r4 r fis,
   | g8
-    a bes4 r c
-  | d2 r8 g,4 f8
+    a bes4 r
+    \staffUpper\stemDown
+    \once\override NoteColumn.force-hshift = #0.4
+    c
+  | \once\override NoteColumn.force-hshift = #0.2 d2
+    \staffLower\stemUp r8
+    g,4 f8
   | e4 f\rest f2\rest
   | f4\rest f8 d g4. cis,8
   %65
   | f4. d8 a'2
-  | d,4 d'2 a8 f
+  | d,4
+    \staffUpper\stemDown
+    \once\override NoteColumn.force-hshift = #0.2
+    d'2
+    \staffLower\stemUp
+     a8 f
   | bes2~ bes8 gis a4
   | d2~ d8 b
     c4
@@ -490,6 +524,7 @@ Bass = \context Voice = "four" \relative c {
       \override HorizontalBracketText.color = #greyTextColor
       \override HorizontalBracketText.font-shape = #'italic
       \override HorizontalBracketText.font-size = #-2
+      \override Parentheses.font-size = #-2
       \override TextScript.color = #greyTextColor
       \override TextScript.font-shape = #'italic
       \override TextScript.font-size = #-2

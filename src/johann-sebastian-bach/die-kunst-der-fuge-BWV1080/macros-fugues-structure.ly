@@ -28,10 +28,10 @@ fugueStructureBoxesI = \markup \fugueStructureBoxes {
   \on-color \episodeColor \pad-markup #1               \concat { "1" \sub " 17" }
   \on-color \secondExpositionColor \pad-markup #0.8    \concat { "Second exposition ASBT" \sub " 23" }
   \on-color \episodeColor \pad-markup #1               \concat { "2" \sub " 44" }
-  \on-color \subjectPresentationColor \pad-markup #0.8 "S"
-  \on-color \subjectPresentationColor \pad-markup #0.8 "B"
+  \on-color \subjectPresentationColor \pad-markup #0.8 \concat { "S" \sub " 49" }
+  \on-color \subjectPresentationColor \pad-markup #0.8 \concat { "B" \sub " 56" }
   \on-color \episodeColor \pad-markup #1               \concat { "3" \sub " 60" }
-  \on-color \endColor \pad-markup #0.8 "T"
+  \on-color \endColor \pad-markup #0.8                 \concat { "T" \sub " 74" }
 }
 
 fugueStructureBoxesII = \markup \fugueStructureBoxes {
