@@ -119,14 +119,16 @@ Alto = \context Voice = "two" \relative c' {
     }
     s2.
     s1*7
-  | \stemUp
+  | \stemUp\tieUp
     \highlightSubjectFirst { d2^\markup \subject #'(0 . 0) #1 a'
   %10
   | f d
   | cis d4 e
   | f2~ f8.[ g16 f8. e16]
-  | \stemDown
-    \unHighlightSubject d8.[ } e16 f8. g16] a2~
+  | \stemDown\tieDown
+    \unHighlightSubject d8.[ } e16 f8. g16]
+    \shape #'((0.8 . -0.8) (0 . -0.7) (0 . -0.7) (-0.8 . -0.8)) Tie
+    a2^~
   | a8.[ g16 f8. e16~] e8.[ f16 e8. d16~]
   %15
   | d8.[ d16 e8. f16] e4 d
@@ -149,42 +151,53 @@ Alto = \context Voice = "two" \relative c' {
   | b2 r8 r16 e[ fis8. gis16]
   | a2. gis4
   %30
-  | a8.[ g!16 f8. e16] d4 g
+  | a8.[ g!16
+    \hideStaffSwitch \staffLower\stemUp
+    f8. e16] d4
+    \showStaffSwitch \staffUpper\stemDown
+    g
   | f2 e
-  | d r
-  | b'8\rest b16\rest bes[ a8. g16] f8.[ e16 d8. cis16]
+  | d b'\rest
+  | b8\rest b16\rest bes[ a8. g16] f8.[ e16 d8. cis16]
   | d4 d' b cis
   %35
   | d r r c~
   | c8.[ bes16 a8. g16] a2
   | gis4 c fis, gis!
   | a8.[ bes!16 a8. g16] f8.[ a16 g8. f16~]
-  | f8. e16 fis8. gis16 a8. b16 c8. a16
+  | f8.
+    \hideStaffSwitch \staffLower\stemUp
+    e16
+    \showStaffSwitch \staffUpper\stemDown
+    fis8. gis16 a8. b16 c8. a16
   %40
   | \stemUp
     b2~ b8.[ a16 gis8. a16]
   | \stemDown
-    dis,8. a16 a'2 e4~
+    dis,8.
+    \hideStaffSwitch \staffLower\stemUp
+    a16
+    \showStaffSwitch \staffUpper\stemDown
+    a'2 e4~
   | e f! d g
   | c,8.[ f16 e8. d16~] d8.[ e16 d8. cis16]
   | d2. g4
   %45
-  | \hideStaffSwitch c,2~
-    \once\override Beam.positions = #'(-5 . -5)
-    c8.[
-    \staffLower
-    \stemUp
+  | \staffLower \stemUp\tieUp
+    c,2~ c8.[
     bes16 a8. g16] \showStaffSwitch
   | \hideStaffSwitch f8.[
     \staffUpper
-    \stemDown
+    \stemDown\tieDown
     f'16 \showStaffSwitch g8. a16] bes8.[ c16 d8. bes16]
   | c4 g c2~
   | c d4 c8. bes16
   | \highlightSubjectFirst { a2_\markup \subject #'(1.5 . 0) #1 d
   %50
   | bes g
-  | fis g4 a
+  | fis
+    \once\override NoteColumn.force-hshift = #0 g4
+    a
   | \stemUp
     bes2^~ bes8.[ c16 bes8. a16]
   | g4 } bes a c~
@@ -199,9 +212,17 @@ Alto = \context Voice = "two" \relative c' {
   | r8 r16
     \stemDown
     g[ fis8. g16] e4 f~
-  | f8.[ d16 cis8. d16] g2~
+  | f8.[
+    \hideStaffSwitch \staffLower \stemUp
+    d16 cis8. d16]
+    \staffUpper \stemDown
+    g2~
   %60
-  | g4 f e a~
+  | g4
+    \showStaffSwitch \staffLower\stemUp
+    f e
+    \staffUpper\stemDown
+    a~
   | a r r2
   | r8 r16 bes[ a8. g16~] g8.[ a16 g8. f16]
   | e4
@@ -237,8 +258,11 @@ Alto = \context Voice = "two" \relative c' {
   | bes8.[ bes16 a8. g16] f4 bes
   | a2 bes4 a~
   | a8.[ fis16 g8. a16]
-    s2
-  | s1
+    bes2^~
+  | \stemUp
+    \once\override NoteColumn.force-hshift = #1
+    bes8.
+    a16 bes8. g16 a2
 }
 
 Tenor = \context Voice = "three" \relative c' {
@@ -251,19 +275,23 @@ Tenor = \context Voice = "three" \relative c' {
   | gis a4 b
   | c2~ c8.[ d16 c8. bes16]
   | \revert Tie.color \hideStaffSwitch a2~ } a8.[
-    \staffUpper
-    \stemDown
+    \staffUpper\stemDown
     g'16 f8. e16]
   %10
-  | \once\override Beam.positions = #'(-5 . -5)
-    d8.[ c16
+  | d8.[ c16
+    bes8. a16]
+    bes8.[ a16 \staffLower\stemUp g8. f16]
+  | e2
+    \showStaffSwitch \staffUpper\stemDown
+    g8\rest g16\rest a[ b8. cis16]
+  | d2.
+    \staffLower\stemUp
+    cis4
+  | d4. e16\rest e
+    \staffUpper\once\stemDown
+    \once\override NoteColumn.force-hshift = #0.3
+    f2
     \staffLower
-    \stemUp
-    bes8. a16] \showStaffSwitch
-    bes8.[ a16 g8. f16]
-  | e2 a8\rest a16\rest a[ b8. cis16]
-  | d2. cis4
-  | d4. e16\rest e f2
   | e4 c2 a4
   %15
   | b2 a8\rest a16\rest e[ fis!8. gis16]
@@ -282,12 +310,20 @@ Tenor = \context Voice = "three" \relative c' {
   | a8.[ d16 cis8. d16] gis,4 b~
   | b8.[ e,16 a8. g16] f2~
   | f4 e r2
-  | r8 r16 g'[ f8. e16] dis4 e
+  | r8 r16
+    \showStaffSwitch \staffUpper\stemDown
+    g'[ f8. e16]
+    \staffLower\stemUp
+    dis4 e
   %30
-  | a,2 b4 cis
-  | d2 r
-  | r8 r16 a[ b8. cis16] d8.[ e16 f8. d16]
-  | e4 e, f g
+  | a,2 \stemDown b4 cis
+  | \stemUp d2 r
+  | r8 r16 a[ b8. cis16]
+    \staffUpper\stemDown
+    d8.[ e16 f8. d16]
+  | e4
+    \staffLower\stemUp
+    e, f g
   | a r r2
   %35
   | r4 d~ d8.[ c16 bes8. a16]
@@ -302,7 +338,7 @@ Tenor = \context Voice = "three" \relative c' {
   | c2~ c8.[ d16 c8. b16]
   | \unHighlightSubject a2~ } a8.[ g16 f8. e16]
   | f4 bes e, a
-  | \stemDown
+  | \stemDown\tieDown
     d, e8.[ f16] g8.[ a16] bes4~
   %45
   | bes8. a16 g8. f16 e2
@@ -313,28 +349,30 @@ Tenor = \context Voice = "three" \relative c' {
   %50
   | g8. a16 bes2 a8. bes16
   | \stemUp
-    c4 ees d2~
+    c4
+    \staffUpper\stemDown
+    ees
+    \once\override NoteColumn.force-hshift = #0.2
+    d2~
   | d4 d
-    \staffUpper
-    \stemDown
     e! f_~
   | f8.[ f16 ees8. d16]
-    \staffLower
-    \stemUp
+    \staffLower\stemUp
     c8.[ bes16 a8. g16]
   | f4 r r2
   %55
   | r4 c d ees
   | f bes2
-    \staffUpper
-    \stemDown
+    \staffUpper\stemDown
     ees4
-  | f2 \staffLower\stemUp d8\rest d16\rest
+  | f2 \staffLower\stemUp\tieUp d8\rest d16\rest
     c[ bes8. a16]
   | g4 ees' cis d~
-  | d8 c\rest b4\rest a2\rest
+  | d8 a\rest d,4\rest a'2\rest
   %60
-  | e'4\rest d2 cis4
+  | e'4\rest
+    \once\override NoteColumn.force-hshift = #0.4 d2
+    cis4
   | d2 e
   | a,4 b8. cis16 d4 r
   | r \override NoteColumn.force-hshift = #0.3 e,
@@ -369,8 +407,11 @@ Tenor = \context Voice = "three" \relative c' {
   | r8 r16 d,[ e8. f16] g8. a16 g8. f16
   | e8.[ g16 f8. e16] d2
   | cis4 d2 cis4
-  | d4 e8. fis16 <g~ bes~>2
-  | <g bes>8.[ <fis a>16 <g bes>8. <e g>16] <fis a>2\fermata
+  | d4 e8. fis16
+    \staffUpper\stemDown\tieDown
+    \once\override NoteColumn.force-hshift = #0.2
+    g2~
+  | g8.[ fis16 g8. e16] fis2\fermata
 }
 
 Bass = \context Voice = "four" \relative c {

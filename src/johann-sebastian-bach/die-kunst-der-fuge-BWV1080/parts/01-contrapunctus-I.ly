@@ -275,13 +275,14 @@ Tenor = \context Voice = "three" \relative c' {
     a d~
   | d8 b
     \staffUpper\voiceTwo
-    c4 b e4~
-  | \staffLower\voiceThree
-    e8 a, d4~ d8 d c b
+    c4 b
+    \staffLower\voiceThree
+    e4~
+  | e8 a, d4~ d8 d c b
   %30
   | c d b8\rest a c4 a
   | b2
-    \staffUpper
+    \showStaffSwitch \staffUpper
     \once\stemDown
     \once\override NoteColumn.force-hshift = #0.4
     c4
