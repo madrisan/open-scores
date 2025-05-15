@@ -258,6 +258,7 @@ Alto = \context Voice = "two" \relative c' {
   | bes8.[ bes16 a8. g16] f4 bes
   | a2 bes4 a~
   | a8.[ fis16 g8. a16]
+    \shape #'((0.5 . -0.4) (0 . -0.4) (0 . -0.5) (-0.5 . -0.5)) Tie
     bes2^~
   | \stemUp
     \once\override NoteColumn.force-hshift = #1
