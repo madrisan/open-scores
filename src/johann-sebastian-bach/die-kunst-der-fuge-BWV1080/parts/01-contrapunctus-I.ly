@@ -263,7 +263,7 @@ Tenor = \context Voice = "three" \relative c' {
     \stemUp
     \showStaffSwitch
     b4. cis8
-  | \parenthesize d4 a2.~
+  | d4 a2.~
   | a2 bes
   %25
   | r8 e, a4~ a8

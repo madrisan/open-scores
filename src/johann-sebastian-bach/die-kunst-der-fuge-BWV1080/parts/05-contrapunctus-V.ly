@@ -39,7 +39,8 @@ Soprano = \context Voice = "one" \relative c'' {
   | a b\rest d2\rest
   | R1*3
   %33
-  | r2 \highlightSubjectFirstInv { c^\markup \scale #'(1 . -1) \subject #'(0 . 0) #1
+  | r2
+    \highlightSubjectFirstInv { c^\markup \scale #'(1 . -1) \subject #'(0 . 0) #1
   | f,4. g8 a4. bes8
   %35
   | c2 d
@@ -50,7 +51,11 @@ Soprano = \context Voice = "one" \relative c'' {
   %40
   | d c2 bes!4~
   | \highlightMotif {
-      bes4.^\markup \italic\tiny \with-color #greyTextColor { "B" }
+      bes4.^\markup \italic\tiny \with-color #greyTextColor {
+        "B"
+      }^\markup \italic \tiny \with-color #greyTextColor {
+        "Note Bach's motive on the soprano, at bar 41"
+      }
       \once\override Staff.TextScript.extra-offset = #'(0 . 0.2)
       a8^\markup \italic\tiny \with-color #greyTextColor { "A" }
       c^\markup \italic\tiny \with-color #greyTextColor { "C" }
@@ -66,15 +71,26 @@ Soprano = \context Voice = "one" \relative c'' {
   %45
   | g2. f8 ees
   | f2~ f8 ees d4~
-  | d8 g, f ees d f g a
+  | d8^\markup {
+      \subjectStrettoBullet
+      "Stretto inversus BT and episode (stretto) STAB, bars 47−55"
+    }
+    g, f ees d f g a
   | bes f bes4~ bes8 c bes a
   | bes c d4~ d8 ees f4~
   %50
   | f8 ees d c bes4. c8
   | d4 c f2~
   | f8 e! f g c,2~
-  | c4 f c4. d8
-  | ees4. f8 g4 d~
+  | c4^\markup \override #'(baseline-skip . 2) {
+      \column {
+        "Episode made of a four voice stretto using"
+        "the first notes of the subject (inversus)"
+      }
+    }
+    \highlightSubjectFirstInv { f^\markup \scale #'(1 . -1) \subject #'(2.3 . 0) #1
+    c4. d8
+  | ees4. f8 \unHighlightSubject g4 } d~
   %55
   | d8 e! f4~ f8 g a4
   | e8 f g4 d8 e f4
@@ -88,8 +104,15 @@ Soprano = \context Voice = "one" \relative c'' {
   | f8 a g f e2~
   | e~ e8 d cis d
   %65
-  | cis4 e' a4. g8
-  | f4. e8 d4 g~
+  | cis4^\markup \override #'(baseline-skip . 2) {
+      \column {
+        "similar episode using the first notes"
+        "of the subject (rectus)"
+      }
+    }
+    \highlightSubjectFirst { e'^\markup \subject #'(-0.8 . 0) #1
+    a4. g8
+  | f4. e8 \unHighlightSubject d4 } g~
   | g8 f e4~ e8 d c4
   | f8 e d4 g8 f e4
   | \highlightSubjectFirstInv { a2^\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 d,4. e8
@@ -137,7 +160,8 @@ Alto = \context Voice = "two" \relative c' {
   \voiceTwo
   \mergeDifferentlyDottedOn
   %1
-  | \stemUp \highlightSubjectFirstInv { a'2^\markup \italic \tiny \with-color #greyTextColor {
+  | \stemUp \highlightSubjectFirstInv {
+    a'2^\markup \italic \tiny \with-color #greyTextColor {
       \ieyeglasses
       \concat {
         "14-note version of the subject "
@@ -210,10 +234,11 @@ Alto = \context Voice = "two" \relative c' {
   | d8 c bes a g a bes4~
   | bes8 g a4~ a8 f g a
   | bes2~ bes8 bes a g
-  | a4 r r c
+  | a4 r r
+    \highlightSubjectFirstInv { c_\markup \scale #'(1 . -1) \subject #'(1 . 0) #1
   | g4. a8 bes4. c8
   %55
-  | d4 a~ a8 bes c4~
+  | \unHighlightSubject d4 } a~ a8 bes c4~
   | c bes2 a4~
   | a8 b a gis a4 r
   | r2 \highlightSubjectFirst { d,_\markup \subject #'(2 . 0) #1
@@ -225,9 +250,9 @@ Alto = \context Voice = "two" \relative c' {
   | d~ d8 d c bes
   | a2. gis4
   %65
-  | a4 r r a'
+  | a4 r r \highlightSubjectFirst { a'_\markup \subject #'(1.1 . 0) #1
   | d4. c8 bes4. a8
-  | g4 c~ c8 bes a4~
+  | \unHighlightSubject g4 } c~ c8 bes a4~
   | a8 g f4 bes8 a g4
   | c8 bes c4~ c8 a bes4
   %70
@@ -254,24 +279,40 @@ Alto = \context Voice = "two" \relative c' {
   | f2~ f8 g f e
   | \unHighlightSubject d2. } r4
   | r8 a' bes c d2
+  << {
   | a~ a8 a g4~
   %85
   | g8 a bes4 a4. g8~
-  | g e \highlightSubjectFirst { fis4_\markup \subject #'(1.2 . 0) #1 a4.
-    \stemDown g8
+  | g e fis4 s2
+  | s1
+  | s1
+  | s1
+  %90
+  | s1
+  } \new Voice {
+  | s1
+  %85
+  | s1
+  | \voiceOne \stemDown \highlightSubjectFirst {
+    d2_\markup \subject #'(-2.6 . 0) #1
+    a'4. g8
   | fis4. e8 d2
   | cis d4. e8
-  | \voiceOne \stemDown fis2~
-    fis8 g fis e
+  | fis2~ fis8 g fis e
   %90
-  | d1 }
+  | \unHighlightSubject d1_\fermata }
+  } >>
 }
 
 Tenor = \context Voice = "three" \relative c' {
   \voiceThree
   \showStaffSwitch
   | \override MultiMeasureRest.staff-position = #0
-    R1*3
+    R1_\markup \italic \tiny \with-color #greyTextColor {
+      \hspace #13
+      \expositionBullet "Exposition ABST, bars 1−14"
+    }
+  | R1*2
   | s1*6
   %10
   | \highlightSubjectFirstInv { d2^\markup \scale #'(1 . -1) \subject #'(2.5 . 0) #1 a4. b8
@@ -340,8 +381,9 @@ Tenor = \context Voice = "three" \relative c' {
   | f2 g
   | f4. ees8 d2~
   | d8 c d e! \unHighlightSubject f2~ }
-  | f4 r f c~
-  | c8 d ees4~ ees8 f g4
+  | f4 r \highlightSubjectFirstInv { f^\markup \scale #'(1 . -1) \subject #'(2.3 . 0) #1
+    c~
+  | c8 d ees4~ ees8 f \unHighlightSubject g4 }
   %55
   | d4. e!8 f4. g8
   | a4 e8 f g4 d~
@@ -362,8 +404,9 @@ Tenor = \context Voice = "three" \relative c' {
   | g8 g f e f2
   %65
   | e4 r r2
-  | d'4 g~ g8 f e4~
-  | e8 d c4 f4. e8
+  | \highlightSubjectFirst { d'4^\markup \subject #'(2.2 . 0) #1
+    g~ g8 f e4~
+  | e8 d \unHighlightSubject c4 } f4. e8
   | d2. e4~
   | e8 d e fis g2
   %70
@@ -391,7 +434,7 @@ Tenor = \context Voice = "three" \relative c' {
   | g f8 e d f e d
   %85
   | e4 f e8 d e4
-  | d2 r8 e, fis g
+  | d2 e8\rest e, fis g
   | a g a bes c bes c fis,
   | g a g e a g fis e
   | d2~
@@ -420,7 +463,10 @@ Bass = \context Voice = "four" \relative c {
   %15
   | a1~
   | a2~ a8 bes a g
-  | f2. d4
+  | f2._\markup {
+      \secondExpositionBullet "Second exposition STBA, bars 17−30"
+    }
+    d4
   | a'4 f c'2~
   | c8 c b a gis2
   %20
@@ -439,7 +485,11 @@ Bass = \context Voice = "four" \relative c {
   | bes~ bes8 bes a g
   | fis2 g~
   | g8 g f! e d4 e
-  | \highlightSubjectFirst { f2_\markup \subject #'(0 . 0) #1 c'4. bes8
+  | \highlightSubjectFirst { f2_\markup \subject #'(1.0 . 0) #1
+    _\markup {
+      \subjectStrettoBullet "Stretto rectus-inversus BS, bars 33−37"
+    }
+    c'4. bes8
   | a4. g8 f2
   %35
   | e f4. g8
@@ -449,11 +499,10 @@ Bass = \context Voice = "four" \relative c {
   | b d c b a g a b
   %40
   | c d e f g a g f
-  | e_\markup \italic \tiny \with-color #greyTextColor {
-      \hspace #-1
-      \ieyeglasses
-      "note Bach's motive on the soprano, at bar 41"
-    } c f2 ees4
+  | e_\markup {
+      \subjectStrettoBullet "Stretto inversus-rectus TA, bars 41−45"
+    }
+    c f2 ees4
   | d1~
   | d8 g, c4~ c8 c bes a
   | g d' e fis g2~
@@ -468,11 +517,16 @@ Bass = \context Voice = "four" \relative c {
   | \unHighlightSubject f1~ }
   | f~
   | f4 r r2
-  | c'4 g~ g8 a bes4~
+  | \highlightSubjectFirstInv { c'4_\markup \scale #'(1 . -1) \subject #'(0 . 0) #1
+    g~ g8 a bes4~
   %55
-  | bes8 c d4 a4. bes8
+  | bes8 c \unHighlightSubject d4 } a4. bes8
   | c4 g8 a bes4 f8 g
-  | a2~ a8 g f e
+  | a2~_\markup {
+      \subjectStrettoBullet
+      "Stretto rectus SA and episode (stretto) SBAT, bars 57−67"
+    }
+    a8 g f e
   | d2 r4 g~
   | g8 e f2.~
   %60
@@ -482,11 +536,15 @@ Bass = \context Voice = "four" \relative c {
   | b c
   | cis d
   %65
-  | a4 r a' d^~
-  | d8 c bes4~ bes8 a g4
+  | a4 r \highlightSubjectFirst { a'_\markup \subject #'(0.0 . 0) #1
+    d^~
+  | d8 c bes4~ bes8 a \unHighlightSubject g4 }
   | c4. bes8 a4. g8
   | f4 bes8 a g4 c8 bes
-  | a2 g
+  | a2_\markup {
+      \subjectStrettoBullet "Stretto inversus ST, bars 69−73"
+    }
+    g
   %70
   | d r8 g' f e
   | d2. cis4
@@ -496,7 +554,10 @@ Bass = \context Voice = "four" \relative c {
   %75
   | d e f d g f e g
   | cis, d e cis d c bes d
-  | gis, a b gis a g'! f e
+  | gis,_\markup {
+      \subjectStrettoBullet "Stretto rectus TA, 77−82"
+    }
+    a b gis a g'! f e
   | d2~ d8 c bes4
   | a8 bes a g f4 bes
   %80
@@ -518,13 +579,18 @@ Bass = \context Voice = "four" \relative c {
       fis2~
       \hide Stem
       fis8 e fis g
-      a1\fermata }
+      a1^\fermata }
     } \new Voice {
-      \stemDown \tieDown d,2 s d
+      \stemDown \tieDown d,2_\markup {
+        \endBullet "Simultaneous presentation of both subjects AB"
+      }
+      g,\rest
+    | d'
       \once\override Voice.Rest.X-offset = #1
-      g,\rest d'
+      g,\rest
+    | d'
       \once\override Voice.Rest.X-offset = #-1
-      g,\rest r8 c bes a g2 d'1
+      g,\rest r8 c bes a g2 d'1_\fermata
     } >>
 }
 
@@ -562,6 +628,9 @@ Bass = \context Voice = "four" \relative c {
   \layout {
     \context {
       \Voice
+      \override TextScript.color = #greyTextColor
+      \override TextScript.font-shape = #'italic
+      \override TextScript.font-size = #-2
       \override VoiceFollower.color = #greyTextColor
       \override VoiceFollower.style = #'dashed-line
     }
