@@ -84,7 +84,7 @@ fugueStructureBoxesV = \markup \fugueStructureBoxes {
   \on-color \episodeColor \pad-markup #1 "1" % 15
   \on-color \secondExpositionColor \pad-markup #0.8 \concat { "Second exposition STBA" \sub " 17" }
   \on-color \episodeColor \pad-markup #1 "2" % 31
-  \on-color \subjectStrettoColor \pad-markup #0.8 \concat { "Stretto BS" \sub " 33" }
+  \on-color \subjectStrettoColor \pad-markup #0.8 \concat { "BS" \sub " 33" }
   \on-color \episodeColor \pad-markup #1 "3" % 38
   \on-color \subjectStrettoColor \pad-markup #0.8 \concat { "TA" \sub " 41" }
   \on-color \episodeColor \pad-markup #1 "4" % 46
@@ -98,27 +98,30 @@ fugueStructureBoxesV = \markup \fugueStructureBoxes {
 }
 
 fugueStructureBoxesVI = \markup \fugueStructureBoxes {
-  \on-color \subjectStrettoColor \pad-markup #0.8 "Stretto BSA"
-  \on-color \episodeColor \pad-markup #1 "1"
-  \on-color \subjectStrettoColor \pad-markup #0.8 "TAS"
-  \on-color \episodeColor \pad-markup #1 "2"
-  \on-color \subjectStrettoColor \pad-markup #0.8 "BTS"
-  \on-color \subjectPresentationColor \pad-markup #0.8 "T"
-  \on-color \subjectStrettoColor \pad-markup #0.8 "AT"
-  \on-color \episodeColor \pad-markup #1 "3"
-  \on-color \subjectStrettoColor \pad-markup #0.8 "TASBT"
-  \on-color \episodeColor \pad-markup #1 "4"
-  \on-color \subjectPresentationColor \pad-markup #0.8 "A"
-  \on-color \episodeColor \pad-markup #1 "5"
-  \on-color \subjectStrettoColor \pad-markup #0.8 "BT"
-  \on-color \episodeColor \pad-markup #1 "6"
-  \on-color \subjectStrettoColor \pad-markup #0.8 "SAT"
-  \on-color \episodeColor \pad-markup #1 "7"
-  \on-color \subjectStrettoColor \pad-markup #0.8 "TSA"
+  \on-color \subjectStrettoColor \pad-markup #0.8 "BSA"
+  \on-color \episodeColor \pad-markup #1 "1" % 5
+  \on-color \subjectStrettoColor \pad-markup #0.8 \concat { "TAS" \sub " 7" }
+  \on-color \episodeColor \pad-markup #1 "2" % 12
+  \on-color \subjectStrettoColor \pad-markup #0.8 \concat { "BTS" \sub " 15" }
+  \on-color \subjectPresentationColor \pad-markup #0.8 \concat { "T"   \sub " 20" }
+  \on-color \subjectStrettoColor \pad-markup #0.8 \concat { "AT"  \sub " 25" }
+  \on-color \episodeColor \pad-markup #1 "3" % 29
+  \on-color \subjectStrettoColor \pad-markup #0.8 \concat { "TA"  \sub " 31" }
+  \on-color \subjectStrettoColor \pad-markup #0.8 \concat { "SBT" \sub " 35" }
+  \on-color \episodeColor \pad-markup #1 "4" % 39
+  \on-color \subjectPresentationColor \pad-markup #0.8 \concat { "A"   \sub " 42" }
+  \on-color \episodeColor \pad-markup #1 "5" % 44
+  \on-color \subjectStrettoColor \pad-markup #0.8 \concat { "BT"  \sub " 47" }
+  \on-color \episodeColor \pad-markup #1 "6" % 51
+  \on-color \subjectStrettoColor \pad-markup #0.8 \concat { "SAT" \sub " 57" }
+  \on-color \episodeColor \pad-markup #1 "7" % 62
+  \on-color \subjectStrettoColor \pad-markup #0.8 \concat { "TSA" \sub " 63" }
+  \on-color \episodeColor \pad-markup #1 "8" % 69
+  \on-color \subjectStrettoColor \pad-markup #0.8 \concat { "TSA" \sub " 74" }
 }
 
 fugueStructureBoxesVII = \markup \fugueStructureBoxes {
-  \on-color \subjectStrettoColor \pad-markup #0.8 "Stretto TSABAT"
+  \on-color \subjectStrettoColor \pad-markup #0.8 "TSABAT"
   \on-color \subjectStrettoColor \pad-markup #0.8 "SAT"
   \on-color \subjectStrettoColor \pad-markup #0.8 "TB"
   \on-color \subjectStrettoColor \pad-markup #0.8 "ATSBA"
@@ -131,7 +134,7 @@ fugueStructureBoxesVII = \markup \fugueStructureBoxes {
 fugueStructureBoxesVIII_lineone = \markup \fugueStructureBoxes {
   \on-color \expositionColor \pad-markup #0.8 "Exposition 1 A1 B1 S1"
   \on-color \episodeColor \pad-markup #1 "1"
-  \on-color \subjectStrettoColor \pad-markup #0.8 "Stretto A1 B1"
+  \on-color \subjectStrettoColor \pad-markup #0.8 "A1 B1"
   \on-color \episodeColor \pad-markup #1 "2"
   \on-color \subjectPresentationColor \pad-markup #0.8 "B1"
 }
@@ -179,7 +182,7 @@ fugueStructureBoxesIX = \markup \fugueStructureBoxes {
 fugueStructureBoxesX_lineone = \markup \fugueStructureBoxes {
   \on-color \expositionColor \pad-markup #0.8 "Exposition 1 A1 T1 B1 S1"
   \on-color \episodeColor \pad-markup #1 "1"
-  \on-color \subjectStrettoColor \pad-markup #0.8 "Stretto A1 T1"  % bar 14-17
+  \on-color \subjectStrettoColor \pad-markup #0.8 "A1 T1"  % bar 14-17
   \on-color \secondExpositionColor  \pad-markup #0.8 "Exposition 2 S2 T2 B3 A2"  % bar 23-38
   \on-color \episodeColor \pad-markup #1 "2"
 }

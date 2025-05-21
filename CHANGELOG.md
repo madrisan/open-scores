@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 
-- J.S. Bach: Die Kunst der Fuge (BWV1080) - annotations for fugues I-V
+- J.S. Bach: Die Kunst der Fuge (BWV1080) - annotations for fugues I-VI
 - J.S. Bach: Die Kunst der Fuge (BWV1080) - translate notes on contrapunctus XIV in italian
 - J.S. Bach: Die Kunst der Fuge (BWV1080) - Contrapunctus I-II: better repartition of notes between hands
 

@@ -295,7 +295,11 @@ Tenor = \context Voice = "three" \relative c' {
   %55
   | bes[ c bes a] g f e d cis[ g' a bes] a g f e
   | d[ a' bes c] bes a g fis g2~
-  | g16 bes a g \stemDown f2 bes4
+  | g16
+    _\markup {
+      \subjectStrettoBullet "Stretto SAT, bars 57−62"
+    }
+    bes a g \stemDown f2 bes4
   | \stemUp a r
     \staffUpper
     \stemDown
@@ -339,6 +343,9 @@ Bass = \context Voice = "four" \relative c {
   \voiceFour
   %1
   | \highlightSubjectFirst { d2
+    _\markup {
+      \subjectStrettoBullet "Stretto BSA, bars 1−5"
+    }
     _\markup \italic \tiny \with-color #greyTextColor {
         \ieyeglasses
       "In Contrapunctus 6 there are 14 entries of the subject rectus and 14 entries inversus"
@@ -351,7 +358,11 @@ Bass = \context Voice = "four" \relative c {
   %5
   | \stemUp \unHighlightSubject d8.[ } d,16 e8. f16] g8.[ a16 g8. f16]
   | e8.[ e'16 f8. g16] \stemNeutral a8.[ bes16 a8. g16]
-  | f4 d a'2~
+  | f4
+    _\markup {
+      \subjectStrettoBullet "Stretto TAS, bars 7−12"
+    }
+    d a'2~
   | a1~
   | a8.[ e16 a8. g16] f8.[ e16 f8. d16]
   %10
@@ -359,31 +370,53 @@ Bass = \context Voice = "four" \relative c {
   | a8. g!16 f4 e2
   | R1*3
   %15
-  | \highlightSubjectFirstInv { a4_\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 d,8. e16 f8. g16 a4
+  | \highlightSubjectFirstInv {
+    a4
+    _\markup \scale #'(1 . -1) \subject #'(0 . 0) #1
+    _\markup {
+      \subjectStrettoBullet "Stretto BTS, bars 15−20"
+    }
+    d,8. e16 f8. g16 a4
   | bes a8. g16 f4~ f16 e f g
   | a2 } c,4\rest c8\rest bes'!
   | a8. g16 f4~ f8~[ f32 g f e] d4
   | r8 r32 d e f \tieUp g4~ g8~[ g32 e f g] a8. g16
   %20
-  | f8. d16 g8. f16 e8~[ e32 c d e] f8. ees16
+  | f8.d16 g8. f16 e8~[
+    _\markup {
+      \subjectPresentationBullet "Subject T, bars 20-24"
+    }
+    e32 c d e] f8. ees16
   | \once\override NoteColumn.force-hshift = #0.4 d8. c16 d8. e!16 f8. e16 f8. g16
   | a4_~ a8~[ a32 f g a] bes8. a16 g8. f16
   | e!8. c16 \tieDown f4~ f8.[ g16 f8. e16]
   | d2 c8~[ c32 g' a bes] c8. bes16
   %25
-  | a8. f16 bes8. d16 e,4~ e8~[ e32 c d e]
+  | a8.
+    _\markup {
+      \subjectStrettoBullet "Stretto AT, bars 25−29"
+    }
+    f16 bes8. d16 e,4~ e8~[ e32 c d e]
   | f8. e16 d4~ \stemDown d16[ d c bes] a f g a
   | bes[ g a bes] c8. cis16 d cis d e f4~
   | f16 e f g a4~ a8.[ g16 f8. e16]
   | \stemUp d4~ d8~[ d32 d, e f] g4~ g8~[ g32 f e d]
   %30
   | c4~ c8~[ c32 c' d e] \stemDown \tieUp f4~ f8~[ f32 e d c]
-  | bes2 \tieDown a~
+  | bes2
+    _\markup {
+      \subjectStrettoBullet "Stretto TA, bars 31−35"
+    }
+    \tieDown a~
   | a1~
   | a4. a8 bes8. a16 g4
   | f8.[ g16 a8. bes16] c2~
   %35
-  | c4. c8 bes4. a8
+  | c4.
+    _\markup {
+      \subjectStrettoBullet "Stretto SBT, bars 35−39"
+    }
+    c8 bes4. a8
   | \highlightSubjectFirst { g4_\markup \subject #'(1.3 . 0) #1 d'8. c16 bes8. a16 g4
   | fis g8. a16 bes4~ bes16 c bes a
   | \unHighlightSubject g8 } g'~ g~[ g32 f ees d] c8. f16 g8. a16
@@ -391,14 +424,23 @@ Bass = \context Voice = "four" \relative c {
   %40
   | ees8. d16 c8. d16 ees[ g f ees] d c bes a
   | \stemUp g8. f16 g8. bes16 a[ f g a] bes c d ees
-  | \stemDown d4 ees f2~
+  | \stemDown d4
+    _\markup {
+      \subjectPresentationBullet "Subject A, bars 42-44"
+    }
+    ees f2~
   | f16[ ees32 d ees16 c] \stemUp a8.^\trill[ g32 a] \stemDown bes8. bes'16 a8. g16
   | f8.[ f,16 ees8. d16] \stemUp c8.[ c'16 bes8. a16]
   %45
   | g8.[ g'16 f8. e16] d8~[ d32 a' b cis] d8. c16
   | \stemDown bes8.[ a16 bes8. g16] a4 d,\rest
   | \stemUp
-    \highlightSubjectFirstInv { a2_\markup \scale #'(1 . -1) \subject-augmentatio #'(0 . 0) #1 "+"
+    \highlightSubjectFirstInv {
+    a2
+    _\markup \scale #'(1 . -1) \subject-augmentatio #'(0 . 0) #1 "+"
+    _\markup {
+      \subjectStrettoBullet "Stretto BT, bars 47−51"
+    }
     d,4. e8
   | \stemDown f4. g8 a2
   | bes a4. g8
@@ -416,7 +458,11 @@ Bass = \context Voice = "four" \relative c {
   | d[ c'! bes a] g f e d cis[ d' cis b] a g f e
   | d[ e d c] bes a g f g[ d' c bes] a g f e
   | f[ c' d e] f g f e d[ f g a] bes c bes a
-  | g[ g, a bes] c d c bes a[ bes a g] f4~
+  | g[ g, a bes] c d c bes a[
+    _\markup {
+      \subjectStrettoBullet "Stretto TSA, bars 63−68"
+    }
+    bes a g] f4~
   | f~ f8~[ f32 e d g] a16[ bes' a g] f e d8~
   %65
   | d16[ c bes a] bes g cis8 d16[ bes a g] f g f e
@@ -430,6 +476,9 @@ Bass = \context Voice = "four" \relative c {
   | bes8.[ a16 g8. f16] e8.[ f16 e8. d16]
   | cis4\fermata r8 a d8. e16 f8. g16
   | a8.[ g16 a8. a,16] d2~
+    _\markup {
+      \subjectStrettoBullet "Stretto TSA, bars 74−79"
+    }
   %75
   | d1~
   | d~
@@ -472,6 +521,9 @@ Bass = \context Voice = "four" \relative c {
   \layout {
     \context {
       \Voice
+      \override TextScript.color = #greyTextColor
+      \override TextScript.font-shape = #'italic
+      \override TextScript.font-size = #-2
       \override VoiceFollower.color = #greyTextColor
       \override VoiceFollower.style = #'dashed-line
     }
