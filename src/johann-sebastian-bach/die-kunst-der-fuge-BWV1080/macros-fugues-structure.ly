@@ -121,14 +121,14 @@ fugueStructureBoxesVI = \markup \fugueStructureBoxes {
 }
 
 fugueStructureBoxesVII = \markup \fugueStructureBoxes {
-  \on-color \subjectStrettoColor \pad-markup #0.8 "TSABAT"
-  \on-color \subjectStrettoColor \pad-markup #0.8 "SAT"
-  \on-color \subjectStrettoColor \pad-markup #0.8 "TB"
-  \on-color \subjectStrettoColor \pad-markup #0.8 "ATSBA"
-  \on-color \episodeColor \pad-markup #1 "1"
-  \on-color \subjectStrettoColor \pad-markup #0.8 "ATSSAATB"
-  \on-color \subjectStrettoColor \pad-markup #0.8 "SAAT"
-  \on-color \endColor \pad-markup #0.8 "Coda"
+  \on-color \subjectStrettoColor \pad-markup #0.8 "TSABAT"  % 1-13
+  \on-color \subjectStrettoColor \pad-markup #0.8 \concat { "SAT" \sub " 13" }  % 13-19
+  \on-color \subjectStrettoColor \pad-markup #0.8 \concat { "TB"  \sub " 20" }  % 20-22
+  \on-color \subjectStrettoColor \pad-markup #0.8 \concat { "ATSBA" \sub " 23" }  % 23-31
+  \on-color \episodeColor \pad-markup #1 \concat { "1" \sub " 31" }  % 31-34
+  \on-color \subjectStrettoColor \pad-markup #0.8 \concat { "ATSSAATB" \sub " 35" }  % 35-49
+  \on-color \subjectStrettoColor \pad-markup #0.8 \concat { "SAAT" \sub " 50" }  % 50-57
+  \on-color \endColor \pad-markup #0.8 \concat { "Coda" \sub " 58" }  % 58
 }
 
 fugueStructureBoxesVIII_lineone = \markup \fugueStructureBoxes {

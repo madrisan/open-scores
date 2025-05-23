@@ -100,7 +100,7 @@ Soprano = \context Voice = "one" \relative c'' {
   |     r r8 f~ f16[ d e f] g a bes g
   %60
   |     fis a g fis g4~ g8 bes a4
-  |     d, cis d2
+  |     d, cis d2_\fermata
     } >>
     \bar"|."
 }
@@ -199,7 +199,7 @@ Alto = \context Voice = "two" \relative c' {
     gis a2
   %60
   | <d, bes'>4^~ \stemDown bes'16 c bes a g fis e a fis4
-  | s2 \stemUp a
+  | s2 \stemUp a^\fermata
 }
 
 Tenor = \context Voice = "three" \relative c' {
@@ -208,7 +208,10 @@ Tenor = \context Voice = "three" \relative c' {
   %1
   | \staffUpper
     \stemDown
-    \highlightSubjectFirst { d4_\markup \subject #'(1.2 . 0) #1 a'8. g16 f8. e16 d4
+    \highlightSubjectFirst {
+    d4
+    _\markup \subject #'(1.2 . 0) #1
+    a'8. g16 f8. e16 d4
   | cis d8. e16 f4~ f16 g f e
   | \staffLower
     \unHighlightSubject d[ } cis d8~] d16 d c b] a[ gis a8~ ]a16 a b cis
@@ -230,7 +233,10 @@ Tenor = \context Voice = "three" \relative c' {
   | a4~ a16 d, e fis g4~ g16 fis g a
   | bes4~ bes16 a bes c d4~ d16 c bes a
   | g4~ g16 g a bes a4 r
-  | R1*2
+  | \override MultiMeasureRest.staff-position = #4
+    R1
+  | \once\override MultiMeasureRest.X-offset = #-0.4
+    R1
   %17
   | \stemDown
     \once\override NoteColumn.force-hshift = #1.1
@@ -324,7 +330,11 @@ Tenor = \context Voice = "three" \relative c' {
 Bass = \context Voice = "four" \relative c {
   \voiceFour
   | \override MultiMeasureRest.staff-position = #-4
-    R1*2
+    R1
+    _\markup \tiny\italic \with-color #lightGrey {
+      \subjectStrettoBullet "Stretto TSABAT, bars 1−13"
+    }
+    R1
   | s1*2
   %5
   | \highlightSubjectFirstInv { d1_\markup \scale #'(1 . -1) \subject-augmentatio #'(0.8 . 0) #1 "++"
@@ -337,6 +347,9 @@ Bass = \context Voice = "four" \relative c {
   | c1~
   | c4 a bes c
   | d2 } r
+    _\markup \tiny\italic \with-color #lightGrey {
+      \subjectStrettoBullet "Stretto SAT, bars 13-19"
+    }
   | r16 g, a bes c4~ c16[ a d c] bes a g fis
   %15
   | g bes c d ees4~ ees16[ ees d c] b8.\trill a32 b
@@ -345,10 +358,19 @@ Bass = \context Voice = "four" \relative c {
   | f16[ a bes c] d c d ees f2~
   | f4~ f16 ees d c g'2
   %20
-  | f4 r \highlightSubjectFirstInv { f_\markup \scale #'(1 . -1) \subject #'(1 . 0) #1 bes,8. c16
+  | f4
+    _\markup {
+      \subjectStrettoBullet "Stretto TB, bars 20−22"
+    }
+    r \highlightSubjectFirstInv {
+    f_\markup \scale #'(1 . -1) \subject #'(1 . 0) #1 bes,8. c16
   | d8. ees16 f2 g4~
   | g8 f16 ees d4~ d16 c d e \unHighlightSubject f4~ }
-  | f r16 bes,[ a g] f a bes c d4
+  | f r16
+    _\markup {
+      \subjectStrettoBullet "Stretto ATSBA, bars 23−31"
+    }
+    bes,[ a g] f a bes c d4
   | r16 \stemUp c,[ c' bes!] a g f e \stemDown f c' f e d4~
   %25
   | d16[ d c bes] a8. a16 bes8.[ b16] c8. cis16
@@ -358,12 +380,18 @@ Bass = \context Voice = "four" \relative c {
   | cis d8. e16 f4~ f16 g f e
   %30
   | d4 } d8\rest g~ g f4 e8~
-  | e[ d16 c] b8. cis16 d8 bes g a
+  | e[ d16 c] b8. cis16 d8
+    _\markup { \episodeBullet "Episode, bars 31-34" }
+    bes g a
   | d e f4~ f16[ a g f] e8 a
   | d, d\rest g d\rest c d\rest f d\rest
   | bes[ bes'^~] bes16 a g fis g8 a bes g
   %35
-  | a4~ a16 bes a g f8.[ g16] a8 r
+  | a4~
+    _\markup {
+      \subjectStrettoBullet "Stretto ATSSAATB, bars 35−49"
+    }
+    a16 bes a g f8.[ g16] a8 r
   | r16 bes,[ a g] f e d cis d4 r16 g' f e
   | d cis d e f4 r16 f,[ g a] bes8 g
   | d'16[ d, d' e] f a g f e[ d e f] e f d e
@@ -381,7 +409,11 @@ Bass = \context Voice = "four" \relative c {
   | c8. bes16 a8. g16 f4 e
   | f8. g16 a4~ a16[ bes a g] \unHighlightSubject f } ees' d c
   %50
-  | bes4 r16 bes' a g fis8 d g4~
+  | bes4
+    _\markup {
+      \subjectStrettoBullet "Stretto SAAT, bars 50−57"
+    }
+    r16 bes' a g fis8 d g4~
   | g16[ g f! e] f8. d16 a'4 r16 a, b cis
   | d4 d16\rest e f g a2
   | d,16\rest bes'[ a g] f e d f bes,2
@@ -390,7 +422,11 @@ Bass = \context Voice = "four" \relative c {
   | f[ g f e] d e f8~ f16[ a g f] e a g a
   | d,4 r r2
   | r16 a'[ g f] e d cis e a,2~
-  | a16[ g' f e] d c bes d gis,4 r
+  | a16[ g' f e] d c bes d gis,4
+    _\markup {
+      \endBullet "Coda"
+    }
+    r
   | r r8 bes a2
   %60
   | \shape #'((0 . 0) (0 . -2) (0 . -2) (0 . 0)) Tie
@@ -432,6 +468,9 @@ Bass = \context Voice = "four" \relative c {
   \layout {
     \context {
       \Voice
+      \override TextScript.color = #greyTextColor
+      \override TextScript.font-shape = #'italic
+      \override TextScript.font-size = #-2
       \override VoiceFollower.color = #greyTextColor
       \override VoiceFollower.style = #'dashed-line
     }
