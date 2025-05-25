@@ -37,6 +37,10 @@ unknownColor =             #(rgb-color 0.00 0.00 0.00)
   "Prints out a bullet for marking the start of a fugue exposition"
   (interpret-markup layout props
     #{ \markup \with-color #subjectPresentationColor \char ##x25a0 #}))
+#(define-markup-command (thirdExpositionBullet layout props) ()
+  "Prints out a bullet for marking the start of a fugue exposition"
+  (interpret-markup layout props
+    #{ \markup \with-color #thirdExpositionColor \char ##x25a0 #}))
 
 #(define-markup-command (on-color layout props color arg) (color? markup?)
    (let* ((stencil (interpret-markup layout props arg))

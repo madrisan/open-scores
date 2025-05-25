@@ -132,32 +132,36 @@ fugueStructureBoxesVII = \markup \fugueStructureBoxes {
 }
 
 fugueStructureBoxesVIII_lineone = \markup \fugueStructureBoxes {
-  \on-color \expositionColor \pad-markup #0.8 "Exposition 1 A1 B1 S1"
-  \on-color \episodeColor \pad-markup #1 "1"
-  \on-color \subjectStrettoColor \pad-markup #0.8 "A1 B1"
-  \on-color \episodeColor \pad-markup #1 "2"
-  \on-color \subjectPresentationColor \pad-markup #0.8 "B1"
+  \on-color \expositionColor \pad-markup #0.8 "Exposition 1 A1 B1 S1"  % 1-15
+  \on-color \episodeColor \pad-markup #1  \concat { "1" \sub " 15" }   % 15-21
+  \on-color \subjectStrettoColor \pad-markup #0.8 \concat { "A1 B1" \sub " 21" }  % 21-25
+  \on-color \episodeColor \pad-markup #1 \concat { "2" \sub " 25" }  % 25-35
+  \on-color \subjectPresentationColor \pad-markup #0.8 \concat { "B1" \sub " 35" }  % 35-39
 }
 fugueStructureBoxesVIII_linetwo = \markup \fugueStructureBoxes {
-  \on-color \secondExpositionColor \pad-markup #0.8 "Exposition 2 S1 A2 B1 S2 A1 B2"
-  \on-color \episodeColor \pad-markup #1 "3"
-  \on-color \subjectPresentationColor \pad-markup #0.8 "S1 A2"
-  \on-color \subjectPresentationColor \pad-markup #0.8 "B1 S2"
-  \on-color \episodeColor \pad-markup #1 "4"
-  \on-color \subjectPresentationColor \pad-markup #0.8 "S1 A2"
-  \on-color \subjectPresentationColor \pad-markup #0.8 "S1 A2"
+  \on-color \secondExpositionColor \pad-markup #0.8
+    \concat { "Exposition 2 S1 A2 B1 S2 A1 B2" \sub " 39" }  % 39-53
+  \on-color \episodeColor \pad-markup #1 \concat { "3" \sub " 53" }  % 53-61
+  \on-color \subjectPresentationColor \pad-markup #0.8 \concat { "S1 A2" \sub " 61" }  % 61-65
+  \on-color \subjectPresentationColor \pad-markup #0.8 \concat { "B1 S2" \sub " 67" }  % 67-71
+  \on-color \episodeColor \pad-markup #1 \concat { "4" \sub " 71" }  % 71-81
+  \on-color \subjectPresentationColor \pad-markup #0.8 \concat { "S1 A2" \sub " 81" }  % 81-85
+  \on-color \episodeColor \pad-markup #1 \concat { "5" \sub " 85" }   % 85-93
 }
 fugueStructureBoxesVIII_linethree = \markup \fugueStructureBoxes {
-  \on-color \thirdExpositionColor \pad-markup #0.8 "Exposition 3 A3 B3 S3"
-  \on-color \episodeColor \pad-markup #1 "5"
-  \on-color \subjectPresentationColor \pad-markup #0.8 "A1"
-  \on-color \subjectPresentationColor \pad-markup #0.8 "B1"
-  \on-color \episodeColor \pad-markup #1 "6"
-  \on-color \subjectPresentationColor \pad-markup #0.8 "S1 A2 B3"
-  \on-color \subjectPresentationColor \pad-markup #0.8 "A1 B2 S3"
-  \on-color \subjectPresentationColor \pad-markup #0.8 "B1 S2 A3"
-  \on-color \subjectPresentationColor \pad-markup #0.8 "B1 S2 A3"
-  \on-color \subjectPresentationColor \pad-markup #0.8 "A2 S1 B3"
+  \on-color \thirdExpositionColor \pad-markup #0.8
+    \concat { "Exp 3 A3 B3 S3" \sub " 94" }  % 94-109
+  \on-color \episodeColor \pad-markup #1 \concat { "6" \sub " 109" }  % 109-124
+  \on-color \subjectPresentationColor \pad-markup #0.8 \concat { "A1" \sub " 125" }  % 125-129
+  \on-color \subjectStrettoColor \pad-markup #0.8 \concat { "B1 A2" \sub " 131" }  % 131-135
+  \on-color \episodeColor \pad-markup #1 \concat { "7" \sub " 135" }  % 135-147
+  \on-color \subjectPresentationColor \pad-markup #0.8 \concat { "S1 A2 B3" \sub " 147" }  % 147-152
+  \on-color \subjectPresentationColor \pad-markup #0.8 \concat { "A1 B2 S3" \sub " 152" }  % 152-157
+  \on-color \subjectPresentationColor \pad-markup #0.8 \concat { "B1 S2 A3" \sub " 158" }  % 158-163
+  %\on-color \episodeColor \pad-markup #1 \concat { "8" \sub " 163" }  % 163-170
+  \on-color \subjectPresentationColor \pad-markup #0.8 \concat { "B1 A2 S3" \sub " 170" }  % 170-175
+  %\on-color \episodeColor \pad-markup #1 \concat { "9" \sub " 175" }  % 175-182
+  \on-color \subjectPresentationColor \pad-markup #0.8 \concat { "A2 S1 B3" \sub " 182" }
 }
 
 fugueStructureBoxesIX = \markup \fugueStructureBoxes {

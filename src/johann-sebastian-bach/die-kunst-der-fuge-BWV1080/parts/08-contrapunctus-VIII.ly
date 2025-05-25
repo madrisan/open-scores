@@ -44,7 +44,9 @@ Soprano = \context Voice = "one" \relative c'' {
   | a e d cis d f e g
   | f c b a b d cis e
   | d f e g f e d cis
-  | \appoggiatura cis8 d2 \highlightSubjectFirst { d'^\markup \subject #'(-0.8 . 0) #1
+  \break
+  | \appoggiatura cis8 d2 \highlightSubjectFirst {
+    d'^\markup \subject #'(-0.8 . 0) #1
   %40
   | c4 f b, bes
   | a d g,2\prallmordent
@@ -95,8 +97,8 @@ Soprano = \context Voice = "one" \relative c'' {
   | g8 e f f e4 a
   | d4. e8 cis4 d
   %80
-  | b \highlightSubjectFirst { \unHighlightSubject c! } r bes
-  | gis \highlightSubjectFirst { \unHighlightSubject a }
+  | b c! r bes
+  | gis a
     r \highlightSubjectFirst { d^\markup \subject #'(-0.8 . 0) #1
   | c f b, bes
   | a d g,2\prallmordent
@@ -150,10 +152,10 @@ Soprano = \context Voice = "one" \relative c'' {
   | a b e, gis
   | a2 r
   %125
-  | \highlightSubjectSecond { r4^\markup \subject #'(2 . 0) #2 a8 a a f g g
+  | r4 a8 a a f g g
   | g e f f f e d cis
   | d f e d cis d b cis
-  | \unHighlightSubject d } a bes! g e4 g~
+  | d a bes! g e4 g~
   | g8 g f e fis d' gis, b~
   %130
   | b b a gis a f' b, d~
@@ -190,7 +192,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | r a g f
   | r e8 d e4 fis
   | \unHighlightSubject g8 } d e fis g fis a g
-  | bes a g f ees d \highlightSubjectSecond { ees^\markup \subject #'(0 . 0) #2 ees
+  | bes a g f ees d ees \highlightSubjectSecond { ees^\markup \subject #'(0 . 0) #2
   | ees cis d d d b c c
   %160
   | c a bes! bes bes a g fis
@@ -235,7 +237,11 @@ Alto = \context Voice = "two" \relative c' {
   %1
   | \staffLower
     \stemUp
-    a2\rest \highlightSubjectFirst { d^\markup \subject #'(-1 . 0) #1
+    a2\rest
+    _\markup {
+      \secondExpositionBullet "First exposition A1 B1 S1, bars 1−15"
+    }
+    \highlightSubjectFirst { d^\markup \subject #'(-1 . 0) #1
   | c4 f b, bes
   | a d g,2^\prallmordent
   | f4 g a8 g a4
@@ -388,21 +394,22 @@ Alto = \context Voice = "two" \relative c' {
   | d,4 g2 fis4
   | g8 d
     % this is not really a subject because it belongs to a fugue episode
-    \highlightSubjectSecond { g^\markup \subject #'(0 . 0) #2 g g e! f! f
+    g %^\markup \subject #'(0 . 0) #2
+    g g e! f! f
   %75
   | f d ees ees ees cis d d
   | d b c! c c bes a g
-  | a2 } b4 cis
+  | a2 b4 cis
   | d8 a d4~ d8 b c! c
   | \staffLower
     \stemUp\tieUp
     c a bes! bes a4
     \staffUpper
     \stemDown\tieDown
-    \highlightSubjectFirst { a'_\markup \subject #'(1.2 . 0) #1
+    a' %_\markup \subject #'(1.2 . 0) #1
   %80
   | g c fis, f
-  | e a d, } \highlightSubjectSecond { b'~_\markup \subject #'(1.2 . 0) #2
+  | e a d, \highlightSubjectSecond { b'~_\markup \subject #'(1.2 . 0) #2
   | b8 gis a a a fis g g
   | g e f! f f ees d c
   | d2 } r4 c~
@@ -487,7 +494,10 @@ Alto = \context Voice = "two" \relative c' {
   | d b c! c c b a gis
   | a2. } gis4
   %135
-  | a8 c b a gis a fis gis
+  | a8
+    c
+    _\markup { \episodeBullet "Episode 7, bars 135-147" }
+    b a gis a fis gis
   | a
     \staffUpper
     \stemDown\tieDown
@@ -606,19 +616,31 @@ Bass = \context Voice = "four" \relative c {
   | f2 r8 e d cis
   | d2 r8 c! bes a
   %15
-  | bes2 c
+  | bes2
+    _\markup {
+      \episodeBullet "Episode 1, bars 15−21"
+    }
+    c
   | f,8 a g f g e f d
   | a' g' f e f d e cis
   | d1
   | cis4 a' d, f
   %20
   | \stemUp bes, a bes g
-  | \stemNeutral a8 a' g f g e f d
-  | \highlightSubjectFirst { e2_\markup \subject #'(0.8 . 0) #1 d4 g
+  | \stemNeutral a8 a' g f g
+    _\markup {
+      \subjectStrettoBullet "Stretto A1 B1, bars 21−25"
+    }
+    e f d
+  | \highlightSubjectFirst { e2^\markup \subject #'(0.2 . 0) #1 d4 g
   | cis, c b e
-  | a,2 } r4 a'8 g
+  | a,2 } d4\rest a'8 g
   %25
-  | fis4 d e fis
+  | fis4 d
+    _\markup {
+      \episodeBullet "Episode 2, bars 25−35"
+    }
+    e fis
   | \once\stemDown g, a bes g
   | c d e c
   | f,8 g' f e f d e cis
@@ -630,11 +652,15 @@ Bass = \context Voice = "four" \relative c {
   | \stemNeutral g8 a g f g e f d
   | cis bes' a g a f g e
   %35
-  | f4 \stemDown a \highlightSubjectFirst { d2_\markup \subject #'(1.2 . 0) #1
+  | f4 \stemDown a \highlightSubjectFirst {
+    d2
+    _\markup \subject #'(1.2 . 0) #1
+    _\markup { \subjectPresentationBullet "B1, bars 35-39" }
   | c4 f b, bes
   | a d g,2%\prallmordent
   | f4 g a8 g a4
   | d,2 } r
+    _\markup { \secondExpositionBullet "Second exposition S1 A2 B1 S2 A1 B2, bars 39-53" }
   | R1*2
   %42
   | d'8\rest bes' a g fis g e fis
@@ -650,7 +676,9 @@ Bass = \context Voice = "four" \relative c {
   | f8 dis e e e cis d d
   | d b c! c c b a gis
   | a2 } r4 g'~
-  | g8 f e d cis d b cis
+  | g8
+    _\markup { \episodeBullet "Episode 3, bars 53-61" }
+    f e d cis d b cis
   | d2 r4 e
   %55
   | f \stemNeutral f,8 g a4 b
@@ -660,7 +688,9 @@ Bass = \context Voice = "four" \relative c {
   | g f a g f e g f
   %60
   | e f g a bes a c bes
-  | a g f e d a' c, b
+  | a g f e d
+    _\markup { \subjectPresentationBullet "Subjects S1 A2, bars 61-65" }
+    a' c, b
   | c1~
   | c2 r4 cis
   | d8 d' c! bes a bes g a
@@ -668,12 +698,21 @@ Bass = \context Voice = "four" \relative c {
   | bes a g f e f d e
   | f e d c b c a b
   | c d e f g a
-    \highlightSubjectFirst { bes!_\markup \subject #'(0 . 0) #1 g
-  |  a4 d g, ges
+    \highlightSubjectFirst {
+    bes!
+    ^\markup \subject #'(0 . 0) #1
+    _\markup {
+      \hspace #-22
+      "Subjets B1 S2, bars 67-71 " \subjectPresentationBullet
+    }
+    g
+  | a4 d g, ges
   | f bes ees,2\prallmordent
   %70
   | d4 ees f8 ees f4
-  | bes, } bes'2 a4
+  | bes, } bes'2
+    _\markup { \episodeBullet "Episode 4, bars 71-81" }
+    a4
   | bes8 g a bes c bes d c
   | bes4 ees c d
   | g, ees cis d
@@ -684,15 +723,20 @@ Bass = \context Voice = "four" \relative c {
   | d4 d'\rest d2\rest
   | d4\rest
     % this is not really a subject because it belongs to a fugue episode
-    \highlightSubjectSecond { g~_\markup \subject #'(0 . 0) #2 g8 e f f
+    g~ %_\markup \subject #'(0 . 0) #2
+    g8 e f f
   %80
   | f dis e e e cis d d
-  | d b c! c c b a gis
-  | a2 } r4 d
+  | d b c! c c b a
+    _\markup { \subjectPresentationBullet "Subjects S1 A2, bars 81-85" }
+    gis
+  | a2 r4 d
   | cis c b c~
   | c8 bes! a g fis g e fis
   %85
-  | g4 g'2 fis4
+  | g4
+    _\markup { \episodeBullet "Episode 5, bars 85-93" }
+    g'2 fis4
   | g f! e d
   | cis8 bes' a g f g e f
   | d e c d bes c a bes
@@ -702,7 +746,9 @@ Bass = \context Voice = "four" \relative c {
   | cis[ d e f] e d cis b a[ b cis d] cis b a g
   | f4 r16 d e32 f g a bes2\downmordent
   | a8 a' g f e f d e
-  | f2 c8\rest e d cis
+  | f2
+    _\markup { \thirdExpositionBullet "Third exp. A3 B3 S3, bars 94-109" }
+    c8\rest e d cis
   %95
   | d2 c8\rest c! bes a
   | g4 g' a a,
@@ -720,7 +766,9 @@ Bass = \context Voice = "four" \relative c {
   | a4. g!8 f e d c
   | b4 e, fis gis
   | a4. gis8 a c b d
-  | c2 c4\rest cis
+  | c2
+    _\markup { \episodeBullet "Episode 6, bars 110-124" }
+    c4\rest cis
   %110
   | d a bes! d
   | g,8 d' g bes a c b d
@@ -740,14 +788,20 @@ Bass = \context Voice = "four" \relative c {
   | f d e e'
   | a,8 e' a a a f g g
   %125
-  | g e f f f d bes'4
+  | g e f f f
+    _\markup { \subjectPresentationBullet "Subject A1, bars 125-129" }
+    d bes'4
   | a d gis, g
   | f bes e,2~
   | e4 d2~ \stemDown d8 cis
   | d4 r r2
   %130
   | R1
-  | r2 \highlightSubjectFirst { a'^\markup \subject #'(-1 . 0) #1
+  | r2 \highlightSubjectFirst {
+    a'
+    ^\markup \subject #'(-1 . 0) #1
+    _\markup { \subjectStrettoBullet "Stretto B1 A2, bars 131-135" }
+
   | g4 c fis, f
   | e a d,2%\prallmordent
   | c4 d e8 d e4
@@ -766,21 +820,32 @@ Bass = \context Voice = "four" \relative c {
   %145
   | g f e d \stemNeutral cis d b cis
   | d c! b a gis a fis gis
-  | a4 a'2 gis4
+  | a4 a'2
+    _\markup {
+      \hspace #5
+      \subjectPresentationBullet "Subjects S1 A2 B3, bars 147-152"
+    }
+    gis4
   | a \highlightSubjectThird { c^\markup \subject #'(2 . 0) #3 fis, gis
   | d\rest a' bes! c
   %150
   | d,\rest d' c bes
   | d,\rest a'8 g a4 b
-  | \clef treble \unHighlightSubject c8 } d c b a c fis
-    \highlightSubjectSecond { a_\markup \subject #'(0 . 0) #2
+  | \clef treble \unHighlightSubject c8 } d c b
+    a
+    _\markup { \subjectPresentationBullet "Subjects A1 B2 S3, bars 152-157" }
+    c fis
+    \highlightSubjectSecond { a^\markup \subject #'(0 . 0) #2
   | a fis g g g e f f
   | f dis e e \stemDown e d c b
   %155
   | \unHighlightSubject c } e d c b c a b
   | \highlightSubjectFirst { \unHighlightSubject c } d c bes! a4 d
   | g c, bes a
-  | g2 \clef bass r8 bes a \highlightSubjectFirst { g_\markup \subject #'(0 . 0) #1
+  | g2 \clef bass r8 bes a \highlightSubjectFirst {
+    g
+    _\markup \subject #'(0 . 0) #1
+    _\markup { \subjectPresentationBullet "Subjects B1 S2 A3, bars 158-163" }
   | f4 bes e,! ees
   %160
   | d g c,2
@@ -795,7 +860,10 @@ Bass = \context Voice = "four" \relative c {
   | a1^~
   | a
   %170
-  | r2 \highlightSubjectFirst { d,_\markup \subject #'(1.2 . 0) #1
+  | r2 \highlightSubjectFirst {
+    d,
+    _\markup \subject #'(1.2 . 0) #1
+    _\markup { \subjectPresentationBullet "Subjects B1 A2 S3, bars 170-175" }
   | c4 f b, bes
   | a d g,2%\prallmordent
   | f4 g a8 g a4
@@ -810,7 +878,11 @@ Bass = \context Voice = "four" \relative c {
   | \stemNeutral a\rest gis' a a,
   | d1^~
   | d2 d2\rest
-  | \highlightSubjectThird { d4\rest_\markup \subject #'(0 . 0) #3 a d, e
+    _\markup {
+      \hspace #6
+      \subjectPresentationBullet "Subjects A2 S1 B3, bars 182-"
+    }
+  | \highlightSubjectThird { d4\rest^\markup \subject #'(0 . 0) #3 a d, e
   | c'\rest f, g a
   %185
   | c\rest bes a g
@@ -856,6 +928,9 @@ Bass = \context Voice = "four" \relative c {
   \layout {
     \context {
       \Voice
+      \override TextScript.color = #greyTextColor
+      \override TextScript.font-shape = #'italic
+      \override TextScript.font-size = #-2
       \override VoiceFollower.color = #greyTextColor
       \override VoiceFollower.style = #'dashed-line
     }
