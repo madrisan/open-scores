@@ -605,7 +605,7 @@
         "Sezione 1" "misure 1 – 114.25"
       }
       \line {
-        "Sezione 2" "misure 114.25 – 192.50   →   79.25 misure (1.4(4) = ratio 2·1)"
+        "Sezione 2" "misure 114.25 – 192.50   →   79.25 misure (1.4(4) = ratio sezione 2 · sezione 1)"
       }
       \line {
         "Sezione 3"
@@ -980,6 +980,21 @@
       Si ritiene che la composizione, la pubblicazione, l'ampliamento dei pezzi e l'aggiunta di nuovi
       pezzi, fossero tutti simultaneamente in corso in quel periodo, quindi la fuga incompiuta costruita
       a metà non poteva combaciare con la struttura simmetrica creata alla fine.
+    }
+  }
+}
+\markup {
+  \pad-around #2
+  \column {
+    \wordwrap \abs-fontsize #10 \with-color #middleGrey {
+      Bach avrebbe quindi interrotto la composizione dopo aver deciso che erano necessari cambiamenti
+      fondamentali, sfortunatamente mai eseguiti.
+      Forse una riduzione nella lunghezza delle tre sezioni esistenti per terminare il
+      Contrapunctus XIV alla misura 230, conservando il rapporto 1.4 tra le sezioni.
+    % misure 1–91.50 per la sezione 1,
+    % fino alla 155.25 la sezione 2,
+    % alla 199.33 la sezione 3 e
+    % conclusione della sezione 4 alla battuta 230.
     }
   }
 }

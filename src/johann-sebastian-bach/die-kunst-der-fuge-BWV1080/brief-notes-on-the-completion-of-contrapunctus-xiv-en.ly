@@ -600,7 +600,7 @@
         "Section 1" "bars 1 – 114.25"
       }
       \line {
-        "Section 2" "bars 114.25 – 192.50   →   79.25 bars (1.4(4) = ratio 2·1)"
+        "Section 2" "bars 114.25 – 192.50   →   79.25 bars (1.4(4) = ratio section 2 · section 1)"
       }
       \line {
         "Section 3"
@@ -970,3 +970,25 @@
     }
   }
 }
+\markup {
+  \pad-around #2
+  \column {
+    \wordwrap \abs-fontsize #10 \with-color #middleGrey {
+      Bach would therefore have broken off the composition after deciding that fundamental changes were
+      necessary, but unfortunately never carried out.
+      Perhaps precisely a reduction in length of the three existing sections to end the Contrapunctus XIV
+      at bar 230, preserving the 1.4 ratio between sections lengths.
+    % bars 1–91.50 Section 1, 91.50–155.25 Section 2, 155.25–199.33 Section 3,
+    % 199.33–230 Section 4.
+    }
+  }
+}
+
+% 230 = x + (x/1.44) + (x/(1.44^2)) + (x/(1.44^3))
+%   bc -l <<< "230 / (1 + 1/1.44 + 1/(1.44^2) + 1/(1.44^3))"
+%   x=91.57525537416475367224
+%
+% Section 1:   1    -  91.50
+% Section 2:  91.50 - 155.25    # bc -l <<< "$x + $x/1.44" = 155.16918271733472150018
+% Section 3: 155.25 - 199.33    # bc -l <<< "$x + $x/1.44 + $x/(1.44^2)" = 199.33163226120275471403
+% Section 4: 199.33 - 230       # bc -l <<< "$x + $x/1.44 + $x/(1.44^2) + $x/(1.44^3)" = 230.00000000000000000142
