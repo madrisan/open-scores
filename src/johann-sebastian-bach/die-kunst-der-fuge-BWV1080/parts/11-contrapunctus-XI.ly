@@ -117,8 +117,17 @@ Sopran = \context Voice = "one" \relative c'' {
   | f2 d\rest
   | \override MultiMeasureRest.staff-position = #0
     R1*3
-  | d2\rest d4\rest \highlightSubjectThird { bes~^\markup \subject #'(-0.8 . 0) #3
-  | bes8 a c c c b d d
+  | d2\rest d4\rest \highlightSubjectThird {
+    bes~
+    ^\markup \subject #'(-2 . 0) #3
+    ^\markup \italic\tiny \with-color #greyTextColor { "B" }
+  | bes8
+    \once\override Staff.TextScript.extra-offset = #'(0 . 0.2)
+    a^\markup \italic\tiny \with-color #greyTextColor { "A" }
+    c^\markup \italic\tiny \with-color #greyTextColor { "C" }
+    c c
+    b^\markup \italic\tiny \with-color #greyTextColor { "H" }
+    d d
   %95
   | d cis e e e d f f
   | f e fis gis \unHighlightSubject a } gis a4~
