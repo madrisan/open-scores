@@ -25,8 +25,10 @@ Soprano = \context Voice = "one" \relative c'' {
   | a8 a g f g e f d'
   | f,4\prall e r8 cis' d4~
   | d8 b a g a c b4~
-  | b8 gis fis e fis a gis b
-  | a c b d c2~
+  | b8 gis fis e \highlightMotif {
+    fis^\markup { \concat { "a1" \sub "inv" } }
+    a gis b
+  | \unHighlightMotif a } c b d c2~
   %25
   | c8 ees d c d bes c a
   | bes1~
@@ -246,11 +248,18 @@ Alto = \context Voice = "two" \relative c' {
   | a d g,2^\prallmordent
   | f4 g a8 g a4
   %5
-  | d, } d'^( c b)
-  | c f^( e dis)
+  | d, }
+    \once\override HorizontalBracketText.text = \markup { "motif a" }
+    \highlightMotif { d'^(\startGroup c b)
+  | c\stopGroup } f^(^\markup { \hspace #-1.2 "a" } e dis)
     \break
-  | e2 e8\rest d! c b
-  | c2 c8\rest b a gis
+  | e2 e8\rest
+    \highlightMotif {
+      d!^\markup { \hspace #-1 \concat { "a" \sub "dim" } } c b
+  |   c2
+    }
+    c8\rest b^\markup { \hspace #-1.2 \concat { "a" \sub "dim" } }
+    a gis
   | a c b d gis,
     \staffUpper
     \stemDown
@@ -278,10 +287,10 @@ Alto = \context Voice = "two" \relative c' {
   | \hideStaffSwitch g8
     \staffUpper
     \stemDown\tieDown
-    g' f e f d e cis
+    g' f e \highlightMotif { f_\markup { "a1" } d e cis
     \showStaffSwitch
   %20
-  | d1~
+  | \unHighlightMotif d1~ }
   | d4 cis \highlightSubjectFirst { a'2_\markup \subject #'(1.3 . 0) #1
   | g4 c fis, f
   | e a d,2%\prallmordent
@@ -606,7 +615,12 @@ Bass = \context Voice = "four" \relative c {
   | \override MultiMeasureRest.staff-position = #-4
     R1*5
   | b2\rest \highlightSubjectFirst { a'-\markup \subject #'(0 . 0) #1
-  | g4 c fis, f
+  | g4
+    _\markup {
+      "Through out the fugue motives a and " "a" \sub "dim" "serve as counterpoints"
+      "and are developed in numerous ways (see a1, ...)"
+    }
+    c fis, f
   | e a d,2\prallmordent
   | c4 d e8 d e4
   %10
@@ -660,7 +674,15 @@ Bass = \context Voice = "four" \relative c {
   | a d g,2%\prallmordent
   | f4 g a8 g a4
   | d,2 } r
-    _\markup { \secondExpositionBullet "Second exposition S1 A2 B1 S2 A1 B2, bars 39-53" }
+    _\markup \left-column {
+      \concat {
+        \secondExpositionBullet " Second exposition S1 A2 B1 S2 A1 B2, bars 39-53"
+      }
+      \vspace #-0.2
+      \concat {
+        "(Note how this subject contains portions of the a1 and " a\sub "dim" " motifs)"
+      }
+    }
   | R1*2
   %42
   | d'8\rest bes' a g fis g e fis
@@ -747,7 +769,15 @@ Bass = \context Voice = "four" \relative c {
   | f4 r16 d e32 f g a bes2\downmordent
   | a8 a' g f e f d e
   | f2
-    _\markup { \thirdExpositionBullet "Third exp. A3 B3 S3, bars 94-109" }
+    _\markup \left-column {
+      \concat {
+        \thirdExpositionBullet " Third exp. A3 B3 S3, bars 94-109"
+      }
+      \vspace #-0.2
+      \concat {
+        "(Note some reminiscences of the motifs)"
+      }
+    }
     c8\rest e d cis
   %95
   | d2 c8\rest c! bes a
@@ -928,6 +958,12 @@ Bass = \context Voice = "four" \relative c {
   \layout {
     \context {
       \Voice
+      \consists "Horizontal_bracket_engraver"
+      \override HorizontalBracket.color = #greyTextColor
+      \override HorizontalBracket.direction = #DOWN
+      \override HorizontalBracketText.color = #greyTextColor
+      \override HorizontalBracketText.font-shape = #'italic
+      \override HorizontalBracketText.font-size = #-2
       \override TextScript.color = #greyTextColor
       \override TextScript.font-shape = #'italic
       \override TextScript.font-size = #-2
