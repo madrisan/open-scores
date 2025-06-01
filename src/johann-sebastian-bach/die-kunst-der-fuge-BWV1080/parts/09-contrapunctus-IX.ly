@@ -36,8 +36,6 @@ Sopran = \context Voice = "one" \relative c'' {
   | c bes!
   | a g
   | f8 a g f g f e d
-    % workaround a lilypond bug that causes staff to overlap
-    \break
   %30
   | g8 bes a g a g f e
   | a4 c f2~
@@ -46,6 +44,8 @@ Sopran = \context Voice = "one" \relative c'' {
   | d cis
   %35
   | \highlightSubjectSecond { d1^\markup \subject #'(1 . 0) #2
+    % workaround a lilypond bug that causes staff to overlap
+    \break
   | a'
   | f
   | d
