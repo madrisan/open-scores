@@ -167,7 +167,12 @@ Alto = \context Voice = "two" \relative c' {
   \voiceTwo
   \stemDown\tieUp\slurUp
   %1
-  | \highlightSubjectFirst { r4_\markup \subject #'(0 . 0) #1 d d'2~
+  | \highlightSubjectFirst {
+    r4
+    ^\markup {
+      \secondExpositionBullet "First exposition A1 S1 B1 T1, bars 1−29"
+    }
+    _\markup \subject #'(0 . 0) #1 d d'2~
   | d4 cis8 b a g f e
   | d cis d e f d e f
   | g fis g a bes g a bes
@@ -373,7 +378,10 @@ Tenor = \context Voice = "three" \relative c' {
   | g a g f g f e d
   | e f e d e c d e
   %45
-  | \highlightSubjectSecond { f1_\markup \subject #'(0.5 . 0) #2
+  | \highlightSubjectSecond {
+    f1
+    _\markup \subject #'(0.5 . 0) #2
+    _\markup { \subjectPresentationBullet "Subjects T2 A1, bars 45-53" }
   | c'
   | a
   | f
@@ -392,7 +400,10 @@ Tenor = \context Voice = "three" \relative c' {
   | d2 r
   %--
   | R1*13
-  | \highlightSubjectSecond { a'1^\markup \subject #'(0 . 0) #2
+  | \highlightSubjectSecond {
+    a'1
+    ^\markup \subject #'(0 . 0) #2
+    _\markup { \subjectPresentationBullet "Subjects T2 A1, bars 73-81" }
   | e'
   %75
   | \once\override NoteColumn.force-hshift = #1.2 c
@@ -423,7 +434,10 @@ Tenor = \context Voice = "three" \relative c' {
   | c4 r r g
   | a e f a
   | bes8 c bes a bes a g fis
-  | \highlightSubjectSecond { g1^\markup \subject #'(2 . 0) #2
+  | \highlightSubjectSecond {
+    g1
+    ^\markup \subject #'(2 . 0) #2
+    _\markup { \subjectPresentationBullet "Subjects T2 A1, bars 99-107" }
   %100
   | d'
   | bes
@@ -498,11 +512,16 @@ Bass = \context Voice = "four" \relative c {
   | a2 d,4\rest bes'
   | g e a a,
   %35
-  | bes f' bes2
+  | bes
+    _\markup { \subjectPresentationBullet "Subjects S2 T1, bars 35-43" }
+    f' bes2
   | a r
   %--
   | R1*22
-  | \highlightSubjectFirst { r4_\markup \subject #'(2 . 0) #2 d,, d'2~
+  | \highlightSubjectFirst {
+    r4_\markup \subject #'(2 . 0) #2
+    _\markup { \subjectPresentationBullet "Subjects A2 B1, bars 59-67" }
+    d,, d'2~
   %60
   | d4 cis8 b a g f e
   | d cis d e f d e f
@@ -533,7 +552,10 @@ Bass = \context Voice = "four" \relative c {
   | a4 r r2
   | \override MultiMeasureRest.staff-position = #-4
     R1*7
-  | \highlightSubjectSecond { d1_\markup \subject #'(0.5 . 0) #2
+  | \highlightSubjectSecond {
+    d1
+    _\markup \subject #'(0.5 . 0) #2
+    _\markup { \subjectPresentationBullet "Subjects B2 S1, bars 89-97" }
   %90
   | a'
   | f
@@ -569,7 +591,9 @@ Bass = \context Voice = "four" \relative c {
   | bes4 r r2
   | r8 g f e d f e d
   | cis4 e cis a
-  | d c! bes2
+  | d
+    _\markup { \subjectPresentationBullet "Subjects A2 T1, bars 119-127" }
+    c! bes2
   %120
   | a r4 a
   | bes1~
@@ -579,7 +603,9 @@ Bass = \context Voice = "four" \relative c {
   %125
   | d2 r4 a
   | bes2 r4 c
-  | bes8 c bes a bes a g f
+  | bes8
+    _\markup { \endBullet "Coda" }
+    c bes a bes a g f
   | e4 e' f g
   | a g a a,
   %130
@@ -620,6 +646,9 @@ Bass = \context Voice = "four" \relative c {
   \layout {
     \context {
       \Voice
+      \override TextScript.color = #greyTextColor
+      \override TextScript.font-shape = #'italic
+      \override TextScript.font-size = #-2
       \override VoiceFollower.color = #greyTextColor
       \override VoiceFollower.style = #'dashed-line
     }

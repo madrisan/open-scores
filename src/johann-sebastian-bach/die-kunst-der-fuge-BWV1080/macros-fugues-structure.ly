@@ -180,7 +180,7 @@ fugueStructureBoxesIX = \markup \fugueStructureBoxes {
   \on-color \subjectPresentationColor \pad-markup #0.8 \concat { "T2 A1" \sub " 99" }
   \on-color \episodeColor \pad-markup #1 "7" % D minor
   \on-color \subjectPresentationColor \pad-markup #0.8 \concat { "A2 T1" \sub " 119" }
-  \on-color \endColor \pad-markup #0.8 \concat { "Coda" \sub " 125" }
+  \on-color \endColor \pad-markup #0.8 \concat { "Coda" \sub " 127" }
 }
 
 fugueStructureBoxesX_lineone = \markup \fugueStructureBoxes {
