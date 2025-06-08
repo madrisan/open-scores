@@ -116,7 +116,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | a4 g8 f e d cis b
   | a g a b c a b cis
   | d cis d e f d e f
-  | f4( e) r8 e d e
+  | f4 e r8 e d e
   | f a g f g f e d
   %95
   | c f e d e d c bes
