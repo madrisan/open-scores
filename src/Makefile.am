@@ -37,6 +37,7 @@ SUBDIRS = alfredo-casella \
 	  karol-szymanowski \
 	  ludwig-van-beethoven \
 	  mikhail-glinka \
+	  pietro-domenico-paradisi \
 	  robert-schumann \
 	  rued-langgaard
 

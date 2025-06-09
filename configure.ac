@@ -170,6 +170,8 @@ AC_CONFIG_FILES([\
   src/ludwig-van-beethoven/klaviersonate-8-op.13/Makefile \
   src/mikhail-glinka/Makefile \
   src/mikhail-glinka/nocturne/Makefile \
+  src/pietro-domenico-paradisi/Makefile \
+  src/pietro-domenico-paradisi/sonata-06/Makefile \
   src/robert-schumann/kinderscenen-op.15/Makefile \
   src/robert-schumann/Makefile \
   src/rued-langgaard/Makefile \

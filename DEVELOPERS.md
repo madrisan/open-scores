@@ -88,6 +88,7 @@ make -C src/johannes-brahms/rhapsodie-op.79-nr.2
 make -C src/karol-szymanowski/nine-preludes-op.1
 make -C src/ludwig-van-beethoven/klaviersonate-8-op.13
 make -C src/mikhail-glinka/nocturne
+make -C src/pietro-domenico-paradisi/sonata-06
 make -C src/robert-schumann/kinderscenen-op.15
 make -C src/rued-langgaard/insektarium-BVN_134
 ```
