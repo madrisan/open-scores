@@ -23,7 +23,7 @@ EXTRA_DIST = Pietro-Domenico-Paradisi-Toccata-La-Maggiore.ly \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
-	     logo.ly \
+	     logo.ly
 
 all: $(BUILT_SOURCES) Pietro-Domenico-Paradisi-Toccata-La-Maggiore
 

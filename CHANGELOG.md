@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [v65] - unrealised
 
+### Added
+
+- Pietro Domenico Paradisi - Toccata in La Maggiore (P 893.06)
+
 ### Changed
 
 - J.S. Bach: Die Kunst der Fuge (BWV1080) - annotations for fugues I-VIII
