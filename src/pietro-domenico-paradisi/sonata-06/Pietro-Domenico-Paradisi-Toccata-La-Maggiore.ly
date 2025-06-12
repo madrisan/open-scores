@@ -168,14 +168,58 @@ Soprano = \context Voice = "one" \relative c'' {
   | d fis b, d gis, b e d
   | cis e a, cis fis, a d cis
   | b d gis, b eis, gis cis b
-  | a cis a eis fis8 a\(
+  | a cis a eis fis8
+    \once\shape #'(
+      ((-0.5 . 3) (0 . 3) (0 . 2.5) (0 . 2.5))
+      ((1 . 1) (0 . 1) (0 . 0) (-0.5 . 0.5))
+    ) PhrasingSlur
+    a\(
   %45
   | b[ d e gis,]
   | a[ cis d fis,]
   | gis[ b cis eis,]
   | fis16\) cis' a fis d' b gis eis
-
-  | R1*2/4*34
+  | fis cis' a fis d' b gis eis
+  %50
+  | fis cis' a fis d' b gis eis
+  | fis fis' d b a fis' gis, eis'
+  | fis cis a fis \clef "bass" d b gis eis
+  | fis cis' a fis d' b gis eis
+  | fis cis' a fis d' b gis eis
+  %55
+  | fis fis' d b a fis' gis, eis'
+  | <a, cis fis>4
+    \clef "treble" a'16 e cis' a
+  | b e, d' b cis a e' cis
+  | b e gis, b a e cis' a
+  | b e, d' b cis a e' cis
+  %60
+  | b e gis, b a cis e g
+  | fis cis d gis,! a cis e g
+  | fis cis d ais b dis fis a!
+  | g dis e ais, b dis fis a
+  | gis e' dis e cis e a, cis
+  %65
+  | fis, d' cis d b d gis, b
+  | e, cis' b cis a cis fis, a
+  | d, b' a b gis b e, gis
+  | cis,4 a8 cis
+  | d fis, gis b
+  %70
+  | cis e, fis a
+  | b d, e gis
+  | r16 a cis e fis d b gis'
+  | a e cis a fis' d b gis'
+  | a e cis a fis' d b gis'
+  %75
+  | a e fis d cis a' b, gis'
+  | a e cis a fis d b gis'
+  | a e cis a fis' d b gis'
+  | a e cis a fis' d b gis'
+  | \once\override Staff.TextScript.extra-offset = #'(0 . -0.4)
+    a_\markup { "rall." } e fis d cis a' b, gis'
+  %80
+  | <cis, e a>4\fermata
     \fine
 }
 
@@ -282,9 +326,16 @@ Bass = \context Voice = "four" \relative c' {
   | cis a gis e
   %35
   | a fis b b,
-  | e,_.\) e'4^>\( dis8
+  | e,_.\)
+    \once\shape #'(
+      ((0 . -3) (0 . -2) (0 . 0) (0 . 0))
+      ((0 . 0) (0 . 0) (0 . 0) (0 . 0))
+    ) PhrasingSlur
+    e'4^>\( dis8
   | e cis d ais
-  | b_.\) b'4^>\( ais8
+  | b_.\)
+    \once\shape #'((0 . -1) (0 . -1) (0 . 0) (0 . 0)) PhrasingSlur
+    b'4^>\( ais8
   | b gis a eis
   %40
   | fis4.\) a8\(
@@ -296,9 +347,55 @@ Bass = \context Voice = "four" \relative c' {
   | d fis b, d gis,^> b e d
   | cis e a, cis fis,^> a d cis
   | b d gis, b eis,^> gis cis b
-  | a8 fis\) b cis
-
-  | R1*2/4*34
+  | a8 fis\) b\( cis
+  | a d b cis
+  %50
+  | a d b cis
+  | a b cis cis,
+  | fis, fis'\) b,\( cis
+  | a d b cis
+  | a d b cis
+  %55
+  | a b cis cis,
+  | fis16\) fis'\( e! d cis8 a'
+  | gis e a a,
+  | e' d cis a'
+  | gis e a a,
+  %60
+  | e'\)
+    \once\shape #'((0 . -2) (0 . -2) (0 . -1) (0 . 0)) PhrasingSlur
+    d'\( cis a
+  | d^. fis^. cis^. a^.
+  | d^. fis^. dis^. b^.
+  | \clef "treble"
+    e gis! dis b
+  | \clef "bass"
+    <e, e'>4\) a8^.\( cis^.
+  %65
+  | d^. fis,^. gis^. b^.
+  | cis^. e,^. fis^. a^.
+  | b^. d,^. e^. gis^.
+  | a16_.\) e'\( dis e cis e a, cis
+  | fis, d' cis d b d gis, b
+  %70
+  | e, cis' b cis a cis fis, a
+  | d, b' a b gis b e, gis
+  | cis,8 a'\)
+    \once\shape #'(
+      ((0 . -1.5) (0 . -1.5) (0 . -2) (0 . -2))
+      ((0 . 0) (0 . 0) (0 . 0) (0 . 0))
+    ) PhrasingSlur
+    d\( e
+  | cis fis d e
+  | cis fis d e
+  %75
+  | cis d e e,
+  | a, a'\) d,\( e
+  | cis fis d e
+  | cis fis d e
+  | cis d e <e, e'>
+  %80
+  | <a, a'>4\)^\fermata
     \fine
 }
 
@@ -351,6 +448,38 @@ dynamics = {
   %45
   | s2*3
   | s4 s\mf
+  | s s\p
+  %50
+  | s s\mf
+  | s\< s
+  | s8\!\> s16 s\! s4\mf
+  | s s\p
+  | s s\mf
+  %55
+  | s\< s
+  | s\!\> a16\!\p s8.
+  | s2*5
+  %62
+  | s4 s16 s-\markup { "cresc." } s8
+  | s2
+  | s4\f s
+  | s2*2
+  %67
+  | s16 s-\markup { "cresc." } s4.
+  | s32 s16.\ff s4.
+  | s2
+  | s8
+    \once\override Staff.TextScript.extra-offset = #'(0 . 1)
+    s-\markup { "dim." } s4
+  | s2
+  | s32 s16.\f s4.
+  | s2
+    s8 s16 s-\markup { "dim." } s4
+  | s2
+  | s4 s\p
+  | s2*2
+  | s4\< s
+  | s\!\f
 }
 
 \score {
