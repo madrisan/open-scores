@@ -91,6 +91,7 @@ Latest release: [Open Scores for Piano v64](https://github.com/madrisan/open-sco
 |  | Trauervorspiel und Trauermarsch S.206 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v64/Franz-Liszt-Trauervorspiel-und-Trauermarsch-S.206.pdf) |
 |  | En rêve (Nocturne) S.207 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v64/Franz-Liszt-En-reve-Nocturne-S.207.pdf) |
 |  | Unstern (Sinistre) S.208 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v64/Franz-Liszt-Unstern-S.208.pdf) |
+| Pietro Domenico Paradisi | Toccata in La Maggiore P 893.06 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v65/Pietro-Domenico-Paradisi-Toccata-La-Maggiore.pdf) |
 | Ildebrando Pizzetti | Sogno | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v64/Ildebrando-Pizzetti-Sogno.pdf) |
 | Domenico Scarlatti | Sonata K. 1 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v64/Domenico-Scarlatti-Sonata-k1.pdf) |
 |  | Sonata K. 30 (Cat's fugue) | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v64/Domenico-Scarlatti-Sonata-k30.pdf) |
