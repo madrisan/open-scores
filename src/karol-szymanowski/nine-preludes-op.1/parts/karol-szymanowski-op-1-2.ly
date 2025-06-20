@@ -112,8 +112,7 @@ Alto = \context Voice = "two" \relative c' {
   %30
   | <c c'>8(_\( <bes bes'>4 <a a'>8) <c c'>8( <bes bes'>4 <a a'>8) <c c'>8( <bes bes'>4 <a a'>8)\)
   | \ottava #1 <f' f'>4. <e e'>8~ q <d d'> <f f'> <a a'> <f' a f'>2~
-  | \once\override TextScript.outside-staff-priority = ##t
-    q1.^\fermata
+  | q1.^\fermata
 }
 
 Tenor = \context Voice = "three" \relative c' {
