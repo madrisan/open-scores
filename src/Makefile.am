@@ -18,6 +18,7 @@
 AM_MAKEFLAGS = --no-print-directory
 
 SUBDIRS = alfredo-casella \
+	  andrea-turchetto \
 	  arnold-schoenberg \
 	  baldassare-galuppi \
 	  carl-philipp-emanuel-bach \
