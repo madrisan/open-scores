@@ -74,7 +74,7 @@
         \null\null\null\null
         \line { \abs-fontsize #40 \bold "Composizioni" }
         \null\null
-        \fill-line { \abs-fontsize #30 \bold  "per pianoforte" }
+        \fill-line { \abs-fontsize #30 \bold\italic  "per pianoforte" }
         \null\null\null\null\null\null\null
         \null\null\null\null\null\null\null
       }

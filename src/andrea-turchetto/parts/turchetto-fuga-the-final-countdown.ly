@@ -36,7 +36,7 @@ Alto = \context Voice = "two" \relative c' {
   | fis4. cis'16 b cis4 fis,~
   | fis4. d'16 cis d8 cis b4~
   | b4. d16 cis d4 fis,
-  | gis4 r8 b16 a b8 a gis b
+  | gis4 b8\rest b16 a b8 a gis b
   %5
   | a4. gis16 a b4. a16 b
   | cis8 b a gis fis4 d'

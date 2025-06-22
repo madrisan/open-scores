@@ -21,6 +21,7 @@ git checkout main
 ```
 ```
 make -C src/alfredo-casella/deux-contrastes-op.31
+make -C src/andrea-turchetto/
 make -C src/arnold-schoenberg/sechs-kleine-klavierstucke-op.19
 make -C src/baldassare-galuppi/sonata-5-c-major
 make -C src/christoph-willibald-gluck/orfeo-melodie-sgambati
