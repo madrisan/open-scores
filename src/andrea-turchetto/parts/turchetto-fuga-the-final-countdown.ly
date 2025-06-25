@@ -49,8 +49,40 @@ Soprano = \context Voice = "one" \relative c' {
   | a e cis'8. cis,16 e2
   %45
   | fis8.[ fis,16 gis a b8] r cis cis cis
-
-  | R1*26
+  | d16 e d cis d e cis d e fis e d e fis d e
+  | fis4 gis8 a gis8. fis16 fis4
+  | r8 fis,[ cis'8. e,16] d8 fis b4
+  | a16 gis a c fis8. e16 dis4. cis!16 dis
+  %50
+  | e8 fis g4 gis4. fis16 gis
+  | a4 ais b16 ais b8 bis4
+  | cis2~ cis16 d cis b cis8\fermata r\fermata
+    \break
+  | \stemNeutral\tieNeutral
+    b,4.\rest cis16 b cis4 fis,~
+  | fis4. d'16 cis d8 cis b4~
+  %55
+  | b4. d16 cis d4 fis,
+  | gis4 b8\rest b16 a b8 a gis b
+  | a4. gis16 a b4. a16 b
+  | cis8 b a gis fis4 d'
+  | \stemUp\tieUp
+    cis2 b4 s
+  %60
+  | b,8 d b' a gis4~ gis16 e dis e
+  | fis8 cis fis cis' gis'8. d16 gis4
+  | a16 gis fis eis fis4 r r8 cis'16 b
+  | \stemNeutral\tieNeutral
+    cis4 fis,~ fis4. d'16 cis
+  | d8 cis b4~ b4. d16 cis
+  %65
+  | d4 fis, gis4. fis16 gis
+  | a4. gis16 a b4. a16 b
+  | \stemUp\tieUp
+    cis8[ b a gis] fis4 d'
+  | cis2. cis16 d cis b
+  | cis2 cis
+  | <cis, fis cis'>1\fermata
     \fine
 }
 
@@ -117,7 +149,31 @@ Alto = \context Voice = "two" \relative c' {
   %45
   | \showStaffSwitch \change Staff = "lower" \voiceThree
     fis,,4 e8 d cis16 e a8 e'4
-
+  | \showStaffSwitch \change Staff = "upper" \voiceTwo
+    r8 fis fis fis e8. a16 cis4
+  | d8[ a d16 e d8] cis4 a16 gis a b
+  | cis4 cis,~ cis8 b fis'4~
+  | fis cis'8 a16 g fis g fis e fis4
+  %50
+  | g8[ b16 c b8. a16] gis8[ cis16 d cis8. b16]
+  | a8. cis16 fis g fis e fis2~
+  | fis4 eis8 dis eis4. r8\fermata
+  | s1*6
+  %59
+  | r2 fis,16 e d cis d8 fis
+  | gis4 fis eis cis
+  | cis8 fis a4 b16 a b8~ b16 d cis b
+  | a b8. cis8[ b a gis] fis r
+  | \showStaffSwitch \change Staff = "lower" \voiceThree
+    a,16 b a gis a8[ b cis16 d cis8~] cis fis,~
+  | fis b16 cis d4 fis d8 cis
+  %65
+  | b16 fis b8 fis'4~ fis16 d gis fis eis4
+  | fis8 r a,16 b a fis d'8[ gis,16 fis gis8 cis,]
+  | \showStaffSwitch \change Staff = "upper" \voiceTwo
+    fis''8. d16 cis4 d16 cis d e fis8 d
+  | a'4 gis8 fis gis2~
+  | gis4 cis, cis'2
 }
 
 Tenor = \context Voice = "three" \relative c {
@@ -180,9 +236,42 @@ Bass = \context Voice = "four" \relative c {
   | a4~ a8 e cis'8.[ cis,16 e8 a]
   %45
   | \stemDown\tieDown
-    d8[ cis b8. gis16] a4. gis16 a
+    d8[ cis b8. gis16] a4. \stemNeutral\tieNeutral gis16 a
+  | b4. a16 b cis4 a'8. cis16
+  | d16 e d cis d8. b16 a4 a,
+  | ais~ ais16 fis gis ais b ais b cis d cis d e
+  | fis8. g16 a g a c b4 a
+  %50
+  | g16 fis e dis e8 e, eis4 cis
+  | fis16 fis, fis'4 e8 dis4. d8
+  | cis d cis b cis4
+    \ottava #-1 cis,8\fermata r\fermata
 
-  | R1*26
+  | <fis fis'>1
+  | <d d'>
+  %55
+  | <b b'>
+  | <e e'>
+    \ottava #0
+  | r4 fis'4. cis'16 b cis4
+  | fis,4. d'16 cis d8 cis b4~
+  | b4. d16 cis d4 fis,
+  %60
+  | gis4. b16 a b8[ a gis b]
+  | a4. gis16 a b4. a16 b
+  | cis8[ b a gis] fis4 d'
+  | \stemDown\tieDown
+    cis2. cis16 d cis a
+  | b4. fis'8 d'16 cis b ais b4
+  %65
+  | d,8 fis d' cis b4~ b16 d cis b
+  | a8 cis, fis4 gis8. d16 gis,4
+  | \stemNeutral\tieNeutral
+    a16 gis fis eis fis8.[ e16 d8 cis] b4
+  | cis8.[ fis16 cis'8 d] cis b cis4
+  | cis,2. <cis, cis'>4
+  %70
+  | <fis cis' fis>1\fermata
     \fine
 }
 
