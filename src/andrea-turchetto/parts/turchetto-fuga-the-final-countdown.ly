@@ -157,7 +157,7 @@ Alto = \context Voice = "two" \relative c' {
   %50
   | g8[ b16 c b8. a16] gis8[ cis16 d cis8. b16]
   | a8. cis16 fis g fis e fis2~
-  | fis4 eis8 dis eis4. r8\fermata
+  | fis4 eis8 dis eis4.\fermata r8\fermata
   | s1*6
   %59
   | r2 fis,16 e d cis d8 fis
@@ -174,13 +174,6 @@ Alto = \context Voice = "two" \relative c' {
     fis''8. d16 cis4 d16 cis d e fis8 d
   | a'4 gis8 fis gis2~
   | gis4 cis, cis'2
-}
-
-Tenor = \context Voice = "three" \relative c {
-  \voiceThree
-  \stemUp\tieUp
-  \override Rest.staff-position = #0
-  %1
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -290,13 +283,12 @@ Bass = \context Voice = "four" \relative c {
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \clef bass
-      \Tenor
       \Bass
     >>
   >>
   \header {
     composer = "Andrea Turchetto"
-    opus = ##f
+    opus = "2020"
     title = \markup { "Fugue on “The final countdown”" }
     subtitle = ##f
   }
