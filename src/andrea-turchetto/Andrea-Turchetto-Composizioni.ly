@@ -84,4 +84,6 @@
   \include "./logo.ly"
 }
 
+\include "./parts/turchetto-canon-in-F-sharp-minor.ly"
+\pageBreak
 \include "./parts/turchetto-fuga-the-final-countdown.ly"
