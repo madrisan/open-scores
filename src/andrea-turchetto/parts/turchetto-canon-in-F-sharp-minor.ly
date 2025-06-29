@@ -43,8 +43,37 @@ Soprano = \context Voice = "one" \relative c' {
   | d16 fis e d cis b
   %25
   | cis8 g16 fis8.
-
-  | R1*6/16*25
+    \pageBreak
+  | e16 d cis d8 dis16
+  | e8. fis16 b, a
+  | gis fis gis a8.
+  | d8 b16 cis dis eis~
+  %30
+  | eis fis8 gis16 fis gis
+  | a8 fis16 b8.~
+  | b16 cis a d b8
+  | eis8.~ eis16 fis gis
+  | d cis b cis8.~
+  %35
+  | cis8 gis'16~ gis a b
+  | a fis eis fis8.~
+  | fis8.~ fis16 e d
+  | e fis ais, b8 fis16
+  | cis' d e d fis, a~
+  %40
+  | a gis8 fis8.
+  | eis8 cis16 fis e d
+  | cis b cis \clef "bass" a8.~
+  | a cis16 fis, eis
+  | fis cis fis gis cis, gis'
+  %45
+  | a8. cis,~
+  | cis16 cis' fis, b a gis
+  | a8. eis~
+  | eis cis~
+  | cis4.
+  %50
+  | fis\fermata
     \fine
 }
 
@@ -85,8 +114,35 @@ Bass = \context Voice = "four" \relative c {
   %25
   | d16 fis e d cis b
   | cis8 g16 fis8.
-
-  | R1*6/16*24
+  | e16 d cis d8 dis16
+  | e8. fis16 b, a
+  | gis fis gis a8.
+  %30
+  | d8 b16 cis dis eis~
+  | eis fis8 gis16 fis gis
+  | a8 fis16 b8.~
+  | b16 cis a d b8
+  | \clef "treble" eis8.~ eis16 fis gis
+  %35
+  | d cis b cis8.~
+  | cis8 gis'16~ gis a b
+  | a fis eis fis8.~
+  | fis8.~ fis16 e d
+  | e fis \clef "bass" ais, b8 fis16
+  %40
+  | cis' d e d fis, a
+  | a gis8 fis8.
+  | eis8 cis16 fis e d
+  | cis b cis a8.~
+  | a cis16 fis, eis
+  %45
+  | fis cis fis gis cis, gis'
+  | a8. cis,~
+  | cis16 cis' fis, b a gis
+  | a8. eis~
+  | eis cis~
+  %50
+  | cis8. fis\fermata
     \fine
 }
 
