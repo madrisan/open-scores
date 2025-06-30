@@ -23,6 +23,7 @@ EXTRA_DIST = Andrea-Turchetto-Composizioni.ly \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
+	     index.ly \
 	     logo.ly
 
 all: $(BUILT_SOURCES) Andrea-Turchetto-Composizioni

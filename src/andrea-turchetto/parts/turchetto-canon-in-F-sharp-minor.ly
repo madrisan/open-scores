@@ -12,6 +12,7 @@ Soprano = \context Voice = "one" \relative c' {
   \stemNeutral\tieNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'CanonFisMinor
   %1
   | fis16 cis fis gis cis, gis'
   | a8.~ a8 eis16

@@ -10,6 +10,7 @@ Soprano = \context Voice = "one" \relative c' {
   \voiceOne
   \stemUp\tieUp
   \override MultiMeasureRest.staff-position = #0
+  \label #'FugaFinalCountdown
   %1
   | s1*14
   | fis4 fis'8 cis'16 b cis4 fis,~
@@ -289,7 +290,7 @@ Bass = \context Voice = "four" \relative c {
   \header {
     composer = "Andrea Turchetto"
     opus = "2020"
-    title = \markup { "Fugue on “The final countdown”" }
+    title = \markup { "Fugue on “The Final Countdown”" }
     subtitle = ##f
   }
   \layout {
