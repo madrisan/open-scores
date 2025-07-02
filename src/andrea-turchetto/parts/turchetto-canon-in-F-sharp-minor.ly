@@ -4,9 +4,6 @@ Global = {
   \include "../global.ly"
 }
 
-CanonNotes = {
-}
-
 Soprano = \context Voice = "one" \relative c' {
   \voiceOne
   \stemNeutral\tieNeutral
