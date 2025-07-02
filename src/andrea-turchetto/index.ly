@@ -26,12 +26,31 @@ middleGrey =    #(x11-color 'grey45)
          }
        } #}))
 
+\markup \center-column {
+  \null\null\null
+  \line {
+    \hspace #8
+    \general-align #Y #DOWN {
+      \epsfile #X #80 #"andrea-turchetto.eps"
+    }
+  }
+  \null
+  \line \italic {
+    \hspace #18
+    { \bold "Andrea Turchetto" } \char ##x2014 "??? (?)"
+  }
+  \null
+}
+
 \markup \column \abs-fontsize #11 {
   \pad-around #2
   \abs-fontsize #12 \smallCaps \bold { \concat { \char ##x23AF " Canoni" } }
 }
 
 \markup { \indexItem "Canon in F-sharp minor" #'CanonFisMinor "canon in imitation at the octave" }
+\markup {
+  \indexItem "Cromatic Canon" #'CanoneCromatico "cromatic canon in imitation at the octave"
+}
 
 \markup \column \abs-fontsize #11 {
   \pad-around #2

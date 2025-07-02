@@ -20,6 +20,7 @@ SUFFIXES = .in
 BUILT_SOURCES = covercolor.ly
 
 EXTRA_DIST = Andrea-Turchetto-Composizioni.ly \
+	     andrea-turchetto.eps \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
