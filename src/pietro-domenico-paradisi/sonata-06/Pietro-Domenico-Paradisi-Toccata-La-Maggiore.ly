@@ -197,7 +197,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | b e gis, b a cis e g
   | fis cis d gis,! a cis e g
   | fis cis d ais b dis fis a!
-  | g dis e ais, b dis fis a
+  | gis dis e ais, b dis fis a
   | gis e' dis e cis e a, cis
   %65
   | fis, d' cis d b d gis, b

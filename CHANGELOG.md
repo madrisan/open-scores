@@ -11,6 +11,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Andrea Turchetto: Fugue on "The final countdown"
 - Andrea Turchetto: Canone cromatico
 
+### Fixed
+
+- Pietro Domenico Paradisi - Toccata in La Maggiore (P 893.06) - missing sharp alteration
+
 ## [v65] - 2025-06-19
 
 ### Added
