@@ -32,7 +32,13 @@ Sopran = \context Voice = "one" \relative c'' {
   | a8 d4 cis8 d2~
   | d4 cis d2\rest
     \break
-  | \highlightSubjectSecond { a'2^\markup \subject #'(2.5 . 0) #2 d,4. e8
+  | \highlightSubjectSecond {
+    a'2
+    ^\markup \subject #'(2.5 . 0) #2
+    ^\markup {
+      \secondExpositionBullet "Second exposition S2 T2 B2 A2, bars 23−38"
+    }
+    d,4. e8
   | f4. g8 a2
   %25
   | bes a4. g8
@@ -85,7 +91,13 @@ Sopran = \context Voice = "one" \relative c'' {
   | c2. c4
   %65
   | f2~ f8 g f g
-  | e4 \highlightSubjectFirst { a,^\markup \subject #'(2.2 . 0) #1 bes f
+  | e4 \highlightSubjectFirst {
+    a,
+    ^\markup \subject #'(2.2 . 0) #1
+    %^\markup {
+    %  "S is T(44) transposed at tenth, T is same as A(44)"
+    %}
+    bes f
   | r d' c f
   | bes,8 c d e f g \unHighlightSubject a4~ }
   | a8 g f e d2
@@ -96,7 +108,14 @@ Sopran = \context Voice = "one" \relative c'' {
   | g2~ g8 gis a b
   | c2 r8 e, f! g
   %75
-  | \highlightSubjectSecond { a2^\markup \subject #'(2.5 . 0) #2 d,4. e8
+  | \highlightSubjectSecond {
+    a2
+    ^\markup \subject #'(2.5 . 0) #2
+    %^\markup {
+    %  "A and B are the A.44 and T.44 transposed an ascending third"
+    %  %"S doubles A in sixths and is harmonically similar to inversion at the tenth"
+    %}
+    d,4. e8
   | f4. g8 a2
   | bes a4. g8
   | f2~ f8 e f g
@@ -252,7 +271,7 @@ Alto = \context Voice = "two" \relative c' {
   | g b c d e2~
   | e4. d8 c4. b8
   %75
-  | \highlightSubjectSecond { c2_\markup \subject #'(1.2 . 0) #1 f,4. g8
+  | \highlightSubjectSecond { c2_\markup \subject #'(1.2 . 0) #2 f,4. g8
   | a4. bes8 c2
   | d c4. bes8
   | a2~ a8 g a bes
@@ -308,7 +327,10 @@ Alto = \context Voice = "two" \relative c' {
   | f8 a g f e4 d
   | cis8 d e4~ e8 e d4~
   %115
-  | d \highlightSubjectFirst { cis d a
+  | d \highlightSubjectFirst {
+    cis
+    _\markup \subject #'(1.2 . 0) #1
+    d a
   | r f' e a
   | d,8 e f g a bes \unHighlightSubject c4~ }
   | c8 bes a g f g a4~
@@ -392,7 +414,7 @@ Tenor = \context Voice = "three" \relative c' {
     \stemDown\tieDown
     d e f d b e d e
   | cis
-    \staffLower
+    \hideStaffSwitch \staffLower
     \stemUp\tieUp
     a d4 g, bes
   | e, d2 cis!4
@@ -425,7 +447,7 @@ Tenor = \context Voice = "three" \relative c' {
   %85
   | g,4 d'8
     e
-    \staffUpper
+    \showStaffSwitch \staffUpper
     \stemDown\tieDown
     f e d cis
   | \staffLower
@@ -490,6 +512,9 @@ Tenor = \context Voice = "three" \relative c' {
 Bass = \context Voice = "four" \relative c {
   \voiceFour
   | s1*2
+    _\markup {
+      \expositionBullet "First exposition A1 T1 B1 S1, bars 1−11"
+    }
   | \override MultiMeasureRest.staff-position = #-4
     R1*4
   | \highlightSubjectFirstInv { r4_\markup \scale #'(1 . -1) \subject #'(1.5 . 0) #1 f e a
@@ -500,7 +525,11 @@ Bass = \context Voice = "four" \relative c {
   | b e~ e8 a, b cis
   | d2 c!8 d e fis
   | g2 d8 e f g
-  | a2~ a8 f g e
+  | a2~
+    _\markup {
+      \subjectStrettoBullet "Stretto A1 T1, bars 14-17"
+    }
+    a8 f g e
   %15
   | f e d cis d bes c a
   | b cis d2 f,4
@@ -533,7 +562,11 @@ Bass = \context Voice = "four" \relative c {
   | f4 e8 d cis4.\trill b16 cis
   | d2~ d8 f, bes a
   | g a bes g e a g a
-  | f g a fis bes4 g
+  | f
+    _\markup {
+      \subjectPresentationBullet "Subjects T1 A2, bars 44-48"
+    }
+    g a fis bes4 g
   %45
   | d'4. e8 f4. fis8
   | g2 f!8 g a4
@@ -543,7 +576,13 @@ Bass = \context Voice = "four" \relative c {
   %50
   | e4 d8 cis d2~
   | d cis
-  | \highlightSubjectSecond { d_\markup \subject #'(1.2 . 0) #2 a4. b8
+  | \highlightSubjectSecond {
+    d
+    _\markup \subject #'(1.2 . 0) #2
+    _\markup {
+      \subjectPresentationBullet "Subjects A1 B2, bars 52-56"
+    }
+    a4. b8
   | c4. d8 e2
   | f e4. d8
   %55
@@ -560,7 +599,11 @@ Bass = \context Voice = "four" \relative c {
   | e f g e c f e f
   %65
   | d e f d b e d e
-  | cis2 d~
+  | cis2
+    _\markup {
+      \subjectPresentationBullet "Subjects T2 S1, bars 66-70"
+    }
+    d~
   | d4 bes f'4. d8
   | g4. g8 f4. e8
   | d4. c8 bes2
@@ -571,7 +614,13 @@ Bass = \context Voice = "four" \relative c {
   | b\rest c8\rest e fis gis
   | a2 b,\rest
   %75
-  | \highlightSubjectFirst { b4\rest_\markup \subject #'(0.5 . 0) #1 a' bes f
+  | \highlightSubjectFirst {
+    b4\rest
+    _\markup \subject #'(0.5 . 0) #1
+    _\markup {
+      \subjectPresentationBullet "Subjects S2 A2 B1, bars 75-79"
+    }
+    a' bes f
   | r d c f
   | bes,8 c d e f g \unHighlightSubject a4~ }
   | a8 g f e d2
@@ -580,7 +629,13 @@ Bass = \context Voice = "four" \relative c {
   | \override MultiMeasureRest.staff-position = #-6
     R1*5
   %85
-  | \highlightSubjectSecond { g'2_\markup \subject #'(0 . 0) #2 d4. e8
+  | \highlightSubjectSecond {
+    g'2
+    _\markup \subject #'(0 . 0) #2
+    _\markup {
+      \subjectPresentationBullet "Subjects B2 A1 S1, bars 85-89"
+    }
+    d4. e8
   | f4. g8 a2
   | bes a4. g8
   | f2~ f8 e f g
@@ -599,7 +654,12 @@ Bass = \context Voice = "four" \relative c {
   | d r
   %--
   | R1*4
-  | \highlightSubjectFirst { r4 d'_\markup \subject #'(0.5 . 0) #1 ees bes
+  | \highlightSubjectFirst {
+    r4
+    _\markup {
+      \subjectPresentationBullet "Subjects B1 T1 S2, bars 103-107"
+    }
+    d'_\markup \subject #'(0.5 . 0) #1 ees bes
   | r g' f bes
   %105
   | ees,8 f g a bes c \unHighlightSubject d4~ }
@@ -608,7 +668,11 @@ Bass = \context Voice = "four" \relative c {
   | \override MultiMeasureRest.staff-position = #-4
     R1*7
   %115
-  | a2 d,4. e8
+  | a2
+    _\markup {
+      \subjectPresentationBullet "Subjects T1 A1, bars 115-117"
+    }
+    d,4. e8
   | f4. g8 a2
   | bes a4. g8
   | f2~ f8 e f g
@@ -654,6 +718,9 @@ Bass = \context Voice = "four" \relative c {
   \layout {
     \context {
       \Voice
+      \override TextScript.color = #greyTextColor
+      \override TextScript.font-shape = #'italic
+      \override TextScript.font-size = #-2
       \override VoiceFollower.color = #greyTextColor
       \override VoiceFollower.style = #'dashed-line
     }
