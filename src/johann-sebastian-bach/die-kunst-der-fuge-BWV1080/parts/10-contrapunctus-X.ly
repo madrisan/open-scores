@@ -81,10 +81,10 @@ Sopran = \context Voice = "one" \relative c'' {
   | a2 r
   | \override MultiMeasureRest.staff-position = #2
     R1*2
-  | r4 a8 b cis d e f
+  | r4 \highlightSubjectThird { a8 b cis d e f
   | g a bes g e a g a
   %60
-  | f g f e d e f d
+  | \unHighlightSubject f } g f e d e f d
   | e fis g2 fis4
   | g d g2~
   | g4 f8 e f4 d
@@ -253,9 +253,9 @@ Alto = \context Voice = "two" \relative c' {
   | \override MultiMeasureRest.staff-position = #-6
     R1*2
   %60
-  | r4 d8 e f g a b
+  | r4 \highlightSubjectThird { d8 e f g a b
   | c d ees c a d c d
-  | bes c bes a g a bes g
+  | \unHighlightSubject bes } c bes a g a bes g
   | a b c2 bes4~
   | bes e, a2~
   %65
@@ -409,11 +409,23 @@ Tenor = \context Voice = "three" \relative c' {
   | a2. gis4
   %55
   | a e e' d8 c
-  | b4 e,8 fis gis a b c
+  | b4 \highlightSubjectThird {
+    e,8^\markup {
+      \hspace #-1.8
+      \override #'(circle-padding . 0.02)
+      \circle \with-color #lightGrey {
+        \concat {
+          \normal-text \raise #0.1 "("
+          \teeny \musicglyph "three"
+          \normal-text \raise #0.1 ")"
+        }
+      }
+    }
+    fis gis a b c
   | \staffUpper
     \stemDown\tieDown
     d e f d b e d e
-  | cis
+  | \unHighlightSubject cis }
     \hideStaffSwitch \staffLower
     \stemUp\tieUp
     a d4 g, bes
@@ -587,16 +599,31 @@ Bass = \context Voice = "four" \relative c {
   | f e4. d8
   %55
   | c2~ c8 b c d
-  | \unHighlightSubject e } dis e4 r e
+  | \unHighlightSubject e } dis
+    \highlightSubjectThird {
+      \unHighlightMotif e4
+      _\markup {
+        \column {
+          \line {
+            "This section may look as a new exposition and Bach may want us"
+          }
+          \vspace #-0.3
+          \line {
+            "to think so by leaving the tenor almost alone in measure 56"
+          }
+        }
+      }
+    }
+    r e
   | fis8 gis a2 gis8 fis
   | g!4 f! e d
   | cis d8 bes g4 a
   %60
   | d, r r2
   | R1
-  | r4 g8 a bes c d e
+  | r4 \highlightSubjectThird { g8 a bes c d e
   | f g a f d g f g
-  | e f g e c f e f
+  | \unHighlightSubject e } f g e c f e f
   %65
   | d e f d b e d e
   | cis2
