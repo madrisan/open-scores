@@ -52,6 +52,7 @@ unknownColor =             #(rgb-color 0.00 0.00 0.00)
        stencil)))
 
 motifColor = #(x11-color 'darkcyan)
+motifsecondColor = #(x11-color "light sea green")
 
 subjectFirstColor = #(x11-color 'darkblue)
 subjectFirstInvColor = #(x11-color 'royalblue)
@@ -132,6 +133,12 @@ highlightMotif =
    (ly:music?)
    "Colour an important motif like the B.A.C.H. signature"
    #{ \markWithColorExtended \motifColor #music #})
+
+highlightMotifSecond =
+#(define-music-function (music)
+   (ly:music?)
+   "Colour an important motif"
+   #{ \markWithColorExtended \motifsecondColor #music #})
 
 highlightSubjectFirst =
 #(define-music-function (music)

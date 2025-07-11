@@ -32,17 +32,22 @@ Sopran = \context Voice = "one" \relative c'' {
   | \override MultiMeasureRest.staff-position = #10
     R1
   | d4\rest e,8 f e4 d
-  | cis \highlightSubjectFirst { e^\markup \subject #'(-1 . 0) #1 a g
+  | cis \highlightSubjectFirst {
+    e
+    ^\markup \subject #'(-1 . 0) #1
+    a g
   | r f e d
   | r cis d e
   %25
   | r f8 g f4 e
   | d2. } cis4
   | \once\override NoteColumn.force-hshift = #0.6 d2 b\rest
-  | g4\rest d ees e
+  | g4\rest \highlightMotif { d
+    ^\markup { "Chromatic motif (cm) based on the subject 2" }
+    ees e
   | f fis g gis
   %30
-  | a8 b c a f'4. e16 d
+  | \unHighlightMotif a8 } b c a f'4. e16 d
   | cis4 d g2~
   | g4 f8 e f g f e
   | d4 g8 fis g a g f
@@ -50,12 +55,12 @@ Sopran = \context Voice = "one" \relative c'' {
   %35
   | a8 g! f e d cis d4~
   | d8 c! bes! a gis( a gis a)
-  | gis4 e'2 dis4
+  | gis4 \highlightMotif { e'2 dis4
   | d! cis c b~
-  | b8 a r8 a' b, a b cis
+  | b8 a } r8 \highlightMotifSecond { a' b, a b cis
   %40
-  | d4 r8 d e d e fis
-  | g g, g'4 fis f~
+  | d4 } r8 \highlightMotifSecond { d e d e fis
+  | \unHighlightMotif g } g, g'4 fis f~
   | f8 d e4 f g
   | c, f e ees~
   | ees8 d c b c bes a4~
@@ -70,10 +75,10 @@ Sopran = \context Voice = "one" \relative c'' {
   | e8 a e d c4 cis
   | d e f fis
   | g a bes2~
-  | bes8 e, a4 gis g
+  | bes8 e, \highlightMotif { a4 gis g
   %55
   | fis f e ees
-  | d4. cis8 d4. e8
+  | d4. } cis8 d4. e8
   | \highlightSubjectSecondInv {
     \appoggiatura d8 cis4^\markup \scale #'(1 . -1) \subject #'(-2 . 0) #2 f b, bes
   | a d g,2
@@ -83,15 +88,15 @@ Sopran = \context Voice = "one" \relative c'' {
   | f e f g
   | c, r8 c' d c d e
   | a,4 f' e ees~
-  | ees8 d r8 d ees d ees f
+  | ees8 d r8 \highlightMotifSecond { d ees d ees f
   %65
-  | g4 r8 g a gis a b
+  | g4 } r8 g a gis a b
   | gis b e,4 dis d
   | cis f! e dis
-  | e e dis d
+  | e \highlightMotif { e dis d
   | cis c b bes
   %70
-  | a2. gis4
+  | a2. } gis4
   | a r r d
   | d( c) r bes!
   | bes a8 b c4 b8 c
@@ -103,9 +108,9 @@ Sopran = \context Voice = "one" \relative c'' {
   | r bes a g
   | r f8 e f4 g
   %80
-  | a4. } g8 fis4 f
+  | a4. } \highlightMotif { g8 fis4 f
   | e ees d cis
-  | c b cis d
+  | c b } cis d
   | e1~
   | e8 d cis e d c bes d
   %85
@@ -114,9 +119,12 @@ Sopran = \context Voice = "one" \relative c'' {
   | a2~ a8 bes a bes
   | c4 f2 e4
   \break
-  | f2 d\rest
+  | f2 d\rest^\markup {
+      "Presentation of the 3 Subjects"
+    }
   | \override MultiMeasureRest.staff-position = #0
     R1*3
+    \break
   | d2\rest d4\rest \highlightSubjectThird {
     bes~
     ^\markup \subject #'(-2 . 0) #3
@@ -130,9 +138,9 @@ Sopran = \context Voice = "one" \relative c'' {
     d d
   %95
   | d cis e e e d f f
-  | f e fis gis \unHighlightSubject a } gis a4~
+  | f e fis gis \unHighlightSubject a } gis \highlightMotifSecond { a4~
   | a8 fis g! g g e f f
-  | e2 dis4 d~
+  | e2 } dis4 d~
   | d8 b c e a,4 b~
   %100
   | b8 gis a c b d cis e
@@ -141,10 +149,12 @@ Sopran = \context Voice = "one" \relative c'' {
   | bes8 g a a a f g g
   | f e16 d d'4 b cis
   %105
-  | d c! b bes~
-  | bes8 a d4~ d8 b cis e
-  | a4 a,8 d d b c c
-  | c a bes! bes c d ees4~
+  | d \highlightMotif { c!
+    ^\markup { "Variation of the chromatic motive" }
+    b bes~
+  | bes8 a } d4~ d8 b cis e
+  | a4 a,8 \highlightMotifSecond { d d b c c
+  | c a bes! bes } c d ees4~
   | ees d e f~
   %110
   | f8 d ees ees ees c d d
@@ -155,15 +165,15 @@ Sopran = \context Voice = "one" \relative c'' {
   %115
   | d a e'2
   | f4 e d8 e d4
-  | a' } g~ g8 e f f
+  | a' } \highlightMotifSecond { g~ g8 e f f
   | f dis e e e cis d d
-  | d b c! c c a b b
+  | d b c! c c a b b }
   %120
   | b e a,4~ a8 c b a
   | gis4 b a c
-  | b d~ d8 c ees ees
+  | b \highlightMotifSecond { d~ d8 c ees ees
   | ees d f f f e g g
-  | g f c' c c bes f f
+  | g f c' c } c bes f f
   %125
   | f e e e e d bes' bes
   | cis,4 d b e
@@ -171,35 +181,37 @@ Sopran = \context Voice = "one" \relative c'' {
   | f8 e4 d8 c[ b8. a16 b8]
   | a2 r4 gis
   %130
-  | a4. a8 b d cis cis
+  | a4. a8 \highlightMotifSecond { b d cis cis
   | cis e d d d f e e
-  | e g f f f d e e
+  | e g f f } f d e e
   | e cis d d d( cis) e( d)
   | f( e) g4~ g8 f e d
   %135
   | cis a d2 cis4
+    \break
   | d8 a d d d b c c
-  | bes!4 \highlightSubjectThird { a~^\markup \subject #'(-0.8 . 0) #3 a8 g bes bes
+  | bes!4 \highlightMotifSecond { a~ a8 g bes bes
   | bes a c c c b d d
   | d cis d e f e f g
   %140
   | e4 } f d e
   | cis d r2
-  | r4 a'~ a8 fis g g
+  | r4 \highlightMotifSecond { a'~ a8 fis g g
   | g e! f! f f dis e e
-  | dis4 e8 d cis4 d8 c
+  | dis4 } e8 d cis4 d8 c
+    \break
   %145
   | b4 c2 \highlightSubjectSecond { b4^\markup \subject #'(-0.8 . 0) #2
   | c g d' dis
   | e b fis'2
   | g4 fis e8 fis e4
-  | \unHighlightSubject b'8 } dis, e4~ e8 cis d d
+  | \unHighlightSubject b'8 } dis, \highlightMotifSecond { e4~ e8 cis d d
   %150
   | d b c c c a bes bes
-  | a4 bes! gis a
-  | d e cis d~
+  | a4 } bes! gis a
+  | d e cis \highlightMotifSecond { d~
   | d8 f e e e g f f
-  | f a g g g bes a a
+  | f a g g g bes a a }
   %155
   | g4 g,~ g8 bes a a
   | a fis g g g bes ees4~
@@ -209,17 +221,17 @@ Sopran = \context Voice = "one" \relative c'' {
   %160
   | r bes a g
   | r f8 e f4 g
-  | a } d,~ d8 bes c c
+  | a } \highlightMotifSecond {  d,~ d8 bes c c
   | c2~ c8 aes bes bes
-  | bes2 r4 d~
+  | bes2 } r4 d~
   %165
   | d8 f e! e f2~
   | f8 d ees ees ees4. ees8
-  | d c bes a g4 \highlightSubjectThirdInv { f~^\markup \scale #'(1 . -1) \subject #'(0 . 0) #3
+  | d c bes a g4 \highlightMotifSecond { f~
   | f8 aes g g g bes a a
-  | a c b b b d cis cis
+  | a c b b b d cis cis }
   %170
-  | \omit Beam \omit Stem cis e d d } % d f e e
+  | \omit Beam \omit Stem cis e d d % d f e e
     \undo\omit Beam \undo\omit Stem
     s2
   | a2 r4 g'
@@ -253,7 +265,8 @@ Alto = \context Voice = "two" \relative c' {
   \voiceTwo
   \showStaffSwitch
   %1
-  | \highlightSubjectFirst { r4_\markup \subject #'(0 . 0) #1 d a' g
+  | \highlightSubjectFirst {
+    r4_\markup \subject #'(0 . 0) #1 d a' g
   | r f e d
   | r cis d e
   | r f8 g f4 e
@@ -295,17 +308,23 @@ Alto = \context Voice = "two" \relative c' {
   | \once\override NoteColumn.force-hshift = #0.6 a
     \staffLower
     \stemUp\tieUp
-    \highlightSubjectSecond { a,^\markup \subject #'(-0.5 . 0) #2
+    \highlightSubjectSecond {
+    a,
+    ^\markup \subject #'(-0.5 . 0) #2
+    _\markup {
+      \secondExpositionBullet "Exposition 2 A2 T2 B2 S2 (27−60)"
+    }
   | bes4 f c' cis
   | d a e'2
   %30
   | f4 e d8 e d4
   | \staffUpper
     \stemDown\tieDown
-    a'4. } a8 b a b cis
-  | d4 a d cis
+    a'4. } \highlightMotifSecond { a8_\markup { \hspace #-2.4 "More melodic motif" }
+    b a b cis
+  | d4 } a \highlightMotif { d cis
   | c! b bes a
-  | gis8 c b a b d c b
+  | \unHighlightMotif gis8 } c b a b d c b
   %35
   | a2 r4 r8 f
   | e4 g f fis
@@ -327,8 +346,8 @@ Alto = \context Voice = "two" \relative c' {
   %50
   | g a2 gis4
   | a b~ b8[ e,16 f] g a bes8
-  | a4 g f r8 d'
-  | e d e fis g f ees d
+  | a4 g f r8 \highlightMotifSecond { d'
+  | e d e fis \unHighlightMotif g } f ees d
   | cis4 d2 e4
   %55
   | a, r8 bes~ bes a g fis
@@ -345,16 +364,16 @@ Alto = \context Voice = "two" \relative c' {
     \stemDown\tieDown
   r r2
   | r4 a' gis g~
-  | g8 f r f g f g a
-  | bes f bes d c b c d
+  | g8 f r \highlightMotifSecond { f g f g a
+  | \unHighlightMotif bes } f bes \highlightMotifSecond { \unHighlightMotif d } c b c d
   %65
   | b d g,4 fis f
   | e r8 gis a gis a b
   | e,4. d8 cis4 c
-  | b8 b' a gis a c b a
+  | b8 b' a gis a c b \highlightMotif { a
   | gis4 g fis f
   %70
-  | e f e2
+  | e } f e2
   | e4 r r f
   | f e r g
   | g f e gis~
@@ -380,17 +399,18 @@ Alto = \context Voice = "two" \relative c' {
   | \once\override NoteColumn.force-hshift = #-0.3 bes
   a r2
   %90
-  | r r4 bes,~
+  | r r4 \highlightMotifSecond { bes,~
+    ^\markup { "Motif (variation of third subject)" }
   | bes8 a c c c b d d
-  | d cis d e f e f g
+  | d cis d e \unHighlightMotif f } e f g
   | e g f e d4 \highlightSubjectSecond { e_\markup \subject #'(-2 . 0) #2
   | f c g' gis
   %95
   | a e b'2
   | c4 b a8 b a4
-  | e'2 } r4 d~
+  | e'2 } r4 \highlightMotifSecond { d~
   | d8 b c c c a b b
-  | b gis a c fis,4 f
+  | \unHighlightMotif b } gis a c fis,4 f
   %100
   | e2 fis4 bes!
   | a \highlightSubjectFirst { d,_\markup \subject #'(1.5 . 0) #1 a' g
@@ -404,10 +424,10 @@ Alto = \context Voice = "two" \relative c' {
     \highlightSubjectThird { a'~_\markup \scale #'(1 . -1) \subject #'(1.2 . 0) #3 a8 fis g g
   | g e f! f f d e e
   | e cis d4 } r c
-  | f e ees r8 c'~
+  | f e ees r8 \highlightMotifSecond { c'~
   | c a bes bes bes g aes aes
   %110
-  | g4. a!8 fis4. g8
+  | g4. } a!8 fis4. g8
   | c,4 c'~c8 a bes bes
   | a2 g
   | \shape #'((0.2 . 0.5) (0 . 0.3) (0 . 0.4) (0 . 0.3)) Tie
@@ -416,61 +436,65 @@ Alto = \context Voice = "two" \relative c' {
   %115
   | g fis a a a g b b
   | a4 b8 cis d4 } r
-  | r2 r4 d~
+  | r2 r4 \highlightMotifSecond { d~
   | d8 b c c c a b b
-  | b gis a a a fis gis gis
+  | b gis a a a fis gis gis }
   %120
-  | gis[ a16 g] fis8 e fis2~
+  | gis[ a16 g] fis8 e \highlightMotifSecond { fis2~
   | fis8 e gis gis gis fis a a
   | a gis b b b a c c
-  | c b d d d cis e e
+  | c b d d d cis e e }
   | e d ees ees ees d d d
   %125
   | d c g g f4 d'8 d
   | bes g a4 gis a8 g
   | fis4 gis~ gis8 b a c
   | b4 a2 gis4
-  | a g fis f
+  | \highlightMotif { a g fis f
   %130
-  | e4. e8 f a e e
-  | e g f f f a g g
+  | e4. } e8 f a \highlightMotifSecond { e e
+  | e g f f f a g g }
   | g bes a d d b cis cis
   | cis e, f f bes2~
   | bes4. bes8 a4 g~
   %135
   | g f8 d g2~
   | g4 f8 g f4 ees~
-  | ees8 d \highlightSubjectThird { f f f e g g
+  | ees8 d \highlightSubjectThird {
+    f_\markup \subject #'(0 . 0) #3
+    f f e g g
   | g fis a a a gis b b
   | b a b cis d cis d e
   %140
-  | cis4 } c b bes
-  | a bes b c
-  | cis d ees2~
+  | cis4 } \highlightMotif { c b bes
+  | a } \highlightMotif { bes b c
+  | cis d } ees2~
   | ees8 cis d d d b c c
-  | b4. bes8 a4. aes8
+  | b4. \highlightMotif { bes8 a4. aes8
   %145
-  | g4. f8 \highlightSubjectThird { ees_\markup \subject #'(-2 . 0) #3 d f f
+  | g4. } f8 \highlightSubjectThird { ees_\markup \subject #'(-2 . 0) #3 d f f
   | f e! g g g fis a a
   | a gis b b b a c c
   | \unHighlightSubject c } b a b g4 c
   | b r r2
   %150
-  | r4 a~ a8 fis g g
-  | fis4 f e r
-  | r2 r4 a~
+  | r4 a~ a8 fis \highlightMotif { g g
+  | fis4 f e } r
+  | r2 r4 \highlightMotifSecond { a~
   | a8 f g g g e f f
-  | f d e e e cis d4~
+  | f d e e e cis \unHighlightMotif d4~ }
   %155
-  | %\single\override Stem.details.beamed-lengths = #'(2)
+  | %\override Stem.details.beamed-lengths = #'(0)
+    \override Beam.positions = #'(-5.5 . -5.5)
     d8[
-    \staffLower
+    \hideStaffSwitch \staffLower
     \stemUp\tieUp
-    %\single\override Stem.details.beamed-lengths = #'(2)
     \once\override NoteColumn.force-hshift = #1.8 b
     \staffUpper
     \stemDown\tieDown
     c e]
+    \revert Beam.positions
+    \showStaffSwitch
     e g fis fis
   | fis d e4~ e8 g fis fis
   | fis a g g g a bes4~
@@ -512,7 +536,7 @@ Alto = \context Voice = "two" \relative c' {
   | d2 } cis4 c
   %180
   | d8 bes'4 a8~ a c e bes
-  | a d cis c b bes a gis
+  | a \highlightMotif { d cis c b bes a gis }
   | a bes! g a f4 bes
   | \once\override NoteColumn.force-hshift = #0.4 cis,
     a'8 bes a4 g
@@ -582,14 +606,14 @@ Tenor = \context Voice = "three" \relative c' {
   | cis f2 e4
   %40
   | d r r2
-  | r4 r8 g, a g a b
-  | c4 r r2
+  | r4 r8 \highlightMotifSecond { g, a g a b
+  | c4 } r r2
   | R1
-  | r4 d, ees e
+  | r4 \highlightMotif { d, ees e
   %45
   | f fis g gis
-  | a r8 a bes!4 b
-  | c cis d8 ees d c
+  | a } r8 \highlightMotif { a bes!4 b
+  | c cis d8 \unHighlightMotif ees } d c
   | d2 g,4 c8 bes
   | a f c'4. e8 d c
   %50
@@ -597,27 +621,28 @@ Tenor = \context Voice = "three" \relative c' {
   | c4 b a16 b c d e4
   | f cis d8 r r4
   | R1
-  | r4 r8 a b a b cis
+  | r4 r8 \highlightMotifSecond { a b a b cis
   %55
-  | d a d4 r2
+  | \unHighlightMotif d } a d4 r2
   | r8 cis, d e f e f4
-  | e a gis g
+  | e \highlightMotif { a gis g
   | fis f e ees
-  | d r r2
+  | d } r r2
   %60
-  | r4 r8 g a g a b
-  | c c, c'4 b bes~
-  | bes a b8 a b cis
-  | d a d2 c!4
-  | bes g' fis f~
+  | r4 r8 \highlightMotifSecond { g a g a b
+  | \unHighlightMotif c } c, c'4 b bes~
+  | bes \highlightMotifSecond { a b8 a b cis
+  | \unHighlightMotif d } a d2 c!4
+  | bes \highlightMotif { g' fis f~
   %65
   | f e dis d~
   | d cis c b~
-  | b a r r8 fis'
+  | b } a r r8 fis'
   | e d \highlightSubjectSecondInv { \unHighlightSubject c } b c4 d
   | e8 dis e c d cis d gis,
   %70
   | a b c4 b2
+  \break
   | c4 \highlightSubjectFirstInv { e^\markup \scale #'(1 . -1) \subject #'(2.5 . 0) #1 a, b
   | e\rest c d e
   | d\rest f e d
@@ -625,8 +650,8 @@ Tenor = \context Voice = "three" \relative c' {
   %75
   | e2 } r4 bes!
   | a d8 c b4 bes
-  | a d, e8 d e fis
-  | g4 fis8 e fis a cis e~
+  | a \highlightMotifSecond { d, e8 d e fis
+  | g4 } fis8 e fis a cis e~
   | e d4 cis8 d f4 e8
   %80
   | f8 e d4 r
@@ -675,10 +700,10 @@ Tenor = \context Voice = "three" \relative c' {
     d8 cis f4 r
   | r d cis c~
   | c b c g'
-  | g2 r4 f~
+  | g2 r4 \highlightMotifSecond { f~
   | f8 dis e e e cis d d
   %100
-  | d b c!4 d e
+  | \unHighlightMotif d } b c!4 d e
   | a,4. a8 b4 cis
   | d r r
     \staffUpper
@@ -703,8 +728,8 @@ Tenor = \context Voice = "three" \relative c' {
   | f4 g a8 g a4
   | d, } f c'4. d16 c
   %110
-  | b4 c~ c8 a bes! bes
-  | bes g a a g4
+  | b4 \highlightMotifSecond { c~ c8 a bes! bes
+  | bes g a a g4 }
     \staffUpper
     \stemDown\tieDown
     \once\override NoteColumn.force-hshift = #0.3 g'
@@ -719,26 +744,26 @@ Tenor = \context Voice = "three" \relative c' {
     bes4. a8 g bes a g
   %115
   | a4 d8 c b cis d4~
-  | d8 cis g'4~ g8 e f f
-  | f dis e e e a, d c
+  | d8 cis \highlightMotifSecond { g'4~ g8 e f f
+  | f dis e e } e a, d \highlightMotif { c
   | b4 bes a r8 a
   | gis4 g fis f
   %120
-  | e2. dis4
+  | e2. } dis4
   | e4 e'2 dis4
   | e gis, a r
   | r2 r4 e'
   | f fis g gis
   %125
-  | a2~ a8 f g g
+  | a2~ a8 \highlightMotifSecond { f g g
   | g e f f f d e e
-  | e c d d d2~
+  | e c d d d2~ }
   | d4 c f b,
-  | c8 d e e e cis d d
+  | c8 d \highlightMotifSecond { e e e cis d d
   %130
-  | d b c! c d f bes, bes
+  | d b c! c } d f \highlightMotifSecond { bes, bes
   | bes g a a a f g g
-  | g e f4 r bes
+  | \unHighlightMotif g } e f4 r bes
   | a2 g~
   | g4 e f g
   %135
@@ -750,7 +775,7 @@ Tenor = \context Voice = "three" \relative c' {
   %140
   | \unHighlightSubject a'8 } e a a a fis g g
   | g e
-    \staffUpper
+    \hideStaffSwitch \staffUpper
     \stemDown\tieDown
     \once\override NoteColumn.force-hshift = #0.3 f!
     f
@@ -758,7 +783,7 @@ Tenor = \context Voice = "three" \relative c' {
     \once\override NoteColumn.force-hshift = #0.3 g g
   | \once\override NoteColumn.force-hshift = #0.3 g bes
     \once\override NoteColumn.force-hshift = #0.4 a!4
-    \staffLower
+    \showStaffSwitch \staffLower
     \stemUp\tieUp
     c,2
   | bes4 r r g'
@@ -777,17 +802,17 @@ Tenor = \context Voice = "three" \relative c' {
   | r g8 a g4 fis
   %150
   | e2 } r4 e'~
-  | e8 cis d d d b c c
-  | b4 bes a4. c8
+  | e8 cis d d d b \highlightMotif { c c
+  | b4 bes a4. } c8
   | bes a bes4 r a8 b
   | cis b cis4 d\rest c
   %155
-  | \override Stem.details.beamed-lengths = #'(6)
-    b8[ d c c] c2~
+  | \override Stem.details.beamed-lengths = #'(4)
+    b8[ d c c] \highlightMotifSecond { c2~
     \revert Stem.details.beamed-lengths
   | c8 a bes bes bes g a a
   | a fis g g g e f f
-  | e a cis4 r
+  | \unHighlightMotif e } a cis4 r
     \staffUpper
     \stemDown\tieDown
     bes'^~
@@ -809,10 +834,10 @@ Tenor = \context Voice = "three" \relative c' {
   | r4 d'~ d8 f e e
   %170
   | e
-    \staffUpper
+    \hideStaffSwitch \staffUpper
     \stemDown\tieDown
     g f f f a g g
-  | \staffLower
+  | \showStaffSwitch \staffLower
     \stemUp\tieUp
     cis,4 d g,2~
   | g4 f r d'
@@ -840,23 +865,46 @@ Tenor = \context Voice = "three" \relative c' {
 Bass = \context Voice = "four" \relative c {
   \voiceFour
   | s1*8
-  | \highlightSubjectFirst { r4_\markup \subject #'(1.5 . 0) #1 d a' g
+    _\markup {
+      \expositionBullet "First exposition T1 S1 B1 A1 (1−17)"
+    }
+    _\markup \italic \tiny \with-color #greyTextColor {
+      \ieyeglasses
+      \column {
+        \concat {
+          "This fugue can be divided into three blocks of "
+          "27 (subject 1), 44 (subject 2), 114 bars (exp 1/b, subjects 1 2 3)."
+        }
+        \raise #0.8
+        \concat {
+          "And we note that 44/27"
+          \char ##x2248 "114/70"
+          \char ##x2248 "1.618 (golden ratio)"
+          " where 70 is the sum of the bars of the first two blocks."
+        }
+      }
+    }
+  | \highlightSubjectFirst { d4\rest_\markup \subject #'(1.5 . 0) #1 d a' g
   %10
-  | r f e d
-  | r cis d e
-  | r f8 g f4 e
+  | d\rest f e d
+  | d\rest cis d e
+  | d\rest f8 g f4 e
   | d2 } r4 e
   | f e8 d e4 f
   %15
   | b, c8 d c4 b
   | a a' d, g~
-  | g f8 g f4 e
+  | g
+    _\markup { \episodeBullet "Episode 1" }
+    f8 g f4 e
   | d r r2
   | r4 d8 e d4 c
   %20
   | bes bes' e, fis
   | g2. a4
-  | bes a8 g f e d cis
+  | bes a8
+    _\markup { \subjectPresentationBullet "Subject S1 (22−25)" }
+    g f e d cis
   | d4 r r d
   | a' g f bes
   %25
@@ -866,24 +914,30 @@ Bass = \context Voice = "four" \relative c {
   | \override MultiMeasureRest.staff-position = #-4
     R1*2
   %30
-  | r4 a'2 gis4
+  | r4 \highlightMotif { a'2
+    _\markup {
+      \hspace #-1
+      "Chromatic motif inverted"
+    }
+    gis4
   | g! fis f e
-  | d2 b\rest
+  | d2 } b\rest
   | \override MultiMeasureRest.staff-position = #0
     R1
   | \override MultiMeasureRest.staff-position = #-4
     R1
   %35
-  | r4 a bes b
+  | r4 \highlightMotif { a bes b
   | c cis d dis
-  | e2 f
-  | e4 r8 e fis e fis gis
-  | a4 b,\rest b2\rest
+  | e2 } f
+  | e4 r8 \highlightMotifSecond { e fis e fis gis
+  | a4 } b,\rest b2\rest
   %40
   | r4 d cis c
   | b e2 d4
-  | c4 r8 c d c d e
-  | f e f g a4 \highlightSubjectSecond { a,_\markup \subject #'(-2 . 0) #2
+  | c4 r8 \highlightMotifSecond { c d c d e
+  | \unHighlightMotif f e f g a4 }
+    \highlightSubjectSecond { a,_\markup \subject #'(-2 . 0) #2
   | bes f c' cis
   %45
   | d a e'2
@@ -893,36 +947,41 @@ Bass = \context Voice = "four" \relative c {
   | d e f c8\rest d
   %50
   | e4 fis g c,8\rest e
-  | fis4 gis a r8 g
+  | fis4 gis a d,8\rest g
   | f g f e d a d c
   | bes c bes a g d' g4~
   | g fis f e
   %55
-  | r d cis c
-  | b bes a gis
+  | r \highlightMotif { d cis c
+  | b bes a gis }
   | a r r r8 cis
   | d4 r r r8 a
-  | bes a g2 fis4
+  | bes a \highlightMotif { g2 fis4
   %60
-  | f! e ees d
-  | c r8 c' d c d e
-  | f c f2 e4
+  | f! e ees d }
+  | c r8 \highlightMotifSecond { c' d c d e
+  | \unHighlightMotif f } c f2 e4
   | d r r2
   | r4 bes' a aes
   %65
   | g r r2
   | r4 r8 e fis e fis gis
-  | a e a4~ a8 gis \highlightSubjectSecondInv { a4_\markup \scale #'(1 . -1) \subject #'(0 . 0) #2
+  | a e a4~ a8 gis \highlightSubjectSecondInv {
+    a4_\markup \scale #'(1 . -1) \subject #'(0 . 0) #2
   | gis c fis, f
   | e a d,2
   %70
   | c4 d e8 d e4
-  | a, } r r gis'
+  | a, } r
+    _\markup {
+      \expositionBullet "Another Exposition with First Subject T1 S1 B1 A1 (71−88)"
+    }
+    r gis'
   | a2 r4 cis,
   | d2 r4 e
-  | f2 r4 b,
+  | f2 r4 \highlightMotif { b,
   %75
-  | c8 b c d e e, e'4
+  | c8 b c d \unHighlightMotif e } e, e'4
   | f fis g cis,
   | d r r2
   | r4 d ees e
@@ -938,12 +997,15 @@ Bass = \context Voice = "four" \relative c {
   | g a~
   | a4 b8 cis d4 bes
   | f' a,8 bes c4 c,
-  | f2 \highlightSubjectSecond { a_\markup \subject #'(-2 . 0) #2
+  | f2 \highlightSubjectSecond { a
+    _\markup \subject #'(-2 . 0) #2
+    _\markup { \subjectPresentationBullet "Subjects B2 T3" }
   %90
   | bes4 f c' cis
   | d a e'2
   | f4 e d8 e d4
   | \unHighlightSubject a'8 } e a2 g4
+    _\markup { \subjectPresentationBullet "Subjects A2 S3" }
   | f4. g16 f e8 d e4
   %95
   | a, a'2 gis4
@@ -952,67 +1014,85 @@ Bass = \context Voice = "four" \relative c {
   | c e, fis gis
   | a1~
   %100
-  | a4 a~ a8 fis g g
-  | g e f! f f d e e
-  | e cis d e f e f g
-  | cis,4 r r bes~
+  | a4 \highlightMotifSecond { a~ a8 fis g g
+  | g e f!
+    _\markup { \subjectPresentationBullet "Subject A1" }
+    f f d e e
+  | e cis d e } f e f g
+  | cis,4 r r \highlightMotifSecond { bes~
   | bes8 gis a a a f g g
   %105
-  | g e fis fis g4 e
-  | a a' gis g
+  | g e fis
+    _\markup { \subjectPresentationBullet "Subjects A3 T2" }
+    fis } g4 e
+  | a \highlightMotif { a' gis g
   | fis f e ees
-  | d des c f
+  | d } des c f
   | bes,2 b\rest
   %110
   | R1
-  | r2 r4 g~
+  | r2 r4 \highlightMotifSecond { g~
   | g8 e f f f d ees ees
-  | ees c d ees f ees f4
+  | ees c d ees } f ees f4
+    _\markup { \subjectPresentationBullet "Subjects S2 A3" }
   | bes d ees2
   %115
-  | d4 fis g gis
-  | a r8 a bes4 b
-  | c cis d d,
+  | d4 \highlightMotif { fis g gis
+  | a } r8 \highlightMotif { a bes4 b
+  | c
+    _\markup { \episodeBullet "Episode 2" }
+    cis d } d,
   | g c, f b,
-  | e r8 e dis4 d
+  | e r8 \highlightMotif { e dis4 d
   %120
-  | cis c b8 a b4
+  | cis c \unHighlightMotif b8 } a b4
   | e, r r2
-  | r4 e' f fis
-  | g gis a r
-  | r a bes b
+  | r4 \highlightMotif { e' f fis
+  | g gis a } r
+  | r \highlightMotif { a bes b
   %125
-  | c cis d2~
-  | d4 d8 d d b c c
+  | c cis d2~ }
+  | \highlightMotifSecond { d4 d8 d d b c c
   | c a b b b gis a a
-  | gis4 a d, e
+  | gis4 } a d, e
   | a,1~
   %130
-  | a4 a'8 a a f g g
+  | a4 \highlightMotifSecond { a'8 a a f g g
   | g e f f f d e e
-  | e cis \highlightSubjectFirst { d4_\markup \subject #'(1 . 0) #1 a' g
+  | \unHighlightMotif e } cis\highlightSubjectFirst {
+    d4
+    _\markup \subject #'(1.2 . 0) #1
+    _\markup { \subjectPresentationBullet "Subject B1" }
+    a' g
   | r f e d
   | r cis d e
   %135
   | r f8 g f4 e
   | \unHighlightSubject d8 } cis d e f4 fis
+    _\markup { \subjectPresentationBullet "Subjects T2 A3" }
   | g d a'2~
   | a1~
   | a~
   %140
-  | a4 b,\rest b2\rest
-  | r4 d~ d8 f e e
+  | a4
+    _\markup { \episodeBullet "Episode 3" }
+    b,\rest b2\rest
+  | r4 \highlightMotifSecond { d~ d8 f e e
   | e g fis fis fis a g g
-  | g bes a a a2~
+  | g bes a a } a2~
   | a8 fis g g g e f f
   %145
-  | f d ees f g4 g,
+  | f d ees f g4
+    _\markup { \subjectPresentationBullet "Subjects A3 T1 S2" }
+    g,
   | c2 r4 f
   | e2 dis4 a'
   | g c,2 b8 a
   | g4 c a b
   %150
-  | gis a e r
+  | gis
+    _\markup { \episodeBullet "Episode 4" }
+    a e r
   | r2 r4 a'~
   | a8 fis g g g e fis4
   | g cis, r d
@@ -1021,20 +1101,28 @@ Bass = \context Voice = "four" \relative c {
   | f! e r ees
   | d cis r c
   | b bes2 a8 gis
-  | a4 c8\rest g' f e d cis
+  | a4 c8\rest
+    _\markup { \subjectPresentationBullet "Subjects S1 A1" }
+    g' f e d cis
   | d4 r8 d e4 fis
   %160
   | g8 f! e g f2~
   | f8 f bes4~ bes8 a g4
   | fis r8 d ees4 e
   | f r8 c des4 d
-  | ees \highlightSubjectFirstInv { bes'_\markup \scale #'(1 . -1) \subject #'(0 . 0) #1 e, fis
+  | ees \highlightSubjectFirstInv {
+    bes'
+    _\markup \scale #'(1 . -1) \subject #'(0 . 0) #1
+    _\markup { \subjectPresentationBullet "Subjects B1 T1" }
+    e, fis
   %165
   | r g a b
   | r c bes! a
   | r g8 fis g4 a
-  | b } b, c cis
-  | d2 r4 \highlightSubjectThirdInv { bes'~_\markup \scale #'(1 . -1) \subject #'(0 . 0) #1
+  | b } \highlightMotif { b,
+    _\markup { \episodeBullet "Episode 5" }
+    c cis
+  | d2 } r4 \highlightMotifSecond { bes'~
   %170
   | bes8 g a a a f g g
   | g e f f f d e e
@@ -1046,7 +1134,10 @@ Bass = \context Voice = "four" \relative c {
   | d a e'2
   | f4 e d8 e d4
   | a' } bes a4. g8
-  | fis4 f e \highlightSubjectThird { ees~_\markup \subject #'(-1.8 . 0) #3
+  | fis4 f e \highlightSubjectThird {
+    ees~
+    _\markup \subject #'(-1.8 . 0) #3
+    _\markup { \subjectPresentationBullet "Subjects B3 T2 S1" }
   %180
   | ees8 d f f f e g g
   | g f a a a g bes bes
@@ -1093,6 +1184,9 @@ Bass = \context Voice = "four" \relative c {
   \layout {
     \context {
       \Voice
+      \override TextScript.color = #greyTextColor
+      \override TextScript.font-shape = #'italic
+      \override TextScript.font-size = #-2
       \override VoiceFollower.color = #greyTextColor
       \override VoiceFollower.style = #'dashed-line
     }
