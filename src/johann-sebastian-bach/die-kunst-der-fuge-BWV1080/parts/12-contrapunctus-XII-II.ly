@@ -10,7 +10,13 @@ Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \label #'ContrapunctusXIIinversus
   %1
-  | \highlightSubjectFirstInv { a2^\markup \scale #'(1 . -1) \subject #'(-0.5 . 0) #1 d,1
+  | \highlightSubjectFirstInv {
+    a2
+    ^\markup \scale #'(1 . -1) \subject #'(-0.5 . 0) #1
+    ^\markup {
+      \expositionBullet "First exposition S1 A1 T1 B1 (1−18)"
+    }
+    d,1
   | f2 a1
   | bes2 a g
   | f2. e4 f g
@@ -88,9 +94,9 @@ Alto = \context Voice = "two" \relative c' {
   | bes2 d1
   | ees2 d c
   | bes2. a4 b cis
-  | d2. c!4 d e
+  | d2. } c!4 d e
   %10
-  | \unHighlightSubject f8 } e f g a4 d, c
+  | f8 e f g a4 d, c
     \staffLower
     \stemUp\tieUp
     bes
@@ -108,8 +114,8 @@ Alto = \context Voice = "two" \relative c' {
   | d a8 g f4 bes a e'
   %20
   | d2. e4 f g
-  | a2~ a8 g f e d2~
-    \pageBreak
+  | a2~
+    a8 g f e d2~
   | \hideStaffSwitch
     d8
     \staffLower
@@ -145,7 +151,6 @@ Alto = \context Voice = "two" \relative c' {
   | g2~ g8 a g f g4 a
   | bes8 c bes a bes4 c d ees
   | d f ees d cis8 b a b
-    \pageBreak
   %40
   | cis4 d e f e g
   | f e d8 e d cis d4 e
@@ -213,6 +218,27 @@ Tenor = \context Voice = "three" \relative c' {
   \showStaffSwitch
   | \override MultiMeasureRest.staff-position = #0
     R1*3/2*9
+    _\markup \italic \tiny \with-color #greyTextColor {
+      \hspace #80
+      \ieyeglasses
+      \left-column {
+        \concat {
+          "The inversus fugue looks like a reflection on an horizontal mirror "
+          "of the rectus fugue: "
+          "S A T B  " \char ##x2192 "  B T A S"
+        }
+        \raise #0.8
+        \line {
+          "Note that in the inversion process Bach also needs to tweak the modulations."
+          "For instance in the rectus the answer takes us"
+        }
+        \raise #1.6
+        \line {
+          "to the dominant key (A minor). "
+          "In the inversus this modulation goes to the subdominant key (G minor)."
+        }
+    }
+  }
   %10
   | \highlightSubjectFirstInv { a2^\markup \scale #'(1 . -1) \subject #'(2.5 . 0) #1 d,1
   | \stemDown f2 a1
@@ -303,11 +329,17 @@ Bass = \context Voice = "four" \relative c {
   | bes2 d1
   | ees2 d c
   | bes2. a4 b cis
-  | d2. cis4 d e
-  | f2. } e4 f g
+  | d2._\markup { \episodeBullet "Episode 1" } }
+    cis4 d e
+  | f2. e4 f g
   %20
   | f e d2. c8 bes
-  | \highlightSubjectSecondInv { a_\markup \scale #'(1 . -1) \subject #'(-2 . 0) #2 g f e d2~ d8 cis d e
+  | \highlightSubjectSecondInv { a
+    _\markup \scale #'(1 . -1) \subject #'(-2 . 0) #2
+    _\markup {
+      \secondExpositionBullet "Second exposition B2 T2 A2 S2 (21−46)"
+    }
+    g f e d2~ d8 cis d e
   | f4 g a2. bes8 c
   | bes2 a2. g4
   | f2. e4 f g
@@ -341,20 +373,46 @@ Bass = \context Voice = "four" \relative c {
   | d e d cis d e f g a2~
   %45
   | a8 bes a g a bes c d c bes a g
-  | f g f e f g a bes a g f a
+  | f g f e f
+    _\markup { \episodeBullet "Episode 2" }
+    g a bes a g f a
   | c d c b c4 a c a
   | e8 f e d e f g4~ g8 fis g a
   | bes c bes a bes g g'4~ g8 f e d16 cis
   %50
   | d1.~
+    _\markup {
+      \subjectPresentationBullet "Subject T2 (slightly modified at the end)"
+    }
   | d~
   | d~
   | d~
-  | d4 e8 f \highlightSubjectSecondInv { e_\markup \scale #'(1 . -1) \subject #'(-1.5 . 0) #2 d cis b a2~
+  | d4 e8 f \highlightSubjectSecondInv {
+    e
+    _\markup \scale #'(1 . -1) \subject #'(-1.5 . 0) #2
+    _\markup { \subjectPresentationBullet "Subject B2 (incomplete)" }
+    d cis b a2~
   %55
-  | a4 b cis d \unHighlightSubject e8 } d cis4
+  | a4 b cis d \unHighlightSubject e8_\markup { \endBullet "Short Coda" } }
+    d cis4
   | d1.\fermata
   \bar "|."
+}
+
+forceBreaks = {
+  % page 1
+  \repeat unfold 5 { s1.\noBreak } s\break\noPageBreak
+  \repeat unfold 3 { s1.\noBreak } s\break\noPageBreak
+  \repeat unfold 3 { s1.\noBreak } s\break\noPageBreak
+  \repeat unfold 3 { s1.\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1.\noBreak } s\pageBreak
+  % page 2
+  \repeat unfold 2 { s1.\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1.\noBreak } s\break\noPageBreak
+  \repeat unfold 3 { s1.\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1.\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1.\noBreak } s\pageBreak
+  % page 3
 }
 
 \score {
@@ -375,6 +433,7 @@ Bass = \context Voice = "four" \relative c {
       \Tenor
       \Bass
     >>
+    \new Devnull \forceBreaks
   >>
   \header {
     %composer = "Johann Sebastian Bach"
@@ -392,6 +451,9 @@ Bass = \context Voice = "four" \relative c {
   \layout {
     \context {
       \Voice
+      \override TextScript.color = #greyTextColor
+      \override TextScript.font-shape = #'italic
+      \override TextScript.font-size = #-2
       \override VoiceFollower.color = #greyTextColor
       \override VoiceFollower.style = #'dashed-line
     }

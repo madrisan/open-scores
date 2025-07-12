@@ -241,45 +241,45 @@ fugueStructureBoxesXI_linethree = \markup \fugueStructureBoxes {
 fugueStructureBoxesXII_I = \markup \fugueStructureBoxes {
   \on-color \expositionColor \pad-markup #0.8 "Exposition 1 B1 T1 A1 S1"
   \on-color \episodeColor \pad-markup #1 "1"
-  \on-color \secondExpositionColor \pad-markup #0.8 "Exposition 2 S2 A2 T2 B2"   % bar 21-45
+  \on-color \secondExpositionColor \pad-markup #0.8 \concat { "Exposition 2 S2 A2 T2 B2" \sub " 21" }  % bar 21-45
   \on-color \episodeColor \pad-markup #1 "2"
-  \on-color \subjectPresentationColor \pad-markup #0.8 "A2"   % bar 50
-  \on-color \subjectPresentationColor \pad-markup #0.8 "S2"   % bar 54 (incomplete subject)
+  \on-color \subjectPresentationColor \pad-markup #0.8 \concat { "A2" \sub " 50" }  % bar 50
+  \on-color \subjectPresentationColor \pad-markup #0.8 \concat { "S2" \sub " 54" }  % bar 54 (incomplete subject)
   \on-color \endColor \pad-markup #0.8 "Coda"
 }
 
 fugueStructureBoxesXII_II = \markup \fugueStructureBoxes {
   \on-color \expositionColor \pad-markup #0.8 "Exposition 1 S1 A1 T1 B1"
   \on-color \episodeColor \pad-markup #1 "1"
-  \on-color \secondExpositionColor \pad-markup #0.8 "Exposition 2 B2 T2 A2 S2"   % bar 21-45
+  \on-color \secondExpositionColor \pad-markup #0.8 \concat { "Exposition 2 B2 T2 A2 S2" \sub " 21" }  % bar 21-46
   \on-color \episodeColor \pad-markup #1 "2"
-  \on-color \subjectPresentationColor \pad-markup #0.8 "T2"   % bar 50
-  \on-color \subjectPresentationColor \pad-markup #0.8 "B2"   % bar 54 (incomplete subject)
+  \on-color \subjectPresentationColor \pad-markup #0.8 \concat { "T2" \sub " 50" }  % bar 50
+  \on-color \subjectPresentationColor \pad-markup #0.8 \concat { "B2" \sub " 54" }  % bar 54 (incomplete subject)
   \on-color \endColor \pad-markup #0.8 "Coda"
 }
 
 fugueStructureBoxesXIII_I = \markup \fugueStructureBoxes {
   \on-color \expositionColor \pad-markup #0.8 "Exposition 1 A B S"
   \on-color \episodeColor \pad-markup #1 "1"                  % bar 13-19
-  \on-color \subjectPresentationColor \pad-markup #0.8 "A"    % bar 20
+  \on-color \subjectPresentationColor \pad-markup #0.8 \concat { "A" \sub " 19" }  % bar 19
   \on-color \episodeColor \pad-markup #1 "2"                  % bar 24
-  \on-color \secondExpositionColor \pad-markup #0.8 "Exposition 2 B S A"  % bar 29-41
+  \on-color \secondExpositionColor \pad-markup #0.8 \concat { "Exposition 2 B S A" \sub " 28" }  % bar 28-41
   \on-color \episodeColor \pad-markup #1 "3"                  % bar 41-47
-  \on-color \subjectPresentationColor \pad-markup #0.8 "A"    % bar 47-52
+  \on-color \subjectPresentationColor \pad-markup #0.8 \concat { "A" \sub " 47" }  % bar 47-52
   \on-color \episodeColor \pad-markup #1 "4"                  % bar 52-61
-  \on-color \endColor \pad-markup #0.8 "Final presentation B S"
+  \on-color \endColor \pad-markup #0.8 \concat { "Final presentation B S" \sub " 61" }
 }
 
 fugueStructureBoxesXIII_II = \markup \fugueStructureBoxes {
   \on-color \expositionColor \pad-markup #0.8 "Exposition 1 S A B"
   \on-color \episodeColor \pad-markup #1 "1"                  % bar 13-19
-  \on-color \subjectPresentationColor \pad-markup #0.8 "S"    % bar 20
+  \on-color \subjectPresentationColor \pad-markup #0.8 \concat { "S" \sub " 19" }  % bar 19
   \on-color \episodeColor \pad-markup #1 "2"                  % bar 24
-  \on-color \secondExpositionColor \pad-markup #0.8 "Exposition 2 A B S"  % bar 29-41
+  \on-color \secondExpositionColor \pad-markup #0.8 \concat { "Exposition 2 A B S" \sub " 28" } % bar 28-41
   \on-color \episodeColor \pad-markup #1 "3"                  % bar 41-47
-  \on-color \subjectPresentationColor \pad-markup #0.8 "S"    % bar 47-52
+  \on-color \subjectPresentationColor \pad-markup #0.8 \concat { "S" \sub " 47" }  % bar 47-52
   \on-color \episodeColor \pad-markup #1 "4"                  % bar 52-61
-  \on-color \endColor \pad-markup #0.8 "Final presentation A B"
+  \on-color \endColor \pad-markup #0.8 \concat { "Final presentation A B" \sub " 61" }
 }
 
 fugueStructureBoxesXIV_lineone = \markup \fugueStructureBoxes {

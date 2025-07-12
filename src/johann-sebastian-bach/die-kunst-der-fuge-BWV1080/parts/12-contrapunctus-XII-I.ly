@@ -23,6 +23,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | f2. g4 f e
   %20
   | f g a2. b8 cis
+    %\break
   | \highlightSubjectSecond { d^\markup \subject #'(-0.8 . 0) #2 e f g a2~ a8 bes a g
   | f4 e d2. cis8 b
   | cis2 d2. e4
@@ -193,7 +194,11 @@ Tenor = \context Voice = "three" \relative c' {
   | a d8 e f4 cis d g,
   %20
   | a2. g4 f e
-  | d2~ d8 e f g a2~
+  | d2~
+    _\markup {
+      \secondExpositionBullet "Second exposition S2 A2 T2 B2 (21−46)"
+    }
+    d8 e f g a2~
   | \hideStaffSwitch
     a8
     \staffUpper
@@ -266,9 +271,13 @@ Tenor = \context Voice = "three" \relative c' {
   | a,4 r d,8 e f g a2~
   | a8 bes a g f2~ f8 e d cis
   | d a' b cis d e d cis d4 g,
-  | fis bes!~ bes8 a g a bes c bes a
+  | fis bes!~ bes8
+    _\markup { \subjectPresentationBullet "Subject S2 (incomplete)" }
+    a g a bes c bes a
   %55
-  | g d e fis g a bes c bes a g fis!16 e
+  | g d e fis g a bes c bes
+    _\markup { \endBullet "Short Coda" }
+    a g fis!16 e
   | fis8 g a4 d,1\fermata
   \bar "|."
 }
@@ -276,7 +285,13 @@ Tenor = \context Voice = "three" \relative c' {
 Bass = \context Voice = "four" \relative c {
   \voiceFour
   %1
-  | \highlightSubjectFirst { d2_\markup \subject #'(1.2 . 0) #1 a'1
+  | \highlightSubjectFirst {
+    d2
+    _\markup \subject #'(1.2 . 0) #1
+    _\markup {
+      \expositionBullet "First exposition B1 T1 A1 S1 (1−18)"
+    }
+    a'1
   | f2 d1
   | cis2 d e
   | f2. g4 f e
@@ -297,7 +312,9 @@ Bass = \context Voice = "four" \relative c {
   | a8 g f e f2 r4 f'
   | e8 d c b c2 r4 e
   | a,8 b c d e2 e,
-  | f8 g a bes c2 c,
+  | f8
+    _\markup { \episodeBullet "Episode 1" }
+    g a bes c2 c,
   | d8 e f g a2 r4 bes
   %20
   | a g f e d2
@@ -327,12 +344,19 @@ Bass = \context Voice = "four" \relative c {
   | cis2 d2. e4
   %45
   | f2. g4 f e
-  | \unHighlightSubject d2~ } d8 cis d e f4 d
+  | \unHighlightSubject d2~ }
+    d8
+    _\markup { \episodeBullet "Episode 2" }
+    cis d e f4 d
   | g2~ g8 fis g a g4 f
   | e2~ e8 d e f g4 e
   | a2~ a8 g a bes a4 e
   %50
-  | f2. e8 d cis a b cis
+  | f2.
+    _\markup {
+      \subjectPresentationBullet "Subject A2 (slightly modified at the end)"
+    }
+    e8 d cis a b cis
   | d cis d e f2~ f8 e f g
   | a4 r d,,8 e f g a2~
   | a4 g f e f8 a b cis
@@ -341,6 +365,22 @@ Bass = \context Voice = "four" \relative c {
   | d~
   | d2~ d8[ a16 g fis g a8] d,2\fermata
   \bar "|."
+}
+
+forceBreaks = {
+  % page 1
+  \repeat unfold 5 { s1.\noBreak } s\break\noPageBreak
+  \repeat unfold 3 { s1.\noBreak } s\break\noPageBreak
+  \repeat unfold 3 { s1.\noBreak } s\break\noPageBreak
+  \repeat unfold 3 { s1.\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1.\noBreak } s\pageBreak
+  % page 2
+  \repeat unfold 2 { s1.\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1.\noBreak } s\break\noPageBreak
+  \repeat unfold 3 { s1.\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1.\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1.\noBreak } s\pageBreak
+  % page 3
 }
 
 \score {
@@ -361,6 +401,7 @@ Bass = \context Voice = "four" \relative c {
       \Tenor
       \Bass
     >>
+    \new Devnull \forceBreaks
   >>
   \header {
     %composer = "Johann Sebastian Bach"
@@ -378,6 +419,9 @@ Bass = \context Voice = "four" \relative c {
   \layout {
     \context {
       \Voice
+      \override TextScript.color = #greyTextColor
+      \override TextScript.font-shape = #'italic
+      \override TextScript.font-size = #-2
       \override VoiceFollower.color = #greyTextColor
       \override VoiceFollower.style = #'dashed-line
     }
