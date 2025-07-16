@@ -142,6 +142,7 @@ AC_CONFIG_FILES([\
   src/johann-sebastian-bach/fuga/BWV947/Makefile \
   src/johann-sebastian-bach/fuga/BWV948/Makefile \
   src/johann-sebastian-bach/fuga/BWV949/Makefile \
+  src/johann-sebastian-bach/fuga/BWV950/Makefile \
   src/johann-sebastian-bach/fuga/BWV951/Makefile \
   src/johann-sebastian-bach/fuga/BWV952/Makefile \
   src/johann-sebastian-bach/fuga/BWV953/Makefile \

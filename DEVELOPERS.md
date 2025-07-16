@@ -62,6 +62,8 @@ make -C src/johann-sebastian-bach/fantasie-und-fuge-BWV904
 make -C src/johann-sebastian-bach/fantasie-und-fuge-BWV944
 make -C src/johann-sebastian-bach/fuga/BWV947
 make -C src/johann-sebastian-bach/fuga/BWV948
+make -C src/johann-sebastian-bach/fuga/BWV949
+make -C src/johann-sebastian-bach/fuga/BWV950
 make -C src/johann-sebastian-bach/fuga/BWV951
 make -C src/johann-sebastian-bach/fuga/BWV952
 make -C src/johann-sebastian-bach/fuga/BWV953
