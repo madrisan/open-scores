@@ -167,9 +167,40 @@ Soprano = \context Voice = "one" \relative c'' {
   | b8 cis ais8.\parenthesize\mordent b16 b8 r r4
   %45
   | r8 e4 d!16 e cis4 r
+  | r8 dis4 cis16 dis bis8 gis'4 fis16 gis
+  | e8 d16 cis d cis bis cis bis8 e16 cis d! cis bis! cis
+  | bis gis gis' cis, bis8.\parenthesize\mordent cis16 cis4 r8 cis
+  | dis4 r8 dis cis4 r8 cis
+  %50
+  | dis gis, a gis <e gis> gis'16 e a e a gis
+  | fis8 fis16 dis gis dis gis fis e8 e16 cis fis cis fis e
+  | dis8 dis16 b e b e d cis8 dis16 eis fis4~
+  | fis16 fis eis dis eis8 b'~ b16 b a gis a8 d,~
+  | d16 d cis b cis8 gis'~ gis16 gis fis eis fis8 b,
+  %55
+  | b16 gis a b eis,4 r16 cis' b a d a gis fis
+  | eis cis' b a gis8.\mordent fis16 fis4. fis8
+  | gis a b gis cis d e fis
+  | gis a b4~ b8 a16 gis a8 gis
+  | fis8 r r4 r2
+  %60
+  | \override MultiMeasureRest.staff-position = #2
+    R1*2
+  | \highlightSubject { b,8\rest e,4 fis16 gis a8 gis16 a fis gis a b
+  | gis8 cis b cis16 b a b gis a fis8.\mordent e16
+  | e8 } b'16\rest b, cis e d cis d fis e d e g fis e
+  %65
+  | fis8 b16\rest fis gis b a gis a cis b a gis e' d cis
+  | b cis b a gis a gis fis e b' a gis fis e' d cis
+  | b fis' e d cis b a g fis gis a b cis8 b16\trill a
+  | a4 r r2
+  | \override MultiMeasureRest.staff-position = #4
+    R1*2
+  | R1*4
+  %75
 
   | \override MultiMeasureRest.staff-position = #0
-    R1*54
+    R1*25
     \fine
 }
 
@@ -238,7 +269,7 @@ Alto = \context Voice = "two" \relative c' {
   | fis8 e16 fis dis e fis gis e8 a gis a16 gis
   %50
   | fis gis e fis dis8. cis16 cis4 r8 cis
-  | d cis bis gis cis b
+  | dis cis bis gis cis b
     \hideStaffSwitch \change Staff = "lower" \voiceThree
     ais fis
   | b a gis e a4
@@ -260,16 +291,17 @@ Alto = \context Voice = "two" \relative c' {
   | d8 cis'16 a b d, cis b cis8 b'16 gis a cis, b a
   | b8 a'16 fis gis
     \hideStaffSwitch \change Staff = "lower" \voiceThree
-    gis, a gis cis b a gis fis8.\parenthesize\trill e16
+    gis, a gis cis b a gis fis8.\parenthesize\mordent e16
   | e2 fis8 e4 dis8
-  | e8. fis16 gis8 a b cis dis4
-  | e8 r r4 r2
+  | e8. fis16 gis8 a b
+    \change Staff = "upper" \voiceTwo
+    cis dis4
+  | e8 g,\rest r4 e2\rest
   %65
-  | \change Staff = "upper" \voiceTwo
     R1
-  | \override MultiMeasureRest.staff-position = #-8
+  | \override MultiMeasureRest.staff-position = #-10
     R1*2
-  | \highlightSubject { r8 a,4 b16 cis d8 cis16 d b cis d e
+  | \highlightSubject { r8 a4 b16 cis d8 cis16 d b cis d e
   | cis8 fis e fis16 e d e cis d b8.\parenthesize\trill a16
   %70
   | \unHighlightSubject a8 } a'16 a, b g' cis, g' fis d b' b, cis a' dis, a'
@@ -337,9 +369,38 @@ Bass = \context Voice = "four" \relative c {
     \override Rest.staff-position = #0
     r2 r8 b16 cis dis e fis dis
   | e8 e,16 fis gis a b gis a8 a16 b cis dis e cis
+  | dis8 dis16 e fis gis a fis gis8 gis16 ais bis cis dis bis
+  | cis8 e fis fis, gis cis, fis8. fis,16
+  | gis8 e16 fis gis4 cis8 cis16 dis e8 dis16 cis
+  | bis4 r8 gis cis16 cis' fis, cis' e, cis' fis, cis'
+  %50
+  | dis, bis' cis, cis' fis, cis' gis bis cis,4 r
+  | R1*2
+  | \override MultiMeasureRest.staff-position = #0
+    R1*3
+  %56
+  | r2 r8 fis4 gis16 a
+  | b8 a16 b gis a b cis a8 d! cis8 d16 cis
+  | b cis a b gis8. cis16 d8 cis16 b cis8 cis,
+  | fis4 r8 b gis4 r8 a
+  %60
+  | fis4 r8 gis e4 r8 fis
+  | \stemDown dis4 b8\rest e a, fis b4
+  | e,8 e'16 d cis b a gis fis8 cis' a b
+  | e, a e' cis dis e fis16 a gis fis
+  | gis b a gis a8 \stemNeutral r16 e fis a g fis g b a g
+  %65
+  | a cis b a b8 r16 b cis e d cis b8 a
+  | gis fis e d cis a d b
+  | e gis a cis, d16 cis b a e'8 e,
+  | a16 cis d e fis e d cis b gis' a4 gis8
+  | a gis16 fis gis8 cis fis,16 gis a8 d, e
+  %70
+  | fis4. e8 d4 fis8 b,
+  | e gis b e a, gis a d
 
-  | \override MultiMeasureRest.staff-position = #-4
-    R1*54
+  | \override MultiMeasureRest.staff-position = #0
+    R1*28
     \fine
 }
 
