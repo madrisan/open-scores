@@ -328,7 +328,7 @@ forceBreaks = {
   \header {
     composer = ##f % "Johann Sebastian Bach"
     opus = "BWV 953"
-    title = \markup { "Fuga à 3" }
+    title = \markup { "Fuga C-Dur" }
     subtitle = ##f
   }
   \layout {

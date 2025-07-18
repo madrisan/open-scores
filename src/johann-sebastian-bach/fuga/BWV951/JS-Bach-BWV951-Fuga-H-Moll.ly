@@ -672,8 +672,8 @@ Bass = \context Voice = "four" \relative c {
   \header {
     composer = ##f % "Johann Sebastian Bach"
     opus = "BWV 951"
-    title = \markup { "" }
-    subtitle = ##f
+    title = \markup { "Fuge H-Moll" }
+    subtitle = \markup { \italic "Über ein Thema von Tommaso Albinoni" }
   }
   \layout {
     \context {
