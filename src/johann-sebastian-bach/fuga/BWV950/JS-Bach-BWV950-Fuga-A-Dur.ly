@@ -570,7 +570,7 @@ Bass = \context Voice = "four" \relative c {
     a~
   | a1\fermata
   } \\ {
-  | \voiceFour
+  | \voiceThree \stemDown
     f'16\rest e cis a s4 \stemUp d2
   | <gis, b d e>4 f'4\rest f2\rest
   | f\rest a16\rest gis a b cis e, fis gis
@@ -601,7 +601,8 @@ Bass = \context Voice = "four" \relative c {
     \override Tie.extra-offset = #'(-0.6 . -0.8)
     cis8^~ \shiftOff cis4 s2
   } \\ {
-  | s1
+  | \voiceFour
+    s1
   | s1
   | s1
   | \stemDown
