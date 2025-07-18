@@ -198,9 +198,73 @@ Soprano = \context Voice = "one" \relative c'' {
     R1*2
   | R1*4
   %75
-
-  | \override MultiMeasureRest.staff-position = #0
-    R1*25
+  | \highlightMotif { r8 e'4 fis16 gis a8 gis16 a fis gis a b
+  | \unHighlightSubject gis } a gis fis e fis e d! cis dis e fis dis e fis gis
+  | e8 r r e~ e4. dis8
+  | e4. b8 cis b a fis
+  | gis4 c8\rest gis a b cis16 b cis dis
+  %80
+  | e8 b16 cis d cis b a gis8 b16 cis d cis b a
+  | gis8 cis16 d e d cis b a8 d16 e fis e d cis
+  | d e d cis b8.\parenthesize\mordent a16 a4 d8\rest e,
+  | fis e fis gis a16 gis a b cis4
+  | b8 a4 gis8 a16 e a e d'\rest e, a e
+  %85
+  | r16 a cis a r b fis' b, r b e b r b e b
+  | r cis fis cis r cis fis cis d4 d~
+  | d8. b16 e4~ e16 e a8~ a16 b a gis
+  | fis b a b e, a gis a d, gis fis gis cis, fis e fis
+  | b, e dis e a, dis cis dis e b e8~ <b e>4~
+  %90
+  | \override Rest.staff-position = #0
+    q r r16 e, fis gis a b cis d
+  | << {
+      cis a cis
+      \override Tie.extra-offset = #'(-0.4 . 0)
+      e_~ e2
+    } \\ {
+      \voiceOne
+      s4 a2
+    } \\ {
+      \voiceOne \stemDown\tieDown
+      s8 cis,~ cis2
+    } \\ {
+      \voiceOne \stemDown\tieDown
+      \mergeDifferentlyDottedOn
+      f,16\rest
+      \override Tie.extra-offset = #'(0 . -1.5)
+      a8.~ a2
+    } >>
+    r4
+  | \stemNeutral
+    r16 e' g fis e d cis b cis a e' gis, a b cis e,
+  | a,16 r r8 r4 r4 d'16\rest a gis fis
+  | \stemUp\tieUp
+    <gis b>4 e'16\rest \tempo "(Allegro)" d
+    cis b e b cis d e4~
+  %95
+  | <cis e>1~
+  | q4 f16\rest d cis b e gis, a b cis e, fis gis
+  << {
+  | a4 a~ a16 b cis! d!32 e gis,8.\mordent a16
+  | a2 a
+  | a1\fermata
+  } \\ {
+  | a16 e cis a r8 dis e2
+  | d16\rest g fis e \stemUp fis4 \shiftOn fis2
+  | \once\override NoteColumn.force-hshift = #0.8
+    e8 fis e d e2^\fermata
+  } \\ {
+  | s2
+    \once\override Voice.Rest.X-offset = #0.6
+    g,4\rest
+    \stemDown d'
+  | \once\override Voice.Rest.X-offset = #0.8
+    f,4\rest b16\rest e d cis d2
+  | %\once\override NoteColumn.force-hshift = #0.8
+    cis8
+    d a16\rest cis8 b16 <a cis>2
+  } >>
     \fine
 }
 
@@ -232,7 +296,8 @@ Alto = \context Voice = "two" \relative c' {
   | cis8 fis e fis16 e d e cis d b cis d b
   | \unHighlightSubject cis16 } d b cis ais b cis ais b cis a b gis a b gis
   | a8 b cis dis e cis a b
-  | \showStaffSwitch \change Staff = "upper" \voiceTwo
+  | %\showStaffSwitch
+    \change Staff = "upper" \voiceTwo
     e8. fis16 gis8 a16 b cis8 b16 cis a8 fis
   | e4 r r2
   | r8 e4 d!16 e cis8 fis4 e16 fis
@@ -265,10 +330,10 @@ Alto = \context Voice = "two" \relative c' {
   | gis4 r r8 a4 gis16 a
   | fis4 r r8 bis16 cis dis4
   | cis8 r r4 r2
-  | c,2\rest r8 cis4 dis16 e
+  | c,2\rest \highlightSubject { r8 cis4 dis16 e
   | fis8 e16 fis dis e fis gis e8 a gis a16 gis
   %50
-  | fis gis e fis dis8. cis16 cis4 r8 cis
+  | fis gis e fis dis8. cis16 cis4 } r8 cis
   | dis cis bis gis cis b
     \hideStaffSwitch \change Staff = "lower" \voiceThree
     ais fis
@@ -306,15 +371,67 @@ Alto = \context Voice = "two" \relative c' {
   %70
   | \unHighlightSubject a8 } a'16 a, b g' cis, g' fis d b' b, cis a' dis, a'
   | gis e e' e, fis d'! gis, d' a cis b d cis e d cis
+  | b gis e' e, a cis b a gis e cis' cis, fis a gis fis
+  | eis cis a' a, d fis e d cis dis e fis dis e fis gis
+  | e fis gis a fis gis a b gis fis a gis fis8.\mordent e16
+  %75
+  | e8 e16 d cis
+    \change Staff = "lower" \voiceThree
+    b a gis 	fis8 cis'4 b8~
+  | b
+    \showStaffSwitch \change Staff = "upper" \voiceTwo
+    e4 fis16 gis a8 gis16 a fis gis a b
+  | gis8 e'16 d cis b a gis fis8 gis a fis
+  | b16 cis b a gis8 e~ e4. dis8
+  | e4 c8\rest e fis gis a4
+  %80
+  | gis4 a8 fis e e fis d
+  | e d cis e fis4 r8 fis
+  | gis a4 gis8 a16 e cis e a,4~
+  | a d8 b e r r16 gis a gis
+  | fis gis e fis d cis d e cis4 cis
+  %85
+  | fis fis gis gis
+  | ais ais r16 b fis b d fis, b8~
+  | 16 d, e8~ e16 b' cis d cis8. d16 e4
+  | r8 d r cis r b r a
+  | r gis r fis gis4 gis~
+  %90
+  | gis s2.
+  | s4 r16 fis e d
+    \once\override Beam.positions = #'(-11.5 . -12.5)
+    cis
+    \hideStaffSwitch \change Staff = "lower" \voiceThree \stemDown
+    b a gis
+    << {
+      \stemUp\tieDown a a, cis e^~
+  |   <e a>4 d\rest d2\rest
+    } \\ {
+      \voiceTwo
+      s16
+      \override Tie.extra-offset = #'(0 . -1.5)
+      a8.~
+  |   a4 s2.
+    } \\ {
+      \voiceTwo
+      s8 cis~
+  |   cis4 s2.
+    } >>
+  | \change Staff = "upper" \voiceTwo
+    s2 r16 cis' b a d4
+  | d r r r16 gis a b
+  %95
+  | << {
+      \stemDown
+      f16\rest e fis gis
+      \override Tie.extra-offset = #'(0 . -0.2)
+      a2.~
+  |   a4 s2.
+    } \\ {
+      e,4\rest r16 b' cis d e2~
+  |   e4 d4\rest c2\rest
+    } >>
 
-
-}
-
-Tenor = \context Voice = "three" \relative c {
-  \voiceThree
-  \stemUp\tieUp
-  \override Rest.staff-position = #0
-  %1
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -398,10 +515,137 @@ Bass = \context Voice = "four" \relative c {
   %70
   | fis4. e8 d4 fis8 b,
   | e gis b e a, gis a d
-
-  | \override MultiMeasureRest.staff-position = #0
-    R1*28
+  | e d cis a e' a,,[ d b]
+  | cis fis, fis' gis a gis16 a b gis a b
+  | cis a b cis dis b cis dis e8 a, b b,
+  %75
+  | \stemDown\tieDown
+    e r r e~ e4 dis
+  | e r r2
+  | \stemNeutral\tieNeutral
+    \highlightMotif { r8 e4 fis16 gis a8 gis16 a fis gis a b
+  | \unHighlightSubject gis } a gis fis
+    \highlightSubject { e e, fis gis a8 gis16 a fis gis a b
+  | gis8 cis b cis16 b a b gis a fis8. e16
+  %80
+  | \unHighlightSubject e8 } e' fis d e4 r
+  | R1
+  | r2 \highlightSubject { r8 a,4 b16 cis
+  | d8 cis16 d b cis d e cis8 fis e fis16 e
+  | d e cis d b a b cis a4 } r16 a cis a
+  %85
+  | d4 r16 d b d e4 r16 e cis e
+  | fis4 r16 ais fis ais b4~ b8. a16
+  | gis4. e8 a8. b16 cis8 a
+  | d4 e e e
+  | e e e r16
+    << {
+      e8.~
+  |   e4 r4 r2
+    } \\ {
+      \voiceFour \stemUp\tieUp
+      s16 b8~
+  |   \shiftOff b4 s2.
+    } \\ {
+      \voiceFour \stemDown\tieUp
+      \mergeDifferentlyDottedOn
+      e16 b gis_~
+  |   \shiftOff <e gis>4 s2.
+    } >>
+  | s1*2
+  %93
+  | g,4*1/4\rest \stemDown\tieDown e'16 cis a fis2.
+  << {
+  | \voiceFour
+    e1~_\markup { "Pedal" }
+  %95
+  | e~
+  | e~
+  | e
+  | a2
+    \override Tie.extra-offset = #'(0 . -0.6)
+    a~
+  | a1\fermata
+  } \\ {
+    \stemUp
+  | <gis b d e>4 f'4\rest f2\rest
+  | f\rest a16\rest gis a b cis e, fis gis
+  | a4^~ a f2\rest
+  | d'4\rest c16\rest c b a b2
+  | a a32\rest b a g fis g fis e d e fis g a b cis d64 gis,,!
+  } \\ {
+  | s1
+  | s1
+  | \stemDown
+    \once\override Voice.Rest.X-offset = #-1.2
+    e'16\rest
+    \stemUp e8.~ \shiftOff e4 s2
+  | f2\rest \stemDown d!
+  | \stemUp \shiftOn e4 s2.
+  } \\ {
+  | s1
+  | s1
+  | \stemDown
+    \once\override Voice.Rest.X-offset = #0
+    c8\rest
+    \stemUp
+    \override Tie.extra-offset = #'(-0.6 . -0.8)
+    cis8^~ \shiftOff cis4 s2
+  } \\ {
+  | s1
+  | s1
+  | \stemDown
+    \once\override Voice.Rest.X-offset = #1.2
+    b8.\rest
+    \stemDown a16_~ \stemUp \shiftOff a4 s2
+  } >>
     \fine
+}
+
+forceBreaks = {
+  % page 1
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\pageBreak
+  % page 2
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 1 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 1 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 1 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 1 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 1 { s1\noBreak } s\pageBreak
+  % page 3
+  \repeat unfold 1 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 1 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 1 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 1 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 1 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 1 { s1\noBreak } s\pageBreak
+  % page 4
+  \repeat unfold 1 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 1 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 1 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\pageBreak
+  % page 5
+  \repeat unfold 1 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\pageBreak
+  % page 6
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
 }
 
 \score {
@@ -419,15 +663,15 @@ Bass = \context Voice = "four" \relative c {
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \clef bass
-      \Tenor
       \Bass
     >>
+    \new Devnull \forceBreaks
   >>
   \header {
     composer = ##f % "Johann Sebastian Bach"
-    opus = ##f % "BWV 950"
-    title = \markup { "" }
-    subtitle = ##f
+    opus = "BWV 950"
+    title = \markup { "Fuge A-Dur" }
+    subtitle = \markup { \italic "Über ein Thema von Tommaso Albinoni" }
   }
   \layout {
     \context {
