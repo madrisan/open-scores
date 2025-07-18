@@ -271,6 +271,9 @@ Bass = \context Voice = "four" \relative c {
   \override TupletBracket.bracket-visibility = ##f
   \override TupletNumber.transparent = ##t
   \partial 4 d4\rest
+    _\markup {
+      \expositionBullet "First exposition A B S (1−13)"
+    }
   | \override MultiMeasureRest.staff-position = #0
     R1*3
   | d2\rest d4\rest \highlightSubjectFirst { d_\markup \subject #'(1.2 . 0) #1
@@ -284,25 +287,36 @@ Bass = \context Voice = "four" \relative c {
   | a r r a'~
   | a \tuplet 3/2 { gis8 a fis} gis2^\trill
   | a1_~
-  | a8.*8/9[ e16*4/3 c8.*8/9 e16*4/3] a8.*8/9[ bes16*4/3 a8.*8/9 g16*4/3]
+  | a8.*8/9[
+    _\markup { \episodeBullet "Episode 1" }
+    e16*4/3 c8.*8/9 e16*4/3] a8.*8/9[ bes16*4/3 a8.*8/9 g16*4/3]
   | f8.*8/9[ a16*4/3 d8.*8/9 a16*4/3] f8.*8/9[ d16*4/3 e8.*8/9 fis16*4/3]
   %15
   | g8.*8/9[ d16*4/3 bes8.*8/9 d16*4/3] g8.*8/9[ a16*4/3 g8.*8/9 f16*4/3]
   | e8.*8/9[ g16*4/3 c8.*8/9 g16*4/3] e8.*8/9[ c16*4/3 d8.*8/9 e16*4/3]
   | f8.*8/9[ g16*4/3 f8.*8/9 e16*4/3] d8.*8/9[ e16*4/3 f8.*8/9 d16*4/3]
   | g8.*8/9[ a16*4/3 g8.*8/9 f16*4/3] e8.*8/9[ f16*4/3 g8.*8/9 e16*4/3]
-  | a8.*8/9[ bes16*4/3 a8.*8/9 g16*4/3] f8.*8/9[ e16*4/3 d8.*8/9 e16*4/3]
+  | a8.*8/9[ bes16*4/3 a8.*8/9 g16*4/3] f8.*8/9[ e16*4/3 d8.*8/9
+    _\markup { \subjectPresentationBullet "Subject A" }
+    e16*4/3]
   %20
   | f8.*8/9[ e16*4/3 f8.*8/9 g16*4/3] a4 cis,
   | d bes'! d,\rest gis
   | a d,\rest d\rest a'
   | d, b\rest b\rest d
-  | g d\rest d\rest d
+  | g
+    _\markup { \episodeBullet "Episode 2" }
+    d\rest d\rest d
   %25
   | c r r c
   | f d\rest d\rest c
   | g' d\rest d2\rest
-  | d\rest d4\rest \highlightSubjectFirstInv { f_\markup \scale #'(1 . -1) \subject #'(0.8 . 0) #1
+  | d\rest d4\rest \highlightSubjectFirstInv {
+    f
+    _\markup \scale #'(1 . -1) \subject #'(0.8 . 0) #1
+    _\markup {
+      \expositionBullet "Second exposition B S A (28-41)"
+    }
   | bes bes,~ \tuplet 3/2 { bes8 c d c d ees
   %30
   | d ees f} ees4~ \tuplet 3/2 { ees8 f g } \tuplet 3/2 { f g aes }
@@ -318,20 +332,25 @@ Bass = \context Voice = "four" \relative c {
   | g~
   %40
   | g~
-  | g2 d4\rest g
+  | g2_\markup { \episodeBullet "Episode 3" }
+    d4\rest g
   | c2 d,4\rest g
   | f2 d4\rest f
   | bes2 d,4\rest f
   %45
   | e8.*8/9[ g16*4/3 bes8.*8/9 g16*4/3] e8.*8/9[ f16*4/3 e8.*8/9 d16*4/3]
   | cis8[ e g e] cis8.*8/9[ d16*4/3 cis8.*8/9 b16*4/3]
-  | a8.*8/9[ cis16*4/3 e8.*8/9 cis16*4/3] a8.*8/9[ bes16*4/3 a8.*8/9 g16*4/3]
+  | a8.*8/9[ cis16*4/3 e8.*8/9 cis16*4/3] a8.*8/9[ bes16*4/3 a8.*8/9
+    _\markup { \subjectPresentationBullet "Subject A" }
+    g16*4/3]
   | \stemDown \tuplet 3/2 { f8 a d } \stemNeutral \tuplet 3/2 { f e d } cis4.*10/9^\trill b16*2/3 cis
   | d4 bes'! d,\rest gis
   %50
   | a8.*8/9 g!16*4/3 \tuplet 3/2 { f8 g a} bes8.*8/9 d,16*4/3 \tuplet 3/2 { cis8 d e}
   | d4 f a d,
-  | g d\rest d\rest g
+  | g
+    _\markup { \episodeBullet "Episode 4" }
+    d\rest d\rest g
   | g, g' b e,
   | a d,\rest d\rest a'
   %55
@@ -343,7 +362,9 @@ Bass = \context Voice = "four" \relative c {
   %60
   | \tuplet 3/2 { f8 e d} g4~ \tuplet 3/2 { g8 f e} a4
   | d, d\rest d\rest \highlightSubjectFirstInv { g^\markup \scale #'(1 . -1) \subject #'(0 . 0) #1
-  | d' d,~ \tuplet 3/2 { d8 e f e f g
+  | d'
+    _\markup { \endBullet "Final presentation B S" }
+    d,~ \tuplet 3/2 { d8 e f e f g
   | f g a } g4~ \tuplet 3/2 { g8 a bes a bes c
   | bes a g } a4~ \tuplet 3/2 { a8 g f g f e }
   %65
@@ -356,6 +377,35 @@ Bass = \context Voice = "four" \relative c {
   | d~ \tuplet 3/2 { d8 fis g a bes c } d8.*8/9 d,16*4/3
   | d2.\fermata
   \bar "|."
+}
+
+forceBreaks = {
+  % page 1
+  \partial 4 s4
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\pageBreak
+  % page 2
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\pageBreak
+  % page 3
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s\pageBreak
+  % page 4
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
 }
 
 \score {
@@ -375,6 +425,7 @@ Bass = \context Voice = "four" \relative c {
       \clef bass
       \Bass
     >>
+    \new Devnull \forceBreaks
   >>
   \header {
     %composer = "Johann Sebastian Bach"
@@ -392,6 +443,9 @@ Bass = \context Voice = "four" \relative c {
   \layout {
     \context {
       \Voice
+      \override TextScript.color = #greyTextColor
+      \override TextScript.font-shape = #'italic
+      \override TextScript.font-size = #-2
       \override VoiceFollower.color = #greyTextColor
       \override VoiceFollower.style = #'dashed-line
     }
