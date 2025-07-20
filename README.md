@@ -48,6 +48,7 @@ Latest release: [Open Scores for Piano v65](https://github.com/madrisan/open-sco
 |  | Fuga a-Moll BWV947 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v65/JS-Bach-BWV947-Fuga-a-Moll.pdf) |
 |  | Fuga d-Moll BWV948 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v65/JS-Bach-BWV948-Fuga-d-Moll.pdf) |
 |  | Fuga A-Dur BWV949 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v65/JS-Bach-BWV949-Fuga-A-Dur.pdf) |
+|  | Fuga A-Dur BWV950 - on a Theme by Tomaso Albinoni | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v66/JS-Bach-BWV950-Fuga-A-Dur.pdf) |
 |  | Fuga H-Moll BWV951 - on a Theme by Tomaso Albinoni | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v65/JS-Bach-BWV951-Fuga-H-Moll.pdf) |
 |  | Fuga C-Dur BWV952 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v65/JS-Bach-BWV952-Fuga-C-Dur.pdf) |
 |  | Fuga C-Dur BWV953 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v65/JS-Bach-BWV953-Fuga-C-Dur.pdf) |
@@ -93,6 +94,7 @@ Latest release: [Open Scores for Piano v65](https://github.com/madrisan/open-sco
 |  | Unstern (Sinistre) S.208 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v65/Franz-Liszt-Unstern-S.208.pdf) |
 | Pietro Domenico Paradisi | Toccata in La Maggiore P 893.06 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v65/Pietro-Domenico-Paradisi-Toccata-La-Maggiore.pdf) |
 | Ildebrando Pizzetti | Sogno | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v65/Ildebrando-Pizzetti-Sogno.pdf) |
+| Andrea Turchetto | Composizioni per pianoforte | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v66/Andrea-Turchetto-Composizioni.pdf) |
 | Domenico Scarlatti | Sonata K. 1 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v65/Domenico-Scarlatti-Sonata-k1.pdf) |
 |  | Sonata K. 30 (Cat's fugue) | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v65/Domenico-Scarlatti-Sonata-k30.pdf) |
 |  | Sonata K. 55 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v65/Domenico-Scarlatti-Sonata-k55.pdf) |

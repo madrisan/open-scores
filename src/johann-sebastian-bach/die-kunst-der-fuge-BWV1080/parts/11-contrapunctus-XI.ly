@@ -879,7 +879,7 @@ Bass = \context Voice = "four" \relative c {
         \concat {
           "And we note that 44/27"
           \char ##x2248 "114/70"
-          \char ##x2248 "1.618 (golden ratio)"
+          \char ##x2248 "1.618 (golden ratio),"
           " where 70 is the sum of the bars of the first two blocks."
         }
       }
