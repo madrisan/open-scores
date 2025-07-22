@@ -75,12 +75,17 @@
         \line { \abs-fontsize #40 \bold "Fuga A-Dur" }
         \null\null
         \line { \abs-fontsize #24 \bold "Über ein Thema von Tommaso Albinoni" }
-        \null\null\null
+        \null
+        \line {
+          \abs-fontsize #12 \italic
+          "“Suonate a tre, doi violini, e violoncello col basso per l’organo”, op.1 Nr. 3/2"
+        }
+        \null\null
         \line { \abs-fontsize #20 "BWV 950" }
         \null\null\null\null
         \fill-line \italic { \abs-fontsize #14 "For keyboard instruments" }
         \null\null\null
-        \null\null\null
+        \null\null
       }
     }
   }

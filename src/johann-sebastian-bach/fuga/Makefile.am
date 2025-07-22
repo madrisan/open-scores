@@ -1,4 +1,5 @@
-SUBDIRS = BWV947 \
+SUBDIRS = BWV946 \
+	  BWV947 \
 	  BWV948 \
 	  BWV949 \
 	  BWV950 \
