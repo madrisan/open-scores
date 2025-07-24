@@ -160,7 +160,7 @@ Soprano = \context Voice = "one" \relative c'' {
   %35
   | c8 b4 \tieSolid a8~ a g f4
   | e8 g16 e c8 a'16 f d8 b'16 a g4
-  | e8 b16 c d8 a16 b c8 g' f4
+  | e8 b16 c d8 a16 b c8 g' f4\parenthesize\trill
   | e4 f'\rest c'2\rest
   | \override MultiMeasureRest.staff-position = #6
     R1*2
@@ -174,11 +174,12 @@ Soprano = \context Voice = "one" \relative c'' {
   | gis a fis gis a16 b! c8~ c d16 e
   | b8. c16 d4 r2
   | b2\rest c4 bes
-  | a f'2 e4~
+  | \once\override NoteColumn.force-hshift = #0 a
+    f'2 e4~
   | e ees8 d ees4 a
   %50
   | g2 f
-  | <c e>1\fermata
+  | <c e!>1\fermata
     \fine
 }
 
@@ -201,13 +202,13 @@ Alto = \context Voice = "two" \relative c' {
   | cis,8 d4 c8~ c b a4
   | g a b4. c8~
   | c r r4 r2
-  | r8 g'4 a8~ a b16 c d8 c16 d
+  | \highlightSubject { r8 g'4 a8~ a b16 c d8 c16 d
   %15
-  | e8 d4 c8~ c b a4
-  | g4 a8 b g a f g
+  | e8 d4 c8~ c b a4\parenthesize\trill
+  | g4 } a8 b g a f g
   | e4. f8~ f g16 f e4~
   | e8 b c a b g a b
-  | c4 b a4. a8
+  | c4 b a4. d16 c
   %20
   | b8. c!16 d8 c16 d e8 d16 e fis8 e16 fis
   | g8 b16 a g e a g fis d g b, c e d c
@@ -244,7 +245,10 @@ Alto = \context Voice = "two" \relative c' {
   | e d e8 \tieSolid a4.~
   | a8 g~ g16 a g fis g d e f e b c d
   | r2 g~
-  | g4 f g2
+  | \once\override NoteColumn.force-hshift = #1 g4
+    \once\stemUp
+    \once\override NoteColumn.force-hshift = #0.3 f
+    g2
   | a1
   %50
   | d4 c2 b4
@@ -261,7 +265,7 @@ Tenor = \context Voice = "three" \relative c' {
   | \override MultiMeasureRest.staff-position = #4
     R1*2
   | \highlightSubject { r8 g4 a8~ a b16 c d8 c16 d
-  | e8 d4 c8~ c b a4
+  | e8 d4 c8~ c b a4\parenthesize\trill
   %10
   | \unHighlightSubject g8 } f e a~ a g16 fis g4~
   | g8 f e a d, g4 f8~
@@ -270,10 +274,10 @@ Tenor = \context Voice = "three" \relative c' {
   | c8 b4 c8~ c d16 e fis8 e16 fis
   %15
   | g8 .gis16 a8. g16 fis8 g4 f8~
-  | f e4 d8~ d c4 b8
-  | c \clef "bass" c,4 d8~ d e16 f g8 f16 g
-  | a8 g4 f8~ f e d4
-  | c8 f d e c cis d4
+  | f e4 d8~ d c4 \clef "bass" b8
+  | \highlightSubject { c c,4 d8~ d e16 f g8 f16 g
+  | a8 g4 f8~ f e d4\parenthesize\trill
+  | \unHighlightSubject c8 } f d e c cis d4
   %20
   | R1*3
   | \override MultiMeasureRest.staff-position = #6
@@ -282,7 +286,7 @@ Tenor = \context Voice = "three" \relative c' {
     R1*2
   %26
   | \highlightSubject { r8 g4 a8~ a b16 c d8 c16 d
-  | e8 d4 c8~ c b a4
+  | e8 d4 c8~ c b a4\parenthesize\trill
   | g } f e d
   | c8 e f4 c'8 cis d4
   %30
@@ -311,18 +315,24 @@ Tenor = \context Voice = "three" \relative c' {
   << {
   | g16 c b a g a g f! \shiftOn e4 g
   | a2 g4 c~
-  | c a c d8 c
+  | c a c4. d16 c
   %50
   | b4 g_~ g2
   | c,1
   } \\ {
-  | \stemUp\tieUp
-    s2 c'~
-  | c8 b!16 c d2 s4
+  | \change Staff = "upper"
+    s2
+    \once\override NoteColumn.force-hshift = #0.3 c'~
+  | \once\override NoteColumn.force-hshift = #0 c8
+    b!16 c d2 s4
   | s1
   %50
-  | s4 e! d2
-  | g,1
+  | \change Staff = "lower" \voiceThree
+    s4
+    \override NoteColumn.force-hshift = #-0.4
+    e! d2
+  | \override NoteColumn.force-hshift = #0
+    g,1
   } >>
 }
 
@@ -346,7 +356,7 @@ Bass = \context Voice = "four" \relative c {
     R1*3
   %20
   | \stemDown \highlightSubject { g8\rest g4 a8~ a b16 c d8 c16 d
-  | e8 d4 c8~ c b a4
+  | e8 d4 c8~ c b a4\parenthesize\trill
   | \unHighlightSubject g8 } a b c d16 f a e f d g f
   | e8 f a g b a g4
   | f8 c' cis d b c4 b8
@@ -356,7 +366,7 @@ Bass = \context Voice = "four" \relative c {
   | R1*7
   %34
   | \highlightSubject { r8 c,4 d8~ d e16 f g8 f16 g
-  | a8 g4 f8~ f e d4
+  | a8 g4 f8~ f e d4\parenthesize\trill
   | c8 } e4 f8~ f g16 a b8 a16 b
   | c d e8 b16 c d8 a16 b c8~ c b
   | c e16 f g4 fis8 g b,4
