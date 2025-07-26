@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Added
 
 - J.S. Bach: Fuga C-Dur BWV946
+- J.S. Bach: Organ Concerto (Largo) BWV596
 
 ## [v66] - 2025-07-21
 

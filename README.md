@@ -45,6 +45,7 @@ Latest release: [Open Scores for Piano v66](https://github.com/madrisan/open-sco
 |  | Fantasie und Fuge BWV 944 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v66/JS-Bach-BWV944-Fantasie-und-Fuge.pdf) |
 |  | Neun kleine Präludien BWV 924-932 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v66/JS-Bach-BWV924-932-Neun-kleine-Praludien.pdf) |
 |  | Sechs kleine Präludien BWV 933-938 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v66/JS-Bach-BWV933-938-Sechs-kleine-Praludien.pdf) |
+|  | Fuga C-Dur BWV946 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/JS-Bach-BWV946-Fuga-C-Dur.pdf) |
 |  | Fuga a-Moll BWV947 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v66/JS-Bach-BWV947-Fuga-a-Moll.pdf) |
 |  | Fuga d-Moll BWV948 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v66/JS-Bach-BWV948-Fuga-d-Moll.pdf) |
 |  | Fuga A-Dur BWV949 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v66/JS-Bach-BWV949-Fuga-A-Dur.pdf) |
@@ -65,6 +66,7 @@ Latest release: [Open Scores for Piano v66](https://github.com/madrisan/open-sco
 | Bach / Liszt | Präludium und Fuge BWV543 S462 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v66/Bach-Liszt-Praludium-und-Fuge-BWV543-S462.pdf) |
 | Bach / Madrisan | Chorale Prelude - Jesu meine Freude BWV 610 :three: | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v66/JS-Bach-BWV610-Jesu-meine-Freude.pdf) |
 |  | Chorale Prelude - Nun komm’ der Heiden Heiland BWV 659 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v66/JS-Bach-BWV659-Chorale-Prelude.pdf) |
+| Bach / Nemerovsky | Organ Concerto 5 (Andante) BWV 596 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/JS-Bach-BWV596-Organ-Concerto-Largo.pdf) |
 | Bach / Petri | Schafe können sicher weiden BWV 208 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v66/JS-Bach-Petri-Schafe-konnen-sicher-weiden-BWV208.pdf) |
 | Bach / Rodrigues | Cantata BWV54 - Aria | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v66/JS-Bach-BWV54-Cantata-Aria.pdf) |
 | Bach / Ruoshi Sun | Chorale Prelude - Vor deinen Thron tret' ich hiermit BWV 668 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v66/JS-Bach-BWV668-Chorale-Prelude.pdf) |

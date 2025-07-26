@@ -60,6 +60,7 @@ make -C src/johann-sebastian-bach/chromatische-fantasie-und-fugue-BWV903-busoni
 make -C src/johann-sebastian-bach/die-kunst-der-fuge-BWV1080
 make -C src/johann-sebastian-bach/fantasie-und-fuge-BWV904
 make -C src/johann-sebastian-bach/fantasie-und-fuge-BWV944
+make -C src/johann-sebastian-bach/fuga/BWV946
 make -C src/johann-sebastian-bach/fuga/BWV947
 make -C src/johann-sebastian-bach/fuga/BWV948
 make -C src/johann-sebastian-bach/fuga/BWV949
@@ -71,6 +72,7 @@ make -C src/johann-sebastian-bach/goldberg-variationen-BWV988
 make -C src/johann-sebastian-bach/inventionen-und-sinfonien-BWV772-801
 make -C src/johann-sebastian-bach/italienisches-konzert-BWV971
 make -C src/johann-sebastian-bach/musikalisches-opfer-BWV1079
+make -C src/johann-sebastian-bach/organ-concerto-5-andante-BWV596-nemerovsky
 make -C src/johann-sebastian-bach/organ-sonata-4-andante-BWV528-stradal
 make -C src/johann-sebastian-bach/ouverture-nach-franzosischer-art-BWV831
 make -C src/johann-sebastian-bach/partitas

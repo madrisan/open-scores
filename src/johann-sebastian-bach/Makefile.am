@@ -12,6 +12,7 @@ SUBDIRS = cantatas \
 	  inventionen-und-sinfonien-BWV772-801 \
 	  italienisches-konzert-BWV971 \
 	  musikalisches-opfer-BWV1079 \
+	  organ-concerto-5-andante-BWV596-nemerovsky \
 	  organ-sonata-4-andante-BWV528-stradal \
 	  ouverture-nach-franzosischer-art-BWV831 \
 	  partitas \
