@@ -17,6 +17,7 @@ SUBDIRS = cantatas \
 	  ouverture-nach-franzosischer-art-BWV831 \
 	  partitas \
           praeludium-fuge-und-allegro-BWV998 \
+	  praeludium-und-fuge-BWV898 \
 	  praeludium-und-fughetta-BWV899 \
 	  praeludium-und-fughetta-BWV900 \
 	  praeludium-und-fughetta-BWV901 \

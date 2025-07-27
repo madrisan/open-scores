@@ -77,6 +77,7 @@ make -C src/johann-sebastian-bach/organ-sonata-4-andante-BWV528-stradal
 make -C src/johann-sebastian-bach/ouverture-nach-franzosischer-art-BWV831
 make -C src/johann-sebastian-bach/partitas
 make -C src/johann-sebastian-bach/praeludium-fuge-und-allegro-BWV998
+make -C src/johann-sebastian-bach/praeludium-und-fuge-BWV898
 make -C src/johann-sebastian-bach/praeludium-und-fughetta-BWV900
 make -C src/johann-sebastian-bach/praeludium-und-fughetta-BWV901
 make -C src/johann-sebastian-bach/praeludium-und-fughetta-BWV902
