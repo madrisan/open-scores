@@ -68,11 +68,49 @@ Soprano = \context Voice = "one" \relative c'' {
   | c8 d16 c b4 bes8 c16 bes a8 c16 a
   | bes4 r r2
   | bes4 a c b
-  %40
+  %50
   | f'8 e bes[ a] ees'[ d] aes g
   | r2 f'4 e
-
-  | R1*36
+  | g fis c'8[ b] f e
+  | bes' a ees[ d] g bes16 a g f ees d
+  | c8 d16 e f g f ees d2~
+  %55
+  | d8 e16 f g a g f e2
+  | c8 d16 e f g f ees <bes d>4 r
+  | \override MultiMeasureRest.staff-position = #4
+    R1
+  | r4 c16 b d c b4 bes16 a c bes
+  | a4 aes16 g bes aes g4 bes
+  %60
+  | aes c~ c8 d16 e f4~
+  | f2 bes,8 c16 d ees4~
+  | ees2 f4 ees
+  | g f a g~
+  | g f2 ees4~
+  %65
+  | ees d2 c4~
+  | c bes2 c4
+  | bes2 c4 bes
+  | a8 f16 g a bes c d ees8 c'16 bes a g f ees
+  | d c ees d f4 ees16 d f ees g4~
+  %70
+  | g4 e16 c g' f~ f4 d16 bes f' ees
+  | r2 r8 c'16 bes a g f es
+  | d4 r8 d ees4 r8 e
+  | f4 r8 fis8 g4 r8 d
+  | c4 r8 c bes4 r8 bes
+  %75
+  | a8 f16 g a bes c d ees c d ees f g a bes
+  | \stemNeutral
+    \stemUp c32 bes a g \stemDown f[ ees d c]
+    \stemUp f ees d c \stemDown bes[ a g f]
+    \stemUp c' bes a g \stemDown f[ ees d c]
+    \stemUp f ees d c s8
+  | s1*8
+  %85
+  | b'4\rest <bes d g> b2\rest
+  | b4\rest <c ees a> b2\rest
+  | s1*2
     \fine
 }
 
@@ -125,6 +163,53 @@ Alto = \context Voice = "two" \relative c' {
   | s1*16
   %51
   | c8 ees16 d c bes a g a g bes a g4
+  | bes16 a c bes a4
+    \once\override Beam.positions = #'(1.7 . 1.4)
+    a8
+    \once\override NoteColumn.force-hshift = #0 g~
+    g4
+  | \once\override Beam.positions = #'(1.5 . 1.2)
+    g8
+    \once\override NoteColumn.force-hshift = #0 f~
+    f4 g2~
+  | \stemDown
+    g4 f~ f8 g16 a bes c bes a
+  %55
+  | g2~ g8 a16 b c d c bes
+  | a2 s4 f8 e
+  | \stemNeutral
+    ees d g fis f e a gis
+  | \stemDown
+    g16 fis a g fis4 f16 e g f e4
+  | ees16 d f ees d4 ees f16 ees g f~
+  %60
+  | f4 g16 f aes g~ g4 f16 a g f~
+  | f8 c' bes4 f ees16 g f ees~
+  | ees8 bes' aes4~ aes16 c bes aes g4
+  | bes16 des c bes a4 c16 ees d c b4
+  | bes16 des c bes a4 aes16 c bes aes g4
+  %65
+  | aes16 bes aes g fis4 g16 aes g f e4
+  | ees16 g f ees d4 ees16 g f ees~ ees g f ees
+  | d f ees d ees g f ees~ ees g f ees d f ees d
+  | c4 r r c'8\rest \stemUp c
+  | bes4 c16 bes d c~ c4 \stemDown d16 c ees d
+  %70
+  | \stemUp b16 g d' c~ c4 a16 f c' bes~ bes4
+  | s2. c8\rest c
+  | bes4 b8\rest bes bes4 b8\rest c
+  | c4 b8\rest d d4 s
+  | s2 f,4 b8\rest f
+  %75
+  | f s s2.
+  | s1*2
+  | \change Staff = "lower" \voiceThree
+    \omit TupletNumber
+    \tuplet 3/2 { s16 bes,[ g] } \tuplet 3/2 { s des'[ bes] }
+    \change Staff = "upper" \voiceTwo \stemUp
+    \tuplet 3/2 { s e[ des] } \tuplet 3/2 { s g[ e] } \tuplet 3/2 { s bes'[ g] }
+    \tuplet 3/2 { s des'[ bes] } \tuplet 3/2 { s e[ des] } \tuplet 3/2 { s g[ e] }
+  | \tuplet 3/2 { s bes'[ g] } s8 s2.
 }
 
 Tenor = \context Voice = "three" \relative c {
@@ -216,6 +301,74 @@ Tenor = \context Voice = "three" \relative c {
     ees8 e f4
     \change Staff = "lower" \voiceThree
     c16 b d c
+  | \once\stemDown g4
+    \change Staff = "upper" \voiceTwo
+    d'16 c d c fis8[ g]
+    \change Staff = "lower" \voiceThree
+    b, c
+  | \change Staff = "upper" \voiceTwo
+    e8 f
+    \change Staff = "lower" \voiceThree
+    a,[ bes] b4\rest \stemNeutral\tieNeutral bes~
+  | bes a bes8 bes, r bes'
+  %55
+  | b2 c8 c, r c'
+  | f,2 bes8 a aes g
+  | c b bes a d cis c b
+  | cis4 d2 c4~
+  | c \stemUp\tieUp bes~ bes16 a c bes~ bes4
+  %60
+  | c16 b d c~ c2.
+  | f,8 g16 a bes d c bes bes2
+  | ees,8 f16 g aes c bes aes bes4~ bes16 des c b
+  | c4~ c16 ees d c d4~ d16 b c d
+  | c4~ c16 a bes c bes4~ bes16 g aes bes
+  %65
+  | aes4 a16 fis g a g4~ g16 e f g
+  | f4~ f16 d ees f ees4 f~
+  | f16 d ees f g ees f g a f g a bes d c bes
+  | a2 s4
+    \change Staff = "upper" \voiceTwo
+    r8 f'
+  | f2 g
+  %70
+  | g4. f8 f4. ees8~
+  | ees8 g16 f ees d
+    \change Staff = "lower" \voiceThree
+    c bes a4
+    \change Staff = "upper" \voiceTwo
+    r8 f'
+  | f4 r8 f ees4 r8 g
+  | f4 r8 a g d'16 c bes a g f
+  | ees8 c'16 bes a g f ees d4 r8 d
+  %75
+  | c8 r r4 r2
+  | \change Staff = "lower" \voiceThree
+    s1
+  | s2
+    \omit TupletNumber
+    \tuplet 3/2 { s16 bes,[ g] } \tuplet 3/2 { s des'[ bes] }
+    \tuplet 3/2 { s16 e[ des] } \tuplet 3/2 { s g[ e] }
+  | \stemDown
+    \tuplet 3/2 { e16 s8 } \tuplet 3/2 { g16 s8 } \tuplet 3/2 { bes16 s8 }
+    \change Staff = "upper" \voiceTwo
+    \tuplet 3/2 { des16 s8 } \tuplet 3/2 { e16 s8 }
+    \tuplet 3/2 { g16 s8 } \tuplet 3/2 { bes16 s8 } \tuplet 3/2 { des16 s8 }
+  | \tuplet 3/2 { e16 s8 } b8\rest b8.\rest
+    \stemUp <bes, c g'>16 \appoggiatura q4 <a c f>2^\fermata
+  %80
+  | \change Staff = "lower" \voiceThree
+    bes4 a c b
+  | f'8 e bes[ a] ees' d aes[ g]
+  | c8 ees16 d c bes a g f8 d'16 c bes a g f
+  | ees8 c'16 bes a g f ees d8 a' bes d,
+  | ees a bes e, f a bes fis
+  %85
+  | g4 r r8. e16 e4\trill
+  | f4 r r8. fis16 fis4\trill
+  | g8. a16 a4\trill bes8. d16 d4\trill
+  | \change Staff = "upper" \voiceTwo \stemUp
+    ees f bes,2^\fermata
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -261,15 +414,72 @@ Bass = \context Voice = "four" \relative c {
   | f4 e g fis
   | c'8 b f[ e] bes'[ a] ees d
   | aes' g bes[ a] c[ bes] a fis
+  %45
   | g4 d'2 c4~
   | c bes2 a4~
   | a g2 f4~
   | \stemDown\tieDown
     f16 e g f ees d f ees d c ees d c bes d c
   | bes4 d4\rest d2\rest
-
-  | R1*38
+  %50
+  | R1*5
+  | \once\override MultiMeasureRest.extra-offset = #'(-1 . 0)
+    R1
+  | \override MultiMeasureRest.staff-position = #-4
+    R1*3
+  %59
+  | r2 ees4 d
+  | f e bes' a
+  | ees d aes' g
+  | des c d ees
+  | e f fis f
+  | e ees d des
+  %65
+  | c2 b4 bes
+  | a aes g a
+  | bes s2.
+  | f'2  d4\rest d8\rest f'8
+  | bes,4 a c b
+  %70
+  | f8 e bes' a ees d aes' g
+  | c,8 ees16 d c bes a g f4 r8 a
+  | \stemNeutral bes f'16 ees d c bes aes g8 g'16 f e d c bes
+  | a8 a'16 g fis ees d c bes4 d8\rest b
+  | c4 d8\rest a bes16 f g a bes c d ees
+  %75
+  | f4 e\rest d2\rest
+  | s2. s8 bes'32a g f
+  | \stemUp c' bes a g \stemDown f[ ees d c]
+    \stemUp f ees d c \stemDown bes[ a g f]
+    \stemDown
+    \omit TupletNumber
+    \tuplet 3/2 { e16 s8 }
+    \tuplet 3/2 { g16 s8 }
+    \tuplet 3/2 { bes16 s8 }
+    \tuplet 3/2 { des16 s8 }
+  | R1
+  | d4\rest d8.\rest e16 f2^\fermata
+  %80
+  | bes,4 a c b
+  | f'8 e bes[ a] ees' d aes[ g]
+  | c8 ees16 d c bes a g f8 d'16 c bes a g f
+  | ees8 c'16 bes a g f ees d8 a' bes d,
+  | ees a bes e, f a bes fis
+  %85
+  | g4 r r8. e16 e4\trill
+  | f4 r4 r8. fis16 fis4\trill
+  | g8. a16 a4\trill bes8. d16 d4\trill
+  | \stemNeutral ees4 f bes,2\fermata
     \fine
+}
+
+forceBreaks = {
+  % page 1
+  % \repeat unfold 2 { s1\noBreak } s1\break\noPageBreak
+  % \repeat unfold 2 { s1\noBreak } s1\break\noPageBreak
+  % \repeat unfold 2 { s1\noBreak } s1\break\noPageBreak
+  % \repeat unfold 2 { s1\noBreak } s1\pageBreak
+  % page 2
 }
 
 \score {
@@ -290,6 +500,7 @@ Bass = \context Voice = "four" \relative c {
       \Tenor
       \Bass
     >>
+    \new Devnull \forceBreaks
   >>
   \header {
     composer = ##f % "Johann Sebastian Bach"

@@ -19,7 +19,7 @@ SUFFIXES = .in
 
 BUILT_SOURCES = covercolor.ly
 
-EXTRA_DIST = JS-Bach-BWV898-Praludium-und-Fuge.ly \
+EXTRA_DIST = JS-Bach-BWV898-Praeludium-und-Fuge.ly
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \
