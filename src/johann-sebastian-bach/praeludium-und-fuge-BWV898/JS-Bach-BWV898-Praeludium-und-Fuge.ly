@@ -78,7 +78,7 @@
         \null\null\null
         \line { \abs-fontsize #22 "BWV 898" }
         \null
-        \line \italic {
+        \line \italic \bold {
           \abs-fontsize #11
           "Bach's authorship uncertain; possibly composed by Johann Christian Kittel"
         }

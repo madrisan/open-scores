@@ -34,7 +34,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | a8 bes c d16 c bes8 c d ees16 d
   %20
   | fis8 g b,[ c] e[ f] a, bes~
-  | bes d16 c bes a g f ees8 f16 g a4~
+  | bes d16 c bes a g f e8 f16 g a4~
   | a8 bes16 c d bes c d bes4 r
   | g8 a16 bes c g a bes a2
   | bes8 r r f' f bes16 a g f ees d
@@ -144,7 +144,7 @@ Alto = \context Voice = "two" \relative c' {
   | f4 e g fis
   %20
   | c'8 b f[ e] bes'[ a] ees d
-  | g bes16 a g f ees d c8 d16 ees f g f ees
+  | g bes16 a g f e d c8 d16 e f g f ees
   | d4 r d8 e16 fis g a g f
   | ees2 c8 d16 ees f g f ees
   | d8 r r d' d4 r8 g,
@@ -164,12 +164,14 @@ Alto = \context Voice = "two" \relative c' {
   %51
   | c8 ees16 d c bes a g a g bes a g4
   | bes16 a c bes a4
+    \shiftOff
     \once\override Beam.positions = #'(1.7 . 1.4)
     a8
     \once\override NoteColumn.force-hshift = #0 g~
     g4
   | \once\override Beam.positions = #'(1.5 . 1.2)
     g8
+    \shiftOn
     \once\override NoteColumn.force-hshift = #0 f~
     f4 g2~
   | \stemDown
@@ -227,7 +229,7 @@ Tenor = \context Voice = "three" \relative c {
   | \stemUp\tieUp
     a8 bes c d16 c bes8 c d ees16 d
   | fis8 g d[ c] e[ f] c bes
-  | d8\rest d16 c ges a g f e8 f16 g
+  | d8\rest d16 c bes a g f e8 f16 g
     \once\override Tie.extra-offset = #'(0 . 1)
     f4~
   | f bes2 c4~
@@ -269,7 +271,7 @@ Tenor = \context Voice = "three" \relative c {
   | g4 bes16 a g f ees8 c'16 bes a g f ees
   %35
   | d8 f'16 ees d c bes aes g8 a bes c16 bes
-  | a8 bes c d16 c ees8[ f] a, bes
+  | a8 bes c d16 c e8[ f] a, bes
   | d ees g,[ aes]~ aes4 a
   | bes8 f'16 ees d c bes aes g f aes g f8 g
   | aes16 g bes aes g8 a bes16 a c bes a8 b
@@ -303,7 +305,7 @@ Tenor = \context Voice = "three" \relative c {
     c16 b d c
   | \once\stemDown g4
     \change Staff = "upper" \voiceTwo
-    d'16 c d c fis8[ g]
+    d'16 c ees d fis8[ g]
     \change Staff = "lower" \voiceThree
     b, c
   | \change Staff = "upper" \voiceTwo
@@ -388,7 +390,7 @@ Bass = \context Voice = "four" \relative c {
   | f g
   %15
   | a bes8 d16 c bes a g f
-  | e8 c'16 bes a g f ees d8 bes'16 a g f ees d
+  | e8 c'16 bes a g f e d8 bes'16 a g f e d
   | c4 r f8 c'16 bes a g f ees
   | d4. d8 ees4. e8
   | f4 r r2

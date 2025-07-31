@@ -13,7 +13,7 @@ Soprano = \context Voice = "one" \relative c' {
   | \tempo "Präludium"
     <f bes>4 r32 bes, c d ees f g a bes16. f32 d'16. bes32 f'8 <bes, d>
   | <g bes ees>4 r32 bes, c d ees f g a bes16. g32 ees'16. bes32 g'8 <bes, ees>
-  | <c e>4 r32 c, d e f g a bes c16. g32 ees'16. c32 g'8 <c, ees>
+  | <c e>4 r32 c, d e f g a bes c16. g32 e'16. c32 g'8 <c, e>
   | <a c f>4 r r r8 <a c f>
   %5
   | <bes d f>4 r r r8 <bes d f>
@@ -50,7 +50,8 @@ Alto = \context Voice = "two" \relative c' {
   | f4 s2 r8 f
   | g4 s2 r8 g
   | <f c'>4 <f bes> f s
-  | s1*2
+  | s1
+  | d4 s2.
   %10
   | s2 c4 s
   | s4. c8 s4. c8
@@ -101,7 +102,10 @@ Bass = \context Voice = "four" \relative c {
   | bes4 r32 bes, c d ees f g a bes16. f32 d'16. bes32 f'8 aes,^\trill
   | g4 r16. g32 g16. g32 a4 r16. a32 a16. a32
   | bes4 r16. d,32 d16. d32 ees8 r r4
-  | f8 g r ees f4 f,
+  | f8 g r ees_\markup {
+      "attacca subito la fuga"
+    }
+     f4 f,
     \bar "||"
 }
 
@@ -139,6 +143,6 @@ Bass = \context Voice = "four" \relative c {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 4 = 80
   }
 }

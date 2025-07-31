@@ -25,7 +25,7 @@ EXTRA_DIST = JS-Bach-BWV898-Praeludium-und-Fuge.ly
 	     global.ly \
 	     logo.ly
 
-all: $(BUILT_SOURCES) JS-Bach-BWV898-Praludium-und-Fuge
+all: $(BUILT_SOURCES) JS-Bach-BWV898-Praeludium-und-Fuge
 
 clean-local:
 	 -rm -f $(BUILT_SOURCES)
