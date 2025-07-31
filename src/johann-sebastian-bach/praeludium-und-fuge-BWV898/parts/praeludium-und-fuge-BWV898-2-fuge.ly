@@ -4,6 +4,8 @@ Global = {
   \include "../global.ly"
 }
 
+\include "../macros.ly"
+
 Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
   \stemUp\tieUp
@@ -12,11 +14,16 @@ Soprano = \context Voice = "one" \relative c'' {
   \set Timing.beatStructure = 1,1,1,1
   %1
   | \tempo "Fuge"
-  | s1*3
-  | f4 e g fis
+  | \override MultiMeasureRest.staff-position = #6
+    R1
+  | \override MultiMeasureRest.extra-offset = #'(0.8 . 0)
+    R1*2
+    \revert MultiMeasureRest.extra-offset
+    \override MultiMeasureRest.staff-position = #0
+  | \highlightSubject { f4 e g fis
   %5
   | c'8 b f[ e] bes'[ a] ees d
-  | g bes16 a g f e d c8 d16 e f g f ees
+  | g bes16 a g f e d c8 d16 e f g f ees }
   | d8 ees f g16 f ees8 f g aes16 g~
   | g4 e8 f~ f4 d8 ees
   | f8\rest g16 f ees d c bes a8 bes16 c d f ees d
@@ -51,9 +58,9 @@ Soprano = \context Voice = "one" \relative c'' {
   | ees4 r8 e f4 r8 fis
   | g4 r8 d c r r c
   %35
-  | bes r r f' ees4 d
+  | bes r r f' \highlightSubject { ees4 d
   | f e bes'8 a ees![ d]
-  | aes' g des[ c] f aes16 g f ees d c
+  | aes' g des[ c] f aes16 g f ees d c }
   | d8 r r f ees4 des16 c ees des
   | c4 ees16 d f ees d4 f16 ees g f
   %40
@@ -67,13 +74,13 @@ Soprano = \context Voice = "one" \relative c'' {
   | ees8 f16 ees d4~ d8 ees16 d cis4
   | c8 d16 c b4 bes8 c16 bes a8 c16 a
   | bes4 r r2
-  | bes4 a c b
+  | \highlightSubject { bes4 a c b
   %50
-  | f'8 e bes[ a] ees'[ d] aes g
-  | r2 f'4 e
+  | f'8 e bes[ a] ees'[ d] aes g }
+  | r2 \highlightSubject { f'4 e
   | g fis c'8[ b] f e
   | bes' a ees[ d] g bes16 a g f ees d
-  | c8 d16 e f g f ees d2~
+  | c8 d16 e f g f ees } d2~
   %55
   | d8 e16 f g a g f e2
   | c8 d16 e f g f ees <bes d>4 r
@@ -118,10 +125,10 @@ Alto = \context Voice = "two" \relative c' {
   \voiceTwo
   %1
   | \stemUp
-    bes'4 a c b
+    \highlightSubject { bes'4 a c b
   | \stemNeutral
     f'8 e bes[ a] ees'[ d] aes g
-  | c8 ees16 d c bes a g f8 g16 a bes d c bes
+  | c8 ees16 d c bes a g f8 g16 a bes d c bes }
   | \stemDown\tieDown
     a8 bes c d16 c bes8 c d ees16 d
   %5
@@ -141,10 +148,10 @@ Alto = \context Voice = "two" \relative c' {
   | c2 bes~
   | bes4 s2.
   | s1
-  | f4 e g fis
+  | \highlightSubject { f4 e g fis
   %20
   | c'8 b f[ e] bes'[ a] ees d
-  | g bes16 a g f e d c8 d16 e f g f ees
+  | g bes16 a g f e d c8 d16 e f g f ees }
   | d4 r d8 e16 fis g a g f
   | ees2 c8 d16 ees f g f ees
   | d8 r r d' d4 r8 g,
@@ -162,11 +169,12 @@ Alto = \context Voice = "two" \relative c' {
   | d8 d16 c s2.
   | s1*16
   %51
-  | c8 ees16 d c bes a g a g bes a g4
+  | \highlightMotif { c8 ees16 d c bes a g } a g bes a g4
   | bes16 a c bes a4
     \shiftOff
     \once\override Beam.positions = #'(1.7 . 1.4)
     a8
+    \shiftOn
     \once\override NoteColumn.force-hshift = #0 g~
     g4
   | \once\override Beam.positions = #'(1.5 . 1.2)
@@ -222,9 +230,9 @@ Tenor = \context Voice = "three" \relative c {
     \change Staff = "lower"  \stemNeutral\tieNeutral
   | s1*5
   %7
-  | bes4 a c b
+  | \highlightSubject { bes4 a c b
   | f'8 e bes[ a] ees'[ d] aes g
-  | c8 ees16 d c bes a g f8 g16 a bes d c bes
+  | c8 ees16 d c bes a g f8 g16 a bes d c bes }
   %10
   | \stemUp\tieUp
     a8 bes c d16 c bes8 c d ees16 d
@@ -360,9 +368,9 @@ Tenor = \context Voice = "three" \relative c {
     \stemUp <bes, c g'>16 \appoggiatura q4 <a c f>2^\fermata
   %80
   | \change Staff = "lower" \voiceThree
-    bes4 a c b
+    \highlightMotif { bes4 a c b
   | f'8 e bes[ a] ees' d aes[ g]
-  | c8 ees16 d c bes a g f8 d'16 c bes a g f
+  | c8 ees16 d c bes a g } f8 d'16 c bes a g f
   | ees8 c'16 bes a g f ees d8 a' bes d,
   | ees a bes e, f a bes fis
   %85
@@ -380,12 +388,14 @@ Bass = \context Voice = "four" \relative c {
   | \stemNeutral
     bes4 d\rest d2\rest
   | R1*5
-  | s1*3
+  | \override MultiMeasureRest.staff-position = #-8
+    R1*3
+    \override MultiMeasureRest.staff-position = #0
   %10
   | \stemDown\tieDown
-    f4 e g fis
+    \highlightSubject { f4 e g fis
   | c'8 b f[ e] bes'[ a] ees d
-  | g8 bes16 a g f e d c8 d16 e f g f ees
+  | g8 bes16 a g f e d c8 d16 e f g f ees }
   | d2 ees
   | f g
   %15
@@ -396,11 +406,11 @@ Bass = \context Voice = "four" \relative c {
   | f4 r r2
   %20
   | s1*7
-  | r2 bes,4 a
+  | r2 \highlightSubject { bes,4 a
   | c b f'8 e bes a
   | ees' d aes g c ees16 d c bes a g
   %30
-  | f8 g16 a bes c bes aes g8 a16 bes c d c bes
+  | f8 g16 a bes c bes aes } g8 a16 bes c d c bes
   | a8 bes16 c d ees d c bes8 c16 d ees f ees d
   | c8 d16 ees f g f ees d8 f16 ees d c bes aes
   | \stemNeutral\tieNeutral
@@ -413,8 +423,8 @@ Bass = \context Voice = "four" \relative c {
   | bes d,8\rest d ees4 d\rest
   | R1*3
   %42
-  | f4 e g fis
-  | c'8 b f[ e] bes'[ a] ees d
+  | \highlightMotif { f4 e g fis
+  | c'8 b f[ e] bes'[ a] ees d }
   | aes' g bes[ a] c[ bes] a fis
   %45
   | g4 d'2 c4~
@@ -430,10 +440,10 @@ Bass = \context Voice = "four" \relative c {
   | \override MultiMeasureRest.staff-position = #-4
     R1*3
   %59
-  | r2 ees4 d
+  | r2 \highlightMotif { ees4 d
   | f e bes' a
   | ees d aes' g
-  | des c d ees
+  | des c } d ees
   | e f fis f
   | e ees d des
   %65
@@ -441,10 +451,10 @@ Bass = \context Voice = "four" \relative c {
   | a aes g a
   | bes s2.
   | f'2  d4\rest d8\rest f'8
-  | bes,4 a c b
+  | \highlightMotif { bes,4 a c b
   %70
   | f8 e bes' a ees d aes' g
-  | c,8 ees16 d c bes a g f4 r8 a
+  | c,8 ees16 d c bes a g f4 } r8 a
   | \stemNeutral bes f'16 ees d c bes aes g8 g'16 f e d c bes
   | a8 a'16 g fis ees d c bes4 d8\rest b
   | c4 d8\rest a bes16 f g a bes c d ees
@@ -462,9 +472,9 @@ Bass = \context Voice = "four" \relative c {
   | R1
   | d4\rest d8.\rest e16 f2^\fermata
   %80
-  | bes,4 a c b
+  | \highlightMotif { bes,4 a c b
   | f'8 e bes[ a] ees' d aes[ g]
-  | c8 ees16 d c bes a g f8 d'16 c bes a g f
+  | c8 ees16 d c bes a g } f8 d'16 c bes a g f
   | ees8 c'16 bes a g f ees d8 a' bes d,
   | ees a bes e, f a bes fis
   %85
