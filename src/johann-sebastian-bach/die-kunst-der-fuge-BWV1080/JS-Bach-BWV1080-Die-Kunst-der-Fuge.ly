@@ -93,7 +93,7 @@ Subject = \relative {
 
   \markup
     \fill-line {
-      \center-column {msm
+      \center-column {
         \score {
           <<
           \new Voice = "subject" \Subject
