@@ -46,6 +46,7 @@ make -C src/franz-liszt/unstern-s.208
 make -C src/frederic-chopin/valse
 make -C src/ildebrando-pizzetti/sogno
 make -C src/jan-pieterszoon-sweelinck/fantasia-cromatica-SwWV258
+make -C src/johann-christian-bach/sonata-op-17-5
 make -C src/johann-sebastian-bach/cantata-BWV106-actus-tragicus-sonatina
 make -C src/johann-sebastian-bach/cantata-BWV54-aria
 make -C src/johann-sebastian-bach/cembalo-konzert-largo-BWV1056-kempff

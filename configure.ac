@@ -120,6 +120,7 @@ AC_CONFIG_FILES([\
   src/johannes-brahms/klavierstucke-op.119/Makefile \
   src/johannes-brahms/rhapsodie-op.79-nr.1/Makefile \
   src/johannes-brahms/rhapsodie-op.79-nr.2/Makefile \
+  src/johann-christian-bach/sonata-op-17-5/Makefile \
   src/johann-sebastian-bach/Makefile \
   src/johann-sebastian-bach/cantatas/Makefile \
   src/johann-sebastian-bach/cantatas/cantata-BWV54-aria/Makefile \

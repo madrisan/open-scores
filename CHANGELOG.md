@@ -10,6 +10,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - J.S. Bach: Fuga C-Dur BWV946
 - J.S. Bach: Organ Concerto (Largo) BWV596
 - J.S. Bach: Präludium und Fuge über den Namen BACH BWV898
+- Johann Christian Bach: Sonata op.17 n.5 W.A11
+
+### Fixed
+
+- J.S. Bach: Die Kunst der Fuge (BWV1080) - fix typo in front cover
 
 ## [v66] - 2025-07-21
 
