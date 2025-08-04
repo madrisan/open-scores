@@ -4,11 +4,15 @@ Global = {
   \include "../global.ly"
 }
 
+lH = \markup { \teeny "l.H" }
+rH = \markup { \teeny "r.H" }
+
 Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
   \stemNeutral\tieNeutral\slurNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \omit TupletBracket
   \repeat volta 2 {
   \tempo "Allegro"
   \partial 4 { cis8.\turn d16 }
@@ -74,7 +78,43 @@ Soprano = \context Voice = "one" \relative c'' {
   }
   \pageBreak
   \repeat volta 2 {
-  | R1*61
+  | r4 b''16 gis e b a4 a'16 fis dis a
+  %40
+  | gis4 b'16 gis e b a4 a'16 fis dis a
+  | gis4 b'16 gis fis e a gis fis e dis cis b a
+  | gis e' dis e fis e dis e e,4 cis'8.\trill d16
+  | e4 e r8. e16 fis8. gis16
+  | a8. d,16~ d2 cis4~
+  %45
+  | cis8 b16 cis
+    \slurDown
+    \once\stemUp \appoggiatura e16 d8 cis16 b
+    \once\stemUp \appoggiatura gis'16 fis8 e16 d
+    \once\stemUp \appoggiatura e16 d8 cis16 b
+  | \once\stemUp \appoggiatura a16 gis4\trill a r8 a16 b cis d e fis
+  | g a b g e fis g e cis d e cis g a b g
+  | fis32 g a8. a4 fis16 g a b cis d e fis
+  | e fis g e cis d e cis ais b cis ais e fis g e
+  %50
+  | d32 e fis8. fis4 r b16 d fis b
+  | fis4 b,16 dis gis b e,4 b16 e g b
+  | a4 b,16 dis fis b g b g fis g b g fis
+  | eis4 cis'16 gis eis cis fis4 cis'16 a fis cis
+  | eis4 b'16 gis eis cis a' cis a gis a fis cis b
+  %55
+  | a b cis a b cis d b cis fis a, cis b d gis, b
+  | a b cis a b cis d b cis fis a, cis b d gis, b
+  | a cis a fis ais cis ais g g16\rest \stemDown cis ais g r cis ais g
+  | \stemNeutral b d b fis cis' e cis fis, r e' cis fis, r e' cis fis,
+  | \stemNeutral d' b fis d b d fis b d b d fis b a gis fis
+  %60
+  | eis gis b gis eis gis cis, eis gis, cis eis, gis cis, eis gis cis
+  | a cis a fis \stemDown r cis' a fis r cis' a fis r cis' a fis
+  | \stemNeutral d4^\rH d'16 b a gis
+    gis2*7/8\trill \magnifyMusic 0.66 { fis32[ gis] }
+  | \stemNeutral a16 cis a fis \stemDown r cis' a fis r cis' a fis r cis' a fis
+
+  | R1*36
     \fine
 } }
 
@@ -93,6 +133,9 @@ Tenor = \context Voice = "three" \relative c {
   \partial 4 s4
   %1
   | s1*3
+  | s4 e s2
+  | s1*66
+  %71
   | s4 e s2
 }
 
@@ -157,9 +200,59 @@ Bass = \context Voice = "four" \relative c' {
   }
   \break
   \repeat volta 2 {
-  | R1*61
+  | e16 gis b e e,4 b16 dis fis b b,4
+  %40
+  | e16 gis b e e,4 b16 dis fis b b,4
+  | e16 gis b e e,8 gis fis a b dis,
+  | e2~ e16 dis e fis e d cis b
+  | <a a'>8 cis' e a, gis b e gis,
+  | fis a d fis, e gis cis e,
+  %45
+  | <d fis>4 q r q
+  | <d e> cis16 d e cis a4 r
+  | cis cis r cis'
+  | d16 e fis d a d fis, a d,4 r
+  | ais ais r ais'
+  %50
+  | b16 cis d b fis b d, fis b,16 d fis b r4
+  | a16 dis fis a a,4 g16 b e g g,4
+  | fis16 b dis fis fis,4 e r
+  | \clef "treble" b'16 eis gis! b b,4 a16 cis fis a a,4
+  | \clef "bass" gis16 cis eis gis gis,4 fis r
+  %55
+  | fis16 gis a fis gis a b gis a cis fis, a gis b eis, gis
+  | fis16 gis a fis gis a b gis a cis fis, a gis b eis, gis
+  | fis4 <e, e'>
+    \change Staff = "upper" \voiceOne e'''4^\lH g
+  | \change Staff = "lower" \voiceFour \stemNeutral <d,, fis> <ais fis'>
+    \change Staff = "upper" \voiceOne ais'''4^\lH cis
+  | \change Staff = "lower" \voiceFour \stemNeutral
+    <b,,, b'> b2 d4
+  %60
+  | cis cis~ cis8 cis eis cis
+  | fis4 \change Staff = "upper" \voiceOne fis''^\lH a cis
+  | \change Staff = "lower" \voiceFour \stemNeutral
+    b,,,16 b' d b b, b' d b cis, b' cis b cis, b' cis b
+  | fis4 \change Staff = "upper" \voiceOne fis''^\lH a cis
+  | \change Staff = "lower" \voiceFour \stemNeutral
+  %65
+
+  | R1*36
     \fine
   }
+}
+
+forceBreaks = {
+  % page 1
+  \partial 4 s4 \noBreak
+  \repeat unfold 3 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s\break\pageBreak
+  % page 2
+
 }
 
 \score {
@@ -180,6 +273,7 @@ Bass = \context Voice = "four" \relative c' {
       \Tenor
       \Bass
     >>
+    \new Devnull \forceBreaks
   >>
   \header {
     composer = ##f % "Johann Christian Bach"
