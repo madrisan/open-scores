@@ -30,7 +30,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | a8. d,16~ d2 cis4
   | \tuplet 3/2 { r8 b cis } \tuplet 3/2 { dis cis b }
     \tuplet 3/2 { fis' e dis } \tuplet 3/2 { cis b a }
-  | a4\trill gis r8 d' d8.\mordent cis32 b
+  | a4\trill gis r8 d' d8.\trill cis32 b
   | \tuplet 3/2 { cis8 cis' a } \tuplet 3/2 { e a e }
     \tuplet 3/2 { cis e cis } \tuplet 3/2 { a cis a }
   %10
@@ -113,8 +113,60 @@ Soprano = \context Voice = "one" \relative c'' {
   | \stemNeutral d4^\rH d'16 b a gis
     gis2*7/8\trill \magnifyMusic 0.66 { fis32[ gis] }
   | \stemNeutral a16 cis a fis \stemDown r cis' a fis r cis' a fis r cis' a fis
-
-  | R1*36
+  | \stemUp d4^\rH d'16 b a gis gis2*7/8\trill \magnifyMusic 0.66 { fis32[ gis] }
+  %65
+  | \stemNeutral fis16 fis' eis fis cis fis a, cis fis,4 cis'8.\trill d16
+  | e4 e r8. e16 fis8. gis16
+  | a8. d,16~ d2 cis4~
+  | cis8 b16 cis
+    \slurDown
+    \once\stemUp \appoggiatura e16 d8 cis16 b
+    \once\stemUp \appoggiatura gis'16 fis8 e16 d
+    \once\stemUp \appoggiatura e16 d8 cis16 b
+  | gis4\turn a r cis8.\turn d16
+  %70
+  | \once\stemUp \appoggiatura fis16 e4 e r8. e16 fis8. gis16
+  | a8. d,16~ d2 cis4~
+  | \tuplet 3/2 { cis8 b cis } \tuplet 3/2 { dis cis b }
+    \tuplet 3/2 { fis' e dis } \tuplet 3/2 { cis b a }
+  | gis16 b, e gis b gis d' b gis' d b' gis d' b gis d
+  | cis a b cis d e fis gis a gis fis e d cis b a
+  %75
+  | gis b cis dis e fis gis a b a gis fis e dis cis b
+  | cis e a e cis e a, cis e, a cis, e a, cis e a
+  | gis4.\trill fis8 e4~
+    \grace {
+      e32 dis e fis gis a b % \tuplet 3/2 { gis a b }
+    }
+    \unset Timing.baseMoment
+    cis8.\trill d!16
+  | e4 e~ e8 g fis e
+  | e8. dis16 dis4 r b8.\trill cis16
+  %80
+  | d4 d~ d8 ais' b d,
+  | cis4 cis' b16 dis e b gis b e, b'
+  | a4 a8.\trill gis32 a gis16 bis cis gis e gis cis, e
+  | fis4 fis8.\trill e32 fis e16 gis a e cis e a, cis
+  | d4 d16 fis b d fis,4 d16 fis b d
+  %85
+  | e,4 e16 gis b d a4 d,16 fis a d
+  | gis,4 b,16 e gis b gis4 gis,16 b d fis
+  | e4 e,16 a cis e d4 d16 b gis d
+  | cis8 a' a a \tuplet 3/2 { gis16 fis e } d'8[ d d]
+    \repeat unfold 2 {
+  |   \tuplet 3/2 { cis16 b a } e'8[ e e] e4 \once\stemUp \appoggiatura e16 d8 cis16 b
+    }
+  %91
+  | cis16 e8. gis,16 b gis b a cis b a gis fis e d
+  | cis e a e fis d cis b b2\trill
+  | fis''16 e d cis b a gis fis e d cis b \clef "bass" a gis fis e
+  | d4. \clef "treble" d''8 d4.\trill cis16 b
+  %95
+  | cis e a e fis d cis b b2\trill
+  | fis'16 e d cis b a gis fis e d cis b \clef "bass" a gis fis e
+  | d4. \clef "treble" d''8 d4.\trill cis16 b
+  | cis e a e fis d cis b cis e a cis, b d a' gis
+  | a cis a e cis a s8 s2
     \fine
 } }
 
@@ -134,8 +186,8 @@ Tenor = \context Voice = "three" \relative c {
   %1
   | s1*3
   | s4 e s2
-  | s1*66
-  %71
+  | s1*64
+  %69
   | s4 e s2
 }
 
@@ -235,9 +287,50 @@ Bass = \context Voice = "four" \relative c' {
     b,,,16 b' d b b, b' d b cis, b' cis b cis, b' cis b
   | fis4 \change Staff = "upper" \voiceOne fis''^\lH a cis
   | \change Staff = "lower" \voiceFour \stemNeutral
+    b,,,16 b' d b b, b' d b cis, b' cis b cis, b' cis b
   %65
-
-  | R1*36
+  | <fis a>4 fis fis16 a gis fis e d cis b
+  | <a a'>8 cis'e a, gis b e gis,
+  | fis a d fis, e gis cis e,
+  | d4 <d fis> r q
+  | <d e> \stemDown cis8. e16 \stemNeutral a,4 r
+  %70
+  | a'8 cis e a, gis b e gis,
+  | fis a d fis, e gis cis e,
+  | dis4 <dis fis> r q
+  | <e, e'>1
+  | q
+  %75
+  | q
+  | q
+  | q2 r2\fermata
+  | cis''8 e g b, ais cis fis ais,
+  | b dis fis dis b dis fis a,
+  %80
+  | gis b e b gis4 gis
+  | a16 cis e gis a e cis a gis4 gis'
+  | fis,16 a cis eis fis a gis fis e4 cis
+  | d,16 fis a cis d a fis d cis4 cis'
+  | \clef "treble" b16 d fis b b,4 a16 d fis a a,4
+  %85
+  | gis16 b e gis gis,4 \clef "bass" fis16 a d fis fis,4
+  | e16 gis b e e,4 d16 gis b d d,4
+  | cis16 e a cis cis,4 b16 d gis b b,4
+  | a16 cis b d cis e dis fis e gis e gis fis a gis b
+   \repeat unfold 2 {
+  |  a cis b d cis e d fis cis e a, cis b d gis, b
+  }
+  %91
+  | a, cis a cis b d b d cis e cis e d fis d fis
+  | e8 e d d e e e, e
+  | d4 r r2
+  | b'16 cis d cis b a gis fis e fis gis a b cis d e
+  %95
+  | a,8 cis d[ fis] d b e e,
+  | d4 r r2
+  | b'16 cis d cis b a gis fis e fis gis a b cis d e
+  | a,8 cis d[ fis] e4 e,
+  | a r8 e''16 cis a2
     \fine
   }
 }
@@ -273,7 +366,7 @@ forceBreaks = {
       \Tenor
       \Bass
     >>
-    \new Devnull \forceBreaks
+    %\new Devnull \forceBreaks
   >>
   \header {
     composer = ##f % "Johann Christian Bach"
