@@ -100,4 +100,4 @@
 
 \include "./parts/sonata-op-17-5-WA11-1-allegro.ly"
 \pageBreak
-%\include "./parts/sonata-op-17-5-WA11-2-presto.ly"
+\include "./parts/sonata-op-17-5-WA11-2-presto.ly"
