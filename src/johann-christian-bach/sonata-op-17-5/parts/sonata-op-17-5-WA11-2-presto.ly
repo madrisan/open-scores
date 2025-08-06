@@ -6,7 +6,7 @@ Global = {
 
 Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
-  \stemNeutral\tieNeutral
+  \stemNeutral\tieNeutral\slurDown
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \omit TupletBracket
@@ -69,8 +69,41 @@ Soprano = \context Voice = "one" \relative c'' {
   \break
   \repeat volta 2 {
   %45
- %| e'4.
-  | R1*3/8*83
+  | e'4.
+  | b'4 r32 a gis fis
+  | e8 e e
+  | e4.
+  | \once\stemUp \acciaccatura b16 cis4.\trill^\markup\center-align\concat\vcenter {
+      \teeny\sharp
+    }
+  %50
+  | b4 \tuplet 3/2 { gis'16[ e b] }
+  | b4 a8
+  | \tuplet 3/2 { gis16[ b a]  gis fis e  b'[ gis e] }
+  | fis8 gis a
+  \repeat unfold 2 {
+  | \tuplet 3/2 { gis16[ b dis]  e dis cis  b[ a gis] }
+  | fis8 gis a
+  }
+  | \tuplet 3/2 { gis16[ dis' e]  a, dis e  b[ dis e] }
+  | \tuplet 3/2 { cis[ dis e]  dis cis b  a[ gis fis] }
+  %60
+  | \tuplet 3/2 { gis[ b a]  gis fis e  d![ cis b] }
+  | \tuplet 3/2 { r16 cis' e } \tuplet 3/2 { r b e } \tuplet 3/2 { r a, e' }
+  | \tuplet 3/2 { r gis, e'  r fis, e'  r e, e' }
+  | \tuplet 3/2 { r a, a'  r a, gis'  r a, fis' }
+  | \tuplet 3/2 { r a, e'  r gis, d'  r a cis }
+  %65
+  | g'8~ \tuplet 3/2 { g16[ b a]  g fis e }
+  | fis8~ \tuplet 3/2 { fis16[ a g]  fis e d }
+  | \tuplet 3/2 { cis[ e d]  cis b a  g[ fis e] }
+  | \tuplet 3/2 { fis[ a g]  fis e d  a'[ fis d] }
+  | e'8~ \tuplet 3/2 { e16[ g fis]  e d cis }
+  %70
+  | d8~ \tuplet 3/2 { d16[ fis e]  d cis b }
+  | \tuplet 3/2 { ais[ cis b]  ais gis fis  e![ d cis] }
+
+  | R1*3/8*55
   }
     \fine
 }
@@ -150,7 +183,43 @@ Bass = \context Voice = "four" \relative c' {
     \clef "treble"
   }
   \repeat volta 2 {
-  | R1*3/8*83
+  %45
+  | \repeat unfold 3 { \tuplet 3/2 { e'16[ gis b] } }
+  | \repeat unfold 3 { \tuplet 3/2 { dis,[ fis b] } }
+  | \repeat unfold 3 { \tuplet 3/2 { cis,[ e gis] } }
+    \clef "bass"
+  | \repeat unfold 3 { \tuplet 3/2 { gis,[ b e] } }
+  | \repeat unfold 3 { \tuplet 3/2 { a,[ cis e] } }
+  %50
+  | \repeat unfold 3 { \tuplet 3/2 { gis,[ b e] } }
+  | \repeat unfold 3 { \tuplet 3/2 { fis,[ a dis] } }
+  | e,4 r8
+  \repeat unfold 2 {
+  | \repeat unfold 3 { \tuplet 3/2 { b16[ dis b'] } }
+  | <b, e>4 r8
+  }
+  %57
+  | \repeat unfold 3 { \tuplet 3/2 { b16[ dis b'] } }
+  | e,8 fis gis
+  | a16 ais b8[ b,]
+  %60
+  | e4 r8
+  | <a, a'>[ gis'' fis]
+  | e d cis
+  | fis e d
+  | cis b a
+  %65
+  | \tuplet 3/2 { cis,16[ e a] } cis4
+  | \tuplet 3/2 { d,16[ fis a] } d8 gis,!
+  | a8 cis, e
+  | d d, r
+  | \tuplet 3/2 { ais'16[ cis e] } ais4
+  %70
+  | \tuplet 3/2 { b,16[ d fis] } b8 eis,
+  | fis8 fis, ais
+
+
+  | R1*3/8*56
   }
     \fine
 }
