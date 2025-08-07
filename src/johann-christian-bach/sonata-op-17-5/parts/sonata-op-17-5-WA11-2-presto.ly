@@ -102,8 +102,54 @@ Soprano = \context Voice = "one" \relative c'' {
   %70
   | d8~ \tuplet 3/2 { d16[ fis e]  d cis b }
   | \tuplet 3/2 { ais[ cis b]  ais gis fis  e![ d cis] }
+  | \tuplet 3/2 { d[ fis e]  d cis b  fis'[ d b] }
+  \repeat unfold 2 {
+  | \tuplet 3/2 { r16 ais fis' } \tuplet 3/2 { r cis fis } \tuplet 3/2 { r d fis }
+  | \tuplet 3/2 { r16 e fis } \tuplet 3/2 { r d fis } \tuplet 3/2 { r cis fis }
+  %75
+  | \tuplet 3/2 { r16 d fis } \tuplet 3/2 { r fis d' } \tuplet 3/2 { r fis, cis' }
+  | \tuplet 3/2 { r16 fis, b } \tuplet 3/2 { r fis ais } \tuplet 3/2 { r fis b }
+  }
+  | d4 eis8\trill
+  | fis cis r
+  | cis4 dis8\trill
+  | e b r
+  %85
+  | b4 cis8\trill
+  | d8 a cis
+  | b fis a
+  | gis! d fis
+  | e4.
+  %90
+  | \tuplet 3/2 { e16 gis a } \tuplet 3/2 { b[ gis e] } \tuplet 3/2 { dis fis e }
+  | e4.
+  | \tuplet 3/2 { e16 gis a } \tuplet 3/2 { b[ gis e] } \tuplet 3/2 { dis fis e }
+  | e8 d cis
+  | <a cis>4.
+  %95
+  | <gis b>8 r r
 
-  | R1*3/8*55
+  | \tuplet 3/2 { r16 cis' e } \tuplet 3/2 { r b e } \tuplet 3/2 { r a, e' }
+    \tuplet 3/2 { r gis, e'  r fis, e'  r e, e' }
+  | \tuplet 3/2 { r a, a'  r a, gis'  r a, fis' }
+  | \tuplet 3/2 { r a, e'  r gis, d'  r a cis }
+  | fis8~ \tuplet 3/2 { fis16[ a gis]  fis[ e d] }
+  %100
+  | e8~ \tuplet 3/2 { e16[ g fis]  e[ d cis] }
+  | \tuplet 3/2 { d[ fis e]  d cis b  cis[ b a] }
+  | \tuplet 3/2 { gis![ b a]  gis fis e  d[ cis b] }
+  | \tuplet 3/2 { r16 cis' e } \tuplet 3/2 { r b e } \tuplet 3/2 { r a, e' }
+  | \tuplet 3/2 { r gis, e'  r fis, e'  r e, e' }
+  %105
+  | \tuplet 3/2 { r a, a'  r a, gis'  r a, fis' }
+  | \tuplet 3/2 { r a, e'  r gis, d'  r a cis }
+  | fis8~ \tuplet 3/2 { fis16[ a gis]  fis[ e d] }
+  | e8~ \tuplet 3/2 { e16[ g fis]  e[ d cis] }
+  | \tuplet 3/2 { d[ fis e]  d cis b  cis[ b a] }
+  %110
+  | \tuplet 3/2 { gis[ e' b]  gis b gis  e[ b' d] }
+
+  | R1*3/8*16
   }
     \fine
 }
@@ -113,6 +159,12 @@ Alto = \context Voice = "two" \relative c' {
   \stemDown\tieDown
   \override Rest.staff-position = #0
   %1
+  | s4.*88
+  | e8 d cis
+  %90
+  | s4.
+  | e8 d! cis
+
 }
 
 Tenor = \context Voice = "three" \relative c {
@@ -217,9 +269,54 @@ Bass = \context Voice = "four" \relative c' {
   %70
   | \tuplet 3/2 { b,16[ d fis] } b8 eis,
   | fis8 fis, ais
+  | b4 r8
+  \repeat unfold 2 {
+  | fis ais' b
+  | cis b ais
+  | b, b' cis
+  | d e d
+  }
+  %81
+  | \repeat unfold 2 { \tuplet 3/2 { b16[ d fis] } } \tuplet 3/2 { b,[ d gis] }
+  | \repeat unfold 3 { \tuplet 3/2 { ais,[ cis fis] } }
+  | \repeat unfold 2 { \tuplet 3/2 { a,[ cis fis] } } \tuplet 3/2 { a,[ c fis] }
+  | \repeat unfold 3 { \tuplet 3/2 { gis,[ b e] } }
+  %85
+  | \repeat unfold 2 { \tuplet 3/2 { g,[ b e] } } \tuplet 3/2 { g,[ bes e] }
+  | \repeat unfold 2 { \tuplet 3/2 { fis,[ a d] } } \tuplet 3/2 { e,[ g cis] }
+  | \repeat unfold 2 { \tuplet 3/2 { d,[ fis b] } } \tuplet 3/2 { cis,[ e a] }
+  | \repeat unfold 2 { \tuplet 3/2 { b,[ d gis] } } \tuplet 3/2 { a,[ cis fis] }
+  \repeat unfold 2 {
+  | \repeat unfold 2 { \tuplet 3/2 { gis,[ b e] } } \tuplet 3/2 { a,[ cis e] }
+  | e,4 r8
+  }
+  | \repeat unfold 2 { \tuplet 3/2 { gis16[ b e] } } \tuplet 3/2 { a,[ cis e] }
+  | e,4.~
+  %95
+  | e8 r r
+  | <a a'>8 gis'' fis
+  | e d cis
+  | fis e d
+  | cis b a
+  %100
+  | \tuplet 3/2 { d,16[ fis a] } d4
+  | \tuplet 3/2 { cis,16[ e a] } cis4
+  | b8 gis a
+  | e4 gis8
+  | <a,, a'>8 gis''' fis
+  %105
+  | e d cis
+  | fis e d
+  | cis b a
+  | \tuplet 3/2 { d,16[ fis a] } d4
+    \tuplet 3/2 { cis,16[ e a] } cis4
+  | b8 gis a
+  %110
+  | e4 gis8
 
+  % | \tuplet 3/2 { a16[ b cis] b[ cis d]  cis d e }
 
-  | R1*3/8*56
+  | R1*3/8*16
   }
     \fine
 }
