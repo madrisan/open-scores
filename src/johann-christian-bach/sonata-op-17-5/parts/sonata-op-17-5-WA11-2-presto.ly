@@ -128,28 +128,46 @@ Soprano = \context Voice = "one" \relative c'' {
   | <a cis>4.
   %95
   | <gis b>8 r r
-
   | \tuplet 3/2 { r16 cis' e } \tuplet 3/2 { r b e } \tuplet 3/2 { r a, e' }
-    \tuplet 3/2 { r gis, e'  r fis, e'  r e, e' }
+  | \tuplet 3/2 { r gis, e'  r fis, e'  r e, e' }
   | \tuplet 3/2 { r a, a'  r a, gis'  r a, fis' }
   | \tuplet 3/2 { r a, e'  r gis, d'  r a cis }
-  | fis8~ \tuplet 3/2 { fis16[ a gis]  fis[ e d] }
   %100
+  | fis8~ \tuplet 3/2 { fis16[ a gis]  fis[ e d] }
   | e8~ \tuplet 3/2 { e16[ g fis]  e[ d cis] }
   | \tuplet 3/2 { d[ fis e]  d cis b  cis[ b a] }
   | \tuplet 3/2 { gis![ b a]  gis fis e  d[ cis b] }
   | \tuplet 3/2 { r16 cis' e } \tuplet 3/2 { r b e } \tuplet 3/2 { r a, e' }
-  | \tuplet 3/2 { r gis, e'  r fis, e'  r e, e' }
   %105
+  | \tuplet 3/2 { r gis, e'  r fis, e'  r e, e' }
   | \tuplet 3/2 { r a, a'  r a, gis'  r a, fis' }
   | \tuplet 3/2 { r a, e'  r gis, d'  r a cis }
   | fis8~ \tuplet 3/2 { fis16[ a gis]  fis[ e d] }
   | e8~ \tuplet 3/2 { e16[ g fis]  e[ d cis] }
-  | \tuplet 3/2 { d[ fis e]  d cis b  cis[ b a] }
   %110
+  | \tuplet 3/2 { d[ fis e]  d cis b  cis[ b a] }
   | \tuplet 3/2 { gis[ e' b]  gis b gis  e[ b' d] }
-
-  | R1*3/8*16
+  | \tuplet 3/2 { cis[ d e]  d e fis  e[ fis g!] }
+  | \tuplet 3/2 { fis[ gis a]  gis a b  a[ e g!] }
+  | \tuplet 3/2 { \once\stemUp \acciaccatura g16 fis[ e d] }
+    cis8 b\trill
+  %115
+  | \tuplet 3/2 { cis16[ d e]  d e fis  e[ fis g!] }
+  | \tuplet 3/2 { fis[ gis a]  gis a b  a[ e g!] }
+  | \tuplet 3/2 { \once\stemUp \acciaccatura g16 fis[ e d] }
+    cis8 b8*1/2\trill \magnifyMusic 0.66 { a32[ b] }
+  | a4 r16 e
+  | a16. gis32 a16 gis a b
+  %120
+  | cis16. b32 cis16 b cis d
+  | \tuplet 3/2 { e[ a, cis]  e cis e  a[ e cis] }
+  | \tuplet 3/2 { fis[ e d]  cis e a,  b[ d gis,] }
+  | a4 r8
+  | \tuplet 3/2 { fis'16[ e d]  cis e a,  b[ d gis,] }
+  %120
+  | a4 r8
+  | \tuplet 3/2 { fis'16[ e d]  cis e a  b,[ d gis] }
+  | <cis, a'>8 a r
   }
     \fine
 }
@@ -313,10 +331,23 @@ Bass = \context Voice = "four" \relative c' {
   | b8 gis a
   %110
   | e4 gis8
-
-  % | \tuplet 3/2 { a16[ b cis] b[ cis d]  cis d e }
-
-  | R1*3/8*16
+  \repeat unfold 2 {
+  | \tuplet 3/2 { a16[ b cis] } \tuplet 3/2 { b[ cis d] } \tuplet 3/2 { cis[ d e] }
+  | \tuplet 3/2 { d[ e fis] } \tuplet 3/2 { b,[ cis d] } cis8
+  | d e e,
+  }
+  | \tuplet 3/2 { a,16[ cis e] } \tuplet 3/2 { a[ e cis] } a8
+  | r8 r16 e' fis gis
+  %120
+  | a16. gis32 a16 gis a b
+  | cis4 r8
+  | d,8 e d
+  | \tuplet 3/2 { cis16[ e a]  e[ a cis]  a[ cis e] }
+  | d,8 e d
+  %125
+  | \tuplet 3/2 { cis16[ e a]  e[ a cis]  a[ cis e] }
+  | d,8 e e
+  | a,4 r8
   }
     \fine
 }
