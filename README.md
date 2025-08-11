@@ -37,6 +37,7 @@ Latest release: [Open Scores for Piano v66](https://github.com/madrisan/open-sco
 |  | Sinfonien BWV 787-801 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v66/JS-Bach-BWV772-801-Inventionen-und-Sinfonien.pdf) |
 |  | Suites Anglaises BWV 806-811 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v66/JS-Bach-BWV806-811-Suites-Anglaises.pdf) |
 |  | Das Wohltemperierte Klavier - Teil I | *milestone 3* |  |
+|  | Praeludium und Fuge BWV898 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/JS-Bach-BWV898-Praeludium-und-Fuge.pdf) |
 |  | Praeludium und Fughetta in d-moll BWV 899 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v66/JS-Bach-BWV899-Praeludium-und-Fughetta.pdf) |
 |  | Praeludium und Fughetta in e-moll BWV 900 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v66/JS-Bach-BWV900-Praeludium-und-Fughetta.pdf) |
 |  | Praeludium und Fughetta in F-Dur BWV 901 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v66/JS-Bach-BWV901-Praeludium-und-Fughetta.pdf) |
