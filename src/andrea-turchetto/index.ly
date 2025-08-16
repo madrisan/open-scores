@@ -31,13 +31,13 @@ middleGrey =    #(x11-color 'grey45)
   \line {
     \hspace #8
     \general-align #Y #DOWN {
-      \epsfile #X #80 #"andrea-turchetto.eps"
+      \epsfile #X #90 #"andrea-turchetto.eps"
     }
   }
   \null
   \line \italic {
     \hspace #18
-    { \bold "Andrea Turchetto" } \char ##x2014 "??? (?)"
+    { \bold "Andrea Turchetto" } \char ##x2014 "Educatorio della Provvidenza, Torino (2017)"
   }
   \null
 }
@@ -57,3 +57,13 @@ middleGrey =    #(x11-color 'grey45)
   \abs-fontsize #12 \smallCaps \bold { \concat { \char ##x23AF " Contrapuncti" } }
 }
 \markup \indexItem "Fugue on “The Final Countdown”" #'FugaFinalCountdown "three-voice fugue"
+
+%\markup \column \abs-fontsize #11 {
+%  \pad-around #2
+%  \abs-fontsize #12 \smallCaps \bold { \concat { \char ##x23AF " Intermezzi" } }
+%}
+
+%\markup \column \abs-fontsize #11 {
+%  \pad-around #2
+%  \abs-fontsize #12 \smallCaps \bold { \concat { \char ##x23AF " Variazioni" } }
+%}
