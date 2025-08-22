@@ -77,8 +77,8 @@ Latest release: [Open Scores for Piano v67](https://github.com/madrisan/open-sco
 | Alban Berg | Klaviersonate Op. 1 | :zzz: |   |
 | Johannes Brahms | Intermezzo Es-Dur, *from 6 Klavierstücke Op. 118* | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Johannes-Brahms-Klavierstucke-op.119.pdf) |
 |  | Rapsodie A-Dur, *from 4 Klavierstücke Op. 119* | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Johannes-Brahms-Klavierstucke-op.118.pdf) |
-|  | Rapsodie h-moll Op.79. I | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Johannes-Brahms-Rhapsodie-op.op.79-nr.1.pdf) |
-|  | Rapsodie g-moll Op.79. II | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Johannes-Brahms-Rhapsodie-op.op.79-nr.2.pdf) |
+|  | Rapsodie h-moll Op.79. I | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Johannes-Brahms-Rhapsodie-op.79-nr.1.pdf) |
+|  | Rapsodie g-moll Op.79. II | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Johannes-Brahms-Rhapsodie-op.79-nr.2.pdf) |
 | Ferruccio Busoni | Drei Albumblätter  BV 289 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Ferruccio-Busoni-BV289-Drei-Albumblatter.pdf) |
 | Dietric Buxtehude | Canzonetta in a BuxWV 225 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Dietric-Buxtehude-BuxWV225-Canzonetta-in-a.pdf) |
 | Alfredo Casella | Deux Contrastes op.31 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Alfredo-Casella-Deux-Contrastes-op.31.pdf) |
