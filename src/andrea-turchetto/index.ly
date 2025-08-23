@@ -58,10 +58,12 @@ middleGrey =    #(x11-color 'grey45)
 }
 \markup \indexItem "Fugue on “The Final Countdown”" #'FugaFinalCountdown "three-voice fugue"
 
-%\markup \column \abs-fontsize #11 {
-%  \pad-around #2
-%  \abs-fontsize #12 \smallCaps \bold { \concat { \char ##x23AF " Intermezzi" } }
-%}
+\markup \column \abs-fontsize #11 {
+  \pad-around #2
+  \abs-fontsize #12 \smallCaps \bold { \concat { \char ##x23AF " Intermezzi" } }
+}
+
+\markup \indexItem "Intermezzo in B major" #'IntermezzoBmajor ""
 
 %\markup \column \abs-fontsize #11 {
 %  \pad-around #2

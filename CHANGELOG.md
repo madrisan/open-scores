@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [v68] - unreleased
 
+- Andrea Turchetto: Intermezzo in B major
+
 ### Fixed
 
 - Johannes Brahms: Rapsodie op.79 n.1,2 - fix pdf filenames

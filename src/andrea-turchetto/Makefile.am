@@ -25,7 +25,11 @@ EXTRA_DIST = Andrea-Turchetto-Composizioni.ly \
 	     header.ily \
 	     global.ly \
 	     index.ly \
-	     logo.ly
+	     logo.ly \
+	     parts/turchetto-canon-in-F-sharp-minor.ly \
+	     parts/turchetto-chromatic-canon.ly \
+	     parts/turchetto-fuga-the-final-countdown.ly \
+	     parts/turchetto-intermezzo-in-B-major.ly
 
 all: $(BUILT_SOURCES) Andrea-Turchetto-Composizioni
 

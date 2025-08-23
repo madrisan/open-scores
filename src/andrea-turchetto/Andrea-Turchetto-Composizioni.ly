@@ -93,3 +93,6 @@
 \pageBreak
 
 \include "./parts/turchetto-fuga-the-final-countdown.ly"
+
+\pageBreak
+\include "./parts/turchetto-intermezzo-in-B-major.ly"
