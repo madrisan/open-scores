@@ -59,8 +59,49 @@ Soprano = \context Voice = "one" \relative c' {
   | r4 b,8 b' r4 a,8 a'
   %30
   | r4 d,8 d' r4 cis,8 cis'
-
-  | R1*30
+  | b,8 b' r4 a,8 a' r4
+  | g,8 g' r4 f,8 f' r4
+  | e,8 e' r4 d,8 d' r4
+  | r4 b,8 g' r4 a,8 g'
+  %35
+  | r4 b,8 b' r4 a,8 a'
+    \clef "bass"
+  | d,,8 d' r4 cis,8 cis' r4
+  | b8 b, r4 a'8 a, r4
+  | R1
+  | <g' b e>2\arpeggio d'~
+  %40
+  | d4 cis2 b4~
+  | b2 eis,
+  | <e ais>1\fermata
+    \key b \major
+  | dis'2 e4 <fis, dis'>
+  | <f d'>2 g'
+    \clef "treble"
+  %45
+  | r4 fis <b e> dis~
+  | dis dis, gis'2
+  | <cis, fis cis'>4 <b b'>2 <ais ais'>4
+  | <b b'>1
+  | r4 ces'8 f, r4 bes,8 f
+  %50
+  | r4 e,8 ais~ ais r <e' e'>4
+  | <ais ais'>2 <ais' ais'>
+  | r4 <b, b'> cis g'
+  | <fis, d' fis>2 dis'
+    \clef "bass"
+    \break
+  | r2 <e,, g e'>~
+  %55
+  | q ais
+    \clef "treble"
+  | r4 dis8 fis r4 <e' e'>~
+  | q <dis dis'> <d f d'>2~
+  | q1
+  | b,2~ <b eis>
+  %60
+  | <b fis'>1~
+  | q
     \fine
 }
 
@@ -123,14 +164,64 @@ Bass = \context Voice = "four" \relative c {
   | b8 g' r4 ees8 g r4
   %30
   | d8 aes' r4 f8 a r4
-
-  | R1*30
-
+  | r4 f8 a r4 cis,8 f
+    \clef "bass"
+  | r4 f,8 a r4 b,8 f'
+  | r4 g,,8 d' r4 a'8 b
+  | b,8 cis r4 b'8 dis r4
+  %35
+  | g8 b, r4 g8 ees r4
+  | r4 d8 aes' r4 f8 a
+  | r4 f8 b, r4 cis8 f,
+  | gis' gis,4. fis'8 fis,4.
+  | <b cis>1\arpeggio
+  %40
+  | <g g'>
+  | <g cis>
+  | r2 <fis fis'>\fermata
+    \key b \major
+  | r4 <b fis'>2.~
+  | <b g'>4 g2.
+  %45
+  | dis'4 b' fis'2
+  | <eis b'>4~ <eis gis b>2.
+  | <e fis cis'>1\arpeggio
+  | <e, fis b>2~ <dis fis b>
+  | d8 bes' r4 d8 bes' r4
+  %50
+  | cis,,8 b'~ b2.
+  | r4 dis e fis
+  | g2~ <e g>
+  | fis1
+  | r2 <cis, b'>
+  %55
+  | <fis, fis'>1
+  | b'8 fis' r4 b8~ <b fis'>~ q4~
+  | q2 r8 b g'4~
+  | g2 <b,, g'>~
+  | q1
+  %60
+  | r4 <e, e'>2.~
+  | q2 <dis dis'>\fermata
     \fine
 }
 
+forceBreaks = {
+  % page 1
+  \repeat unfold 6 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 6 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 6 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 4 { s1\noBreak } s1\pageBreak
+  % page 2
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+}
+
 \score {
-  \new PianoStaff
+  \new PianoStaff \with { connectArpeggios = ##t }
   <<
     \accidentalStyle Score.piano
     \context Staff = "upper" <<
@@ -146,6 +237,7 @@ Bass = \context Voice = "four" \relative c {
       \clef bass
       \Bass
     >>
+    \new Devnull \forceBreaks
   >>
   \header {
     composer = "Andrea Turchetto"
