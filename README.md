@@ -28,6 +28,7 @@ Latest release: [Open Scores for Piano v67](https://github.com/madrisan/open-sco
 |---|---|:---:|:---:|
 | Hans Erich Apostel | Kubiniana Op. 13, *10 Klavierstücke* | II, III, VI, VII, IX | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Hans-Erich-Apostel-Kubiniana-op.13.pdf) |
 | Carl Philipp Emanuel Bach | Solfeggio c-Moll (“Solfeggietto”) Wq 117/2, H.220 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/CPE-Bach-H.220-Solfeggio-c-Moll.pdf) |
+| johann Christian Bach | Sonata op.17 no.5 W.A11 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/JC-Bach-W.A11-Sonata-op-17-5.pdf) |
 | Johann Sebastian Bach :zero: | Clavierübung Teil I - Partiten BWV 825-830 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/JS-Bach-BWV825-830-Partiten.pdf) |
 |  | Clavierübung Teil II - Italienisches Konzert BWV 971 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/JS-Bach-BWV971-Italienisches-Konzert.pdf) |
 |  | Clavierübung Teil II - Ouvertüre nach französischer Art BWV 831 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/JS-Bach-BWV831-Ouverture-nach-Franzosischer-Art.pdf) |
@@ -97,6 +98,7 @@ Latest release: [Open Scores for Piano v67](https://github.com/madrisan/open-sco
 |  | Unstern (Sinistre) S.208 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Franz-Liszt-Unstern-S.208.pdf) |
 | Pietro Domenico Paradisi | Toccata in La Maggiore P 893.06 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Pietro-Domenico-Paradisi-Toccata-La-Maggiore.pdf) |
 | Ildebrando Pizzetti | Sogno | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Ildebrando-Pizzetti-Sogno.pdf) |
+| Francis Poulenc | Deux Improvisations FP.113 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Francis-Poulenc-2-Improvisations-FP113.pdf) |
 | Andrea Turchetto | Composizioni per pianoforte | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Andrea-Turchetto-Composizioni.pdf) |
 | Domenico Scarlatti | Sonata K. 1 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Domenico-Scarlatti-Sonata-k1.pdf) |
 |  | Sonata K. 30 (Cat's fugue) | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Domenico-Scarlatti-Sonata-k30.pdf) |
@@ -108,6 +110,7 @@ Latest release: [Open Scores for Piano v67](https://github.com/madrisan/open-sco
 | Arnold Schoenberg | Sechs kleine Klavierstücke op.19 :six: | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Arnold-Schoenberg-Sechs-Kleine-Klavierstucke-op.19.pdf) |
 | Clara Schumann Wieck | Soirées Musicales op.6 | 2. Nocturne | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Clara-Schumann-Wieck-Soirees-Musicales-op.6.pdf) |
 | Robert Schumann | Kinderscenen op.15 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Robert-Schumann-Kinderscenen-op.15.pdf) |
+| Jan Pieterszoon Sweelinck | Fantasia Cromatica SwWV258 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Jan-Pieterszoon-Sweelinck-Fantasia-Cromatica.pdf) |
 | Karol Maciej Szymanowski | Dziewięć preludiów (Nine Preludes) Op. 1 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Karol-Szymanowski-Nine-Preludes-op.1.pdf) |
 
  0. [Milestones](https://github.com/users/madrisan/projects/2)
