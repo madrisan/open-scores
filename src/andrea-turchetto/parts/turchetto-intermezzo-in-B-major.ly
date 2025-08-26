@@ -206,6 +206,62 @@ Bass = \context Voice = "four" \relative c {
     \fine
 }
 
+centerDynamics = {
+  %1
+  | s4\p s2.
+  | s1
+  | s16 s8.\mp s2.
+  | s1
+  %5
+  | s16 s8.\mf s2.
+  | s1*2
+  | s2 s\p
+  | s1
+  %10
+  | s4 s\mf s2
+  | s4\> s2.
+  | s1
+  | s1\!\p
+  | s1
+  %15
+  | s4 s\mp s2
+  | s1
+  | s16 s8.\mf s2.
+  | s1*2
+  %20
+  | s1\p
+  | s1
+  | s4 s\mf s2
+  | s1\>
+  | s
+  %25
+  | s\!\p
+  | s1*2
+  | s\p
+  | s1*9
+  %39
+  | s1\mf
+  | s2 s4 s\>
+  | s1*2
+  | s1\!\p
+  | s
+  %45
+  | s4 s\mp s2
+  | s1
+  | s1\mf
+  | s1
+  | s4\p s2.
+  %50
+  | s2. s4\mf
+  | s1*3
+  | s2 s\mp
+  | s1
+  %56
+  | s4 s\p s2
+  | s1*3
+  | s16 s8.\pp s2.
+}
+
 forceBreaks = {
   % page 1
   \repeat unfold 6 { s1\noBreak } s1\break\noPageBreak
@@ -230,6 +286,16 @@ forceBreaks = {
       \clef treble
       \Soprano
       \Alto
+      \new Dynamics = "dynamics" {
+        % Will use self-alignment-Y to place element
+        \override TextScript.Y-offset = #self-alignment-interface::y-aligned-on-self
+        % Use negative value of direction,
+        % i.e. CENTER -> align to center, UP -> align to bottom, DOWN -> align to top
+        \override TextScript.self-alignment-Y = #(lambda (grob) (- (ly:grob-property grob 'direction)))
+        % use CENTER as default direction instead of DOWN
+        \override TextScript.direction = #CENTER
+        \centerDynamics
+      }
     >>
     \context Staff = "lower" <<
       \set Staff.midiInstrument = #"acoustic grand"
