@@ -23,5 +23,6 @@ SUBDIRS = sancta-dorothea-s.187 \
 	  am-grabe-richard-wagners-s.202 \
 	  en-reve-nocturne-s.207 \
 	  recueillement-s.204 \
+	  richard-wagner-venezia-s.201 \
 	  trauervorspiel-und-trauermarsch-s.206 \
 	  unstern-s.208

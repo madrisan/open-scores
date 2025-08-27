@@ -5,7 +5,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [v68] - unreleased
 
+### Added
+
 - Andrea Turchetto: Intermezzo in B major
+- Franz Liszt: Richard-Wagner Venezia S.201
 
 ### Fixed
 
