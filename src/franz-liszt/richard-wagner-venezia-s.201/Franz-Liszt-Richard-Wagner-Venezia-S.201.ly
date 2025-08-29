@@ -146,8 +146,47 @@ Soprano = \context Voice = "one" \relative c' {
   | dis4\) <b dis g>2 <c! e gis>4
   %25
   | r4 <cis f a>2 <d fis ais>4
-
-  | R1*24
+  | r <dis g b> <e gis c> <f a cis>
+  | r <fis bes d> <g b dis> <gis c e>
+    \clef "treble"
+  | <a cis f> <b dis gis> <cis f a> <dis gis b>
+  | <f a cis> <gis b dis> <a cis f> <b dis gis>
+  %30
+  | r2 <cis f a>2
+    \bar "||"
+    \key bes \major
+  | <d g bes>2. \tupletNeutral \tuplet 3/2 { <bes d f bes>8 q q }
+  | q2. \tuplet 3/2 { <bes, d f bes>8 q q }
+  | q8 r \tuplet 3/2 { <bes' d f bes>8 q q } q8 r \tuplet 3/2 { q q q }
+  | q r r4 <bes des f bes>8 r r4
+  %35
+  | <des f aes des>2. \tuplet 3/2 { q8 q q }
+  | q2. \tuplet 3/2 { <des, f aes des>8 q q }
+  | q8 r \tuplet 3/2 { <des' f aes des>8 q q } q r \tuplet 3/2 { q q q }
+  | <des f aes des>8 r r4 <des e aes des>8 r r4
+    \bar "||"
+    \key c \major
+  | <e gis b e>2. \tuplet 3/2 { q8 q q }
+  %40
+  | <e gis b e>2. \tuplet 3/2 { <e, gis b e>8 q q }
+  | q r \tuplet 3/2 { <e' gis b e>8 q q } q8 r \tuplet 3/2 { <e gis b e> q q }
+  | q r r4 <e a cis e>8 r r4
+  | r
+    \override TieColumn.tie-configuration =
+    #'((11.0 . 1) (8.5 . 1) (6.4 . -1) (3.5 . -1))
+    \once\shape #'((-0.5 . -0.5) (0 . 1.2) (0 . 1.5) (0 . -6)) PhrasingSlur
+    <f a cis f>2.~\(
+  | \revert TieColumn.tie-configuration
+    q4 cis' bes a
+  %45
+  | f cis bes a
+  | f cis2
+    \change Staff = "lower" \voiceThree
+    bes4~
+  | bes a2 f4
+  | cis\) r r2
+  | cis4 r r2
+    \change Staff = "upper"
     \fine
 }
 
@@ -167,14 +206,11 @@ Alto = \context Voice = "two" \relative c {
   %14
   | s2 <d fis>
   | q2. d4
+  | s1*27
+  %43
+  %| s4 \tieDown <f'' a>2.~
+  %| q4
 
-}
-
-Tenor = \context Voice = "three" \relative c {
-  \voiceThree
-  \stemUp\tieUp
-  \override Rest.staff-position = #0
-  %1
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -229,8 +265,48 @@ Bass = \context Voice = "four" \relative c {
     <b dis! g>2 <c! e gis>4
   %25
   | r4 <cis f a>2 <d fis ais>4
-
-  | R1*24
+  | r <dis g b> <e gis c> <f a cis>
+  | r <fis bes d> <g b dis> <gis c e>
+  | <a cis f> <b dis gis> <cis f a> <dis gis b>
+  | <f a cis> <gis b dis>
+    \clef "treble"
+    <a cis f> <b dis gis>
+  %30
+  | r2 <cis f a>2
+    \bar "||"
+    \key bes \major
+  | <d f bes>8 r
+    \clef "bass"
+    \tupletNeutral\tuplet 3/2 { <d,, d'> q q } <f f'>4 \tuplet 3/2 { <bes bes'>8 q q }
+  | <d d'>4 \tuplet 3/2 { <bes bes'>8 q q } <f f'>4 \tuplet 3/2 { <d d'>8 q q }
+  | q r  \tuplet 3/2 { <f f'>8 q q } <bes bes'>8 r \tuplet 3/2 { <d bes' d>8 q q }
+  | <f d' f>8 r r4 <f bes des f>8 r r4
+  %35
+  | <f aes des f>8 r \tuplet 3/2 { <f, f'>8 q q } <aes aes'>4 \tuplet 3/2 { <des des'>8 q q }
+  | <f f'>4 \tuplet 3/2 { <des des'>8 q q } <aes aes'>4 \tuplet 3/2 { <f f'>8 q q }
+  | q r \tuplet 3/2 { <aes aes'> q q } <des des'> r \tuplet 3/2 { <f des' f> q q }
+  | <aes f' aes>8 r r4 <aes des e aes>8 r r4
+  | <gis b e gis>8 r \tuplet 3/2 { <gis, gis'> q q } <b b'!> r \tuplet 3/2 { <e e'!> q q }
+  %40
+  | <gis gis'>4 \tuplet 3/2 { <e e'>8 q q } <b b'>4 \tuplet 3/2 { <gis gis'>8 q q }
+  | q8 r \tuplet 3/2 { <b b'>8 q q } <e e'>8 r
+    \clef "treble"
+    \tuplet 3/2 { <gis e' gis>8 q q }
+  | <b gis' b> r r4 <cis e a cis>8 r r4
+  | r4
+    \override TieColumn.tie-configuration =
+    #'((2.2 . 1) (-0.8 . 1) (-3.4 . -1) (-6.5 . -1))
+    <cis f a cis>2.~
+  | q4 cis' bes a
+    \revert TieColumn.tie-configuration
+  %45
+  | f cis
+    \clef "bass"
+    bes a
+  | f cis2 \stemDown\tieDown bes4~
+  | bes a2 f4
+  | cis4 s2.
+  | cis4 s2.
     \fine
 }
 
@@ -264,7 +340,6 @@ forceBreaks = {
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \clef bass
-      \Tenor
       \Bass
     >>
     \new Devnull \forceBreaks
@@ -272,7 +347,7 @@ forceBreaks = {
   \header {
     composer = "Franz Liszt"
     opus = ##f % "S.201"
-    title = \markup { "" }
+    title = \markup { "R. W. – VENEZIA" }
     subtitle = ##f
   }
   \layout {
