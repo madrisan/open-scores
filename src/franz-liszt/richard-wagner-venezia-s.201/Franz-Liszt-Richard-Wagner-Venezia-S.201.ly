@@ -105,6 +105,8 @@ Global = {
   \include "global.ly"
 }
 
+ritenuto = { \override TextSpanner.bound-details.left.text = \markup { "riten " } }
+
 Soprano = \context Voice = "one" \relative c' {
   \voiceOne
   \stemNeutral\tieNeutral\slurNeutral\phrasingSlurNeutral
@@ -149,10 +151,11 @@ Soprano = \context Voice = "one" \relative c' {
   | r <dis g b> <e gis c> <f a cis>
   | r <fis bes d> <g b dis> <gis c e>
     \clef "treble"
-  | <a cis f> <b dis gis> <cis f a> <dis gis b>
+  | \ritenuto
+    <a cis f>\startTextSpan <b dis gis> <cis f a> <dis gis b>
   | <f a cis> <gis b dis> <a cis f> <b dis gis>
   %30
-  | r2 <cis f a>2
+  | r2 <cis f a>2\stopTextSpan
     \bar "||"
     \key bes \major
   | <d g bes>2. \tupletNeutral \tuplet 3/2 { <bes d f bes>8 q q }
@@ -174,7 +177,7 @@ Soprano = \context Voice = "one" \relative c' {
   | r
     \override TieColumn.tie-configuration =
     #'((11.0 . 1) (8.5 . 1) (6.4 . -1) (3.5 . -1))
-    \once\shape #'((-0.5 . -0.5) (0 . 1.2) (0 . 1.5) (0 . -6)) PhrasingSlur
+    \once\shape #'((-0.5 . -0.5) (0 . 1.2) (0 . 1.5) (-0.5 . -8.5)) PhrasingSlur
     <f a cis f>2.~\(
   | \revert TieColumn.tie-configuration
     q4 cis' bes a
@@ -310,6 +313,25 @@ Bass = \context Voice = "four" \relative c {
     \fine
 }
 
+centerDynamics = {
+  %1
+  | s4 s\p s2
+  | s1*22
+  %24
+  | s4 s-\markup { "cresc." } s2
+  | s1*6
+  %31
+  | s4\f s2.
+  | s1*11
+  %43
+  | s4 s\ff s2
+  | s1\dim
+  | s1*2
+  | s2 s4 s8\! s
+  | s4\p s2.
+  | s4\pp s2.
+}
+
 forceBreaks = {
   % page 1
   \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
@@ -335,6 +357,16 @@ forceBreaks = {
       \clef treble
       \Soprano
       \Alto
+      \new Dynamics = "dynamics" {
+        % Will use self-alignment-Y to place element
+        \override TextScript.Y-offset = #self-alignment-interface::y-aligned-on-self
+        % Use negative value of direction,
+        % i.e. CENTER -> align to center, UP -> align to bottom, DOWN -> align to top
+        \override TextScript.self-alignment-Y = #(lambda (grob) (- (ly:grob-property grob 'direction)))
+        % use CENTER as default direction instead of DOWN
+        \override TextScript.direction = #CENTER
+        \centerDynamics
+      }
     >>
     \context Staff = "lower" <<
       \set Staff.midiInstrument = #"acoustic grand"
