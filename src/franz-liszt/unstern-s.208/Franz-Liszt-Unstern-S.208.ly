@@ -57,12 +57,14 @@
         \null\null
         \fill-line { \draw-hline }
         \null\null\null
-        \line { \abs-fontsize #35 \bold "Unstern! Sinistre" }
+        \line { \abs-fontsize #40 \bold "Unstern! Sinistre" }
         \null\null\null
-        \line { \abs-fontsize #35 \bold "S. 208" }
+        \line { \abs-fontsize #24 "S. 208" }
+        \null\null\null\null
+        \fill-line \italic { \abs-fontsize #14 "For Piano" }
         \null\null\null
         \null\null\null
-        \null\null\null
+        \null\null
       }
     }
   }
@@ -73,9 +75,9 @@
     \fill-line {
       \center-column {
         \null\null\null\null
-        \fill-line \abs-fontsize #12 {
+        \fill-line \abs-fontsize #10 {
           \concat {
-            "Based on the score: Leipzig: Breitkopf & Härtel, 1927. Plate F.L. 80."
+            "Based on the score: Leipzig: Breitkopf & Härtel, 1927"
           }
         }
         \null\null
