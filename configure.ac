@@ -106,6 +106,7 @@ AC_CONFIG_FILES([\
   src/franz-liszt/sancta-dorothea-s.187/Makefile \
   src/franz-liszt/recueillement-s.204/Makefile \
   src/franz-liszt/richard-wagner-venezia-s.201/Makefile \
+  src/franz-liszt/schlaflos-frage-und-antwort-s.203/Makefile \
   src/franz-liszt/trauervorspiel-und-trauermarsch-s.206/Makefile \
   src/franz-liszt/unstern-s.208/Makefile \
   src/frederic-chopin/Makefile \

@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Andrea Turchetto: Intermezzo in B major
 - Franz Liszt: Richard-Wagner Venezia S.201
+- Franz Liszt: Schlaflos Frage und Antwort S.203
 
 ### Fixed
 

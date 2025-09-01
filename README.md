@@ -91,6 +91,7 @@ Latest release: [Open Scores for Piano v67](https://github.com/madrisan/open-sco
 | Franz Liszt | Sancta Dorothea S.187 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Franz-Liszt-Sancta-Dorothea-S.187.pdf) |
 |  | Trübe Wolken (Nuages Gris) S.199 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Franz-Liszt-Nuages-Gris-S.199.pdf) |
 |  | La lugubre gondola S.200/2 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Franz-Liszt-La-lugubre-gondola-S.200.pdf) |
+|  | R.W. Venezia S.201 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v68/Franz-Liszt-Richard-Wagner-Venezia-S.201.pdf) |
 |  | Am Grabe Richard Wagners S.202 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Franz-Liszt-Am-Grabe-Richard-Wagners-S.202.pdf) |
 |  | Recueillement S.204 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Franz-Liszt-Recueillement-S.204.pdf) |
 |  | Trauervorspiel und Trauermarsch S.206 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Franz-Liszt-Trauervorspiel-und-Trauermarsch-S.206.pdf) |

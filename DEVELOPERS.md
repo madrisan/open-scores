@@ -40,7 +40,9 @@ make -C src/franz-liszt/en-reve-nocturne-s.207
 make -C src/franz-liszt/la-lugubre-gondola-s.200
 make -C src/franz-liszt/nuages-gris-s.199
 make -C src/franz-liszt/recueillement-s.204
+make -C src/franz-liszt/richard-wagner-venezia-s.201
 make -C src/franz-liszt/sancta-dorothea-s.187
+make -C src/franz-liszt/schlaflos-frage-und-antwort-s.203
 make -C src/franz-liszt/trauervorspiel-und-trauermarsch-s.206
 make -C src/franz-liszt/unstern-s.208
 make -C src/frederic-chopin/valse
