@@ -212,13 +212,11 @@ Alto = \context Voice = "two" \relative c' {
   \stemDown\tieDown
   \override Rest.staff-position = #0
   %1
-}
-
-Tenor = \context Voice = "three" \relative c {
-  \voiceThree
-  \stemUp\tieUp
-  \override Rest.staff-position = #0
-  %1
+  | s1*53
+  | s4 b' a2
+  %55
+  | f4\rest a gis2
+  | e4\rest gis fis2
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -413,7 +411,6 @@ sustainPedal = {
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \clef bass
-      \Tenor
       \Bass
     >>
     \context Dynamics = "sustainPedal" \sustainPedal
