@@ -93,6 +93,7 @@ Latest release: [Open Scores for Piano v67](https://github.com/madrisan/open-sco
 |  | La lugubre gondola S.200/2 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Franz-Liszt-La-lugubre-gondola-S.200.pdf) |
 |  | R.W. Venezia S.201 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v68/Franz-Liszt-Richard-Wagner-Venezia-S.201.pdf) |
 |  | Am Grabe Richard Wagners S.202 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Franz-Liszt-Am-Grabe-Richard-Wagners-S.202.pdf) |
+|  | Schlaflos Frage und Antwort S.203 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v68/Franz-Liszt-Schlaflos-Frage-und-Antwort-S.203.pdf) |
 |  | Recueillement S.204 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Franz-Liszt-Recueillement-S.204.pdf) |
 |  | Trauervorspiel und Trauermarsch S.206 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Franz-Liszt-Trauervorspiel-und-Trauermarsch-S.206.pdf) |
 |  | En rêve (Nocturne) S.207 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v67/Franz-Liszt-En-reve-Nocturne-S.207.pdf) |
