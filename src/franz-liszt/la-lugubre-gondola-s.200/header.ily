@@ -19,7 +19,7 @@
 
   opus = "S.200/2"
   title = "La lugubre gondola"
-  source = "Breitkopf @source@ Härtel, Leipzig 1927"
+  source = "Breitkopf & Härtel, Leipzig 1927"
   style = "Romantic"
 
   copyright = \markup {

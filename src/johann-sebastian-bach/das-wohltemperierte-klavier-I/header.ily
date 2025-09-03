@@ -19,7 +19,7 @@
 
   opus = "Teil I"
   title = "Das Wohltemperierte Klavier"
-  source = "Based on: Carl Czerny - Leipzig @source@ Berline: C.F. Peters"
+  source = "Based on: Carl Czerny - Leipzig: C.F. Peters"
   style = "Baroque"
 
   copyright = \markup {

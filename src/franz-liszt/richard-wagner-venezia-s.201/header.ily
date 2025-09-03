@@ -19,7 +19,7 @@
 
   opus = "S.201"
   title = "R.W. Venezia"
-  source = "Leipzig: Breitkopf @source@ Härtel, 1927"
+  source = "Leipzig: Breitkopf & Härtel, 1927"
   style = "Romantic"
 
   copyright = \markup {

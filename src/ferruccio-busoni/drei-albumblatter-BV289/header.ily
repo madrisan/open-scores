@@ -19,7 +19,7 @@
 
   opus = "BV 289"
   title = "Drei Albumblätter, BV 289"
-  source = "Based on Breitkopf @source@ Härtel - Leipzig, 1921"
+  source = "Based on Breitkopf & Härtel - Leipzig, 1921"
   style = "Modern"
 
   copyright = \markup {

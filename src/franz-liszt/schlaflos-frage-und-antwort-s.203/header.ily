@@ -19,7 +19,7 @@
 
   opus = "S.203"
   title = "Schlaflos! Frage und Antwort"
-  source = "Breitkopf @source@ Härtel - Leipzig, 1927"
+  source = "Breitkopf & Härtel - Leipzig, 1927"
   style = "Romantic"
 
   copyright = \markup {

@@ -19,7 +19,7 @@
 
   opus = "S.187"
   title = "Sancta Dorothea"
-  source = "Leipzig: Breitkopf @source@ Härtel, 1927"
+  source = "Leipzig: Breitkopf & Härtel, 1927"
   style = "Romantic"
 
   copyright = \markup {
