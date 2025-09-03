@@ -105,7 +105,9 @@ Global = {
   \include "global.ly"
 }
 
-ritenuto = { \override TextSpanner.bound-details.left.text = \markup { "riten " } }
+ritenuto = {
+  \override TextSpanner.bound-details.left.text = \markup { \small "riten " }
+}
 
 Soprano = \context Voice = "one" \relative c' {
   \voiceOne
@@ -223,7 +225,10 @@ Bass = \context Voice = "four" \relative c {
   \override Rest.staff-position = #0
   %1
   | \ottava #-1
-    r4 cis,,\( fis a
+    r4 cis,,\(_\markup {
+      "con " \hspace #-0.5 \musicglyph #"pedal.Ped"
+    }
+    fis a
   | cis4. a8 f4 cis\)
   | r4 cis\( fis a
   | cis4. <a a'>8 <fis fis'>4 <cis cis'>\)
@@ -299,7 +304,9 @@ Bass = \context Voice = "four" \relative c {
   | r4
     \override TieColumn.tie-configuration =
     #'((2.2 . 1) (-0.8 . 1) (-3.4 . -1) (-6.5 . -1))
-    <cis f a cis>2.~
+    <cis f a cis>2.~_\markup {
+      \musicglyph #"pedal.Ped"
+    }
   | q4 cis' bes a
     \revert TieColumn.tie-configuration
   %45
@@ -391,6 +398,6 @@ forceBreaks = {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 4 = 48
   }
 }
