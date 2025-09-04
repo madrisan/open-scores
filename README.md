@@ -1,3 +1,5 @@
+![Open Musical Scores Logo](images/open-scores-logo.png)
+
 ![Release Status](https://img.shields.io/badge/status-in--progress-brightgreen.svg)
 [![License](https://img.shields.io/badge/License-CC--BY--NC--SA--4.0-blue.svg)](https://spdx.org/licenses/CC-BY-NC-SA-4.0.html)
 [![Latest Release](https://img.shields.io/badge/download-latest--version-blue.svg)](https://github.com/madrisan/open-scores/releases)
@@ -22,7 +24,7 @@ Latest release: [Open Scores for Piano v68](https://github.com/madrisan/open-sco
 > [!NOTE]
 > The source code was compiled with `GNU LilyPond 2.25.20 (running Guile 3.0)` (Fedora Linux 41).
 
-![Open Musical Scores Logo](images/SheetMusic-icon.png)
+![Sheet Music Logo](images/sheet-music-icon.png)
 
 | Author | Work | Status | :link: Scores |
 |---|---|:---:|:---:|
