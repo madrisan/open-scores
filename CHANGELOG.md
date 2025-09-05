@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [v69] - unreleased
 
+### Added
+
+- Franz Liszt: Wiegenlied - Chant du berceau S.198
+
 ### Changed
 
 - J.S. Bach: Sechs kleine Präludien (BWV 933-938) - use \atLeft\mordent
