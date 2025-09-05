@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [v69] - unreleased
+
+### Changed
+
+- J.S. Bach: Sechs kleine Präludien (BWV 933-938) - use \atLeft\mordent
+
+      Lilypond 2.25 make it possible to position a mordent to the left side of a note.
+      Remove the ugly code used to display them when this feature was not available.
+
+- J.S. Bach: Suite Anglaise 1 BWV806 - use the new ornament \bachschleifer
+
+      Remove the custom macro "macros-schleifer.ly" and use the new ornament available
+      in Lilypond 2.25.
+
 ## [v68] - 2025-09-04
 
 ### Added

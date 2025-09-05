@@ -66,7 +66,7 @@ Soprano = \context Voice = "one" \relative c' {
     | gis( fis e fis) gis( fis) a( gis)
     %40
     | b( a gis fis) a( gis fis e)
-    | a4. b8 gis4.\downmordent a8
+    | a4. b8 gis4.\tweak Y-offset #4.2 \downmordent a8
     | a2. e4
     | e8( cis b a) cis( b) d( cis)
     | d( b a gis) b( a) cis( b)

@@ -4,15 +4,12 @@ Global = {
   \include "../global.ly"
 }
 
-textmordent = \markup { \musicglyph "scripts.mordent" }
-
 Sopran = \context Voice = "one" \relative c' {
   \voiceOne
   \override Rest.staff-position = #0
   \repeat volta 2 {
   %1
-  | \once\override NoteColumn.force-hshift = #0.5 e4
-    r8 f \once\override NoteColumn.force-hshift = #1 g4 r8 c
+  | e4 r8 f g4 r8 c
   | f,8 \mordent[ f ] d'[ f,] f[ e] r4
     \noBreak
   | d4 \mordent r8 e f4 r8 f
@@ -27,10 +24,7 @@ Sopran = \context Voice = "one" \relative c' {
   }
   \break
   \repeat volta 2 {
-  | \once\override NoteColumn.force-hshift = #1.2 b'4
-    r8 c
-    \once\override NoteColumn.force-hshift = #1.2 d4
-    r8 e
+  | b'4 r8 c d4 r8 e
   %10
   | f!8[ f] f[ e] d[ c] r4
   | <c g'>4 r8 bes a4 \mordent r8 a'
@@ -50,12 +44,8 @@ Alto = \context Voice = "two" \relative c' {
   \override Rest.staff-position = #0
   \repeat volta 2 {
   %1
-  | \once\override Staff.TextScript.extra-offset = #'(-1.5 . -6.4)
-    \once\override NoteColumn.force-hshift = #0.5 <g c>4^\textmordent
-    s8 d'
-    \once\override Staff.TextScript.extra-offset = #'(-1.5 . -5.4)
-    \once\override NoteColumn.force-hshift = #1
-    <c e>4^\textmordent s8 e
+  | <g c\atLeft\mordent>4
+    s8 d' <c e\atLeft\mordent>4 s8 e
   | d8[ d] d\rest d d[ c] s4
   | b4 s8 c d4 s8 d
   | c8[ e] c[ c] \appoggiatura c b4 s
@@ -63,11 +53,7 @@ Alto = \context Voice = "two" \relative c' {
   | s1*4
   }
   \repeat volta 2 {
-  | \once\override Staff.TextScript.extra-offset = #'(-1.5 . -5)
-    \once\override NoteColumn.force-hshift = #1.2 <d g>4^\textmordent s8 a'
-    \once\override Staff.TextScript.extra-offset = #'(-1.5 . -4.8)
-    \once\override NoteColumn.force-hshift = #1.2
-    <g b >4^\textmordent s8 c
+  | <d g\atLeft\mordent>4 s8 a' <g b\atLeft\mordent>4 s8 c
   | d[ d] d[ c] b[ a] s4
   | g4 s8 g f4 s8 c'
   | f8[ e] d[ c] c[ b] s4

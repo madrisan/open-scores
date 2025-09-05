@@ -4,7 +4,6 @@ Global = {
   \include "../../global.ly"
 }
 
-\include "../macros-schleifer.ly"
 \include "../macros-slidenotes.ly"
 
 Soprano = \context Voice = "one" \relative c'' {
@@ -160,10 +159,8 @@ Alto = \context Voice = "two" \relative c'' {
   | s2.
   } >>
   %30
-  | c8. d32 e d8 c b\prall \schleifer a
-  | % FIXME: a bad hack to insert horizontal space
-    \hideNotes \grace e'8 \unHideNotes
-    f e c4\downprall b8 a
+  | c8. d32 e d8 c b\prall a
+    f'\atLeft\bachschleifer e c4\downprall b8 a
   | \shiftOff a4 << { \stemDown a2 } \\ { \shiftOn cis } \\ { \shiftOn e } >>
 }
 

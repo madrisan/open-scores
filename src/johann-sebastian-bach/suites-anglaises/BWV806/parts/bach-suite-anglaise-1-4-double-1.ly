@@ -4,8 +4,6 @@ Global = {
   \include "../../global.ly"
 }
 
-\include "../macros-schleifer.ly"
-
 Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
   \stemUp\tieUp
@@ -54,7 +52,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | ais( gis fis gis) ais( b cis d) e( g fis e)
   \break
   | d( e d cis) b( ais b cis) \stemUp cis4.\upprall b8
-  | b2. \stemNeutral \schleifer b4 e4. d8
+  | b2. \stemNeutral b4 e4.\atLeft\bachschleifer d8
   %20
   | cis( d cis b) a( gis fis gis) a( cis b a)
   | gis( fis e fis) gis( a b cis) d( cis b\prall a)
