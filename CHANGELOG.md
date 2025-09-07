@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Added
 
 - Franz Liszt: Wiegenlied - Chant du berceau S.198
+- Franco Margola: Sei sonatine facili per pianoforte dc108 - #1
 
 ### Changed
 

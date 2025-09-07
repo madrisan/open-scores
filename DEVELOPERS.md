@@ -35,6 +35,7 @@ make -C src/domenico-scarlatti/sonata-k095
 make -C src/domenico-scarlatti/sonata-k387
 make -C src/ferruccio-busoni/drei-albumblatter-BV289
 make -C src/francis-poulenc/2-improvisations-fp.113
+make -C src/franco-margola/sei-sonatine-facili-dc108
 make -C src/franz-liszt/am-grabe-richard-wagners-s.202
 make -C src/franz-liszt/en-reve-nocturne-s.207
 make -C src/franz-liszt/la-lugubre-gondola-s.200
@@ -45,6 +46,7 @@ make -C src/franz-liszt/sancta-dorothea-s.187
 make -C src/franz-liszt/schlaflos-frage-und-antwort-s.203
 make -C src/franz-liszt/trauervorspiel-und-trauermarsch-s.206
 make -C src/franz-liszt/unstern-s.208
+make -C src/franz-liszt/wiegenlied-s.198
 make -C src/frederic-chopin/valse
 make -C src/ildebrando-pizzetti/sogno
 make -C src/jan-pieterszoon-sweelinck/fantasia-cromatica-SwWV258

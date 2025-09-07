@@ -1,6 +1,6 @@
 ## Process this file with automake to produce Makefile.in
 
-## Copyright (c) 2022 Davide Madrisan <d.madrisan@proton.me>
+## Copyright (c) 2023 Davide Madrisan <d.madrisan@proton.me>
 ##
 ## This program is free software: you can redistribute it and/or modify
 ## it under the terms of the GNU General Public License as published by
@@ -17,30 +17,4 @@
 
 AM_MAKEFLAGS = --no-print-directory
 
-SUBDIRS = alfredo-casella \
-	  andrea-turchetto \
-	  arnold-schoenberg \
-	  baldassare-galuppi \
-	  carl-philipp-emanuel-bach \
-	  christoph-willibald-gluck \
-	  clara-schumann-wieck \
-	  dietric-buxtehude \
-	  domenico-scarlatti \
-	  ferruccio-busoni \
-	  francis-poulenc \
-	  franco-margola \
-	  frederic-chopin \
-	  franz-liszt \
-	  hans-erich-apostel \
-	  ildebrando-pizzetti \
-	  jan-pieterszoon-sweelinck \
-	  johannes-brahms \
-	  johann-sebastian-bach \
-	  karol-szymanowski \
-	  ludwig-van-beethoven \
-	  mikhail-glinka \
-	  pietro-domenico-paradisi \
-	  robert-schumann \
-	  rued-langgaard
-
-check-local: all
+SUBDIRS = sei-sonatine-facili-dc108
