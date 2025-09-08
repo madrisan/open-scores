@@ -91,6 +91,7 @@ Latest release: [Open Scores for Piano v68](https://github.com/madrisan/open-sco
 | Gluck / Sgambati | Mélodie de Gluck depuis "Orfeo ed Euridice" | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v68/Christoph-Willibald-Gluck-Orfeo-Melodie-Sgambati.pdf) |
 | Rued Langgaard | Insektarium, 9 Puzzle Pictures BVN 134 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v68/Rued-Langgaard-Insektarium-BVN-134.pdf) |
 | Franz Liszt | Sancta Dorothea S.187 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v68/Franz-Liszt-Sancta-Dorothea-S.187.pdf) |
+|  | Wiegenlied - Chant du berceau S.198 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v69/Franz-Liszt-Wiegenlied-S.198.pdf) |
 |  | Trübe Wolken (Nuages Gris) S.199 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v68/Franz-Liszt-Nuages-Gris-S.199.pdf) |
 |  | La lugubre gondola S.200/2 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v68/Franz-Liszt-La-lugubre-gondola-S.200.pdf) |
 |  | R.W. Venezia S.201 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v68/Franz-Liszt-Richard-Wagner-Venezia-S.201.pdf) |

@@ -98,6 +98,7 @@ AC_CONFIG_FILES([\
   src/ferruccio-busoni/drei-albumblatter-BV289/Makefile \
   src/francis-poulenc/Makefile \
   src/francis-poulenc/2-improvisations-fp.113/Makefile \
+  src/franco-margola/Makefile \
   src/franco-margola/sei-sonatine-facili-dc108/Makefile \
   src/franz-liszt/Makefile \
   src/franz-liszt/am-grabe-richard-wagners-s.202/Makefile \
