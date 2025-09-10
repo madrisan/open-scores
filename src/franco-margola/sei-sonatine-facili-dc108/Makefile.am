@@ -29,7 +29,7 @@ EXTRA_DIST = Franco-Margola-Sei-sonatine-facili.ly \
 	     parts/margola-6-sonatine-facili-3-andante-piuttosto-lento.ly \
 	     parts/margola-6-sonatine-facili-4-allegro-giusto.ly \
 	     parts/margola-6-sonatine-facili-5-andantino.ly \
-	     parts/margola-6-sonatine-facili-7-allegro.ly
+	     parts/margola-6-sonatine-facili-6-allegro.ly
 
 all: $(BUILT_SOURCES) Franco-Margola-Sei-sonatine-facili
 
