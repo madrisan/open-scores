@@ -6,7 +6,8 @@ PROGNAME="${0##*/}"
 PROGPATH="${0%/*}"
 REVISION=3
 
-die () { echo -e "$PROGNAME: error: $1" 1>&2; exit 1; }
+die () { echo -e "$PROGNAME: ERROR: $1" 1>&2; exit 1; }
+warning () { echo -e "$PROGNAME: WARNING: $1" 1>&2; }
 
 usage () {
    cat <<__EOF
@@ -141,7 +142,10 @@ done
 [ "$ly_data" ] || die "you must set a --composer"
 [ "$ly_date" ] || die "you must set a --year"
 [ -z "$ly_pdfname" -a "$ly_parts_only" == "false" ] && die "you must set a --pdfname"
-[ "$ly_source" ] || die "you must set a --source"
+[ "$ly_source" ] || {
+    warning "--source has been specified, an unidentified publisher or a forgotten cmdline arg?"
+    ly_source="Unidentified Publisher"
+}
 [ "$ly_targetdir" ] || die "you must set a --targetdir"
 
 [ -r "$ly_data" ] || die "file not found: $ly_data"
