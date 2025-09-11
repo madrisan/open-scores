@@ -106,6 +106,15 @@ centerDynamics = {
   | s4-\markup { \dynamic p "a tempo" } s2.
 }
 
+forceBreaks = {
+  % page 1
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+}
+
 \score {
   \new PianoStaff
   <<
@@ -116,6 +125,7 @@ centerDynamics = {
       \clef treble
       \Soprano
     >>
+    \new Devnull \forceBreaks
     \context Dynamics = "dynamics" \centerDynamics
     \context Staff = "lower" <<
       \set Staff.midiInstrument = #"acoustic grand"
