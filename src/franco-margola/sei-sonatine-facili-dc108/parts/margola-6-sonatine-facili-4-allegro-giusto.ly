@@ -9,31 +9,32 @@ Soprano = \context Voice = "one" \relative c'' {
   \stemNeutral\tieNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \set fingeringOrientations = #'(up)
   %1
-  | g'8\( f16 e d e f d c8 e\) r c^.
-  | b8( g') d^. b^. c\( e~ e16 d c b
-  | a b c a b8\) g_. g8._- g16_. c8^. a^.
-  | b^. <c g'>^. d^. <c a'>^. <b g'>4^- r8 <bes g'>^.
+  | g'8\(-5 f16 e d e f d c8 e\) r c^.-2
+  | b8( g') d^. b^. c\(-3 e~ e16 d c b
+  | a-1 b-3 c a-2 b8\) g_.-1 g8._--2 g16_.-1 c8^.-4 a^.-1
+  | b^.-2 <c g'>^.-1-5 d^. <c a'>^. <b g'>4^- r8 <bes g'>^.-1-5
   %5
-  | <a f'>8\( g'16 f e f g e d8 f\) r b,^.
+  | <a f'>8\(-1-4 g'16 f e f g e d8 f\) r b,^.-2
   | cis( e) a,^. cis^. d4( a)
-  | f'8\( g16 f e f g e d8 f\) r b,^.
-  | cis( e) a,^. cis^. d4 <f, d'>
-  | \stemUp c'8.\( d16 c8. d16 c8\) a'^. f^. d^.
+  | f'8\(-4 g16 f e f g e d8 f\) r b,^.-2
+  | cis( e) a,^. cis^. d4-4 <f, d'>-1-5
+  | \stemUp c'8.\(-1-2 d16 c8. d16 c8\) a'^. f^. d^.-3
   %10
-  | \stemUp c8.\( d16 c8. d16 c8\) a'^. f^. g^.
-  | \stemNeutral <e a>4-- <f a>-- <c a'>-- <d a'>--
-  | r8 <cis a'>( <d b'>)[ <d gis>-.] <cis a'>4-- <f g>--
-  | g8\( f16 e d e f d c8 e\) r c-.
-  | b( g') d-. b-. c\( e~ e16 d c b
+  | \stemUp c8.\( d16 c8. d16 c8\) a'^. f^.-3 g^.
+  | \stemNeutral <e a>4---2-5 <f a>---3-5 <c a'>---1-5 <d a'>---2-5
+  | r8 <cis a'>(-1-4 <d b'>)[-1-5 <d gis>-.]-1-3 <cis a'>4---1-4 <f g>---2-3
+  | g8\(-5 f16 e d e f d c8 e\) r c-.
+  | b( g') d-. b-. c\(-3 e~ e16 d c b
   %15
-  | a b c a b8[\) g]_. g8._- g16_. c8-. a-.
-  | b-. <c g'>-. d-. <c a'>^. <b g'>4-- r8 <bes g'>-.
-  | <a f'>\( g'16 f e f g e d8 f\) r b,-.
+  | a-1 b-3 c a-2 b8[\) g]_.-1 g8._--2 g16_.-1 c8-.-4 a-.-1
+  | b-.-2 <c g'>-.-1-5 d-. <c a'>^. <b g'>4-- r8 <bes g'>-.
+  | <a f'>\(-4 g'16 f e f g e d8 f\) r b,-.-2
   | cis( e) a,-. cis-. d4-- <f, d'>_-
-  | g'8\( f16 e d e f d c8\) c-. g'4(
+  | g'8\(-5 f16 e d e f d c8\)-1 c-.-2 g'4(
   %20
-  | c,8) c-. g'-. g,-. c4 <e, c'>\fermata
+  | c,8)-1 c-.-2 g'-. g,-. c4 <e, c'>\fermata
     \fine
 }
 
@@ -59,34 +60,36 @@ Bass = \context Voice = "four" \relative c' {
   \stemNeutral\tieNeutral\phrasingSlurNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \set fingeringOrientations = #'(down)
+  %\override Fingering.staff-padding = #'()
   %1
-  | <c e>8\( g <d' f> g, <c e> g <c e> g\)
+  | <c e>8\(-1-3 g-5 <d' f>-1-2 g,-5 <c e> g <c e> g\)
   | <d' f>\( g, <d' f> g, <c e> g <c e>\) r
-  | <c f>\( g <d' f> g, <c e>^.\) g^. a^. c^.
+  | <c f>\( g <d' f> g, <c e>^.\) g^.-5 a^.-4 c^.-2
     \clef "treble"
-  | d_. e_. fis_. d_. g_. e_. d_. cis_.
+  | d_.-1 e_.-3 fis_. d_. g_.-1 e_.-2 d_. cis_.
   %5
-  | <d f>\( a <e' g> a, <d f> a <d f> a\)
+  | <d f>\(-1-3  a <e' g> a, <d f> a <d f> a\)
   | <e' g>\( a, <e' g> a, <d f> a <d f> a\)
   | <d f>\( a <e' g> a, <d f> a <d f> a\)
-  | <e' g>\( a, <e' g> a, \clef "bass" <d f>\) a^. b^. g^.
-  | bes^. c^. e,^. c'^. f,^. c'^. a^. c^.
+  | <e' g>\( a, <e' g> a, \clef "bass" <d f>\) a^.-5 b^.-3 g^.-5
+  | bes^.-2 c^. e,^. c'^. f,^. c'^. a^. c^.
   %10
   | bes^. c^. e,^. c'^. f,^. r r4
     \clef "treble"
-  | cis'8-. a'-. d,-. a'-. e-. a-. f-. a-.
-  | e4 r8 e-. <a, e'>4-- <b d>--
+  | cis'8-.-5 a'-. d,-. a'-. e-. a-. f-. a-.
+  | e4 r8 e-.-2 <a, e'>4---5-1 <b d>--
     \clef "bass"
-  | <c e>8\( g <d' f> g, <c e> g <c e> g\)
+  | <c e>8\(-2-1 g <d' f> g, <c e> g <c e> g\)
   | <d' f>\( g, <d' f> g, <c e>[ g] <c e>\) r
   %15
   | <c f>\( g <d' f> g, <c e>\) g^. a^. c^.
     \clef "treble"
-  | d-. e-. fis-. d-. g-. e-. d-. cis-.
-  | <d f>\( a <e' g> a, <d f> a <d f> a\)
-  | <e' g>\( a, <e' g> a, <d f> a b g\)
+  | d-.-1 e-.-3 fis-. d-. g-. e-.-2 d-. cis-.
+  | <d f>\(-2-1 a <e' g> a, <d f> a <d f> a\)
+  | <e' g>\( a, <e' g> a, <d f> a b-3 g\)-5
     \clef "bass"
-  | <c e>\( g <bes f'> g <c e> g <bes f'> g\)
+  | <c e>\( g <bes f'>-3 g <c e> g <bes f'> g\)
   %20
   | <c e>\( g <bes f'> g <c e>4\) <c,, g'>\fermata
     \fine
