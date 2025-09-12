@@ -10,50 +10,50 @@ Soprano = \context Voice = "one" \relative c'' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   %1
-  | d4\( d d
+  | d4\(-2 d d
   | d4. e8 f[ e]
   | g4 f e
   | d2~ d8\) r
   %5
   | \once\override PhrasingSlur.positions = #'(2.5 . 0)
-    a4.\( d8 g,4
+    a4.\(-2 d8-5 g,4-1
   | d'4. f,8 d'4~
   | d8\) g,( bes) cis^. g^. bes^.
-  | d8( g,) bes^. cis^. g^. bes^.
+  | d8( g,) bes^. cis^. g^.-1 bes^.-2
   | \stemUp c4(\( f) f
   %10
   | f2.\)
   | r4
     \once\override Slur.positions = #'(2.2 . 0)
     c( f)
-  | f8( d) bes^. d^. bes^. f^.
-  | a4\( bes a
-  | a2.\)
+  | f8(-5 d) bes^.-3 d^. bes^. f^.-1
+  | a4\(-2-3 bes a
+  | a2.\)-1-4
   %15
-  | a8 r b! r <g cis> r
-  | <a d>4. f'8\rest f4\rest
+  | a8-2-4 r b!-2-4 r <g cis>-1-2-4 r
+  | <a d>4.-2-3-4 f'8\rest f4\rest
   | \stemNeutral\tieNeutral
-    d4\( d d
+    d4\(-2 d d
   | d4. e8 f[ e]
   | g4 f e
   %20
   | d2~ d8\) r
   | \once\override PhrasingSlur.positions = #'(2.5 . 0)
-    a4.\( d8 g,4
+    a4.\(-2 d8-5 g,4-1
   | d'4. f,8 d'4~
   | d8\) g,( bes) cis^. g^. bes^.
-  | d8( g,) bes^. cis^. g^. bes^.
+  | d8( g,) bes^. cis^. g^.-1 bes^.-2
   %25
   | \stemUp c4(\( f) f
   | f2.\)
   | f
   | f
-  | \stemNeutral r8 g,( d')[ b!^.] g'^. d^.
+  | \stemNeutral r8 g,(-1 d'-5)[ b!^.]-1 g'^.-5 d^.-2
   %30
-  | d( ees) r g,^. c4^-
+  | d(-3 ees)-4 r g,^.-1 c4^--4
   | r8
     \once\override Slur.positions = #'(3 . 2)
-    a( c)[
+    a(-1 c)[
     e!^. a,^. c^.]
   | <fis, a d>2~ q8 r
     \fine
@@ -68,7 +68,7 @@ Alto = \context Voice = "two" \relative c'' {
   | a2.
   | bes4.\( c8 d4\)
   | s4 a2
-  | bes4 d,\rest d\rest
+  | bes4-2 d,\rest d\rest
   | fis2.
   | e4.\( g8 e4\)
   %15
@@ -107,46 +107,46 @@ Bass = \context Voice = "four" \relative c' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   %1
-  | bes8\( d c[ d] a d\)
+  | bes8\(-3 d c[-2 d] a-4 d\)
   | bes\( d g,[ d'] c d\)
-  | bes\( d a[ d] g, d'\)
-  | f,\( d' cis[ d] c d\)
+  | bes\( d a[ d] g,-5 d'\)
+  | f,\(-5 d' cis[-2 d] c-2 d\)
   %5
-  | bes\( d c[ d] bes d\)
-  | a\( d bes[ d] a d\)
-  | \stemDown\tieDown g,2.~
+  | bes\(-3 d c[ d] bes d\)
+  | a\(-4 d bes[ d] a d\)
+  | \stemDown\tieDown g,2.~-2-5
   | g2.
     \clef "treble" \stemNeutral\tieNeutral\phrasingSlurNeutral
-  | ees'8\( f ees[ f] ees f\)
+  | ees'8\(-2 f ees[ f] ees f\)
   %10
   | d\( f d[ f] d f\)
   | ees\( f ees[ f] ees f\)
   | d4 r r
     \clef "bass"
-  | c8\( d c[ d] c d\)
+  | c8\(-2 d c[ d] c d\)
   | bes\( d cis[ d] bes d\)
   %15
-  | <a d> r q r a, r
+  | <a d>-1-4 r q r a, r
   | d2~ d8 r
-  | bes'8\( d c[ d] a d\)
+  | bes'8\(-3 d c[-2 d] a-4 d\)
   | bes\( d g,[ d'] c d\)
-  | bes\( d a[ d] g, d'\)
+  | bes\( d a[ d] g,-5 d'\)
   %20
-  | f,\( d' cis[ d] c d\)
-  | bes\( d c[ d] bes d\)
-  | a\( d bes[ d] a d\)
-  | \stemDown\tieDown g,2.~
+  | f,\(-5 d' cis[-2 d] c-2 d\)
+  | bes\(-3 d c[ d] bes d\)
+  | a\(-4 d bes[ d] a d\)
+  | \stemDown\tieDown g,2.~-2-5
   | g2.
     \clef "treble" \stemNeutral\tieNeutral\phrasingSlurNeutral
   %25
-  | ees'8\( f ees[ f] ees f\)
+  | ees'8\(-2 f ees[ f] ees f\)
   | d\( f d[ f] d f\)
-  | des\( f des[ f] des f\)
-  | c\( ees c[ ees] c ees\)
-  | <b! d>2.
+  | des\(-4 f-1 des[ f] des f\)
+  | c\(-4 ees-2 c[ ees] c ees\)
+  | <b! d>2.-3-5
   %30
-  | <bes c ees>4 q2
-  | <a d f>2 <a c e!>4
+  | <bes c ees>4-2-3-5 q2
+  | <a d f>2-1-2-5 <a c e!>4
   | \stemDown d2.
     \fine
 }
