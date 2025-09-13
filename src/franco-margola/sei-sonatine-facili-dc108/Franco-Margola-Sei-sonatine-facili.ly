@@ -96,5 +96,5 @@
 \include "./parts/margola-6-sonatine-facili-4-allegro-giusto.ly"
 \pageBreak
 \include "./parts/margola-6-sonatine-facili-5-andantino.ly"
-\pageBreak
+%\pageBreak
 %\include "./parts/margola-6-sonatine-facili-6-allegro.ly"
