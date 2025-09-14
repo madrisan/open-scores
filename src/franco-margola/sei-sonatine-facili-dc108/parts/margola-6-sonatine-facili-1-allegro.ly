@@ -14,6 +14,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \override Fingering.staff-padding = #'()
   %1
   | \tempo "Allegro"
+    \textMark \markup { \hspace #2.5 "A" }
     e16-5\( d c b a8
     c-3
     b d-4 c b
@@ -25,7 +26,9 @@ Soprano = \context Voice = "one" \relative c'' {
   | e16-5\( d c b a8 d-5 b-3 g-1 c-4 a-2\)
   | b4~\( b16 c b a\) b4~\( b16 c b a\)
   | b8 e~^-\( e16 d c b d-4 c b a c-4 b a g
-  | a2~-2 a8\) g-1\( a b
+  | a2~-2
+    \textMark \markup { "B" }
+    a8\) g-1\( a b
   %10
   | c4\) b-1\( c d\)
   | e4.\( f8 d4. e8
@@ -35,7 +38,8 @@ Soprano = \context Voice = "one" \relative c'' {
   %15
   | g'\( b, c\) d^. e[( a,]) b( fis)
   | g8 r <d a'>4_- q_- <d gis>_-
-  | e'16-5\( d c b a8
+  | \textMark \markup { \hspace #-0.5 "A2" }
+    e'16-5\( d c b a8
     c-3
     b d-4 c b
   | a4-1 a-2 a2-1\)
@@ -101,7 +105,7 @@ centerDynamics = {
   %15
   | s2 s8 s\> s4
   | s4\!
-    \once\override TextScript.extra-offset = #'(-0.5 . -1)
+    \once\override TextScript.extra-offset = #'(-0.5 . 0)
     s-\markup { \dynamic p "poco rit." } s2
   | s4-\markup { \dynamic p "a tempo" } s2.
 }
@@ -146,6 +150,11 @@ forceBreaks = {
       \override Parentheses.font-size = #-2
       \override TextScript.font-shape = #'italic
       \override TextScript.font-size = #-1
+    }
+    \context {
+      \Score
+      \override TextMark.color = #(x11-color "gray")
+      \override TextMark.font-series = #'bold
     }
   }
   \midi {
