@@ -15,6 +15,7 @@ Soprano = \context Voice = "one" \relative c'' {
   %1
   \partial 4 {
     \tempo "Allegro giocoso"
+    \textMark \markup { \hspace #3 "A" }
     f8^.-5 c^.-3
   }
   | bes4^- a_-
@@ -33,7 +34,8 @@ Soprano = \context Voice = "one" \relative c'' {
     \once\override PhrasingSlur.positions = #'(2 . 0)
     g4\(-1
   | c f\) \breathe
-  | c4.\(-5 g8
+  | \textMark \markup { \hspace #-1.5 "B" }
+    c4.\(-5 g8
   | c4. a8
   %15
   | c\)-5 r a'4\(-5
@@ -52,7 +54,9 @@ Soprano = \context Voice = "one" \relative c'' {
   | a8[\) c_. b_. a_.]
   %25
   | e'4-_ e,__
-  | r4 f'8^. c^.
+  | r4
+    \textMark \markup { \hspace #-0.5 "A" }
+    f'8^. c^.
   | bes4^- a_-
   | bes4^- f'8^. c~^-
   | c bes4^- a8_.
@@ -69,7 +73,8 @@ Soprano = \context Voice = "one" \relative c'' {
     \once\override PhrasingSlur.positions = #'(2.5 . 2.5)
     g4\(
   | c f\) \breathe
-  | c4.-5\( g8-2
+  | \textMark \markup { \hspace #-1.5 "C" }
+    c4.-5\( g8-2
   %40
   | c4. a8-3
   | c-5\) r c4-1\(
@@ -253,6 +258,11 @@ forceBreaks = {
       \override Parentheses.font-size = #-2
       \override TextScript.font-shape = #'italic
       \override TextScript.font-size = #-1
+    }
+    \context {
+      \Score
+      \override TextMark.color = #(x11-color "gray")
+      \override TextMark.font-series = #'bold
     }
   }
   \midi {
