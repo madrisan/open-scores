@@ -10,7 +10,8 @@ Soprano = \context Voice = "one" \relative c'' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   %1
-  | d4\(-2 d d
+  | \textMark \markup { \hspace #3 "A" }
+    d4\(-2 d d
   | d4. e8 f[ e]
   | g4 f e
   | d2~ d8\) r
@@ -20,7 +21,8 @@ Soprano = \context Voice = "one" \relative c'' {
   | d'4. f,8 d'4~
   | d8\) g,( bes) cis^. g^. bes^.
   | d8( g,) bes^. cis^. g^.-1 bes^.-2
-  | \stemUp c4(\( f) f
+  | \textMark \markup { "B" }
+    \stemUp c4(\( f) f
   %10
   | f2.\)
   | r4
@@ -32,7 +34,8 @@ Soprano = \context Voice = "one" \relative c'' {
   %15
   | a8-2-4 r b!-2-4 r <g cis>-1-2-4 r
   | <a d>4.-2-3-4 f'8\rest f4\rest
-  | \stemNeutral\tieNeutral
+  | \textMark \markup { "A" }
+    \stemNeutral\tieNeutral
     d4\(-2 d d
   | d4. e8 f[ e]
   | g4 f e
@@ -44,7 +47,8 @@ Soprano = \context Voice = "one" \relative c'' {
   | d8\) g,( bes) cis^. g^. bes^.
   | d8( g,) bes^. cis^. g^.-1 bes^.-2
   %25
-  | \stemUp c4(\( f) f
+  | \textMark \markup { \hspace #-1 "B2" }
+    \stemUp c4(\( f) f
   | f2.\)
   | f
   | f
@@ -160,10 +164,10 @@ centerDynamics = {
   | s4\! s\< s
   | s4\! s\> s
   | s4\! s2
-  | s2.*4
-  %18
+  | s2.*3
+  %17
   | s4\p s2
-  | s2.*6
+  | s2.*7
   %25
   | s4\< s2
   | s4\!\> s2
@@ -218,6 +222,11 @@ forceBreaks = {
       \override Parentheses.font-size = #-2
       \override TextScript.font-shape = #'italic
       \override TextScript.font-size = #-1
+    }
+    \context {
+      \Score
+      \override TextMark.color = #(x11-color "gray")
+      \override TextMark.font-series = #'bold
     }
   }
   \midi {
