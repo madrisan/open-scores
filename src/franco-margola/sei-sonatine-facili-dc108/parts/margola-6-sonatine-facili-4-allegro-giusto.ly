@@ -11,28 +11,37 @@ Soprano = \context Voice = "one" \relative c'' {
   \override Rest.staff-position = #0
   \set fingeringOrientations = #'(up)
   %1
-  | g'8\(-5 f16 e d e f d c8 e\) r c^.-2
+  | \textMark \markup { \hspace #2 "A" }
+    g'8\(-5 f16 e d e f d c8 e\) r c^.-2
   | b8( g') d^. b^. c\(-3 e~ e16 d c b
   | a-1 b-3 c a-2 b8\) g_.-1 g8._--2 g16_.-1 c8^.-4 a^.-1
-  | b^.-2 <c g'>^.-1-5 d^. <c a'>^. <b g'>4^- r8 <bes g'>^.-1-5
+  | b^.-2 <c g'>^.-1-5 d^. <c a'>^. <b g'>4^-
+    \textMark \markup { "B1" }
+    r8 <bes g'>^.-1-5
   %5
   | <a f'>8\(-1-4 g'16 f e f g e d8 f\) r b,^.-2
   | cis( e) a,^. cis^. d4( a)
-  | f'8\(-4 g16 f e f g e d8 f\) r b,^.-2
+  | \textMark \markup { "B2" }
+    f'8\(-4 g16 f e f g e d8 f\) r b,^.-2
   | cis( e) a,^. cis^. d4-4 <f, d'>-1-5
-  | \stemUp c'8.\(-1-2 d16 c8. d16 c8\) a'^. f^. d^.-3
+  | \textMark \markup { "C" }
+    \stemUp c'8.\(-1-2 d16 c8. d16 c8\) a'^. f^. d^.-3
   %10
   | \stemUp c8.\( d16 c8. d16 c8\) a'^. f^.-3 g^.
   | \stemNeutral <e a>4---2-5 <f a>---3-5 <c a'>---1-5 <d a'>---2-5
   | r8 <cis a'>(-1-4 <d b'>)[-1-5 <d gis>-.]-1-3 <cis a'>4---1-4 <f g>---2-3
-  | g8\(-5 f16 e d e f d c8 e\) r c-.
+  | \textMark \markup { "A" }
+    g8\(-5 f16 e d e f d c8 e\) r c-.
   | b( g') d-. b-. c\(-3 e~ e16 d c b
   %15
   | a-1 b-3 c a-2 b8[\) g]_.-1 g8._--2 g16_.-1 c8-.-4 a-.-1
-  | b-.-2 <c g'>-.-1-5 d-. <c a'>^. <b g'>4-- r8 <bes g'>-.
+  | b-.-2 <c g'>-.-1-5 d-. <c a'>^. <b g'>4--
+    \textMark \markup { \hspace #-1 "B1b" }
+    r8 <bes g'>-.
   | <a f'>\(-4 g'16 f e f g e d8 f\) r b,-.-2
   | cis( e) a,-. cis-. d4-- <f, d'>_-
-  | g'8\(-5 f16 e d e f d c8\)-1 c-.-2 g'4(
+  | \textMark \markup { \hspace #-1.5 "D" }
+    g'8\(-5 f16 e d e f d c8\)-1 c-.-2 g'4(
   %20
   | c,8)-1 c-.-2 g'-. g,-. c4 <e, c'>\fermata
     \fine
@@ -155,6 +164,11 @@ forceBreaks = {
       \override Parentheses.font-size = #-2
       \override TextScript.font-shape = #'italic
       \override TextScript.font-size = #-1
+    }
+    \context {
+      \Score
+      \override TextMark.color = #(x11-color "gray")
+      \override TextMark.font-series = #'bold
     }
   }
   \midi {
