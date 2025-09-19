@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # A simple scaffolding script for Lilypond partitions.
-# Copyright (c) 2024 Davide Madrisan <d.madrisan@proton.me>
+# Copyright (c) 2024,2025 Davide Madrisan <d.madrisan@proton.me>
 
 PROGNAME="${0##*/}"
 PROGPATH="${0%/*}"
@@ -25,6 +25,7 @@ Options:
    -o|--opus      : opus of the composition
    -p|--parts     : the partition is splitted into several files
    -P|--parts-only: only create the files in folder part
+     |--parts-strict: strict polyphonic structure of the four voices
    -s|--source    : the source of the partition
    -t|--title     : title of the composition
    -y|--year      : the date of the composition
@@ -36,6 +37,7 @@ Example:
      --key 'bes \\major' \\
      --opus 'BWV 825' \\
      --parts \\
+     --parts-strict \\
      --title 'Partita I' \\
      --pdfname JS-Bach-BWV825-Partita-1.pdf \\
      --source 'Bach-Gesellschaft Ausgabe, Leipzig (1853)' \\
@@ -54,7 +56,7 @@ __EOF
 help () {
    cat <<__EOF
 $PROGNAME v$REVISION - a simple scaffolding script for Lilypond partitions
-Copyright (C) 2024 Davide Madrisan <d.madrisan@proton.me>
+Copyright (C) 2024,2025 Davide Madrisan <d.madrisan@proton.me>
 
 __EOF
 
@@ -71,6 +73,7 @@ ly_title="Unset --title"
 ly_key="c \\\\major"
 ly_parts="false"
 ly_parts_only="false"
+ly_parts_strict="false"
 
 ly_sed () {
   [ -n "$1" -a ! -r "$1" ] && die "ly_sed: cannot read input file: $1"
@@ -95,6 +98,8 @@ ly_sed () {
           s^@mutopiainstrument@^${mutopiainstrument}^;
           s^@opus@^${ly_opus}^g;
           s^@partfile_title@^${partfile_title}^g;
+	  s^@part_elems_position_alto@^${part_elems_position_alto}^g;
+	  s^@part_elems_position_tenor@^${part_elems_position_tenor}^g;
           s^@source@^${ly_source}^g;
           s^@title@^${ly_title}^g;
           " < "${1:-/dev/stdin}"
@@ -119,6 +124,8 @@ while test -n "$1"; do
          ly_parts="true" ;;
       --parts-only|P)
          ly_parts_only="true" ;;
+      --parts-strict)
+         ly_parts_strict="true" ;;
       --part4)
          ly_parts4_files+=("$2")
          ly_parts4_titles+=("$3")
@@ -166,6 +173,14 @@ fi
 ly_version="$(lilypond_version)"
 [ "$ly_version" ] || die "cannot get the Lilyond version"
 echo "found Lilypond version $ly_version"
+
+if [ "$ly_parts_strict" = "true" ]; then
+   part_elems_position_alto="\\\\stemDown\\\\tieDown"
+   part_elems_position_tenor="\\\\stemUp\\\\tieUp"
+else
+   part_elems_position_alto="\\\\stemNeutral\\\tieNeutral"
+   part_elems_position_tenor="\\\\stemNeutral\\\\tieNeutral"
+fi
 
 echo "creating the target folder '$ly_targetdir' ..."
 mkdir -p "$ly_targetdir"
