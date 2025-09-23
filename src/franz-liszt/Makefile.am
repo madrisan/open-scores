@@ -18,6 +18,7 @@
 AM_MAKEFLAGS = --no-print-directory
 
 SUBDIRS = sancta-dorothea-s.187 \
+	  zweite-elegie-s.197 \
 	  wiegenlied-s.198 \
 	  nuages-gris-s.199 \
 	  la-lugubre-gondola-s.200 \

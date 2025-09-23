@@ -111,6 +111,7 @@ AC_CONFIG_FILES([\
   src/franz-liszt/schlaflos-frage-und-antwort-s.203/Makefile \
   src/franz-liszt/trauervorspiel-und-trauermarsch-s.206/Makefile \
   src/franz-liszt/unstern-s.208/Makefile \
+  src/franz-liszt/zweite-elegie-s.197/Makefile \
   src/franz-liszt/wiegenlied-s.198/Makefile \
   src/frederic-chopin/Makefile \
   src/frederic-chopin/valse/Makefile \
