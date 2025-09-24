@@ -263,14 +263,48 @@ Soprano = \context Voice = "one" \relative c' {
     }
     <ces ces'>\( <ees ees'>
   | <f f'>2^.\) r4
-
-  | R1*3/4*7
+  | <ges ges'>2.(
+  %115
+  | <b, b'>~)
+  | q4 <c c'> <des des'>
+  | <d d'> <ees ees'> <e e'>
+  | <f f'> <ges ges'> <d d'>
+  | <ees ees'> <e e'> <f f'>
+  %120
+  | <fis fis'>2\ottava #1 <fis! dis' fis!>4
     \bar "||"
     \key c \major
-  | R1*3/4*8
+  | <g b e g>2.
+  | <b e b'>
+  | \once\stemDown <e, g c e>^>~
+  | \once\stemDown q4( <f f'> <fis fis'>)
+  %125
+  | <g b e g>2.
+  | <b e b'>
+  | \once\stemDown <e, g c e>^>(
+  | <f f'>4 <fis fis'> <g g'>)
     \bar "||"
     \key aes \major
-  | R1*3/4*16
+  | <aes c f aes>2.
+  %130
+  | <c f c'>
+  | \once\shape #'((0 . 0.5) (0 . 0) (0 . 0) (0 . 0)) Slur
+    <f, aes des f>^>~(
+  | q4 <fis fis'> <g g'>)
+  | <aes c f aes>2.
+  | <c f c'>
+  %135
+  | <f, aes des f>
+  | <ges ges'>4 <g g'> <aes aes'>
+  | <bes des ges bes>2.
+  | <des, ges des'>2\( <ges! ges'!>4
+  | <f f'>2 <e e'>4\ottava #0
+  %140
+  | <aes, aes'>2 <eeses' eeses'>4
+  | <des ges des'>2.\)
+  | <ees ees'>4\( <des des'> <ges ges'>
+  | <f f'>2 <ees ees'>4
+  | <aes, aes'>2 <b b'>4\)
     \bar "||"
     \key a \major
   | R1*3/4*15
@@ -323,6 +357,45 @@ Tenor = \context Voice = "three" \relative c {
   | ges
   | ges
   | ees4 s2
+  | s2.
+  | ges
+  %115
+  | ges
+  | ees4 s2
+  | s2.
+  | a
+  | s
+  %120
+  | a
+  | s4 \stemDown b2
+  | g e4
+  | s c'2
+  | g e4
+  %125
+  | s4 b'2
+  | g e4
+  | s4 c'2
+  | g e4
+  | s4 c'2
+  %130
+  | aes2 f4
+  | s4 des'2
+  | aes f4
+  | s4 c'2
+  | aes f4
+  %135
+  | s4 des'2
+  | aes f4
+  | s des'2
+  | bes s4
+  | \stemUp a,8\rest ges_( aes ees' aes, ges)
+  %140
+  | a\rest ges_( aes eeses' aes, ges)
+  | s4 bes'8^>( ges des bes)
+  | ges'( des bes ges) s4
+  | a8\rest ges_( aes ees' aes, ges)
+  | a\rest f_( aes d aes f)
+  %145
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -442,16 +515,81 @@ Bass = \context Voice = "four" \relative c {
   | ges ces, ges ees ges ces
   | ees ces ges\) r r4
   | r8
-    \once\shape #'((0 . 2) (0 . 2) (0 . 0) (0 . 0.5)) PhrasingSlur
-    aes,,\( aes' ees' a des!\)
-
-  | R1*3/4*7
+    \once\shape #'((0 . 2) (0 . 0) (0 . 0) (0 . 0.5)) PhrasingSlur
+    aes,,\( aes' ees' a des!
+  | ges des a ees a des
+  %115
+  | ges c, a ees a c
+  | ees a, ges\) r r4
+  | r8
+    \once\shape #'(
+      ((0 . 5) (0 . 0) (0 . -4) (-0.3 . 0.5))
+      ((0 . 2) (0 . 1) (0 . 1) (0 . 0))
+    ) PhrasingSlur
+    aes,,!\( aes' ges' c ees
+  | a ees c ges c ees
+  | r8 aes,,,! aes' ges' c ees
+  %120
+  | a_> dis, c dis a'\) r
     \bar "||"
     \key c \major
-  | R1*3/4*8
+  | <g,,, g'>4^>
+    \clef "treble"
+    \stemUp b'''8^> g e b
+  | g'^> e b g e'[ e,]
+    \clef "bass"
+  | \once\stemDown <a,, a'>4^>
+    \clef "treble"
+    \stemUp c'''8^> g e c
+  | g'^> e c g e'[ e,]
+    \clef "bass"
+  %125
+  | \once\stemDown <b, b'>4^>
+    \clef "treble"
+    \stemUp b'''8^> g e b
+  | g'^> e b g e'[ e,]
+    \clef "bass"
+  | \once\stemDown <bes, bes'>4^>
+    \clef "treble"
+    \stemUp c'''8^> g e c
+  | g'^> e c g e'[ e,]
+    \clef "bass"
     \bar "||"
     \key aes \major
-  | R1*3/4*16
+  | \once\stemDown <aes,, aes'>4^>
+    \clef "treble"
+    \stemUp c'''8^> aes f c
+  %130
+  | aes'^> f c aes f'[ f,]
+    \clef "bass"
+  | \once\stemDown <bes,, bes'>4^>
+    \clef "treble"
+    \stemUp des'''8^> aes f des
+  | aes'^> f des aes f'[ f,]
+    \clef "bass"
+  | \once\stemDown <c, c'>4^>
+    \clef "treble"
+    \stemUp c'''8^> aes f c
+  | aes'^> f c aes f'[ f,]
+    \clef "bass"
+  %135
+  | \once\stemDown <ces, ces'>4^>
+    \clef "treble"
+    \stemUp des'''8^> aes f des
+  | aes' f des aes f'[ f,]
+    \clef "bass"
+  | \once\stemDown <bes,, bes'>4^>
+    \clef "treble"
+    des'''8^> bes ges des
+  | bes'^> ges des bes r4
+    \clef "bass"
+  | \stemDown <ces,, ces'>2 s4
+  %140
+  | ces'2 s4
+  | <bes, bes'>4 bes'''2
+  | ges2 r4
+  | <ces,,, ces'>2 s4
+  | ces'2 s4
     \bar "||"
     \key a \major
   | R1*3/4*15
