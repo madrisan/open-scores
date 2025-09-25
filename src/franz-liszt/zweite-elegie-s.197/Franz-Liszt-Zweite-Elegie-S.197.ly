@@ -296,7 +296,7 @@ Soprano = \context Voice = "one" \relative c' {
   %135
   | <f, aes des f>
   | <ges ges'>4 <g g'> <aes aes'>
-  | <bes des ges bes>2.
+  | <bes des ges bes>2.^\markup { "agitato" }
   | <des, ges des'>2\( <ges! ges'!>4
   | <f f'>2 <e e'>4\ottava #0
   %140
@@ -307,10 +307,64 @@ Soprano = \context Voice = "one" \relative c' {
   | <aes, aes'>2 <b b'>4\)
     \bar "||"
     \key a \major
-  | R1*3/4*15
+  %145
+  | <d d'>2.~
+  | \once\shape #'((0 . -0.5) (0 . 1) (0 . 1) (0 . 0)) PhrasingSlur
+    q4\( <e e'> <fis fis'>~
+  | q <d d'> <cis cis'>
+  | <b b'> <a a'> <b b'>
+  | <d d'>2.~\)
+  %150
+  | \once\shape #'((0 . -0.8) (0 . 1) (0 . 1) (0 . 0)) PhrasingSlur
+    q4\( <e e'> <fis fis'>
+  | <gis gis'> <fis fis'> <d d'>
+  | <cis cis'>2 <b b'>4
+  | <fis fis'>2.\)
+  | <gis gis'>4 s2
+  %155
+  | s2.*3
+  | r\breve*3/8
+  | d2.^\markup { "(a tempo primo)" }^(
     \bar "||"
     \key aes \major
-  | R1*3/4*30
+  %160
+  | ees)\arpeggio_\(
+  | f4 ees aes
+  | g2 f4
+  | c2 des4
+  | ees2.
+  %165
+  | f8 ees d ees bes' aes
+  | g2 f4
+  | c2 des4
+  | ees2.
+  | f8 ees d ees c'4
+  %170
+  | bes g aes
+  | ees2.\)
+  | e^\(
+  | f
+  | des
+  %175
+  | ees\)
+  | c^~
+  | c2_\( b4
+  | c ees g
+  | aes b c
+  %180
+  | ees g aes
+  | b2 c4
+  | ees2.\)
+  | \once\stemUp \slashedGrace f8\startTrillSpan ees2.
+  | ees
+  %185
+  | \stemUp ees2 d8\stopTrillSpan\( ees
+  | \ottava #1
+    f2.^~\arpeggio
+  | f2 g4
+  | \stemDown
+    <aes, c ees aes>2.~\arpeggio\)
+  | q\fermata
     \fine
 }
 
@@ -396,6 +450,61 @@ Tenor = \context Voice = "three" \relative c {
   | a8\rest ges_( aes ees' aes, ges)
   | a\rest f_( aes d aes f)
   %145
+  \repeat unfold 3 {
+  | a\rest e gis d' gis, e
+  }
+  | a\rest fis a d a fis
+  \repeat unfold 3 {
+  | a\rest e gis d' gis, e
+  }
+  %152
+  | a\rest fis a d a fis
+  | a\rest e gis d' gis, e
+  | \once\shape #'((0 . -4) (0 . 2) (0 . 1) (0 . -1)) PhrasingSlur
+    b\( e gis
+    \once\override TextScript.extra-offset = #'(3 . 1.5)
+    d'^\markup { "dimin." }
+    \change Staff = "upper" \voiceTwo
+    e gis
+  | d'
+    \change Staff = "lower" \voiceThree
+    e, gis d'
+    \change Staff = "upper" \voiceTwo
+    e gis
+  | d'
+    \change Staff = "lower" \voiceThree
+    e, gis d'
+    \change Staff = "upper" \voiceTwo
+    \ottava #1
+    e gis
+  | d'4\)\ottava #0 r r
+    \change Staff = "lower" \voiceThree
+  | s2.
+  | \override Stem.cross-staff = ##t
+    \override Stem.length = #22
+    <e,,,, gis>
+  %160
+  | <ees aes>
+  \repeat unfold 2 {
+  | s2.*3
+  | <ees aes>2.
+  }
+  | s2.*2
+  | aes2.~
+  | aes
+  | aes
+  | <f aes>
+  %175
+  | <ees aes>
+  | q~
+    \revert Stem.length
+  | q4 s2
+  | \change Staff = "upper" \voiceTwo
+    s2.*7
+  %185
+  | c'''2.
+  | <aes c>~
+  | q4 r r
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -592,11 +701,51 @@ Bass = \context Voice = "four" \relative c {
   | ces'2 s4
     \bar "||"
     \key a \major
-  | R1*3/4*15
+  %145
+  \repeat unfold 2 {
+  | b2 s4
+  | ais2 s4
+  | b2 s4
+  | fis2 s4
+  }
+  %153
+  | b2 s4
+  | s2.
+    \clef "treble"
+  | s2.*2
+  | R1*3/4
+  | r\breve*3/8
+    \clef "bass"
+  | <b, gis' b>2._(
     \bar "||"
     \key aes \major
-  | R1*3/4*30
-      \fine
+  %160
+  | <c aes' c>2.\arpeggio)
+  \repeat unfold 2 {
+  | R1*3/4*2
+  | <f aes>2.
+  | <c aes' c>
+  }
+  | R1*3/4*2
+  %171
+  | \tieDown
+    <c aes'>2.~
+  | q_\(
+  | <des aes'>
+  | <bes bes'>
+  | <c c'>\)
+  | <aes ees' aes>2.~\arpeggio
+  | q4 r r
+  | R1*3/4*7
+    \clef "treble"
+  %178
+  | <aes''' c ees>2.
+  | \tieNeutral
+    <aes c f>~\arpeggio
+  | q4 r r
+  | <aes c ees>2.~\arpeggio
+  | q^\fermata
+    \fine
 }
 
 centerDynamics = {
@@ -643,7 +792,7 @@ forceBreaks = {
 }
 
 \score {
-  \new PianoStaff
+  \new PianoStaff \with { connectArpeggios = ##t }
   <<
     \accidentalStyle Score.piano
     \context Staff = "upper" <<
