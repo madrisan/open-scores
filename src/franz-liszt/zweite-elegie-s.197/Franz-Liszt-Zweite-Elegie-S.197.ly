@@ -122,21 +122,23 @@ Soprano = \context Voice = "one" \relative c' {
   | ees4\) r r
   | R1*3/4
   %10
-  | a,,,2._\(
+  | a,,,!2._\(
   | c~_>
   | c2 b!4
-  | c ees aes
+  | c ees a
   | b c ees
   %15
   | a2 b4
   | c2.
   | ges'4\) r r
   | R1*3/4
-  | c,,,2.
+  | c,,,2._\(
   %20
-  | des
-  | f
-  | bes,
+  | des^\markup {
+      "sostenuto ed espressivo"
+    }
+  | f\)
+  | bes,_\markup { \hspace #0.5 "legato" }
   | ces2 c4
   | des2.
   %25
@@ -193,9 +195,10 @@ Soprano = \context Voice = "one" \relative c' {
   | ees4 d g
   | f2 ees4
   | c2 cis4
-  | d2.
+  | \after 4 \<
+    d2.
   %70
-  | ees4 d bes'8 g
+  | ees4 d\! bes'8 g
   | f2._>
   | ees2 d4
   | c2.~_\(
@@ -222,9 +225,6 @@ Soprano = \context Voice = "one" \relative c' {
     \key aes \major
   | <f f'>2.~^\markup {
       "a tempo"
-    }_\markup {
-      \hspace #-2
-      "dolcissimo amoroso"
     }
   %90
   | q
@@ -266,15 +266,19 @@ Soprano = \context Voice = "one" \relative c' {
   | <ges ges'>2.(
   %115
   | <b, b'>~)
-  | q4 <c c'> <des des'>
+  | q4\( <c c'> <des des'>
   | <d d'> <ees ees'> <e e'>
   | <f f'> <ges ges'> <d d'>
   | <ees ees'> <e e'> <f f'>
   %120
-  | <fis fis'>2\ottava #1 <fis! dis' fis!>4
+  | <fis fis'>2\)
+    \ottava #1
+    <fis! dis' fis!>4
     \bar "||"
     \key c \major
-  | <g b e g>2.
+  | <g b e g>2.^\markup {
+      "sempre appassionato ed un poco accel."
+    }
   | <b e b'>
   | \once\stemDown <e, g c e>^>~
   | \once\stemDown q4( <f f'> <fis fis'>)
@@ -329,7 +333,15 @@ Soprano = \context Voice = "one" \relative c' {
     \key aes \major
   %160
   | ees)\arpeggio_\(
-  | f4 ees aes
+  | f4^\markup {
+      \hspace #-4
+      \center-column {
+         \line { "un poco ritenuto" }
+         \vspace #-0.3
+         \line { "espressivo ma semplice" }
+      }
+    }
+    ees aes
   | g2 f4
   | c2 des4
   | ees2.
@@ -519,7 +531,7 @@ Bass = \context Voice = "four" \relative c {
   | q4 r r
   | R1*3/4*7
   %12
-  | <ges ees' a>2.~^>
+  | <ges ees' a!>2.~^>
   | q4 r r
   | R1*3/4*6
   %20
@@ -582,7 +594,7 @@ Bass = \context Voice = "four" \relative c {
     \key aes \major
     \clef "bass"
   | \stemDown r8
-    \once\shape #'((0 . 2) (0 . 1.5) (0 . -4) (0 . 0.8)) PhrasingSlur
+    \once\shape #'((0 . 2) (0 . 2.5) (0 . -4) (0 . 0.8)) PhrasingSlur
     aes,,\( aes' ees' g des'
   %90
   | f des g, ees g des'
@@ -598,11 +610,13 @@ Bass = \context Voice = "four" \relative c {
   %95
   | d b aes e a b
   | d b aes\) r r4
-  | r8 aes,, aes' ees' g des'
+  | r8
+    \once\shape #'((0 . 4) (0 . 1.5) (0 . -4) (0 . 1)) PhrasingSlur
+    aes,,\( aes' ees' g des'
   | f des g, ees g des'
   | f des g, ees g des'
   %100
-  | ees des g, r r4
+  | ees des g,\) r r4
   | r8
     \once\shape #'((0 . 2) (0 . 2) (0 . -7) (0 . 0)) PhrasingSlur
     aes,,\( aes' e' g d'
@@ -617,7 +631,7 @@ Bass = \context Voice = "four" \relative c {
   | f des g, ees g des'
   | ees des g,\) r8 r4
   | r8
-    \once\shape #'((0 . 2) (0 . 2) (0 . -8) (0 . 0.5)) PhrasingSlur
+    \once\shape #'((0 . 3) (0 . 1) (0 . -6) (0 . 0.5)) PhrasingSlur
     aes,,\( aes' ees' ges des'
   %110
   | ges des ges, ees ges des'
@@ -644,53 +658,60 @@ Bass = \context Voice = "four" \relative c {
     \key c \major
   | <g,,, g'>4^>
     \clef "treble"
-    \stemUp b'''8^> g e b
-  | g'^> e b g e'[ e,]
+    \stemUp b'''8^>_\( g e b
+  | g'^> e b g e'[\) e,]
     \clef "bass"
   | \once\stemDown <a,, a'>4^>
     \clef "treble"
-    \stemUp c'''8^> g e c
-  | g'^> e c g e'[ e,]
+    \stemUp
+    \once\shape #'(
+      ((0 . -2) (0 . -2) (0 . -1) (0 . 0))
+      ((0 . -1) (0 . 0) (0 . 0) (0 . 0))
+    ) PhrasingSlur
+    c'''8^>_\( g e c
+  | g'^> e c g e'[\) e,]
     \clef "bass"
   %125
   | \once\stemDown <b, b'>4^>
     \clef "treble"
-    \stemUp b'''8^> g e b
-  | g'^> e b g e'[ e,]
+    \stemUp b'''8^>_\( g e b
+  | g'^> e b g e'[\) e,]
     \clef "bass"
   | \once\stemDown <bes, bes'>4^>
     \clef "treble"
-    \stemUp c'''8^> g e c
-  | g'^> e c g e'[ e,]
+    \stemUp
+    \once\shape #'((0 . -2) (0 . -2) (0 . -1) (0 . 0)) PhrasingSlur
+    c'''8^>_\( g e c
+  | g'^> e c g e'[\) e,]
     \clef "bass"
     \bar "||"
     \key aes \major
   | \once\stemDown <aes,, aes'>4^>
     \clef "treble"
-    \stemUp c'''8^> aes f c
+    \stemUp c'''8^>_\( aes f c
   %130
-  | aes'^> f c aes f'[ f,]
+  | aes'^> f c aes f'[\) f,]
     \clef "bass"
   | \once\stemDown <bes,, bes'>4^>
     \clef "treble"
-    \stemUp des'''8^> aes f des
-  | aes'^> f des aes f'[ f,]
+    \stemUp des'''8^>_\( aes f des
+  | aes'^> f des aes f'[\) f,]
     \clef "bass"
   | \once\stemDown <c, c'>4^>
     \clef "treble"
-    \stemUp c'''8^> aes f c
-  | aes'^> f c aes f'[ f,]
+    \stemUp c'''8^>_\( aes f c
+  | aes'^> f c aes f'[\) f,]
     \clef "bass"
   %135
   | \once\stemDown <ces, ces'>4^>
     \clef "treble"
-    \stemUp des'''8^> aes f des
-  | aes' f des aes f'[ f,]
+    \stemUp des'''8^>_\( aes f des
+  | aes' f des aes f'[\) f,]
     \clef "bass"
   | \once\stemDown <bes,, bes'>4^>
     \clef "treble"
-    des'''8^> bes ges des
-  | bes'^> ges des bes r4
+    des'''8^>_\( bes ges des
+  | bes'^> ges des bes\) r4
     \clef "bass"
   | \stemDown <ces,, ces'>2 s4
   %140
@@ -749,7 +770,62 @@ Bass = \context Voice = "four" \relative c {
 }
 
 centerDynamics = {
- %| s4\pp s2.
+  | s2.*18
+  | s4\mf\< s2
+  | s8 s\! s2
+  | s2.*56
+  %77
+  | s4 s-\markup { "dimin." } s
+  | s2.*6
+  | s2
+    \once\override TextScript.extra-offset = #'(0 . 1)
+    s4-\markup { \whiteout "smorzando" }
+  | s2.*4
+  %89
+  | \once\override TextScript.extra-offset = #'(0 . -0.8)
+    s4-\markup {
+      \hspace #-1
+      "dolcissimo amoroso"
+    }
+    s2
+  | s2.*15
+  %105
+  | s4. s8-\markup {
+      \hspace #1.2 \whiteout "poco a poco cresc."
+    }
+    s4
+  | s2.*11
+  | s4-\markup { "molto cresc." } s2
+  | s2.*3
+  %121
+  | \once\override DynamicText.extra-offset = #'(0 . -1.5)
+    s4\f s2
+  | s2.*6
+  | s4\< s2
+  | s4\! s2
+  | s2.*2
+  %132
+  | s4\< s2
+  | s4\! s2
+  | s2.*2
+  %136
+  | s4\< s2
+  | s4\!\ff s2
+  | s2.*6
+  %144
+  | s4\> s2
+  | s4\!-\markup { \normalsize \dynamic p "dolce" } s2
+  | s2.*12
+  %158
+  | s4-\markup { \normalsize \musicglyph "two" } s2
+  | \once\override DynamicText.extra-offset = #'(-1 . 0)
+    s4\p s2
+  | s2.*17
+  %177
+  | s2 s4\p
+  | s2.*10
+  | \once\override DynamicText.extra-offset = #'(1.5 . 0)
+  | s4\pp s2
 }
 
 forceBreaks = {
@@ -827,6 +903,6 @@ forceBreaks = {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 4 = 120
   }
 }
