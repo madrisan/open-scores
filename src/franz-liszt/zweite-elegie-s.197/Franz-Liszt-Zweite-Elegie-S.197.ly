@@ -650,7 +650,7 @@ Bass = \context Voice = "four" \relative c {
       ((0 . 2) (0 . 1) (0 . 1) (0 . 0))
     ) PhrasingSlur
     aes,,!\( aes' ges' c ees
-  | a ees c ges c ees
+  | a_> ees c ges c ees
   | r8 aes,,,! aes' ges' c ees
   %120
   | a_> dis, c dis a'\) r
@@ -867,6 +867,196 @@ forceBreaks = {
   \repeat unfold 5 { s2.\noBreak } s2.
 }
 
+sustainPedal = {
+  \set Staff.pedalSustainStyle = #'mixed
+  | s2.
+  | s2 s4\sustainOn
+  | s2.
+  | s\sustainOff
+ %5
+  | s
+  | s\sustainOn
+  | s
+  | s4 s s16\sustainOff s8.
+  | s2.*2
+  %11
+  | s4\sustainOn s2
+  | s2.
+  | s\sustainOff
+  | s
+  %15
+  | s\sustainOn
+  | s
+  | s4 s s16\sustainOff s8.
+  | s2.*2
+  %20
+  | s4 s\sustainOn s
+  | s2.
+  | s4\sustainOff\sustainOn s2
+  | s4\sustainOff s2
+  | s4\sustainOn s2
+  %25
+  | s2.
+  | s4\sustainOff s2
+  | s2.
+  | s4\sustainOn s2
+  | s2.
+  %30
+  | s4\sustainOff\sustainOn s2
+  | s4\sustainOff s2
+  | s4\sustainOn s2
+  | s2.
+  | s4\sustainOff\sustainOn s2
+  %35
+  | s4\sustainOff s2
+  | s2.*5
+  %41
+  | s4\sustainOn s2
+  | s4\sustainOff s2
+  | s2.
+  | s4\sustainOn s2
+  | s2.
+  %46
+  | s4\sustainOff s2
+  | s2.*2
+  | s4\sustainOn s2
+  | s2.
+  %51
+  | s4\sustainOff s2
+  | s2.
+  | s4\sustainOn s2
+  | s2.*2
+  %56
+  | s4\sustainOff s2
+  | s2.
+  | s4\sustainOn s2
+  | s2.
+  %60
+  | s4\sustainOff\sustainOn s2
+  | s4\sustainOff s2
+  | s4\sustainOn s2
+  | s2.
+  | s4\sustainOff\sustainOn s2
+  %65
+  | s4\sustainOff s2
+  | s4\sustainOn s2
+  | s2.
+  | s4\sustainOff\sustainOn s2
+  | s4\sustainOff s2
+  %70
+  | s4\sustainOn s2
+  | s2.
+  | s4\sustainOff\sustainOn s2
+  | s4\sustainOff s2
+  | s2.*15
+  %89
+  | s4\sustainOn s2
+  | s2.*2
+  | s4\sustainOff s2
+  | s4\sustainOn s2
+  | s2.
+  %95
+  | s4\sustainOff\sustainOn s2
+  | s4 s8 s\sustainOff s4
+  | s4\sustainOn s2
+  | s4\sustainOff\sustainOn s2
+  | s2.
+  %100
+  | s4\sustainOff s2
+  | s4\sustainOn s2
+  | s2.
+  | s4\sustainOff\sustainOn s2
+  | s4 s8 s\sustainOff s4
+  %105
+  | s4\sustainOn s2
+  | s4\sustainOff\sustainOn s2
+  | s2.
+  | s4\sustainOff s2
+  | s4\sustainOn s2
+  %110
+  | s4\sustainOff\sustainOn s2
+  | s4\sustainOff\sustainOn s2
+  | s4 s8 s\sustainOff s4
+  | s4\sustainOn s2
+  | s2.
+  %115
+  | s4\sustainOff\sustainOn s2
+  | s4 s8 s\sustainOff s4
+  | s4\sustainOn s2
+  | s2.*3
+  %121
+  | s4\sustainOff\sustainOn s2
+  | s2.
+  | s4\sustainOff\sustainOn s2
+  | s4 s s\sustainOff
+  %125
+  | s4\sustainOn s2
+  | s2.
+  | s4\sustainOff\sustainOn s2
+  | s2.
+  | s4\sustainOff\sustainOn s2
+  %130
+  | s2.
+  | s4\sustainOff\sustainOn s2
+  | s2.
+  | s4\sustainOff\sustainOn s2
+  | s2.
+  %135
+  | s4\sustainOff\sustainOn s2
+  | s2.
+  | s4\sustainOff\sustainOn s2
+  | s2.
+  | s4\sustainOff\sustainOn s2
+  %140
+  | s4\sustainOff\sustainOn s2
+  | s4\sustainOff\sustainOn s2
+  | s2.
+  | s4\sustainOff\sustainOn s2
+  | s4\sustainOff\sustainOn s2
+  %145
+  | s4\sustainOff\sustainOn s2
+  | s4\sustainOff\sustainOn s2
+  | s4\sustainOff\sustainOn s2
+  | s4\sustainOff\sustainOn s2
+  | s4\sustainOff\sustainOn s2
+  %150
+  | s4\sustainOff\sustainOn s2
+  | s4\sustainOff\sustainOn s2
+  | s4\sustainOff\sustainOn s2
+  | s4\sustainOff\sustainOn s2
+  | s4\sustainOff\sustainOn s2
+  %155
+  | s2.*2
+  | s4 s\sustainOff s
+  | s2.*2
+  %160
+  | s4\sustainOn s2
+  | s4\sustainOff s2
+  | s2.*2
+  | s4\sustainOn s2
+  | s2.
+  %166
+  | s4\sustainOff s2
+  | s2.
+  | s4\sustainOn s2
+  | s2.*2
+  %171
+  | s4\sustainOff s2
+  | s2.*4
+  %176
+  | s4\sustainOn s2
+  | s2.
+  | s4\sustainOff s2
+  | s2.*4
+  %183
+  | s4\sustainOn s2
+  | s2.*2
+  | s4\sustainOff\sustainOn s2
+  | s2.
+  | s4\sustainOff\sustainOn s2
+  | s2.
+}
+
 \score {
   \new PianoStaff \with { connectArpeggios = ##t }
   <<
@@ -887,6 +1077,7 @@ forceBreaks = {
       \Tenor
       \Bass
     >>
+    \context Dynamics = "sustainPedal" \sustainPedal
   >>
   \header {
     composer = "Franz Liszt"
