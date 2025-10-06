@@ -47,6 +47,7 @@ make -C src/franz-liszt/schlaflos-frage-und-antwort-s.203
 make -C src/franz-liszt/trauervorspiel-und-trauermarsch-s.206
 make -C src/franz-liszt/unstern-s.208
 make -C src/franz-liszt/wiegenlied-s.198
+make -C src/franz-liszt/zweite-elegie-s.197
 make -C src/frederic-chopin/valse
 make -C src/ildebrando-pizzetti/sogno
 make -C src/jan-pieterszoon-sweelinck/fantasia-cromatica-SwWV258
