@@ -151,7 +151,7 @@ Alto = \context Voice = "two" \relative c'' {
   \stemDown
   \override Rest.staff-position = #0
   %1
-  | g4 g16\rest c16 b16. c32 d4 g16\rest d d16. ees32
+  | g4 g16\rest c16 b16. c32 d4 g,16\rest d' d16. ees32
   | f8. f16 f8 g,\rest g4 g16\rest ees'16 ees16. f32
   | c4 g16\rest g g16. aes32 bes8. bes16 bes8 f\rest
   | aes4 g\rest e16\rest f f16. g32 g4
