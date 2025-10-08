@@ -22,7 +22,7 @@ LilyPond is free software and part of the [GNU Project](https://gnu.org/).
 Latest release: [Open Scores for Piano v69](https://github.com/madrisan/open-scores/releases)
 
 > [!NOTE]
-> The source code was compiled with `GNU LilyPond 2.25.28 (running Guile 3.0)` (Fedora Linux 42).
+> The source code was compiled with `GNU LilyPond 2.25.29 (running Guile 3.0)` (Fedora Linux 42).
 
 ![Sheet Music Logo](images/sheet-music-icon.png)
 
