@@ -18,14 +18,4 @@
 AM_MAKEFLAGS = --no-print-directory
 
 SUBDIRS = sancta-dorothea-s.187 \
-	  zweite-elegie-s.197 \
-	  wiegenlied-s.198 \
-	  nuages-gris-s.199 \
-	  la-lugubre-gondola-s.200 \
-	  richard-wagner-venezia-s.201 \
-	  am-grabe-richard-wagners-s.202 \
-	  schlaflos-frage-und-antwort-s.203 \
-	  recueillement-s.204 \
-	  trauervorspiel-und-trauermarsch-s.206 \
-	  en-reve-nocturne-s.207 \
-	  unstern-s.208
+	  late-works
