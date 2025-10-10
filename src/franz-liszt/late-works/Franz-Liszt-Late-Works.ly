@@ -74,7 +74,9 @@
         \null\null\null
         \line { \abs-fontsize #40 \bold "Late Works" }
         \null\null\null
-        \line \abs-fontsize #20 { "S.197" \char ##x2013 "S.208" }
+        \line \abs-fontsize #20 {
+          "S.197" \char ##x2013 "S.204," "S.206" \char ##x2013 "S.208"
+        }
         \null\null\null\null
         \fill-line \italic { \abs-fontsize #14 "For Piano" }
         \null\null\null
@@ -97,23 +99,6 @@
     }
   }
 }
-
-\markup {
-  \general-align #Y #DOWN {
-    \epsfile #X #96 #"Franz-Liszt-by-Nadar-march-1886.eps"
-  }
-}
-\markup {
-  \fill-line {
-    \center-column {
-      \null
-      \fill-line \abs-fontsize #10 {
-        \italic "Franz Liszt - March 1886"
-      }
-    }
-  }
-}
-\pageBreak
 
 \include "./index.ly"
 \pageBreak

@@ -2,7 +2,7 @@
   \center-column \abs-fontsize #18 \bold\caps {
     \null\null
     "Index"
-    \null\null\null\null
+    \null\null
   }
 }
 
@@ -27,6 +27,23 @@ middleGrey = #(x11-color 'grey45)
          }
        } #}))
 
+\markup \fill-line {
+  \center-column {
+    \line {
+      \hspace #1
+      \general-align #Y #DOWN {
+        \epsfile #X #55 #"Franz-Liszt-by-Nadar-march-1886.eps"
+      }
+    }
+    \null
+    \line \italic {
+      \italic "Franz Liszt - March 1886"
+    }
+  }
+}
+
+\markup { \vspace #2 }
+
 \markup { \indexItem "Zwiete Elegie" "S.197" #'S197 }
 \markup { \indexItem "Wiegenlied" "S.198" #'S198 }
 \markup { \indexItem "Nuages Gris" "S.199" #'S199 }
@@ -39,9 +56,5 @@ middleGrey = #(x11-color 'grey45)
 \markup { \indexItem "Trauervorspiel und Trauermarsch" "S.206" #'S206 }
 \markup { \indexItem "En reve Nocturne" "S.207" #'S207 }
 \markup { \indexItem "Unstern" "S.208" #'S208 }
-
-%\markup {
-%  \vspace #1
-%}
 
 \pageBreak
