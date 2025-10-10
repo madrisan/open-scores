@@ -116,6 +116,7 @@ Sopran = \context Voice = "one" \relative c' {
   \override Rest.staff-position = #0
   \phrasingSlurNeutral\stemNeutral\slurNeutral\tieNeutral
   \tempo "Sehr langsam"
+  \label #'S202
   %1
   | R1*6
   | r2 d2~_>(

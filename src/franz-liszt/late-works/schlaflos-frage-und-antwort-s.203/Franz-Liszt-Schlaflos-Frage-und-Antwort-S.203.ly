@@ -115,6 +115,7 @@ Soprano = \context Voice = "one" \relative c' {
   \stemNeutral\tieNeutral\phrasingSlurNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'S203
   %1
   | \tempo "Schnell und leidenschaftlich" 2 = 88
     r4 b\( e4. b8

@@ -115,6 +115,7 @@ Soprano = \context Voice = "one" \relative c' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \tempo "Lento assai" 4 = 48
+  \label #'S201
   %1
   | r4 \clef "bass" cis,,\( f a
   | cis4. a8 f4 cis\)

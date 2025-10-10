@@ -115,6 +115,7 @@ Soprano = \context Voice = "one" \relative c' {
   \voiceOne
   \stemUp\tieUp\phrasingSlurNeutral
   \override MultiMeasureRest.staff-position = #0
+  \label #'S204
   %1
   | \tempo "Un poco lento"
     \clef "bass"

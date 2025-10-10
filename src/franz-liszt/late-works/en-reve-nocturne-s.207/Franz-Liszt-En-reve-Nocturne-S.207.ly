@@ -98,6 +98,7 @@ Sopran = \context Voice = "one" \relative c'' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \phrasingSlurNeutral\stemNeutral\slurNeutral\tieNeutral
+  \label #'S207
   %1
   \tempo "Andantino" 4 = 96
   | r4 dis2 4

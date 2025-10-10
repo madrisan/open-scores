@@ -101,6 +101,7 @@ Sopran = \context Voice = "one" \relative c {
   %\override DynamicText.Y-offset = #-2.4
   %\override Hairpin.Y-offset = #-2
   \phrasingSlurNeutral\stemNeutral\slurNeutral\tieNeutral
+  \label #'S199
   %1
   | \clef bass
     r4 d_\pbeforenote\( g cis~

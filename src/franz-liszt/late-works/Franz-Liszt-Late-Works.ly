@@ -113,9 +113,10 @@
     }
   }
 }
+\pageBreak
 
-%\include "./index.ly"
-%\pageBreak
+\include "./index.ly"
+\pageBreak
 
 \include "zweite-elegie-s.197/Franz-Liszt-Zweite-Elegie-S.197.ly"
 \pageBreak

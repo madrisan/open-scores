@@ -109,6 +109,7 @@ Soprano = \context Voice = "one" \relative c' {
   \stemDown\tieNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'S200
   %1
   | \tempo "Andante mesto, non troppo lento" 4 = 88
     r4 \clef bass
