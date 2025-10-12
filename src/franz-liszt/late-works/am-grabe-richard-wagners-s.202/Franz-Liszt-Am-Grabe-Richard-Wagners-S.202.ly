@@ -28,81 +28,62 @@
         (padding . 2)
         (stretchability . 20))
   top-margin = 15\mm
-
-  oddFooterMarkup = \markup {
-    \if \on-last-page
-    \column \abs-fontsize #9 {
-      \justify {
-         (*) Wagner once reminded me of the likeness between his Parsifal theme and my previously
-         written \char ##x2013 “Excelsior” \char ##x2013 (introduction to the Strasbourg bells).
-         May this remembrance remain here.
-         He has fulfilled the Great and Sublime in the art of the present day.
-      }
-      \hspace #0
-      \left-align \italic {
-        \concat {
-          \char ##x2015 \char ##x2015 " F. Liszt. May 22, 1983. Weimar."
-        }
-      }
-    }
-  }
-  evenFooterMarkup = \oddFooterMarkup
 }
 
-\bookpart {
-  \header {
-    maintainer      = "Davide Madrisan"
-    maintainerEmail = "d.madrisan@proton.me"
-  }
-  \include "./header.ily"
-  \header {
-    title = ##f
-    composer = ##f
-  }
-
-  \markup {
-    \with-dimensions #'(0 . 0) #'(0 . 0)
-    \with-color \coverColor
-    \filled-box #'(-200 . 200) #'(-200 . 200) #0
-  }
-  \markup {
-    \fill-line {
-      \center-column {
-        \null\null\null
-        \null\null\null
-        \line { \abs-fontsize #30 \bold "Franz" }
-        \null
-        \line { \abs-fontsize #75 \bold "Liszt" }
-        \null\null
-        \fill-line { \draw-hline }
-        \null\null\null
-        \line { \abs-fontsize #32 \bold "Am Grabe Richard Wagners" }
-        \null
-        \line { \abs-fontsize #22 \bold "(At the grave of Richard Wagner)" }
-        \null\null\null\null
-        \line { \abs-fontsize #32 \bold "S. 202" }
-        \null\null\null\null\null
-        \null\null\null\null\null
-      }
-    }
-  }
-
-  \include "../logo.ly"
-
-  \markup {
-    \fill-line {
-      \center-column {
-        \null\null\null\null
-        \fill-line \abs-fontsize #10 {
-          \concat {
-            "Based on the Holograph manuscript, n.d.[1883]"
-          }
-        }
-        \null\null
-      }
-    }
-  }
-}
+% \bookpart {
+%   \header {
+%     maintainer      = "Davide Madrisan"
+%     maintainerEmail = "d.madrisan@proton.me"
+%   }
+%   \include "./header.ily"
+%   \header {
+%     title = ##f
+%     composer = ##f
+%   }
+%
+%   \markup {
+%     \with-dimensions #'(0 . 0) #'(0 . 0)
+%     \with-color \coverColor
+%     \filled-box #'(-200 . 200) #'(-200 . 200) #0
+%   }
+%   \markup {
+%     \fill-line {
+%       \center-column {
+%         \null\null\null
+%         \null\null\null
+%         \line { \abs-fontsize #30 \bold "Franz" }
+%         \null
+%         \line { \abs-fontsize #75 \bold "Liszt" }
+%         \null\null
+%         \fill-line { \draw-hline }
+%         \null\null\null
+%         \line { \abs-fontsize #32 \bold "Am Grabe Richard Wagners" }
+%         \null
+%         \line { \abs-fontsize #22 \bold "(At the grave of Richard Wagner)" }
+%         \null\null\null\null
+%         \line { \abs-fontsize #32 \bold "S. 202" }
+%         \null\null\null\null\null
+%         \null\null\null\null\null
+%       }
+%     }
+%   }
+%
+%   \include "../logo.ly"
+%
+%   \markup {
+%     \fill-line {
+%       \center-column {
+%         \null\null\null\null
+%         \fill-line \abs-fontsize #10 {
+%           \concat {
+%             "Based on the Holograph manuscript, n.d.[1883]"
+%           }
+%         }
+%         \null\null
+%       }
+%     }
+%   }
+% }
 
 Global = {
   \key c \major
@@ -144,7 +125,7 @@ Sopran = \context Voice = "one" \relative c' {
   | q4 <e a cis>) q2~(
   | q4 <a cis e>) q2~(
   | q2 <cis e a>)
-    \pageBreak
+    \break
   %25
   | r2 <cis a'>(
   | <e cis'>2. <a e'>4)
@@ -379,14 +360,14 @@ Sustain = {
     >>
   >>
   \header {
-    composer = #f % "Franz Liszt"
-    opus = #f
+    composer = "Franz Liszt"
+    opus = "S.202"
     title = "Am Grabe Richard Wagners"
     subtitle = #f
-    arranger = \markup {
-      \column \abs-fontsize #9 {
+    arranger = \markup \abs-fontsize #9 {
+      \column {
         \hspace #0
-        \override #'(line-width . 52)
+        \override #'(line-width . 65)
         \override #'(baseline-skip . 2.8)
         \justify {
           Wagner erinnerte mich einst an die Ähnlichkeit seines Parsifal-motivs
@@ -400,7 +381,22 @@ Sustain = {
             \char ##x2015 \char ##x2015
           }
           " F. Liszt, 22ten Mai, 83. Weimar" }
+
         \hspace #0
+        \override #'(line-width . 65)
+        \override #'(baseline-skip . 2.8)
+        \justify {
+          Wagner once reminded me of the likeness between his Parsifal theme and my previously
+          written \char ##x2013 “Excelsior” \char ##x2013 (introduction to the Strasbourg bells).
+          May this remembrance remain here.
+          He has fulfilled the Great and Sublime in the art of the present day.
+        }
+        \hspace #0
+        \line {
+          \italic \concat {
+            \char ##x2015 \char ##x2015
+          }
+          " F. Liszt, 22 May, 83. Weimar" }
       }
     }
   }

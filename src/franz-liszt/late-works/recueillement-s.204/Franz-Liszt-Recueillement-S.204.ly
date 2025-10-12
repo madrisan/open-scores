@@ -44,66 +44,66 @@
   top-system-spacing.basic-distance = 1
 }
 
-\bookpart {
-  \header {
-    maintainer      = "Davide Madrisan"
-    maintainerEmail = "d.madrisan@proton.me"
-  }
-
-  \include "./header.ily"
-  \header {
-    title = ##f
-    composer = ##f
-  }
-
-  \markup {
-    \with-dimensions #'(0 . 0) #'(0 . 0)
-    \with-color \coverColor
-    \filled-box #'(-200 . 200) #'(-200 . 200) #0
-  }
-  \markup {
-    \fill-line {
-      \center-column {
-        \null\null\null\null
-        \null\null\null\null
-        \line { \abs-fontsize #30 \bold "Franz" }
-        \null
-        \line { \abs-fontsize #80 \bold "Liszt" }
-        \null
-        \fill-line { \draw-hline }
-        \null\null\null
-        \line { \abs-fontsize #40 \bold "Recueillement" }
-        \null\null
-        \line { \abs-fontsize #20 \bold\italic "Vincenzo Bellini in memoriam" }
-        \null
-        \line {
-          \abs-fontsize #12 \italic
-          "At the invitation of F. Florimo for the erection of a monument of Bellini in Naples"
-        }
-        \null\null
-        \line { \abs-fontsize #20 "S.204" }
-        \null\null\null
-        \fill-line \italic { \abs-fontsize #14 "For Piano" }
-        \null\null\null
-        \null\null
-      }
-    }
-  }
-
-  \include "../logo.ly"
-
-  \markup {
-    \fill-line {
-      \center-column {
-        \null\null\null\null
-        \fill-line {
-          \abs-fontsize #10 "Based on Muzgiz edition, Moscow"
-        }
-        \null\null
-      }
-    }
-  }
-}
+% \bookpart {
+%   \header {
+%     maintainer      = "Davide Madrisan"
+%     maintainerEmail = "d.madrisan@proton.me"
+%   }
+%
+%   \include "./header.ily"
+%   \header {
+%     title = ##f
+%     composer = ##f
+%   }
+%
+%   \markup {
+%     \with-dimensions #'(0 . 0) #'(0 . 0)
+%     \with-color \coverColor
+%     \filled-box #'(-200 . 200) #'(-200 . 200) #0
+%   }
+%   \markup {
+%     \fill-line {
+%       \center-column {
+%         \null\null\null\null
+%         \null\null\null\null
+%         \line { \abs-fontsize #30 \bold "Franz" }
+%         \null
+%         \line { \abs-fontsize #80 \bold "Liszt" }
+%         \null
+%         \fill-line { \draw-hline }
+%         \null\null\null
+%         \line { \abs-fontsize #40 \bold "Recueillement" }
+%         \null\null
+%         \line { \abs-fontsize #20 \bold\italic "Vincenzo Bellini in memoriam" }
+%         \null
+%         \line {
+%           \abs-fontsize #12 \italic
+%           "At the invitation of F. Florimo for the erection of a monument of Bellini in Naples"
+%         }
+%         \null\null
+%         \line { \abs-fontsize #20 "S.204" }
+%         \null\null\null
+%         \fill-line \italic { \abs-fontsize #14 "For Piano" }
+%         \null\null\null
+%         \null\null
+%       }
+%     }
+%   }
+%
+%   \include "../logo.ly"
+%
+%   \markup {
+%     \fill-line {
+%       \center-column {
+%         \null\null\null\null
+%         \fill-line {
+%           \abs-fontsize #10 "Based on Muzgiz edition, Moscow"
+%         }
+%         \null\null
+%       }
+%     }
+%   }
+% }
 
 Global = {
   \key cis \major

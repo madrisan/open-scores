@@ -44,49 +44,49 @@
   top-system-spacing.basic-distance = 1
 }
 
-\bookpart {
-  \header {
-    maintainer      = "Davide Madrisan"
-    maintainerEmail = "d.madrisan@proton.me"
-  }
-
-  \include "./header.ily"
-  \header {
-    title = ##f
-    composer = ##f
-  }
-
-  \markup {
-    \with-dimensions #'(0 . 0) #'(0 . 0)
-    \with-color \coverColor
-    \filled-box #'(-200 . 200) #'(-200 . 200) #0
-  }
-  \markup {
-    \fill-line {
-      \center-column {
-        \null\null\null\null
-        \null\null\null\null
-        \line { \abs-fontsize #30 \bold "Franz" }
-        \null
-        \line { \abs-fontsize #80 \bold "Liszt" }
-        \null
-        \fill-line { \draw-hline }
-        \null\null\null
-        \line { \abs-fontsize #50 \bold "Wiegenlied" }
-        \null\null
-        \line { \abs-fontsize #30 \bold "(Chant du berceau)" }
-        \null\null\null\null
-        \line { \abs-fontsize #24 "S.198" }
-        \null\null\null\null
-        \fill-line \italic { \abs-fontsize #14 "For Piano" }
-        \null\null\null
-        \null\null\null
-      }
-    }
-  }
-
-  \include "../logo.ly"
-}
+% \bookpart {
+%   \header {
+%     maintainer      = "Davide Madrisan"
+%     maintainerEmail = "d.madrisan@proton.me"
+%   }
+%
+%   \include "./header.ily"
+%   \header {
+%     title = ##f
+%     composer = ##f
+%   }
+%
+%   \markup {
+%     \with-dimensions #'(0 . 0) #'(0 . 0)
+%     \with-color \coverColor
+%     \filled-box #'(-200 . 200) #'(-200 . 200) #0
+%   }
+%   \markup {
+%     \fill-line {
+%       \center-column {
+%         \null\null\null\null
+%         \null\null\null\null
+%         \line { \abs-fontsize #30 \bold "Franz" }
+%         \null
+%         \line { \abs-fontsize #80 \bold "Liszt" }
+%         \null
+%         \fill-line { \draw-hline }
+%         \null\null\null
+%         \line { \abs-fontsize #50 \bold "Wiegenlied" }
+%         \null\null
+%         \line { \abs-fontsize #30 \bold "(Chant du berceau)" }
+%         \null\null\null\null
+%         \line { \abs-fontsize #24 "S.198" }
+%         \null\null\null\null
+%         \fill-line \italic { \abs-fontsize #14 "For Piano" }
+%         \null\null\null
+%         \null\null\null
+%       }
+%     }
+%   }
+%
+%   \include "../logo.ly"
+% }
 
 Global = {
   \key c \major
@@ -495,8 +495,8 @@ sustainPedal = {
     \context Dynamics = "sustainPedal" \sustainPedal
   >>
   \header {
-    composer = ##f % "Franz Liszt"
-    opus = ##f % "S.198"
+    composer = "Franz Liszt"
+    opus = "S.198"
     title = \markup { "Wiegenlied – Chant du berceau" }
     subtitle = \markup {
       \center-column \normal-text \small {

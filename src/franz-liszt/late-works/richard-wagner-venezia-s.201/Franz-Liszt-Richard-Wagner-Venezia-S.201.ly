@@ -44,60 +44,60 @@
   top-system-spacing.basic-distance = 1
 }
 
-\bookpart {
-  \header {
-    maintainer      = "Davide Madrisan"
-    maintainerEmail = "d.madrisan@proton.me"
-  }
-
-  \include "./header.ily"
-  \header {
-    title = ##f
-    composer = ##f
-  }
-
-  \markup {
-    \with-dimensions #'(0 . 0) #'(0 . 0)
-    \with-color \coverColor
-    \filled-box #'(-200 . 200) #'(-200 . 200) #0
-  }
-  \markup {
-    \fill-line {
-      \center-column {
-        \null\null\null\null
-        \null\null\null\null
-        \line { \abs-fontsize #30 \bold "Franz" }
-        \null
-        \line { \abs-fontsize #80 \bold "Liszt" }
-        \null
-        \fill-line { \draw-hline }
-        \null\null\null
-        \line { \abs-fontsize #40 \bold "R.W. Venezia" }
-        \null\null\null
-        \line { \abs-fontsize #24 "S.201" }
-        \null\null\null\null
-        \fill-line \italic { \abs-fontsize #14 "For Piano" }
-        \null\null\null
-        \null\null\null
-        \null\null\null
-      }
-    }
-  }
-
-  \include "../logo.ly"
-
-  \markup {
-    \fill-line {
-      \center-column {
-        \null\null\null\null
-        \fill-line {
-          \abs-fontsize #10 "Based on the score published by Breitkopf & Härtel - Leipzig, 1927"
-        }
-        \null\null
-      }
-    }
-  }
-}
+% \bookpart {
+%   \header {
+%     maintainer      = "Davide Madrisan"
+%     maintainerEmail = "d.madrisan@proton.me"
+%   }
+%
+%   \include "./header.ily"
+%   \header {
+%     title = ##f
+%     composer = ##f
+%   }
+%
+%   \markup {
+%     \with-dimensions #'(0 . 0) #'(0 . 0)
+%     \with-color \coverColor
+%     \filled-box #'(-200 . 200) #'(-200 . 200) #0
+%   }
+%   \markup {
+%     \fill-line {
+%       \center-column {
+%         \null\null\null\null
+%         \null\null\null\null
+%         \line { \abs-fontsize #30 \bold "Franz" }
+%         \null
+%         \line { \abs-fontsize #80 \bold "Liszt" }
+%         \null
+%         \fill-line { \draw-hline }
+%         \null\null\null
+%         \line { \abs-fontsize #40 \bold "R.W. Venezia" }
+%         \null\null\null
+%         \line { \abs-fontsize #24 "S.201" }
+%         \null\null\null\null
+%         \fill-line \italic { \abs-fontsize #14 "For Piano" }
+%         \null\null\null
+%         \null\null\null
+%         \null\null\null
+%       }
+%     }
+%   }
+%
+%   \include "../logo.ly"
+%
+%   \markup {
+%     \fill-line {
+%       \center-column {
+%         \null\null\null\null
+%         \fill-line {
+%           \abs-fontsize #10 "Based on the score published by Breitkopf & Härtel - Leipzig, 1927"
+%         }
+%         \null\null
+%       }
+%     }
+%   }
+% }
 
 Global = {
   \key c \major
@@ -386,7 +386,7 @@ forceBreaks = {
   >>
   \header {
     composer = "Franz Liszt"
-    opus = ##f % "S.201"
+    opus = "S.201"
     title = \markup { "R. W. – VENEZIA" }
     subtitle = ##f
   }

@@ -30,60 +30,60 @@
   top-margin = 15\mm
 }
 
-\bookpart {
-  \header {
-    maintainer      = "Davide Madrisan"
-    maintainerEmail = "d.madrisan@proton.me"
-  }
-  \include "./header.ily"
-  \header {
-    title = ##f
-    composer = ##f
-  }
-
-  \markup {
-    \with-dimensions #'(0 . 0) #'(0 . 0)
-    \with-color \coverColor
-    \filled-box #'(-200 . 200) #'(-200 . 200) #0
-  }
-  \markup {
-    \fill-line {
-      \center-column {
-        \null\null\null
-        \null\null\null
-        \line { \abs-fontsize #30 \bold "Franz" }
-        \null
-        \line { \abs-fontsize #75 \bold "Liszt" }
-        \null\null
-        \fill-line { \draw-hline }
-        \null\null\null
-        \line { \abs-fontsize #40 \bold "En rêve (Nocturne)" }
-        \null\null\null
-        \line { \abs-fontsize #35 \bold "S. 207" }
-        \null\null\null
-        \null\null\null
-        \null\null\null
-      }
-    }
-  }
-
-  \include "../logo.ly"
-
-  \markup {
-    \fill-line {
-      \center-column {
-        \null\null\null
-        \null\null\null
-        \fill-line \abs-fontsize #12 {
-          \concat {
-            "Based on the score: Leipzig - Breitkopf & Härtel, 1927. Plate F.L. 85"
-          }
-        }
-        \null\null
-      }
-    }
-  }
-}
+% \bookpart {
+%   \header {
+%     maintainer      = "Davide Madrisan"
+%     maintainerEmail = "d.madrisan@proton.me"
+%   }
+%   \include "./header.ily"
+%   \header {
+%     title = ##f
+%     composer = ##f
+%   }
+%
+%   \markup {
+%     \with-dimensions #'(0 . 0) #'(0 . 0)
+%     \with-color \coverColor
+%     \filled-box #'(-200 . 200) #'(-200 . 200) #0
+%   }
+%   \markup {
+%     \fill-line {
+%       \center-column {
+%         \null\null\null
+%         \null\null\null
+%         \line { \abs-fontsize #30 \bold "Franz" }
+%         \null
+%         \line { \abs-fontsize #75 \bold "Liszt" }
+%         \null\null
+%         \fill-line { \draw-hline }
+%         \null\null\null
+%         \line { \abs-fontsize #40 \bold "En rêve (Nocturne)" }
+%         \null\null\null
+%         \line { \abs-fontsize #35 \bold "S. 207" }
+%         \null\null\null
+%         \null\null\null
+%         \null\null\null
+%       }
+%     }
+%   }
+%
+%   \include "../logo.ly"
+%
+%   \markup {
+%     \fill-line {
+%       \center-column {
+%         \null\null\null
+%         \null\null\null
+%         \fill-line \abs-fontsize #12 {
+%           \concat {
+%             "Based on the score: Leipzig - Breitkopf & Härtel, 1927. Plate F.L. 85"
+%           }
+%         }
+%         \null\null
+%       }
+%     }
+%   }
+% }
 
 Global = {
   \key b \major
@@ -343,7 +343,7 @@ Sustain = {
   >>
   \header {
     composer = "Franz Liszt"
-    opus = #f
+    opus = "S.207"
     title = "En rêve (Nocturne)"
     subtitle = #f
     arranger = \markup { \italic "Komponiert 1885/1886" }

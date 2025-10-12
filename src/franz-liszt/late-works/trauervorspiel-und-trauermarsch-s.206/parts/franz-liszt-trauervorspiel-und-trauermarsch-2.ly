@@ -138,7 +138,7 @@ Sopran = \context Voice = "one" \relative c {
   | bes\) f'~\(
   | f ees
   | bes4\) r <fis bes fis'>2~\(
-    \pageBreak
+    \break
   | q e'!4 cis
   | bes\) r fis'2~\(
   %90
@@ -254,8 +254,6 @@ AltoI = \context Voice = "two" \relative c {
   | s1*3
   | fis2 g~
   | \shiftOff 4 s2.
-
-
 }
 
 AltoII = \context Voice = "five" \relative c' {
@@ -278,7 +276,6 @@ AltoII = \context Voice = "five" \relative c' {
   | <cis fis bes>2 <cis fis a>
   | <cis e bes'>4\) r <ees ees'>4 <cis cis'>
   | <cis fis bes>2 <cis fis a>
-
 }
 
 Bass = \context Voice = "four" \relative c, {
@@ -449,7 +446,6 @@ centerDynamics = {
   | s2 s\ff\<
   | s1
   | s1\!\fff
-
 }
 
 \score {
@@ -511,7 +507,7 @@ centerDynamics = {
       }
       \line {
         "   "
-        \italic "This marking must be observed threughout the while piece"
+        \italic "This marking must be observed throughout the whole piece"
       }
 
       \line {

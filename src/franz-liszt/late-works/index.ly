@@ -20,7 +20,7 @@ middleGrey = #(x11-color 'grey45)
            \with-link #pagelabel {
              \fill-with-pattern #1 #RIGHT .
                \concat {
-                 #title "  " \char ##x2013 \char ##x2013 "  " #opus
+                 #opus "  " \char ##x2013 \char ##x2013 "  " #title
                }
                \page-ref #pagelabel "000" "?"
            }

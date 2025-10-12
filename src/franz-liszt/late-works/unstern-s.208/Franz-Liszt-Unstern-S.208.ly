@@ -30,61 +30,61 @@
   top-margin = 15\mm
 }
 
-\bookpart {
-  \header {
-    maintainer      = "Davide Madrisan"
-    maintainerEmail = "d.madrisan@proton.me"
-  }
-  \include "./header.ily"
-  \header {
-    title = ##f
-    composer = ##f
-  }
-
-  \markup {
-    \with-dimensions #'(0 . 0) #'(0 . 0)
-    \with-color \coverColor
-    \filled-box #'(-200 . 200) #'(-200 . 200) #0
-  }
-  \markup {
-    \fill-line {
-      \center-column {
-        \null\null\null
-        \null\null\null
-        \line { \abs-fontsize #30 \bold "Franz" }
-        \null
-        \line { \abs-fontsize #75 \bold "Liszt" }
-        \null\null
-        \fill-line { \draw-hline }
-        \null\null\null
-        \line { \abs-fontsize #40 \bold "Unstern! Sinistre" }
-        \null\null\null
-        \line { \abs-fontsize #24 "S. 208" }
-        \null\null\null\null
-        \fill-line \italic { \abs-fontsize #14 "For Piano" }
-        \null\null\null
-        \null\null\null
-        \null\null
-      }
-    }
-  }
-
-  \include "../logo.ly"
-
-  \markup {
-    \fill-line {
-      \center-column {
-        \null\null\null\null
-        \fill-line \abs-fontsize #10 {
-          \concat {
-            "Based on the score: Leipzig: Breitkopf & Härtel, 1927"
-          }
-        }
-        \null\null
-      }
-    }
-  }
-}
+% \bookpart {
+%   \header {
+%     maintainer      = "Davide Madrisan"
+%     maintainerEmail = "d.madrisan@proton.me"
+%   }
+%   \include "./header.ily"
+%   \header {
+%     title = ##f
+%     composer = ##f
+%   }
+%
+%   \markup {
+%     \with-dimensions #'(0 . 0) #'(0 . 0)
+%     \with-color \coverColor
+%     \filled-box #'(-200 . 200) #'(-200 . 200) #0
+%   }
+%   \markup {
+%     \fill-line {
+%       \center-column {
+%         \null\null\null
+%         \null\null\null
+%         \line { \abs-fontsize #30 \bold "Franz" }
+%         \null
+%         \line { \abs-fontsize #75 \bold "Liszt" }
+%         \null\null
+%         \fill-line { \draw-hline }
+%         \null\null\null
+%         \line { \abs-fontsize #40 \bold "Unstern! Sinistre" }
+%         \null\null\null
+%         \line { \abs-fontsize #24 "S. 208" }
+%         \null\null\null\null
+%         \fill-line \italic { \abs-fontsize #14 "For Piano" }
+%         \null\null\null
+%         \null\null\null
+%         \null\null
+%       }
+%     }
+%   }
+%
+%   \include "../logo.ly"
+%
+%   \markup {
+%     \fill-line {
+%       \center-column {
+%         \null\null\null\null
+%         \fill-line \abs-fontsize #10 {
+%           \concat {
+%             "Based on the score: Leipzig: Breitkopf & Härtel, 1927"
+%           }
+%         }
+%         \null\null
+%       }
+%     }
+%   }
+% }
 
 Global = {
   \key c \major
@@ -710,7 +710,7 @@ Sustain = {
   >>
   \header {
     composer = "Franz Liszt"
-    opus = #f
+    opus = "S.208"
     title = "Unstern! Sinistre (Disastro)"
     subtitle = #f
   }
