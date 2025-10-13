@@ -113,14 +113,14 @@ Soprano = \context Voice = "one" \relative c' {
   %1
   | \tempo "Andante mesto, non troppo lento" 4 = 88
     r4 \clef bass
-    \once\shape #'((0 . 2) (0 . -7) (0 . -7) (0 . 1)) PhrasingSlur
+    \once\shape #'((0 . -1) (0 . 1) (0 . 1) (0 . -1)) PhrasingSlur
     fis,\( ees' a,~
   | a fis ees' a,~
   | a fis ees'2
   | a, fis\)
   %5
   | r4
-    \once\shape #'((0 . 1) (0 . -1) (0 . -3) (0 . 0)) PhrasingSlur
+    %\once\shape #'((0 . 1) (0 . -1) (0 . -3) (0 . 0)) PhrasingSlur
     a\mf^\markup { "recitando" }\(
     fis'4. ees8
   | d4 c2\) c4~\<
@@ -440,7 +440,7 @@ Bass = \context Voice = "four" \relative c {
   \override Rest.staff-position = #0
   %1
   | r4
-    \once\shape #'((0 . 2) (0 . -7) (0 . -7) (0 . 1)) PhrasingSlur
+    \once\shape #'((0 . -1) (0 . 1) (0 . 1) (0 . -1)) PhrasingSlur
     fis,\( ees' a,~
   | a fis ees' a,~
   | a fis ees'2
