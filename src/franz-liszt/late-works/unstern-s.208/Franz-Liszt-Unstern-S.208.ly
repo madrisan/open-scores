@@ -645,10 +645,9 @@ centerDynamics = {
   %113
   | \once\override Hairpin.Y-offset = #-0.5
     s4\p\> s s s\!
-
-
 }
-Sustain = {
+
+sustain = {
   %1
   | s1*3
   | s2 s\sustainOn
@@ -705,7 +704,7 @@ Sustain = {
       \clef bass
       \Tenor
       \Bass
-      \Sustain
+      \sustain
     >>
   >>
   \header {

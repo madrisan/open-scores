@@ -174,7 +174,6 @@ Soprano = \context Voice = "one" \relative c' {
   | R1*3
     \bar "||"
     \key e \major
-    \break
   %50
   | \tempo "Andante quieto" 2 = 56
     \textMark \markup { \musicglyph "scripts.coda" }
@@ -343,6 +342,29 @@ centerDynamics = {
   | s4 s s s\!
 }
 
+forceBreaks = {
+  % page 1
+  \repeat unfold 2 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s1\pageBreak
+  % page 2
+  \repeat unfold 2 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s1\pageBreak
+  % page 3
+  \repeat unfold 2 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 7 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 6 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 6 { s1\noBreak } s1\break\noPageBreak
+
+}
+
 sustainPedal = {
   \set Staff.pedalSustainStyle = #'mixed
   | s2 s2\sustainOn
@@ -414,6 +436,7 @@ sustainPedal = {
       \clef bass
       \Bass
     >>
+    \new Devnull \forceBreaks
     \context Dynamics = "sustainPedal" \sustainPedal
   >>
   \header {

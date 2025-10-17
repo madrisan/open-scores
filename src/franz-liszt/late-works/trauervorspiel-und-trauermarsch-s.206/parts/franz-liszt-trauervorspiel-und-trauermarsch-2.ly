@@ -26,7 +26,6 @@ Sopran = \context Voice = "one" \relative c {
   | fis1
   | g2 bes
   | cis1\fermata
-  \break
   \bar "||"
   \key g \minor
   | \tempo "Marsch" 2 = 48
@@ -78,7 +77,7 @@ Sopran = \context Voice = "one" \relative c {
   \repeat unfold 2 {
   | ees4. d8 cis8.[ e16 cis8. e16]
   }
-  %\break
+  \break
   | \clef treble
     fis4.^\markup { \small\italic "agitato" } f8 e8.[ g16 e8. g16]
     fis4. f8 e8.[ g16 e8. g16]
@@ -121,7 +120,6 @@ Sopran = \context Voice = "one" \relative c {
   | q8 r16 \stemUp <cis, bes' cis>16[ q8. q16] q8 r16 \stemDown <cis' bes' cis>16[ q8. q16]
   | q8 r16 \stemUp <cis, e cis'>16[ q8. q16] q8 r16 \stemDown <cis' f cis'>16[ q8. q16]
   | q8 r16 <bes cis>16[ q8. q16] q8 r16 <cis bes' cis>16[ q8. q16]
-    \break
   %75
   | q8 r r4 \stemUp fis2
   | s1
@@ -138,7 +136,6 @@ Sopran = \context Voice = "one" \relative c {
   | bes\) f'~\(
   | f ees
   | bes4\) r <fis bes fis'>2~\(
-    \break
   | q e'!4 cis
   | bes\) r fis'2~\(
   %90
@@ -448,6 +445,35 @@ centerDynamics = {
   | s1\!\fff
 }
 
+forceBreaks = {
+  % page 2
+  \repeat unfold 7 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 4 { s1\noBreak } s1\pageBreak
+  % page 3
+  \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s1\pageBreak
+  % page 4
+  \repeat unfold 2 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 2 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 8 { s1\noBreak } s1\pageBreak
+  % page 5
+  \repeat unfold 7 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 6 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 7 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 7 { s1\noBreak } s1\break\noPageBreak
+}
+
 \score {
   \new PianoStaff \with { connectArpeggios = ##t }
   <<
@@ -469,6 +495,7 @@ centerDynamics = {
       \clef bass
       \Bass
     >>
+    \new Devnull \forceBreaks
   >>
   \header {
     composer = #f

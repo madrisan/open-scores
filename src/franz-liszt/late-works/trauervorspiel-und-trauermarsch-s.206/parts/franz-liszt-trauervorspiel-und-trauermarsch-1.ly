@@ -95,6 +95,14 @@ centerDynamics = {
   | s1-\markup { \small\italic "marcato" }
 }
 
+forceBreaks = {
+  % page 1
+  \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 6 { s1\noBreak } s1\pageBreak
+}
+
 \score {
   \new PianoStaff \with { connectArpeggios = ##t }
   <<
@@ -114,6 +122,7 @@ centerDynamics = {
       \clef bass
       \Bass
     >>
+    \new Devnull \forceBreaks
   >>
   \header {
     composer = "Franz Liszt"

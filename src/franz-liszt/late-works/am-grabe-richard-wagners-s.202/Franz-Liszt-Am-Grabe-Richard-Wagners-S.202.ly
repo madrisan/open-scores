@@ -293,7 +293,22 @@ Bass = \context Voice = "four" \relative c, {
   \fine
 }
 
-Sustain = {
+forceBreaks = {
+  % page 1
+  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 5 { s1\noBreak } s1\pageBreak
+  % page 2
+  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+
+}
+
+sustain = {
   %1
   | s1*8
   | s2 s2\sustainOn
@@ -350,13 +365,14 @@ Sustain = {
       \Sopran
       \Alto
     >>
+    \new Devnull \forceBreaks
     \context Staff = "lower" <<
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \clef bass
       \Tenor
       \Bass
-      \Sustain
+      \sustain
     >>
   >>
   \header {

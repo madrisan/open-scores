@@ -251,7 +251,7 @@ Alto = \context Voice = "two" \relative c'' {
   | s1*15
   %71
   | s2 c!
-  | c1~_\markup { "ritenuto" }
+  | c1~^\markup { "ritenuto" }
   | c2 s
   | c1~
   | c2 s
@@ -409,6 +409,28 @@ centerDynamics = {
   | s1-\markup { "perdendo" }
 }
 
+forceBreaks = {
+  % page 1
+  \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 4 { s1\noBreak } s1\pageBreak
+  % page 2
+  \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\pageBreak
+  % page 3
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+
+}
+
 sustainPedal = {
   \set Staff.pedalSustainStyle = #'mixed
   | s1\sustainOn
@@ -485,6 +507,7 @@ sustainPedal = {
       \Alto
     >>
     \context Dynamics = "dynamics" \centerDynamics
+    \new Devnull \forceBreaks
     \context Staff = "lower" <<
       \set Staff.midiInstrument = #"acoustic grand"
       \Global

@@ -592,7 +592,6 @@ dynamics = {
   | s1
   | s4 s s s\stopTextSpan
   | s s\pp s2
-
 }
 
 forceBreaks = {

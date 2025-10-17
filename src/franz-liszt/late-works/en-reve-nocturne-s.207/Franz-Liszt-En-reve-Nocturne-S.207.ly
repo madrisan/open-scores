@@ -124,6 +124,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | eis1~
   %20
   | 1
+    \break
   | r4 <eis dis'>2 q4
   | <e cis'>2 gis4 ais
   | \stemUp fis4. gis8 ais4 b
@@ -284,7 +285,23 @@ centerDynamics = {
   | s1
   | s8 s\ppp s2.
 }
-Sustain = {
+
+forceBreaks = {
+%  % page 1
+%  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+%  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+%  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+%  \repeat unfold 6 { s1\noBreak } s1\break\noPageBreak
+%  \repeat unfold 4 { s1\noBreak } s1\pageBreak
+%  % page 2
+%  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+%  \repeat unfold 2 { s1\noBreak } s1\break\noPageBreak
+%  \repeat unfold 2 { s1\noBreak } s1\break\noPageBreak
+%  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+%  \repeat unfold 6 { s1\noBreak } s1\pageBreak
+}
+
+sustain = {
   %1
   | s4 s\sustainOn s2
   | s4\sustainOff\sustainOn s2.
@@ -338,8 +355,9 @@ Sustain = {
       \clef bass
       \Tenor
       \Bass
-      \Sustain
+      \sustain
     >>
+    \new Devnull \forceBreaks
   >>
   \header {
     composer = "Franz Liszt"

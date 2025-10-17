@@ -125,7 +125,7 @@ Sopran = \context Voice = "one" \relative c {
   | <d fis bes>1~
   %20
   | q4 r r2
-    \pageBreak
+    \break
   \repeat unfold 2 {
   |  r4 a\( bes cis~
   | cis d bes2\)
@@ -259,7 +259,23 @@ centerDynamics = {
   %46
   | s4\p s2.
 }
-Sustain = {
+
+forceBreaks = {
+  % page 1
+  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\pageBreak
+  % page 2
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+}
+
+sustain = {
   %1
   | s1*8
   | s4\sustainOn s2.
@@ -286,6 +302,7 @@ Sustain = {
       \clef treble
       \Sopran
     >>
+    \new Devnull \forceBreaks
     \context Dynamics <<
       \Global \centerDynamics
     >>
@@ -295,7 +312,7 @@ Sustain = {
       \clef bass
       \Tenor
       \Bass
-      \Sustain
+      \sustain
     >>
   >>
   \header {
