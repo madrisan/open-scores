@@ -1,6 +1,6 @@
 \header {
   composer = "Franz Liszt (1811–1886)"
-  date = "18851"
+  date = "1885"
 
   footer = "Mutopia-2023/05/31"
 

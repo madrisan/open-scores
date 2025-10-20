@@ -8,8 +8,8 @@
 
 middleGrey = #(x11-color 'grey45)
 
-#(define-markup-command (indexItem layout props title opus pagelabel)
-  (string? string? symbol?)
+#(define-markup-command (indexItem layout props title opus date pagelabel)
+  (string? string? string? symbol?)
   "Format a block of the index"
   (interpret-markup layout props
     #{ \markup \column \abs-fontsize #11 {
@@ -20,7 +20,10 @@ middleGrey = #(x11-color 'grey45)
            \with-link #pagelabel {
              \fill-with-pattern #1 #RIGHT .
                \concat {
-                 #opus "  " \char ##x2013 \char ##x2013 "  " #title
+                 \abs-fontsize #9 { #opus }
+                 "  " \char ##x2013 \char ##x2013
+                 "  " { \italic #title }
+                 \abs-fontsize #9 { "  (" #date ")" }
                }
                \page-ref #pagelabel "000" "?"
            }
@@ -44,17 +47,17 @@ middleGrey = #(x11-color 'grey45)
 
 \markup { \vspace #2 }
 
-\markup { \indexItem "Zwiete Elegie" "S.197" #'S197 }
-\markup { \indexItem "Wiegenlied" "S.198" #'S198 }
-\markup { \indexItem "Nuages Gris" "S.199" #'S199 }
-\markup { \indexItem "La lugubre gondola" "S.200" #'S200 }
-\markup { \indexItem "Richard Wagner, Venezia" "S.201" #'S201 }
-\markup { \indexItem "Am Grabe Richard Wagners" "S.202" #'S202 }
-\markup { \indexItem "Schlaflos Frage und Antwort" "S.203" #'S203 }
-\markup { \indexItem "Recueillement" "S.204" #'S204 }
+\markup { \indexItem "Zwiete Elegie" "S.197" "1877" #'S197 }
+\markup { \indexItem "Wiegenlied" "S.198" "1881" #'S198 }
+\markup { \indexItem "Nuages Gris" "S.199" "24 August 1881" #'S199 }
+\markup { \indexItem "La lugubre gondola" "S.200" "1883" #'S200 }
+\markup { \indexItem "Richard Wagner, Venezia" "S.201" "1883" #'S201 }
+\markup { \indexItem "Am Grabe Richard Wagners" "S.202" "22 May 1883" #'S202 }
+\markup { \indexItem "Schlaflos Frage und Antwort" "S.203" "1883" #'S203 }
+\markup { \indexItem "Recueillement" "S.204" "1877" #'S204 }
 % S.205
-\markup { \indexItem "Trauervorspiel und Trauermarsch" "S.206" #'S206 }
-\markup { \indexItem "En reve Nocturne" "S.207" #'S207 }
-\markup { \indexItem "Unstern" "S.208" #'S208 }
+\markup { \indexItem "Trauervorspiel und Trauermarsch" "S.206" "1885" #'S206 }
+\markup { \indexItem "En rêve, Nocturne" "S.207" "1885" #'S207 }
+\markup { \indexItem "Unstern" "S.208" "1881" #'S208 }
 
 \pageBreak
