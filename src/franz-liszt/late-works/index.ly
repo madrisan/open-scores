@@ -55,7 +55,7 @@ middleGrey = #(x11-color 'grey45)
 \markup { \indexItem "Am Grabe Richard Wagners" "S.202" "22 May 1883" #'S202 }
 \markup { \indexItem "Schlaflos Frage und Antwort" "S.203" "1883" #'S203 }
 \markup { \indexItem "Recueillement" "S.204" "1877" #'S204 }
-% S.205
+\markup { \indexItem "Historische ungarische Bildnisse" "S.205" "1885" #'S205 }
 \markup { \indexItem "Trauervorspiel und Trauermarsch" "S.206" "1885" #'S206 }
 \markup { \indexItem "En rêve, Nocturne" "S.207" "1885" #'S207 }
 \markup { \indexItem "Unstern" "S.208" "1881" #'S208 }

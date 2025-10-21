@@ -75,7 +75,7 @@
         \line { \abs-fontsize #40 \bold "Late Works" }
         \null\null\null
         \line \abs-fontsize #20 {
-          "S.197" \char ##x2013 "S.204," "S.206" \char ##x2013 "S.208"
+          "S.197" \char ##x2013 "S.208"
         }
         \null\null\null\null
         \fill-line \italic { \abs-fontsize #14 "For Piano" }
@@ -119,7 +119,8 @@
 \pageBreak
 \include "recueillement-s.204/Franz-Liszt-Recueillement-S.204.ly"
 \pageBreak
-% S.205
+\include "historische-ungarische-bildnisse-s.205/Franz-Liszt-Historische-ungarische-Bildnisse-S.205.ly"
+\pageBreak
 \include "trauervorspiel-und-trauermarsch-s.206/Franz-Liszt-Trauervorspiel-und-Trauermarsch-S.206.ly"
 \pageBreak
 \include "en-reve-nocturne-s.207/Franz-Liszt-En-reve-Nocturne-S.207.ly"
