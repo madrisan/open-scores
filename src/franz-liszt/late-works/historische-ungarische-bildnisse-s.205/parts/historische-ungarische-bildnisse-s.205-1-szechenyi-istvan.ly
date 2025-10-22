@@ -6,7 +6,7 @@ Global = {
 
 Soprano = \context Voice = "one" \relative c' {
   \voiceOne
-  \stemNeutral\tieNeutral\phrasingSlurNeutral
+  \stemNeutral\tieNeutral\phrasingSlurNeutral\slurNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \label #'S205
@@ -139,10 +139,45 @@ Soprano = \context Voice = "one" \relative c' {
   | <cis cis'>4 <d d'> <a a'> <bes bes'>
     \bar "||"
     \key bes \major
-  | <ees g ees'>2^\markup { "Sempre più largo" } q
+  | \textMark \markup \italic \smaller { "Sempre più largo" }
+    <ees g ees'>2 q
   %100
-
-  | R1*71
+  | <d g d'> <bes d g bes>4 <c c'>8 <d d'>
+  | <ees g ees'>2 q
+  | <d g d'> <bes d g bes>4 <c c'>8 <d d'>
+  \repeat unfold 2 {
+  | <ees g ees'>2 <bes d g bes>4 <c c'>8 <d d'>
+  }
+  %105
+  | <ees g ees'>2 <bes bes'>4 <c c'>
+  \repeat unfold 2 {
+  | <d d'> <ees ees'> <a, a'> <bes bes'>8 <c c'>
+  }
+  | <d d'>4 <ees ees'> <bes bes'> <b b'>
+    \bar "||"
+    \key e \major
+  | <gis' e'>8( e) <gis, e'>8[( e)] <gis e'>8[( gis')] <e' gis>( \ottava #1 e')
+  %110
+  | <gis, dis'>([ dis)] \ottava #0 <gis, dis'>( dis) <b b'>4 <cis cis'>8 <dis dis'>
+  | <gis e'>8( e) <gis, e'>8[( e)] <gis e'>8[( gis')] <e' gis>( gis,)
+  | <gis eis'>8( eis) <gis, eis'>8[( eis)] <cis cis'>4 <dis' dis'>8 <eis eis'>
+  | <ais fis'>8( fis) <ais, fis'>8[( fis)] <ais fis'>8[( ais')] <fis' ais>( \ottava #1 fis')
+  | <ais, eis'>8([ eis)] \ottava #0 <ais, eis'>8( eis) <cis cis'>4 <dis dis'>8 <eis eis'>
+  %115
+  | <ais fis'>([ fis)] <ais, fis'>( fis) <ais fis'>( ais') 
+    <fis' ais>([ \ottava #1 fis')] \ottava #0
+  | <cis, gis'>([ gis)] <cis, gis'>( gis) <cis' gis'>([ gis)] <cis, gis'>( gis)
+    \bar "||"
+    \key d \major
+  | \tempo "Tempo I."
+  | \ottava #1 
+    a'''^^[( a,)] gis'[( gis,)] g'[( g,)] fis'[( fis,)]
+  | e'[( e,)] d'[( d,)] cis'[( cis,)] b'[( b,)]
+    \ottava #0
+  | a'^^[( a,)] gis'[( gis,)] g'[( g,)] fis'[( fis,)]
+  | e'[( e,)] d'[( d,)] cis'[( cis,)] b'[( b,)]
+  
+  | R1*50
     \fine
 }
 
@@ -266,8 +301,70 @@ Bass = \context Voice = "four" \relative c {
   }
     \bar "||"
     \key d \major
-
-  | R1*90
+  | r2 <e a e'>~^^\(
+  | q <a, e' a>\)
+  | r <fis' a fis'>~^^\(
+  | q <a, fis' a>\)
+  %85
+  | r <fis' ais fis'>~^^\(
+  | q <ais, fis' ais>\)
+  | <fis' b fis'>^^( <b, fis' b>)
+  | <fis' cis' fis>^^( <cis fis cis'>)
+  %89
+  \repeat unfold 2 {
+  | <d, d'>4 <a'' d fis> <fis, fis'> <a' cis fis>
+  | <fis, fis'> <a' cis fis>8 q q4 r
+  }
+  \repeat unfold 2 {
+  | <d,, d'> <a'' d fis> <fis, fis'> <a' cis fis>
+  }
+  | <d,, d'> <a'' d fis> <a, a'> <b b'>
+  \repeat unfold 2 {
+  | <cis cis'> <d d'> <gis, gis'> <a a'>8 <b b'>
+  }
+  | <cis cis'>4 <d d'> <a a'> <bes bes'>
+    \bar "||"
+    \key bes \major
+  %99
+  \repeat unfold 2 {
+  | <ees,, ees'> <bes'' ees g> <ees g bes> <g bes ees>
+  | <g,, g'> <g'' bes d g>8 q q4 r
+  }
+  | <ees,, ees'> <bes'' ees g> <g, g'> <d'' g bes>
+  | <ees, ees'> <g' bes ees> <g, g'> <bes' d g>
+  %105
+  | <ees, ees'> \clef "treble" <g' bes> \clef "bass" <bes,, bes'> <c c'>
+  \repeat unfold 2 {
+  | <d d'> <ees ees'> <a, a'> <bes bes'>8 <c c'>
+  }
+  | <d d'>4 <ees ees'> <bes bes'> <b b'>
+    \bar "||"
+    \key e \major    
+  | e,,8^\( b' e b' e b' \clef "treble" e b'\)
+  %110
+  | <gis, dis' dis'>4\arpeggio_> <b dis gis>8_> q_> q4_> r
+    \clef "bass"
+  | e,,,8^\( b' e b' e b' \clef "treble" b'4\)
+    \clef "bass"
+  | <cis,, gis' eis'>4^> \clef "treble" <cis''' eis gis>8^> q8^> q4^> r
+    \clef "bass"
+  | fis,,,,,8^\( cis' fis cis' fis cis' \clef "treble" fis cis'\)
+  | <ais, eis' eis'>4\arpeggio_> <cis eis ais>8_> q_> q4_> r
+    \clef "bass"
+  %115
+  | fis,,,8^\( cis' fis cis' fis cis' \clef "treble" fis cis'\)
+    \clef "bass"
+  | <eis,,,, eis'>8_\( cis'' gis' cis\) <e,,, e'>_\( cis'' gis' cis \)
+    \bar "||"
+    \key d \major
+  | \ottava #-1
+    a,,,_^[( a')] b,[( b')] cis,[( cis')] d,[( d')]
+    \ottava #0
+  | e,[( e')] fis,[( fis')] g,[( g')] gis,[( gis')]
+  | a,_^[( a')] b,[( b')] cis,[( cis')] d,[( d')]
+  | e,[( e')] fis,[( fis')] g,[( g')] gis,[( gis')]
+  
+  | R1*50
     \fine
 }
 
@@ -293,18 +390,44 @@ centerDynamics = {
  | s1*2
  %35
  | s2
-   \override Hairpin.Y-offset = #-6
+   \once\override Hairpin.Y-offset = #-6
    s\>
  | s4 s\! s2
  | s1*2
  %39
- | s2 s\<
+ | s2 
+   \once\override Hairpin.Y-offset = #-6
+   s\<
  | s4 s\! s2
  | s2\f s
  | s1*5
  | s2
-   \once\override TextScript.extra-offset = #'(-1 . 1)
+   \once\override TextScript.extra-offset = #'(-1 . 0)
    s-\markup { \whiteout "martellato" }
+ | s1*2
+ | \once\override Hairpin.Y-offset = #-2
+   s4\< s2.
+ | s4\! s2.
+ | s1*8
+ %60
+ | \once\override Hairpin.Y-offset = #-3
+   s4\< s2.
+ | s4\! s2.
+ | s1*24
+ | s2 s\<
+ | s1
+ | s2 s\!
+ %89
+ | s2\ff s
+ | s1*8
+ | s4\< s2.
+ | s4\! s2.
+ | s1*8
+ %108
+ | s4\< s2.
+ | s4\! s2.
+ | s1*7
+ | s4-\markup { "sempre" \dynamic ff } s2.
 }
 
 forceBreaks = {
@@ -327,6 +450,12 @@ forceBreaks = {
   \repeat unfold 7 { s1\noBreak } s1\break\noPageBreak
   \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
   \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\pageBreak
+  % page 4
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
 }
 
 \score {
@@ -365,6 +494,6 @@ forceBreaks = {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 2 = 116
   }
 }
