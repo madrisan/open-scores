@@ -175,29 +175,82 @@ Soprano = \context Voice = "one" \relative c' {
   | e'[( e,)] d'[( d,)] cis'[( cis,)] b'[( b,)]
     \ottava #0
   | a'^^[( a,)] gis'[( gis,)] g'[( g,)] fis'[( fis,)]
+  %120
   | e'[( e,)] d'[( d,)] cis'[( cis,)] b'[( b,)]
-  
-  | R1*50
+  | a'^^[( a,)] gis'[( gis,)] g'[( g,)] fis'[( fis,)]
+  | e'[( e')] d,[( d')] cis,[( cis')] b,[( b')]
+  | a,^^[( a')] gis,[( gis')] g,[( g')] fis,[( fis')]
+  | e,[( e')] cis,[( cis')] a,[( a')] e,[( e')]
+  %125
+  | <d f bes>4 q8 q q4 q
+  | <f bes d>2( <d f bes>4_.) \tupletDown\tuplet 5/4 { <f bes d>16^\( f' bes d f }
+  | \ottava #1
+    <d f bes>4\) q8 q q4 q
+  | <f bes d>2( <d f bes>4^.) <f bes d>^.
+    \ottava #0
+  | <fis,,! a cis>4 q8 q q4 q
+  %130
+  | <a cis fis>2( <fis a cis>4_.) \tupletDown\tuplet 5/4 { <a cis fis>16^\( a' cis fis a }
+  | \ottava #1
+    <fis a cis>4\) q8 q q4 q
+  | <a cis fis>2( <fis a cis>4^.) <a cis fis>^.
+  | a'8^^[( a,)] gis'[( gis,)] g'[( g,)] fis'[( fis,)]
+  | e'[( e,)] d'[( d,)] cis'[( cis,)] b'[( b,)]
+    \ottava #0
+  %135
+  | a'^^[( a,)] gis'[( gis,)] g'[( g,)] fis'[( fis,)]
+  | e'[( e,)] d'[( d,)] cis'[( cis,)] b'[( b,)]
+  | a'^^[( a,)] gis'[( gis,)] g'[( g,)] fis'[( fis,)]
+  | e'^^[( e')] d,[( d')] cis,[( cis')] b,[( b')]
+  | a,^^[( a')] gis,[( gis')] g,[( g')] fis,[( fis')]
+  %140
+  | e,[( e')] cis,[( cis')] a,[( a')] e,[( e')]
+  | <d f bes>4 q8 q q4 q
+  | <f bes d>2( <d f bes>4_.) \tupletDown\tuplet 5/4 { <f bes d>16^\( f' bes d f }
+  | \ottava #1
+    <d f bes>4\) q8 q q4 q
+  | <f bes d>2( <d f bes>4^.) <f bes d>^.
+    \ottava #0
+  %145
+  | <fis,,! a cis>4 q8 q q4 q
+  | <a cis fis>2( <fis a cis>4_.) \tupletDown\tuplet 5/4 { <a cis fis>16^\( a' cis fis a }
+  | \ottava #1
+    <fis a cis>4\) q8 q q4 q
+  | <a cis fis>2( <fis a cis>4^.) <a cis fis>^.
+    \ottava #0
+  | <fis,, a d fis> <d fis a d>8 q q4 <fis a d fis>4
+  %150
+  | <fis a d fis> <a d fis a>2( <fis a d fis>4)
+  | <fis' a d fis> <d fis a d>8 q q4 <fis a d fis>4
+  | q4 <a d fis a>2( <fis a d fis>4)
+  | <a, d fis a>^^ <gis gis'> <g g'> <fis fis'>8 <e e'>
+
+  | <d d'>4 <cis cis'> <d fis a d> <fis fis'>8 <a a'>
+  %155
+  | <d fis a d>4^^ <cis cis'> <b b'> <a a'>8 <gis gis'>
+  | <a a'>4 <g g'> <fis a d fis> <a a'>8 <d d'>
+  | <fis a d fis>4^^ <e e'> <d d'> <cis cis'>8 <b b'>
+  | <a a'>4 <gis gis'> <a d fis a> <d d'>8 <fis fis'>
+  | <a d fis a>4^^ <gis gis'> <g g'> <fis fis'>8 <e e'>
+  %160
+  | <d fis a d>4 <cis cis'> <b d fis b> <a a'>8 <gis gis'>
+  | <a d fis a>4^^ <gis gis'> <g g'> <fis fis'>8 <e e'>
+  | <d fis a d>4 <cis cis'> <b d fis b> <a a'>8 <gis gis'>
+  | <a a'>4_. r <fis fis'>_._^ r
+    \clef "bass"
+  | <e e'>4^.^^ r <d d'>^.^^ r
+  \repeat unfold 2 {
+  | <cis cis'>1^^~
+  | q4 r <fis fis'>^.^^ r
+  }
+  | <cis cis'>1^^~
+  | q\fermata
     \fine
-}
-
-Alto = \context Voice = "two" \relative c' {
-  \voiceTwo
-  \stemNeutral\tieNeutral
-  \override Rest.staff-position = #0
-  %1
-}
-
-Tenor = \context Voice = "three" \relative c {
-  \voiceThree
-  \stemNeutral\tieNeutral
-  \override Rest.staff-position = #0
-  %1
 }
 
 Bass = \context Voice = "four" \relative c {
   \voiceFour
-  \stemNeutral\tieNeutral\phrasingSlurNeutral
+  \stemNeutral\tieNeutral\phrasingSlurNeutral\slurNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   %1
@@ -362,9 +415,81 @@ Bass = \context Voice = "four" \relative c {
     \ottava #0
   | e,[( e')] fis,[( fis')] g,[( g')] gis,[( gis')]
   | a,_^[( a')] b,[( b')] cis,[( cis')] d,[( d')]
+  %120
   | e,[( e')] fis,[( fis')] g,[( g')] gis,[( gis')]
-  
-  | R1*50
+  | a,^^[( a')] b,[( b')] cis,[( cis')] d,[( d')]
+  | e,[( e')] fis,[( fis')] g,[( g')] gis,[( gis')]
+  | a,^^[( a,)] b'[( b,)] cis'[( cis,)] d'[( d,)]
+  | e[( e,)] cis'[( cis,)] a'[( a,)] e'[( e,)]
+  %125
+  | <d'' f bes>4 q8 q q4 q
+  | <f bes d>2( <d f bes>4^.) 
+    \tupletUp\tuplet 5/4 { <f bes d>16^\( \clef "treble" f' bes d f }
+  | <d f bes>4\) q8 q q4 q
+  | <f bes d>2( <d f bes>4^.) <f bes d>^.
+    \clef "bass"
+  | <fis,,! a cis>4 q8 q q4 q
+  %130
+  | <a cis fis>2( <fis a cis>4_.) 
+    \clef "treble"
+    \tupletUp\tuplet 5/4 { <a cis fis>16^\( a' cis fis a }
+  | <fis a cis>4\) q8 q q4 q
+  | <a cis fis>2( <fis a cis>4^.) <a cis fis>^.
+    \clef "bass"
+  | \ottava #-1
+    a,,,,,8_^[( a')] b,[( b')] cis,[( cis')] d,[( d')]
+    \ottava #0
+  | e,[( e')] fis,[( fis')] g,[( g')] gis,[( gis')]
+  %135
+  | a,_^[( a')] b,[( b')] cis,[( cis')] d,[( d')]
+  | e,[( e')] fis,[( fis')] g,[( g')] gis,[( gis')]
+  | a,^^[( a')] b,[( b')] cis,[( cis')] d,[( d')]
+  | e,[( e')] fis,[( fis')] g,[( g')] gis,[( gis')]
+  | a,^^[( a,)] b'[( b,)] cis'[( cis,)] d'[( d,)]
+  %140
+  | e[( e,)] cis'[( cis,)] a'[( a,)] e'[( e,)]
+  | <d'' f bes>4 q8 q q4 q
+  | <f bes d>2( <d f bes>4^.) 
+    \tupletUp\tuplet 5/4 { <f bes d>16^\( \clef "treble" f' bes d f }
+  | <d f bes>4\) q8 q q4 q
+  | <f bes d>2( <d f bes>4^.) <f bes d>^.
+    \clef "bass"
+  %145
+  | <fis,,! a cis>4 q8 q q4 q
+  | <a cis fis>2( <fis a cis>4_.) 
+    \clef "treble"
+    \tupletUp\tuplet 5/4 { <a cis fis>16^\( a' cis fis a }
+  | <fis a cis>4\) q8 q q4 q
+  | <a cis fis>2( <fis a cis>4^.) <a cis fis>^.
+    \clef "bass"
+  | <a,,, d fis a> <fis a d fis>8 q q4 <a d fis a>
+  %150
+  | q <d fis a d>2( <a d fis a>4)
+    \clef "treble"
+  | <a' d fis a> <fis a d fis>8 q q4 <a d fis a>
+  | q <d fis a d>2( <a d fis a>4)
+    \clef "bass"
+  | <a, d fis a>^^ <gis gis'> <g g'> <fis fis'>8 <e e'>
+  | <d d'>4 <cis cis'> <d fis a d> <fis fis'>8 <a a'>
+  %155
+  | <d fis a d>4^^ <cis cis'> <b b'> <a a'>8 <gis gis'>
+  | <a a'>4 <g g'> <fis a d fis> <a a'>8 <d d'>
+  | <fis a d fis>4^^ <e e'> <d d'> <cis cis'>8 <b b'>
+  | <a a'>4 <gis gis'> <a d fis a> <d d'>8 <fis fis'>
+  | <a d fis a>4^^ <gis gis'> <g g'> <fis fis'>8 <e e'>
+  %160
+  | <d fis a d>4 <cis cis'> <b d fis b> <a a'>8 <gis gis'>
+  | <a d fis a>4^^ <gis gis'> <g g'> <fis fis'>8 <e e'>
+  | <d fis a d>4 <cis cis'> <b d fis b> <a a'>8 <gis gis'>
+  | <a a'>4_. r <fis fis'>_._^ r
+  | <e e'>4_._^ r <d d'>_._^ r
+  %165
+  \repeat unfold 2 {
+  | <cis cis'>1_^~
+  | q4 r <fis fis'>_._^ r
+  }
+  | <cis cis'>1_^~
+  | q\fermata
     \fine
 }
 
@@ -443,19 +568,32 @@ forceBreaks = {
   \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
   \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
   \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
-  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
-  \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
   \repeat unfold 5 { s1\noBreak } s1\pageBreak
   % page 3
+  \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
   \repeat unfold 7 { s1\noBreak } s1\break\noPageBreak
   \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
   \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 4 { s1\noBreak } s1\break\pageBreak
+  % page 4  
   \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
-  \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
   \repeat unfold 3 { s1\noBreak } s1\pageBreak
-  % page 4
+  % page 5  
   \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
   \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\pageBreak
+  % page 6
+  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 6 { s1\noBreak } s1\pageBreak
 }
 
 \score {
@@ -467,7 +605,6 @@ forceBreaks = {
       \Global
       \clef treble
       \Soprano
-      \Alto
     >>
     \new Devnull \forceBreaks
     \context Dynamics = "dynamics" \centerDynamics
@@ -475,7 +612,6 @@ forceBreaks = {
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \clef bass
-      \Tenor
       \Bass
     >>
   >>
