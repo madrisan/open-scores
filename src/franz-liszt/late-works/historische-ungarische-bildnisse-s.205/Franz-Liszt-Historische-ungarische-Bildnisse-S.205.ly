@@ -100,8 +100,8 @@
 
 \include "./parts/historische-ungarische-bildnisse-s.205-1-szechenyi-istvan.ly"
 \pageBreak
-%\include "./parts/historische-ungarische-bildnisse-s.205-2-eotvos-jozsef.ly"
-%\pageBreak
+\include "./parts/historische-ungarische-bildnisse-s.205-2-eotvos-jozsef.ly"
+\pageBreak
 %\include "./parts/historische-ungarische-bildnisse-s.205-3-vorosmarty-mihaly.ly"
 %\pageBreak
 %\include "./parts/historische-ungarische-bildnisse-s.205-4-teleki-laszlo.ly"
