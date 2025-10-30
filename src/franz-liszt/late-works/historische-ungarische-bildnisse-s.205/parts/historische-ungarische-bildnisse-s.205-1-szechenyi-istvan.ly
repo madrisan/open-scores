@@ -4,6 +4,57 @@ Global = {
   \include "../global.ly"
 }
 
+SopranoOssia = \relative c'' {
+  | \stopStaff
+    s1*116
+  | \startStaff
+  %\repeat volta 2 {
+    \clef "treble"
+    \key d \major
+    <a a'>1~
+  | q2 <e e'>
+  | <a a'>1
+  | <e e'>
+  | <a a'>~
+  | q4 r e2
+    \stopStaff
+    % workaround to force the visualization of the clef at bar 137
+    \clef "bass"
+    \override Staff.Clef.stencil = ##f
+    \override Staff.KeySignature.stencil = ##f
+  | s1*10
+  %}
+  %137
+  | \startStaff
+    s1*4
+    \revert Staff.Clef.stencil
+    \revert Staff.KeySignature.stencil
+    \clef "treble"
+    \key d \major
+  | <a a'>1~
+  | q2 <fis fis'>
+  | <d d'>1~
+  %140
+  | q2 <fis fis'>
+  | <a a'>1~
+  | q2 <fis fis'>
+  | <a a'>1
+  | <fis fis'>2 <d d'>
+  %145
+  | a'1
+  | fis2 d
+  | a'4 r fis r
+  | e r d r
+  | cis1~
+  %150
+  | cis4 r fis r
+  | cis1~
+  | cis4 r fis r
+  | cis1~
+  | cis\fermata
+    \fine
+}
+
 Soprano = \context Voice = "one" \relative c' {
   \voiceOne
   \stemNeutral\tieNeutral\phrasingSlurNeutral\slurNeutral
@@ -39,29 +90,28 @@ Soprano = \context Voice = "one" \relative c' {
   | bes-. r cis-. r
     \clef "treble"
   %25
-  | r2 e~_^\(
-  | e a,\)
-  | r <a' e'>~\(
-  | q a\)
-  | r f~_^\(
+  | r2 e~_^
+  | e a,
+  | r e'~
+  | e a,
+  | r f'~_^
   %30
-  | f a,\)
-  | r <a' f'>~\(
-  | q a\)
-  | r gis~_^\(
-  | gis cis,\)
+  | f a,
+  | r f'~
+  | f a,
+  | r gis'~_^
+  | gis cis,
   %35
-  | r <cis' gis'>~\(
-  | q cis\)
-  | r a~_^\(
+  | r gis'~
+  | gis cis,
+  | r a'~_^\(
   | a cis,\)
-  | r <cis' a'>~\(
+  | r a'~
   %40
-  | q cis\)
-    \clef "bass"
+  | a cis,
   \repeat unfold 2 {
-  | <f,, a d>^^ q^^
-  | <e gis cis>^^ bes'4^> cis^>
+  | <f, a d>^^ q^^
+  | <e gis cis>^^ bes'4_> cis_>
   }
   %45
   \repeat unfold 2 {
@@ -114,15 +164,15 @@ Soprano = \context Voice = "one" \relative c' {
     \bar "||"
     \key d \major
   %81
-  | r2 <e a e'>~^^\(
-  | q <a, e' a>\)
-  | r <fis' a fis'>~^^\(
-  | q <a, fis' a>\)
+  | r2 <e e'>~^^
+  | q <a, a'>
+  | r <fis' fis'>~^^
+  | q <a, a'>
   %85
-  | r <fis' ais fis'>~^^\(
-  | q <ais, fis' ais>\)
-  | <fis' b fis'>^^( <b, fis' b>)
-  | <fis' cis' fis>^^(^\markup { "rit." } <cis fis cis'>)
+  | r <fis' fis'>~^^
+  | q <ais, ais'>
+  | <fis' fis'>^^( <b, b'>)
+  | <fis' fis'>^^(^\markup { "rit." } <cis cis'>)
     \bar "||"
   | \tempo "Più largo"
   \repeat unfold 2 {
@@ -142,11 +192,11 @@ Soprano = \context Voice = "one" \relative c' {
   | \textMark \markup \italic \smaller { "Sempre più largo" }
     <ees g ees'>2 q
   %100
-  | <d g d'> <bes d g bes>4 <c c'>8 <d d'>
+  | <d g d'> <bes bes'>4 <c c'>8 <d d'>
   | <ees g ees'>2 q
-  | <d g d'> <bes d g bes>4 <c c'>8 <d d'>
+  | <d g d'> <bes bes'>4 <c c'>8 <d d'>
   \repeat unfold 2 {
-  | <ees g ees'>2 <bes d g bes>4 <c c'>8 <d d'>
+  | <ees g ees'>2 <bes bes'>4 <c c'>8 <d d'>
   }
   %105
   | <ees g ees'>2 <bes bes'>4 <c c'>
@@ -156,96 +206,81 @@ Soprano = \context Voice = "one" \relative c' {
   | <d d'>4 <ees ees'> <bes bes'> <b b'>
     \bar "||"
     \key e \major
-  | <gis' e'>8( e) <gis, e'>8[( e)] <gis e'>8[( gis')] <e' gis>( \ottava #1 e')
+  | <e gis e'>2 q
   %110
-  | <gis, dis'>([ dis)] \ottava #0 <gis, dis'>( dis) <b b'>4 <cis cis'>8 <dis dis'>
-  | <gis e'>8( e) <gis, e'>8[( e)] <gis e'>8[( gis')] <e' gis>( gis,)
-  | <gis eis'>8( eis) <gis, eis'>8[( eis)] <cis cis'>4 <dis' dis'>8 <eis eis'>
-  | <ais fis'>8( fis) <ais, fis'>8[( fis)] <ais fis'>8[( ais')] <fis' ais>( \ottava #1 fis')
-  | <ais, eis'>8([ eis)] \ottava #0 <ais, eis'>8( eis) <cis cis'>4 <dis dis'>8 <eis eis'>
+  | <dis gis dis'> <b b'>4 <cis cis'>8 <dis dis'>
+  | <e gis e'>2 q
+  | \stemUp <eis gis eis'> <cis cis'>4 <dis dis'>8 <eis eis'>
+  | <fis ais fis'>2 q
+  | \once\stemNeutral <eis ais eis'> <cis cis'>4 <dis dis'>8 <eis eis'>
   %115
-  | <ais fis'>([ fis)] <ais, fis'>( fis) <ais fis'>( ais') 
-    <fis' ais>([ \ottava #1 fis')] \ottava #0
-  | <cis, gis'>([ gis)] <cis, gis'>( gis) <cis' gis'>([ gis)] <cis, gis'>( gis)
-    \bar "||"
+  | \stemNeutral <fis ais fis'>2 q
+  | <gis cis gis'> q
     \key d \major
   | \tempo "Tempo I."
-  | \ottava #1 
-    a'''^^[( a,)] gis'[( gis,)] g'[( g,)] fis'[( fis,)]
-  | e'[( e,)] d'[( d,)] cis'[( cis,)] b'[( b,)]
-    \ottava #0
-  | a'^^[( a,)] gis'[( gis,)] g'[( g,)] fis'[( fis,)]
+  \repeat volta 2 {
+  | <a a'>4^^ <gis gis'> <g g'> <fis fis'>
+  | <e e'> <d d'> <cis cis'> <b b'>8 <a a'>
+  | <a' a'>4^^ <gis gis'> <g g'> <fis fis'>
   %120
-  | e'[( e,)] d'[( d,)] cis'[( cis,)] b'[( b,)]
-  | a'^^[( a,)] gis'[( gis,)] g'[( g,)] fis'[( fis,)]
-  | e'[( e')] d,[( d')] cis,[( cis')] b,[( b')]
-  | a,^^[( a')] gis,[( gis')] g,[( g')] fis,[( fis')]
-  | e,[( e')] cis,[( cis')] a,[( a')] e,[( e')]
+  | <e e'> <d d'> <cis cis'> <b b'>8 <a a'>
+  | <a' a'>4^^ <gis gis'> <g g'> <fis fis'>
+  | <e e'> <d d'> <cis cis'> <b b'>8 <a a'>
+  | <a a'>4^^ <gis gis'> <g g'> <fis fis'>
+  | e' cis a <cis, e a>
   %125
+    \repeat unfold 2 {
   | <d f bes>4 q8 q q4 q
-  | <f bes d>2( <d f bes>4_.) \tupletDown\tuplet 5/4 { <f bes d>16^\( f' bes d f }
-  | \ottava #1
-    <d f bes>4\) q8 q q4 q
-  | <f bes d>2( <d f bes>4^.) <f bes d>^.
-    \ottava #0
-  | <fis,,! a cis>4 q8 q q4 q
-  %130
-  | <a cis fis>2( <fis a cis>4_.) \tupletDown\tuplet 5/4 { <a cis fis>16^\( a' cis fis a }
-  | \ottava #1
-    <fis a cis>4\) q8 q q4 q
-  | <a cis fis>2( <fis a cis>4^.) <a cis fis>^.
-  | a'8^^[( a,)] gis'[( gis,)] g'[( g,)] fis'[( fis,)]
-  | e'[( e,)] d'[( d,)] cis'[( cis,)] b'[( b,)]
-    \ottava #0
-  %135
-  | a'^^[( a,)] gis'[( gis,)] g'[( g,)] fis'[( fis,)]
-  | e'[( e,)] d'[( d,)] cis'[( cis,)] b'[( b,)]
-  | a'^^[( a,)] gis'[( gis,)] g'[( g,)] fis'[( fis,)]
-  | e'^^[( e')] d,[( d')] cis,[( cis')] b,[( b')]
-  | a,^^[( a')] gis,[( gis')] g,[( g')] fis,[( fis')]
-  %140
-  | e,[( e')] cis,[( cis')] a,[( a')] e,[( e')]
-  | <d f bes>4 q8 q q4 q
-  | <f bes d>2( <d f bes>4_.) \tupletDown\tuplet 5/4 { <f bes d>16^\( f' bes d f }
-  | \ottava #1
-    <d f bes>4\) q8 q q4 q
-  | <f bes d>2( <d f bes>4^.) <f bes d>^.
-    \ottava #0
-  %145
-  | <fis,,! a cis>4 q8 q q4 q
-  | <a cis fis>2( <fis a cis>4_.) \tupletDown\tuplet 5/4 { <a cis fis>16^\( a' cis fis a }
-  | \ottava #1
-    <fis a cis>4\) q8 q q4 q
-  | <a cis fis>2( <fis a cis>4^.) <a cis fis>^.
-    \ottava #0
-  | <fis,, a d fis> <d fis a d>8 q q4 <fis a d fis>4
-  %150
-  | <fis a d fis> <a d fis a>2( <fis a d fis>4)
-  | <fis' a d fis> <d fis a d>8 q q4 <fis a d fis>4
-  | q4 <a d fis a>2( <fis a d fis>4)
-  | <a, d fis a>^^ <gis gis'> <g g'> <fis fis'>8 <e e'>
-
-  | <d d'>4 <cis cis'> <d fis a d> <fis fis'>8 <a a'>
-  %155
-  | <d fis a d>4^^ <cis cis'> <b b'> <a a'>8 <gis gis'>
-  | <a a'>4 <g g'> <fis a d fis> <a a'>8 <d d'>
-  | <fis a d fis>4^^ <e e'> <d d'> <cis cis'>8 <b b'>
-  | <a a'>4 <gis gis'> <a d fis a> <d d'>8 <fis fis'>
-  | <a d fis a>4^^ <gis gis'> <g g'> <fis fis'>8 <e e'>
-  %160
-  | <d fis a d>4 <cis cis'> <b d fis b> <a a'>8 <gis gis'>
-  | <a d fis a>4^^ <gis gis'> <g g'> <fis fis'>8 <e e'>
-  | <d fis a d>4 <cis cis'> <b d fis b> <a a'>8 <gis gis'>
-  | <a a'>4_. r <fis fis'>_._^ r
-    \clef "bass"
-  | <e e'>4^.^^ r <d d'>^.^^ r
-  \repeat unfold 2 {
-  | <cis cis'>1^^~
-  | q4 r <fis fis'>^.^^ r
+  | <f bes d>2( <d f bes>4_.) <f bes d>_.
+    }
+    \repeat unfold 2 {
+  | <fis a cis>4 q8 q q4 q
+  | <a cis fis>2( <fis a cis>4_.) <a cis fis>^.
+    }
   }
-  | <cis cis'>1^^~
-  | q\fermata
+  %133
+  \repeat unfold 2 {
+  | <a d fis> <fis a d>8 q q4 <a d fis>
+  | q <d fis a>2( <a d fis>4)
+  }
+  %137
+  | <a a'>^^ <gis gis'> <g g'> <fis fis'>8 <e e'>
+  | <d d'>4 <cis cis'> <d d'> <fis fis'>8 <a a'>
+  | <d d'>4^^ <cis cis'> <b b'> <a a'>8 <gis gis'>
+  | <a a'>4 <g g'> <fis fis'> <a a'>8 <d d'>
+  | <fis fis'>4^^ <e e'> <d d'> <cis cis'>8 <b b'>
+  | <a a'>4 <gis gis'> <a a'> <d d'>8 <fis fis'>
+  | <a a'>4^^ <gis gis'> <g g'> <fis fis'>8 <e e'>
+  | <d d'>4 <cis cis'> <b b'> <a a'>8 <gis gis'>
+  %145
+  | <a a'>4^^ <gis gis'> <g g'> <fis fis'>8 <e e'>
+  | <d d'>4 <cis cis'> <b b'> <a a'>8 <gis gis'>
+  | <a a'>4_. r fis'_._^ r
+  | e_._^ r d_._^ r
+  \repeat unfold 2 {
+  | cis1^^~
+  | cis4 r fis^.^^ r
+  }
+  | cis1^^~
+  | cis\fermata
     \fine
+}
+
+Alto = \context Voice = "two" \relative c' {
+  \stemDown\tieDown
+  \override Stem.cross-staff = ##t
+  \override Stem.length = #20
+  %1
+  | s1*111
+  | s4
+    \autoBeamOff \omit Flag
+    <eis gis>8 q q4 s
+  | s <fis ais> s q
+  | s <eis ais>8 q8 q4 s
+  %115
+  | \override Stem.length = #24
+    s <fis ais> s q
+  | s <gis cis> s q
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -280,31 +315,27 @@ Bass = \context Voice = "four" \relative c {
   | <cis cis'>_. r <a a'>_. r
   | <bes bes'>_. r <cis cis'> r
   %25
-  | r2 <e e'>~_^\(
-  | q <a, a'>\)
-  | r2 e'''~\(
-  | e a,\)
-  | r2 <f, f'>~_^\(
+  | r2 <e e'>~_^
+  | q <a, a'>
+  | r2 e''~
+  | e a,
+  | r2 <f f'>~_^
   %30
-  | q <a, a'>\)
-  | r2 f'''~\(
-  | f a,\)
-  | r2 <gis, gis'>~_^\(
-  | q <cis, cis'>\)
-    \clef "treble"
+  | q <a, a'>
+  | r2 f''~
+  | f a,
+  | r2 <gis gis'>~_^
+  | q <cis, cis'>
   %35
-  | r2 gis'''~\(
-  | gis cis,\)
-      \clef "bass"
-  | r2 <a, a'>~^^\(
+  | r2 gis''~
+  | gis cis,
+  | r2 <a a'>~^^\(
   | q <cis, cis'>\)
-    \clef "treble"
-  | r2 a'''~\(
+  | r2 a''~
   %40
-  | a cis,\)
-      \clef "bass"
+  | a cis,
   \repeat unfold 2 {
-  | <d,, d'> q
+  | <d, d'> q
   | <bes bes'> r
   }
   %45
@@ -354,15 +385,15 @@ Bass = \context Voice = "four" \relative c {
   }
     \bar "||"
     \key d \major
-  | r2 <e a e'>~^^\(
-  | q <a, e' a>\)
-  | r <fis' a fis'>~^^\(
-  | q <a, fis' a>\)
+  | r2 <e e'>~^^
+  | q <a, e' a>
+  | r <fis' fis'>~^^
+  | q <a, a'>
   %85
-  | r <fis' ais fis'>~^^\(
-  | q <ais, fis' ais>\)
-  | <fis' b fis'>^^( <b, fis' b>)
-  | <fis' cis' fis>^^( <cis fis cis'>)
+  | r <fis' fis'>~^^
+  | q <ais, ais'>
+  | <fis' fis'>^^( <b, b'>)
+  | <fis' fis'>^^( <cis cis'>)
   %89
   \repeat unfold 2 {
   | <d, d'>4 <a'' d fis> <fis, fis'> <a' cis fis>
@@ -380,114 +411,70 @@ Bass = \context Voice = "four" \relative c {
     \key bes \major
   %99
   \repeat unfold 2 {
-  | <ees,, ees'> <bes'' ees g> <ees g bes> <g bes ees>
-  | <g,, g'> <g'' bes d g>8 q q4 r
+  | <ees, ees'> <bes'' ees g> <ees,, ees'> <bes'' ees g>
+  | <g, g'> <bes' d g>8 q q4 r
   }
-  | <ees,, ees'> <bes'' ees g> <g, g'> <d'' g bes>
-  | <ees, ees'> <g' bes ees> <g, g'> <bes' d g>
+  | <ees,, ees'> <bes'' ees g> <g, g'> <bes' d g>
+  | <ees,, ees'> <bes'' ees g> <g, g'> <bes' d g>
   %105
-  | <ees, ees'> \clef "treble" <g' bes> \clef "bass" <bes,, bes'> <c c'>
+  | <ees, ees'> <bes' ees g> <bes, bes'> <c c'>
   \repeat unfold 2 {
   | <d d'> <ees ees'> <a, a'> <bes bes'>8 <c c'>
   }
   | <d d'>4 <ees ees'> <bes bes'> <b b'>
     \bar "||"
     \key e \major    
-  | e,,8^\( b' e b' e b' \clef "treble" e b'\)
+  | <e, e'>4 <b'' e gis> <e,, e'> <b'' e gis>
   %110
-  | <gis, dis' dis'>4\arpeggio_> <b dis gis>8_> q_> q4_> r
-    \clef "bass"
-  | e,,,8^\( b' e b' e b' \clef "treble" b'4\)
-    \clef "bass"
-  | <cis,, gis' eis'>4^> \clef "treble" <cis''' eis gis>8^> q8^> q4^> r
-    \clef "bass"
-  | fis,,,,,8^\( cis' fis cis' fis cis' \clef "treble" fis cis'\)
-  | <ais, eis' eis'>4\arpeggio_> <cis eis ais>8_> q_> q4_> r
-    \clef "bass"
+  | <gis, gis'>4 <b' dis gis>8 q q4 r
+  | <e,, e'>4 <b'' e gis> <e,, e'> <b'' e gis>
+  | <cis,, cis'>4 cis''8 cis cis4 r
+  | <fis,, fis'> cis'' <fis,, fis'> cis''
+  | <ais, ais'> cis'8 cis cis4 r
   %115
-  | fis,,,8^\( cis' fis cis' fis cis' \clef "treble" fis cis'\)
-    \clef "bass"
-  | <eis,,,, eis'>8_\( cis'' gis' cis\) <e,,, e'>_\( cis'' gis' cis \)
-    \bar "||"
+  | <fis,, fis'> cis'' <fis,, fis'>4 cis''
+  | <eis,, eis'> cis'' <e,, e'>4 cis''
     \key d \major
-  | \ottava #-1
-    a,,,_^[( a')] b,[( b')] cis,[( cis')] d,[( d')]
-    \ottava #0
-  | e,[( e')] fis,[( fis')] g,[( g')] gis,[( gis')]
-  | a,_^[( a')] b,[( b')] cis,[( cis')] d,[( d')]
-  %120
-  | e,[( e')] fis,[( fis')] g,[( g')] gis,[( gis')]
-  | a,^^[( a')] b,[( b')] cis,[( cis')] d,[( d')]
-  | e,[( e')] fis,[( fis')] g,[( g')] gis,[( gis')]
-  | a,^^[( a,)] b'[( b,)] cis'[( cis,)] d'[( d,)]
-  | e[( e,)] cis'[( cis,)] a'[( a,)] e'[( e,)]
+  \repeat volta 2 {
+    \repeat unfold 3 {
+  | <a,, a'>_^ <b b'> <cis cis'> <d d'>
+  | <e e'> <fis fis'> <g g'> <gis gis'>8 <a a'>
+    }
+  | <a a'>4^^ <b b'> <cis cis'> <d d'>
+  | <e e'> <cis cis'> <a a'> <e' a>
   %125
-  | <d'' f bes>4 q8 q q4 q
-  | <f bes d>2( <d f bes>4^.) 
-    \tupletUp\tuplet 5/4 { <f bes d>16^\( \clef "treble" f' bes d f }
-  | <d f bes>4\) q8 q q4 q
-  | <f bes d>2( <d f bes>4^.) <f bes d>^.
-    \clef "bass"
-  | <fis,,! a cis>4 q8 q q4 q
-  %130
-  | <a cis fis>2( <fis a cis>4_.) 
-    \clef "treble"
-    \tupletUp\tuplet 5/4 { <a cis fis>16^\( a' cis fis a }
-  | <fis a cis>4\) q8 q q4 q
-  | <a cis fis>2( <fis a cis>4^.) <a cis fis>^.
-    \clef "bass"
-  | \ottava #-1
-    a,,,,,8_^[( a')] b,[( b')] cis,[( cis')] d,[( d')]
-    \ottava #0
-  | e,[( e')] fis,[( fis')] g,[( g')] gis,[( gis')]
-  %135
-  | a,_^[( a')] b,[( b')] cis,[( cis')] d,[( d')]
-  | e,[( e')] fis,[( fis')] g,[( g')] gis,[( gis')]
-  | a,^^[( a')] b,[( b')] cis,[( cis')] d,[( d')]
-  | e,[( e')] fis,[( fis')] g,[( g')] gis,[( gis')]
-  | a,^^[( a,)] b'[( b,)] cis'[( cis,)] d'[( d,)]
-  %140
-  | e[( e,)] cis'[( cis,)] a'[( a,)] e'[( e,)]
-  | <d'' f bes>4 q8 q q4 q
-  | <f bes d>2( <d f bes>4^.) 
-    \tupletUp\tuplet 5/4 { <f bes d>16^\( \clef "treble" f' bes d f }
-  | <d f bes>4\) q8 q q4 q
-  | <f bes d>2( <d f bes>4^.) <f bes d>^.
-    \clef "bass"
+    \repeat unfold 2 {
+  | <d f bes>4 q8 q q4 q
+  | <f bes d>2( <d f bes>4_.) <f bes d>_.
+    }
+    \repeat unfold 2 {
+  | <fis a cis>4 q8 q q4 q
+  | <a cis fis>2( <fis a cis>4_.) <a cis fis>^.
+    }
+  }
+  \repeat unfold 2 {
+  | <a d fis> <fis a d>8 q q4 <a d fis>
+  | q <d fis a>2( <a d fis>4)
+  }
+  %137
+  | <a, a'>^^ <gis gis'> <g g'> <fis fis'>8 <e e'>
+  | <d d'>4 <cis cis'> <d d'> <fis fis'>8 <a a'>
+  | <d d'>4^^ <cis cis'> <b b'> <a a'>8 <gis gis'>
+  | <a a'>4 <g g'> <fis fis'> <a a'>8 <d d'>
+  | <fis fis'>4^^ <e e'> <d d'> <cis cis'>8 <b b'>
+  | <a a'>4 <gis gis'> <a a'> <d d'>8 <fis fis'>
+  | <a a'>4^^ <gis gis'> <g g'> <fis fis'>8 <e e'>
+  | <d d'>4 <cis cis'> <b b'> <a a'>8 <gis gis'>
   %145
-  | <fis,,! a cis>4 q8 q q4 q
-  | <a cis fis>2( <fis a cis>4_.) 
-    \clef "treble"
-    \tupletUp\tuplet 5/4 { <a cis fis>16^\( a' cis fis a }
-  | <fis a cis>4\) q8 q q4 q
-  | <a cis fis>2( <fis a cis>4^.) <a cis fis>^.
-    \clef "bass"
-  | <a,,, d fis a> <fis a d fis>8 q q4 <a d fis a>
-  %150
-  | q <d fis a d>2( <a d fis a>4)
-    \clef "treble"
-  | <a' d fis a> <fis a d fis>8 q q4 <a d fis a>
-  | q <d fis a d>2( <a d fis a>4)
-    \clef "bass"
-  | <a, d fis a>^^ <gis gis'> <g g'> <fis fis'>8 <e e'>
-  | <d d'>4 <cis cis'> <d fis a d> <fis fis'>8 <a a'>
-  %155
-  | <d fis a d>4^^ <cis cis'> <b b'> <a a'>8 <gis gis'>
-  | <a a'>4 <g g'> <fis a d fis> <a a'>8 <d d'>
-  | <fis a d fis>4^^ <e e'> <d d'> <cis cis'>8 <b b'>
-  | <a a'>4 <gis gis'> <a d fis a> <d d'>8 <fis fis'>
-  | <a d fis a>4^^ <gis gis'> <g g'> <fis fis'>8 <e e'>
-  %160
-  | <d fis a d>4 <cis cis'> <b d fis b> <a a'>8 <gis gis'>
-  | <a d fis a>4^^ <gis gis'> <g g'> <fis fis'>8 <e e'>
-  | <d fis a d>4 <cis cis'> <b d fis b> <a a'>8 <gis gis'>
-  | <a a'>4_. r <fis fis'>_._^ r
+  | <a a'>4^^ <gis gis'> <g g'> <fis fis'>8 <e e'>
+  | <d d'>4 <cis cis'> <b b'> <a a'>8 <gis gis'>
+  | <a a'>4_. r <fis' fis'>_._^ r
   | <e e'>4_._^ r <d d'>_._^ r
-  %165
   \repeat unfold 2 {
   | <cis cis'>1_^~
   | q4 r <fis fis'>_._^ r
   }
+  %153
   | <cis cis'>1_^~
   | q\fermata
     \fine
@@ -498,7 +485,11 @@ centerDynamics = {
  | s1*15
  %17
  | s4 s\p s2
- | s1*7
+ | s1*3
+ | s4 s\< s2
+ | s1
+ | s8 s\! s2.
+ | s1
  %24
  | s2 s\mf
  | s1
@@ -510,7 +501,7 @@ centerDynamics = {
  | s1
  | s2 s\>
  | s4 s\! 
-   \once\override TextScript.extra-offset = #'(-1 . 2)
+   \once\override TextScript.extra-offset = #'(-1 . 1.5)
    s2-\markup { "sempre cresc. " } 
  | s1*2
  %35
@@ -538,7 +529,12 @@ centerDynamics = {
  | \once\override Hairpin.Y-offset = #-3
    s4\< s2.
  | s4\! s2.
- | s1*24
+ | s1*15
+ %77
+ | s4\< s2.
+ | s1
+ | s4\! s2.
+ | s1*6
  | s2 s\<
  | s1
  | s2 s\!
@@ -552,7 +548,8 @@ centerDynamics = {
  | s4\< s2.
  | s4\! s2.
  | s1*7
- | s4-\markup { "sempre" \dynamic ff } s2.
+ | \once\override TextScript.extra-offset = #'(0 . 1)
+   s4-\markup { "sempre" \dynamic ff } s2.
 }
 
 forceBreaks = {
@@ -574,22 +571,18 @@ forceBreaks = {
   \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
   \repeat unfold 7 { s1\noBreak } s1\break\noPageBreak
   \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
-  \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
   \repeat unfold 4 { s1\noBreak } s1\break\pageBreak
   % page 4  
   \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
-  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
-  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
   \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
   \repeat unfold 3 { s1\noBreak } s1\pageBreak
   % page 5  
   \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
   \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
   \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
-  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
-  \repeat unfold 3 { s1\noBreak } s1\pageBreak
+  \repeat unfold 3 { s1\noBreak } s1\break\pageBreak
   % page 6
-  \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
   \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
   \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
   \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
@@ -597,22 +590,32 @@ forceBreaks = {
 }
 
 \score {
-  \new PianoStaff
   <<
-    \accidentalStyle Score.piano
-    \context Staff = "upper" <<
-      \set Staff.midiInstrument = #"acoustic grand"
-      \Global
-      \clef treble
-      \Soprano
-    >>
-    \new Devnull \forceBreaks
-    \context Dynamics = "dynamics" \centerDynamics
-    \context Staff = "lower" <<
-      \set Staff.midiInstrument = #"acoustic grand"
-      \Global
-      \clef bass
-      \Bass
+    \new Staff = "ossia" \with {
+      \override InstrumentName.extra-offset = #'(1 . 0)
+      %instrumentName = "Trompeten"
+      shortInstrumentName = "Tromp."
+      \include "../../ossiasetup.ly"
+    }
+    { \SopranoOssia }
+    \new PianoStaff
+    <<
+      \accidentalStyle Score.piano
+      \context Staff = "upper" <<
+        \set Staff.midiInstrument = #"acoustic grand"
+        \Global
+        \clef treble
+        \Soprano
+        \Alto
+      >>
+      \new Devnull \forceBreaks
+      \context Dynamics = "dynamics" \centerDynamics
+      \context Staff = "lower" <<
+        \set Staff.midiInstrument = #"acoustic grand"
+        \Global
+        \clef bass
+        \Bass
+      >>
     >>
   >>
   \header {
@@ -624,6 +627,7 @@ forceBreaks = {
   \layout {
     \context {
       \PianoStaff
+      \remove "Keep_alive_together_engraver"
       \override Parentheses.font-size = #-2
       \override TextScript.font-shape = #'italic
       \override TextScript.font-size = #-1

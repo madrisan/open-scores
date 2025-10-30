@@ -27,6 +27,7 @@ EXTRA_DIST = Franz-Liszt-Late-Works.ly \
 	     global.ly \
 	     index.ly \
 	     logo.ly \
+	     ossiasetup.ly \
 	     zweite-elegie-s.197/Franz-Liszt-Zweite-Elegie-S.197.ly \
 	     wiegenlied-s.198/Franz-Liszt-Wiegenlied-S.198.ly \
 	     nuages-gris-s.199/Franz-Liszt-Nuages-Gris-S.199.ly \
