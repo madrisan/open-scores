@@ -151,9 +151,6 @@ Soprano = \context Voice = "one" \relative c' {
     \fine
 }
 
-Alto = \context Voice = "two" \relative c' {
-}
-
 Tenor = \context Voice = "three" \relative c {
   \voiceThree
   \stemUp\tieUp
@@ -438,7 +435,6 @@ forceBreaks = {
       \Global
       \clef treble
       \Soprano
-      \Alto
     >>
     \new Devnull \forceBreaks
     \context Dynamics = "dynamics" \centerDynamics
