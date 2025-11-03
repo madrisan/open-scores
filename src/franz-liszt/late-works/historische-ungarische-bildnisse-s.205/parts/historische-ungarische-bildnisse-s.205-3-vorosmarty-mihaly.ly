@@ -65,9 +65,11 @@ Soprano = \context Voice = "one" \relative c {
   | cis4 r r2
     \key b \major
     \bar "||"
-    \break
   | \tempo "Un poco meno lento" 2 = 96
-    fis,4 <dis'' fis dis'>2\( <cis e cis'>4
+    fis,4 <dis'' fis dis'>2\(_\markup {
+      "dolce"
+    }
+    <cis e cis'>4
   | <b dis b'>4.. <ais cis ais'>16 <b dis b'>8. <ais cis ais'>16 <b dis b'>8. <cis e cis'>16
   | <b dis fis b>4.. <ais cis ais'>16 q4..\) <gis b gis'>16\(
   %60
@@ -79,13 +81,60 @@ Soprano = \context Voice = "one" \relative c {
   %65
   | q8.[ <b dis b'>16] q8.[ <cis e cis'>16] q8.[ <dis fis dis'>16] q8\) r
   | r8. <b dis b'>16\( q8.[ <cis e cis'>16] q8.[ <dis fis dis'>16] q8\) r
-  | r4 <fis ais fis'>2 <eis gis eis'>4
+  | r4 <fis ais fis'>2\( <eis gis eis'>4
   | <dis fis dis'>4.. <cisis eis cisis'>16 q8.[ <dis fis dis'>16] q8. <eis gis eis'>16
-  | q8 r <fis ais fis'>2 <eis gis eis'>4
+  | q8\) r <fis ais fis'>2\( <eis gis eis'>4
   %70
   | <dis fis dis'>4.. <cisis eis cisis'>16 q8.[ <dis fis dis'>16] q8. <eis gis eis'>16
-
-  | R1*36
+  | q8. <dis fis dis'>16 q8.[ <cisis eis cisis'>16] q8. <dis fis dis'>16 q8.[ <eis gis eis'>16]
+  | q8\) r <fis ais fis'> r <gis b gis'> r <ais cis ais'> r
+  | <b dis b'> r <dis,, fis>2^\( <cis fis>4
+  | <fis>4.. q16 q8. q16 q8. q16
+  %75
+  | <fis>4.. q16 <fis>4..\) q16^\(
+  | <fis>8. q16 <fis>8.[ q16] <fis>8.[ q16] <fis>8\) r
+  | r8. q16^\( <fis>8.[ q16] <fis>8.[ q16] <fis>8\) r
+  | r4
+    \once\shape #'(
+      ((0 . 3) (0 . 1.5) (0 . 1) (0 . 0))
+    ) PhrasingSlur
+    <e fis>2^\( <dis fis>4
+  | <fis>4.. q16 q8. q16 q8. q16
+  %80
+  | <fis>4.. q16 <fis>4..\) q16^\(
+  | <fis>8. q16 <fis>8.[ q16] <fis>8.[ q16] <fis>8\) r
+  | r8. q16^\( <fis>8.[ q16] <fis>8.[ q16] <fis>8\) r
+    \break
+  | \stemNeutral r4 <fis, fis'> <gis gis'> <ais ais'>
+  | <b b'> <cis fis cis'> <d fis d'> <dis fis dis'>
+  %85
+  | <fis fis'>8 r <fis fis'>4 <gis gis'> <ais ais'>
+  | <b b'> <cis fis cis'> <d fis d'> <dis fis dis'>
+  | <fis fis'>8 r q4^^~ q8.^\( <e e'>16 <dis dis'>8. <cis cis'>16
+  | <b b'>4^.\) <dis dis'>^. <ais ais'>^. <dis dis'>^.
+  | <gis, gis'>-. <b b'>-. <fis fis'>-. <b b'>-.
+  %90
+  | <eis, eis'>_. <gis gis'>-. <fis fis'>-. <b b'>-.
+  | <dis, dis'>_. <fis fis'>^^~ q8._\( <e e'>16 <dis dis'>8. <cis cis'>16
+  | <b b'>4_.\) <dis dis'>_. <ais ais'>_. <dis dis'>_.
+  | <gis, gis'>_. <b b'>_. <fis fis'>_. <b b'>_.
+  | <eis, eis'>_. <gis gis'>_. <fis fis'>_. <b b'>_.
+  %95
+  | dis4_. r fis2^^~
+  | fis4 e_. dis_. cis_.
+  | b_. r dis_. r
+  | ais_. r dis_. r
+    \break
+  | gis,1_^~
+  %100
+  | gis4 r b_. r
+  | g1_^~
+  | g4 r b_. r
+  | g1_^~
+  | g4 r b_.^\markup { "breit" } r
+  %105
+  | g1_^~
+  | g\fermata
     \fine
 }
 
@@ -98,9 +147,26 @@ Alto = \context Voice = "two" \relative c' {
 
 Tenor = \context Voice = "three" \relative c {
   \voiceThree
-  \stemNeutral\tieNeutral
+  \stemUp
   \override Rest.staff-position = #0
+  \override Stem.cross-staff = ##t
+  \override Stem.length = #20
+  \omit Flag \omit Beam
+  \autoBeamOff
   %1
+  | s1*72
+  | s4 fis2 fis4
+  | <fis b>4.. <fis ais>16 <fis b>8. <fis ais>16 <fis b>8. <fis cis'>16
+  %75
+  | <fis b>4.. <fis ais>16 q4.. gis16
+  | gis8. <fis ais>16 q8. <fis b>16 q8. <fis cis'>16 q8 s
+  | s8. <fis ais>16 q8. <fis b>16 q8. <fis cis'>16 q8 s
+  | s4 fis2 fis4
+  | <fis cis'>4.. <fis b>16 <fis cis'>8. <fis b>16 <fis cis'>8. <fis dis'>16
+  %80
+  | <fis cis'>4.. <fis b>16 q4.. <fis ais>16
+  | <fis ais>8. <fis b>16 q8. <fis cis'>16 q8. <fis dis'>16 q8 s
+  | s8. <fis b>16 q8. <fis cis'>16 q8. <fis dis'>16 q8 s
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -128,7 +194,7 @@ Bass = \context Voice = "four" \relative c {
   %15
   | r eis~_>(
   | eis fis)
-  | r4_\markup { 
+  | r4_\markup {
       "con" \musicglyph #"pedal.Ped"
     }
     \ottava #-1 <fis, fis'> q q
@@ -193,8 +259,45 @@ Bass = \context Voice = "four" \relative c {
   | <gis eis' gis>[ q <ais fis' ais> q] <b gis' b>[ q <ais fis' ais> q]
   | <gis eis' gis>[ q <fis dis' fis> q] \clef "bass" <eis d' eis>[ q <e cis' e> q]
   | \stemDown <dis b' dis>8 r <dis, dis'>2 <cis cis'>4
-
-  | R1*33
+  | <b b'>4.. <ais ais'>16 <b b'>8. <ais ais'>16 <b b'>8. <cis cis'>16
+  %75
+  | <b b'>4.. <ais ais'>16 q4.. <gis gis'>16
+  | <gis gis'>8. <ais ais'>16 q8.[ <b b'>16] q8.[ <cis cis'>16] q8 g'\rest
+  | g8.\rest <ais, ais'>16 q8.[ <b b'>16] q8.[ <cis cis'>16] q8 g'8\rest
+  | r4 <e e'>2 <dis dis'>4
+  | <cis cis'>4.. <b b'>16 <cis cis'>8. <b b'>16 <cis cis'>8. <dis dis'>16
+  %80
+  | <cis cis'>4.. <b b'>16 q4.. <ais ais'>16
+  | <ais ais'>8. <b b'>16 q8.[ <cis cis'>16] q8.[ <dis dis'>16] q8 g\rest
+  | g8.\rest <b, b'>16 q8.[ <cis cis'>16] q8.[ <dis dis'>16] q8 g\rest
+  | \stemNeutral r4 <fis, fis'> <gis gis'> <ais ais'>
+  | <b b'> <cis fis cis'> <d fis d'> <dis fis dis'>
+  %85
+  | <fis fis'>8 r <fis fis'>4 <gis gis'> <ais ais'>
+  | <b b'> <cis fis cis'> <d fis d'> <dis fis dis'>
+  | <fis fis'>8 r q4^^~ q8.^\( <e e'>16 <dis dis'>8. <cis cis'>16
+  | <b b'>4^.\) <dis dis'>^. <ais ais'>^. <dis dis'>^.
+  | <gis, gis'>-. <b b'>^. <fis fis'>-. <b b'>^.
+  %90
+  | <eis, eis'>-. <gis gis'>-. <fis fis'>-. <b b'>^.
+  | <dis, dis'>_. <fis fis'>^^~ q8._\( <e e'>16 <dis dis'>8. <cis cis'>16
+  | <b b'>4-.\) <dis dis'>-. <ais ais'>-. <dis dis'>-.
+  | <gis, gis'>-. <b b'>-. <fis fis'>-. <b b'>-.
+  | <eis, eis'>-. <gis gis'>-. <fis fis'>-. <b b'>-.
+  %95
+  | <dis dis'>-. r <fis fis'>2^^~
+  | q4 <e e'>-. <dis dis'>-. <cis cis'>-.
+  | <b b'>-. r <dis dis'>-. r
+  | <ais ais'>-. r <dis dis'>-. r
+  | <gis, gis'>1-._^~
+  %100
+  | q4 r <b b'>-. r
+  \repeat unfold 2 {
+  | <g g'>1-._^~
+  | q4 r <b b'>-. r
+  }
+  | <g g'>1_^~
+  | q\fermata
     \fine
 }
 
@@ -202,6 +305,23 @@ centerDynamics = {
   | s4-\markup { \dynamic mf \whiteout "dolente" } s2.
   | s1*17
   | s4-\markup { \dynamic mf \whiteout "espressivo" } s2.
+  | s1*33
+  %53
+  | s2 s4-\markup { "dim." } s
+  | s1*3
+  | s4\p s2.
+  | s1*14
+  %72
+  | s4 s\< s2
+  | s16 s\!\ff s8 s2.
+  | s1*9
+  | s2 s4\< s
+  | s1
+  | s4\! s s\< s
+  | s1
+  | s4\! s2.
+  | s1*14
+  | s2 s4-\markup { "marcato" }
 }
 
 forceBreaks = {
@@ -210,9 +330,12 @@ forceBreaks = {
   \repeat unfold 7 { s1\noBreak } s1\break\noPageBreak
   \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
   \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
-
- %\repeat unfold 2 { s1\noBreak } s1\pageBreak
+  \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 4 { s1\noBreak } s1\pageBreak
   % page 2
+  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
 }
 
 sustainPedal = {
