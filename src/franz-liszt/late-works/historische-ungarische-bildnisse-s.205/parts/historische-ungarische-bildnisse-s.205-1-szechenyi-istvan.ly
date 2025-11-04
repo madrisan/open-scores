@@ -4,6 +4,8 @@ Global = {
   \include "../global.ly"
 }
 
+Ped = \markup { \hspace #-1.5 \musicglyph #"pedal.Ped" }
+
 SopranoOssia = \relative c'' {
   | \stopStaff
     s1*116
@@ -61,6 +63,7 @@ Soprano = \context Voice = "one" \relative c' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \label #'S205
+  \label #'S205i
   \tempo Feroce 2 = 116
   %1
   | d1_\(
@@ -115,7 +118,7 @@ Soprano = \context Voice = "one" \relative c' {
   }
   %45
   \repeat unfold 2 {
-  | <f, a d>2^^ <e gis bes>4^> <e gis cis>^>
+  | <f, a d>2^^ <e gis bes>4_> <e gis cis>_>
   }
   | <f a d>2^^ a4 bes
   \repeat unfold 2 {
@@ -124,14 +127,14 @@ Soprano = \context Voice = "one" \relative c' {
   %50
   | cis4 d a bes
   \repeat unfold 2 {
-  | <ges bes ees>2^^ q^^
-  | <f a d>^^ b4^> d^>
+  | <ges bes ees>2_^ q_^
+  | <f a d>_^ b4_> d_>
   }
   %55
   \repeat unfold 2 {
-  | <ges, bes ees>2^^ <f a b>4^> <f a d>^>
+  | <ges, bes ees>2_^ <f a b>4_> <f a d>_>
   }
-  | <ges bes ees>2^^ bes4^> b^>
+  | <ges bes ees>2_^ bes4_> b_>
   \repeat unfold 2 {
   | d ees a, bes8 b
   }
@@ -139,24 +142,24 @@ Soprano = \context Voice = "one" \relative c' {
   | d4 ees bes b
   \repeat unfold 2 {
   | <g b e>2^^ q^^
-  | <fis a dis>^^ c'4^> dis^>
+  | <fis a dis>^^ c'4_> dis_>
   }
   %65
   \repeat unfold 2 {
   | <aes c f>2^^ q^^
-  | <g bes e>^^ des'4^> e^>
+  | <g bes e>^^ des'4_> e_>
   }
   | <a, cis fis>2^^ q^^
   %70
-  | <gis b eis>^^ d'4^> eis^>
+  | <gis b eis>^^ d'4_> eis_>
   | <a, cis fis>2^^ q^^
-  | <gis b eis>^^ d'4^> f^>
+  | <gis b eis>^^ d'4_> f_>
     \clef "treble"
   | b, cis d e
   | f gis f gis
   %75
   | <b, b'> <cis cis'> <d d'> <e e'>
-  | <f f'> <gis gis'> <f f'> <gis gis'> 
+  | <f f'> <gis gis'> <f f'> <gis gis'>
   \repeat unfold 2 {
   | <b b'> <gis gis'> <b b'> <cis cis'>
   | <b b'> <a a'> <b b'> <cis cis'>
@@ -259,7 +262,7 @@ Soprano = \context Voice = "one" \relative c' {
   | e_._^ r d_._^ r
   \repeat unfold 2 {
   | cis1^^~
-  | cis4 r fis^.^^ r
+  | cis4 r fis_._^ r
   }
   | cis1^^~
   | cis\fermata
@@ -423,7 +426,7 @@ Bass = \context Voice = "four" \relative c {
   }
   | <d d'>4 <ees ees'> <bes bes'> <b b'>
     \bar "||"
-    \key e \major    
+    \key e \major
   | <e, e'>4 <b'' e gis> <e,, e'> <b'' e gis>
   %110
   | <gis, gis'>4 <b' dis gis>8 q q4 r
@@ -436,8 +439,10 @@ Bass = \context Voice = "four" \relative c {
   | <eis,, eis'> cis'' <e,, e'>4 cis''
     \key d \major
   \repeat volta 2 {
-    \repeat unfold 3 {
-  | <a,, a'>_^ <b b'> <cis cis'> <d d'>
+  | <a,, a'>_^_\Ped <b b'> <cis cis'> <d d'>
+  | <e e'> <fis fis'> <g g'> <gis gis'>8 <a a'>
+    \repeat unfold 2 {
+  | <a, a'>4_^ <b b'> <cis cis'> <d d'>
   | <e e'> <fis fis'> <g g'> <gis gis'>8 <a a'>
     }
   | <a a'>4^^ <b b'> <cis cis'> <d d'>
@@ -500,9 +505,9 @@ centerDynamics = {
  | s s\mf
  | s1
  | s2 s\>
- | s4 s\! 
+ | s4 s\!
    \once\override TextScript.extra-offset = #'(-1 . 1.5)
-   s2-\markup { "sempre cresc. " } 
+   s2-\markup { "sempre cresc. " }
  | s1*2
  %35
  | s2
@@ -511,7 +516,7 @@ centerDynamics = {
  | s4 s\! s2
  | s1*2
  %39
- | s2 
+ | s2
    \once\override Hairpin.Y-offset = #-6
    s\<
  | s4 s\! s2
@@ -572,12 +577,12 @@ forceBreaks = {
   \repeat unfold 7 { s1\noBreak } s1\break\noPageBreak
   \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
   \repeat unfold 4 { s1\noBreak } s1\break\pageBreak
-  % page 4  
+  % page 4
   \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
   \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
   \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
   \repeat unfold 3 { s1\noBreak } s1\pageBreak
-  % page 5  
+  % page 5
   \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
   \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
   \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
@@ -587,6 +592,23 @@ forceBreaks = {
   \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
   \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
   \repeat unfold 6 { s1\noBreak } s1\pageBreak
+}
+
+sustainPedal = {
+  \set Staff.pedalSustainStyle = #'mixed
+  | s1*124
+  | s4\sustainOn s2.
+  | s1
+  | s4\sustainOff s2.
+  | s1
+  | s4\sustainOn s2.
+  %130
+  | s1
+  | s4\sustainOff s2.
+  | s1
+  | s4\sustainOn s2.
+  | s1
+  | s4\sustainOff s2.
 }
 
 \score {
@@ -616,6 +638,7 @@ forceBreaks = {
         \clef bass
         \Bass
       >>
+    \context Dynamics = "sustainPedal" \sustainPedal
     >>
   >>
   \header {

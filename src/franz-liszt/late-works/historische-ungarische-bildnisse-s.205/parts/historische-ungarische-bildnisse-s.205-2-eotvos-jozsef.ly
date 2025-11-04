@@ -9,6 +9,7 @@ Soprano = \context Voice = "one" \relative c' {
   \stemUp\tieUp
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'S205ii
   %1
   \tempo "Vivace" 2 = 108
   | r2 e4 r
@@ -36,7 +37,7 @@ Soprano = \context Voice = "one" \relative c' {
   %20
   | gis2. cis,4\)
   | gis'2. r4
-  | a2.^\markup { "rit." }^( cis,4)
+  | a2.^\markup { "riten." }^( cis,4)
   | a'2.( <a, a'>4)
     \bar "||"
     \key a \major
@@ -87,7 +88,7 @@ Soprano = \context Voice = "one" \relative c' {
   | r4 <dis fis dis'>2^\( <e g e'>4~
   | q <fis ais fis'>2 <g b g'>4\)
   %60
-  | r2 \ottava #1 
+  | r2 \ottava #1
     <g ais g'>2~
   | q q\(
   | <fis ais fis'> <g ais g'>
@@ -105,7 +106,7 @@ Soprano = \context Voice = "one" \relative c' {
   | r2 <aes aes'>~
   | q <g g'>4 r
   | r2 <g g'>~
-  | q <fis fis'>4 \ottava #0 r 
+  | q <fis fis'>4 \ottava #0 r
   | r2 <f f'>~
   %75
   | q <e e'>~
@@ -121,7 +122,7 @@ Soprano = \context Voice = "one" \relative c' {
     }
   | q2 <cis cis'>
     \bar "||"
-    \key a \major    
+    \key a \major
   | \tempo "Tempo I"
     <e e'>2..^^ <a, a'>8
   %85
@@ -314,7 +315,7 @@ Bass = \context Voice = "four" \relative c {
   | \repeat unfold 4 { e' a, }
     \bar "||"
     \key a \major
-  | <cis,, cis'>4_\markup { 
+  | <cis,, cis'>4_\markup {
       "tre corde"
     }
     r8 \stemNeutral <a'' cis e> q4 c8\rest q
@@ -325,7 +326,7 @@ Bass = \context Voice = "four" \relative c {
   | <cis, cis'>4 r8 \stemNeutral <a'' cis fis> q4 c8\rest q
   | q4 c8\rest q q4 r8 <cis,, a' cis>
   %90
-  | q4 b'8\rest q q4 b8\rest q 
+  | q4 b'8\rest q q4 b8\rest q
   | q4 b8\rest q q4 r
   | <eis, eis'>4 r8 <cis'' eis gis> q4 c8\rest q
   | q4 c8\rest q q4 r8 <eis,, cis' eis>
@@ -366,7 +367,7 @@ centerDynamics = {
  | s2 s4\! s
  | s1
  %44
- | s4-\markup { \dynamic p } s2.
+ | s4-\p s2.
  | s1*14
  %59
  | s4\< s2.
@@ -426,6 +427,14 @@ forceBreaks = {
   \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
 }
 
+sustainPedal = {
+  \set Staff.pedalSustainStyle = #'mixed
+  | s1*99
+  | s4\sustainOn s2.
+  | s1*3
+  | s4 s s\sustainOff s
+}
+
 \score {
   \new PianoStaff
   <<
@@ -445,6 +454,7 @@ forceBreaks = {
       \Tenor
       \Bass
     >>
+    \context Dynamics = "sustainPedal" \sustainPedal
   >>
   \header {
     composer = ##f % "Franz Liszt"
@@ -461,6 +471,6 @@ forceBreaks = {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 2 = 108
   }
 }
