@@ -9,6 +9,7 @@ Soprano = \context Voice = "one" \relative c {
   \stemNeutral\tieNeutral\slurNeutral\phrasingSlurNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'S205iii
   %1
   | \tempo "Andante maestoso" 4 = 84
     R1*18
