@@ -61,8 +61,46 @@ Soprano = \context Voice = "one" \relative c' {
   | <c, ees c'>2 <b ees b'>
   | <bes ees bes'> \once\phrasingSlurDashed <a ees' a>4_\( <bes bes'>8 <b b'>\)
   }
-
-    s1*59
+  %41
+  \repeat unfold 2 {
+  | c'4. b8 bes4. a8
+  | aes4. g8 aes8. a16 bes8. b16
+  }
+  %45
+  \repeat unfold 2 {
+  | c4. b8 bes8. cis16 bes8. cis16
+  }
+  | ees4.^\markup {
+      "poco a poco accel."
+    }
+    d8 <cis, e cis'>8. <e g e'!>16 <cis e cis'>8. <e g e'>16
+  | ees'4. d8 <cis, e cis'>8. <e g e'!>16 <cis e cis'>8. <e g e'>16
+  \repeat unfold 2 {
+  | fis'4. f8 <e, g e'>8. <g bes g'!>16 <e g e'>8. <g bes g'!>16
+  }
+    \stemNeutral
+  %51
+  | <fis a fis'>8. <a c a'>16 <fis a fis'>8. <a c a'>16
+    <g bes g'>8. <bes cis bes'>16 <g bes g'>8. <bes cis bes'>16
+  | <a c a'>8. <c ees! c'>16 <a c a'>8. <c ees c'>16 
+    <bes cis bes'>8. <cis e cis'>16 <bes cis bes'>8. <cis e cis'>16
+  | \tempo "Sostenuto (Tempo I)" 
+    <cis e cis'>8^. r16 <cis, e cis'> q8. q16 <cis f cis'>8 r16 <cis' f cis'> q8. q16
+  | <cis f cis'>8 r16 <cis, bes' cis> q8. q16 q8 r16 <cis' bes' cis>16 q8. q16
+  %55
+  | q8 r16 <cis, e cis'>16 q8. q16 <cis f cis'>8 r16 <cis' f cis'> q8. q16
+  | <cis f cis'>8 r16 <bes cis> q8. q16 q8 r16 <cis bes' cis> q8. q16
+  | <cis bes' cis>8^. r r4 
+    \stemUp fis2
+  | s1
+  | s2 fis
+  %60
+  | s1
+  | s2 \stemNeutral ees'!4\( cis
+  | bes\) r e\( cis
+  | b\) r fis'2
+  
+    s1*36
     \fine
 }
 
@@ -110,8 +148,38 @@ Tenor = \context Voice = "three" \relative c' {
     \override NoteColumn.force-hshift = #0.7
     a4 bes8 b
     \revert NoteColumn.force-hshift
+  %37
+  \repeat unfold 2 {
   | s1
   | s2. ees4
+  }
+  \repeat unfold 2 {
+  | <c ees>8.[ g'16 q8] b, <bes cis>8.[ e16 q8] a,
+  | <aes cis>8.[ e'16 q8] g, aes8. a16 <bes e>8. b16
+  }
+  %45
+  \repeat unfold 2 {
+  | <c ees>8.[ g'16 q8] b, <bes e>8. cis16 <bes e>8. cis16
+  }
+  \repeat unfold 2 {
+  | <ees fis>8.[ a16 q8] d, s2
+  }
+  %49
+  \repeat unfold 2 {
+  | <fis a>8.[ c'16 q8] f,8 s2
+  }
+  | s1*6
+  %57
+  | s2 <ees' ees'>4^\( <cis cis'>
+  | <cis fis bes>2 <cis fis a>
+  | <cis e bes'>4\) r <ees ees'>4^\( <cis! cis'!>
+  | <cis fis bes>2 <cis fis a>
+  | <cis e bes'>4\) r s2
+    \change Staff = "lower"
+  | s1*9
+  %71
+  | s2 \stemUp cis
+  
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -120,7 +188,7 @@ Bass = \context Voice = "four" \relative c {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   %1
-  | r2 <fis,, fis'>4_. r
+  | r2 <fis,, fis'>4_.^\p r
   \repeat unfold 5 {
   | <g g'>_. r <bes bes'>_. r
   | <cis cis'>_. r <fis, fis'>_. r
@@ -171,7 +239,7 @@ Bass = \context Voice = "four" \relative c {
   | <g bes>4 r <bes, fis' bes>2
   %60
   | <cis fis bes> <fis a>
-  | <g bes>4 r r2
+  | <g bes>4 r_\markup { "una coda" } r2
   \repeat unfold 2 {
   | <gis cis e>4 r r2
   }
@@ -185,7 +253,10 @@ Bass = \context Voice = "four" \relative c {
   | r2 \stemDown fis4_\( g
   | <bes e>1~\)
   | q4 r r2
-  | r4 \clef "bass" \stemNeutral <fis,, fis'>-. <g g'>-. <bes bes'>^.
+  | r4_\markup {
+      "tre corde"
+    }
+    \clef "bass" \stemNeutral <fis,, fis'>-. <g g'>-. <bes bes'>^.
   %75
   | <cis cis'>^. <fis, fis'>-. <g g'>-. <bes bes'>^.
   | <cis, cis'>
@@ -214,7 +285,50 @@ Bass = \context Voice = "four" \relative c {
 }
 
 centerDynamics = {
- %| s4\pp s2.
+  | s1*4
+  | s4 s\mp s2
+  | s1*7
+  | s4 s-\markup { "risoluto" } s2
+  | s1*4
+  | s2 s4\< s
+  | s1
+  %20
+  | s4\! s2.
+  | s4-\markup { \normalsize \dynamic f "doloroso" } s2.
+  | s1*7
+  %29
+  | s4-\markup { "sembre cresc." } s2.
+  | s1*3
+  | s4-\markup { "largo" } s2.
+  | s1*18
+  %52
+  | s4 s\< s2
+  | s4\!\ff s2.
+  | s1*2
+  | s4 s\< s2
+  %57
+  | s4\! s s-\markup { \normalsize \dynamic mp "espr." } s
+  | s1
+  | s2 s\p
+  | s1*5
+  %65
+  | s2 s\pp
+  | s1
+  | s4 s\> s2
+  | s4 s\! s2
+  | s2 s-\markup { "dolce" }
+  %70
+  | s1*2
+  | s4\> s2.
+  | s8 s\! s2.
+  | s4 s\p s2
+  | s1
+  %76
+  | s4 s\mp s2
+  | s1
+  | s2 s\ff\<
+  | s1
+  | s4\!-\markup { "marc." }
 }
 
 forceBreaks = {
