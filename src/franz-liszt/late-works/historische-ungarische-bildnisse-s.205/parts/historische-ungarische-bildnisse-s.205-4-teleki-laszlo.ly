@@ -84,6 +84,7 @@ Soprano = \context Voice = "one" \relative c' {
     <g bes g'>8. <bes cis bes'>16 <g bes g'>8. <bes cis bes'>16
   | <a c a'>8. <c ees! c'>16 <a c a'>8. <c ees c'>16 
     <bes cis bes'>8. <cis e cis'>16 <bes cis bes'>8. <cis e cis'>16
+    \break
   | \tempo "Sostenuto (Tempo I)" 
     <cis e cis'>8^. r16 <cis, e cis'> q8. q16 <cis f cis'>8 r16 <cis' f cis'> q8. q16
   | <cis f cis'>8 r16 <cis, bes' cis> q8. q16 q8 r16 <cis' bes' cis>16 q8. q16
@@ -98,9 +99,50 @@ Soprano = \context Voice = "one" \relative c' {
   | s1
   | s2 \stemNeutral ees'!4\( cis
   | bes\) r e\( cis
-  | b\) r fis'2
-  
-    s1*36
+  | b\) r fis'2~^\(
+  | fis e4 cis
+  %65
+  | bes\) r fis'2~^\(
+  | fis e4 cis
+  | bes\) fis^\( g bes
+  | cis\) r r2
+  | r <cis, fis>(
+  %70
+  | <ees g>1)
+  | r2 <e bes'>(
+  | cis'1~)
+  | cis4 r r2
+  | r4 fis,,_. g_. bes^.
+  %75
+  | cis^. fis,_. g_. bes^.
+  | cis, \clef "bass" fis,^. g^. bes^.
+  | cis^. fis,^. g^. bes^.
+  | cis, r <cis fis cis'>2^>
+  | <cis g' cis>^> <cis bes' cis>^>
+  %80
+  | <cis cis'>2.^^ q4^^
+  | q2^^ q^^
+  | r2 <cis fis cis'>^>
+  | <cis g' cis>^> <cis bes' cis>^>
+  | <cis cis'>2.^^ q4^^
+  %85
+  | q2^^ q^^
+  | r2 \clef "treble" <cis' cis'>^^~_\(
+  | q <fis, fis'>\)
+  | r2 <g g'>~^^^\(
+  | q \clef "bass" <bes, bes'>\)
+  %90
+  | r2 <cis cis'>^^~^\(
+  | q <fis, fis'>\)
+  | r <g g'>^^~^\(
+  | q <bes bes'>\)
+  | r <cis cis'>^^~^\(
+  %95
+  | q <fis, fis'>\)
+  | r <g g'>^^~^\(
+  | q <bes bes'>\)
+  | <cis cis'>1^^~
+  | q\fermata
     \fine
 }
 
@@ -122,7 +164,7 @@ Alto = \context Voice = "two" \relative c {
   \repeat unfold 2 {
   | <fis a>2 <g bes>4 q
   }
-  \clef "treble" \stemDown
+  \clef "treble" \stemDown\tieDown
   \repeat unfold 2 {
   | <a c!>2 <bes cis>4 q
   }
@@ -135,6 +177,10 @@ Alto = \context Voice = "two" \relative c {
   %35
   | cis2 a4 bes8 b
   | cis2 <cis f>4 q
+  | s1*35
+  %72
+  | fis'2 g~
+  | g4 s2.
 }
 
 Tenor = \context Voice = "three" \relative c' {
@@ -334,6 +380,11 @@ centerDynamics = {
 forceBreaks = {
   % page 1
   \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 3 { s1\noBreak } s1\pageBreak
+  % page 2
  %\repeat unfold 2 { s1\noBreak } s1\pageBreak
 }
 
