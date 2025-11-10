@@ -234,7 +234,12 @@ Bass = \context Voice = "four" \relative c {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   %1
-  | r2 <fis,, fis'>4_.^\p r
+  | r2 <fis,, fis'>4_.^\p^\markup {
+      \hspace #-6
+      \whiteout
+      "Wie Glockengeläute (Like the tolling of a bell)"
+    }
+    r
   \repeat unfold 5 {
   | <g g'>_. r <bes bes'>_. r
   | <cis cis'>_. r <fis, fis'>_. r
@@ -388,6 +393,43 @@ forceBreaks = {
  %\repeat unfold 2 { s1\noBreak } s1\pageBreak
 }
 
+sustainPedal = {
+  \set Staff.pedalSustainStyle = #'mixed
+  | s1
+  \repeat unfold 5 {
+  | s4\sustainOn s2.
+  | s4 s\sustainOff s2
+  }
+  %12
+  | s4\sustainOn s2.
+  | s4\sustainOff\sustainOn s2.
+  \repeat unfold 9 {
+  | s4\sustainOff\sustainOn s2.
+  }
+  %23
+  \repeat unfold 34 {
+  | s4\sustainOff\sustainOn s s \sustainOff\sustainOn s
+  }
+  %57
+  | s4\sustainOff s2.
+  | s1*22
+  %80
+  | s4\sustainOn s2.
+  | s1
+  | s4\sustainOff s2.
+  | s1
+  | s4\sustainOn s2.
+  %87
+  | s1*3
+  \repeat unfold 4 {
+  | s4\sustainOff\sustainOn s2.
+  | s1
+  }
+  %96
+  | s4\sustainOff\sustainOn s2.
+  | s1*3
+}
+
 \score {
   \new PianoStaff
   <<
@@ -408,6 +450,7 @@ forceBreaks = {
       \Tenor
       \Bass
     >>
+    \context Dynamics = "sustainPedal" \sustainPedal
   >>
   \header {
     composer = ##f % "Franz Liszt"
