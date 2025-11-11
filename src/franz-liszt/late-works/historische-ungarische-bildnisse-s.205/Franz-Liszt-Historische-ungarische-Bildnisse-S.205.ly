@@ -106,8 +106,8 @@
 \pageBreak
 \include "./parts/historische-ungarische-bildnisse-s.205-4-teleki-laszlo.ly"
 \pageBreak
-%\include "./parts/historische-ungarische-bildnisse-s.205-5-deak-ferenc.ly"
-%\pageBreak
+\include "./parts/historische-ungarische-bildnisse-s.205-5-deak-ferenc.ly"
+\pageBreak
 %\include "./parts/historische-ungarische-bildnisse-s.205-6-petofi-sandor.ly"
 %\pageBreak
 %\include "./parts/historische-ungarische-bildnisse-s.205-7-mosonyi-mihaly.ly"
