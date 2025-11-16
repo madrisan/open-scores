@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Changed
 
 - Franz Liszt: Move late compositions to the "Late Works" collection.
-- Franz Liszt: Historische Ungarische Bildnisse S.205 - n.1-4
+- Franz Liszt: Historische Ungarische Bildnisse S.205 - n.1-5
 
 ### Fixed
 
