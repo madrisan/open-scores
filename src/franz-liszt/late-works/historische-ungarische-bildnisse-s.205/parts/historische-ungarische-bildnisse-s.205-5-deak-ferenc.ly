@@ -81,10 +81,11 @@ Soprano = \context Voice = "one" \relative c'' {
   | <bes bes'>4. <cis cis'>8\) <d d'>4^. <f f'>^.
   }
   %61
-  | <bes bes'>2( <f f'>4^.) <g g'>^.
-  | <aes aes'>4.( <g g'>8) <f f'>4^. <bes, bes'>^.
-  | <bes' bes'>2( <ees, ees'>4^.) <f f'>^.
-  | <g g'>4.( <f f'>8) <ees ees'>4^. <bes bes'>^.
+  | \ottava #1
+    <bes bes'>2( <f f'>4^.) <g g'>^.
+  | <aes aes'>4.( <g g'>8) <f f'>4^. <bes, bes'>_.
+  | <bes' bes'>2( <ees, ees'>4_.) <f f'>^.
+  | <g g'>4.( <f f'>8) <ees ees'>4_. <bes bes'>_.
   %65
   | <bes' bes'>2( <f f'>4^.) <g g'>^.
   | <aes aes'>4.( <g g'>8) <f f'>4^. <aes aes'>^.
@@ -94,23 +95,33 @@ Soprano = \context Voice = "one" \relative c'' {
     \key b \minor
     \pageBreak
   %69
-  << {
-    s1
-  }
-  \new Staff \with {
-    alignAboveContext = "upper"
-    \omit Staff.TimeSignature
-  } {
-    \key b \minor
   | <b b'>2_\markup { 
       \normalsize "sempre" \dynamic ff 
     }
-    <dis, dis'>4. <eis eis'>8
-  | s1*12
-  }
-  >>
+    <dis, dis'>4.\( <eis eis'>8
+  | <fis fis'>4. <gis gis'>8\) <ais ais'>4^. <b b'>^.
+  | <cis cis'>2 <g g'>4.\( <a a'>8
+  | <ais ais'>4. <a a'>8\) <ais ais'>4^. <cis cis'>^.
+  | <b b'>2 <dis, dis'>4.\( <eis eis'>8
+  | <fis fis'>4. <gis gis'>8\) <ais ais'>4^. <b b'>^.
+  %75
+  | <cis cis'>2 <g g'>4.\( <a a'>8
+  | <bes bes'>4. <a a'>8\) <bes bes'>4^. <cis cis'>^.
+  | <d d'>2\( <a a'>4^.\) <b b'>^.
+  | <cis cis'>4.\(^> <b b'>8\) <a a'>4^. <fis fis'>^.
+  | <b b'>2\( <fis fis'>4^.\) <gis gis'>^.
+  %80
+  | <a a'>4.\(^> <gis gis'>8\) <fis fis'>4^. 
+    \ottava #0
+    <cis cis'>^.
+  | <d d'>2\( <a a'>4^.\) <b b'>^.
     \break
-  | R1*39
+  | <cis cis'>2\( <gis gis'>4^.\) <ais ais'>^.
+  | <c c'>2\( <g g'>4^.\) <a a'>^.
+  | <b b'>2\( <fis fis'>4^.\) <gis gis'>^.
+  %85
+
+  | R1*36
     \bar "||"
     \key d \minor
     \break
@@ -124,7 +135,32 @@ Alto = \context Voice = "two" \relative c' {
   \override Rest.staff-position = #0
   %1
   | s1*68
+  << {
+    s1*13
+  }
+  \new Staff \with {
+    alignBelowContext = "upper"
+    \omit Staff.TimeSignature
+  } {
+    \key b \minor
   | s4 <dis fis b> q q
+  %70
+  | q q q r
+  | r <cis g' ais cis> q q
+  | q q q r
+  | r4 <dis fis b> q q
+  | <dis fis b> q q r
+  %75
+  | r <cis g' bes cis> q q
+  | q q q r
+  | r <d fis a d> q q
+  | r <cis fis a cis> q q
+  | r <d fis b> q q
+  %80
+  | r <fis a> q q
+  | r q q q
+  }
+  >>
 }
 
 Tenor = \context Voice = "three" \relative c' {
@@ -159,8 +195,22 @@ Tenor = \context Voice = "three" \relative c' {
     \bar "||"
   %69
   | \override Stem.cross-staff = ##t
-    \override Stem.length = #10
+    \override Stem.length = #12
     s4 b b b
+  | b b b s
+  | s1*2
+  | s4 b b b
+  | b b b s
+  | s1*4
+  %79
+  | s4 b b b
+  | s <a cis> q q
+  | s a a a
+  | \revert Stem.length
+    s <gis cis eis> q q
+  | s <g c e> q q
+  | s <fis b dis> q q
+  %85
 }
 
 Bass = \context Voice = "four" \relative c' {
@@ -242,7 +292,26 @@ Bass = \context Voice = "four" \relative c' {
     \key b \minor
   %69
   | <dis dis'>4 s2.
-  | R1*51
+  | s1
+  | <e e'>4 s2.
+  | s1
+  | <dis dis'>4 s2.
+  | s1
+  %75
+  | <e e'>4 s2.
+  | s1
+  | <fis, fis'>4 s2.
+  | <fis' fis'>4 s2.
+  | q4 s2.
+  %80
+  | q4 s2.
+  | q4 s2.
+  | <eis eis'>4 s2.
+  | <e e'>4 s2.
+  | <dis dis'>4 s2.
+  %85
+  
+  | R1*36
     \bar "||"
     \key d \minor
   | R1*16
@@ -278,18 +347,29 @@ centerDynamics = {
   | s1*15
   %61
   | s4^\markup { "trionfante" } s2.
-  | s1*7
+  | s1*22
+  | s4^\markup { "marc." } s2.
 }
 
 forceBreaks = {
   % page 1
   \repeat unfold 7 { s1\noBreak } s1\break\noPageBreak
-%  \repeat unfold 7 { s1\noBreak } s1\break\noPageBreak
-%  \repeat unfold 7 { s1\noBreak } s1\break\noPageBreak
-%  \repeat unfold 7 { s1\noBreak } s1\break\noPageBreak
-%  \repeat unfold 6 { s1\noBreak } s1\pageBreak  
+  \repeat unfold 9 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 9 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 7 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 7 { s1\noBreak } s1\pageBreak
  % page 2
-  %[...]
+  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 5 { s1\noBreak } s1\pageBreak
+ % page 3
+  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 6 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 6 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 6 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 6 { s1\noBreak } s1\pageBreak
+ % page 4
 }
 
 \score {
