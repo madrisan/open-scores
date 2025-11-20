@@ -120,12 +120,79 @@ Soprano = \context Voice = "one" \relative c'' {
   | <c c'>2\( <g g'>4^.\) <a a'>^.
   | <b b'>2\( <fis fis'>4^.\) <gis gis'>^.
   %85
-
-  | R1*36
+  | <ais ais'>4. <gis gis'>8 <ais ais'>4. <cis cis'>8
+  | <ais ais'>4. <cis cis'>8 <ais ais'>4. <cis cis'>8
+  | <ais ais'>4. <gis gis'>8 <ais ais'>4. <cis cis'>8
+  | <bes bes'>4. <cis cis'>8 <bes bes'>4. <cis cis'>8
+  | <d d'>2( <a a'>4^.) <b b'>^.
+  %90
+  | <cis cis'>4.^>( <b b'>8) <a a'>4^. <fis fis'>^.
+  | <b b'>2( <fis fis'>4^.) <gis gis'>^.
+  | <a a'>4.^>( <gis gis'>8) <fis fis'>4^. <cis cis'>_.
+  | <d d'>2( <a a'>4_.) <b b'>_.
+  | <cis cis'>2( <gis gis'>4_.) <ais ais'>_.
+  %95
+  | <c c'>2( <g g'>4_.) <a a'>_.
+  | <b b'>2( <fis fis'>4_.) <gis gis'>_.
+  | <ais ais'>4. <gis gis'>8 <ais ais'>4. <cis cis'>8
+  | <ais ais'>4. <cis cis'>8 <ais ais'>4. <cis cis'>8
+  | <ais ais'>4. <gis gis'>8 <ais ais'>4. <cis cis'>8
+  %100
+  | <bes bes'>4. <cis cis'>8 <bes bes'>4. <cis cis'>8
+  | <bes bes'>4.\( <cis cis'>8\) <g g'>4_. <bes bes'>_.
+  | <cis cis'>_. <e e'>_. <g g'>_. <bes bes'>^.
+  | <bes bes'>4.^>\( <cis cis'>8\) <g g'>4^. <b b'>^.
+  | <cis cis'>^. <e e'>^. 
+    \ottava #1
+    <g g'>^. <bes bes'>^.
+  %105
+  | \override Beam.positions = #'(-2 . -1.5)
+    \repeat unfold 3 {
+      \repeat tremolo 8 { <bes d>16 bes' }
+    }
+    \ottava #0
+  | \repeat tremolo 8 { <bes,, d>16 bes' }
+  | \repeat tremolo 8 { <bes, fis'!>16 bes' }
+  %110
+  | \repeat unfold 3 {
+      \repeat tremolo 8 { <bes, fis'>16 bes' }
+    }
+  | \repeat unfold 3 {
+      \repeat tremolo 8 { <bes, d>16 bes' }
+    }
+  %116
+  | \override Beam.positions = #'(2.5 . 3)
+    \repeat tremolo 8 { <d,, bes'>16 d' }
+  | \override Beam.positions = #'(1.5 . 2)
+    \repeat tremolo 8 { <ais, fis'>16 ais' }
+  | \override Beam.positions = #'(1.5 . 3)
+    \repeat tremolo 8 { <cis, fis>16 cis' }
+  | \override Beam.positions = #'(-2.5 . -1.5)
+    \repeat tremolo 8 { <fis, ais>16 fis' }
+  | \revert Beam.positions
+    \repeat tremolo 4 { <ais, cis>16 ais' } \repeat tremolo 4 { <cis, fis>16 cis' }
     \bar "||"
     \key d \minor
     \break
-  | R1*16
+  %121
+  | <d, d'>2..^^\( <d, d'>8\)
+  | q4_. r <f f'>^. r
+  | <bes bes'>2..^^\( <bes, bes'>8\)
+  | q4_. r <d d'>_. r
+  %125
+  | <f f'>2..^^\( <f, f'>8\)
+  | q4_. r <bes bes'>_. r
+  | <d d'>2..^^\( f8\)
+  | f4_. r bes^. r
+  \repeat unfold 2 {
+  | d,_.^^ r <a f' a>_. r
+  | d_. r <bes bes'>_. r
+  }
+  | d_. r r2
+  | <a d f a>4_. r r2
+  %135
+  | <bes bes'>1~^^
+  | q\fermata
     \fine
 }
 
@@ -195,7 +262,7 @@ Tenor = \context Voice = "three" \relative c' {
     \bar "||"
   %69
   | \override Stem.cross-staff = ##t
-    \override Stem.length = #12
+    \override Stem.length = #15
     s4 b b b
   | b b b s
   | s1*2
@@ -207,10 +274,30 @@ Tenor = \context Voice = "three" \relative c' {
   | s <a cis> q q
   | s a a a
   | \revert Stem.length
+    \revert Stem.cross-staff
     s <gis cis eis> q q
   | s <g c e> q q
   | s <fis b dis> q q
   %85
+  | s <fis ais cis e> q q
+  | s <g ais cis e> s q
+  | s <fis ais cis e> q q
+  | s <g bes cis e> s q
+  | s <fis a d fis> q q
+  %90
+  | s <fis a cis fis> q <fis a cis>
+  | s <d fis b d> q q
+  | s <cis fis a cis> q <cis fis a>
+  | s <fis, d' fis> q q
+  | s <eis cis' eis> q q
+  %95
+  | s <e c' e> q q
+  | s <dis b' dis> q q
+  | s <fis cis' e> q q
+  | s <g cis e> s q
+  | s <fis cis' e> q q
+  %100
+  | s <g cis e> s q
 }
 
 Bass = \context Voice = "four" \relative c' {
@@ -310,11 +397,71 @@ Bass = \context Voice = "four" \relative c' {
   | <e e'>4 s2.
   | <dis dis'>4 s2.
   %85
-  
-  | R1*36
+  \repeat unfold 2 {
+  | <fis fis'>4 s2.
+  | <g g'>4 s q s
+  }
+  \repeat unfold 2 {
+  | <fis fis'>4 s2.
+  }
+  %91
+  \repeat unfold 3 {
+  | <fis, fis'>4 s2.
+  }
+  | <eis eis'>4 s2.
+  %95
+  | <e e'>4 s2.
+  | <dis dis'>4 s2.
+  \repeat unfold 2 {  
+  | <fis fis'>4 s2.
+  | <g g'>4 s q s
+  }
+  %101
+  | \stemNeutral
+    <bes bes'>4.\( <cis cis'>8\) <g g'>4_. <bes bes'>_.
+  | <cis cis'>_. <e e'>_. <g g'>_. <bes bes'>^.
+  | <bes bes'>4.^>\( <cis cis'>8\) <g g'>4_. <b b'>^.
+  | <cis cis'>^. <e e'>^. \clef "treble" <g g'>_. <bes bes'>_.
+  %105
+  | <d bes' d>2..^^\( <d, d'>8\)
+  | q4_. r <f f'>_. r
+  | <bes d bes'>2..^^\( \clef "bass" <bes, bes'>8\)
+  | <bes bes'>4^. r <d d'>^. r
+  | <fis! ais fis'!>2..^^\( <fis, fis'>8\)
+  %110
+  | <fis fis'>4_. r <ais ais'>^. r
+  | <cis ais' cis>2..^^\( <cis, cis'>8\)
+  | q4_. r <fis fis'>_. <ais ais'>^.
+  | <d bes' d>2..^^\( <d, d'>8\)
+  | <d d'>4_. r <f f'>_. r
+  %115
+  | <bes bes'>2..^^\( <bes, bes'>8\)
+  | q4_. r <d d'>_. r
+  | <fis cis' fis>2..^^\( <fis, fis'>8\)
+  | q4_. r <ais ais'>_. r
+  | <cis cis'>2..^^\( <fis fis'>8\)
+  %120
+  | <fis fis'>4_. r <ais ais'>^. r
     \bar "||"
     \key d \minor
-  | R1*16
+  | <d d'>2..^^\( <d, d'>8\)
+  | q4_. r <f f'>_. r
+  | <bes bes'>2..^^\( <bes, bes'>8\)
+  | q4_. r <d d'>_. r
+  %125
+  | <f f'>2..^^\( <f, f'>8\)
+  | q4_. r <bes bes'>_. r
+  | <d d'>2..^^\( <f f'>8\)
+  | q4_. r <bes bes'>^. r
+  \repeat unfold 2 {
+  | <d, d'>4^^_. r <f f'>_. r
+  | <d d'>4_. r <bes bes'>_. r
+  }
+  %133
+  | <d d'>_. r r2
+  | <f a d f>4_. r r2
+  | <bes, bes'>1~^^
+  | q1\fermata
     \fine
 }
 
@@ -348,7 +495,16 @@ centerDynamics = {
   %61
   | s4^\markup { "trionfante" } s2.
   | s1*22
+  %84
   | s4^\markup { "marc." } s2.
+  | s1*20
+  %105
+  | s4^\markup { \hspace #-1 "marcatissimo" } s2.
+  | s1*13
+  %119
+  | s4 s s s8\< s
+  | s1
+  | s4\!\fff s2.
 }
 
 forceBreaks = {
@@ -370,6 +526,10 @@ forceBreaks = {
   \repeat unfold 6 { s1\noBreak } s1\break\noPageBreak
   \repeat unfold 6 { s1\noBreak } s1\pageBreak
  % page 4
+  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+  \repeat unfold 7 { s1\noBreak } s1\break\noPageBreak
 }
 
 \score {
