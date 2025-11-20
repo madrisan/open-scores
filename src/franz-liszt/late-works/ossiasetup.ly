@@ -16,6 +16,7 @@ fontSize = #-3
 \override Script.color        = #(x11-color 'grey35)
 \override Slur.color          = #(x11-color 'grey35)
 \override Stem.color          = #(x11-color 'grey35)
+\override StemTremolo.color   = #(x11-color 'grey35)
 \override TextScript.color    = #(x11-color 'grey35)
 \override Tie.color           = #(x11-color 'grey35)
 \override TimeSignature.color = #(x11-color 'grey35)

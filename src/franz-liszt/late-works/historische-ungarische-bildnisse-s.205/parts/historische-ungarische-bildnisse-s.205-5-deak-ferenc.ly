@@ -196,6 +196,37 @@ Soprano = \context Voice = "one" \relative c'' {
     \fine
 }
 
+SopranoOssia = \relative c'' {
+  | \stopStaff
+    s1*120
+    \startStaff
+    \clef "treble"
+    \key d \minor
+    \ottava #1
+  \repeat unfold 2 {
+  | \repeat tremolo 8 <d d'>16 \repeat tremolo 8 <f f'>
+  | \repeat tremolo 8 <bes d bes'> \repeat tremolo 8 q
+  }
+    \ottava #0
+  \repeat unfold 2 {
+  | \repeat tremolo 8 <d,, d'>16 \repeat tremolo 8 <f f'>
+  | \repeat tremolo 8 <bes d bes'> \repeat tremolo 8 q
+  }
+  %129
+    \ottava #1
+  \repeat unfold 2 {
+  | \repeat tremolo 8 <a' d a'> \repeat tremolo 8 q
+  | \repeat tremolo 8 <a d a'> \repeat tremolo 8 <bes d bes'>
+  }
+  \repeat unfold 2 {
+  | \repeat tremolo 8 <a d a'> \repeat tremolo 8 q
+  }
+  | \repeat tremolo 8 <bes bes'> \repeat tremolo 8 <bes bes'>
+  | \repeat tremolo 16 <bes bes'>\fermata
+    \stopStaff
+    \fine
+}
+
 Alto = \context Voice = "two" \relative c' {
   \voiceTwo
   \stemNeutral\tieNeutral
@@ -532,25 +563,38 @@ forceBreaks = {
   \repeat unfold 7 { s1\noBreak } s1\break\noPageBreak
 }
 
+sustainPedal = {
+}
+
 \score {
-  \new PianoStaff
   <<
-    \accidentalStyle Score.piano
-    \context Staff = "upper" <<
-      \set Staff.midiInstrument = #"acoustic grand"
-      \Global
-      \clef treble
-      \Soprano
-      \Alto
-    >>
-    \new Devnull \forceBreaks
-    \context Dynamics = "dynamics" \centerDynamics
-    \context Staff = "lower" <<
-      \set Staff.midiInstrument = #"acoustic grand"
-      \Global
-      \clef bass
-      \Tenor
-      \Bass
+    \new Staff = "ossia" \with {
+      \override InstrumentName.extra-offset = #'(1 . 0)
+      %instrumentName = "Orchester"
+      shortInstrumentName = "Orch."
+      \include "../../ossiasetup.ly"
+    }
+    { \SopranoOssia }
+    \new PianoStaff
+    <<
+      \accidentalStyle Score.piano
+      \context Staff = "upper" <<
+        \set Staff.midiInstrument = #"acoustic grand"
+        \Global
+        \clef treble
+        \Soprano
+        \Alto
+      >>
+      \new Devnull \forceBreaks
+      \context Dynamics = "dynamics" \centerDynamics
+      \context Staff = "lower" <<
+        \set Staff.midiInstrument = #"acoustic grand"
+        \Global
+        \clef bass
+        \Tenor
+        \Bass
+      >>
+    \context Dynamics = "sustainPedal" \sustainPedal
     >>
   >>
   \header {
@@ -562,6 +606,7 @@ forceBreaks = {
   \layout {
     \context {
       \PianoStaff
+      \remove "Keep_alive_together_engraver"
       \override Parentheses.font-size = #-2
       \override TextScript.font-shape = #'italic
       \override TextScript.font-size = #-1
