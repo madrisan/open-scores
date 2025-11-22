@@ -14,7 +14,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | \tempo "Bewegt" 2 = 96
     r2 a^^~\(
   | a d,\)
-  | r a'^^~\( 
+  | r a'^^~\(
   | a d,\)
   %5
   | r2 a4_. r
@@ -25,7 +25,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | r2 bes^^~\(
   %10
   | bes d,\)
-  | r bes'^^~\( 
+  | r bes'^^~\(
   | bes d,\)
   | r2 bes4_. r
   | bes_. r cis_. r
@@ -95,8 +95,8 @@ Soprano = \context Voice = "one" \relative c'' {
     \key b \minor
     \pageBreak
   %69
-  | <b b'>2_\markup { 
-      \normalsize "sempre" \dynamic ff 
+  | <b b'>2_\markup {
+      \normalsize "sempre" \dynamic ff
     }
     <dis, dis'>4.\( <eis eis'>8
   | <fis fis'>4. <gis gis'>8\) <ais ais'>4^. <b b'>^.
@@ -111,7 +111,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | <cis cis'>4.\(^> <b b'>8\) <a a'>4^. <fis fis'>^.
   | <b b'>2\( <fis fis'>4^.\) <gis gis'>^.
   %80
-  | <a a'>4.\(^> <gis gis'>8\) <fis fis'>4^. 
+  | <a a'>4.\(^> <gis gis'>8\) <fis fis'>4^.
     \ottava #0
     <cis cis'>^.
   | <d d'>2\( <a a'>4^.\) <b b'>^.
@@ -142,7 +142,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | <bes bes'>4.\( <cis cis'>8\) <g g'>4_. <bes bes'>_.
   | <cis cis'>_. <e e'>_. <g g'>_. <bes bes'>^.
   | <bes bes'>4.^>\( <cis cis'>8\) <g g'>4^. <b b'>^.
-  | <cis cis'>^. <e e'>^. 
+  | <cis cis'>^. <e e'>^.
     \ottava #1
     <g g'>^. <bes bes'>^.
   %105
@@ -443,7 +443,7 @@ Bass = \context Voice = "four" \relative c' {
   %95
   | <e e'>4 s2.
   | <dis dis'>4 s2.
-  \repeat unfold 2 {  
+  \repeat unfold 2 {
   | <fis fis'>4 s2.
   | <g g'>4 s q s
   }
@@ -564,6 +564,70 @@ forceBreaks = {
 }
 
 sustainPedal = {
+  \set Staff.pedalSustainStyle = #'mixed
+  | s2 s\sustainOn
+  | s1*3
+  | s4\sustainOff s2.
+  | s1*3
+  %9
+  | s2 s\sustainOn
+  | s1*3
+  | s4\sustainOff s2.
+  | s1*3
+  %17
+  | s2 s\sustainOn
+  | s1*3
+  | s4\sustainOff s2.
+  | s1*3
+  %24
+  | s2 s\sustainOn
+  | s1
+  | s4\sustainOff s4 s2\sustainOn
+  | s1
+  | s4\sustainOff\sustainOn s2.
+  | s4\sustainOff\sustainOn s2.
+  | s4\sustainOff\sustainOn s2.
+  | s4\sustainOff\sustainOn s2.
+  %33
+  | s4\sustainOff\sustainOn s2.
+  | s1*3
+  %37
+  | s4\sustainOff\sustainOn s2.
+  | s1*3
+  | s4\sustainOff\sustainOn s2.
+  | s4 s\sustainOff s2
+  | s1*2
+  %45
+  \repeat unfold 12 {
+  | s4\sustainOn s2.
+  | s4\sustainOff s2.
+  }
+  | s4\sustainOn s2.
+  | s1
+  \repeat unfold 3 {
+  | s4\sustainOff\sustainOn s2.
+  | s1
+  }
+  \repeat unfold 4 {
+  | s4\sustainOff\sustainOn s2.
+  }
+  | s4\sustainOff^\markup { \hspace #1.5 \musicglyph #"pedal.Ped" "simile" } s2.
+  | s1*19
+  %101
+  | s4\sustainOn s2.
+  | s1*3
+  \repeat unfold 4 {
+  | s4\sustainOff\sustainOn s2.
+  | s1*3
+  }
+  %121
+  \repeat unfold 3 {
+  | s4\sustainOff\sustainOn s2.
+  | s1
+  }
+  | s4\sustainOff\sustainOn s2.
+  | s1
+  | s4 s\sustainOff s2
 }
 
 \score {
