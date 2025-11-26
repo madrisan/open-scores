@@ -41,13 +41,44 @@ Soprano = \context Voice = "one" \relative c' {
   }
   | c4( f,!2 \acciaccatura { g16 a } g8. f16
   | c'8) f[( \stemUp \once\slurDown \acciaccatura { g16 a } \stemNeutral g8 f] c') r r4
+  %35
   | c,4( fis,!2 \acciaccatura { gis16 a } gis8. fis16
   | c'8) fis[( \stemUp \once\slurDown \acciaccatura { gis16 a } \stemNeutral gis8 fis] c') r r4
-  | R1*4
+  | \stemUp\slurUp\phrasingSlurUp
+    r2 c4( fis,)
+  | r2 c'4( fis,)
+  | r2 cis'4( fis,)
+  %40
+  | \set Staff.connectArpeggios = ##t
+    r2 cis'4\arpeggio\( fis,
     \bar "||"
     \key e \major
     \break
-  | R1*49
+  | gis8^\markup {
+      "un poco meno lento"
+    }
+    b4. e,8 fis4.
+  | gis8 b4. e,8 fis4.\)
+  | gis8\( b e, fis gis b e, fis
+  | s2. \hideNotes cis'4\) \unHideNotes
+  %45
+  | a8 cis4. fis,8 gis4.
+  | a8 cis4. fis,8 gis4.
+  | a8\( cis fis, gis a cis fis, gis
+  | s2. \hideNotes cis4\) \unHideNotes
+  | b8 dis4. <bis, bis'>4( <cis cis'>)
+  %50
+  | b'8 dis4. <bis, bis'>4( <cis cis'>)
+  | b'8\( dis b cis b dis b cis
+  | b dis b dis\) b s4.
+  | \tempo "Tempo I"
+    \stemNeutral
+    %\repeat unfold 2 {
+      <dis, dis'>4 <ais ais'>2
+      \once\slurDown\stemUp \appoggiatura { <b b'>16 <cis cis'> }
+      \stemNeutral <b b'>8.( <ais ais'>16)
+    %}
+  | R1*36
     \fine
 }
 
@@ -63,7 +94,28 @@ Alto = \context Voice = "two" \relative c' {
   %26
   | ees2 g(
   | ees) g
-  | s1
+  | s1*9
+  %37
+  | r2 c
+  | r c
+  | r cis
+  | \set Staff.connectArpeggios = ##t
+    r <cis fis>\arpeggio
+  %41
+  | <b e>2 q
+  | <b e> <ais e'>
+  | <b e>4 cis q ais
+  | <b e gis>2 <a fis' a>4 <b gis' b>
+  %45
+  | <cis fis>2 q
+  | q <bis fis'>
+  | <cis fis>4 dis q bis
+  | <cis fis a>2 <b gis' b>4 <cis a' cis>
+  | <dis fis>2 fis
+  %50
+  | q fis
+  | q4 <cis fis> <dis fis> <cis fis>
+  | <dis fis> q q8 <b b'>[ <cis cis'> <cisis cisis'>]
 }
 
 Tenor = \context Voice = "three" \relative c {
@@ -76,6 +128,21 @@ Tenor = \context Voice = "three" \relative c {
   | s1*6
   %24
   | s4 g'( fis) s
+  | s1*16
+  %41
+  \repeat unfold 3 {
+  | gis8 e gis e gis e gis e
+  }
+  | gis e dis e fis e gis4
+  %45
+  \repeat unfold 3 {
+  | a8 fis a fis a fis a fis
+  }
+  | a fis e fis gis fis a4
+  \repeat unfold 3 {
+  | a8 fis a fis a fis a fis
+  }
+  | a fis a fis a r r4
 }
 
 Bass = \context Voice = "four" \relative c' {
@@ -128,10 +195,41 @@ Bass = \context Voice = "four" \relative c' {
   %35
   | r4 <dis a' c>8[( q q q]) r4
   | R1
-  | R1*4
+  | r2 <fis a dis>
+  | r <a dis fis>
+  | r <a cis fis>
+  %40
+  | r \clef "treble" <b dis a'>\arpeggio_\markup {
+      "una corda"
+    }
     \bar "||"
     \key e \major
-  | R1*49
+  | \stemDown
+    b2 cis
+  | b cis
+  | b4 ais b cis
+  | b2 b8\rest e e dis
+  %45
+  | cis2 dis
+  | cis dis
+  | cis4 bis cis dis
+  | cis2 b8\rest fis' fis e
+  | <dis b'>2 <e a>
+  %50
+  | <dis b'>2 <e a>
+  | <dis b'>4 e q e
+  | q q q8_\markup {
+      \hspace #2 "tre corde"
+    }
+    r r4
+    \clef "bass"
+    \break
+    \stemNeutral
+  | %\repeat unfold 2 {
+      <ais,,, ais'>8 r <fis'' ais dis fis> r <ais,, ais'> r <eis'' gis cisis eis> r
+    %}
+
+  | R1*36
     \fine
 }
 
@@ -167,7 +265,21 @@ centerDynamics = {
  %37
  | s2 s\pp
  | s1*2
- | s4^\markup { \whiteout "grazioso e dolce" } s2.
+ | s4-\markup { \hspace #1 \whiteout "grazioso e dolce" } s2.
+ | s1*4
+ %45
+ | s4-\markup { \hspace #-1 \whiteout "sempre legato e dolce" } s2.
+ | s1*3
+ | \set crescendoText = \markup { \small\italic { "poco a poco cresc." } }
+   \set crescendoSpanner = #'text
+   %\override DynamicTextSpanner.style = #'dashed-line
+   s4\< s2.
+ | s1*2
+ | s4 s
+   \unset crescendoText
+   \unset crescendoSpanner
+   s\!\< s
+ | s\! s2.
 }
 
 forceBreaks = {
@@ -179,7 +291,10 @@ forceBreaks = {
   \new PianoStaff
   <<
     \accidentalStyle Score.piano
-    \context Staff = "upper" <<
+    \context Staff = "upper" \with {
+      \consists "Span_arpeggio_engraver"
+    }
+    <<
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \clef treble
