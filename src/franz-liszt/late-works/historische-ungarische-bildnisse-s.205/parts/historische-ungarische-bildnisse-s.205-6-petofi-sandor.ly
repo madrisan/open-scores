@@ -73,12 +73,65 @@ Soprano = \context Voice = "one" \relative c' {
   | b dis b dis\) b s4.
   | \tempo "Tempo I"
     \stemNeutral
-    %\repeat unfold 2 {
+    \repeat unfold 2 {
       <dis, dis'>4 <ais ais'>2
       \once\slurDown\stemUp \appoggiatura { <b b'>16 <cis cis'> }
       \stemNeutral <b b'>8.( <ais ais'>16)
-    %}
-  | R1*36
+    }
+  %55
+  \repeat unfold 2 {
+  | <gis' gis'>4 <fis fis'>2 \tuplet 3/2 { <b, b'>8( <cis cis'> <dis dis'>) }
+  }
+  \repeat unfold 2 {
+  | <e e'>4 <b b'>2
+    \once\slurDown\stemUp \appoggiatura { <cis cis'>16 <dis dis'> }
+    \stemNeutral <cis cis'>8.( <b b'>16)
+  }
+  | \ottava #1
+    \repeat unfold 2 {
+      <a' a'>4 <gis gis'>2
+      \once\slurDown\stemUp \appoggiatura { <f f'>16 <g g'> }
+      \stemNeutral <f! f'!>8.( <e e'>16)
+    }
+  %61
+  | <d' d'>8 <c c'>4 <b b'> <a a'> <g g'>8
+  | <fis' fis'>8\( <e e'>4 <d d'> <c c'> <b b'>8
+  | <ais ais'>8\) <g' g'>4^^ <fis fis'> <e e'> <d d'>8\(
+  | <c c'>8 <b b'> <ais ais'> <g g'> <fis fis'> <e e'> <d d'> <c c'>\)
+    \ottava #0
+  %65
+  | <b b'>\( <ais ais'> <g g'> <fis fis'> <e e'> <d d'> <c c'> <b b'>\)
+  | <ais ais'>4 <g g'>_\( <fis fis'>4.^> <e e'>8\)
+  | <e e'>2 \clef "bass" <b b'>
+  | r4 <c c'>2(^> <b b'>4)
+  | r <e e'>2( <b b'>4)
+  %70
+  | r <c c'>2(^> <b b'>4)
+  | r <cis cis'>2\( <b b'>4
+    \clef "treble"
+  | <fis' fis'>4 <e e'> <a a'>^\markup {
+      "un poco rall."
+    }
+    <gis gis'>
+  | <cis cis'> <b b'> <fis' fis'> <e e'>
+  | <a a'> <gis gis'>\) <cis cis'>2
+  %75
+  | <b b'>4 r 
+    \ottava #1
+    <gis' b fis'>2~
+  | q_~( <gis b e>)
+  | r <gis cis e>~
+  | q_~( <gis b dis>)
+  | <gis cis eis>^~_( <ais cis eis>)
+  %80
+  | <fis ais fis'>1
+  | <gis cis eis gis>~^^
+  | q  
+    \ottava #0
+    \break
+  | R1^\markup { \small\italic "sempre rall." } 
+  | R1*5
+  | R1\fermata
     \fine
 }
 
@@ -116,6 +169,9 @@ Alto = \context Voice = "two" \relative c' {
   | q fis
   | q4 <cis fis> <dis fis> <cis fis>
   | <dis fis> q q8 <b b'>[ <cis cis'> <cisis cisis'>]
+  | s1*27
+  %80
+  | \stemUp cis'2^( dis)
 }
 
 Tenor = \context Voice = "three" \relative c {
@@ -143,6 +199,9 @@ Tenor = \context Voice = "three" \relative c {
   | a8 fis a fis a fis a fis
   }
   | a fis a fis a r r4
+  | s1*27
+  %80
+  | cis2( dis)
 }
 
 Bass = \context Voice = "four" \relative c' {
@@ -225,11 +284,57 @@ Bass = \context Voice = "four" \relative c' {
     \clef "bass"
     \break
     \stemNeutral
-  | %\repeat unfold 2 {
+  | \repeat unfold 2 {
       <ais,,, ais'>8 r <fis'' ais dis fis> r <ais,, ais'> r <eis'' gis cisis eis> r
-    %}
-
-  | R1*36
+    }
+  %55
+  | \repeat unfold 2 {
+      <ais,, ais'>8 r <fis'' ais dis fis> r <a,, a'> r <fis'' b dis fis> r
+    }
+  | \repeat unfold 2 {
+      <gis,, gis'>8 r <e'' gis b e> r <fis,, fis'> r <dis'' a' b dis> r
+    }
+  | \repeat unfold 2 {
+      <f,, f'>8^^ r <d'' b' d> r <e,, e'>^^ r <gis'' b d! gis> r
+    }
+  %61
+  | <e,, e'>^^ r <e'' g c e> r <g c e g> r \clef "treble" <c e g c> r
+  | r4 <c e g c>8 r <e g c e> r <g c e g> r
+  | r4 \clef "bass" \repeat tremolo 12 { <e,, g>32 c' }
+  | \override Beam.positions = #'(1.5 . 2.5)
+    \repeat tremolo 16 { <e, g>32 c' }
+  %65
+  | \repeat tremolo 16 { <e, g>32 c' }
+  | R1*2
+  | <gis,! e' gis!>2( <fis dis' fis>
+  | <gis e' gis>4) r r2
+  %70
+  | <gis e' gis>2( <fis dis' fis>)
+  | r2 \repeat tremolo 8 { <gis e'>32 gis' }
+  | \override Beam.positions = #'(0.5 . 1)
+    \repeat tremolo 16 { <gis, e'>32 gis' }
+  | \repeat tremolo 16 { <gis, e'>32 gis' }
+  | \override Beam.positions = #'(1 . 1.8)
+    \repeat tremolo 8 { <gis, e'>32 gis' } r2
+    \revert Beam.positions
+  %75
+  | r2 \clef "treble" <gis'' b fis'>~
+  | q_~( <gis b e>)
+  | r <gis cis e>~
+  | q_~( <gis b dis>)
+  | <gis cis eis>^~_( <ais cis eis>)
+  %80
+  | <fis ais fis'>1
+  | <eis gis cis eis>~
+  | q
+  | cis4\( gis2 \once\slurDown\stemUp \appoggiatura { ais16 bis } ais8. gis16\)
+  | fis'4( eis dis cis)
+  %85
+  | ais'( gis fis eis)
+  | r2 ais~\(
+  | ais gis
+  | fis1
+  | eis\)^\fermata
     \fine
 }
 
@@ -242,7 +347,7 @@ centerDynamics = {
  | s1*4
  | s4\> s\! s2
  | s4 s\> s\! s
- | s s-\markup { "dim." } s2
+ | s s^\markup { "dim." } s2
  | s8 s\> s4 s\! s
  %20
  | s8 s\> s4 s\! s
@@ -251,24 +356,24 @@ centerDynamics = {
  | s1
  | s4 s\> s8 s\! s4
  %25
- | s-\markup { "dim." } s2.
+ | s^\markup { "dim." } s2.
  | s4\> s s s\!
  | s4\> s s s\!
  | s4 s\< s2
- | s8\! s^\markup { \hspace #-2 \whiteout "sempre espressivo e legato" } s2.
+ | s8\! s^\markup { \hspace #-3 "sempre espressivo e legato" } s2.
  | s1*3
  %33
- | s4^\markup { \hspace #-1 "dolce" } s2.
+ | s4^\markup { "dolce" } s2.
  | s8 s\p s2.
- | s4^\markup { \normalsize "più" \dynamic p } s2.
+ | s4^\markup { "più" \normalsize \dynamic p } s2.
  | s1
  %37
  | s2 s\pp
  | s1*2
- | s4-\markup { \hspace #1 \whiteout "grazioso e dolce" } s2.
+ | s4-\markup { \hspace #1 "grazioso e dolce" } s2.
  | s1*4
  %45
- | s4-\markup { \hspace #-1 \whiteout "sempre legato e dolce" } s2.
+ | s4^\markup { \hspace #-1 "sempre legato e dolce" } s2.
  | s1*3
  | \set crescendoText = \markup { \small\italic { "poco a poco cresc." } }
    \set crescendoSpanner = #'text
@@ -279,12 +384,39 @@ centerDynamics = {
    \unset crescendoText
    \unset crescendoSpanner
    s\!\< s
- | s\! s2.
+ %53
+ | s\!-\markup { \normalsize \dynamic f "grandioso" } s2.
+ | s1
+ | s2. s4\<
+ | s4\! s2 s4\<
+ | s4\!\ff s2.
+ | s1*3
+ %61
+ | s4-\markup { "sempre più rinforz." } s2.
+ | s1
+ | s4\fff s2.
+ | s1*7
+ %71
+ | s4-\markup { \normalsize \dynamic mf "legato" } s2.
+ | s2 s4-\markup { "dim." } s
+ | s1*2
+ | s2 s\p
 }
 
 forceBreaks = {
  % page 1
- \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+ %\repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+ %\repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+ %\repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+ %\repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+ %\repeat unfold 4 { s1\noBreak } s1\pageBreak
+ % page 2
+ %\repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+ %\repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+ %\repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+ %\repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+ %\repeat unfold 3 { s1\noBreak } s1\pageBreak
+ % page 3
 }
 
 \score {
