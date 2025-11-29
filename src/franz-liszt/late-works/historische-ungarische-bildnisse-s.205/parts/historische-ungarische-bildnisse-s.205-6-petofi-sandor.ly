@@ -405,18 +405,89 @@ centerDynamics = {
 
 forceBreaks = {
  % page 1
- %\repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
- %\repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
- %\repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
- %\repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
- %\repeat unfold 4 { s1\noBreak } s1\pageBreak
+ \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+ \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+ \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+ \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+ \repeat unfold 4 { s1\noBreak } s1\pageBreak
  % page 2
- %\repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
- %\repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
- %\repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
- %\repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
- %\repeat unfold 3 { s1\noBreak } s1\pageBreak
+ \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+ \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+ \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+ \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+ \repeat unfold 3 { s1\noBreak } s1\pageBreak
  % page 3
+ \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+ \repeat unfold 2 { s1\noBreak } s1\break\noPageBreak
+ \repeat unfold 2 { s1\noBreak } s1\break\noPageBreak
+ \repeat unfold 2 { s1\noBreak } s1\pageBreak
+ % page 4
+ \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+ \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+ \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+ \repeat unfold 6 { s1\noBreak } s1\break\noPageBreak
+%\repeat unfold 6
+}
+
+sustainPedal = {
+  | \set Staff.pedalSustainStyle = #'mixed
+    s1*12
+  | s2. s4\sustainOn
+  | s s\sustainOff s2
+  | s1*4
+  %19
+  | s2\sustainOn s\sustainOff\sustainOn
+  | s2\sustainOff\sustainOn s
+  | s4\sustainOff s2.
+  | s1*4
+  %26
+  | s2\sustainOn s\sustainOff\sustainOn
+  | s2\sustainOff\sustainOn s
+  | s4\sustainOff s2.
+  \repeat unfold 4 {
+  | s4\sustainOn s s\sustainOff s
+  }
+  %33
+  | s4\sustainOn s s s\sustainOff
+  | s1
+  | s4\sustainOn s s s\sustainOff
+  | s1*4
+  %40
+  | s2 s\sustainOn
+  | s4\sustainOff\sustainOn s s\sustainOff\sustainOn s
+  | s4\sustainOff\sustainOn s s\sustainOff\sustainOn s
+  | s1\sustainOff
+  | s
+  %45
+  | s4\sustainOn s s\sustainOff\sustainOn s
+  | s4\sustainOff\sustainOn s s\sustainOff\sustainOn s
+  | s1\sustainOff
+  | s
+  %49
+  | s4\sustainOn s s\sustainOff s
+  | s4\sustainOn s s\sustainOff s
+  | s4\sustainOn s\sustainOff s\sustainOn s\sustainOff
+  | s4\sustainOn s2.
+  \repeat unfold 8 {
+  | s4\sustainOff\sustainOn s s\sustainOff\sustainOn s
+  }
+  %61
+  | s\sustainOff\sustainOn s2.
+  | s1
+  | s4\sustainOff\sustainOn s2.
+  | s1
+  | s2 s\sustainOff
+  | s1*3
+  %69
+  | s4\sustainOn s2.
+  | s4\sustainOff s2.
+  | s4\sustainOn s2.
+  | s4\sustainOff s2.
+  | s1*2
+  %75
+  | s2 s\sustainOn
+  | s2 s\sustainOff\sustainOn
+  | s\sustainOff s
 }
 
 \score {
@@ -442,6 +513,7 @@ forceBreaks = {
       \Tenor
       \Bass
     >>
+    \context Dynamics = "sustainPedal" \sustainPedal
   >>
   \header {
     composer = ##f % "Franz Liszt"
