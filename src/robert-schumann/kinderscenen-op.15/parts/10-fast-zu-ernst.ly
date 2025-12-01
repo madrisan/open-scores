@@ -40,6 +40,7 @@ Sopran = \context Voice = "one" \relative c'' {
   %20
   | gis16[ fisis8 ais16~]
   | ais8\fermata\) r16 dis,~\(
+    \break
   | dis16[ gis8 ais16~]
   | ais16[ b8 cis16~]
   | cis16[ dis8 cis16~]
@@ -55,6 +56,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | e16[ cis8 dis16~]
   | dis16 b8.~
   | b8\fermata\) r16 fis~\(
+    \break
   %35
   | fis16[ b8 dis16~]
   | dis16[ cis8 ais16~]
@@ -81,7 +83,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | ais16[ b8 dis16~]
   %55
   | dis16[\) gis8
-    \shape #'((-11 . -4.5) (0 . 1) (0 . 1.2) (0 . 1.2)) Slur
+    \shape #'((-13 . -5) (0 . 1) (0 . 1.2) (0 . 1.2)) Slur
     ais,,16_~](
   | ais16[ b8 dis16_~]
   | <dis gis>2*1/4\fermata)

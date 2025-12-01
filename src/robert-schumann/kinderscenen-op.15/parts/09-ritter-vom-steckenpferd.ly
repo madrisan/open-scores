@@ -18,12 +18,14 @@ Sopran = \context Voice = "one" \relative c'' {
   | r8 <c g'>4 8 <c e>4^>
   | r8 <c f>4 8 <d g>4^>
   | r8 <c e>4 8 \stemUp <g c>4^>
+    \break
   %5
   | r8 <g c>4 8 <a c>4^>
   | r8 <g c>4 8 <e c'>4^>
   | r8 <f g>4 8 <g g>4^>
   | r8 <e g>4 8 <e g>4^>
   }
+  \break
   \repeat volta 2 {
   | b'8\rest <e, g c>4 8 <e a c>4^>
   %10

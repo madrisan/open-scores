@@ -18,22 +18,26 @@ Sopran = \context Voice = "one" \relative c'' {
   | a[ fis ] e ) gis^> (
   %5
   | a4^> ) c8\rest cis,8 (
+    \break\noPageBreak
   | d\< [ fis b\! <a> ]
   | g [ b e\> d_\markup { "rit." } ]
   | cis[ b\! a] ) gis (
   | a[\< cis fis\! e]
+    \break\noPageBreak
   %10
   | d a ) c8\rest a^.
   | a16[ ( e16^. ] ) e[ ( fis] g8 b
   | a fis e ) gis^> (
   | a4^> ) c8\rest cis,8 (
   | d\< [ fis b\! a ]
+    \break\noPageBreak
   %15
   | g [ b e\> d_\markup { "rit." } ]
   | cis[ b\! a] ) a (
   | bes[\<  e a\! g]
   | f c ) c8\rest c^.
   | c16[ ( g16^.] ) g[ ( a] bes8 d
+    \break\noPageBreak
   %20
   | c8 a g ) a (
   | bes[\<  e a\! g]
@@ -142,6 +146,16 @@ Bass = \context Voice = "four" \relative c {
   \fine
 }
 
+forceBreaks = {
+  \partial 8 s8
+  % page 1
+  | \repeat unfold 3 { s2\noBreak } s2\break\noPageBreak
+  | \repeat unfold 4 { s2\noBreak } s2\break\noPageBreak
+  | \repeat unfold 4 { s2\noBreak } s2\break\noPageBreak
+  | \repeat unfold 4 { s2\noBreak } s2\break\noPageBreak
+  | \repeat unfold 4 { s2\noBreak } s2\pageBreak
+}
+
 \score {
   \new PianoStaff
   <<
@@ -153,6 +167,7 @@ Bass = \context Voice = "four" \relative c {
       \Sopran
       \Alto
     >>
+    %\new Devnull \forceBreaks
     \context Staff = "lower" <<
       \set Staff.midiInstrument = #"acoustic grand"
       \Global

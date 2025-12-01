@@ -24,7 +24,6 @@ Sopran = \context Voice = "one" \relative c'' {
   | a4 d
   | b2 )
   }
-  \break
   \repeat volta 2 {
   | <g b>4_\markup { \hspace #-0.3 \dynamic p } ( <a c>
   %10
@@ -196,6 +195,16 @@ Bass = \context Voice = "three" \relative c' {
   \fine
 }
 
+forceBreaks = {
+  % page 1
+  | \repeat unfold 3 { s2\noBreak } s2\break\noPageBreak
+  | \repeat unfold 3 { s2\noBreak } s2\break\noPageBreak
+  | \repeat unfold 3 { s2\noBreak } s2\break\noPageBreak
+  | \repeat unfold 3 { s2\noBreak } s2\break\noPageBreak
+  | \repeat unfold 2 { s2\noBreak } s2\break\noPageBreak
+  | \repeat unfold 2 { s2\noBreak } s2\break\noPageBreak
+}
+
 \score {
   \new PianoStaff
   <<
@@ -206,6 +215,7 @@ Bass = \context Voice = "three" \relative c' {
       \clef treble
       \Sopran
     >>
+    \new Devnull \forceBreaks
     \context Staff = "lower" <<
       \set Staff.midiInstrument = #"acoustic grand"
       \Global

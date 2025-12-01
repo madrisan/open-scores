@@ -4,9 +4,9 @@
   composer = "Robert Schumann (1810–1856)"
   date = "1838"
 
-  footer = "Mutopia-2022/12/26"
+  footer = "Mutopia-2025/12/01"
 
-  lastupdated = "2022 Dec 26"
+  lastupdated = "2025 Dec 1"
   license = "Creative Commons Attribution Non Commercial Share Alike 4.0 International"
   maintainerEmail = "d.madrisan@proton.me"
   maintainerWeb = "https://github.com/madrisan/open-scores"
@@ -49,7 +49,7 @@
     \column {
       \abs-fontsize #8
       \concat {
-	"Typeset using " \with-url #"http://www.lilypond.org" "LilyPond " ©" 2022 ""by " \maintainer " — " \footer
+        "Typeset using " \with-url #"http://www.lilypond.org" "LilyPond " ©" 2022-2025 ""by " \maintainer " — " \footer
       }
       \concat {
 	\concat {

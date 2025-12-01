@@ -17,6 +17,7 @@ Sopran = \context Voice = "one" \relative c' {
   | c8 f\! ) f2 e8 ( d
   | c8 f ) g, ( a bes d ) f, ( <e g>8
   | <f a>8 c' <e, g>2 ) c4 (
+    \break\noPageBreak
   %5
   | f2 ~ f8 ) e[\< ( f a]
   | c8 a'\! ) a4. \( g8 f e
@@ -25,14 +26,14 @@ Sopran = \context Voice = "one" \relative c' {
     e \appoggiatura { c8 } c2*1/2 \)
     s8 \stemDown c,8 (
     }
-    \break
+    \break\noPageBreak
   | \stemUp f2~ f8 ) e\< ( [f a]
   %10
   | c8 ees\! ) ees2 d8 ( c
   | bes d g, a bes4. a8
   | g4. d8 ~ d4 ) r8 f8 (
   | bes2 ~ bes8 ) a ( bes d
-  \pageBreak
+  \break\noPageBreak
   | f8 bes ) bes2 ( a8 g
   %15
   | f8 a d, e f4. e8

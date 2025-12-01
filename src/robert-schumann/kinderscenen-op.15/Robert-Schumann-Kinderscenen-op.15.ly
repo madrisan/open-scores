@@ -74,13 +74,18 @@
 \include "./parts/01-von-fremden-landern-und-menschen.ly"
 \pageBreak
 \include "./parts/02-curiose-geschichte.ly"
+\pageBreak
 \include "./parts/03-hasche-mann.ly"
 \include "./parts/04-bittendes-kind.ly"
 \pageBreak
 \include "./parts/05-gluckes-genug.ly"
+\pageBreak
 \include "./parts/06-wichtige-begebenheit.ly"
+\pageBreak
 \include "./parts/07-traumerei.ly"
+\pageBreak
 \include "./parts/08-am-camin.ly"
+\pageBreak
 \include "./parts/09-ritter-vom-steckenpferd.ly"
 \pageBreak
 \include "./parts/10-fast-zu-ernst.ly"

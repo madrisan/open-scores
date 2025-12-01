@@ -21,6 +21,7 @@ refrainSopran = {
   | <a d'>8 d'[ c'8. b16]
   | <g b>4 <fis a>)
   }
+  \break
 }
 
 refrainAlto = {

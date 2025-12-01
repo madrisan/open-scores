@@ -134,6 +134,16 @@ centerDynamics = {
   | s4 s4 s4\mf
 }
 
+forceBreaks = {
+  \partial 4 s4
+  % page 1
+  \repeat unfold 3 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 3 { s2.\noBreak } s2\break\noPageBreak
+  s4\noBreak \repeat unfold 3 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 2 { s2.\noBreak } s2.\noBreak s2\break\noPageBreak
+  s4\noBreak \repeat unfold 3 { s2.\noBreak } s2.\break\noPageBreak
+}
+
 \score {
   \new PianoStaff
   <<
@@ -148,6 +158,7 @@ centerDynamics = {
     \context Dynamics <<
       \Global \centerDynamics
     >>
+    \new Devnull \forceBreaks
     \context Staff = "lower" <<
       \set Staff.midiInstrument = #"acoustic grand"
       \Global

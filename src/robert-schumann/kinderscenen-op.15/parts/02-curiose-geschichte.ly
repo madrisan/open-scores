@@ -41,7 +41,6 @@ Sopran = \context Voice = "one" \relative c' {
   | a2\) fis4 \(
   | \grace { b16 [a] } <cis,! g'>8 \) [r16 <cis fis>16 ] <cis g'>4 <cis b'> (
   | <d a'>2 ) <a' d>4(
-  \break
   | <g cis>8) [r16 <fis b>16 ] <e a>4 \stemDown <g a g'>^\accent (
   | <fis d' fis>8) [r16 <g cis e>16 ] <a d>4 \stemUp <d, fis> (
   %25
@@ -152,7 +151,7 @@ Tenor = \context Voice = "three" \relative c' {
   %25
   | s2.
   | << {
-      \shape #'((0 . 0) (0 . 0.8) (0 . 1.2) (0 . 0)) PhrasingSlur
+      \shape #'((0 . 0) (0 . 1) (0 . -6) (-1 . -2)) PhrasingSlur
       a8[\( b cis d] d[ e]
     } \\ { } >>
   | << {
@@ -177,7 +176,7 @@ Tenor = \context Voice = "three" \relative c' {
   | s2.
   | s2.
   | << {
-      \shape #'((0 . 0) (0 . 1.2) (0 . 1.6) (0 . 0)) PhrasingSlur
+      \shape #'((0 . 0) (0 . 1) (0 . -6) (-1 . -2)) PhrasingSlur
       a8[\( b cis d] d[ e]
     } \\ { } >>
   | << {
@@ -313,6 +312,21 @@ centerDynamics = {
   | s8\> s8 s8 s8\!
 }
 
+forceBreaks = {
+  \partial 4 s4
+  % page 1
+  | \repeat unfold 3 { s2.\noBreak } s2.\break\noPageBreak
+  | \repeat unfold 4 { s2.\noBreak } s2.\break\noPageBreak
+  | \repeat unfold 4 { s2.\noBreak } s2.\break\noPageBreak
+  | \repeat unfold 3 { s2.\noBreak } s2.\break\noPageBreak
+  | \repeat unfold 3 { s2.\noBreak } s2.\pageBreak
+  % page 2
+  | \repeat unfold 2 { s2.\noBreak } s2.\break\noPageBreak
+  | \repeat unfold 3 { s2.\noBreak } s2.\break\noPageBreak
+  | \repeat unfold 3 { s2.\noBreak } s2.\break\noPageBreak
+  | \repeat unfold 3 { s2.\noBreak } s2.\break\noPageBreak
+}
+
 \score {
   \new PianoStaff
   <<
@@ -324,6 +338,7 @@ centerDynamics = {
       \Sopran
       \Alto
     >>
+    \new Devnull \forceBreaks
     \context Dynamics <<
       \Global \centerDynamics
     >>
