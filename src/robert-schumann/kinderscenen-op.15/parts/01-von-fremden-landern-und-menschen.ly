@@ -29,9 +29,9 @@ Sopran = \context Voice = "one" \relative c'' {
   %10
   | <fis a> <g b> )
   | <e g> ( <e a>
-  | <dis fis>_\markup { \italic "rit." } <d! g> ) \ritardando
-  | e\startTextSpan ( fis
-  | g8. a16\stopTextSpan b8.\fermata c16 )
+  | <dis fis> <d! g>^\markup { \italic "ritard." } )
+  | e ( fis^\markup { \italic "ritard." }
+  | g8. a16 b8.\fermata c16 )
   %15
   | d4\p ( g
   | fis8. e16 d4 )
@@ -46,8 +46,27 @@ Sopran = \context Voice = "one" \relative c'' {
   \fine
 }
 
-Tenor = \context Voice = "two" \relative c' {
+Alto = \context Voice = "two" \relative c' {
   \voiceTwo
+  \stemDown
+  | s2*4
+  | s4 g~
+  | g s
+  | s2*7
+  %14
+  | d2
+  | s2*4
+  %19
+  | s4 g~
+  | g s
+  | s2
+  %22
+  | \omit TupletNumber
+    \tuplet 3/2 { s8 b4~ } \tuplet 3/2 { \hideNotes b8 s4 \unHideNotes }
+}
+
+Tenor = \context Voice = "three" \relative c' {
+  \voiceThree
   \mergeDifferentlyDottedOn
   \mergeDifferentlyHeadedOn
   \override TupletBracket.bracket-visibility = ##f
@@ -73,9 +92,9 @@ Tenor = \context Voice = "two" \relative c' {
   %5
   | \tuplet 3/2 { \bottom\stemUp b,8 d \top\stemDown g }
     \tuplet 3/2 {
-      \bottom\stemUp
+      \bottom\stemUp\tieDown
       \shape #'((0 . 0.3) (0 . 0) (0 . 0) (0 . 0.3)) Tie
-      g,8~ d' \top\stemDown g
+      g,8 d' \top\stemDown g
     }
   | \override Beam.positions = #'(5.5 . 6)
     \tuplet 3/2 { \bottom\stemUp g,8 e' \top\stemDown g }
@@ -105,13 +124,15 @@ Tenor = \context Voice = "two" \relative c' {
   | \tuplet 3/2 { \bottom\stemUp c,8 g' \top\stemDown c }
     \override Beam.positions = #'(3.8 . 4.2)
     \tuplet 3/2 {
-      \bottom\stemUp d,8 a'
+      \bottom\stemUp
+      d,8
+      \override Hairpin.self-alignment-Y = #4
+      a'\<
       \top\stemDown
-      \override Hairpin.self-alignment-Y = #17.2
-      d\<
+      d
     }
   | \tuplet 3/2 { \bottom\stemUp d,8 g \top\stemDown d' }
-    \bottom\stemUp g,,8 \top\stemDown d''\!
+    \tuplet 3/2 { \bottom\stemUp g,,8 a' \top\stemDown d	\! }
   %15
   | \override Beam.positions = #'(5 . 5.5)
     \tuplet 3/2 { \bottom\stemUp b8 d \top\stemDown g }
@@ -134,12 +155,12 @@ Tenor = \context Voice = "two" \relative c' {
     \tuplet 3/2 { \bottom\stemUp g,8\> c \top\stemDown g' }
   | \tuplet 3/2 { \bottom\stemUp g,8 c \top\stemDown g' }
     \tuplet 3/2 { \bottom\stemUp fis,8 c' \top\stemDown fis }
-  | \bottom\stemUp d,8 \top\stemDown g'
-    s4\!
+  | \tuplet 3/2 { \bottom\stemUp d,8 b' \top\stemDown g' }
+    \tuplet 3/2 { \bottom\stemUp b, b \top\stemDown g'\! }
   }
 }
 
-Bass = \context Voice = "three" \relative c' {
+Bass = \context Voice = "four" \relative c' {
   \voiceFour
   \override Rest.staff-position = #0
   \slurUp
@@ -150,47 +171,40 @@ Bass = \context Voice = "three" \relative c' {
   | g r cis, r
   | d r fis r
   %5
-  | g r b, a\rest
-  | c r e r
-  | d\> r d r\!
-  | g, r g' r
+  | g r
+    \override NoteColumn.force-hshift = #0.3
+    b, a\rest
+  | c
+    \revert NoteColumn.force-hshift
+    r e r
+  | d\> r d r
+  | g, r g' r\!
   }
   \repeat volta 2 {
-  | e4 a,
+  | e4\( a,
   %10
-  | d8. c16 b4
-  | c fis,
-  | b8. a16 g4
-  | c c
-  | << {
-      \stemDown b8. a16 g4_\fermata
-    } \\ {
-      \once\override NoteColumn.force-hshift = #1.8
-      d'2
-    } \\ {
-      s4
-      \stemDown
-      \once\override NoteColumn.force-hshift = #1.4
-      a'
-    } >>
+  | d8. c16 b4\)
+  | c\( fis,
+  | b8. a16 g4\)
+  %<< {
+  | c_\( c
+  | \stemDown
+    \once\override NoteColumn.force-hshift = #0.4 b8.
+    a16 g4_\fermata\)
   %15
-  | g8 r cis, r
+  | g'8 r cis, r
   | d r fis r
   | g r cis, r
-  | d r fis r
-  | g r b, r
+  | d r fis r  
+  | g r
+    \override NoteColumn.force-hshift = #0.3
+    b, a\rest
   %20
-  | c r e r
+  | c
+    \revert NoteColumn.force-hshift
+    r e r  
   | d r fis r
-  | << {
-      \stemDown <g, d'>2
-    } \\ {
-      \override TupletNumber.transparent = ##t
-      \once\override NoteColumn.force-hshift = #1.2
-      b'4^~
-      \override Beam.positions = #'(5 . 5.4)
-      \tuplet 3/2 { \bottom\stemUp b8 b \top\stemDown g'\! }
-    } >>
+  | \stemDown <g, d'>2 
   }
   \fine
 }
@@ -220,6 +234,7 @@ forceBreaks = {
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \clef bass
+      \Alto
       \Tenor
       \Bass
     >>
@@ -236,6 +251,13 @@ forceBreaks = {
              }
            }
   }
-  \layout {}
+  \layout {
+    \context {
+      \PianoStaff
+      \override Parentheses.font-size = #-2
+      \override TextScript.font-shape = #'italic
+      \override TextScript.font-size = #-1
+    }
+  }
   \midi {}
 }
