@@ -4,6 +4,10 @@
 
 \include "./covercolor.ly"
 
+\header {
+  tagline = ##f
+}
+
 \paper {
   #(set-paper-size "a4")
   annotate-spacing = ##f
@@ -111,6 +115,8 @@
 \include "./parts/09-ritter-vom-steckenpferd.ly"
 \pageBreak
 \include "./parts/10-fast-zu-ernst.ly"
+\pageBreak
 \include "./parts/11-furchtenmachen.ly"
 \include "./parts/12-kind-im-einschlummern.ly"
+\pageBreak
 \include "./parts/13-der-dichter-spricht.ly"

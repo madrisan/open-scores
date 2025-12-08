@@ -16,10 +16,11 @@ Sopran = \context Voice = "one" \relative c'' {
   | \stemUp e4^\sfp ( \stemDown fis16 ) g-. a-. b-.
   | d-.-> cis-. b-. ais-. <fis b>[ ( d] ) b-.[ fis-.]
   %5
-  | \stemUp b4 ( \stemDown cis16 ) d-. e-. fis-.
+  | \stemUp b4^\sfp ( \stemDown cis16 ) d-. e-. fis-.
   | a-.-> g-. fis-. e-. g-.-> fis-. e-. d-.
-  | \stemUp e4 ( \stemDown fis16 ) g-. a-. b-.
+  | \stemUp e4^\sfp ( \stemDown fis16 ) g-. a-. b-.
   | d-.-> cis-. b-. ais-. <fis b>[ ( d )] b-.[ fis-.]
+    %\bar "||"
   \break
   \repeat volta 2 {
   | \stemUp g'4^\sfp ( \stemDown a,16 ) b-. cis-. d-.
@@ -32,16 +33,16 @@ Sopran = \context Voice = "one" \relative c'' {
   %15
   | c4 \) <ais e'>4 ~
   | <ais e'>2
-  | b4^\sfp ( \stemDown cis16 ) d-. e-. fis-.
-  | a-.-> g-. fis-. e-. g-.-> fis-. e-. d-.
-  | \stemUp e4^\sfp ( \stemDown fis16 ) g-. a-. b-.
+  | b4^\sf ( \stemDown cis16 ) d-. e-. fis-.
+  | a-. g-. fis-. e-. g-. fis-. e-. d-.
+  | \stemUp e4^\sf ( \stemDown fis16 ) g-. a-. b-.
   }
   %20
   \alternative {
     {
-  |   d-.-> cis-. b-. ais-. <fis b>[ ( d] ) b-.[ fis-.]
+  |   d-. cis-. b-. ais-. <fis b>[_\sf ( d] ) b-.[ fis-.]
     }{
-  |   \stemDown d''16-.-> cis-. b-. ais-. b4
+  |   \stemDown d''16-. cis-. b-. ais-. b4-.
     }
   }
   \fine
@@ -106,8 +107,8 @@ Tenor = \context Voice = "three" \relative c' {
   %1
   | s2*14
   %15
-  | s4 c8\rest gis16[ a]
-  | ais[(^\< b bis c] d[ dis e eis]\!)
+  | s4 c8\rest gis16[( a]
+  | ais[^\< b bis c] d[ dis e eis]\!)
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -120,22 +121,22 @@ Bass = \context Voice = "four" \relative c {
   | fis,8^. <e' ais>^. b16^. r16 s8
   %5
   | b,16 r16 s8 b8^. <fis' d'>8^.
-  | e8^. <b' e>^. b,^. <b' d>^.
+  | e8^.[ <b' e>^. b,^. <b' d>^.]
   | e,16 r16 s8 e8^. <e' g>^.
   | fis,8^. <e' ais>^. b16^. r16 s8
   \repeat volta 2 {
   | b16 r16 s8 b8^. <d g>^.
   %10
-  | a8^. <c g'>^. d,^. c'^.
+  | a8^.[ <c g'>^. d,^. c'^.]
   | r8 s8 b,8^. <g' b>^.
-  | a,8^. <fis' c'>^. b,^. <fis' a>^.
+  | a,8^.[ <fis' c'>^. b,^. <fis' a>^.]
   | r8 s8 <c, g'>4-> ~
   | <c g'> <c g'>-> ~
   %15
   | <c g'>8 s8 <fis fis'>4\sf ~
   | <fis fis'>2
   | r8 s8 b8^. <fis' d'>^.
-  | e8^. <b' e>^. b,^. <b' d>^.
+  | e8^.[ <b' e>^. b,^. <b' d>^.]
   | e,16 r16 s8 e8^. <e' g>^.
   }
   %20
@@ -143,7 +144,7 @@ Bass = \context Voice = "four" \relative c {
     {
   |   fis,8^. <e' ais>^. b16^. r16 s8
     }{
-  |   fis8^. <e' ais>8^. <b d b'>4
+  |   fis8^. <e' ais>8^. <b d b'>4^.
     }
   }
   \fine
