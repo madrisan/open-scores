@@ -25,13 +25,13 @@ Sopran = \context Voice = "one" \relative c'' {
   | <b e gis>4-^ <cis e a>-^
   \repeat volta 2 {
     \partial 4
-    \top\stemDown
+    \top\stemNeutral
     <a' cis e a>4
   %10
   | <a d fis a>2 <a d fis a>4
   | <d e g b>2-^ <d e g b>4
   | <g, a cis e>4-^ <g a cis e>-^ <g a cis e>-^
-  | \dynamicUp <c d a'>2.\sf
+  | \dynamicUp <c d a'>2.\sfz
   | <g c d>4-^ <g c d>4-^ <g c d>4-^
   %15
   | <g b d>-^ <g d' g>-^ <a d fis>-^
@@ -186,5 +186,7 @@ forceBreaks = {
       \override TextScript.font-shape = #'italic
     }
   }
-  \midi {}
+  \midi {
+    \tempo 4 = 138
+  }
 }

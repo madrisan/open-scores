@@ -244,12 +244,12 @@ forceBreaks = {
     %opus = "Op. 15"
     title = \markup { "1. Von fremden Ländern und Menschen" }
     subtitle = \markup {
-             \column {
-               \line { "(From foreign Lands and People)" }
-               % workaround to insert some vertical space after the subtitle
-               \line { " " }
-             }
-           }
+      \column {
+        \line { "(From foreign Lands and People)" }
+        % workaround to insert some vertical space after the subtitle
+        \line { " " }
+      }
+    }
   }
   \layout {
     \context {
@@ -259,5 +259,7 @@ forceBreaks = {
       \override TextScript.font-size = #-1
     }
   }
-  \midi {}
+  \midi {
+    \tempo 4 = 108
+  }
 }

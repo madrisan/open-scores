@@ -214,5 +214,7 @@ centerDynamics = {
       \override StaffGrouper.staff-staff-spacing.minimum-distance = 12
     }
   }
-  \midi {}
+  \midi {
+    \tempo 8 = 138
+  }
 }

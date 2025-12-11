@@ -179,5 +179,7 @@ Bass = \context Voice = "four" \relative c {
       \override TextScript.font-shape = #'italic
     }
   }
-  \midi {}
+  \midi {
+    \tempo 8 = 132
+  }
 }

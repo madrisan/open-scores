@@ -212,5 +212,7 @@ centerDynamics = {
       \override TextScript.font-size = #-1
     }
   }
-  \midi {}
+  \midi {
+    \tempo 4 = 112
+  }
 }
