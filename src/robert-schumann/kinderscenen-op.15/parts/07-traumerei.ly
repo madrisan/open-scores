@@ -4,7 +4,11 @@ Global = {
   \include "../global.ly"
 }
 
-ritardando = { \override TextSpanner.bound-details.left.text = \markup { \small "ritard " } }
+ritardando = {
+  \override TextSpanner.bound-details.left.text = \markup {
+    \hspace #6 \small "ritard "
+  }
+}
 
 Sopran = \context Voice = "one" \relative c' {
   \voiceOne
@@ -19,38 +23,53 @@ Sopran = \context Voice = "one" \relative c' {
   | <f a>8 c' <e, g>2 ) c4 (
     \break\noPageBreak
   %5
-  | f2 ~ f8 ) e[\< ( f a]
-  | c8 a'\! ) a4. \( g8 f e
+  | f2 ~ f8 ) e[ ( f a]
+  | c8\< a' ) a4.\! \( g8 f e
   | f8 a d, f e4. ees8
-  | d4_\markup { \hspace #0.6 \italic "ritard." }
+  | \once\override TextScript.extra-offset = #'(0.8 . 1)
+    d4_\markup { \italic "ritard." }
     e \appoggiatura { c8 } c2*1/2 \)
-    s8 \stemDown c,8 (
+    s8
+    \stemDown
+    \once\shape #'(
+      ((0 . 0) (0 . 0) (0 . 0) (0 . 0))
+      ((0 . 0) (0 . 1) (0 . 1.5) (0 . 2.5))
+    ) PhrasingSlur
+    c,8\(
     }
     \break\noPageBreak
-  | \stemUp f2~ f8 ) e\< ( [f a]
+  | \stemUp f2~ f8 \) e\< ( [f a]
   %10
-  | c8 ees\! ) ees2 d8 ( c
+  | c8 ees\! ees2) d8 ( c
   | bes d g, a bes4. a8
-  | g4. d8 ~ d4 ) r8 f8 (
-  | bes2 ~ bes8 ) a ( bes d
+  | g4. d8 d4 ) r8 f8\(
+  | bes2 ~ bes8 a bes d
   \break\noPageBreak
-  | f8 bes ) bes2 ( a8 g
+  | f8 bes bes2\) a8( g
   %15
-  | f8 a d, e f4. e8
+  | f8 a d, e! f4. e8
   | d4. << a8~ \\ g8 >>
     << {
+      \once\override TextScript.extra-offset = #'(0.5 . 1)
       a4_\markup { \italic "ritard." }
-    } \\ {} >> g ) (
-    \acciaccatura { c,8 }
-  | f2~ f8 ) e\< ( [f a]
-  | c8\! f ) f2 ( e8 d
-  | c8 f ) g, ( a bes d ) f, ( <e g>
+    } \\ {} >> g ) \(
+  \break\noPageBreak
+  | \acciaccatura { c,8 }
+    f2~ f8 e\<  [f a]
+  | \stemDown c8\!( f) \stemUp f2 e8 d
+  | c8 f \) g, ( a bes d ) f, ( <e g>
   %20
-  | <f a> c' <e, g>2 ) c4 (
-  | f2 ~ f8 ) e( [f a]\<
-  | c8 a'\! )  a4.^\fermata ( g8 f d
+  | <f a> c' <e, g>2 )
+    \once\shape #'(
+      ((0 . 0) (0 . 0) (0 . 0) (0 . 0))
+      ((0 . 0) (0 . 1) (0 . 1.5) (0 . 2.8))
+    ) PhrasingSlur
+    c4 \(
+  \break\noPageBreak
+  | f2 ~ f8 \) e( [f a]
+  | c8 a' )  a4.^\fermata ( g8 f d
   | c8 [f] ) g, ( [a] bes [d] ) g, ( [<fis a>]
-  | <g bes> d' ) d,^\p ( \tieDown <c~ e> <c f>2^\fermata)
+  | <g bes> d' ) d, ( \tieDown <c~ e> <c f>2^\fermata)
   \fine
 }
 
@@ -78,14 +97,14 @@ Alto = \context Voice = "two" \relative c' {
   | r4  <bes f'>2.
   | f''4 e2 e4
   %15
-  | d4. bes8 ( a d ) f, ( g
+  | d4. bes!8 ( a d ) f, ( g
   | f8 a
     \change Staff = "lower"
     \stemUp d, ) <e cis>
     \change Staff = "upper"
     \stemDown f4 e
   | r4 <f, c'>2.
-  | r4 f'2.~
+  | g4\rest f'2.~
   | f4 e2 c4~
   %20
   | c4 c2 c4
@@ -104,8 +123,8 @@ Tenor = \context Voice = "three" \relative c {
   | \repeat volta 2 {
     f,4 <c' a'>2.~
   | <c a'>4 \tieDown\grace { bes16 f'~ } \stemDown f2.
-  | \slurDown c4 c2 a8\<( c8
-  | f4\!) c8 (d c bes g a
+  | \slurDown c4 c2 a8\< c8
+  | f4 c8\! (d c bes g a
   %5
   | \stemUp\tieUp f4) <c' a'>2.~
   | <c a'>4 \tieDown\grace { cis16 a'~ } \stemDown a2.~
@@ -152,7 +171,7 @@ Tenor = \context Voice = "three" \relative c {
     \\ {
       \stemUp\slurUp \once\override NoteColumn.force-hshift = #1 bes8 ( a g4 )
     } >> s4
-  | s4 g4 s2
+  | s4 g4^\p s2
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -235,7 +254,12 @@ Bass = \context Voice = "four" \relative c {
     \context {
       \PianoStaff
       \override StaffGrouper.staff-staff-spacing.minimum-distance = 10
+      \override Parentheses.font-size = #-2
+      \override TextScript.font-shape = #'italic
+      \override TextScript.font-size = #-1
     }
   }
-  \midi {}
+  \midi {
+    \tempo 4 = 100
+  }
 }
