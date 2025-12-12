@@ -22,9 +22,9 @@ Sopran = \context Voice = "one" \relative c'' {
   | \shape #'((0 . 2) (0 . 2) (0 . 2) (0 . 2)) Slur
     c,4.( \stemDown bes8
   | \stemUp a4) r8 c
-  \bar "||"
+  %\bar "||"
   \repeat volta 2 {
-  | << { c8[( g a bes] } \\ {} >>
+  | << { c8[( g a bes^>] } \\ {} >>
   %10
   | << { d[) d,( e fis] } \\ {
       \mergeDifferentlyDottedOn
@@ -33,41 +33,45 @@ Sopran = \context Voice = "one" \relative c'' {
   | << { g,[ bes d\! d,] } \\ {} >>
   | << { g4) r8 bes( } \\ {} >>
   | << { d[ a bes c^>] } \\ {} >>
-  | << { e[) e,( fis gis] } \\ {
+  | << {
+      e[) e,( fis gis]
+    } \\ {
       \mergeDifferentlyDottedOn
       e'4. s8
     } >>
+    \break\noPageBreak
   %15
   | << { a,[ c e e,~] } \\ {} >>
   | << { e8 <c a'>4) <bes! g'!>8^> } \\ {} >>
-  | f'4( e8 ees
-  | d'[ e! f g])
+  | f'4\( e8 ees\)
+  | d'[\(  e! f g]
   | \shape #'((0 . 2) (0 . 2) (0 . 2) (0 . 2)) Slur
-    c,4.( \stemDown bes8
+    c,4.\stemDown bes8
   %20
-  | \stemUp a4) c8\rest c
-  | c[( f e ees]
-  | d[ e!_\markup { "rit." } f g]
+  | \stemUp a4\) c8\rest c\(
+  | c[ f e ees]
+  | d[ e! f_\markup { \hspace #0.5 "rit." } g]
   | a4 g
   }
   \alternative {
-    {
-  |   f4) e8\rest c
-    \break
-    }{
-  |   f4 f8\rest <f, c'>
-  %25
-  |   <f d'>^>[( <e c'>) <f d'>^>( <e c'>)]
-  |   c'8( bes4 a8
-  |   g4 a
-  |   f4.) \clef bass \stemDown <f, c'>8
-  |   \stemUp <f d'>^>[( <e c'>) <f d'>^>( <e c'>)]
-  %30
-  |   c'8( bes4 a8
-  |   g4 a
-  |   f2)\fermata
+    \volta 1 {
+  |   f4\) e8\rest c
+    }
+    \volta 2 {
+  |   \once\override RepeatTie.extra-offset = #'(0 . 0.3)
+      f4\repeatTie f8\rest <f, c'>
     }
   }
+  %25
+  |   <f d'>_>[_( <e c'>) <f d'>_>_( <e c'>)]
+  |   c'8( bes4 a8
+  |   g4 a
+  |   f4.) \clef bass \stemNeutral <f, c'>8
+  |   <f d'>^>[( <e c'>) <f d'>^>( <e c'>)]
+  %30
+  |   \stemUp c'8( bes4 a8
+  |   g4 a
+  |   f2)\fermata
   \fine
 }
 
@@ -109,10 +113,10 @@ Alto = \context Voice = "two" \relative c' {
   | bes) b\rest b\rest c
   | b\rest <bes d>4 b8\rest
   | b\rest fis'4.
-  | s8 e4( d8
+  | s8 e4(_> d8
   %15
   | c) c\rest c\rest d~
-  | d8_\markup { "rit." } s4.
+  | d8 s4.
   | b8\rest <f c'>4\sf f8
   | b\rest f'4 8
   | e8\rest
@@ -166,11 +170,11 @@ Tenor = \context Voice = "three" \relative c' {
   | c\rest d4^> 8
   | c\rest <g d'~>4^> <fis d'>8
   | c'\rest <g d'>4 <g d'>8
-  | c\rest d4^> c8
+  | c\rest d4^>( c8)
   | c\rest <b! d>4^> b8
   %15
-  | c\rest <a e'~>4^> <gis~ e'>8
-  | <gis e'> <a e'>4 <e c'>8
+  | c\rest <a e'~>4^> \once\tieNeutral <gis e'>8~
+  | q <a e'>4 <e c'>8
   | f\rest <c a'>4 <c a'>8
   | g'\rest <d bes'>4 <bes' d>8
   | a\rest e'4 8
@@ -190,9 +194,7 @@ Tenor = \context Voice = "three" \relative c' {
   | s2
   | g8\rest f4.~
   | f4^\markup {
-      \hspace #2
-      \whiteout\pad-markup #1
-      \small "ritardando"
+      \pad-markup #0.5 "ritardando"
     } c
   | a2^\fermata
   \fine
@@ -214,7 +216,7 @@ Bass = \context Voice = "four" \relative c {
   | bes2
   | c,8[ bes'( a g]
   | f8) a4 a8
-  \bar "||"
+  %\bar "||"
   \repeat volta 2 {
   | c,2
   %10
@@ -225,7 +227,7 @@ Bass = \context Voice = "four" \relative c {
   | c2
   %15
   | c4 4
-  | c4 4
+  | c4_\markup { \hspace #1 "rit." } 4
   | f,2
   | bes4 g
   | c8 bes'[( a g]
@@ -238,7 +240,7 @@ Bass = \context Voice = "four" \relative c {
   }
   %25
   | f4 r8 s8
-  | <b! aes'>^>[( <c g'>) <b aes'>^>( <c g'>)]
+  | <b! aes'>^>[^( <c g'>) <b aes'>^>^( <c g'>)]
   | a![( bes g a]
   | bes[ g c bes]
   | a f c4)
@@ -264,7 +266,16 @@ centerDynamics = {
   | s2*12
   | s8\> s8 s8 s8
   | s8 s8 s8\! s8
+}
 
+forceBreaks = {
+  % page 1
+  \partial 8 s8
+  | \repeat unfold 5 { s2\noBreak } s2\break\noPageBreak
+  | \repeat unfold 6 { s2\noBreak } s2\break\noPageBreak
+  | \repeat unfold 6 { s2\noBreak } s2\break\noPageBreak
+  | \repeat unfold 5 { s2\noBreak } s2\break\noPageBreak
+  %| \repeat unfold 6 { s2\noBreak } s2\break\noPageBreak
 }
 
 \score {
@@ -281,6 +292,7 @@ centerDynamics = {
     \context Dynamics <<
       \Global \centerDynamics
     >>
+    \new Devnull \forceBreaks
     \context Staff = "lower" <<
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
@@ -292,22 +304,25 @@ centerDynamics = {
   \header {
     %composer = "Robert Schumann"
     %opus = "Op. 15"
-    title = \markup { "8. Am Camin" }
+    title = \markup { "8. Am Kamin" }
     subtitle = \markup {
-             \column {
-               \line { "(By the Fireside)" }
-               % workaround to insert some vertical space after the subtitle
-               \line { " " }
-             }
-           }
+      \column {
+        \line { "(By the Fireside)" }
+        % workaround to insert some vertical space after the subtitle
+        \line { " " }
+      }
+    }
   }
   \layout {
     \context {
       \PianoStaff
       \override TextScript.font-shape = #'italic
+      \override Parentheses.font-size = #-2
+      \override TextScript.font-shape = #'italic
+      \override TextScript.font-size = #-1
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 4 = 138
   }
 }
