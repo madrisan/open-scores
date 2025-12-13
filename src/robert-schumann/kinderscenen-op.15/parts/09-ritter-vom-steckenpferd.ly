@@ -69,10 +69,13 @@ Tenor = \context Voice = "two" \relative c' {
   | c4 2~
   | c4 c cis~
   | cis d e!
-  | d,( d') <g,, g'>
-  | a( a') <a,, a'>
+  | \shape #'((0 . 0.8) (0 . 1.5) (0 . 1) (0 . 0.5)) Slur
+    d,( d') <g,, g'>
+  | \shape #'((0 . 0.8) (0 . 1.5) (0 . 1) (0 . 0.5)) Slur
+    a( a') <a,, a'>
   %15
-  | d( d') <aes, aes'>
+  | \shape #'((0 . 0.8) (0 . 1.5) (0 . 1) (0 . 0.5)) Slur
+    d( d') <aes, aes'>
   | <g g'> s <g g'>
   | c s2
   | e'2 c4
@@ -175,6 +178,6 @@ centerDynamics = {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 2. = 80
   }
 }
