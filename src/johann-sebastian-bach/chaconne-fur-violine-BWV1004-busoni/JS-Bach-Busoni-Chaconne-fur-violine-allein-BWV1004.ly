@@ -83,8 +83,13 @@ Global = {
 }
 
 bottom = { \change Staff = "lower"\stemUp }
+greyTextColor = #(x11-color "dimgray") 
+sostenendo = { 
+  \override TextSpanner.bound-details.left.text = \markup { 
+    \small "sostenendo "
+  }
+}
 top = { \change Staff = "upper"\stemDown }
-sostenendo = { \override TextSpanner.bound-details.left.text = \markup { \small "sostenendo " } }
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
@@ -1260,6 +1265,8 @@ Tenor = \context Voice = "three" \relative c' {
   \voiceThree
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \override VoiceFollower.color = \greyTextColor
+  \override VoiceFollower.style = #'dashed-line
   \mergeDifferentlyDottedOn
   %1
     s2
@@ -1664,7 +1671,7 @@ Bass = \context Voice = "four" \relative c {
       \hspace #-3 \italic\tiny "quasi" \dynamic f
     }
   | <cis cis'>_._-)]
-    \clef treble <cis'' e>_.[(^\p <c! e a>_. <c ees g>_. <c e fis>_.])
+    \clef treble <cis'' e>_.[(^\p <c! e a>_. <c ees g>_. <c ees fis>_.])
     \clef bass <c,, c'>_._-[(^\markup {
       \hspace #-3.3 \italic\tiny "quasi" \dynamic f
     }
@@ -2280,7 +2287,9 @@ Bass = \context Voice = "four" \relative c {
       \RemoveEmptyStaves
       % More space between staves in the same PianoStaff
       %\override StaffGrouper.staff-staff-spacing.minimum-distance = 12
-      %\override TextScript.font-shape = #'italic
+      \override Parentheses.font-size = #-2
+      \override TextScript.font-shape = #'italic
+      \override TextScript.font-size = #-1
     }
   }
   \midi {
