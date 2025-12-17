@@ -60,6 +60,7 @@ Sopran = \context Voice = "one" \relative c' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'KinderscenenXI
   %1
   \repeat volta 2 {
     \refrainSopran

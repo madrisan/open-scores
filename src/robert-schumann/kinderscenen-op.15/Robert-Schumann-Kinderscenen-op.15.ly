@@ -96,6 +96,10 @@
     }
   }
 }
+\pageBreak
+
+\include "./index.ly"
+\pageBreak
 
 \include "./parts/01-von-fremden-landern-und-menschen.ly"
 \pageBreak

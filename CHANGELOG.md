@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Franz Liszt: Move late compositions to the "Late Works" collection
 - Franz Liszt: Historische Ungarische Bildnisse S.205 - n.1-5
 - Robert Schumann: Kinderscenen op.15 - better pagination and lots of enhancements/fixes
+- Robert Schumann: Kinderscenen op.15 - add an index page
 
 ### Fixed
 

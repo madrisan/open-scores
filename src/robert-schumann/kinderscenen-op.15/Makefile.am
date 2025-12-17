@@ -41,7 +41,8 @@ EXTRA_DIST = Robert-Schumann-Kinderscenen-op.15.ly \
 	     parts/10-fast-zu-ernst.ly \
 	     parts/11-furchtenmachen.ly \
 	     parts/12-kind-im-einschlummern.ly \
-	     parts/13-der-dichter-spricht.ly
+	     parts/13-der-dichter-spricht.ly \
+	     robert-schumann-1839.eps
 
 all: $(BUILT_SOURCES) Robert-Schumann-Kinderscenen-op.15
 

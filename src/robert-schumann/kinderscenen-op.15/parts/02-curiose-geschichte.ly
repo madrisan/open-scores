@@ -10,6 +10,7 @@ bottom = \change Staff = "lower"
 Sopran = \context Voice = "one" \relative c' {
   \voiceOne
   \override Rest.staff-position = #0
+  \label #'KinderscenenII
   \repeat volta 2 {
   \partial 4
     <d fis>4 (

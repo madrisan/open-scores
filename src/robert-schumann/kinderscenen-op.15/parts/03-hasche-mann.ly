@@ -10,6 +10,7 @@ bottom = \change Staff = "lower"
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \override Rest.staff-position = #0
+  \label #'KinderscenenIII
   %1
   | b4^\sfp ( \stemDown cis16 ) d-. e-. fis-.
   | a-.-> g-. fis-. e-. g-.-> fis-. e-. d-.

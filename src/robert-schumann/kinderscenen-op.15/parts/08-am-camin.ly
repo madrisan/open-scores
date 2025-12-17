@@ -8,6 +8,7 @@ Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'KinderscenenVIII
   \partial 8
   \once\stemDown c8(
   %1

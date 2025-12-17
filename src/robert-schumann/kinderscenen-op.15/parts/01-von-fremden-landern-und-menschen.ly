@@ -12,6 +12,7 @@ bottom = \change Staff = "lower"
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \override Rest.staff-position = #0
+  \label #'KinderscenenI
   \repeat volta 2 {
   %1
   | b4_\markup { \hspace #-0.3 \dynamic p } ( g'

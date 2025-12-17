@@ -20,6 +20,7 @@ extendLV = #(define-music-function (parser location further) (number?) #{
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \override Rest.staff-position = #0
+  \label #'KinderscenenV
   \partial 8
     <gis>8\p (
   %1

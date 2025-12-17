@@ -11,6 +11,7 @@ top = \change Staff = "upper"
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \override Rest.staff-position = #0
+  \label #'KinderscenenVI
   \partial 4
     \stemDown <cis e a>4 (
   %1

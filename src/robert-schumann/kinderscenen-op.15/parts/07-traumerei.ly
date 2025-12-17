@@ -13,6 +13,7 @@ ritardando = {
 Sopran = \context Voice = "one" \relative c' {
   \voiceOne
   \override Rest.staff-position = #0
+  \label #'KinderscenenVII
   \partial 4
     c4(\p
   %1

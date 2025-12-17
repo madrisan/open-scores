@@ -12,6 +12,7 @@ Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'KinderscenenX
   \partial 16 { dis,16~\( }
   %1
   | dis16[ gis8 b16~]

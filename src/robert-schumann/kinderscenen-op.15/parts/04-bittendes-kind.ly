@@ -11,6 +11,7 @@ ritardando = { \override TextSpanner.bound-details.left.text = \markup { \small 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \override Rest.staff-position = #0
+  \label #'KinderscenenIV
   %1
   | b8 \( [g' fis e]
   | d <gis, b> <a cis>4\)
