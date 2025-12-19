@@ -110,4 +110,4 @@
 \pageBreak
 \include "./parts/historische-ungarische-bildnisse-s.205-6-petofi-sandor.ly"
 \pageBreak
-%\include "./parts/historische-ungarische-bildnisse-s.205-7-mosonyi-mihaly.ly"
+\include "./parts/historische-ungarische-bildnisse-s.205-7-mosonyi-mihaly.ly"
