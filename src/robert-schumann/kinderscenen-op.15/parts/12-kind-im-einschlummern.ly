@@ -4,14 +4,17 @@ Global = {
   \include "../global.ly"
 }
 
-bottom = \change Staff = "lower"
-ritardando = { \override TextSpanner.bound-details.left.text = \markup { \small "ritard " } }
-top = \change Staff = "upper"
+ritardando = {
+  \override TextSpanner.bound-details.left.text = \markup {
+    \small "ritard "
+  }
+}
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'KinderscenenXII
   %1
   | r4 b8[( fis'16 b,]
   | b16 g'8.^>) b,8[( fis'16 b,]
@@ -48,7 +51,6 @@ Sopran = \context Voice = "one" \relative c'' {
   | b( a
   | fis b) \key e \minor
   \bar "||"
-  \break
   %25
   | r4 b8[( fis'16 b,]
   | b16[ g'8.]) b,8[( fis'16 b,]
@@ -147,7 +149,10 @@ Tenor = \context Voice = "three" \relative c' {
   | \stemUp
     b8[ c!16 b] b16[ d!8 c16]
   | b8[ a]  g!16[ c!8 b16]
-  | b8[ c!16 b] b16[_\markup { \small "ritard." } d!8 c16]
+  | b8[ c!16 b] b16[_\markup {
+      \small "ritard."
+    }
+    d!8 c16]
   | b8[ a]  g!16[ b8 a16]
   %25
   | g8[( c16 b] b[ fis'8.])
@@ -156,9 +161,10 @@ Tenor = \context Voice = "three" \relative c' {
   | c,8[( d16 c] b[ a'8.])
   | b,8[( c16 b] a[ g'8.])
   %30
-  | a,8[ b16 a_~] \stemDown <e a c e>4~
-  | <e a c e>2~\fermata
-  | <e a c e>4 r
+  | \once\shape #'((0 . 0) (0 . 0.5) (0 . 0.5) (0 . 0.5)) PhrasingSlur
+    a,8[\( b16 a_~] \stemDown \tieNeutral <e a c e>4~
+  | <e a c e>2~_\fermata
+  | <e a c e>4\) r
   \fine
 }
 
@@ -185,15 +191,19 @@ Bass = \context Voice = "four" \relative c {
   | e fis16[ gis8 fis16]
   | fis4 s
   | \stemUp
-    b,8[( cis16 b] fis16[ fis'8 fis,16]
-  | e8[ fis16 e] a16[ a'8 gis16])
-  | fis8[( gis16 fis] cis16[ cis'8 cis,16]
-  | fis16[ fis'8 fis,16] b,16[ b'8 b16])
+    \once\shape #'((0 . 1) (0 . -2) (0 . -2) (0 . 1)) PhrasingSlur
+    b,8[\( cis16 b] fis16[ fis'8 fis,16]
+  | e8[ fis16 e] a16[ a'8 gis16]
+  | fis8[ gis16 fis] cis16[ cis'8 cis,16]
+  | fis16[ fis'8 fis,16] b,16[ b'8 b16]\)
   %21
-  | \stemDown c!2(
-  | d!4 g!)
-  | c,!2(
-  | d!4 dis)
+  | \stemDown
+    \once\shape #'((0.5 . 1) (0 . 2) (0 . -1.5) (6 . 3)) PhrasingSlur
+    c!2\(
+  | d!4 g!\)
+  | \once\shape #'((0.5 . 1) (0 . 2) (0 . -3) (6.5 . 2)) PhrasingSlur
+    c,!2\(
+  | d!4 dis\)
   | \key e \minor
   %25
   | e <dis fis>
@@ -205,7 +215,7 @@ Bass = \context Voice = "four" \relative c {
   | <b, dis> s
   | s2
   | a4\! s
-\fine
+  \fine
 }
 
 centerDynamics = {
@@ -235,11 +245,24 @@ centerDynamics = {
   | s8 s s\> s
   | s s s\! s
   %25
-  | s2*2
+  | s4\p s
+  | s2
   | s8 s s s\ritardando
   | s\startTextSpan s s4
   | s2
   | s8 s s\stopTextSpan s
+}
+
+forceBreaks = {
+  % page 1
+  | \repeat unfold 3 { s2\noBreak } s2\break\noPageBreak
+  | \repeat unfold 3 { s2\noBreak } s2\pageBreak
+  % page 2
+  | \repeat unfold 3 { s2\noBreak } s2\break\noPageBreak
+  | \repeat unfold 3 { s2\noBreak } s2\break\noPageBreak
+  | \repeat unfold 3 { s2\noBreak } s2\break\noPageBreak
+  | \repeat unfold 4 { s2\noBreak } s2\break\noPageBreak
+  | \repeat unfold 6 { s2\noBreak } s2\pageBreak
 }
 
 \score {
@@ -256,6 +279,7 @@ centerDynamics = {
     \context Dynamics <<
       \Global \centerDynamics
     >>
+    \new Devnull \forceBreaks
     \context Staff = "lower" <<
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
@@ -285,6 +309,6 @@ centerDynamics = {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 8 = 92
   }
 }
