@@ -12,6 +12,7 @@ Sopran = \context Voice = "one" \relative c' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
+  \label #'KinderscenenXIII
   %1
   | <d fis>2( <d g>
   | <d c'>2. <d b'>4
@@ -42,8 +43,7 @@ Sopran = \context Voice = "one" \relative c' {
     } >>
   | \override Score.BarLine.transparent = ##t
     \override Score.SpanBar.transparent = ##t
-    s1
-  | s1
+    s1*2
   %15
   | \shape #'((0 . 0) (0 . 0.8) (0 . 0.8) (0 . 0)) Tie
     e''1~
@@ -61,16 +61,17 @@ Sopran = \context Voice = "one" \relative c' {
   | a'2 \grace { b8[ a g a] } b4. g8
   %20
   | b2 a)
-  | <f! gis>2( <e a>
-  | <f! d'>2 \acciaccatura e8 <e c'>2)
-  | r4 <d f! b>2~( <d f b>8[ r16 <b e gis>])
-  | <b e gis>2( <c e a>4) r
+  | \shape #'((0.3 . 2.5) (0 . 1) (0 . 1) (0 . 0)) PhrasingSlur
+    <f! gis>2\( <e a>
+  | <f! d'>2 \once\slurDown \acciaccatura e8 <e c'>2\)
+  | r4 \tieNeutral <d f! b>2~( <d f b>8[ r16 <b e gis>])
+  | <b e gis>2~( <c e a>4) r
   %25
   | r <c ees a>2~\( <c ees a>8[ r16 <a d fis>]\)
   | <a d fis>2~( <g d' g)>4) r
-  | r <g c e>2.
+  | r <g c e>2~ q4
   | \bottom
-    r4 <fis a d>2.
+    r4 <fis a d>2~ q4
   | <g d'>1\fermata
     \top
   \fine
@@ -103,9 +104,9 @@ Alto = \context Voice = "two" \relative c' {
     \magnifyMusic 0.75 {
       \omit TupletBracket
       \tuplet 3/2 { r8 a(\pp b } \tuplet 3/2 { c b a } fis'4. e8
-  |   e4 dis2^\fermata)
+  |   e4 dis2^\fermata
       \omit TupletNumber
-      \acciaccatura dis8 \tuplet 5/4 { dis16 e dis cisis dis }
+      \acciaccatura dis8 \tuplet 5/4 { dis16 e dis cisis dis) }
   %15
   |   %\undo\omit TupletNumber
       \tupletDown
@@ -117,13 +118,6 @@ Alto = \context Voice = "two" \relative c' {
   | \stemDown e,2 e
   %20
   | d1
-  | s1*4
-  %25
-  | s1
-  | s1
-  | s1
-  | s1
-  | s1
 }
 
 Tenor = \context Voice = "three" \relative c' {
@@ -155,13 +149,6 @@ Tenor = \context Voice = "three" \relative c' {
   | \stemUp g,2 fis
   | b a
   | gis \grace { a8[ gis fisis gis] } s2
-  | s1*2
-  %25
-  | s1
-  | s1
-  | s1
-  | s1
-  | s1
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -184,26 +171,24 @@ Bass = \context Voice = "four" \relative c {
   | a1)\fermata
   | a2( g
   | fis~) \stemUp fis4\fermata r8*2^\fermata
-  | s1
-  | s1
-  %15
-  | s1
-  | s1
+  | s1*4
+  %17
   | \stemDown
     <c' a'>2( <b g'>
   | <a fis'>2. <b g'>4
   | <c g'>2 <cis g'>
   %20
   | d1)
-  | d2( c!
-  | b_\markup { \hspace #3 "rit."  } c)
-  | r4 d2~^( d8[ r16 e])
+  | \shape #'((0.3 . -2.5) (0 . -1) (0 . -1) (0 . 0)) PhrasingSlur
+    d2\( c!
+  | b_\markup { \hspace #3 "rit."  } c\)
+  | r4 d2~^( d8[ r16 e^.])
   | e2^(\> \stemUp a,4) \stemDown r
   %25
-  | r4 \stemUp c2~ c8[ r16 d]
+  | r4 \stemUp c2~_\( c8[ r16 d_.]\)
   | d2( b4) r
-  | r c2.
-  | r4 \stemDown <d, c'>2.
+  | r c2~ c4
+  | r4 \stemDown <d, c'>2~ q4
   | <g, b'>1\fermata\!
   \fine
 }
@@ -218,24 +203,29 @@ centerDynamics = {
   | s4 s s\! s
   | s4 s4-\markup { \hspace #-0.4 \dynamic pp } s2
   | s4\> s s\! s
-  | s1
-  %10
-  | s1*3
+  | s1*4
+  %13
   | s8 s\< s s\! s4 s
   | s1
-  %15
   | s8 s\< s s s s\! s s
-  | s8 s s s s s\>^\markup { \small "rit." } s s
+  | s8 s s s s\>^\markup { \small "rit." } s s s
   | s4\!-\markup { \dynamic p } s\< s s
   | s s s\! s
-  | s1
-  %20
-  | s1
-  | s4 s\< s s
+  | s1*2
+  %21
+  | s4\< s s s
   | s s s\! s
   | s4 s4-\markup { \dynamic pp } s\ritardando s\startTextSpan
   | s1*4
   | s1\stopTextSpan
+}
+
+forceBreaks = {
+  % page 1
+  | \repeat unfold 5 { s1\noBreak } s1\break\noPageBreak
+  | \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  | \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  | \repeat unfold 6 { s1\noBreak } s1\break\noPageBreak
 }
 
 \score {
@@ -252,6 +242,7 @@ centerDynamics = {
     \context Dynamics <<
       \Global \centerDynamics
     >>
+    \new Devnull \forceBreaks
     \context Staff = "lower" <<
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
@@ -281,6 +272,6 @@ centerDynamics = {
     }
   }
   \midi {
-    \tempo 4 = 100
+    \tempo 4 = 112
   }
 }
