@@ -73,23 +73,44 @@ Soprano = \context Voice = "one" \relative c {
     \unset crescendoSpanner
     \key bes \major
     \bar "||"
-  | ges'4.( f8) <f, f'>2
-  | R1*4
+  | ges'4.( f8) <f, f'>2_\sf
+  | ges'4.( f8) <f, f'>2_\sf
+  | r8 ges'4^>( f8) r <a, des f>_._( r <a es' f>_.)
+  | r4 <f bes es f>~ <f bes d f> <f bes c f>
+  %35
+  | <f 	bes d f>8_. r r4 q8_. r r4
   | r2 r4\fermata
     \bar "||"
-    r4
+    \stemNeutral <bes' bes'>4
     \bar "||"
     \time 5/4
-  | R1*5/4*6
+  | \stemUp
+    \once\override TextScript.extra-offset = #'(-0.5 . -1)
+    <bes des ges bes>4_\markup {
+      "dolciss."
+    }
+    <bes ges' bes>~^- q q^.( q^.)
+  | \tieUp ces'2 ces4^- bes8[( aes g aes)]
+  | \ottava #1
+    des4 des^-~ des des^.( des^.)
+  %40
+  | \set Staff.connectArpeggios = ##f
+    <ges, d'!>2\arpeggio ees'8 d! f[ ees ges ees
+  | ces aes]
+    \ottava #0
+    r4 r ges,4 ees
+  | ces aes r\fermata r <gis b e gis>  
     \bar "||"
     \key e \major
-  | R1*5/4*7
+  | \tieNeutral q4 <gis e' gis>^-~ q q^.( q^.)
+  | R1*5/4*6
     \bar "||"
     \time 4/4
   | R1*2
     \bar "||"
     \key a \minor
-  | R1*16
+  | \tempo "Tempo I"
+    R1*16
     \bar "||"
     \key b \minor
   | R1*10
@@ -138,6 +159,29 @@ Alto = \context Voice = "two" \relative c {
   %25
   | \stemUp dis'2~ dis
   | dis~ dis
+  | s1*4
+  %31
+  | \repeat unfold 2 {
+      \stemDown
+      \shape #'((0.4 . -0.4) (0 . -0.7) (0 . -0.9) (0 . -0.4)) Slur
+      des4( c)
+      \shape #'((0.6 . -0.6) (0 . -0.5) (0 . -0.6) (0 . -0.3)) Slur
+      c( bes)
+    }
+  | s8 <a c>4. s2
+  | s1*3
+  %37
+  | \stemDown s4 des'~ 
+    \shape #'((0 . 3) (0 . -8) (0 . -4) (0 . -1)) PhrasingSlur
+    des8[\( ees des 
+    \change Staff = "lower" \voiceThree c ees des]\)
+  | \change Staff = "upper" \voiceTwo
+    f8[( ees ges f~)] f4 r f
+  | ges ges~ ges8[( aes ges f aes ges])
+  %40
+  | ces[( bes des ces~]) <g ces>4 s2
+  | s1*5/4*2
+  | s4 b,,~ b8[( cis b ais cis b])
 }
 
 Contralto = \context Voice = "three" \relative c' {
@@ -159,6 +203,11 @@ Contralto = \context Voice = "three" \relative c' {
   | s1
   | s2 <cis e>
   | cis s
+  | s1
+  %31
+  | \override NoteColumn.force-hshift = #0.4
+    a2 s
+  | a s
 }
 
 Tenor = \context Voice = "four" \relative c {
@@ -178,7 +227,7 @@ Tenor = \context Voice = "four" \relative c {
   | <cis cis'>8\( <f gis> <c c'> <f gis> <cis cis'> <f gis> <c c'> <f gis>\)
   << {
   | \tieNeutral
-    <b, b'>8\( <f' gis> <bes, bes'> <f' gis> <b, b'> <f' gis> 
+    <b, b'>8\( <f' gis> <bes, bes'> <f' gis> <b, b'> <f' gis>
     \once\override NoteColumn.force-hshift = #0
     bes,
     <f'-\shape #'((0 . 0) (0 . 0) (-0.3 . 0) (-0.6 . 0))_~
@@ -187,7 +236,7 @@ Tenor = \context Voice = "four" \relative c {
     \once \override TieColumn.positioning-done = ##t
   | \hideNotes q8 s s2. \unHideNotes
   } \\ {
-  | s2. 
+  | s2.
     \omit Stem \omit Flag
     \override NoteColumn.force-hshift = #0
     bes4^~
@@ -219,6 +268,11 @@ Baritone = \context Voice = "five" \relative c {
     a2~ a4 gisis
   | \shape #'((0 . -0.5) (0 . -0.5) (0 . -0.7) (-1 . -0.8)) Tie
     a2~ a4 gisis
+    \revert NoteColumn.force-hshift
+  | s1*4
+  %31
+  | s2 des'
+  | s des
 }
 
 Bass = \context Voice = "six" \relative c {
@@ -237,7 +291,7 @@ Bass = \context Voice = "six" \relative c {
   | cis4 c cis c
   | b bes b bes
   | cis c cis c
-  | b bes b 
+  | b bes b
     \override NoteColumn.force-hshift = #0 bes~
   | \once\stemUp \once\omit Accidental
     \once\override NoteColumn.force-hshift = #0
@@ -273,13 +327,27 @@ Bass = \context Voice = "six" \relative c {
   | R1\fermata
     \key bes \major
     \bar "||"
-  | R1*5
-  | r4 r r^\fermata
+  | <f, ees' ges>2 \stemDown ges4.( f8)
+  | \once\stemNeutral <f ees' ges>2 ges4.( f8)
+  | \stemNeutral <ees ees'>4^>( <d! d'!>8) r <des des'>8_. r <c c'>_. r
+  | \override Beam.positions = #'(1 . 1.5)
+    \repeat tremolo 16 { <bes f'>32 bes' }
+    \revert Beam.positions
+  %35
+  | <bes, f'>8_. r r <a a'>_. <bes bes'>_. r r <a a'>_.^\ppp
+  | <bes bes'>_. r r4 r^\fermata
     \bar "||"
-    r4
+    r4_\markup { "una corda" }
     \bar "||"
     \time 5/4
-  | R1*5/4*6
+  | r2 r4 r8 \clef "treble" s4.
+  | <aes''' des>2. r4 <ces des>4
+  | <bes des> \once\tieNeutral q~^- q q^.^( <a des>^.)
+  %40
+  | \set Staff.connectArpeggios = ##f
+    <aes ces d!>2\arpeggio ees'8 d! f ees ges4
+  | r4 ges8[ ees ces aes] r4 r
+  | r2 r4\fermata r \clef "bass" <b,,, b'>
     \bar "||"
     \key e \major
   | R1*5/4*7
@@ -324,6 +392,19 @@ centerDynamics = {
   | s1
   %25
   | s4-\markup { \normalsize \dynamic mf "espr." } s2.
+  | s1*5
+  %31
+  | s4-\markup { \hspace #-2 "pesante" } s2.
+  | s1
+  | s2 s-\markup { "dim." }
+  | s4\p s\> s\! s
+  | s16 s8.\pp s2.
+  | s1
+  | s1*5/4*3
+  %40
+  | s2 s-\markup { "sempre legato" } s4
+  | s2. s4-\markup { \hspace #-2 "perdendo" } s
+  | s2 s2 s4\pp
 }
 
 forceBreaks = {
@@ -338,6 +419,7 @@ forceBreaks = {
   %page2
   | \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
   | \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  | \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
 }
 
 \score {
