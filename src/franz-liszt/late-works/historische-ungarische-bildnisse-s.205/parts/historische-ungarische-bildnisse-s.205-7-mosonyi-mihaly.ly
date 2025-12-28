@@ -103,10 +103,27 @@ Soprano = \context Voice = "one" \relative c {
     \bar "||"
     \key e \major
   | \tieNeutral q4 <gis e' gis>^-~ q q^.( q^.)
-  | R1*5/4*6
+  | <b a'>2 a'4^- gis8[( fis eis fis)]
+  %45
+  | <b, e b'>4 <b gis' b>~^- q <b b'>^.( q^.)
+  | <bis bis'>2 <cis cis'>8[( <bis bis'> <dis dis'> <cis cis'>)] <e e'>4~
+  | q fis'8[ eis gis fis] a2
+  | <ais, ais'>8[ <gis gis'> <b b'> <ais ais'>]
+    <cis cis'>[ <bis bis'> <dis dis'> <cis cis'>] \stemDown <e! e'!>[ <dis dis'>
+  | <fis fis'> <e e'>]
+    \shape #'((0 . 0) (0 . 0) (1 . 3) (0 . -4)) Slur
+    <e' gis>^.[( <cis e>^. <ais cis>^.
+    \change Staff = "lower" \voiceTwo \stemUp <a,, cis!>])
+    <gis b>[(^. <e gis>^. <cis! e>^. <a cis>^.])
     \bar "||"
     \time 4/4
-  | R1*2
+  %50
+  | \clef "treble"
+    \shape #'((0 . -3.5) (0 . 0.5) (0 . 0.5) (0 . 0)) Slur
+    <ais'' cis>8^.^( <cis e>^.
+    \change Staff = "upper" \voiceOne \stemDown
+    <e gis>^. <fis ais>^.) <ais cis>4^.^( <cis e>^.)
+  | <e gis>2.\fermata r4\fermata
     \bar "||"
     \key a \minor
   | \tempo "Tempo I"
@@ -182,6 +199,15 @@ Alto = \context Voice = "two" \relative c {
   | ces[( bes des ces~]) <g ces>4 s2
   | s1*5/4*2
   | s4 b,,~ b8[( cis b ais cis b])
+  | dis[ cis e dis^~] <b dis>4 b\rest q
+  %45
+  | s
+    \shape #'((0.5 . 0.5) (0 . 0.5) (0 . 0.3) (0.1 . 0.2)) Tie
+    e_~ e8([ fis e dis fis e)]
+  | fis[( e gis fis]) <e a>4 s
+    \once\override Beam.positions = #'(-4.5 . -4.5)
+    a8[ gis
+  | b a] <fis cis'>4 <gis cis> e'8[ dis fis e]
 }
 
 Contralto = \context Voice = "three" \relative c' {
@@ -208,6 +234,19 @@ Contralto = \context Voice = "three" \relative c' {
   | \override NoteColumn.force-hshift = #0.4
     a2 s
   | a s
+    \revert NoteColumn.force-hshift
+  | s1*4
+  | s1*5/4*7
+  %44
+  | \hideNotes
+    \once\omit Stem
+    \once\override NoteColumn.force-hshift = #0.4 b2~
+    \once\override NoteColumn.force-hshift = #0 b4
+    \unHideNotes
+    s2
+  | s1*5/4*2
+  | s2. \stemUp a'4 a
+  | \stemDown e' e e s2
 }
 
 Tenor = \context Voice = "four" \relative c {
@@ -244,6 +283,11 @@ Tenor = \context Voice = "four" \relative c {
     \ottava #0
     s s2.
   } >>
+  | s1*27
+  | s1*5/4*9
+  %46
+  | s1 cis''8[ bis
+  | dis cis] e4 e <fis, e'> <fis fis'>
 }
 
 Baritone = \context Voice = "five" \relative c {
@@ -273,6 +317,13 @@ Baritone = \context Voice = "five" \relative c {
   %31
   | s2 des'
   | s des
+  | s1*4
+  | s1*5/4*9
+  %46
+  | s1 \stemDown fis4_~
+  | fis4 a8[ gis b a] cis[ bis dis cis]
+  | \stemUp fis[ e gis fis] s2.
+
 }
 
 Bass = \context Voice = "six" \relative c {
@@ -350,12 +401,24 @@ Bass = \context Voice = "six" \relative c {
   | r2 r4\fermata r \clef "bass" <b,,, b'>
     \bar "||"
     \key e \major
-  | R1*5/4*7
+  | <b b'>4 q~ q q q
+  | <b' fis'>2~ q4 r <b a'>
+  %45
+  | <b gis'> <b, b'>~^- q( <gis gis'>) q
+  | <gis gis'>2( <fis fis'>~) q4_~
+  | q1 s4
+  | <fis'' cis'>4 q
+    \once\override Arpeggio.padding = #0.1
+    <fis cis' e ais>2.\arpeggio
+  | r4 s1
     \bar "||"
     \time 4/4
-  | R1*2
+  %50
+  | s1
+  | R1\fermata
     \bar "||"
     \key a \minor
+    \clef "bass"
   | R1*16
     \bar "||"
     \key b \minor
