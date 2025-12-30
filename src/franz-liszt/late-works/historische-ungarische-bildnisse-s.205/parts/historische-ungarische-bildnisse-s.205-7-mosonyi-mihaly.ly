@@ -127,7 +127,32 @@ Soprano = \context Voice = "one" \relative c {
     \bar "||"
     \key a \minor
   | \tempo "Tempo I"
-    R1*16
+    \stemNeutral r2 r4 r8. \clef "bass" <gis,,,, gis'>16
+  | q4.. <gis' gis'>16 q4.. \clef "treble" <gis' gis'>16
+  | q8 r r4 r r8. <gis, gis'>16
+  %55
+  | q4.. <gis' gis'>16 q4.. <gis' gis'>16
+  | q8 r \clef "bass" \stemUp gis,,2 s4
+  | \tupletNeutral
+    s4 \tuplet 6/4 { f,16 gis cis d f gis }
+    \tuplet 6/4 { cis \clef "treble" d f gis cis d } 
+    \stemNeutral \tuplet 6/4 { f gis cis d f gis }
+  | <gis, f' gis>8 r \clef "bass" \once\stemUp gis,,2 s4
+  | s4 \tuplet 6/4 { f,16 gis cis d f gis }
+    \stemUp \tuplet 6/4 { cis \clef "treble" d f gis cis d } 
+    \stemNeutral \tuplet 6/4 { f gis cis d f gis }
+  %60
+  | \ottava #1
+    \override Beam.positions = #'(-4 . -2.5)
+    \repeat tremolo 16 { <gis, f'>32 gis' }
+    \ottava #0
+  | \repeat tremolo 16 { <gis,, f'>32 gis' }
+    \revert Beam.positions
+  | r16 <gis, f' gis> q q q q q q q q q q q q q q
+  | q8 <cis, cis'>^![ <d d'>^! <e e'>^!] <f f'>^! <fis fis'>^! <g g'>^! <gis gis'>^!
+    \break
+
+  | R1*4
     \bar "||"
     \key b \minor
   | R1*10
@@ -208,6 +233,13 @@ Alto = \context Voice = "two" \relative c {
     \once\override Beam.positions = #'(-4.5 . -4.5)
     a8[ gis
   | b a] <fis cis'>4 <gis cis> e'8[ dis fis e]
+  | s1*5/4*2
+  | s1*6
+  %56
+  \repeat unfold 2 {
+  | s4 <f,, f'>4^( <e e'> <ees gis ees'>)
+  | <d d'>8 r s2.
+  }
 }
 
 Contralto = \context Voice = "three" \relative c' {
@@ -323,6 +355,18 @@ Baritone = \context Voice = "five" \relative c {
   | s1 \stemDown fis4_~
   | fis4 a8[ gis b a] cis[ bis dis cis]
   | \stemUp fis[ e gis fis] s2.
+  | s1*5/4
+  | s1*2
+  %52
+  | <f,,, f'>8\( <b d> <e, e'> <b' d>  <f f'> <b d> <e, e'> <b' d>
+  | <f f'> <b d> <e, e'> <b' d>  <f f'> <b d> <e, e'> <b' d>\)
+  | <dis, dis'>\( <gis b> <d d'> <gis b>  <dis dis'> <gis b> <d d'> <gis b>
+  %55
+  | <dis dis'> <gis b> <d d'> <gis b>  <dis dis'> <gis b> <d d'> <gis b>\)
+  \repeat unfold 2 {
+  | <cis, cis'>\( <f gis> <c c'> <f gis>  <cis cis'> <f gis> <c c'> <f gis>\)
+  | <b, b'>\( <f' gis> <bes, bes'> <f' gis>  <b, b'> <f' gis> <bes, bes'> <f' gis>\)
+  }
 
 }
 
@@ -419,7 +463,25 @@ Bass = \context Voice = "six" \relative c {
     \bar "||"
     \key a \minor
     \clef "bass"
-  | R1*16
+  | \ottava #-1
+    \stemDown f,,4_\markup { \hspace #0.5 "tre corde" } e f e
+  | f e f e
+  | dis d dis d
+  %55
+  | dis d dis d
+  | cis c cis c
+  | b bes b bes
+  | cis c cis c
+  | b bes b bes
+  %60
+  | \stemNeutral
+    r8 <a a'> <bes bes'> <cis cis'> <d d'> <e e'> <f f'> <gis gis'>
+    \ottava #0
+  | <a a'> <bes bes'> <cis cis'> <d d'> <e e'> <f f'> <gis gis'> <a a'>
+  | <bes bes'> <cis cis'> <d d'> <e e'> <f f'> <cis cis'> <d d'> <e e'>
+  | <f f'> <cis cis'>^![ <d d'>^! <e e'>^!] <f f'>^! <fis fis'>^! <g g'>^! <gis gis'>^!
+
+  | R1*4
     \bar "||"
     \key b \minor
   | R1*10
