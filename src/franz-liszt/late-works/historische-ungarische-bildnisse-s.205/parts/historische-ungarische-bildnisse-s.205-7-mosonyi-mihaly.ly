@@ -151,17 +151,75 @@ Soprano = \context Voice = "one" \relative c {
   | r16 <gis, f' gis> q q q q q q q q q q q q q q
   | q8 <cis, cis'>^![ <d d'>^! <e e'>^!] <f f'>^! <fis fis'>^! <g g'>^! <gis gis'>^!
     \break
-
-  | R1*4
+  | \ottava #1
+    \tempo \markup { \normal-text\italic "a tempo" }
+    <a' a'>4..^\markup {
+      "ten."
+    }_\markup {
+      \dynamic ff
+    }
+    <bes bes'>16 q2^^^\markup { "ten." }
+  %65
+  | <a a'>4.. <bes bes'>16 q4.. q16
+  | q4..^> q16 q4..^> q16
+  | q4^. q^. q^.
+    r
     \bar "||"
     \key b \minor
-  | R1*10
+    \break
+  | <b! fis' b!>2.\(_\markup { 
+      \hspace #0.6 "dolce"
+    }
+    q4
+  | <ais fis' ais>2 <a a'>\)
+  %70
+  | <a d a'>2.\arpeggio\(_\markup { 
+      \hspace #0.6 "sempre dolce"
+    }
+    <g g'>4
+  | <fis d' fis>2 <f f'>\)
+    \break
+  | <ees bes' ees>2. q4
+  | <d bes' d>2 <des des'>
+    \ottava #0
+  | <cis! fis cis'!>2.\arpeggio\( \once\tieNeutral <c c'>4~
+  %75
+  | q <b b'> <ais ais'> <a a'>\)
+    \break
+  | fis'4\( dis c b
+  | ais a gis g\)
     \bar "||"
     \time 5/4
-  | R1*5/4*5
+  | \tieNeutral \once\slurDown fis <a, b fis'>~ q q_.( <a bis fis'>_.)
+  | \stemUp g'2^- g4^>( fis8[ e dis e])
+  %80
+  | \stemNeutral <a, d a'>4 q~ q <a c d a'> <a c ees a>
+  | \stemUp\tieUp a'2~( a ais4)
+  | <b, d g b>\arpeggio r r2 r4
+    \break
     \bar "||"
     \time 4/4
-  | R1*16
+  | r2 <g d' e>
+  | <a d fis> \tieNeutral <b d g>~
+  %85
+  | q <g d' e>
+  | <a d fis> \tieNeutral <b d g>
+  | <a d a'>1
+  | <a e' a>
+    \break
+  | <a f' a>
+  %90
+  | <a a'>
+  | <a d a'>
+  | <a e' a>
+  | <a f' a>
+  | <a a'>
+  %95
+  | <a d a'>
+  | <a' d a'>
+  | \ottava #1
+    <a' d fis a>
+  | q\fermata
     \fine
 }
 
@@ -240,6 +298,18 @@ Alto = \context Voice = "two" \relative c {
   | s4 <f,, f'>4^( <e e'> <ees gis ees'>)
   | <d d'>8 r s2.
   }
+  | s1*18
+  | s1*5/4
+  %79
+  | <a' cis>2~ q4 a\rest a
+  | s1*5/4
+  | <a c ees fis>1\arpeggio a4\rest
+  | s1*5/4
+  | s1*7
+  %90
+  | f'2.( e4)
+  | s1*3
+  | f2.( e4)
 }
 
 Contralto = \context Voice = "three" \relative c' {
@@ -367,7 +437,31 @@ Baritone = \context Voice = "five" \relative c {
   | <cis, cis'>\( <f gis> <c c'> <f gis>  <cis cis'> <f gis> <c c'> <f gis>\)
   | <b, b'>\( <f' gis> <bes, bes'> <f' gis>  <b, b'> <f' gis> <bes, bes'> <f' gis>\)
   }
-
+  | s1*4
+  %64
+  | \stemUp
+    a''4\rest^\markup {
+      \hspace #-2 "m.d."
+    }
+    <d, f a d>8^.^\markup { 
+      \hspace #-2.5 \dynamic fff
+    }
+    a'\rest a4\rest <d, f gis d'>8^. a'\rest
+  | a4\rest <d, f a d>8^. a'\rest a4\rest <d, f gis d'>8^. a'\rest
+  | a4\rest <d, fis bes d>8^. a'\rest a4\rest <d, f gis d'>8^. a'\rest
+  | \override MultiMeasureRest.staff-position = #0
+    R1
+    \key b \minor
+  | dis,,8 dis'~ dis2.
+  | cis,8 cis'~ cis2.
+  %70
+  | b,8 b'~ b2.
+  | a,8 a'~ a2.
+  | g,8 g'~ g2.
+  | f,8 f'~ f2.
+  | ees,8( ees'~ ees2.)
+  %75
+  | R1
 }
 
 Bass = \context Voice = "six" \relative c {
@@ -480,17 +574,90 @@ Bass = \context Voice = "six" \relative c {
   | <a a'> <bes bes'> <cis cis'> <d d'> <e e'> <f f'> <gis gis'> <a a'>
   | <bes bes'> <cis cis'> <d d'> <e e'> <f f'> <cis cis'> <d d'> <e e'>
   | <f f'> <cis cis'>^![ <d d'>^! <e e'>^!] <f f'>^! <fis fis'>^! <g g'>^! <gis gis'>^!
-
-  | R1*4
-    \bar "||"
-    \key b \minor
-  | R1*10
+  <<
+    \new Staff = "middle" \with {
+      alignAboveContext = "lower"
+    } {
+      \omit Staff.TimeSignature
+      \clef "treble"
+      \key c \major
+      | <a a'>4..^\markup { "ten." } <bes bes'>16 q2^^^\markup { "ten." }
+      %65
+      | <a a'>4.. <bes bes'>16 q4.. q16
+      | q4.._> q16 q4.._> q16
+      | q4_. q_. q_. r
+        \clef "bass"
+        \key b \minor
+      | r4^\markup { 
+          "m.s."
+        }
+        fis8[ fis' fis, fis'] r4
+      | r <fis, cis'>8[ fis' <fis, cis'> fis'] r4
+      %70
+      | r
+        \once\override TextScript.extra-offset = #'(-4 . -2)
+        <g, d'>8[_\markup {
+          "sempre legato"
+        }
+        g' <g, d'> g'] r4
+      | r \clef "treble" <a, d>8[ a' <a, d> a'] r4
+      | r <bes, ees>8[ bes' <bes, ees> bes'] r4
+      | r <bes, f'>8[ bes' <bes, f'> bes'] r4
+      | r \clef "bass" <fis,! ees'>8[\( fis' <fis, ees'> fis' <fis, ees'> <fis'>]
+      %75
+      | <fis, ees'> fis' \repeat unfold 2 { <fis, ees'> fis' } <fis, ees'> fis'\)
+    } {
+      | \stemDown
+        c,,4\rest_\markup { 
+          \hspace #-0.5 "m.s."
+        }
+        <f, a d f>8_. d'\rest c4\rest <f, gis d' f>8_. d'\rest
+      %65
+      | c4\rest <f, a d f>8_. d'\rest c4\rest <f, gis d' f>8_. d'\rest
+      | c4\rest <fis, bes d fis>8_. d'\rest c4\rest <f, gis d' f>8_. d'\rest
+      | s1
+      | \tieDown dis4~ dis2.
+      | cis4~ cis2.
+      %70
+      | b4~ b2.
+      | a4~ a2.
+      | g4~ g2.
+      | f4~ f2.
+      | ees4~ ees2.
+    }
+  >>
+  | R1*2
     \bar "||"
     \time 5/4
-  | R1*5/4*5
+  | \tieNeutral\stemNeutral
+    r4 <dis' b'>~ q q_.( <dis bis'>)
+  | <e cis'>2~ q4 r <g cis>
+  %80
+  | <fis d'> <fis d' fis>~ q q <fis ees' fis>
+  | <g ees' fis>1\arpeggio r4
+  | <g d' g>\arpeggio r r2 r4
     \bar "||"
     \time 4/4
-  | R1*16
+  | r2 <b, b'>
+  | <a a'> <e e'>~
+  %85
+  | q <b' b'>
+  | <a a'> <e e'>
+  | <fis fis'>1
+  | <cis cis'>
+  | <c c'>
+  %90
+  | <cis cis'>
+  | <fis fis'>
+  | <cis cis'>
+  | <c c'>
+  | <cis cis'>
+  %95
+  | <fis d' fis>
+  | <fis' d' fis>
+    \clef "treble"
+  | <fis'' a d fis >
+  | q\fermata  
     \fine
 }
 
