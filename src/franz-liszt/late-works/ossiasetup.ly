@@ -12,6 +12,7 @@ fontSize = #-3
 \override Flag.color          = #(x11-color 'grey35)
 \override KeySignature.color  = #(x11-color 'grey35)
 \override NoteHead.color      = #(x11-color 'grey35)
+\override OttavaBracket.color = #(x11-color 'grey35)
 \override Rest.color          = #(x11-color 'grey35)
 \override Script.color        = #(x11-color 'grey35)
 \override Slur.color          = #(x11-color 'grey35)
