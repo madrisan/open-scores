@@ -99,7 +99,7 @@ Soprano = \context Voice = "one" \relative c {
   | ces aes]
     \ottava #0
     r4 r ges,4 ees
-  | ces aes r\fermata r <gis b e gis>  
+  | ces aes r\fermata r <gis b e gis>
     \bar "||"
     \key e \major
   | \tieNeutral q4 <gis e' gis>^-~ q q^.( q^.)
@@ -108,13 +108,13 @@ Soprano = \context Voice = "one" \relative c {
   | <b, e b'>4 <b gis' b>~^- q <b b'>^.( q^.)
   | <bis bis'>2 <cis cis'>8[( <bis bis'> <dis dis'> <cis cis'>)] <e e'>4~
   | q fis'8[ eis gis fis] a2
-  | <ais, ais'>8[ <gis gis'> <b b'> <ais ais'>]
+  | <ais, ais'>8[\< <gis gis'> <b b'> <ais ais'>]\!
     <cis cis'>[ <bis bis'> <dis dis'> <cis cis'>] \stemDown <e! e'!>[ <dis dis'>
   | <fis fis'> <e e'>]
     \shape #'((0 . 0) (0 . 0) (1 . 3) (0 . -4)) Slur
     <e' gis>^.[( <cis e>^. <ais cis>^.
     \change Staff = "lower" \voiceTwo \stemUp <a,, cis!>])
-    <gis b>[(^. <e gis>^. <cis! e>^. <a cis>^.])
+    <gis b>[^(^. <e gis>^. <cis! e>^. <a cis>^.])
     \bar "||"
     \time 4/4
   %50
@@ -135,11 +135,11 @@ Soprano = \context Voice = "one" \relative c {
   | q8 r \clef "bass" \stemUp gis,,2 s4
   | \tupletNeutral
     s4 \tuplet 6/4 { f,16 gis cis d f gis }
-    \tuplet 6/4 { cis \clef "treble" d f gis cis d } 
+    \tuplet 6/4 { cis \clef "treble" d f gis cis d }
     \stemNeutral \tuplet 6/4 { f gis cis d f gis }
   | <gis, f' gis>8 r \clef "bass" \once\stemUp gis,,2 s4
   | s4 \tuplet 6/4 { f,16 gis cis d f gis }
-    \stemUp \tuplet 6/4 { cis \clef "treble" d f gis cis d } 
+    \stemUp \tuplet 6/4 { cis \clef "treble" d f gis cis d }
     \stemNeutral \tuplet 6/4 { f gis cis d f gis }
   %60
   | \ottava #1
@@ -149,7 +149,7 @@ Soprano = \context Voice = "one" \relative c {
   | \repeat tremolo 16 { <gis,, f'>32 gis' }
     \revert Beam.positions
   | r16 <gis, f' gis> q q q q q q q q q q q q q q
-  | q8 <cis, cis'>^![ <d d'>^! <e e'>^!] <f f'>^! <fis fis'>^! <g g'>^! <gis gis'>^!
+  | q8 <cis, cis'>_![ <d d'>_! <e e'>_!] <f f'>^! <fis fis'>^! <g g'>^! <gis gis'>^!
     \break
   | \ottava #1
     \tempo \markup { \normal-text\italic "a tempo" }
@@ -167,13 +167,13 @@ Soprano = \context Voice = "one" \relative c {
     \bar "||"
     \key b \minor
     \break
-  | <b! fis' b!>2.\(_\markup { 
+  | <b! fis' b!>2.\(_\markup {
       \hspace #0.6 "dolce"
     }
     q4
   | <ais fis' ais>2 <a a'>\)
   %70
-  | <a d a'>2.\arpeggio\(_\markup { 
+  | <a d a'>2.\arpeggio\(_\markup {
       \hspace #0.6 "sempre dolce"
     }
     <g g'>4
@@ -199,21 +199,21 @@ Soprano = \context Voice = "one" \relative c {
     \break
     \bar "||"
     \time 4/4
-  | r2 <g d' e>
+  | r2 <g d' e>\(
   | <a d fis> \tieNeutral <b d g>~
   %85
-  | q <g d' e>
-  | <a d fis> \tieNeutral <b d g>
+  | q\) <g d' e>\(
+  | <a d fis> \tieNeutral <b d g>\)
   | <a d a'>1
   | <a e' a>
-    \break
   | <a f' a>
+    \break
   %90
-  | <a a'>
+  | <a a'>^>
   | <a d a'>
   | <a e' a>
   | <a f' a>
-  | <a a'>
+  | <a a'>^>
   %95
   | <a d a'>
   | <a' d a'>
@@ -271,9 +271,9 @@ Alto = \context Voice = "two" \relative c {
   | s8 <a c>4. s2
   | s1*3
   %37
-  | \stemDown s4 des'~ 
+  | \stemDown s4 des'~
     \shape #'((0 . 3) (0 . -8) (0 . -4) (0 . -1)) PhrasingSlur
-    des8[\( ees des 
+    des8[\( ees des
     \change Staff = "lower" \voiceThree c ees des]\)
   | \change Staff = "upper" \voiceTwo
     f8[( ees ges f~)] f4 r f
@@ -443,7 +443,7 @@ Baritone = \context Voice = "five" \relative c {
     a''4\rest^\markup {
       \hspace #-2 "m.d."
     }
-    <d, f a d>8^.^\markup { 
+    <d, f a d>8^.^\markup {
       \hspace #-2.5 \dynamic fff
     }
     a'\rest a4\rest <d, f gis d'>8^. a'\rest
@@ -588,7 +588,7 @@ Bass = \context Voice = "six" \relative c {
       | q4_. q_. q_. r
         \clef "bass"
         \key b \minor
-      | r4^\markup { 
+      | r4^\markup {
           "m.s."
         }
         fis8[ fis' fis, fis'] r4
@@ -603,12 +603,15 @@ Bass = \context Voice = "six" \relative c {
       | r \clef "treble" <a, d>8[ a' <a, d> a'] r4
       | r <bes, ees>8[ bes' <bes, ees> bes'] r4
       | r <bes, f'>8[ bes' <bes, f'> bes'] r4
-      | r \clef "bass" <fis,! ees'>8[\( fis' <fis, ees'> fis' <fis, ees'> <fis'>]
+      | r \clef "bass" <fis,! ees'>8[\(_\markup {
+          "sempre" \normalsize \dynamic p
+        }
+        fis' <fis, ees'> fis' <fis, ees'> <fis'>]
       %75
       | <fis, ees'> fis' \repeat unfold 2 { <fis, ees'> fis' } <fis, ees'> fis'\)
     } {
       | \stemDown
-        c,,4\rest_\markup { 
+        c,,4\rest_\markup {
           \hspace #-0.5 "m.s."
         }
         <f, a d f>8_. d'\rest c4\rest <f, gis d' f>8_. d'\rest
@@ -638,11 +641,11 @@ Bass = \context Voice = "six" \relative c {
   | <g d' g>\arpeggio r r2 r4
     \bar "||"
     \time 4/4
-  | r2 <b, b'>
+  | r2 <b, b'>\(
   | <a a'> <e e'>~
   %85
-  | q <b' b'>
-  | <a a'> <e e'>
+  | q\) <b' b'>\(
+  | <a a'> <e e'>\)
   | <fis fis'>1
   | <cis cis'>
   | <c c'>
@@ -657,7 +660,7 @@ Bass = \context Voice = "six" \relative c {
   | <fis' d' fis>
     \clef "treble"
   | <fis'' a d fis >
-  | q\fermata  
+  | q\fermata
     \fine
 }
 
@@ -697,6 +700,67 @@ centerDynamics = {
   | s2 s-\markup { "sempre legato" } s4
   | s2. s4-\markup { \hspace #-2 "perdendo" } s
   | s2 s2 s4\pp
+  | s1*5/4*3
+  %46
+  | s1-\markup { \hspace #-1 "legatissimo sempre" }
+    \set crescendoText = \markup { \small\italic { "cresc." } }
+    \set crescendoSpanner = #'text
+    s4\<
+  | s1 s8 s\!
+    \unset crescendoText
+    \unset crescendoSpanner
+  | s1*5/4
+  | s16 s8.\pp s1
+  %50
+  | s4. s8-\markup { "perdendo" } s2
+  | s1
+  | s4\p s2.
+  | s1*3
+  %56
+  | \set crescendoText = \markup { \small\italic { "cresc." } }
+    \set crescendoSpanner = #'text
+    s4\< s2.
+  | s1*2
+  | s2. s8 s16 s\!
+  %60
+  | \set crescendoText = \markup { \small\italic { "più cresc." } }
+    s4\< s2.
+  | s1
+  | s4 s
+    \unset crescendoText
+    \unset crescendoSpanner
+    s\!\< s4
+  | s4\! s2.
+  | s1*12
+  %76
+  | \set crescendoText = \markup { \small\italic { "dim." } }
+    \set crescendoSpanner = #'text
+    s4 s\< s2
+  | s4 s s s8 s\!
+    \unset crescendoText
+    \unset crescendoSpanner
+  | s4 s-\markup { "espr." } s2.
+  | s1*5/4
+  | s2 s4\< s2
+  | s1*5/4\!
+  | s1*5/4
+  %83
+  | s2 s\p
+  | s1
+  | s2 s\<
+  | s1
+  | s\!
+  | s
+  | s\>
+  %90
+  | s16\! s8.-\markup { "dim." } s2.
+  | s1
+  | s1\<
+  | s4 s\!\> s2
+  | s1
+  | s\!\pp
+  | s1
+  | s\ppp
 }
 
 forceBreaks = {
@@ -706,12 +770,21 @@ forceBreaks = {
   | \repeat unfold 1 { s1\noBreak } s1\break\noPageBreak
   | \repeat unfold 1 { s1\noBreak } s1\break\noPageBreak
   | \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
-  | \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
-  | \repeat unfold 3 { s1\noBreak } s1\pageBreak
+  | \repeat unfold 4 { s1\noBreak } s1\pageBreak
   %page2
   | \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
   | \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
+  | \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
   | \repeat unfold 4 { s1\noBreak } s1\break\noPageBreak
+  | s1\noBreak s1*5/4\noBreak s1*5/4\pageBreak
+  %page3
+  | \repeat unfold 2 { s1*5/4\noBreak } s1*5/4\break\noPageBreak
+  | \repeat unfold 2 { s1*5/4\noBreak } s1*5/4\break\noPageBreak
+  | \repeat unfold 2 { s1*5/4\noBreak } s1*5/4\break\noPageBreak
+  | \repeat unfold 2 { s1*5/4\noBreak } s1\break\noPageBreak
+  | \repeat unfold 2 { s1\noBreak } s1\pageBreak
+  %page4
+  %| \repeat unfold 2 { s1\noBreak } s1\pageBreak
 }
 
 \score {
