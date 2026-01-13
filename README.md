@@ -91,17 +91,7 @@ Latest release: [Open Scores for Piano v69](https://github.com/madrisan/open-sco
 | Gluck / Sgambati | Mélodie de Gluck depuis "Orfeo ed Euridice" | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v69/Christoph-Willibald-Gluck-Orfeo-Melodie-Sgambati.pdf) |
 | Rued Langgaard | Insektarium, 9 Puzzle Pictures BVN 134 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v69/Rued-Langgaard-Insektarium-BVN-134.pdf) |
 | Franz Liszt | Sancta Dorothea S.187 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v69/Franz-Liszt-Sancta-Dorothea-S.187.pdf) |
-|  | Zweite Elegie S.197 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v69/Franz-Liszt-Zweite-Elegie-S.197.pdf) |
-|  | Wiegenlied - Chant du berceau S.198 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v69/Franz-Liszt-Wiegenlied-S.198.pdf) |
-|  | Trübe Wolken (Nuages Gris) S.199 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v69/Franz-Liszt-Nuages-Gris-S.199.pdf) |
-|  | La lugubre gondola S.200/2 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v69/Franz-Liszt-La-lugubre-gondola-S.200.pdf) |
-|  | R.W. Venezia S.201 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v69/Franz-Liszt-Richard-Wagner-Venezia-S.201.pdf) |
-|  | Am Grabe Richard Wagners S.202 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v69/Franz-Liszt-Am-Grabe-Richard-Wagners-S.202.pdf) |
-|  | Schlaflos Frage und Antwort S.203 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v69/Franz-Liszt-Schlaflos-Frage-und-Antwort-S.203.pdf) |
-|  | Recueillement S.204 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v69/Franz-Liszt-Recueillement-S.204.pdf) |
-|  | Trauervorspiel und Trauermarsch S.206 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v69/Franz-Liszt-Trauervorspiel-und-Trauermarsch-S.206.pdf) |
-|  | En rêve (Nocturne) S.207 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v69/Franz-Liszt-En-reve-Nocturne-S.207.pdf) |
-|  | Unstern (Sinistre) S.208 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v69/Franz-Liszt-Unstern-S.208.pdf) |
+|  | Late Works S.197 - S.208 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v69/Franz-Liszt-Late-Works.pdf) |
 | Pietro Domenico Paradisi | Toccata in La Maggiore P 893.06 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v69/Pietro-Domenico-Paradisi-Toccata-La-Maggiore.pdf) |
 | Ildebrando Pizzetti | Sogno | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v69/Ildebrando-Pizzetti-Sogno.pdf) |
 | Francis Poulenc | Deux Improvisations FP.113 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v69/Francis-Poulenc-2-Improvisations-FP113.pdf) |
