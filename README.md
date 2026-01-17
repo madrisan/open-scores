@@ -30,7 +30,7 @@ Latest release: [Open Scores for Piano v70](https://github.com/madrisan/open-sco
 |---|---|:---:|:---:|
 | Hans Erich Apostel | Kubiniana Op. 13, *10 Klavierstücke* | II, III, VI, VII, IX | [pdf](https://github.com/madrisan/open-scores/releases/download/v70/Hans-Erich-Apostel-Kubiniana-op.13.pdf) |
 | Carl Philipp Emanuel Bach | Solfeggio c-Moll (“Solfeggietto”) Wq 117/2, H.220 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v70/CPE-Bach-H.220-Solfeggio-c-Moll.pdf) |
-| johann Christian Bach | Sonata op.17 no.5 W.A11 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v70/JC-Bach-W.A11-Sonata-op-17-5.pdf) |
+| Johann Christian Bach | Sonata op.17 no.5 W.A11 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v70/JC-Bach-W.A11-Sonata-op-17-5.pdf) |
 | Johann Sebastian Bach :zero: | Clavierübung Teil I - Partiten BWV 825-830 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v70/JS-Bach-BWV825-830-Partiten.pdf) |
 |  | Clavierübung Teil II - Italienisches Konzert BWV 971 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v70/JS-Bach-BWV971-Italienisches-Konzert.pdf) |
 |  | Clavierübung Teil II - Ouvertüre nach französischer Art BWV 831 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v70/JS-Bach-BWV831-Ouverture-nach-Franzosischer-Art.pdf) |
