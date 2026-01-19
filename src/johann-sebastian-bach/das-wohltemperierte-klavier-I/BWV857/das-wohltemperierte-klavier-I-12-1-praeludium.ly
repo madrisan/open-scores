@@ -151,17 +151,18 @@ Bass = \context Voice = "four" \relative c {
     \fine
 }
 
-centerDynamics = {
- %| s4\pp s2.
-}
-
 forceBreaks = {
   % page 1
- %\repeat unfold 2 { s1\noBreak } s1\break\noPageBreak
- %[...]
- %\repeat unfold 2 { s1\noBreak } s1\pageBreak
- % page 2
-  %[...]
+  s1\noBreak s\break\noPageBreak
+  s1\noBreak s\break\noPageBreak
+  s1\noBreak s\break\noPageBreak
+  s1\noBreak s\break\noPageBreak
+  s1\noBreak s\break\noPageBreak
+  s1\noBreak s\pageBreak
+  % page 2
+  s1\noBreak s\break\noPageBreak
+  s1\noBreak s\break\noPageBreak
+  s1\noBreak s\break\noPageBreak
 }
 
 \score {
@@ -176,7 +177,6 @@ forceBreaks = {
       \Alto
     >>
     \new Devnull \forceBreaks
-    \context Dynamics = "dynamics" \centerDynamics
     \context Staff = "lower" <<
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
