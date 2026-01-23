@@ -8,6 +8,7 @@ Soprano = \context Voice = "one" \relative c {
   \voiceOne
   \stemUp\tieUp
   \override MultiMeasureRest.staff-position = #0
+  \label #'Praeludium12
   %1
   | f'16 as c f  g, f' e g  as, c f e!  f4
   | des4~ des16 16 c bes  as8. bes16 bes8.\prall as32 bes

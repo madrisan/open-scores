@@ -4,7 +4,7 @@ Global = {
   \include "../global.ly"
 }
 
-greyTextColor = #(x11-color "dimgray")
+\include "../macros.ly"
 
 Soprano = \context Voice = "one" \relative c' {
   \voiceOne
@@ -18,11 +18,11 @@ Soprano = \context Voice = "one" \relative c' {
   %10
   | \override MultiMeasureRest.staff-position = #6 R1*2
   | \override MultiMeasureRest.staff-position = #4 R1
-  | r4 c' des c
+  | r4 \highlightSubject { c' des c
   | b e f bes,
   %15
   | a aes g2~
-  | g8 f16 g aes4~ aes2~
+  | \unHighlightSubject g8 } f16 g aes4~ aes2~
   | aes8 g16 aes bes4~ bes2~
   | bes16 g aes c f4~ f2~
   | f8 ees d g~ g16 b, c d ees4
@@ -36,7 +36,7 @@ Soprano = \context Voice = "one" \relative c' {
   | des4. ees16 des c8 c16 bes aes4~
   | aes8 bes16 c des4~ des16 c des bes g'4~
   | g16 c, des c f4~ f8 e16 f g4~
-  | g8 f4 ees8 d8 ees16 f g f e d 
+  | g8 f4 ees8 d8 ees16 f g f e d
   | c4 a'8\rest bes, c4 r8 c
   %30
   | des8 c16 bes c2 r4
@@ -59,11 +59,11 @@ Soprano = \context Voice = "one" \relative c' {
   %45
   | c16 ees d c bes4~ bes8 ees, aes4~
   | aes16 c bes aes g4~ g16 f aes g f ees des c
-  | b4 g'' aes g
+  | b4 \highlightSubject { g'' aes g
   | fis b c f,
-  | e ees d2~ 
+  | e ees d2~
   %50
-  | d8 c16 d ees4~ ees2~
+  | d8 \unHighlightSubject c16 } d ees4~ ees2~
   | ees8 d16 ees f4~ f2~
   | f16 d e g bes,!4~ bes2~
   | bes8 aes g4 f16 ees f g aes4
@@ -85,11 +85,11 @@ Alto = \context Voice = "two" \relative c' {
   %1
   | \override MultiMeasureRest.staff-position = #-4
     R1*3
-  | r4 f as g
+  | r4 \highlightSubject { f as g
   %5
   | fis4 b c f,
   | e4 es d2
-  | c8 c16 d  e8 d16 e  f 
+  | \unHighlightSubject c8 } c16 d  e8 d16 e  f
     \hideStaffSwitch
     \change Staff = "lower" \voiceThree
     e, f g  as4
@@ -107,7 +107,7 @@ Alto = \context Voice = "two" \relative c' {
   %15
   | c4 r8 c des c16 bes c4~
   | c4 r r8 f16 ees! d8 d16 c
-  | bes8 
+  | bes8
     \hideStaffSwitch
     \change Staff = "lower" \voiceThree
     bes16 aes g4
@@ -136,11 +136,11 @@ Alto = \context Voice = "two" \relative c' {
   | \override MultiMeasureRest.staff-position = #-8
     R1*2
   | s1
-  | r4 ees f ees
+  | r4 \highlightSubject { ees f ees
   %35
   | d g aes des,
   | c ces bes2
-  | aes4 r16 b' c d g,4. ges8
+  | aes4 } r16 b' c d g,4. ges8
   | f4~ f16 g aes bes ees,4~ ees16 ges f ees
   | des2~ g16 bes, c des ees4~
   %40
@@ -155,7 +155,7 @@ Alto = \context Voice = "two" \relative c' {
     \hideStaffSwitch
     \change Staff = "lower" \voiceThree
     des,16 ees f8 fis
-  | g g16 a 
+  | g g16 a
     \change Staff = "upper" \voiceTwo
     a'4\rest b8\rest c4 bes8
   | a8 bes16 c d c b a g4 s
@@ -180,10 +180,10 @@ Tenor = \context Voice = "three" \relative c' {
   \override VoiceFollower.color = \greyTextColor
   \override VoiceFollower.style = #'dashed-line
   %1
-  | r4 c des c
+  | r4 \highlightSubject { c des c
   | b4 e f bes,
   | a4 as g2
-  | f8 f16 g  as8 as16 bes  c b, c d  es4
+  | \unHighlightSubject f8 } f16 g  as8 as16 bes  c b, c d  es4
   %5
   | r16 c d es  f4  r16 es f g as4
   | r16 g a b  c4~ c8 b16 a  b4\trill
@@ -213,11 +213,11 @@ Tenor = \context Voice = "three" \relative c' {
   | f4 r16 f g aes bes4. aes16 g
   | aes4 r r2
   | s1*2
-  | r4 g aes g
+  | r4 \highlightSubject { g aes g
   %20
   | f b c f,
   | e ees d2
-  | c4 \clef "treble" r8 c''16 bes a8 a16 g f8 g16 a
+  | c4 } \clef "treble" r8 c''16 bes a8 a16 g f8 g16 a
   | bes8 bes, b'8\rest bes16 aes g8 g16 f ees8 f16 g
   | aes8 aes, b'\rest aes16 g f8 f16 ees des8 des16 c
     \clef "bass"
@@ -226,9 +226,9 @@ Tenor = \context Voice = "three" \relative c' {
   | des8 des16 c bes8 bes16 aes g8 g16 f e8 c
   | \stemDown f f'16 ees! \stemUp des!4 c8 c,16 d e8 d16 e
   | f e f g aes4 r16 f g aes bes4
-  | r16 aes bes c 
+  | r16 aes bes c
     %\change Staff = "upper" \voiceTwo \stemDown
-    des4 
+    des4
     %\change Staff = "lower" \voiceThree
     r16 c d e f4~
   %30
@@ -243,14 +243,14 @@ Tenor = \context Voice = "three" \relative c' {
   | f4 r r2
   | R1*2
   %40
-  | r2 r4 bes
+  | r2 r4 \highlightSubject { bes
   | c bes a d
   | ees aes, g ges
-  | f2 ees4 r
+  | f2 ees4 } r
   | r8 bes'16 c d c bes aes g4 r
   %45
   | r8 g16 aes bes aes g f ees4 r
-  | r8 ees16 f g f ees d 
+  | r8 ees16 f g f ees d
     \stemDown
     \override NoteColumn.force-hshift = #-0.3
     c8[ bes]
@@ -281,11 +281,11 @@ Bass = \context Voice = "four" \relative c {
   | R1*2
   | \override MultiMeasureRest.staff-position = #-4
     R1*4
-  | r4 c des c
+  | r4 \highlightSubject { c des c
   | b e f bes,
   | a aes g2
   %10
-  | f4 d'8\rest f16 g aes8 aes16 bes c8 c,
+  | f4 } d'8\rest f16 g aes8 aes16 bes c8 c,
   | des4 d8\rest des16 ees f8 f16 ges aes8 aes,
   | bes4 r8 bes16 c des8 des16 ees f8 f,
   | c'8 c16 d e8 d16 e f e, f g aes4
@@ -300,11 +300,11 @@ Bass = \context Voice = "four" \relative c {
   | R1
   | \override MultiMeasureRest.staff-position = #-6 R1*2
   | \override MultiMeasureRest.staff-position = #-8 R1*4
-  | r2 r4 c
+  | r2 r4 \highlightSubject { c
   | des c b e!
   | f bes, a aes
   %30
-  | g2 f8 f'16 g aes8 aes16 bes
+  | g2 \unHighlightSubject f8 } f'16 g aes8 aes16 bes
   | c4~ c16 bes aes ges f8 des16 ees f8 f16 g
   | aes4~ aes16 ges f ees des8 bes16 c des8 des16 ees
   | f4~ f16 ees des c bes c des c bes aes g f
@@ -317,9 +317,9 @@ Bass = \context Voice = "four" \relative c {
   | bes a bes c des bes c des ees8 ees16 des c8 c16 bes
   %40
   | aes8 aes'16 g f8 f16 ees d4 ees8 g
-  | aes f bes[ bes,] c c'16 bes aes8 bes16 aes
+  | aes f \highlightSubject { \unHighlightSubject bes[ } bes,] c c'16 bes aes8 bes16 aes
   | g8 bes,16 c d8 c16 d ees8 ees16 d c8 c16 bes
-  | a4 bes ees r8 ees16 f
+  | a4 bes \highlightSubject { \unHighlightSubject ees } r8 ees16 f
   | g8 g16 aes bes8 bes, c4 r8 c16 d
   %45
   | ees8 ees16 f g8 g, aes4 r8 aes16 bes
@@ -333,10 +333,10 @@ Bass = \context Voice = "four" \relative c {
     R1*3
   %52
   | \override MultiMeasureRest.staff-position = #-8 R1
-  | r4 c, des c
+  | r4 \highlightSubject { c, des c
   | b e f bes,
   | a aes g2
-  | f4~ f16 f g a bes4~ bes16 des c bes
+  | \unHighlightSubject f4~ } f16 f g a bes4~ bes16 des c bes
   | c1
   | f,
     \fine

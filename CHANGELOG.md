@@ -3,16 +3,21 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [v70] - 2026-01-16
+## [v71] - unreleased
 
 ### Added
 
- - J.S. Bach: Das wohltemperierte Klavier – Erster Teil: Praeludium XII
+- J.S. Bach: Das wohltemperierte Klavier – Erster Teil: Praeludium und Fuga XII
+
+## [v70] - 2026-01-16
+
+## Added
+
+- Franz Liszt: Historische Ungarische Bildnisse S.205 - n.1-5
 
 ### Changed
 
 - Franz Liszt: Move late compositions to the "Late Works" collection
-- Franz Liszt: Historische Ungarische Bildnisse S.205 - n.1-5
 - Robert Schumann: Kinderscenen op.15 - better pagination and lots of enhancements/fixes
 - Robert Schumann: Kinderscenen op.15 - add an index page
 
