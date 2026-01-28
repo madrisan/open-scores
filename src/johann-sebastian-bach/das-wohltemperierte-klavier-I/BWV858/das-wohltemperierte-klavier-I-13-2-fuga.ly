@@ -30,8 +30,29 @@ Soprano = \context Voice = "one" \relative c' {
   %15
   | dis4 r8 gis eis4 r8 eis
   | dis16 bis cis eis dis bis cis8~ cis16 bis cis4 bis8
-
-  | R1*18
+  | cis4 r8 bis cis16 eis eis cis bis eis eis bis
+  | \autoBeamOff cis8 eis \autoBeamOn ais4~ ais8 gis16 fis gis4~
+  | gis8 fis16 eis fis4~ fis8 fis[ eis dis]
+  %20
+  | cisis r r4 r8 dis,16 eis fis dis dis fis
+  | gis dis dis gis ais dis, dis ais' b dis, dis b' cisis dis, dis cisis'
+  | dis4 r16 eis fis gis cisis, b' ais gis fis8 eis16\prall dis
+  | dis8 fis[ b ais] b2~
+  | b8 eis, ais gis ais2~
+  %25
+  | ais8 ais[ gis fis] eis4 e~
+  | e16 cis cis e dis b b dis dis b b dis cis ais ais cis
+  | cis ais ais cis b gis gis b b gis gis b ais b ais gis
+  | ais8 cis[ dis e~] e16 dis cis e dis b b dis
+  | e b b e fis b, b fis' gis b, b gis' ais b, b ais'
+  %30
+  | b8 r r4 r8 dis, gis fisis
+  | gis ais b gis eis cis[ fis eis]
+  | fis eis16 dis cis8.\prallprall b32 cis dis4 r8 cis
+  | b ais gis cis ais16 cis cis ais gis cis cis gis
+  | \autoBeamOff ais8 cis \autoBeamOn fis2 eis4
+  %35
+  | fis1\fermata
     \fine
 }
 
@@ -57,6 +78,33 @@ Alto = \context Voice = "two" \relative c' {
   %15
   | bis gis[ cis bis] cis bis16 ais gis8.\prallprall fis32 gis
   | ais4 r8 gis fis[ eis dis gis]
+  | eis16 gis gis eis dis gis gis dis eis4 r8 gisis
+  | ais r r cis b4 r8 b
+  | ais4 r8 ais gis2~
+  %20
+  | gis16 b b gis fis gis ais eis fis gis ais8 r8 dis
+  | \once\shape #'((0 . 0.6) (0 . 2) (0 . 2.2) (0 . 0.6)) Tie
+    dis2^~ dis4
+    \once\shape #'((0 . -0.6) (0 . -2) (0 . -2) (0 . -0.6)) Tie
+    gis,~
+  | gis16 fis gis ais b4 ais8 r16 eis' dis8 cisis!
+  | dis r r4 r8 dis gis fis
+  | \once\shape #'((0 . -0.4) (0 . -2) (0 . -2) (0 . -0.4)) Tie
+    gis2~ gis8 cis, fis eis
+  %25
+  | \autoBeamOff fis cis \autoBeamOn dis4~ dis16 gis, gis cis cis gis gis cis
+  | ais2 gis
+  | fis eis4 r
+  | r8 fis b ais b ais16 gis fis8.\prallprall e32 fis
+  | gis4 r8 fis e dis cis fis
+  %30
+  | dis dis[ gis fisis] gis4 r8 ais
+  | b cis dis b gis4 r8 cis
+  | ais4 r8 ais gis16 eis fis ais gis eis fis8~
+  | fis16 eis fis4 eis8 fis4 r8 eis
+  | fis4 r8 ais gis16 dis' dis b gis cis cis b
+  %35
+  | ais1
 }
 
 Tenor = \context Voice = "three" \relative c {

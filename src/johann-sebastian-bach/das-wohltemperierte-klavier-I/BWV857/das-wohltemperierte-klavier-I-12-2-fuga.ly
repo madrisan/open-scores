@@ -142,7 +142,7 @@ Alto = \context Voice = "two" \relative c' {
   | c ces bes2
   | aes4 } r16 b' c d g,4. ges8
   | f4~ f16 g aes bes ees,4~ ees16 ges f ees
-  | des2~ g16 bes, c des ees4~
+  | des2 g16 bes, c des ees4~
   %40
   | ees16 ees f g aes4~ aes16 c bes aes g8. g16
   | f2 c8 r r4
@@ -257,7 +257,7 @@ Tenor = \context Voice = "three" \relative c' {
     \stemUp \override NoteColumn.force-hshift = #0.4 c4
   | \stemDown \once\override NoteColumn.force-hshift = #-0.3 d
     \revert NoteColumn.force-hshift
-  | \stemUp b'8 a16 b c b c d ees4
+    \stemUp b'8 a16 b c b c d ees4
   | r16 c d ees f4~ f16 ees f g aes4
   %50
   | \stemDown c,4 r16 c d ees f d ees f g aes g f
