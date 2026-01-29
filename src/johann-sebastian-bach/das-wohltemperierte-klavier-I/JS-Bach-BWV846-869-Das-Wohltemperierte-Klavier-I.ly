@@ -178,8 +178,8 @@
 
 \include "./BWV859/das-wohltemperierte-klavier-I-14-1-praeludium.ly"
 \pageBreak
-\include "./BWV859/das-wohltemperierte-klavier-I-14-2-fuga.ly"
-\pageBreak
+%\include "./BWV859/das-wohltemperierte-klavier-I-14-2-fuga.ly"
+%\pageBreak
 
 %\include "./BWV860/das-wohltemperierte-klavier-I-15-1-praeludium.ly"
 %\pageBreak

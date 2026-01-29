@@ -239,7 +239,7 @@ Tenor = \context Voice = "three" \relative c' {
   | des8 ees16 des c8 des16 c bes4. aes16 g
   %35
   | aes8 g16 aes bes aes g f ees8 aes~ aes16 g aes bes
-  | r4 r16 f g aes ees4~ r16 g f e
+  | r4 r16 f g aes ees4 r16 g f e
   | f4 r r2
   | R1*2
   %40
