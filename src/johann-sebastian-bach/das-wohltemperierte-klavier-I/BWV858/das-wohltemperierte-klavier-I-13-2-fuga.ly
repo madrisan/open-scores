@@ -11,9 +11,12 @@ Soprano = \context Voice = "one" \relative c' {
   \stemNeutral\tieNeutral
   \override MultiMeasureRest.staff-position = #0
   %1
-  | b'8\rest cis8( fis-.) eis-.  fis eis16 dis cis8.\prallprall b32 cis
+  | b'8\rest \highlightSubject {
+    cis8( fis-.) eis-.  fis eis16 dis cis8.\prallprall b32 cis
   | dis4 b8\rest cis  b ais gis cis
-  | \stemUp\tieUp ais fis16[ fis']  eis fis gis dis  eis fis gis8~  gis16 fis eis dis
+  | \stemUp\tieUp ais }
+    \highlightSubject { \unHighlightSubject fis16[ }
+    fis']  eis fis gis dis  eis fis gis8~  gis16 fis eis dis
   | cis16 dis eis bis  cis dis eis cis  ais bis cis4 bis8
   %5
   | cis2~ cis8 cis16 dis  eis4
@@ -23,9 +26,10 @@ Soprano = \context Voice = "one" \relative c' {
   | gis8 fis16 eis fis4~  fis8 eis16 dis eis4~
   %10
   | eis8 eis[ dis cis]  bis gis cis4~
-  | cis4~ cis16 cis8 bis16 cis8 cis[ fis eis]
+  | cis4~ cis16 cis8 bis16 cis8
+    \highlightSubject { cis[ fis eis]
   | fis8 eis16 dis cis4 dis r8 cis
-  | b ais gis cis ais ais[ dis cisis]
+  | b ais gis cis ais } ais[ dis cisis]
   | dis4 r8 eis fis gis ais fis
   %15
   | dis4 r8 gis eis4 r8 eis
@@ -47,9 +51,9 @@ Soprano = \context Voice = "one" \relative c' {
   | e b b e fis b, b fis' gis b, b gis' ais b, b ais'
   %30
   | b8 r r4 r8 dis, gis fisis
-  | gis ais b gis eis cis[ fis eis]
+  | gis ais b gis eis \highlightSubject { cis[ fis eis]
   | fis eis16 dis cis8.\prallprall b32 cis dis4 r8 cis
-  | b ais gis cis ais16 cis cis ais gis cis cis gis
+  | b ais gis cis \unHighlightSubject ais16 } cis cis ais gis cis cis gis
   | \autoBeamOff ais8 cis \autoBeamOn fis2 eis4
   %35
   | fis1\fermata
@@ -61,8 +65,9 @@ Alto = \context Voice = "two" \relative c' {
   \stemDown\tieDown
   %1
   | s1*2
-  | r8 fis( cis'-.) bis-. cis8 bis16 ais gis8.\prallprall fis32 gis
-  | ais4 r8 gis fis eis dis gis
+  | r8 \highlightSubject {
+    fis( cis'-.) bis-. cis8 bis16 ais gis8.\prallprall fis32 gis
+  | ais4 } r8 gis fis eis dis gis
   %5
   | eis8 cis16[ b'] ais b cis gis ais b cis8~ cis16 b ais gis
   | fis16 gis ais eis fis gis ais fis dis[ eis] fis4 eis8
@@ -76,9 +81,10 @@ Alto = \context Voice = "two" \relative c' {
   | fis4 gis~ gis8 fis r4
   | r8 ais dis cisis dis eis fis dis
   %15
-  | bis gis[ cis bis] cis bis16 ais gis8.\prallprall fis32 gis
+  | bis \highlightSubject {
+    gis[ cis bis] cis bis16 ais gis8.\prallprall fis32 gis
   | ais4 r8 gis fis[ eis dis gis]
-  | eis16 gis gis eis dis gis gis dis eis4 r8 gisis
+  | \unHighlightSubject eis16 } gis gis eis dis gis gis dis eis4 r8 gisis
   | ais r r cis b4 r8 b
   | ais4 r8 ais gis2~
   %20
@@ -95,23 +101,17 @@ Alto = \context Voice = "two" \relative c' {
   | \autoBeamOff fis cis \autoBeamOn dis4~ dis16 gis, gis cis cis gis gis cis
   | ais2 gis
   | fis eis4 r
-  | r8 fis b ais b ais16 gis fis8.\prallprall e32 fis
+  | r8 \highlightSubject {
+    fis b ais b ais16 gis fis8.\prallprall e32 fis
   | gis4 r8 fis e dis cis fis
   %30
-  | dis dis[ gis fisis] gis4 r8 ais
+  | dis } dis[ gis fisis] gis4 r8 ais
   | b cis dis b gis4 r8 cis
   | ais4 r8 ais gis16 eis fis ais gis eis fis8~
   | fis16 eis fis4 eis8 fis4 r8 eis
   | fis4 r8 ais gis16 dis' dis b gis cis cis b
   %35
   | ais1
-}
-
-Tenor = \context Voice = "three" \relative c {
-  \voiceThree
-  \stemNeutral\tieNeutral
-  \override Rest.staff-position = #0
-  %1
 }
 
 Bass = \context Voice = "four" \relative c {
@@ -121,8 +121,9 @@ Bass = \context Voice = "four" \relative c {
   \override Rest.staff-position = #0
   %1
   | R1*4
-  | b8\rest cis8( fis-.) eis-.  fis eis16 dis cis8.\prallprall b32 cis
-  | dis4 r8 cis b ais gis cis
+  | b8\rest \highlightSubject {
+    cis8( fis-.) eis-.  fis eis16 dis cis8.\prallprall b32 cis
+  | dis4 } r8 cis b ais gis cis
   | fis, fis'[ eis cis] fis16 ais ais fis dis fis fis dis
   | \autoBeamOff bis8 cis \autoBeamOn fis4~ fis16 gis bis gis eis gis gis eis
   | cis ais' ais fis dis fis fis dis bis gis' gis eis cis eis eis cis
@@ -139,9 +140,10 @@ Bass = \context Voice = "four" \relative c {
   | ais16 cis cis ais fis ais ais fis dis b' b gis eis gis gis eis
   | cisis ais' ais eis dis fis fis dis b dis dis b gis b b gis
   %20
-  | ais8 ais[ dis cisis] dis cis16 b ais8.\prallprall gis32 ais
+  | ais8 \highlightSubject {
+    ais[ dis cisis] dis cis16 b ais8.\prallprall gis32 ais
   | b4 r8 ais gis[ fis eis ais]
-  | \autoBeamOff dis, fis \autoBeamOn gis4~ gis16 eis' fis gis ais8 ais,
+  | \autoBeamOff dis, } fis \autoBeamOn gis4~ gis16 eis' fis gis ais8 ais,
   | dis16 ais' ais fis dis fis fis dis gis, dis'' dis b gis b b gis
   | eis gis gis eis cis eis eis cis fis, cis'' cis ais fis ais ais fis
   %25
@@ -186,7 +188,6 @@ forceBreaks = {
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \clef bass
-      \Tenor
       \Bass
     >>
   >>
