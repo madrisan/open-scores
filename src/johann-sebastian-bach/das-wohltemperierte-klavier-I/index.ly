@@ -57,9 +57,9 @@
 \noPageBreak
 \markup \indexItem "Praeludium und Fuga XIV"  #'Praeludium14 "fis-Moll (F-sharp minor)" "859"
 \noPageBreak
-
-%\markup \indexItem "Praeludium und Fuga XV"  #'Praeludium15 "G-Dur (G major)" "860"
+\markup \indexItem "Praeludium und Fuga XV"  #'Praeludium15 "G-Dur (G major)" "860"
 \noPageBreak
+
 %\markup \indexItem "Praeludium und Fuga XVI"  #'Praeludium16 "g-Moll (G minor)" "861"
 \noPageBreak
 
