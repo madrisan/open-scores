@@ -10,6 +10,7 @@ Soprano = \context Voice = "one" \relative c' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \omit TupletBracket \omit TupletNumber
+  \label #'Praeludium15
   %1
   | g'16 b d  g d b  d b g  b g d  e g c  e c g  c g e  g e c
   | a c fis  a fis c  fis c a  c a fis  g b d  g d b  d b g
@@ -39,20 +40,6 @@ Soprano = \context Voice = "one" \relative c' {
   | d16 fis a  b g e  c e g  a fis d  b d fis  g e b  a e' g  fis d c |
   | \tuplet 2/3 { <b d g>1\fermata } 
     \fine
-}
-
-Alto = \context Voice = "two" \relative c' {
-  \voiceTwo
-  \stemNeutral\tieNeutral
-  \override Rest.staff-position = #0
-  %1
-}
-
-Tenor = \context Voice = "three" \relative c {
-  \voiceThree
-  \stemNeutral\tieNeutral
-  \override Rest.staff-position = #0
-  %1
 }
 
 Bass = \context Voice = "four" \relative c' {
@@ -98,10 +85,6 @@ Bass = \context Voice = "four" \relative c' {
     \fine
 }
 
-centerDynamics = {
- %| s4\pp s2.
-}
-
 forceBreaks = {
   % page 1
  %\repeat unfold 2 { s1\noBreak } s1\break\noPageBreak
@@ -120,15 +103,12 @@ forceBreaks = {
       \Global
       \clef treble
       \Soprano
-      \Alto
     >>
     \new Devnull \forceBreaks
-    \context Dynamics = "dynamics" \centerDynamics
     \context Staff = "lower" <<
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
       \clef bass
-      \Tenor
       \Bass
     >>
   >>
