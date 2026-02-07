@@ -87,11 +87,7 @@ Bass = \context Voice = "four" \relative c' {
 
 forceBreaks = {
   % page 1
- %\repeat unfold 2 { s1\noBreak } s1\break\noPageBreak
- %[...]
- %\repeat unfold 2 { s1\noBreak } s1\pageBreak
- % page 2
-  %[...]
+  %\repeat unfold 2 { s1*24/16\noBreak } s1*24/16\break\noPageBreak
 }
 
 \score {
