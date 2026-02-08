@@ -4,15 +4,17 @@ Global = {
   \include "../global.ly"
 }
 
+\include "../macros.ly"
+
 Soprano = \context Voice = "one" \relative c' {
   \voiceOne
   \stemNeutral\tieNeutral\slurNeutral
   \override MultiMeasureRest.staff-position = #0
   %1
-  | g'8-. a16( g fis g  a8-) b16( a g a
+  | \highlightSubject { g'8-. a16( g fis g  a8-) b16( a g a
   | b8-.) a-. g-.  d-. c'4->(
   | b8-.) a-. g-.  fis-. e'4->(
-  | d8-.) e16( d c b)  a8-.  c16( b a g)
+  | d8-.) e16( d c b)  a8-.  c16( b a g) }
   %5
   | \voiceOne fis8-. g-. a-.  g-. a-. b-.
   | a8 b16 cis d b  cis b cis d e cis
@@ -36,11 +38,11 @@ Soprano = \context Voice = "one" \relative c' {
   | a16 g a8[ b]  c16 d c b a g
   | \oneVoice fis!8.\prall e32 fis g8~  g16 b a g fis e
   | d8 r r r4 r8
-  | \voiceOne a'8 g16 a b a  g8 fis16 g a g
+  | \voiceOne \highlightSubjectInv { a'8 g16 a b a  g8 fis16 g a g
   %25
   | \oneVoice fis8-. g-. a-.  d-. e,4->(
   | fis8-.) g-. a-.  b-. cis,4->(
-  | d8-.) d16 e fis g  a8 fis16 g a b
+  | d8-.) d16 e fis g  a8 fis16 g a b }
   | \voiceOne c4 b8 a4.
   | g16 g' fis e d fis  e fis e d c e
   %30
@@ -53,11 +55,11 @@ Soprano = \context Voice = "one" \relative c' {
   | g16 a b g c g  d' g, e' g, f' g,
   | e'16 c' b d a d  gis, d' fis,! d' e, d'
   | c16 a b cis dis e  fis g a b c! dis,
-  | e8-. fis16( e dis e)  fis8-. g16( fis e fis)
+  | \highlightSubject { e8-. fis16( e dis e)  fis8-. g16( fis e fis)
   | g8-. fis-. e-.  b-. a'4->(
   %40
   | \voiceOne g8-.) fis-. e-.  dis-. c'4->(
-  | b8) c16( b a g  fis8-.) a16( g fis e
+  | b8) c16( b a g  fis8-.) a16( g fis e }
   | dis8-.) a'-. g-.  fis-. e-. dis-.
   | e8-. d!-. c-.  d-. c-. b-.
   | c16 c' b a g b  a b a g fis a
@@ -69,9 +71,9 @@ Soprano = \context Voice = "one" \relative c' {
   | a4 a8 g4.~
   %50
   | \oneVoice g4 g8 fis4.~
-  | fis16 b cis b ais b  cis8 d16 cis b cis
+  | fis16 \highlightSubject { b cis b ais b  cis8 d16 cis b cis
   | d8-. cis-. b-.  ais-. g'4->(
-  | fis8-.) g16( fis e d  cis8-.) e16 d cis b
+  | fis8-.) g16( fis e d  cis8-.) e16 d cis b }
   | ais16 b cis ais d ais  e' ais, fis' ais, g' ais,
   %55
   | fis'16 ais, b fis'  e32[ d cis e]  e16 gis, ais e'  d32[ cis b cis]
@@ -81,10 +83,10 @@ Soprano = \context Voice = "one" \relative c' {
   | \oneVoice fis16 g32 a b16 fis cis' fis,  d' fis, e' g, fis' a,
   %60
   | g16 fis g b e g,  fis b a cis d8~
-  | d8 cis4  d8-. e16( d cis d
+  | d8 cis4  \highlightSubject { d8-. e16( d cis d
   | e8-.) fis16( e d e  fis8-.) g16( fis e d)
-  | cis8-. b'4~  b16 a b a g fis
-  | e2.~\trill
+  | cis8-. b'4~ b16 a b a g fis
+  | \unHighlightSubject e2.~\trill }
   %65
   | e16 a32 g fis16 a e a  d, a' cis, a' b, a'
   | g16 fis e g d g  cis, g' b, g' a, g'
@@ -102,10 +104,10 @@ Soprano = \context Voice = "one" \relative c' {
   | a16 b cis a d a  e' a, fis'! a, g'! a,
   | \voiceOne fis'8 b g  e a fis
   | g4.~  g16[ a] a8.\trill g32 a
-  | b8-. c16( b a b)  c8-. d16( c b c)
+  | \highlightSubject { b8-. c16( b a b)  c8-. d16( c b c)
   %80
   | d8-. c-. b-.  a-. g'4->
-  | fis8-. e-. d-.  cis-. bes'4->
+  | fis8-. e-. d-.  cis-. bes'4-> }
   | a16 g fis e d8  r16 g8 c,16 g' fis
   | g16 fis32 e d16 g c, g'  b,8 g' a,
   | b16 d32 c b16 d a d  g,8 c4~
@@ -120,10 +122,10 @@ Alto = \context Voice = "two" \relative c {
   \stemNeutral\tieNeutral
   %1
   | s2.*4
-  | \voiceTwo d'8 e16( d cis d  e8) fis16( e d e
+  | \voiceTwo \highlightSubject { d'8 e16( d cis d  e8) fis16( e d e
   | fis8-.) e-. d-.  a-. g'4->(
   | fis8-.) e-. d-.  cis-. b'4->(
-  | a8-.) b16( a g fis)  e8-. g16( fis e d)
+  | a8-.) b16( a g fis)  e8-. g16( fis e d) }
   | cis8-. g'-. fis-.  e-. d-. cis-.
   %10
   | d16 e fis d g d  a' d, b' d, c'! d,
@@ -138,10 +140,10 @@ Alto = \context Voice = "two" \relative c {
   | fis4 fis8-.  e4.~
   | e4 e8-.  d4.~
   %20
-  | d8 c16( d e d  c8-.) b16( c d c
+  | \highlightSubjectInv { d8 c16( d e d  c8-.) b16( c d c
   | b8-.) c-. d-.  g-. \change Staff = "lower" \voiceThree a,4(
-  | b8-.) c-. d-.  e-. fis,4->( |
-  | g8-.) g16( a b cis  d8-.) b16 cis d e |
+  | b8-.) c-. d-.  e-. fis,4->(
+  | g8-.) g16( a b cis  d8-.) b16 cis d e }
   | \change Staff = "upper" \voiceTwo fis8-. e-. dis-.  e-. d-. cis-.
   %25
   | \change Staff = "lower" \voiceThree d8 cis16 b a c  b c b a g b
@@ -159,10 +161,10 @@ Alto = \context Voice = "two" \relative c {
   | e'16 dis e fis g e  fis e fis g a fis
   | g8 a16 g fis e  a4.~
   | a16 g fis a e a  dis, a' cis, a' b, a'
-  | g8 fis16( g a g)  fis8 e16( fis g fis)
+  | \highlightSubjectInv { g8 fis16( g a g)  fis8 e16( fis g fis)
   | e8-. fis-. g-.  c-. dis,4->(
   %45
-  | e8-.) fis-. g-.  a-. b,4->
+  | e8-.) fis-. g-.  a-. b,4-> }
   | c16 b a b c d  e dis e fis g a
   | b4.~  b8 c fis,
   | e16 fis g4->~  g16 fis e dis cis e
@@ -177,10 +179,10 @@ Alto = \context Voice = "two" \relative c {
   | e,8. d16 cis b  \change Staff = "lower" \voiceThree a b a g! fis e
   | d8 r r r4 r8 |
   %60
-  | r4 r8  d e16 d cis! d
+  | r4 r8  \highlightSubject { d e16 d cis! d
   | e8 fis16( e d e  fis8-.) e-. d-.
   | cis8-. b'4->  a8 b16 a g fis
-  | e8 g16 fis e d  cis4 d8~
+  | e8 g16 fis e d }  cis4 d8~
   | d16 g32 fis e16 g d g  cis,g' b, g' a, g'
   %65
   | fis16 g a4~  a16 g fis e d fis
@@ -194,8 +196,8 @@ Alto = \context Voice = "two" \relative c {
   | \change Staff = "lower" \voiceThree c16 d c b a c  b4.
   | a8 \change Staff = "upper" \voiceTwo r r r4 r8
   | s2.*3
-  | d8 c!16 d e d  c8 b16 c d c
-  | \change Staff = "lower" \voiceThree b8 c b  e fis,4
+  | \highlightSubjectInv { d8 c!16 d e d  c8 b16 c d c
+  | \change Staff = "lower" \voiceThree b8 c b  e fis,4 }
   | g8-. \change Staff = "upper" \voiceTwo a'16( g fis g)  a8-. b16( a g a)
   %80
   | b8-. a-. g~  g d' cis
@@ -226,10 +228,10 @@ Bass = \context Voice = "four" \relative c' {
   \override MultiMeasureRest.staff-position = #0
   %1
   | R2.*10
-  | g8^. a16( g fis g  a8^.) b16( a g a
+  | \highlightSubject { g8^. a16( g fis g  a8^.) b16( a g a
   | b8^.) a^. g^.  d^. c'4->(
   | b8^.) a^. g^.  fis^. e'4->(
-  | d8^.) e16( d c b  a8^.) c16( b a g
+  | d8^.) e16( d c b  a8^.) c16( b a g }
   %15
   | fis4) e8  d16 e d c b a
   | g16 a b g c g  d' g, e' g, f' g,
@@ -247,10 +249,10 @@ Bass = \context Voice = "four" \relative c' {
   | d8-. r r r4 r8
   | \override MultiMeasureRest.staff-position = #-6
     R2.
-  | d8-. c16 d e d  \oneVoice c8-. b16 c d c
+  | \highlightSubjectInv { d8-. c16 d e d  \oneVoice c8-. b16 c d c
   | b8-. c-. d-.  g-. a,4->(
   %30
-  | b8-.) c-. d-.  e-. fis,4->(
+  | b8-.) c-. d-.  e-. fis,4->( }
   | g16) a b4->~  b16 a g fis e g
   | fis16 g a4~  a16 g fis e d fis
   | e16 fis g4~  g16 fis e d cis e
@@ -271,8 +273,8 @@ Bass = \context Voice = "four" \relative c' {
   %50
   | \voiceFour e16 d cis e b e  ais, e' gis, e' fis, e'
   | d16 fis e d cis b  \oneVoice ais cis b ais gis fis
-  | b8_. cis16( b ais b  cis8-.) d16( cis b cis
-  | d8-.) cis-. b-.  ais-. g'4->
+  | \highlightSubject { b8_. cis16( b ais b  cis8-.) d16( cis b cis
+  | d8-.) cis-. b-.  ais-. g'4-> }
   | fis16 gis ais fis b fis  cis' fis, d' fis, e' fis,
   %55
   | d'16 fis, g d'  cis32[ b ais b]  cis16 e, fis cis'  b32[ ais gis ais]
@@ -292,11 +294,11 @@ Bass = \context Voice = "four" \relative c' {
   | r8 r16 d cis b  a4 r8
   | r8 r16 cis b a  g8 r r
   | r4 r8  r16 a b cis d e
-  | \oneVoice fis16( g) a8-. a,-.  d-. c!16( d e d)
+  | \oneVoice fis16( g) a8-. a,-.  \highlightSubjectInv { d-. c!16( d e d)
   %70
   | c8-. b16( c d c)  b8-. c-. d-.
   | g8-. a,4->  b8-. c-. d-.
-  | \voiceFour e8-. fis,4->  g8 fis16 g a b  
+  | \voiceFour e8-. fis,4-> }  g8 fis16 g a b  
   | c,8 c''16 b a g  \oneVoice fis e d c b a
   | g16 a b g c g  d' g, e' g, f' g,
   %75
