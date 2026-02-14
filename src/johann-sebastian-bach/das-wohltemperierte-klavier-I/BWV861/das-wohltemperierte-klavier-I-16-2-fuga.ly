@@ -10,14 +10,14 @@ Soprano = \context Voice = "one" \relative c' {
   \override MultiMeasureRest.staff-position = #0
   %1
   | R1
-  | r2 r8 g'8 bes d,
+  | r2 r8 \highlightSubject { g'8 bes d,
   | cis4 d  r8 e16 f  g8 f16 e
-  | \voiceOne f8 g16 a  bes8 a16 g  a8 bes16 c  d8 c16 bes
+  | \voiceOne \unHighlightSubject f8 } g16 a  bes8 a16 g  a8 bes16 c  d8 c16 bes
   %5
   | c4 bes  a8 d16 c!  bes8 c16 d
   | es8 c a[ fis']  g4 r
   | \oneVoice r8 e, a f!  d4 cis8 e~
-  | e8 d g4~  g16 fis g a  bes4~  
+  | e8 d g4~  g16 fis g a  bes4~
   | bes4 a~  a16 d, e fis  g4^~
   %10
   | g8 fis16 g  a8 g16 fis  g4. \voiceOne c8
@@ -25,10 +25,11 @@ Soprano = \context Voice = "one" \relative c' {
   | bes4 r r2
   | s1*2
   %15
-  | b'8\rest 
+  | b'8\rest
+    \highlightSubject {
     \once\override NoteColumn.force-hshift = #-0.3 c,
     d f,  e4 f
-  | r8 g16 a  bes8 a16 g  a8 bes16 c  d8 c16 bes
+  | r8 g16 a  bes8 a16 g  \unHighlightSubject a8 } bes16 c  d8 c16 bes
   | c8 d16 c  bes8 c16 d  es8 f16 es  d8 es16 f
   | g8 es c[ a']  bes r r4
   | r8 g16 as  bes8 as16 g  as8 as16 g  f8 g16 as
@@ -42,10 +43,10 @@ Soprano = \context Voice = "one" \relative c' {
   | a4~ a16 bes c d  g,4~ g16 bes as g
   | f4~ f16 g as bes  es,4~ es16 g f es
   | d4~ d16 d e fis  g4~ g16 bes a g
-  | fis8 d' es! g,  r d'16 c  bes8 c16 d
+  | fis8 \highlightSubject { d' es! g, }  r d'16 c  bes8 c16 d
   | es8 d c[ es]  d r r4
   %30
-  | r2  r8 d16 es  f!8 es16 d
+  | r2  b'8\rest d,16 es  f!8 es16 d
   | es4~ es16 d c bes  a4 r8 es'16 d
   | c8 d16 es  d8 e16 fis  g8 fis16 g  a4~
   | a8 d, g f!  es! d c[ bes!]
@@ -59,9 +60,9 @@ Alto = \context Voice = "two" \relative c {
   \showStaffSwitch
   %1
   | \change Staff = "lower"
-    r8 d' es g,  fis4 g
+    r8 \highlightSubject { d' es g,  fis4 g
   | r8 \once\override Beam.positions = #'(-1.5 . -1) a16
-    bes  \once \override Beam.positions = #'(-1 . -1.5) c8 bes16 a  bes4 g
+    bes  \once \override Beam.positions = #'(-1 . -1.5) c8 bes16 a  bes4 } g
   | r8 a16 g  f!8 g16 a  bes8 g e[ cis']
   | d4.
     \change Staff = "upper" \voiceTwo
@@ -71,36 +72,36 @@ Alto = \context Voice = "two" \relative c {
   | g4 fis8 a  d4 g,\rest
   | s1*5
   %12
-  | r8 f g bes, a4 bes
-  | \oneVoice r8 c16 d ees8 d16 c d e d e f8 e16 d
+  | r8 \highlightSubject { f g bes, a4 bes
+  | \oneVoice r8 c16 d ees8 d16 c \unHighlightSubject d } e d e f8 e16 d
   | g4. f16 e f4 e8 bes'^~
   %15
-  | \voiceTwo \stemUp bes 
+  | \voiceTwo \stemUp bes
     \once\override NoteColumn.force-hshift = #0 a^~
-    \stemDown a g16 a 
+    \stemDown a g16 a
     \stemUp \once\override NoteColumn.force-hshift = #-0.3 bes8
     a16 g \stemDown a4^~
   | a8 g16 f e8 c~ c d16 ees f8. g16
-  | a4 g r8 c d f,
+  | a4 g r8 \highlightSubject { c d f,
   | es4 f r8 f16 g as8 g16 f
-  | g8 r r4 r8 f'16 es d8 es16 f
+  | g8 } r r4 r8 f'16 es d8 es16 f
   %20
   | b,8 es16 d c8 d16 es f,8 g16 f es8 f16 g
   | as8 f d[ b'] c4 r8 es,
   | d8 es16 f  g8 a!16 b!  c8 b16 c  d8 g,~
-  | g8 c16[ d]  es8 g,  fis4 g~
-  | g8 a16 bes  c8 bes16 a  bes d, e fis  g4~
+  | g8 \highlightSubject { c16[ d]  es8 g,  fis4 g~
+  | g8 a16 bes  c8 bes16 a  \unHighlightSubject bes } d, e fis  g4~
   %25
   | g16 g f! es! d4~  d16 bes c d  es4~
   | es16 es d c bes4~  bes16 g a! b  c4~
   | c16 c bes! a g4~  g16 g a bes  c8 cis
-  | d4 r fis! g
-  | r8 a16 bes  c8 bes16 a  a8 g\rest g4\rest
+  | d4 r \highlightSubject { fis! g
+  | r8 a16 bes  c8 bes16 a  a8 } g\rest g4\rest
   %30
-  | r8 fis16 g  a8 g16 fis  g2~
-  | g2 r8 d' es g,
+  | g8\rest \stemUp fis16 g  a8 g16 fis  g2~ \stemDown
+  | g2 r8 \highlightSubject { d' es g,
   | fis4 g  r8 a16 bes  c8 bes16 a
-  | bes4. <g b>8 <a c> r <d, g> r
+  | bes4. } <g b>8 <a c> r <d, g> r
   | <es g>4 <d fis> d2
 }
 
@@ -110,17 +111,17 @@ Tenor = \context Voice = "three" \relative c' {
   \override VoiceFollower.style = #'dashed-line
   %1
   | s1*5
-  | r2 r8 g 
+  | r2 r8 \highlightSubject { g
     \change Staff = "upper" \voiceTwo
     bes
     \change Staff = "lower" \voiceThree
     d,
-  | cis4 d r8 e16 f 
+  | cis4 d r8 e16 f
     \change Staff = "upper" \voiceTwo
     g8
     \change Staff = "lower" \voiceThree
     f16 e
-  | f8 g16 a bes8 a16 g a8 bes16 c d8 c16 bes
+  | \unHighlightSubject f8 } g16 a bes8 a16 g a8 bes16 c d8 c16 bes
   | c2~ c4 bes8
     \change Staff = "upper" \voiceTwo
     es
@@ -130,7 +131,7 @@ Tenor = \context Voice = "three" \relative c' {
     \showStaffSwitch
     \change Staff = "upper" \voiceTwo
     bes8 c16 d es4~
-  | es 
+  | es
     \change Staff = "lower" \voiceThree
     d c2
   | d4 r \oneVoice d,8\rest f16 es d8 es16 f
@@ -138,14 +139,14 @@ Tenor = \context Voice = "three" \relative c' {
     \change Staff = "upper" \voiceTwo
     bes2~
   %15
-  | bes8 c16 bes a8 bes16 c d8 bes 
+  | bes8 c16 bes a8 bes16 c d8 bes
     \change Staff = "lower" \voiceThree
-    g[ 
+    g[
     \hideStaffSwitch
     \change Staff = "upper" \voiceTwo
     e']
     \showStaffSwitch
-  | \shiftOn f8. ees16 
+  | \shiftOn f8. ees16
     \once\override NoteColumn.force-hshift = #0.3 d4
     c4. d16 c
   | \change Staff = "lower" \voiceThree
@@ -154,32 +155,32 @@ Tenor = \context Voice = "three" \relative c' {
   | g4 a8 c f, r r4
   | s1*9
   %28
-  | s2 r8 d' es g,
+  | s2 r8 \highlightSubject { d' es g,
   | fis4 g r8
     \change Staff = "upper" \voiceTwo
     a16 bes c8 bes16 a
-  | bes2~ 
+  | \unHighlightSubject bes2~ }
     \once\override NoteColumn.force-hshift = #0.4 bes8
     \hideStaffSwitch
     \change Staff = "lower" \voiceThree
     b16 a g8 a16 b
   | c4 r s2
   | s1
-  | r8 d es g, fis4 g
+  | r8 \highlightSubject { d es g, fis4 g
   | r8 a16 bes
     \showStaffSwitch
     \change Staff = "upper" \voiceTwo
     \once\override NoteColumn.force-hshift = #0.9 c8
-    bes16 a 
-    \once\override NoteColumn.force-hshift = #0.4 bes2
+    bes16 a
+    \once\override NoteColumn.force-hshift = #0.4 bes2 }
 }
 
 Bass = \context Voice = "four" \relative c' {
   \override MultiMeasureRest.staff-position = #0
   %1
   | s1*4
-  | r8 d, es g,  fis4 g
-  | \voiceFour r8 a16 bes  c8 bes16 a  bes4 g
+  | r8 \highlightSubject { d, es g,  fis4 g
+  | \voiceFour r8 a16 bes  c8 bes16 a  bes4 } g
   | r8 a16 g  f!8 g16 a  bes8 g e[ cis']
   | d1
   | e8 a16 g  fis8 g16 a  bes,8 c16 d  es8 d16 c
@@ -187,17 +188,17 @@ Bass = \context Voice = "four" \relative c' {
   | d2 g,4. a8
   | bes8 f'[ g d]  es8 d16 es  f8 f,
   | bes4 r s2
-  | s2 r8 bes d f,
+  | s2 r8 \highlightSubject { bes d f,
   | e4 f r8 g16 a  bes8 a16 g
   %15
-  | a4 bes  r8 c16 bes  a8 bes16 c
+  | a4 } bes  r8 c16 bes  a8 bes16 c
   | d8 bes g[ e']  f2~
-  | f8 f[ g bes,]  a4 bes
-  | r8 c16 d  es8 d16 c  d8 c16 bes  c8 d
+  | f8 \highlightSubject { f[ g bes,]  a4 bes
+  | r8 c16 d  es8 d16 c  \unHighlightSubject d8 } c16 bes  c8 d
   | \oneVoice es8 d16 c  d8 e  f f,16 g  as8 g16 f
   %20
-  | g8 g'[ as c,]  b4 c
-  | r8 d16 es  f8 es16 d  es8[ e f fis]
+  | g8 \highlightSubject { g'[ as c,]  b4 c
+  | r8 d16 es  f8 es16 d  \unHighlightSubject es8[ } e f fis]
   | g16 as g f!  es8 f16 g  as8 f d[ b']
   | c4~ c16 d c bes!  a! d, c d  es d c bes
   | a8 c[ d d,]  g g'16[ a]  bes8 a16 g
@@ -219,10 +220,6 @@ Bass = \context Voice = "four" \relative c' {
 forceBreaks = {
   % page 1
   \repeat unfold 3 { s1\noBreak } s1\break\noPageBreak
- %[...]
- %\repeat unfold 2 { s1\noBreak } s1\pageBreak
- % page 2
-  %[...]
 }
 
 \score {
