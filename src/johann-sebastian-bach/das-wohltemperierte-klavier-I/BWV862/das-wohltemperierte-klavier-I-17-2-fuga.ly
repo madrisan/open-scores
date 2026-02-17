@@ -10,10 +10,10 @@ Soprano = \context Voice = "one" \relative c'' {
   \override MultiMeasureRest.staff-position = #0
   %1
   | s1*4
-  | \voiceOne r4 as8 ees' c as f' des
-  | es2. as4~
+  | \voiceOne r4 as8 ees' c[ as] f' des
+  | es2~ es4 as~
   | as4 g f2~
-  | f16 bes, c d es4~ es8 as des,[ bes']
+  | f16 bes, c d es4~ es8[ as des, bes']
   | des,4 c bes2
   %10	
   | as2~  as16 as bes c  des4~
@@ -28,7 +28,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | a4 bes16 c des8~  des c16 des es4~
   | es16 c des f  bes8 f  ges es as es
   %20
-  | f8 des16 f  ges8 des  es c f c
+  | f8 des16 f  ges8 des  es[ c] f c
   | des2. c8 f
   | d8 bes es2 d4
   | es4 r r2
@@ -40,28 +40,31 @@ Soprano = \context Voice = "one" \relative c'' {
   | g2.~ g8 f~
   | f16 es d f  es2 des4~
   %30
-  | des16 c bes des  c8 f  des bes ges' es8
+  | des16 c bes des  c8 f  des[ bes] ges' es8
   | f4 as8 f  g!4 bes8 g
-  | as8 f des!4~  des8 es c f
+  | as8 f des!4~  des8[ es] c f
   | c4 bes~  bes8 as16 g  as8 es'
   | c8 as f' des  es g, as4~
   %35
-  | as4 g as2
+  | \once\override NoteColumn.force-hshift = #-0.3 as4 g as2
     \fine
 }
 
 Alto = \context Voice = "two" \relative c' {
+  \set Voice.beamExceptions = #'()
+  \set Voice.baseMoment = #(ly:make-moment 1/4)
+  \set Voice.beatStructure = 1,1,1,1
   \override VoiceFollower.color = \greyTextColor
   \override VoiceFollower.style = #'dashed-line
   %1
   | s1*5
   | \voiceTwo r4 es8 as  g es c' as
   | bes4~ bes16 es, f g as bes c bes as g f as
-  | g2 f8~ f4.
+  | g2 f
   | r16 es f g  as2 g4
   %10
-  | as8 g16 f  es des c es~  es8 des16 es  f8 as,
-  | as'8 r s2.
+  | as8 g16 f  es des c d  es8 r r4
+  | as8 r s2.
   | s1
   | r4 f8 c'  as f des'! bes
   | c8 d16 e  f8 c  des bes es bes
@@ -82,39 +85,50 @@ Alto = \context Voice = "two" \relative c' {
   | c8 f, bes2 as4~
   | as16 g as bes c4~  c16 des es c des4~
   | des16 c bes des c4~  c16 bes as g  as8. as16
-  | g4 es8 as  f des! bes' g
+  | g8 r es as  f des! bes' g
   %30
-  | as4 d,\rest d\rest s8 
+  | as4 d,\rest d\rest b'8\rest 
     \once\override NoteColumn.force-hshift = #0
-    \once\omit Flag \once\omit Stem es'~
-  | \once\override NoteColumn.force-hshift = #1.1 es8 des s
+    \once\omit Flag \once\omit Stem es~
+  | \once\override NoteColumn.force-hshift = #1.1 es8 des d\rest
     \once\override NoteColumn.force-hshift = #0
     \once\omit Flag \once\omit Stem f~
-    \once\override NoteColumn.force-hshift = #1.1 f8 es s4
-  | \once\override NoteColumn.force-hshift = #1.1 f8 s
-    r bes, g bes c as
-  | as4. g8 f4 r8 bes
-  | as r r bes  bes r r f
+    \once\override NoteColumn.force-hshift = #1.1 f8 es e\rest s
+  | \once\override NoteColumn.force-hshift = #1.1 f8 b,\rest
+    g\rest bes g bes 
+    \once\override NoteColumn.force-hshift = #0 c
+    as
+  | as4. g8 f4 d8\rest 
+    \once\override NoteColumn.force-hshift = #-0.7 bes'
+  | \once\override NoteColumn.force-hshift = #-0.8 as
+    d,\rest e\rest
+    \once\override NoteColumn.force-hshift = #-0.8 bes'
+    \once\override NoteColumn.force-hshift = #-0.7 bes
+    c,\rest c\rest \stemUp f
   %35
-  | bes,16 c des f es des c des c2
+  | \once\override NoteColumn.force-hshift = #0 bes,16 c des f
+    \stemDown es des c des c2
 }
 
 Tenor = \context Voice = "three" \relative c' {
+  \set Voice.beamExceptions = #'()
+  \set Voice.baseMoment = #(ly:make-moment 1/4)
+  \set Voice.beatStructure = 1,1,1,1
   \override VoiceFollower.color = \greyTextColor
   \override VoiceFollower.style = #'dashed-line
   %1
   | \change Staff = "upper"
-    r4 as8 es'  c as f' des
+    r4 as8 es'  c[ as f' des]
   | es4~  es16 des c des  es f g es  as bes c bes
   | as16 g f as  g2 f4~
-  | f16 es d f  es4~  es8 des16 c  des f bes as
+  | f16 es d f  es4.  des16 c  des f bes as
   %5
   | \voiceFour g16 f es des  c bes c des  es4
     \showStaffSwitch
     \change Staff = "lower" \voiceThree
     as,
   | g4 as16 bes c8 bes8. bes16 as8 c
-  | f,8 r r4 s2
+  | f,8 r r4 c'2\rest
   | s1*2
   %10
   | r4 as8 es'  c as f' des
@@ -141,42 +155,45 @@ Tenor = \context Voice = "three" \relative c' {
   %30
   | f16 es des f  es8 r  r4 
     \change Staff = "upper" \voiceTwo
-    e'8\rest c'
+    d'8\rest c'
   | as4 g8\rest d'  bes4 g8\rest e'
-  | c8 r
-    \change Staff = "lower" \voiceThree
-    r4  g8\rest g aes f
-  | es4 des c e8\rest es
-  | es e\rest e\rest f es c\rest c\rest bes~
+  | c8 d,\rest
+    a4\rest  f8\rest g' 
+    \once\override NoteColumn.force-hshift = #0.4 aes
+    f
+  | es4 des c f,8\rest es'
+  | es f,\rest g\rest f' es e,\rest e\rest bes'~
   %35
-  | bes4 es, es2
+  | bes4 
+    \change Staff = "lower" \voiceThree
+    es, es2
 }
 
 Bass = \context Voice = "four" \relative c {
   \override MultiMeasureRest.staff-position = #0
-  %\set Voice.beamExceptions = #'()
-  %\set Voice.baseMoment = #(ly:make-moment 1/4)
-  %\set Voice.beatStructure = 1,1,1,1
+  \set Voice.beamExceptions = #'()
+  \set Voice.baseMoment = #(ly:make-moment 1/4)
+  \set Voice.beatStructure = 1,1,1,1
   %1
   | R1
   | r4 es8 as  g es c' as
-  | bes8 es, bes' g  as es as f
+  | bes8 es, bes' g  as[ es as f]
   | g4~  g16 c, des! es  f g as f  bes c des c
   %5
   | bes16 as g bes as4~ as16 as, bes c \voiceFour des es f es
   | des16 c bes des  c8. d16  es f g8~  g16 g f es
-  | d16 bes c d  es4~ \oneVoice es8 as d, bes'
+  | d16 bes c d!  es4~ \oneVoice es8 as d, bes'
   | es,4~  es16 es f g  as bes c bes  as g f as
   | g8 es  r16 as, bes c  des es f es  des c bes des
   %10
   | \voiceFour c4~  c16 des es c  f4~  f16 es f des
-  | as'16 g as bes  c8 g  as f bes f
-  | g8 es as es  f d g d
+  | as'16 g as bes  c8 g  as[ f bes f]
+  | g8[ es as es]  f[ d g d]
   | e8 c d e  f4 bes,8 des
   | c4  r16 f, g as  bes as g f  es f g bes
   %15
-  | \oneVoice as16 g f es  des es f as  g8[ bes c c,]
-  | f16 c' d e  f4~  f8[ bes e,! c']
+  | \oneVoice as16 g f es  des es f as  g8 bes c c,
+  | f16 c' d e  f4~  f8 bes e,! c'
   | es,!8 a des,!4  ges4 r8 ges16 f
   | \voiceFour es16 ges f es  des c bes es  es f ges es  f4
   | bes,4 g\rest r2
