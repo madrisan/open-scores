@@ -198,5 +198,7 @@
 
 \include "./BWV863/das-wohltemperierte-klavier-I-18-1-praeludium.ly"
 \pageBreak
+\include "./BWV863/das-wohltemperierte-klavier-I-18-2-fuga.ly"
+\pageBreak
 
 \include "./manuscript-music.ly"
