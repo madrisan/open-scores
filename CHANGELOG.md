@@ -15,6 +15,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - J.S. Bach: Das wohltemperierte Klavier – Erster Teil: Praeludium und Fuga XVII
 - J.S. Bach: Das wohltemperierte Klavier – Erster Teil: Praeludium und Fuga XVIII
 
+### Changed
+
+- Bach/Busoni: Chorale Prelude BWV 639 - better paging
+
 ## [v70] - 2026-01-16
 
 ## Added

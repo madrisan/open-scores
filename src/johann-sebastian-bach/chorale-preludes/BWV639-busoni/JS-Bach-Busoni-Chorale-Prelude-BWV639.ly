@@ -88,14 +88,18 @@ Global = {
 bottom = \change Staff = "lower"
 top = \change Staff = "upper"
 
-calando = { \override TextSpanner.bound-details.left.text = \markup { \italic\small "calando " } }
+calando = {
+  \override TextSpanner.bound-details.left.text = \markup {
+    \italic\small "calando "
+  }
+}
 
 Sopran = \context Voice = "one" \relative c'' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #2
   \override Rest.staff-position = #0
   \override TupletBracket.bracket-visibility = ##f
-  \set baseMoment = #(ly:make-moment 1/16)
+  \set Voice.beatBase = #1/16
   \set breathMarkType = #'caesura
   \tempo \markup {
     \column {
@@ -115,7 +119,9 @@ Sopran = \context Voice = "one" \relative c'' {
     \set subdivideBeams = ##t
     \tuplet 3/2 { c32[( bes c } \tuplet 3/2 { bes c bes } \tuplet 3/2 { c bes] r) } aes32[( bes]
     \set subdivideBeams = ##f
-    c4) c8.( des16
+    c4)
+    \shape #'((-0.5 . 2.5) (0 . 2) (0 . 1) (0 . 0)) Slur
+    c8.( des16
   | ees4) \appoggiatura des16 c8.[ bes16] aes4 bes8[ c]
   | des4~ des16[^\markup { \tiny\italic "poco slentando" }
     ees32 f des16 c] c4\fermata c4
@@ -142,7 +148,13 @@ Sopran = \context Voice = "one" \relative c'' {
   | c2.^\markup { \italic\small "ten." }\calando <des, des'>4^-\startTextSpan
   | <c c'>^- <bes bes'>^- <aes aes'>^- <f f'>8.^-[ g'16]\stopTextSpan
   | <aes, aes'>4^- <g g'>^- <f aes f'>
-    \clef bass ees!^\markup { \italic\small "più oscuro, ma sempre calando" }
+    \clef bass ees!^\markup {
+      \column {
+        \line { \italic\small "più oscuro," }
+        \general-align #Y #-2
+        \line { \hspace #-5 \italic\small "ma sempre calando" }
+      }
+    }
   | aes aes bes bes
   %20
   | c2. <des, des'>4
@@ -164,7 +176,7 @@ Alto = \context Voice = "two" \relative c' {
     \once\override Staff.TextScript.extra-offset = #'(-4.5 . 0)
     aes16(\arpeggio_\markup {
       \column {
-        \line { \hspace #-2 \tiny "leise und gebunden" }
+        \line { \hspace #-2.5 \tiny "leise und gebunden" }
         \general-align #Y #-2
         \line { \hspace #-2 \italic\tiny "sotto voce e legato" }
       }
@@ -180,14 +192,19 @@ Alto = \context Voice = "two" \relative c' {
     \once\override Beam.positions = #'(4.5 . 5.5)
     aes[ \top\stemDown c f aes]
   | g[ ees aes g] aes[ ees f ges] f[ des f aes] g![ des c ges'!]
-  | f[ \bottom\stemUp bes, \top\stemDown des f]
+  | \once\override Beam.positions = #'(-5.5 . -5.5)
+    f[ \bottom\stemUp bes, \top\stemDown des f]
     bes[ aes g aes] g[ c, e! bes]
     \once\override Arpeggio.positions = #'(-4.5 . 0.5)
     aes[\arpeggio c f e]
     \break
   %5
-  | f[ c aes \bottom\stemUp f] \top\stemDown g[ bes des c]
-    \bottom\stemUp f,[ \top\stemDown aes c bes] aes[ \bottom\stemUp f \top\stemDown aes c]
+  | \once\override Beam.positions = #'(-6 . -6.4)
+    f[ c aes \bottom\stemUp f] \top\stemDown g[ bes des c]
+    \once\override Beam.positions = #'(3.8 . 3.3)
+    \bottom\stemUp f,[ \top\stemDown aes c bes] 
+    \once\override Beam.positions = #'(-6.4 . -6.4)
+    aes[ \bottom\stemUp f \top\stemDown aes c]
   | f16[ e! f aes] g[_( f e f])
     e[ c \bottom\stemUp g bes]
     \once\override Beam.positions = #'(4.5 . 5.5)
@@ -199,15 +216,17 @@ Alto = \context Voice = "two" \relative c' {
     g,[^\markup {
       \column {
         \line { \hspace #-1 \tiny "etwas heller" }
-        \general-align #Y #-2
-        \line { \hspace #-1 \whiteout \tiny\italic "poco più sonoro" }
+        \general-align #Y #-2.5
+        \line { \hspace #-1 \tiny\italic "poco più sonoro" }
       }
     }
     des' aes c]
   | aes[ c bes des] bes[_( des \top\stemDown aes' g])
     aes[ ees des g] c,[ f \shiftOn aes g]
   % 10
-  | aes[ ees aes, ges'] f[ aes, g! des']
+  | aes[ ees aes, ges'] 
+    \once\override Beam.positions = #'(-7.3 . -7.3)
+    f[ aes, g! des']
     c[ aes c ees]_\markup { \hspace #1 \italic "più" \dynamic p }
     \tweak X-offset -1 g16\rest g![ bes, g']
   | \once\override Arpeggio.positions = #'(-4.5 . 0.5)
@@ -223,14 +242,14 @@ Alto = \context Voice = "two" \relative c' {
     g,[ bes des c] ees,[ aes c bes] des[ bes ees, des']
   % 15
   | \bottom\stemUp
-    \shape #'((0.3 . 0.8) (0 . 0.8) (0 . 0) (0 . 0)) Slur
-    f,[_( \top\stemDown aes des c])
+    \shape #'((0 . 0) (0 . 0.8) (0 . 0.2) (0 . -0.5)) Slur
+    f,[^( \top\stemDown aes des c])
     \bottom\stemUp
-    \shape #'((0.3 . 0.8) (0 . 0.8) (0 . 0) (0 . 0)) Slur
-    f,[_( \top\stemDown aes c bes])
+    \shape #'((0 . 0) (0 . 1.4) (0 . 0.4) (0 . -0.5)) Slur
+    f,[^( \top\stemDown aes c bes])
     \bottom\stemUp
-    \shape #'((0.5 . 0.8) (0 . 1) (0 . 0.6) (0 . 0)) PhrasingSlur
-    f[_\( \top\stemDown aes bes aes_(]\)
+    \shape #'((0 . 0.2) (0 . 1.6) (0 . 0.8) (0 . 0.6)) Slur
+    f[^( \top\stemDown aes bes aes_(])
     \once\override Arpeggio.positions = #'(-4.5 . 0.5)
     g[\arpeggio) bes des c~]
   | c16 s8. s2
@@ -241,7 +260,7 @@ Alto = \context Voice = "two" \relative c' {
     \once\override NoteColumn.force-hshift = #-0.4 bes16[ aes g8]
   | d'!16[ f g f] e![ des bes! g]
     \bottom\stemUp f,[ c' aes f]
-    \top\stemDown des'16[-\markup { \hspace #0.6 \italic\small "molto legato" }
+    \top\stemDown des'16[-\markup { \hspace #0.6 \italic\small "molto legato " }
     \bottom\stemUp bes ees, des']
   | f,[ aes des c] \top\stemDown f[ \bottom\stemUp aes, c bes]
     \top\stemDown f'[ \bottom\stemUp aes, bes aes] \top\stemDown ees'4_~
@@ -249,7 +268,7 @@ Alto = \context Voice = "two" \relative c' {
   | ees8 s s2 g,16\rest g'!8[( f16])
   | \slurDown f,16\rest e'![( f ees]) e,16\rest des'![( ees des])
     d,16\rest
-    \once\shape #'((0 . 0) (0 . -1) (0 . 2.5) (0 . -3)) Slur
+    \once\shape #'((0 . 0) (0 . -1.4) (0 . 2.8) (0 . -3)) Slur
     c'![^( des c] bes[ aes \bottom\stemUp g f])
   | s1
 }
@@ -295,7 +314,7 @@ Tenor = \context Voice = "three" \relative c' {
   | s1*4
   %16
   | \bottom\stemUp
-    \shape #'((0 . 0.5) (0 . -2.5) (0 . -2.5) (0 . 3)) PhrasingSlur
+    \shape #'((0.4 . 0.2) (0 . -1.4) (0 . -1.4) (0 . 1)) PhrasingSlur
     aes16[\( \top\stemDown c\< ees aes]
     ees[ bes' c\! bes]%_\markup { \italic\tiny "poco" }
     a![\> ees ges\! \bottom\stemUp a,!]\)^(
@@ -327,9 +346,9 @@ Bass = \context Voice = "four" \relative c, {
     <f, f'>8_-[(_\markup {
       \column {
         \line { \italic\small "Con Pedale" }
-        \general-align #Y #-1
+        \general-align #Y #-2
         \line { \hspace #2 \tiny "Der Baß weich and getragen" }
-        \general-align #Y #-3
+        \general-align #Y #-4.5
         \line { \hspace #2 \italic\tiny "Il basso dolce e sostenuto" }
       }
     }
@@ -355,6 +374,7 @@ Bass = \context Voice = "four" \relative c, {
   | des des ees ees <aes, aes'> <ees ees'> <f f'> <des des'>
   % 10
   | \stemUp
+    \once\override Beam.positions = #'(2.4 . 2.4)
     <ees ees'>[ <c c'> <des des'> <ees ees'>] <aes, aes'>[ <aes aes'>] <e! e'!>[ <e e'>]
   | <f f'>[ <f f'> <f' f'> <f f'>] <f f'>[ <e! e'> <f f'> <des des'>]
   | <bes bes'>[ <g g'> <c c'> q] <des f aes des>\ppp[ q q q]
@@ -374,6 +394,21 @@ Bass = \context Voice = "four" \relative c, {
   \fine
 }
 
+forceBreaks = {
+  % page 1
+  s4\noBreak s1\noBreak s1\break\noPageBreak
+  s1\noBreak s1\break\noPageBreak
+  s1\noBreak s1\break\noPageBreak
+  s1\noBreak s1\break\noPageBreak
+  s1\noBreak s1\break\pageBreak
+  % page 2
+  s1\noBreak s1\break\noPageBreak
+  s1\noBreak s1\break\noPageBreak
+  s1\noBreak s1\break\noPageBreak
+  s1\noBreak s1\break\noPageBreak
+  s1\noBreak s1\break\noPageBreak
+}
+
 \score {
   \new PianoStaff
   <<
@@ -385,6 +420,7 @@ Bass = \context Voice = "four" \relative c, {
       \Sopran
       \Alto
     >>
+    \new Devnull \forceBreaks
     \context Staff = "lower" <<
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
