@@ -10,7 +10,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \override MultiMeasureRest.staff-position = #0
   %1
   | s1*4
-  | \voiceOne r4 \highlightSubject { gis  fisis8 gis16 ais b8 ais
+  | \voiceOne b4\rest \highlightSubject { gis  fisis8 gis16 ais b8 ais
   | gis cisis dis fis,  gis gis ais ais
   | \unHighlightSubject dis,8 } eis fis4~  fis8 e16 fis  gis8 fisis16 gis
   | ais8 gis16 ais  b8 gis  ais r fisis r  
@@ -55,11 +55,17 @@ Soprano = \context Voice = "one" \relative c'' {
 }
 
 Alto = \context Voice = "two" \relative c {
+  \override VoiceFollower.color = \greyTextColor
+  \override VoiceFollower.style = #'dashed-line
   | R1*2
   | r4 \highlightSubject { dis' bis8 cis16 dis  e8 dis
   | cis8 fisis gis b,!  cis cis dis dis
   %5
-  | gis,4 } \voiceTwo cis4~  cis8 b16 cis  dis8 cisis16 dis
+  | \showStaffSwitch
+    \change Staff = "lower" \voiceThree
+    gis,4 }
+    \change Staff = "upper"
+    \voiceTwo cis4~  cis8 b16 cis  dis8 cisis16 dis
   | eis8 dis16 eis  fis!8 dis  eis r cisis r
   | \highlightSubject { \unHighlightSubject dis4 } r8 ais  gis4 r8 dis'
   | e8 dis r dis  e r dis r
@@ -111,10 +117,10 @@ Tenor = \context Voice = "three" \relative c' {
   | \unHighlightSubject dis,8 } eis fis4~  fis8 e16 fis  gis8 fisis16 gis
   | ais8 gis16 ais b8 gis  ais r fisis r
   %5
-  | gis8 fis! e4  dis8 gis4 ais8
+  | \highlightSubject { \unHighlightSubject gis8 } fis! e4  dis8 gis4 ais8
   | b4 ais gis2~
   | \voiceThree gis8 fis16 gis  ais8 fis  dis e r b'!
-  | cis4 r8 dis  cis r ais r
+  | cis4 r8 \parenthesize dis  cis r ais r
   | b4 r8 b  e r cis r
   %10
   | dis4 r8 dis  gis r eis r
