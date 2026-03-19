@@ -4,7 +4,7 @@ Global = {
   \include "../global.ly"
 }
 
-csBracket = \override PianoStaff.Arpeggio.stencil = #ly:arpeggio::brew-chord-bracket
+csBracket = \override PianoStaff.Arpeggio.stencil = #ly:chord-bracket::print
 lH = \markup { \small\italic "l.H" }
 rH = \markup { \small\italic "r.H" }
 

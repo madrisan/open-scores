@@ -25,7 +25,7 @@ SUFFIXES = .in
 
 BUILT_SOURCES = covercolor.ly
 EXTRA_DIST = Arnold-Schoenberg-Sechs-Kleine-Klavierstucke-op.19.ly \
-	     arnold-schoenberg-photo.ps \
+	     arnold-schoenberg-photo.eps \
 	     covercolor.ly.in \
 	     header.ily \
 	     global.ly \

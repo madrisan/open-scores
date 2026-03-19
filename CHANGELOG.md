@@ -19,6 +19,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Bach/Busoni: Chorale Prelude BWV 639 - better paging
 
+### Fixed
+
+- Arnold Schoenberg: Sechs kleine Klavierstücke op.19 - fix build with lilypond 2.25
+
 ## [v70] - 2026-01-16
 
 ## Added

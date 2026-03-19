@@ -11,7 +11,8 @@ extendLV = #(define-music-function (parser location further) (number?) #{
   \once \override LaissezVibrerTie.extra-offset = #(cons (/ further 2) 0)
 #})
 
-csBracket = \override PianoStaff.Arpeggio.stencil = #ly:arpeggio::brew-chord-bracket
+csBracket = \override PianoStaff.Arpeggio.stencil = #ly:chord-bracket::print
+
 grayTextColor = #(x11-color "dimgray")
 lH = \markup \italic\small { "l.H" }
 rH = \markup \italic\small { "r.H" }
@@ -127,7 +128,7 @@ Tenor = \context Voice = "three" \relative c' {
   \voiceThree
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
-  \set baseMoment = #(ly:make-moment 1/8)
+  \set Voice.beatBase = #1/8
   \partial 8 s8
   %1
   | s2.
@@ -144,7 +145,7 @@ Tenor = \context Voice = "three" \relative c' {
     \override DynamicLineSpanner.outside-staff-priority = ##f
     bes4. s8
     \clef bass
-    \shape #'((0 . 0) (0 . -5) (0 . -1) (0 . 0)) Slur
+    \shape #'((0 . 0) (0 . -4) (0 . 0) (0 . 0)) Slur
     a,!16[( b! d!^- cis^\<]
   %5
   | \once\override Hairpin.shorten-pair = #'(0 . 6)

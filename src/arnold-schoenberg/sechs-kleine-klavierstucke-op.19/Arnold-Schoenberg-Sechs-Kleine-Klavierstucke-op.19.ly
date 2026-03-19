@@ -1,4 +1,4 @@
-\version "2.24.1"
+\version "2.25.35"
 
 \include "./covercolor.ly"
 
