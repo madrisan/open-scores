@@ -14,7 +14,7 @@ Sopran = \context Voice = "one" \relative c'' {
     \partial 2 { e16[ fis g8] b,8.[ g'16] }
   %1
   | a,8. g'16 fis4 c16[ b a8] fis'8.[ a,16]
-  | \set tupletSpannerDuration = #(ly:make-moment 1 4)
+  | \set tupletSpannerDuration = #1/4
     g8. b16 e,4~ \tuplet 3/2 { e8[ dis e] a8[ g fis] }
   | \omit TupletNumber
     \tuplet 3/2 { e 8[ dis e] b'[ g fis] e[ dis e] c'[ g fis] }
@@ -82,7 +82,7 @@ Bass = \context Voice = "four" \relative c {
   | g,8.[ e'16] \clef treble a,8.[ fis'16] b,8.[ g'16] c,8.[ a'16]
   | \clef bass d,4~ d16[ c b a] g[ a b8] e,8.[ b'16]
   | c,8.[ b'16] a4 fis16[ e d8] a'8.[ c,16]
-  | \set tupletSpannerDuration = #(ly:make-moment 1 4)
+  | \set tupletSpannerDuration = #1/4
     \omit TupletNumber
     b8.[ a'16] g4 \tuplet 3/2 { e8[ fis g] b,[ a g] }
   | \tuplet 3/2 { fis'8[ g a] c,[ b a] g'[ a b] d,[ c b] }
