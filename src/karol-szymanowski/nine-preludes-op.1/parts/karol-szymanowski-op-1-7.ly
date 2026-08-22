@@ -21,7 +21,7 @@ Sopran = \context Voice = "one" \relative c'' {
   \omit TupletBracket
   \tempo \markup { Moderato }
   \set subdivideBeams = ##t
-  \set baseMoment = #(ly:make-moment 1/8)
+  \set beatBase = #1/8
   %1
   | \once\shape #'((0 . -0.4) (0 . 0) (0 . 0) (0 . -1)) Slur
     g'4.^^(\(^\markup { "leg." }\> f8\!)
@@ -175,7 +175,7 @@ Alto = \context Voice = "two" \relative c'' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \omit TupletBracket \omit TupletNumber
-  \set baseMoment = #(ly:make-moment 1/8)
+  \set beatBase = #1/8
   \stemDown\slurUp
   %1
   | s1*9

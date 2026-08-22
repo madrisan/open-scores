@@ -105,7 +105,7 @@ staffUpper = { \change Staff = "upper" \stemDown }
 Soprano = \context Voice = "one" \relative c' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
-  \set baseMoment = #(ly:make-moment 1/8)
+  \set beatBase = #1/8
   \stemNeutral\tieNeutral\slurUp
   %1
   | r8 fis\( b e cis e, a d
@@ -198,7 +198,7 @@ Soprano = \context Voice = "one" \relative c' {
 Alto = \context Voice = "two" \relative c' {
   \voiceTwo
   \override MultiMeasureRest.staff-position = #0
-  \set baseMoment = #(ly:make-moment 1/8)
+  \set beatBase = #1/8
   \stemDown\tieDown\slurDown
   %1
   | s1*2

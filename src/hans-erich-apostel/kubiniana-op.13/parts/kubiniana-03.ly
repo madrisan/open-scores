@@ -15,7 +15,7 @@ Sopran = \context Voice = "one" \relative c'' {
   \override DynamicText.Y-offset = #-2.4
   \override Hairpin.Y-offset = #-2
   \set subdivideBeams = ##t
-  \set baseMoment = #(ly:make-moment 1/8)
+  \set beatBase = #1/8
   \stemNeutral
   %1
   \tempo \markup { \bold "Allegretto" } 4 = 66-70
@@ -80,7 +80,7 @@ Alto = \context Voice = "two" \relative c {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \set subdivideBeams = ##t
-  \set baseMoment = #(ly:make-moment 1/8)
+  \set beatBase = #1/8
   %1
   | s2*5
   %6
@@ -94,7 +94,7 @@ Bass = \context Voice = "four" \relative c {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \set subdivideBeams = ##t
-  \set baseMoment = #(ly:make-moment 1/8)
+  \set beatBase = #1/8
   %1
   | \clef treble
     \stemNeutral\tupletNeutral

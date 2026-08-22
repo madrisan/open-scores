@@ -52,7 +52,7 @@ Soprano = \context Voice = "one" \relative c'' {
 
 Alto = \context Voice = "two" \relative c' {
   \set Voice.beamExceptions = #'()
-  \set Voice.baseMoment = #(ly:make-moment 1/4)
+  \set Voice.beatBase = #1/4
   \set Voice.beatStructure = 1,1,1,1
   \override VoiceFollower.color = \greyTextColor
   \override VoiceFollower.style = #'dashed-line
@@ -113,7 +113,7 @@ Alto = \context Voice = "two" \relative c' {
 
 Tenor = \context Voice = "three" \relative c' {
   \set Voice.beamExceptions = #'()
-  \set Voice.baseMoment = #(ly:make-moment 1/4)
+  \set Voice.beatBase = #1/4
   \set Voice.beatStructure = 1,1,1,1
   \override VoiceFollower.color = \greyTextColor
   \override VoiceFollower.style = #'dashed-line
@@ -181,7 +181,7 @@ Tenor = \context Voice = "three" \relative c' {
 Bass = \context Voice = "four" \relative c {
   \override MultiMeasureRest.staff-position = #0
   \set Voice.beamExceptions = #'()
-  \set Voice.baseMoment = #(ly:make-moment 1/4)
+  \set Voice.beatBase = #1/4
   \set Voice.beatStructure = 1,1,1,1
   %1
   | R1

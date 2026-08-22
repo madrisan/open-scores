@@ -10,7 +10,7 @@ Soprano = \context Voice = "one" \relative c {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   %\set Timing.beamExceptions = #'()
-  %\set Timing.baseMoment = #(ly:make-moment 3/16)
+  %\set Timing.beatBase = #3/16
   %\set Timing.beatStructure = 1,1,1,1,1,1,1,1
   \label #'SuiteIPrelude
   %1

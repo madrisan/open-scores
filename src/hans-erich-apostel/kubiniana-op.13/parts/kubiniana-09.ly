@@ -16,7 +16,7 @@ Sopran = \context Voice = "one" \relative c {
   \override DynamicText.Y-offset = #-3.4
   \override Hairpin.Y-offset = #-3
   \set subdivideBeams = ##t
-  \set baseMoment = #(ly:make-moment 1/8)
+  \set beatBase = #1/8
   \set tieWaitForNote = ##t
   \stemNeutral\slurNeutral
   %1
@@ -114,7 +114,7 @@ Bass = \context Voice = "four" \relative c {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \set subdivideBeams = ##t
-  \set baseMoment = #(ly:make-moment 1/8)
+  \set beatBase = #1/8
   \stemNeutral\slurNeutral\tieNeutral
   %1
   | cis,8[ \acciaccatura fis g!-.] r4 aes32[( c! d!16-.]) r8 r4

@@ -390,7 +390,7 @@ Bass = \context Voice = "four" \relative c {
   \override Rest.staff-position = #0
   \phrasingSlurNeutral\stemNeutral\slurNeutral\tieNeutral
   \set Timing.beamExceptions = #'()
-  \set Timing.baseMoment = #(ly:make-moment 1/4)
+  \set Timing.beatBase = #1/4
   \set Timing.beatStructure = 1,1,1,1
   %1
   | R1*3/4

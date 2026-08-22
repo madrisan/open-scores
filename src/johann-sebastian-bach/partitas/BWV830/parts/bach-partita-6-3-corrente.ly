@@ -12,7 +12,7 @@ Sopran = \context Voice = "one" \relative c'' {
   \override MultiMeasureRest.staff-position = #-2
   \override Rest.staff-position = #0
   \label #'PartitaVICorrente
-  \set baseMoment = #(ly:make-moment 1/8)
+  \set beatBase = #1/8
   \stemNeutral\slurNeutral\tieNeutral
   \repeat volta 2 {
     \partial 16 b16^\markup {

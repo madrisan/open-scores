@@ -6,7 +6,7 @@ Global = {
 
 Upper = \relative c''' {
   \clef treble
-  \set baseMoment = #(ly:make-moment 1/8)
+  \set beatBase = #1/8
   | R2.
   | R |
   | R |

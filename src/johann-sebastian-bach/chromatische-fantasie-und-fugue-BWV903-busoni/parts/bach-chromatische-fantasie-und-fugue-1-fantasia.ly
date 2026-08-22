@@ -197,7 +197,7 @@ Upper = \relative c'' {
   | s16 e64[ a cis e]
     \tuplet 6/4 8 { \stemDown a32-^ \stemUp a[ bes a g a] }
     \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/8)
+    \set beatBase = #1/8
     \tuplet 6/4 8 { bes32[\< a bes a bes a } bes a g a]\!
     \set subdivideBeams = ##f
     << {
@@ -655,7 +655,7 @@ Upper = \relative c'' {
       \omit TupletNumber
       \override TupletBracket.bracket-visibility = ##f
       \set subdivideBeams = ##t
-      \set baseMoment = #(ly:make-moment 1/16)
+      \set beatBase = #1/16
       \magnifyMusic 0.75 {
         \tuplet 6/4 8 {
           \stemUp g64 a g a g a  g a g a g a  g a g a g a
@@ -1216,7 +1216,7 @@ Lower = \relative c {
       \omit TupletNumber
       \override TupletBracket.bracket-visibility = ##f
       \set subdivideBeams = ##t
-      \set baseMoment = #(ly:make-moment 1/16)
+      \set beatBase = #1/16
       \magnifyMusic 0.75 {
         \tuplet 6/4 8 {
           g'64 a g a g a  g a g a g a  g a g a g a

@@ -12,7 +12,7 @@ Sopran = \context Voice = "one" \relative c'' {
   \override MultiMeasureRest.staff-position = #-2
   \override Rest.staff-position = #0
   \label #'PartitaVISarabande
-  \set baseMoment = #(ly:make-moment 1/8)
+  \set beatBase = #1/8
   \stemUp\slurNeutral\tieUp
   \repeat volta 2 {
     \partial 4 { g8. g16 }
@@ -92,7 +92,7 @@ Sopran = \context Voice = "one" \relative c'' {
 Alto = \context Voice = "Two" \relative c' {
   \voiceTwo
   \override Rest.staff-position = #0
-  \set baseMoment = #(ly:make-moment 1/8)
+  \set beatBase = #1/8
   \mergeDifferentlyDottedOn
   \stemDown
   \repeat volta 2 {
@@ -110,7 +110,7 @@ Alto = \context Voice = "Two" \relative c' {
       \stemDown d4 s2
     } \\ {
       \stemDown <f b>4^(
-      \set baseMoment = #(ly:make-moment 1/8)
+      \set beatBase = #1/8
       \set subdivideBeams = ##t
       <c e a>32)[ f e d c b a gis]
       \set subdivideBeams = ##f
@@ -200,7 +200,7 @@ Alto = \context Voice = "Two" \relative c' {
 Tenor = \context Voice = "Three" \relative c' {
   \voiceThree
   \override Rest.staff-position = #0
-  \set baseMoment = #(ly:make-moment 1/8)
+  \set beatBase = #1/8
   \set PianoStaff.connectArpeggios = ##t
   \mergeDifferentlyDottedOn
   \stemUp
@@ -264,7 +264,7 @@ Bass = \context Voice = "four" \relative c {
   \voiceFour
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
-  \set baseMoment = #(ly:make-moment 1/8)
+  \set beatBase = #1/8
   \stemDown\slurNeutral\tieDown
   \repeat volta 2 {
     \partial 4 { <e g>4 }

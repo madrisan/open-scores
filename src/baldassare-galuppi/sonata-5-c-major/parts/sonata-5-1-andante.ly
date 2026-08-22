@@ -52,7 +52,7 @@ Upper = \relative c'' {
   \repeat volta 2 {
   | \stemDown
     \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/8)
+    \set beatBase = #1/8
     cis16[( d) d( fis)]  fis[( g) g( bes)]  d,[( cis) cis( e)]  e[( fis) fis( g)]
   %20
   | g16[( fis) fis( a)]  a[( b!) b( c)]  e,[(dis) dis( fis)]  fis[(gis) gis( a)]
@@ -75,7 +75,7 @@ Upper = \relative c'' {
 % | cis,16( d!) d8  r4  f8.\trill e32 f
   | \grace { cis,32 e } d8 d  r4  f8.\trill e32 f
     \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/8)
+    \set beatBase = #1/8
     a16( f) f( d)
     \set subdivideBeams = ##f
   | e8.\trill d32 e  g16( e) \acciaccatura e8 d16( c)  b( a) f'( d)  \appoggiatura c8 b4
@@ -87,7 +87,7 @@ Upper = \relative c'' {
   | cis,16 d! d8  r4
     f8.\trill e32 f
     \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/8)
+    \set beatBase = #1/8
     a16( f) f( d)
     \set subdivideBeams = ##f
   | e8.\trill d32 e  g16( e) \acciaccatura e8 d16( c)  b( a) f'( d)  \appoggiatura c8 b4
@@ -95,13 +95,13 @@ Upper = \relative c'' {
   | \appoggiatura d4 c2  a'8. b16(  c16.) c32( b16.) a32(
   | g4)(  c,4)
     \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/8)
+    \set beatBase = #1/8
     b16( d) d( f)  f( d) a'( f)
     \set subdivideBeams = ##f
   | f4\prall  e  a8. b16( c16.) c32( b16.) a32(
   | g4)(  c,4)
     \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/8)
+    \set beatBase = #1/8
     b16( d) d( f)  f( d) a'( f)
     \set subdivideBeams = ##f
   | dis16( e) r16 c'-.  gis( a) r16 c-.

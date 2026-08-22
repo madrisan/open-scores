@@ -16,7 +16,7 @@ Sopran = \context Voice = "one" \relative c'' {
   \override Rest.staff-position = #0
   \stemUp\tieNeutral\slurUp
   \omit TupletBracket \omit TupletNumber
-  \set baseMoment = #(ly:make-moment 1/8)
+  \set beatBase = #1/8
   \tempo \markup { Lento - mesto }
   %1
   | r8^\markup { \hspace #-2 "legat." } f~^^( f[ ees~] ees des ees4)
@@ -88,7 +88,7 @@ Tenor = \context Voice = "three" \relative c' {
   \voiceThree
   \stemUp\tieUp
   \omit TupletBracket \omit TupletNumber
-  \set baseMoment = #(ly:make-moment 1/8)
+  \set beatBase = #1/8
   %1
   | \clef treble
     \tuplet 3/2 { bes8( c aes') } \tuplet 3/2 { des,( ees bes') }

@@ -1070,7 +1070,7 @@ Bass = \context Voice = "four" \relative c {
   | s2
   | d'4\rest_\Ped \clef bass
     \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/4)
+    \set beatBase = #1/4
     bes,16[( f' bes d
     \set subdivideBeams = ##f
   | bes' d f8]) \stemUp <ces,, ees ges ces>4_>

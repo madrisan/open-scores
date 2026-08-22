@@ -39,7 +39,7 @@ Upper = \relative c' {
   | a,8-. \acciaccatura c8 bes32( a bes16) c8-.
   | d8-. \acciaccatura g8 fis32( e fis16) g8-.
     \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/8)
+    \set beatBase = #1/8
   | bes16( g) g( ees) d( cis)
     \set subdivideBeams = ##f
   | \appoggiatura e!8 d4.
@@ -81,14 +81,14 @@ Upper = \relative c' {
   | <g c e>4\arpeggio fis'16\prall( e32 fis
   %50
   | \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/8)
+    \set beatBase = #1/8
     g16)( fis) \acciaccatura g8 fis16( e) e( fis)
   | g16( fis) e( g) \acciaccatura g8 fis16( e)
   | dis16( b') b,( cis) cis( d!)
     \set subdivideBeams = ##f
   | d16[( gis b) b,( cis d]
   | \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/8)
+    \set beatBase = #1/8
     cis a') a,( b) b( c!)
     \set subdivideBeams = ##f
   %55
@@ -119,7 +119,7 @@ Upper = \relative c' {
   | d8-.[ \acciaccatura f8 ees32( d ees16) f8-.]
   | g8[ \acciaccatura c8 b32( a b16) c8->(\(]
   | \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/8)
+    \set beatBase = #1/8
     c16) aes\) aes( g) g( fis)
     \set subdivideBeams = ##f
   | \appoggiatura fis8 g4.

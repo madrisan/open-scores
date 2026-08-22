@@ -138,7 +138,7 @@ Soprano = \context Voice = "one" \relative c'' {
     \grace {
       e32 dis e fis gis a b % \tuplet 3/2 { gis a b }
     }
-    \unset Timing.baseMoment
+    \unset Timing.beatBase
     cis8.\trill d!16
   | e4 e~ e8 g fis e
   | e8. dis16 dis4 r b8.\trill cis16

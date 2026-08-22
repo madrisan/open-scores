@@ -10,7 +10,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \label #'PartitaISarabande
-  \set baseMoment = #(ly:make-moment 1/8)
+  \set beatBase = #1/8
   \repeat volta 4 {
   %1
   | d8. d16 d8~ d32 c bes a bes16 d f g,
@@ -90,7 +90,7 @@ Alto = \context Voice = "two" \relative c' {
   \stemDown
   \mergeDifferentlyDottedOn
   \override Rest.staff-position = #0
-  \set baseMoment = #(ly:make-moment 1/8)
+  \set beatBase = #1/8
   %1
   | <f bes>4 q8 e\rest s4
   | s <d f> s

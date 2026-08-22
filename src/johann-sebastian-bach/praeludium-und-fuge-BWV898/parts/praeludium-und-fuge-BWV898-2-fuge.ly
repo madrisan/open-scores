@@ -10,7 +10,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
   \stemUp\tieUp
   \override MultiMeasureRest.staff-position = #0
-  \set Timing.baseMoment = #(ly:make-moment 1/4)
+  \set Timing.beatBase = #1/4
   \set Timing.beatStructure = 1,1,1,1
   %1
   | \tempo "Fuge"

@@ -12,7 +12,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \stemUp\tieUp\slurNeutral
-  \set baseMoment = #(ly:make-moment 1/8)
+  \set beatBase = #1/8
   %1
   \repeat volta 2 {
   | b4 c~ c8 b16 a b8 c
@@ -212,7 +212,7 @@ Bass = \context Voice = "four" \relative c' {
   \voiceFour
   \override MultiMeasureRest.staff-position = #0
   \stemNeutral\tieDown\slurNeutral
-  \set baseMoment = #(ly:make-moment 1/8)
+  \set beatBase = #1/8
   %1
   \repeat volta 2 {
   | g1~

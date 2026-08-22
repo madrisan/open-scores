@@ -12,7 +12,7 @@ Sopran = \context Voice = "one" \relative c'' {
   \override MultiMeasureRest.staff-position = #-2
   \override Rest.staff-position = #0
   \label #'PartitaVIAllemande
-  \set baseMoment = #(ly:make-moment 1/8)
+  \set beatBase = #1/8
   \stemNeutral\slurNeutral\tieNeutral
   \partial 8 r16 g'
   \repeat volta 4 {
@@ -94,7 +94,7 @@ Sopran = \context Voice = "one" \relative c'' {
 Alto = \context Voice = "Two" \relative c'' {
   \voiceTwo
   \override Rest.staff-position = #0
-  \set baseMoment = #(ly:make-moment 1/8)
+  \set beatBase = #1/8
   \stemDown
   \partial 8 s8
   %1
@@ -134,7 +134,7 @@ Bass = \context Voice = "four" \relative c {
   \voiceFour
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
-  \set baseMoment = #(ly:make-moment 1/8)
+  \set beatBase = #1/8
   \set PianoStaff.connectArpeggios = ##t
   \stemDown\slurUp\tieDown
   \partial 8 r8

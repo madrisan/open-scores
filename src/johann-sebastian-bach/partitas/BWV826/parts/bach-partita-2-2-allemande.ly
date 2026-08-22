@@ -10,7 +10,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \label #'PartitaIIAllemande
-  \set Timing.baseMoment = #(ly:make-moment 1/4)
+  \set Timing.beatBase = #1/4
   \set Timing.beatStructure = 1,1,1,1
   \repeat volta 2 {
   \partial 8. aes'16 g f
@@ -119,7 +119,7 @@ Bass = \context Voice = "four" \relative c {
   \stemNeutral\tieNeutral\slurNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
-  \set Timing.baseMoment = #(ly:make-moment 1/4)
+  \set Timing.beatBase = #1/4
   \set Timing.beatStructure = 1,1,1,1
   \repeat volta 2 {
   \partial 8. r8 r16

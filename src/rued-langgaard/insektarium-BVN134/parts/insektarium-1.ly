@@ -61,7 +61,7 @@ Upper = \relative c'' {
      <a ees'>->~_\startTextSpan
      <a ees'>8. <a ees'>16->]
      \set subdivideBeams = ##t
-     \set baseMoment = #(ly:make-moment 1/8)
+     \set beatBase = #1/8
      <a ees'>8->[ <a ees'>16-> <a ees'>16->~ <a ees'>16 <a ees'>16->]~
    | <a ees'>8 <a ees'>4->~ <a ees'>16[ <a ees'>16-> <a ees'>16-> <a ees'>16->~ <a ees'>8]
    | <a ees'>32->[ <a ees'>32-> <a ees'>16->~ <a ees'>16 <a ees'>16~-> <a ees'>16 <a ees'>16->]_\stopTextSpan
@@ -96,14 +96,14 @@ Upper = \relative c'' {
      <a ees'>->~
      <a ees'>8. <a ees'>16->]
      \set subdivideBeams = ##t
-     \set baseMoment = #(ly:make-moment 1/8)
+     \set beatBase = #1/8
      <a ees'>8->[ <a ees'>16-> <a ees'>16->~ <a ees'>16 <a ees'>16->]~
      \set subdivideBeams = ##f
    | <a ees'>32[ <a ees'>32-> <a ees'>32-> <a ees'>32->~ <a ees'>16. <a ees'>32-> <a ees'>16-> <a ees'>16->]~
      <a ees'>32[ <a ees'>32->~ <a ees'>32 <a ees'>32->~ <a ees'>16 <a ees'>16->~ <a ees'>32 <a ees'>32-> <a ees'>32-> <a ees'>32->]~
    %25
    | \set subdivideBeams = ##t
-     \set baseMoment = #(ly:make-moment 1/8)
+     \set beatBase = #1/8
      <a ees'>32[ <a ees'>32-> <a ees'>32-> <a ees'>32->~
      <a ees'>32 <a ees'>32-> <a ees'>32->~ <a ees'>32~
      <a ees'>32 <a ees'>32->~ <a ees'>32 <a ees'>32->]
@@ -180,7 +180,7 @@ Lower = \relative c {
    | <a ees'>16[ <a ees'>32->\sff <a ees'>->~
      <a ees'>8. <a ees'>16->]\sf
      \set subdivideBeams = ##t
-     \set baseMoment = #(ly:make-moment 1/8)
+     \set beatBase = #1/8
      <a ees'>8->[ <a ees'>16->\sff <a ees'>16->~ <a ees'>16 <a ees'>16->]~
    | <a ees'>8 <a ees'>4->~\sff <a ees'>16[ <a ees'>16-> <a ees'>16-> <a ees'>16->~ <a ees'>8]
    | <a ees'>32->[ <a ees'>32->\fff <a ees'>16->~\< <a ees'>16 <a ees'>16~-> <a ees'>16\! <a ees'>16->]
@@ -213,14 +213,14 @@ Lower = \relative c {
    | <a ees'>16[ <a ees'>32->\sff <a ees'>->~
      <a ees'>8. <a ees'>16->]
      \set subdivideBeams = ##t
-     \set baseMoment = #(ly:make-moment 1/8)
+     \set beatBase = #1/8
      <a ees'>8->[ <a ees'>16-> <a ees'>16->~ <a ees'>16 <a ees'>16->]~
      \set subdivideBeams = ##f
    | <a ees'>32[ <a ees'>32-> <a ees'>32-> <a ees'>32->~ <a ees'>16. <a ees'>32-> <a ees'>16-> <a ees'>16->]~
      <a ees'>32[ <a ees'>32->~ <a ees'>32 <a ees'>32->~ <a ees'>16 <a ees'>16->~ <a ees'>32 <a ees'>32-> <a ees'>32-> <a ees'>32->]~
    %25
    | \set subdivideBeams = ##t
-     \set baseMoment = #(ly:make-moment 1/8)
+     \set beatBase = #1/8
      <a ees'>32-\markup \italic { \dynamic sff sempre }[ <a ees'>32-> <a ees'>32-> <a ees'>32->~
      <a ees'>32 <a ees'>32-> <a ees'>32->~ <a ees'>32~
      <a ees'>32 <a ees'>32->~ <a ees'>32 <a ees'>32->]

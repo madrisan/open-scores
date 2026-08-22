@@ -10,7 +10,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \set Timing.beamExceptions = #'()
-  \set Timing.baseMoment = #(ly:make-moment 1/4)
+  \set Timing.beatBase = #1/4
   \set Timing.beatStructure = 1,1,1,1
   \set Score.rehearsalMarkFormatter = #format-mark-box-alphabet
   \label #'SuiteIIPrelude
@@ -373,7 +373,7 @@ Bass = \context Voice = "four" \relative c' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \set Timing.beamExceptions = #'()
-  \set Timing.baseMoment = #(ly:make-moment 1/4)
+  \set Timing.beatBase = #1/4
   \set Timing.beatStructure = 1,1,1,1
   %1
   | R1*3/4

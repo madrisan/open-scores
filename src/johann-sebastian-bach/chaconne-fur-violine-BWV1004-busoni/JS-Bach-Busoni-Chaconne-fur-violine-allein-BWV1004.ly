@@ -284,7 +284,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | \bottom
     \omit TupletNumber
     \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/16)
+    \set beatBase = #1/16
     \tuplet 12/8 {
       <c,,, c'>32^^(^\markup { \hspace #-0.5 \italic\tiny "ten." } \top
       \once\override Hairpin.rotation = #'(5 -1 0)
@@ -302,7 +302,7 @@ Sopran = \context Voice = "one" \relative c'' {
     a16) s8.
   | \omit TupletNumber
     \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/16)
+    \set beatBase = #1/16
     \bottom
     \tuplet 12/8 {
       <bes,,,, bes'>32^^^\markup { \hspace #-2 \italic\tiny "ten." } \top
@@ -317,7 +317,7 @@ Sopran = \context Voice = "one" \relative c'' {
     g a\! bes a g f! e d
   %75
   | \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/4)
+    \set beatBase = #1/4
     cis^.^>)[ a'( g f
       \once\override Staff.TextScript.extra-offset = #'(0 . -2.5)
       e_\markup {
@@ -386,7 +386,7 @@ Sopran = \context Voice = "one" \relative c'' {
   %90
   | r32 e[(\< fis gis] a[ gis fis e]) r4 e'32^>[( d c b!]) f'![( e d cis)]\!
   | \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/8)
+    \set beatBase = #1/8
     d\ff[(^\markup {
       \italic\small "articolato assai"
     } e f e d f e d] f^>[ e d f e d f e]
@@ -544,7 +544,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | <f g d' f>4 <e g c e> r8 <ees g c ees>
   | <f c' ees>4 <f bes d> r8 <f bes d>
   | r8 <f b! d>
-    \set baseMoment = #(ly:make-moment 1/16)
+    \set beatBase = #1/16
     \set subdivideBeams = ##t
     \tuplet 12/8 {
       cis'32( d cis d cis d cis d cis d cis b
@@ -774,7 +774,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | <a a'>16[^\markup {
       \italic\small "cresc. poco a poco"
     } <a a'>8^. q^. q^. q^. q^. q16^. ]
-  | \set baseMoment = #(ly:make-moment 1/8)
+  | \set beatBase = #1/8
     \set subdivideBeams = ##t
      \once\override Staff.TextScript.extra-offset = #'(0 . -2)
     <a a'>16_![_\markup {
@@ -826,7 +826,7 @@ Sopran = \context Voice = "one" \relative c'' {
   %245
   | s2.*3
   | \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/16)
+    \set beatBase = #1/16
     \bottom
     \tuplet 12/8 { a,,,32( b! cis \top\stemUp d e f g a b! cis d e }
     \tuplet 12/8 { f g f e d cis b a g f^\< e d }
@@ -1173,7 +1173,7 @@ Alto = \context Voice = "two" \relative c' {
   %235
   | d[ e f fis g gis]
   | s4.
-    \set baseMoment = #(ly:make-moment 1/8)
+    \set beatBase = #1/8
     \set subdivideBeams = ##t
     \once\override NoteColumn.force-hshift = #1.4 a16[ a
     \once\override NoteColumn.force-hshift = #1.4 a a
@@ -1433,7 +1433,7 @@ Tenor = \context Voice = "three" \relative c' {
   | <f c' ees>4 <f bes d> r8 <f bes d>
   | r8 <f b! d>
     << {
-      \set baseMoment = #(ly:make-moment 1/16)
+      \set beatBase = #1/16
       \set subdivideBeams = ##t
       \omit TupletNumber
       \tuplet 12/8 {
@@ -1580,7 +1580,7 @@ Tenor = \context Voice = "three" \relative c' {
   | \slurUp
     <f f'>[ <d d'>]
     \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/8)
+    \set beatBase = #1/8
     g'16[(^\> a^.)\! f(^\> a^.)\! e(^\> a^.)\! d,(^\> a'^.)]\!
   | e[ a c, a'] a,[ a e' a,] d[ a c a]
   | d[ a b! a] e'[ a, d a] cis[ a b a]
@@ -1774,7 +1774,7 @@ Bass = \context Voice = "four" \relative c {
     \clef bass <d,,,, d'>16[ <c c'> <bes bes'>]
   | \omit TupletNumber
     \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/16)
+    \set beatBase = #1/16
     \tuplet 12/8 {
       <c c'>32_^( \magnifyMusic 0.75 {
         d'' e  fis g a  bes c d  e fis g
@@ -1789,7 +1789,7 @@ Bass = \context Voice = "four" \relative c {
     \stemDown c16^.)
     \clef bass <c,,,,, c'>16[ <bes bes'> <a a'>]
   | \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/16)
+    \set beatBase = #1/16
     \tuplet 12/8 {
       <bes bes'>32 \clef treble
       \magnifyMusic 0.75 {
@@ -1801,7 +1801,7 @@ Bass = \context Voice = "four" \relative c {
     \undo\omit TupletNumber
   %75
   | \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/4)
+    \set beatBase = #1/4
     <a, e'>^.^>)[ a'_( g f e d cis b!  a b! cis d e f g a  b! cis d e f g a bes^>]
   | g[ e cis bes g e cis bes  \clef bass g e cis bes g e cis bes]  g e cis bes g e cis bes)
     \set subdivideBeams = ##f
@@ -1838,7 +1838,7 @@ Bass = \context Voice = "four" \relative c {
     r8 \stemUp\slurDown <c,, e a>_.
   | <b! f' a>8_. r
     \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/8)
+    \set beatBase = #1/8
     \stemDown f''32^>[^( e d f e d f e] d16^.) r <d, bes' d>8
   | \stemUp <e bes' d>8_. r bes'32[_>( a g bes a g bes a] g16_.) r <a, e' a>_.\fz r
     \set subdivideBeams = ##f
@@ -1876,7 +1876,7 @@ Bass = \context Voice = "four" \relative c {
     }
   %105
   | \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/8)
+    \set beatBase = #1/8
     d,32 a' f' a, f' a, d, a'  d, a' f' a, f' a, d, a'  d, bes' f' bes, f' bes, d, bes'
   | d, c' fis c fis c d, c'  d, bes' fis' bes, fis' bes, d, bes'
     d, a' fis' a, fis' a, d, a'
@@ -2125,7 +2125,7 @@ Bass = \context Voice = "four" \relative c {
     }
     \omit TupletBracket \omit TupletNumber
     \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/8)
+    \set beatBase = #1/8
     \tuplet 6/4 { cis'^>[ cis, cis' d,^> d' d,] }
     \tuplet 6/4 { a'^>[ a, a' d,^> d' d,]) }
   | <d, d'>8_.
@@ -2195,7 +2195,7 @@ Bass = \context Voice = "four" \relative c {
   | s <c e>[( <des f> <d! fis> <ees g> <e! gis>])
   | s4.
     \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/8)
+    \set beatBase = #1/8
     \stemDown
     \once\override NoteColumn.force-hshift = #1.1 a,16^![ a^!
     \once\override NoteColumn.force-hshift = #1.1 a^! a^!
@@ -2218,7 +2218,7 @@ Bass = \context Voice = "four" \relative c {
   %245
   | s2.*3
   | \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/16)
+    \set beatBase = #1/16
     \tuplet 12/8 { a,32_^ b'! cis d e f g a b! cis d e }
     \tuplet 12/8 { f g f e d cis b a g f e d }
     \tuplet 6/4 { cis! b! a g f e } d64 cis b! a  g f e r

@@ -37,7 +37,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | <g, b> d'\rest <fis, a> d'\rest d4\rest
   | \stemDown
     %\set subdivideBeams = ##t
-    %\set baseMoment = #(ly:make-moment 1/4)
+    %\set beatBase = #1/4
     a'16 g fis e d cis b a g fis e d
     %\set subdivideBeams = ##f
   %20
