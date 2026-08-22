@@ -206,29 +206,29 @@ QuiZi = \markup \center-column {
   \combine \move-markup "A" #Dur-radius #90
   \combine \move-markup "E" #Dur-radius #120
   \combine \move-markup \concat {
-    "B" \with-color #(x11-color 'darkgreen) "/C♭" } #Dur-radius #150
+    "B" \with-color #(x11-color 'darkgreen) \concat { "/C" \flat } } #Dur-radius #150
   \combine \move-markup \concat {
-    \with-color #(x11-color 'darkgreen) "G♭" "/F♯" } #Dur-radius #180
+    \with-color #(x11-color 'darkgreen) \concat { "G" \flat } \concat { "/F" \sharp } } #Dur-radius #180
   \combine \move-markup \concat {
-    \with-color #(x11-color 'darkgreen) "D♭" "/C♯" } #Dur-radius #210
+    \with-color #(x11-color 'darkgreen) \concat { "D" \flat } \concat { "/C" \sharp } } #Dur-radius #210
   \with-color #(x11-color 'darkgreen)
-  \combine \move-markup "A♭" #Dur-radius #240
-  \combine \move-markup "E♭" #Dur-radius #270
-  \combine \move-markup "B♭" #Dur-radius #300
+  \combine \move-markup \concat { "A" \flat } #Dur-radius #240
+  \combine \move-markup \concat { "E" \flat } #Dur-radius #270
+  \combine \move-markup \concat { "B" \flat } #Dur-radius #300
   \combine \move-markup "F" #Dur-radius #330
   \with-color #(x11-color 'indianred)
   \combine \move-markup
     \with-color #darkblue \circle \with-color #(x11-color 'indianred) "a" #moll-radius #0
   \combine \move-markup "e" #moll-radius #30
   \combine \move-markup "b" #moll-radius #60
-  \combine \move-markup "f♯" #moll-radius #90
-  \combine \move-markup "c♯" #moll-radius #120
+  \combine \move-markup \concat { "f" \sharp } #moll-radius #90
+  \combine \move-markup \concat { "c" \sharp } #moll-radius #120
   \combine \move-markup \concat {
-    "g♯" \with-color #(x11-color 'forestgreen) "/a♭" } #moll-radius #150
+    \concat { "g" \sharp } \with-color #(x11-color 'forestgreen) \concat { "/a" \flat } } #moll-radius #150
   \combine \move-markup \concat {
-    \with-color #(x11-color 'forestgreen) "e♭" "/d♯" } #moll-radius #180
+    \with-color #(x11-color 'forestgreen) \concat { "e" \flat } \concat { "/d" \sharp } } #moll-radius #180
   \combine \move-markup \concat {
-    \with-color #(x11-color 'forestgreen) "b♭" "/a♯" } #moll-radius #210
+    \with-color #(x11-color 'forestgreen) \concat { "b" \flat } \concat { "/a" \sharp } } #moll-radius #210
   \with-color #(x11-color 'forestgreen)
   \combine \move-markup "f" #moll-radius #240
   \combine \move-markup "c" #moll-radius #270

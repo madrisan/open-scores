@@ -12,7 +12,7 @@ voiceOneOssia = \relative c'' {
   | \key a \major
     \stemUp
     \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/8)
+    \set beatBase = #1/8
     \override TextScript.padding = #3
     a32[(^\markup { \italic "ossia" } gis a8.)] a8  a32[( gis a8.)] a8
     a32 b cis b cis b cis b cis b cis b  cis b cis b cis b cis b cis b a b\laissezVibrer
@@ -25,7 +25,7 @@ voiceOneOssia = \relative c'' {
     \set subdivideBeams = ##f
     s4 \startStaff s8 a16 d cis b e8~
     \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/16)
+    \set beatBase = #1/16
     \tuplet 3/2 { e32[ fis e } \tuplet 3/2 { d e fis } cis8 \tuplet 3/2 { b32 cis b } a16]
     a4.\fermata
     \fine

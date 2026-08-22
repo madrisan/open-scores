@@ -17,7 +17,7 @@ voiceOneOssia = \relative c'' {
   | \startStaff a,8_. d,_. c'32-4( b c8 d16) \stopStaff s2
   | s2 s8. \startStaff
     \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/8)
+    \set beatBase = #1/8
     s16 c32-4( b c16 a g) \stopStaff
 }
 

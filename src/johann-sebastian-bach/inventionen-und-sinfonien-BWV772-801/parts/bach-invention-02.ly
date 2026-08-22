@@ -12,7 +12,7 @@ voiceOneOssia = \relative c'' {
   | \omit TupletBracket
     \stopStaff s1 s2 s8 \startStaff
     \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/8)
+    \set beatBase = #1/8
     s8 \key c \minor ees32 d ees d ees d c d
   | \set subdivideBeams = ##f
     %\undo\hide Clef
@@ -29,7 +29,7 @@ voiceOneOssia = \relative c'' {
     \set subdivideBeams = ##f
     g[ f aes f] g8.[ aes16]
     \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/16)
+    \set beatBase = #1/16
     ees64[ d c d \tuplet 3/2 { ees32 d ees] } d16[ c]
   | c1\fermata\fine
 }

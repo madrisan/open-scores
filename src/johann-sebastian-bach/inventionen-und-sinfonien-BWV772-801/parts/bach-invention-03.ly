@@ -45,9 +45,9 @@ voiceOneOssia = \relative c' {
   | s4.*11
   %58
   | \startStaff d,16[ g]
-    \set baseMoment = #(ly:make-moment 1/16)
+    \set beatBase = #1/16
     fis32 e \tuplet 3/2 { fis[ e fis] }
-    \set baseMoment = #(ly:make-moment 1/8)
+    \set beatBase = #1/8
     e16 d
   | d4.\fermata\fine
 

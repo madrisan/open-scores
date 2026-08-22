@@ -16,7 +16,7 @@ voiceOneOssia = \relative c'' {
   | \startStaff \key c \minor
     << {
       \set subdivideBeams = ##t
-      \set baseMoment = #(ly:make-moment 1/8)
+      \set beatBase = #1/8
       \repeat unfold 6 { ees32 f ees f } \repeat unfold 5 { ees f ees f } ees8\laissezVibrer
     } \\ {
       s4 g,8\rest g4\rest c8 bes4.~ bes4 c8
@@ -27,7 +27,7 @@ voiceOneOssia = \relative c'' {
     \startStaff
     << {
       \set subdivideBeams = ##t
-      \set baseMoment = #(ly:make-moment 1/8)
+      \set beatBase = #1/8
       \repeat unfold 12 { c32 d c d }
     } \\ {
       aes4 f8\rest e4\rest aes8 g4.~ g4 aes8
@@ -44,7 +44,7 @@ voiceThreeOssia = \relative c {
   | \stopStaff s1*12/8*14
   | s1*5/8 \startStaff s8 \key c \minor
     \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/8)
+    \set beatBase = #1/8
     \repeat unfold 6 { bes32 c bes c }
   | \repeat unfold 6 { bes32 c bes c } bes4. a~ \stopStaff
   | \hideNotes a1*12/8

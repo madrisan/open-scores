@@ -63,7 +63,7 @@
         \null
         \line \abs-fontsize #14 { "(Two-Part Inventions)" }
         \null\null
-        \line \abs-fontsize #22 \bold { "BWV 772" \char ##x2012 "786" }
+        \line \abs-fontsize #22 \bold { "BWV 772" \char ##x2014 "786" }
         \null
         \line \italic { \abs-fontsize #16 "und" }
         \null
@@ -71,7 +71,7 @@
         \null
         \line \abs-fontsize #14 { "(Three-Part Inventions)" }
         \null\null
-        \line \abs-fontsize #22 \bold { "BWV 787" \char ##x2012 "801" }
+        \line \abs-fontsize #22 \bold { "BWV 787" \char ##x2014 "801" }
         \null\null\null
         \line { \abs-fontsize #18 \italic "für Tasteninstrument" }
         \null\null\null
@@ -112,7 +112,7 @@
       \null
       \line \abs-fontsize #16 \bold { "(Two-Part Inventions)" }
       \null\null
-      \line \abs-fontsize #24 \bold { "BWV 772" \char ##x2012 "786" }
+      \line \abs-fontsize #24 \bold { "BWV 772" \char ##x2014 "786" }
     }
   }
 }
@@ -159,7 +159,7 @@
       \null
       \line \abs-fontsize #16 \bold { "(Three-Part Inventions)" }
       \null\null
-      \line \abs-fontsize #24 \bold { "BWV 787" \char ##x2012 "801" }
+      \line \abs-fontsize #24 \bold { "BWV 787" \char ##x2014 "801" }
     }
   }
 }

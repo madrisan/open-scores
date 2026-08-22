@@ -17,7 +17,7 @@ voiceOneOssia = \relative c'' {
     \key b \minor
     << {
       \stemUp fis16 g e d8.^~
-      \set baseMoment = #(ly:make-moment 1/16)
+      \set beatBase = #1/16
       \set subdivideBeams = ##t
       \tuplet 3/2 { d32 cis d }
       \tuplet 3/2 { cis d cis }
@@ -34,7 +34,7 @@ voiceThreeOssia = \relative c { }
 VoiceOne = \context Voice = "one" \relative c'' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #2
-  \set baseMoment = #(ly:make-moment 1/16)
+  \set beatBase = #1/16
   %1
   | \stemNeutral\tieNeutral b16[ fis fis] g[ fis fis] b[ fis fis]
   | cis'[ fis, fis] g[ fis fis] cis'[ fis, fis]
@@ -101,7 +101,7 @@ VoiceTwo = \context Voice = "two" \relative c'' {
   \voiceTwo
   \override MultiMeasureRest.staff-position = #-6
   \stemDown\tieDown
-  \set baseMoment = #(ly:make-moment 1/16)
+  \set beatBase = #1/16
   \mergeDifferentlyDottedOn
   %1
   | s1*9/16*6
@@ -153,7 +153,7 @@ VoiceThree = \context Voice = "three" \relative c {
   \override MultiMeasureRest.staff-position = #-4
   \override Rest.staff-position = #0
   \stemNeutral\tieNeutral
-  \set baseMoment = #(ly:make-moment 1/16)
+  \set beatBase = #1/16
   %1
   | b8. r16 b'[ cis] d[ cis b]
   | ais8.~ ais16[ b cis] b[ cis ais]

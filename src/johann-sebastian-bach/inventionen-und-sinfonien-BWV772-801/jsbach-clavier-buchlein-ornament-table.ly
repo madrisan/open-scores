@@ -141,7 +141,7 @@ BachAccentFallendFromGrace =
               d32 c d c d c16.
             | c32[ b c8.]
             | \set subdivideBeams = ##t
-              \set baseMoment = #(ly:make-moment 1/8)
+              \set beatBase = #1/8
               d32[ c d c d c b c]
             | \time 1/8
               d c b c
