@@ -324,7 +324,7 @@ centerDynamics = {
     \context Staff = "upper" <<
       \set Staff.midiInstrument = #"acoustic grand"
       \Global
-      \set Staff.timeSignatureFraction = 6/8
+      \set Staff.timeSignature = 6/8
       \clef treble
       \scaleDurations 2/3 { \Sopran }
       \scaleDurations 2/3 { \Alto }

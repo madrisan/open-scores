@@ -13,7 +13,7 @@ Sopran = \context Voice = "one" \relative c' {
   \repeat volta 2 {
   %1
   | \clef bass
-    \set Staff.timeSignatureFraction = 18/16
+    \set Staff.timeSignature = 18/16
     \scaleDurations 2/3 {
       g16[ a g d e fis] g[ fis g a g a] b[ a b c b cis]
       \clef treble
@@ -28,7 +28,7 @@ Sopran = \context Voice = "one" \relative c' {
     }
       \bar "||"
       \break
-  | \set Staff.timeSignatureFraction = 3/4
+  | \set Staff.timeSignature = 3/4
     \stemUp
     g8.[ fis32 e] d4 f8\rest b
   %10
@@ -44,7 +44,7 @@ Sopran = \context Voice = "one" \relative c' {
   }
   \repeat volta 2 {
   %17
-  | \set Staff.timeSignatureFraction = 18/16
+  | \set Staff.timeSignature = 18/16
     \stemNeutral
     \scaleDurations 2/3 {
       a16[ g a d c b] a[ b a g a g] fis[ g fis e fis e]
@@ -58,12 +58,12 @@ Sopran = \context Voice = "one" \relative c' {
   |   g[ fis g b a b] e,[ dis e g b dis] e[ c b a g fis]
     }
   %25
-  | \set Staff.timeSignatureFraction = 3/4
+  | \set Staff.timeSignature = 3/4
     \stemUp
     e8 d'\rest a'\rest b16\rest g \grace g8 fis8. e16
   | \grace e8 d4~ d8. f16 \grace f8 e8. d16
   | \grace d8 c2~ c8. c16
-  | \set Staff.timeSignatureFraction = 18/16
+  | \set Staff.timeSignature = 18/16
     \scaleDurations 2/3 {
       c8 s4 fis,16[ e fis g fis g] a[ g a b g a]
   |   b[ c b fis g a] s4. d16[ c d e c d]
@@ -103,7 +103,7 @@ Alto = \context Voice = "two" \relative c'' {
   | \stemDown a,8\rest d16\rest gis a8. b16 c4~
   | c8. fis,16 g8. a16 b4~
   | b8. e,16 fis8. g16 a8. g16
-  | \set Staff.timeSignatureFraction = 18/16
+  | \set Staff.timeSignature = 18/16
     \scaleDurations 2/3 {
       fis16[ g fis cis d e] s4. fis8 s4
   |   g8 s4 b16[ a b c b c] b8 s4
@@ -143,7 +143,7 @@ Tenor = \context Voice = "three" \relative c'' {
   | a8.[ fis16] \appoggiatura fis8 dis4 f8\rest fis
   | fis8.[ dis16] e4\mordent
     \clef "bass"
-    \set Staff.timeSignatureFraction = 18/16
+    \set Staff.timeSignature = 18/16
     \scaleDurations 2/3 {
       c,4.\rest
   %25
@@ -170,7 +170,7 @@ Bass = \context Voice = "four" \relative c'' {
   | fis8.[ g16] a4 r8 d,
   | g4 g, g\rest
     \bar "||"
-  | \set Staff.timeSignatureFraction = 18/16
+  | \set Staff.timeSignature = 18/16
     \stemNeutral
     \scaleDurations 2/3 {
       g16[ a g d e fis] g[ fis g a g a] b[ a b c b cis]
@@ -187,7 +187,7 @@ Bass = \context Voice = "four" \relative c'' {
   }
   \repeat volta 2 {
   %17
-  | \set Staff.timeSignatureFraction = 3/4
+  | \set Staff.timeSignature = 3/4
     \stemDown
     d,,4 c b8\rest c
   | b8.[ d16 ] g4 g8\rest d'
@@ -198,7 +198,7 @@ Bass = \context Voice = "four" \relative c'' {
   | a8.[ b16 ] \appoggiatura b8 c4 g8\rest c
   | b4 a g8\rest a
   | a8.[ fis16] g4
-    \set Staff.timeSignatureFraction = 18/16
+    \set Staff.timeSignature = 18/16
     \clef "bass"
     \scaleDurations 2/3 {
       d,16\rest e fis g a b
