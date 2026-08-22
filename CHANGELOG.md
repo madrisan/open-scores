@@ -22,7 +22,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Fixed
 
-- Arnold Schoenberg: Sechs kleine Klavierstücke op.19 - fix build with lilypond 2.25
+- Arnold Schoenberg: Sechs kleine Klavierstucke op.19 - fix build with lilypond 2.25
+- Dietric Buxtehude: Canzonetta in a BuxWV225 - fix build warnings with lilypond 2.26
+- Ferruccio Busoni: Drei Albumblatter BV289 - fix build failure with lilypond 2.26
+- Alfredo Casella: Deux Contrastes op.31 - fix deprecation warning with lilypond 2.26
+- J.S. Bach: Inventionen und Sinfonien BWV772-801 - fix build failure with lilypond 2.26
+- J.S. Bach: Inventionen und Sinfonien BWV772-801 - fix accidental alignment in the Circle of fifths
+- fix 'minimumBeamSubdivisionInterval' deprecation warnings with lilypond 2.26 in all files
+- fix 'baseMoment' deprecation warnings with lilypond 2.26 in all files
+- fix 'tupletSpannerDuration' deprecation warning with lilypond 2.26 in Partita VI Gavotta
+- fix 'timeSignatureFraction' deprecation warning with lilypond 2.26 in Goldberg Variations and Szymanowski op.1
 
 ## [v70] - 2026-01-16
 
