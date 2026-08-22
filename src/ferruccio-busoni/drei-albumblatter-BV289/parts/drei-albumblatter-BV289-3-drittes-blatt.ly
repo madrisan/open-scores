@@ -615,7 +615,7 @@ forceBreaks = {
     \new Devnull \forceBreaks
   >>
   \header {
-    composer = "Ferruccio Busoni ‒ Berlin, 1921"
+    composer = "Ferruccio Busoni — Berlin, 1921"
     opus = ##f % "BV 289"
     title = \markup { "Drittes Blatt" }
     subtitle = "In der Art eines Choralvorspiels"

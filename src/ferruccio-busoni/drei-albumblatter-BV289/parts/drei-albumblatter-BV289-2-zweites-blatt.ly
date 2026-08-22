@@ -27,7 +27,7 @@ Soprano = \context Voice = "one" \relative c' {
   %10
   | c des16\) des^.\( des^. des^. des^. des^.\)
     \stemNeutral
-    \set maximumBeamSubdivisionInterval = \musicLength 8
+    \set beamMaximumSubdivision = #1/8
     \set subdivideBeams = ##t
     <bes des>16^.\( <bes des>^. <bes d>^. <bes d>^. <bes ees>^. <bes ees>^.^\< <bes e>^. <bes f'>^.\!\)
   | <bes f'>16^.\( <bes f'>^. <b f'>^. <b f'>^. <c! f>^. <c f>^. <des f>^. <des f>^.\)
@@ -176,7 +176,7 @@ forceBreaks = {
     \new Devnull \forceBreaks
   >>
   \header {
-    composer = "Ferruccio Busoni ‒ Rome, 1921"
+    composer = "Ferruccio Busoni — Rome, 1921"
     opus = ##f % "BV 289"
     title = \markup { "Zweites Blatt" }
     subtitle = ##f

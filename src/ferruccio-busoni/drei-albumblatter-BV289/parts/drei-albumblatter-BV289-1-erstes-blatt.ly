@@ -10,7 +10,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \omit TupletBracket \omit TupletNumber
-  \set minimumBeamSubdivisionInterval = \musicLength 8
+  \set beamMinimumSubdivision = #1/8
   %1
   | \tempo "Andantino sostenuto."
     b2\( c16 b8.\) a16( g8.)
@@ -58,8 +58,8 @@ Soprano = \context Voice = "one" \relative c'' {
     \tuplet 3/2 {
       \set stemLeftBeamCount = #1 ais^. b^. cis^.)
     }
-  | %\set minimumBeamSubdivisionInterval = \musicLength 8
-    \set maximumBeamSubdivisionInterval = \musicLength 16
+  | %\set beamMinimumSubdivision = #1/8
+    \set beamMaximumSubdivision = #1/16
     \set subdivideBeams = ##t
     \once\override Staff.TextScript.extra-offset = #'(0 . -2)
     bis16.^-_\markup { "poco aumentando" }
@@ -303,7 +303,7 @@ forceBreaks = {
     \new Devnull \forceBreaks
   >>
   \header {
-    composer = "Ferruccio Busoni ‒ Zürich, 1917"
+    composer = "Ferruccio Busoni — Zürich, 1917"
     opus = ##f % "BV 289"
     title = \markup { "Erstes Blatt" }
     subsubtitle = \markup { \normal-text "An Herrn Albert Biolley" }
