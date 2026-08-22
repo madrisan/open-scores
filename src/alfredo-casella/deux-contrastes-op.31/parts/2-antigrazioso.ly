@@ -22,7 +22,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | d,8..^> g,32
     des'16_.[ aes_. d,_.]
     \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/4)
+    \set beatBase = #1/4
     %\set beatStructure = 1,3,2,2
     \clef bass \stemDown g,16-.[
     \break
@@ -120,7 +120,7 @@ Sopran = \context Voice = "one" \relative c'' {
   | d,8..^> g,32
     des'16_.[ aes_. d,_.]
     \set subdivideBeams = ##t
-    \set baseMoment = #(ly:make-moment 1/4)
+    \set beatBase = #1/4
     %\set beatStructure = 1,3,2,2
     \clef bass \stemDown g,16-.[
     \break
