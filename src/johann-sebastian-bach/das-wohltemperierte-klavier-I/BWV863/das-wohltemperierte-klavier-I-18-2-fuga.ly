@@ -44,7 +44,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | gis4 fis e2~
   %35
   | e8 dis b'2 a4~
-  | a4) r8 gis  ais ais bis bis
+  | a4 r8 gis  ais ais bis bis
   | cis4 r8 \highlightSubject { dis  bis cis16 dis  e8 dis
   | cis8 fisis gis b,  cis cis dis dis
   | \unHighlightSubject gis,8 } bis cis2 b4~
