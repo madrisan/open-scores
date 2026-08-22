@@ -56,8 +56,9 @@ Sopran = \context Voice = "one" \relative c' {
   \alternative {
     { \stemUp\slurDown\appoggiatura dis8 \stemDown e2 }
     {
-      \set Timing.measureLength = #(ly:make-moment 2/4)
+      \set Timing.measureLength = #1/2
       e16[ b cis dis!] e[ dis e fis] g8[ e c! a]
+      \unset Timing.measureLength
     }
   }
   | fis'[ d! b g] e'[ c a fis]
