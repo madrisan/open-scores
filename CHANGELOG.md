@@ -32,6 +32,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - fix 'baseMoment' deprecation warnings with lilypond 2.26 in all files
 - fix 'tupletSpannerDuration' deprecation warning with lilypond 2.26 in Partita VI Gavotta
 - fix 'timeSignatureFraction' deprecation warning with lilypond 2.26 in Goldberg Variations and Szymanowski op.1
+- Domenico Scarlatti: Sonata K.30 - fix 'unrecognized image file' warning in Domenico Scarlatti Sonata k30
 
 ## [v70] - 2026-01-16
 

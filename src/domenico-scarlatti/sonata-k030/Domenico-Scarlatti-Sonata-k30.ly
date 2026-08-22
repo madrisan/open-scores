@@ -88,7 +88,7 @@
 
 \markup {
   \general-align #Y #DOWN {
-    \epsfile #X #96 #"domenico-scarlatti-sonata-k30-manuscript-berlin.ps"
+    \epsfile #X #96 #"domenico-scarlatti-sonata-k30-manuscript-berlin.eps"
   }
 }
 
