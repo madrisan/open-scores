@@ -29,11 +29,12 @@ SUBDIRS = alfredo-casella \
 	  ferruccio-busoni \
 	  francis-poulenc \
 	  franco-margola \
-	  frederic-chopin \
 	  franz-liszt \
+	  frederic-chopin \
 	  hans-erich-apostel \
 	  ildebrando-pizzetti \
 	  jan-pieterszoon-sweelinck \
+	  johann-christian-bach \
 	  johannes-brahms \
 	  johann-sebastian-bach \
 	  karol-szymanowski \

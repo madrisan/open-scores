@@ -274,9 +274,8 @@ echo "
 tree "$ly_targetdir"
 
 echo "
-WARNING: make sure to update
- * configure.ac
-   add \"$ly_targetdir/Makefile\" to AC_CONFIG_FILES
- * if applicable, update the SUBDIRS variable of the Makefile.am files in
-   ${ly_targetdir//\// \/ }
++ next step
+run '$PROGPATH/../bootstrap.sh && autoreconf && ./configure' from the repository
+root to wire '$ly_targetdir' into configure.ac and the parent Makefile.am
+files automatically
 "

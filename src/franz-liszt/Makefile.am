@@ -17,5 +17,5 @@
 
 AM_MAKEFLAGS = --no-print-directory
 
-SUBDIRS = sancta-dorothea-s.187 \
-	  late-works
+SUBDIRS = late-works \
+	  sancta-dorothea-s.187

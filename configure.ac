@@ -55,7 +55,7 @@ fi])
 
 AC_CHECK_PROG_VER(LILYPOND, lilypond, --version,
   [GNU LilyPond \([0-9]*\.[0-9.]*\.[0-9.]*\) .running Guile .*],
-  [2.2[4-5].[0-9]*],
+  [2.2[4-6].[0-9]*],
   critic_missing="$critic_missing lilypond")
 
 RGB_COLOR="0.80 0.90 1.00"
@@ -111,16 +111,17 @@ AC_CONFIG_FILES([\
   src/ildebrando-pizzetti/sogno/Makefile \
   src/jan-pieterszoon-sweelinck/Makefile \
   src/jan-pieterszoon-sweelinck/fantasia-cromatica-SwWV258/Makefile \
+  src/johann-christian-bach/Makefile \
+  src/johann-christian-bach/sonata-op-17-5/Makefile \
   src/johannes-brahms/Makefile \
   src/johannes-brahms/klavierstucke-op.118/Makefile \
   src/johannes-brahms/klavierstucke-op.119/Makefile \
   src/johannes-brahms/rhapsodie-op.79-nr.1/Makefile \
   src/johannes-brahms/rhapsodie-op.79-nr.2/Makefile \
-  src/johann-christian-bach/sonata-op-17-5/Makefile \
   src/johann-sebastian-bach/Makefile \
   src/johann-sebastian-bach/cantatas/Makefile \
-  src/johann-sebastian-bach/cantatas/cantata-BWV54-aria/Makefile \
   src/johann-sebastian-bach/cantatas/cantata-BWV106-actus-tragicus-sonatina/Makefile \
+  src/johann-sebastian-bach/cantatas/cantata-BWV54-aria/Makefile \
   src/johann-sebastian-bach/cembalo-konzert-largo-BWV1056-kempff/Makefile \
   src/johann-sebastian-bach/chaconne-fur-violine-BWV1004-busoni/Makefile \
   src/johann-sebastian-bach/chorale-preludes/Makefile \
@@ -152,15 +153,15 @@ AC_CONFIG_FILES([\
   src/johann-sebastian-bach/organ-sonata-4-andante-BWV528-stradal/Makefile \
   src/johann-sebastian-bach/ouverture-nach-franzosischer-art-BWV831/Makefile \
   src/johann-sebastian-bach/partitas/Makefile \
-  src/johann-sebastian-bach/praludien/Makefile \
-  src/johann-sebastian-bach/praludien/neun-kleine-praludien-BWV924-932/Makefile
-  src/johann-sebastian-bach/praludien/sechs-kleine-praludien-BWV933-938/Makefile \
   src/johann-sebastian-bach/praeludium-fuge-und-allegro-BWV998/Makefile \
   src/johann-sebastian-bach/praeludium-und-fuge-BWV898/Makefile \
   src/johann-sebastian-bach/praeludium-und-fughetta-BWV899/Makefile \
   src/johann-sebastian-bach/praeludium-und-fughetta-BWV900/Makefile \
   src/johann-sebastian-bach/praeludium-und-fughetta-BWV901/Makefile \
   src/johann-sebastian-bach/praeludium-und-fughetta-BWV902/Makefile \
+  src/johann-sebastian-bach/praludien/Makefile \
+  src/johann-sebastian-bach/praludien/neun-kleine-praludien-BWV924-932/Makefile \
+  src/johann-sebastian-bach/praludien/sechs-kleine-praludien-BWV933-938/Makefile \
   src/johann-sebastian-bach/praludium-und-fuge-liszt-BWV543-S462/Makefile \
   src/johann-sebastian-bach/schafe-konnen-sicher-weiden-BWV208/Makefile \
   src/johann-sebastian-bach/siciliano-BWV1031-kempff/Makefile \
@@ -174,8 +175,8 @@ AC_CONFIG_FILES([\
   src/mikhail-glinka/nocturne/Makefile \
   src/pietro-domenico-paradisi/Makefile \
   src/pietro-domenico-paradisi/sonata-06/Makefile \
-  src/robert-schumann/kinderscenen-op.15/Makefile \
   src/robert-schumann/Makefile \
+  src/robert-schumann/kinderscenen-op.15/Makefile \
   src/rued-langgaard/Makefile \
   src/rued-langgaard/insektarium-BVN134/Makefile \
 ])
