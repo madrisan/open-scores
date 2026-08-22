@@ -10,7 +10,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \voiceOne
   \stemNeutral
   \showStaffSwitch
-  \set minimumBeamSubdivisionInterval = \musicLength 8
+  \set beamMinimumSubdivision = #1/8
   \label #'PartitaIPraeludium
   %1
   | r16 bes[ bes32 \prall a bes16] c bes d bes es[ bes bes32 \prall a bes16] d bes es bes
@@ -152,7 +152,7 @@ Bass = \context Voice = "four" \relative c' {
   \stemDown\tieDown
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
-  \set minimumBeamSubdivisionInterval = \musicLength 8
+  \set beamMinimumSubdivision = #1/8
   %1
   | \clef treble
     bes1~

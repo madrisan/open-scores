@@ -112,8 +112,8 @@ Soprano = \context Voice = "one" \relative c'' {
   \stemUp\tieUp
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
-  \set minimumBeamSubdivisionInterval = \musicLength 8
-  \set maximumBeamSubdivisionInterval = \musicLength 16
+  \set beamMinimumSubdivision = #1/8
+  \set beamMaximumSubdivision = #1/16
   %1
   | R1*4
   | a1
@@ -313,7 +313,7 @@ Soprano = \context Voice = "one" \relative c'' {
   | b gis gis a b a b g a fis fis g a g a f
   | g g g a b c d e d c b a b a b g
   | a g fis g a b c d e f! g a
-    \set maximumBeamSubdivisionInterval = \musicLength 8
+    \set beamMaximumSubdivision = #1/8
     \set subdivideBeams = ##t
     g32 f e d c b a g
     \set subdivideBeams = ##f
@@ -373,8 +373,8 @@ Alto = \context Voice = "two" \relative c' {
   \override Rest.staff-position = #0
   \override VoiceFollower.color = \greyTextColor
   \override VoiceFollower.style = #'dashed-line
-  \set minimumBeamSubdivisionInterval = \musicLength 8
-  \set maximumBeamSubdivisionInterval = \musicLength 16
+  \set beamMinimumSubdivision = #1/8
+  \set beamMaximumSubdivision = #1/16
   %1
   | d1
   | d2 d
@@ -623,7 +623,7 @@ Alto = \context Voice = "two" \relative c' {
   | d a d c b a g f e c g' f e d c b
   %160
   | a a' d, e f g a b cis a b cis
-    \set maximumBeamSubdivisionInterval = \musicLength 8
+    \set beamMaximumSubdivision = #1/8
     \set subdivideBeams = ##t
     d16 cis d32 cis b cis
     \set subdivideBeams = ##f
@@ -682,8 +682,8 @@ Tenor = \context Voice = "three" \relative c {
   \override MultiMeasureRest.staff-position = #0
   \override VoiceFollower.color = \greyTextColor
   \override VoiceFollower.style = #'dashed-line
-  \set minimumBeamSubdivisionInterval = \musicLength 8
-  \set maximumBeamSubdivisionInterval = \musicLength 16
+  \set beamMinimumSubdivision = #1/8
+  \set beamMaximumSubdivision = #1/16
   %1
   | R1*8
   | s1*4

@@ -13,7 +13,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \label #'PartitaIIIAllemande
-  \set minimumBeamSubdivisionInterval = \musicLength 8
+  \set beamMinimumSubdivision = #1/8
   \repeat volta 2 {
   \partial 4 e8~ e32 d c b
   %1
@@ -67,7 +67,7 @@ Alto = \context Voice = "two" \relative c'' {
   \voiceTwo
   \stemDown\tieDown
   \mergeDifferentlyDottedOn
-  \set minimumBeamSubdivisionInterval = \musicLength 8
+  \set beamMinimumSubdivision = #1/8
   \override Rest.staff-position = #0
   \partial 4 s4
   %1
@@ -176,7 +176,7 @@ Bass = \context Voice = "four" \relative c {
   | d8 r32 d, fis a d8. c32 b e8 r32 c b a gis8 e
   << {
   | c[ f] d[ e]
-    %\set minimumBeamSubdivisionInterval = \musicLength 8
+    %\set beamMinimumSubdivision = #1/8
     %\set subdivideBeams = ##t
     a16.[ e32] d[ c d e]
     %\set subdivideBeams = ##f
@@ -191,7 +191,7 @@ Bass = \context Voice = "four" \relative c {
   } >>
   %5
   | \stemDown\tieDown e4 fis g~
-    \set minimumBeamSubdivisionInterval = \musicLength 8
+    \set beamMinimumSubdivision = #1/8
     \set subdivideBeams = ##t
     g32 a g fis g e g b
     \set subdivideBeams = ##f

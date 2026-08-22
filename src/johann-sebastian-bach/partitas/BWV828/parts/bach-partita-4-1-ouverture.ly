@@ -12,7 +12,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \omit TupletBracket \omit TupletNumber
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
-  \set minimumBeamSubdivisionInterval = \musicLength 8
+  \set beamMinimumSubdivision = #1/8
   \label #'PartitaIVOuverture
   \stemUp
   \repeat volta 2 {
@@ -329,7 +329,7 @@ Alto = \context Voice = "two" \relative c'' {
 Tenor = \context Voice = "three" \relative c'' {
   \voiceThree
   \override Rest.staff-position = #0
-  \set minimumBeamSubdivisionInterval = \musicLength 8
+  \set beamMinimumSubdivision = #1/8
   \mergeDifferentlyDottedOn
   \mergeDifferentlyHeadedOn
   \repeat volta 2 {
@@ -407,7 +407,7 @@ Tenor = \context Voice = "three" \relative c'' {
   | d4 d8\rest s2.
   | s1*9/8*8
   %55
-  | \set maximumBeamSubdivisionInterval = \musicLength 4.
+  | \set beamMaximumSubdivision = #3/8
     \set subdivideBeams = ##t
     \change Staff = "upper" \voiceThree
     e'16[ d c b a g fis e dis cis
@@ -476,7 +476,7 @@ Bass = \context Voice = "four" \relative c {
   \stemNeutral\tieNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
-  \set minimumBeamSubdivisionInterval = \musicLength 8
+  \set beamMinimumSubdivision = #1/8
   \omit TupletBracket \omit TupletNumber
   %1
   \repeat volta 2 {
@@ -540,7 +540,7 @@ Bass = \context Voice = "four" \relative c {
   %35
   | a,4 b8\rest c4.\rest c\rest
   | a4 b8\rest b4.\rest b\rest
-  | \set maximumBeamSubdivisionInterval = \musicLength 4.
+  | \set beamMaximumSubdivision = #3/8
     \set subdivideBeams = ##t
     b16\rest a[ b cis d e fis g a b cis \staffUpper d e fis g a b cis]
     \set subdivideBeams = ##f

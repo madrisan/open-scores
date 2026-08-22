@@ -8,7 +8,7 @@ Global = {
 
 sopranoOssia = \relative c'' { }
 %sopranoOssia = \relative c'' {
-%  \set minimumBeamSubdivisionInterval = \musicLength 8
+%  \set beamMinimumSubdivision = #1/8
 %  | \stopStaff s1*3
 %  %4
 %  | \startStaff \stemUp

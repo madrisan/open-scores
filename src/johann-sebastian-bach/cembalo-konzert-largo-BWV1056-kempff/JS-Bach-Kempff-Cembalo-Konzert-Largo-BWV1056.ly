@@ -102,7 +102,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \omit TupletBracket
-  \set minimumBeamSubdivisionInterval = \musicLength 8
+  \set beamMinimumSubdivision = #1/8
   %1
   | \tempo "Largo" 8 = 54
   | \once\override Staff.TextScript.extra-offset = #'(-1.5 . -1)
@@ -201,7 +201,7 @@ Soprano = \context Voice = "one" \relative c'' {
   %20
   | aes32 g16 aes64 bes bes32_\prall aes bes16
     \set subdivideBeams = ##t
-    \set minimumBeamSubdivisionInterval = \musicLength 16
+    \set beamMinimumSubdivision = #1/16
     c8~^\markup {
       \hspace #-0.5 "rit."
     }

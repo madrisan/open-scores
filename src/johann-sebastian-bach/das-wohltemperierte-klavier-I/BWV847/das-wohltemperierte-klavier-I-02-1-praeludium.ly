@@ -9,7 +9,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \stemUp\tieUp
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
-  \set minimumBeamSubdivisionInterval = \musicLength 8
+  \set beamMinimumSubdivision = #1/8
   \label #'Praeludium02
   %1
   | \repeat unfold 2 { c16 ees, d ees c ees d ees }

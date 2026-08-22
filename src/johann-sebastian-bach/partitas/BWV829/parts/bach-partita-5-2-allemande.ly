@@ -13,7 +13,7 @@ Soprano = \context Voice = "one" \relative c'' {
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
   \label #'PartitaVAllemande
-  \set minimumBeamSubdivisionInterval = \musicLength 8
+  \set beamMinimumSubdivision = #1/8
   \omit TupletBracket \omit TupletNumber
   \repeat volta 2 {
     \partial 16 g'16

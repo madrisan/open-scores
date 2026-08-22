@@ -49,7 +49,7 @@ Soprano = \context Voice = "one" \relative c' {
   \break
   | fis4 b16 a b g g fis g e e d e cis
   | cis4 d8. d16 d8. e16
-    \set minimumBeamSubdivisionInterval = \musicLength 16
+    \set beamMinimumSubdivision = #1/16
     \set subdivideBeams = ##t
     \tuplet 3/2 { cis32 d cis } \tuplet 3/2 { d cis b } cis16 d
     \set subdivideBeams = ##f

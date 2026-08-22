@@ -13,7 +13,7 @@ Soprano = \context Voice = "one" \relative c' {
   \stemNeutral\tieNeutral\slurNeutral
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
-  \set minimumBeamSubdivisionInterval = \musicLength 8
+  \set beamMinimumSubdivision = #1/8
   \repeat volta 2 {
   %1
   | r4 r8 r32 fis g e fis4.\mordent d'8
