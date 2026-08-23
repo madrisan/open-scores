@@ -118,7 +118,7 @@
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #88 {
+    \page-link #87 {
       \fill-with-pattern #1 #RIGHT . "Brief notes on the completion of Contrapunctus XIV"
                          \page-ref #'BriefNotesContrapunctusXIVen "000" "?"
     }
@@ -128,7 +128,7 @@
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #93 {
+    \page-link #92 {
       \fill-with-pattern #1 #RIGHT . "Brevi note sul completamento del Contrapunctus XIV"
                          \page-ref #'BriefNotesContrapunctusXIVit "000" "?"
     }

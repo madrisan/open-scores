@@ -14,7 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - J.S. Bach: Das wohltemperierte Klavier – Erster Teil: Praeludium und Fuga XVI
 - J.S. Bach: Das wohltemperierte Klavier – Erster Teil: Praeludium und Fuga XVII
 - J.S. Bach: Das wohltemperierte Klavier – Erster Teil: Praeludium und Fuga XVIII
-- J.S. Bach: Das wohltemperierte Klavier – Erster Teil: Praeludium und Fuga XIX - prelude
+- J.S. Bach: Das wohltemperierte Klavier – Erster Teil: Praeludium und Fuga XIX
 
 ### Changed
 

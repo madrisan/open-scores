@@ -85,7 +85,7 @@ Tenor = \context Voice = "three" \relative c {
   %15
   | dis4
     \change Staff = "upper" \voiceTwo
-    r8 e'~  e16 e dis cis  b a! 
+    r8 e'~  e16 e dis cis  b a!
     \change Staff = "lower" \voiceThree
     gis fis
   | e4 
@@ -115,10 +115,10 @@ Bass = \context Voice = "four" \relative c {
   | cis16 b a cis  fis, cis' b a  gis fis e fis  gis a b cis
   | d!16 e fis d  b cis d b  cis d e cis  a b cis a
   | b16 cis d b  gis a b gis  a4_~  a16 gis a b
-  | cis4  r16 
+  | cis4  \once\override Rest.direction = #DOWN d,16\rest
     \mergeDifferentlyDottedOn
     \once\shape #'((0.6 . -0.8) (0 . -1) (0 . -1) (-0.2 . -0.6)) Tie
-    e8._~
+    e'8._~
     e8 a, r 
     \once\shape #'((0.6 . 0) (0 . 0) (0 . 0) (-0.2 . 0)) Tie
     d_~
