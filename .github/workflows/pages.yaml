@@ -1,0 +1,100 @@
+name: pages
+
+# Build every score's PDF and publish them to GitHub Pages, together with a
+# simple auto-generated index page grouped by composer.
+#
+# Runs only on tagged releases (matching the project's own release cadence,
+# see CHANGELOG.md) and on manual dispatch, rather than on every push: a full
+# `make` rebuilds the whole collection (100+ pieces, some 100+ pages each),
+# which is too expensive to repeat on every commit.
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one concurrent deployment, but don't cancel an in-progress run.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: 'fedora:44'
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - id: install_deps
+        run: |
+          dnf -y update
+          dnf -y install autoconf automake bzip2 findutils lilypond make xz
+
+      - id: configure
+        run: |
+          autoreconf --install
+          ./configure
+
+      - id: make
+        run: |
+          make
+
+      - id: collect
+        run: |
+          # Only each piece's main assembled PDF: skip individual movement
+          # fragments under parts/, and stray lilypond-tmp-* ghostscript
+          # leftovers that aren't covered by "make clean".
+          mkdir -p _site
+          find src -name '*.pdf' \
+            -not -path '*/parts/*' \
+            -not -name 'lilypond-tmp-*' \
+            -print0 |
+            while IFS= read -r -d '' pdf; do
+              dest="_site/${pdf#src/}"
+              mkdir -p "$(dirname "$dest")"
+              cp "$pdf" "$dest"
+            done
+
+      - id: index
+        run: |
+          {
+            echo '<!DOCTYPE html>'
+            echo '<html lang="en"><head><meta charset="utf-8">'
+            echo '<title>Open Scores for Piano</title></head><body>'
+            echo '<h1>Open Scores for Piano</h1>'
+            find _site -mindepth 1 -maxdepth 1 -type d | sort |
+              while IFS= read -r composer_dir; do
+                composer="$(basename "$composer_dir")"
+                echo "<h2>${composer}</h2>"
+                echo '<ul>'
+                find "$composer_dir" -name '*.pdf' | sort |
+                  while IFS= read -r pdf; do
+                    rel="${pdf#_site/}"
+                    title="$(basename "$pdf" .pdf)"
+                    echo "<li><a href=\"${rel}\">${title}</a></li>"
+                  done
+                echo '</ul>'
+              done
+            echo '</body></html>'
+          } > _site/index.html
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
