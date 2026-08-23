@@ -110,7 +110,11 @@
     \vspace #1
     \line {
 \score {
-  \new PianoStaff
+  \new PianoStaff \with {
+    \override StaffGrouper.staff-staff-spacing =
+      #'((basic-distance . 6)
+         (padding . 1))
+  }
   <<
     \applyContext #(override-color-for-all-grobs middleGrey)
     \accidentalStyle Score.piano
@@ -206,7 +210,11 @@
   \center-column {
     \line {
 \score {
-  \new PianoStaff
+  \new PianoStaff \with {
+    \override StaffGrouper.staff-staff-spacing =
+      #'((basic-distance . 6)
+         (padding . 1))
+  }
   <<
     \applyContext #(override-color-for-all-grobs middleGrey)
     \accidentalStyle Score.piano
@@ -304,7 +312,11 @@
   \center-column {
     \line {
 \score {
-  \new PianoStaff
+  \new PianoStaff \with {
+    \override StaffGrouper.staff-staff-spacing =
+      #'((basic-distance . 6)
+         (padding . 1))
+  }
   <<
     \applyContext #(override-color-for-all-grobs middleGrey)
     \accidentalStyle Score.piano

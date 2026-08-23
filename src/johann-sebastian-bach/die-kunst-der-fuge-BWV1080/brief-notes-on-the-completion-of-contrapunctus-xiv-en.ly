@@ -61,8 +61,7 @@
     \wordwrap \abs-fontsize #9 \with-color #middleGrey {
       [His last illness prevented him from completing the penultimate fugue according to his
       draft, and from working out the last one, which was to contain 4 themes and subsequently
-      be reversed note for note in all 4 voices. This work only came to light after the blessed
-      author's death.]
+      be reversed note for note in all 4 voices.]
     }
   }
 }
@@ -71,8 +70,8 @@
   \column {
     \pad-around #2
     \wordwrap \abs-fontsize #10 \with-color #middleGrey {
-      The Bach's Obituary was written in the latter half of 1750, within months of Bach’s death, and
-      published in 1754 in Lorenz Christoph Mizler's \italic { Musikalische Bibliothek, }
+      Bach's Obituary was written in the latter half of 1750, within months of Bach’s death, and
+      published in 1754 in the last volume of Lorenz Christoph Mizler's \italic { Musikalische Bibliothek, }
       the organ of Mizler's Musical Society of which Bach had been a member from 1747
       (the 14th member admitted to the society, see below).
       Although no author is indicated in the article, its authors are known to be Carl Philipp Emanuel,
@@ -106,7 +105,11 @@
     \vspace #1
     \line {
 \score {
-  \new PianoStaff
+  \new PianoStaff \with {
+    \override StaffGrouper.staff-staff-spacing =
+      #'((basic-distance . 4)
+         (padding . 1))
+  }
   <<
     \applyContext #(override-color-for-all-grobs middleGrey)
     \accidentalStyle Score.piano
@@ -202,7 +205,11 @@
   \center-column {
     \line {
 \score {
-  \new PianoStaff
+  \new PianoStaff \with {
+    \override StaffGrouper.staff-staff-spacing =
+      #'((basic-distance . 4)
+         (padding . 1))
+  }
   <<
     \applyContext #(override-color-for-all-grobs middleGrey)
     \accidentalStyle Score.piano
@@ -300,7 +307,11 @@
   \center-column {
     \line {
 \score {
-  \new PianoStaff
+  \new PianoStaff \with {
+    \override StaffGrouper.staff-staff-spacing =
+      #'((basic-distance . 4)
+         (padding . 1))
+  }
   <<
     \applyContext #(override-color-for-all-grobs middleGrey)
     \accidentalStyle Score.piano
@@ -475,7 +486,7 @@
           }
       " • Contrapunctus II"             "there are 14 entries of the subject"
       " • Contrapunctus V and onwards"  "the subject with and addition of passing notes arrives at a total of 14 notes"
-      " • Contrapunctus V"              "appearance of the BACH motive at bar 41"
+      " • Contrapunctus V"              "appearance of the BACH motive (B flat, A, C, B) at bar 41"
       " • Contrapunctus VI"             "there are 14 entries of the subject rectus and 14 entries inversus"
       " • Contrapunctus XIV"            "the second subject consists of 41 notes"
       " • Contrapunctus XIV"            "the BACH motive makes its most prominent appearance as the third subject"
