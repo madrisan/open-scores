@@ -35,7 +35,14 @@ jobs:
       - id: install_deps
         run: |
           dnf -y update
-          dnf -y install autoconf automake bzip2 findutils gawk lilypond make xz
+          dnf -y install autoconf automake bzip2 findutils gawk git lilypond make xz
+          # The checkout is owned by a different uid than the container runs
+          # as, which makes git refuse to operate on it ("detected dubious
+          # ownership") -- the collect step below relies on `git ls-files`,
+          # so without this every piece is silently skipped (the script
+          # never checks git's exit code, so the step still "succeeds"
+          # while producing an empty manifest).
+          git config --global --add safe.directory '*'
 
       - id: configure
         run: |
@@ -97,6 +104,17 @@ jobs:
                 >> /tmp/pages-manifest.tsv
             done
           cp images/open-scores-logo.png _site/
+
+          # Fail loudly rather than silently deploying an empty page: this
+          # is what would have caught the git/safe.directory issue above
+          # instead of it shipping unnoticed (the workflow still reported
+          # "success" with zero pieces collected).
+          collected="$(wc -l < /tmp/pages-manifest.tsv)"
+          echo "collected $collected pieces"
+          if [ "$collected" -lt 1 ]; then
+            echo "::error::pages-manifest.tsv is empty -- collected 0 pieces, refusing to deploy an empty index" >&2
+            exit 1
+          fi
 
       - id: index
         run: |
