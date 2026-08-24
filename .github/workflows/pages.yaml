@@ -54,6 +54,16 @@ jobs:
           make
 
       - id: collect
+        env:
+          # The checkout is bind-mounted into the container, which git's
+          # repository-discovery walk treats as a filesystem boundary it
+          # refuses to cross by default ("not a git repository ...
+          # Stopping at filesystem boundary") -- without this, `git
+          # ls-files` fails for every directory, and since the script
+          # never checked its exit code, every piece was silently skipped
+          # while the step still reported success (now caught loudly by
+          # the empty-manifest check below instead).
+          GIT_DISCOVERY_ACROSS_FILESYSTEM: 1
         run: |
           # Only each piece's main assembled PDF, derived from the actual
           # build target named in that directory's Makefile.am (every one
