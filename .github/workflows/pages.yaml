@@ -35,7 +35,7 @@ jobs:
       - id: install_deps
         run: |
           dnf -y update
-          dnf -y install autoconf automake bzip2 findutils lilypond make xz
+          dnf -y install autoconf automake bzip2 findutils gawk lilypond make xz
 
       - id: configure
         run: |
@@ -48,40 +48,204 @@ jobs:
 
       - id: collect
         run: |
-          # Only each piece's main assembled PDF: skip individual movement
-          # fragments under parts/, and stray lilypond-tmp-* ghostscript
-          # leftovers that aren't covered by "make clean".
+          # Only each piece's main assembled PDF, derived from the actual
+          # build target named in that directory's Makefile.am (every one
+          # of them reads "all: $(BUILT_SOURCES) <TargetName>" and builds
+          # exactly <TargetName>.pdf -- verified against every Makefile.am
+          # in the tree). This is the authoritative source, rather than
+          # just collecting every *.pdf found on disk, which would also
+          # pick up: stray lilypond-tmp-* ghostscript leftovers; individual
+          # movement fragments under parts/; per-piece PDFs left behind in
+          # a subdirectory that is actually folded into a parent
+          # collection's single merged PDF (e.g. Liszt's "Late Works",
+          # where each movement's own directory has no Makefile.am of its
+          # own); and unrelated stale PDFs (e.g. an old index.pdf) sitting
+          # alongside the real target in the same directory.
+          # It also skips any piece whose directory has no file committed
+          # to git (a real CI checkout never has these, but a local
+          # dry-run against a working tree with in-progress/uncommitted
+          # pieces would).
+          # Also record, per PDF, the composer's top-level directory name,
+          # the PDF's path relative to _site, and the human-readable
+          # "title"/"opus"/"source" fields from that piece's own header.ily
+          # (every target directory has one, each with a quoted title --
+          # verified against the whole tree), for the index page to use
+          # instead of the raw filename. "source" is only used as a last
+          # resort, to tell apart two pieces that legitimately share both
+          # title and opus (e.g. two different pianists' transcriptions of
+          # the same Bach chorale).
           mkdir -p _site
-          find src -name '*.pdf' \
-            -not -path '*/parts/*' \
-            -not -name 'lilypond-tmp-*' \
-            -print0 |
-            while IFS= read -r -d '' pdf; do
+          : > /tmp/pages-manifest.tsv
+          find src -name Makefile.am -print0 |
+            while IFS= read -r -d '' makefile; do
+              dir="$(dirname "$makefile")"
+              [ -n "$(git ls-files -- "$dir")" ] || continue
+              target="$(sed -n 's/^all: \$(BUILT_SOURCES) //p' "$makefile" | head -1)"
+              [ -n "$target" ] || continue
+              pdf="$dir/$target.pdf"
+              [ -f "$pdf" ] || continue
               dest="_site/${pdf#src/}"
               mkdir -p "$(dirname "$dest")"
               cp "$pdf" "$dest"
+
+              composer_dir="$(echo "${dir#src/}" | cut -d/ -f1)"
+              title="$(sed -n 's/^[[:space:]]*title[[:space:]]*=[[:space:]]*"\([^"]*\)".*/\1/p' "$dir/header.ily" | head -1)"
+              opus="$(sed -n 's/^[[:space:]]*opus[[:space:]]*=[[:space:]]*"\([^"]*\)".*/\1/p' "$dir/header.ily" | head -1)"
+              source_field="$(sed -n 's/^[[:space:]]*source[[:space:]]*=[[:space:]]*"\([^"]*\)".*/\1/p' "$dir/header.ily" | head -1)"
+              [ -n "$title" ] || title="$target"
+              printf '%s\t%s\t%s\t%s\t%s\n' "$composer_dir" "${pdf#src/}" "$title" "$opus" "$source_field" \
+                >> /tmp/pages-manifest.tsv
             done
+          cp images/open-scores-logo.png _site/
 
       - id: index
         run: |
           {
             echo '<!DOCTYPE html>'
             echo '<html lang="en"><head><meta charset="utf-8">'
-            echo '<title>Open Scores for Piano</title></head><body>'
-            echo '<h1>Open Scores for Piano</h1>'
-            find _site -mindepth 1 -maxdepth 1 -type d | sort |
-              while IFS= read -r composer_dir; do
-                composer="$(basename "$composer_dir")"
-                echo "<h2>${composer}</h2>"
-                echo '<ul>'
-                find "$composer_dir" -name '*.pdf' | sort |
-                  while IFS= read -r pdf; do
-                    rel="${pdf#_site/}"
-                    title="$(basename "$pdf" .pdf)"
-                    echo "<li><a href=\"${rel}\">${title}</a></li>"
-                  done
-                echo '</ul>'
-              done
+            echo '<meta name="viewport" content="width=device-width, initial-scale=1">'
+            echo '<title>Open Scores for Piano</title>'
+            cat <<'CSS'
+          <style>
+            :root {
+              color-scheme: light dark;
+              --fg: #1a1a1a;
+              --bg: #ffffff;
+              --muted: #666666;
+              --accent: #6a3fa0;
+              --border: #e0e0e0;
+            }
+            @media (prefers-color-scheme: dark) {
+              :root {
+                --fg: #e8e8e8;
+                --bg: #181818;
+                --muted: #a0a0a0;
+                --accent: #b090e0;
+                --border: #333333;
+              }
+            }
+            body {
+              font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+              color: var(--fg);
+              background: var(--bg);
+              max-width: 46rem;
+              margin: 2rem auto;
+              padding: 0 1.5rem 4rem;
+              line-height: 1.5;
+            }
+            header {
+              text-align: center;
+              margin-bottom: 1.5rem;
+            }
+            header img {
+              max-width: 100%;
+              height: auto;
+            }
+            h1 {
+              font-size: 1.8rem;
+              border-bottom: 2px solid var(--accent);
+              padding-bottom: 0.5rem;
+            }
+            h2 {
+              font-size: 1.2rem;
+              margin-top: 2rem;
+              color: var(--accent);
+            }
+            ul {
+              list-style: none;
+              padding-left: 0;
+              margin: 0.5rem 0 0;
+            }
+            li {
+              padding: 0.3rem 0;
+              border-bottom: 1px solid var(--border);
+            }
+            li:last-child {
+              border-bottom: none;
+            }
+            a {
+              color: var(--fg);
+              text-decoration: none;
+            }
+            a:hover {
+              color: var(--accent);
+              text-decoration: underline;
+            }
+          </style>
+          CSS
+            echo '</head><body>'
+            echo '<header><img src="open-scores-logo.png" alt="Open Scores for Piano"></header>'
+            # Group by composer (sorted), each piece titled from its own
+            # header.ily. Within a composer, disambiguate colliding titles
+            # in tiers, each only applied to the entries that still collide
+            # after the previous one:
+            #  1. plain title (e.g. Chorale Prelude - ...)
+            #  2. + opus/catalogue number (e.g. Domenico Scarlatti's
+            #     sonatas are all just "Sonata" in their header.ily)
+            #  3. + arranger, parsed out of "source" (e.g. two different
+            #     pianists' transcriptions of the very same Bach chorale,
+            #     sharing both title and opus) -- falls back to the piece's
+            #     own directory name if "source" doesn't name one.
+            sort -t "$(printf '\t')" -k1,1 -k2,2 /tmp/pages-manifest.tsv |
+              gawk -F '\t' '
+                {
+                  composer[NR] = $1; relpath[NR] = $2
+                  title[NR] = $3; opus[NR] = $4; source_field[NR] = $5
+                  n = NR
+                  count1[$1 SUBSEP $3]++
+                }
+                function esc(s) {
+                  gsub(/&/, "\\&amp;", s)
+                  gsub(/</, "\\&lt;", s)
+                  gsub(/>/, "\\&gt;", s)
+                  return s
+                }
+                function display_composer(dir,    parts, k, w, out) {
+                  n_parts = split(dir, parts, "-")
+                  out = ""
+                  for (k = 1; k <= n_parts; k++) {
+                    w = parts[k]
+                    w = toupper(substr(w, 1, 1)) substr(w, 2)
+                    if (w == "Van" || w == "Von") w = tolower(w)
+                    out = out (out == "" ? "" : " ") w
+                  }
+                  return out
+                }
+                function piece_dirname(rel,    d) {
+                  d = rel
+                  sub(/\/[^\/]*$/, "", d)
+                  sub(/^.*\//, "", d)
+                  return d
+                }
+                END {
+                  for (i = 1; i <= n; i++) {
+                    t2 = title[i]
+                    if (count1[composer[i] SUBSEP t2] > 1) {
+                      if (opus[i] != "") t2 = t2 " (" opus[i] ")"
+                      else t2 = t2 " (" piece_dirname(relpath[i]) ")"
+                    }
+                    tier2[i] = t2
+                    count2[composer[i] SUBSEP t2]++
+                  }
+                  cur = ""
+                  for (i = 1; i <= n; i++) {
+                    if (composer[i] != cur) {
+                      if (cur != "") print "</ul>"
+                      print "<h2>" esc(display_composer(composer[i])) "</h2>"
+                      print "<ul>"
+                      cur = composer[i]
+                    }
+                    t = tier2[i]
+                    if (count2[composer[i] SUBSEP t] > 1) {
+                      who = source_field[i]
+                      if (!sub(/^.*[Bb]y /, "", who)) who = piece_dirname(relpath[i])
+                      t = t " — " who
+                    }
+                    printf "<li><a href=\"%s\">%s</a></li>\n", esc(relpath[i]), esc(t)
+                  }
+                  if (cur != "") print "</ul>"
+                }
+              '
             echo '</body></html>'
           } > _site/index.html
 
