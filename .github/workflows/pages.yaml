@@ -30,19 +30,25 @@ jobs:
     container: 'fedora:44'
 
     steps:
-      - uses: actions/checkout@v2
-
+      # git must be installed *before* actions/checkout runs: the bare
+      # fedora:44 container has no git of its own, and without it checkout
+      # falls back to a plain tarball download with no .git directory at
+      # all -- which is exactly what caused `git ls-files` in the collect
+      # step below to fail with "not a git repository (or any of the
+      # parent directories): .git" (the script never checked its exit
+      # code, so the step still "succeeded" while producing an empty
+      # manifest, until the empty-manifest check further below started
+      # catching it).
       - id: install_deps
         run: |
           dnf -y update
           dnf -y install autoconf automake bzip2 findutils gawk git lilypond make xz
           # The checkout is owned by a different uid than the container runs
           # as, which makes git refuse to operate on it ("detected dubious
-          # ownership") -- the collect step below relies on `git ls-files`,
-          # so without this every piece is silently skipped (the script
-          # never checks git's exit code, so the step still "succeeds"
-          # while producing an empty manifest).
+          # ownership") -- the collect step below relies on `git ls-files`.
           git config --global --add safe.directory '*'
+
+      - uses: actions/checkout@v2
 
       - id: configure
         run: |
