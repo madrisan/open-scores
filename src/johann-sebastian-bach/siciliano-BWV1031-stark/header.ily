@@ -2,11 +2,11 @@
 
 \header {
   composer = "Johann Sebastian Bach (1685-1750)"
-  date = "1748 ca."
+  date = "between 1730 and 1734"
 
-  footer = "Mutopia-2023/01/14"
+  footer = "Mutopia-2026/08/24"
 
-  lastupdated = "2023 Jan 14"
+  lastupdated = "2026 August 24"
   license = "Creative Commons Attribution Non Commercial Share Alike 4.0 International"
   maintainerEmail = "d.madrisan@proton.me"
   maintainerWeb = "https://github.com/madrisan/open-scores"
@@ -16,12 +16,12 @@
   mutopiacopyright = "Creative Commons Attribution Non Commercial Share Alike 4.0 International"
   mutopiainstrument = "Piano"
   mutopiamaintainer = "Davide Madrisan"
-  mutopiaopus = "BWV 639"
-  mutopiatitle = "Chorale Prelude - Ich ruf zu dir, Herr Jesu Christ"
+  mutopiaopus = "BWV 1031"
+  mutopiatitle = "Siciliano"
 
-  opus = "BWV 639"
-  title = "Chorale Prelude - Ich ruf zu dir, Herr Jesu Christ"
-  source = "Transcription for piano by Ferruccio Busoni"
+  opus = "BWV 1031"
+  title = "Siciliano"
+  source = "Transcription for piano by Ludwig Stark"
   style = "Baroque"
 
   copyright = \markup {
