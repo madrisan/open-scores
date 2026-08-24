@@ -19,7 +19,7 @@
   mutopiaopus = ""
   mutopiatitle = "Soirées Musicales"
 
-  opus = "6"
+  opus = "Op. 6"
   title = "Soirées Musicales"
   source = "Leipzig: Friedrich Hofmeister, n.d.[1836]. Plate 2148."
   style = "Romantic"

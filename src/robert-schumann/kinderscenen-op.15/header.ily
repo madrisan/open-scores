@@ -19,7 +19,7 @@
   mutopiaopus = ""
   mutopiatitle = "Kinderscenen"
 
-  opus = "15"
+  opus = "Op. 15"
   title = "Kinderscenen"
   source = "Robert Schumanns Werke, Serie VII: Für Pianoforte zu zwei Händen - Leipzig: Breitkopf & Härtel, 1880. Plate R.S. 53."
   style = "Romantic"

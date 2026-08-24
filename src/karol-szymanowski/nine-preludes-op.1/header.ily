@@ -16,10 +16,10 @@
   mutopiacopyright = "Creative Commons Attribution Non Commercial Share Alike 4.0 International"
   mutopiainstrument = "Piano"
   mutopiamaintainer = "Davide Madrisan"
-  mutopiaopus = "1"
+  mutopiaopus = "Op. 1"
   mutopiatitle = "Nine Preludes"
 
-  opus = "1"
+  opus = "Op. 1"
   title = "Nine Preludes"
   source = "-----"
   style = "Modern"

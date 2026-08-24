@@ -16,10 +16,10 @@
   mutopiacopyright = "Creative Commons Attribution Non Commercial Share Alike 4.0 International"
   mutopiainstrument = "Piano"
   mutopiamaintainer = "Davide Madrisan"
-  mutopiaopus = "BWV 988"
+  mutopiaopus = "BWV 998"
   mutopiatitle = "Praeludium Fuge und Allegro"
 
-  opus = "BWV 988"
+  opus = "BWV 998"
   title = "Praeludium Fuge und Allegro"
   source = "Les Éditions Outremontaises, 2005 - Montréal"
   style = "Baroque"
