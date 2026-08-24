@@ -18,7 +18,7 @@
   mutopiatitle = "Nuages Gris"
 
   opus = "S.199"
-  title = "Nuages Gris S.199"
+  title = "Nuages Gris"
   source = ""
   style = "Romantic"
 

@@ -18,7 +18,7 @@
   mutopiatitle = "Trauervorspiel und Trauermarsch"
 
   opus = "S.206"
-  title = "Trauervorspiel und Trauermarsch S.206"
+  title = "Trauervorspiel und Trauermarsch"
   source = ""
   style = "Romantic"
 

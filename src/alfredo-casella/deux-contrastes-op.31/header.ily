@@ -18,7 +18,7 @@
   mutopiatitle = "Deux contrastes"
 
   opus = "Op. 31"
-  title = "Deux contrastes Op. 31"
+  title = "Deux contrastes"
   source = "London: J. & W. Chester, Ltd., 1919. Plate J. & W. C. 2041."
   style = "Neoclassic"
 

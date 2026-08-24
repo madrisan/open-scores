@@ -16,11 +16,11 @@
   mutopiacopyright = "Creative Commons Attribution Non Commercial Share Alike 4.0 International"
   mutopiainstrument = "Piano"
   mutopiamaintainer = "Davide Madrisan"
-  mutopiaopus = "13"
-  mutopiatitle = "Kubiniana op. 13"
+  mutopiaopus = "Op. 13"
+  mutopiatitle = "Kubiniana"
 
-  opus = "13"
-  title = "Kubiniana op. 13"
+  opus = "Op. 13"
+  title = "Kubiniana"
   source = "Youtube"
   style = "Dodecaphony"
 

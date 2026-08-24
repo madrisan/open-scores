@@ -16,11 +16,11 @@
   mutopiacopyright = "Creative Commons Attribution Non Commercial Share Alike 4.0 International"
   mutopiainstrument = "Piano"
   mutopiamaintainer = "Davide Madrisan"
-  mutopiaopus = "79"
-  mutopiatitle = "Rhapsodie op. 79 nr. 2"
+  mutopiaopus = "Op. 79"
+  mutopiatitle = "Rhapsodie nr. 2"
 
-  opus = "79"
-  title = "Rhapsodie op. 79 nr. 2"
+  opus = "Op. 79"
+  title = "Rhapsodie nr. 2"
   source = "Edizioni Curci Milano"
   style = "Romantic"
 

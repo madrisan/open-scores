@@ -18,7 +18,7 @@
   mutopiatitle = "Sechs kleine Klavierstücke"
 
   opus = "Op. 19"
-  title = "Sechs kleine Klavierstücke Op. 19"
+  title = "Sechs kleine Klavierstücke"
   source = "Vienna: Universal Edition, 1913. Plate U.E. 5069."
   style = "Atonal"
 

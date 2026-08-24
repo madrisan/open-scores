@@ -14,10 +14,10 @@
   mutopiacopyright = "Creative Commons Attribution Non Commercial Share Alike 4.0 International"
   mutopiainstrument = "Piano"
   mutopiamaintainer = "Davide Madrisan"
-  mutopiaopus = "op. 118"
+  mutopiaopus = "Op. 118"
   mutopiatitle = "Intermezzo in A"
 
-  opus = "op. 118"
+  opus = "Op. 118"
   title = "Intermezzo in A"
   source = "Berlin: N. Simrock, 1893"
   style = "Romantic"

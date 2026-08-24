@@ -16,11 +16,11 @@
   mutopiacopyright = "Creative Commons Attribution Non Commercial Share Alike 4.0 International"
   mutopiainstrument = "Piano"
   mutopiamaintainer = "Davide Madrisan"
-  mutopiaopus = "119"
-  mutopiatitle = "4 Klavierstücke op. 119"
+  mutopiaopus = "Op. 119"
+  mutopiatitle = "4 Klavierstücke"
 
-  opus = "119"
-  title = "4 Klavierstücke op. 119"
+  opus = "Op. 119"
+  title = "4 Klavierstücke"
   source = "Edizioni Curci Milano"
   style = "Romantic"
 

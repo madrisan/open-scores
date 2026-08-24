@@ -15,7 +15,7 @@
   mutopiainstrument = "Harpsichord, Piano"
   mutopiamaintainer = "Davide Madrisan"
   mutopiaopus = "BWV 971"
-  mutopiatitle = "Italienisches Konzert"
+  mutopiatitle = "Concerto nach Italiænischen Gusto"
 
   opus = "BWV 971"
   title = "Concerto nach Italiænischen Gusto"

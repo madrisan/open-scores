@@ -15,10 +15,10 @@
   mutopiainstrument = "Piano"
   mutopiamaintainer = "Davide Madrisan"
   mutopiaopus = "S.208"
-  mutopiatitle = "Unstern! Sinistre, Disastro"
+  mutopiatitle = "Unstern! Sinistre, disastro"
 
   opus = "S.208"
-  title = "Unstern! Sinistre (Disastro) S.208"
+  title = "Unstern! Sinistre, disastro"
   source = ""
   style = "Romantic"
 

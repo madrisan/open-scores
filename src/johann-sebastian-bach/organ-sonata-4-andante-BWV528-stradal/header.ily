@@ -20,7 +20,7 @@
   mutopiatitle = "Sonate 4 für Orgel in e-Moll - Andante"
 
   opus = "BWV 528"
-  title = "Sonate 4 für Orgel in e-Moll"
+  title = "Sonate 4 für Orgel in e-Moll - Andante"
   source = "J. Schuberth & Co., n.d. Plate 7710 - Leipzig"
   style = "Baroque"
 

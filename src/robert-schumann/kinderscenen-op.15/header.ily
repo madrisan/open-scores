@@ -16,7 +16,7 @@
   mutopiacopyright = "Creative Commons Attribution Non Commercial Share Alike 4.0 International"
   mutopiainstrument = "Piano"
   mutopiamaintainer = "Davide Madrisan"
-  mutopiaopus = ""
+  mutopiaopus = "Op. 15"
   mutopiatitle = "Kinderscenen"
 
   opus = "Op. 15"

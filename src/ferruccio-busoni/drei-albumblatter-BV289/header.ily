@@ -15,10 +15,10 @@
   mutopiainstrument = "Piano"
   mutopiamaintainer = "Davide Madrisan"
   mutopiaopus = "BV 289"
-  mutopiatitle = "Drei Albumblätter, BV 289"
+  mutopiatitle = "Drei Albumblätter"
 
   opus = "BV 289"
-  title = "Drei Albumblätter, BV 289"
+  title = "Drei Albumblätter"
   source = "Based on Breitkopf & Härtel - Leipzig, 1921"
   style = "Modern"
 

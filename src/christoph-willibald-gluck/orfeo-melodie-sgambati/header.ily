@@ -18,7 +18,7 @@
   mutopiatitle = "Mélodie de Gluck (depuis Orfeo ed Euridice)"
 
   opus = ""
-  title = "Mélodie de Gluck"
+  title = "Mélodie de Gluck (depuis Orfeo ed Euridice)"
   source = ""
   style = "Classical"
 

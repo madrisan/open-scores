@@ -14,11 +14,11 @@
   mutopiacopyright = "Creative Commons Attribution Non Commercial Share Alike 4.0 International"
   mutopiainstrument = "Piano"
   mutopiamaintainer = "Davide Madrisan"
-  mutopiaopus = ""
-  mutopiatitle = "Sonata in B minor K. 87"
+  mutopiaopus = "K.87"
+  mutopiatitle = "Sonata in B minor"
 
   opus = "K.87"
-  title = "Sonata"
+  title = "Sonata in B minor"
   source = ""
   style = "Baroque"
 

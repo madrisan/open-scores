@@ -18,7 +18,7 @@
   mutopiatitle = "En rêve (Nocturne)"
 
   opus = "S.207"
-  title = "En rêve (Nocturne) S.207"
+  title = "En rêve (Nocturne)"
   source = ""
   style = "Romantic"
 

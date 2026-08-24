@@ -17,7 +17,7 @@
   mutopiainstrument = "Piano"
   mutopiamaintainer = "Davide Madrisan"
   mutopiaopus = "BWV 668"
-  mutopiatitle = "Chorale Prelude - Nun komm’ der Heiden Heiland"
+  mutopiatitle = "Chorale Prelude - Vor deinen Thron tret' ich hiermit"
 
   opus = "BWV 668"
   title = "Chorale Prelude - Vor deinen Thron tret' ich hiermit"

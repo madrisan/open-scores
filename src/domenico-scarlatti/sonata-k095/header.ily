@@ -14,11 +14,11 @@
   mutopiacopyright = "Creative Commons Attribution Non Commercial Share Alike 4.0 International"
   mutopiainstrument = "Piano"
   mutopiamaintainer = "Davide Madrisan"
-  mutopiaopus = ""
-  mutopiatitle = "Sonata in C Major K. 95"
+  mutopiaopus = "K.95"
+  mutopiatitle = "Sonata in C Major"
 
   opus = "K.95"
-  title = "Sonata"
+  title = "Sonata in C Major"
   source = ""
   style = "Baroque"
 

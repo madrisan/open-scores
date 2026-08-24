@@ -18,7 +18,7 @@
   mutopiatitle = "Am Grabe Richard Wagners"
 
   opus = "S.202"
-  title = "Am Grabe Richard Wagners S.202"
+  title = "Am Grabe Richard Wagners"
   source = ""
   style = "Romantic"
 

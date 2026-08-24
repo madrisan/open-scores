@@ -15,10 +15,10 @@
   mutopiainstrument = "Piano"
   mutopiamaintainer = "Davide Madrisan"
   mutopiaopus = "FP.113"
-  mutopiatitle = "2 Improvisations FP.113"
+  mutopiatitle = "2 Improvisations"
 
   opus = "FP.113"
-  title = "2 Improvisations FP.113"
+  title = "2 Improvisations"
   source = ""
   style = ""
 
