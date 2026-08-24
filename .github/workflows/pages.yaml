@@ -114,6 +114,8 @@ jobs:
               --muted: #666666;
               --accent: #6a3fa0;
               --border: #e0e0e0;
+              --card-bg: #f8f6fb;
+              --zebra: rgba(106, 63, 160, 0.05);
             }
             @media (prefers-color-scheme: dark) {
               :root {
@@ -122,6 +124,8 @@ jobs:
                 --muted: #a0a0a0;
                 --accent: #b090e0;
                 --border: #333333;
+                --card-bg: #201e26;
+                --zebra: rgba(176, 144, 224, 0.07);
               }
             }
             body {
@@ -137,31 +141,87 @@ jobs:
               text-align: center;
               margin-bottom: 1.5rem;
             }
-            header img {
+            header img.logo {
               max-width: 100%;
               height: auto;
             }
+            .badges {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+              gap: 0.4rem;
+              margin: 0.9rem 0 0;
+            }
+            .badges img {
+              height: 20px;
+            }
             h1 {
-              font-size: 1.8rem;
+              font-size: 1.5rem;
+              margin: 1.2rem 0 0.3rem;
+            }
+            .tagline {
+              margin: 0 0 0.9rem;
+            }
+            .blurb {
+              font-style: italic;
+              color: var(--muted);
+              font-size: 0.9rem;
+              max-width: 40rem;
+              margin: 0 auto;
+              padding-bottom: 1rem;
               border-bottom: 2px solid var(--accent);
-              padding-bottom: 0.5rem;
+            }
+            .alpha-nav {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+              gap: 0.5rem;
+              margin: 1.8rem 0 0.5rem;
+              font-weight: bold;
+              font-size: 0.85rem;
+            }
+            .alpha-nav a {
+              color: var(--accent);
+            }
+            .alpha-nav span {
+              color: var(--border);
+            }
+            section.composer {
+              background: var(--card-bg);
+              border: 1px solid var(--border);
+              border-radius: 0.6rem;
+              padding: 0.9rem 1.1rem 0.5rem;
+              margin: 1.1rem 0;
             }
             h2 {
               font-size: 1.2rem;
-              margin-top: 2rem;
+              margin: 0 0 0.2rem;
               color: var(--accent);
             }
-            ul {
-              list-style: none;
-              padding-left: 0;
+            table {
+              width: 100%;
+              table-layout: fixed;
+              border-collapse: collapse;
               margin: 0.5rem 0 0;
             }
-            li {
-              padding: 0.3rem 0;
+            td {
+              padding: 0.3rem 0.4rem;
+              vertical-align: middle;
+              overflow-wrap: break-word;
+            }
+            tr {
               border-bottom: 1px solid var(--border);
             }
-            li:last-child {
+            tr:last-child {
               border-bottom: none;
+            }
+            tr.even {
+              background: var(--zebra);
+            }
+            td.icon-col {
+              width: 2.2rem;
+              text-align: center;
+              white-space: nowrap;
             }
             a {
               color: var(--fg);
@@ -171,28 +231,61 @@ jobs:
               color: var(--accent);
               text-decoration: underline;
             }
+            a.icon {
+              text-decoration: none;
+              filter: grayscale(40%);
+            }
+            a.icon:hover {
+              text-decoration: none;
+              filter: none;
+            }
           </style>
           CSS
             echo '</head><body>'
-            echo '<header><img src="open-scores-logo.png" alt="Open Scores for Piano"></header>'
+            # Same header as the project's own README.md: logo, badges,
+            # title, tagline, and the LilyPond blurb.
+            cat <<'HEADER'
+          <header>
+            <img class="logo" src="open-scores-logo.png" alt="Open Scores for Piano">
+            <p class="badges">
+              <img alt="Release Status" src="https://img.shields.io/badge/status-in--progress-brightgreen.svg">
+              <a href="https://spdx.org/licenses/CC-BY-NC-SA-4.0.html"><img alt="License" src="https://img.shields.io/badge/License-CC--BY--NC--SA--4.0-blue.svg"></a>
+              <a href="https://github.com/madrisan/open-scores/releases"><img alt="Latest Release" src="https://img.shields.io/badge/download-latest--version-blue.svg"></a>
+              <img alt="GitHub All Releases" src="https://img.shields.io/github/downloads/madrisan/open-scores/total.svg?style=flat-square">
+            </p>
+            <h1>Open Scores for Piano encoded using LilyPond</h1>
+            <p class="tagline"><strong>Piano sheet music and piano transcriptions with source code in LilyPond language</strong></p>
+            <p class="blurb">
+              <a href="https://lilypond.org/">LilyPond</a> is a music engraving program, devoted to producing the
+              highest-quality sheet music possible. It brings the aesthetics of traditionally engraved music to
+              computer printouts. LilyPond is free software and part of the
+              <a href="https://gnu.org/">GNU Project</a>.
+            </p>
+          </header>
+          HEADER
             # Group by composer (sorted), each piece titled from its own
-            # header.ily. Within a composer, disambiguate colliding titles
-            # in tiers, each only applied to the entries that still collide
-            # after the previous one:
+            # header.ily, in tiers:
             #  1. plain title (e.g. Chorale Prelude - ...)
-            #  2. + opus/catalogue number (e.g. Domenico Scarlatti's
-            #     sonatas are all just "Sonata" in their header.ily)
-            #  3. + arranger, parsed out of "source" (e.g. two different
-            #     pianists' transcriptions of the very same Bach chorale,
-            #     sharing both title and opus) -- falls back to the piece's
-            #     own directory name if "source" doesn't name one.
+            #  2. + opus/catalogue number, whenever header.ily has one that
+            #     isn't already spelled out in the title itself (e.g.
+            #     Domenico Scarlatti's sonatas are all just "Sonata" in
+            #     their header.ily, but "Deux contrastes Op. 31" already
+            #     names its own opus, so nothing is appended there)
+            #  3. + arranger, parsed out of "source", only for entries that
+            #     still collide after tier 2 (e.g. two different pianists'
+            #     transcriptions of the very same Bach chorale, sharing
+            #     both title and opus) -- falls back to the piece's own
+            #     directory name if "source" doesn't name one.
+            # Each entry also gets two small icon links: 🎼 to the built
+            # PDF, 📂 to that piece's own source directory on GitHub (main
+            # branch).
+            repo_url="${GITHUB_SERVER_URL:-https://github.com}/${GITHUB_REPOSITORY:-madrisan/open-scores}"
             sort -t "$(printf '\t')" -k1,1 -k2,2 /tmp/pages-manifest.tsv |
-              gawk -F '\t' '
+              gawk -F '\t' -v repo_url="$repo_url" '
                 {
                   composer[NR] = $1; relpath[NR] = $2
                   title[NR] = $3; opus[NR] = $4; source_field[NR] = $5
                   n = NR
-                  count1[$1 SUBSEP $3]++
                 }
                 function esc(s) {
                   gsub(/&/, "\\&amp;", s)
@@ -217,23 +310,51 @@ jobs:
                   sub(/^.*\//, "", d)
                   return d
                 }
+                function piece_full_dir(rel,    d) {
+                  d = rel
+                  sub(/\/[^\/]*$/, "", d)
+                  return d
+                }
                 END {
                   for (i = 1; i <= n; i++) {
                     t2 = title[i]
-                    if (count1[composer[i] SUBSEP t2] > 1) {
-                      if (opus[i] != "") t2 = t2 " (" opus[i] ")"
-                      else t2 = t2 " (" piece_dirname(relpath[i]) ")"
-                    }
+                    o = opus[i]
+                    if (o != "" && o != "-" && o != "N/A" &&
+                        index(tolower(title[i]), tolower(o)) == 0)
+                      t2 = t2 " (" o ")"
                     tier2[i] = t2
                     count2[composer[i] SUBSEP t2]++
                   }
+
+                  # Quick A-Z nav: composer dirs are sorted, and the first
+                  # character of a composer dir always matches the first
+                  # character of its display name (display_composer only
+                  # capitalizes, never reorders) -- so the first composer
+                  # seen for each letter is already the right jump target.
+                  n_letters = split("ABCDEFGHIJKLMNOPQRSTUVWXYZ", letters, "")
+                  for (i = 1; i <= n; i++) {
+                    L = toupper(substr(composer[i], 1, 1))
+                    if (!(L in first_dir)) first_dir[L] = composer[i]
+                  }
+                  print "<nav class=\"alpha-nav\">"
+                  for (li = 1; li <= n_letters; li++) {
+                    L = letters[li]
+                    if (L in first_dir)
+                      printf "<a href=\"#%s\">%s</a>\n", esc(first_dir[L]), L
+                    else
+                      printf "<span>%s</span>\n", L
+                  }
+                  print "</nav>"
+
                   cur = ""
                   for (i = 1; i <= n; i++) {
                     if (composer[i] != cur) {
-                      if (cur != "") print "</ul>"
+                      if (cur != "") print "</table></section>"
+                      printf "<section class=\"composer\" id=\"%s\">\n", esc(composer[i])
                       print "<h2>" esc(display_composer(composer[i])) "</h2>"
-                      print "<ul>"
+                      print "<table>"
                       cur = composer[i]
+                      row = 0
                     }
                     t = tier2[i]
                     if (count2[composer[i] SUBSEP t] > 1) {
@@ -241,9 +362,14 @@ jobs:
                       if (!sub(/^.*[Bb]y /, "", who)) who = piece_dirname(relpath[i])
                       t = t " — " who
                     }
-                    printf "<li><a href=\"%s\">%s</a></li>\n", esc(relpath[i]), esc(t)
+                    source_url = repo_url "/tree/main/src/" piece_full_dir(relpath[i])
+                    row++
+                    printf "<tr%s><td>%s</td>" \
+                           "<td class=\"icon-col\"><a class=\"icon\" href=\"%s\" title=\"View the PDF\">🎼</a></td>" \
+                           "<td class=\"icon-col\"><a class=\"icon\" href=\"%s\" title=\"View the source on GitHub\">📂</a></td></tr>\n", \
+                           (row % 2 == 0 ? " class=\"even\"" : ""), esc(t), esc(relpath[i]), esc(source_url)
                   }
-                  if (cur != "") print "</ul>"
+                  if (cur != "") print "</table></section>"
                 }
               '
             echo '</body></html>'
