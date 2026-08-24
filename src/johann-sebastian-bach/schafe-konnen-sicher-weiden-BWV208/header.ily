@@ -2,11 +2,11 @@
 
 \header {
   composer = "Johann Sebastian Bach (1685-1750)"
-  date = "1748 ca."
+  date = "1713"
 
-  footer = "Mutopia-2023/01/14"
+  footer = "Mutopia-2026/08/24"
 
-  lastupdated = "2023 Jan 14"
+  lastupdated = "2026 August 24"
   license = "Creative Commons Attribution Non Commercial Share Alike 4.0 International"
   maintainerEmail = "d.madrisan@proton.me"
   maintainerWeb = "https://github.com/madrisan/open-scores"
@@ -16,12 +16,12 @@
   mutopiacopyright = "Creative Commons Attribution Non Commercial Share Alike 4.0 International"
   mutopiainstrument = "Piano"
   mutopiamaintainer = "Davide Madrisan"
-  mutopiaopus = "BWV 639"
-  mutopiatitle = "Chorale Prelude - Ich ruf zu dir, Herr Jesu Christ"
+  mutopiaopus = "BWV 208"
+  mutopiatitle = "Schafe können sicher weiden"
 
-  opus = "BWV 639"
-  title = "Chorale Prelude - Ich ruf zu dir, Herr Jesu Christ"
-  source = "Transcription for piano by Ferruccio Busoni"
+  opus = "BWV 208"
+  title = "Schafe können sicher weiden"
+  source = "Transcription for piano by Egon Petri"
   style = "Baroque"
 
   copyright = \markup {

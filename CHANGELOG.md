@@ -35,6 +35,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - fix 'measureLength' deprecation warning and bar check failure with lilypond 2.26 in Partita VI Air
 - fix 'timeSignatureFraction' deprecation warning with lilypond 2.26 in Goldberg Variations and Szymanowski op.1
 - Domenico Scarlatti: Sonata K.30 - fix 'unrecognized image file' warning in Domenico Scarlatti Sonata k30
+- J.S. Bach: Schafe konnen sicher weiden BWV208: fix wrong metadata in header.ily
 
 ## [v70] - 2026-01-16
 
