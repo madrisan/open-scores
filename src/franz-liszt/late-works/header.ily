@@ -1,26 +1,26 @@
 \header {
-  composer = "Johann Sebastian Bach (1685-1750)"
-  date = ""
+  composer = "Franz Liszt (1811-1886)"
+  date = "1877-1885"
 
-  footer = "Mutopia-2025/01/02"
+  footer = "Mutopia-2026/08/24"
 
-  lastupdated = "2025 January 2"
+  lastupdated = "2026 August 24"
   license = "Creative Commons Attribution Non Commercial Share Alike 4.0 International"
   maintainerEmail = "d.madrisan@proton.me"
   maintainerWeb = "https://github.com/madrisan/open-scores"
 
   % Extra Mutopia Information
-  mutopiacomposer = "BachJS"
+  mutopiacomposer = "LisztF"
   mutopiacopyright = "Creative Commons Attribution Non Commercial Share Alike 4.0 International"
-  mutopiainstrument = "Harpsichord, Piano"
+  mutopiainstrument = "Piano"
   mutopiamaintainer = "Davide Madrisan"
-  mutopiaopus = "BWV 825-830"
-  mutopiatitle = "Partitas"
+  mutopiaopus = "S.197-208"
+  mutopiatitle = "Late Works"
 
-  opus = "BWV 825-830"
-  title = "Partitas"
-  source = "Muzgiz, Moscow 1968"
-  style = "Baroque"
+  opus = "S.197-208"
+  title = "Late Works"
+  source = "Various publishers (see the individual movements)"
+  style = "Romantic"
 
   copyright = \markup {
     \override #'(font-name . "DejaVu Sans, Bold")
