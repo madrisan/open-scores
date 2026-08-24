@@ -15,10 +15,10 @@
   mutopiainstrument = "Harpsichord, Piano"
   mutopiamaintainer = "Davide Madrisan"
   mutopiaopus = "BWV 596"
-  mutopiatitle = "Konzert für Orgel D-moll, BWV 596 (Largo) Nach Antonio Vivaldi"
+  mutopiatitle = "Konzert für Orgel D-moll, Nach Antonio Vivaldi (Largo)"
 
   opus = "BWV 596"
-  title = "Konzert für Orgel D-moll, BWV 596 (Largo) Nach Antonio Vivaldi"
+  title = "Konzert für Orgel D-moll, Nach Antonio Vivaldi (Largo)"
   source = "Unidentified Publisher, Russia"
   style = "Baroque"
 

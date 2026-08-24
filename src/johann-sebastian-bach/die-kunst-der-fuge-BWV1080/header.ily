@@ -16,10 +16,10 @@
   mutopiacopyright = "Creative Commons Attribution Non Commercial Share Alike 4.0 International"
   mutopiainstrument = "Harpsichord, Piano"
   mutopiamaintainer = "Davide Madrisan"
-  mutopiaopus = ""
+  mutopiaopus = "BWV 1080"
   mutopiatitle = "Die Kunst der Fuge"
 
-  opus = ""
+  opus = "BWV 1080"
   title = "Die Kunst der Fuge"
   source = ""
   style = "Baroque"

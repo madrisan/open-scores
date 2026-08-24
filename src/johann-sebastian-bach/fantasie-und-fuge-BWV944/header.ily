@@ -15,10 +15,10 @@
   mutopiainstrument = "Harpsichord, Piano"
   mutopiamaintainer = "Davide Madrisan"
   mutopiaopus = "BWV 944"
-  mutopiatitle = "Fantasie und Fuge a-Moll, BWV 944"
+  mutopiatitle = "Fantasie und Fuge a-Moll"
 
   opus = "BWV 944"
-  title = "Fantasie und Fuge a-Moll, BWV 944"
+  title = "Fantasie und Fuge a-Moll"
   source = "Based on Bach-Gesellschaft Ausgabe - Leipzig: Breitkopf und Härtel, 1890"
   style = "Baroque"
 

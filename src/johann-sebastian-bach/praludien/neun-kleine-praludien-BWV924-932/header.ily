@@ -15,10 +15,10 @@
   mutopiainstrument = "Harpsichord, Piano"
   mutopiamaintainer = "Davide Madrisan"
   mutopiaopus = "BWV 924-932"
-  mutopiatitle = "Neun kleine Präludien BWV 924-932"
+  mutopiatitle = "Neun kleine Präludien"
 
   opus = "BWV 924-932"
-  title = "Neun kleine Präludien BWV 924-932"
+  title = "Neun kleine Präludien"
   source = "Neue Bach-Ausgabe, Serie V, Band 5 / Wolfgang Plath, 1962"
   style = "Baroque"
 

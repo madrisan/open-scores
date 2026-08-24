@@ -15,10 +15,10 @@
   mutopiainstrument = "Harpsichord, Piano"
   mutopiamaintainer = "Davide Madrisan"
   mutopiaopus = "BWV 948"
-  mutopiatitle = "Fuga d-Moll BWV 948"
+  mutopiatitle = "Fuga d-Moll"
 
   opus = "BWV 948"
-  title = "Fuga d-Moll BWV 948"
+  title = "Fuga d-Moll"
   source = "Based on Bach-Gesellschaft Ausgabe - Leipzig: Breitkopf und Härtel, 1890"
   style = "Baroque"
 

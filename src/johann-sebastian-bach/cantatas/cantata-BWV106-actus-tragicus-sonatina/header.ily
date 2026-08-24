@@ -15,10 +15,10 @@
   mutopiainstrument = "Harpsichord, Piano"
   mutopiamaintainer = "Davide Madrisan"
   mutopiaopus = "BWV 106"
-  mutopiatitle = "Actus Tragicus Cantata BWV 106"
+  mutopiatitle = "Actus Tragicus Cantata"
 
   opus = "BWV 106"
-  title = "Actus Tragicus Cantata BWV 106"
+  title = "Actus Tragicus Cantata"
   source = "Jacques Erdos"
   style = "Baroque"
 

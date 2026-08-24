@@ -15,11 +15,11 @@
   mutopiainstrument = "Harpsichord, Piano"
   mutopiamaintainer = "Davide Madrisan"
   mutopiaopus = "BWV 1031"
-  mutopiatitle = "Siciliano"
+  mutipiatitle = "Siciliano (transcription for piano by Wilhelm Kempff)"
 
   opus = "BWV 1031"
-  title = "Siciliano"
-  source = "XXX"
+  title = "Siciliano (transcription for piano by Wilhelm Kempff)"
+  source = ""
   style = "Baroque"
 
   copyright = \markup {

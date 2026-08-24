@@ -15,10 +15,10 @@
   mutopiainstrument = "Harpsichord, Piano"
   mutopiamaintainer = "Davide Madrisan"
   mutopiaopus = "BWV 933-938"
-  mutopiatitle = "Sechs kleine Präludien BWV 933-938"
+  mutopiatitle = "Sechs kleine Präludien"
 
   opus = "BWV 933-938"
-  title = "Sechs kleine Präludien BWV 933-938"
+  title = "Sechs kleine Präludien"
   source = "Bach-Gesellschaft Edition Band 36 / Ernst Naumann 1890"
   style = "Baroque"
 

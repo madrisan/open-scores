@@ -14,10 +14,10 @@
   mutopiacopyright = "Creative Commons Attribution Non Commercial Share Alike 4.0 International"
   mutopiainstrument = "Harpsichord, Piano"
   mutopiamaintainer = "Davide Madrisan"
-  mutopiaopus = "Teil I"
+  mutopiaopus = "Teil I, BWV 846–893"
   mutopiatitle = "Das Wohltemperierte Klavier"
 
-  opus = "Teil I"
+  opus = "Teil I, BWV 846–893"
   title = "Das Wohltemperierte Klavier"
   source = "Based on: Carl Czerny - Leipzig: C.F. Peters"
   style = "Baroque"
