@@ -16,10 +16,10 @@
   mutopiacopyright = "Creative Commons Attribution Non Commercial Share Alike 4.0 International"
   mutopiainstrument = "Harpsichord, Fortepiano, Piano"
   mutopiamaintainer = "Davide Madrisan"
-  mutopiaopus = "BWV1079"
+  mutopiaopus = "BWV 1079"
   mutopiatitle = "Musikalisches Opfer"
 
-  opus = "BWV1079"
+  opus = "BWV 1079"
   title = "Musikalisches Opfer"
   source = ""
   style = "Baroque"

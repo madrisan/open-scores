@@ -355,7 +355,7 @@ jobs:
                     o = opus[i]
                     if (o != "" && o != "-" && o != "N/A" &&
                         index(tolower(title[i]), tolower(o)) == 0)
-                      t2 = t2 " (" o ")"
+                      t2 = t2 " — " o
                     tier2[i] = t2
                     count2[composer[i] SUBSEP t2]++
                   }

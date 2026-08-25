@@ -16,10 +16,10 @@
   mutopiacopyright = "Creative Commons Attribution Non Commercial Share Alike 4.0 International"
   mutopiainstrument = "Piano"
   mutopiamaintainer = "Davide Madrisan"
-  mutopiaopus = "BWV772-801"
+  mutopiaopus = "BWV 772-801"
   mutopiatitle = "Inventionen und Sinfonien"
 
-  opus = "BWV772-801"
+  opus = "BWV 772-801"
   title = "Inventionen und Sinfonien"
   source = ""
   style = "Baroque"
