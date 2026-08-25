@@ -42,7 +42,7 @@ jobs:
       - id: install_deps
         run: |
           dnf -y update
-          dnf -y install autoconf automake bzip2 findutils gawk git lilypond make xz
+          dnf -y install autoconf automake bzip2 findutils gawk git git-lfs lilypond make xz
           # The checkout is owned by a different uid than the container runs
           # as, which makes git refuse to operate on it ("detected dubious
           # ownership") -- the collect step below relies on `git ls-files`.
