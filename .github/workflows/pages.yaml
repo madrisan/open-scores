@@ -49,6 +49,8 @@ jobs:
           git config --global --add safe.directory '*'
 
       - uses: actions/checkout@v2
+        with:
+          lfs: true
 
       - id: configure
         run: |
