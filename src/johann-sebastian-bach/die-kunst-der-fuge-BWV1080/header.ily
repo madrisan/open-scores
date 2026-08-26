@@ -4,7 +4,7 @@
   composer = "Johann Sebastian Bach (1685-1750)"
   date = "1740 (or 1742) until 1750"
 
-  footer = "Mutopia-2025/05/12"
+  footer = "Mutopia-2026/08/25"
 
   lastupdated = "2025 May 12"
   license = "Creative Commons Attribution Non Commercial Share Alike 4.0 International"
@@ -49,7 +49,7 @@
     \column {
       \abs-fontsize #8
       \concat {
-        "Typeset using " \with-url #"http://www.lilypond.org" "LilyPond " ©" 2022-2025 ""by " \maintainer " — " \footer
+        "Typeset using " \with-url #"http://www.lilypond.org" "LilyPond " ©" 2022-2026 ""by " \maintainer " — " \footer
       }
       \concat {
 	\concat {

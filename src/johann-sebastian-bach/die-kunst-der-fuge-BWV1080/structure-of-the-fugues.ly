@@ -19,6 +19,7 @@
 }
 
 \markup \fugueStructureTitle "I" ""
+\label #'StructureOfFuges
 \fugueStructureBoxesI
 
 \markup \fugueStructureTitle "II" ""

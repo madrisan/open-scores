@@ -4,7 +4,6 @@
   \center-column \abs-fontsize #18 \smallCaps \bold {
     "Index"
     \null
-    \null
   }
 }
 
@@ -12,7 +11,7 @@
   (string? symbol? string?)
   "Format a block of the index"
   (interpret-markup layout props
-    #{ \markup \column \abs-fontsize #11 {
+    #{ \markup \column \abs-fontsize #10 {
          \override #'(line-width . 95)
          \line {
            \hspace #3.2
@@ -26,28 +25,60 @@
          }
        } #}))
 
-\markup \column \abs-fontsize #11 {
+\markup \column \abs-fontsize #10 {
+  \pad-around #0.2
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
     \page-link #3 {
-      \fill-with-pattern #1 #RIGHT . "List of Subjects" \page-ref #'ListOfSubjects "000" "2"
+      \fill-with-pattern #1 #RIGHT . "Preface" \page-ref #'PrefaceEn "000" "?"
     }
   }
 }
-
-\markup \column \abs-fontsize #11 {
-  \pad-around #0.4
+\markup \column \abs-fontsize #10 {
+  \pad-around #0.2
+  \override #'(line-width . 95)
+  \line {
+    \hspace #3.2
+    \page-link #4 {
+      \fill-with-pattern #1 #RIGHT . "Prefazione (italian translation)" \page-ref #'PrefaceIt "000" "?"
+    }
+  }
+}
+\markup \column \abs-fontsize #10 {
+  \pad-around #0.2
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
     \page-link #5 {
-      \fill-with-pattern #1 #RIGHT . "Structure of the Fuges" \page-ref #'ListOfSubjects "000" "4"
+      \fill-with-pattern #1 #RIGHT . "Préface (french translation)" \page-ref #'PrefaceFr "000" "?"
     }
   }
 }
 
-\markup \column \abs-fontsize #11 {
+\markup \column \abs-fontsize #10 {
+  \pad-around #0.2
+  \override #'(line-width . 95)
+  \line {
+    \hspace #3.2
+    \page-link #6 {
+      \fill-with-pattern #1 #RIGHT . "List of Subjects" \page-ref #'ListOfSubjects "000" "5"
+    }
+  }
+}
+
+\markup \column \abs-fontsize #10 {
+  \pad-around #0.2
+  \override #'(line-width . 95)
+  \line {
+    \hspace #3.2
+    \page-link #7 {
+      \fill-with-pattern #1 #RIGHT . "Structure of the Fuges" \page-ref #'StructureOfFuges "000" "?"
+    }
+  }
+}
+
+\markup \column \abs-fontsize #10 {
   \pad-around #2
   \abs-fontsize #12 \smallCaps \bold { \concat { \char ##x23AF " Contrapuncti" } }
 }
@@ -80,11 +111,11 @@
 \markup { \indexItem "Contrapunctus XI" #'ContrapunctusXI
   "triple fugue, employing the three subjects of Contrapunctus VIII in inversion"
 }
-\markup \column \abs-fontsize #11 {
+\markup \column \abs-fontsize #10 {
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #63 {
+    \page-link #66 {
       \pad-markup #0.5 {
         \fill-with-pattern #1 #RIGHT . "Contrapunctus XII [rectus]"
                            \page-ref #'ContrapunctusXIIrectus "000" "?"
@@ -95,11 +126,11 @@
 \markup { \indexItem "Contrapunctus XII inversus" #'ContrapunctusXIIinversus
   "mirror fugues, in which a piece is notated once and then with voices and counterpoint completely inverted"
 }
-\markup \column \abs-fontsize #11 {
+\markup \column \abs-fontsize #10 {
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #69 {
+    \page-link #72 {
       \pad-markup #0.5 {
         \fill-with-pattern #1 #RIGHT . "Contrapunctus XIII [rectus]"
                            \page-ref #'ContrapunctusXIIIrectus "000" "?"
@@ -114,28 +145,28 @@
   "four-voice triple fugue (not completed by Bach, but likely to have become a quadruple fugue: see below)"
 }
 
-\markup \column \abs-fontsize #11 {
+\markup \column \abs-fontsize #10 {
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #87 {
+    \page-link #89 {
       \fill-with-pattern #1 #RIGHT . "Brief notes on the completion of Contrapunctus XIV"
                          \page-ref #'BriefNotesContrapunctusXIVen "000" "?"
     }
   }
 }
-\markup \column \abs-fontsize #11 {
+\markup \column \abs-fontsize #10 {
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #92 {
-      \fill-with-pattern #1 #RIGHT . "Brevi note sul completamento del Contrapunctus XIV"
+    \page-link #94 {
+      \fill-with-pattern #1 #RIGHT . "Brevi note sul completamento del Contrapunctus XIV (italian translation)"
                          \page-ref #'BriefNotesContrapunctusXIVit "000" "?"
     }
   }
 }
 
-\markup \column \abs-fontsize #11 {
+\markup \column \abs-fontsize #10 {
   \pad-around #2
   \abs-fontsize #12 \smallCaps \bold { \concat { \char ##x23AF " Canoni" } }
 }

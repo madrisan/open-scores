@@ -124,6 +124,15 @@ Subject = \relative {
 \include "./index.ly"
 \pageBreak
 
+\include "./preface-en.ly"
+\pageBreak
+
+\include "./preface-it.ly"
+\pageBreak
+
+\include "./preface-fr.ly"
+\pageBreak
+
 \include "./list-of-subjects.ly"
 \pageBreak
 

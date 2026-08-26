@@ -56,6 +56,9 @@ EXTRA_DIST = JS-Bach-BWV1080-Die-Kunst-der-Fuge.ly \
 	     parts/16-canon-alla-decima.ly \
 	     parts/17-canon-alla-duodecima.ly \
 	     parts/18-canon-in-hypodiatessaron.ly \
+	     preface-en.ly \
+	     preface-fr.ly \
+	     preface-it.ly \
 	     structure-of-the-fugues.ly
 
 all: $(BUILT_SOURCES) JS-Bach-BWV1080-Die-Kunst-der-Fuge
