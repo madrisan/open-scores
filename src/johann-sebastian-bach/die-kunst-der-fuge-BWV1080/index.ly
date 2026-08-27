@@ -26,17 +26,17 @@
        } #}))
 
 \markup \column \abs-fontsize #10 {
-  \pad-around #0.2
+  \pad-around #0.1
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #3 {
+    \page-link #2 {
       \fill-with-pattern #1 #RIGHT . "Preface" \page-ref #'PrefaceEn "000" "?"
     }
   }
 }
 \markup \column \abs-fontsize #10 {
-  \pad-around #0.2
+  \pad-around #0.1
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
@@ -46,7 +46,7 @@
   }
 }
 \markup \column \abs-fontsize #10 {
-  \pad-around #0.2
+  \pad-around #0.1
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
@@ -57,7 +57,7 @@
 }
 
 \markup \column \abs-fontsize #10 {
-  \pad-around #0.2
+  \pad-around #0.1
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
@@ -68,11 +68,11 @@
 }
 
 \markup \column \abs-fontsize #10 {
-  \pad-around #0.2
+  \pad-around #0
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #7 {
+    \page-link #8 {
       \fill-with-pattern #1 #RIGHT . "Structure of the Fuges" \page-ref #'StructureOfFuges "000" "?"
     }
   }
@@ -115,7 +115,7 @@
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #66 {
+    \page-link #67 {
       \pad-markup #0.5 {
         \fill-with-pattern #1 #RIGHT . "Contrapunctus XII [rectus]"
                            \page-ref #'ContrapunctusXIIrectus "000" "?"
@@ -130,7 +130,7 @@
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #72 {
+    \page-link #73 {
       \pad-markup #0.5 {
         \fill-with-pattern #1 #RIGHT . "Contrapunctus XIII [rectus]"
                            \page-ref #'ContrapunctusXIIIrectus "000" "?"
@@ -149,7 +149,7 @@
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #89 {
+    \page-link #90 {
       \fill-with-pattern #1 #RIGHT . "Brief notes on the completion of Contrapunctus XIV"
                          \page-ref #'BriefNotesContrapunctusXIVen "000" "?"
     }
@@ -159,9 +159,19 @@
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #94 {
+    \page-link #95 {
       \fill-with-pattern #1 #RIGHT . "Brevi note sul completamento del Contrapunctus XIV (italian translation)"
                          \page-ref #'BriefNotesContrapunctusXIVit "000" "?"
+    }
+  }
+}
+\markup \column \abs-fontsize #10 {
+  \override #'(line-width . 95)
+  \line {
+    \hspace #3.2
+    \page-link #100 {
+      \fill-with-pattern #1 #RIGHT . "Notes succinctes sur l'achèvement du Contrapunctus XIV (french translation)"
+                         \page-ref #'BriefNotesContrapunctusXIVfr "000" "?"
     }
   }
 }

@@ -21,6 +21,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Bach/Busoni: Chorale Prelude BWV 639 - better paging
 - J.S. Bach: Die Kunst der Fuge (BWV1080) - improve the en translation of the Brief notes on the completion of Contrapunctus XIV
 - J.S. Bach: Die Kunst der Fuge (BWV1080) - add a preface in english/italian and french
+- J.S. Bach: Die Kunst der Fuge (BWV1080) - french translation of Notes on the completion of Contrapunctus XIV
 
 ### Fixed
 

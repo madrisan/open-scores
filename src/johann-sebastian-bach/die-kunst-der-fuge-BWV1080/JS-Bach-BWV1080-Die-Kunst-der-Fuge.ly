@@ -175,6 +175,8 @@ Subject = \relative {
 \pageBreak
 \include "./brief-notes-on-the-completion-of-contrapunctus-xiv-it.ly"
 \pageBreak
+\include "./brief-notes-on-the-completion-of-contrapunctus-xiv-fr.ly"
+\pageBreak
 \include "./parts/15-canon-in-hypodiapason.ly"
 \pageBreak
 \include "./parts/16-canon-alla-decima.ly"
