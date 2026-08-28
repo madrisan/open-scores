@@ -10,7 +10,6 @@ commonSettings = {
 
 CommonSubjectI = {
   \commonSettings
-  \label #'ListOfSubjects
   | d'2^\markup \abs-fontsize #8 \italic { "main subject in « The Art of Fugue »" }
     a'
   | f d | cis d4 e | f2~ f8 g f e | d4 s
@@ -295,6 +294,7 @@ CanonIVBass = {
     \vspace #1
   }
 }
+\label #'ListOfSubjects
 
 \markup \fill-line {
   \center-column \abs-fontsize #12 \smallCaps \bold {

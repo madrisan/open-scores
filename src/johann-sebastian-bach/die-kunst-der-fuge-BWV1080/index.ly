@@ -30,7 +30,7 @@
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #3 {
+    \with-link #'PrefaceEn {
       \fill-with-pattern #1 #RIGHT . "Preface" \page-ref #'PrefaceEn "000" "?"
     }
   }
@@ -40,7 +40,7 @@
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #4 {
+    \with-link #'PrefaceIt {
       \fill-with-pattern #1 #RIGHT . "Prefazione (italian translation)" \page-ref #'PrefaceIt "000" "?"
     }
   }
@@ -50,7 +50,7 @@
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #5 {
+    \with-link #'PrefaceFr {
       \fill-with-pattern #1 #RIGHT . "Préface (french translation)" \page-ref #'PrefaceFr "000" "?"
     }
   }
@@ -61,8 +61,8 @@
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #6 {
-      \fill-with-pattern #1 #RIGHT . "List of Subjects" \page-ref #'ListOfSubjects "000" "5"
+    \with-link #'ListOfSubjects {
+      \fill-with-pattern #1 #RIGHT . "List of Subjects" \page-ref #'ListOfSubjects "000" "?"
     }
   }
 }
@@ -72,7 +72,7 @@
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #7 {
+    \with-link #'StructureOfFuges {
       \fill-with-pattern #1 #RIGHT . "Structure of the Fuges" \page-ref #'StructureOfFuges "000" "?"
     }
   }
@@ -115,7 +115,7 @@
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #67 {
+    \with-link #'ContrapunctusXIIrectus {
       \pad-markup #0.5 {
         \fill-with-pattern #1 #RIGHT . "Contrapunctus XII [rectus]"
                            \page-ref #'ContrapunctusXIIrectus "000" "?"
@@ -130,7 +130,7 @@
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #73 {
+    \with-link #'ContrapunctusXIIIrectus {
       \pad-markup #0.5 {
         \fill-with-pattern #1 #RIGHT . "Contrapunctus XIII [rectus]"
                            \page-ref #'ContrapunctusXIIIrectus "000" "?"
@@ -149,7 +149,7 @@
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #90 {
+    \with-link #'BriefNotesContrapunctusXIVen {
       \fill-with-pattern #1 #RIGHT . "Brief notes on the completion of Contrapunctus XIV"
                          \page-ref #'BriefNotesContrapunctusXIVen "000" "?"
     }
@@ -159,7 +159,7 @@
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #95 {
+    \with-link #'BriefNotesContrapunctusXIVit {
       \fill-with-pattern #1 #RIGHT . "Brevi note sul completamento del Contrapunctus XIV (italian translation)"
                          \page-ref #'BriefNotesContrapunctusXIVit "000" "?"
     }
@@ -169,7 +169,7 @@
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #100 {
+    \with-link #'BriefNotesContrapunctusXIVfr {
       \fill-with-pattern #1 #RIGHT . "Notes succinctes sur l'achèvement du Contrapunctus XIV (french translation)"
                          \page-ref #'BriefNotesContrapunctusXIVfr "000" "?"
     }
