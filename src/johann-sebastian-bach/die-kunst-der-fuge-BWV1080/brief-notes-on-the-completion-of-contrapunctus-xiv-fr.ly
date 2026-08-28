@@ -14,6 +14,12 @@
   \column {
     \pad-around #2
     \wordwrap \abs-fontsize #10 \with-color #middleGrey {
+      Le Contrapunctus XIV a suscité plus de soixante‐dix tentatives d'achèvement depuis la mort de Bach.
+      Ces notes passent en revue les indices numériques et proportionnels que plusieurs chercheurs ont
+      relevés dans la construction de cet oeuvre.
+    }
+    \pad-around #1
+    \wordwrap \abs-fontsize #10 \with-color #middleGrey {
       Ruth Tatlow affirme que l'Art de la Fugue est
       « la thèse la plus aboutie de Bach en tant que mathématicien »
       \abs-fontsize #8 {
@@ -47,8 +53,8 @@
 
 \markup {
   \column {
-    \override #'(line-width . 82)
-    \translate #'(11 . 0)
+    \override #'(line-width . 92)
+    \translate #'(6 . 0)
     \pad-around #2
     \wordwrap \abs-fontsize #9 \italic \with-color #middleGrey {
       “Seine letzte Kranckheit, hat ihn verhindert, seinem Entwurfe nach, die vorletze
@@ -57,8 +63,8 @@
       — \italic { extrait de la notice nécrologique de Bach, 1754 }
     }
     \pad-around #1
-    \override #'(line-width . 82)
-    \translate #'(11 . 0)
+    \override #'(line-width . 92)
+    \translate #'(6 . 0)
     \wordwrap \abs-fontsize #9 \with-color #middleGrey {
       [Sa dernière maladie l'empêcha d'achever, selon son plan, l'avant‐dernière fugue, et
       d'élaborer la dernière, qui devait contenir quatre sujets et être ensuite renversée
@@ -579,8 +585,8 @@
 }
 \markup {
   \column {
-    \override #'(line-width . 87)
-    \translate #'(8 . 0)
+    \override #'(line-width . 92)
+    \translate #'(6 . 0)
     \pad-around #2
     \wordwrap \abs-fontsize #10 \italic \with-color #middleGrey {
       « Si l'on examine les proportions relatives des trois sections subsistantes de cette fugue,
@@ -892,7 +898,7 @@
       \concat { \char ##x2211 "Contrapuncti 1,2,3,4,5,6,7" }
       "/"
       \concat { \char ##x2211 "Canons 1,2,3,4" }
-      "=" "602 / 230"
+      "=" "602 / 372"
       "=" "1.618" \char ##x2248 \char ##x1D6DF
     }
 }

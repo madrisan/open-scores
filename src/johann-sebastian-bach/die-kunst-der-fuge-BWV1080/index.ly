@@ -30,7 +30,7 @@
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #2 {
+    \page-link #3 {
       \fill-with-pattern #1 #RIGHT . "Preface" \page-ref #'PrefaceEn "000" "?"
     }
   }
@@ -72,7 +72,7 @@
   \override #'(line-width . 95)
   \line {
     \hspace #3.2
-    \page-link #8 {
+    \page-link #7 {
       \fill-with-pattern #1 #RIGHT . "Structure of the Fuges" \page-ref #'StructureOfFuges "000" "?"
     }
   }

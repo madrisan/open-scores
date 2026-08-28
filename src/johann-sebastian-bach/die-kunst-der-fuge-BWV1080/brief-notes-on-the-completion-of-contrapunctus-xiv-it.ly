@@ -14,6 +14,12 @@
   \column {
     \pad-around #2
     \wordwrap \abs-fontsize #10 \with-color #middleGrey {
+      Il Contrapunctus XIV ha attirato più di settanta tentativi di completamento dopo la morte di Bach.
+      Queste note passano in rassegna le evidenze numeriche e proporzionali che diversi studiosi hanno
+      individuato nella struttura dell'opera.
+    }
+    \pad-around #1
+    \wordwrap \abs-fontsize #10 \with-color #middleGrey {
       Ruth Tatlow sostiene che l'Arte della fuga è
       “la tesi più sviluppata di Bach come matematico”.
       \abs-fontsize #8 {
@@ -94,7 +100,7 @@
       insite in un unico soggetto musicale e questo soggetto deve pertando comparire in ogni fuga.
       È stato tuttavia solo nel 1881 che Gustave Nottebohm scoprì che il soggetto principale
       dell'Arte della Fuga può essere combinato con i primi tre soggetti, e che doveva quindi essere
-      il quarto soggetto di une fuga quadrupla
+      il quarto soggetto di una fuga quadrupla
       \abs-fontsize #8 {
         [Nottebohm, G. (1881) “J. S. Bachʹs letzte Fuge” Music‐Welt: 234].
       }
@@ -589,7 +595,7 @@
       “Se esaminiamo le proporzioni relative delle tre sezioni esistenti di questa fuga,
       notiamo una costante diminuzione delle lunghezze delle sezioni successive.
       Inoltre, la seconda sezione (di 78 misure) occupa quasi esattamente i due terzi della lunghezza della
-      proma sezione (di 115 misure) e la terza sezione, incompleta, è lunga quarantasei battute.
+      prima sezione (di 115 misure) e la terza sezione, incompleta, è lunga quarantasei battute.
       Secondo questo schema quest'ultima avrebbe dovuto quindi occupare i due terzi della lunghezza della
       sezione 2, dunque 52 misure.
       Seguendo le stesse proporzioni, la sezione 4 avrebbe dovuto occupare circa due terzi
@@ -783,7 +789,7 @@
   \pad-around #2
   \column {
     \wordwrap \abs-fontsize #10 \with-color #middleGrey {
-      Il contrappunto XIV rompe la simmatria, non avendo 230 battute.
+      Il contrappunto XIV rompe la simmetria, non avendo 230 battute.
     }
   }
 }
@@ -840,7 +846,7 @@
     \pad-around #1
     \wordwrap \abs-fontsize #10 \with-color #middleGrey {
       poiché se F(n) descrive l'ennesimo numero di Fibonacci, il quoziente dei termini adiacenti
-      F(n+1) / F(n) si approssilerà sempre più al limite \char ##x1D6DF all'incrementare di n.
+      F(n+1) / F(n) si approssimerà sempre più al limite \char ##x1D6DF all'incrementare di n.
       Il rapporto aureo, nella sua manifestazione geometrica, era già noto agli antichi matematici greci ed
       era molto popolare tra gli artisti anche in epoche precedenti a quella di Bach.
       Gli Elementi di Euclide forniscono la prima definizione scritta conosciuta:
@@ -897,7 +903,7 @@
       \concat { \char ##x2211 "Contrapuncti 1,2,3,4,5,6,7" }
       "/"
       \concat { \char ##x2211 "Canons 1,2,3,4" }
-      "=" "602 / 230"
+      "=" "602 / 372"
       "=" "1.618" \char ##x2248 \char ##x1D6DF
     }
 }

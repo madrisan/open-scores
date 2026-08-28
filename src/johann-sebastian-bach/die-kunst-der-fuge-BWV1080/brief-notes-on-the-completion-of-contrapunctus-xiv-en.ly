@@ -14,6 +14,12 @@
   \column {
     \pad-around #2
     \wordwrap \abs-fontsize #10 \with-color #middleGrey {
+      Contrapunctus XIV has attracted more than seventy attempted completions since Bach's death.
+      These notes survey the numerical and proportional evidence that several scholars have
+      found in the structure of the work.
+    }
+    \pad-around #1
+    \wordwrap \abs-fontsize #10 \with-color #middleGrey {
       Ruth Tatlow states that the Art of Fugue is
       “the most developed thesis of Bach as a mathematician”
       \abs-fontsize #8 {
@@ -886,7 +892,7 @@
       \concat { \char ##x2211 "Contrapuncti 1,2,3,4,5,6,7" }
       "/"
       \concat { \char ##x2211 "Canons 1,2,3,4" }
-      "=" "602 / 230"
+      "=" "602 / 372"
       "=" "1.618" \char ##x2248 \char ##x1D6DF
     }
 }

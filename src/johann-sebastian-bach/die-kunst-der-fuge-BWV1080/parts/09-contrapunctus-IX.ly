@@ -201,9 +201,9 @@ Alto = \context Voice = "two" \relative c' {
   | f d b'8\rest f e d
   | c b c d e c d e
   %25
-  | f4 f4\rest e2\rest
-  %--
-  | R1 s1*4
+  | f4 a4\rest b2\rest
+  | R1
+  | s1*4
   | r2 r4 a
   | bes8 d c bes c bes a g
   | f a g f g f e d
@@ -347,16 +347,18 @@ Tenor = \context Voice = "three" \relative c' {
     \staffLower
     \stemUp\tieUp
     d c b
-    \showStaffSwitch
   | a gis a b c a b c
   %25
-  | d cis d e f d e f
-  | \staffUpper
+  | d
+    \hideStaffSwitch
+    \staffUpper
     \stemDown\tieDown
-    f4_( e) b8\rest e d e
+    cis d e f d e f
+  | f4_( e) b8\rest e d e
   | f a g f g f e d
   | c f e d e d cis b
-  | \staffLower
+  | \showStaffSwitch
+    \staffLower
     \stemUp\tieUp
     a4 } bes!8 a bes2~
   %30
@@ -370,7 +372,7 @@ Tenor = \context Voice = "three" \relative c' {
   | d4 cis8 b a g f e
   | d cis d e f d e f
   | g fis g a bes g a bes
-  | bes4( a) r8 a g a
+  | bes4 a r8 a g a
   %40
   | bes d c bes c bes a g
   | f bes a g a g f e
@@ -492,7 +494,7 @@ Bass = \context Voice = "four" \relative c {
   | d4 cis8 b a g f e
   | d cis d e f d e f
   | g fis g a bes g a bes
-  | bes4( a) d,8\rest a' g a
+  | bes4 a d,8\rest a' g a
   %20
   | bes d c bes c bes a g
   | \unHighlightSubject f } bes a g a g f e
