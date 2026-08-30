@@ -15,7 +15,7 @@
     \pad-around #2
     \wordwrap \abs-fontsize #10 \with-color #middleGrey {
       Le Contrapunctus XIV a suscité plus de soixante‐dix tentatives d'achèvement depuis la mort de Bach.
-      Ces notes passent en revue les indices numériques et proportionnels que plusieurs chercheurs ont
+      Ces notes passent en revue les étonnants indices numériques et proportionnels que plusieurs chercheurs ont
       relevés dans la construction de cet oeuvre.
     }
     \pad-around #1
@@ -983,8 +983,8 @@
 }
 \markup {
   \column {
-    \override #'(line-width . 87)
-    \translate #'(8 . 0)
+    \override #'(line-width . 92)
+    \translate #'(6 . 0)
     \wordwrap \abs-fontsize #10 \italic \with-color #middleGrey {
       Si l'on considère sa structure sans le thème commun et cette asymétrie par rapport au cycle de
       l'Art de la Fugue, la fugue inachevée pourrait ne pas appartenir au cycle.
@@ -1003,7 +1003,8 @@
       Bach aurait donc interrompu la composition après avoir jugé nécessaires des changements
       fondamentaux, mais malheureusement jamais réalisés.
       Peut‐être précisément une réduction de la longueur des trois sections existantes, pour terminer le
-      Contrapunctus XIV à la mesure 230, en conservant le rapport 1,4 entre les longueurs des sections.
+      Contrapunctus XIV à la mesure 230, en conservant le rapport 1,4 entre les longueurs des sections
+      (mesures 1–91.50–155.25–199.33–230).
     % mesures 1–91.50 Section 1, 91.50–155.25 Section 2, 155.25–199.33 Section 3,
     % 199.33–230 Section 4.
     }

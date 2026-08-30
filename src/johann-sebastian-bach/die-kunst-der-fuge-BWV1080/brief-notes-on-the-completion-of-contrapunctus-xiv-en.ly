@@ -15,7 +15,7 @@
     \pad-around #2
     \wordwrap \abs-fontsize #10 \with-color #middleGrey {
       Contrapunctus XIV has attracted more than seventy attempted completions since Bach's death.
-      These notes survey the numerical and proportional evidence that several scholars have
+      These notes survey the astonishing numerical and proportional evidence that several scholars have
       found in the structure of the work.
     }
     \pad-around #1
@@ -52,8 +52,8 @@
 
 \markup {
   \column {
-    \override #'(line-width . 82)
-    \translate #'(11 . 0)
+    \override #'(line-width . 92)
+    \translate #'(6 . 0)
     \pad-around #2
     \wordwrap \abs-fontsize #9 \italic \with-color #middleGrey {
       “Seine letzte Kranckheit, hat ihn verhindert, seinem Entwurfe nach, die vorletze
@@ -62,8 +62,8 @@
       — \italic { from Bach's Obituary, 1754 }
     }
     \pad-around #1
-    \override #'(line-width . 82)
-    \translate #'(11 . 0)
+    \override #'(line-width . 92)
+    \translate #'(6 . 0)
     \wordwrap \abs-fontsize #9 \with-color #middleGrey {
       [His last illness prevented him from completing the penultimate fugue according to his
       draft, and from working out the last one, which was to contain 4 themes and subsequently
@@ -582,8 +582,8 @@
 }
 \markup {
   \column {
-    \override #'(line-width . 82)
-    \translate #'(11 . 0)
+    \override #'(line-width . 92)
+    \translate #'(6 . 0)
     \pad-around #2
     \wordwrap \abs-fontsize #10 \italic \with-color #middleGrey {
       “If we examine the relative proportions of the three extant sections of this fugue,
@@ -975,8 +975,8 @@
 }
 \markup {
   \column {
-    \override #'(line-width . 82)
-    \translate #'(11 . 0)
+    \override #'(line-width . 92)
+    \translate #'(6 . 0)
     \wordwrap \abs-fontsize #10 \italic \with-color #middleGrey {
       Considering its structure without the common theme and with this asymmetry for the cycle of the art
       of fugue, the unfinished fugue might not be the member of the cycle.
@@ -994,9 +994,10 @@
       Bach would therefore have broken off the composition after deciding that fundamental changes were
       necessary, but unfortunately never carried out.
       Perhaps precisely a reduction in length of the three existing sections to end the Contrapunctus XIV
-      at bar 230, preserving the 1.4 ratio between sections lengths.
-    % bars 1–91.50 Section 1, 91.50–155.25 Section 2, 155.25–199.33 Section 3,
-    % 199.33–230 Section 4.
+      at bar 230, preserving the 1.4 ratio between sections lengths
+    % (bars 1–91.50–155.25–199.33–230).
+      (bars 1–91.50 Section 1, 91.50–155.25 Section 2, 155.25–199.33 Section 3,
+      199.33–230 Section 4).
     }
   }
 }

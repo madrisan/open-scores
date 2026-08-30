@@ -254,11 +254,13 @@ Alto = \context Voice = "two" \relative c' {
     ^\markup { \endBullet "Final Episode with subject S, bars 79-84" }
     f16 e8. d16] cis8.[ a16 b8. cis16]
   %80
-  | d4 c2 bes4~
+  | d4 c2 
+    \shape #'((0.5 . 0.5) (0 . 0.4) (0 . 0.5) (-0.5 . 0.5)) Tie
+    bes4~
   | bes8.[ bes16 a8. g16] f4 bes
   | a2 bes4 a~
   | a8.[ fis16 g8. a16]
-    \shape #'((0.5 . -0.4) (0 . -0.4) (0 . -0.5) (-0.5 . -0.5)) Tie
+    \shape #'((0.5 . -0.6) (0 . -0.4) (0 . -0.4) (0 . -0.6)) Tie
     bes2^~
   | \stemUp
     \once\override NoteColumn.force-hshift = #1
@@ -402,12 +404,21 @@ Tenor = \context Voice = "three" \relative c' {
   | d4 e8. fis16 g8. f16 e8. d16
   | cis2 d
   | e f
-  | e r4 a
-  | a2 r
+  | e r4 
+    \staffUpper\stemDown
+    \once\override NoteColumn.force-hshift = #0.4 a
+  | \once\override NoteColumn.force-hshift = #-0.6 a2
+    \staffLower\stemUp
+    r
   %80
-  | r8 r16 d,[ e8. f16] g8. a16 g8. f16
+  | r8 r16 d,[ e8. f16] g8.
+    \hideStaffSwitch\staffUpper\stemDown
+    a16 \once\override NoteColumn.force-hshift = #0.4 g8.
+    \staffLower\stemUp
+    f16
+    \showStaffSwitch
   | e8.[ g16 f8. e16] d2
-  | cis4 d2 cis4
+  | cis4 d2 cis!4
   | d4 e8. fis16
     \staffUpper\stemDown\tieDown
     \once\override NoteColumn.force-hshift = #0.2

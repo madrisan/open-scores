@@ -15,7 +15,7 @@
     \pad-around #2
     \wordwrap \abs-fontsize #10 \with-color #middleGrey {
       Il Contrapunctus XIV ha attirato più di settanta tentativi di completamento dopo la morte di Bach.
-      Queste note passano in rassegna le evidenze numeriche e proporzionali che diversi studiosi hanno
+      Queste note passano in rassegna le sorprendenti evidenze numeriche e proporzionali che diversi studiosi hanno
       individuato nella struttura dell'opera.
     }
     \pad-around #1
@@ -1008,11 +1008,12 @@
       Bach avrebbe quindi interrotto la composizione dopo aver deciso che erano necessari cambiamenti
       fondamentali, sfortunatamente mai eseguiti.
       Forse una riduzione nella lunghezza delle tre sezioni esistenti per terminare il
-      Contrapunctus XIV alla misura 230, conservando il rapporto 1.4 tra le sezioni.
-    % misure 1–91.50 per la sezione 1,
-    % fino alla 155.25 la sezione 2,
-    % alla 199.33 la sezione 3 e
-    % conclusione della sezione 4 alla battuta 230.
+      Contrapunctus XIV alla misura 230, conservando il rapporto 1.4 tra le sezioni
+    % (misure 1–91.50–155.25–199.33–230).
+      (sezione 1 misure 1–91.50,
+       sezione 2 fino alla 155.25,
+       sezione 3 fino alla 199.33,
+       conclusione della sezione 4 alla battuta 230).
     }
   }
 }

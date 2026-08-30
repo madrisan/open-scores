@@ -38,6 +38,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - fix 'timeSignatureFraction' deprecation warning with lilypond 2.26 in Goldberg Variations and Szymanowski op.1
 - Domenico Scarlatti: Sonata K.30 - fix 'unrecognized image file' warning in Domenico Scarlatti Sonata k30
 - J.S. Bach: Schafe konnen sicher weiden BWV208: fix wrong metadata in header.ily
+- J.S. Bach: Die Kunst der Fuge (BWV1080) - make all index links dynamic via \with-link, fixing broken navigation
 
 ## [v70] - 2026-01-16
 

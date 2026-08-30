@@ -191,7 +191,7 @@ SubjectXIIISecond = {
 
 SubjectXIVFirst = {
   \commonSettings
-  | s2^\markup \abs-fontsize #8 \italic { "first subject" }
+  | s2^\markup \abs-fontsize #8 \italic { "first subject (palindrome)" }
     d'
   | a'2. g4 | f1 | g | a | d,2 % s
 }
