@@ -796,7 +796,7 @@
   \column {
     \wordwrap \abs-fontsize #10 \with-color #middleGrey {
       Une
-      \with-url #"https://www.jstor.org/stable/43030058?seq=1" {
+      \with-url #"https://www.researchgate.net/publication/258507180_THE_MATHEMATICAL_ARCHITECTURE_OF_BACH'S_''THE_ART_OF_FUGUE''" {
         \override #'(offset . 5)
         \override #'(thickness . 1)
         \underline { "analyse mathématique" }
