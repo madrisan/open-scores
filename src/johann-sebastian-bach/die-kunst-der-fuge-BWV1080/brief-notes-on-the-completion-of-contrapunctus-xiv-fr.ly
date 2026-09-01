@@ -409,7 +409,7 @@
 
 \markup {
   \column {
-    \pad-around #2
+    \pad-around #1
     \wordwrap \abs-fontsize #10 \with-color #middleGrey {
       L'Art de la Fugue est riche en symbolisme lié au nombre 14,
       qui est une transposition du nom Bach
@@ -418,7 +418,7 @@
 }
 \markup \fill-line {
   \center-column \abs-fontsize #10 \with-color #middleGrey {
-    \pad-around #2
+    \pad-around #1
     \column {
       \line { "B + A + C + H = 2 + 1 + 3 + 8 = 14" }
     }
@@ -437,7 +437,7 @@
 \markup \fill-line {
   \center-column \abs-fontsize #10 \with-color #middleGrey {
     \override #'(word-space . 2)
-    \pad-around #2
+    \pad-around #1
     \center-column {
       \line {
         "A: 1" "B: 2" "C: 3" "D: 4" "E: 5" "F: 6" "G: 7" "H: 8" "I/J: 9"
@@ -469,7 +469,7 @@
   }
 }
 
-\pageBreak
+%\pageBreak
 
 \markup {
   \column {
@@ -789,8 +789,6 @@
   }
 }
 
-\pageBreak
-
 \markup {
   \pad-around #1
   \column {
@@ -806,6 +804,9 @@
         [The Mathematical Architecture of Bachʹs The Art of Fugue - Il Saggiatore Musicale, 2010]
       }
       révèle une remarquable adéquation avec la \italic { suite de Fibonacci }
+      \italic { uₙ₊₂ } = \italic { uₙ₊₁ } + \italic { uₙ }
+      \concat { (\italic { n } } = 1, 2, ...).
+      C'est-à-dire, si nous posons \italic { u₁ } = 1, \italic { u₂ } = 1
     }
   }
 }
@@ -815,6 +816,8 @@
     "1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, ..."
   }
 }
+
+\pageBreak
 
 \markup {
   \pad-around #1
@@ -848,7 +851,11 @@
       d'or) lorsque le rapport entre la ligne entière et le plus grand segment est le même que celui
       entre le plus grand segment et le plus petit. » }
     }
-    \pad-around #2
+  }
+}
+\markup {
+  \column {
+    \pad-around #1
     \wordwrap \abs-fontsize #10 \with-color #middleGrey {
       Nous nous concentrerons ici sur les rapports du nombre de mesures dans l'Art de la Fugue, selon le
       raisonnement suivant.
@@ -961,7 +968,22 @@
 }
 
 \markup {
-  \pad-around #0.5
+  \pad-around #1
+  \column {
+    \pad-around #1
+    \wordwrap \abs-fontsize #10 \with-color #middleGrey {
+      Cette conception architecturale pourrait, comme mentionné, s'expliquer par l'adhésion de
+      Bach, dans ses dernières années, à la Sozietät der musicalischen Wissenschaften, un cercle
+      d'inspiration pythagoricienne qui considérait les mathématiques comme le fondement de la
+      musique.
+      La structure rigoureuse de l'œuvre pourrait donc se lire comme une proclamation cryptique
+      de cette philosophie.
+    }
+  }
+}
+
+\markup {
+  %\pad-around #0.5
   \center-column \fontsize #5 \with-color #middleGrey {
     \hspace #100
     \concat {

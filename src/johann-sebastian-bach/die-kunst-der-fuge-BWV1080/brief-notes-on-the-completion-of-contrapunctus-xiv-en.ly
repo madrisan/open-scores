@@ -407,7 +407,7 @@
 
 \markup {
   \column {
-    \pad-around #2
+    \pad-around #1
     \wordwrap \abs-fontsize #10 \with-color #middleGrey {
       The Art of Fugue is rich in symbolism related to the number 14,
       which is a transposition of the name Bach
@@ -416,7 +416,7 @@
 }
 \markup \fill-line {
   \center-column \abs-fontsize #10 \with-color #middleGrey {
-    \pad-around #2
+    \pad-around #1
     \column {
       \line { "B + A + C + H = 2 + 1 + 3 + 8 = 14" }
     }
@@ -435,7 +435,7 @@
 \markup \fill-line {
   \center-column \abs-fontsize #10 \with-color #middleGrey {
     \override #'(word-space . 2)
-    \pad-around #2
+    \pad-around #1
     \center-column {
       \line {
         "A: 1" "B: 2" "C: 3" "D: 4" "E: 5" "F: 6" "G: 7" "H: 8" "I/J: 9"
@@ -467,7 +467,7 @@
   }
 }
 
-\pageBreak
+%\pageBreak
 
 \markup {
   \column {
@@ -786,7 +786,7 @@
   }
 }
 
-\pageBreak
+%\pageBreak
 
 \markup {
   \pad-around #1
@@ -803,6 +803,9 @@
         [The Mathematical Architecture of Bachʹs The Art of Fugue - Il Saggiatore Musicale, 2010]
       }
       shows an amazing adherence to the \italic { Fibonacci sequence }
+      \italic { uₙ₊₂ } = \italic { uₙ₊₁ } + \italic { uₙ }
+      \concat { (\italic { n } } = 1, 2, ...).
+      That is, if we set \italic { u₁ } = 1, \italic { u₂ } = 1
     }
   }
 }
@@ -814,10 +817,11 @@
 }
 
 \markup {
-  \pad-around #2
+  \pad-around #1
   \column {
     \wordwrap \abs-fontsize #10 \with-color #middleGrey {
-      Fibonacci numbers are intimately linked to the irrational number called the \italic { golden ratio }
+      Fibonacci numbers are intimately linked to the irrational number called the
+      \italic { golden ratio }
     }
   }
 }
@@ -831,12 +835,11 @@
   }
 }
 
-
 \markup {
   \column {
     \pad-around #1
     \wordwrap \abs-fontsize #10 \with-color #middleGrey {
-      because if F(n) describes the nth Fibonacci number, the quotient of the adjacent terms F(n+1) / F(n)
+      because if F(n) describes the nₜₕ Fibonacci number, the quotient of the adjacent terms F(n+1) / F(n)
       will approach the limit \char ##x1D6DF .
       The golden ratio, in its geometric manifestation, was already known to ancient Greek mathematicians
       and was also very popular among artists even in times before Bach's.
@@ -844,7 +847,11 @@
       \italic { “A straight line is said to have been cut into the extreme and golden ratio when,
       as the whole line stands to the greater segment, so the greater stands to the lesser.” }
     }
-    \pad-around #2
+  }
+}
+\markup {
+  \column {
+    \pad-around #1
     \wordwrap \abs-fontsize #10 \with-color #middleGrey {
       We will focus on the ratios in the number of bars of the Art of Fugue, using the following rationale.
       Since in the manuscript the \italic { rectus } and \italic { inversus } of Contrapuncti XII and XIII
@@ -953,7 +960,21 @@
 }
 
 \markup {
-  \pad-around #2
+  \pad-around #1
+  \column {
+    \pad-around #1
+    \wordwrap \abs-fontsize #10 \with-color #middleGrey {
+      This architectural conception could, as mentioned, be explained by Bach's adherence,
+      in his final years, to the Sozietät der musicalischen Wissenschaften, a circle of
+      Pythagorean inspiration that regarded mathematics as the foundation of music.
+      The work's rigorous structure could therefore be read as a cryptic proclamation of that
+      philosophy.      
+    }
+  }
+}
+
+\markup {
+  %\pad-around #1
   \center-column \fontsize #5 \with-color #middleGrey {
     \hspace #100
     \concat {
