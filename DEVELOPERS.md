@@ -76,6 +76,7 @@ make -C src/johann-sebastian-bach/fuga/BWV950
 make -C src/johann-sebastian-bach/fuga/BWV951
 make -C src/johann-sebastian-bach/fuga/BWV952
 make -C src/johann-sebastian-bach/fuga/BWV953
+make -C src/johann-sebastian-bach/fuga/BWV954
 make -C src/johann-sebastian-bach/goldberg-variationen-BWV988
 make -C src/johann-sebastian-bach/inventionen-und-sinfonien-BWV772-801
 make -C src/johann-sebastian-bach/italienisches-konzert-BWV971

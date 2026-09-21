@@ -5,4 +5,5 @@ SUBDIRS = BWV946 \
 	  BWV950 \
 	  BWV951 \
 	  BWV952 \
-	  BWV953
+	  BWV953 \
+	  BWV954
