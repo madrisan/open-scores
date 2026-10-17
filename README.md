@@ -49,14 +49,7 @@ Latest release: [Open Scores for Piano v70](https://github.com/madrisan/open-sco
 |  | Fantasie und Fuge BWV 944 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v70/JS-Bach-BWV944-Fantasie-und-Fuge.pdf) |
 |  | Neun kleine Präludien BWV 924-932 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v70/JS-Bach-BWV924-932-Neun-kleine-Praludien.pdf) |
 |  | Sechs kleine Präludien BWV 933-938 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v70/JS-Bach-BWV933-938-Sechs-kleine-Praludien.pdf) |
-|  | Fuga C-Dur BWV946 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v70/JS-Bach-BWV946-Fuga-C-Dur.pdf) |
-|  | Fuga a-Moll BWV947 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v70/JS-Bach-BWV947-Fuga-a-Moll.pdf) |
-|  | Fuga d-Moll BWV948 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v70/JS-Bach-BWV948-Fuga-d-Moll.pdf) |
-|  | Fuga A-Dur BWV949 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v70/JS-Bach-BWV949-Fuga-A-Dur.pdf) |
-|  | Fuga A-Dur BWV950 - on a Theme by Tomaso Albinoni | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v70/JS-Bach-BWV950-Fuga-A-Dur.pdf) |
-|  | Fuga H-Moll BWV951 - on a Theme by Tomaso Albinoni | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v70/JS-Bach-BWV951-Fuga-H-Moll.pdf) |
-|  | Fuga C-Dur BWV952 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v70/JS-Bach-BWV952-Fuga-C-Dur.pdf) |
-|  | Fuga C-Dur BWV953 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v70/JS-Bach-BWV953-Fuga-C-Dur.pdf) |
+|  | Fugen BWV 946-954 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v71/JS-Bach-BWV946-954-Fugen.pdf) |
 |  | Praeludium Fuge und Allegro BWV 998 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v70/JS-Bach-BWV998-Praeludium-Fuge-und-Allegro.pdf) |
 |  | Musikalisches Opfer: Ricercar a 3, Ricercar a 6 BWV 1079 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v70/JS-Bach-BWV1079-Musikalisches-Opfer.pdf) |
 | Bach / Busoni | Chorale Prelude - In dir ist Freude BWV 615 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v70/JS-Bach-Busoni-Chorale-Prelude-BWV615.pdf) |

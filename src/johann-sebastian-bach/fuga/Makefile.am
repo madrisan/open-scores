@@ -1,9 +1,0 @@
-SUBDIRS = BWV946 \
-	  BWV947 \
-	  BWV948 \
-	  BWV949 \
-	  BWV950 \
-	  BWV951 \
-	  BWV952 \
-	  BWV953 \
-	  BWV954
