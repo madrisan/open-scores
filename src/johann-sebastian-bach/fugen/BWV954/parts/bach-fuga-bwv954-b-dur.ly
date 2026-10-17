@@ -379,7 +379,7 @@ forceBreaks = {
   \header {
     composer = ##f % "Johann Sebastian Bach"
     opus = "BWV 954"
-    title = \markup { "Fuga B-Dur" }
+    title = \markup { "IX. Fuga B-Dur" }
     subtitle = \markup \abs-fontsize #8 \normal-text {
       "über das Thema der Allegro-Fuge aus der"
       \italic { "Sonata sexta" } 
