@@ -136,16 +136,7 @@ AC_CONFIG_FILES([\
   src/johann-sebastian-bach/die-kunst-der-fuge-BWV1080/Makefile \
   src/johann-sebastian-bach/fantasie-und-fuge-BWV904/Makefile \
   src/johann-sebastian-bach/fantasie-und-fuge-BWV944/Makefile \
-  src/johann-sebastian-bach/fuga/Makefile \
-  src/johann-sebastian-bach/fuga/BWV946/Makefile \
-  src/johann-sebastian-bach/fuga/BWV947/Makefile \
-  src/johann-sebastian-bach/fuga/BWV948/Makefile \
-  src/johann-sebastian-bach/fuga/BWV949/Makefile \
-  src/johann-sebastian-bach/fuga/BWV950/Makefile \
-  src/johann-sebastian-bach/fuga/BWV951/Makefile \
-  src/johann-sebastian-bach/fuga/BWV952/Makefile \
-  src/johann-sebastian-bach/fuga/BWV953/Makefile \
-  src/johann-sebastian-bach/fuga/BWV954/Makefile \
+  src/johann-sebastian-bach/fugen/Makefile \
   src/johann-sebastian-bach/goldberg-variationen-BWV988/Makefile \
   src/johann-sebastian-bach/inventionen-und-sinfonien-BWV772-801/Makefile \
   src/johann-sebastian-bach/italienisches-konzert-BWV971/Makefile \

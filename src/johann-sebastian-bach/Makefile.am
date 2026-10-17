@@ -7,7 +7,7 @@ SUBDIRS = cantatas \
 	  die-kunst-der-fuge-BWV1080 \
 	  fantasie-und-fuge-BWV904 \
 	  fantasie-und-fuge-BWV944 \
-	  fuga \
+	  fugen \
 	  goldberg-variationen-BWV988 \
 	  inventionen-und-sinfonien-BWV772-801 \
 	  italienisches-konzert-BWV971 \
