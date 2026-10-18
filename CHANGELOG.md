@@ -25,6 +25,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - J.S. Bach: Die Kunst der Fuge (BWV1080) - french translation of Notes on the completion of Contrapunctus XIV
 - J.S. Bach: Die Kunst der Fuge (BWV1080) - add Fibonacci recurrence and Pythagorean-society paragraph to Brief Notes (en/it/fr)
 - J.S. Bach: Fugen BWV946-954: merge the nine fugues into a single document
+- J.S. Bach: Fugen BWV946-954: number the fugues I-IX in their titles and in the index
 
 ### Fixed
 
