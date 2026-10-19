@@ -49,7 +49,7 @@ Latest release: [Open Scores for Piano v70](https://github.com/madrisan/open-sco
 |  | Fantasie und Fuge BWV 944 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v70/JS-Bach-BWV944-Fantasie-und-Fuge.pdf) |
 |  | Neun kleine Präludien BWV 924-932 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v70/JS-Bach-BWV924-932-Neun-kleine-Praludien.pdf) |
 |  | Sechs kleine Präludien BWV 933-938 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v70/JS-Bach-BWV933-938-Sechs-kleine-Praludien.pdf) |
-|  | Fugen BWV 946-954 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v71/JS-Bach-BWV946-954-Fugen.pdf) |
+|  | Fugen BWV 946-955 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v71/JS-Bach-BWV946-955-Fugen.pdf) |
 |  | Praeludium Fuge und Allegro BWV 998 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v70/JS-Bach-BWV998-Praeludium-Fuge-und-Allegro.pdf) |
 |  | Musikalisches Opfer: Ricercar a 3, Ricercar a 6 BWV 1079 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v70/JS-Bach-BWV1079-Musikalisches-Opfer.pdf) |
 | Bach / Busoni | Chorale Prelude - In dir ist Freude BWV 615 | :white_check_mark: | [pdf](https://github.com/madrisan/open-scores/releases/download/v70/JS-Bach-Busoni-Chorale-Prelude-BWV615.pdf) |

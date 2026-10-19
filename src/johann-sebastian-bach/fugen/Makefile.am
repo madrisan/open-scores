@@ -39,7 +39,7 @@ EXTRA_DIST = JS-Bach-BWV946-955-Fugen.ly \
 	     BWV955/parts/bach-fuga-bwv955-b-dur.ly
 #	     BWV956/parts/bach-fuga-bwv956-e-moll.ly
 
-all: $(BUILT_SOURCES) JS-Bach-BWV946-954-Fugen
+all: $(BUILT_SOURCES) JS-Bach-BWV946-955-Fugen
 
 clean-local:
 	-rm -f $(BUILT_SOURCES)

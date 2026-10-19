@@ -14,10 +14,10 @@
   mutopiacopyright = "Creative Commons Attribution Non Commercial Share Alike 4.0 International"
   mutopiainstrument = "Harpsichord, Piano"
   mutopiamaintainer = "Davide Madrisan"
-  mutopiaopus = "BWV 946-954"
+  mutopiaopus = "BWV 946-955"
   mutopiatitle = "Fugen"
 
-  opus = "BWV 946-954"
+  opus = "BWV 946-955"
   title = "Fugen"
   source = "Bach-Gesellschaft Ausgabe - Leipzig: Breitkopf und Härtel, 1890"
   style = "Baroque"
