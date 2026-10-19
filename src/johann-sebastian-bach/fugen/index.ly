@@ -36,3 +36,5 @@
 \markup { \indexItem "VII." "Fuga C-Dur" "952" #'FugaBWV952 }
 \markup { \indexItem "VIII." "Fuga C-Dur" "953" #'FugaBWV953 }
 \markup { \indexItem "IX." \line { "Fuga B-Dur" \italic "über ein Thema von Johann Adam Reinken" } "954" #'FugaBWV954 }
+\markup { \indexItem "X." "Fuga B-Dur" "955" #'FugaBWV955 }
+%\markup { \indexItem "XI." "Fuga e-Moll" "956" #'FugaBWV956 }

@@ -19,7 +19,7 @@ SUFFIXES = .in
 
 BUILT_SOURCES = covercolor.ly
 
-EXTRA_DIST = JS-Bach-BWV946-954-Fugen.ly \
+EXTRA_DIST = JS-Bach-BWV946-955-Fugen.ly \
 	     Makefile.am \
 	     covercolor.ly.in \
 	     header.ily \
@@ -35,7 +35,9 @@ EXTRA_DIST = JS-Bach-BWV946-954-Fugen.ly \
 	     BWV951/parts/bach-fuga-bwv951-h-moll.ly \
 	     BWV952/parts/bach-fuga-bwv952-c-dur.ly \
 	     BWV953/parts/bach-fuga-bwv953-c-dur.ly \
-	     BWV954/parts/bach-fuga-bwv954-b-dur.ly
+	     BWV954/parts/bach-fuga-bwv954-b-dur.ly \
+	     BWV955/parts/bach-fuga-bwv955-b-dur.ly
+#	     BWV956/parts/bach-fuga-bwv956-e-moll.ly
 
 all: $(BUILT_SOURCES) JS-Bach-BWV946-954-Fugen
 

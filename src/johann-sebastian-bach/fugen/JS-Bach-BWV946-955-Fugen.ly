@@ -74,7 +74,7 @@
         \null\null\null
         \line { \abs-fontsize #40 \bold "Fugen" }
         \null\null
-        \line \abs-fontsize #20 { "BWV 946" \char ##x2013 "954" }
+        \line \abs-fontsize #20 { "BWV 946" \char ##x2013 "955" }
         \null\null\null\null
         \fill-line \italic { \abs-fontsize #14 "For keyboard instruments" }
         \null\null\null
@@ -128,3 +128,9 @@
 
 \pageBreak
 \include "./BWV954/parts/bach-fuga-bwv954-b-dur.ly"
+
+\pageBreak
+\include "./BWV955/parts/bach-fuga-bwv955-b-dur.ly"
+
+%\pageBreak
+%\include "./BWV956/parts/bach-fuga-bwv956-e-moll.ly"
