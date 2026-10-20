@@ -27,6 +27,10 @@ EXTRA_DIST = JS-Bach-BWV946-955-Fugen.ly \
 	     index.ly \
 	     logo.ly \
 	     macros.ly \
+	     preface-en.ly \
+	     preface-fr.ly \
+	     preface-it.ly \
+	     young-bach-c1715.eps \
 	     BWV946/parts/bach-fuga-bwv946-c-dur.ly \
 	     BWV947/parts/bach-fuga-bwv947-a-moll.ly \
 	     BWV948/parts/bach-fuga-bwv948-d-moll.ly \

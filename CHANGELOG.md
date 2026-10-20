@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - J.S. Bach: Das wohltemperierte Klavier – Erster Teil: Praeludium und Fuga XIX
 - J.S. Bach: Fuga B-Dur BWV954
 - J.S. Bach: Fuga B-Dur BWV955
+- J.S. Bach: Fugen BWV946-955 - add a preface in english/italian and french
 
 ### Changed
 

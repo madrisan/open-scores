@@ -103,6 +103,11 @@
 \include "./index.ly"
 
 \pageBreak
+\include "./preface-en.ly"
+\include "./preface-it.ly"
+\include "./preface-fr.ly"
+
+\pageBreak
 \include "./BWV946/parts/bach-fuga-bwv946-c-dur.ly"
 
 \pageBreak

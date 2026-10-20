@@ -6,6 +6,17 @@
   }
 }
 
+\markup \fill-line {
+  \center-column {
+    \epsfile #X #40 #"young-bach-c1715.eps"
+    \vspace #0.6
+    \abs-fontsize #8 \italic "Portrait presumed to show the young Johann Sebastian Bach, c. 1715,"
+    \abs-fontsize #8 \italic "attributed to Johann Ernst Rentsch the Elder (Angermuseum, Erfurt)"
+  }
+}
+
+\markup { \vspace #2 }
+
 #(define-markup-command (indexItem layout props num title bwv pagelabel)
   (string? markup? string? symbol?)
   "Format a block of the index"
@@ -26,6 +37,24 @@
            }
          }
        } #}))
+
+\markup \column \abs-fontsize #11 {
+  \override #'(line-width . 95)
+  \pad-around #1
+  \line {
+    \hspace #3.2
+    \with-link #'Preface {
+      \fill-with-pattern #1 #RIGHT .
+        \concat {
+          \override #'(line-width . 5) \fill-line { \null "" }
+          \hspace #1.5
+          "Preface " \char ##x00B7 " Prefazione " \char ##x00B7 " Préface"
+        }
+        \page-ref #'Preface "000" "?"
+    }
+  }
+}
+\markup { \vspace #1 }
 
 \markup { \indexItem "I." \line { "Fuge C-Dur" \italic "über ein Thema von Tommaso Albinoni" } "946" #'FugaBWV946 }
 \markup { \indexItem "II." "Fuge a-Moll" "947" #'FugaBWV947 }
