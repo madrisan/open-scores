@@ -10,13 +10,13 @@ Soprano = \context Voice = "one" \relative c' {
   \override MultiMeasureRest.staff-position = #0
   %1
   | R1*18
-  | r4 f g c
+  | r4 \highlightSubject { f g c
   %20
   | \appoggiatura bes16 a4 d g, c
   | f, bes~ bes8 c16 bes a8 bes16 a
   | g8 a16 bes c8 e, f g16 a bes8 d,
   | e \appoggiatura d16 c8 f2 e!4
-  | f8 c16[ d] c4 r8 c16 d c4
+  | f8 } c16[ d] c4 r8 c16 d c4
   %25
   | r8 c16 d es g f es d es' d es32 c bes4~
   | bes~ bes16 bes c d es4~ es16 g f es
@@ -55,11 +55,11 @@ Soprano = \context Voice = "one" \relative c' {
   | \override MultiMeasureRest.staff-position = #2
     R1
   %55
-  | r2 r4 bes,
+  | r2 r4 \highlightSubject { bes,
   | c f d g
   | c, f bes, es~
   | es8 f16 es d8 es16 d c8 d16 es f8 a,
-  | bes c16 d es8 g, a g16 f bes8 c16 d
+  | bes c16 d es8 g, a g16 f \unHighlightSubject bes8 } c16 d
   %60
   | es8 f16 g f8.\prall es16 d8 d16[ es] d4
   | r8 c16 d c4 r r8 c16 d32 es
@@ -95,12 +95,12 @@ Alto = \context Voice = "two" \relative c' {
   \override MultiMeasureRest.staff-position = #-4
   %1
   | R1*11
-  | r4 bes c f
+  | r4 \highlightSubject { bes c f
   | \appoggiatura { \tweak Stem.direction #UP es16 } d4 g c, f
   | bes, es~ es8 f16 es d8 es16 d
   %15
   | c8 d16 es f8 a, bes8 c16 d es8 g,
-  | a \appoggiatura { \tweak Stem.direction #UP g16 } f8 bes2 a4
+  | a \appoggiatura { \tweak Stem.direction #UP g16 } f8 bes2 a4 }
   | g8 a16 bes c4 f,8 g16 aes g8 a16 bes 
   | a8 bes16 c bes8 c16 d c8 d16 es d8. c16
   | d8 \appoggiatura { \tweak Stem.direction #UP f16 } e8 f2 e4
@@ -121,12 +121,12 @@ Alto = \context Voice = "two" \relative c' {
   | bes16 g c bes a4 bes8 a g4
   | f r8 g a4 r8 g
   | a8 g16 f g8 a bes f16 g as8 bes16 as
-  | g8 a bes4 c f
+  | g8 a \highlightSubject { bes4 c f
   %35
   | \appoggiatura { \tweak Stem.direction #UP es16 } d4 g c, f
   | bes, es~ es8 f16 es d8 es16 d
   | c8 d16 es f8 a,! bes c16 d es8 g,
-  | as f bes2 as4~
+  | as f bes2 \unHighlightSubject as4~ }
   | as8 g16 f g bes as g f es f g f8.\prallprall es32 f
   %40
   | g8 es r16 as g f g4 r8 f
@@ -157,22 +157,22 @@ Alto = \context Voice = "two" \relative c' {
   | bes4 r r8 f16 g f4
   | r8 f16 g f4 r8 g16 a g4
   | r8 g16 a g4 r8 g16 a g8. fis16
-  | g8 d g4 a d
+  | g8 d \highlightSubject { g4 a d
   %65
   | bes es a, d
   | g, c~ c8 d16 c bes!8 c16 bes
   | a8 bes16 c d8 fis, g a16 bes c8 g
-  | a4 bes a4. c8
+  | a4 bes } a4. c8
   | bes4 r8 g fis4 r8 f
   %70
   | f4 r8 f e4 r8 c
   | des4 r8 des c des c4~
-  | c8 r r f g4 c
+  | c8 r r \highlightSubject { f g4 c
   | \appoggiatura { \tweak Stem.direction #UP bes16 } a4 d g, c
   | f, bes~ bes16 d c bes a c bes a
   %75
   | g8 a16 bes c8 es,! f g16 a bes8 d,
-  | es4. d16 c d4. es16 f
+  | es4. } d16 c d4. es16 f
   | g8 f~ f4 d r8 f
   | es4 r8 es d4 r8 d'
   | bes4 r8 bes bes4 r
@@ -191,13 +191,13 @@ Tenor = \context Voice = "three" \relative c {
   | \override MultiMeasureRest.staff-position = #2
     R1*2
   %6
-  | r4 f g c
+  | r4 \highlightSubject { f g c
   | \appoggiatura bes16 a4 d g, c
   | f, bes~ bes8 c16 bes a8 bes16 a
   | g8 a16 bes c8 e, f g16 a bes8 d,
   %10
   | e \appoggiatura d16 c8 f2 e!4
-  | f8 g a bes \appoggiatura bes16 c4 g8 a
+  | \unHighlightSubject f8 } g a bes \appoggiatura bes16 c4 g8 a
   | bes8 f bes2 a4
   | bes bes2 as4~
   | as4 r8 g f4 bes
@@ -235,11 +235,11 @@ Tenor = \context Voice = "three" \relative c {
   | \override MultiMeasureRest.staff-position = #6
     R1*2
   %47
-  | r4 f, g c
+  | r4 \highlightSubject { f, g c
   | a d g, c
   | f, bes~ bes8 c16 bes a8 bes16 a
   | g8 a16 bes c8 es,! f g16 a bes8 d,
-  | e c f bes, c c'16 des c4
+  | \unHighlightSubject { e } } c f bes, c c'16 des c4
   | r8 c,16 des c4 \clef treble r8 c''16 des c bes as g
   | \clef bass f8 bes, c c, f16 a! bes c d8 d,
   | es!16 g a bes c8 c, d16 f g a bes c bes a
@@ -282,13 +282,13 @@ Tenor = \context Voice = "three" \relative c {
 Bass = \context Voice = "four" \relative c {
   \voiceFour
   %1
-  | r4 bes c f
+  | r4 \highlightSubject { bes c f
   | \appoggiatura { \tweak Stem.direction #UP es16 } d4 g c, f
   | bes, es~ es8 f16 es d8 es16 d
   | c8 d16 es f8 a, bes8 c16 d es8 g,
   %5
   | a f bes2 a4
-  | bes f'2 e4
+  | bes } f'2 e4
   | f8 f, f'2 es4~
   | es r8 d c4 f
   | e r8 c d4 r8 bes
@@ -313,23 +313,23 @@ Bass = \context Voice = "four" \relative c {
   %25
   | f,4 r r2
   | R1
-  | r4 f' g c
+  | r4 \highlightSubject { f' g c
   | a d g, c
   | f, bes~ bes8 c16 bes a8 bes16 a
   %30
   | g8 a16 bes c8 e, f g16 a bes8 d,
   | e4 f2~ f8 es
-  | f4 r8 e f4 r8 c
+  | f4 } r8 e f4 r8 c
   | f,4 r r2
   | R1*6
   %39
   | r2 r4 r8 bes
-  | es,8 r bes'4 c f
+  | es,8 r \highlightSubject { bes'4 c f
   | d g c, f
   | bes, es~ es8 f16 es d8 es16 d
   | c8 d16 es f8 a, bes c16 d es8 g,
   %45
-  | a f bes[ bes'~] bes4 as
+  | a f \unHighlightSubject { bes[ } } bes'~] bes4 as
   | g1
   | a!8 a,! d c bes g r c
   | f4 r r2
