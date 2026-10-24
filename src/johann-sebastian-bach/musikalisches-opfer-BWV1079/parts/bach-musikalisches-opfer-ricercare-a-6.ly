@@ -25,8 +25,9 @@ vi = \markup { \teeny "vi" }
 VoiceOne = \context Voice = "one" \relative c'' {
   \voiceOne
   \override MultiMeasureRest.staff-position = #0
-  \showStaffSwitch
   \override VoiceFollower.color = \grayTextColor
+  \override VoiceFollower.style = #'dashed-line
+  \showStaffSwitch
   %1
   | s1*36
   | \hshift #0 c2^\i ees
@@ -245,8 +246,9 @@ VoiceOne = \context Voice = "one" \relative c'' {
 VoiceTwo = \context Voice = "two" \relative c'' {
   \voiceTwo
   \override MultiMeasureRest.staff-position = #-6
-  \showStaffSwitch
   \override VoiceFollower.color = \grayTextColor
+  \override VoiceFollower.style = #'dashed-line
+  \showStaffSwitch
   \slurUp\stemUp\tieUp
   %1
   | s1*8
@@ -557,8 +559,9 @@ VoiceTwo = \context Voice = "two" \relative c'' {
 VoiceThree = \context Voice = "three" \relative c' {
   \voiceThree
   \override MultiMeasureRest.staff-position = #0
-  \showStaffSwitch
   \override VoiceFollower.color = \grayTextColor
+  \override VoiceFollower.style = #'dashed-line
+  \showStaffSwitch
   \tieDown
   %1
   | c2_\iii ees
@@ -814,8 +817,9 @@ VoiceThree = \context Voice = "three" \relative c' {
 VoiceFour = \context Voice = "four" \relative c' {
   \voiceFour
   \override MultiMeasureRest.staff-position = #0
-  \showStaffSwitch
   \override VoiceFollower.color = \grayTextColor
+  \override VoiceFollower.style = #'dashed-line
+  \showStaffSwitch
   %1
   | s1*24
   %25
@@ -1053,8 +1057,9 @@ VoiceFour = \context Voice = "four" \relative c' {
 VoiceFive = \context Voice = "five" \relative c {
   \voiceFour
   \override MultiMeasureRest.staff-position = #0
-  \showStaffSwitch
   \override VoiceFollower.color = \grayTextColor
+  \override VoiceFollower.style = #'dashed-line
+  \showStaffSwitch
   \stemNeutral
   %1
   | s1*16
@@ -1131,7 +1136,7 @@ VoiceFive = \context Voice = "five" \relative c {
   | \hshift #0.9 g4 c, f2~
   | \hshift #0.3 f \hshift #0.3 ees
   | f1
-  | \once\override Stem.length = #4 ees2 f\rest
+  | \once\override Stem.length = #4 ees2 \once\override Rest.direction = #UP f\rest
   | R1*5
   %84
   | d2\rest \stemDown bes'~_\v
@@ -1156,7 +1161,7 @@ VoiceFive = \context Voice = "five" \relative c {
   | bes4 a \hshift #-0.3 aes g
   | fis d g c
   | bes2 a!
-  | \once\override Stem.length = #5 g f\rest
+  | \once\override Stem.length = #5 g \once\override Rest.direction = #UP f\rest
   | s1*3
   %107
   | d2\rest f
@@ -1239,7 +1244,7 @@ VoiceFive = \context Voice = "five" \relative c {
   | d4 \hshift #0.2 fis \once\stemDown g c,\rest
   | \hshiftRest #1.3 f2\rest
     g4\rest \hshift #0.2 a
-  | \hshift #0.2 bes f\rest f\rest \stemDown g_\v
+  | \hshift #0.2 bes \once\override Rest.direction = #UP f\rest \once\override Rest.direction = #UP f\rest \stemDown g_\v
   %180
   | a2 b
   | c4 c,8 d ees! c aes'!4~
@@ -1282,8 +1287,9 @@ VoiceFive = \context Voice = "five" \relative c {
 VoiceSix = \context Voice = "six" \relative c {
   \voiceFour
   \override MultiMeasureRest.staff-position = #0
-  \showStaffSwitch
   \override VoiceFollower.color = \grayTextColor
+  \override VoiceFollower.style = #'dashed-line
+  \showStaffSwitch
   %1
   | R1*16
   | s1*32

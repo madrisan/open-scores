@@ -249,9 +249,10 @@ Alto = \context Voice = "two" \relative c'' {
   \voiceTwo
   \override MultiMeasureRest.staff-position = #-6
   \override Rest.staff-position = #0
+  \override VoiceFollower.color = \grayTextColor
+  \override VoiceFollower.style = #'dashed-line
   \omit TupletBracket
   \showStaffSwitch
-  \override VoiceFollower.color = \grayTextColor
   %1
   | s1*9
   %10
