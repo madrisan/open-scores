@@ -93,6 +93,11 @@
   }
 }
 
+\include "./preface-en.ly"
+\include "./preface-it.ly"
+\include "./preface-fr.ly"
+\pageBreak
+
 \include "./parts/bach-musikalisches-opfer-ricercare-a-3.ly"
 \pageBreak
 \include "./parts/bach-musikalisches-opfer-ricercare-a-6.ly"

@@ -29,6 +29,9 @@ EXTRA_DIST = JS-Bach-BWV1079-Musikalisches-Opfer.ly \
 	     header.ily \
 	     global.ly \
 	     logo.ly \
+	     preface-en.ly \
+	     preface-fr.ly \
+	     preface-it.ly \
 	     parts/bach-musikalisches-opfer-ricercare-a-3.ly
 
 all: $(BUILT_SOURCES) JS-Bach-BWV1079-Musikalisches-Opfer
