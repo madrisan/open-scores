@@ -39,6 +39,11 @@ middleGrey = #(x11-color 'grey45)
          }
        } #}))
 
+\markup { \indexItem "Preface · Prefazione · Préface" #'Preface }
+\markup {
+  \vspace #1
+}
+
 \markup { \indexSection "I" "B-Dur / B flat major / Si bemolle maggiore" "825" }
 \markup { \indexItem "Praeludium" #'PartitaIPraeludium }
 \markup { \indexItem "Allemande" #'PartitaIAllemande }

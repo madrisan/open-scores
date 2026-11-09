@@ -26,6 +26,9 @@ EXTRA_DIST = JS-Bach-BWV825-830-Partiten.ly \
 	     global.ly \
 	     index.ly \
 	     logo.ly \
+	     preface-en.ly \
+	     preface-fr.ly \
+	     preface-it.ly \
 	     BWV825/parts/bach-partita-1-1-praeludium.ly \
 	     BWV825/parts/bach-partita-1-2-allemande.ly \
 	     BWV825/parts/bach-partita-1-3-corrente.ly \

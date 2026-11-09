@@ -101,6 +101,11 @@
 \include "./index.ly"
 \pageBreak
 
+\include "./preface-en.ly"
+\include "./preface-it.ly"
+\include "./preface-fr.ly"
+\pageBreak
+
 %%% Partita I
 
 \include "./BWV825/parts/bach-partita-1-1-praeludium.ly"

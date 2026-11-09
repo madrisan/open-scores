@@ -18,6 +18,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - J.S. Bach: Fuga B-Dur BWV954
 - J.S. Bach: Fuga B-Dur BWV955
 - J.S. Bach: Fugen BWV946-955 - add a preface in english/italian and french
+- J.S. Bach: Musikalisches Opfer (BWV1079) - add a preface in english/italian and french
+- J.S. Bach: Partiten BWV825-830 - add a preface in english/italian and french, with a description of the dance forms
 
 ### Changed
 
@@ -29,6 +31,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - J.S. Bach: Fugen BWV946-954: merge the nine fugues into a single document
 - J.S. Bach: Fugen BWV946-954: number the fugues I-IX in their titles and in the index
 - J.S. Bach: Musikalisches Opfer: minor reformatting and compilation warning fixes
+- J.S. Bach: Fuga B-Dur BWV955 - colorize fugue subjects
 
 ### Fixed
 
