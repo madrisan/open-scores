@@ -39,6 +39,7 @@ make -C src/domenico-scarlatti/sonata-k087
 make -C src/domenico-scarlatti/sonata-k095
 make -C src/domenico-scarlatti/sonata-k141
 make -C src/domenico-scarlatti/sonata-k387
+make -C src/edward-elgar/enigma-variations-op.36-nimrod
 make -C src/ferruccio-busoni/drei-albumblatter-BV289
 make -C src/francis-poulenc/2-improvisations-fp.113
 make -C src/franco-margola/sei-sonatine-facili-dc108

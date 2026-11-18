@@ -94,6 +94,8 @@ AC_CONFIG_FILES([\
   src/domenico-scarlatti/sonata-k095/Makefile \
   src/domenico-scarlatti/sonata-k141/Makefile \
   src/domenico-scarlatti/sonata-k387/Makefile \
+  src/edward-elgar/Makefile \
+  src/edward-elgar/enigma-variations-op.36-nimrod/Makefile \
   src/ferruccio-busoni/Makefile \
   src/ferruccio-busoni/drei-albumblatter-BV289/Makefile \
   src/francis-poulenc/Makefile \
