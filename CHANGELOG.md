@@ -20,6 +20,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - J.S. Bach: Fugen BWV946-955 - add a preface in english/italian and french
 - J.S. Bach: Musikalisches Opfer (BWV1079) - add a preface in english/italian and french
 - J.S. Bach: Partiten BWV825-830 - add a preface in english/italian and french, with a description of the dance forms
+- Edward Elgar: Enigma Variations op.36 - Variation IX "Nimrod" (piano arrangement by the composer)
 
 ### Changed
 

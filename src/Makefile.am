@@ -26,6 +26,7 @@ SUBDIRS = alfredo-casella \
 	  clara-schumann-wieck \
 	  dietric-buxtehude \
 	  domenico-scarlatti \
+	  edward-elgar \
 	  ferruccio-busoni \
 	  francis-poulenc \
 	  franco-margola \
