@@ -1,4 +1,4 @@
-\version "2.27.4"
+\version "2.26.0"
 
 #(ly:set-option 'relative-includes #t)
 
