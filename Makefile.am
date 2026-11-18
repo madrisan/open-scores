@@ -21,3 +21,26 @@ SUBDIRS = lyinit \
 	  src
 
 check-local: all
+
+## Build only the scores changed since BASE (default: origin/main), committed
+## or not, as listed by ci/changed-scores.sh; for instance:
+##   make changed
+##   make changed BASE=HEAD~3
+## Changes to the build system build everything; documentation changes nothing.
+BASE = origin/main
+
+changed:
+	@targets=`cd $(top_srcdir) && ci/changed-scores.sh $(BASE)` || exit 1; \
+	if test "$$targets" = all; then \
+	  echo "The build system changed since $(BASE): building everything."; \
+	  $(MAKE) $(AM_MAKEFLAGS) all; \
+	elif test -z "$$targets"; then \
+	  echo "No score changed since $(BASE): nothing to build."; \
+	else \
+	  for dir in $$targets; do \
+	    echo "Building $$dir..."; \
+	    $(MAKE) $(AM_MAKEFLAGS) -C $$dir || exit 1; \
+	  done; \
+	fi
+
+.PHONY: changed

@@ -1,8 +1,11 @@
 #!/bin/bash
-# List the score directories to build for the changes between BASE and HEAD
-# (default: the current HEAD).
+# List the score directories to build for the changes between BASE and HEAD,
+# or between BASE and the working tree when HEAD is not given (so that the
+# uncommitted changes to the tracked files are also taken into account).
 #
 # Usage: ci/changed-scores.sh BASE [HEAD]
+#
+# It is used by the GitHub CI and by "make changed".
 #
 # Prints one directory per line (for "make -C"), or the single word "all"
 # when a change affects the whole build (configure.ac, the top-level
@@ -13,7 +16,7 @@ set -euo pipefail
 
 base="${1:?usage: $0 BASE}"
 
-changed=$(git diff --name-only "$base" "${2:-HEAD}")
+changed=$(git diff --name-only "$base" ${2:+"$2"})
 
 dirs=()
 while IFS= read -r file; do
