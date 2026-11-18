@@ -179,7 +179,8 @@ Soprano = \context Voice = "one" \relative c'' {
     \voiceOne <bes bes'>4. q8
   | bes'2.
   %40
-  | \oneVoice <g bes es g>8 <g bes es> <as es' as>4( <f as es' f>)
+  | \oneVoice <g bes es g>8^\markup { "largamente" }
+    <g bes es> <as es' as>4( <f as es' f>)
   | <bes es bes'>4( <f bes f'>4. <as as'>8)
   | <g bes es g>2.~\fermata
   | q4 r r\fermata
