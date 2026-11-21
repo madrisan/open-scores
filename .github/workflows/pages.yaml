@@ -299,7 +299,7 @@ jobs:
             </p>
           </header>
           HEADER
-            # Group by composer (sorted), each piece titled from its own
+            # Group by composer (sorted by surname), each piece titled from its own
             # header.ily, in tiers:
             #  1. plain title (e.g. Chorale Prelude - ...)
             #  2. + opus/catalogue number, whenever header.ily has one that
@@ -316,11 +316,26 @@ jobs:
             # PDF, 📂 to that piece's own source directory on GitHub (main
             # branch).
             repo_url="${GITHUB_SERVER_URL:-https://github.com}/${GITHUB_REPOSITORY:-madrisan/open-scores}"
-            sort -t "$(printf '\t')" -k1,1 -k2,2 /tmp/pages-manifest.tsv |
+            # Composers are sorted by surname, i.e. the last word of their
+            # directory name (johann-sebastian-bach -> bach,
+            # ludwig-van-beethoven -> beethoven), then by the whole directory
+            # name, so that the Bachs (and the Schumanns) are ordered by
+            # their first names. The surname key is added as a 6th column.
+            # Clara Schumann's directory also carries her maiden name, which
+            # is not the surname she is listed under.
+            gawk -F '\t' -v OFS='\t' '
+              {
+                n = split($1, w, "-")
+                surname = w[n]
+                if ($1 == "clara-schumann-wieck") surname = "schumann"
+                print $0, surname
+              }' /tmp/pages-manifest.tsv |
+              sort -t "$(printf '\t')" -k6,6 -k1,1 -k2,2 |
               gawk -F '\t' -v repo_url="$repo_url" '
                 {
                   composer[NR] = $1; relpath[NR] = $2
                   title[NR] = $3; opus[NR] = $4; source_field[NR] = $5
+                  surname[NR] = $6
                   n = NR
                 }
                 function esc(s) {
@@ -362,14 +377,12 @@ jobs:
                     count2[composer[i] SUBSEP t2]++
                   }
 
-                  # Quick A-Z nav: composer dirs are sorted, and the first
-                  # character of a composer dir always matches the first
-                  # character of its display name (display_composer only
-                  # capitalizes, never reorders) -- so the first composer
-                  # seen for each letter is already the right jump target.
+                  # Quick A-Z nav, by the initial of the surname: composers
+                  # are sorted by surname, so the first composer seen for
+                  # each letter is already the right jump target.
                   n_letters = split("ABCDEFGHIJKLMNOPQRSTUVWXYZ", letters, "")
                   for (i = 1; i <= n; i++) {
-                    L = toupper(substr(composer[i], 1, 1))
+                    L = toupper(substr(surname[i], 1, 1))
                     if (!(L in first_dir)) first_dir[L] = composer[i]
                   }
                   print "<nav class=\"alpha-nav\">"
