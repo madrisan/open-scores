@@ -59,7 +59,7 @@ jobs:
 
       - id: make
         run: |
-          make
+          make LILYPOND="lilypond -dinclude-settings=$PWD/ci/no-midi.ly"
 
       - id: collect
         env:

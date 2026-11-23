@@ -99,3 +99,10 @@ make -C src/robert-schumann/kinderscenen-op.15
 make -C src/rued-langgaard/insektarium-BVN134
 ```
 <!-- LYINIT:MAKE-COMMANDS:END -->
+
+To build only the scores you have changed since `origin/main`, committed or not, run:
+```
+make changed
+```
+Use `make changed BASE=<commit>` to compare with another commit.
+A change to the build system (for instance `configure.ac` or a top-level `Makefile.am`) builds everything, and a documentation-only change builds nothing.

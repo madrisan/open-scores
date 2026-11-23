@@ -27,9 +27,11 @@ jobs:
           # as, which makes git refuse to operate on it ("dubious ownership").
           git config --global --add safe.directory '*'
 
+      # the full history is needed to compare with the base of the changes
       - uses: actions/checkout@v2
         with:
           lfs: true
+          fetch-depth: 0
 
       - id: configure
         run: |
@@ -40,6 +42,48 @@ jobs:
         run: |
           make dist
 
-      - id: make
+      # Pushes to main build the whole collection; the other pushes and the
+      # pull requests only build the scores they change (see
+      # ci/changed-scores.sh).
+      - id: targets
+        shell: bash
+        env:
+          EVENT: ${{ github.event_name }}
+          REF: ${{ github.ref }}
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PUSH_BEFORE: ${{ github.event.before }}
         run: |
-          make
+          if [ "$EVENT" = push ] && [ "$REF" = refs/heads/main ]; then
+            targets=all
+          else
+            if [ "$EVENT" = pull_request ]; then
+              base="$PR_BASE"
+            else
+              base="$PUSH_BEFORE"
+            fi
+            # first push of a new branch: compare with main
+            if [ -z "$base" ] || ! git cat-file -e "$base^{commit}" 2>/dev/null; then
+              base=$(git merge-base origin/main HEAD)
+            fi
+            targets=$(ci/changed-scores.sh "$base" | paste -sd ' ')
+          fi
+          echo "Scores to build: ${targets:-none}"
+          echo "targets=$targets" >> "$GITHUB_OUTPUT"
+
+      - id: make
+        shell: bash
+        env:
+          TARGETS: ${{ steps.targets.outputs.targets }}
+        run: |
+          lilypond="lilypond -dinclude-settings=$PWD/ci/no-midi.ly"
+          if [ "$TARGETS" = all ]; then
+            make LILYPOND="$lilypond"
+          elif [ -z "$TARGETS" ]; then
+            echo "No score changed: nothing to build."
+          else
+            for dir in $TARGETS; do
+              echo "::group::$dir"
+              make -C "$dir" LILYPOND="$lilypond"
+              echo "::endgroup::"
+            done
+          fi
